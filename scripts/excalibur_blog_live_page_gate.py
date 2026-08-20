@@ -172,18 +172,22 @@ def inspect(
                 errors.append("article image has empty/missing alt")
                 break
             src = re.search(r"\bsrc=[\"']([^\"']+)", tag, flags=re.I)
-            if verify_media and src and src.group(1).startswith(("http://", "https://")):
-                try:
-                    request = urllib.request.Request(
-                        src.group(1),
-                        headers={"User-Agent": "ExcaliburBlogLiveGate/1.0"},
-                        method="HEAD",
-                    )
-                    with urllib.request.urlopen(request, timeout=15) as response:
-                        if int(response.status) >= 400:
-                            errors.append(f"article image unavailable: {src.group(1)}")
-                except Exception:
-                    errors.append(f"article image unavailable: {src.group(1)}")
+            if src:
+                src_val = src.group(1).strip()
+                if src_val.startswith("cover/") or src_val.startswith("./cover/"):
+                    errors.append(f"relative cover image src on live page: {src_val}")
+                elif verify_media and src_val.startswith(("http://", "https://")):
+                    try:
+                        request = urllib.request.Request(
+                            src_val,
+                            headers={"User-Agent": "ExcaliburBlogLiveGate/1.0"},
+                            method="HEAD",
+                        )
+                        with urllib.request.urlopen(request, timeout=15) as response:
+                            if int(response.status) >= 400:
+                                errors.append(f"article image unavailable: {src_val}")
+                    except Exception:
+                        errors.append(f"article image unavailable: {src_val}")
 
     featured = re.search(
         r"<div\b[^>]*class=[\"'][^\"']*post-thumbnail[^\"']*[\"'][^>]*>(.*?)</div>",

@@ -624,39 +624,40 @@ $slashed_title = wp_slash((string) $p['title']);
 $slashed_content = wp_slash((string) $p['content']);
 $slashed_excerpt = wp_slash((string) $p['excerpt']);
 
+$cover_only = !empty($p['cover_only']);
+$has_inline = !empty($p['inline_images']) && is_array($p['inline_images']);
+$defer_content = $cover_only || $has_inline;
+
 $post_id = 0;
+$post_fields = [
+    'post_title' => $slashed_title,
+    'post_name' => $slug,
+    'post_excerpt' => $slashed_excerpt,
+    'post_status' => 'publish',
+];
+if (!$defer_content) {{
+    $post_fields['post_content'] = $slashed_content;
+}}
 if (!empty($p['post_id'])) {{
     $post_id = (int) $p['post_id'];
-    wp_update_post([
-        'ID' => $post_id,
-        'post_title' => $slashed_title,
-        'post_name' => $slug,
-        'post_content' => $slashed_content,
-        'post_excerpt' => $slashed_excerpt,
-        'post_status' => 'publish',
-    ]);
+    $post_fields['ID'] = $post_id;
+    wp_update_post($post_fields);
 }} else {{
 $existing = get_page_by_path($slug, OBJECT, 'post');
 if ($existing instanceof WP_Post) {{
     $post_id = (int) $existing->ID;
-    wp_update_post([
-        'ID' => $post_id,
-        'post_title' => $slashed_title,
-        'post_name' => $slug,
-        'post_content' => $slashed_content,
-        'post_excerpt' => $slashed_excerpt,
-        'post_status' => 'publish',
-    ]);
+    $post_fields['ID'] = $post_id;
+    wp_update_post($post_fields);
 }} else {{
-    $post_id = (int) wp_insert_post([
-        'post_title' => $slashed_title,
-        'post_name' => $slug,
-        'post_content' => $slashed_content,
-        'post_excerpt' => $slashed_excerpt,
-        'post_status' => 'publish',
-        'post_type' => 'post',
-    ], true);
+    $post_fields['post_type'] = 'post';
+    if (!$defer_content) {{
+        $post_fields['post_content'] = $slashed_content;
+    }}
+    $post_id = (int) wp_insert_post($post_fields, true);
 }}
+}}
+if ($cover_only) {{
+    echo 'OK cover_only_skip_content=1' . PHP_EOL;
 }}
 if (is_wp_error($post_id)) {{
     echo 'ERR post: ' . $post_id->get_error_message() . PHP_EOL;
@@ -784,6 +785,7 @@ if (!empty($p['inline_images'])) {{
         'ID' => $post_id,
         'post_content' => wp_slash($content_updated),
     ]);
+    echo 'OK post_content_rewritten=1' . PHP_EOL;
 }}
 
 $permalink = get_permalink($post_id);
@@ -1234,6 +1236,18 @@ def check_publish_prerequisites(
     return blockers
 
 
+def relative_cover_src_errors(content: str) -> list[str]:
+    """BLOCK when article HTML still references local cover/ paths (must be WP URLs on live)."""
+    errors: list[str] = []
+    for match in re.finditer(
+        r'\bsrc=(["\'])(cover/[^"\']+)\1',
+        content,
+        flags=re.IGNORECASE,
+    ):
+        errors.append(f"relative cover image src must be rewritten before publish: {match.group(2)}")
+    return errors
+
+
 def evaluate_publish_output(out: str, payload: dict[str, Any]) -> dict[str, Any]:
     """Fail publish when post OK but cover/inline media WARN or incomplete."""
     lines = [line.strip() for line in (out or "").splitlines() if line.strip()]
@@ -1243,6 +1257,7 @@ def evaluate_publish_output(out: str, payload: dict[str, Any]) -> dict[str, Any]
     inline_ok = sum(1 for line in lines if line.startswith("OK inline_image_upload="))
     expected_inline = len(payload.get("inline_images") or [])
     expect_cover = bool(payload.get("cover_b64"))
+    cover_only = bool(payload.get("cover_only"))
 
     errors: list[str] = []
     if not has_post:
@@ -1251,6 +1266,12 @@ def evaluate_publish_output(out: str, payload: dict[str, Any]) -> dict[str, Any]
         errors.append("cover expected but missing OK featured_image=")
     if expected_inline and inline_ok < expected_inline:
         errors.append(f"inline images expected={expected_inline} uploaded={inline_ok}")
+    if expected_inline and inline_ok >= expected_inline and not any(
+        line.startswith("OK post_content_rewritten=") for line in lines
+    ):
+        errors.append("inline images uploaded but post_content was not rewritten with attachment URLs")
+    if cover_only and not any(line.startswith("OK cover_only_skip_content=") for line in lines):
+        errors.append("cover-only publish must skip post_content (avoid overwriting live inline URLs)")
     if media_warns:
         errors.extend(media_warns)
 
@@ -1311,6 +1332,11 @@ def main() -> int:
             "Allow freshness-report.json status=STALE while keeping all other "
             "publish gates (implied by --media-refresh)"
         ),
+    )
+    ap.add_argument(
+        "--cover-only",
+        action="store_true",
+        help="With --media-refresh: re-upload featured image only (skip inline media)",
     )
     ap.add_argument(
         "--deploy-llms",
@@ -1401,7 +1427,14 @@ def main() -> int:
     else:
         print("WARN --skip-gates: publishing without link-verify/schema prerequisites", file=sys.stderr)
 
+    if args.cover_only and not args.media_refresh:
+        print("BLOCKER: --cover-only requires --media-refresh", file=sys.stderr)
+        return 2
+
     payload = load_article(article_dir, public_base=public)
+    if args.cover_only:
+        payload["inline_images"] = []
+        payload["cover_only"] = True
     php = build_php(payload)
 
     if args.dry_run:
