@@ -138,6 +138,10 @@ def inline_panel_prompt(slot: dict, types_catalog: dict) -> str:
             f" +tiny meme sticker only (≤{int(MEME_STICKER_INLINE_MAX_SHARE * 100)}% frame, "
             f"corner accent from {MEME_CATALOG_REL}; NO co-host human; NO presenter)."
         )
+    base += (
+        " Leave one corner empty clean margin (no stickers/text/people) for factory logo paste "
+        "8–12% width; NO drawn logo/house/heart in generation."
+    )
     return base
 
 
@@ -466,11 +470,15 @@ def build_prompt(
         if brand_logo_paste:
             emotion_clause = f"Expression: {cover_emotion}." if cover_emotion else ""
             panel_lines.append(
-                f"TL COVER TXT «{cover_hook_text}» bold Cyrillic black, {highlight_rule}.{sticky_lock} "
-                f"NO brand logo; NO phone numbers in image (factory adds post-render). "
-                f"Russian guest scene (not host i2i); {emotion_clause} sun flare; "
+                f"TL COVER TXT «{cover_hook_text}» bold Cyrillic black, {highlight_rule}. "
+                f"Late-August Tyumen evening (20 Aug): dry warm street, golden hour, green trees, "
+                f"NO snow NO ice NO frost NO winter NO blizzard NO frozen keybox NO minus degrees. "
+                f"NO brand logo; NO phone in image (factory adds post-render). "
+                f"Russian guest with suitcase at apartment entrance; {emotion_clause} sun flare; "
                 f"{compact(cover_scene, COVER_SCENE_HINT_COMPACT)}; "
-                f"1-2 meme cat stickers; {BOARD_STATIONERY}; Wordstat/Tyumen; #FFF; perfect Cyrillic"
+                f"meme cat sticker ONLY far top-right ≤12% frame; keep one corner empty clean sky/wall "
+                f"margin (no stickers/text there — factory pastes logo); "
+                f"{BOARD_STATIONERY}; Wordstat/Tyumen; #FFF; perfect Cyrillic"
             )
         else:
             emotion_clause = (

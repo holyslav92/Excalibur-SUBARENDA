@@ -1,16 +1,28 @@
 {
   "hero_id": "dobry-dom-brand",
-  "status": "brand_logo_mode",
+  "status": "brand_logo_paste",
   "name_ru": "Добрый дом",
-  "cover_mode": "brand_logo",
+  "cover_mode": "brand_logo_paste",
   "reference_images": ["memory/cover/assets/brand/dobry-dom-logo.png"],
   "reference_image": "memory/cover/assets/brand/dobry-dom-logo.png",
-  "reference_url_hosted": "https://xn---72-9cdob8azaodt6k.xn--p1ai/wp-content/uploads/2026/05/dizajn-bez-nazvaniya-38.png",
-  "reference_url_source": "добрыйдом-72.рф WP media logo",
+  "reference_url_hosted": "https://xn---72-9cdob8azaodt6k.xn--p1ai/wp-content/uploads/2026/03/img_7143.png",
+  "reference_url_source": "добрыйдом-72.рф canonical logo (curtains+flower)",
+  "logo_composite": {
+    "mode": "paste_png_alpha",
+    "logo_asset": "memory/cover/assets/brand/dobry-dom-logo.png",
+    "canonical_sha256": "eaf97915a9830ffd31b5c08b128e8b60dc0b0b9a8ee85fc4083f32c49040ee3f",
+    "forbid_ai_drawn_logo": true,
+    "cover_phone_post_composite": true,
+    "max_width_fraction": 0.10,
+    "min_width_fraction": 0.08,
+    "max_width_fraction_cap": 0.12,
+    "margin_px": 20
+  },
   "visual_lock": {
     "person": "NO Shakin/rieltor identity — Russian guests fitting check-in topic only",
-    "logo_lockup": "Добрый дом on all 8 panels"
+    "logo_lockup": "PASTE official PNG 1:1 on all 8 panels at 8–12% canvas width — adaptive empty corner; NEVER AI-drawn logo/house/heart",
+    "cover_phone": "+7 (993) 574-83-22 post-composite next to logo on cover only"
   },
   "cover_canon": "memory/cover/cover-canon.json",
-  "host_face_todo": "skip_human_host for B01 test publish"
+  "host_face_todo": "skip_human_host — brand logo paste mode"
 }
