@@ -17,7 +17,7 @@
   "anti_repeat_log": "memory/cover/used-motifs.json",
   "wordstat_geo": "memory/cover/wordstat-geo.json",
   "prefer_local_reference": true,
-  "global_prompt_prefix": "High-key bright RU editorial collage, airy #FFFFFF, sun flare, warm hospitality mood (apartment stay, not realtor deal). NO host face / NO Shakin / NO identity-real. Russian guest or host couple fitting check-in topic allowed as scene people. REQUIRED readable logo lockup «Добрый дом» bottom-right on EVERY panel (all 8 images). 1-3 Wordstat stickers (Тюмень, посуточно). Meme cat cutouts small. No dark cinematic.",
+  "global_prompt_prefix": "High-key bright RU editorial collage, airy #FFFFFF, sun flare, warm hospitality mood (apartment stay, not realtor deal). Comfort+ lived-in cozy interiors for ordinary guests (командировки, семьи, пары) — NOT business-class, NOT hotel-luxe, NO marble palaces, NO luxury penthouse promise. NO host face / NO Shakin / NO identity-real. Russian guest or host couple fitting check-in topic allowed as scene people. REQUIRED readable logo lockup «Добрый дом» bottom-right on EVERY panel (all 8 images). 1-3 Wordstat stickers (Тюмень, посуточно). Meme cat cutouts small. No dark cinematic.",
   "hook_ink": "#141821",
   "hook_accent": "#dcc5a1",
   "panel_background": "#FFFFFF",
@@ -26,6 +26,11 @@
     "realtor deal desk",
     "EGRN document stack as hero",
     "tymenrieltor branding",
-    "The Риэлтор"
+    "The Риэлтор",
+    "business-class apartment marketing",
+    "marble palace interior",
+    "hotel-luxe lobby",
+    "luxury penthouse as brand promise",
+    "«бизнес-класс ЖК» hero"
   ]
 }

@@ -10,7 +10,7 @@ import time
 from ftplib import FTP, error_perm
 from typing import Any
 
-DEFAULT_FTP_TIMEOUT = 60
+DEFAULT_FTP_TIMEOUT = 90
 PASV_REWRITE_IP = "188.225.40.162"
 PASV_ALLOWED_HOSTS = frozenset({"vh368.timeweb.ru", PASV_REWRITE_IP})
 WP_ROOT_CANDIDATES = (
@@ -157,7 +157,7 @@ def _ftp_stor_with_retry(
     remote_name: str,
     data: bytes,
     *,
-    attempts: int = 3,
+    attempts: int = 8,
     retry_pause_s: float = 2.0,
 ) -> None:
     """Upload via passive STOR with short retries (Timeweb PASV ports can be flaky)."""

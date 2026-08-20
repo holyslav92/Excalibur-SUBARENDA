@@ -32,6 +32,12 @@
     "panels_per_canvas": 4,
     "total_images": 8
   },
+  "brand_tone": {
+    "positioning": "комфорт+",
+    "not": "бизнес-класс, люкс, hotel-luxe",
+    "audience": "командировки, семьи, пары — обычные гости, без пафоса",
+    "visual": "уютные «живые» интерьеры, не мраморные дворцы и не «бизнес-класс ЖК» как обещание бренда"
+  },
   "cta_required": true,
   "cta_links": [
     "https://добрыйдом-72.рф/",
@@ -40,10 +46,14 @@
   ],
   "cta_channels": {
     "site": "https://добрыйдом-72.рф/",
+    "booking": "https://добрыйдом-72.рф/",
     "blog": "https://добрыйдом-72.рф/blog/",
     "telegram_manager": "https://t.me/Dobriy_dom_Tyumen",
+    "telegram_manager_handle": "@Dobriy_dom_Tyumen",
     "telegram_channel": "https://t.me/Dobriy_dom_72",
     "messenger": "https://t.me/Dobriy_dom_Tyumen",
+    "max": "https://max.ru/id660300569233_biz",
+    "avito": "https://www.avito.ru/brands/dobriydomtymen/all?sellerId=5a9944e5fd6eca88b3c4f0864c03f0b4",
     "phone": "",
     "phone_display": ""
   },
