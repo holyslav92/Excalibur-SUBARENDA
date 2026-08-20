@@ -1,0 +1,23 @@
+{
+  "name": "excalibur-2-cloud",
+  "displayName": "Excalibur-2-Cloud",
+  "description": "Clean human-first blog pipeline for Cursor Cloud: Setup onboarding → Scout → Research → Title → Writer → Sol → Cover||Schema → Indexer → Publish.",
+  "version": "1.0.0",
+  "keywords": [
+    "excalibur",
+    "excalibur-2-cloud",
+    "blog",
+    "wordpress",
+    "orchestrator",
+    "subagents",
+    "setup",
+    "onboarding"
+  ],
+  "author": {
+    "name": "Excalibur-2-Cloud"
+  },
+  "rules": "./rules/",
+  "skills": "./skills/",
+  "agents": "./agents/",
+  "commands": "./commands/"
+}

@@ -1,0 +1,85 @@
+{
+  "status": "ok",
+  "comment": "Inline panel type catalog for The Риэлтор. Utility-first: each panel teaches a fact from its H2. No host face on inline.",
+  "utility_test": "Reader who has NOT read the paragraph must still extract a concrete fact, order, number, or comparison from the image alone. If labels removed → nothing understandable = FAIL. Row of 5 gold icon circles with 3-word captions = FAIL.",
+  "style_lock": "Same as approved cover B02: #FFFFFF high-key, gold #dcc5a1 / black #141821, torn paper, gold tape, pins, thin strings, sun flare, collage. Small meme sticker on 2–3 of 7 inlines only (≤15% frame; catalog people-memes or cats — never a second human hero).",
+  "forbidden_inline": [
+    "host face / identity-real / Святослав portrait",
+    "stock model / handsome realtor / generated man as co-host or presenter",
+    "large human (any non-host) on inline — hero slot, left portrait, talking-head, pointing at table",
+    "meme person >15% of frame or occupying presenter slot",
+    "invented photogenic stranger called a meme — use memory/cover/meme-top100.json only",
+    "row of decorative icons + 3-word mood captions",
+    "duplicate labels on two cards",
+    "realtor at desk decorative scene",
+    "empty UI placeholders",
+    "cover copy-paste",
+    "Salt Bae / Drake / celebrity memes",
+    "«не эскроу» as process step 4 instead of footnote"
+  ],
+  "preferred_order": [
+    "comparison_table",
+    "process_flow",
+    "bar_timeline_chart",
+    "structure_diagram",
+    "labeled_checklist",
+    "fact_card"
+  ],
+  "types": {
+    "comparison_table": {
+      "label_ru": "сравнительная таблица с колонками",
+      "utility": "Real columns/rows; numbers when Writer gave them; left vs right must differ",
+      "keywords": ["сравн", "vs", "или", "порядок", "ошибк", "норма", "тариф", "альтернатив"]
+    },
+    "process_flow": {
+      "label_ru": "нумерованный процесс / таймлайн",
+      "utility": "Numbered steps; one failure/success point highlighted; evidence as callout not extra step",
+      "keywords": ["кейс", "произошло", "шаг", "сорвал", "порядок", "сделк"]
+    },
+    "bar_timeline_chart": {
+      "label_ru": "график / шкала сроков",
+      "utility": "Comparable bar or timeline with durations, rates, amounts — visually scannable",
+      "keywords": ["срок", "дней", "график", "60", "90", "регистрац"]
+    },
+    "structure_diagram": {
+      "label_ru": "схема устройства механизма",
+      "utility": "Who holds money, when release; arrows + blocks; footnotes aside",
+      "keywords": ["как работает", "аккредитив", "механизм", "схема", "банк", "егрн"]
+    },
+    "labeled_checklist": {
+      "label_ru": "чеклист ошибок vs правильный путь",
+      "utility": "Named errors vs correct path rows — not generic «типичные ошибки»",
+      "keywords": ["чек", "ошибк", "проверь", "не заменяет", "риск"]
+    },
+    "fact_card": {
+      "label_ru": "карточка фактов",
+      "utility": "Only if 3–6 DISTINCT facts (not synonyms); last resort",
+      "keywords": ["факт", "цифр", "минимум", "максимум", "статья"]
+    },
+    "workflow_diagram": {
+      "label_ru": "пошаговая схема (legacy alias → process_flow)",
+      "utility": "Use process_flow rules",
+      "keywords": ["workflow"]
+    },
+    "checklist_board": {
+      "label_ru": "чеклист (legacy → labeled_checklist)",
+      "utility": "Use labeled_checklist rules",
+      "keywords": ["checklist"]
+    },
+    "schema_faq_ui": {
+      "label_ru": "схема (legacy → structure_diagram)",
+      "utility": "Use structure_diagram rules",
+      "keywords": ["schema", "faq"]
+    },
+    "tool_screenshot": {
+      "label_ru": "таблица тарифов / UI (legacy → comparison_table)",
+      "utility": "Use comparison_table with numbers",
+      "keywords": ["тариф", "сбер", "сбр"]
+    },
+    "infographic_card": {
+      "label_ru": "инфографика (legacy → bar_timeline_chart)",
+      "utility": "Use bar_timeline_chart for durations",
+      "keywords": ["infographic"]
+    }
+  }
+}

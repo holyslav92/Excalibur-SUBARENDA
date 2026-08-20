@@ -1,0 +1,49 @@
+---
+description: Excalibur-2-Cloud — оркестратор, Setup gate, Task(subagents), Cloud handoff
+alwaysApply: false
+---
+
+# Excalibur-2-Cloud (плагин + Cloud)
+
+## Cloud
+
+- Handoff: `.cursor/excalibur-blog-handoff.md` (не коммитить)
+- Fragments: `.cursor/excalibur-blog-fragments/` для cover||schema
+- Task agents: `.cursor/agents/excalibur-blog-*`
+- Preflight: `scripts/excalibur_blog_today.py`, `excalibur_blog_research_start.py`
+- См. `AGENTS.md`, `CLOUD-FIRST-RUN.md`, `CLOUD-AUTOMATION.md`, `SETUP.md`
+
+## Setup gate
+
+Если `memory/setup/status.json` не `complete` — чат = **Setup**
+(`excalibur-blog-setup`), не Director. Memories OFF.
+
+## Главный и субагенты
+
+- **Setup** — чат (не Task): `agents/excalibur-blog-setup.md`
+- **Директор** — чат (не Task): `agents/excalibur-blog-director.md`
+- **Субагенты** — `Task(<name>)`, см. `agents/FOR-AGENTS.md`
+
+## Пайплайн (после setup)
+
+0. Scout Task при `needs_scout`, затем shell `research_start`
+1. `excalibur-blog-research`
+2. `excalibur-blog-title`
+3. `excalibur-blog-writer` → `drafts/writer.html` (смысл)
+4. `excalibur-blog-sol` → `article.html` (слог SOUL + examples)
+5. shell: `pipeline_canon --stamp` + opening_meta + html_linter
+6. **ПАРАЛЛЕЛЬНО** cover-text + schema → cover
+7. `excalibur-blog-indexer`
+8. `excalibur-blog-publish`
+9. fixer(open) → merge_to_main → content-learner
+
+Канон: `shared/pipeline-canon.json`.
+**Не возвращать** Critic/Panel/Thesis/Voice/Headline/Glavred/Visual QA.
+
+## Запреты
+
+- `Task(excalibur-blog-director)` / `Task(excalibur-blog-setup)`
+- субагенты не запускают вложенные Task (кроме Setup → setup-voice/visual)
+- cover||schema без **Sol** `article.html` + canon stamp
+- rewrite-loop поверх Sol
+- пайплайн до завершения Setup

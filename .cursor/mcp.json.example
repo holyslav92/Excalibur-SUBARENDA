@@ -1,0 +1,4 @@
+{
+  "_comment": "PRIMARY Wordstat path for Cloud Agents: enable MCP-KV in Automation → Tools (personal connector from mcp-kv.ru dashboard — never commit SSE URL or tokens to git). Optional local: MCP_KV_TOKEN in Cloud Secrets.",
+  "mcpServers": {}
+}

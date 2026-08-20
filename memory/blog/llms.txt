@@ -1,0 +1,5 @@
+# Excalibur BLOG - LLM Index (Добрый дом)
+
+https://добрыйдом-72.рф/blog
+
+Indexer fills this file after publish.

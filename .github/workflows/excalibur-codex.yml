@@ -1,0 +1,92 @@
+name: Excalibur BLOG - Codex via AnyModel
+
+on:
+  schedule:
+    # 12:00, 14:00, 16:00, 18:00 at UTC+5.
+    - cron: '0 7,9,11,13 * * *'
+  workflow_dispatch:
+    inputs:
+      topic:
+        description: 'Тема статьи (необязательно)'
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: excalibur-codex-main
+  cancel-in-progress: false
+
+jobs:
+  generate-and-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      PUBLIC_SITE_URL: https://xn---72-9cdob8azaodt6k.xn--p1ai
+      EXCALIBUR_BLOG_ALLOW_PUBLISH: no
+      ANYMODEL_BASE_URL: https://anymodel.org/v1
+      ANYMODEL_MODEL: gpt-5.6-terra
+      FTP_ROOT: .
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install Codex CLI
+        run: npm install --global @openai/codex
+
+      - name: Configure Codex for AnyModel Responses API
+        env:
+          ANYMODEL_API_KEY: ${{ secrets.ANYMODEL_API_KEY }}
+        run: |
+          test -n "$ANYMODEL_API_KEY" || { echo 'Missing ANYMODEL_API_KEY'; exit 1; }
+          mkdir -p "$RUNNER_TEMP/codex-home"
+          cat > "$RUNNER_TEMP/codex-home/config.toml" <<EOF
+          model = "${ANYMODEL_MODEL}"
+          model_provider = "anymodel"
+          model_reasoning_effort = "high"
+
+          [model_providers.anymodel]
+          name = "AnyModel"
+          base_url = "${ANYMODEL_BASE_URL}"
+          wire_api = "responses"
+          requires_openai_auth = true
+          EOF
+          echo "CODEX_HOME=$RUNNER_TEMP/codex-home" >> "$GITHUB_ENV"
+          echo "OPENAI_API_KEY=$ANYMODEL_API_KEY" >> "$GITHUB_ENV"
+
+      - name: Install project dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Verify setup gate
+        run: |
+          python3 scripts/excalibur_blog_doctor.py
+          test "$(jq -r '.complete' memory/setup/status.json)" = true
+
+      - name: Run Excalibur Director in Codex
+        run: |
+          codex login status || true
+          codex exec \
+            --cd "$GITHUB_WORKSPACE" \
+            --dangerously-bypass-approvals-and-sandbox \
+            --skip-git-repo-check \
+            --ephemeral \
+            --output-last-message "$RUNNER_TEMP/codex-last-message.txt" \
+            -m "$ANYMODEL_MODEL" \
+            "Read AGENTS.md, CLOUD-AUTOMATION.md, shared/pipeline-canon.json, and shared/tenant-config.json. If setup is incomplete, stop with a clear error. Otherwise run the complete Excalibur pipeline for one new article on the requested topic: ${{ inputs.topic }}. Use Scout only when no topic was provided. Run research_start, Research, Title, Writer, Sol, pipeline canon and all gates, cover/schema/indexer, then publish using the existing SFTP publish script. Use the repository's existing format and contracts. Do not put secrets in files or output. Use PUBLIC_SITE_URL from the environment. Finish only after reporting the exact result and any blocker." \
+            2>&1 | tee "$RUNNER_TEMP/codex-run.log"
+
+      - name: Commit generated safe artifacts
+        run: |
+          git config user.name 'Excalibur BLOG Bot'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add memory shared
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: automated Excalibur article run"
+            git push origin HEAD:main
+          fi

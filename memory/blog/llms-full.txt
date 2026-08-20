@@ -1,0 +1,5 @@
+# Excalibur BLOG - LLM Knowledge Base (Добрый дом)
+
+Ledger сброшен при fork с Excalibur-2-Cloud. Indexer заполнит после первых publish.
+
+Site: https://добрыйдом-72.рф/blog

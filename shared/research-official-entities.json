@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "note": "Сущности, для которых тарифы/комиссии/условия обязаны идти с официального сайта.",
+  "entities": [
+    {
+      "id": "sberbank",
+      "aliases": ["сбербанк", "сбер банк", "сбер"],
+      "official_domains": ["sberbank.ru", "www.sberbank.ru"],
+      "person_url_hint": "/ru/person/",
+      "legal_url_hint": "/ru/legal/",
+      "tariff_keywords": ["тариф", "комисси", "аккредитив", "0,", "%", "₽", "руб", "3400", "3 400", "15 000", "15000"]
+    },
+    {
+      "id": "vtb",
+      "aliases": ["втб", "банк втб"],
+      "official_domains": ["vtb.ru", "www.vtb.ru"],
+      "person_url_hint": "/personal/",
+      "legal_url_hint": "/business/",
+      "tariff_keywords": ["тариф", "комисси", "сбр", "аккредитив", "%", "₽", "руб"]
+    },
+    {
+      "id": "tinkoff",
+      "aliases": ["т-банк", "т банк", "тинькофф", "t-bank"],
+      "official_domains": ["tbank.ru", "www.tbank.ru", "tinkoff.ru"],
+      "person_url_hint": "/",
+      "legal_url_hint": "/business/",
+      "tariff_keywords": ["тариф", "комисси", "аккредитив", "%", "₽", "руб"]
+    }
+  ]
+}

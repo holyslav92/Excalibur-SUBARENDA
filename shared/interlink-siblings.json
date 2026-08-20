@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "note": "Сайтовые longform/чеклисты для перекрёстных ссылок (slug + post_id). Обновлять при publish.",
+  "siblings": [
+    {
+      "slug": "rosfinmonitoring-sdelka-nedvizhimost-cheklis-tyumen-2026",
+      "post_id": 8487,
+      "title": "Росфинмониторинг и сделка с недвижимостью: чеклист для Тюмени"
+    },
+    {
+      "slug": "bank-otkazal-po-domu-cheklist-starogo-fonda-v-tyumeni",
+      "post_id": 8456,
+      "title": "Банк отказал по дому? Чеклист старого фонда в Тюмени"
+    },
+    {
+      "slug": "na-matkapital-kupili-detskie-doli-proverte",
+      "post_id": 8730,
+      "title": "На маткапитал купили — детских долей в выписке нет"
+    }
+  ]
+}

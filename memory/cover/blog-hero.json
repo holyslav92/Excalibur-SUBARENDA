@@ -1,0 +1,17 @@
+{
+  "hero_id": "dobry-dom-placeholder",
+  "status": "NEED_REPLACE",
+  "name_ru": "Добрый дом",
+  "cover_mode": "host_reference",
+  "reference_images": [],
+  "reference_notes": "PLACEHOLDER: identity-real photos from Excalibur-2-Cloud fork — NOT Добрый дом brand. Owner must replace memory/cover/assets/identity-real/ and update this file before production Cover-QA PASS.",
+  "face_primary": "memory/cover/assets/identity-real/face-studio-2026-06-23.jpg",
+  "reference_image": "memory/cover/assets/identity-real/face-studio-2026-06-23.jpg",
+  "visual_lock": {
+    "person": "TODO: brand host or neutral hospitality visual after identity upload",
+    "forbid": "Shakin/rieltor identity lock, tymenrieltor.ru URLs, deal paperwork hero"
+  },
+  "cover_canon": "memory/cover/cover-canon.json",
+  "reference_url_source": "PLACEHOLDER — replace after WP media upload on добрыйдом-72.рф",
+  "host_face_todo": "Replace identity-real + portrait.jpg; rerun Setup Visual"
+}
