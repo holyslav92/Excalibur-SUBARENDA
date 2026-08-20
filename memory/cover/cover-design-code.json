@@ -1,92 +1,76 @@
 {
-  "design_code_id": "the_rieltor_light_meme_wordstat",
+  "design_code_id": "dobry_dom_light_meme_wordstat",
   "status": "ok",
-  "label_ru": "The Риэлтор — light/bright, мемы, Wordstat-стикеры, live identity, anti-repeat",
+  "label_ru": "Добрый дом — light/bright, мемы, Wordstat-стикеры, logo lockup, anti-repeat",
   "canon_file": "memory/cover/cover-canon.json",
-  "reference_notes": "FACE: face-studio-2026-06-23.jpg only. Body: hoodie+office. Greenhouse/regiment = scene only.",
-  "host_reference": true,
-  "age_lock": 28,
-  "face_primary": "memory/cover/assets/identity-real/face-studio-2026-06-23.jpg",
-  "identity_lock_files": [
-    "memory/cover/assets/identity-real/face-studio-2026-06-23.jpg",
-    "memory/cover/assets/identity-real/face-hoodie-airpods.jpeg",
-    "memory/cover/assets/identity-real/face-office-selfie.jpeg",
-    "memory/cover/assets/identity-real/face-greenhouse-yahweh.png",
-    "memory/cover/assets/identity-real/face-immortal-regiment.jpeg"
-  ],
-  "body_build_only_files": [
-    "memory/cover/assets/identity-real/face-hoodie-airpods.jpeg",
-    "memory/cover/assets/identity-real/face-office-selfie.jpeg"
-  ],
-  "not_face_source_files": [
-    "memory/cover/assets/identity-real/face-greenhouse-yahweh.png",
-    "memory/cover/assets/identity-real/face-immortal-regiment.jpeg"
-  ],
-  "scene_composition_only_files": [
-    "memory/cover/assets/scene-composition-only/hero-ref-office-risk-hologram.jpg",
-    "memory/cover/assets/scene-composition-only/hero-ref-balcony-keys-sunset.jpg"
-  ],
-  "scene_composition_rule": "AI hero-ref JPGs: mood ONLY. Hard ban: FACE source, copy face/pose 1:1.",
-  "invention_rule": "Каждая обложка — новая выдуманная сцена: другая локация, мем, жест, шутка, стикеры. Без inventory lock и без дефолтных props (ключи/голограмма/стол/балкон).",
+  "reference_notes": "Logo lockup: memory/cover/assets/brand/logo-dobry-dom.png on ALL 8 images. NO host face. NO Shakin identity.",
+  "host_reference": false,
+  "logo_lockup": true,
+  "logo_asset": "memory/cover/assets/brand/logo-dobry-dom.png",
+  "invention_rule": "Каждая обложка — новая выдуманная сцена: другая локация, мем, жест, шутка, стикеры. Без inventory lock и без дефолтных props (ключи/голограмма/стол/балкон/ЕГРН-доска).",
   "anti_repeat": {
     "window_days": 14,
     "log": "memory/cover/used-motifs.json",
     "gate": "scripts/excalibur_blog_cover_motif_gate.py"
   },
   "forbidden_daypart_formula": "REJECTED: morning desk+document / day street / evening close talk / night split — never use",
-  "composition_rule": "Cover agent изобретает композицию с нуля под тему H1. Эмоция из emotion_bank — только настроение, не фиксированная сцена. Anti-repeat 14д.",
+  "composition_rule": "Cover agent изобретает композицию с нуля под тему H1. Warm hospitality, cozy apartment stay. Anti-repeat 14д.",
   "emotion_bank": [
-    "спокойная уверенность",
-    "настороженность",
-    "жёсткий стоп",
+    "тёплый уют",
+    "спокойное заселение",
     "лёгкая ирония",
-    "сосредоточенный разбор",
-    "тёплый финал сделки"
+    "забота о госте",
+    "настороженность к скрытым доплатам",
+    "радость от уютной квартиры"
   ],
   "cover_rules": [
-    "host_reference=true; FACE only face-studio-2026-06-23.jpg; body medium-slim per hoodie+office refs",
-    "BODY LOCK: match studio portrait jaw/stubble/hairline; FAIL if chubby or different person",
-    "COVER PHONE: readable CTA «+7 922 001 65 05» on phone screen or gold tape sticker — not tiny unreadable",
-    "BOARD STATIONERY: light investigation-board tape/pins/strings/paper scraps — high-key beautiful, NOT dark crime-board",
-    "LIGHT BRIGHT high-key: sun flare, light leak, glow, airy whites — no dark cinematic",
-    "Cover изобретает сцену с нуля; no recurring default props",
+    "logo_lockup=true; logo on cover + all 7 inlines; readable corner lockup, not giant watermark",
+    "NO host face / NO Shakin / NO face-studio-2026-06-23 identity lock",
+    "Topic-fit Russian people OK on cover when scene needs humans (guests, families, cleaners) — never identity-locked",
+    "LIGHT BRIGHT high-key: sun flare, light leak, glow, airy whites — teal curtains + terracotta accents",
+    "Cover изобретает сцену с нуля; no recurring default props; no realtor-deal investigation board",
     "1–3 designer stickers with LIVE Wordstat phrases (Тюмень/область) — readable, not spam",
-    "Meme cats + catalog people-memes as SMALL stickers on COVER (1–2); inlines: tiny meme on 2–3 of 7 panels only — infographic first, never co-host human",
-    "8-image set: people = cover host only; inline people-memes ≤15% frame from meme-top100.json",
+    "Meme cats + catalog people-memes as SMALL stickers on COVER (1–2); inlines: tiny meme on 2–3 of 7 panels only — infographic first",
     "cover_hook 18–42 кириллицы; meme_caption_ru пуст",
-    "Панели #FFFFFF; ink #141821; gold #dcc5a1 один accent",
-    "Запрещены: plastic face, AI hero-ref face, chubby/overweight host, puffy cheeks, double chin, thick neck, white hoodie, empty office/doc-only, daypart formula"
+    "Панели #FFFFFF; ink #141821; terracotta #c45c3e + teal #3d8b7a accents",
+    "Запрещены: Shakin face, plastic identity lock, dark cinematic, daypart formula, inventory default props, empty doc-only office, EGRN hero"
   ],
   "inline_rules": [
     "Longform: 7 inline (inline_1…inline_7) — UTILITY-FIRST per H2 (см. inline-visual-types.json)",
-    "Стиль = одобренная обложка B02: #FFFFFF high-key, gold #dcc5a1 / black #141821, torn paper, gold tape, pins, thin strings, sun flare, collage",
-    "Без лица Святослава / host / identity-real на inline — host ТОЛЬКО на cover",
+    "Стиль = одобренная обложка: #FFFFFF high-key, terracotta/teal accents, torn paper, tape, pins, sun flare, collage",
+    "Logo lockup on EVERY inline — same placement logic as cover",
+    "Без лица host / Shakin / identity-real на inline",
     "Без stock model / generated man / co-host / presenter human на inline — FAIL",
+    "FAIL decorative-only: inline MUST be info-graphic with real numbers/labels from article",
     "People-meme на inline: только из meme-top100.json, стикер ≤15% кадра, угол/край — не герой",
     "UTILITY TEST (FAIL): без абзаца читатель не выносит факт/порядок/число/сравнение; ряд иконок+3 слова = FAIL",
     "Типы (предпочтение): comparison_table → process_flow → bar_timeline_chart → structure_diagram → labeled_checklist → fact_card",
-    "Запрещено: icon row+mood captions; дубли подписей; риэлтор за столом; пустой UI; копипаст cover; Salt Bae/Drake/celebrity; «не эскроу» как шаг",
+    "Запрещено: icon row+mood captions; дубли подписей; риэлтор за столом; пустой UI; копипаст cover; Salt Bae/Drake/celebrity; decorative interior only",
     "Optional ONE tiny cat or catalog people-meme sticker (≤15% frame, corner accent — NOT hero); labels = факты из статьи (цифры, порядок, инструменты)"
   ],
   "visual_motifs": [
     "sun flare / light leak / soft glow на белой бумаге",
+    "teal/green curtain accents from logo",
+    "terracotta wordmark color accents",
     "мем-кот стикер (толстый белый контур, ≤15% кадра)",
     "мем-человек из meme-top100.json — только маленький cutout в углу, не co-host",
     "Wordstat-стикер с живым запросом",
-    "torn paper / gold tape — премиум коллаж"
+    "torn paper / terracotta tape — премиум коллаж",
+    "logo lockup corner on every panel"
   ],
   "color_palette": {
     "background": "#FFFFFF",
     "panel_background": "#FFFFFF",
     "ink": "#141821",
-    "accent_primary": "#dcc5a1",
+    "accent_primary": "#c45c3e",
+    "accent_teal": "#3d8b7a",
     "accent_gold_mid": "#ecd9b6",
     "accent_gold_light": "#f3e6c9",
     "light_glow": "#fff8ee",
-    "usage": "High-key #FFFFFF panels. Sun flare/glow allowed. No twilight/dark cinematic backgrounds."
+    "usage": "High-key #FFFFFF panels. Terracotta + teal from logo. Sun flare/glow allowed. No twilight/dark cinematic backgrounds."
   },
   "typography_reference": "Cormorant Garamond + Manrope. Cover: bold condensed Cyrillic hook + Wordstat sticker labels.",
-  "cover_panel_prompt_block": "High-key RU editorial collage, bright airy #FFFFFF, sun flare/light leak/glow, BLACK #141821 Cyrillic, gold #dcc5a1 accent. Host LARGE left = same 28yo man as i2i identity-real, medium slim build matching live refs (NOT chubby, NOT puffy cheeks, NOT thick neck, blazer relaxed fit). NEW invented scene/emotion. 1-3 Wordstat sticker labels. Meme cat and/or meme people sticker cutouts. No dark cinematic, no inventory props, no doc-only office.",
-  "inline_information_block": "INLINE UTILITY LOCK: same B02-approved bright collage (#FFF, gold/black, torn paper, tape, sun flare). Teach fact/order/number/comparison for THIS H2 — comparison_table, process_flow, bar chart, structure diagram, or error-vs-correct checklist. NO host face. NO stock/generated man. NO large human co-host. Optional ONE tiny cat or catalog people-meme sticker (≤15% frame, corner only — from meme-top100.json). Labels = facts from article (rates, order, durations), not mood slogans.",
-  "global_negative": "dark cinematic, low-key noir, twilight panel, plastic uncanny face, AI hero-ref face, chubby host, overweight, puffy face, puffy cheeks, double chin, stocky, thick neck, wide torso tight blazer, white hoodie, inventory lock props (keys hologram desk balcony default), empty office documents only, daypart formula, pink-cat, EXCALIBUR stamp, fake CIAN screenshot, SEO spam wall, stock model man, handsome realtor co-host, generated stranger presenter, large meme person on inline, invented meme face"
+  "cover_panel_prompt_block": "High-key RU editorial collage, bright airy #FFFFFF, sun flare/light leak/glow, BLACK #141821 Cyrillic, terracotta #c45c3e + teal #3d8b7a accents. Brand logo «Добрый дом» lockup readable corner. Warm cozy apartment hospitality scene — invented each run. Topic-fit Russian people OK (not identity-locked). 1-3 Wordstat sticker labels. Meme cat and/or meme people sticker cutouts. No dark cinematic, no inventory props, no doc-only office, no Shakin face.",
+  "inline_information_block": "INLINE UTILITY LOCK: same bright collage (#FFF, terracotta/teal, torn paper, tape, sun flare). Logo lockup corner on every inline. Teach fact/order/number/comparison for THIS H2 — comparison_table, process_flow, bar chart, structure diagram, or error-vs-correct checklist. NO host face. NO Shakin. NO stock/generated man. NO decorative-only interior. Optional ONE tiny cat or catalog people-meme sticker (≤15% frame, corner only — from meme-top100.json). Labels = facts from article (rates, order, durations), not mood slogans.",
+  "global_negative": "dark cinematic, low-key noir, twilight panel, Shakin face, face-studio identity, host_reference lock, plastic uncanny face, AI hero-ref face, chubby host, white hoodie, inventory lock props (keys hologram desk balcony default), empty office documents only, daypart formula, pink-cat, EXCALIBUR stamp, fake CIAN screenshot, SEO spam wall, stock model man, handsome realtor co-host, generated stranger presenter, large meme person on inline, invented meme face, decorative-only inline, missing logo lockup, EGRN investigation board default"
 }

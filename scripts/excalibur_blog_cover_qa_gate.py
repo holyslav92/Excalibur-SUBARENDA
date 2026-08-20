@@ -9,10 +9,10 @@ import sys
 from pathlib import Path
 
 
-REQUIRED_CHECKS = (
-    "identity_face_28yo",
-    "identity_body_medium_slim",
-    "identity_expression_invented",
+LOGO_LOCKUP_CHECKS = (
+    "logo_lockup_all_8",
+    "logo_lockup_readable",
+    "no_shakin_identity_face",
     "cover_phone_readable",
     "board_stationery_ok",
     "typography_cyrillic_clean",
@@ -22,12 +22,19 @@ REQUIRED_CHECKS = (
     "people_in_8_set",
     "cats_cadence_ok",
     "wordstat_stickers_1_3",
-    "identity_real_files",
     "inline_utility_all_7",
+    "inline_no_decorative_only",
     "inline_no_host_face",
     "inline_no_co_host_human",
     "inline_meme_sticker_scale",
     "meme_people_real_catalog",
+)
+
+LEGACY_IDENTITY_CHECKS = (
+    "identity_face_28yo",
+    "identity_body_medium_slim",
+    "identity_expression_invented",
+    "identity_real_files",
 )
 
 REQUIRED_IMAGES = (
@@ -50,15 +57,33 @@ def load_json(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def required_checks_for_mode(root: Path) -> tuple[str, ...]:
+    from excalibur_blog_identity_real import cover_mode, is_logo_lockup_mode, missing_logo_lockup
+
+    if is_logo_lockup_mode(root):
+        return LOGO_LOCKUP_CHECKS
+    return LOGO_LOCKUP_CHECKS + LEGACY_IDENTITY_CHECKS
+
+
 def validate_cover_qa(article_dir: Path, root: Path) -> dict:
+    from excalibur_blog_identity_real import (
+        is_logo_lockup_mode,
+        missing_identity_files,
+        missing_logo_lockup,
+    )
+
     errors: list[str] = []
     qa_path = article_dir / "cover" / "cover_qa.json"
+    required_checks = required_checks_for_mode(root)
 
-    from excalibur_blog_identity_real import missing_identity_files
-
-    missing_identity = missing_identity_files(root)
-    if missing_identity:
-        errors.append(f"identity-real missing: {', '.join(missing_identity)}")
+    if is_logo_lockup_mode(root):
+        missing_logo = missing_logo_lockup(root)
+        if missing_logo:
+            errors.append(f"logo lockup missing: {', '.join(missing_logo)}")
+    else:
+        missing_identity = missing_identity_files(root)
+        if missing_identity:
+            errors.append(f"identity-real missing: {', '.join(missing_identity)}")
 
     for rel in REQUIRED_IMAGES:
         if not (article_dir / rel).is_file():
@@ -79,9 +104,15 @@ def validate_cover_qa(article_dir: Path, root: Path) -> dict:
         errors.append(f"cover_qa.json status must be PASS, got {qa.get('status')!r}")
 
     checks = qa.get("checks") or {}
-    for key in REQUIRED_CHECKS:
+    for key in required_checks:
         if not checks.get(key):
             errors.append(f"cover_qa check failed or missing: {key}")
+
+    # FAIL if legacy identity checks present and true in logo_lockup mode
+    if is_logo_lockup_mode(root):
+        for legacy in LEGACY_IDENTITY_CHECKS:
+            if checks.get(legacy):
+                errors.append(f"cover_qa legacy identity check must be false/absent in logo_lockup: {legacy}")
 
     manifest_path = article_dir / "cover" / "quad-manifest.json"
     meme_catalog = root / "memory" / "cover" / "meme-top100.json"
@@ -93,9 +124,6 @@ def validate_cover_qa(article_dir: Path, root: Path) -> dict:
             stickers = manifest.get("wordstat_stickers") or []
             if not (1 <= len(stickers) <= 3):
                 errors.append(f"wordstat_stickers count {len(stickers)}, need 1-3 in quad-manifest")
-            phone = str(manifest.get("cover_phone_cta") or "").strip()
-            if phone != "+7 922 001 65 05":
-                errors.append("cover_phone_cta must be '+7 922 001 65 05' in quad-manifest")
             slots = manifest.get("slots") or {}
             allowed_types = {
                 "comparison_table",
@@ -128,6 +156,8 @@ def validate_cover_qa(article_dir: Path, root: Path) -> dict:
 
 
 def cmd_doctor(root: Path) -> int:
+    from excalibur_blog_identity_real import is_logo_lockup_mode, missing_logo_lockup
+
     agent_cursor = root / ".cursor/agents/excalibur-blog-cover-qa.md"
     agent_repo = root / "agents/excalibur-blog-cover-qa.md"
     skill = root / "skills/cover-qa-excalibur-blog/SKILL.md"
@@ -135,7 +165,14 @@ def cmd_doctor(root: Path) -> int:
         if not path.is_file():
             print(f"FAIL missing {path.relative_to(root)}", file=sys.stderr)
             return 1
-    print("OK cover-qa agent + skill present")
+    if is_logo_lockup_mode(root):
+        missing = missing_logo_lockup(root)
+        if missing:
+            print(f"FAIL logo lockup missing: {', '.join(missing)}", file=sys.stderr)
+            return 1
+        print("OK cover-qa agent + skill present; logo lockup asset present")
+    else:
+        print("OK cover-qa agent + skill present")
     return 0
 
 

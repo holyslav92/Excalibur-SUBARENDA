@@ -1,17 +1,18 @@
 {
-  "hero_id": "dobry-dom-placeholder",
-  "status": "NEED_REPLACE",
+  "hero_id": "dobry-dom",
+  "status": "ok",
   "name_ru": "Добрый дом",
-  "cover_mode": "host_reference",
-  "reference_images": [],
-  "reference_notes": "PLACEHOLDER: identity-real photos from Excalibur-2-Cloud fork — NOT Добрый дом brand. Owner must replace memory/cover/assets/identity-real/ and update this file before production Cover-QA PASS.",
-  "face_primary": "memory/cover/assets/identity-real/face-studio-2026-06-23.jpg",
-  "reference_image": "memory/cover/assets/identity-real/face-studio-2026-06-23.jpg",
+  "subtitle_ru": "УЮТНЫЕ КВАРТИРЫ В АРЕНДУ",
+  "cover_mode": "logo_lockup",
+  "logo_lockup": "memory/cover/assets/brand/logo-dobry-dom.png",
+  "reference_image": "memory/cover/assets/brand/logo-dobry-dom.png",
+  "reference_url_hosted": "https://xn---72-9cdob8azaodt6k.xn--p1ai/wp-content/uploads/2026/03/img_7143.png",
+  "reference_url_source": "wp-media-добрыйдом-72.рф",
+  "reference_notes": "Official Добрый дом logo: green curtain mark + flower pot, terracotta wordmark, subtitle «УЮТНЫЕ КВАРТИРЫ В АРЕНДУ». Logo lockup on ALL 8 images. NO host face / NO Shakin identity.",
   "visual_lock": {
-    "person": "TODO: brand host or neutral hospitality visual after identity upload",
-    "forbid": "Shakin/rieltor identity lock, tymenrieltor.ru URLs, deal paperwork hero"
+    "logo": "memory/cover/assets/brand/logo-dobry-dom.png",
+    "placement": "consistent corner lockup on cover + all 7 inlines",
+    "forbid": "Shakin/rieltor identity lock, tymenrieltor.ru URLs, face-studio-2026-06-23, deal paperwork hero, EGRN investigation board default"
   },
-  "cover_canon": "memory/cover/cover-canon.json",
-  "reference_url_source": "PLACEHOLDER — replace after WP media upload on добрыйдом-72.рф",
-  "host_face_todo": "Replace identity-real + portrait.jpg; rerun Setup Visual"
+  "cover_canon": "memory/cover/cover-canon.json"
 }

@@ -1,10 +1,12 @@
 {
   "status": "ok",
-  "comment": "Inline panel type catalog for The Риэлтор. Utility-first: each panel teaches a fact from its H2. No host face on inline.",
-  "utility_test": "Reader who has NOT read the paragraph must still extract a concrete fact, order, number, or comparison from the image alone. If labels removed → nothing understandable = FAIL. Row of 5 gold icon circles with 3-word captions = FAIL.",
-  "style_lock": "Same as approved cover B02: #FFFFFF high-key, gold #dcc5a1 / black #141821, torn paper, gold tape, pins, thin strings, sun flare, collage. Small meme sticker on 2–3 of 7 inlines only (≤15% frame; catalog people-memes or cats — never a second human hero).",
+  "comment": "Inline panel type catalog for Добрый дом. Utility-first: each panel teaches a fact from its H2. Logo lockup on all inlines. No host face / no Shakin identity.",
+  "utility_test": "Reader who has NOT read the paragraph must still extract a concrete fact, order, number, or comparison from the image alone. If labels removed → nothing understandable = FAIL. Row of 5 icon circles with 3-word captions = FAIL. Decorative-only interior = FAIL.",
+  "style_lock": "Same as approved cover: #FFFFFF high-key, terracotta #c45c3e / teal #3d8b7a / black #141821, torn paper, tape, sun flare, collage. Logo lockup corner on every inline. Small meme sticker on 2–3 of 7 inlines only (≤15% frame).",
+  "logo_lockup_required": true,
   "forbidden_inline": [
-    "host face / identity-real / Святослав portrait",
+    "decorative-only interior without facts/labels/numbers",
+    "host face / identity-real / Shakin / face-studio portrait",
     "stock model / handsome realtor / generated man as co-host or presenter",
     "large human (any non-host) on inline — hero slot, left portrait, talking-head, pointing at table",
     "meme person >15% of frame or occupying presenter slot",
@@ -15,7 +17,7 @@
     "empty UI placeholders",
     "cover copy-paste",
     "Salt Bae / Drake / celebrity memes",
-    "«не эскроу» as process step 4 instead of footnote"
+    "missing logo lockup"
   ],
   "preferred_order": [
     "comparison_table",

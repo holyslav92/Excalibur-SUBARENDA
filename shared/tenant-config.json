@@ -13,7 +13,7 @@
   ],
   "author_id": "dobry-dom",
   "publisher_display": "Добрый дом",
-  "host_face_todo": "TODO: заменить memory/cover/assets/identity-real/ на фото ведущего/бренда; blog-hero.json → status NEED_REPLACE",
+  "logo_lockup": "memory/cover/assets/brand/logo-dobry-dom.png",
   "publish_format": "longform",
   "inline_image_count": 7,
   "publish_schedule": {
@@ -50,8 +50,8 @@
     "derouter_image_quality": "high",
     "auto_interlink_after_publish": true
   },
-  "cover_mode": "host_reference",
-  "cover_identity_status": "NEED_REPLACE",
+  "cover_mode": "logo_lockup",
+  "cover_identity_status": "not_applicable",
   "dzen_rf_pack": true,
   "scout_signal_urls": [
     "https://t.me/klyshin_A",
@@ -87,7 +87,8 @@
   "cover_files": {
     "hero": "memory/cover/blog-hero.json",
     "design_code": "memory/cover/cover-design-code.json",
-    "style_preset": "memory/cover/quad-style-dobry-dom.json"
+    "style_preset": "memory/cover/quad-style-dobry-dom.json",
+    "logo": "memory/cover/assets/brand/logo-dobry-dom.png"
   },
   "site_urls": {
     "public_punycode": "https://xn---72-9cdob8azaodt6k.xn--p1ai",

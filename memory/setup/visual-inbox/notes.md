@@ -1,42 +1,32 @@
-# Visual inbox — The Риэлтор
+# Visual inbox — Добрый дом
 
-Дата: 2026-08-18 (обновлено: identity-real)
+Дата: 2026-08-20
 
 ## cover_mode
 
-`host_reference` — на обложке **Святослав Шакин** (узнаваемое лицо, 28 лет).
+`logo_lockup` — логотип «Добрый дом» на **всех 8** изображениях (cover + 7 inlines). **Нет** locked host face.
 
-## Identity lock (live photos ONLY)
+## Logo lockup
 
-Положите **оригинальные бинарники** (не AI) с точными именами:
+Официальный логотип уже в репозитории:
+- `memory/cover/assets/brand/logo-dobry-dom.png`
+- WP media: `blog-hero.json` → `reference_url_hosted`
 
-- `face-hoodie-airpods.jpeg` — крупный план, родинки (PRIMARY)
-- `face-office-selfie.jpeg` — селфи, серая футболка
-- `face-greenhouse-yahweh.png` — оранжерея, YAHWEH (likeness only)
-- `face-immortal-regiment.jpeg` — только лицо (не клонировать сцену)
-
-После загрузки:
+Для обновления логотипа положите `logo-dobry-dom.png` сюда и выполните:
 
 ```bash
 python3 scripts/excalibur_blog_identity_real.py --stage-from-inbox
+python3 scripts/excalibur_blog_hero_reference_url.py --force
 ```
 
-Копии остаются здесь; канон — `memory/cover/assets/identity-real/`.
+## Identity-real (НЕ использовать)
 
-**Важно:** вложения в чат Cloud Agent **не сохраняются** на диск VM — кладите файлы в этот каталог через workspace (drag-and-drop), не только в сообщение.
-
-## Scene composition (NOT face)
-
-`scene-composition-only/` в assets — AI hero-ref для mood. **Не** использовать как лицо.
-
-## Emotion bank
-
-6 эмоций в `blog-hero.json`; каждый кадр — другая поза/сцена.
+`identity-real/` — **отключён** для Добрый дом. Не загружать Shakin/face-studio photos.
 
 ## Longform
 
-Обложка + 7 inline-quad. 2× quad-canvas 2K (mcp-derouter).
+Обложка + 7 inline-quad. 2× quad-canvas 2K (Derouter REST). Logo на каждом кадре.
 
 ## Запреты
 
-AI-reconstructed faces, plastic look, клон референсных сцен, pink-cat, EXCALIBUR, белое худи.
+Shakin identity lock, host_reference mode, decorative-only inline, missing logo on any of 8.

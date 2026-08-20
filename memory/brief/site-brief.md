@@ -36,7 +36,8 @@
 
 ## Визуал
 
-- **cover_identity_status:** NEED_REPLACE (placeholder from fork)
+- **cover_mode:** logo_lockup
+- **cover_identity_status:** not_applicable (logo lockup only)
 - **light/bright:** high-key, мемы, Wordstat-стикеры
 
 ## Scout
