@@ -50,15 +50,34 @@ def load_json(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def load_tenant_cover_mode(root: Path) -> dict:
+    cfg_path = root / "shared" / "tenant-config.json"
+    if not cfg_path.is_file():
+        return {}
+    try:
+        tenant = json.loads(cfg_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return {}
+    channels = tenant.get("cta_channels") or {}
+    mode = str(tenant.get("cover_mode") or "").strip().casefold()
+    return {
+        "brand_logo_paste": mode in {"brand_logo_paste", "brand_logo_composite", "paste_png"},
+        "phone_display": str(channels.get("phone_display") or "+7 (993) 574-83-22").strip(),
+    }
+
+
 def validate_cover_qa(article_dir: Path, root: Path) -> dict:
     errors: list[str] = []
     qa_path = article_dir / "cover" / "cover_qa.json"
+    tenant_cover = load_tenant_cover_mode(root)
+    brand_logo_paste = bool(tenant_cover.get("brand_logo_paste"))
 
     from excalibur_blog_identity_real import missing_identity_files
 
-    missing_identity = missing_identity_files(root)
-    if missing_identity:
-        errors.append(f"identity-real missing: {', '.join(missing_identity)}")
+    if not brand_logo_paste:
+        missing_identity = missing_identity_files(root)
+        if missing_identity:
+            errors.append(f"identity-real missing: {', '.join(missing_identity)}")
 
     for rel in REQUIRED_IMAGES:
         if not (article_dir / rel).is_file():
@@ -94,8 +113,13 @@ def validate_cover_qa(article_dir: Path, root: Path) -> dict:
             if not (1 <= len(stickers) <= 3):
                 errors.append(f"wordstat_stickers count {len(stickers)}, need 1-3 in quad-manifest")
             phone = str(manifest.get("cover_phone_cta") or "").strip()
-            if phone != "+7 922 001 65 05":
-                errors.append("cover_phone_cta must be '+7 922 001 65 05' in quad-manifest")
+            expected_phone = str(tenant_cover.get("phone_display") or "+7 (993) 574-83-22")
+            if phone != expected_phone:
+                errors.append(
+                    f"cover_phone_cta must be {expected_phone!r} in quad-manifest (got {phone!r})"
+                )
+            if "922" in phone.replace(" ", ""):
+                errors.append("cover_phone_cta must not contain 922 (forbidden rieltor number)")
             slots = manifest.get("slots") or {}
             allowed_types = {
                 "comparison_table",
@@ -122,6 +146,16 @@ def validate_cover_qa(article_dir: Path, root: Path) -> dict:
                     errors.append(f"{key}.labels count {len(labels)}, need 2-6")
         except json.JSONDecodeError:
             errors.append("quad-manifest.json invalid JSON")
+
+    if brand_logo_paste:
+        try:
+            from excalibur_blog_brand_logo_composite import validate_logo_stamp
+
+            errors.extend(validate_logo_stamp(article_dir, root))
+        except ImportError:
+            stamp_path = article_dir / "cover" / "logo-composite-stamp.json"
+            if not stamp_path.is_file():
+                errors.append("cover/logo-composite-stamp.json missing — run brand logo composite")
 
     status = "PASS" if not errors else "FAIL"
     return {"status": status, "errors": errors}

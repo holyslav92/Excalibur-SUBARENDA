@@ -59,7 +59,8 @@ I2I_EXPRESSION_LOCK = (
     "do NOT copy reference closed-mouth smile/pose/head angle; "
     "FORBIDDEN polite studio smile"
 )
-COVER_PHONE_CTA = "+7 922 001 65 05"
+DEFAULT_COVER_PHONE_CTA = "+7 (993) 574-83-22"
+FORBIDDEN_COVER_PHONE = "+7 922 001 65 05"
 BOARD_STATIONERY = "tape/pins/strings/paper scraps; high-key #FFF/gold; not noir"
 INLINE_BAN_EXTRA = (
     "icon slogans; empty cells; desk scene; cover copy; celebrity memes; "
@@ -356,6 +357,43 @@ def style_allows_cat_stickers(style: dict) -> bool:
     return "cat" in motif
 
 
+def load_tenant_cover_config(root: Path) -> dict:
+    cfg_path = root / "shared" / "tenant-config.json"
+    if not cfg_path.is_file():
+        return {}
+    try:
+        tenant = json.loads(cfg_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return {}
+    channels = tenant.get("cta_channels") or {}
+    return {
+        "cover_mode": str(tenant.get("cover_mode") or "").strip(),
+        "phone_display": str(channels.get("phone_display") or DEFAULT_COVER_PHONE_CTA).strip(),
+    }
+
+
+def tenant_uses_brand_logo_paste(root: Path, style: dict | None = None) -> bool:
+    tenant = load_tenant_cover_config(root)
+    mode = str(tenant.get("cover_mode") or "").strip().casefold()
+    if mode in {"brand_logo_paste", "brand_logo_composite", "paste_png"}:
+        return True
+    if style:
+        hero_mode = str(style.get("cover_hero_mode") or "").strip().casefold()
+        if hero_mode in {"brand_logo_paste", "brand_logo_composite", "paste_png"}:
+            return True
+        if style.get("skip_human_host") is True and hero_mode == "brand_logo_paste":
+            return True
+    return False
+
+
+def cover_phone_cta_for_manifest(manifest: dict, root: Path) -> str:
+    manifest_phone = str(manifest.get("cover_phone_cta") or "").strip()
+    if manifest_phone and manifest_phone != FORBIDDEN_COVER_PHONE:
+        return manifest_phone
+    tenant = load_tenant_cover_config(root)
+    return str(tenant.get("phone_display") or DEFAULT_COVER_PHONE_CTA)
+
+
 def style_is_situational_cat_hero(style: dict) -> bool:
     """Cat is the cover hero (not host+sticker cats)."""
     mode = str(style.get("cover_hero_mode") or "").strip().casefold()
@@ -377,6 +415,8 @@ def build_prompt(
     *,
     canvas_slots: tuple[str, ...] | None = None,
     has_cover: bool = True,
+    brand_logo_paste: bool = False,
+    cover_phone_cta: str = DEFAULT_COVER_PHONE_CTA,
 ) -> str:
     slots = manifest.get("slots") or {}
     canvas_slots = canvas_slots or tuple(CANVAS_1_SLOTS)
@@ -423,18 +463,28 @@ def build_prompt(
             if cover_sticky
             else ""
         )
-        emotion_clause = (
-            f"Expression: {cover_emotion}. {I2I_EXPRESSION_LOCK}."
-            if cover_emotion
-            else f"{I2I_EXPRESSION_LOCK}."
-        )
-        panel_lines.append(
-            f"TL COVER TXT «{cover_hook_text}» bold Cyrillic black, {highlight_rule}.{sticky_lock} "
-            f"Phone EXACT «{COVER_PHONE_CTA}» readable CTA sticker. "
-            f"Host i2i left ({BODY_LOCK}); {emotion_clause} sun flare; "
-            f"{compact(cover_scene, COVER_SCENE_HINT_COMPACT)}; "
-            f"1-2 meme stickers; {BOARD_STATIONERY}; Wordstat/Tyumen; #FFF; perfect Cyrillic"
-        )
+        if brand_logo_paste:
+            emotion_clause = f"Expression: {cover_emotion}." if cover_emotion else ""
+            panel_lines.append(
+                f"TL COVER TXT «{cover_hook_text}» bold Cyrillic black, {highlight_rule}.{sticky_lock} "
+                f"NO brand logo; NO phone numbers in image (factory adds post-render). "
+                f"Russian guest scene (not host i2i); {emotion_clause} sun flare; "
+                f"{compact(cover_scene, COVER_SCENE_HINT_COMPACT)}; "
+                f"1-2 meme cat stickers; {BOARD_STATIONERY}; Wordstat/Tyumen; #FFF; perfect Cyrillic"
+            )
+        else:
+            emotion_clause = (
+                f"Expression: {cover_emotion}. {I2I_EXPRESSION_LOCK}."
+                if cover_emotion
+                else f"{I2I_EXPRESSION_LOCK}."
+            )
+            panel_lines.append(
+                f"TL COVER TXT «{cover_hook_text}» bold Cyrillic black, {highlight_rule}.{sticky_lock} "
+                f"Phone EXACT «{cover_phone_cta}» readable CTA sticker. "
+                f"Host i2i left ({BODY_LOCK}); {emotion_clause} sun flare; "
+                f"{compact(cover_scene, COVER_SCENE_HINT_COMPACT)}; "
+                f"1-2 meme stickers; {BOARD_STATIONERY}; Wordstat/Tyumen; #FFF; perfect Cyrillic"
+            )
         inline_keys = [k for k in canvas_slots if k != "cover"]
         for label, key in zip(quadrant_labels[1:], inline_keys[:3]):
             panel_lines.append(f"{label} inline: {inline_panel_prompt(slot(key), types_catalog)}")
@@ -447,15 +497,23 @@ def build_prompt(
         f"stock/generated man co-host on inline; large meme person on inline; "
         f"{INLINE_BAN_EXTRA}."
     )
-    reference_line = (
-        f"Cover TL only: i2i face-studio-2026-06-23 ({BODY_LOCK}); {I2I_EXPRESSION_LOCK}; invent scene; no AI hero-ref."
-        if has_cover
-        else (
+    if has_cover and brand_logo_paste:
+        reference_line = (
+            "Cover TL: NO host i2i; NO Shakin/identity-real; NO brand logo; NO phone in generation; "
+            "Russian guest by topic allowed; invent bright scene."
+        )
+    elif has_cover:
+        reference_line = (
+            f"Cover TL only: i2i face-studio-2026-06-23 ({BODY_LOCK}); {I2I_EXPRESSION_LOCK}; "
+            "invent scene; no AI hero-ref."
+        )
+    else:
+        reference_line = (
             "Inlines: NO host face; NO stock/generated man; NO large human co-host/presenter; "
+            f"NO brand logo in generation (factory pastes PNG); "
             f"people-memes only as tiny stickers (≤{int(MEME_STICKER_INLINE_MAX_SHARE * 100)}% frame, corner) "
             f"from real templates in {MEME_CATALOG_REL}; infographic is hero."
         )
-    )
     inline_suffix = (
         f"Inline all: #FFF collage, gold/black Cyrillic labels, {BOARD_STATIONERY}; "
         "dense facts/numbers; exact TXT per panel; meme only if +meme AND sticker-scale; "
@@ -516,6 +574,8 @@ def main() -> int:
 
     cat_hero = style_is_situational_cat_hero(style)
     local_reference = str(style.get("local_reference") or "").strip()
+    brand_logo_paste = tenant_uses_brand_logo_paste(root, style)
+    cover_phone_cta = cover_phone_cta_for_manifest(manifest, root)
 
     inline_count = inline_count_from_manifest(manifest)
     canvas_specs = canvas_specs_for_inline_count(inline_count)
@@ -530,7 +590,7 @@ def main() -> int:
         canvas_slots = tuple(spec["slots"])
         identity_spec: dict[str, str] = {}
         identity_rel = ""
-        if has_cover:
+        if has_cover and not brand_logo_paste:
             topic_id = str(manifest.get("topic_id") or "").strip()
             slug = str(manifest.get("slug") or article_dir.name).strip()
             identity_spec = pick_identity_reference(topic_id, slug)
@@ -563,6 +623,8 @@ def main() -> int:
             article_dir=article_dir,
             canvas_slots=canvas_slots,
             has_cover=has_cover,
+            brand_logo_paste=brand_logo_paste,
+            cover_phone_cta=cover_phone_cta,
         )
         if not validate_prompt_budget(prompt):
             return 1
@@ -600,7 +662,7 @@ def main() -> int:
             "aspect_ratio": "16:9",
             "resolution": MCP_RESOLUTION,
         }
-        if batch_ref_url:
+        if batch_ref_url and not brand_logo_paste:
             api_input["input_urls"] = [batch_ref_url]
 
         batch = {
