@@ -1,0 +1,193 @@
+{
+  "canon_id": "the_rieltor_light_meme_wordstat_v2",
+  "status": "ok",
+  "label_ru": "The Риэлтор — изобретение с нуля, light/bright, мемы, Wordstat-стикеры, anti-repeat 14д",
+  "forbidden_daypart_formula": {
+    "status": "REJECTED_BY_OWNER",
+    "never_use": true,
+    "slots": {
+      "morning": "desk + document",
+      "day": "street/entrance",
+      "evening": "close talk to camera",
+      "night": "split «как продают / что в выписке»"
+    },
+    "note": "Расписание публикаций 09/12/15/17 YEKT (будни) ≠ формула обложки."
+  },
+  "invention_rule": "Cover agent INVENTS every cover from scratch to surprise. No inventory lock. No recurring default props (keys, hologram, desk, balcony, documents-only office). Variety is the product.",
+  "anti_repeat": {
+    "window_days": 14,
+    "log_file": "memory/cover/used-motifs.json",
+    "collision_fields": [
+      "composition",
+      "location",
+      "meme",
+      "prop_set",
+      "sticker_set",
+      "joke"
+    ],
+    "preflight_script": "scripts/excalibur_blog_cover_motif_gate.py",
+    "after_14_days_motif_may_return": true
+  },
+  "light_bright": {
+    "required": true,
+    "style": "high-key, светлые картинки, airy",
+    "effects": ["sun flare", "light leak", "glow", "soft bloom"],
+    "forbidden": ["dark cinematic", "twilight mood panel", "low-key noir", "moody black background"]
+  },
+  "meme_system": {
+    "required": true,
+    "catalog": "memory/cover/meme-top100.json",
+    "host_human_rule": "ONLY Святослав (face-studio-2026-06-23.jpg) may be LARGE / hero of any frame — COVER ONLY. No second human hero anywhere.",
+    "people": "Cover: host = only large human. Inline: NO large human; people-memes = SMALL stickers (≤12–15% frame) from meme-top100.json only — never co-host, never presenter pointing at table.",
+    "cats": "meme-cat sticker cutouts — small accent (≤12–15% frame); often enough across weekly posts; not every frame",
+    "per_article_8_set": {
+      "must_include_people": true,
+      "people_source": "cover host ONLY counts as the person in the 8-set; inline people-memes are tiny stickers on 1–2 panels max, never a second hero",
+      "inline_people_meme_max_panels": 2,
+      "inline_people_meme_max_frame_share": 0.15,
+      "cats_frequency": "at least one cat motif per article OR ensure weekly cadence has cats",
+      "forbidden": [
+        "empty office only-documents cover",
+        "sterile host+text without stickers",
+        "stock/generated handsome man as co-host on inline",
+        "invented photogenic stranger called a meme",
+        "meme person in left portrait / talking-head / presenter slot on inline",
+        "meme person >15% of inline frame area"
+      ]
+    }
+  },
+  "wordstat_stickers": {
+    "required": true,
+    "count": "1–3 readable designer stickers per cover",
+    "source": "live Wordstat top + similar queries for topic",
+    "geo": "memory/cover/wordstat-geo.json",
+    "not": ["random words", "spam wall", "SEO tail dump"]
+  },
+  "identity_lock": {
+    "face_primary": "memory/cover/assets/identity-real/face-studio-2026-06-23.jpg",
+    "body_build_refs": [
+      "memory/cover/assets/identity-real/face-hoodie-airpods.jpeg",
+      "memory/cover/assets/identity-real/face-office-selfie.jpeg"
+    ],
+    "not_face_source": [
+      "memory/cover/assets/identity-real/face-greenhouse-yahweh.png",
+      "memory/cover/assets/identity-real/face-immortal-regiment.jpeg"
+    ],
+    "source": "memory/cover/assets/identity-real/",
+    "age": 28,
+    "body_build": "medium-slim per hoodie+office body refs; NOT chubby vs face-studio portrait",
+    "cover_body_rule": "FAIL Cover-QA if host looks heavier/chubbier than face-studio-2026-06-23 or body refs",
+    "face": "face-studio-2026-06-23.jpg only for FACE i2i; match bone structure, hairline, eye shape, stubble, 28yo",
+    "expression_lock": {
+      "keep_every_run": [
+        "bone structure",
+        "hairline",
+        "eye shape",
+        "stubble density",
+        "28yo age",
+        "medium-slim build"
+      ],
+      "free_every_run": [
+        "emotion",
+        "eyebrows",
+        "mouth",
+        "head tilt",
+        "gaze",
+        "hands",
+        "body pose"
+      ],
+      "i2i_prompt_rule": "same person as reference, NEW expression for the hook, do not copy reference smile/pose",
+      "scene_hint_must_name_emotion": true,
+      "fail_if": [
+        "polite studio closed-mouth smile copied 1:1 from reference",
+        "different person",
+        "chubby vs portrait"
+      ],
+      "pass_requires": "hook-matched invented expression (shock, side-eye, grimace, laugh, bewildered, etc.)"
+    },
+    "forbidden_body": ["chubby", "overweight", "puffy face", "puffy cheeks", "double chin", "stocky", "thick waist", "thick neck", "wide torso tight blazer"],
+    "forbidden_scene_clone": [
+      "greenhouse",
+      "Immortal Regiment",
+      "office selfie",
+      "hoodie selfie",
+      "office hologram",
+      "balcony keys sunset"
+    ],
+    "forbidden_faces": ["reconstructed AI hero-ref", "plastic uncanny"]
+  },
+  "pipeline": {
+    "primary": "derouter-rest",
+    "resolution": "2K",
+    "canvases": 2,
+    "panels_per_canvas": 4,
+    "total_images": 8,
+    "split": "2x2 per canvas"
+  },
+  "image_allowlist": {
+    "allowed": [
+      "scripts/excalibur_blog_derouter_gpt_image2_api.py (Derouter REST image API, api-direct, 2K 16:9)",
+      "scripts/excalibur_blog_kie_gpt_image2_api.py (Kie async image API — secondary after Derouter auth/5xx)"
+    ],
+    "forbidden": [
+      "mcp-derouter/start-mcp.sh",
+      "flux2-pro-text-to-image",
+      "flux2-pro-image-to-image",
+      "seedream",
+      "nano_banana",
+      "nano_banana_2",
+      "z-image",
+      "off-pipeline demo canvases / lone prompts without Scout×Wordstat article"
+    ],
+    "timeout_rule": "Derouter auth/5xx → one retry + fallback host; then Kie script. NEVER Flux/Seedream/nano_banana/z-image"
+  },
+  "inline_utility": {
+    "catalog": "memory/cover/inline-visual-types.json",
+    "utility_test": "Reader without paragraph extracts fact/order/number/comparison for H2; icon row + 3-word captions = FAIL",
+    "style_match_cover": "B02-approved: #FFFFFF high-key, gold/black, torn paper, tape, sun flare, collage",
+    "no_host_face": true,
+    "no_co_host_human": true,
+    "no_stock_model": true,
+    "meme_sticker_max_frame_share": 0.15,
+    "meme_people_catalog": "memory/cover/meme-top100.json",
+    "preferred_types": [
+      "comparison_table",
+      "process_flow",
+      "bar_timeline_chart",
+      "structure_diagram",
+      "labeled_checklist",
+      "fact_card"
+    ],
+    "forbidden": [
+      "host face on inline",
+      "stock model / handsome realtor / generated man as co-host",
+      "large human (non-host) occupying hero slot on inline",
+      "meme person >15% frame or in presenter/portrait slot",
+      "invented face called meme — use meme-top100.json real templates only",
+      "icon row with mood captions",
+      "duplicate labels across cards",
+      "decorative realtor desk scene",
+      "empty UI",
+      "cover copy-paste",
+      "Salt Bae Drake celebrity",
+      "не эскроу as process step"
+    ],
+    "cover_qa_checks": [
+      "inline_utility_all_7",
+      "inline_no_host_face",
+      "inline_no_co_host_human",
+      "inline_meme_sticker_scale",
+      "meme_people_real_catalog",
+      "identity_expression_invented"
+    ]
+  },
+  "owner_visual_polish": {
+    "cover_phone_required": "+7 922 001 65 05",
+    "cover_body": "medium-slim vs face-studio-2026-06-23; FAIL if chubby/puffy or wrong person",
+    "cover_expression": "FAIL if host copies studio polite closed-mouth smile 1:1; PASS if NEW hook-matched emotion",
+    "board_stationery": "light tape/pins/strings on white investigation board — high-key, not noir",
+    "meme_density": "cover: 1–2 memes required (host counts as person); inlines: small meme sticker on 2–3 of 7 max — cats and/or catalog people-memes at sticker scale only",
+    "typography": "handsome condensed black Cyrillic + gold accent; zero spelling errors; no Latin garbage",
+    "inline_density": "more informational labels per panel; utility test still required; no empty cells"
+  }
+}

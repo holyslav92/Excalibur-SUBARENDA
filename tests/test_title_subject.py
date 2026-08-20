@@ -1,0 +1,39 @@
+"""Guard Title subject and multi-Wordstat rules."""
+from __future__ import annotations
+
+import unittest
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
+class TitleSubjectWordstatTest(unittest.TestCase):
+    def test_title_skill_requires_subject_in_h1(self) -> None:
+        s = (ROOT / "skills/title-excalibur-blog/SKILL.md").read_text(encoding="utf-8")
+        low = s.lower()
+        self.assertIn("тема", low)
+        self.assertIn("label head", low)
+        self.assertIn("openai", low)
+
+    def test_title_agent_bans_hiding_subject(self) -> None:
+        a = (ROOT / "agents/excalibur-blog-title.md").read_text(encoding="utf-8")
+        self.assertIn("case hook", a.lower())
+
+    def test_scout_uses_multiple_wordstat_calls(self) -> None:
+        s = (ROOT / "skills/scout-excalibur-blog/SKILL.md").read_text(encoding="utf-8")
+        low = s.lower()
+        self.assertIn("hard gate", low)
+
+    def test_research_uses_multiple_wordstat_calls(self) -> None:
+        r = (ROOT / "skills/excalibur-research/SKILL.md").read_text(encoding="utf-8")
+        self.assertIn("несколько вызовов", r.lower())
+
+    def test_writer_owns_h1_subject_not_hidden(self) -> None:
+        w = (ROOT / "agents/excalibur-blog-writer.md").read_text(encoding="utf-8")
+        t = (ROOT / "skills/title-excalibur-blog/SKILL.md").read_text(encoding="utf-8")
+        blob = (w + t).lower()
+        self.assertTrue("тема" in blob or "h1" in blob)
+
+
+if __name__ == "__main__":
+    unittest.main()

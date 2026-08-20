@@ -1,0 +1,99 @@
+{
+  "version": "1.0",
+  "setup_complete": true,
+  "brand_name": "Добрый дом",
+  "language": "ru",
+  "niche": "Посуточная аренда и субаренда квартир в Тюмени: заселение, договор, залог, соседи, ЖКХ, скрытые доплаты, правила проживания",
+  "topic_focus_profile": "short_term_rental",
+  "content_goals": [
+    "Практические советы гостям и арендодателям: заселение, залог, уборка, соседи, ЖКХ",
+    "Чеклисты без скрытых доплат и «сюрпризов» при бронировании посуточно",
+    "Лиды на бронирование квартир «Добрый дом» в Тюмени",
+    "Публикации в блог сайта — кликабельные статьи в стиле существующего /blog"
+  ],
+  "author_id": "dobry-dom",
+  "publisher_display": "Добрый дом",
+  "host_face_todo": "TODO: заменить memory/cover/assets/identity-real/ на фото ведущего/бренда; blog-hero.json → status NEED_REPLACE",
+  "publish_format": "longform",
+  "inline_image_count": 7,
+  "publish_schedule": {
+    "timezone": "Asia/Yekaterinburg",
+    "weekdays_only": true,
+    "slots_local": ["09:00", "12:00", "15:00", "17:00"],
+    "runs_per_day": 4,
+    "window_local": "09:00-17:00",
+    "note": "Longform Cursor Automation: 4 weekday slots YEKT (owner 9–17). NOT 20:00. Publish only when FTP secrets + EXCALIBUR_BLOG_ALLOW_PUBLISH=yes on process (never git)."
+  },
+  "image_generation": {
+    "provider": "derouter-rest",
+    "script": "scripts/excalibur_blog_derouter_gpt_image2_api.py",
+    "resolution": "2K",
+    "canvases_per_article": 2,
+    "panels_per_canvas": 4,
+    "total_images": 8
+  },
+  "cta_required": true,
+  "cta_links": [
+    "https://xn---72-9cdob8azaodt6k.xn--p1ai/blog/",
+    "https://xn---72-9cdob8azaodt6k.xn--p1ai/"
+  ],
+  "cta_channels": {
+    "site": "https://xn---72-9cdob8azaodt6k.xn--p1ai/",
+    "blog": "https://xn---72-9cdob8azaodt6k.xn--p1ai/blog/",
+    "messenger": "TODO: ссылка на мессенджер с сайта добрыйдом-72.рф",
+    "phone": "TODO: телефон с сайта добрыйдом-72.рф",
+    "phone_display": "TODO"
+  },
+  "wp_categories_required": true,
+  "publish_options": {
+    "deploy_llms_after_publish": true,
+    "derouter_image_quality": "high",
+    "auto_interlink_after_publish": true
+  },
+  "cover_mode": "host_reference",
+  "cover_identity_status": "NEED_REPLACE",
+  "dzen_rf_pack": true,
+  "scout_signal_urls": [
+    "https://t.me/klyshin_A",
+    "{{SITE_BASE}}/blog/",
+    "https://xn---72-9cdob8azaodt6k.xn--p1ai/blog"
+  ],
+  "scout_klyshin_topic_bank": "memory/scout/klyshin-topic-bank.json",
+  "writing_model": {
+    "provider": "derouter-rest",
+    "scope": "factory-brain-two-tier",
+    "endpoint": "https://api.derouter.ai/openai/v1/chat/completions",
+    "script": "scripts/excalibur_blog_derouter_opus_chat.py",
+    "contract": "shared/derouter-opus-brain-contract.md",
+    "fail_loud_if_unavailable": true,
+    "powerful": {
+      "model": "claude-opus-5",
+      "model_env": "DEROUTER_OPUS_MODEL",
+      "family": "claude-opus-5",
+      "roles": ["writer", "sol", "title", "scout"]
+    },
+    "utility": {
+      "model": "gpt-5.6-terra",
+      "model_env": "DEROUTER_TERRA_MODEL",
+      "roles": ["research", "description", "cover-text", "schema", "cover-scene"]
+    }
+  },
+  "interlink_old_articles": true,
+  "style_files": {
+    "soul": "shared/SOUL.md",
+    "article_style": "shared/article-style.md",
+    "soul_examples": "shared/soul-examples/"
+  },
+  "cover_files": {
+    "hero": "memory/cover/blog-hero.json",
+    "design_code": "memory/cover/cover-design-code.json",
+    "style_preset": "memory/cover/quad-style-dobry-dom.json"
+  },
+  "site_urls": {
+    "public_punycode": "https://xn---72-9cdob8azaodt6k.xn--p1ai",
+    "public_unicode": "https://добрыйдом-72.рф",
+    "blog_punycode": "https://xn---72-9cdob8azaodt6k.xn--p1ai/blog",
+    "blog_unicode": "https://добрыйдом-72.рф/blog"
+  },
+  "comment": "Добрый дом / добрыйдом-72.рф. Secrets: PUBLIC_SITE_URL, WP_SITE_URL, SFTP, EXCALIBUR_BLOG_ALLOW_PUBLISH. Не копировать credentials tymenrieltor.ru."
+}

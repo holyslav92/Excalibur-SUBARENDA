@@ -1,0 +1,114 @@
+{
+  "bank_id": "klyshin_topic_bank_subarenda_v1",
+  "source_channel": "https://t.me/klyshin_A",
+  "source_label": "Алексей Клышин — юрист по недвижимости (angle only, не копировать сделки)",
+  "tenant": "Добрый дом — посуточная аренда / субаренда Тюмень",
+  "updated_at": "2026-08-20",
+  "algorithm": "klyshin_hook → wordstat_probe → rework_for_demand → final_P0_or_skip_after_rework",
+  "wordstat_gate": {
+    "provider": "mcp-kv",
+    "regions": ["55", "11176"],
+    "compare_ru": "225",
+    "rule": "Evaluate hook via Wordstat; weak volume → rework (Tyumen, посуточно, залог, заселение, субаренда); skip only after rework exhausted",
+    "rework_vocabulary": [
+      "посуточно",
+      "субаренда",
+      "аренда квартиры",
+      "залог",
+      "заселение",
+      "уборка",
+      "жкх",
+      "соседи",
+      "договор аренды",
+      "командировка",
+      "тюмень"
+    ],
+    "handoff_log_fields": ["klyshin_hook", "wordstat_rework", "wordstat"]
+  },
+  "localize_rule": "Facts and city = Тюмень, «Добрый дом», посуточная аренда. Не копировать Moscow/Dubai P0.",
+  "hooks": [
+    {
+      "id": "deposit_return_cleaning",
+      "hook_ru": "уборка перед выездом — залог вернут?",
+      "angle": "7 шагов уборки, чтобы вернули залог",
+      "klyshin_signal": "Angle: чеклист до выезда; на сайте Добрый дом уже есть статья про уборку и залог",
+      "wordstat_probes": ["уборка квартиры перед выездом", "залог при аренде квартиры", "аренда квартиры тюмень"],
+      "rework_hints": ["посуточно тюмень", "залог аренда"],
+      "tyumen_localize": true,
+      "status": "seed"
+    },
+    {
+      "id": "hidden_fees",
+      "hook_ru": "скрытые доплаты при аренде — как не переплатить",
+      "angle": "что спросить до оплаты",
+      "klyshin_signal": "«На словах всё включено» → пункты в договоре",
+      "wordstat_probes": ["скрытые доплаты аренда квартиры", "аренда квартиры посуточно тюмень", "что входит в аренду квартиры"],
+      "tyumen_localize": true,
+      "status": "seed"
+    },
+    {
+      "id": "neighbors_relations",
+      "hook_ru": "соседи в съёмной — без конфликтов",
+      "angle": "7 шагов к добрым отношениям",
+      "wordstat_probes": ["соседи аренда квартиры", "правила проживания аренда", "аренда квартиры тюмень"],
+      "tyumen_localize": true,
+      "status": "seed"
+    },
+    {
+      "id": "price_from_ads",
+      "hook_ru": "цена «от» в рекламе — уточнить реальную",
+      "angle": "5 вопросов до брони",
+      "wordstat_probes": ["аренда квартиры посуточно тюмень", "цена аренды квартиры", "бронирование квартиры"],
+      "tyumen_localize": true,
+      "status": "seed"
+    },
+    {
+      "id": "utilities_counters",
+      "hook_ru": "показания счётчиков — не переплатить ЖКХ",
+      "angle": "как фиксировать при посуточной/субаренде",
+      "wordstat_probes": ["показания счетчиков аренда", "жкх аренда квартиры", "коммунальные платежи аренда"],
+      "tyumen_localize": true,
+      "status": "seed"
+    },
+    {
+      "id": "contract_bans",
+      "hook_ru": "что нельзя делать по договору аренды",
+      "angle": "7 запретов до подписания",
+      "wordstat_probes": ["договор аренды квартиры", "правила проживания аренда", "аренда квартиры условия"],
+      "tyumen_localize": true,
+      "status": "seed"
+    },
+    {
+      "id": "sublease_chain",
+      "hook_ru": "субаренда квартиры — где риск для гостя",
+      "angle": "проверка прав субарендатора",
+      "wordstat_probes": ["субаренда квартиры", "субаренда квартиры тюмень", "аренда квартиры без посредников"],
+      "tyumen_localize": true,
+      "status": "seed"
+    },
+    {
+      "id": "check_in_contactless",
+      "hook_ru": "бесконтактное заселение — что проверить до оплаты",
+      "angle": "инструкция, код, поддержка в мессенджере",
+      "wordstat_probes": ["заселение в квартиру", "аренда квартиры посуточно", "квартиры посуточно тюмень"],
+      "tyumen_localize": true,
+      "status": "seed"
+    },
+    {
+      "id": "move_one_day",
+      "hook_ru": "переезд за один день — чеклист без хаоса",
+      "angle": "12 шагов для гостя посуточно",
+      "wordstat_probes": ["переезд чеклист", "аренда квартиры на сутки", "квартира посуточно"],
+      "tyumen_localize": true,
+      "status": "seed"
+    },
+    {
+      "id": "internet_tv_rental",
+      "hook_ru": "интернет и ТВ в съёмной — подключить за день",
+      "angle": "что проверить в апартаментах",
+      "wordstat_probes": ["интернет в арендованной квартире", "аренда квартиры с wifi", "квартира посуточно тюмень"],
+      "tyumen_localize": true,
+      "status": "seed"
+    }
+  ]
+}

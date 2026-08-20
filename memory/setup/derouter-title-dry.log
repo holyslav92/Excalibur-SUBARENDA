@@ -1,0 +1,3 @@
+WROTE memory/setup/derouter-title-dry-output.json
+STAMP memory/setup/derouter-title-dry-stamp.json
+OK role=title model=claude-opus-5 chars=708 preview='```json {   "topic_id": "B99-smoke",   "h1": "В Тюмени отдали аванс. Продавец спрятал строку в ЕГРН",   "title": "В Тюме'

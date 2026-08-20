@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "forbid_uncategorized": true,
+  "uncategorized_wp_id": 1,
+  "default_primary_slug": "posutochnaya-arenda",
+  "comment": "TODO: sync wp_id with live WP categories on добрыйдом-72.рф after secrets",
+  "categories": {
+    "posutochnaya-arenda": {
+      "wp_id": 101,
+      "name": "Посуточная аренда"
+    },
+    "zalog-i-vyiezd": {
+      "wp_id": 102,
+      "name": "Залог и выезд"
+    },
+    "dogovor-i-pravila": {
+      "wp_id": 103,
+      "name": "Договор и правила проживания"
+    },
+    "zhkh-i-doplaty": {
+      "wp_id": 104,
+      "name": "ЖКХ и доплаты"
+    },
+    "subarenda": {
+      "wp_id": 105,
+      "name": "Субаренда"
+    },
+    "sovety-gostyam": {
+      "wp_id": 106,
+      "name": "Советы гостям"
+    }
+  },
+  "topic_defaults": {
+    "B02": ["posutochnaya-arenda", "zalog-i-vyiezd"]
+  }
+}

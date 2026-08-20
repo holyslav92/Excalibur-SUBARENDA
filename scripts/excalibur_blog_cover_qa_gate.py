@@ -1,0 +1,169 @@
+#!/usr/bin/env python3
+"""Cover QA gate — stamp cover/cover_qa.json after visual checks."""
+
+from __future__ import annotations
+
+import argparse
+import json
+import sys
+from pathlib import Path
+
+
+REQUIRED_CHECKS = (
+    "identity_face_28yo",
+    "identity_body_medium_slim",
+    "identity_expression_invented",
+    "cover_phone_readable",
+    "board_stationery_ok",
+    "typography_cyrillic_clean",
+    "meme_density_inline_ok",
+    "light_high_key",
+    "motif_no_collision_14d",
+    "people_in_8_set",
+    "cats_cadence_ok",
+    "wordstat_stickers_1_3",
+    "identity_real_files",
+    "inline_utility_all_7",
+    "inline_no_host_face",
+    "inline_no_co_host_human",
+    "inline_meme_sticker_scale",
+    "meme_people_real_catalog",
+)
+
+REQUIRED_IMAGES = (
+    "cover/cover.png",
+    "cover/inline-01.png",
+    "cover/inline-02.png",
+    "cover/inline-03.png",
+    "cover/inline-04.png",
+    "cover/inline-05.png",
+    "cover/inline-06.png",
+    "cover/inline-07.png",
+)
+
+
+def project_root() -> Path:
+    return Path(__file__).resolve().parents[1]
+
+
+def load_json(path: Path) -> dict:
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def validate_cover_qa(article_dir: Path, root: Path) -> dict:
+    errors: list[str] = []
+    qa_path = article_dir / "cover" / "cover_qa.json"
+
+    from excalibur_blog_identity_real import missing_identity_files
+
+    missing_identity = missing_identity_files(root)
+    if missing_identity:
+        errors.append(f"identity-real missing: {', '.join(missing_identity)}")
+
+    for rel in REQUIRED_IMAGES:
+        if not (article_dir / rel).is_file():
+            errors.append(f"missing image: {rel}")
+
+    if not qa_path.is_file():
+        errors.append("cover/cover_qa.json missing — run excalibur-blog-cover-qa")
+        return {"status": "FAIL", "errors": errors}
+
+    try:
+        qa = load_json(qa_path)
+    except json.JSONDecodeError as exc:
+        return {"status": "FAIL", "errors": [f"cover_qa.json invalid JSON: {exc}"]}
+
+    if str(qa.get("agent") or "") != "excalibur-blog-cover-qa":
+        errors.append("cover_qa.json agent must be excalibur-blog-cover-qa")
+    if str(qa.get("status") or "").upper() != "PASS":
+        errors.append(f"cover_qa.json status must be PASS, got {qa.get('status')!r}")
+
+    checks = qa.get("checks") or {}
+    for key in REQUIRED_CHECKS:
+        if not checks.get(key):
+            errors.append(f"cover_qa check failed or missing: {key}")
+
+    manifest_path = article_dir / "cover" / "quad-manifest.json"
+    meme_catalog = root / "memory" / "cover" / "meme-top100.json"
+    if not meme_catalog.is_file():
+        errors.append("memory/cover/meme-top100.json missing — meme catalog required")
+    if manifest_path.is_file():
+        try:
+            manifest = load_json(manifest_path)
+            stickers = manifest.get("wordstat_stickers") or []
+            if not (1 <= len(stickers) <= 3):
+                errors.append(f"wordstat_stickers count {len(stickers)}, need 1-3 in quad-manifest")
+            phone = str(manifest.get("cover_phone_cta") or "").strip()
+            if phone != "+7 922 001 65 05":
+                errors.append("cover_phone_cta must be '+7 922 001 65 05' in quad-manifest")
+            slots = manifest.get("slots") or {}
+            allowed_types = {
+                "comparison_table",
+                "process_flow",
+                "bar_timeline_chart",
+                "structure_diagram",
+                "labeled_checklist",
+                "fact_card",
+                "workflow_diagram",
+                "checklist_board",
+                "schema_faq_ui",
+                "tool_screenshot",
+                "infographic_card",
+            }
+            for i in range(1, 8):
+                key = f"inline_{i}"
+                slot = slots.get(key) or {}
+                if not str(slot.get("visual_type") or "").strip():
+                    errors.append(f"{key}.visual_type missing in quad-manifest")
+                elif str(slot.get("visual_type")) not in allowed_types:
+                    errors.append(f"{key}.visual_type invalid: {slot.get('visual_type')}")
+                labels = slot.get("labels") or []
+                if not (2 <= len(labels) <= 6):
+                    errors.append(f"{key}.labels count {len(labels)}, need 2-6")
+        except json.JSONDecodeError:
+            errors.append("quad-manifest.json invalid JSON")
+
+    status = "PASS" if not errors else "FAIL"
+    return {"status": status, "errors": errors}
+
+
+def cmd_doctor(root: Path) -> int:
+    agent_cursor = root / ".cursor/agents/excalibur-blog-cover-qa.md"
+    agent_repo = root / "agents/excalibur-blog-cover-qa.md"
+    skill = root / "skills/cover-qa-excalibur-blog/SKILL.md"
+    for path in (agent_cursor, agent_repo, skill):
+        if not path.is_file():
+            print(f"FAIL missing {path.relative_to(root)}", file=sys.stderr)
+            return 1
+    print("OK cover-qa agent + skill present")
+    return 0
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description="Cover QA gate for longform 8-image set")
+    parser.add_argument("--article-dir", help="Article directory to validate")
+    parser.add_argument("--doctor", action="store_true", help="Repo-level doctor check")
+    args = parser.parse_args()
+    root = project_root()
+
+    if args.doctor:
+        return cmd_doctor(root)
+
+    if not args.article_dir:
+        print("FAIL --article-dir required", file=sys.stderr)
+        return 1
+
+    article_dir = Path(args.article_dir)
+    if not article_dir.is_absolute():
+        article_dir = root / article_dir
+
+    result = validate_cover_qa(article_dir, root)
+    if result["status"] != "PASS":
+        print(f"FAIL COVER QA GATE: {'; '.join(result['errors'])}", file=sys.stderr)
+        return 1
+    print("OK cover QA stamp (cover_qa.json PASS)")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

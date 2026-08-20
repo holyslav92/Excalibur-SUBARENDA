@@ -1,0 +1,72 @@
+{
+  "primary_source": "mcp-kv",
+  "mcp_server": "MCP-KV",
+  "mcp_tools": [
+    "wordstat_get_user_info",
+    "wordstat_get_top_requests",
+    "wordstat_get_regions",
+    "wordstat_get_regions_tree",
+    "wordstat_get_dynamics"
+  ],
+  "tenant_geo": "Тюмень / Тюменская область",
+  "primary_city_ru": "Тюмень",
+  "primary_oblast_ru": "Тюменская область",
+  "russia_region_id": 225,
+  "region_ids": {
+    "tyumen_city": 55,
+    "tyumen_oblast": 11176
+  },
+  "scout_required_region_ids": [55, 11176],
+  "compare_region_ids": [225],
+  "region_ids_verified_via": "MCP-KV wordstat_get_regions_tree",
+  "region_ids_verified_at": "2026-08-20",
+  "region_lookup_names": {
+    "55": "Тюмень",
+    "11176": "Тюменская область",
+    "225": "Россия"
+  },
+  "p0_buyer_seed_phrases": [
+    "квартиры посуточно",
+    "аренда квартиры посуточно",
+    "аренда квартиры тюмень",
+    "субаренда квартиры",
+    "залог аренда",
+    "договор аренды квартиры",
+    "скрытые доплаты",
+    "уборка квартиры",
+    "жкх аренда",
+    "правила проживания",
+    "заселение квартира",
+    "квартира на сутки"
+  ],
+  "brand_vanity_queries_not_p0": [
+    "добрый дом тюмень",
+    "добрый дом квартиры",
+    "апартаменты добрый дом"
+  ],
+  "brand_vanity_note": "Brand vanity — не P0. Scout берёт buyer-запросы: посуточно, залог, субаренда, ЖКХ.",
+  "scout_workflow": [
+    "CallMcpTool MCP-KV wordstat_get_user_info (preflight)",
+    "wordstat_get_regions_tree once if ids stale",
+    "Pick Klyshin hook from memory/scout/klyshin-topic-bank.*",
+    "wordstat_get_top_requests(phrase, regions=[55,11176], numPhrases) on hook + probes",
+    "weak volume → REWORK: localize Tyumen, buyer jargon (посуточно, залог, заселение, субаренда…)",
+    "skip ONLY after rework exhausted",
+    "handoff log: klyshin_hook + wordstat_rework + wordstat (final P0 phrase+frequency)"
+  ],
+  "rework_vocabulary": [
+    "посуточно",
+    "субаренда",
+    "залог",
+    "заселение",
+    "уборка",
+    "жкх",
+    "соседи",
+    "доплаты",
+    "договор аренды",
+    "командировка",
+    "тюмень"
+  ],
+  "affinity_rule": "Klyshin hook → Wordstat evaluate+rework until Tyumen buyer P0 for short-term rental.",
+  "seo_geo_dual": "Final P0 Wordstat-фразы → demand spine; Title stays Klyshin hook; stickers/H2 from live queries."
+}

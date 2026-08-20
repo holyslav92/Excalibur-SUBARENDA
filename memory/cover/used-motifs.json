@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "window_days": 14,
+  "entries": [
+    {
+      "date": "2026-08-18",
+      "topic_id": "B01",
+      "slug": "",
+      "motifs": {
+        "composition": "host_large_left_points_at_glowing_egrn_tablet_sun_flare",
+        "location": "bright_glass_registry_atrium_white_marble_tyumen",
+        "meme": "distracted_boyfriend_sticker_plus_thinking_cat_cutout",
+        "prop_set": "egrn_pdf_fold_red_marker_tiny_apartment_icon",
+        "sticker_set": "wordstat_paper_stickers_meme_people_reaction_cutout",
+        "joke": "sticky_аванс_сегодня_crossed_red_x"
+      }
+    },
+    {
+      "date": "2026-08-18",
+      "topic_id": "B02",
+      "slug": "",
+      "motifs": {
+        "composition": "host_large_left_holds_receipt_points_empty_bank_balance_sun_flare",
+        "location": "bright_sunlit_tyumen_bank_notary_atrium_white_glass",
+        "meme": "this_is_fine_cat_sticker_plus_surprised_guy_reaction_cutout",
+        "prop_set": "handwritten_receipt_fold_tiny_accreditiv_card_red_zero_balance",
+        "sticker_set": "wordstat_kupit_kvartiru_tyuymeni_akkreditiv_paper_stickers",
+        "joke": "sticky_бумага_есть_arrow_to_empty_счёт_пуст"
+      }
+    }
+  ]
+}
