@@ -373,6 +373,7 @@ def split_canvas(
                 from excalibur_blog_brand_logo_composite import (
                     composite_logo_onto_image,
                     load_tenant_logo_config,
+                    resolve_inline_logo_slots,
                     uses_brand_logo_paste,
                 )
 
@@ -380,6 +381,10 @@ def split_canvas(
                 _cfg = load_tenant_logo_config(_root)
                 if uses_brand_logo_paste(_cfg):
                     _logo = _root / str(_cfg["logo_rel"])
+                    _article_dir = cover_dir.parent
+                    _inline_logo_files = resolve_inline_logo_slots(_article_dir, _cfg)
+                    _out_name = "cover.png" if slot_key == "cover" else INLINE_FILES[slot_key]
+                    _paste = slot_key == "cover" or _out_name in _inline_logo_files
                     composite_logo_onto_image(
                         out_path,
                         _logo,
@@ -387,7 +392,9 @@ def split_canvas(
                         margin_px=int(_cfg.get("margin_px") or 20),
                         phone_display=str(_cfg.get("phone_display") or ""),
                         add_phone=(slot_key == "cover"),
-                        adaptive_corner=(slot_key == "cover"),
+                        adaptive_corner=False,
+                        fixed_corner=str(_cfg.get("logo_corner") or "top_right"),
+                        paste_logo=_paste,
                     )
             except Exception as _logo_exc:  # noqa: BLE001
                 raise ValueError(f"brand logo composite failed for {out_name}: {_logo_exc}") from _logo_exc

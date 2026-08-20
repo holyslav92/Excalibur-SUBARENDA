@@ -122,7 +122,7 @@ def compact(value: object, limit: int) -> str:
     return text[: limit - 1].rstrip() + "…"
 
 
-def inline_panel_prompt(slot: dict, types_catalog: dict) -> str:
+def inline_panel_prompt(slot: dict, types_catalog: dict, *, logo_paste: bool = False) -> str:
     type_id = slot.get("visual_type") or "fact_card"
     type_def = (types_catalog.get("types") or {}).get(type_id) or {}
     label = type_def.get("label_ru", type_id)
@@ -136,12 +136,17 @@ def inline_panel_prompt(slot: dict, types_catalog: dict) -> str:
     if slot.get("meme_sticker"):
         base += (
             f" +tiny meme sticker only (≤{int(MEME_STICKER_INLINE_MAX_SHARE * 100)}% frame, "
-            f"corner accent from {MEME_CATALOG_REL}; NO co-host human; NO presenter)."
+            f"bottom-left or bottom-right corner only — NEVER top-right pad; "
+            f"from {MEME_CATALOG_REL}; NO co-host human; NO presenter)."
         )
-    base += (
-        " Leave one corner empty clean margin (no stickers/text/people) for factory logo paste "
-        "8–12% width; NO drawn logo/house/heart in generation."
-    )
+    if logo_paste:
+        base += (
+            " TOP-RIGHT empty pad for ONE factory logo 8–12%; NO drawn logo/house/heart; NO multi logos."
+        )
+    else:
+        base += (
+            " TOP-RIGHT clean margin; NO factory logo here; NO drawn logos/house/heart."
+        )
     return base
 
 
@@ -409,6 +414,17 @@ def style_is_situational_cat_hero(style: dict) -> bool:
     return motif in {"situational_cat_hero", "cat_hero"}
 
 
+def resolve_manifest_inline_logo_keys(manifest: dict, root: Path) -> set[str]:
+    cfg = load_tenant_cover_config(root)
+    tenant = load_json(root / "shared" / "tenant-config.json") if (root / "shared" / "tenant-config.json").is_file() else {}
+    composite = (tenant.get("logo_composite") or {})
+    raw = manifest.get("logo_paste_inline_slots") or manifest.get("inline_logo_slots")
+    if isinstance(raw, list) and raw:
+        return {str(x).strip() for x in raw if str(x).strip()}
+    defaults = composite.get("inline_logo_slots_default") or ["inline_1", "inline_3", "inline_7"]
+    return {str(x).strip() for x in defaults}
+
+
 def build_prompt(
     manifest: dict,
     style: dict,
@@ -421,6 +437,7 @@ def build_prompt(
     has_cover: bool = True,
     brand_logo_paste: bool = False,
     cover_phone_cta: str = DEFAULT_COVER_PHONE_CTA,
+    inline_logo_keys: set[str] | None = None,
 ) -> str:
     slots = manifest.get("slots") or {}
     canvas_slots = canvas_slots or tuple(CANVAS_1_SLOTS)
@@ -448,6 +465,11 @@ def build_prompt(
     quadrant_labels = ("Top-left", "Top-right", "Bottom-left", "Bottom-right")
     panel_lines: list[str] = []
 
+    inline_logo_keys = inline_logo_keys or set()
+
+    def inline_prompt_for(key: str) -> str:
+        return inline_panel_prompt(slot(key), types_catalog, logo_paste=(key in inline_logo_keys))
+
     if has_cover and "cover" in canvas_slots:
         cover = slot("cover")
         highlight = compact(manifest.get("cover_hook_highlight", ""), 24)
@@ -468,17 +490,14 @@ def build_prompt(
             else ""
         )
         if brand_logo_paste:
-            emotion_clause = f"Expression: {cover_emotion}." if cover_emotion else ""
+            emotion_clause = f"Expr: {cover_emotion}." if cover_emotion else ""
             panel_lines.append(
-                f"TL COVER TXT «{cover_hook_text}» bold Cyrillic black, {highlight_rule}. "
-                f"Late-August Tyumen evening (20 Aug): dry warm street, golden hour, green trees, "
-                f"NO snow NO ice NO frost NO winter NO blizzard NO frozen keybox NO minus degrees. "
-                f"NO brand logo; NO phone in image (factory adds post-render). "
-                f"Russian guest with suitcase at apartment entrance; {emotion_clause} sun flare; "
-                f"{compact(cover_scene, COVER_SCENE_HINT_COMPACT)}; "
-                f"meme cat sticker ONLY far top-right ≤12% frame; keep one corner empty clean sky/wall "
-                f"margin (no stickers/text there — factory pastes logo); "
-                f"{BOARD_STATIONERY}; Wordstat/Tyumen; #FFF; perfect Cyrillic"
+                f"TL COVER POSTER (not stock): «{cover_hook_text}» bold display Cyrillic, {highlight_rule}; "
+                f"sticky «{cover_sticky or 'Залог вернут?'}»; bubble «залог не вернули»; chip on stove; keys+suitcase; "
+                f"Aug Tyumen warm light, green trees, NO winter/snow. NO logo/phone in gen. "
+                f"{emotion_clause} sun flare; gold tape; Wordstat; "
+                f"{compact(cover_scene, COVER_SCENE_HINT_COMPACT)}; cat bottom-left ≤12%; "
+                f"TOP-RIGHT empty pad for ONE factory logo; NO multi logos; {BOARD_STATIONERY}; #FFF"
             )
         else:
             emotion_clause = (
@@ -495,10 +514,10 @@ def build_prompt(
             )
         inline_keys = [k for k in canvas_slots if k != "cover"]
         for label, key in zip(quadrant_labels[1:], inline_keys[:3]):
-            panel_lines.append(f"{label} inline: {inline_panel_prompt(slot(key), types_catalog)}")
+            panel_lines.append(f"{label} inline: {inline_prompt_for(key)}")
     else:
         for label, key in zip(quadrant_labels, list(canvas_slots)[:4]):
-            panel_lines.append(f"{label} inline: {inline_panel_prompt(slot(key), types_catalog)}")
+            panel_lines.append(f"{label} inline: {inline_prompt_for(key)}")
 
     ban_line = (
         "Ban: dark/low-key; inventory props; celebrity memes; EXCALIBUR stamp; chubby host; "
@@ -508,7 +527,8 @@ def build_prompt(
     if has_cover and brand_logo_paste:
         reference_line = (
             "Cover TL: NO host i2i; NO Shakin/identity-real; NO brand logo; NO phone in generation; "
-            "Russian guest by topic allowed; invent bright scene."
+            "poster collage with reserved TOP-RIGHT empty pad for ONE factory logo; "
+            "NEVER multiple logos or logo comparison table; Russian guest by topic allowed."
         )
     elif has_cover:
         reference_line = (
@@ -518,9 +538,10 @@ def build_prompt(
     else:
         reference_line = (
             "Inlines: NO host face; NO stock/generated man; NO large human co-host/presenter; "
-            f"NO brand logo in generation (factory pastes PNG); "
-            f"people-memes only as tiny stickers (≤{int(MEME_STICKER_INLINE_MAX_SHARE * 100)}% frame, corner) "
-            f"from real templates in {MEME_CATALOG_REL}; infographic is hero."
+            f"NO brand logo in generation (factory pastes PNG on 2–3 panels only, TOP-RIGHT pad); "
+            f"people-memes only as tiny stickers (≤{int(MEME_STICKER_INLINE_MAX_SHARE * 100)}% frame, "
+            f"never top-right pad) from real templates in {MEME_CATALOG_REL}; "
+            "mix sketch/table/chart/scheme collage — not text walls."
         )
     inline_suffix = (
         f"Inline all: #FFF collage, gold/black Cyrillic labels, {BOARD_STATIONERY}; "
@@ -622,6 +643,7 @@ def main() -> int:
             batch_ref_url = ""
 
         warn_long_scene_hints(manifest)
+        inline_logo_keys = resolve_manifest_inline_logo_keys(manifest, root)
         prompt = build_prompt(
             manifest,
             style,
@@ -633,6 +655,7 @@ def main() -> int:
             has_cover=has_cover,
             brand_logo_paste=brand_logo_paste,
             cover_phone_cta=cover_phone_cta,
+            inline_logo_keys=inline_logo_keys,
         )
         if not validate_prompt_budget(prompt):
             return 1

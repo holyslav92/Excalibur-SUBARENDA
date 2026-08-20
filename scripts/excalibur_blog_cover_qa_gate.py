@@ -9,11 +9,27 @@ import sys
 from pathlib import Path
 
 
-REQUIRED_CHECKS = (
+BRAND_LOGO_CHECKS = (
+    "brand_logo_paste_png",
+    "logo_top_right_fixed",
+    "inline_logo_count_2_3",
+    "forbid_multiple_logos_per_image",
+    "logo_width_fraction_8_12",
+    "cover_phone_993_post_composite",
+    "forbid_922_phone",
+    "cover_phone_not_in_logo_pad",
+    "august_no_winter_hero",
+)
+
+HOST_IDENTITY_CHECKS = (
     "identity_face_28yo",
     "identity_body_medium_slim",
     "identity_expression_invented",
     "cover_phone_readable",
+    "identity_real_files",
+)
+
+COMMON_CHECKS = (
     "board_stationery_ok",
     "typography_cyrillic_clean",
     "meme_density_inline_ok",
@@ -22,7 +38,6 @@ REQUIRED_CHECKS = (
     "people_in_8_set",
     "cats_cadence_ok",
     "wordstat_stickers_1_3",
-    "identity_real_files",
     "inline_utility_all_7",
     "inline_no_host_face",
     "inline_no_co_host_human",
@@ -98,7 +113,12 @@ def validate_cover_qa(article_dir: Path, root: Path) -> dict:
         errors.append(f"cover_qa.json status must be PASS, got {qa.get('status')!r}")
 
     checks = qa.get("checks") or {}
-    for key in REQUIRED_CHECKS:
+    required = list(COMMON_CHECKS)
+    if brand_logo_paste:
+        required.extend(BRAND_LOGO_CHECKS)
+    else:
+        required.extend(HOST_IDENTITY_CHECKS)
+    for key in required:
         if not checks.get(key):
             errors.append(f"cover_qa check failed or missing: {key}")
 

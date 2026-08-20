@@ -16,12 +16,16 @@
     "max_width_fraction": 0.10,
     "min_width_fraction": 0.08,
     "max_width_fraction_cap": 0.12,
-    "margin_px": 20
+    "margin_px": 20,
+    "logo_corner": "top_right",
+    "inline_logo_count_min": 2,
+    "inline_logo_count_max": 3,
+    "inline_logo_slots_default": ["inline_1", "inline_3", "inline_7"]
   },
   "visual_lock": {
     "person": "NO Shakin/rieltor identity — Russian guests fitting check-in topic only",
-    "logo_lockup": "PASTE official PNG 1:1 on all 8 panels at 8–12% canvas width — adaptive empty corner; NEVER AI-drawn logo/house/heart",
-    "cover_phone": "+7 (993) 574-83-22 post-composite next to logo on cover only"
+    "logo_lockup": "PASTE official PNG 1:1 — COVER always ONE small logo TOP-RIGHT; INLINES logo on 2–3 panels only (same corner); reserved empty top-right pad in generation; NEVER AI-drawn logo/house/heart; NEVER multiple logos per image",
+    "cover_phone": "+7 (993) 574-83-22 post-composite bottom-left on cover only (not in logo pad)"
   },
   "cover_canon": "memory/cover/cover-canon.json",
   "host_face_todo": "skip_human_host — brand logo paste mode"

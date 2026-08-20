@@ -121,7 +121,11 @@
     "max_width_fraction": 0.10,
     "min_width_fraction": 0.08,
     "max_width_fraction_cap": 0.12,
-    "margin_px": 20
+    "margin_px": 20,
+    "logo_corner": "top_right",
+    "inline_logo_count_min": 2,
+    "inline_logo_count_max": 3,
+    "inline_logo_slots_default": ["inline_1", "inline_3", "inline_7"]
   },
   "cover_identity_status": "brand_logo_only",
   "dzen_rf_pack": true,

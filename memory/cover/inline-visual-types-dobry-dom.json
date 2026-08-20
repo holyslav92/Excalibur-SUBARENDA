@@ -1,0 +1,58 @@
+{
+  "status": "ok",
+  "tenant": "dobry-dom",
+  "comment": "Добрый дом: comfort+ visuals + utility panels. Logo: cover always + 2-3 inlines only, TOP-RIGHT pad. No Shakin.",
+  "utility_test": "Inline must teach OR show lived-in comfort+ OR infographic utility. Pure decorative icon row = FAIL.",
+  "style_lock": "High-key #FFFFFF, warm hospitality. ONE small official logo TOP-RIGHT on cover + 2-3 inlines only (factory paste). Cozy lived-in, NOT hotel-luxe.",
+  "forbidden_inline": [
+    "host face / Shakin / identity-real",
+    "marble palace interior",
+    "business-class luxury lobby",
+    "five-star hotel aesthetic",
+    "seven identical infographic schemes",
+    "tymenrieltor branding",
+    "decorative icon row without lived-in scene"
+  ],
+  "preferred_order": [
+    "lived_in_room",
+    "guest_checkin_scene",
+    "comfort_plus_interior",
+    "labeled_checklist",
+    "comparison_table",
+    "process_flow"
+  ],
+  "min_lived_in_inlines": 2,
+  "max_decorative_inlines": 4,
+  "types": {
+    "lived_in_room": {
+      "label_ru": "уютная комната comfort+ (живой интерьер)",
+      "utility": "Realistic sofa, kitchen nook, clean bedding — lived-in, not catalog luxury",
+      "keywords": ["комнат", "диван", "кухн", "уют", "бель", "посуточ"]
+    },
+    "guest_checkin_scene": {
+      "label_ru": "гость у двери / с телефоном / код доступа",
+      "utility": "Scene matches H2 about check-in, keys, messenger — people-by-topic OK",
+      "keywords": ["засел", "код", "домофон", "ключ", "телефон", "чемодан"]
+    },
+    "comfort_plus_interior": {
+      "label_ru": "comfort+ деталь интерьера (реалистично)",
+      "utility": "Towels, clean kitchen, Wi-Fi sticker, shoe rack — ordinary guest comfort",
+      "keywords": ["полотен", "чист", "wi-fi", "комфорт", "кухн"]
+    },
+    "labeled_checklist": {
+      "label_ru": "чеклист вопросов до оплаты",
+      "utility": "Named guest questions — not generic «7 советов» decorative",
+      "keywords": ["вопрос", "чек", "до оплаты", "провер"]
+    },
+    "comparison_table": {
+      "label_ru": "сравнение «в рекламе / на деле»",
+      "utility": "Two columns that differ — deposit, check-in, support",
+      "keywords": ["сравн", "реклам", "договор", "залог"]
+    },
+    "process_flow": {
+      "label_ru": "шаги заселения / доступа",
+      "utility": "Numbered steps: book → instruction → door — one failure point",
+      "keywords": ["шаг", "инструк", "доступ", "порядок"]
+    }
+  }
+}
