@@ -423,9 +423,9 @@ def main() -> int:
             warnings,
             warn=not args.publish,
         )
-        check(bool(env.get("FTP_HOST")), "SFTP host configured", errors, warnings, warn=not args.publish)
-        check(bool(env.get("FTP_USER")), "SFTP user configured", errors, warnings, warn=not args.publish)
-        check(bool(env.get("FTP_PASS")), "SFTP password configured", errors, warnings, warn=not args.publish)
+        check(bool(env.get("FTP_HOST")), "publish host configured (FTP/SFTP)", errors, warnings, warn=not args.publish)
+        check(bool(env.get("FTP_USER")), "publish user configured", errors, warnings, warn=not args.publish)
+        check(bool(env.get("FTP_PASS")), "publish password configured", errors, warnings, warn=not args.publish)
     else:
         print("NOTE skip publish secret checks until setup complete (use --publish to force)")
     if args.publish:

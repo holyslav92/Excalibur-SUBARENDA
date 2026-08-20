@@ -15,7 +15,6 @@ from excalibur_blog_identity_real import (
     is_logo_lockup_mode,
     pick_identity_reference,
     pick_logo_reference,
-    resolve_logo_reference_path,
 )
 from excalibur_blog_quad_slots import (
     CANVAS_1_SLOTS,

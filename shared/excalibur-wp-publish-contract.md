@@ -16,10 +16,12 @@ Excalibur BLOG готовит артефакты локально; публик�
 - `schema.jsonld` + `schema-gate.json` PASS
 - `cover/cover.png` + `cover-registry.json` (alt)
 - `link-verify.json` (verdict pass)
-- Cloud Secrets / env vars или `memory/site.env.local` — SFTP доступ + `PUBLIC_SITE_URL` + `EXCALIBUR_BLOG_ALLOW_PUBLISH=yes`
-- **Секреты:** `FTP_HOST` / `FTP_USER` / `FTP_PASS` (или `FTP_PASSWORD`) / `FTP_ROOT=.` — это **SFTP** под именами FTP. Отдельный SSH-пароль не нужен: `SSH_*` = те же значения. Transport всегда SFTP/SSH; plain FTP не вызывается.
+- Cloud Secrets / env vars или `memory/site.env.local` — FTP или SFTP доступ + `PUBLIC_SITE_URL` + `EXCALIBUR_BLOG_ALLOW_PUBLISH=yes`
+- **Секреты:** `FTP_HOST` / `FTP_USER` / `FTP_PASS` / `FTP_ROOT` / `FTP_PORT` / `FTP_TRANSPORT`
+  - **SFTP (default):** port 22 — `FTP_*` = те же SFTP-учётные данные; `SSH_*` = алиасы
+  - **FTP passive (Добрый дом / Timeweb):** `FTP_PORT=21` или `FTP_TRANSPORT=ftp`; `FTP_ROOT=sublease/public_html`
 - Env precedence: переменные окружения перекрывают `memory/site.env.local`.
-- Root: канон `FTP_ROOT=.` (SFTP login cwd с `wp-load.php`). Пустой или `/` нормализуется в `.`.
+- Root: `FTP_ROOT` относительно FTP login cwd (Timeweb: `sublease/public_html`). Пустой или `/` → `.`
 
 ## Скрипт
 
