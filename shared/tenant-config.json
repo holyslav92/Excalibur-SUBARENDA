@@ -34,15 +34,18 @@
   },
   "cta_required": true,
   "cta_links": [
-    "https://xn---72-9cdob8azaodt6k.xn--p1ai/blog/",
-    "https://xn---72-9cdob8azaodt6k.xn--p1ai/"
+    "https://добрыйдом-72.рф/",
+    "https://t.me/Dobriy_dom_Tyumen",
+    "https://t.me/Dobriy_dom_72"
   ],
   "cta_channels": {
-    "site": "https://xn---72-9cdob8azaodt6k.xn--p1ai/",
-    "blog": "https://xn---72-9cdob8azaodt6k.xn--p1ai/blog/",
-    "messenger": "TODO: ссылка на мессенджер с сайта добрыйдом-72.рф",
-    "phone": "TODO: телефон с сайта добрыйдом-72.рф",
-    "phone_display": "TODO"
+    "site": "https://добрыйдом-72.рф/",
+    "blog": "https://добрыйдом-72.рф/blog/",
+    "telegram_manager": "https://t.me/Dobriy_dom_Tyumen",
+    "telegram_channel": "https://t.me/Dobriy_dom_72",
+    "messenger": "https://t.me/Dobriy_dom_Tyumen",
+    "phone": "",
+    "phone_display": ""
   },
   "wp_categories_required": true,
   "publish_options": {

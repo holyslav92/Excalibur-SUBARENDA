@@ -42,6 +42,9 @@ def url_patterns(url: str) -> re.Pattern[str]:
     return re.compile(pat, re.I)
 
 
+from excalibur_blog_site_base import SITE_BASE_PLACEHOLDER
+
+
 def check_tel_link(html: str, tel_url: str) -> bool:
     digits = normalize_phone_digits(tel_url.removeprefix("tel:"))
     if len(digits) < 10:
@@ -52,6 +55,30 @@ def check_tel_link(html: str, tel_url: str) -> bool:
     if re.search(rf"tel:\+?7{re.escape(tail)}", html or "", re.I):
         return True
     return tail in normalize_phone_digits(html or "")
+
+
+def link_in_html(html: str, link: str) -> bool:
+    link = (link or "").strip()
+    if link.lower().startswith("tel:"):
+        return check_tel_link(html, link)
+    if url_patterns(link).search(html or ""):
+        return True
+    parsed = urlparse(link)
+    path = parsed.path or "/"
+    if not path.endswith("/") and path != "/":
+        path_variants = [path, f"{path}/"]
+    else:
+        path_variants = [path]
+    for p in path_variants:
+        if f'href="{p}"' in (html or "") or f"href='{p}'" in (html or ""):
+            return True
+        placeholder_href = f'href="{SITE_BASE_PLACEHOLDER}{p}"'
+        if placeholder_href in (html or ""):
+            return True
+        if p == "/":
+            if f'href="{SITE_BASE_PLACEHOLDER}/"' in (html or ""):
+                return True
+    return False
 
 
 def check_max_channel(html: str, max_cfg: str, phone: str) -> tuple[bool, str]:
@@ -83,10 +110,7 @@ def check_html(
             errors.append("cta_required=true but tenant-config.cta_links is empty")
         return errors, present
     for link in links:
-        if link.lower().startswith("tel:"):
-            ok = check_tel_link(html, link)
-        else:
-            ok = bool(url_patterns(link).search(html or ""))
+        ok = link_in_html(html, link)
         present[link] = ok
         if not ok:
             errors.append(f"missing required CTA href {link}")

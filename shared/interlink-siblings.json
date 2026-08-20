@@ -1,21 +1,22 @@
 {
   "version": 1,
-  "note": "Сайтовые longform/чеклисты для перекрёстных ссылок (slug + post_id). Обновлять при publish.",
+  "note": "Добрый дом / добрыйдом-72.рф — siblings для outbound interlink (slug + post_id при известности).",
   "siblings": [
     {
-      "slug": "rosfinmonitoring-sdelka-nedvizhimost-cheklis-tyumen-2026",
-      "post_id": 8487,
-      "title": "Росфинмониторинг и сделка с недвижимостью: чеклист для Тюмени"
+      "slug": "chto-vhodit-v-stoimost-kvartiry-posutochno-polnyj-spisok-uslug",
+      "title": "Что входит в стоимость квартиры посуточно: полный список услуг"
     },
     {
-      "slug": "bank-otkazal-po-domu-cheklist-starogo-fonda-v-tyumeni",
-      "post_id": 8456,
-      "title": "Банк отказал по дому? Чеклист старого фонда в Тюмени"
+      "slug": "pravila-prozhivaniya-v-otele-chto-proverit-do-oplaty-chtoby-ne-poteryat-dengi",
+      "title": "Правила проживания в отеле: что проверить до оплаты, чтобы не потерять деньги"
     },
     {
-      "slug": "na-matkapital-kupili-detskie-doli-proverte",
-      "post_id": 8730,
-      "title": "На маткапитал купили — детских долей в выписке нет"
+      "slug": "skrytye-doplaty-pri-arende-kvartiry-kak-ne-pereplatit",
+      "title": "Скрытые доплаты при аренде квартиры: как не переплатить"
+    },
+    {
+      "slug": "uborka-syomnoj-kvartiry-pered-vyezdom-7-shagov-chtoby-vernuli-zalog",
+      "title": "Уборка съёмной квартиры перед выездом: 7 шагов, чтобы вернули залог"
     }
   ]
 }

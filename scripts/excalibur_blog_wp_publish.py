@@ -183,27 +183,37 @@ def validate_publish_env(env: dict[str, str]) -> list[str]:
 
 
 def publish_env_check_report(env: dict[str, str]) -> dict[str, object]:
+    from excalibur_blog_remote_transport import transport_mode
+
     root_label = sftp_root_label(env)
+    mode = transport_mode(env)
+    transport_block: dict[str, object] = {
+        "mode": mode,
+        "host_configured": bool(env.get("SSH_HOST") or env.get("FTP_HOST")),
+        "user_configured": bool(env.get("SSH_USER") or env.get("FTP_USER")),
+        "password_configured": bool(
+            env.get("SSH_PASS")
+            or env.get("FTP_PASS")
+            or env.get("SSH_PASSWORD")
+            or env.get("FTP_PASSWORD")
+        ),
+        "root": root_label,
+        "port": env.get("FTP_PORT") or ("21" if mode == "ftp" else "22"),
+    }
+    if mode == "ftp":
+        transport_block["pasv_rewrite_ip"] = "188.225.40.162"
+        transport_block["timeout_seconds"] = 60
+    else:
+        transport_block["ftp_aliases_are_sftp"] = True
+        transport_block["dot_fallback_enabled"] = root_label == "configured-non-dot"
     return {
         "allow_publish": env.get("EXCALIBUR_BLOG_ALLOW_PUBLISH", "").strip().lower() == "yes",
         "public_site_url_configured": bool(env.get("PUBLIC_SITE_URL") or env.get("WP_HOME") or env.get("WP_SITE_URL")),
-        "sftp": {
-            "host_configured": bool(env.get("SSH_HOST") or env.get("FTP_HOST")),
-            "user_configured": bool(env.get("SSH_USER") or env.get("FTP_USER")),
-            "password_configured": bool(
-                env.get("SSH_PASS")
-                or env.get("FTP_PASS")
-                or env.get("SSH_PASSWORD")
-                or env.get("FTP_PASSWORD")
-            ),
-            "root": root_label,
-            "ftp_aliases_are_sftp": True,
-            "dot_fallback_enabled": root_label == "configured-non-dot",
-        },
+        "transport": transport_block,
         "missing": validate_publish_env(env),
         "note": (
-            "FTP_HOST/USER/PASS/ROOT are SFTP credentials under FTP_* names; "
-            "transport is always SFTP. Default root is '.' (login cwd)."
+            "FTP_TRANSPORT=ftp uses Timeweb PASV rewrite (188.225.40.162); "
+            "otherwise SFTP on port 22."
         ),
     }
 
@@ -903,6 +913,11 @@ def trigger_bootstrap_http(url: str, root: Path) -> str:
 
 
 def publish_via_sftp(env: dict[str, str], php: str, public_base: str, *, bootstrap_name: str = "excalibur-blog-publish-once.php") -> str:
+    from excalibur_blog_remote_transport import transport_mode
+
+    if transport_mode(env) == "ftp":
+        return publish_via_ftp(env, php, public_base, bootstrap_name=bootstrap_name)
+
     remote = bootstrap_name
     data = php.encode("utf-8")
     url = public_base.rstrip("/") + "/" + remote
@@ -915,6 +930,47 @@ def publish_via_sftp(env: dict[str, str], php: str, public_base: str, *, bootstr
     finally:
         try:
             delete_bootstrap_sftp(env, remote, uploaded_remote_path)
+        except Exception as cleanup_error:  # noqa: BLE001
+            print(f"WARN cleanup: could not delete bootstrap {remote}: {cleanup_error}", file=sys.stderr)
+    return out
+
+
+def publish_via_ftp(
+    env: dict[str, str],
+    php: str,
+    public_base: str,
+    *,
+    bootstrap_name: str = "excalibur-blog-publish-once.php",
+) -> str:
+    from excalibur_blog_remote_transport import (
+        delete_remote_file,
+        find_wp_root,
+        upload_bytes,
+    )
+
+    remote = bootstrap_name
+    data = php.encode("utf-8")
+    url = public_base.rstrip("/") + "/" + remote
+    root = project_root()
+
+    selected_root, probe_log = find_wp_root(env)
+    if not selected_root:
+        raise RuntimeError(
+            "FTP BLOCKER: wp-load.php not found in any FTP_ROOT candidate; "
+            f"probe={probe_log}"
+        )
+    env = dict(env)
+    env["FTP_ROOT"] = selected_root
+    env["SSH_ROOT"] = selected_root
+    print(f"FTP wp root: {selected_root}")
+
+    upload_bytes(env, remote, data, root=selected_root)
+
+    try:
+        out = trigger_bootstrap_http(url, root)
+    finally:
+        try:
+            delete_remote_file(env, remote, root=selected_root)
         except Exception as cleanup_error:  # noqa: BLE001
             print(f"WARN cleanup: could not delete bootstrap {remote}: {cleanup_error}", file=sys.stderr)
     return out
@@ -1422,7 +1478,7 @@ def main() -> int:
         "slug": payload["slug"],
         "topic_id": payload["topic_id"],
         "permalink": safe_permalink,
-        "publish_method": "sftp",
+        "publish_method": "ftp" if (env.get("FTP_TRANSPORT") or "").strip().lower() == "ftp" else "sftp",
         "cover_evidence": redact_structure(payload.get("cover_evidence", {}), public),
         "raw_output": safe_raw,
         "media_check": {
