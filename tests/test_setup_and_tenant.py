@@ -25,6 +25,9 @@ class SetupTenantTests(unittest.TestCase):
         self.assertEqual(tenant.get("author_id"), "dobry-dom")
         self.assertEqual(tenant.get("topic_focus_profile"), "short_term_rental")
         self.assertEqual(tenant.get("cover_mode"), "logo_lockup")
+        hints = tenant.get("publish_transport_hints") or {}
+        self.assertEqual(hints.get("transport"), "ftp")
+        self.assertEqual(hints.get("ftp_root"), "sublease/public_html")
         self.assertTrue(tenant.get("cta_required"))
         links = tenant.get("cta_links") or []
         self.assertTrue(any("blog" in x for x in links))

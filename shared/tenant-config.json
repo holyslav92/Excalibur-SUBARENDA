@@ -50,6 +50,14 @@
     "derouter_image_quality": "high",
     "auto_interlink_after_publish": true
   },
+  "publish_transport_hints": {
+    "transport": "ftp",
+    "ftp_host": "vh368.timeweb.ru",
+    "ftp_port": 21,
+    "ftp_user": "ca21576_svyat",
+    "ftp_root": "sublease/public_html",
+    "note": "Timeweb extra FTP user: SFTP:22 Permission denied; use FTP passive port 21. Bootstrap uploads to FTP_ROOT where wp-load.php lives. FTP_PASS and EXCALIBUR_BLOG_ALLOW_PUBLISH only in Cloud Secrets."
+  },
   "cover_mode": "logo_lockup",
   "cover_identity_status": "not_applicable",
   "dzen_rf_pack": true,

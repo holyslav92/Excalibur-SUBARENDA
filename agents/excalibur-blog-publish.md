@@ -43,7 +43,7 @@ incident_report: none | memory/pipeline-fix-queue.md#INC-...
 - `article.html`, `article.meta.json`, `article-qa.md` (plain `verdict: PASS`, не `**verdict:**`)
 - `schema.jsonld`, `cover/cover.png`, `cover-registry.json`
 - Cloud Secrets / env vars или `memory/site.env.local`
-- Upload transport: **сразу SFTP/SSH**. `FTP_HOST`/`FTP_USER`/`FTP_PASS`/`FTP_ROOT=.` — **те же** SFTP-креды (имена FTP). Отдельный SSH-пароль не обязателен.
+- Upload transport: **FTP passive port 21** (Timeweb). `FTP_HOST`/`FTP_USER`/`FTP_PASS`/`FTP_ROOT`/`FTP_PORT`/`FTP_TRANSPORT=ftp`. SFTP:22 у этого user = Permission denied.
 - `article.meta.json.theme_blocks`: faq/quiz/side_stickers = `skip`; в body
   ровно один тематический FAQ.
 
