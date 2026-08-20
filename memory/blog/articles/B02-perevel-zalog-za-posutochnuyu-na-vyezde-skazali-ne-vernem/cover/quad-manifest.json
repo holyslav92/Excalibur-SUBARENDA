@@ -27,26 +27,27 @@
   "style_preset": "dobry_dom_light_meme_wordstat",
   "style_file": "memory/cover/quad-style-dobry-dom.json",
   "blog_hero": "memory/cover/blog-hero.json",
-  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
   "cover_hook": "Залог не вернули — скол на плите",
   "cover_hook_highlight": "скол",
   "cover_phone_cta": "+7 (993) 574-83-22",
   "wordstat_stickers": ["залог посуточно", "Тюмень"],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
   "cover_motifs": {
-    "composition": "guest with suitcase near countertop chip, phone message, empty top-left corner for logo paste",
-    "location": "Tyumen apartment warm August evening, green trees outside",
-    "meme": "tiny cat sticker far top-right ≤12%",
-    "prop_set": "suitcase, phone, keys, chip marker",
-    "sticker_set": ["залог посуточно", "Тюмень"],
-    "joke": "tiny cat reacts to countertop chip"
+    "composition": "poster collage chip on stove + phone bubble + bold headline, TOP-RIGHT empty logo pad",
+    "location": "Tyumen apartment kitchen August warm evening green trees window",
+    "meme": "tiny cat sticker bottom-left ≤12%, never top-right pad",
+    "prop_set": "stove chip marker, phone bubble, suitcase, keys, torn sticky, gold tape",
+    "sticker_set": ["залог посуточно", "Тюмень", "скол на плите"],
+    "joke": "cat reacts to countertop chip"
   },
-  "cover_emotion": "усталый недоумение гостя с чемоданом",
+  "cover_emotion": "шок гостя: скол на плите + сообщение о невозвращённом залоге",
   "slots": {
     "cover": {
       "quadrant": "top_left",
       "role": "cover_editorial_hero",
-      "alt": "Гость с чемоданом у кухонной столешницы с маленьким сколом читает на телефоне сообщение о невозвращённом залоге.",
-      "scene_hint": "Августовский вечер Тюмень: гость с чемоданом у столешницы со сколом, телефон «залог не вернули»; кот-стикер ≤12% справа; пустой угол под логотип.",
+      "alt": "Постер: гость у кухонной плиты со сколом читает на телефоне «залог не вернули» — август, Тюмень.",
+      "scene_hint": "Poster collage: chip on stove, phone bubble, bold Cyrillic headline, props, TOP-RIGHT empty pad; август Тюмень; NO logo in gen.",
       "meme_caption_ru": "",
       "sticky": "Залог вернут?"
     },
@@ -54,7 +55,7 @@
       "quadrant": "top_right",
       "h2_anchor": "Залог — это не оплата, это гарантия",
       "visual_type": "comparison_table",
-      "scene_hint": "Таблица «оплата / залог / депозит», белый фон, gold/black, пустой угол под логотип.",
+      "scene_hint": "Sketch+table 3-col compare оплата/залог/депозит, torn paper, gold ink, interactive chips.",
       "alt": "Залог за посуточную квартиру — гарантия сохранности, а не доплата за проживание",
       "labels": ["залог ≠ оплата", "депозит", "гарантия", "возврат"]
     },
@@ -62,23 +63,23 @@
       "quadrant": "bottom_left",
       "h2_anchor": "Пятнадцать минут на заселении, которые спасают залог",
       "visual_type": "process_flow",
-      "scene_hint": "5 шагов видео-обхода при заселении: обход, плита, чат, техника, дата; пустой угол под логотип.",
+      "scene_hint": "Hand-drawn sketch flow 5 steps: обход, видео плиты, отправить в чат; phone mockup arrows.",
       "alt": "Обход квартиры при заселении: видео плиты и столешницы с отправкой хозяину в чат",
       "labels": ["видео обход", "фото плиты", "отправить в чат", "дата заезда"]
     },
     "inline_3": {
       "quadrant": "bottom_right",
       "h2_anchor": "Как вообще считается ущерб",
-      "visual_type": "structure_diagram",
-      "scene_hint": "Схема «износ vs ущерб» для скола: ремонт, смета, фото «до»; пустой угол под логотип.",
+      "visual_type": "bar_timeline_chart",
+      "scene_hint": "Bar chart + timeline: repair vs replace cost for chip; sketch annotations, gold bars.",
       "alt": "Расчёт ущерба за скол на плите: ремонт вместо замены и учёт износа техники",
       "labels": ["расчёт ущерба", "скол на плите", "износ vs порча", "смета"]
     },
     "inline_4": {
       "quadrant": "top_left",
       "h2_anchor": "Если по-хорошему не вышло",
-      "visual_type": "process_flow",
-      "scene_hint": "4 шага спора: претензия, площадка, банк, срок; numbered cards; пустой угол под логотип.",
+      "visual_type": "structure_diagram",
+      "scene_hint": "Flowchart ladder dispute: претензия→площадка→банк; red/gold nodes, collage tape.",
       "alt": "Порядок действий, если не вернули залог: претензия, площадка бронирования, банк, суд",
       "labels": ["претензия", "площадка", "банк", "срок возврата"]
     },
@@ -86,7 +87,7 @@
       "quadrant": "top_right",
       "h2_anchor": "Как отличить нормальный залог от способа заработать",
       "visual_type": "labeled_checklist",
-      "scene_hint": "Чеклист честного залога: сумма, срок, основания, расчёт; 5 пунктов; пустой угол под логотип.",
+      "scene_hint": "Interactive checklist board toggle chips: сумма, срок, основания; sticky notes collage.",
       "alt": "Признаки честного залога при посуточной аренде и тревожные сигналы в переписке",
       "labels": ["сумма до брони", "срок возврата", "основания", "честный залог"]
     },
@@ -94,7 +95,7 @@
       "quadrant": "bottom_left",
       "h2_anchor": "Как мы работаем с залогом в «Добром доме»",
       "visual_type": "fact_card",
-      "scene_hint": "Карточка «Добрый дом»: прозрачный залог, возврат без придирок; пустой угол под логотип.",
+      "scene_hint": "Warm illustration card: cozy apartment detail + transparent deposit policy labels; sketch lines.",
       "alt": "Посуточные квартиры в Тюмени: прозрачные условия залога и возврат без придирок",
       "labels": ["Добрый дом", "Тюмень", "без придирок", "до брони"]
     },
@@ -102,7 +103,7 @@
       "quadrant": "bottom_right",
       "h2_anchor": "Частые вопросы",
       "visual_type": "schema_faq_ui",
-      "scene_hint": "4 вопроса про залог и уборку; карточки FAQ UI; кот-стикер ≤12%; пустой угол под логотип.",
+      "scene_hint": "FAQ UI cards 4 Q&A with expand chevrons; small cat sticker bottom-left only.",
       "alt": "Частые вопросы гостей про возврат залога после посуточной аренды квартиры",
       "labels": ["залог обязателен?", "уборка", "фото заезда", "проверка хозяина"]
     }

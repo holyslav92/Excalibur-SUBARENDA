@@ -3,32 +3,30 @@
   "mode": "paste_png_alpha",
   "logo_path": "memory/cover/assets/brand/dobry-dom-logo.png",
   "logo_sha256": "eaf97915a9830ffd31b5c08b128e8b60dc0b0b9a8ee85fc4083f32c49040ee3f",
+  "logo_corner_fixed": "top_right",
   "logo_width_fraction_target": 0.1,
   "logo_width_fraction_min": 0.08,
   "logo_width_fraction_max": 0.12,
+  "inline_logo_files": [
+    "inline-01.png",
+    "inline-03.png",
+    "inline-07.png"
+  ],
+  "inline_logo_count": 3,
   "cover_phone_display": "+7 (993) 574-83-22",
   "cover_logo_placement": {
-    "logo_corner": "top_left",
+    "logo_corner": "top_right",
     "logo_xy": [
-      20,
+      1060,
       20
     ],
     "logo_width_px": 120,
     "logo_width_fraction": 0.1,
-    "phone_anchor": "bottom_right"
+    "phone_anchor": "bottom_left",
+    "logo_pasted": true
   },
   "panel_logo_placements": {
     "inline-01.png": {
-      "logo_corner": "top_left",
-      "logo_xy": [
-        20,
-        20
-      ],
-      "logo_width_px": 120,
-      "logo_width_fraction": 0.1,
-      "phone_anchor": ""
-    },
-    "inline-02.png": {
       "logo_corner": "top_right",
       "logo_xy": [
         1060,
@@ -36,58 +34,37 @@
       ],
       "logo_width_px": 120,
       "logo_width_fraction": 0.1,
-      "phone_anchor": ""
+      "phone_anchor": "",
+      "logo_pasted": true
     },
     "inline-03.png": {
-      "logo_corner": "top_left",
+      "logo_corner": "top_right",
       "logo_xy": [
-        20,
+        1060,
         20
       ],
       "logo_width_px": 120,
       "logo_width_fraction": 0.1,
-      "phone_anchor": ""
-    },
-    "inline-04.png": {
-      "logo_corner": "bottom_left",
-      "logo_xy": [
-        20,
-        535
-      ],
-      "logo_width_px": 120,
-      "logo_width_fraction": 0.1,
-      "phone_anchor": ""
-    },
-    "inline-05.png": {
-      "logo_corner": "bottom_left",
-      "logo_xy": [
-        20,
-        535
-      ],
-      "logo_width_px": 120,
-      "logo_width_fraction": 0.1,
-      "phone_anchor": ""
-    },
-    "inline-06.png": {
-      "logo_corner": "top_left",
-      "logo_xy": [
-        20,
-        20
-      ],
-      "logo_width_px": 120,
-      "logo_width_fraction": 0.1,
-      "phone_anchor": ""
+      "phone_anchor": "",
+      "logo_pasted": true
     },
     "inline-07.png": {
-      "logo_corner": "top_left",
+      "logo_corner": "top_right",
       "logo_xy": [
-        20,
+        1060,
         20
       ],
       "logo_width_px": 120,
       "logo_width_fraction": 0.1,
-      "phone_anchor": ""
+      "phone_anchor": "",
+      "logo_pasted": true
     }
+  },
+  "panel_logo_skipped": {
+    "inline-02.png": "no_factory_logo_by_rule",
+    "inline-04.png": "no_factory_logo_by_rule",
+    "inline-05.png": "no_factory_logo_by_rule",
+    "inline-06.png": "no_factory_logo_by_rule"
   },
   "images": [
     "cover/cover.png",
@@ -99,9 +76,10 @@
     "cover/inline-06.png",
     "cover/inline-07.png"
   ],
-  "composed_at": "2026-08-20T12:35:03+00:00",
+  "composed_at": "2026-08-20T13:34:22+00:00",
   "forbid_ai_drawn_logo": true,
+  "forbid_multiple_logos_per_image": true,
   "cover_phone_post_composite": true,
-  "adaptive_logo_corner_all_panels": true,
+  "adaptive_logo_corner_all_panels": false,
   "inline_phone_required": false
 }

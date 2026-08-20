@@ -5,16 +5,16 @@
   "style_preset": "dobry_dom_light_meme_wordstat",
   "pipeline": "quad_canvas_2x_image_api_longform",
   "file": "cover/cover.png",
-  "alt": "Гость с чемоданом у кухонной столешницы с маленьким сколом читает на телефоне сообщение о невозвращённом залоге.",
+  "alt": "Постер: гость у кухонной плиты со сколом читает на телефоне «залог не вернули» — август, Тюмень.",
   "aspect_ratio": "16:9",
   "canvas_source": "cover/canvas-quad-01.png",
-  "generated_at": "2026-08-20T12:34:27+00:00",
+  "generated_at": "2026-08-20T13:33:44+00:00",
   "assets": [
     {
       "role": "cover",
       "slot": "cover",
       "file": "cover/cover.png",
-      "alt": "Гость с чемоданом у кухонной столешницы с маленьким сколом читает на телефоне сообщение о невозвращённом залоге.",
+      "alt": "Постер: гость у кухонной плиты со сколом читает на телефоне «залог не вернули» — август, Тюмень.",
       "h2_anchor": null,
       "visual_type": "cover_editorial_hero",
       "aspect_ratio": "16:9"
@@ -43,7 +43,7 @@
       "file": "cover/inline-03.png",
       "alt": "Расчёт ущерба за скол на плите: ремонт вместо замены и учёт износа техники",
       "h2_anchor": "Как вообще считается ущерб",
-      "visual_type": "structure_diagram",
+      "visual_type": "bar_timeline_chart",
       "aspect_ratio": "16:9"
     },
     {
@@ -52,7 +52,7 @@
       "file": "cover/inline-04.png",
       "alt": "Порядок действий, если не вернули залог: претензия, площадка бронирования, банк, суд",
       "h2_anchor": "Если по-хорошему не вышло",
-      "visual_type": "process_flow",
+      "visual_type": "structure_diagram",
       "aspect_ratio": "16:9"
     },
     {
