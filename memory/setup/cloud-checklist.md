@@ -16,7 +16,7 @@
 | Yandex Metrika tokens | optional | Content-learner |
 | deploy llms после publish | yes | `publish_options.deploy_llms_after_publish=true` |
 | First-run automation = Setup prompt | done | `memory/setup/status.json` complete |
-| Daily automation = CLOUD-AUTOMATION.md | pending | 4× будни YEKT 09/12/15/17 |
+| Daily automation = CLOUD-AUTOMATION.md | pending | 3× будни YEKT 10/13/17 — `.cursor/automations/dobry-dom-3x.yml` |
 
 ## Разница First-run vs Daily
 

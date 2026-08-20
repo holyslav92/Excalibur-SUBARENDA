@@ -32,5 +32,5 @@ git push -u origin main
 
 1. Cursor Cloud Environment → репозиторий **Excalibur-SUBARENDA**
 2. Secrets: `PUBLIC_SITE_URL`, WP/SFTP для добрыйдом-72.рф
-3. 4× Automation YEKT — см. `CLOUD-AUTOMATION.md`
+3. 3× Automation YEKT (10/13/17) — см. `CLOUD-AUTOMATION.md` и `.cursor/automations/dobry-dom-3x.yml`
 4. Заменить `memory/cover/assets/identity-real/` (NEED_REPLACE)

@@ -1,0 +1,113 @@
+# Cursor Cloud Automation — Добрый дом (3 статьи / будни)
+# Repository: holyslav92/Excalibur-SUBARENDA ONLY (never Excalibur-2-Cloud / tymenrieltor.ru)
+# Import: Cursor → Automations → create from repo file or /automate skill
+# Docs: https://cursor.com/docs/cloud-agent/automations
+
+name: Добрый дом 3 статьи
+enabled: true
+
+repository:
+  github: holyslav92/Excalibur-SUBARENDA
+  branch: main
+
+environment:
+  timezone: Asia/Yekaterinburg
+  # Link Cloud Environment «Excalibur-SUBARENDA» from dashboard (install from .cursor/environment.json)
+
+trigger:
+  - type: scheduled
+    weekdays_only: true
+    # Preferred (YEKT explicit):
+    cron: "0 10,13,17 * * 1-5"
+    cron_tz: Asia/Yekaterinburg
+    # Equivalent shell form:
+    # CRON_TZ=Asia/Yekaterinburg 0 10,13,17 * * 1-5
+    # If Cursor UI stores cron in UTC only (YEKT = UTC+5):
+    cron_utc_fallback: "0 5,8,12 * * 1-5"
+
+schedule_slots_yekt:
+  - "10:00"
+  - "13:00"
+  - "17:00"
+
+tools:
+  memories: false
+  open_pull_request: true
+  computer_use: false
+  mcp:
+    enabled: true
+    servers:
+      - mcp-kv
+    allow_tools:
+      - wordstat_get_user_info
+      - wordstat_get_top_requests
+      - wordstat_get_dynamics
+      - wordstat_get_regions
+      - wordstat_get_regions_tree
+    forbid_tools:
+      - wordpress_*
+    forbid_hosts:
+      - tymenrieltor.ru
+
+tenant:
+  brand: Добрый дом
+  site: добрыйдом-72.рф
+  public_site_url: https://xn---72-9cdob8azaodt6k.xn--p1ai
+  publish_transport: ftp
+  ftp_host: vh368.timeweb.ru
+  ftp_port: 21
+  ftp_user: ca21576_svyat
+  ftp_root: sublease/public_html
+  # FTP_PASS — ONLY Cloud Secrets (never commit)
+
+cover:
+  mode: logo_lockup
+  logo: memory/cover/assets/brand/logo-dobry-dom.png
+  images_per_article: 8
+  rule: logo lockup on cover + all 7 inlines; NO host face / NO Shakin identity
+
+brain_and_images:
+  prose: scripts/excalibur_blog_derouter_opus_chat.py
+  images: scripts/excalibur_blog_derouter_gpt_image2_api.py
+  forbid:
+    - flux2-pro-*
+    - seedream
+    - nano_banana*
+    - z-image
+    - mcp-derouter/start-mcp.sh
+
+publish_gate:
+  allow_flag_env: EXCALIBUR_BLOG_ALLOW_PUBLISH
+  allow_flag_git_default: "no"
+  requires_cloud_secrets:
+    - PUBLIC_SITE_URL
+    - FTP_HOST
+    - FTP_USER
+    - FTP_PASS
+    - FTP_PORT
+    - FTP_TRANSPORT
+    - FTP_ROOT
+
+instructions: |
+  Read AGENTS.md, CLOUD-AUTOMATION.md, CLOUD-FIRST-RUN.md, shared/pipeline-canon.json,
+  shared/tenant-config.json, and .cursor/automations/dobry-dom-3x.yml.
+
+  Repository: holyslav92/Excalibur-SUBARENDA only. Tenant: Добрый дом / добрыйдом-72.рф.
+  NEVER use Excalibur-2-Cloud, tymenrieltor.ru, or MCP-KV wordpress_* tools.
+
+  If memory/setup/status.json complete != true → stop with BLOCKER.
+
+  Run ONE full longform article per automation trigger:
+  Scout? → research_start → Research → Title → Writer → Sol
+  → Description → Cover-text || Schema → Cover → Cover-QA → Indexer → Publish? → Fixer → Content-learner
+
+  Scout: dual gate Klyshin × MCP-KV wordstat_* only (Tyumen 55+11176).
+  Writer = meaning (drafts/writer.html). Sol = tenant voice (shared/SOUL.md).
+  Cover: logo lockup on ALL 8 images (cover + 7 utility inlines); warm hospitality; no Shakin face.
+  Images: Derouter REST scripts only (2K quad canvas). No Flux/Seedream/nano_banana.
+
+  Publish target ONLY добрыйдом-72.рф via FTP passive (vh368.timeweb.ru, port 21,
+  root sublease/public_html). Publish ONLY when Cloud Secrets have FTP_* + EXCALIBUR_BLOG_ALLOW_PUBLISH=yes.
+  Never write secrets to files or output.
+
+  If publish blocked → finish after Indexer with artifacts in repo. Report exact PASS/BLOCKER per step.

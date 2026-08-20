@@ -28,6 +28,10 @@ class SetupTenantTests(unittest.TestCase):
         hints = tenant.get("publish_transport_hints") or {}
         self.assertEqual(hints.get("transport"), "ftp")
         self.assertEqual(hints.get("ftp_root"), "sublease/public_html")
+        schedule = tenant.get("publish_schedule") or {}
+        self.assertEqual(schedule.get("slots_local"), ["10:00", "13:00", "17:00"])
+        self.assertEqual(schedule.get("runs_per_day"), 3)
+        self.assertEqual(schedule.get("timezone"), "Asia/Yekaterinburg")
         self.assertTrue(tenant.get("cta_required"))
         links = tenant.get("cta_links") or []
         self.assertTrue(any("blog" in x for x in links))
@@ -51,6 +55,17 @@ class SetupTenantTests(unittest.TestCase):
             ".cursor/agents/excalibur-blog-setup.md",
         ):
             self.assertTrue((ROOT / rel).is_file(), rel)
+
+    def test_automation_config_present(self) -> None:
+        automation = ROOT / ".cursor/automations/dobry-dom-3x.yml"
+        self.assertTrue(automation.is_file(), str(automation))
+        text = automation.read_text(encoding="utf-8")
+        self.assertIn("Добрый дом 3 статьи", text)
+        self.assertIn("holyslav92/Excalibur-SUBARENDA", text)
+        self.assertIn("0 10,13,17 * * 1-5", text)
+        self.assertIn("memories: false", text)
+        self.assertIn("wordpress_*", text)
+        self.assertNotIn("FTP_PASS:", text.replace("# FTP_PASS", ""))  # no committed password value
 
     def test_tenant_files_filled_no_setup_required(self) -> None:
         for rel in (
