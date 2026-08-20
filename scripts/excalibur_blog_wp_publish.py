@@ -94,6 +94,7 @@ PUBLISH_ENV_KEYS = {
     "FTP_PASSWORD",
     "FTP_ROOT",
     "FTP_PATH",
+    "FTP_TRANSPORT",
     "SSH_HOST",
     "SSH_PORT",
     "SSH_USER",

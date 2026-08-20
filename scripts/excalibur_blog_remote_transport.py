@@ -3,9 +3,10 @@
 
 from __future__ import annotations
 
-import ipaddress
+import io
 import os
 import socket
+import time
 from ftplib import FTP, error_perm
 from typing import Any
 
@@ -151,6 +152,31 @@ def _ftp_cwd_root(ftp: FTP, root: str, login_cwd: str) -> None:
             ftp.cwd(part)
 
 
+def _ftp_stor_with_retry(
+    ftp: FTP,
+    remote_name: str,
+    data: bytes,
+    *,
+    attempts: int = 3,
+    retry_pause_s: float = 2.0,
+) -> None:
+    """Upload via passive STOR with short retries (Timeweb PASV ports can be flaky)."""
+    last_exc: Exception | None = None
+    for attempt in range(1, attempts + 1):
+        try:
+            ftp.voidcmd("TYPE I")
+            bio = io.BytesIO(data)
+            ftp.storbinary(f"STOR {remote_name}", bio)
+            return
+        except (TimeoutError, OSError, error_perm) as exc:
+            last_exc = exc
+            if attempt >= attempts:
+                break
+            time.sleep(retry_pause_s)
+    assert last_exc is not None
+    raise last_exc
+
+
 def upload_bytes(
     env: dict[str, str],
     remote_name: str,
@@ -165,9 +191,7 @@ def upload_bytes(
         login_cwd = ftp.pwd()
         _ftp_cwd_root(ftp, root, login_cwd)
         remote_path = remote_name
-        with ftp.transfercmd(f"STOR {remote_name}") as conn:
-            conn.sendall(data)
-        ftp.voidresp()
+        _ftp_stor_with_retry(ftp, remote_name, data)
         print(f"FTP upload OK: {root}/{remote_name} ({len(data)} bytes)")
         return remote_path
     finally:
