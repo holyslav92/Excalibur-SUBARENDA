@@ -8,35 +8,40 @@
       "split": {
         "source_canvas": "memory/blog/articles/B01-beskontaktnoe-zaselenie-posutochno-tyumen/cover/canvas-quad-01.png",
         "source_size_px": [
-          2048,
-          1152
+          2688,
+          1520
         ],
         "panel_size_px": [
-          1021,
-          573
+          1344,
+          760
         ],
         "split_meta": {
-          "split_mode": "gutter_detect",
-          "h_gutter_px": {
-            "start": 573,
-            "end": 579
-          },
-          "v_gutter_px": {
-            "start": 1021,
-            "end": 1026
-          },
+          "split_mode": "mechanical_center",
+          "h_gutter_px": null,
+          "v_gutter_px": null,
           "requested_mode": "auto",
-          "gutter_quality": {
-            "h_center_offset_px": 0.0,
-            "v_center_offset_px": 0.5,
-            "max_aspect_crop_loss": 0.0,
-            "per_panel_crop_loss": {
-              "top_left": 0.0,
-              "top_right": 0.0,
-              "bottom_left": 0.0,
-              "bottom_right": 0.0
+          "fallback_reason": "aspect_crop_loss_too_high",
+          "rejected_gutter": {
+            "h_gutter_px": {
+              "start": 754,
+              "end": 787
             },
-            "reject_reason": null
+            "v_gutter_px": {
+              "start": 1335,
+              "end": 1376
+            },
+            "gutter_quality": {
+              "h_center_offset_px": 10.5,
+              "v_center_offset_px": 11.5,
+              "max_aspect_crop_loss": 0.024,
+              "per_panel_crop_loss": {
+                "top_left": 0.0,
+                "top_right": 0.0212,
+                "bottom_left": 0.024,
+                "bottom_right": 0.0069
+              },
+              "reject_reason": "aspect_crop_loss_too_high"
+            }
           }
         },
         "output_size_px": [
@@ -50,14 +55,14 @@
             "box_px": {
               "left": 0,
               "top": 0,
-              "right": 1021,
-              "bottom": 573
+              "right": 1344,
+              "bottom": 760
             },
             "raw_box_px": {
               "left": 0,
               "top": 0,
-              "right": 1021,
-              "bottom": 573
+              "right": 1344,
+              "bottom": 760
             },
             "size_px": [
               1200,
@@ -71,16 +76,16 @@
             "file": "cover/inline-01.png",
             "quadrant": "top_right",
             "box_px": {
-              "left": 1026,
+              "left": 1344,
               "top": 0,
-              "right": 2048,
-              "bottom": 573
+              "right": 2688,
+              "bottom": 760
             },
             "raw_box_px": {
-              "left": 1026,
+              "left": 1344,
               "top": 0,
-              "right": 2048,
-              "bottom": 573
+              "right": 2688,
+              "bottom": 760
             },
             "size_px": [
               1200,
@@ -95,15 +100,15 @@
             "quadrant": "bottom_left",
             "box_px": {
               "left": 0,
-              "top": 579,
-              "right": 1021,
-              "bottom": 1152
+              "top": 760,
+              "right": 1344,
+              "bottom": 1520
             },
             "raw_box_px": {
               "left": 0,
-              "top": 579,
-              "right": 1021,
-              "bottom": 1152
+              "top": 760,
+              "right": 1344,
+              "bottom": 1520
             },
             "size_px": [
               1200,
@@ -117,16 +122,16 @@
             "file": "cover/inline-03.png",
             "quadrant": "bottom_right",
             "box_px": {
-              "left": 1026,
-              "top": 579,
-              "right": 2048,
-              "bottom": 1152
+              "left": 1344,
+              "top": 760,
+              "right": 2688,
+              "bottom": 1520
             },
             "raw_box_px": {
-              "left": 1026,
-              "top": 579,
-              "right": 2048,
-              "bottom": 1152
+              "left": 1344,
+              "top": 760,
+              "right": 2688,
+              "bottom": 1520
             },
             "size_px": [
               1200,
@@ -145,35 +150,40 @@
       "split": {
         "source_canvas": "memory/blog/articles/B01-beskontaktnoe-zaselenie-posutochno-tyumen/cover/canvas-quad-02.png",
         "source_size_px": [
-          2048,
-          1152
+          2688,
+          1520
         ],
         "panel_size_px": [
-          1018,
-          571
+          1344,
+          760
         ],
         "split_meta": {
-          "split_mode": "gutter_detect",
-          "h_gutter_px": {
-            "start": 571,
-            "end": 583
-          },
-          "v_gutter_px": {
-            "start": 1018,
-            "end": 1029
-          },
+          "split_mode": "mechanical_center",
+          "h_gutter_px": null,
+          "v_gutter_px": null,
           "requested_mode": "auto",
-          "gutter_quality": {
-            "h_center_offset_px": 1.0,
-            "v_center_offset_px": 0.5,
-            "max_aspect_crop_loss": 0.0069,
-            "per_panel_crop_loss": {
-              "top_left": 0.0,
-              "top_right": 0.0,
-              "bottom_left": 0.0059,
-              "bottom_right": 0.0069
+          "fallback_reason": "gutter_too_far_from_center",
+          "rejected_gutter": {
+            "h_gutter_px": {
+              "start": 746,
+              "end": 794
             },
-            "reject_reason": null
+            "v_gutter_px": {
+              "start": 1265,
+              "end": 1324
+            },
+            "gutter_quality": {
+              "h_center_offset_px": 10.0,
+              "v_center_offset_px": 49.5,
+              "max_aspect_crop_loss": 0.0535,
+              "per_panel_crop_loss": {
+                "top_left": 0.0456,
+                "top_right": 0.0279,
+                "bottom_left": 0.0193,
+                "bottom_right": 0.0535
+              },
+              "reject_reason": "gutter_too_far_from_center"
+            }
           }
         },
         "output_size_px": [
@@ -187,14 +197,14 @@
             "box_px": {
               "left": 0,
               "top": 0,
-              "right": 1018,
-              "bottom": 571
+              "right": 1344,
+              "bottom": 760
             },
             "raw_box_px": {
               "left": 0,
               "top": 0,
-              "right": 1018,
-              "bottom": 571
+              "right": 1344,
+              "bottom": 760
             },
             "size_px": [
               1200,
@@ -208,16 +218,16 @@
             "file": "cover/inline-05.png",
             "quadrant": "top_right",
             "box_px": {
-              "left": 1029,
+              "left": 1344,
               "top": 0,
-              "right": 2048,
-              "bottom": 571
+              "right": 2688,
+              "bottom": 760
             },
             "raw_box_px": {
-              "left": 1029,
+              "left": 1344,
               "top": 0,
-              "right": 2048,
-              "bottom": 571
+              "right": 2688,
+              "bottom": 760
             },
             "size_px": [
               1200,
@@ -231,16 +241,16 @@
             "file": "cover/inline-06.png",
             "quadrant": "bottom_left",
             "box_px": {
-              "left": 3,
-              "top": 583,
-              "right": 1015,
-              "bottom": 1152
+              "left": 0,
+              "top": 760,
+              "right": 1344,
+              "bottom": 1520
             },
             "raw_box_px": {
               "left": 0,
-              "top": 583,
-              "right": 1018,
-              "bottom": 1152
+              "top": 760,
+              "right": 1344,
+              "bottom": 1520
             },
             "size_px": [
               1200,
@@ -254,16 +264,16 @@
             "file": "cover/inline-07.png",
             "quadrant": "bottom_right",
             "box_px": {
-              "left": 1032,
-              "top": 583,
-              "right": 2044,
-              "bottom": 1152
+              "left": 1344,
+              "top": 760,
+              "right": 2688,
+              "bottom": 1520
             },
             "raw_box_px": {
-              "left": 1029,
-              "top": 583,
-              "right": 2048,
-              "bottom": 1152
+              "left": 1344,
+              "top": 760,
+              "right": 2688,
+              "bottom": 1520
             },
             "size_px": [
               1200,
@@ -282,9 +292,9 @@
     "skip inline_1: already correct under H2 — Быстрый инсайт",
     "skip inline_2: already correct under H2 — Что обычно идёт не так в 23:00",
     "skip inline_3: already correct under H2 — Семь вопросов до перевода денег",
-    "injected inline_4 after H2 — Подъезд и квартира — два разных доступа",
-    "injected inline_5 after H2 — На словах и в инструкции",
-    "injected inline_6 after H2 — Когда приходит код",
-    "injected inline_7 after H2 — Кто отвечает ночью"
+    "skip inline_4: already correct under H2 — Подъезд и квартира — два разных доступа",
+    "skip inline_5: already correct under H2 — На словах и в инструкции",
+    "skip inline_6: already correct under H2 — Когда приходит код",
+    "skip inline_7: already correct under H2 — Кто отвечает ночью"
   ]
 }

@@ -668,8 +668,8 @@ def main() -> int:
         batch = {
             "pipeline": manifest.get("pipeline") or "quad_canvas_2x_image_api_longform",
             "canvas_index": spec["index"],
-            "identity_reference_local": identity_rel if has_cover else "",
-            "identity_reference_id": identity_spec["id"] if has_cover else "",
+            "identity_reference_local": identity_rel if has_cover and not brand_logo_paste else "",
+            "identity_reference_id": identity_spec.get("id", "") if has_cover and not brand_logo_paste else "",
             "reference_url_hosted": batch_ref_url,
             "output_canvas": spec["canvas_file"],
             "result_path": spec["result_file"],

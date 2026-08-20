@@ -2,13 +2,13 @@
   "topic_id": "B01",
   "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
   "cover_family": "brand_collage",
-  "style_preset": "the_rieltor_twilight_gold",
+  "style_preset": "dobry_dom_light_meme_wordstat",
   "pipeline": "quad_canvas_2x_image_api_longform",
   "file": "cover/cover.png",
   "alt": "Гость с чемоданом у зимнего подъезда проверяет на телефоне два разных кода для домофона и квартиры.",
   "aspect_ratio": "16:9",
   "canvas_source": "cover/canvas-quad-01.png",
-  "generated_at": "2026-08-20T10:06:07+00:00",
+  "generated_at": "2026-08-20T11:19:10+00:00",
   "assets": [
     {
       "role": "cover",
@@ -25,7 +25,7 @@
       "file": "cover/inline-01.png",
       "alt": "Сравнительная схема показывает, почему одного кода недостаточно: домофон закрыт на улице, а ключница находится у двери квартиры.",
       "h2_anchor": "Быстрый инсайт",
-      "visual_type": "comparison_table_ui",
+      "visual_type": "comparison_table",
       "aspect_ratio": "16:9"
     },
     {
@@ -34,7 +34,7 @@
       "file": "cover/inline-02.png",
       "alt": "Схема из семи вопросов, которые нужно задать владельцу квартиры до перевода денег.",
       "h2_anchor": "Что обычно идёт не так в 23:00",
-      "visual_type": "workflow_diagram",
+      "visual_type": "process_flow",
       "aspect_ratio": "16:9"
     },
     {
@@ -43,7 +43,7 @@
       "file": "cover/inline-03.png",
       "alt": "Чеклист адреса, подъезда, этажа и двух кодов, который нужно сохранить в телефоне до поездки.",
       "h2_anchor": "Семь вопросов до перевода денег",
-      "visual_type": "checklist_board",
+      "visual_type": "labeled_checklist",
       "aspect_ratio": "16:9"
     },
     {
@@ -52,7 +52,7 @@
       "file": "cover/inline-04.png",
       "alt": "Схема доставки кодов в мессенджер и СМС с напоминанием проверить связь в дороге.",
       "h2_anchor": "Подъезд и квартира — два разных доступа",
-      "visual_type": "schema_faq_ui",
+      "visual_type": "structure_diagram",
       "aspect_ratio": "16:9"
     },
     {
@@ -61,7 +61,7 @@
       "file": "cover/inline-05.png",
       "alt": "Экран инструкции показывает ночного дежурного, план Б, дубликат ключа и обещанное время живого ответа.",
       "h2_anchor": "На словах и в инструкции",
-      "visual_type": "tool_screenshot",
+      "visual_type": "fact_card",
       "aspect_ratio": "16:9"
     },
     {
@@ -70,7 +70,7 @@
       "file": "cover/inline-06.png",
       "alt": "Инфографика перечисляет, что проверить до оплаты: залог, способ оплаты, срок возврата и фото при заезде.",
       "h2_anchor": "Когда приходит код",
-      "visual_type": "infographic_card",
+      "visual_type": "fact_card",
       "aspect_ratio": "16:9"
     },
     {
@@ -79,7 +79,7 @@
       "file": "cover/inline-07.png",
       "alt": "Таблица правил проживания помогает заранее уточнить тишину, гостей, курение и контакт для ночных вопросов.",
       "h2_anchor": "Кто отвечает ночью",
-      "visual_type": "comparison_table_ui",
+      "visual_type": "comparison_table",
       "aspect_ratio": "16:9"
     }
   ]
