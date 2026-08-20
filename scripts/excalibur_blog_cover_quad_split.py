@@ -383,7 +383,7 @@ def split_canvas(
                     composite_logo_onto_image(
                         out_path,
                         _logo,
-                        max_width_fraction=float(_cfg.get("max_width_fraction") or 0.18),
+                        max_width_fraction=float(_cfg.get("max_width_fraction") or 0.10),
                         margin_px=int(_cfg.get("margin_px") or 20),
                         phone_display=str(_cfg.get("phone_display") or ""),
                         add_phone=(slot_key == "cover"),

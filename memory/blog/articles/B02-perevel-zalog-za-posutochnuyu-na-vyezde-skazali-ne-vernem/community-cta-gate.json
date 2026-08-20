@@ -1,0 +1,24 @@
+{
+  "status": "FAIL",
+  "article_dir": "memory/blog/articles/B02-perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+  "cta_required": true,
+  "required": [
+    "https://t.me/Dobriy_dom_72",
+    "https://max.ru/id660300569233_biz",
+    "https://добрыйдом-72.рф/booking/",
+    "https://добрыйдом-72.рф/",
+    "tel:+79935748322"
+  ],
+  "present": {
+    "https://t.me/Dobriy_dom_72": true,
+    "https://max.ru/id660300569233_biz": true,
+    "https://добрыйдом-72.рф/booking/": false,
+    "https://добрыйдом-72.рф/": false,
+    "tel:+79935748322": true,
+    "cta_channels.max": true
+  },
+  "errors": [
+    "missing required CTA href https://добрыйдом-72.рф/booking/",
+    "missing required CTA href https://добрыйдом-72.рф/"
+  ]
+}

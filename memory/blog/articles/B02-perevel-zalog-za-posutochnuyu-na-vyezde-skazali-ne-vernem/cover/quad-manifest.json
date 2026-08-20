@@ -1,0 +1,111 @@
+{
+  "topic_id": "B02",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "cover_hook": "Залог не вернули — скол на плите",
+  "cover_hook_highlight": "скол",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "wordstat_stickers": ["залог посуточно", "Тюмень"],
+  "cover_motifs": {
+    "composition": "guest with suitcase near countertop chip, phone message, empty top-left corner for logo paste",
+    "location": "Tyumen apartment warm August evening, green trees outside",
+    "meme": "tiny cat sticker far top-right ≤12%",
+    "prop_set": "suitcase, phone, keys, chip marker",
+    "sticker_set": ["залог посуточно", "Тюмень"],
+    "joke": "tiny cat reacts to countertop chip"
+  },
+  "cover_emotion": "усталый недоумение гостя с чемоданом",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Гость с чемоданом у кухонной столешницы с маленьким сколом читает на телефоне сообщение о невозвращённом залоге.",
+      "scene_hint": "Августовский вечер Тюмень: гость с чемоданом у столешницы со сколом, телефон «залог не вернули»; кот-стикер ≤12% справа; пустой угол под логотип.",
+      "meme_caption_ru": "",
+      "sticky": "Залог вернут?"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Залог — это не оплата, это гарантия",
+      "visual_type": "comparison_table",
+      "scene_hint": "Таблица «оплата / залог / депозит», белый фон, gold/black, пустой угол под логотип.",
+      "alt": "Залог за посуточную квартиру — гарантия сохранности, а не доплата за проживание",
+      "labels": ["залог ≠ оплата", "депозит", "гарантия", "возврат"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Пятнадцать минут на заселении, которые спасают залог",
+      "visual_type": "process_flow",
+      "scene_hint": "5 шагов видео-обхода при заселении: обход, плита, чат, техника, дата; пустой угол под логотип.",
+      "alt": "Обход квартиры при заселении: видео плиты и столешницы с отправкой хозяину в чат",
+      "labels": ["видео обход", "фото плиты", "отправить в чат", "дата заезда"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Как вообще считается ущерб",
+      "visual_type": "structure_diagram",
+      "scene_hint": "Схема «износ vs ущерб» для скола: ремонт, смета, фото «до»; пустой угол под логотип.",
+      "alt": "Расчёт ущерба за скол на плите: ремонт вместо замены и учёт износа техники",
+      "labels": ["расчёт ущерба", "скол на плите", "износ vs порча", "смета"]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Если по-хорошему не вышло",
+      "visual_type": "process_flow",
+      "scene_hint": "4 шага спора: претензия, площадка, банк, срок; numbered cards; пустой угол под логотип.",
+      "alt": "Порядок действий, если не вернули залог: претензия, площадка бронирования, банк, суд",
+      "labels": ["претензия", "площадка", "банк", "срок возврата"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Как отличить нормальный залог от способа заработать",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Чеклист честного залога: сумма, срок, основания, расчёт; 5 пунктов; пустой угол под логотип.",
+      "alt": "Признаки честного залога при посуточной аренде и тревожные сигналы в переписке",
+      "labels": ["сумма до брони", "срок возврата", "основания", "честный залог"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Как мы работаем с залогом в «Добром доме»",
+      "visual_type": "fact_card",
+      "scene_hint": "Карточка «Добрый дом»: прозрачный залог, возврат без придирок; пустой угол под логотип.",
+      "alt": "Посуточные квартиры в Тюмени: прозрачные условия залога и возврат без придирок",
+      "labels": ["Добрый дом", "Тюмень", "без придирок", "до брони"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Частые вопросы",
+      "visual_type": "schema_faq_ui",
+      "scene_hint": "4 вопроса про залог и уборку; карточки FAQ UI; кот-стикер ≤12%; пустой угол под логотип.",
+      "alt": "Частые вопросы гостей про возврат залога после посуточной аренды квартиры",
+      "labels": ["залог обязателен?", "уборка", "фото заезда", "проверка хозяина"]
+    }
+  },
+  "cover_keys_ru": ["залог посуточно", "Тюмень"]
+}

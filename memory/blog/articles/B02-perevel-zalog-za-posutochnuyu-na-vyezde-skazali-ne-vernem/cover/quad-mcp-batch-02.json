@@ -1,0 +1,39 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 2,
+  "identity_reference_local": "",
+  "identity_reference_id": "",
+  "reference_url_hosted": "",
+  "output_canvas": "cover/canvas-quad-02.png",
+  "result_path": "cover/quad-mcp-result-02.json",
+  "slots": [
+    "inline_4",
+    "inline_5",
+    "inline_6",
+    "inline_7"
+  ],
+  "preferred_image_flow": {
+    "provider": "derouter-rest",
+    "script": "scripts/excalibur_blog_derouter_gpt_image2_api.py",
+    "resolution": "2K",
+    "note": "PRIMARY: Derouter REST image API (api-direct, 2K 16:9). Fallback: excalibur_blog_kie_gpt_image2_api.py when DEROUTER auth/5xx. FORBIDDEN: flux2-pro-*, Seedream, nano_banana*, z-image, mcp-derouter/start-mcp.sh.",
+    "apply_script": "python3 scripts/excalibur_blog_quad_apply.py --article-dir <article_dir> --canvas-index 2 --inject-html"
+  },
+  "jobs": [
+    {
+      "slot": "canvas_quad",
+      "tool": "derouter-rest",
+      "mcp_args": {
+        "prompt": "High-key bright RU editorial collage, airy #FFFFFF, sun flare, warm hospitality mood (apartment stay, not realtor deal). Comfort+ lived-in cozy interiors for ordinary guests (командировки, семьи, пары) — NOT business-class, NOT hotel-luxe, NO marble palaces. NO host face / NO Shakin / NO identity-real. NO brand logo in generation — factory pastes canonical PNG after split. NO…\nCanvas 2048x1152 exact 2x2; four 16:9 panels (1024x576); thin white gutters; no bleed.\nBan: dark/low-key; inventory props; celebrity memes; EXCALIBUR stamp; chubby host; stock/generated man co-host on inline; large meme person on inline; icon slogans; empty cells; desk scene; cover copy; celebrity memes; stock model man; handsome realtor co-host; generated stranger presenter; large human on inline; meme person >15% frame; invented meme face.\nTEXT LANGUAGE LOCK: all visible text is RUSSIAN Cyrillic only; exact LABELS per panel only.\nInlines: NO host face; NO stock/generated man; NO large human co-host/presenter; NO brand logo in generation (factory pastes PNG); people-memes only as tiny stickers (≤15% frame, corner) from real templates in memory/cover/meme-top100.json; infographic is hero.\nTop-left inline: нумерованный процесс / таймлайн; «Если по-хорошему не вышло»; 4 шага спора: претензия, площадка, банк, срок; numbered cards; пустой угол под логотип.. TXT:претензия | площадка | банк | срок возврата. Leave one corner empty clean margin (no stickers/text/people) for factory logo paste 8–12% width; NO drawn logo/house/heart in generation.\nTop-right inline: чеклист ошибок vs правильный путь; «Как отличить нормальный залог от способа заработать»; Чеклист честного залога: сумма, срок, основания, расчёт; 5 пунктов; пустой угол под логотип.. TXT:сумма до брони | срок возврата | основания | честный залог. Leave one corner empty clean margin (no stickers/text/people) for factory logo paste 8–12% width; NO drawn logo/house/heart in generation.\nBottom-left inline: карточка фактов; «Как мы работаем с залогом в «Добром доме»»; Карточка «Добрый дом»: прозрачный залог, возврат без придирок; пустой угол под логотип.. TXT:Добрый дом | Тюмень | без придирок | до брони. Leave one corner empty clean margin (no stickers/text/people) for factory logo paste 8–12% width; NO drawn logo/house/heart in generation.\nBottom-right inline: схема (legacy → structure_diagram); «Частые вопросы»; 4 вопроса про залог и уборку; карточки FAQ UI; кот-стикер ≤12%; пустой угол под логотип.. TXT:залог обязателен? | уборка | фото заезда | проверка хозяина. Leave one corner empty clean margin (no stickers/text/people) for factory logo paste 8–12% width; NO drawn logo/house/heart in generation.\nInline all: #FFF collage, gold/black Cyrillic labels, tape/pins/strings/paper scraps; high-key #FFF/gold; not noir; dense facts/numbers; exact TXT per panel; meme only if +meme AND sticker-scale; no human hero on inline; no icon soup; zero typos.",
+        "aspect_ratio": "16:9",
+        "resolution": "2K"
+      }
+    }
+  ],
+  "validation": {
+    "prompt_chars": 2917,
+    "max_prompt_chars": 3500,
+    "required_reference_host": "",
+    "resolution": "2K"
+  }
+}

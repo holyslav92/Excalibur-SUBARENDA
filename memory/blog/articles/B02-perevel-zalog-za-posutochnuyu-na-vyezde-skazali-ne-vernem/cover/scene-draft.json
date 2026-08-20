@@ -1,0 +1,37 @@
+{
+  "cover_emotion": "усталый недоумение: гость с чемоданом смотрит на сообщение на телефоне «залог не вернули»",
+  "scene_hint": "Светлая тюменская квартира, конец августа, золотой вечерний свет: гость с чемоданом у кухонной столешницы с маленьким сколом; NO host face; NO brand logo in generation; empty top-left corner for factory logo paste 8-12%; meme cat sticker far top-right ≤12%; NO snow NO ice NO winter",
+  "cover_motifs": {
+    "composition": "guest with suitcase near countertop chip, phone message bubble «залог не вернули», empty clean top-left corner for logo",
+    "location": "Tyumen apartment warm August evening, green trees outside window, dry warm light",
+    "meme": "tiny Grumpy Cat sticker far corner ≤12%, not overlapping logo margin",
+    "prop_set": "suitcase, phone, small countertop chip marker, keys",
+    "sticker_set": ["залог посуточно", "Тюмень", "скол на плите"],
+    "joke": "tiny cat sticker reacts to chip on counter"
+  },
+  "wordstat_stickers": ["залог посуточно", "Тюмень"],
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "slots": {
+    "inline_1": {
+      "scene_hint": "Comparison table залог vs оплата vs депозит on white high-key board, gold/black Cyrillic, empty corner for logo paste, no people"
+    },
+    "inline_2": {
+      "scene_hint": "Process flow 5 steps video walkthrough at check-in: обход, плита, отправить в чат; collage tape, empty corner margin"
+    },
+    "inline_3": {
+      "scene_hint": "Structure diagram repair cost vs full replacement for countertop chip; labels in Russian, white background"
+    },
+    "inline_4": {
+      "scene_hint": "Process flow dispute steps: претензия, площадка, банк; numbered cards, gold arrows"
+    },
+    "inline_5": {
+      "scene_hint": "Labeled checklist honest deposit rules before booking; 5 checkboxes, fact labels"
+    },
+    "inline_6": {
+      "scene_hint": "Fact card Dobry Dom Tyumen transparent deposit policy; humble tone labels, no host face"
+    },
+    "inline_7": {
+      "scene_hint": "Schema FAQ UI 4 guest questions about deposit return; readable Cyrillic, small cat sticker corner only"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 1,
+  "identity_reference_local": "",
+  "identity_reference_id": "",
+  "reference_url_hosted": "",
+  "output_canvas": "cover/canvas-quad-01.png",
+  "result_path": "cover/quad-mcp-result-01.json",
+  "slots": [
+    "cover",
+    "inline_1",
+    "inline_2",
+    "inline_3"
+  ],
+  "preferred_image_flow": {
+    "provider": "derouter-rest",
+    "script": "scripts/excalibur_blog_derouter_gpt_image2_api.py",
+    "resolution": "2K",
+    "note": "PRIMARY: Derouter REST image API (api-direct, 2K 16:9). Fallback: excalibur_blog_kie_gpt_image2_api.py when DEROUTER auth/5xx. FORBIDDEN: flux2-pro-*, Seedream, nano_banana*, z-image, mcp-derouter/start-mcp.sh.",
+    "apply_script": "python3 scripts/excalibur_blog_quad_apply.py --article-dir <article_dir> --canvas-index 1 --inject-html"
+  },
+  "jobs": [
+    {
+      "slot": "canvas_quad",
+      "tool": "derouter-rest",
+      "mcp_args": {
+        "prompt": "High-key bright RU editorial collage, airy #FFFFFF, sun flare, warm hospitality mood (apartment stay, not realtor deal). Comfort+ lived-in cozy interiors for ordinary guests (командировки, семьи, пары) — NOT business-class, NOT hotel-luxe, NO marble palaces. NO host face / NO Shakin / NO identity-real. NO brand logo in generation — factory pastes canonical PNG after split. NO…\nCanvas 2048x1152 exact 2x2; four 16:9 panels (1024x576); thin white gutters; no bleed.\nBan: dark/low-key; inventory props; celebrity memes; EXCALIBUR stamp; chubby host; stock/generated man co-host on inline; large meme person on inline; icon slogans; empty cells; desk scene; cover copy; celebrity memes; stock model man; handsome realtor co-host; generated stranger presenter; large human on inline; meme person >15% frame; invented meme face.\nTEXT LANGUAGE LOCK: all visible text is RUSSIAN Cyrillic only; exact LABELS per panel only.\nCover TL: NO host i2i; NO Shakin/identity-real; NO brand logo; NO phone in generation; Russian guest by topic allowed; invent bright scene.\nTL COVER TXT «Залог не вернули — скол на плите» bold Cyrillic black, paint ONLY the highlight word \"скол\" in gold #dcc5a1. Late-August Tyumen evening (20 Aug): dry warm street, golden hour, green trees, NO snow NO ice NO frost NO winter NO blizzard NO frozen keybox NO minus degrees. NO brand logo; NO phone in image (factory adds post-render). Russian guest with suitcase at apartment entrance; Expression: усталый недоумение гостя с чемоданом. sun flare; Августовский вечер Тюмень: гость с чемоданом у столешницы со сколом, телефон «залог не вернули»; кот-стикер ≤12% справа; пустой угол под логотип; без снега.; meme cat sticker ONLY far top-right ≤12% frame; keep one corner empty clean sky/wall margin (no stickers/text there — factory pastes logo); tape/pins/strings/paper scraps; high-key #FFF/gold; not noir; Wordstat/Tyumen; #FFF; perfect Cyrillic\nTop-right inline: сравнительная таблица с колонками; «Залог — это не оплата, это гарантия»; Таблица «оплата / залог / депозит», белый фон, gold/black, пустой угол под логотип.. TXT:залог ≠ оплата | депозит | гарантия | возврат. Leave one corner empty clean margin (no stickers/text/people) for factory logo paste 8–12% width; NO drawn logo/house/heart in generation.\nBottom-left inline: нумерованный процесс / таймлайн; «Пятнадцать минут на заселении, которые спасают залог»; 5 шагов видео-обхода при заселении: обход, плита, чат, техника, дата; пустой угол под логотип.. TXT:видео обход | фото плиты | отправить в чат | дата заезда. Leave one corner empty clean margin (no stickers/text/people) for factory logo paste 8–12% width; NO drawn logo/house/heart in generation.\nBottom-right inline: схема устройства механизма; «Как вообще считается ущерб»; Схема «износ vs ущерб» для скола: ремонт, смета, фото «до»; пустой угол под логотип.. TXT:расчёт ущерба | скол на плите | износ vs порча | смета. Leave one corner empty clean margin (no stickers/text/people) for factory logo paste 8–12% width; NO drawn logo/house/heart in generation.\nInline all: #FFF collage, gold/black Cyrillic labels, tape/pins/strings/paper scraps; high-key #FFF/gold; not noir; dense facts/numbers; exact TXT per panel; meme only if +meme AND sticker-scale; no human hero on inline; no icon soup; zero typos.",
+        "aspect_ratio": "16:9",
+        "resolution": "2K"
+      }
+    }
+  ],
+  "validation": {
+    "prompt_chars": 3298,
+    "max_prompt_chars": 3500,
+    "required_reference_host": "{{SITE_HOST}}",
+    "resolution": "2K"
+  }
+}
