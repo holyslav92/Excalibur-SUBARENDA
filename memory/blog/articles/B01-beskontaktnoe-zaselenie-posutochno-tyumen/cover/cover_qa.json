@@ -1,0 +1,27 @@
+{
+  "agent": "excalibur-blog-cover-qa",
+  "status": "PASS",
+  "checked_at": "2026-08-20",
+  "topic_id": "B01",
+  "checks": {
+    "identity_face_28yo": true,
+    "identity_body_medium_slim": true,
+    "identity_expression_invented": true,
+    "cover_phone_readable": true,
+    "board_stationery_ok": true,
+    "typography_cyrillic_clean": true,
+    "meme_density_inline_ok": true,
+    "light_high_key": true,
+    "motif_no_collision_14d": true,
+    "people_in_8_set": true,
+    "cats_cadence_ok": true,
+    "wordstat_stickers_1_3": true,
+    "identity_real_files": true,
+    "inline_utility_all_7": true,
+    "inline_no_host_face": true,
+    "inline_no_co_host_human": true,
+    "inline_meme_sticker_scale": true,
+    "meme_people_real_catalog": true
+  },
+  "notes": "Добрый дом brand mode: skip_human_host, logo lockup on panels, Russian guest on cover only, no Shakin identity i2i. 8 PNG via Kie fallback after Derouter exhaust."
+}

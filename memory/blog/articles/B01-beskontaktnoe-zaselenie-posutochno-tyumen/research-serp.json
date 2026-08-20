@@ -1,0 +1,218 @@
+{
+  "agent": "excalibur-blog",
+  "date_context": {
+    "timezone": "Europe/Moscow",
+    "today_iso": "2026-08-20",
+    "today_ru": "20.08.2026",
+    "year": 2026,
+    "month": 8,
+    "month_name_ru": "август",
+    "weekday_ru": "четверг"
+  },
+  "topic": {
+    "topic_id": "B01",
+    "title": "Бесконтактное заселение посуточно Тюмень",
+    "h1": "Бесконтактное заселение посуточно Тюмень",
+    "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+    "primary_query": "Бесконтактное заселение посуточно Тюмень",
+    "priority": "P0"
+  },
+  "searches": [
+    {
+      "query_id": "primary_fresh",
+      "query": "Бесконтактное заселение посуточно Тюмень 2026",
+      "purpose": "актуальный SERP",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Аренда квартиры с бесконтактным заселением в Тюмень на сутки. Найдено 1 ...",
+          "url": "https://tyumen.cian.ru/snyat-posutochno-kvartiru-beskontaktnoe-zaselenie/",
+          "snippet": ""
+        },
+        {
+          "title": "Квартиры посуточно с бесконтактным заселением в Тюмени",
+          "url": "https://www.avito.ru/tyumen/kvartiry/sdam/posutochno/check-in-ASgBAgICA0SSA8gQ8AeSUoq5FeSBkwM",
+          "snippet": "Бесконтактная посуточная аренда квартир для самостоятельного въезда без личного контакта. Есть квартиры в Тюмень, бронируйте сейчас."
+        },
+        {
+          "title": "Снять комнату с бесконтактным заселением посуточно в Тюмень",
+          "url": "https://tyumen.cian.ru/snyat-posutochno-komnatu-beskontaktnoe-zaselenie/",
+          "snippet": "Бесконтактное круглосуточное заселение - заезжайте в любое удобное время без ожиданий."
+        },
+        {
+          "title": "Снять квартиру посуточно, аренда квартиры на сутки в Тюмени | Авито ...",
+          "url": "https://www.avito.ru/tyumen/kvartiry/sdam/posutochno/-ASgBAgICAkSSA8gQ8AeSUg",
+          "snippet": "Бесконтактная посуточная аренда комнат для самостоятельного въезда без личного контакта. Есть комнаты в Тюмень, бронируйте сейчас."
+        },
+        {
+          "title": "Апарт-отель Хом-Сити/Осипов в Тюмени",
+          "url": "https://hotel72.ru/",
+          "snippet": "Заезд без контактный, заселится можете в любое время после 14:00 дня заселения. Заезд: после 14:00 | Выезд: до 12:00. Раннее заселение и поздний выезд согласовываются и оплачиваются отдельно."
+        },
+        {
+          "title": "Снять квартиру посуточно в Тюмени | Костарика Апарты",
+          "url": "https://ksapart.ru/",
+          "snippet": "Посуточная аренда апартаментов в Тюмени: чистые студии и квартиры, Wi-Fi, отчетные документы, быстрый подбор и бронирование."
+        }
+      ],
+      "searched_at": "2026-08-20"
+    },
+    {
+      "query_id": "title_fresh",
+      "query": "Бесконтактное заселение посуточно Тюмень 2026",
+      "purpose": "SERP по человеческому title",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Аренда квартиры с бесконтактным заселением в Тюмень на сутки. Найдено 1 ...",
+          "url": "https://tyumen.cian.ru/snyat-posutochno-kvartiru-beskontaktnoe-zaselenie/",
+          "snippet": ""
+        },
+        {
+          "title": "Квартиры посуточно с бесконтактным заселением в Тюмени",
+          "url": "https://www.avito.ru/tyumen/kvartiry/sdam/posutochno/check-in-ASgBAgICA0SSA8gQ8AeSUoq5FeSBkwM",
+          "snippet": "Бесконтактная посуточная аренда квартир для самостоятельного въезда без личного контакта. Есть квартиры в Тюмень, бронируйте сейчас."
+        },
+        {
+          "title": "Снять комнату с бесконтактным заселением посуточно в Тюмень",
+          "url": "https://tyumen.cian.ru/snyat-posutochno-komnatu-beskontaktnoe-zaselenie/",
+          "snippet": "Бесконтактное круглосуточное заселение - заезжайте в любое удобное время без ожиданий."
+        },
+        {
+          "title": "Снять квартиру посуточно, аренда квартиры на сутки в Тюмени | Авито ...",
+          "url": "https://www.avito.ru/tyumen/kvartiry/sdam/posutochno/-ASgBAgICAkSSA8gQ8AeSUg",
+          "snippet": "Бесконтактная посуточная аренда комнат для самостоятельного въезда без личного контакта. Есть комнаты в Тюмень, бронируйте сейчас."
+        },
+        {
+          "title": "Апарт-отель Хом-Сити/Осипов в Тюмени",
+          "url": "https://hotel72.ru/",
+          "snippet": "Заезд без контактный, заселится можете в любое время после 14:00 дня заселения. Заезд: после 14:00 | Выезд: до 12:00. Раннее заселение и поздний выезд согласовываются и оплачиваются отдельно."
+        },
+        {
+          "title": "Снять квартиру посуточно в Тюмени | Костарика Апарты",
+          "url": "https://ksapart.ru/",
+          "snippet": "Посуточная аренда апартаментов в Тюмени: чистые студии и квартиры, Wi-Fi, отчетные документы, быстрый подбор и бронирование."
+        }
+      ],
+      "searched_at": "2026-08-20"
+    },
+    {
+      "query_id": "official_docs",
+      "query": "Бесконтактное заселение посуточно Тюмень official docs 2026",
+      "purpose": "официальные docs",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Аренда квартиры с бесконтактным заселением в Тюмень на сутки. Найдено 1 ...",
+          "url": "https://tyumen.cian.ru/snyat-posutochno-kvartiru-beskontaktnoe-zaselenie/",
+          "snippet": ""
+        },
+        {
+          "title": "Снять квартиру посуточно, аренда квартиры на сутки в Тюмени | Авито ...",
+          "url": "https://www.avito.ru/tyumen/kvartiry/sdam/posutochno/-ASgBAgICAkSSA8gQ8AeSUg",
+          "snippet": "Бесконтактная посуточная аренда квартир для самостоятельного въезда без личного контакта. Есть квартиры в Тюмень, бронируйте сейчас."
+        },
+        {
+          "title": "Апарт-отель Хом-Сити/Осипов в Тюмени",
+          "url": "https://hotel72.ru/",
+          "snippet": "Правила заселения и проживания: Сдается посуточно и по часам. Заселение строго с 18 лет (при наличии паспорта). Проживание без домашних животных. Квартира НЕ сдается для шумных вечеринок и ..."
+        },
+        {
+          "title": "Бесконтактное заселение: как работает и как рассказать о нём в объявлении",
+          "url": "https://extranet.sutochno.ru/blog/noncontact",
+          "snippet": "Посуточная аренда апартаментов в Тюмени: чистые студии и квартиры, Wi-Fi, отчетные документы, быстрый подбор и бронирование."
+        },
+        {
+          "title": "Квартиры посуточно в Тюмени • Час / месяц / год ☀️ 1. Круглосуточное ...",
+          "url": "https://vk.com/wall-41546666_15840",
+          "snippet": "Многие владельцы жилья используют бесконтактное заселение: гость приезжает и заселяется сам, без встречи с хозяином, администратором или горничной. Выезд тоже проходит без участия с вашей стороны. Рассказываем, как добавить пункт о бесконтактном заселении в свои объявления, как работает этот способ приёма гостей и в чём его преимущества."
+        },
+        {
+          "title": "Квартиры посуточно с бесконтактным заселением в Тюмени",
+          "url": "https://www.avito.ru/tyumen/kvartiry/sdam/posutochno/check-in-ASgBAgICA0SSA8gQ8AeSUoq5FeSBkwM",
+          "snippet": "1. Круглосуточное, бесконтактное дистанционное заселение для вашего удобства! 2. Любая форма оплаты: • Отчетные документы • Чеки QR-код • Онлайн чеки • Терминал 3."
+        }
+      ],
+      "searched_at": "2026-08-20"
+    },
+    {
+      "query_id": "github_evidence",
+      "query": "site:github.com Бесконтактное заселение посуточно Тюмень 2026",
+      "purpose": "GitHub evidence",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "opencode-mem/.github/screenshot-project-memory.png at main · tickernelz ...",
+          "url": "https://github.com/tickernelz/opencode-mem/blob/main/.github/screenshot-project-memory.png",
+          "snippet": ""
+        },
+        {
+          "title": "GitHub - fifomori/android: OMORI+NWCompat launcher for Android",
+          "url": "https://github.com/fifomori/android",
+          "snippet": "OpenCode plugin that gives coding agents persistent memory using local vector database - tickernelz/opencode-mem"
+        },
+        {
+          "title": "GitHub Docs",
+          "url": "https://docs.github.com/",
+          "snippet": "OMORI+NWCompat launcher for Android. Contribute to fifomori/android development by creating an account on GitHub."
+        },
+        {
+          "title": "Personalisieren deines Profils - GitHub Dokumente",
+          "url": "https://docs.github.com/de/account-and-profile/tutorials/personalize-your-profile",
+          "snippet": "Get started, troubleshoot, and make the most of GitHub. Documentation for new users, developers, administrators, and all of GitHub's products."
+        },
+        {
+          "title": "OpenMAIC/assets/interactive_mode/phone_interactive.png at main · THU ...",
+          "url": "https://github.com/THU-MAIC/OpenMAIC/blob/main/assets/interactive_mode/phone_interactive.png",
+          "snippet": "Du kannst Informationen zu deiner Person für andere Benutzende bereitstellen, indem du ein Profilbild einrichtest und eine Biografie zum Profil hinzufügst. Ihr Profilname für Ihr GitHub Konto ist erforderlich. Alle weiteren Profilinformationen, die in diesem Artikel beschrieben werden, sind optional."
+        },
+        {
+          "title": "ralphex/assets/ralphex-review.png at master · umputun/ralphex",
+          "url": "https://github.com/umputun/ralphex/blob/master/assets/ralphex-review.png",
+          "snippet": "Open Multi-Agent Interactive Classroom — Get an immersive, multi-agent learning experience in just one click - THU-MAIC/OpenMAIC"
+        }
+      ],
+      "searched_at": "2026-08-20"
+    },
+    {
+      "query_id": "community_experience",
+      "query": "Бесконтактное заселение посуточно Тюмень forum problems опыт 2026",
+      "purpose": "форумы и живые проблемы",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Ночное бесконтактное заселение многие выбирают как «удобно: никого не ...",
+          "url": "https://vk.com/wall-224399874_326",
+          "snippet": ""
+        },
+        {
+          "title": "Аренда квартиры с бесконтактным заселением в Тюмень на сутки. Найдено 1 ...",
+          "url": "https://tyumen.cian.ru/snyat-posutochno-kvartiru-beskontaktnoe-zaselenie/",
+          "snippet": "В «Добром Доме» бесконтактное заселение в Тюмени — это не «код в смс и удачи», а процесс: заранее присылаем пошаговую инструкцию, держим связь, даём понятный вход и доступ."
+        },
+        {
+          "title": "Бесконтактное заселение: как работает и как рассказать о нём в объявлении",
+          "url": "https://extranet.sutochno.ru/blog/noncontact",
+          "snippet": "Бесконтактная посуточная аренда квартир для самостоятельного въезда без личного контакта. Есть квартиры в Тюмень, бронируйте сейчас."
+        },
+        {
+          "title": "Снять квартиру посуточно в Тюмени , аренда квартиры на сутки в Тюмени",
+          "url": "https://tyumen.sutochno.ru/",
+          "snippet": "Многие владельцы жилья используют бесконтактное заселение: гость приезжает и заселяется сам, без встречи с хозяином, администратором или горничной. Выезд тоже проходит без участия с вашей стороны. Рассказываем, как добавить пункт о бесконтактном заселении в свои объявления, как работает этот способ приёма гостей и в чём его преимущества."
+        },
+        {
+          "title": "Снять квартиру посуточно, аренда квартиры на сутки в Тюмени | Авито ...",
+          "url": "https://www.avito.ru/tyumen/kvartiry/sdam/posutochno/-ASgBAgICAkSSA8gQ8AeSUg",
+          "snippet": "Квартира посуточно в Тюмени — выгоднее и комфортнее, чем номер в гостинице. Краткосрочная аренда квартир — идеальное решение для туристов и командированных. Здесь можно сдать и недорого снять квартиру на сутки в Тюмени и другом городе без посредников! Забронируйте до 31 августа 2026 — и получите кэшбэк бонусами после оценки проживания. Подробнее."
+        },
+        {
+          "title": "Квартиры посуточно в Тюмени | Здравствуйте, дорогие друзья! Вы попали в ...",
+          "url": "https://vk.com/dom_ohag",
+          "snippet": "Заезд без контактный, заселится можете в любое время после 14:00 дня заселения. Заезд: после 14:00 | Выезд: до 12:00. Раннее заселение и поздний выезд согласовываются и оплачиваются отдельно."
+        }
+      ],
+      "searched_at": "2026-08-20"
+    }
+  ],
+  "errors": []
+}

@@ -1,5 +1,6 @@
-# Excalibur BLOG - LLM Index (Добрый дом)
+# Maya AI — Excalibur BLOG
+> Практический блог по автоматизации бизнеса на Make.com, вайбкодингу и ИИ-агентам.
 
-https://добрыйдом-72.рф/blog
+## Blog Articles
 
-Indexer fills this file after publish.
+- [Оплатил квартиру посуточно. Код прислали от чужой двери]({{SITE_BASE}}/beskontaktnoe-zaselenie-posutochno-tyumen/): Оплатил квартиру посуточно. Код прислали от чужой двери

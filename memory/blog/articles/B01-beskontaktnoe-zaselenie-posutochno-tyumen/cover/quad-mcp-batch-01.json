@@ -1,0 +1,39 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 1,
+  "identity_reference_local": "",
+  "identity_reference_id": "",
+  "reference_url_hosted": "{{SITE_BASE}}/wp-content/uploads/2026/05/dizajn-bez-nazvaniya-38.png",
+  "output_canvas": "cover/canvas-quad-01.png",
+  "result_path": "cover/quad-mcp-result-01.json",
+  "slots": [
+    "cover",
+    "inline_1",
+    "inline_2",
+    "inline_3"
+  ],
+  "preferred_image_flow": {
+    "provider": "derouter-rest",
+    "script": "scripts/excalibur_blog_derouter_gpt_image2_api.py",
+    "resolution": "2K",
+    "note": "PRIMARY: Derouter REST image API (api-direct, 2K 16:9). Fallback: excalibur_blog_kie_gpt_image2_api.py when DEROUTER auth/5xx. FORBIDDEN: flux2-pro-*, Seedream, nano_banana*, z-image, mcp-derouter/start-mcp.sh.",
+    "apply_script": "python3 scripts/excalibur_blog_quad_apply.py --article-dir <article_dir> --canvas-index 1 --inject-html"
+  },
+  "jobs": [
+    {
+      "slot": "canvas_quad",
+      "tool": "derouter-rest",
+      "mcp_args": {
+        "prompt": "High-key bright RU editorial collage, airy #FFFFFF, sun flare, warm hospitality mood (apartment stay, not realtor deal). NO host face / NO Shakin / NO identity-real. Russian guest or host couple fitting check-in topic allowed as scene people. REQUIRED readable logo lockup «Добрый дом» bottom-right on EVERY panel (all 8 images). 1-3 Wordstat stickers (Тюмень, посуточно). Meme c…\nCanvas 2048x1152 exact 2x2; four 16:9 panels (1024x576); thin white gutters; no bleed.\nBan: dark/low-key; inventory props; celebrity memes; EXCALIBUR stamp; chubby host; stock/generated man co-host on inline; large meme person on inline; icon slogans; empty cells; desk scene; cover copy; celebrity memes; stock model man; handsome realtor co-host; generated stranger presenter; large human on inline; meme person >15% frame; invented meme face.\nTEXT LANGUAGE LOCK: all visible text is RUSSIAN Cyrillic only; exact LABELS per panel only.\nCover TL only: i2i face-studio-2026-06-23 (face-studio identity: jaw/stubble/hairline/eyes; medium-slim; NOT chubby/puffy); same person as reference, NEW expression for the hook, do NOT copy reference closed-mouth smile/pose/head angle; FORBIDDEN polite studio smile; invent scene; no AI hero-ref.\nTL COVER TXT «Гость, проверь два кода до оплаты» bold Cyrillic black, paint ONLY the highlight word \"два\" in gold #dcc5a1. Small gold sticky with EXACTLY «Один код — не вход» in Cyrillic. Phone EXACT «+7 922 001 65 05» readable CTA sticker. Host i2i left (face-studio identity: jaw/stubble/hairline/eyes; medium-slim; NOT chubby/puffy); Expression: настороженность у подъезда ночью. same person as reference, NEW expression for the hook, do NOT copy reference closed-mouth smile/pose/head angle; FORBIDDEN polite studio smile. sun flare; Светлый high-key коллаж зимнего подъезда в Тюмени: русский гость среднего возраста с чемоданом настороженно сверяет смартфон с домофоном и ключницей, на экране два отдельных кода с красным крестиком…; 1-2 meme stickers; tape/pins/strings/paper scraps; high-key #FFF/gold; not noir; Wordstat/Tyumen; #FFF; perfect Cyrillic\nTop-right inline: comparison_table_ui; «Быстрый инсайт»; Светлая инфографика-сравнение «Улица / Доступ»: слева заснеженный подъезд в 23:00 и закрытый домофон, справа дверь квартиры и замёрзшая ключница; крупные читаемые плашки «23:00 на…. TXT:23:00 на улице | код от квартиры | домофон закрыт | минус 25 °C | ключница замёрзла.\nBottom-left inline: пошаговая схема (legacy alias → process_flow); «Что обычно идёт не так в 23:00»; Светлая workflow-схема из семи вопросительных карточек перед оплатой: центральная развилка «7 вопросов», далее стрелки к «адрес до оплаты», «кто после 22:00», «план «Б»», «залог д…. TXT:7 вопросов | адрес до оплаты | кто после 22:00 | план «Б» | залог до перевода.\nBottom-right inline: чеклист (legacy → labeled_checklist); «Семь вопросов до перевода денег»; Светлая доска-чеклист для заселения: вертикальные отмечаемые пункты «дом и корпус», «подъезд 2», «этаж 9», «два разных кода», «скриншот в телефон»; рядом минимальная схема дома с…. TXT:дом и корпус | подъезд 2 | этаж 9 | два разных кода | скриншот в телефон.\nInline all: #FFF collage, gold/black Cyrillic labels, tape/pins/strings/paper scraps; high-key #FFF/gold; not noir; dense facts/numbers; exact TXT per panel; meme only if +meme AND sticker-scale; no human hero on inline; no icon soup; zero typos.",
+        "aspect_ratio": "16:9",
+        "resolution": "2K"
+      }
+    }
+  ],
+  "validation": {
+    "prompt_chars": 3370,
+    "max_prompt_chars": 3500,
+    "required_reference_host": "{{SITE_HOST}}",
+    "resolution": "2K"
+  }
+}

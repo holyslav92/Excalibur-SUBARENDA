@@ -1,0 +1,290 @@
+{
+  "agent": "excalibur-blog-cover-quad-split",
+  "status": "PASS",
+  "splits": [
+    {
+      "canvas_index": 1,
+      "manifest": "cover/quad-manifest.json",
+      "split": {
+        "source_canvas": "memory/blog/articles/B01-beskontaktnoe-zaselenie-posutochno-tyumen/cover/canvas-quad-01.png",
+        "source_size_px": [
+          2048,
+          1152
+        ],
+        "panel_size_px": [
+          1021,
+          573
+        ],
+        "split_meta": {
+          "split_mode": "gutter_detect",
+          "h_gutter_px": {
+            "start": 573,
+            "end": 579
+          },
+          "v_gutter_px": {
+            "start": 1021,
+            "end": 1026
+          },
+          "requested_mode": "auto",
+          "gutter_quality": {
+            "h_center_offset_px": 0.0,
+            "v_center_offset_px": 0.5,
+            "max_aspect_crop_loss": 0.0,
+            "per_panel_crop_loss": {
+              "top_left": 0.0,
+              "top_right": 0.0,
+              "bottom_left": 0.0,
+              "bottom_right": 0.0
+            },
+            "reject_reason": null
+          }
+        },
+        "output_size_px": [
+          1200,
+          675
+        ],
+        "outputs": {
+          "cover": {
+            "file": "cover/cover.png",
+            "quadrant": "top_left",
+            "box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1021,
+              "bottom": 573
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1021,
+              "bottom": 573
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Гость с чемоданом у зимнего подъезда проверяет на телефоне два разных кода для домофона и квартиры.",
+            "h2_anchor": null
+          },
+          "inline_1": {
+            "file": "cover/inline-01.png",
+            "quadrant": "top_right",
+            "box_px": {
+              "left": 1026,
+              "top": 0,
+              "right": 2048,
+              "bottom": 573
+            },
+            "raw_box_px": {
+              "left": 1026,
+              "top": 0,
+              "right": 2048,
+              "bottom": 573
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Сравнительная схема показывает, почему одного кода недостаточно: домофон закрыт на улице, а ключница находится у двери квартиры.",
+            "h2_anchor": "Быстрый инсайт"
+          },
+          "inline_2": {
+            "file": "cover/inline-02.png",
+            "quadrant": "bottom_left",
+            "box_px": {
+              "left": 0,
+              "top": 579,
+              "right": 1021,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 579,
+              "right": 1021,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Схема из семи вопросов, которые нужно задать владельцу квартиры до перевода денег.",
+            "h2_anchor": "Что обычно идёт не так в 23:00"
+          },
+          "inline_3": {
+            "file": "cover/inline-03.png",
+            "quadrant": "bottom_right",
+            "box_px": {
+              "left": 1026,
+              "top": 579,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 1026,
+              "top": 579,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Чеклист адреса, подъезда, этажа и двух кодов, который нужно сохранить в телефоне до поездки.",
+            "h2_anchor": "Семь вопросов до перевода денег"
+          }
+        }
+      }
+    },
+    {
+      "canvas_index": 2,
+      "manifest": "cover/quad-manifest.json",
+      "split": {
+        "source_canvas": "memory/blog/articles/B01-beskontaktnoe-zaselenie-posutochno-tyumen/cover/canvas-quad-02.png",
+        "source_size_px": [
+          2048,
+          1152
+        ],
+        "panel_size_px": [
+          1018,
+          571
+        ],
+        "split_meta": {
+          "split_mode": "gutter_detect",
+          "h_gutter_px": {
+            "start": 571,
+            "end": 583
+          },
+          "v_gutter_px": {
+            "start": 1018,
+            "end": 1029
+          },
+          "requested_mode": "auto",
+          "gutter_quality": {
+            "h_center_offset_px": 1.0,
+            "v_center_offset_px": 0.5,
+            "max_aspect_crop_loss": 0.0069,
+            "per_panel_crop_loss": {
+              "top_left": 0.0,
+              "top_right": 0.0,
+              "bottom_left": 0.0059,
+              "bottom_right": 0.0069
+            },
+            "reject_reason": null
+          }
+        },
+        "output_size_px": [
+          1200,
+          675
+        ],
+        "outputs": {
+          "inline_4": {
+            "file": "cover/inline-04.png",
+            "quadrant": "top_left",
+            "box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1018,
+              "bottom": 571
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1018,
+              "bottom": 571
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Схема доставки кодов в мессенджер и СМС с напоминанием проверить связь в дороге.",
+            "h2_anchor": "Подъезд и квартира — два разных доступа"
+          },
+          "inline_5": {
+            "file": "cover/inline-05.png",
+            "quadrant": "top_right",
+            "box_px": {
+              "left": 1029,
+              "top": 0,
+              "right": 2048,
+              "bottom": 571
+            },
+            "raw_box_px": {
+              "left": 1029,
+              "top": 0,
+              "right": 2048,
+              "bottom": 571
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Экран инструкции показывает ночного дежурного, план Б, дубликат ключа и обещанное время живого ответа.",
+            "h2_anchor": "На словах и в инструкции"
+          },
+          "inline_6": {
+            "file": "cover/inline-06.png",
+            "quadrant": "bottom_left",
+            "box_px": {
+              "left": 3,
+              "top": 583,
+              "right": 1015,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 583,
+              "right": 1018,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Инфографика перечисляет, что проверить до оплаты: залог, способ оплаты, срок возврата и фото при заезде.",
+            "h2_anchor": "Когда приходит код"
+          },
+          "inline_7": {
+            "file": "cover/inline-07.png",
+            "quadrant": "bottom_right",
+            "box_px": {
+              "left": 1032,
+              "top": 583,
+              "right": 2044,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 1029,
+              "top": 583,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Таблица правил проживания помогает заранее уточнить тишину, гостей, курение и контакт для ночных вопросов.",
+            "h2_anchor": "Кто отвечает ночью"
+          }
+        }
+      }
+    }
+  ],
+  "manifest": "cover/quad-manifest.json",
+  "html_inject": [
+    "skip inline_1: already correct under H2 — Быстрый инсайт",
+    "skip inline_2: already correct under H2 — Что обычно идёт не так в 23:00",
+    "skip inline_3: already correct under H2 — Семь вопросов до перевода денег",
+    "injected inline_4 after H2 — Подъезд и квартира — два разных доступа",
+    "injected inline_5 after H2 — На словах и в инструкции",
+    "injected inline_6 after H2 — Когда приходит код",
+    "injected inline_7 after H2 — Кто отвечает ночью"
+  ]
+}
