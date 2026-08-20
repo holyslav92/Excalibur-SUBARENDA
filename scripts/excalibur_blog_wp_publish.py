@@ -1,5 +1,5 @@
 ﻿#!/usr/bin/env python3
-"""Publish one Excalibur blog article to WordPress (SFTP bootstrap)."""
+"""Publish one Excalibur blog article to WordPress (SFTP or FTP bootstrap)."""
 from __future__ import annotations
 
 import argparse
@@ -32,6 +32,19 @@ from excalibur_blog_pipeline_canon import (
     validate_article_canon,
 )
 from excalibur_blog_wp_categories import category_gate_errors, resolve_category_ids
+from excalibur_blog_remote_transport import (
+    configured_remote_root,
+    delete_remote_file,
+    is_missing_remote_path_error,
+    normalize_remote_root_value,
+    remote_creds,
+    remote_path,
+    remote_root_candidates,
+    remote_root_label,
+    resolve_publish_transport,
+    transport_note,
+    upload_text_file,
+)
 
 def load_tenant_config(root: Path) -> dict[str, Any]:
     path = root / "shared/tenant-config.json"
@@ -94,6 +107,8 @@ PUBLISH_ENV_KEYS = {
     "FTP_PASSWORD",
     "FTP_ROOT",
     "FTP_PATH",
+    "FTP_TRANSPORT",
+    "PUBLISH_TRANSPORT",
     "SSH_HOST",
     "SSH_PORT",
     "SSH_USER",
@@ -119,10 +134,8 @@ def _read_env_file(path: Path) -> dict[str, str]:
 def load_env(root: Path) -> dict[str, str]:
     """Load publish secrets.
 
-    Canon: FTP_* and SSH_* are the **same** SFTP credentials under two names.
-    Transport is always SFTP/SSH (port 22). Never attempt plain FTP upload.
-    Prefer setting FTP_HOST / FTP_USER / FTP_PASS / FTP_ROOT in Cloud Secrets;
-    SSH_* are optional aliases. Empty or ``/`` root means SFTP login cwd (``.``).
+    Transport: SFTP (default, port 22) or FTP passive (port 21 / FTP_TRANSPORT=ftp).
+    FTP_* and SSH_* share host/user/password; FTP_ROOT is remote web root path.
     """
     env = _read_env_file(root / "memory/site.env.local")
     for key in PUBLISH_ENV_KEYS:
@@ -162,11 +175,8 @@ def load_env(root: Path) -> dict[str, str]:
 
 
 def normalize_sftp_root_value(value: str) -> str:
-    """Map empty or panel ``/`` to SFTP login cwd ``.`` (where wp-load.php usually is)."""
-    raw = (value or "").strip()
-    if not raw or raw in {"/", "./"}:
-        return "."
-    return raw
+    """Map empty or panel ``/`` to remote login cwd ``.`` (where wp-load.php usually is)."""
+    return normalize_remote_root_value(value)
 
 
 def validate_publish_env(env: dict[str, str]) -> list[str]:
@@ -183,11 +193,13 @@ def validate_publish_env(env: dict[str, str]) -> list[str]:
 
 
 def publish_env_check_report(env: dict[str, str]) -> dict[str, object]:
-    root_label = sftp_root_label(env)
+    root_label = remote_root_label(env)
+    transport = resolve_publish_transport(env)
     return {
         "allow_publish": env.get("EXCALIBUR_BLOG_ALLOW_PUBLISH", "").strip().lower() == "yes",
         "public_site_url_configured": bool(env.get("PUBLIC_SITE_URL") or env.get("WP_HOME") or env.get("WP_SITE_URL")),
-        "sftp": {
+        "transport": transport,
+        "remote": {
             "host_configured": bool(env.get("SSH_HOST") or env.get("FTP_HOST")),
             "user_configured": bool(env.get("SSH_USER") or env.get("FTP_USER")),
             "password_configured": bool(
@@ -197,14 +209,12 @@ def publish_env_check_report(env: dict[str, str]) -> dict[str, object]:
                 or env.get("FTP_PASSWORD")
             ),
             "root": root_label,
-            "ftp_aliases_are_sftp": True,
+            "ftp_root": env.get("FTP_ROOT") or ".",
+            "ftp_port": env.get("FTP_PORT") or ("21" if transport == "ftp" else "22"),
             "dot_fallback_enabled": root_label == "configured-non-dot",
         },
         "missing": validate_publish_env(env),
-        "note": (
-            "FTP_HOST/USER/PASS/ROOT are SFTP credentials under FTP_* names; "
-            "transport is always SFTP. Default root is '.' (login cwd)."
-        ),
+        "note": transport_note(env),
     }
 
 
@@ -781,99 +791,60 @@ echo 'permalink=' . $permalink . PHP_EOL;
 
 
 def _ssh_creds(env: dict[str, str]) -> tuple[str, int, str, str]:
-    host = env.get("SSH_HOST") or env["FTP_HOST"]
-    port = int(env.get("SSH_PORT") or "22")
-    user = env.get("SSH_USER") or env["FTP_USER"]
-    password = env.get("SSH_PASS") or env["FTP_PASS"]
-    return host, port, user, password
+    """Backward-compatible alias for remote_creds (SFTP callers)."""
+    return remote_creds(env)
 
 
 def configured_sftp_root(env: dict[str, str]) -> str:
-    return normalize_sftp_root_value(
-        env.get("SSH_ROOT") or env.get("FTP_ROOT") or env.get("FTP_PATH") or ""
-    )
+    return configured_remote_root(env)
 
 
 def sftp_remote_path(env: dict[str, str], remote: str, root_override: str | None = None) -> str:
-    root = configured_sftp_root(env) if root_override is None else normalize_sftp_root_value(root_override)
-    if not root or root in {".", "./"}:
-        return remote
-    return root.rstrip("/") + "/" + remote
+    return remote_path(env, remote, root_override)
 
 
 def sftp_root_label(env: dict[str, str]) -> str:
-    root = configured_sftp_root(env)
-    if root in {".", "./"}:
-        return "dot"
-    return "configured-non-dot"
+    return remote_root_label(env)
 
 
-def sftp_root_candidates(env: dict[str, str]) -> list[str]:
-    root = configured_sftp_root(env)
-    if root and root not in {".", "./"}:
-        return [root, "."]
-    return ["."]
-
-
-def is_missing_remote_path_error(exc: OSError) -> bool:
-    errno_value = getattr(exc, "errno", None)
-    if errno_value == 2:
-        return True
-    text = str(exc).lower()
-    return "no such file" in text or "enoent" in text
+sftp_root_candidates = remote_root_candidates
 
 
 def upload_bootstrap_sftp(env: dict[str, str], remote: str, data: bytes) -> str:
-    import paramiko
+    return upload_text_file(env, remote, data)
 
-    host, port, user, password = _ssh_creds(env)
-    transport = paramiko.Transport((host, port))
-    transport.connect(username=user, password=password)
-    sftp = paramiko.SFTPClient.from_transport(transport)
+
+def delete_bootstrap_sftp(env: dict[str, str], remote: str, remote_path_value: str | None = None) -> None:
+    delete_remote_file(env, remote, remote_path_value)
+
+
+def publish_via_bootstrap(
+    env: dict[str, str],
+    php: str,
+    public_base: str,
+    *,
+    bootstrap_name: str = "excalibur-blog-publish-once.php",
+) -> str:
+    remote = bootstrap_name
+    data = php.encode("utf-8")
+    url = public_base.rstrip("/") + "/" + remote
+    root = project_root()
+
+    uploaded_remote_path = upload_text_file(env, remote, data)
+
     try:
-        candidates = sftp_root_candidates(env)
-        for index, root_candidate in enumerate(candidates):
-            remote_path = sftp_remote_path(env, remote, root_candidate)
-            try:
-                with sftp.open(remote_path, "w") as handle:
-                    handle.write(data.decode("utf-8"))
-                if index > 0:
-                    print(
-                        "WARN SFTP root fallback: configured remote root was not found; "
-                        "used '.' for bootstrap. Update SSH_ROOT/FTP_ROOT to '.' in Cloud Secrets "
-                        "if this is the intended SFTP login cwd."
-                    )
-                print(f"SFTP upload OK: {remote_path} ({len(data)} bytes)")
-                return remote_path
-            except OSError as exc:
-                if index < len(candidates) - 1 and is_missing_remote_path_error(exc):
-                    print(
-                        "WARN SFTP upload: configured remote root returned ENOENT; retrying bootstrap at '.'.",
-                        file=sys.stderr,
-                    )
-                    continue
-                raise
+        out = trigger_bootstrap_http(url, root)
     finally:
-        sftp.close()
-        transport.close()
-    raise RuntimeError("SFTP upload did not complete")
+        try:
+            delete_remote_file(env, remote, uploaded_remote_path)
+        except Exception as cleanup_error:  # noqa: BLE001
+            print(f"WARN cleanup: could not delete bootstrap {remote}: {cleanup_error}", file=sys.stderr)
+    return out
 
 
-def delete_bootstrap_sftp(env: dict[str, str], remote: str, remote_path: str | None = None) -> None:
-    import paramiko
-
-    host, port, user, password = _ssh_creds(env)
-    remote_path = remote_path or sftp_remote_path(env, remote)
-    transport = paramiko.Transport((host, port))
-    transport.connect(username=user, password=password)
-    sftp = paramiko.SFTPClient.from_transport(transport)
-    try:
-        sftp.remove(remote_path)
-    except OSError:
-        pass
-    finally:
-        sftp.close()
-        transport.close()
+def publish_via_sftp(env: dict[str, str], php: str, public_base: str, *, bootstrap_name: str = "excalibur-blog-publish-once.php") -> str:
+    """Backward-compatible alias — dispatches to FTP or SFTP via env."""
+    return publish_via_bootstrap(env, php, public_base, bootstrap_name=bootstrap_name)
 
 
 def trigger_bootstrap_http(url: str, root: Path) -> str:
@@ -900,24 +871,6 @@ def trigger_bootstrap_http(url: str, root: Path) -> str:
                 return out
             time.sleep(1)
         raise RuntimeError("Cloud WebFetch Fallback timed out after 120 seconds. Please trigger manually.")
-
-
-def publish_via_sftp(env: dict[str, str], php: str, public_base: str, *, bootstrap_name: str = "excalibur-blog-publish-once.php") -> str:
-    remote = bootstrap_name
-    data = php.encode("utf-8")
-    url = public_base.rstrip("/") + "/" + remote
-    root = project_root()
-
-    uploaded_remote_path = upload_bootstrap_sftp(env, remote, data)
-
-    try:
-        out = trigger_bootstrap_http(url, root)
-    finally:
-        try:
-            delete_bootstrap_sftp(env, remote, uploaded_remote_path)
-        except Exception as cleanup_error:  # noqa: BLE001
-            print(f"WARN cleanup: could not delete bootstrap {remote}: {cleanup_error}", file=sys.stderr)
-    return out
 
 
 def ledger_url_for_commit(permalink: str, slug: str = "") -> str:
@@ -1405,7 +1358,7 @@ def main() -> int:
     if SITE_BASE_PLACEHOLDER in (payload.get("schema_jsonld") or ""):
         print("BLOCKER: schema still contains {{SITE_BASE}} after expand", file=sys.stderr)
         return 2
-    out = publish_via_sftp(env, php, public)
+    out = publish_via_bootstrap(env, php, public)
     print(out)
 
     media = evaluate_publish_output(out, payload)
@@ -1422,7 +1375,7 @@ def main() -> int:
         "slug": payload["slug"],
         "topic_id": payload["topic_id"],
         "permalink": safe_permalink,
-        "publish_method": "sftp",
+        "publish_method": resolve_publish_transport(env),
         "cover_evidence": redact_structure(payload.get("cover_evidence", {}), public),
         "raw_output": safe_raw,
         "media_check": {

@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
-"""Канонические live-фото владельца для i2i identity lock (The Риэлтор)."""
+"""Канонические референсы бренда для cover factory (Добрый дом — logo lockup)."""
 
 from __future__ import annotations
 
-import hashlib
 import json
 import shutil
 from pathlib import Path
@@ -11,63 +10,22 @@ from pathlib import Path
 IDENTITY_REAL_DIR = Path("memory/cover/assets/identity-real")
 VISUAL_INBOX_DIR = Path("memory/setup/visual-inbox")
 SCENE_COMPOSITION_DIR = Path("memory/cover/assets/scene-composition-only")
+LOGO_LOCKUP_REL = Path("memory/cover/assets/brand/logo-dobry-dom.png")
+TENANT_CONFIG_REL = Path("shared/tenant-config.json")
 
-# Единственный FACE source для /images/edits — студийный портрет.
+# Legacy identity lock — DISABLED for Добрый дом (logo_lockup mode).
 FACE_PRIMARY: dict[str, str | bool] = {
     "id": "face_studio_2026",
     "file": "face-studio-2026-06-23.jpg",
     "role": "face_primary",
-    "notes": "ONLY FACE i2i input. Studio portrait: jaw, stubble, hairline, dark-brown hair, warm eyes.",
+    "notes": "LEGACY — DISABLED for logo_lockup. Do not use.",
     "do_not_clone_scene": True,
 }
 
-# Только телосложение (medium-slim), НЕ лицо.
-BODY_BUILD_FILES: tuple[dict[str, str | bool], ...] = (
-    {
-        "id": "hoodie_airpods",
-        "file": "face-hoodie-airpods.jpeg",
-        "role": "body_build_only",
-        "notes": "Body/build reference only — NOT FACE source.",
-        "do_not_clone_scene": True,
-    },
-    {
-        "id": "office_selfie",
-        "file": "face-office-selfie.jpeg",
-        "role": "body_build_only",
-        "notes": "Body/build reference only — NOT FACE source.",
-        "do_not_clone_scene": True,
-    },
-)
-
-# Только композиция/сцена — никогда FACE.
-NOT_FACE_SOURCE_FILES: tuple[dict[str, str | bool], ...] = (
-    {
-        "id": "greenhouse_yahweh",
-        "file": "face-greenhouse-yahweh.png",
-        "role": "scene_composition_only",
-        "notes": "Scene mood only; never FACE source; do not clone greenhouse.",
-        "do_not_clone_scene": True,
-    },
-    {
-        "id": "immortal_regiment",
-        "file": "face-immortal-regiment.jpeg",
-        "role": "scene_composition_only",
-        "notes": "Scene mood only; never FACE source; do not clone march/portrait.",
-        "do_not_clone_scene": True,
-    },
-)
-
-IDENTITY_REAL_FILES: tuple[dict[str, str | bool], ...] = (
-    FACE_PRIMARY,
-    *BODY_BUILD_FILES,
-    *NOT_FACE_SOURCE_FILES,
-)
-
-# AI-стилизованные кадры — только mood/композиция, НЕ лицо.
-SCENE_COMPOSITION_ONLY_FILES: tuple[str, ...] = (
-    "hero-ref-office-risk-hologram.jpg",
-    "hero-ref-balcony-keys-sunset.jpg",
-)
+BODY_BUILD_FILES: tuple[dict[str, str | bool], ...] = ()
+NOT_FACE_SOURCE_FILES: tuple[dict[str, str | bool], ...] = ()
+IDENTITY_REAL_FILES: tuple[dict[str, str | bool], ...] = ()
+SCENE_COMPOSITION_ONLY_FILES: tuple[str, ...] = ()
 
 
 def project_root() -> Path:
@@ -79,12 +37,53 @@ def project_root() -> Path:
     return Path(__file__).resolve().parents[1]
 
 
+def load_tenant_config(root: Path | None = None) -> dict:
+    root = root or project_root()
+    path = root / TENANT_CONFIG_REL
+    if not path.is_file():
+        return {}
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def cover_mode(root: Path | None = None) -> str:
+    """Return cover_mode from tenant-config (default logo_lockup for Добрый дом)."""
+    tenant = load_tenant_config(root)
+    return str(tenant.get("cover_mode") or "logo_lockup").strip()
+
+
+def is_logo_lockup_mode(root: Path | None = None) -> bool:
+    return cover_mode(root) in {"logo_lockup", "illustrative"}
+
+
+def logo_lockup_path(root: Path | None = None) -> Path:
+    root = root or project_root()
+    tenant = load_tenant_config(root)
+    rel = str(tenant.get("logo_lockup") or LOGO_LOCKUP_REL)
+    path = Path(rel)
+    if not path.is_absolute():
+        path = root / path
+    return path
+
+
+def missing_logo_lockup(root: Path | None = None) -> list[str]:
+    root = root or project_root()
+    path = logo_lockup_path(root)
+    if path.is_file():
+        return []
+    return [str(path.relative_to(root))]
+
+
 def identity_paths(root: Path | None = None) -> list[Path]:
+    if is_logo_lockup_mode(root):
+        return []
     base = (root or project_root()) / IDENTITY_REAL_DIR
     return [base / str(spec["file"]) for spec in IDENTITY_REAL_FILES]
 
 
 def missing_identity_files(root: Path | None = None) -> list[str]:
+    """Return missing identity-real files. Empty when logo_lockup mode."""
+    if is_logo_lockup_mode(root):
+        return []
     root = root or project_root()
     missing: list[str] = []
     for spec in IDENTITY_REAL_FILES:
@@ -95,9 +94,25 @@ def missing_identity_files(root: Path | None = None) -> list[str]:
 
 
 def pick_identity_reference(topic_id: str = "", slug: str = "") -> dict[str, str | bool]:
-    """FACE i2i всегда только студийный портрет (без ротации по topic_id)."""
+    """Legacy — returns logo lockup spec when logo_lockup mode."""
     _ = topic_id, slug
-    return FACE_PRIMARY
+    return {
+        "id": "logo_dobry_dom",
+        "file": "logo-dobry-dom.png",
+        "role": "logo_lockup",
+        "notes": "Brand logo lockup — NOT face i2i.",
+        "do_not_clone_scene": False,
+    }
+
+
+def pick_logo_reference(topic_id: str = "", slug: str = "") -> dict[str, str]:
+    """Return logo lockup reference spec for cover pipeline."""
+    _ = topic_id, slug
+    return {
+        "id": "logo_dobry_dom",
+        "path": str(LOGO_LOCKUP_REL),
+        "role": "logo_lockup",
+    }
 
 
 def resolve_identity_reference_path(
@@ -107,30 +122,44 @@ def resolve_identity_reference_path(
     root: Path | None = None,
 ) -> Path:
     root = root or project_root()
+    if is_logo_lockup_mode(root):
+        return logo_lockup_path(root)
     spec = pick_identity_reference(topic_id, slug)
     return root / IDENTITY_REAL_DIR / str(spec["file"])
 
 
+def resolve_logo_reference_path(*, root: Path | None = None) -> Path:
+    return logo_lockup_path(root)
+
+
 def stage_from_visual_inbox(root: Path | None = None) -> list[str]:
-    """Копирует canonical identity files из visual-inbox → identity-real."""
+    """Копирует logo из visual-inbox → brand/ (logo_lockup mode)."""
     root = root or project_root()
     staged: list[str] = []
-    dest_dir = root / IDENTITY_REAL_DIR
+    if not is_logo_lockup_mode(root):
+        return staged
     inbox = root / VISUAL_INBOX_DIR
+    dest_dir = root / LOGO_LOCKUP_REL.parent
     dest_dir.mkdir(parents=True, exist_ok=True)
-
-    for spec in IDENTITY_REAL_FILES:
-        name = str(spec["file"])
+    for name in ("logo-dobry-dom.png", "logo.png"):
         src = inbox / name
-        if not src.is_file():
-            continue
-        dest = dest_dir / name
-        shutil.copy2(src, dest)
-        staged.append(str(dest.relative_to(root)))
+        if src.is_file():
+            dest = dest_dir / LOGO_LOCKUP_REL.name
+            shutil.copy2(src, dest)
+            staged.append(str(dest.relative_to(root)))
+            break
     return staged
 
 
 def identity_lock_summary() -> dict:
+    root = project_root()
+    if is_logo_lockup_mode(root):
+        return {
+            "cover_mode": cover_mode(root),
+            "logo_lockup": str(LOGO_LOCKUP_REL),
+            "logo_exists": logo_lockup_path(root).is_file(),
+            "identity_lock": "DISABLED — logo lockup only",
+        }
     return {
         "identity_real_dir": str(IDENTITY_REAL_DIR),
         "face_primary": str(IDENTITY_REAL_DIR / str(FACE_PRIMARY["file"])),
@@ -145,10 +174,10 @@ def identity_lock_summary() -> dict:
 def main() -> int:
     import argparse
 
-    ap = argparse.ArgumentParser(description="Identity-real staging and rotation helpers")
-    ap.add_argument("--stage-from-inbox", action="store_true", help="Copy from visual-inbox")
-    ap.add_argument("--check", action="store_true", help="Print missing identity-real files")
-    ap.add_argument("--pick", metavar="TOPIC_ID", help="Show face reference for topic")
+    ap = argparse.ArgumentParser(description="Logo lockup / identity staging helpers")
+    ap.add_argument("--stage-from-inbox", action="store_true", help="Copy logo from visual-inbox")
+    ap.add_argument("--check", action="store_true", help="Check logo lockup or identity-real files")
+    ap.add_argument("--pick", metavar="TOPIC_ID", help="Show reference for topic")
     ap.add_argument("--json", action="store_true", help="Emit JSON summary")
     args = ap.parse_args()
 
@@ -160,10 +189,19 @@ def main() -> int:
             for path in staged:
                 print(f"  {path}")
         else:
-            print("WARN no identity files found in visual-inbox")
+            print("WARN no logo files found in visual-inbox")
         return 0
 
     if args.check:
+        if is_logo_lockup_mode(root):
+            missing = missing_logo_lockup(root)
+            if missing:
+                print("FAIL missing logo lockup:")
+                for path in missing:
+                    print(f"  {path}")
+                return 1
+            print(f"OK logo lockup present ({LOGO_LOCKUP_REL})")
+            return 0
         missing = missing_identity_files(root)
         if missing:
             print("FAIL missing identity-real:")
@@ -174,9 +212,13 @@ def main() -> int:
         return 0
 
     if args.pick:
-        spec = pick_identity_reference(args.pick)
-        rel = IDENTITY_REAL_DIR / str(spec["file"])
-        print(json.dumps({"topic_id": args.pick, "reference": str(rel), "id": spec["id"]}, ensure_ascii=False))
+        if is_logo_lockup_mode(root):
+            spec = pick_logo_reference(args.pick)
+            print(json.dumps({"topic_id": args.pick, "reference": spec["path"], "id": spec["id"]}, ensure_ascii=False))
+        else:
+            spec = pick_identity_reference(args.pick)
+            rel = IDENTITY_REAL_DIR / str(spec["file"])
+            print(json.dumps({"topic_id": args.pick, "reference": str(rel), "id": spec["id"]}, ensure_ascii=False))
         return 0
 
     if args.json:

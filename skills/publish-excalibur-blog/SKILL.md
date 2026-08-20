@@ -66,10 +66,10 @@ openers). Канон в article — `<h2>Частые вопросы</h2>`; bare
 | Pipeline canon | `pipeline_canon=human-first-v1`, `editorial_swarm=false` |
 | WP рубрики | `article.meta.json` → `wp_category_slugs` или `topic_defaults`; gate `wp-categories-gate.json` PASS |
 | Interlink outbound | `interlink-gate.json` PASS (1–3 ссылки на published siblings) |
-| Credentials | `FTP_HOST`/`FTP_USER`/`FTP_PASS`/`FTP_ROOT=.` + `PUBLIC_SITE_URL` |
+| Credentials | `FTP_HOST`/`FTP_USER`/`FTP_PASS`/`FTP_ROOT` + `FTP_PORT`/`FTP_TRANSPORT` + `PUBLIC_SITE_URL` |
 | Allow flag | `EXCALIBUR_BLOG_ALLOW_PUBLISH=yes` |
 
-**Агент знает:** пароль FTP = пароль SFTP. Сразу SFTP с `FTP_*`; не требуй отдельный `SSH_PASS`, если задан `FTP_PASS`. Root = `.` (login cwd).
+**Агент знает:** для Добрый дом / Timeweb — **FTP passive port 21** (`FTP_TRANSPORT=ftp`, `FTP_ROOT=sublease/public_html`). SFTP:22 у extra FTP user = Permission denied. Для других тенантов — SFTP (port 22, default). Пароль только в Cloud Secrets, не в git.
 
 Если allow flag ≠ yes → **`❌ PUBLISH BLOCKER`** (не silent skip).
 

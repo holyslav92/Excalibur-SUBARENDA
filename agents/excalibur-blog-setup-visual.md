@@ -14,7 +14,7 @@ is_background: false
 ## Читаешь
 
 1. `memory/setup/visual-inbox/` (PNG/JPG/WebP + заметки)
-2. Handoff: `cover_mode` = `host_reference` | `illustrative`
+2. Handoff: `cover_mode` = `logo_lockup` | `host_reference` | `illustrative`
 3. Контракт `shared/blog-cover-quad-canvas-contract.md` (структура quad; без чужого бренда)
 4. Текущие stubs `memory/cover/*`
 
@@ -40,7 +40,7 @@ is_background: false
 ```text
 === EXCALIBUR SETUP VISUAL ===
 status: PASS | NEED_MORE_REFS
-cover_mode: host_reference | illustrative
+cover_mode: logo_lockup | host_reference | illustrative
 files: memory/cover/blog-hero.json, cover-design-code.json, assets/...
 incident_report: none
 ```

@@ -1,6 +1,6 @@
 ---
 name: excalibur-blog-cover
-description: "④a Cover: 2× quad canvas Derouter REST 2K i2i, light/meme/Wordstat, anti-repeat."
+description: "④a Cover: 2× quad canvas Derouter REST 2K, light/meme/Wordstat, logo lockup, anti-repeat."
 model: inherit
 readonly: false
 is_background: false
@@ -10,7 +10,7 @@ is_background: false
 
 ## Канон (читать первым)
 
-- `memory/cover/cover-canon.json` — light/bright, мемы, Wordstat stickers, anti-repeat 14д
+- `memory/cover/cover-canon.json` — light/bright, мемы, Wordstat stickers, logo lockup, anti-repeat 14д
 - `skills/cover-excalibur-blog/SKILL.md`
 - `shared/blog-cover-quad-canvas-contract.md`
 
@@ -27,15 +27,17 @@ Cover генерирует **2×** quad-холста 2×2 (**Derouter REST** + `
 - `article.html` + Sol PASS + `cover/cover-text.json` gate PASS
 - `research-notes.md` / handoff — **Wordstat фразы** для stickers
 - `memory/cover/blog-hero.json`, `cover-design-code.json`, `quad-style-dobry-dom.json`
+- `memory/cover/assets/brand/logo-dobry-dom.png` — официальный логотип
 
 ## Cover agent обязан
 
 1. **Изобрести** новую сцену: composition, location, meme, props, stickers, joke — не из inventory.
 2. Заполнить `cover_motifs` в `quad-manifest.json` и пройти motif gate.
-3. **Light & bright:** sun flare, light leak, glow, airy #FFFFFF — no dark cinematic.
-4. **Мемы:** meme cat + catalog people-meme **small stickers** on cover; host Святослав LARGE left = **only** large human. Inline = infographic; no co-host/stock man.
-5. **1–3 Wordstat stickers** — live high-frequency RU queries (Тюмень/область), из research/handoff.
-6. **Identity:** i2i `face-studio-2026-06-23.jpg` only (WHO); **NEW expression** per hook (`cover_emotion` + scene_hint); never copy reference smile/pose.
+3. **Light & bright:** sun flare, light leak, glow, airy #FFFFFF — teal curtains + terracotta accents; no dark cinematic.
+4. **Logo lockup:** логотип «Добрый дом» на **всех 8** изображениях (cover + 7 inlines) — читаемый corner lockup, не гигантский watermark.
+5. **Мемы:** meme cat + catalog people-meme **small stickers** on cover; inline = infographic; no co-host/stock man.
+6. **1–3 Wordstat stickers** — live high-frequency RU queries (Тюмень/область), из research/handoff.
+7. **NO host face / NO Shakin identity** — люди по теме статьи OK (гости, семьи, уборщики), но без identity lock.
 
 ## Пайплайн
 
@@ -88,22 +90,21 @@ python3 scripts/excalibur_blog_cover_motif_gate.py record --topic-id <id> --comp
 ## Inline utility (v3)
 
 - Канон: `memory/cover/inline-visual-types.json`
-- **Тест пользы:** каждый inline учит факт/порядок/число/сравнение по H2 — FAIL если ряд иконок+3 слова
-- **NO host face** на inline; стиль = одобренная B02 обложка (high-key collage)
-- **NO co-host human** на inline — stock model, generated man, large meme person → FAIL
-- **Meme stickers** на inline: ≤15% кадра, угол; `memory/cover/meme-top100.json`
+- **Тест пользы:** каждый inline учит факт/порядок/число/сравнение по H2 — FAIL если decorative-only или ряд иконок+3 слова
+- **Logo lockup** на каждом inline
+- **NO host face / NO Shakin** на inline
 - Cover-text labels = **факты** из статьи, не слоганы
-- Cover-QA checks: `inline_utility_all_7`, `inline_no_host_face`, `inline_no_co_host_human`, `inline_meme_sticker_scale`, `meme_people_real_catalog`
+- Cover-QA checks: `logo_lockup_all_8`, `inline_utility_all_7`, `inline_no_decorative_only`
 
 ## Blockers
 
 | Код | Причина |
 |-----|---------|
 | COVER MOTIF BLOCKER | collision 14-day anti-repeat |
-| COVER HERO BLOCKER | нет identity-real / reference_url |
+| LOGO BLOCKER | нет logo-dobry-dom.png / reference_url |
 | DEROUTER API KEY MISSING / DEROUTER BLOCKER / KIE API BLOCKER | нет canvas URL/local_path после 2K |
 | IMAGE MODEL BLOCKER | Flux/Seedream/nano_banana/z-image или off-pipeline demo |
-| COVER STYLE BLOCKER | dark cinematic, daypart formula, inventory default props, empty doc-only office |
+| COVER STYLE BLOCKER | dark cinematic, daypart formula, inventory default props, decorative-only inline |
 
 ## Fragment
 

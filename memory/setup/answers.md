@@ -31,7 +31,7 @@
 
 ## Visual
 
-- cover_mode: host_reference
+- cover_mode: logo_lockup
 - refs: portrait.jpg / portrait-landing.jpg, logo, gold favicon, twilight mood
 
 ## CTA

@@ -187,6 +187,35 @@ class WordstatGateTest(unittest.TestCase):
         canon = json.loads((ROOT / "memory/cover/cover-canon.json").read_text(encoding="utf-8"))
         self.assertTrue(canon["forbidden_daypart_formula"]["never_use"])
 
+    def test_cover_canon_logo_lockup_mode(self) -> None:
+        canon = json.loads((ROOT / "memory/cover/cover-canon.json").read_text(encoding="utf-8"))
+        self.assertTrue(canon["logo_lockup"]["required"])
+        self.assertEqual(canon["identity_lock"]["status"], "DISABLED")
+        logo_path = ROOT / canon["logo_lockup"]["asset"]
+        self.assertTrue(logo_path.is_file(), str(logo_path))
+
+    def test_cover_qa_doctor_logo_lockup(self) -> None:
+        proc = subprocess.run(
+            [sys.executable, str(ROOT / "scripts/excalibur_blog_cover_qa_gate.py"), "--doctor"],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        self.assertEqual(proc.returncode, 0, proc.stderr or proc.stdout)
+        self.assertIn("logo lockup", proc.stdout.lower())
+
+    def test_identity_real_check_logo_mode(self) -> None:
+        proc = subprocess.run(
+            [sys.executable, str(ROOT / "scripts/excalibur_blog_identity_real.py"), "--check"],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        self.assertEqual(proc.returncode, 0, proc.stderr or proc.stdout)
+        self.assertIn("logo lockup", proc.stdout.lower())
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,42 +1,31 @@
-# Cover assets — The Риэлтор
+# Cover assets — Добрый дом
 
-Локальные референсы для `cover_mode=host_reference`. Чужие CDN/catbox не использовать.
+Локальные референсы для `cover_mode=logo_lockup`. Чужие CDN/catbox не использовать для бренда.
 
-## Identity lock (PRIMARY) — live photos
-
-Каталог `identity-real/` — **единственный** source of truth для лица:
+## Logo lockup (PRIMARY)
 
 | Файл | Роль |
 |------|------|
-| `identity-real/face-hoodie-airpods.jpeg` | PRIMARY geometry lock |
-| `identity-real/face-office-selfie.jpeg` | Round face, stubble |
-| `identity-real/face-greenhouse-yahweh.png` | Full body likeness (no scene clone) |
-| `identity-real/face-immortal-regiment.jpeg` | Face only (no scene clone) |
+| `brand/logo-dobry-dom.png` | **logo_lockup** — official brand mark on ALL 8 images |
 
-i2i **ротирует** все четыре (`blog-hero.json` → `i2i_reference_rotation`).
+Hosted URL: `blog-hero.json` → `reference_url_hosted` (WP media on добрыйдом-72.рф).
+
+## Identity-real (DISABLED)
+
+`identity-real/` — **не используется** для Добрый дом. NO Shakin / face-studio identity lock.
 
 ## Scene composition only (NOT face)
 
 `scene-composition-only/hero-ref-*.jpg` — AI mood refs. **Запрещено** как FACE source.
 
-## Legacy likeness (secondary, not primary)
-
-| Файл | Роль |
-|------|------|
-| `portrait.jpg` | Старый full-body navy blazer (сайт) |
-| `portrait-landing.jpg` | Поясной, сумерки |
-| `portrait-640.webp` | Webp |
-
-## Emotion bank
-
-Cover выбирает одну эмоцию на статью; **новая** поза/сцена каждый раз.
-
 ## Longform
 
-8 изображений: cover + 7 inline. 2× quad-canvas 2K (mcp-derouter) → split 2×2.
+8 изображений: cover + 7 inline. 2× quad-canvas 2K (Derouter REST) → split 2×2.
 
-Inbox: `memory/setup/visual-inbox/` (копии identity-real + logo).
+Logo lockup на cover + каждом inline. Inline = utility info-graphics (tables, steps, checklists).
+
+Inbox: `memory/setup/visual-inbox/` (logo updates).
 
 ## Запреты
 
-Чужое лицо, plastic/uncanny face, AI hero-ref как лицо, pink-cat, белое худи, клон любой референсной сцены.
+Shakin/face-studio identity lock, plastic/uncanny face, AI hero-ref как лицо, decorative-only inline, missing logo on any of 8.

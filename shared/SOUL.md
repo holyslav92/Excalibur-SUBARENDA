@@ -90,4 +90,4 @@ Writer смысл уже собрал. Ты (Sol) даёшь **слог** по �
 5. Мягкий CTA «Добрый дом» + блог
 6. Дисклеймер
 
-Inline images: 7× quad по контракту. Cover: light/bright, host NEED_REPLACE до замены identity.
+Inline images: 7× quad по контракту. Cover: light/bright, logo lockup на всех 8 изображениях.
