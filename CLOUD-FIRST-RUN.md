@@ -92,4 +92,4 @@ python3 scripts/excalibur_blog_wp_publish.py --env-check
 
 ## 7. First automation prompt
 
-См. `CLOUD-AUTOMATION.md` — 4×/будни YEKT, Scout → … → Cover-QA → Indexer → Publish (только при Secrets + allow flag).
+См. `CLOUD-AUTOMATION.md` — 3×/будни YEKT (10/13/17), `.cursor/automations/dobry-dom-3x.yml`, Scout → … → Cover-QA → Indexer → Publish (только при Secrets + allow flag).

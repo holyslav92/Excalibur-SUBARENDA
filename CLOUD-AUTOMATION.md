@@ -8,36 +8,38 @@
 Тенант: **«Добрый дом»** / добрыйдом-72.рф — longform ~2000–2600 слов, cover + 7 inline-quad.
 Темы: посуточная аренда, субаренда, заселение, залог, соседи, ЖКХ, Тюмень.
 
-## Расписание (owner: 9–17 YEKT)
+## Расписание (owner: 10–17 YEKT)
 
-**4 запуска в будни** (пн–пт), часовой пояс **Asia/Yekaterinburg (YEKT, UTC+5)**:
+**3 запуска в будни** (пн–пт), часовой пояс **Asia/Yekaterinburg (YEKT, UTC+5)**:
 
 | Слот | Время YEKT |
 |------|------------|
-| 1 | 09:00 |
-| 2 | 12:00 |
-| 3 | 15:00 |
-| 4 | 17:00 |
+| 1 | 10:00 |
+| 2 | 13:00 |
+| 3 | 17:00 |
 
-- Окно владельца: **09:00–17:00** YEKT. Слот **20:00 не используется**.
+- Окно владельца: **10:00–17:00** YEKT.
 - Выходные (сб–вс): longform automation **не запускать**, если owner не попросил отдельно.
 
 ### Cursor Automation (не GitHub Actions)
 
-Настройте **4 отдельных триггера** в [Cursor → Automations](https://cursor.com/docs/cloud-agent/automations) на репозиторий **Excalibur-SUBARENDA**:
+**Repo config:** `.cursor/automations/dobry-dom-3x.yml` — импорт в [Cursor → Automations](https://cursor.com/docs/cloud-agent/automations).
 
-| Триггер | Расписание (YEKT) | Пример cron (TZ=Asia/Yekaterinburg) |
-|---------|-------------------|-------------------------------------|
-| 1 | пн–пт 09:00 | `0 9 * * 1-5` |
-| 2 | пн–пт 12:00 | `0 12 * * 1-5` |
-| 3 | пн–пт 15:00 | `0 15 * * 1-5` |
-| 4 | пн–пт 17:00 | `0 17 * * 1-5` |
+Один триггер с тремя слотами (пн–пт):
+
+| Поле | Значение |
+|------|----------|
+| Имя | Добрый дом 3 статьи |
+| Репозиторий | `holyslav92/Excalibur-SUBARENDA` |
+| Cron (YEKT) | `CRON_TZ=Asia/Yekaterinburg 0 10,13,17 * * 1-5` |
+| Cron (UTC fallback) | `0 5,8,12 * * 1-5` (= 10/13/17 YEKT) |
+| Memories | **OFF** |
+| MCP | MCP-KV `wordstat_*` only — **never** `wordpress_* |
+| Publish site | только **добрыйдом-72.рф** (FTP Timeweb) — **never** tymenrieltor.ru |
 
 Канонические слоты дублируются в `shared/tenant-config.json` → `publish_schedule.slots_local`.
 
 **Не добавляйте** GitHub Actions cron для этого longform-потока — расписание живёт в **Cursor Automation**.
-
-**Memories = OFF** в Automation → Tools (см. `CLOUD-FIRST-RUN.md`).
 
 ## Один run = одна статья
 
@@ -48,19 +50,29 @@ Scout? → research_start → Research → Title → Writer → Sol
 ```
 
 - **Publish** — **только если одновременно**:
-  1. в Cloud Secrets SFTP для **добрыйдом-72.рф** (не tymenrieltor.ru);
+  1. Cloud Secrets FTP для **добрыйдом-72.рф** (vh368.timeweb.ru, port 21, root `sublease/public_html`);
   2. `EXCALIBUR_BLOG_ALLOW_PUBLISH=yes` на процесс (**не git**).
+- **Never** tymenrieltor.ru, Excalibur-2-Cloud, MCP-KV `wordpress_*`.
 - Если allow flag или FTP **нет** — run завершается после Indexer + артефактов в репо.
+
+### Cover + images (HARD)
+
+- Logo lockup на **всех 8** изображениях (`memory/cover/assets/brand/logo-dobry-dom.png`).
+- NO host face / NO Shakin identity.
+- Inline = utility info-graphics (не decorative-only).
+- Images: **Derouter REST** (`excalibur_blog_derouter_gpt_image2_api.py`) — not Flux/Seedream/nano_banana/mcp-derouter.
 
 Writer = смысл (`drafts/writer.html`). Sol = слог тенанта (`shared/SOUL.md`).
 
 ## Thin conductor + Derouter two-tier (HARD)
 
-См. `shared/derouter-opus-brain-contract.md` — без изменений от Excalibur-2-Cloud.
+См. `shared/derouter-opus-brain-contract.md`.
 
 ## Scout × Wordstat × Klyshin
 
 Dual gate сохранён. Klyshin = angle/hook; Wordstat = evaluate + rework для
 посуточной аренды / субаренды в Тюмени (Tyumen 55+11176, compare RU 225).
+
+**Wordstat:** MCP-KV `wordstat_*` only.
 
 Банк: `memory/scout/klyshin-topic-bank.json`.
