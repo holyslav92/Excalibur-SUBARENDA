@@ -11,12 +11,14 @@ import argparse
 import hashlib
 import json
 import re
+import shutil
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-DEFAULT_LOGO_REL = "memory/cover/assets/brand/dobry-dom-logo.png"
+DEFAULT_LOGO_REL = "memory/cover/assets/brand/logo-dobry-dom.png"
+PRE_COMPOSITE_DIRNAME = "pre-composite"
 CANONICAL_SHA256 = "eaf97915a9830ffd31b5c08b128e8b60dc0b0b9a8ee85fc4083f32c49040ee3f"
 LOGO_WIDTH_FRACTION_MIN = 0.08
 LOGO_WIDTH_FRACTION_MAX = 0.12
@@ -284,6 +286,36 @@ def clamp_logo_fraction(value: float, cfg: dict[str, Any] | None = None) -> floa
     return max(lo, min(hi, target))
 
 
+def snapshot_pre_composite(image_path: Path, pre_dir: Path) -> tuple[Path, bool]:
+    """Сохранить копию до factory paste — для QA drawn-lockup gate."""
+    pre_dir.mkdir(parents=True, exist_ok=True)
+    dest = pre_dir / image_path.name
+    if dest.is_file():
+        return dest, False
+    shutil.copy2(image_path, dest)
+    return dest, True
+
+
+def restore_or_snapshot_pre_composite(image_path: Path, pre_dir: Path) -> tuple[Path, bool]:
+    """Вернуть generation-only panel: restore из pre-composite или создать snapshot."""
+    pre_path, created = snapshot_pre_composite(image_path, pre_dir)
+    if not created:
+        shutil.copy2(pre_path, image_path)
+    return pre_path, created
+
+
+def assert_no_drawn_lockup_before_paste(image_path: Path) -> None:
+    from excalibur_blog_drawn_logo_gate import detect_drawn_lockup_in_image
+
+    result = detect_drawn_lockup_in_image(image_path)
+    if result.get("detected"):
+        reasons = ", ".join(result.get("reasons") or [])
+        raise ValueError(
+            f"AI-drawn lockup in {image_path.name} before factory paste "
+            f"(score={result.get('score')}, {reasons}) — regenerate panel with empty top-right pad"
+        )
+
+
 def composite_logo_onto_image(
     image_path: Path,
     logo_path: Path,
@@ -295,8 +327,15 @@ def composite_logo_onto_image(
     adaptive_corner: bool = False,
     fixed_corner: str = FIXED_LOGO_CORNER,
     paste_logo: bool = True,
+    pre_snapshot_dir: Path | None = None,
+    block_drawn_lockup: bool = True,
 ) -> dict[str, Any]:
     from PIL import Image
+
+    if pre_snapshot_dir is not None:
+        pre_path, created = restore_or_snapshot_pre_composite(image_path, pre_snapshot_dir)
+        if paste_logo and block_drawn_lockup and created:
+            assert_no_drawn_lockup_before_paste(pre_path)
 
     with Image.open(image_path) as base_img:
         base = base_img.convert("RGBA")
@@ -321,10 +360,12 @@ def composite_logo_onto_image(
             base.alpha_composite(logo, (max(0, x), max(0, y)))
             logo_width_fraction = round(logo.width / max(base.width, 1), 4)
             logo_width_px = int(logo.width)
+            logo_height_px = int(logo.height)
             logo_xy = [int(x), int(y)]
         else:
             logo_width_fraction = 0.0
             logo_width_px = 0
+            logo_height_px = 0
             logo_xy = []
         if add_phone and phone_display:
             draw_phone_on_cover(base, phone_display, anchor=phone_anchor, margin_px=margin_px)
@@ -333,6 +374,7 @@ def composite_logo_onto_image(
         "logo_corner": corner if paste_logo else "",
         "logo_xy": logo_xy,
         "logo_width_px": logo_width_px,
+        "logo_height_px": logo_height_px,
         "logo_width_fraction": logo_width_fraction,
         "phone_anchor": phone_anchor if add_phone else "",
         "logo_pasted": bool(paste_logo),
@@ -366,6 +408,7 @@ def composite_article_images(
     logo_corner = str(cfg.get("logo_corner") or FIXED_LOGO_CORNER).casefold()
     inline_logo_files = resolve_inline_logo_slots(article_dir, cfg)
     cover_dir = article_dir / "cover"
+    pre_composite_dir = cover_dir / PRE_COMPOSITE_DIRNAME
     composed: list[str] = []
     cover_placement: dict[str, Any] = {}
     panel_placements: dict[str, Any] = {}
@@ -386,6 +429,8 @@ def composite_article_images(
             adaptive_corner=False,
             fixed_corner=logo_corner,
             paste_logo=paste_logo,
+            pre_snapshot_dir=pre_composite_dir,
+            block_drawn_lockup=True,
         )
         if name == "cover.png":
             cover_placement = placement
@@ -417,6 +462,7 @@ def composite_article_images(
         "cover_phone_post_composite": True,
         "adaptive_logo_corner_all_panels": False,
         "inline_phone_required": False,
+        "pre_composite_dir": f"cover/{PRE_COMPOSITE_DIRNAME}",
     }
     stamp_path = cover_dir / "logo-composite-stamp.json"
     stamp_path.write_text(json.dumps(stamp, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

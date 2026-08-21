@@ -20,7 +20,10 @@ FAIL → **вернуть Cover** (не Indexer/Publish).
 2. **no_element_overlap** — headline, stickers, meme, cat, phone, people, logo pad не перекрываются.
 3. **wow_poster_magazine_typography** — magazine poster, bold readable Russian display hook, scene + one sharp line; не timid system font / label wall / empty stock / WP screenshot.
 4. **inline_logo_count_2_3** + **forbid_multiple_logos_per_image** + **logo_top_right_fixed** — логотип на cover + 2–3 inline (default inline_1/3/7), TOP-RIGHT pad; never 2+ logos per frame.
-5. **cover_phone_993_post_composite** + **cover_phone_not_in_logo_pad** — +7 (993) 574-83-22 только на cover post-composite, не в logo pad.
+5. **forbid_ai_drawn_logo_pre_composite** — pre-composite panels MUST NOT contain AI-drawn lockup (curtains+flower, dashed frame, wordmark).
+6. **official_logo_pixels_only** — post-composite logo region MUST match official `logo-dobry-dom.png` pixels.
+7. **logo_no_text_overlap** — factory logo MUST NOT overlap readable text.
+8. **cover_phone_993_post_composite** + **cover_phone_not_in_logo_pad** — +7 (993) 574-83-22 только на cover post-composite, не в logo pad.
 
 ## Что проверяешь (визуально + артефакты)
 
@@ -58,6 +61,9 @@ FAIL → **вернуть Cover** (не Indexer/Publish).
     "inline_logo_count_2_3": true,
     "forbid_multiple_logos_per_image": true,
     "logo_width_fraction_8_12": true,
+    "forbid_ai_drawn_logo_pre_composite": true,
+    "official_logo_pixels_only": true,
+    "logo_no_text_overlap": true,
     "cover_phone_993_post_composite": true,
     "forbid_922_phone": true,
     "cover_phone_not_in_logo_pad": true,

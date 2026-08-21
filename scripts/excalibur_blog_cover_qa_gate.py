@@ -18,6 +18,9 @@ BRAND_LOGO_CHECKS = (
     "cover_phone_993_post_composite",
     "forbid_922_phone",
     "cover_phone_not_in_logo_pad",
+    "forbid_ai_drawn_logo_pre_composite",
+    "official_logo_pixels_only",
+    "logo_no_text_overlap",
     "forbid_wordpress_ui_in_art",
     "no_element_overlap",
     "wow_poster_magazine_typography",
@@ -179,6 +182,12 @@ def validate_cover_qa(article_dir: Path, root: Path) -> dict:
             stamp_path = article_dir / "cover" / "logo-composite-stamp.json"
             if not stamp_path.is_file():
                 errors.append("cover/logo-composite-stamp.json missing — run brand logo composite")
+        try:
+            from excalibur_blog_drawn_logo_gate import validate_article_logo_gates
+
+            errors.extend(validate_article_logo_gates(article_dir, root))
+        except ImportError:
+            errors.append("excalibur_blog_drawn_logo_gate.py missing — logo paste QA unavailable")
 
     status = "PASS" if not errors else "FAIL"
     return {"status": status, "errors": errors}

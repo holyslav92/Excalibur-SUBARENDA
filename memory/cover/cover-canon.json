@@ -34,7 +34,7 @@
       "logo_pad": {
         "corner": "top_right",
         "reserved_empty_in_generation": true,
-        "factory_paste_png": "memory/cover/assets/brand/dobry-dom-logo.png",
+        "factory_paste_png": "memory/cover/assets/brand/logo-dobry-dom.png",
         "width_fraction": "8-12%",
         "one_logo_per_image": true
       },
@@ -102,7 +102,7 @@
     "mode": "paste_png_alpha",
     "cover_mode": "brand_logo_paste",
     "skip_human_host": true,
-    "logo_asset": "memory/cover/assets/brand/dobry-dom-logo.png",
+    "logo_asset": "memory/cover/assets/brand/logo-dobry-dom.png",
     "forbid_ai_drawn_logo": true,
     "logo_corner": "top_right",
     "logo_width_fraction": "8-12%",

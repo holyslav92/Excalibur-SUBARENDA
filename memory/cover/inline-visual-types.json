@@ -3,7 +3,13 @@
   "comment": "Inline panel type catalog for Добрый дом. Utility-first: each panel teaches a fact from its H2. Logo lockup on all inlines. No host face / no Shakin identity.",
   "utility_test": "Reader who has NOT read the paragraph must still extract a concrete fact, order, number, or comparison from the image alone. If labels removed → nothing understandable = FAIL. Row of 5 icon circles with 3-word captions = FAIL. Decorative-only interior = FAIL.",
   "style_lock": "Same as approved cover: #FFFFFF high-key, terracotta #c45c3e / teal #3d8b7a / black #141821, torn paper, tape, sun flare, collage. Logo lockup corner on every inline. Small meme sticker on 2–3 of 7 inlines only (≤15% frame).",
-  "logo_lockup_required": true,
+  "logo_lockup_required": false,
+  "logo_factory_paste": {
+    "cover_always": true,
+    "inline_count": "2-3 of 7",
+    "asset": "memory/cover/assets/brand/logo-dobry-dom.png",
+    "forbid_ai_drawn_logo": true
+  },
   "forbidden_inline": [
     "decorative-only interior without facts/labels/numbers",
     "host face / identity-real / Shakin / face-studio portrait",
