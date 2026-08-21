@@ -10,8 +10,53 @@ from unittest import mock
 
 ROOT = Path(__file__).resolve().parents[1]
 
+NON_WRITER_TEXT_ROLES = (
+    "scout",
+    "title",
+    "sol",
+    "research",
+    "description",
+    "cover-text",
+    "schema",
+    "cover-scene",
+)
+
 
 class DerouterResolveModelTests(unittest.TestCase):
+    def test_only_writer_on_powerful_tier(self) -> None:
+        from scripts.excalibur_blog_derouter_opus_chat import (
+            POWERFUL_ROLES,
+            UTILITY_ROLES,
+            resolve_model,
+        )
+
+        self.assertEqual(POWERFUL_ROLES, frozenset({"writer"}))
+        self.assertEqual(
+            UTILITY_ROLES,
+            frozenset(
+                {
+                    "scout",
+                    "title",
+                    "sol",
+                    "research",
+                    "description",
+                    "cover-text",
+                    "schema",
+                    "cover-scene",
+                }
+            ),
+        )
+
+        model, tier = resolve_model("writer", None, ROOT)
+        self.assertEqual(tier, "powerful")
+        self.assertIn("opus", model.lower())
+
+        for role in NON_WRITER_TEXT_ROLES:
+            model, tier = resolve_model(role, None, ROOT)
+            self.assertEqual(tier, "utility", role)
+            self.assertNotIn("opus", model.lower(), role)
+            self.assertIn("terra", model.lower(), role)
+
     def test_powerful_role_requires_opus_family(self) -> None:
         from scripts.excalibur_blog_derouter_opus_chat import resolve_model
 
@@ -25,12 +70,12 @@ class DerouterResolveModelTests(unittest.TestCase):
                             "powerful": {
                                 "model": "claude-opus-5",
                                 "model_env": "DEROUTER_OPUS_MODEL",
-                                "roles": ["writer", "sol", "title", "scout"],
+                                "roles": ["writer"],
                             },
                             "utility": {
                                 "model": "gpt-5.6-terra",
                                 "model_env": "DEROUTER_TERRA_MODEL",
-                                "roles": ["research", "description", "cover-text", "schema", "cover-scene"],
+                                "roles": list(NON_WRITER_TEXT_ROLES),
                             },
                         }
                     }
@@ -44,6 +89,17 @@ class DerouterResolveModelTests(unittest.TestCase):
             model, tier = resolve_model("research", None, root)
             self.assertEqual(tier, "utility")
             self.assertEqual(model, "gpt-5.6-terra")
+
+    def test_validate_rejects_non_writer_on_opus_tier(self) -> None:
+        from scripts.excalibur_blog_derouter_opus_chat import (
+            DerouterChatError,
+            validate_writing_model_opus_writer_only,
+        )
+
+        with self.assertRaises(DerouterChatError):
+            validate_writing_model_opus_writer_only(
+                {"powerful": {"roles": ["writer", "sol", "title"]}, "utility": {"roles": ["scout"]}}
+            )
 
     def test_legacy_text_model_does_not_override_powerful_to_non_opus(self) -> None:
         from scripts.excalibur_blog_derouter_opus_chat import resolve_model
@@ -66,6 +122,19 @@ class DerouterResolveModelTests(unittest.TestCase):
                 model, tier = resolve_model("writer", None, root)
                 self.assertEqual(tier, "powerful")
                 self.assertIn("opus", model.lower())
+
+
+class TenantWritingModelRoutingTests(unittest.TestCase):
+    def test_tenant_config_opus_writer_only(self) -> None:
+        tenant = json.loads((ROOT / "shared/tenant-config.json").read_text(encoding="utf-8"))
+        writing = tenant.get("writing_model") or {}
+        powerful_roles = set((writing.get("powerful") or {}).get("roles") or [])
+        utility_roles = set((writing.get("utility") or {}).get("roles") or [])
+
+        self.assertEqual(powerful_roles, {"writer"})
+        self.assertEqual(writing.get("canon_note"), "Opus 5 = Writer only; everything else Terra")
+        self.assertFalse(powerful_roles.intersection({"scout", "title", "sol"}))
+        self.assertTrue(set(NON_WRITER_TEXT_ROLES).issubset(utility_roles))
 
 
 if __name__ == "__main__":

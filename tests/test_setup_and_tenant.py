@@ -7,6 +7,17 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
+NON_WRITER_TEXT_ROLES = (
+    "scout",
+    "title",
+    "sol",
+    "research",
+    "description",
+    "cover-text",
+    "schema",
+    "cover-scene",
+)
+
 
 class SetupTenantTests(unittest.TestCase):
     def test_setup_status_complete_after_tenant_fill(self) -> None:
@@ -44,6 +55,9 @@ class SetupTenantTests(unittest.TestCase):
         utility = writing.get("utility") or {}
         self.assertEqual(powerful.get("model"), "claude-opus-5")
         self.assertEqual(utility.get("model"), "gpt-5.6-terra")
+        self.assertEqual(set(powerful.get("roles") or []), {"writer"})
+        self.assertTrue(set(NON_WRITER_TEXT_ROLES).issubset(set(utility.get("roles") or [])))
+        self.assertEqual(writing.get("canon_note"), "Opus 5 = Writer only; everything else Terra")
         self.assertTrue(writing.get("fail_loud_if_unavailable"))
 
     def test_setup_agents_present(self) -> None:

@@ -5,9 +5,9 @@ description: Invent one catchy human H1 — cable pain-scene; Tyumen in H1 optio
 
 # Title Agent — цепкий заголовок
 
-## Derouter powerful (HARD)
+## Derouter utility (HARD)
 
-H1 — только через `excalibur_blog_derouter_opus_chat.py --role title` (Derouter REST / OpenAI-compatible API).
+H1 — только через `excalibur_blog_derouter_opus_chat.py --role title` (gpt-5.6-terra via Derouter REST).
 
 ## Хороший H1
 

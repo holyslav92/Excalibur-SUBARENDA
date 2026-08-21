@@ -62,8 +62,11 @@ VALID_ROLES = frozenset(
     }
 )
 
-POWERFUL_ROLES = frozenset({"scout", "title", "writer", "sol"})
-UTILITY_ROLES = frozenset({"research", "description", "cover-text", "schema", "cover-scene"})
+# Opus 5 = Writer only; everything else Terra (cost canon — do not revert scout/title/sol to powerful).
+POWERFUL_ROLES = frozenset({"writer"})
+UTILITY_ROLES = frozenset(
+    {"scout", "title", "sol", "research", "description", "cover-text", "schema", "cover-scene"}
+)
 
 
 class DerouterChatError(RuntimeError):
@@ -97,6 +100,19 @@ def load_writing_model_config(root: Path) -> dict[str, Any]:
     if not isinstance(writing, dict):
         return {}
     return writing
+
+
+def validate_writing_model_opus_writer_only(writing: dict[str, Any]) -> None:
+    """Opus 5 = Writer only; everything else Terra."""
+    if not writing:
+        return
+    powerful_roles = set(writing.get("powerful", {}).get("roles") or POWERFUL_ROLES)
+    non_writer_on_opus = powerful_roles - {"writer"}
+    if non_writer_on_opus:
+        raise DerouterChatError(
+            "Opus 5 = Writer only; everything else Terra. "
+            f"Non-writer roles on powerful tier: {sorted(non_writer_on_opus)}"
+        )
 
 
 def tier_for_role(role: str, writing: dict[str, Any]) -> str:
@@ -155,6 +171,7 @@ def is_model_not_found_error(exc: Exception) -> bool:
 def resolve_model(role: str, override: str | None, root: Path) -> tuple[str, str]:
     """Возвращает (model_id, tier). Источник истины — tenant-config role map."""
     writing = load_writing_model_config(root)
+    validate_writing_model_opus_writer_only(writing)
     tier = tier_for_role(role, writing)
     tier_block = tier_config(writing, tier)
     config_model = str(tier_block.get("model") or "").strip()
@@ -480,6 +497,7 @@ def run_chat(args: argparse.Namespace) -> int:
 
     root = project_root()
     timeout = max(MIN_TIMEOUT_SECONDS, int(args.timeout))
+    validate_writing_model_opus_writer_only(load_writing_model_config(root))
 
     if role == "smoke" or args.smoke:
         terra_ok, terra_model = run_smoke_ping(

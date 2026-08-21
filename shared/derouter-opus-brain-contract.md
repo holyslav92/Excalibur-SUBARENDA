@@ -9,12 +9,14 @@
 
 Источник истины по ролям: `shared/tenant-config.json` → `writing_model`.
 
+**Opus 5 = Writer only; everything else Terra** — не возвращай scout/title/sol на powerful без явного решения тенанта.
+
 ## Два tier (HARD)
 
 | Tier | Model id (Derouter) | Env override | Роли |
 |------|---------------------|--------------|------|
-| **powerful** | `claude-opus-5` | `DEROUTER_OPUS_MODEL` | scout, title, writer, sol |
-| **utility** | `gpt-5.6-terra` | `DEROUTER_TERRA_MODEL` | research, description, cover-text, schema, cover-scene |
+| **powerful** | `claude-opus-5` | `DEROUTER_OPUS_MODEL` | writer |
+| **utility** | `gpt-5.6-terra` | `DEROUTER_TERRA_MODEL` | scout, title, sol, research, description, cover-text, schema, cover-scene |
 
 `resolve_model` выбирает tier по `--role`. **Не** используй глобальный `DEROUTER_TEXT_MODEL` как override всех ролей — если задан, он не переводит powerful-роли на non-Opus.
 
@@ -80,4 +82,4 @@ python3 scripts/excalibur_blog_derouter_opus_chat.py --role smoke --smoke
 
 ## Legacy alias
 
-`shared/writer-model-contract.md` — Writer/Sol subset powerful tier.
+`shared/writer-model-contract.md` — Writer-only Opus subset (Sol → utility Terra).
