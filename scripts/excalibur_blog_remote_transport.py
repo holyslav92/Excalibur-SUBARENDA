@@ -177,6 +177,16 @@ def _ftp_stor_with_retry(
     raise last_exc
 
 
+def resolve_publish_transport(env: dict[str, str]) -> str:
+    """Return active publish transport label for deploy scripts."""
+    return transport_mode(env)
+
+
+def upload_text_file(env: dict[str, str], remote_name: str, data: bytes) -> str:
+    """Upload a small UTF-8 text artifact to the WP site root."""
+    return upload_bytes(env, remote_name, data)
+
+
 def upload_bytes(
     env: dict[str, str],
     remote_name: str,

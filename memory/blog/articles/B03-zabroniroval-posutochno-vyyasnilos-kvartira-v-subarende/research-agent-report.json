@@ -1,0 +1,37 @@
+{
+  "topic_id": "B03",
+  "research_date": "2026-08-21",
+  "status": "PASS",
+  "summary": "Guest-risk research for sublease chain in Tyumen short-term rental: 7 messenger checks before payment. Fresh signal: Teletype host checklist published 2026-08-15; NGS guest scam column July 2026.",
+  "freshness_audit": {
+    "research_date": "2026-08-21",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://teletype.in/@tg_groups/kak_zakonno_sdavat_kvartiru_posutochno_v_2026_chek",
+      "published_at": "2026-08-15",
+      "note": "Teletype @tg_groups checklist for legal posutochno 2026: owner consent for sublease, chain termination risk, guest data handling."
+    }
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["225", "55", "11176"],
+    "p0_phrase": "субаренда квартиры",
+    "p0_volume": 2954,
+    "related_calls": [
+      "субаренда квартир посуточно",
+      "квартиры посуточно тюмень"
+    ]
+  },
+  "official_source_audit": {
+    "required": false,
+    "status": "PASS",
+    "verified_claims": 0,
+    "entities_checked": [],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  }
+}
