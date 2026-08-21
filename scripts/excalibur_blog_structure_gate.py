@@ -176,6 +176,27 @@ def main() -> int:
     interlink = _load_json(article_dir / "interlink-gate.json")
     record("interlink", interlink_rc == 0 and _hard_ok(interlink), f"exit={interlink_rc}")
 
+    crosslink_argv = [
+        py,
+        str(scripts / "excalibur_blog_crosslink_qa_gate.py"),
+        "--article-dir",
+        str(article_dir.relative_to(root)),
+        "-o",
+        "crosslink-qa-gate.json",
+    ]
+    if args.skip_network:
+        crosslink_argv.append("--skip-http")
+        crosslink_argv.append("--use-cache")
+    elif site_base:
+        crosslink_argv.extend(["--site-base", site_base])
+    crosslink_rc = run_cmd(root, crosslink_argv)
+    crosslink = _load_json(article_dir / "crosslink-qa-gate.json")
+    record(
+        "crosslink_qa",
+        crosslink_rc == 0 and _hard_ok(crosslink),
+        f"exit={crosslink_rc}",
+    )
+
     official_rc = run_cmd(
         root,
         [

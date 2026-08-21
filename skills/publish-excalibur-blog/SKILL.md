@@ -66,6 +66,7 @@ openers). Канон в article — `<h2>Частые вопросы</h2>`; bare
 | Pipeline canon | `pipeline_canon=human-first-v1`, `editorial_swarm=false` |
 | WP рубрики | `article.meta.json` → `wp_category_slugs` или `topic_defaults`; gate `wp-categories-gate.json` PASS |
 | Interlink outbound | `interlink-gate.json` PASS (1–3 ссылки на published siblings) |
+| Cross-link QA | `crosslink-qa-gate.json` PASS (live `/blog/` catalog + HTTP 200 + anchor intent) |
 | Credentials | `FTP_HOST`/`FTP_USER`/`FTP_PASS`/`FTP_ROOT` + `FTP_PORT`/`FTP_TRANSPORT` + `PUBLIC_SITE_URL` |
 | Allow flag | `EXCALIBUR_BLOG_ALLOW_PUBLISH=yes` |
 

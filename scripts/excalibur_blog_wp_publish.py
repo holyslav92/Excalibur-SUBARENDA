@@ -1223,6 +1223,20 @@ def check_publish_prerequisites(
         except json.JSONDecodeError:
             blockers.append("interlink-gate.json invalid")
 
+    crosslink_rc = _run_article_gate_script(root, article_dir, "excalibur_blog_crosslink_qa_gate.py")
+    if crosslink_rc != 0:
+        blockers.append(
+            "crosslink-qa-gate failed (live /blog/ catalog + HTTP 200 + anchor intent; see crosslink-qa-gate.json)"
+        )
+    crosslink_gate = article_dir / "crosslink-qa-gate.json"
+    if crosslink_gate.is_file():
+        try:
+            crosslink_report = json.loads(crosslink_gate.read_text(encoding="utf-8"))
+            if str(crosslink_report.get("status") or "").upper() != "PASS":
+                blockers.append(f"crosslink-qa-gate.json status={crosslink_report.get('status') or 'missing'}")
+        except json.JSONDecodeError:
+            blockers.append("crosslink-qa-gate.json invalid")
+
     if require_freshness_gate and (article_dir / "freshness-report.json").is_file():
         freshness = _gate_json_status(article_dir / "freshness-report.json")
         if freshness == "STALE" and allow_stale_freshness:
