@@ -46,19 +46,34 @@ def load_tenant_config(root: Path | None = None) -> dict:
 
 
 def cover_mode(root: Path | None = None) -> str:
-    """Return cover_mode from tenant-config (default logo_lockup for Добрый дом)."""
+    """Return cover_mode from tenant-config (default brand_logo_paste for Добрый дом)."""
     tenant = load_tenant_config(root)
-    return str(tenant.get("cover_mode") or "logo_lockup").strip()
+    return str(tenant.get("cover_mode") or "brand_logo_paste").strip()
 
 
 def is_logo_lockup_mode(root: Path | None = None) -> bool:
-    return cover_mode(root) in {"logo_lockup", "illustrative"}
+    mode = cover_mode(root).casefold()
+    return mode in {"logo_lockup", "brand_logo_paste", "brand_logo_composite", "paste_png", "illustrative"}
 
 
 def logo_lockup_path(root: Path | None = None) -> Path:
     root = root or project_root()
     tenant = load_tenant_config(root)
-    rel = str(tenant.get("logo_lockup") or LOGO_LOCKUP_REL)
+    composite = tenant.get("logo_composite") or {}
+    hero_rel = (tenant.get("cover_files") or {}).get("hero") or "memory/cover/blog-hero.json"
+    hero_path = root / hero_rel
+    hero_logo = ""
+    if hero_path.is_file():
+        try:
+            hero = json.loads(hero_path.read_text(encoding="utf-8"))
+            hero_logo = str(
+                (hero.get("logo_composite") or {}).get("logo_asset")
+                or hero.get("reference_image")
+                or ""
+            )
+        except json.JSONDecodeError:
+            hero_logo = ""
+    rel = str(composite.get("logo_asset") or hero_logo or tenant.get("logo_lockup") or LOGO_LOCKUP_REL)
     path = Path(rel)
     if not path.is_absolute():
         path = root / path
@@ -100,7 +115,7 @@ def pick_identity_reference(topic_id: str = "", slug: str = "") -> dict[str, str
         "id": "logo_dobry_dom",
         "file": "logo-dobry-dom.png",
         "role": "logo_lockup",
-        "notes": "Brand logo lockup — NOT face i2i.",
+        "notes": "Brand logo factory paste — NOT face i2i; NEVER draw lockup in generation.",
         "do_not_clone_scene": False,
     }
 

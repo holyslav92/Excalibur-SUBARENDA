@@ -24,7 +24,7 @@ class SetupTenantTests(unittest.TestCase):
         self.assertEqual(tenant.get("brand_name"), "Добрый дом")
         self.assertEqual(tenant.get("author_id"), "dobry-dom")
         self.assertEqual(tenant.get("topic_focus_profile"), "short_term_rental")
-        self.assertEqual(tenant.get("cover_mode"), "logo_lockup")
+        self.assertIn(tenant.get("cover_mode"), {"brand_logo_paste", "logo_lockup"})
         hints = tenant.get("publish_transport_hints") or {}
         self.assertEqual(hints.get("transport"), "ftp")
         self.assertEqual(hints.get("ftp_root"), "sublease/public_html")

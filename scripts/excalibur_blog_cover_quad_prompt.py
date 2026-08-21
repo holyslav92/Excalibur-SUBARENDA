@@ -75,6 +75,12 @@ WOW_POSTER_BAN = (
     "block editor; theme chrome; cookie bar; timid system font; "
     "wall of tiny labels; empty stock; wordpress screenshot"
 )
+LOGO_DRAW_HARD_BAN = (
+    "NEVER draw/render/paint ANY brand logo, wordmark, lockup, icon, or subtitle in generation: "
+    "NO «Добрый дом» text; NO green curtains+red flower icon; NO dashed logo frame/box; "
+    "NO gold house-with-heart; NO terracotta serif wordmark; NO УЮТНЫЕ КВАРТИРЫ В АРЕНДУ subtitle; "
+    "NO logo comparison table; NO second logo copy; factory pastes official PNG after split only"
+)
 NO_OVERLAP_RULE = (
     "Separate zones — headline, Wordstat stickers, meme, cat bottom-left, people, "
     "TOP-RIGHT empty logo pad NEVER overlap each other; phone NOT in generation"
@@ -153,11 +159,13 @@ def inline_panel_prompt(slot: dict, types_catalog: dict, *, logo_paste: bool = F
         )
     if logo_paste:
         base += (
-            " TOP-RIGHT empty pad for ONE factory logo 8–12%; NO drawn logo/house/heart; NO multi logos."
+            " TOP-RIGHT empty pad for ONE factory logo 8–12%; "
+            "NO drawn logo/wordmark/lockup/curtains+flower/dashed frame/gold house; NO multi logos."
         )
     else:
         base += (
-            " TOP-RIGHT clean margin; NO factory logo here; NO drawn logos/house/heart."
+            " TOP-RIGHT clean margin; NO factory logo here; "
+            "NO drawn logos/wordmark/lockup/curtains+flower/dashed frame/gold house."
         )
     return base
 
@@ -534,14 +542,14 @@ def build_prompt(
     ban_line = (
         "Ban: dark/low-key; inventory props; celebrity memes; EXCALIBUR stamp; chubby host; "
         f"stock/generated man co-host on inline; large meme person on inline; "
-        f"{INLINE_BAN_EXTRA}; {WOW_POSTER_BAN}."
+        f"{INLINE_BAN_EXTRA}; {WOW_POSTER_BAN}; {LOGO_DRAW_HARD_BAN}."
     )
     if has_cover and brand_logo_paste:
         reference_line = (
             "Cover TL: NO host i2i; NO Shakin/identity-real; NO brand logo; NO phone in generation; "
             "WOW magazine poster collage with reserved TOP-RIGHT empty pad for ONE factory logo; "
             "NEVER multiple logos or logo comparison table; "
-            f"{NO_OVERLAP_RULE}; Russian guest by topic allowed."
+            f"{LOGO_DRAW_HARD_BAN}; {NO_OVERLAP_RULE}; Russian guest by topic allowed."
         )
     elif has_cover:
         reference_line = (
@@ -552,6 +560,7 @@ def build_prompt(
         reference_line = (
             "Inlines: NO host face; NO stock/generated man; NO large human co-host/presenter; "
             f"NO brand logo in generation (factory pastes PNG on 2–3 panels only, TOP-RIGHT pad); "
+            f"{LOGO_DRAW_HARD_BAN}; "
             f"people-memes only as tiny stickers (≤{int(MEME_STICKER_INLINE_MAX_SHARE * 100)}% frame, "
             f"never top-right pad) from real templates in {MEME_CATALOG_REL}; "
             "mix sketch/table/chart/scheme collage — not text walls."
