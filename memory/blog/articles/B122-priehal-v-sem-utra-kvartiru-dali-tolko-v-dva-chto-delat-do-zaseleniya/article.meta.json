@@ -1,0 +1,20 @@
+{
+  "topic_id": "B122",
+  "slug": "priehal-v-sem-utra-kvartiru-dali-tolko-v-dva-chto-delat-do-zaseleniya",
+  "title": "Приехали в семь утра. Ранний заезд просят накануне, а не на пороге",
+  "author_id": "dobry-dom",
+  "wp_category_slugs": ["posutochnaya-arenda", "sovety-gostyam"],
+  "primary_query": "квартиры посуточно ранний заезд",
+  "wordstat_p0": "квартиры посуточно ранний заезд",
+  "wordstat_volume": 248,
+  "season": "summer",
+  "publish_format": "longform",
+  "inline_image_count": 7,
+  "pipeline_canon": "human-first-v2",
+  "editorial_swarm": false,
+  "theme_blocks": {
+    "faq": "skip",
+    "quiz": "skip",
+    "side_stickers": "skip"
+  }
+}

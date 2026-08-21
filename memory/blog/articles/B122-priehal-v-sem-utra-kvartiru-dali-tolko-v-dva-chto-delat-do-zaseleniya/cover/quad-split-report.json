@@ -1,0 +1,300 @@
+{
+  "agent": "excalibur-blog-cover-quad-split",
+  "status": "PASS",
+  "splits": [
+    {
+      "canvas_index": 1,
+      "manifest": "cover/quad-manifest.json",
+      "split": {
+        "source_canvas": "memory/blog/articles/B122-priehal-v-sem-utra-kvartiru-dali-tolko-v-dva-chto-delat-do-zaseleniya/cover/canvas-quad-01.png",
+        "source_size_px": [
+          2688,
+          1520
+        ],
+        "panel_size_px": [
+          1344,
+          760
+        ],
+        "split_meta": {
+          "split_mode": "mechanical_center",
+          "h_gutter_px": null,
+          "v_gutter_px": null,
+          "requested_mode": "auto",
+          "fallback_reason": "gutter_too_far_from_center",
+          "rejected_gutter": {
+            "h_gutter_px": {
+              "start": 754,
+              "end": 840
+            },
+            "v_gutter_px": {
+              "start": 1334,
+              "end": 1417
+            },
+            "gutter_quality": {
+              "h_center_offset_px": 37.0,
+              "v_center_offset_px": 31.5,
+              "max_aspect_crop_loss": 0.0937,
+              "per_panel_crop_loss": {
+                "top_left": 0.0,
+                "top_right": 0.0517,
+                "bottom_left": 0.0937,
+                "bottom_right": 0.0488
+              },
+              "reject_reason": "gutter_too_far_from_center"
+            }
+          }
+        },
+        "output_size_px": [
+          1200,
+          675
+        ],
+        "outputs": {
+          "cover": {
+            "file": "cover/cover.png",
+            "quadrant": "top_left",
+            "box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1344,
+              "bottom": 760
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1344,
+              "bottom": 760
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Светлый летний коллаж: открытая дверь уютной квартиры, лента 07:00→14:00, чемодан и кот-мем стикером; белый high-key, teal curtains, terraco",
+            "h2_anchor": null
+          },
+          "inline_1": {
+            "file": "cover/inline-01.png",
+            "quadrant": "top_right",
+            "box_px": {
+              "left": 1344,
+              "top": 0,
+              "right": 2688,
+              "bottom": 760
+            },
+            "raw_box_px": {
+              "left": 1344,
+              "top": 0,
+              "right": 2688,
+              "bottom": 760
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Инфографика-сравнение на белом фоне: временная шкала квартиры от утра до 14:00, отдельный блок уборки между выездом и новым заездом; teal, t",
+            "h2_anchor": "«Заезд с 14:00» — это не про характер, это про уборку"
+          },
+          "inline_2": {
+            "file": "cover/inline-02.png",
+            "quadrant": "bottom_left",
+            "box_px": {
+              "left": 0,
+              "top": 760,
+              "right": 1344,
+              "bottom": 1520
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 760,
+              "right": 1344,
+              "bottom": 1520
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Светлая схема «почему уголок не решает вопрос»: квартира занята → уборка идёт → гость ждёт вне подъезда; три связанных блока со стрелками, т",
+            "h2_anchor": "Почему «мы тихонько, в уголке» не работает"
+          },
+          "inline_3": {
+            "file": "cover/inline-03.png",
+            "quadrant": "bottom_right",
+            "box_px": {
+              "left": 1344,
+              "top": 760,
+              "right": 2688,
+              "bottom": 1520
+            },
+            "raw_box_px": {
+              "left": 1344,
+              "top": 760,
+              "right": 2688,
+              "bottom": 1520
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Нумерованный вечерний процесс из трёх шагов: написать накануне, назвать время приезда, получить подтверждение; последний шаг выделен terraco",
+            "h2_anchor": "Ранний заезд решается за один вечер"
+          }
+        }
+      }
+    },
+    {
+      "canvas_index": 2,
+      "manifest": "cover/quad-manifest.json",
+      "split": {
+        "source_canvas": "memory/blog/articles/B122-priehal-v-sem-utra-kvartiru-dali-tolko-v-dva-chto-delat-do-zaseleniya/cover/canvas-quad-02.png",
+        "source_size_px": [
+          2688,
+          1520
+        ],
+        "panel_size_px": [
+          1344,
+          760
+        ],
+        "split_meta": {
+          "split_mode": "mechanical_center",
+          "h_gutter_px": null,
+          "v_gutter_px": null,
+          "requested_mode": "auto",
+          "fallback_reason": "aspect_crop_loss_too_high",
+          "rejected_gutter": {
+            "h_gutter_px": {
+              "start": 751,
+              "end": 768
+            },
+            "v_gutter_px": {
+              "start": 1353,
+              "end": 1381
+            },
+            "gutter_quality": {
+              "h_center_offset_px": 0.5,
+              "v_center_offset_px": 23.0,
+              "max_aspect_crop_loss": 0.0226,
+              "per_panel_crop_loss": {
+                "top_left": 0.0133,
+                "top_right": 0.0213,
+                "bottom_left": 0.0118,
+                "bottom_right": 0.0226
+              },
+              "reject_reason": "aspect_crop_loss_too_high"
+            }
+          }
+        },
+        "output_size_px": [
+          1200,
+          675
+        ],
+        "outputs": {
+          "inline_4": {
+            "file": "cover/inline-04.png",
+            "quadrant": "top_left",
+            "box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1344,
+              "bottom": 760
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1344,
+              "bottom": 760
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Практическая аварийная мини-схема для гостя у подъезда: вы уже приехали → сразу написать хозяину → спросить про вещи; ясные стрелки и блоки,",
+            "h2_anchor": "Сколько стоит зайти раньше"
+          },
+          "inline_5": {
+            "file": "cover/inline-05.png",
+            "quadrant": "top_right",
+            "box_px": {
+              "left": 1344,
+              "top": 0,
+              "right": 2688,
+              "bottom": 760
+            },
+            "raw_box_px": {
+              "left": 1344,
+              "top": 0,
+              "right": 2688,
+              "bottom": 760
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Горизонтальная шкала раннего приезда с крупными отметками 06:00, 07:00 и 14:00: поезд прибывает, ключи возможны после подтверждения, стандар",
+            "h2_anchor": "Что делать, если вы уже стоите у подъезда"
+          },
+          "inline_6": {
+            "file": "cover/inline-06.png",
+            "quadrant": "bottom_left",
+            "box_px": {
+              "left": 0,
+              "top": 760,
+              "right": 1344,
+              "bottom": 1520
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 760,
+              "right": 1344,
+              "bottom": 1520
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Факт-карта «У нас так»: три крупные карточки в правильной последовательности — заранее попросить, дождаться уборки, получить вечернее подтве",
+            "h2_anchor": "Чеклист: как получить ключи в семь утра"
+          },
+          "inline_7": {
+            "file": "cover/inline-07.png",
+            "quadrant": "bottom_right",
+            "box_px": {
+              "left": 1344,
+              "top": 760,
+              "right": 2688,
+              "bottom": 1520
+            },
+            "raw_box_px": {
+              "left": 1344,
+              "top": 760,
+              "right": 2688,
+              "bottom": 1520
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Финальный чеклист с двумя колонками: правильный путь и ошибка на пороге; галочки, крестики, бумажные стикеры и мягкий sun flare, маленький m",
+            "h2_anchor": "У нас так"
+          }
+        }
+      }
+    }
+  ],
+  "manifest": "cover/quad-manifest.json",
+  "html_inject": [
+    "skip inline_1: already correct under H2 — «Заезд с 14:00» — это не про характер, это про уборку",
+    "skip inline_2: already correct under H2 — Почему «мы тихонько, в уголке» не работает",
+    "skip inline_3: already correct under H2 — Ранний заезд решается за один вечер",
+    "injected inline_4 after H2 — Сколько стоит зайти раньше",
+    "injected inline_5 after H2 — Что делать, если вы уже стоите у подъезда",
+    "injected inline_6 after H2 — Чеклист: как получить ключи в семь утра",
+    "injected inline_7 after H2 — У нас так"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "status": "FAIL",
+  "article_dir": "memory/blog/articles/B122-priehal-v-sem-utra-kvartiru-dali-tolko-v-dva-chto-delat-do-zaseleniya",
+  "schema_path": "memory/blog/articles/B122-priehal-v-sem-utra-kvartiru-dali-tolko-v-dva-chto-delat-do-zaseleniya/schema.jsonld",
+  "has_site_base_placeholder": true,
+  "errors": [
+    "schema article URLs must be {{SITE_BASE}}/<slug>/, not /blog/<slug>/",
+    "BlogPosting URL/@id must include exact canonical {{SITE_BASE}}/priehal-v-sem-utra-kvartiru-dali-tolko-v-dva-chto-delat-do-zaseleniya/"
+  ],
+  "warnings": []
+}

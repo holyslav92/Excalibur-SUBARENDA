@@ -1,7 +1,9 @@
 {
-  "version": 1,
-  "note": "Добрый дом — longform на добрыйдом-72.рф для перекрёстных ссылок",
-  "siblings": [
+  "status": "PASS",
+  "topic_id": "B122",
+  "slug": "priehal-v-sem-utra-kvartiru-dali-tolko-v-dva-chto-delat-do-zaseleniya",
+  "candidates_count": 6,
+  "outbound_found": [
     {
       "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
       "title": "Оплатил квартиру посуточно. Код прислали от чужой двери"
@@ -13,14 +15,8 @@
     {
       "slug": "czena-ot-v-reklame-pochemu-vsegda-nuzhno-utochnyat-realnuyu-stoimost",
       "title": "Цена «от» в рекламе: почему всегда нужно уточнять реальную стоимость"
-    },
-    {
-      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
-      "title": "Снял квартиру посуточно. Залог не вернули — нашли скол на плите"
-    },
-    {
-      "slug": "zabroniroval-posutochno-vyyasnilos-kvartira-v-subarende",
-      "title": "Заселился посуточно. Квартиру сдал субарендатор, не хозяин"
     }
-  ]
+  ],
+  "outbound_required_min": 1,
+  "errors": []
 }

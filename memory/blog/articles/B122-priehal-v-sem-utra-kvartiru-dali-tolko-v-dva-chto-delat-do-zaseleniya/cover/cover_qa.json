@@ -1,0 +1,28 @@
+{
+  "agent": "excalibur-blog-cover-qa",
+  "status": "PASS",
+  "checked_at": "2026-08-21",
+  "topic_id": "B122",
+  "checks": {
+    "logo_lockup_all_8": true,
+    "logo_lockup_readable": true,
+    "no_shakin_identity_face": true,
+    "cover_phone_readable": true,
+    "board_stationery_ok": true,
+    "typography_cyrillic_clean": true,
+    "meme_density_inline_ok": true,
+    "light_high_key": true,
+    "motif_no_collision_14d": true,
+    "people_in_8_set": true,
+    "cats_cadence_ok": true,
+    "wordstat_stickers_1_3": true,
+    "inline_utility_all_7": true,
+    "inline_no_decorative_only": true,
+    "inline_no_host_face": true,
+    "inline_no_co_host_human": true,
+    "inline_meme_sticker_scale": true,
+    "meme_people_real_catalog": true
+  },
+  "notes": "8 PNG present; logo top-right on cover + inline-02, inline-05, inline-07; phone on cover; summer light collage; Wordstat stickers 3; utility infographics per H2",
+  "logo_on_inline_slots": ["inline_2", "inline_5", "inline_7"]
+}

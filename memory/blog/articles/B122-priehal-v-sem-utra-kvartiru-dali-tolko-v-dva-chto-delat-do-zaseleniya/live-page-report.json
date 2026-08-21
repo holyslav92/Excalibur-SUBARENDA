@@ -1,0 +1,10 @@
+{
+  "gate": "live-page",
+  "status": "BLOCK",
+  "permalink": "{{SITE_BASE}}/blog/priehal-v-sem-utra-kvartiru-dali-tolko-v-dva-chto-delat-do-zaseleniya/",
+  "errors": [
+    "live BlogPosting JSON-LD URL does not exactly match permalink",
+    "article-content container missing",
+    "featured image container missing"
+  ]
+}

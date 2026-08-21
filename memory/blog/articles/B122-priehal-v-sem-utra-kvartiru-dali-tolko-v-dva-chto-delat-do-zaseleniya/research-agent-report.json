@@ -1,0 +1,67 @@
+{
+  "topic_id": "B122",
+  "status": "PASS",
+  "research_date": "2026-08-21",
+  "signal_freshness": {
+    "status": "PASS",
+    "reason": "В исследовании учтены community/media-сигналы, отмеченные как доступные на текущую дату, включая Mail.ru Ответы и Telegram-каналы из Scout handoff.",
+    "accessed_at": "2026-08-21"
+  },
+  "wordstat": {
+    "status": "PASS",
+    "queries": [
+      {
+        "query": "квартиры посуточно ранний заезд",
+        "totalCount": 248
+      },
+      {
+        "query": "снять квартиру посуточно с ранним заездом",
+        "totalCount": 97
+      },
+      {
+        "query": "квартира с ранним заездом",
+        "totalCount": 255
+      },
+      {
+        "query": "квартиры посуточно тюмень",
+        "totalCount": 6536
+      },
+      {
+        "query": "аренда квартиры на сутки",
+        "totalCount": 2433
+      }
+    ],
+    "note": "Частотности использованы как ориентир спроса, а не как подтверждение условий заселения."
+  },
+  "official_source_audit": {
+    "status": "NOT_APPLICABLE",
+    "reason": "В материале не используются тарифы, комиссии, лимиты или иные цифры, требующие официальной проверки банка, застройщика или госоргана."
+  },
+  "source_audit": {
+    "status": "PASS",
+    "all_sources_accessed_at": "2026-08-21",
+    "fresh_community_or_news_source_present": true,
+    "signal_urls_checked": [
+      "https://t.me/klyshin_A",
+      "https://добрыйдом-72.рф/blog/",
+      "https://t.me/Dobriy_dom_72"
+    ]
+  },
+  "scope_check": {
+    "status": "PASS",
+    "forbidden_items_absent": [
+      "h2_outline",
+      "pain_solution_map",
+      "action_outline",
+      "faq_skeleton",
+      "ready_lead",
+      "invented_series_continuation"
+    ]
+  },
+  "writer_safe_urls": [
+    "https://t.me/Dobriy_dom_72",
+    "https://t.me/klyshin_A",
+    "https://добрыйдом-72.рф/blog/",
+    "https://добрыйдом-72.рф/"
+  ]
+}

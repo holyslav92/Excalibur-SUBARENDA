@@ -1,0 +1,30 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "{{SITE_BASE}}/priehal-v-sem-utra-kvartiru-dali-tolko-v-dva-chto-delat-do-zaseleniya/#blogposting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{SITE_BASE}}/priehal-v-sem-utra-kvartiru-dali-tolko-v-dva-chto-delat-do-zaseleniya/"
+      },
+      "url": "{{SITE_BASE}}/priehal-v-sem-utra-kvartiru-dali-tolko-v-dva-chto-delat-do-zaseleniya/",
+      "headline": "Приехали в семь утра. Ранний заезд просят накануне, а не на пороге",
+      "datePublished": "2026-08-21",
+      "inLanguage": "ru-RU",
+      "author": {
+        "@type": "Person",
+        "@id": "{{SITE_BASE}}/#author-dobry-dom",
+        "name": "Добрый дом",
+        "jobTitle": "Апартаменты и квартиры посуточно в Тюмени",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Добрый дом"
+        },
+        "sameAs": [
+          "{{SITE_BASE}}/"
+        ]
+      }
+    }
+  ]
+}

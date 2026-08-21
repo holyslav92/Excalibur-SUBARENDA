@@ -1,0 +1,86 @@
+{
+  "topic_id": "B122",
+  "slug": "priehal-v-sem-utra-kvartiru-dali-tolko-v-dva-chto-delat-do-zaseleniya",
+  "cover_family": "brand_collage",
+  "style_preset": "the_rieltor_twilight_gold",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "file": "cover/cover.png",
+  "alt": "Светлый летний коллаж: открытая дверь уютной квартиры, лента 07:00→14:00, чемодан и кот-мем стикером; белый high-key, teal curtains, terraco",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-quad-01.png",
+  "generated_at": "2026-08-21T13:59:52+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Светлый летний коллаж: открытая дверь уютной квартиры, лента 07:00→14:00, чемодан и кот-мем стикером; белый high-key, teal curtains, terraco",
+      "h2_anchor": null,
+      "visual_type": "cover_collage",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Инфографика-сравнение на белом фоне: временная шкала квартиры от утра до 14:00, отдельный блок уборки между выездом и новым заездом; teal, t",
+      "h2_anchor": "«Заезд с 14:00» — это не про характер, это про уборку",
+      "visual_type": "comparison_table",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Светлая схема «почему уголок не решает вопрос»: квартира занята → уборка идёт → гость ждёт вне подъезда; три связанных блока со стрелками, т",
+      "h2_anchor": "Почему «мы тихонько, в уголке» не работает",
+      "visual_type": "structure_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Нумерованный вечерний процесс из трёх шагов: написать накануне, назвать время приезда, получить подтверждение; последний шаг выделен terraco",
+      "h2_anchor": "Ранний заезд решается за один вечер",
+      "visual_type": "process_flow",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_4",
+      "file": "cover/inline-04.png",
+      "alt": "Практическая аварийная мини-схема для гостя у подъезда: вы уже приехали → сразу написать хозяину → спросить про вещи; ясные стрелки и блоки,",
+      "h2_anchor": "Сколько стоит зайти раньше",
+      "visual_type": "process_flow",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_5",
+      "file": "cover/inline-05.png",
+      "alt": "Горизонтальная шкала раннего приезда с крупными отметками 06:00, 07:00 и 14:00: поезд прибывает, ключи возможны после подтверждения, стандар",
+      "h2_anchor": "Что делать, если вы уже стоите у подъезда",
+      "visual_type": "bar_timeline_chart",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_6",
+      "file": "cover/inline-06.png",
+      "alt": "Факт-карта «У нас так»: три крупные карточки в правильной последовательности — заранее попросить, дождаться уборки, получить вечернее подтве",
+      "h2_anchor": "Чеклист: как получить ключи в семь утра",
+      "visual_type": "fact_card",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_7",
+      "file": "cover/inline-07.png",
+      "alt": "Финальный чеклист с двумя колонками: правильный путь и ошибка на пороге; галочки, крестики, бумажные стикеры и мягкий sun flare, маленький m",
+      "h2_anchor": "У нас так",
+      "visual_type": "labeled_checklist",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}

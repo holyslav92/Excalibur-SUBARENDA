@@ -1,0 +1,91 @@
+{
+  "cover_motifs": {
+    "composition": "high-key paper-collage of an open sunlit apartment doorway with a large horizontal time ribbon from 07:00 to 14:00",
+    "location": "bright Tyumen summer apartment entryway with teal curtains visible through the room, white walls and terracotta details",
+    "meme": "small surprised orange meme-cat sticker peeking from a terracotta travel bag",
+    "prop_set": "paper time ribbon, small rolling suitcase, teal cleaning spray silhouette, terracotta luggage tag, sun flare",
+    "sticker_set": "three torn-paper Wordstat query stickers, handwritten time labels 07:00 and 14:00, small tape strips",
+    "joke": "cat has a tiny sticker saying «Я тоже приехал рано» while the time ribbon explains why keys are later"
+  },
+  "wordstat_stickers": [
+    "квартиры посуточно ранний заезд",
+    "квартиры посуточно тюмень",
+    "ранний заезд"
+  ],
+  "slots": {
+    "cover": {
+      "scene_hint": "Светлый летний коллаж: открытая дверь уютной квартиры, лента 07:00→14:00, чемодан и кот-мем стикером; белый high-key, teal curtains, terracotta, sun flare, logo top-right.",
+      "visual_type": "cover_collage",
+      "labels": [
+        "Ранний заезд согласуют вечером",
+        "вечером",
+        "Не у двери",
+        "07:00",
+        "14:00"
+      ]
+    },
+    "inline_1": {
+      "scene_hint": "Инфографика-сравнение на белом фоне: временная шкала квартиры от утра до 14:00, отдельный блок уборки между выездом и новым заездом; teal, terracotta, torn paper, logo corner.",
+      "visual_type": "comparison_table",
+      "labels": [
+        "заезд с 14:00",
+        "утром идёт уборка",
+        "семь утра — рано"
+      ]
+    },
+    "inline_2": {
+      "scene_hint": "Светлая схема «почему уголок не решает вопрос»: квартира занята → уборка идёт → гость ждёт вне подъезда; три связанных блока со стрелками, тёплый collage style, logo corner.",
+      "visual_type": "structure_diagram",
+      "labels": [
+        "не ждать в подъезде",
+        "квартира может быть занята",
+        "уборку не отменить"
+      ]
+    },
+    "inline_3": {
+      "scene_hint": "Нумерованный вечерний процесс из трёх шагов: написать накануне, назвать время приезда, получить подтверждение; последний шаг выделен terracotta, white high-key paper collage, logo corner.",
+      "visual_type": "process_flow",
+      "labels": [
+        "1. напишите накануне",
+        "2. уточните время приезда",
+        "3. согласуйте вечером"
+      ]
+    },
+    "inline_4": {
+      "scene_hint": "Практическая аварийная мини-схема для гостя у подъезда: вы уже приехали → сразу написать хозяину → спросить про вещи; ясные стрелки и блоки, маленький кот-стикер в углу, logo corner.",
+      "visual_type": "process_flow",
+      "labels": [
+        "вы уже у подъезда",
+        "сразу напишите хозяину",
+        "спросите про вещи"
+      ]
+    },
+    "inline_5": {
+      "scene_hint": "Горизонтальная шкала раннего приезда с крупными отметками 06:00, 07:00 и 14:00: поезд прибывает, ключи возможны после подтверждения, стандартный заезд в 14:00; logo corner.",
+      "visual_type": "bar_timeline_chart",
+      "labels": [
+        "поезд в шесть",
+        "ключи в семь утра",
+        "заезд с 14:00"
+      ]
+    },
+    "inline_6": {
+      "scene_hint": "Факт-карта «У нас так»: три крупные карточки в правильной последовательности — заранее попросить, дождаться уборки, получить вечернее подтверждение; high-key teal and terracotta, logo corner.",
+      "visual_type": "fact_card",
+      "labels": [
+        "ранний заезд заранее",
+        "ключи после уборки",
+        "время подтвердят вечером"
+      ]
+    },
+    "inline_7": {
+      "scene_hint": "Финальный чеклист с двумя колонками: правильный путь и ошибка на пороге; галочки, крестики, бумажные стикеры и мягкий sun flare, маленький meme-cat accent, logo corner.",
+      "visual_type": "labeled_checklist",
+      "labels": [
+        "предупредите о приезде",
+        "не просите на пороге",
+        "согласуйте заранее"
+      ]
+    }
+  }
+}

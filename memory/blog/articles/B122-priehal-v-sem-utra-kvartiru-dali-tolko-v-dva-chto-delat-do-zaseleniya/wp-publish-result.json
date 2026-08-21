@@ -1,0 +1,31 @@
+{
+  "slug": "priehal-v-sem-utra-kvartiru-dali-tolko-v-dva-chto-delat-do-zaseleniya",
+  "topic_id": "B122",
+  "permalink": "{{SITE_BASE}}/blog/priehal-v-sem-utra-kvartiru-dali-tolko-v-dva-chto-delat-do-zaseleniya/",
+  "publish_method": "ftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B122-priehal-v-sem-utra-kvartiru-dali-tolko-v-dva-chto-delat-do-zaseleniya/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1016853,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=3801 slug=priehal-v-sem-utra-kvartiru-dali-tolko-v-dva-chto-delat-do-zaseleniya\nOK categories=101,106\nOK featured_image=3802\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=3803 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/08/priehal-v-sem-utra-kvartiru-dali-tolko-v-dva-chto-delat-do-zaseleniya-inline-01.png\nOK inline_alt=3803\nOK inline_caption=3803\nOK inline_description=3803\nOK inline_image_upload=3804 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/08/priehal-v-sem-utra-kvartiru-dali-tolko-v-dva-chto-delat-do-zaseleniya-inline-02.png\nOK inline_alt=3804\nOK inline_caption=3804\nOK inline_description=3804\nOK inline_image_upload=3805 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/08/priehal-v-sem-utra-kvartiru-dali-tolko-v-dva-chto-delat-do-zaseleniya-inline-03.png\nOK inline_alt=3805\nOK inline_caption=3805\nOK inline_description=3805\nOK inline_image_upload=3806 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/08/priehal-v-sem-utra-kvartiru-dali-tolko-v-dva-chto-delat-do-zaseleniya-inline-04.png\nOK inline_alt=3806\nOK inline_caption=3806\nOK inline_description=3806\nOK inline_image_upload=3807 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/08/priehal-v-sem-utra-kvartiru-dali-tolko-v-dva-chto-delat-do-zaseleniya-inline-05.png\nOK inline_alt=3807\nOK inline_caption=3807\nOK inline_description=3807\nOK inline_image_upload=3808 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/08/priehal-v-sem-utra-kvartiru-dali-tolko-v-dva-chto-delat-do-zaseleniya-inline-06.png\nOK inline_alt=3808\nOK inline_caption=3808\nOK inline_description=3808\nOK inline_image_upload=3809 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/08/priehal-v-sem-utra-kvartiru-dali-tolko-v-dva-chto-delat-do-zaseleniya-inline-07.png\nOK inline_alt=3809\nOK inline_caption=3809\nOK inline_description=3809\npermalink={{SITE_BASE}}/blog/priehal-v-sem-utra-kvartiru-dali-tolko-v-dva-chto-delat-do-zaseleniya/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "fail",
+  "live_page": {
+    "gate": "live-page",
+    "status": "BLOCK",
+    "permalink": "{{SITE_BASE}}/blog/priehal-v-sem-utra-kvartiru-dali-tolko-v-dva-chto-delat-do-zaseleniya/",
+    "errors": [
+      "live BlogPosting JSON-LD URL does not exactly match permalink",
+      "article-content container missing",
+      "featured image container missing"
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "task_id": "e5e6093c2760160d5758431a04bc5521",
+  "source": "kie-api",
+  "model": "gpt-image-2-image-to-image",
+  "state": "success",
+  "create_attempts": 1,
+  "result_path": "memory/blog/articles/B122-priehal-v-sem-utra-kvartiru-dali-tolko-v-dva-chto-delat-do-zaseleniya/cover/quad-mcp-result-02.json",
+  "updated_at_epoch": 1787320739
+}

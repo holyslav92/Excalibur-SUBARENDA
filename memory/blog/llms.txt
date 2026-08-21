@@ -1,5 +1,6 @@
-# Excalibur BLOG - LLM Index (Добрый дом)
+# Maya AI — Excalibur BLOG
+> Практический блог по автоматизации бизнеса на Make.com, вайбкодингу и ИИ-агентам.
 
-https://добрыйдом-72.рф/blog
+## Blog Articles
 
-Indexer fills this file after publish.
+- [Приехали в семь утра. Ранний заезд просят накануне, а не на пороге]({{SITE_BASE}}/priehal-v-sem-utra-kvartiru-dali-tolko-v-dva-chto-delat-do-zaseleniya/): 

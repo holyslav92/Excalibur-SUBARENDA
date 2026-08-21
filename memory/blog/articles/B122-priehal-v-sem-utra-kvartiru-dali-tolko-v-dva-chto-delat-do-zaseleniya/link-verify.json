@@ -1,0 +1,74 @@
+{
+  "source": "/workspace/memory/blog/articles/B122-priehal-v-sem-utra-kvartiru-dali-tolko-v-dva-chto-delat-do-zaseleniya/article.html",
+  "total_links": 7,
+  "failed_count": 0,
+  "verdict": "pass",
+  "links": [
+    {
+      "url": "{{SITE_BASE}}/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+      "status": 200,
+      "ok": true,
+      "method": "HEAD",
+      "error": null,
+      "kind": "internal_relative",
+      "skipped": false,
+      "checked_url": "{{SITE_BASE}}/blog/beskontaktnoe-zaselenie-posutochno-tyumen/"
+    },
+    {
+      "url": "{{SITE_BASE}}/blog/czena-ot-v-reklame-pochemu-vsegda-nuzhno-utochnyat-realnuyu-stoimost/",
+      "status": 200,
+      "ok": true,
+      "method": "HEAD",
+      "error": null,
+      "kind": "internal_relative",
+      "skipped": false,
+      "checked_url": "{{SITE_BASE}}/blog/czena-ot-v-reklame-pochemu-vsegda-nuzhno-utochnyat-realnuyu-stoimost/"
+    },
+    {
+      "url": "{{SITE_BASE}}/skrytye-doplaty-pri-arende-kvartiry-kak-ne-pereplatit/",
+      "status": 200,
+      "ok": true,
+      "method": "HEAD",
+      "error": null,
+      "kind": "internal_relative",
+      "skipped": false,
+      "checked_url": "{{SITE_BASE}}/skrytye-doplaty-pri-arende-kvartiry-kak-ne-pereplatit/"
+    },
+    {
+      "url": "https://t.me/Dobriy_dom_72",
+      "kind": "external",
+      "status": null,
+      "ok": true,
+      "skipped": true,
+      "method": null,
+      "error": null
+    },
+    {
+      "url": "https://max.ru/id660300569233_biz",
+      "kind": "external",
+      "status": null,
+      "ok": true,
+      "skipped": true,
+      "method": null,
+      "error": null
+    },
+    {
+      "url": "https://t.me/Dobriy_dom_Tyumen",
+      "kind": "external",
+      "status": null,
+      "ok": true,
+      "skipped": true,
+      "method": null,
+      "error": null
+    },
+    {
+      "url": "https://%D0%B4%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%D0%B4%D0%BE%D0%BC-72.%D1%80%D1%84/",
+      "kind": "external",
+      "status": null,
+      "ok": true,
+      "skipped": true,
+      "method": null,
+      "error": null
+    }
+  ]
+}
