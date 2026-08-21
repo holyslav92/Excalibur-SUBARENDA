@@ -1,0 +1,41 @@
+{
+  "cover_emotion": "растерянность у подъезда: гость с чемоданом узнаёт, что квартиру сдаёт не собственник",
+  "scene_hint": "POSTER collage август Тюмень: подъезд, чемодан, телефон с сообщением «я не хозяин, сдаю по суткам», ключи, torn-paper sticky, gold tape; bold Cyrillic headline; NO host; NO logo; TOP-RIGHT empty pad; tiny cat sticker bottom-left ≤12%; NO winter",
+  "cover_motifs": {
+    "composition": "poster collage: apartment entrance + phone bubble + bold headline + props scatter, TOP-RIGHT empty pad for logo",
+    "location": "Tyumen apartment building entrance August warm evening green trees",
+    "meme": "tiny cat sticker bottom-left ≤12%, never top-right pad",
+    "prop_set": "suitcase, keys, phone bubble, torn sticky notes, gold tape, entrance door",
+    "sticker_set": ["субаренда квартиры", "квартиры посуточно тюмень", "7 проверок"],
+    "joke": "cat sticker side-eyes phone message about sublease"
+  },
+  "wordstat_stickers": ["субаренда квартиры", "квартиры посуточно тюмень"],
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "slots": {
+    "cover": {
+      "scene_hint": "Poster collage: guest at entrance with suitcase, phone bubble sublease reveal, bold headline, TOP-RIGHT empty pad; August Tyumen; NO logo in gen."
+    },
+    "inline_1": {
+      "scene_hint": "Labeled checklist board: TL;DR bullets about sublease chain on torn paper; gold tape; TOP-RIGHT empty pad"
+    },
+    "inline_2": {
+      "scene_hint": "Structure diagram: owner → tenant → guest chain with arrows and labels; sketch collage; top-right clean"
+    },
+    "inline_3": {
+      "scene_hint": "Comparison table: 4 money-loss scenarios (prepay, deposit, cancel, double booking); bar labels; TOP-RIGHT empty pad"
+    },
+    "inline_4": {
+      "scene_hint": "Numbered process flow 7 checks before payment with arrows and chat bubbles; interactive sketch; top-right clean"
+    },
+    "inline_5": {
+      "scene_hint": "Fact card: Добрый дом transparent rules list with icons; warm sketch; no logo"
+    },
+    "inline_6": {
+      "scene_hint": "Red-flag warning board with 6 stop signs as labeled chips; collage tape; top-right clean"
+    },
+    "inline_7": {
+      "scene_hint": "FAQ UI cards 4 questions with expand arrows; small cat sticker bottom-left; TOP-RIGHT empty pad"
+    }
+  }
+}

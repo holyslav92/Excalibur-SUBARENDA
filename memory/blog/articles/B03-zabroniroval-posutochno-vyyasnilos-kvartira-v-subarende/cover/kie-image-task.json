@@ -1,0 +1,9 @@
+{
+  "task_id": "ed04a0ed18cda8649bbf1b5aa8149545",
+  "source": "kie-api",
+  "model": "kie-fallback",
+  "state": "success",
+  "create_attempts": 1,
+  "result_path": "memory/blog/articles/B03-zabroniroval-posutochno-vyyasnilos-kvartira-v-subarende/cover/quad-mcp-result-02-clean.json",
+  "updated_at_epoch": 1787337958
+}

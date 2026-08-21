@@ -1558,6 +1558,7 @@ def main() -> int:
             body_probe=body_probe,
             verify_media=True,
             expected_permalink=permalink,
+            expected_schema_jsonld=str(payload.get("schema_jsonld") or ""),
         )
     except Exception as exc:  # network failure is a blocker, never a fake PASS
         live_errors = [f"live page fetch failed: {type(exc).__name__}: {exc}"]

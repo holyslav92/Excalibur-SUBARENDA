@@ -1,0 +1,86 @@
+{
+  "topic_id": "B03",
+  "slug": "zabroniroval-posutochno-vyyasnilos-kvartira-v-subarende",
+  "cover_family": "brand_collage",
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "file": "cover/cover.png",
+  "alt": "Постер: гость у подъезда узнаёт про субаренду — август, Тюмень.",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-quad-01.png",
+  "generated_at": "2026-08-21T18:48:11+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Постер: гость у подъезда узнаёт про субаренду — август, Тюмень.",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Коротко: субаренда посуточно — кто берёт деньги и что спросить до оплаты",
+      "h2_anchor": "Коротко",
+      "visual_type": "comparison_table",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Схема цепочки: собственник — арендатор — гость при посуточной субаренде",
+      "h2_anchor": "Что такое субаренда посуточно и почему это не всегда плохо",
+      "visual_type": "process_flow",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Где теряют деньги: предоплата, залог, срыв брони, двойная бронь",
+      "h2_anchor": "Где реально теряют деньги",
+      "visual_type": "bar_timeline_chart",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_4",
+      "file": "cover/inline-04.png",
+      "alt": "Семь проверок в чате до перевода денег за посуточную квартиру",
+      "h2_anchor": "7 проверок до оплаты",
+      "visual_type": "structure_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_5",
+      "file": "cover/inline-05.png",
+      "alt": "Как у «Добрый дом»: один контакт, условия письменно, инструкция до заселения",
+      "h2_anchor": "У нас так",
+      "visual_type": "labeled_checklist",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_6",
+      "file": "cover/inline-06.png",
+      "alt": "Красные флаги: когда лучше не платить за посуточную квартиру",
+      "h2_anchor": "Красные флаги: когда лучше не платить вообще",
+      "visual_type": "fact_card",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_7",
+      "file": "cover/inline-07.png",
+      "alt": "Кому писать, если бронь рассыпается после оплаты",
+      "h2_anchor": "Кому писать, если бронь начала рассыпаться",
+      "visual_type": "schema_faq_ui",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}

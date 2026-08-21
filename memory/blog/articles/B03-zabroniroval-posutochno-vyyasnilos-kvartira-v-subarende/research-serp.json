@@ -1,0 +1,218 @@
+{
+  "agent": "excalibur-blog",
+  "date_context": {
+    "timezone": "Europe/Moscow",
+    "today_iso": "2026-08-21",
+    "today_ru": "21.08.2026",
+    "year": 2026,
+    "month": 8,
+    "month_name_ru": "август",
+    "weekday_ru": "пятница"
+  },
+  "topic": {
+    "topic_id": "B03",
+    "title": "Забронировал посуточно. Выяснилось — квартира в субаренде",
+    "h1": "Забронировал посуточно. Выяснилось — квартира в субаренде",
+    "slug": "zabroniroval-posutochno-vyyasnilos-kvartira-v-subarende",
+    "primary_query": "Забронировал посуточно. Выяснилось — квартира в субаренде",
+    "priority": "P0"
+  },
+  "searches": [
+    {
+      "query_id": "primary_fresh",
+      "query": "Забронировал посуточно. Выяснилось — квартира в субаренде 2026",
+      "purpose": "актуальный SERP",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Хочу предостеречь всех кто занимается сдачей жилья посуточно ...",
+          "url": "https://vk.com/wall-140786750_705869",
+          "snippet": ""
+        },
+        {
+          "title": "Юридические тонкости посуточной аренды: объясняет юрист",
+          "url": "https://www.cian.ru/stati-juridicheskie-tonkosti-posutochnoj-arendy-objasnjaet-jurist-341001/",
+          "snippet": "Хочу предостеречь всех кто занимается сдачей жилья посуточно . Забронировал квартиру молодой человек на сутки , сказал будет проживать двое человек,"
+        },
+        {
+          "title": "Законы о посуточной аренде квартир в 2025 году: полный каталог",
+          "url": "https://travel.yandex.ru/pro/zakony-kotorye-stoit-znat-kazhdomu-kto-sdayot-zhilyo-posutochno/",
+          "snippet": "В городе зафиксированы случаи судебного запрета на сдачу жилья посуточно, если есть жалобы от соседей. Такие решения создают прецеденты и формируют практику, которая может повлиять на других арендодателей. Столица готовится к более жёсткому регулированию."
+        },
+        {
+          "title": "СУТОЧНО.РУ — найдём, где остановиться: отели, квартиры, гостевые дома",
+          "url": "https://sutochno.ru/",
+          "snippet": "Какие законы регулируют посуточную аренду. Где узнать, какие права у гостя, за что есть штрафы и какие квартиры подходят по закону для сдачи в аренду посуточно."
+        },
+        {
+          "title": "Запрет посуточной сдачи квартир \\ 2026-2025-2024 год \\ Акты, образцы ...",
+          "url": "https://www.consultant.ru/law/podborki/zapret_posutochnoj_sdachi_kvartir/",
+          "snippet": "Все варианты, брони и переписка с хозяевами у вас в кармане. Добавляйте свои объекты бесплатно и зарабатывайте вместе с нами! Поможем найти и забронировать жильё посуточно в России и за рубежом."
+        },
+        {
+          "title": "Сдавали квартиру в субаренду посуточно без договора: советы по ...",
+          "url": "https://prav.io/browse/questions/sdavali-kvartiru-v-subarendu-posutochno-bez-dogovora-sovety-po-deystviyam-i-nakazaniyu-za-obman",
+          "snippet": "Главный тезис: ГК РФ не устанавливает и не ограничивает минимальный срок сдачи жилья внаем, а значит, сдавать можно, если это не нарушает права соседей и не перегружает общую инфраструктуру многоквартирного дома."
+        }
+      ],
+      "searched_at": "2026-08-21"
+    },
+    {
+      "query_id": "title_fresh",
+      "query": "Забронировал посуточно. Выяснилось — квартира в субаренде 2026",
+      "purpose": "SERP по человеческому title",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Хочу предостеречь всех кто занимается сдачей жилья посуточно ...",
+          "url": "https://vk.com/wall-140786750_705869",
+          "snippet": ""
+        },
+        {
+          "title": "Юридические тонкости посуточной аренды: объясняет юрист",
+          "url": "https://www.cian.ru/stati-juridicheskie-tonkosti-posutochnoj-arendy-objasnjaet-jurist-341001/",
+          "snippet": "Хочу предостеречь всех кто занимается сдачей жилья посуточно . Забронировал квартиру молодой человек на сутки , сказал будет проживать двое человек,"
+        },
+        {
+          "title": "Законы о посуточной аренде квартир в 2025 году: полный каталог",
+          "url": "https://travel.yandex.ru/pro/zakony-kotorye-stoit-znat-kazhdomu-kto-sdayot-zhilyo-posutochno/",
+          "snippet": "В городе зафиксированы случаи судебного запрета на сдачу жилья посуточно, если есть жалобы от соседей. Такие решения создают прецеденты и формируют практику, которая может повлиять на других арендодателей. Столица готовится к более жёсткому регулированию."
+        },
+        {
+          "title": "СУТОЧНО.РУ — найдём, где остановиться: отели, квартиры, гостевые дома",
+          "url": "https://sutochno.ru/",
+          "snippet": "Какие законы регулируют посуточную аренду. Где узнать, какие права у гостя, за что есть штрафы и какие квартиры подходят по закону для сдачи в аренду посуточно."
+        },
+        {
+          "title": "Запрет посуточной сдачи квартир \\ 2026-2025-2024 год \\ Акты, образцы ...",
+          "url": "https://www.consultant.ru/law/podborki/zapret_posutochnoj_sdachi_kvartir/",
+          "snippet": "Все варианты, брони и переписка с хозяевами у вас в кармане. Добавляйте свои объекты бесплатно и зарабатывайте вместе с нами! Поможем найти и забронировать жильё посуточно в России и за рубежом."
+        },
+        {
+          "title": "Сдавали квартиру в субаренду посуточно без договора: советы по ...",
+          "url": "https://prav.io/browse/questions/sdavali-kvartiru-v-subarendu-posutochno-bez-dogovora-sovety-po-deystviyam-i-nakazaniyu-za-obman",
+          "snippet": "Главный тезис: ГК РФ не устанавливает и не ограничивает минимальный срок сдачи жилья внаем, а значит, сдавать можно, если это не нарушает права соседей и не перегружает общую инфраструктуру многоквартирного дома."
+        }
+      ],
+      "searched_at": "2026-08-21"
+    },
+    {
+      "query_id": "official_docs",
+      "query": "Забронировал посуточно. Выяснилось — квартира в субаренде official docs 2026",
+      "purpose": "официальные docs",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Бизнес на посуточной аренде: как заработать на субаренде квартир",
+          "url": "https://fb.ru/article/615884/2026-biznes-na-posutochnoy-arende-kak-zarabotat-na-subarende-kvartir",
+          "snippet": ""
+        },
+        {
+          "title": "Договор субаренды \\ 2026-2025-2024 год \\ Акты, образцы, формы, договоры ...",
+          "url": "https://www.consultant.ru/law/podborki/dogovor_subarendy/",
+          "snippet": "Разбираем кейс предпринимателя с 82 квартирами: выгода посуточной аренды перед долгосрочной, расчеты прибыли, налоги и риски субаренды в 2026 году."
+        },
+        {
+          "title": "Хочу предостеречь всех кто занимается сдачей жилья посуточно ...",
+          "url": "https://vk.com/wall-140786750_705869",
+          "snippet": "Путеводитель по судебной практике: Аренда транспортных средств. Признается ли ничтожным договор субаренды, если в договоре аренды ТС с экипажем субаренда запрещена (КонсультантПлюс, 2026)"
+        },
+        {
+          "title": "Всё о согласии на субаренду от арендодателя: как оформить и образец ...",
+          "url": "https://realty.yandex.ru/journal/post/soglasie-na-subarendu-ot-arendodatelya/",
+          "snippet": "Хочу предостеречь всех кто занимается сдачей жилья посуточно . Забронировал квартиру молодой человек на сутки , сказал будет проживать двое человек,"
+        },
+        {
+          "title": "Посуточная сдача жилья \\ 2026-2025-2024 год \\ Акты, образцы, формы ...",
+          "url": "https://www.consultant.ru/law/podborki/posutochnaya_sdacha_zhilya/",
+          "snippet": "Давайте разберёмся, в каких случаях для субаренды (а именно так называется такая схема сдачи уже арендованного жилья) требуется одобрение от арендодателя и как его оформить."
+        },
+        {
+          "title": "Вписка в пустой квартире закончилась скандалом с хозяином Компания ...",
+          "url": "https://vk.com/wall-227430742_13839",
+          "snippet": "(Консультация эксперта, 2026) Ответ: Сдача в аренду апартаментов посуточно облагается НДС в общеустановленном порядке."
+        }
+      ],
+      "searched_at": "2026-08-21"
+    },
+    {
+      "query_id": "github_evidence",
+      "query": "site:github.com Забронировал посуточно. Выяснилось — квартира в субаренде 2026",
+      "purpose": "GitHub evidence",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "WindowTabs-2026/README_Image/SettingsAppearanceColorTheme.png at master ...",
+          "url": "https://github.com/lover520f/WindowTabs-2026/blob/master/README_Image/SettingsAppearanceColorTheme.png",
+          "snippet": ""
+        },
+        {
+          "title": "GitHub · Change is constant. GitHub keeps you ahead. · GitHub",
+          "url": "https://github.com/",
+          "snippet": "Contribute to lover520f/WindowTabs-2026 development by creating an account on GitHub."
+        },
+        {
+          "title": "VIL/sources/overall.png at main · liboyan233/VIL · GitHub",
+          "url": "https://github.com/liboyan233/VIL/blob/main/sources/overall.png",
+          "snippet": "Write, test, and fix code quickly with GitHub Copilot, from simple boilerplate to complex features. From your first line of code to final deployment, GitHub provides AI and automation tools to help you build and ship better software faster. A Copilot chat window with the 'Ask' mode enabled."
+        },
+        {
+          "title": "DeMamba/figs/tab_fig.jpg at main · chenhaoxing/DeMamba · GitHub",
+          "url": "https://github.com/chenhaoxing/DeMamba/blob/main/figs/tab_fig.jpg",
+          "snippet": "Contribute to liboyan233/VIL development by creating an account on GitHub."
+        },
+        {
+          "title": "DMT-Net/figs/results.png at main · liuye123321/DMT-Net · GitHub",
+          "url": "https://github.com/liuye123321/DMT-Net/blob/main/figs/results.png",
+          "snippet": "This repository is the code of paper 'DeMamba: AI-Generated Video Detection on Million-Scale GenVideo Benchmark'. - DeMamba/figs/tab_fig.jpg at main · chenhaoxing/DeMamba."
+        },
+        {
+          "title": "SMRTnet/figs/demo1.png at main · Yuhan-Fei/SMRTnet · GitHub",
+          "url": "https://github.com/Yuhan-Fei/SMRTnet/blob/main/figs/demo1.png",
+          "snippet": "Contribute to liuye123321/DMT-Net development by creating an account on GitHub."
+        }
+      ],
+      "searched_at": "2026-08-21"
+    },
+    {
+      "query_id": "community_experience",
+      "query": "Забронировал посуточно. Выяснилось — квартира в субаренде forum problems опыт 2026",
+      "purpose": "форумы и живые проблемы",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Сдача квартиры посуточно: законно ли, куда жаловаться, как запретить",
+          "url": "https://life.rambler.ru/laws/55541646-sdacha-kvartiry-posutochno-zakonno-li-kuda-zhalovatsya-kak-zapretit/",
+          "snippet": ""
+        },
+        {
+          "title": "ТОП ошибок при аренде квартиры посуточно Аренда квартиры в Москве ...",
+          "url": "https://vk.com/wall-238143777_3",
+          "snippet": "В этом году спрос на бронирование квартир посуточно вырос на 28%. Совместно с экспертами разберёмся, законно ли сдавать жилые помещения в аренду на сутки, какие условия и правила при этом нужно соблюдать и что можно сделать, если постояльцы регулярно мусорят, шумят и дебоширят."
+        },
+        {
+          "title": "Как распознать мошенника про бронировании жилья посуточно",
+          "url": "https://rg.ru/2026/06/16/obmany-s-bronirovaniem-zhile-posutochno-po-kakim-priznakam-raspoznat-aferista.html",
+          "snippet": "27-04-2026 ТОП ошибок при аренде квартиры посуточно Аренда квартиры в Москве кажется простой: выбрал фото — забронировал — заехал. Но именно на этом этапе чаще всего и случаются проблемы."
+        },
+        {
+          "title": "Юридические тонкости посуточной аренды: объясняет юрист",
+          "url": "https://www.cian.ru/stati-juridicheskie-tonkosti-posutochnoj-arendy-objasnjaet-jurist-341001/",
+          "snippet": "Проверьте состояние квартиры, технику, счетчики, ключи и составьте акт или хотя бы зафиксируйте все на фото и видео. Насторожить должны низкая цена, давление на срочность, отказ от договора,..."
+        },
+        {
+          "title": "Как не попасться мошенникам, если снимаешь квартиру посуточно ...",
+          "url": "https://59.ru/text/world/2026/07/17/76536561/",
+          "snippet": "Юридические вопросы в посуточной аренде вызывают споры даже у опытных хостов. Где грань между наймом и гостиничными услугами и как действовать законно — вместе с юристом Татьяной Рисованной разбираемся, что важно знать арендодателю."
+        },
+        {
+          "title": "Субаренда квартиры без согласия: как предотвратить и что делать",
+          "url": "https://arenda.yandex.ru/journal/post/subarenda-kvartiry-bez-soglasiya-kak-predotvratit-i-chto-delat/",
+          "snippet": "Но любое самостоятельное путешествие начинается с поиска жилья, и стоит только открыть сайт с объявлениями о сдаче квартир посуточно, как начинается настоящий квест."
+        }
+      ],
+      "searched_at": "2026-08-21"
+    }
+  ],
+  "errors": []
+}
