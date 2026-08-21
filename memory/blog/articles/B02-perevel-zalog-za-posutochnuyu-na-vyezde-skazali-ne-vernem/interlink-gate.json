@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "topic_id": "B02",
+  "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+  "candidates_count": 5,
+  "outbound_found": [
+    {
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "title": "beskontaktnoe-zaselenie-posutochno-tyumen"
+    }
+  ],
+  "outbound_required_min": 1,
+  "errors": []
+}

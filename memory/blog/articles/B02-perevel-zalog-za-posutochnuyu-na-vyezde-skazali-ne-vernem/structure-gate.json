@@ -1,0 +1,61 @@
+{
+  "gate": "structure",
+  "status": "FAIL",
+  "article_dir": "memory/blog/articles/B02-perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+  "checks": [
+    {
+      "name": "pipeline_canon",
+      "ok": true,
+      "detail": "exit=0"
+    },
+    {
+      "name": "research_agent_report",
+      "ok": true,
+      "detail": "status=PASS"
+    },
+    {
+      "name": "link_verify",
+      "ok": true,
+      "detail": "exit=0"
+    },
+    {
+      "name": "html_linter",
+      "ok": true,
+      "detail": "exit=0"
+    },
+    {
+      "name": "community_cta",
+      "ok": false,
+      "detail": "exit=1"
+    },
+    {
+      "name": "wp_categories",
+      "ok": true,
+      "detail": "exit=0"
+    },
+    {
+      "name": "interlink",
+      "ok": true,
+      "detail": "exit=0"
+    },
+    {
+      "name": "research_official",
+      "ok": true,
+      "detail": "exit=0"
+    },
+    {
+      "name": "opening_meta",
+      "ok": true,
+      "detail": "exit=0"
+    },
+    {
+      "name": "factory_quality",
+      "ok": true,
+      "detail": "exit=0"
+    }
+  ],
+  "failed": [
+    "community_cta"
+  ],
+  "note": "Structural/links/HTML only — does not rewrite prose."
+}

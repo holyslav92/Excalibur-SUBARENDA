@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "article_dir": "memory/blog/articles/B01-beskontaktnoe-zaselenie-posutochno-tyumen",
+  "cta_required": true,
+  "required": [
+    "https://добрыйдом-72.рф/",
+    "https://t.me/Dobriy_dom_Tyumen",
+    "https://t.me/Dobriy_dom_72"
+  ],
+  "present": {
+    "https://добрыйдом-72.рф/": true,
+    "https://t.me/Dobriy_dom_Tyumen": true,
+    "https://t.me/Dobriy_dom_72": true,
+    "cta_channels.max": true
+  },
+  "errors": []
+}

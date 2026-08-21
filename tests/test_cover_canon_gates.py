@@ -187,34 +187,44 @@ class WordstatGateTest(unittest.TestCase):
         canon = json.loads((ROOT / "memory/cover/cover-canon.json").read_text(encoding="utf-8"))
         self.assertTrue(canon["forbidden_daypart_formula"]["never_use"])
 
-    def test_cover_canon_logo_lockup_mode(self) -> None:
-        canon = json.loads((ROOT / "memory/cover/cover-canon.json").read_text(encoding="utf-8"))
-        self.assertTrue(canon["logo_lockup"]["required"])
-        self.assertEqual(canon["identity_lock"]["status"], "DISABLED")
-        logo_path = ROOT / canon["logo_lockup"]["asset"]
-        self.assertTrue(logo_path.is_file(), str(logo_path))
+    def test_wow_cover_rules_locked_in_tenant(self) -> None:
+        tenant = json.loads((ROOT / "shared/tenant-config.json").read_text(encoding="utf-8"))
+        wow = tenant.get("cover_wow_rules") or {}
+        self.assertTrue(wow.get("forbid_wordpress_ui_in_art"))
+        self.assertTrue(wow.get("no_element_overlap"))
+        self.assertTrue(wow.get("wow_poster_magazine_typography"))
+        self.assertEqual(wow.get("inline_logo_count_min"), 2)
+        self.assertEqual(wow.get("inline_logo_count_max"), 3)
+        self.assertIn("Excalibur-SUBARENDA", wow.get("tenant_scope", ""))
 
-    def test_cover_qa_doctor_logo_lockup(self) -> None:
-        proc = subprocess.run(
-            [sys.executable, str(ROOT / "scripts/excalibur_blog_cover_qa_gate.py"), "--doctor"],
-            cwd=ROOT,
-            capture_output=True,
-            text=True,
-            check=False,
+    def test_visual_notes_dobry_dom(self) -> None:
+        notes = json.loads(
+            (ROOT / "memory/cover/visual-notes-dobry-dom.json").read_text(encoding="utf-8")
         )
-        self.assertEqual(proc.returncode, 0, proc.stderr or proc.stdout)
-        self.assertIn("logo lockup", proc.stdout.lower())
+        rules = notes.get("wow_cover_rules") or {}
+        self.assertTrue(rules.get("forbid_wordpress_ui_in_art", {}).get("required"))
+        self.assertTrue(rules.get("no_element_overlap", {}).get("required"))
+        self.assertTrue(rules.get("wow_poster", {}).get("required"))
 
-    def test_identity_real_check_logo_mode(self) -> None:
-        proc = subprocess.run(
-            [sys.executable, str(ROOT / "scripts/excalibur_blog_identity_real.py"), "--check"],
-            cwd=ROOT,
-            capture_output=True,
-            text=True,
-            check=False,
-        )
-        self.assertEqual(proc.returncode, 0, proc.stderr or proc.stdout)
-        self.assertIn("logo lockup", proc.stdout.lower())
+    def test_cover_qa_gate_requires_wow_checks(self) -> None:
+        gate_src = (ROOT / "scripts/excalibur_blog_cover_qa_gate.py").read_text(encoding="utf-8")
+        for key in (
+            "forbid_wordpress_ui_in_art",
+            "no_element_overlap",
+            "wow_poster_magazine_typography",
+        ):
+            self.assertIn(key, gate_src)
+
+    def test_quad_prompt_bans_wordpress_ui(self) -> None:
+        prompt_src = (ROOT / "scripts/excalibur_blog_cover_quad_prompt.py").read_text(encoding="utf-8")
+        self.assertIn("WOW_POSTER_BAN", prompt_src)
+        self.assertIn("WordPress", prompt_src)
+
+    def test_canvas_contract_dobry_dom_not_rieltor(self) -> None:
+        contract = (ROOT / "shared/blog-cover-quad-canvas-contract.md").read_text(encoding="utf-8")
+        self.assertIn("Добрый дом", contract)
+        self.assertIn("WOW cover rules", contract)
+        self.assertNotIn("The Риэлтор / tymenrieltor.ru", contract.split("NEVER")[0])
 
 
 if __name__ == "__main__":

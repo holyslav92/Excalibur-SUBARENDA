@@ -1,0 +1,28 @@
+{
+  "topic_id": "B01",
+  "research_date": "2026-08-20",
+  "status": "PASS",
+  "summary": "Research notes for contactless check-in in Tyumen short-term rental. Fresh market signal: Avito Tyumen posutochno promo through 31 Aug 2026 (SERP accessed 2026-08-20).",
+  "freshness_audit": {
+    "research_date": "2026-08-20",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://www.avito.ru/tyumen/kvartiry/sdam/posutochno/-ASgBAgICAkSSA8gQ8AeSUg",
+      "published_at": "2026-08-20",
+      "note": "Live marketplace SERP: Avito cashback promo until 31 Aug 2026 for posutochno bookings in Tyumen; filter contactless check-in listings active."
+    }
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176"]
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  }
+}

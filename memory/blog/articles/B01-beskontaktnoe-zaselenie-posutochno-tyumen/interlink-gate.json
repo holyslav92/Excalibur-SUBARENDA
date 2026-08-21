@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "topic_id": "B01",
+  "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+  "candidates_count": 4,
+  "outbound_found": [
+    {
+      "slug": "chto-vhodit-v-stoimost-kvartiry-posutochno-polnyj-spisok-uslug",
+      "title": "Что входит в стоимость квартиры посуточно: полный список услуг"
+    },
+    {
+      "slug": "pravila-prozhivaniya-v-otele-chto-proverit-do-oplaty-chtoby-ne-poteryat-dengi",
+      "title": "Правила проживания в отеле: что проверить до оплаты, чтобы не потерять деньги"
+    }
+  ],
+  "outbound_required_min": 1,
+  "errors": []
+}

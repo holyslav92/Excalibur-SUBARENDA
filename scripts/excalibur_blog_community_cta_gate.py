@@ -42,6 +42,9 @@ def url_patterns(url: str) -> re.Pattern[str]:
     return re.compile(pat, re.I)
 
 
+from excalibur_blog_site_base import SITE_BASE_PLACEHOLDER
+
+
 def check_tel_link(html: str, tel_url: str) -> bool:
     digits = normalize_phone_digits(tel_url.removeprefix("tel:"))
     if len(digits) < 10:
@@ -52,6 +55,30 @@ def check_tel_link(html: str, tel_url: str) -> bool:
     if re.search(rf"tel:\+?7{re.escape(tail)}", html or "", re.I):
         return True
     return tail in normalize_phone_digits(html or "")
+
+
+def link_in_html(html: str, link: str) -> bool:
+    link = (link or "").strip()
+    if link.lower().startswith("tel:"):
+        return check_tel_link(html, link)
+    if url_patterns(link).search(html or ""):
+        return True
+    parsed = urlparse(link)
+    path = parsed.path or "/"
+    if not path.endswith("/") and path != "/":
+        path_variants = [path, f"{path}/"]
+    else:
+        path_variants = [path]
+    for p in path_variants:
+        if f'href="{p}"' in (html or "") or f"href='{p}'" in (html or ""):
+            return True
+        placeholder_href = f'href="{SITE_BASE_PLACEHOLDER}{p}"'
+        if placeholder_href in (html or ""):
+            return True
+        if p == "/":
+            if f'href="{SITE_BASE_PLACEHOLDER}/"' in (html or ""):
+                return True
+    return False
 
 
 def check_max_channel(html: str, max_cfg: str, phone: str) -> tuple[bool, str]:
@@ -66,6 +93,55 @@ def check_max_channel(html: str, max_cfg: str, phone: str) -> tuple[bool, str]:
     if phone_digits and not check_tel_link(html, f"tel:+{phone_digits.lstrip('0')}"):
         return False, "MAX block requires tenant phone (tel: or digits)"
     return True, ""
+
+
+def check_funnel_hooks(html: str) -> list[str]:
+    """Mid-body funnel: TG after checklist vibe; MAX/manager after brand block."""
+    errors: list[str] = []
+    body = html or ""
+    lower = body.casefold()
+    n = max(len(body), 1)
+    tg = "t.me/dobriy_dom_72"
+    tg_pos = lower.find(tg)
+    max_pos = lower.find("max.ru/id660300569233_biz")
+    mgr_pos = lower.find("t.me/dobriy_dom_tyumen")
+    if tg_pos < 0:
+        errors.append("funnel: missing Telegram channel https://t.me/Dobriy_dom_72 in body")
+    elif tg_pos > int(n * 0.82):
+        errors.append("funnel: Telegram channel link only at the end — move mid-article after checklist")
+    if tg_pos >= 0:
+        window = lower[max(0, tg_pos - 400) : tg_pos + 120]
+        if not re.search(r"канал|полн|список", window):
+            errors.append("funnel: TG hook should mention channel/full list near https://t.me/Dobriy_dom_72")
+    brand_markers = ("добр", "у нас", "мы сдаём", "мы шлём", "мы отправ")
+    brand_pos = -1
+    for m in brand_markers:
+        p = lower.find(m)
+        if p >= 0:
+            brand_pos = p if brand_pos < 0 else min(brand_pos, p)
+    mm_pos = max_pos if max_pos >= 0 else mgr_pos
+    if brand_pos >= 0 and mm_pos < 0:
+        errors.append("funnel: after brand block need MAX or manager link in body")
+    if mm_pos >= 0:
+        window = lower[max(0, mm_pos - 500) : mm_pos + 200]
+        if not re.search(r"инструк|засел|до заезд|до засел", window):
+            errors.append("funnel: MAX/manager hook should mention instruction before check-in")
+    banned = (
+        ("егрн", "banned topic: ЕГРН"),
+        ("нотариус", "banned topic: нотариус"),
+        (r"\bсуд\b", "banned topic: суд"),
+        ("я адвокат", "banned phrase: я адвокат"),
+        ("мы лучшие", "banned phrase: мы лучшие"),
+        ("бизнес-класс", "banned phrase: бизнес-класс"),
+    )
+    for pat, msg in banned:
+        if re.search(pat, lower):
+            # alt-тексты картинок не считаем телом статьи
+            prose = re.sub(r"<img[^>]*alt=\"[^\"]*\"[^>]*>", "", body, flags=re.I)
+            prose_lower = prose.casefold()
+            if re.search(pat, prose_lower):
+                errors.append(msg)
+    return errors
 
 
 def check_html(
@@ -83,10 +159,7 @@ def check_html(
             errors.append("cta_required=true but tenant-config.cta_links is empty")
         return errors, present
     for link in links:
-        if link.lower().startswith("tel:"):
-            ok = check_tel_link(html, link)
-        else:
-            ok = bool(url_patterns(link).search(html or ""))
+        ok = link_in_html(html, link)
         present[link] = ok
         if not ok:
             errors.append(f"missing required CTA href {link}")
@@ -135,6 +208,7 @@ def main() -> int:
                 phone=phone,
             )
             errors.extend(link_errors)
+            errors.extend(check_funnel_hooks(html))
     if not links and not cta_required:
         present = {}
 
@@ -145,6 +219,7 @@ def main() -> int:
         "cta_required": cta_required,
         "required": links,
         "present": present,
+        "funnel_errors": [e for e in errors if e.startswith("funnel:") or e.startswith("banned")],
         "errors": errors,
     }
     out_name = Path(args.output).name

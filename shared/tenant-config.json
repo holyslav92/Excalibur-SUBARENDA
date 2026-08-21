@@ -13,16 +13,16 @@
   ],
   "author_id": "dobry-dom",
   "publisher_display": "Добрый дом",
-  "logo_lockup": "memory/cover/assets/brand/logo-dobry-dom.png",
+  "host_face_todo": "TODO: заменить memory/cover/assets/identity-real/ на фото ведущего/бренда; blog-hero.json → status NEED_REPLACE",
   "publish_format": "longform",
   "inline_image_count": 7,
   "publish_schedule": {
     "timezone": "Asia/Yekaterinburg",
     "weekdays_only": true,
-    "slots_local": ["10:00", "13:00", "17:00"],
-    "runs_per_day": 3,
-    "window_local": "10:00-17:00",
-    "note": "Longform Cursor Automation: 3 weekday slots YEKT (10/13/17). Config: .cursor/automations/dobry-dom-3x.yml. Publish only when FTP secrets + EXCALIBUR_BLOG_ALLOW_PUBLISH=yes on process (never git)."
+    "slots_local": ["09:00", "12:00", "15:00", "17:00"],
+    "runs_per_day": 4,
+    "window_local": "09:00-17:00",
+    "note": "Longform Cursor Automation: 4 weekday slots YEKT (owner 9–17). NOT 20:00. Publish only when FTP secrets + EXCALIBUR_BLOG_ALLOW_PUBLISH=yes on process (never git)."
   },
   "image_generation": {
     "provider": "derouter-rest",
@@ -32,17 +32,77 @@
     "panels_per_canvas": 4,
     "total_images": 8
   },
+  "brand_tone": {
+    "positioning": "комфорт+",
+    "not": "бизнес-класс, люкс, hotel-luxe, premium, мрамор, 5-star",
+    "audience": "командировки, семьи, пары — обычные гости, без пафоса",
+    "visual": "уютные «живые» интерьеры, не мраморные дворцы и не «бизнес-класс ЖК» как обещание бренда",
+    "voice_allowed": ["заранее", "спокойно", "на связи", "как для своих", "без лишней суеты"],
+    "voice_forbidden": ["лучшие", "№1", "premium", "бизнес-класс", "люкс", "мрамор", "как в пятизвёздочном отеле"]
+  },
+  "factory_quality": {
+    "min_score_target": 9,
+    "title_banned_patterns": [
+      "\\d+\\s+совет",
+      "полный\\s+гайд",
+      "полный\\s+список",
+      "вс[её]\\s+что\\s+нужно\\s+знать",
+      "top[- ]?ошиб",
+      "топ[- ]?\\d+",
+      "гайд\\s+20\\d{2}"
+    ],
+    "humble_brand_proof_patterns": [
+      "у\\s+нас\\s+(?:это|закры|сдел|отправ|присл|инструк)",
+      "в\\s+«?добр\\w+\\s+дом\\w*»?",
+      "мы\\s+(?:отправ|присл|закры|дела|шл|на\\s+связ)",
+      "заранее,\\s*не\\s+у\\s+двер",
+      "как\\s+для\\s+своих"
+    ],
+    "cta_conversion": {
+      "primary_channel": "https://t.me/Dobriy_dom_72",
+      "primary_booking": "https://добрыйдом-72.рф/booking/",
+      "primary_booking_punycode": "https://xn---72-9cdob8azaodt6k.xn--p1ai/booking/",
+      "manager_questions": "https://t.me/Dobriy_dom_Tyumen"
+    },
+    "tyumen_complexes_whitelist": [
+      {"name": "Европейский", "aliases": ["европейск", "tikhiy 6", "тихий 6"]},
+      {"name": "Novin / 50 let Oktyabrya", "aliases": ["новин", "50 лет окт"]},
+      {"name": "Zvezdnyy 2 / Charkova 87", "aliases": ["звёздн", "звездн", "чарков"]},
+      {"name": "center Dzerzhinskogo 23", "aliases": ["дзержинск", "центр"]}
+    ],
+    "brand_facts_allowed": [
+      "бесконтактное заселение",
+      "поддержка в мессенджере",
+      "инструкция заранее, не у двери",
+      "10 лет Сургут+Тюмень",
+      "комфорт+"
+    ],
+    "invented_facts_forbidden": [
+      "конкретные коды доступа",
+      "суммы залогов без источника",
+      "инвентарь квартир которого нет в research"
+    ]
+  },
   "cta_required": true,
   "cta_links": [
-    "https://xn---72-9cdob8azaodt6k.xn--p1ai/blog/",
-    "https://xn---72-9cdob8azaodt6k.xn--p1ai/"
+    "https://t.me/Dobriy_dom_72",
+    "https://max.ru/id660300569233_biz",
+    "https://добрыйдом-72.рф/booking/",
+    "https://добрыйдом-72.рф/",
+    "tel:+79935748322"
   ],
   "cta_channels": {
-    "site": "https://xn---72-9cdob8azaodt6k.xn--p1ai/",
-    "blog": "https://xn---72-9cdob8azaodt6k.xn--p1ai/blog/",
-    "messenger": "TODO: ссылка на мессенджер с сайта добрыйдом-72.рф",
-    "phone": "TODO: телефон с сайта добрыйдом-72.рф",
-    "phone_display": "TODO"
+    "site": "https://добрыйдом-72.рф/",
+    "booking": "https://добрыйдом-72.рф/booking/",
+    "blog": "https://добрыйдом-72.рф/blog/",
+    "telegram_manager": "https://t.me/Dobriy_dom_Tyumen",
+    "telegram_manager_handle": "@Dobriy_dom_Tyumen",
+    "telegram_channel": "https://t.me/Dobriy_dom_72",
+    "messenger": "https://t.me/Dobriy_dom_Tyumen",
+    "max": "https://max.ru/id660300569233_biz",
+    "avito": "https://www.avito.ru/brands/dobriydomtymen/all?sellerId=5a9944e5fd6eca88b3c4f0864c03f0b4",
+    "phone": "+79935748322",
+    "phone_display": "+7 (993) 574-83-22"
   },
   "wp_categories_required": true,
   "publish_options": {
@@ -50,17 +110,40 @@
     "derouter_image_quality": "high",
     "auto_interlink_after_publish": true
   },
-  "publish_transport_hints": {
-    "transport": "ftp",
-    "ftp_host": "vh368.timeweb.ru",
-    "ftp_port": 21,
-    "ftp_user": "ca21576_svyat",
-    "ftp_root": "sublease/public_html",
-    "note": "Timeweb extra FTP user: SFTP:22 Permission denied; use FTP passive port 21. Bootstrap uploads to FTP_ROOT where wp-load.php lives. FTP_PASS and EXCALIBUR_BLOG_ALLOW_PUBLISH only in Cloud Secrets."
+  "cover_mode": "brand_logo_paste",
+  "logo_composite": {
+    "mode": "paste_png_alpha",
+    "logo_asset": "memory/cover/assets/brand/dobry-dom-logo.png",
+    "canonical_url": "https://xn---72-9cdob8azaodt6k.xn--p1ai/wp-content/uploads/2026/03/img_7143.png",
+    "canonical_sha256": "eaf97915a9830ffd31b5c08b128e8b60dc0b0b9a8ee85fc4083f32c49040ee3f",
+    "forbid_ai_drawn_logo": true,
+    "cover_phone_post_composite": true,
+    "max_width_fraction": 0.10,
+    "min_width_fraction": 0.08,
+    "max_width_fraction_cap": 0.12,
+    "margin_px": 20,
+    "logo_corner": "top_right",
+    "inline_logo_count_min": 2,
+    "inline_logo_count_max": 3,
+    "inline_logo_slots_default": ["inline_1", "inline_3", "inline_7"]
   },
-  "cover_mode": "logo_lockup",
-  "cover_identity_status": "not_applicable",
+  "cover_identity_status": "brand_logo_only",
   "dzen_rf_pack": true,
+  "dzen_publish": {
+    "status": "TODO",
+    "channel_url": "",
+    "note": "Нет аккаунта Дзена «Добрый дом» в config. Пишем dzen-excerpt.json на статью; постер владельца позже. НЕ постить в Дзен The Realtor / holyslav.",
+    "artifact": "dzen-excerpt.json"
+  },
+  "social_funnel": {
+    "seo_base": "site /blog article",
+    "primary_channel": "https://t.me/Dobriy_dom_72",
+    "max": "https://max.ru/id660300569233_biz",
+    "primary_booking": "https://добрыйдом-72.рф/booking/",
+    "manager": "https://t.me/Dobriy_dom_Tyumen",
+    "phone_display": "+7 (993) 574-83-22",
+    "goal": "activity in Dzen + TG + MAX, not publish-and-forget"
+  },
   "scout_signal_urls": [
     "https://t.me/klyshin_A",
     "{{SITE_BASE}}/blog/",
@@ -92,11 +175,29 @@
     "article_style": "shared/article-style.md",
     "soul_examples": "shared/soul-examples/"
   },
+  "cover_wow_rules": {
+    "status": "locked",
+    "visual_notes": "memory/cover/visual-notes-dobry-dom.json",
+    "forbid_wordpress_ui_in_art": true,
+    "no_element_overlap": true,
+    "wow_poster_magazine_typography": true,
+    "inline_logo_count_min": 2,
+    "inline_logo_count_max": 3,
+    "inline_logo_slots_default": ["inline_1", "inline_3", "inline_7"],
+    "logo_corner": "top_right",
+    "logo_asset": "memory/cover/assets/brand/dobry-dom-logo.png",
+    "cover_phone_display": "+7 (993) 574-83-22",
+    "cover_phone_not_in_logo_pad": true,
+    "forbid_multiple_logos_per_image": true,
+    "cover_qa_fail_if_broken": true,
+    "tenant_scope": "Excalibur-SUBARENDA / Добрый дом only — never tymenrieltor.ru / Excalibur-2-Cloud rieltor canon"
+  },
   "cover_files": {
     "hero": "memory/cover/blog-hero.json",
     "design_code": "memory/cover/cover-design-code.json",
     "style_preset": "memory/cover/quad-style-dobry-dom.json",
-    "logo": "memory/cover/assets/brand/logo-dobry-dom.png"
+    "inline_visual_types": "memory/cover/inline-visual-types-dobry-dom.json",
+    "visual_notes": "memory/cover/visual-notes-dobry-dom.json"
   },
   "site_urls": {
     "public_punycode": "https://xn---72-9cdob8azaodt6k.xn--p1ai",

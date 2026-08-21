@@ -7,25 +7,30 @@ description: "Cover-QA: visual gate after Cover, before Indexer/Publish; stamp c
 
 ## Когда
 
-**После** `excalibur-blog-cover` (8 PNG готовы, inject в `article.html`).  
+**После** `excalibur-blog-cover` (8 PNG готовы + `excalibur_blog_brand_logo_composite.py` PASS).  
 **До** Indexer и Publish.
 
 FAIL → **вернуть Cover** (не Indexer/Publish).
 
+## WOW cover rules (Добрый дом — FAIL if broken)
+
+Канон: `memory/cover/visual-notes-dobry-dom.json` · `shared/tenant-config.json` → `cover_wow_rules`
+
+1. **forbid_wordpress_ui_in_art** — нет WordPress/Gutenberg/Add title/Publish/Dashboard/wp-admin/block editor/theme chrome/cookie bars в арте.
+2. **no_element_overlap** — headline, stickers, meme, cat, phone, people, logo pad не перекрываются.
+3. **wow_poster_magazine_typography** — magazine poster, bold readable Russian display hook, scene + one sharp line; не timid system font / label wall / empty stock / WP screenshot.
+4. **inline_logo_count_2_3** + **forbid_multiple_logos_per_image** + **logo_top_right_fixed** — логотип на cover + 2–3 inline (default inline_1/3/7), TOP-RIGHT pad; never 2+ logos per frame.
+5. **cover_phone_993_post_composite** + **cover_phone_not_in_logo_pad** — +7 (993) 574-83-22 только на cover post-composite, не в logo pad.
+
 ## Что проверяешь (визуально + артефакты)
 
-1. **Logo lockup на всех 8** — логотип «Добрый дом» читаем на cover + каждом inline; consistent corner placement; не гигантский watermark.
-2. **Logo readable** — достаточный контраст (light plate на светлом фоне при необходимости).
-3. **NO Shakin identity** — FAIL если face-studio-2026-06-23 / Святослав Шакин на любом изображении.
-4. **Light / high-key** — светлая картинка, sun flare/glow, teal/terracotta accents; **нет** dark cinematic / low-key.
-5. **Motif 14д** — нет коллизии с `memory/cover/used-motifs.json`.
-6. **Wordstat stickers** — 1–3 читаемых стикера с live P0-фразами (из `quad-manifest.json` → `wordstat_stickers`).
-7. **Inline utility (все 7)** — каждый inline проходит тест пользы: факт/порядок/число/сравнение по H2; не decorative-only; не ряд иконок+3 слова.
-8. **inline_no_decorative_only** — FAIL если inline = пустой красивый интерьер без таблиц/цифр/схем.
-9. **inline_no_host_face** — ни на одном inline нет locked host face.
-10. **inline_no_co_host_human** — нет stock model / generated man / large meme person как co-host.
-11. **inline_meme_sticker_scale** — мем-человек ≤15% кадра, угол/край.
-12. **meme_people_real_catalog** — people-memes из `memory/cover/meme-top100.json`.
+1. **Light / high-key** — светлая картинка, sun flare/glow; **нет** dark cinematic / low-key / twilight.
+2. **Motif 14д** — нет коллизии с `memory/cover/used-motifs.json`.
+3. **Люди в 8-set** — гости по теме OK; inline people-memes только маленькие стикеры из `meme-top100.json`.
+4. **Коты** — meme-cat на cover bottom-left ≤12% **или** недельная каденция не просела.
+5. **Wordstat stickers** — 1–3 читаемых стикера с live P0-фразами.
+6. **Inline utility (все 7)** — факт/порядок/число/сравнение по H2; не host face.
+7. **Brand logo composite** — `cover/logo-composite-stamp.json` PASS; canonical PNG sha256; logo 8–12% TOP-RIGHT.
 
 Канон: `memory/cover/cover-canon.json`.
 
@@ -35,27 +40,30 @@ FAIL → **вернуть Cover** (не Indexer/Publish).
 {
   "agent": "excalibur-blog-cover-qa",
   "status": "PASS",
-  "checked_at": "2026-08-20",
+  "checked_at": "2026-08-18",
   "topic_id": "B01",
   "checks": {
-    "logo_lockup_all_8": true,
-    "logo_lockup_readable": true,
-    "no_shakin_identity_face": true,
     "light_high_key": true,
     "motif_no_collision_14d": true,
     "people_in_8_set": true,
     "cats_cadence_ok": true,
     "wordstat_stickers_1_3": true,
     "inline_utility_all_7": true,
-    "inline_no_decorative_only": true,
     "inline_no_host_face": true,
     "inline_no_co_host_human": true,
     "inline_meme_sticker_scale": true,
     "meme_people_real_catalog": true,
-    "cover_phone_readable": true,
-    "board_stationery_ok": true,
-    "typography_cyrillic_clean": true,
-    "meme_density_inline_ok": true
+    "brand_logo_paste_png": true,
+    "logo_top_right_fixed": true,
+    "inline_logo_count_2_3": true,
+    "forbid_multiple_logos_per_image": true,
+    "logo_width_fraction_8_12": true,
+    "cover_phone_993_post_composite": true,
+    "forbid_922_phone": true,
+    "cover_phone_not_in_logo_pad": true,
+    "forbid_wordpress_ui_in_art": true,
+    "no_element_overlap": true,
+    "wow_poster_magazine_typography": true
   },
   "notes": "кратко: что смотрел"
 }
@@ -74,9 +82,8 @@ python3 scripts/excalibur_blog_cover_qa_gate.py --article-dir "$ARTICLE"
 
 ## Blockers
 
-- COVER QA BLOCKER — любой check false
-- logo lockup missing on any of 8
-- Shakin face detected → return Cover
-- decorative-only inline → return Cover
+- COVER QA BLOCKER — любой check false (включая WOW rules)
+- logo-composite-stamp missing / sha256 mismatch
+- dark cinematic / overlapping elements / WordPress UI in art → return Cover
 
 Agent: `agents/excalibur-blog-cover-qa.md`

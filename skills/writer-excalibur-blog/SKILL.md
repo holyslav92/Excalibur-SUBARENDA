@@ -46,12 +46,15 @@ python3 scripts/excalibur_blog_derouter_opus_chat.py \
 
 ## Правила смысла
 
+- **Простой разговорный русский** — короткие удары, сцена в §1, «где подставят», «что сделать сегодня».
+- **Delivery Клышина, смысл наш:** хост посуточной Тюмень, comfort+, чеклисты/заселение — не юрист.
+- **Бан:** ЕГРН, нотариус, суд, «я адвокат», «мы лучшие», бизнес-класс.
+- **Воронка в теле:** (a) после чеклиста → TG канал «полный список»; (b) после «у нас так» → MAX или менеджер, инструкция до заселения.
 - Все факты только из research; не выдумывай.
-- **Тарифы/комиссии банков** — только из `research-notes.md` →
-  `## official_verifications` + `practical_facts` с пометкой official; не из обзоров.
-- Структура: открытие → несколько H2 с мыслями → практика/ограничения → CTA.
-- Без research-даты / Wordstat в открытии (Sol всё равно вычистит, но не засоряй).
-- CTA: `tenant-config.cta_links` + MAX по `cta_channels.max` (обязательно при `cta_required=true`).
+- **Supply:** только Тюмень. **Demand Wordstat:** RF-wide (225), cluster A без города + B с «тюмень».
+- H1 может быть без слова «Тюмень» — cable pain-scene.
+- CTA: TG канал, MAX, booking, tel из `tenant-config`.
+- Положи `dzen-excerpt.json` (hook + first_screen + takeaway) для будущего Дзена.
 - **Interlink (если `interlink_old_articles=true`):** 1–3 контекстные `<a href="/blog/...">` на
   опубликованные sibling из ledger; якорь по смыслу H2, не «читайте также» в каждом абзаце.
 - Не читай чужие article.html / live-сайт / уже опубликованные статьи сайта / topics.

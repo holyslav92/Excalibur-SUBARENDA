@@ -1,18 +1,42 @@
 {
-  "hero_id": "dobry-dom",
-  "status": "ok",
+  "hero_id": "dobry-dom-brand",
+  "status": "brand_logo_paste",
   "name_ru": "Добрый дом",
-  "subtitle_ru": "УЮТНЫЕ КВАРТИРЫ В АРЕНДУ",
-  "cover_mode": "logo_lockup",
-  "logo_lockup": "memory/cover/assets/brand/logo-dobry-dom.png",
-  "reference_image": "memory/cover/assets/brand/logo-dobry-dom.png",
-  "reference_url_hosted": "https://xn---72-9cdob8azaodt6k.xn--p1ai/wp-content/uploads/2026/03/img_7143.png",
-  "reference_url_source": "wp-media-добрыйдом-72.рф",
-  "reference_notes": "Official Добрый дом logo: green curtain mark + flower pot, terracotta wordmark, subtitle «УЮТНЫЕ КВАРТИРЫ В АРЕНДУ». Logo lockup on ALL 8 images. NO host face / NO Shakin identity.",
-  "visual_lock": {
-    "logo": "memory/cover/assets/brand/logo-dobry-dom.png",
-    "placement": "consistent corner lockup on cover + all 7 inlines",
-    "forbid": "Shakin/rieltor identity lock, tymenrieltor.ru URLs, face-studio-2026-06-23, deal paperwork hero, EGRN investigation board default"
+  "cover_mode": "brand_logo_paste",
+  "reference_images": ["memory/cover/assets/brand/dobry-dom-logo.png"],
+  "reference_image": "memory/cover/assets/brand/dobry-dom-logo.png",
+  "reference_url_hosted": "[REDACTED]/wp-content/uploads/2026/03/img_7143.png",
+  "reference_url_source": "добрыйдом-72.рф canonical logo (curtains+flower)",
+  "visual_notes": "memory/cover/visual-notes-dobry-dom.json",
+  "logo_composite": {
+    "mode": "paste_png_alpha",
+    "logo_asset": "memory/cover/assets/brand/dobry-dom-logo.png",
+    "canonical_sha256": "eaf97915a9830ffd31b5c08b128e8b60dc0b0b9a8ee85fc4083f32c49040ee3f",
+    "forbid_ai_drawn_logo": true,
+    "cover_phone_post_composite": true,
+    "max_width_fraction": 0.10,
+    "min_width_fraction": 0.08,
+    "max_width_fraction_cap": 0.12,
+    "margin_px": 20,
+    "logo_corner": "top_right",
+    "inline_logo_count_min": 2,
+    "inline_logo_count_max": 3,
+    "inline_logo_slots_default": ["inline_1", "inline_3", "inline_7"]
   },
-  "cover_canon": "memory/cover/cover-canon.json"
+  "wow_cover_rules": {
+    "forbid_wordpress_ui_in_art": true,
+    "no_element_overlap": true,
+    "wow_poster_magazine_typography": true,
+    "cover_qa_fail_if_broken": true
+  },
+  "visual_lock": {
+    "person": "NO Shakin/rieltor identity — Russian guests fitting check-in topic only",
+    "wow_poster": "Magazine cover poster: bold readable Russian DISPLAY type hook + one sharp scene line. NOT timid system font; NOT label wall; NOT empty stock; NOT WordPress screenshot",
+    "forbid_wordpress_ui": "NEVER WordPress, Gutenberg, Add title, Publish, Dashboard, wp-admin, block editor, theme chrome, cookie bars in generated art",
+    "no_overlap": "Headline, Wordstat stickers, meme, cat, phone, people, logo pad NEVER overlap — separate composition zones",
+    "logo_lockup": "PASTE official PNG 1:1 — COVER always ONE small logo TOP-RIGHT; INLINES logo on 2–3 panels only (same corner pad); reserved empty top-right in generation; NEVER AI-drawn logo; NEVER 2+ logos per frame",
+    "cover_phone": "+7 (993) 574-83-22 post-composite bottom-left on cover only — NEVER in logo pad; NEVER in generation"
+  },
+  "cover_canon": "memory/cover/cover-canon.json",
+  "host_face_todo": "skip_human_host — brand logo paste mode"
 }

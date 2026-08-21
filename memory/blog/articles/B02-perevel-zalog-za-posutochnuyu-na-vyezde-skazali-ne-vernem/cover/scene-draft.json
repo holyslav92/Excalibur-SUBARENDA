@@ -1,0 +1,38 @@
+{
+  "cover_emotion": "шок и усталость: гость с чемоданом смотрит на скол на плите и сообщение «залог не вернули»",
+  "scene_hint": "POSTER collage август Тюмень: кухня со сколом на плите, красный маркер на чипе, телефон с пузырем «залог не вернули», чемодан, ключи, золотой скотч, torn-paper sticky; NO host; NO logo; TOP-RIGHT empty pad; cat sticker bottom-left ≤12%; NO winter",
+  "cover_motifs": {
+    "composition": "poster collage: chip on stove + phone bubble + bold headline + props scatter, TOP-RIGHT empty pad for logo",
+    "location": "Tyumen apartment kitchen August evening warm light green trees in window",
+    "meme": "tiny Grumpy Cat bottom-left ≤12%, never top-right pad",
+    "prop_set": "stove chip marker, phone bubble, suitcase, keys, torn sticky notes, gold tape",
+    "sticker_set": ["залог посуточно", "Тюмень", "скол на плите"],
+    "joke": "cat sticker reacts to chip on countertop"
+  },
+  "wordstat_stickers": ["залог посуточно", "Тюмень"],
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "slots": {
+    "inline_1": {
+      "scene_hint": "Sketch+table hybrid: 3-column compare оплата/залог/депозит on torn paper board, gold arrows, interactive feel; TOP-RIGHT empty pad"
+    },
+    "inline_2": {
+      "scene_hint": "Hand-drawn process sketch 5 steps video walkthrough at check-in with numbered arrows and phone mockup; NO logo pad needed top-right clean"
+    },
+    "inline_3": {
+      "scene_hint": "Bar chart + scheme: repair cost vs full replacement for chip; labeled bars, sketch annotations; TOP-RIGHT empty pad"
+    },
+    "inline_4": {
+      "scene_hint": "Flowchart dispute ladder: претензия→площадка→банк with red/gold nodes, collage tape; top-right clean no logo"
+    },
+    "inline_5": {
+      "scene_hint": "Interactive checklist board with toggle chips honest deposit rules; sticky notes; top-right clean margin"
+    },
+    "inline_6": {
+      "scene_hint": "Illustration fact card: cozy Tyumen apartment detail + transparent deposit labels; warm sketch lines; no logo"
+    },
+    "inline_7": {
+      "scene_hint": "FAQ UI cards 4 questions with expand arrows, small cat sticker bottom-left; TOP-RIGHT empty pad"
+    }
+  }
+}

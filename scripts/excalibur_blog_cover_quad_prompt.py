@@ -11,11 +11,7 @@ import sys
 from pathlib import Path
 from urllib.parse import urlparse
 
-from excalibur_blog_identity_real import (
-    is_logo_lockup_mode,
-    pick_identity_reference,
-    pick_logo_reference,
-)
+from excalibur_blog_identity_real import pick_identity_reference
 from excalibur_blog_quad_slots import (
     CANVAS_1_SLOTS,
     active_inline_keys,
@@ -58,21 +54,30 @@ def sanitize_cover_scene_hint(scene: str, highlight: str) -> str:
 
 
 BODY_LOCK = "face-studio identity: jaw/stubble/hairline/eyes; medium-slim; NOT chubby/puffy"
-LOGO_LOCKUP_RULE = (
-    "brand logo «Добрый дом» lockup readable corner (green curtain mark + terracotta wordmark); "
-    "consistent placement; light plate on bright bg if needed; NOT giant watermark"
-)
 I2I_EXPRESSION_LOCK = (
     "same person as reference, NEW expression for the hook, "
     "do NOT copy reference closed-mouth smile/pose/head angle; "
     "FORBIDDEN polite studio smile"
 )
-COVER_PHONE_CTA = ""  # optional — use cta_channels.phone when set
-BOARD_STATIONERY = "tape/pins/strings/paper scraps; high-key #FFF/teal/terracotta; not noir"
+DEFAULT_COVER_PHONE_CTA = "+7 (993) 574-83-22"
+FORBIDDEN_COVER_PHONE = "+7 922 001 65 05"
+BOARD_STATIONERY = "tape/pins/strings/paper scraps; high-key #FFF/gold; not noir"
 INLINE_BAN_EXTRA = (
     "icon slogans; empty cells; desk scene; cover copy; celebrity memes; "
     "stock model man; handsome realtor co-host; generated stranger presenter; "
-    "large human on inline; meme person >15% frame; invented meme face"
+    "large human on inline; meme person >15% frame; invented meme face; "
+    "WordPress; Gutenberg; wp-admin; block editor; theme chrome; cookie bar; "
+    "overlapping headline stickers meme cat phone logo; timid system font; "
+    "wall of tiny labels; empty stock; wordpress screenshot"
+)
+WOW_POSTER_BAN = (
+    "WordPress; Gutenberg; Add title; Publish; Dashboard; wp-admin; "
+    "block editor; theme chrome; cookie bar; timid system font; "
+    "wall of tiny labels; empty stock; wordpress screenshot"
+)
+NO_OVERLAP_RULE = (
+    "Separate zones — headline, Wordstat stickers, meme, cat bottom-left, people, "
+    "TOP-RIGHT empty logo pad NEVER overlap each other; phone NOT in generation"
 )
 MEME_CATALOG_REL = "memory/cover/meme-top100.json"
 MEME_STICKER_INLINE_MAX_SHARE = 0.15
@@ -129,7 +134,7 @@ def compact(value: object, limit: int) -> str:
     return text[: limit - 1].rstrip() + "…"
 
 
-def inline_panel_prompt(slot: dict, types_catalog: dict) -> str:
+def inline_panel_prompt(slot: dict, types_catalog: dict, *, logo_paste: bool = False) -> str:
     type_id = slot.get("visual_type") or "fact_card"
     type_def = (types_catalog.get("types") or {}).get(type_id) or {}
     label = type_def.get("label_ru", type_id)
@@ -143,7 +148,16 @@ def inline_panel_prompt(slot: dict, types_catalog: dict) -> str:
     if slot.get("meme_sticker"):
         base += (
             f" +tiny meme sticker only (≤{int(MEME_STICKER_INLINE_MAX_SHARE * 100)}% frame, "
-            f"corner accent from {MEME_CATALOG_REL}; NO co-host human; NO presenter)."
+            f"bottom-left or bottom-right corner only — NEVER top-right pad; "
+            f"from {MEME_CATALOG_REL}; NO co-host human; NO presenter)."
+        )
+    if logo_paste:
+        base += (
+            " TOP-RIGHT empty pad for ONE factory logo 8–12%; NO drawn logo/house/heart; NO multi logos."
+        )
+    else:
+        base += (
+            " TOP-RIGHT clean margin; NO factory logo here; NO drawn logos/house/heart."
         )
     return base
 
@@ -364,6 +378,43 @@ def style_allows_cat_stickers(style: dict) -> bool:
     return "cat" in motif
 
 
+def load_tenant_cover_config(root: Path) -> dict:
+    cfg_path = root / "shared" / "tenant-config.json"
+    if not cfg_path.is_file():
+        return {}
+    try:
+        tenant = json.loads(cfg_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return {}
+    channels = tenant.get("cta_channels") or {}
+    return {
+        "cover_mode": str(tenant.get("cover_mode") or "").strip(),
+        "phone_display": str(channels.get("phone_display") or DEFAULT_COVER_PHONE_CTA).strip(),
+    }
+
+
+def tenant_uses_brand_logo_paste(root: Path, style: dict | None = None) -> bool:
+    tenant = load_tenant_cover_config(root)
+    mode = str(tenant.get("cover_mode") or "").strip().casefold()
+    if mode in {"brand_logo_paste", "brand_logo_composite", "paste_png"}:
+        return True
+    if style:
+        hero_mode = str(style.get("cover_hero_mode") or "").strip().casefold()
+        if hero_mode in {"brand_logo_paste", "brand_logo_composite", "paste_png"}:
+            return True
+        if style.get("skip_human_host") is True and hero_mode == "brand_logo_paste":
+            return True
+    return False
+
+
+def cover_phone_cta_for_manifest(manifest: dict, root: Path) -> str:
+    manifest_phone = str(manifest.get("cover_phone_cta") or "").strip()
+    if manifest_phone and manifest_phone != FORBIDDEN_COVER_PHONE:
+        return manifest_phone
+    tenant = load_tenant_cover_config(root)
+    return str(tenant.get("phone_display") or DEFAULT_COVER_PHONE_CTA)
+
+
 def style_is_situational_cat_hero(style: dict) -> bool:
     """Cat is the cover hero (not host+sticker cats)."""
     mode = str(style.get("cover_hero_mode") or "").strip().casefold()
@@ -373,6 +424,17 @@ def style_is_situational_cat_hero(style: dict) -> bool:
         return True
     motif = str(style.get("allowed_animal_motif") or "").strip().casefold()
     return motif in {"situational_cat_hero", "cat_hero"}
+
+
+def resolve_manifest_inline_logo_keys(manifest: dict, root: Path) -> set[str]:
+    cfg = load_tenant_cover_config(root)
+    tenant = load_json(root / "shared" / "tenant-config.json") if (root / "shared" / "tenant-config.json").is_file() else {}
+    composite = (tenant.get("logo_composite") or {})
+    raw = manifest.get("logo_paste_inline_slots") or manifest.get("inline_logo_slots")
+    if isinstance(raw, list) and raw:
+        return {str(x).strip() for x in raw if str(x).strip()}
+    defaults = composite.get("inline_logo_slots_default") or ["inline_1", "inline_3", "inline_7"]
+    return {str(x).strip() for x in defaults}
 
 
 def build_prompt(
@@ -385,6 +447,9 @@ def build_prompt(
     *,
     canvas_slots: tuple[str, ...] | None = None,
     has_cover: bool = True,
+    brand_logo_paste: bool = False,
+    cover_phone_cta: str = DEFAULT_COVER_PHONE_CTA,
+    inline_logo_keys: set[str] | None = None,
 ) -> str:
     slots = manifest.get("slots") or {}
     canvas_slots = canvas_slots or tuple(CANVAS_1_SLOTS)
@@ -412,13 +477,18 @@ def build_prompt(
     quadrant_labels = ("Top-left", "Top-right", "Bottom-left", "Bottom-right")
     panel_lines: list[str] = []
 
+    inline_logo_keys = inline_logo_keys or set()
+
+    def inline_prompt_for(key: str) -> str:
+        return inline_panel_prompt(slot(key), types_catalog, logo_paste=(key in inline_logo_keys))
+
     if has_cover and "cover" in canvas_slots:
         cover = slot("cover")
         highlight = compact(manifest.get("cover_hook_highlight", ""), 24)
         highlight_rule = (
-            f'paint ONLY the highlight word "{highlight}" in terracotta #c45c3e'
+            f'paint ONLY the highlight word "{highlight}" in gold #dcc5a1'
             if highlight
-            else "paint at most ONE punch word in terracotta #c45c3e"
+            else "paint at most ONE punch word in gold #dcc5a1"
         )
         cover_emotion = compact(
             str(cover.get("cover_emotion") or manifest.get("cover_emotion") or ""), 120
@@ -427,22 +497,19 @@ def build_prompt(
         cover_hook_text = compact(manifest.get("cover_hook", ""), 120)
         cover_sticky = compact(str(cover.get("sticky") or ""), 48)
         sticky_lock = (
-            f" Small terracotta sticky with EXACTLY «{cover_sticky}» in Cyrillic."
+            f" Small gold sticky with EXACTLY «{cover_sticky}» in Cyrillic."
             if cover_sticky
             else ""
         )
-        phone_clause = (
-            f"Phone EXACT «{COVER_PHONE_CTA}» readable CTA sticker. "
-            if COVER_PHONE_CTA
-            else ""
-        )
-        if is_logo_lockup_mode():
+        if brand_logo_paste:
+            emotion_clause = f"Expr: {cover_emotion}." if cover_emotion else ""
             panel_lines.append(
-                f"TL COVER TXT «{cover_hook_text}» bold Cyrillic black, {highlight_rule}.{sticky_lock} "
-                f"{phone_clause}"
-                f"{LOGO_LOCKUP_RULE}; warm cozy apartment hospitality; sun flare; "
-                f"{compact(cover_scene, COVER_SCENE_HINT_COMPACT)}; "
-                f"1-2 meme stickers; {BOARD_STATIONERY}; Wordstat/Tyumen; #FFF; perfect Cyrillic"
+                f"TL COVER WOW POSTER (magazine, not stock): «{cover_hook_text}» bold DISPLAY Cyrillic readable, {highlight_rule}; "
+                f"sticky «{cover_sticky or 'Залог вернут?'}»; scene props; Aug Tyumen warm light, NO winter/snow. "
+                f"NO logo/phone in gen. {NO_OVERLAP_RULE}. "
+                f"{emotion_clause} sun flare; gold tape; 1-3 Wordstat; "
+                f"{compact(cover_scene, COVER_SCENE_HINT_COMPACT)}; cat bottom-left ≤12%; "
+                f"TOP-RIGHT empty pad ONE factory logo; NO multi logos; {BOARD_STATIONERY}; #FFF"
             )
         else:
             emotion_clause = (
@@ -452,47 +519,47 @@ def build_prompt(
             )
             panel_lines.append(
                 f"TL COVER TXT «{cover_hook_text}» bold Cyrillic black, {highlight_rule}.{sticky_lock} "
-                f"{phone_clause}"
+                f"Phone EXACT «{cover_phone_cta}» readable CTA sticker. "
                 f"Host i2i left ({BODY_LOCK}); {emotion_clause} sun flare; "
                 f"{compact(cover_scene, COVER_SCENE_HINT_COMPACT)}; "
                 f"1-2 meme stickers; {BOARD_STATIONERY}; Wordstat/Tyumen; #FFF; perfect Cyrillic"
             )
         inline_keys = [k for k in canvas_slots if k != "cover"]
         for label, key in zip(quadrant_labels[1:], inline_keys[:3]):
-            panel_lines.append(f"{label} inline: {inline_panel_prompt(slot(key), types_catalog)}")
+            panel_lines.append(f"{label} inline: {inline_prompt_for(key)}")
     else:
         for label, key in zip(quadrant_labels, list(canvas_slots)[:4]):
-            panel_lines.append(f"{label} inline: {inline_panel_prompt(slot(key), types_catalog)}")
+            panel_lines.append(f"{label} inline: {inline_prompt_for(key)}")
 
     ban_line = (
-        "Ban: dark/low-key; inventory props; celebrity memes; EXCALIBUR stamp; Shakin/face-studio identity; "
-        f"stock/generated man co-host on inline; large meme person on inline; decorative-only inline; "
-        f"{INLINE_BAN_EXTRA}."
+        "Ban: dark/low-key; inventory props; celebrity memes; EXCALIBUR stamp; chubby host; "
+        f"stock/generated man co-host on inline; large meme person on inline; "
+        f"{INLINE_BAN_EXTRA}; {WOW_POSTER_BAN}."
     )
-    if is_logo_lockup_mode():
+    if has_cover and brand_logo_paste:
         reference_line = (
-            f"Cover TL + all inlines: {LOGO_LOCKUP_RULE}; invent warm hospitality scene; no Shakin face; no AI hero-ref."
-            if has_cover
-            else (
-                f"Inlines: {LOGO_LOCKUP_RULE}; NO host face; NO Shakin; NO stock/generated man; "
-                f"people-memes only as tiny stickers (≤{int(MEME_STICKER_INLINE_MAX_SHARE * 100)}% frame, corner) "
-                f"from real templates in {MEME_CATALOG_REL}; infographic is hero; utility labels required."
-            )
+            "Cover TL: NO host i2i; NO Shakin/identity-real; NO brand logo; NO phone in generation; "
+            "WOW magazine poster collage with reserved TOP-RIGHT empty pad for ONE factory logo; "
+            "NEVER multiple logos or logo comparison table; "
+            f"{NO_OVERLAP_RULE}; Russian guest by topic allowed."
+        )
+    elif has_cover:
+        reference_line = (
+            f"Cover TL only: i2i face-studio-2026-06-23 ({BODY_LOCK}); {I2I_EXPRESSION_LOCK}; "
+            "invent scene; no AI hero-ref."
         )
     else:
         reference_line = (
-            f"Cover TL only: i2i face-studio-2026-06-23 ({BODY_LOCK}); {I2I_EXPRESSION_LOCK}; invent scene; no AI hero-ref."
-            if has_cover
-            else (
-                "Inlines: NO host face; NO stock/generated man; NO large human co-host/presenter; "
-                f"people-memes only as tiny stickers (≤{int(MEME_STICKER_INLINE_MAX_SHARE * 100)}% frame, corner) "
-                f"from real templates in {MEME_CATALOG_REL}; infographic is hero."
-            )
+            "Inlines: NO host face; NO stock/generated man; NO large human co-host/presenter; "
+            f"NO brand logo in generation (factory pastes PNG on 2–3 panels only, TOP-RIGHT pad); "
+            f"people-memes only as tiny stickers (≤{int(MEME_STICKER_INLINE_MAX_SHARE * 100)}% frame, "
+            f"never top-right pad) from real templates in {MEME_CATALOG_REL}; "
+            "mix sketch/table/chart/scheme collage — not text walls."
         )
     inline_suffix = (
-        f"Inline all: #FFF collage, terracotta/teal/black Cyrillic labels, {LOGO_LOCKUP_RULE if is_logo_lockup_mode() else BOARD_STATIONERY}; "
+        f"Inline all: #FFF collage, gold/black Cyrillic labels, {BOARD_STATIONERY}; "
         "dense facts/numbers; exact TXT per panel; meme only if +meme AND sticker-scale; "
-        "no human hero on inline; no decorative-only; zero typos."
+        "no human hero on inline; no icon soup; zero typos."
     )
 
     lines = [
@@ -549,6 +616,8 @@ def main() -> int:
 
     cat_hero = style_is_situational_cat_hero(style)
     local_reference = str(style.get("local_reference") or "").strip()
+    brand_logo_paste = tenant_uses_brand_logo_paste(root, style)
+    cover_phone_cta = cover_phone_cta_for_manifest(manifest, root)
 
     inline_count = inline_count_from_manifest(manifest)
     canvas_specs = canvas_specs_for_inline_count(inline_count)
@@ -561,33 +630,21 @@ def main() -> int:
     for spec in canvas_specs:
         has_cover = bool(spec.get("has_cover"))
         canvas_slots = tuple(spec["slots"])
-        identity_spec: dict[str, str | bool] = {}
+        identity_spec: dict[str, str] = {}
         identity_rel = ""
-        if has_cover:
+        if has_cover and not brand_logo_paste:
             topic_id = str(manifest.get("topic_id") or "").strip()
             slug = str(manifest.get("slug") or article_dir.name).strip()
-            if is_logo_lockup_mode(root):
-                logo_spec = pick_logo_reference(topic_id, slug)
-                identity_rel = str(logo_spec["path"])
-                identity_spec = {"id": logo_spec["id"], "file": Path(identity_rel).name, "role": "logo_lockup"}
-                identity_path = root / identity_rel
-                if not identity_path.is_file():
-                    print(
-                        f"❌ LOGO BLOCKER: missing brand logo {identity_rel}",
-                        file=sys.stderr,
-                    )
-                    return 1
-            else:
-                identity_spec = pick_identity_reference(topic_id, slug)
-                identity_rel = f"memory/cover/assets/identity-real/{identity_spec['file']}"
-                identity_path = root / identity_rel
-                if not identity_path.is_file():
-                    print(
-                        f"❌ IDENTITY BLOCKER: missing live reference {identity_rel} "
-                        f"(stage via memory/setup/visual-inbox/)",
-                        file=sys.stderr,
-                    )
-                    return 1
+            identity_spec = pick_identity_reference(topic_id, slug)
+            identity_rel = f"memory/cover/assets/identity-real/{identity_spec['file']}"
+            identity_path = root / identity_rel
+            if not identity_path.is_file():
+                print(
+                    f"❌ IDENTITY BLOCKER: missing live reference {identity_rel} "
+                    f"(stage via memory/setup/visual-inbox/)",
+                    file=sys.stderr,
+                )
+                return 1
             ref_url = (hero.get("reference_url_hosted") or "").strip()
             if not ref_url:
                 print("❌ COVER HERO BLOCKER: reference_url_hosted missing", file=sys.stderr)
@@ -599,6 +656,7 @@ def main() -> int:
             batch_ref_url = ""
 
         warn_long_scene_hints(manifest)
+        inline_logo_keys = resolve_manifest_inline_logo_keys(manifest, root)
         prompt = build_prompt(
             manifest,
             style,
@@ -608,6 +666,9 @@ def main() -> int:
             article_dir=article_dir,
             canvas_slots=canvas_slots,
             has_cover=has_cover,
+            brand_logo_paste=brand_logo_paste,
+            cover_phone_cta=cover_phone_cta,
+            inline_logo_keys=inline_logo_keys,
         )
         if not validate_prompt_budget(prompt):
             return 1
@@ -645,14 +706,14 @@ def main() -> int:
             "aspect_ratio": "16:9",
             "resolution": MCP_RESOLUTION,
         }
-        if batch_ref_url:
+        if batch_ref_url and not brand_logo_paste:
             api_input["input_urls"] = [batch_ref_url]
 
         batch = {
             "pipeline": manifest.get("pipeline") or "quad_canvas_2x_image_api_longform",
             "canvas_index": spec["index"],
-            "identity_reference_local": identity_rel if has_cover else "",
-            "identity_reference_id": identity_spec["id"] if has_cover else "",
+            "identity_reference_local": identity_rel if has_cover and not brand_logo_paste else "",
+            "identity_reference_id": identity_spec.get("id", "") if has_cover and not brand_logo_paste else "",
             "reference_url_hosted": batch_ref_url,
             "output_canvas": spec["canvas_file"],
             "result_path": spec["result_file"],

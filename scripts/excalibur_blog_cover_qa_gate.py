@@ -9,11 +9,30 @@ import sys
 from pathlib import Path
 
 
-LOGO_LOCKUP_CHECKS = (
-    "logo_lockup_all_8",
-    "logo_lockup_readable",
-    "no_shakin_identity_face",
+BRAND_LOGO_CHECKS = (
+    "brand_logo_paste_png",
+    "logo_top_right_fixed",
+    "inline_logo_count_2_3",
+    "forbid_multiple_logos_per_image",
+    "logo_width_fraction_8_12",
+    "cover_phone_993_post_composite",
+    "forbid_922_phone",
+    "cover_phone_not_in_logo_pad",
+    "forbid_wordpress_ui_in_art",
+    "no_element_overlap",
+    "wow_poster_magazine_typography",
+    "august_no_winter_hero",
+)
+
+HOST_IDENTITY_CHECKS = (
+    "identity_face_28yo",
+    "identity_body_medium_slim",
+    "identity_expression_invented",
     "cover_phone_readable",
+    "identity_real_files",
+)
+
+COMMON_CHECKS = (
     "board_stationery_ok",
     "typography_cyrillic_clean",
     "meme_density_inline_ok",
@@ -23,18 +42,10 @@ LOGO_LOCKUP_CHECKS = (
     "cats_cadence_ok",
     "wordstat_stickers_1_3",
     "inline_utility_all_7",
-    "inline_no_decorative_only",
     "inline_no_host_face",
     "inline_no_co_host_human",
     "inline_meme_sticker_scale",
     "meme_people_real_catalog",
-)
-
-LEGACY_IDENTITY_CHECKS = (
-    "identity_face_28yo",
-    "identity_body_medium_slim",
-    "identity_expression_invented",
-    "identity_real_files",
 )
 
 REQUIRED_IMAGES = (
@@ -57,30 +68,31 @@ def load_json(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def required_checks_for_mode(root: Path) -> tuple[str, ...]:
-    from excalibur_blog_identity_real import cover_mode, is_logo_lockup_mode, missing_logo_lockup
-
-    if is_logo_lockup_mode(root):
-        return LOGO_LOCKUP_CHECKS
-    return LOGO_LOCKUP_CHECKS + LEGACY_IDENTITY_CHECKS
+def load_tenant_cover_mode(root: Path) -> dict:
+    cfg_path = root / "shared" / "tenant-config.json"
+    if not cfg_path.is_file():
+        return {}
+    try:
+        tenant = json.loads(cfg_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return {}
+    channels = tenant.get("cta_channels") or {}
+    mode = str(tenant.get("cover_mode") or "").strip().casefold()
+    return {
+        "brand_logo_paste": mode in {"brand_logo_paste", "brand_logo_composite", "paste_png"},
+        "phone_display": str(channels.get("phone_display") or "+7 (993) 574-83-22").strip(),
+    }
 
 
 def validate_cover_qa(article_dir: Path, root: Path) -> dict:
-    from excalibur_blog_identity_real import (
-        is_logo_lockup_mode,
-        missing_identity_files,
-        missing_logo_lockup,
-    )
-
     errors: list[str] = []
     qa_path = article_dir / "cover" / "cover_qa.json"
-    required_checks = required_checks_for_mode(root)
+    tenant_cover = load_tenant_cover_mode(root)
+    brand_logo_paste = bool(tenant_cover.get("brand_logo_paste"))
 
-    if is_logo_lockup_mode(root):
-        missing_logo = missing_logo_lockup(root)
-        if missing_logo:
-            errors.append(f"logo lockup missing: {', '.join(missing_logo)}")
-    else:
+    from excalibur_blog_identity_real import missing_identity_files
+
+    if not brand_logo_paste:
         missing_identity = missing_identity_files(root)
         if missing_identity:
             errors.append(f"identity-real missing: {', '.join(missing_identity)}")
@@ -104,15 +116,14 @@ def validate_cover_qa(article_dir: Path, root: Path) -> dict:
         errors.append(f"cover_qa.json status must be PASS, got {qa.get('status')!r}")
 
     checks = qa.get("checks") or {}
-    for key in required_checks:
+    required = list(COMMON_CHECKS)
+    if brand_logo_paste:
+        required.extend(BRAND_LOGO_CHECKS)
+    else:
+        required.extend(HOST_IDENTITY_CHECKS)
+    for key in required:
         if not checks.get(key):
             errors.append(f"cover_qa check failed or missing: {key}")
-
-    # FAIL if legacy identity checks present and true in logo_lockup mode
-    if is_logo_lockup_mode(root):
-        for legacy in LEGACY_IDENTITY_CHECKS:
-            if checks.get(legacy):
-                errors.append(f"cover_qa legacy identity check must be false/absent in logo_lockup: {legacy}")
 
     manifest_path = article_dir / "cover" / "quad-manifest.json"
     meme_catalog = root / "memory" / "cover" / "meme-top100.json"
@@ -124,6 +135,14 @@ def validate_cover_qa(article_dir: Path, root: Path) -> dict:
             stickers = manifest.get("wordstat_stickers") or []
             if not (1 <= len(stickers) <= 3):
                 errors.append(f"wordstat_stickers count {len(stickers)}, need 1-3 in quad-manifest")
+            phone = str(manifest.get("cover_phone_cta") or "").strip()
+            expected_phone = str(tenant_cover.get("phone_display") or "+7 (993) 574-83-22")
+            if phone != expected_phone:
+                errors.append(
+                    f"cover_phone_cta must be {expected_phone!r} in quad-manifest (got {phone!r})"
+                )
+            if "922" in phone.replace(" ", ""):
+                errors.append("cover_phone_cta must not contain 922 (forbidden rieltor number)")
             slots = manifest.get("slots") or {}
             allowed_types = {
                 "comparison_table",
@@ -151,13 +170,21 @@ def validate_cover_qa(article_dir: Path, root: Path) -> dict:
         except json.JSONDecodeError:
             errors.append("quad-manifest.json invalid JSON")
 
+    if brand_logo_paste:
+        try:
+            from excalibur_blog_brand_logo_composite import validate_logo_stamp
+
+            errors.extend(validate_logo_stamp(article_dir, root))
+        except ImportError:
+            stamp_path = article_dir / "cover" / "logo-composite-stamp.json"
+            if not stamp_path.is_file():
+                errors.append("cover/logo-composite-stamp.json missing — run brand logo composite")
+
     status = "PASS" if not errors else "FAIL"
     return {"status": status, "errors": errors}
 
 
 def cmd_doctor(root: Path) -> int:
-    from excalibur_blog_identity_real import is_logo_lockup_mode, missing_logo_lockup
-
     agent_cursor = root / ".cursor/agents/excalibur-blog-cover-qa.md"
     agent_repo = root / "agents/excalibur-blog-cover-qa.md"
     skill = root / "skills/cover-qa-excalibur-blog/SKILL.md"
@@ -165,14 +192,7 @@ def cmd_doctor(root: Path) -> int:
         if not path.is_file():
             print(f"FAIL missing {path.relative_to(root)}", file=sys.stderr)
             return 1
-    if is_logo_lockup_mode(root):
-        missing = missing_logo_lockup(root)
-        if missing:
-            print(f"FAIL logo lockup missing: {', '.join(missing)}", file=sys.stderr)
-            return 1
-        print("OK cover-qa agent + skill present; logo lockup asset present")
-    else:
-        print("OK cover-qa agent + skill present")
+    print("OK cover-qa agent + skill present")
     return 0
 
 

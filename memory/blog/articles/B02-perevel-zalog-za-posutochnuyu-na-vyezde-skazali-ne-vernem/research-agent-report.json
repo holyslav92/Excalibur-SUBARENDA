@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "research_date": "2026-08-20",
+  "topic": "залог при посуточной аренде",
+  "fresh_signal": "pravoved.ru/question/4760585 + vc.ru zalog posutochnaya",
+  "official_source_audit": {
+    "status": "NOT_REQUIRED",
+    "reason": "Нет тарифов/комиссий банков или госорганов"
+  }
+}

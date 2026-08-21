@@ -1,0 +1,31 @@
+{
+  "topic_id": "B01",
+  "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+  "title": "Оплатил квартиру посуточно. Код прислали от чужой двери",
+  "wp_category_slugs": [
+    "posutochnaya-arenda",
+    "sovety-gostyam"
+  ],
+  "theme_blocks": {
+    "faq": "skip",
+    "quiz": "skip",
+    "side_stickers": "skip"
+  },
+  "status": "published",
+  "wp_post_id": 3745,
+  "h1": "Оплатил квартиру посуточно. Код прислали от чужой двери",
+  "author_id": "dobry-dom",
+  "article_mode": "B",
+  "description": "Оплатил квартиру посуточно. Код прислали от чужой двери",
+  "meta_ab": {
+    "title_seo": "Оплатил квартиру посуточно. Код прислали от чужой двери",
+    "title_ctr": "Оплатил квартиру посуточно. Код прислали от чужой двери",
+    "title_aeo": "Оплатил квартиру посуточно. Код прислали от чужой двери",
+    "description_seo": "Оплатил квартиру посуточно. Код прислали от чужой двери",
+    "description_ctr": "Оплатил квартиру посуточно. Код прислали от чужой двери",
+    "description_aeo": "Оплатил квартиру посуточно. Код прислали от чужой двери"
+  },
+  "date": "2026-08-20",
+  "pipeline_canon": "human-first-v2",
+  "editorial_swarm": false
+}

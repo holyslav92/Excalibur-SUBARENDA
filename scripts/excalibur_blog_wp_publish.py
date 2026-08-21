@@ -1,5 +1,5 @@
 ﻿#!/usr/bin/env python3
-"""Publish one Excalibur blog article to WordPress (SFTP or FTP bootstrap)."""
+"""Publish one Excalibur blog article to WordPress (SFTP bootstrap)."""
 from __future__ import annotations
 
 import argparse
@@ -32,19 +32,6 @@ from excalibur_blog_pipeline_canon import (
     validate_article_canon,
 )
 from excalibur_blog_wp_categories import category_gate_errors, resolve_category_ids
-from excalibur_blog_remote_transport import (
-    configured_remote_root,
-    delete_remote_file,
-    is_missing_remote_path_error,
-    normalize_remote_root_value,
-    remote_creds,
-    remote_path,
-    remote_root_candidates,
-    remote_root_label,
-    resolve_publish_transport,
-    transport_note,
-    upload_text_file,
-)
 
 def load_tenant_config(root: Path) -> dict[str, Any]:
     path = root / "shared/tenant-config.json"
@@ -108,7 +95,6 @@ PUBLISH_ENV_KEYS = {
     "FTP_ROOT",
     "FTP_PATH",
     "FTP_TRANSPORT",
-    "PUBLISH_TRANSPORT",
     "SSH_HOST",
     "SSH_PORT",
     "SSH_USER",
@@ -134,8 +120,10 @@ def _read_env_file(path: Path) -> dict[str, str]:
 def load_env(root: Path) -> dict[str, str]:
     """Load publish secrets.
 
-    Transport: SFTP (default, port 22) or FTP passive (port 21 / FTP_TRANSPORT=ftp).
-    FTP_* and SSH_* share host/user/password; FTP_ROOT is remote web root path.
+    Canon: FTP_* and SSH_* are the **same** SFTP credentials under two names.
+    Transport is always SFTP/SSH (port 22). Never attempt plain FTP upload.
+    Prefer setting FTP_HOST / FTP_USER / FTP_PASS / FTP_ROOT in Cloud Secrets;
+    SSH_* are optional aliases. Empty or ``/`` root means SFTP login cwd (``.``).
     """
     env = _read_env_file(root / "memory/site.env.local")
     for key in PUBLISH_ENV_KEYS:
@@ -175,8 +163,11 @@ def load_env(root: Path) -> dict[str, str]:
 
 
 def normalize_sftp_root_value(value: str) -> str:
-    """Map empty or panel ``/`` to remote login cwd ``.`` (where wp-load.php usually is)."""
-    return normalize_remote_root_value(value)
+    """Map empty or panel ``/`` to SFTP login cwd ``.`` (where wp-load.php usually is)."""
+    raw = (value or "").strip()
+    if not raw or raw in {"/", "./"}:
+        return "."
+    return raw
 
 
 def validate_publish_env(env: dict[str, str]) -> list[str]:
@@ -193,28 +184,38 @@ def validate_publish_env(env: dict[str, str]) -> list[str]:
 
 
 def publish_env_check_report(env: dict[str, str]) -> dict[str, object]:
-    root_label = remote_root_label(env)
-    transport = resolve_publish_transport(env)
+    from excalibur_blog_remote_transport import transport_mode
+
+    root_label = sftp_root_label(env)
+    mode = transport_mode(env)
+    transport_block: dict[str, object] = {
+        "mode": mode,
+        "host_configured": bool(env.get("SSH_HOST") or env.get("FTP_HOST")),
+        "user_configured": bool(env.get("SSH_USER") or env.get("FTP_USER")),
+        "password_configured": bool(
+            env.get("SSH_PASS")
+            or env.get("FTP_PASS")
+            or env.get("SSH_PASSWORD")
+            or env.get("FTP_PASSWORD")
+        ),
+        "root": root_label,
+        "port": env.get("FTP_PORT") or ("21" if mode == "ftp" else "22"),
+    }
+    if mode == "ftp":
+        transport_block["pasv_rewrite_ip"] = "188.225.40.162"
+        transport_block["timeout_seconds"] = 60
+    else:
+        transport_block["ftp_aliases_are_sftp"] = True
+        transport_block["dot_fallback_enabled"] = root_label == "configured-non-dot"
     return {
         "allow_publish": env.get("EXCALIBUR_BLOG_ALLOW_PUBLISH", "").strip().lower() == "yes",
         "public_site_url_configured": bool(env.get("PUBLIC_SITE_URL") or env.get("WP_HOME") or env.get("WP_SITE_URL")),
-        "transport": transport,
-        "remote": {
-            "host_configured": bool(env.get("SSH_HOST") or env.get("FTP_HOST")),
-            "user_configured": bool(env.get("SSH_USER") or env.get("FTP_USER")),
-            "password_configured": bool(
-                env.get("SSH_PASS")
-                or env.get("FTP_PASS")
-                or env.get("SSH_PASSWORD")
-                or env.get("FTP_PASSWORD")
-            ),
-            "root": root_label,
-            "ftp_root": env.get("FTP_ROOT") or ".",
-            "ftp_port": env.get("FTP_PORT") or ("21" if transport == "ftp" else "22"),
-            "dot_fallback_enabled": root_label == "configured-non-dot",
-        },
+        "transport": transport_block,
         "missing": validate_publish_env(env),
-        "note": transport_note(env),
+        "note": (
+            "FTP_TRANSPORT=ftp uses Timeweb PASV rewrite (188.225.40.162); "
+            "otherwise SFTP on port 22."
+        ),
     }
 
 
@@ -623,39 +624,40 @@ $slashed_title = wp_slash((string) $p['title']);
 $slashed_content = wp_slash((string) $p['content']);
 $slashed_excerpt = wp_slash((string) $p['excerpt']);
 
+$cover_only = !empty($p['cover_only']);
+$has_inline = !empty($p['inline_images']) && is_array($p['inline_images']);
+$defer_content = $cover_only || $has_inline;
+
 $post_id = 0;
+$post_fields = [
+    'post_title' => $slashed_title,
+    'post_name' => $slug,
+    'post_excerpt' => $slashed_excerpt,
+    'post_status' => 'publish',
+];
+if (!$defer_content) {{
+    $post_fields['post_content'] = $slashed_content;
+}}
 if (!empty($p['post_id'])) {{
     $post_id = (int) $p['post_id'];
-    wp_update_post([
-        'ID' => $post_id,
-        'post_title' => $slashed_title,
-        'post_name' => $slug,
-        'post_content' => $slashed_content,
-        'post_excerpt' => $slashed_excerpt,
-        'post_status' => 'publish',
-    ]);
+    $post_fields['ID'] = $post_id;
+    wp_update_post($post_fields);
 }} else {{
 $existing = get_page_by_path($slug, OBJECT, 'post');
 if ($existing instanceof WP_Post) {{
     $post_id = (int) $existing->ID;
-    wp_update_post([
-        'ID' => $post_id,
-        'post_title' => $slashed_title,
-        'post_name' => $slug,
-        'post_content' => $slashed_content,
-        'post_excerpt' => $slashed_excerpt,
-        'post_status' => 'publish',
-    ]);
+    $post_fields['ID'] = $post_id;
+    wp_update_post($post_fields);
 }} else {{
-    $post_id = (int) wp_insert_post([
-        'post_title' => $slashed_title,
-        'post_name' => $slug,
-        'post_content' => $slashed_content,
-        'post_excerpt' => $slashed_excerpt,
-        'post_status' => 'publish',
-        'post_type' => 'post',
-    ], true);
+    $post_fields['post_type'] = 'post';
+    if (!$defer_content) {{
+        $post_fields['post_content'] = $slashed_content;
+    }}
+    $post_id = (int) wp_insert_post($post_fields, true);
 }}
+}}
+if ($cover_only) {{
+    echo 'OK cover_only_skip_content=1' . PHP_EOL;
 }}
 if (is_wp_error($post_id)) {{
     echo 'ERR post: ' . $post_id->get_error_message() . PHP_EOL;
@@ -783,6 +785,7 @@ if (!empty($p['inline_images'])) {{
         'ID' => $post_id,
         'post_content' => wp_slash($content_updated),
     ]);
+    echo 'OK post_content_rewritten=1' . PHP_EOL;
 }}
 
 $permalink = get_permalink($post_id);
@@ -791,60 +794,99 @@ echo 'permalink=' . $permalink . PHP_EOL;
 
 
 def _ssh_creds(env: dict[str, str]) -> tuple[str, int, str, str]:
-    """Backward-compatible alias for remote_creds (SFTP callers)."""
-    return remote_creds(env)
+    host = env.get("SSH_HOST") or env["FTP_HOST"]
+    port = int(env.get("SSH_PORT") or "22")
+    user = env.get("SSH_USER") or env["FTP_USER"]
+    password = env.get("SSH_PASS") or env["FTP_PASS"]
+    return host, port, user, password
 
 
 def configured_sftp_root(env: dict[str, str]) -> str:
-    return configured_remote_root(env)
+    return normalize_sftp_root_value(
+        env.get("SSH_ROOT") or env.get("FTP_ROOT") or env.get("FTP_PATH") or ""
+    )
 
 
 def sftp_remote_path(env: dict[str, str], remote: str, root_override: str | None = None) -> str:
-    return remote_path(env, remote, root_override)
+    root = configured_sftp_root(env) if root_override is None else normalize_sftp_root_value(root_override)
+    if not root or root in {".", "./"}:
+        return remote
+    return root.rstrip("/") + "/" + remote
 
 
 def sftp_root_label(env: dict[str, str]) -> str:
-    return remote_root_label(env)
+    root = configured_sftp_root(env)
+    if root in {".", "./"}:
+        return "dot"
+    return "configured-non-dot"
 
 
-sftp_root_candidates = remote_root_candidates
+def sftp_root_candidates(env: dict[str, str]) -> list[str]:
+    root = configured_sftp_root(env)
+    if root and root not in {".", "./"}:
+        return [root, "."]
+    return ["."]
+
+
+def is_missing_remote_path_error(exc: OSError) -> bool:
+    errno_value = getattr(exc, "errno", None)
+    if errno_value == 2:
+        return True
+    text = str(exc).lower()
+    return "no such file" in text or "enoent" in text
 
 
 def upload_bootstrap_sftp(env: dict[str, str], remote: str, data: bytes) -> str:
-    return upload_text_file(env, remote, data)
+    import paramiko
 
-
-def delete_bootstrap_sftp(env: dict[str, str], remote: str, remote_path_value: str | None = None) -> None:
-    delete_remote_file(env, remote, remote_path_value)
-
-
-def publish_via_bootstrap(
-    env: dict[str, str],
-    php: str,
-    public_base: str,
-    *,
-    bootstrap_name: str = "excalibur-blog-publish-once.php",
-) -> str:
-    remote = bootstrap_name
-    data = php.encode("utf-8")
-    url = public_base.rstrip("/") + "/" + remote
-    root = project_root()
-
-    uploaded_remote_path = upload_text_file(env, remote, data)
-
+    host, port, user, password = _ssh_creds(env)
+    transport = paramiko.Transport((host, port))
+    transport.connect(username=user, password=password)
+    sftp = paramiko.SFTPClient.from_transport(transport)
     try:
-        out = trigger_bootstrap_http(url, root)
+        candidates = sftp_root_candidates(env)
+        for index, root_candidate in enumerate(candidates):
+            remote_path = sftp_remote_path(env, remote, root_candidate)
+            try:
+                with sftp.open(remote_path, "w") as handle:
+                    handle.write(data.decode("utf-8"))
+                if index > 0:
+                    print(
+                        "WARN SFTP root fallback: configured remote root was not found; "
+                        "used '.' for bootstrap. Update SSH_ROOT/FTP_ROOT to '.' in Cloud Secrets "
+                        "if this is the intended SFTP login cwd."
+                    )
+                print(f"SFTP upload OK: {remote_path} ({len(data)} bytes)")
+                return remote_path
+            except OSError as exc:
+                if index < len(candidates) - 1 and is_missing_remote_path_error(exc):
+                    print(
+                        "WARN SFTP upload: configured remote root returned ENOENT; retrying bootstrap at '.'.",
+                        file=sys.stderr,
+                    )
+                    continue
+                raise
     finally:
-        try:
-            delete_remote_file(env, remote, uploaded_remote_path)
-        except Exception as cleanup_error:  # noqa: BLE001
-            print(f"WARN cleanup: could not delete bootstrap {remote}: {cleanup_error}", file=sys.stderr)
-    return out
+        sftp.close()
+        transport.close()
+    raise RuntimeError("SFTP upload did not complete")
 
 
-def publish_via_sftp(env: dict[str, str], php: str, public_base: str, *, bootstrap_name: str = "excalibur-blog-publish-once.php") -> str:
-    """Backward-compatible alias — dispatches to FTP or SFTP via env."""
-    return publish_via_bootstrap(env, php, public_base, bootstrap_name=bootstrap_name)
+def delete_bootstrap_sftp(env: dict[str, str], remote: str, remote_path: str | None = None) -> None:
+    import paramiko
+
+    host, port, user, password = _ssh_creds(env)
+    remote_path = remote_path or sftp_remote_path(env, remote)
+    transport = paramiko.Transport((host, port))
+    transport.connect(username=user, password=password)
+    sftp = paramiko.SFTPClient.from_transport(transport)
+    try:
+        sftp.remove(remote_path)
+    except OSError:
+        pass
+    finally:
+        sftp.close()
+        transport.close()
 
 
 def trigger_bootstrap_http(url: str, root: Path) -> str:
@@ -871,6 +913,70 @@ def trigger_bootstrap_http(url: str, root: Path) -> str:
                 return out
             time.sleep(1)
         raise RuntimeError("Cloud WebFetch Fallback timed out after 120 seconds. Please trigger manually.")
+
+
+def publish_via_sftp(env: dict[str, str], php: str, public_base: str, *, bootstrap_name: str = "excalibur-blog-publish-once.php") -> str:
+    from excalibur_blog_remote_transport import transport_mode
+
+    if transport_mode(env) == "ftp":
+        return publish_via_ftp(env, php, public_base, bootstrap_name=bootstrap_name)
+
+    remote = bootstrap_name
+    data = php.encode("utf-8")
+    url = public_base.rstrip("/") + "/" + remote
+    root = project_root()
+
+    uploaded_remote_path = upload_bootstrap_sftp(env, remote, data)
+
+    try:
+        out = trigger_bootstrap_http(url, root)
+    finally:
+        try:
+            delete_bootstrap_sftp(env, remote, uploaded_remote_path)
+        except Exception as cleanup_error:  # noqa: BLE001
+            print(f"WARN cleanup: could not delete bootstrap {remote}: {cleanup_error}", file=sys.stderr)
+    return out
+
+
+def publish_via_ftp(
+    env: dict[str, str],
+    php: str,
+    public_base: str,
+    *,
+    bootstrap_name: str = "excalibur-blog-publish-once.php",
+) -> str:
+    from excalibur_blog_remote_transport import (
+        delete_remote_file,
+        find_wp_root,
+        upload_bytes,
+    )
+
+    remote = bootstrap_name
+    data = php.encode("utf-8")
+    url = public_base.rstrip("/") + "/" + remote
+    root = project_root()
+
+    selected_root, probe_log = find_wp_root(env)
+    if not selected_root:
+        raise RuntimeError(
+            "FTP BLOCKER: wp-load.php not found in any FTP_ROOT candidate; "
+            f"probe={probe_log}"
+        )
+    env = dict(env)
+    env["FTP_ROOT"] = selected_root
+    env["SSH_ROOT"] = selected_root
+    print(f"FTP wp root: {selected_root}")
+
+    upload_bytes(env, remote, data, root=selected_root)
+
+    try:
+        out = trigger_bootstrap_http(url, root)
+    finally:
+        try:
+            delete_remote_file(env, remote, root=selected_root)
+        except Exception as cleanup_error:  # noqa: BLE001
+            print(f"WARN cleanup: could not delete bootstrap {remote}: {cleanup_error}", file=sys.stderr)
+    return out
 
 
 def ledger_url_for_commit(permalink: str, slug: str = "") -> str:
@@ -1130,6 +1236,18 @@ def check_publish_prerequisites(
     return blockers
 
 
+def relative_cover_src_errors(content: str) -> list[str]:
+    """BLOCK when article HTML still references local cover/ paths (must be WP URLs on live)."""
+    errors: list[str] = []
+    for match in re.finditer(
+        r'\bsrc=(["\'])(cover/[^"\']+)\1',
+        content,
+        flags=re.IGNORECASE,
+    ):
+        errors.append(f"relative cover image src must be rewritten before publish: {match.group(2)}")
+    return errors
+
+
 def evaluate_publish_output(out: str, payload: dict[str, Any]) -> dict[str, Any]:
     """Fail publish when post OK but cover/inline media WARN or incomplete."""
     lines = [line.strip() for line in (out or "").splitlines() if line.strip()]
@@ -1139,6 +1257,7 @@ def evaluate_publish_output(out: str, payload: dict[str, Any]) -> dict[str, Any]
     inline_ok = sum(1 for line in lines if line.startswith("OK inline_image_upload="))
     expected_inline = len(payload.get("inline_images") or [])
     expect_cover = bool(payload.get("cover_b64"))
+    cover_only = bool(payload.get("cover_only"))
 
     errors: list[str] = []
     if not has_post:
@@ -1147,6 +1266,12 @@ def evaluate_publish_output(out: str, payload: dict[str, Any]) -> dict[str, Any]
         errors.append("cover expected but missing OK featured_image=")
     if expected_inline and inline_ok < expected_inline:
         errors.append(f"inline images expected={expected_inline} uploaded={inline_ok}")
+    if expected_inline and inline_ok >= expected_inline and not any(
+        line.startswith("OK post_content_rewritten=") for line in lines
+    ):
+        errors.append("inline images uploaded but post_content was not rewritten with attachment URLs")
+    if cover_only and not any(line.startswith("OK cover_only_skip_content=") for line in lines):
+        errors.append("cover-only publish must skip post_content (avoid overwriting live inline URLs)")
     if media_warns:
         errors.extend(media_warns)
 
@@ -1207,6 +1332,11 @@ def main() -> int:
             "Allow freshness-report.json status=STALE while keeping all other "
             "publish gates (implied by --media-refresh)"
         ),
+    )
+    ap.add_argument(
+        "--cover-only",
+        action="store_true",
+        help="With --media-refresh: re-upload featured image only (skip inline media)",
     )
     ap.add_argument(
         "--deploy-llms",
@@ -1297,7 +1427,14 @@ def main() -> int:
     else:
         print("WARN --skip-gates: publishing without link-verify/schema prerequisites", file=sys.stderr)
 
+    if args.cover_only and not args.media_refresh:
+        print("BLOCKER: --cover-only requires --media-refresh", file=sys.stderr)
+        return 2
+
     payload = load_article(article_dir, public_base=public)
+    if args.cover_only:
+        payload["inline_images"] = []
+        payload["cover_only"] = True
     php = build_php(payload)
 
     if args.dry_run:
@@ -1358,7 +1495,7 @@ def main() -> int:
     if SITE_BASE_PLACEHOLDER in (payload.get("schema_jsonld") or ""):
         print("BLOCKER: schema still contains {{SITE_BASE}} after expand", file=sys.stderr)
         return 2
-    out = publish_via_bootstrap(env, php, public)
+    out = publish_via_sftp(env, php, public)
     print(out)
 
     media = evaluate_publish_output(out, payload)
@@ -1375,7 +1512,7 @@ def main() -> int:
         "slug": payload["slug"],
         "topic_id": payload["topic_id"],
         "permalink": safe_permalink,
-        "publish_method": resolve_publish_transport(env),
+        "publish_method": "ftp" if (env.get("FTP_TRANSPORT") or "").strip().lower() == "ftp" else "sftp",
         "cover_evidence": redact_structure(payload.get("cover_evidence", {}), public),
         "raw_output": safe_raw,
         "media_check": {
