@@ -32,6 +32,11 @@ python3 scripts/excalibur_blog_derouter_opus_chat.py \
 - `research-notes.md`
 - `title-brief.json`
 - `published-titles-only.md`
+- Scout handoff `dzen_pattern` + `shared/article-style.md`
+
+## Dzen feed — смысл
+
+Writer **выполняет обещание H1** (5 паттернов в `shared/article-style.md`): список с числом, кейс с суммами, страх→инструкция в §1, контраст с ответом в лиде, локальный+сезонный крючок. `dzen-excerpt.json` для карточки; статья конвертит в TG/MAX. Телефон только **+7 (993) 574-83-22**.
 
 ## Выход
 

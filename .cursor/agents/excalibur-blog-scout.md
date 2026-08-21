@@ -21,6 +21,11 @@ Klyshin hook → Wordstat probe → rework if weak → final P0 (skip only after
 
 Слабый объём **не** повод мгновенно drop hook. Локализуй Тюмень, меняй жаргон на buyer-поиск, тяни similar queries до high-frequency cluster с тем же risk/story.
 
+## Anti-dup / forbidden sources
+
+- Не читать **уже опубликованные статьи сайта** как образец (только `published-titles-only.md`).
+- Не читать tymenrieltor.ru / The Риэлтор.
+
 ## Обязательные signal_urls
 
 - `https://t.me/klyshin_A` (всегда)
@@ -38,7 +43,12 @@ Handoff:
 klyshin_hook: <id> | original: «…» | angle: … | signal: https://t.me/klyshin_A/…
 wordstat_rework: probe «…» <freq> → … → final P0 «…» <freq>
 wordstat: mcp_kv live | regions 55,11176,compare225 | P0 «…» <freq> | …
+dzen_pattern: <1|2|3|4|5> | dzen_shape_hint: «…»
 ```
+
+## Dzen feed — угол темы
+
+Один паттерн из `shared/article-style.md` (число+список, кейс с суммами, страх→инструкция, контраст, локальный+сезон). Не копировать пустой кликбейт конкурентов (CAPS, красные стрелки, «1000% годовых»).
 
 ```bash
 python3 scripts/excalibur_blog_wordstat_gate.py handoff

@@ -90,7 +90,7 @@ python3 scripts/excalibur_blog_wordstat_gate.py config
 
 ### НЕ P0 (brand vanity — только справка)
 
-«риэлтор тюмень», «услуги риэлтора тюмень» — низкий объём. Не строить тему только из них.
+«добрый дом тюмень», brand vanity — низкий объём. Не строить тему только из них.
 
 ### Handoff (обязательно)
 
@@ -111,9 +111,27 @@ python3 scripts/excalibur_blog_wordstat_gate.py handoff
 2. Wordstat final P0 buyer volume после rework-цикла
 3. `published-titles-only.md` — anti-dup only
 
+## Dzen feed — угол темы (research авг 2026)
+
+Лента Дзена кликает: **число+список**, **страх денег/жилья**, **кейс с суммами**, **вопрос/контраст в заголовке**, **постер**. Добрый дом **не** копирует пустой кликбейт (CAPS, красные стрелки, «1000% годовых», luxury-flex).
+
+Выбери **один** `dzen_pattern` для handoff (см. `shared/article-style.md`):
+
+| # | Паттерн | Пример угла |
+|---|---------|-------------|
+| 1 | Нумерованный список с обещанием | «5 вопросов хозяину до предоплаты» |
+| 2 | Кейс с суммами и датами | залог удержали / «посчитали на выезде» |
+| 3 | Страх → инструкция в §1 | «залог 5 000 ₽: когда вернут» |
+| 4 | Контраст с ответом в лиде | посуточно vs отель на 2 ночи |
+| 5 | Локальный + сезонный | район Тюмени, окно брони август / НГ |
+
+**Demand** RF-wide Wordstat; **supply** — только посуточная/субаренда **Тюмень**. H1 может быть без слова «Тюмень».
+
+В handoff: `dzen_pattern: N` + `dzen_shape_hint: «…»` (shape, не финальный H1).
+
 ## Выход
 
-`.cursor/excalibur-blog-handoff.md` — topic_id, title draft (Klyshin rhythm), external_signal, signal_urls, klyshin_hook + wordstat_rework + wordstat lines.
+`.cursor/excalibur-blog-handoff.md` — topic_id, title draft (Klyshin rhythm), `dzen_pattern`, external_signal, signal_urls, klyshin_hook + wordstat_rework + wordstat lines.
 
 ## Чеклист
 
@@ -122,5 +140,5 @@ python3 scripts/excalibur_blog_wordstat_gate.py handoff
 3. Pick hook from bank or fresh post → update bank
 4. `wordstat_get_top_requests` на hook + probes (55+11176; compare 225)
 5. Слабый объём → rework (локализация + buyer jargon + similar queries) — **не** мгновенный skip
-6. Final P0 + title angle; лог original hook + final phrase+volume
+6. Final P0 + title angle + `dzen_pattern` (1–5); лог original hook + final phrase+volume
 7. handoff + `wordstat_gate.py handoff` → стоп

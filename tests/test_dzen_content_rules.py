@@ -1,6 +1,7 @@
 """Guard Dzen content rules wiring into style/gates."""
 from __future__ import annotations
 
+import json
 import unittest
 from pathlib import Path
 
@@ -29,6 +30,28 @@ class DzenContentRulesTest(unittest.TestCase):
     def test_doctor_requires_dzen_rules(self) -> None:
         doc = (ROOT / "scripts/excalibur_blog_doctor.py").read_text(encoding="utf-8")
         self.assertIn("shared/dzen-content-rules.md", doc)
+
+    def test_dzen_feed_patterns_in_style_and_soul(self) -> None:
+        style = (ROOT / "shared/article-style.md").read_text(encoding="utf-8").lower()
+        soul = (ROOT / "shared/SOUL.md").read_text(encoding="utf-8").lower()
+        scout = (ROOT / "skills/scout-excalibur-blog/SKILL.md").read_text(encoding="utf-8").lower()
+        title = (ROOT / "skills/title-excalibur-blog/SKILL.md").read_text(encoding="utf-8").lower()
+        writer = (ROOT / "skills/writer-excalibur-blog/SKILL.md").read_text(encoding="utf-8").lower()
+        tenant = json.loads((ROOT / "shared/tenant-config.json").read_text(encoding="utf-8"))
+
+        for blob in (style, soul):
+            self.assertIn("5 вопросов", blob)
+            self.assertIn("залог 5 000", blob)
+            self.assertIn("посуточно или отель", blob)
+
+        for blob in (scout, title, writer):
+            self.assertIn("dzen_pattern", blob)
+
+        self.assertIn("поверхность дистрибуции", style)
+        self.assertIn("tg/max", style)
+        self.assertIn("writing_patterns_ref", tenant["dzen_publish"])
+        self.assertEqual(len(tenant["dzen_publish"]["patterns"]), 5)
+        self.assertGreaterEqual(len(tenant["dzen_publish"]["headline_shapes_example"]), 3)
 
 
 if __name__ == "__main__":
