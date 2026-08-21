@@ -2,7 +2,8 @@
 
 | date | topic_id | slug | url | status |
 |------|----------|------|-----|--------|
-| 2026-08-21 | B121 | zabroniroval-posutochno-vyyasnilos-kvartira-v-subarende | /zabroniroval-posutochno-vyyasnilos-kvartira-v-subarende/ | published |
+| 2026-08-21 | B122 | priehal-v-sem-utra-kvartiru-dali-tolko-v-dva-chto-delat-do-zaseleniya | /blog/priehal-v-sem-utra-kvartiru-dali-tolko-v-dva-chto-delat-do-zaseleniya/ | published |
+| 2026-08-21 | B121 | zabroniroval-posutochno-vyyasnilos-kvartira-v-subarende | /blog/zabroniroval-posutochno-vyyasnilos-kvartira-v-subarende/ | published |
 | 2026-08-20 | B120 | perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem | /perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/ | published |
 | 2026-08-20 | B119 | beskontaktnoe-zaselenie-posutochno-tyumen | /beskontaktnoe-zaselenie-posutochno-tyumen/ | published |
 | 2026-08-19 | B118 | uborka-syomnoj-kvartiry-pered-vyezdom-7-shagov-chtoby-vernuli-zalog | /uborka-syomnoj-kvartiry-pered-vyezdom-7-shagov-chtoby-vernuli-zalog/ | published |
