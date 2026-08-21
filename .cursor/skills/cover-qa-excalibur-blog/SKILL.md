@@ -23,7 +23,8 @@ FAIL → **вернуть Cover** (не Indexer/Publish).
 5. **forbid_ai_drawn_logo_pre_composite** — pre-composite panels MUST NOT contain AI-drawn lockup (curtains+flower, dashed frame, wordmark).
 6. **official_logo_pixels_only** — post-composite logo region MUST match official `logo-dobry-dom.png` pixels.
 7. **logo_no_text_overlap** — factory logo MUST NOT overlap readable text.
-8. **cover_phone_993_post_composite** + **cover_phone_not_in_logo_pad** — +7 (993) 574-83-22 только на cover post-composite, не в logo pad.
+8. **forbid_logo_white_plate** — NO white box/card/square/plate/tablichka under logo pad in generation or post-composite; alpha-PNG overlay only.
+9. **cover_phone_993_post_composite** + **cover_phone_not_in_logo_pad** — +7 (993) 574-83-22 только на cover post-composite, не в logo pad.
 
 ## Что проверяешь (визуально + артефакты)
 
@@ -64,6 +65,7 @@ FAIL → **вернуть Cover** (не Indexer/Publish).
     "forbid_ai_drawn_logo_pre_composite": true,
     "official_logo_pixels_only": true,
     "logo_no_text_overlap": true,
+    "forbid_logo_white_plate": true,
     "cover_phone_993_post_composite": true,
     "forbid_922_phone": true,
     "cover_phone_not_in_logo_pad": true,

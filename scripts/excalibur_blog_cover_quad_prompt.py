@@ -81,6 +81,11 @@ LOGO_DRAW_HARD_BAN = (
     "NO gold house-with-heart; NO terracotta serif wordmark; NO УЮТНЫЕ КВАРТИРЫ В АРЕНДУ subtitle; "
     "NO logo comparison table; NO second logo copy; factory pastes official PNG after split only"
 )
+LOGO_WHITE_PLATE_BAN = (
+    "NEVER draw white box/white card/white square/rounded rectangle/paper tablichka/plate/podlozhka "
+    "behind or under the TOP-RIGHT logo pad — pad stays organic scene/background only; "
+    "factory alpha-PNG overlay after split, no backing shape in generation"
+)
 NO_OVERLAP_RULE = (
     "Separate zones — headline, Wordstat stickers, meme, cat bottom-left, people, "
     "TOP-RIGHT empty logo pad NEVER overlap each other; phone NOT in generation"
@@ -159,12 +164,14 @@ def inline_panel_prompt(slot: dict, types_catalog: dict, *, logo_paste: bool = F
         )
     if logo_paste:
         base += (
-            " TOP-RIGHT empty pad for ONE factory logo 8–12%; "
+            " TOP-RIGHT empty pad for ONE factory logo 8–12%; organic scene only — "
+            "NO white box/card/square/plate/tablichka/podlozhka under pad; "
             "NO drawn logo/wordmark/lockup/curtains+flower/dashed frame/gold house; NO multi logos."
         )
     else:
         base += (
-            " TOP-RIGHT clean margin; NO factory logo here; "
+            " TOP-RIGHT clean margin; organic scene only — NO white logo card/plate/tablichka; "
+            "NO factory logo here; "
             "NO drawn logos/wordmark/lockup/curtains+flower/dashed frame/gold house."
         )
     return base
@@ -517,7 +524,8 @@ def build_prompt(
                 f"NO logo/phone in gen. {NO_OVERLAP_RULE}. "
                 f"{emotion_clause} sun flare; gold tape; 1-3 Wordstat; "
                 f"{compact(cover_scene, COVER_SCENE_HINT_COMPACT)}; cat bottom-left ≤12%; "
-                f"TOP-RIGHT empty pad ONE factory logo; NO multi logos; {BOARD_STATIONERY}; #FFF"
+                f"TOP-RIGHT empty pad ONE factory logo; organic scene only — NO white card/plate/box; "
+                f"NO multi logos; {BOARD_STATIONERY}; #FFF"
             )
         else:
             emotion_clause = (
@@ -542,14 +550,15 @@ def build_prompt(
     ban_line = (
         "Ban: dark/low-key; inventory props; celebrity memes; EXCALIBUR stamp; chubby host; "
         f"stock/generated man co-host on inline; large meme person on inline; "
-        f"{INLINE_BAN_EXTRA}; {WOW_POSTER_BAN}; {LOGO_DRAW_HARD_BAN}."
+        f"{INLINE_BAN_EXTRA}; {WOW_POSTER_BAN}; {LOGO_DRAW_HARD_BAN}; {LOGO_WHITE_PLATE_BAN}."
     )
     if has_cover and brand_logo_paste:
         reference_line = (
             "Cover TL: NO host i2i; NO Shakin/identity-real; NO brand logo; NO phone in generation; "
             "WOW magazine poster collage with reserved TOP-RIGHT empty pad for ONE factory logo; "
+            "organic scene/background only — NO white box/card/plate/tablichka under pad; "
             "NEVER multiple logos or logo comparison table; "
-            f"{LOGO_DRAW_HARD_BAN}; {NO_OVERLAP_RULE}; Russian guest by topic allowed."
+            f"{LOGO_DRAW_HARD_BAN}; {LOGO_WHITE_PLATE_BAN}; {NO_OVERLAP_RULE}; Russian guest by topic allowed."
         )
     elif has_cover:
         reference_line = (
@@ -560,7 +569,7 @@ def build_prompt(
         reference_line = (
             "Inlines: NO host face; NO stock/generated man; NO large human co-host/presenter; "
             f"NO brand logo in generation (factory pastes PNG on 2–3 panels only, TOP-RIGHT pad); "
-            f"{LOGO_DRAW_HARD_BAN}; "
+            f"{LOGO_DRAW_HARD_BAN}; {LOGO_WHITE_PLATE_BAN}; "
             f"people-memes only as tiny stickers (≤{int(MEME_STICKER_INLINE_MAX_SHARE * 100)}% frame, "
             f"never top-right pad) from real templates in {MEME_CATALOG_REL}; "
             "mix sketch/table/chart/scheme collage — not text walls."

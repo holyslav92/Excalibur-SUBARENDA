@@ -39,7 +39,11 @@
       "gold house-with-heart logo",
       "УЮТНЫЕ КВАРТИРЫ В АРЕНДУ subtitle",
       "second logo copy",
-      "logo comparison table"
+      "logo comparison table",
+      "white box under logo pad",
+      "white card behind logo",
+      "logo plate or tablichka",
+      "rounded rectangle logo backing"
     ],
     "logo_factory_paste_only": "memory/cover/assets/brand/logo-dobry-dom.png",
     "logo_pad": "top_right empty 8-12% width reserved in generation"
@@ -132,6 +136,7 @@
     "forbid_ai_drawn_logo_pre_composite": true,
     "official_logo_pixels_only": true,
     "logo_no_text_overlap": true,
+    "forbid_logo_white_plate": true,
     "cover_phone_post_composite": true,
     "max_width_fraction": 0.10,
     "min_width_fraction": 0.08,
@@ -222,6 +227,7 @@
     "forbid_ai_drawn_logo_pre_composite": true,
     "official_logo_pixels_only": true,
     "logo_no_text_overlap": true,
+    "forbid_logo_white_plate": true,
     "inline_logo_count_min": 2,
     "inline_logo_count_max": 3,
     "inline_logo_slots_default": ["inline_1", "inline_3", "inline_7"],

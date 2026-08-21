@@ -21,6 +21,7 @@ BRAND_LOGO_CHECKS = (
     "forbid_ai_drawn_logo_pre_composite",
     "official_logo_pixels_only",
     "logo_no_text_overlap",
+    "forbid_logo_white_plate",
     "forbid_wordpress_ui_in_art",
     "no_element_overlap",
     "wow_poster_magazine_typography",

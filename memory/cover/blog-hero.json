@@ -34,7 +34,7 @@
     "wow_poster": "Magazine cover poster: bold readable Russian DISPLAY type hook + one sharp scene line. NOT timid system font; NOT label wall; NOT empty stock; NOT WordPress screenshot",
     "forbid_wordpress_ui": "NEVER WordPress, Gutenberg, Add title, Publish, Dashboard, wp-admin, block editor, theme chrome, cookie bars in generated art",
     "no_overlap": "Headline, Wordstat stickers, meme, cat, phone, people, logo pad NEVER overlap — separate composition zones",
-    "logo_lockup": "PASTE official PNG 1:1 — COVER always ONE small logo TOP-RIGHT; INLINES logo on 2–3 panels only (same corner pad); reserved empty top-right in generation; NEVER AI-drawn logo; NEVER 2+ logos per frame",
+    "logo_lockup": "PASTE official PNG 1:1 alpha overlay — COVER always ONE small logo TOP-RIGHT; INLINES logo on 2–3 panels only (same corner pad); reserved organic scene in generation (NO white box/card/plate); NEVER AI-drawn logo; NEVER 2+ logos per frame",
     "cover_phone": "+7 (993) 574-83-22 post-composite bottom-left on cover only — NEVER in logo pad; NEVER in generation"
   },
   "cover_canon": "memory/cover/cover-canon.json",

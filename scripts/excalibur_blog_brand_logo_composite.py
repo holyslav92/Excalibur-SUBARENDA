@@ -2,6 +2,8 @@
 """Paste canonical Dobry Dom brand PNG onto cover/inline panels (alpha composite).
 
 NEVER ask image models to draw/restyle the logo — factory pastes this file 1:1.
+Crop to non-transparent getbbox() before resize — never paste the full empty square.
+Never draw white/card/plate backing under the lockup — alpha overlay only.
 Cover panel also gets tenant phone (post-composite text), not AI-drawn.
 """
 
@@ -278,6 +280,25 @@ def draw_phone_on_cover(
     draw.text((x1 + pad_x, y1 + pad_y - 1), text, font=font, fill=(20, 24, 33, 255))
 
 
+def prepare_logo_rgba(logo_path: Path, max_width_px: int):
+    """Crop logo to opaque bbox, resize to target width — RGBA only, no white flatten."""
+    from PIL import Image
+
+    with Image.open(logo_path) as logo_img:
+        logo = logo_img.convert("RGBA")
+    bbox = logo.getbbox()
+    if bbox:
+        logo = logo.crop(bbox)
+    max_w = max(32, int(max_width_px))
+    if logo.width > max_w:
+        scale = max_w / logo.width
+        logo = logo.resize(
+            (max_w, max(1, int(logo.height * scale))),
+            Image.Resampling.LANCZOS,
+        )
+    return logo
+
+
 def clamp_logo_fraction(value: float, cfg: dict[str, Any] | None = None) -> float:
     cfg = cfg or {}
     lo = float(cfg.get("min_width_fraction") or LOGO_WIDTH_FRACTION_MIN)
@@ -342,21 +363,15 @@ def composite_logo_onto_image(
         corner = str(fixed_corner or FIXED_LOGO_CORNER).casefold()
         phone_anchor = phone_anchor_for_logo_corner(corner)
         if paste_logo:
-            with Image.open(logo_path) as logo_img:
-                logo = logo_img.convert("RGBA")
             max_w = max(32, int(base.width * max_width_fraction))
-            if logo.width > max_w:
-                scale = max_w / logo.width
-                logo = logo.resize(
-                    (max_w, max(1, int(logo.height * scale))),
-                    Image.Resampling.LANCZOS,
-                )
+            logo = prepare_logo_rgba(logo_path, max_w)
             if adaptive_corner:
                 x, y, corner = pick_logo_corner(base, logo.width, logo.height, margin_px=margin_px)
             else:
                 x, y = fixed_logo_xy(
                     base, logo.width, logo.height, margin_px=margin_px, corner=corner
                 )
+            # Alpha-composite only — never paste with mask on RGB, never draw backing plate.
             base.alpha_composite(logo, (max(0, x), max(0, y)))
             logo_width_fraction = round(logo.width / max(base.width, 1), 4)
             logo_width_px = int(logo.width)
@@ -458,6 +473,8 @@ def composite_article_images(
         "images": composed,
         "composed_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "forbid_ai_drawn_logo": True,
+        "forbid_logo_white_plate": True,
+        "logo_crop_getbbox": True,
         "forbid_multiple_logos_per_image": True,
         "cover_phone_post_composite": True,
         "adaptive_logo_corner_all_panels": False,

@@ -16,6 +16,10 @@ PAD_HEIGHT_FRACTION = 0.26
 DRAWN_LOCKUP_SCORE_THRESHOLD = 0.38
 OFFICIAL_PASTE_MAE_MAX = 36.0
 OFFICIAL_PASTE_MATCH_MIN = 0.78
+WHITE_PLATE_LUMA_MIN = 235.0
+WHITE_PLATE_STD_MAX = 16.0
+WHITE_PLATE_MIN_AREA_RATIO = 1.12
+WHITE_PLATE_RING_PX = 12
 
 
 @dataclass
@@ -155,6 +159,175 @@ def _dashed_frame_score(pad) -> float:
     return float(peaks.mean())
 
 
+def _largest_low_variance_rect(gray, *, luma_min: float, std_max: float) -> dict[str, Any]:
+    """Find largest near-uniform near-white axis-aligned block in a gray patch."""
+    import numpy as np
+
+    h, w = gray.shape
+    if h < 8 or w < 8:
+        return {"found": False, "area": 0, "bbox": None, "mean": 0.0, "std": 0.0}
+
+    best: dict[str, Any] = {"found": False, "area": 0, "bbox": None, "mean": 0.0, "std": 0.0}
+    step_y = max(1, h // 24)
+    step_x = max(1, w // 24)
+    for y0 in range(0, h - 7, step_y):
+        for x0 in range(0, w - 7, step_x):
+            for y1 in range(y0 + 8, h + 1, step_y):
+                for x1 in range(x0 + 8, w + 1, step_x):
+                    block = gray[y0:y1, x0:x1]
+                    mean = float(block.mean())
+                    std = float(block.std())
+                    if mean < luma_min or std > std_max:
+                        continue
+                    area = int(block.size)
+                    if area > int(best["area"]):
+                        best = {
+                            "found": True,
+                            "area": area,
+                            "bbox": (x0, y0, x1, y1),
+                            "mean": mean,
+                            "std": std,
+                        }
+    return best
+
+
+def detect_white_plate_in_pad(
+    image_path: Path,
+    *,
+    pad_w_frac: float = PAD_WIDTH_FRACTION,
+    pad_h_frac: float = PAD_HEIGHT_FRACTION,
+) -> dict[str, Any]:
+    """FAIL helper: AI generation drew a white card/plate in the logo pad."""
+    arr = np_array_rgb(image_path)
+    h, w = arr.shape[:2]
+    x0, y0, pad_w, pad_h = _pad_box(w, h, pad_w_frac=pad_w_frac, pad_h_frac=pad_h_frac)
+    pad = arr[y0 : y0 + pad_h, x0 : x0 + pad_w]
+    if pad.size == 0:
+        return {"detected": False, "reason": "empty_pad"}
+
+    gray = pad.mean(axis=2)
+    global_mean = float(arr.mean())
+    rect = _largest_low_variance_rect(
+        gray, luma_min=WHITE_PLATE_LUMA_MIN, std_max=WHITE_PLATE_STD_MAX
+    )
+    pad_area = int(pad_w * pad_h)
+    min_area = max(900, int(pad_area * 0.18))
+    plate_mean = float(rect.get("mean") or 0.0)
+    plate_std = float(rect.get("std") or 0.0)
+    brighter_than_scene = plate_mean >= max(WHITE_PLATE_LUMA_MIN, global_mean + 12.0)
+    detected = (
+        bool(rect.get("found"))
+        and int(rect.get("area") or 0) >= min_area
+        and brighter_than_scene
+        and plate_std <= WHITE_PLATE_STD_MAX
+    )
+    return {
+        "detected": detected,
+        "pad_box": [x0, y0, pad_w, pad_h],
+        "plate_area": int(rect.get("area") or 0),
+        "plate_mean_luma": round(float(rect.get("mean") or 0.0), 2),
+        "plate_std": round(float(rect.get("std") or 0.0), 2),
+        "plate_bbox_local": rect.get("bbox"),
+        "min_area": min_area,
+    }
+
+
+def detect_white_plate_under_logo(
+    image_path: Path,
+    logo_path: Path,
+    *,
+    logo_xy: tuple[int, int],
+    logo_width_px: int,
+    logo_height_px: int,
+) -> dict[str, Any]:
+    """FAIL helper: near-white opaque rectangle under lockup larger than glyph bbox."""
+    from PIL import Image
+
+    import numpy as np
+
+    from excalibur_blog_brand_logo_composite import prepare_logo_rgba
+
+    x, y = logo_xy
+    if logo_width_px <= 0 or logo_height_px <= 0:
+        return {"detected": False, "reason": "invalid_logo_bbox"}
+
+    logo = prepare_logo_rgba(logo_path, logo_width_px)
+    if logo.width != logo_width_px:
+        scale = logo_width_px / max(logo.width, 1)
+        logo = logo.resize(
+            (logo_width_px, max(1, int(logo.height * scale))),
+            Image.Resampling.LANCZOS,
+        )
+    logo_h = min(logo.height, logo_height_px)
+
+    with Image.open(image_path) as base_img:
+        base = base_img.convert("RGBA")
+    w = min(logo.width, base.width - x)
+    h = min(logo_h, base.height - y)
+    if w <= 0 or h <= 0:
+        return {"detected": False, "reason": "out_of_bounds"}
+
+    region = np.array(base.crop((x, y, x + w, y + h)), dtype="float32")
+    logo_arr = np.array(logo.crop((0, 0, w, h)), dtype="float32")
+    alpha = logo_arr[..., 3] / 255.0
+    glyph_mask = alpha > 0.35
+    glyph_area = int(glyph_mask.sum())
+    if glyph_area < 24:
+        glyph_mask = alpha > 0.08
+        glyph_area = int(glyph_mask.sum())
+    if glyph_area < 12:
+        return {"detected": False, "reason": "glyph_mask_empty"}
+
+    gray = region[..., :3].mean(axis=2)
+    ys, xs = np.where(glyph_mask)
+    gy0, gy1 = int(ys.min()), int(ys.max()) + 1
+    gx0, gx1 = int(xs.min()), int(xs.max()) + 1
+    glyph_bbox_area = max(1, (gy1 - gy0) * (gx1 - gx0))
+
+    ring = max(4, WHITE_PLATE_RING_PX)
+    ry0 = max(0, gy0 - ring)
+    ry1 = min(h, gy1 + ring)
+    rx0 = max(0, gx0 - ring)
+    rx1 = min(w, gx1 + ring)
+    ring_mask = np.zeros((h, w), dtype=bool)
+    ring_mask[ry0:ry1, rx0:rx1] = True
+    ring_mask[gy0:gy1, gx0:gx1] = False
+    transparent = alpha < 0.12
+    inspect = ring_mask | transparent
+    if not inspect.any():
+        return {"detected": False, "glyph_bbox_area": glyph_bbox_area}
+
+    sample = gray[inspect]
+    mean_luma = float(sample.mean())
+    std_luma = float(sample.std())
+    white_frac = float((sample >= WHITE_PLATE_LUMA_MIN).mean()) if sample.size else 0.0
+    low_var_white = mean_luma >= WHITE_PLATE_LUMA_MIN and std_luma <= WHITE_PLATE_STD_MAX
+    rect = _largest_low_variance_rect(
+        gray, luma_min=WHITE_PLATE_LUMA_MIN, std_max=WHITE_PLATE_STD_MAX
+    )
+    plate_area = int(rect.get("area") or 0)
+    plate_ratio = plate_area / max(glyph_bbox_area, 1)
+    # Uniform near-white under transparent logo margins = backing plate on a non-white scene.
+    backing_under_glyphs = (
+        low_var_white
+        and white_frac >= 0.45
+        and mean_luma >= WHITE_PLATE_LUMA_MIN
+        and std_luma <= 8.0
+    )
+    detected = backing_under_glyphs or (
+        low_var_white and plate_ratio >= WHITE_PLATE_MIN_AREA_RATIO
+    )
+    return {
+        "detected": detected,
+        "mean_luma": round(mean_luma, 2),
+        "std_luma": round(std_luma, 2),
+        "glyph_bbox_area": glyph_bbox_area,
+        "plate_area": plate_area,
+        "plate_ratio": round(plate_ratio, 3),
+        "plate_bbox_local": rect.get("bbox"),
+    }
+
+
 def detect_drawn_lockup_in_image(
     image_path: Path,
     *,
@@ -192,19 +365,23 @@ def verify_official_logo_paste(
 ) -> dict[str, Any]:
     from PIL import Image
 
+    from excalibur_blog_brand_logo_composite import prepare_logo_rgba
+
     with Image.open(image_path) as base_img:
         base = base_img.convert("RGBA")
-    with Image.open(logo_path) as logo_img:
-        logo = logo_img.convert("RGBA")
-
-    x, y = logo_xy
     if logo_width_px <= 0:
         return {"ok": False, "reason": "logo_width_px missing"}
 
-    scale = logo_width_px / max(logo.width, 1)
-    target_h = logo_height_px or max(1, int(logo.height * scale))
-    logo_resized = logo.resize((logo_width_px, target_h), Image.Resampling.LANCZOS)
+    logo_resized = prepare_logo_rgba(logo_path, logo_width_px)
+    target_h = logo_height_px or logo_resized.height
+    if logo_resized.height != target_h:
+        scale = target_h / max(logo_resized.height, 1)
+        logo_resized = logo_resized.resize(
+            (max(1, int(logo_resized.width * scale)), target_h),
+            Image.Resampling.LANCZOS,
+        )
 
+    x, y = logo_xy
     x = max(0, min(x, base.width - 1))
     y = max(0, min(y, base.height - 1))
     w = min(logo_resized.width, base.width - x)
@@ -336,6 +513,12 @@ def validate_article_logo_gates(article_dir: Path, root: Path) -> list[str]:
             errors.append(
                 f"pre-composite {name}: AI-drawn lockup detected (score={result['score']}, {reasons})"
             )
+        plate = detect_white_plate_in_pad(source)
+        if plate.get("detected"):
+            errors.append(
+                f"pre-composite {name}: white logo plate/card in generation pad "
+                f"(area={plate.get('plate_area')}, luma={plate.get('plate_mean_luma')})"
+            )
 
     if not stamp:
         return errors
@@ -375,6 +558,18 @@ def validate_article_logo_gates(article_dir: Path, root: Path) -> list[str]:
         )
         if overlap.get("overlap"):
             errors.append(f"{name}: logo overlaps readable text in logo pad zone")
+        plate = detect_white_plate_under_logo(
+            img_path,
+            logo_path,
+            logo_xy=(int(xy[0]), int(xy[1])),
+            logo_width_px=logo_w,
+            logo_height_px=logo_h,
+        )
+        if plate.get("detected"):
+            errors.append(
+                f"{name}: white plate/card under factory logo "
+                f"(ratio={plate.get('plate_ratio')}, luma={plate.get('mean_luma')})"
+            )
 
     for name in IMAGE_NAMES:
         if name == "cover.png" or name in inline_files:

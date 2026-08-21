@@ -6,9 +6,11 @@
 
 | Файл | Роль |
 |------|------|
-| `brand/logo-dobry-dom.png` | **Единственный** allowed lockup — alpha PNG, 1:1 paste после генерации |
+| `brand/logo-dobry-dom.png` | **Единственный** allowed lockup — alpha PNG overlay после генерации (без белой подложки) |
 
-**NEVER** просить image model нарисовать логотип, wordmark, curtains+flower, dashed frame или gold house.
+**Канон:** «Логотип Добрый дом — только alpha-PNG overlay, без белой подложки и без квадрата.»
+
+**NEVER** просить image model нарисовать логотип, wordmark, curtains+flower, dashed frame, gold house **или белую табличку/карточку/подложку** под logo pad.
 Factory paste: `scripts/excalibur_blog_brand_logo_composite.py` → TOP-RIGHT 8–12% на cover + 2–3 inline.
 
 Legacy alias `brand/dobry-dom-logo.png` — тот же файл (backward compat).
