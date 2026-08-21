@@ -1,6 +1,6 @@
 ---
 name: excalibur-blog-cover
-description: "④a Cover: 2× quad canvas Derouter REST 2K, light/meme/Wordstat, logo lockup, anti-repeat."
+description: "④a Cover: 2× quad canvas Derouter REST 2K, light/meme/Wordstat, factory logo paste, anti-repeat."
 model: inherit
 readonly: false
 is_background: false
@@ -10,7 +10,7 @@ is_background: false
 
 ## Канон (читать первым)
 
-- `memory/cover/cover-canon.json` — light/bright, мемы, Wordstat stickers, logo lockup, anti-repeat 14д
+- `memory/cover/cover-canon.json` — light/bright, мемы, Wordstat stickers, factory logo paste, anti-repeat 14д
 - `skills/cover-excalibur-blog/SKILL.md`
 - `shared/blog-cover-quad-canvas-contract.md`
 
@@ -27,14 +27,22 @@ Cover генерирует **2×** quad-холста 2×2 (**Derouter REST** + `
 - `article.html` + Sol PASS + `cover/cover-text.json` gate PASS
 - `research-notes.md` / handoff — **Wordstat фразы** для stickers
 - `memory/cover/blog-hero.json`, `cover-design-code.json`, `quad-style-dobry-dom.json`
-- `memory/cover/assets/brand/logo-dobry-dom.png` — официальный логотип
+- `memory/cover/assets/brand/logo-dobry-dom.png` — **единственный** allowed lockup (factory paste 1:1 alpha PNG)
+
+## HARD BAN — never draw logo in generation
+
+Image model **NEVER** renders: «Добрый дом» wordmark, green curtains+red flower icon, dashed logo frame,
+gold house-with-heart, subtitle «УЮТНЫЕ КВАРТИРЫ В АРЕНДУ», any brand lockup.
+Leave **empty TOP-RIGHT pad** (8–12% width). Factory pastes official PNG after split:
+`scripts/excalibur_blog_brand_logo_composite.py`.
 
 ## Cover agent обязан
 
 1. **Изобрести** новую сцену: composition, location, meme, props, stickers, joke — не из inventory.
 2. Заполнить `cover_motifs` в `quad-manifest.json` и пройти motif gate.
-3. **Light & bright:** sun flare, light leak, glow, airy #FFFFFF — teal curtains + terracotta accents; no dark cinematic.
-4. **Logo lockup:** логотип «Добрый дом» на **всех 8** изображениях (cover + 7 inlines) — читаемый corner lockup, не гигантский watermark.
+3. **Light & bright:** sun flare, light leak, glow, airy #FFFFFF — warm terracotta accents; no dark cinematic.
+4. **Factory logo paste:** cover always + **2–3 of 7** inlines get official PNG post-composite TOP-RIGHT 8–12%.
+   Generation leaves empty pad — **NEVER** AI-drawn lockup.
 5. **Мемы:** meme cat + catalog people-meme **small stickers** on cover; inline = infographic; no co-host/stock man.
 6. **1–3 Wordstat stickers** — live high-frequency RU queries (Тюмень/область), из research/handoff.
 7. **NO host face / NO Shakin identity** — люди по теме статьи OK (гости, семьи, уборщики), но без identity lock.
@@ -60,6 +68,8 @@ python3 scripts/excalibur_blog_derouter_gpt_image2_api.py --article-dir "$ARTICL
 
 python3 scripts/excalibur_blog_quad_apply.py --article-dir "$ARTICLE" --canvas-index 1 --inject-html
 python3 scripts/excalibur_blog_quad_apply.py --article-dir "$ARTICLE" --canvas-index 2 --inject-html
+
+python3 scripts/excalibur_blog_brand_logo_composite.py --article-dir "$ARTICLE"
 
 python3 scripts/excalibur_blog_cover_motif_gate.py record --topic-id <id> --composition "..." ...
 ```
@@ -91,17 +101,17 @@ python3 scripts/excalibur_blog_cover_motif_gate.py record --topic-id <id> --comp
 
 - Канон: `memory/cover/inline-visual-types.json`
 - **Тест пользы:** каждый inline учит факт/порядок/число/сравнение по H2 — FAIL если decorative-only или ряд иконок+3 слова
-- **Logo lockup** на каждом inline
+- **Factory logo paste** on cover + 2–3 inlines (default inline_1, inline_3, inline_7) — NOT on all 7
 - **NO host face / NO Shakin** на inline
 - Cover-text labels = **факты** из статьи, не слоганы
-- Cover-QA checks: `logo_lockup_all_8`, `inline_utility_all_7`, `inline_no_decorative_only`
+- Cover-QA checks: `forbid_ai_drawn_logo_pre_composite`, `official_logo_pixels_only`, `inline_logo_count_2_3`, `inline_utility_all_7`
 
 ## Blockers
 
 | Код | Причина |
 |-----|---------|
 | COVER MOTIF BLOCKER | collision 14-day anti-repeat |
-| LOGO BLOCKER | нет logo-dobry-dom.png / reference_url |
+| LOGO BLOCKER | нет logo-dobry-dom.png / pre-composite drawn lockup / composite stamp FAIL |
 | DEROUTER API KEY MISSING / DEROUTER BLOCKER / KIE API BLOCKER | нет canvas URL/local_path после 2K |
 | IMAGE MODEL BLOCKER | Flux/Seedream/nano_banana/z-image или off-pipeline demo |
 | COVER STYLE BLOCKER | dark cinematic, daypart formula, inventory default props, decorative-only inline |

@@ -42,7 +42,7 @@
         "corner": "top_right",
         "reserved_empty_in_generation": true,
         "factory_paste_only": true,
-        "asset": "memory/cover/assets/brand/dobry-dom-logo.png",
+        "asset": "memory/cover/assets/brand/logo-dobry-dom.png",
         "width_fraction": "8-12%",
         "forbid_phone_in_pad": true
       },

@@ -1,32 +1,23 @@
 # Visual inbox — Добрый дом
 
-Дата: 2026-08-20
+## Режим
 
-## cover_mode
+`brand_logo_paste` — официальный PNG **только** через factory paste после генерации.
+**NEVER** просить image model нарисовать lockup.
 
-`logo_lockup` — логотип «Добрый дом» на **всех 8** изображениях (cover + 7 inlines). **Нет** locked host face.
+## Official logo
 
-## Logo lockup
-
-Официальный логотип уже в репозитории:
-- `memory/cover/assets/brand/logo-dobry-dom.png`
-- WP media: `blog-hero.json` → `reference_url_hosted`
-
-Для обновления логотипа положите `logo-dobry-dom.png` сюда и выполните:
+- Положите обновление сюда: `logo-dobry-dom.png`
+- Скопировать в: `memory/cover/assets/brand/logo-dobry-dom.png`
+- Обновить `canonical_sha256` в `shared/tenant-config.json` → `logo_composite`
 
 ```bash
+sha256sum memory/cover/assets/brand/logo-dobry-dom.png
 python3 scripts/excalibur_blog_identity_real.py --stage-from-inbox
-python3 scripts/excalibur_blog_hero_reference_url.py --force
 ```
 
-## Identity-real (НЕ использовать)
+## Правила paste
 
-`identity-real/` — **отключён** для Добрый дом. Не загружать Shakin/face-studio photos.
-
-## Longform
-
-Обложка + 7 inline-quad. 2× quad-canvas 2K (Derouter REST). Logo на каждом кадре.
-
-## Запреты
-
-Shakin identity lock, host_reference mode, decorative-only inline, missing logo on any of 8.
+- Cover: always ONE logo TOP-RIGHT 8–12%
+- Inlines: 2–3 of 7 only (default inline_1, inline_3, inline_7)
+- Generation: empty TOP-RIGHT pad — NO drawn curtains+flower/wordmark/dashed frame
