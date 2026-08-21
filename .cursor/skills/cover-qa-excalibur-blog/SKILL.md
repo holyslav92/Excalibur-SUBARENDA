@@ -7,26 +7,30 @@ description: "Cover-QA: visual gate after Cover, before Indexer/Publish; stamp c
 
 ## Когда
 
-**После** `excalibur-blog-cover` (8 PNG готовы, inject в `article.html`).  
+**После** `excalibur-blog-cover` (8 PNG готовы + `excalibur_blog_brand_logo_composite.py` PASS).  
 **До** Indexer и Publish.
 
 FAIL → **вернуть Cover** (не Indexer/Publish).
 
+## WOW cover rules (Добрый дом — FAIL if broken)
+
+Канон: `memory/cover/visual-notes-dobry-dom.json` · `shared/tenant-config.json` → `cover_wow_rules`
+
+1. **forbid_wordpress_ui_in_art** — нет WordPress/Gutenberg/Add title/Publish/Dashboard/wp-admin/block editor/theme chrome/cookie bars в арте.
+2. **no_element_overlap** — headline, stickers, meme, cat, phone, people, logo pad не перекрываются.
+3. **wow_poster_magazine_typography** — magazine poster, bold readable Russian display hook, scene + one sharp line; не timid system font / label wall / empty stock / WP screenshot.
+4. **inline_logo_count_2_3** + **forbid_multiple_logos_per_image** + **logo_top_right_fixed** — логотип на cover + 2–3 inline (default inline_1/3/7), TOP-RIGHT pad; never 2+ logos per frame.
+5. **cover_phone_993_post_composite** + **cover_phone_not_in_logo_pad** — +7 (993) 574-83-22 только на cover post-composite, не в logo pad.
+
 ## Что проверяешь (визуально + артефакты)
 
-1. **Лицо + телосложение хоста** — тот же человек что `face-studio-2026-06-23.jpg` (кости, hairline, глаза, щетина, 28 лет); **medium slim**. FAIL: chubby, другой человек.
-2. **Эмоция НЕ копия референса** — выражение под hook статьи (шок, side-eye, гримаса, недоумение «где деньги?»…). **FAIL** если вежливая студийная closed-mouth smile 1:1 как на reference. PASS если живая мимика под тему.
-3. **Light / high-key** — светлая картинка, sun flare/glow; **нет** dark cinematic / low-key / twilight.
-3. **Motif 14д** — нет коллизии с `memory/cover/used-motifs.json` (composition/location/meme…).
-4. **Люди в 8-set** — host на cover = единственный крупный человек; inline people-memes только как маленькие стикеры из `meme-top100.json`.
-5. **Коты** — meme-cat на cover/inline **или** недельная каденция не просела (не 3+ статей подряд без кота).
-6. **Wordstat stickers** — 1–3 читаемых стикера с live P0-фразами (из `quad-manifest.json` → `wordstat_stickers`).
-7. **identity-real** — 4 live-файла на месте.
-8. **Inline utility (все 7)** — каждый inline проходит тест пользы: факт/порядок/число/сравнение по H2; не ряд иконок+3 слова; не host face.
-9. **inline_no_host_face** — ни на одном inline нет лица Святослава / identity-real.
-10. **inline_no_co_host_human** — нет stock model / generated man / handsome realtor / large meme person как co-host или presenter на inline.
-11. **inline_meme_sticker_scale** — если мем-человек на inline, он ≤15% кадра, угол/край, не герой.
-12. **meme_people_real_catalog** — people-memes из `memory/cover/meme-top100.json`, не выдуманные лица.
+1. **Light / high-key** — светлая картинка, sun flare/glow; **нет** dark cinematic / low-key / twilight.
+2. **Motif 14д** — нет коллизии с `memory/cover/used-motifs.json`.
+3. **Люди в 8-set** — гости по теме OK; inline people-memes только маленькие стикеры из `meme-top100.json`.
+4. **Коты** — meme-cat на cover bottom-left ≤12% **или** недельная каденция не просела.
+5. **Wordstat stickers** — 1–3 читаемых стикера с live P0-фразами.
+6. **Inline utility (все 7)** — факт/порядок/число/сравнение по H2; не host face.
+7. **Brand logo composite** — `cover/logo-composite-stamp.json` PASS; canonical PNG sha256; logo 8–12% TOP-RIGHT.
 
 Канон: `memory/cover/cover-canon.json`.
 
@@ -39,20 +43,27 @@ FAIL → **вернуть Cover** (не Indexer/Publish).
   "checked_at": "2026-08-18",
   "topic_id": "B01",
   "checks": {
-    "identity_face_28yo": true,
-    "identity_body_medium_slim": true,
-    "identity_expression_invented": true,
     "light_high_key": true,
     "motif_no_collision_14d": true,
     "people_in_8_set": true,
     "cats_cadence_ok": true,
     "wordstat_stickers_1_3": true,
-    "identity_real_files": true,
     "inline_utility_all_7": true,
     "inline_no_host_face": true,
     "inline_no_co_host_human": true,
     "inline_meme_sticker_scale": true,
-    "meme_people_real_catalog": true
+    "meme_people_real_catalog": true,
+    "brand_logo_paste_png": true,
+    "logo_top_right_fixed": true,
+    "inline_logo_count_2_3": true,
+    "forbid_multiple_logos_per_image": true,
+    "logo_width_fraction_8_12": true,
+    "cover_phone_993_post_composite": true,
+    "forbid_922_phone": true,
+    "cover_phone_not_in_logo_pad": true,
+    "forbid_wordpress_ui_in_art": true,
+    "no_element_overlap": true,
+    "wow_poster_magazine_typography": true
   },
   "notes": "кратко: что смотрел"
 }
@@ -71,8 +82,8 @@ python3 scripts/excalibur_blog_cover_qa_gate.py --article-dir "$ARTICLE"
 
 ## Blockers
 
-- COVER QA BLOCKER — любой check false
-- identity-real missing
-- dark cinematic / wrong face / reference smile clone → return Cover
+- COVER QA BLOCKER — любой check false (включая WOW rules)
+- logo-composite-stamp missing / sha256 mismatch
+- dark cinematic / overlapping elements / WordPress UI in art → return Cover
 
 Agent: `agents/excalibur-blog-cover-qa.md`

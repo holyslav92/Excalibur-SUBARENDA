@@ -65,7 +65,19 @@ BOARD_STATIONERY = "tape/pins/strings/paper scraps; high-key #FFF/gold; not noir
 INLINE_BAN_EXTRA = (
     "icon slogans; empty cells; desk scene; cover copy; celebrity memes; "
     "stock model man; handsome realtor co-host; generated stranger presenter; "
-    "large human on inline; meme person >15% frame; invented meme face"
+    "large human on inline; meme person >15% frame; invented meme face; "
+    "WordPress; Gutenberg; wp-admin; block editor; theme chrome; cookie bar; "
+    "overlapping headline stickers meme cat phone logo; timid system font; "
+    "wall of tiny labels; empty stock; wordpress screenshot"
+)
+WOW_POSTER_BAN = (
+    "WordPress; Gutenberg; Add title; Publish; Dashboard; wp-admin; "
+    "block editor; theme chrome; cookie bar; timid system font; "
+    "wall of tiny labels; empty stock; wordpress screenshot"
+)
+NO_OVERLAP_RULE = (
+    "Separate zones — headline, Wordstat stickers, meme, cat bottom-left, people, "
+    "TOP-RIGHT empty logo pad NEVER overlap each other; phone NOT in generation"
 )
 MEME_CATALOG_REL = "memory/cover/meme-top100.json"
 MEME_STICKER_INLINE_MAX_SHARE = 0.15
@@ -492,12 +504,12 @@ def build_prompt(
         if brand_logo_paste:
             emotion_clause = f"Expr: {cover_emotion}." if cover_emotion else ""
             panel_lines.append(
-                f"TL COVER POSTER (not stock): «{cover_hook_text}» bold display Cyrillic, {highlight_rule}; "
-                f"sticky «{cover_sticky or 'Залог вернут?'}»; bubble «залог не вернули»; chip on stove; keys+suitcase; "
-                f"Aug Tyumen warm light, green trees, NO winter/snow. NO logo/phone in gen. "
-                f"{emotion_clause} sun flare; gold tape; Wordstat; "
+                f"TL COVER WOW POSTER (magazine, not stock): «{cover_hook_text}» bold DISPLAY Cyrillic readable, {highlight_rule}; "
+                f"sticky «{cover_sticky or 'Залог вернут?'}»; scene props; Aug Tyumen warm light, NO winter/snow. "
+                f"NO logo/phone in gen. {NO_OVERLAP_RULE}. "
+                f"{emotion_clause} sun flare; gold tape; 1-3 Wordstat; "
                 f"{compact(cover_scene, COVER_SCENE_HINT_COMPACT)}; cat bottom-left ≤12%; "
-                f"TOP-RIGHT empty pad for ONE factory logo; NO multi logos; {BOARD_STATIONERY}; #FFF"
+                f"TOP-RIGHT empty pad ONE factory logo; NO multi logos; {BOARD_STATIONERY}; #FFF"
             )
         else:
             emotion_clause = (
@@ -522,13 +534,14 @@ def build_prompt(
     ban_line = (
         "Ban: dark/low-key; inventory props; celebrity memes; EXCALIBUR stamp; chubby host; "
         f"stock/generated man co-host on inline; large meme person on inline; "
-        f"{INLINE_BAN_EXTRA}."
+        f"{INLINE_BAN_EXTRA}; {WOW_POSTER_BAN}."
     )
     if has_cover and brand_logo_paste:
         reference_line = (
             "Cover TL: NO host i2i; NO Shakin/identity-real; NO brand logo; NO phone in generation; "
-            "poster collage with reserved TOP-RIGHT empty pad for ONE factory logo; "
-            "NEVER multiple logos or logo comparison table; Russian guest by topic allowed."
+            "WOW magazine poster collage with reserved TOP-RIGHT empty pad for ONE factory logo; "
+            "NEVER multiple logos or logo comparison table; "
+            f"{NO_OVERLAP_RULE}; Russian guest by topic allowed."
         )
     elif has_cover:
         reference_line = (

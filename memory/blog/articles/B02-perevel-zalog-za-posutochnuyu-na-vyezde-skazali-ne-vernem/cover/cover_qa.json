@@ -25,7 +25,10 @@
     "cover_phone_993_post_composite": true,
     "forbid_922_phone": true,
     "cover_phone_not_in_logo_pad": true,
+    "forbid_wordpress_ui_in_art": true,
+    "no_element_overlap": true,
+    "wow_poster_magazine_typography": true,
     "august_no_winter_hero": true
   },
-  "notes": "B02 regen v2: poster cover chip+stove; logo TOP-RIGHT cover+inline-01/03/07 only (3); phone bottom-left cover; Kie canvases Aug Tyumen."
+  "notes": "B02 regen v2: WOW poster cover chip+stove; logo TOP-RIGHT cover+inline-01/03/07 only (3); phone bottom-left cover; no WP UI; no overlap."
 }

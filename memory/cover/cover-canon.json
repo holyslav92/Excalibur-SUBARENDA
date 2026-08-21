@@ -1,19 +1,83 @@
 {
-  "canon_id": "the_rieltor_light_meme_wordstat_v2",
-  "status": "ok",
-  "label_ru": "The Риэлтор — изобретение с нуля, light/bright, мемы, Wordstat-стикеры, anti-repeat 14д",
+  "canon_id": "dobry_dom_wow_poster_logo_paste_v1",
+  "status": "locked",
+  "tenant": "dobry-dom",
+  "label_ru": "Добрый дом — WOW magazine poster, factory logo paste, light/meme/Wordstat",
+  "tenant_scope": "holyslav92/Excalibur-SUBARENDA ONLY. Never tymenrieltor.ru / Excalibur-2-Cloud rieltor identity.",
+  "wow_cover_rules": {
+    "forbid_wordpress_ui_in_art": {
+      "cover_qa_check": "forbid_wordpress_ui_in_art",
+      "forbidden": [
+        "WordPress",
+        "Gutenberg",
+        "Add title",
+        "Publish",
+        "Dashboard",
+        "wp-admin",
+        "block editor",
+        "theme chrome",
+        "cookie bars",
+        "cookie banner"
+      ]
+    },
+    "no_element_overlap": {
+      "cover_qa_check": "no_element_overlap",
+      "elements_never_overlap": [
+        "headline",
+        "wordstat_stickers",
+        "meme_sticker",
+        "cat_sticker",
+        "phone_cta",
+        "people",
+        "logo_pad"
+      ],
+      "logo_pad": {
+        "corner": "top_right",
+        "reserved_empty_in_generation": true,
+        "factory_paste_png": "memory/cover/assets/brand/dobry-dom-logo.png",
+        "width_fraction": "8-12%",
+        "one_logo_per_image": true
+      },
+      "cover_phone": {
+        "display": "+7 (993) 574-83-22",
+        "post_composite_bottom_left": true,
+        "never_in_logo_pad": true,
+        "cover_only": true
+      }
+    },
+    "wow_poster": {
+      "cover_qa_check": "wow_poster_magazine_typography",
+      "must": [
+        "magazine cover poster",
+        "beautiful readable Russian display type",
+        "scene + one sharp hook line",
+        "high-key editorial collage"
+      ],
+      "forbidden": [
+        "timid system font",
+        "wall of tiny labels",
+        "empty stock",
+        "wordpress screenshot"
+      ]
+    },
+    "inline_logo": {
+      "cover_qa_checks": [
+        "inline_logo_count_2_3",
+        "forbid_multiple_logos_per_image",
+        "logo_top_right_fixed"
+      ],
+      "count": "2-3 of 7 inlines only",
+      "default_slots": ["inline_1", "inline_3", "inline_7"],
+      "corner": "top_right",
+      "never_two_plus_logos_per_frame": true
+    }
+  },
   "forbidden_daypart_formula": {
     "status": "REJECTED_BY_OWNER",
     "never_use": true,
-    "slots": {
-      "morning": "desk + document",
-      "day": "street/entrance",
-      "evening": "close talk to camera",
-      "night": "split «как продают / что в выписке»"
-    },
     "note": "Расписание публикаций 09/12/15/17 YEKT (будни) ≠ формула обложки."
   },
-  "invention_rule": "Cover agent INVENTS every cover from scratch to surprise. No inventory lock. No recurring default props (keys, hologram, desk, balcony, documents-only office). Variety is the product.",
+  "invention_rule": "Cover agent INVENTS every cover from scratch to surprise. No inventory lock. No recurring default props. Variety is the product.",
   "anti_repeat": {
     "window_days": 14,
     "log_file": "memory/cover/used-motifs.json",
@@ -34,24 +98,35 @@
     "effects": ["sun flare", "light leak", "glow", "soft bloom"],
     "forbidden": ["dark cinematic", "twilight mood panel", "low-key noir", "moody black background"]
   },
+  "brand_logo_paste": {
+    "mode": "paste_png_alpha",
+    "cover_mode": "brand_logo_paste",
+    "skip_human_host": true,
+    "logo_asset": "memory/cover/assets/brand/dobry-dom-logo.png",
+    "forbid_ai_drawn_logo": true,
+    "logo_corner": "top_right",
+    "logo_width_fraction": "8-12%",
+    "cover_always_one_logo": true,
+    "inline_logo_count": "2-3 of 7",
+    "inline_logo_slots_default": ["inline_1", "inline_3", "inline_7"],
+    "cover_phone_post_composite": "+7 (993) 574-83-22",
+    "forbidden_phone": "+7 922 001 65 05",
+    "composite_script": "scripts/excalibur_blog_brand_logo_composite.py"
+  },
   "meme_system": {
     "required": true,
     "catalog": "memory/cover/meme-top100.json",
-    "host_human_rule": "ONLY Святослав (face-studio-2026-06-23.jpg) may be LARGE / hero of any frame — COVER ONLY. No second human hero anywhere.",
-    "people": "Cover: host = only large human. Inline: NO large human; people-memes = SMALL stickers (≤12–15% frame) from meme-top100.json only — never co-host, never presenter pointing at table.",
-    "cats": "meme-cat sticker cutouts — small accent (≤12–15% frame); often enough across weekly posts; not every frame",
+    "host_human_rule": "NO Shakin/rieltor host — Russian guests fitting check-in topic only; never large co-host on inline.",
+    "people": "Cover: scene people by topic OK; inline people-memes = SMALL stickers (≤12–15% frame) from meme-top100.json only.",
+    "cats": "meme-cat sticker cutouts — small accent (≤12–15% frame); often enough across weekly posts",
     "per_article_8_set": {
-      "must_include_people": true,
-      "people_source": "cover host ONLY counts as the person in the 8-set; inline people-memes are tiny stickers on 1–2 panels max, never a second hero",
+      "must_include_people_or_guest_scene": true,
       "inline_people_meme_max_panels": 2,
       "inline_people_meme_max_frame_share": 0.15,
-      "cats_frequency": "at least one cat motif per article OR ensure weekly cadence has cats",
       "forbidden": [
-        "empty office only-documents cover",
-        "sterile host+text without stickers",
+        "empty stock photo cover",
+        "sterile text-only cover without scene",
         "stock/generated handsome man as co-host on inline",
-        "invented photogenic stranger called a meme",
-        "meme person in left portrait / talking-head / presenter slot on inline",
         "meme person >15% of inline frame area"
       ]
     }
@@ -63,59 +138,6 @@
     "geo": "memory/cover/wordstat-geo.json",
     "not": ["random words", "spam wall", "SEO tail dump"]
   },
-  "identity_lock": {
-    "face_primary": "memory/cover/assets/identity-real/face-studio-2026-06-23.jpg",
-    "body_build_refs": [
-      "memory/cover/assets/identity-real/face-hoodie-airpods.jpeg",
-      "memory/cover/assets/identity-real/face-office-selfie.jpeg"
-    ],
-    "not_face_source": [
-      "memory/cover/assets/identity-real/face-greenhouse-yahweh.png",
-      "memory/cover/assets/identity-real/face-immortal-regiment.jpeg"
-    ],
-    "source": "memory/cover/assets/identity-real/",
-    "age": 28,
-    "body_build": "medium-slim per hoodie+office body refs; NOT chubby vs face-studio portrait",
-    "cover_body_rule": "FAIL Cover-QA if host looks heavier/chubbier than face-studio-2026-06-23 or body refs",
-    "face": "face-studio-2026-06-23.jpg only for FACE i2i; match bone structure, hairline, eye shape, stubble, 28yo",
-    "expression_lock": {
-      "keep_every_run": [
-        "bone structure",
-        "hairline",
-        "eye shape",
-        "stubble density",
-        "28yo age",
-        "medium-slim build"
-      ],
-      "free_every_run": [
-        "emotion",
-        "eyebrows",
-        "mouth",
-        "head tilt",
-        "gaze",
-        "hands",
-        "body pose"
-      ],
-      "i2i_prompt_rule": "same person as reference, NEW expression for the hook, do not copy reference smile/pose",
-      "scene_hint_must_name_emotion": true,
-      "fail_if": [
-        "polite studio closed-mouth smile copied 1:1 from reference",
-        "different person",
-        "chubby vs portrait"
-      ],
-      "pass_requires": "hook-matched invented expression (shock, side-eye, grimace, laugh, bewildered, etc.)"
-    },
-    "forbidden_body": ["chubby", "overweight", "puffy face", "puffy cheeks", "double chin", "stocky", "thick waist", "thick neck", "wide torso tight blazer"],
-    "forbidden_scene_clone": [
-      "greenhouse",
-      "Immortal Regiment",
-      "office selfie",
-      "hoodie selfie",
-      "office hologram",
-      "balcony keys sunset"
-    ],
-    "forbidden_faces": ["reconstructed AI hero-ref", "plastic uncanny"]
-  },
   "pipeline": {
     "primary": "derouter-rest",
     "resolution": "2K",
@@ -124,25 +146,8 @@
     "total_images": 8,
     "split": "2x2 per canvas"
   },
-  "image_allowlist": {
-    "allowed": [
-      "scripts/excalibur_blog_derouter_gpt_image2_api.py (Derouter REST image API, api-direct, 2K 16:9)",
-      "scripts/excalibur_blog_kie_gpt_image2_api.py (Kie async image API — secondary after Derouter auth/5xx)"
-    ],
-    "forbidden": [
-      "mcp-derouter/start-mcp.sh",
-      "flux2-pro-text-to-image",
-      "flux2-pro-image-to-image",
-      "seedream",
-      "nano_banana",
-      "nano_banana_2",
-      "z-image",
-      "off-pipeline demo canvases / lone prompts without Scout×Wordstat article"
-    ],
-    "timeout_rule": "Derouter auth/5xx → one retry + fallback host; then Kie script. NEVER Flux/Seedream/nano_banana/z-image"
-  },
   "inline_utility": {
-    "catalog": "memory/cover/inline-visual-types.json",
+    "catalog": "memory/cover/inline-visual-types-dobry-dom.json",
     "utility_test": "Reader without paragraph extracts fact/order/number/comparison for H2; icon row + 3-word captions = FAIL",
     "style_match_cover": "B02-approved: #FFFFFF high-key, gold/black, torn paper, tape, sun flare, collage",
     "no_host_face": true,
@@ -150,27 +155,27 @@
     "no_stock_model": true,
     "meme_sticker_max_frame_share": 0.15,
     "meme_people_catalog": "memory/cover/meme-top100.json",
+    "logo_on_inline": "factory paste 2-3 of 7 only, same TOP-RIGHT pad; never 2+ logos on one frame",
     "preferred_types": [
+      "lived_in_room",
+      "guest_checkin_scene",
+      "comfort_plus_interior",
       "comparison_table",
       "process_flow",
-      "bar_timeline_chart",
-      "structure_diagram",
       "labeled_checklist",
       "fact_card"
     ],
     "forbidden": [
       "host face on inline",
       "stock model / handsome realtor / generated man as co-host",
-      "large human (non-host) occupying hero slot on inline",
+      "large human (non-guest) occupying hero slot on inline",
       "meme person >15% frame or in presenter/portrait slot",
-      "invented face called meme — use meme-top100.json real templates only",
+      "wordpress UI screenshot",
+      "logo on every inline panel",
+      "two logos on one frame",
       "icon row with mood captions",
-      "duplicate labels across cards",
-      "decorative realtor desk scene",
       "empty UI",
-      "cover copy-paste",
-      "Salt Bae Drake celebrity",
-      "не эскроу as process step"
+      "cover copy-paste"
     ],
     "cover_qa_checks": [
       "inline_utility_all_7",
@@ -178,16 +183,20 @@
       "inline_no_co_host_human",
       "inline_meme_sticker_scale",
       "meme_people_real_catalog",
-      "identity_expression_invented"
+      "forbid_wordpress_ui_in_art",
+      "no_element_overlap",
+      "wow_poster_magazine_typography",
+      "inline_logo_count_2_3",
+      "forbid_multiple_logos_per_image",
+      "logo_top_right_fixed"
     ]
   },
   "owner_visual_polish": {
-    "cover_phone_required": "+7 922 001 65 05",
-    "cover_body": "medium-slim vs face-studio-2026-06-23; FAIL if chubby/puffy or wrong person",
-    "cover_expression": "FAIL if host copies studio polite closed-mouth smile 1:1; PASS if NEW hook-matched emotion",
+    "cover_phone_required": "+7 (993) 574-83-22",
+    "cover_phone_forbidden": "+7 922 001 65 05",
     "board_stationery": "light tape/pins/strings on white investigation board — high-key, not noir",
-    "meme_density": "cover: 1–2 memes required (host counts as person); inlines: small meme sticker on 2–3 of 7 max — cats and/or catalog people-memes at sticker scale only",
-    "typography": "handsome condensed black Cyrillic + gold accent; zero spelling errors; no Latin garbage",
-    "inline_density": "more informational labels per panel; utility test still required; no empty cells"
+    "meme_density": "cover: meme cat and/or catalog people-meme as small stickers; inlines: tiny meme on 2–3 of 7 max",
+    "typography": "WOW magazine display Cyrillic for cover hook; zero spelling errors; no Latin garbage; not timid system font",
+    "inline_density": "informational labels per panel; utility test still required; no empty cells"
   }
 }

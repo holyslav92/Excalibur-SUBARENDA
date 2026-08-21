@@ -1,9 +1,22 @@
 {
-  "status": "ok",
+  "status": "locked",
   "tenant": "dobry-dom",
-  "comment": "Добрый дом: comfort+ visuals + utility panels. Logo: cover always + 2-3 inlines only, TOP-RIGHT pad. No Shakin.",
+  "comment": "Добрый дом WOW cover rules — Cover-QA FAIL if broken. Logo: cover always + 2-3 inlines only, TOP-RIGHT pad.",
+  "wow_cover_rules_ref": "memory/cover/visual-notes-dobry-dom.json",
   "utility_test": "Inline must teach OR show lived-in comfort+ OR infographic utility. Pure decorative icon row = FAIL.",
-  "style_lock": "High-key #FFFFFF, warm hospitality. ONE small official logo TOP-RIGHT on cover + 2-3 inlines only (factory paste). Cozy lived-in, NOT hotel-luxe.",
+  "style_lock": "WOW magazine poster cover + high-key #FFFFFF utility inlines. ONE small official logo TOP-RIGHT on cover + 2-3 inlines only (factory paste). NO overlapping zones.",
+  "forbidden_all_panels": [
+    "WordPress",
+    "Gutenberg",
+    "Add title",
+    "Publish",
+    "Dashboard",
+    "wp-admin",
+    "block editor",
+    "theme chrome",
+    "cookie bar",
+    "wordpress screenshot"
+  ],
   "forbidden_inline": [
     "host face / Shakin / identity-real",
     "marble palace interior",
@@ -11,8 +24,19 @@
     "five-star hotel aesthetic",
     "seven identical infographic schemes",
     "tymenrieltor branding",
+    "logo on all 7 inlines",
+    "two or more logos on one frame",
+    "overlapping headline and logo pad",
     "decorative icon row without lived-in scene"
   ],
+  "logo_inline_rules": {
+    "count_min": 2,
+    "count_max": 3,
+    "default_slots": ["inline_1", "inline_3", "inline_7"],
+    "corner": "top_right",
+    "reserved_pad_in_generation": true,
+    "forbid_multiple_per_frame": true
+  },
   "preferred_order": [
     "lived_in_room",
     "guest_checkin_scene",

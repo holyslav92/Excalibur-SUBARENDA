@@ -18,6 +18,9 @@ BRAND_LOGO_CHECKS = (
     "cover_phone_993_post_composite",
     "forbid_922_phone",
     "cover_phone_not_in_logo_pad",
+    "forbid_wordpress_ui_in_art",
+    "no_element_overlap",
+    "wow_poster_magazine_typography",
     "august_no_winter_hero",
 )
 

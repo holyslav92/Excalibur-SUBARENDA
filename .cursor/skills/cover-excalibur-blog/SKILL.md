@@ -52,15 +52,28 @@ PRIMARY: **Derouter REST** (`DEROUTER_API_KEY` + `DEROUTER_IMAGE_MODEL`, api-dir
 
 **On Derouter auth/5xx:** one retry + fallback host → then Kie script — **never** Flux/Seedream/nano_banana/z-image.
 
-## Cover canon (v2)
+## Cover canon (v2 — Добрый дом WOW)
+
+**Tenant:** `holyslav92/Excalibur-SUBARENDA` / Добрый дом only. **Never** tymenrieltor.ru / Excalibur-2-Cloud rieltor.
+
+**WOW rules (Cover-QA FAIL if broken):** `memory/cover/visual-notes-dobry-dom.json` · `shared/tenant-config.json` → `cover_wow_rules`
+
+1. **NO WordPress UI in art** — WordPress, Gutenberg, Add title, Publish, Dashboard, wp-admin, block editor, theme chrome, cookie bars.
+2. **NO overlapping** — headline, stickers, meme, cat, phone, people, logo pad never overlap. Logo = official PNG ONE stamp TOP-RIGHT (empty pad in gen). Phone +7 993 574-83-22 cover only post-composite, not in logo pad.
+3. **WOW poster** — magazine cover, bold readable Russian display type, scene + one sharp line. Not timid system font / label wall / empty stock / WP screenshot.
+4. **Inlines** — logo on 2–3 of 7 only (default inline_1, inline_3, inline_7); never 2+ logos per frame.
+
+Factory paste after split: `python3 scripts/excalibur_blog_brand_logo_composite.py --article-dir "$ARTICLE"`
+
+## Cover canon (production)
 
 1. **Invent from scratch** — no inventory lock; no default keys/hologram/desk/balcony.
 2. **Anti-repeat 14д** — `used-motifs.json` + `excalibur_blog_cover_motif_gate.py`.
 3. **Light & bright** — high-key, sun flare, light leak, glow; **no dark cinematic**.
 4. **Memes required** — meme cats + catalog people-memes as **small stickers** on cover; host Святослав = only large human. Inline: infographic hero; meme sticker ≤15% frame from `memory/cover/meme-top100.json` — never co-host/stock man.
 5. **Wordstat stickers** — 1–3 readable labels from live Wordstat (Тюмень regions 55+11176).
-6. **Identity + body lock** — `face-studio-2026-06-23.jpg` i2i (WHO only); medium slim; NOT chubby.
-7. **Expression invention (HARD)** — эмоция/мимика/поза **новые каждый раз** под hook; `scene_hint` + `cover_emotion` называют эмоцию (шок, side-eye, гримаса, недоумение…). i2i: «same person, NEW expression, do not copy reference smile/pose». Копия студийной улыбки 1:1 = FAIL.
+6. **Identity + body lock** — N/A for `brand_logo_paste` (Добрый дом): NO Shakin/rieltor host; Russian guests by topic only.
+7. **Expression invention** — scene emotion under hook; no rieltor studio host clone.
 8. **REJECTED daypart formula** — never morning desk / day street / evening close / night split.
 
 ## Inline canon (v3 utility-first)

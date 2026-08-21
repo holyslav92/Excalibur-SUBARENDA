@@ -1,10 +1,22 @@
 # Blog cover quad canvas contract
 
-> **TENANT:** The Риэлтор / tymenrieltor.ru — `memory/cover/*`, `shared/tenant-config.json`.
+> **TENANT:** Добрый дом / добрыйдом-72.рф — `holyslav92/Excalibur-SUBARENDA`.  
+> **NEVER** tymenrieltor.ru / Excalibur-2-Cloud rieltor identity or phone +7 922.
 
 # Excalibur BLOG — Quad Canvas (Derouter REST 2K)
 
 Cover после `article.html` + Sol PASS.
+
+## WOW cover rules (Cover-QA FAIL if broken)
+
+Locked in: `shared/tenant-config.json` → `cover_wow_rules`, `memory/cover/visual-notes-dobry-dom.json`, `memory/cover/cover-canon.json`.
+
+1. **NO WordPress UI in art** — WordPress, Gutenberg, Add title, Publish, Dashboard, wp-admin, block editor, theme chrome, cookie bars.
+2. **NO overlapping** — headline, stickers, meme, cat, phone, people, logo never sit on each other. Logo = official PNG, ONE small stamp **TOP-RIGHT**, reserved empty pad. Phone **+7 993 574-83-22** on cover only (post-composite), not in logo pad.
+3. **WOW poster** — magazine cover, beautiful readable Russian display type, scene + one sharp line. Not timid system font, not wall of tiny labels, not empty stock, not WP screenshot.
+4. **Inlines** — logo on **2–3 of 7** only, same top-right pad; never 2+ logos on one frame.
+
+Factory logo paste: `scripts/excalibur_blog_brand_logo_composite.py` — never ask image model to draw logo.
 
 ## Longform: 8 изображений
 
@@ -33,61 +45,52 @@ PRIMARY: **Derouter REST** (`DEROUTER_API_KEY` + `DEROUTER_IMAGE_MODEL`), `resol
 
 **MCP-KV on Cloud:** Wordstat (`wordstat_*`) only for Scout/Cover stickers. Not a buffet of image models.
 
-**No off-pipeline demos:** one uncut prompt ≠ article. Full canon: Scout×Wordstat → … → Cover only.
-
 Contracts: `shared/derouter-gpt-image-api-contract.md`, `shared/kie-gpt-image-api-contract.md`
 
-## Cover canon (v2)
+## Cover canon (Добрый дом)
 
-Канон: `memory/cover/cover-canon.json`
+Канон: `memory/cover/cover-canon.json` · Style: `memory/cover/quad-style-dobry-dom.json`
 
-1. **Изобретение с нуля** — no inventory lock, no default recurring props (keys, hologram, desk, balcony).
-2. **Anti-repeat 14д** — `memory/cover/used-motifs.json` + `excalibur_blog_cover_motif_gate.py check` перед `--write-batch`.
-3. **Light & bright** — high-key, sun flare, light leak, glow; dark cinematic запрещён.
-4. **Мемы** — meme cats + meme people stickers; host Святослав на cover; 8-set включает людей; коты регулярно по неделе.
-5. **Wordstat stickers** — 1–3 readable stickers с live Wordstat фразами (Тюмень/область, regions 55+11176).
-6. **Identity** — `identity-real/*` only; no scene clone; no AI faces.
-7. **REJECTED daypart formula** — never: morning desk+document / day street / evening close talk / night split.
-
-## Hero identity lock
-
-- `memory/cover/assets/identity-real/*` — **4 live photos** (28 лет). i2i ротация.
-- `scene-composition-only/hero-ref-*.jpg` — mood ONLY, **never FACE source**
+1. **WOW magazine poster** — bold readable Russian display hook + scene; high-key collage.
+2. **Brand logo paste** — NO logo in generation; factory pastes PNG TOP-RIGHT 8–12% on cover + 2–3 inlines.
+3. **Anti-repeat 14д** — `memory/cover/used-motifs.json` + `excalibur_blog_cover_motif_gate.py`.
+4. **Light & bright** — high-key, sun flare, light leak, glow; dark cinematic запрещён.
+5. **Memes** — meme cat bottom-left ≤12% on cover; catalog people-memes tiny on inline only.
+6. **Wordstat stickers** — 1–3 readable stickers с live Wordstat (Тюмень regions 55+11176).
+7. **NO Shakin/rieltor host** — Russian guests by topic only.
+8. **Phone** — `+7 (993) 574-83-22` post-composite bottom-left on cover only.
 
 ## Workflow
 
 ```bash
-python3 scripts/excalibur_blog_hero_reference_url.py
 python3 scripts/excalibur_blog_cover_text_gate.py --article-dir <dir>
 python3 scripts/excalibur_blog_quad_manifest.py --article-dir <dir> --merge
-python3 scripts/excalibur_blog_cover_motif_gate.py check --topic-id <id> --composition "..." --location "..." ...
+python3 scripts/excalibur_blog_cover_motif_gate.py check --topic-id <id> --composition "..." ...
 python3 scripts/excalibur_blog_cover_quad_prompt.py --article-dir <dir> --write-batch
-# Derouter REST ×2 → quad-mcp-result-01.json, quad-mcp-result-02.json
-# python3 scripts/excalibur_blog_derouter_gpt_image2_api.py --article-dir <dir> --batch cover/quad-mcp-batch-01.json --result cover/quad-mcp-result-01.json --fallback-kie
+python3 scripts/excalibur_blog_derouter_gpt_image2_api.py --article-dir <dir> --batch cover/quad-mcp-batch-01.json --result cover/quad-mcp-result-01.json --fallback-kie
+python3 scripts/excalibur_blog_derouter_gpt_image2_api.py --article-dir <dir> --batch cover/quad-mcp-batch-02.json --result cover/quad-mcp-result-02.json --fallback-kie
 python3 scripts/excalibur_blog_quad_apply.py --article-dir <dir> --canvas-index 1 --inject-html
 python3 scripts/excalibur_blog_quad_apply.py --article-dir <dir> --canvas-index 2 --inject-html
-python3 scripts/excalibur_blog_cover_motif_gate.py record --topic-id <id> --composition "..." ...
+python3 scripts/excalibur_blog_brand_logo_composite.py --article-dir <dir>
+python3 scripts/excalibur_blog_cover_motif_gate.py record --topic-id <id> ...
+python3 scripts/excalibur_blog_cover_qa_gate.py --article-dir <dir>
 ```
 
-## Visual locks (The Риэлтор)
+## Visual locks (Добрый дом)
 
 - Панели `#FFFFFF` high-key; ink `#141821`; gold `#dcc5a1` один accent; sun flare/glow OK
-- **Cover:** host LARGE left, smart-casual blazer, invented bright scene, Wordstat stickers, meme stickers
-- **Inline (7 шт.) — UTILITY-FIRST** (канон: `memory/cover/inline-visual-types.json`):
-  - Стиль = одобренная обложка B02: белый high-key, золото/чёрный, скотч, рваная бумага, солнце, коллаж
-  - **Без лица host / identity-real** — host только на cover
-  - **Тест пользы (FAIL):** читатель без абзаца выносит факт/порядок/число/сравнение по H2; ряд иконок + 3 слова = FAIL
-  - Типы: `comparison_table`, `process_flow`, `bar_timeline_chart`, `structure_diagram`, `labeled_checklist`, `fact_card`
-  - Labels = факты из статьи (цифры, порядок, инструменты), не слоганы настроения
-  - Optional ONE tiny cat-sticker — не герой кадра
-- Запреты inline: icon row+caption; дубли подписей; риэлтор за столом; пустой UI; копипаст cover; Salt Bae/Drake/celebrity; «не эскроу» как шаг процесса
-- Запреты общие: dark cinematic, daypart formula, inventory default props, plastic face, AI hero-ref face, empty doc-only office
+- **Cover:** WOW poster collage; bold Cyrillic hook; Wordstat stickers; meme cat bottom-left; TOP-RIGHT empty logo pad; phone post-composite (not in gen)
+- **Inline (7 шт.) — UTILITY-FIRST** (`memory/cover/inline-visual-types-dobry-dom.json`):
+  - Стиль = B02-approved bright collage
+  - Logo paste on **2–3** panels only (default inline_1, inline_3, inline_7), same TOP-RIGHT pad
+  - **Без лица host / Shakin**
+  - Meme sticker ≤15% frame, never top-right pad
+- Запреты: WordPress UI, overlapping elements, logo on all panels, 2+ logos per frame, timid system font, empty stock, tymenrieltor branding
 
 ## Blockers
 
-- нет reference / canvas 1 без `input_urls`
+- `COVER QA BLOCKER` — any WOW rule check false in `cover/cover_qa.json`
 - `COVER MOTIF BLOCKER` — collision в 14-дневном логе
 - `DEROUTER BLOCKER` / `KIE API BLOCKER` — нет URL после 2K gen
-- 8 отдельных image jobs вместо 2 canvas — запрещено
 - отсутствует любой из `inline-01…07.png` или inject `data-slot`
-- cover клонирует эталонный кадр или daypart formula
+- logo composite stamp FAIL or inline logo count outside 2–3
