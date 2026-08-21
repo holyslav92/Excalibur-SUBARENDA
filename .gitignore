@@ -15,3 +15,5 @@ tmp/
 
 # test runtime fixtures
 memory/blog/articles/_cta_gate_fixture/
+memory/live-catalog.json
+memory/live-xlink-fix-report.json
