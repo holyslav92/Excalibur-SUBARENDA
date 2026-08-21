@@ -20,7 +20,7 @@ Primary Cloud path for Excalibur BLOG cover/inline quad canvas generation.
 - **Do not** use `https://api.derouter.ai` for images — Cloudflare ~100s → **HTTP 524** on long gen
 - Fallback alias: `https://api-direct.apikey.cloud/openai/v1`
 
-Text (factory brain): `scripts/excalibur_blog_derouter_opus_chat.py` — powerful `claude-opus-5`, utility `gpt-5.6-terra`. См. `shared/derouter-opus-brain-contract.md`.
+Text (factory brain): `scripts/excalibur_blog_derouter_opus_chat.py` — Opus 5 = Writer only; everything else Terra. См. `shared/derouter-opus-brain-contract.md`.
 
 ## Text → image
 

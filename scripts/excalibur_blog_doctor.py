@@ -501,14 +501,22 @@ def main() -> int:
     powerful_roles = set((brain.get("powerful") or {}).get("roles") or [])
     utility_roles = set((brain.get("utility") or {}).get("roles") or [])
     check(
-        {"writer", "sol", "title", "scout"}.issubset(powerful_roles),
-        "tenant writing_model.powerful.roles includes writer/sol/title/scout",
+        powerful_roles == {"writer"},
+        "tenant writing_model.powerful.roles is writer-only (Opus 5 = Writer only; everything else Terra)",
         errors,
         warnings,
     )
     check(
-        {"research", "description", "cover-text", "schema", "cover-scene"}.issubset(utility_roles),
-        "tenant writing_model.utility.roles includes research/description/cover-text/schema/cover-scene",
+        not powerful_roles.intersection({"scout", "title", "sol"}),
+        "tenant writing_model.powerful.roles must not include scout/title/sol (Terra roles)",
+        errors,
+        warnings,
+    )
+    check(
+        {"scout", "title", "sol", "research", "description", "cover-text", "schema", "cover-scene"}.issubset(
+            utility_roles
+        ),
+        "tenant writing_model.utility.roles includes all non-writer text roles",
         errors,
         warnings,
     )

@@ -5,9 +5,9 @@ description: Pick P0 topic from Klyshin hooks × MCP-KV Wordstat — evaluate an
 
 # Scout — Klyshin hooks × Wordstat (evaluate + rework)
 
-## Thin conductor + Derouter powerful (HARD)
+## Thin conductor + Derouter utility (HARD)
 
-Handoff-проза (topic, rework log, title draft) — **только** через Derouter powerful tier (claude-opus-5).
+Handoff-проза (topic, rework log, title draft) — **только** через Derouter utility tier (gpt-5.6-terra).
 Wordstat частоты — live MCP-KV (не Derouter). Cursor не пишет handoff своей моделью.
 
 ```bash
