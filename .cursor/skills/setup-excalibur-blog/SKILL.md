@@ -72,7 +72,7 @@ Phase `voice` → `done` при PASS Voice.
 
 Спроси:
 
-1. Нужен человек-герой на обложке? (`host_reference` vs `illustrative`)
+1. Режим обложки? (`logo_lockup` для Добрый дом | `host_reference` | `illustrative`)
 2. Пришлите reference cover / mood / inline
 3. Цвета, язык надписей, запреты
 

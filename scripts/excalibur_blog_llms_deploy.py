@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Deploy memory/blog/llms.txt (+ llms-full.txt) to WordPress site root via SFTP."""
+"""Deploy memory/blog/llms.txt (+ llms-full.txt) to WordPress site root via SFTP or FTP."""
 from __future__ import annotations
 
 import argparse
@@ -8,21 +8,12 @@ import sys
 from pathlib import Path
 from typing import Any
 
+from excalibur_blog_remote_transport import resolve_publish_transport, upload_text_file
 from excalibur_blog_site_base import SITE_BASE_PLACEHOLDER, expand_site_base
-from excalibur_blog_wp_publish import (
-    load_env,
-    project_root,
-    sftp_remote_path,
-    sftp_root_candidates,
-    validate_publish_env,
-    _ssh_creds,
-    is_missing_remote_path_error,
-)
+from excalibur_blog_wp_publish import load_env, project_root, validate_publish_env
 
 
 def deploy_llms_files(root: Path, env: dict[str, str], public_base: str) -> dict[str, Any]:
-    import paramiko
-
     llms_dir = root / "memory" / "blog"
     files = [
         ("llms.txt", llms_dir / "llms.txt"),
@@ -36,50 +27,26 @@ def deploy_llms_files(root: Path, env: dict[str, str], public_base: str) -> dict
     if env_missing:
         return {"status": "FAIL", "errors": [f"missing env: {', '.join(env_missing)}"]}
 
-    host, port, user, password = _ssh_creds(env)
-    transport = paramiko.Transport((host, port))
-    transport.connect(username=user, password=password)
-    sftp = paramiko.SFTPClient.from_transport(transport)
     uploaded: list[str] = []
     errors: list[str] = []
-    try:
-        candidates = sftp_root_candidates(env)
-        for name, path in files:
-            raw = path.read_text(encoding="utf-8")
-            body = expand_site_base(raw, public_base)
-            if SITE_BASE_PLACEHOLDER in body:
-                errors.append(f"{name} still contains {{{{SITE_BASE}}}} after expand")
-                continue
-            data = body.encode("utf-8")
-            placed = False
-            for index, root_candidate in enumerate(candidates):
-                remote_path = sftp_remote_path(env, name, root_candidate)
-                try:
-                    with sftp.open(remote_path, "w") as handle:
-                        handle.write(data.decode("utf-8"))
-                    uploaded.append(remote_path)
-                    placed = True
-                    if index > 0:
-                        print(
-                            "WARN SFTP root fallback used for llms deploy; "
-                            "update SSH_ROOT/FTP_ROOT to '.' if this is intended.",
-                            file=sys.stderr,
-                        )
-                    break
-                except OSError as exc:
-                    if index < len(candidates) - 1 and is_missing_remote_path_error(exc):
-                        continue
-                    errors.append(f"{name}: {exc}")
-                    break
-            if not placed:
-                errors.append(f"{name}: upload failed")
-    finally:
-        sftp.close()
-        transport.close()
+    transport = resolve_publish_transport(env)
+    for name, path in files:
+        raw = path.read_text(encoding="utf-8")
+        body = expand_site_base(raw, public_base)
+        if SITE_BASE_PLACEHOLDER in body:
+            errors.append(f"{name} still contains {{{{SITE_BASE}}}} after expand")
+            continue
+        data = body.encode("utf-8")
+        try:
+            remote_target = upload_text_file(env, name, data)
+            uploaded.append(remote_target)
+        except Exception as exc:  # noqa: BLE001
+            errors.append(f"{name}: {exc}")
 
     status = "PASS" if uploaded and not errors else "FAIL"
     return {
         "status": status,
+        "transport": transport,
         "uploaded": uploaded,
         "errors": errors,
         "public_base_configured": bool(public_base),
@@ -87,7 +54,7 @@ def deploy_llms_files(root: Path, env: dict[str, str], public_base: str) -> dict
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="SFTP-deploy llms.txt to WP root")
+    ap = argparse.ArgumentParser(description="Deploy llms.txt to WP root (SFTP or FTP)")
     ap.add_argument("--public-base", type=str, default=None)
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
@@ -103,6 +70,7 @@ def main() -> int:
             "llms_txt": llms.is_file(),
             "llms_full_txt": full.is_file(),
             "public_base_configured": bool(public),
+            "transport": resolve_publish_transport(env),
             "placeholder_remaining": (
                 (SITE_BASE_PLACEHOLDER in llms.read_text(encoding="utf-8")) if llms.is_file() and public else None
             ),
