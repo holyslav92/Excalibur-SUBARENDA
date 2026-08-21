@@ -1,0 +1,27 @@
+{
+  "slug": "zabroniroval-posutochno-vyyasnilos-kvartira-v-subarende",
+  "topic_id": "B03",
+  "permalink": "{{SITE_BASE}}/blog/zabroniroval-posutochno-vyyasnilos-kvartira-v-subarende/",
+  "publish_method": "ftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B03-zabroniroval-posutochno-vyyasnilos-kvartira-v-subarende/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 740147,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=3797 slug=zabroniroval-posutochno-vyyasnilos-kvartira-v-subarende\nOK categories=101,106\nOK featured_image=3821\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=3822 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/08/zabroniroval-posutochno-vyyasnilos-kvartira-v-subarende-inline-01-2.png\nOK inline_alt=3822\nOK inline_caption=3822\nOK inline_description=3822\nOK inline_image_upload=3823 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/08/zabroniroval-posutochno-vyyasnilos-kvartira-v-subarende-inline-02-2.png\nOK inline_alt=3823\nOK inline_caption=3823\nOK inline_description=3823\nOK inline_image_upload=3824 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/08/zabroniroval-posutochno-vyyasnilos-kvartira-v-subarende-inline-03-2.png\nOK inline_alt=3824\nOK inline_caption=3824\nOK inline_description=3824\nOK inline_image_upload=3825 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/08/zabroniroval-posutochno-vyyasnilos-kvartira-v-subarende-inline-04-2.png\nOK inline_alt=3825\nOK inline_caption=3825\nOK inline_description=3825\nOK inline_image_upload=3826 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/08/zabroniroval-posutochno-vyyasnilos-kvartira-v-subarende-inline-05-2.png\nOK inline_alt=3826\nOK inline_caption=3826\nOK inline_description=3826\nOK inline_image_upload=3827 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/08/zabroniroval-posutochno-vyyasnilos-kvartira-v-subarende-inline-06-2.png\nOK inline_alt=3827\nOK inline_caption=3827\nOK inline_description=3827\nOK inline_image_upload=3828 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/08/zabroniroval-posutochno-vyyasnilos-kvartira-v-subarende-inline-07-2.png\nOK inline_alt=3828\nOK inline_caption=3828\nOK inline_description=3828\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/zabroniroval-posutochno-vyyasnilos-kvartira-v-subarende/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/zabroniroval-posutochno-vyyasnilos-kvartira-v-subarende/",
+    "errors": []
+  }
+}

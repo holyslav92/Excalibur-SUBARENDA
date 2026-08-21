@@ -1,0 +1,23 @@
+{
+  "topic_id": "B03",
+  "slug": "zabroniroval-posutochno-vyyasnilos-kvartira-v-subarende",
+  "title": "Забронировал посуточно — квартиру сдаёт субарендатор",
+  "h1": "Забронировал посуточно — квартиру сдаёт субарендатор",
+  "description": "«Всё согласовано с хозяином», — уверяет тот, кто сдаёт чужую квартиру. До перевода проверьте цепочку договоров и право на субаренду: иначе бронь обернётся спором и потерянными деньгами.",
+  "wp_category_slugs": [
+    "posutochnaya-arenda",
+    "sovety-gostyam"
+  ],
+  "theme_blocks": {
+    "faq": "skip",
+    "quiz": "skip",
+    "side_stickers": "skip"
+  },
+  "status": "published",
+  "wp_post_id": 3797,
+  "author_id": "dobry-dom",
+  "article_mode": "B",
+  "date": "2026-08-21",
+  "pipeline_canon": "human-first-v2",
+  "editorial_swarm": false
+}

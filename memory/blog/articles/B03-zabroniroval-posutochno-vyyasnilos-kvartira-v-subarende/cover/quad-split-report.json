@@ -1,0 +1,306 @@
+{
+  "agent": "excalibur-blog-cover-quad-split",
+  "status": "BLOCK",
+  "splits": [
+    {
+      "canvas_index": 1,
+      "manifest": "cover/quad-manifest.json",
+      "split": {
+        "source_canvas": "memory/blog/articles/B03-zabroniroval-posutochno-vyyasnilos-kvartira-v-subarende/cover/canvas-quad-01.png",
+        "source_size_px": [
+          2048,
+          1152
+        ],
+        "panel_size_px": [
+          1024,
+          576
+        ],
+        "split_meta": {
+          "split_mode": "mechanical_center",
+          "h_gutter_px": null,
+          "v_gutter_px": null,
+          "requested_mode": "auto",
+          "fallback_reason": "gutter_too_far_from_center",
+          "rejected_gutter": {
+            "h_gutter_px": {
+              "start": 569,
+              "end": 651
+            },
+            "v_gutter_px": {
+              "start": 1017,
+              "end": 1083
+            },
+            "gutter_quality": {
+              "h_center_offset_px": 34.0,
+              "v_center_offset_px": 26.0,
+              "max_aspect_crop_loss": 0.1239,
+              "per_panel_crop_loss": {
+                "top_left": 0.0,
+                "top_right": 0.0457,
+                "bottom_left": 0.1239,
+                "bottom_right": 0.0767
+              },
+              "reject_reason": "gutter_too_far_from_center"
+            }
+          }
+        },
+        "output_size_px": [
+          1200,
+          675
+        ],
+        "outputs": {
+          "cover": {
+            "file": "cover/cover.png",
+            "quadrant": "top_left",
+            "box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1024,
+              "bottom": 576
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1024,
+              "bottom": 576
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Постер: гость у подъезда узнаёт про субаренду — август, Тюмень.",
+            "h2_anchor": null
+          },
+          "inline_1": {
+            "file": "cover/inline-01.png",
+            "quadrant": "top_right",
+            "box_px": {
+              "left": 1024,
+              "top": 0,
+              "right": 2048,
+              "bottom": 576
+            },
+            "raw_box_px": {
+              "left": 1024,
+              "top": 0,
+              "right": 2048,
+              "bottom": 576
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Залог за посуточную квартиру — гарантия сохранности, а не доплата за проживание",
+            "h2_anchor": "Коротко"
+          },
+          "inline_2": {
+            "file": "cover/inline-02.png",
+            "quadrant": "bottom_left",
+            "box_px": {
+              "left": 0,
+              "top": 576,
+              "right": 1024,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 576,
+              "right": 1024,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Обход квартиры при заселении: видео плиты и столешницы с отправкой хозяину в чат",
+            "h2_anchor": "Что такое субаренда посуточно и почему это не всегда плохо"
+          },
+          "inline_3": {
+            "file": "cover/inline-03.png",
+            "quadrant": "bottom_right",
+            "box_px": {
+              "left": 1024,
+              "top": 576,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 1024,
+              "top": 576,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Расчёт ущерба за скол на плите: ремонт вместо замены и учёт износа техники",
+            "h2_anchor": "Где реально теряют деньги"
+          }
+        }
+      }
+    },
+    {
+      "canvas_index": 2,
+      "manifest": "cover/quad-manifest.json",
+      "split": {
+        "source_canvas": "memory/blog/articles/B03-zabroniroval-posutochno-vyyasnilos-kvartira-v-subarende/cover/canvas-quad-02.png",
+        "source_size_px": [
+          2048,
+          1152
+        ],
+        "panel_size_px": [
+          1024,
+          576
+        ],
+        "split_meta": {
+          "split_mode": "mechanical_center",
+          "h_gutter_px": null,
+          "v_gutter_px": null,
+          "requested_mode": "auto",
+          "fallback_reason": "aspect_crop_loss_too_high",
+          "rejected_gutter": {
+            "h_gutter_px": {
+              "start": 552,
+              "end": 622
+            },
+            "v_gutter_px": {
+              "start": 976,
+              "end": 1034
+            },
+            "gutter_quality": {
+              "h_center_offset_px": 11.0,
+              "v_center_offset_px": 19.0,
+              "max_aspect_crop_loss": 0.071,
+              "per_panel_crop_loss": {
+                "top_left": 0.0,
+                "top_right": 0.0325,
+                "bottom_left": 0.0348,
+                "bottom_right": 0.071
+              },
+              "reject_reason": "aspect_crop_loss_too_high"
+            }
+          }
+        },
+        "output_size_px": [
+          1200,
+          675
+        ],
+        "outputs": {
+          "inline_4": {
+            "file": "cover/inline-04.png",
+            "quadrant": "top_left",
+            "box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1024,
+              "bottom": 576
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1024,
+              "bottom": 576
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Порядок действий, если не вернули залог: претензия, площадка бронирования, банк, суд",
+            "h2_anchor": "7 проверок до оплаты"
+          },
+          "inline_5": {
+            "file": "cover/inline-05.png",
+            "quadrant": "top_right",
+            "box_px": {
+              "left": 1024,
+              "top": 0,
+              "right": 2048,
+              "bottom": 576
+            },
+            "raw_box_px": {
+              "left": 1024,
+              "top": 0,
+              "right": 2048,
+              "bottom": 576
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Признаки честного залога при посуточной аренде и тревожные сигналы в переписке",
+            "h2_anchor": "У нас так"
+          },
+          "inline_6": {
+            "file": "cover/inline-06.png",
+            "quadrant": "bottom_left",
+            "box_px": {
+              "left": 0,
+              "top": 576,
+              "right": 1024,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 576,
+              "right": 1024,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Посуточные квартиры в Тюмени: прозрачные условия залога и возврат без придирок",
+            "h2_anchor": "Красные флаги: когда лучше не платить вообще"
+          },
+          "inline_7": {
+            "file": "cover/inline-07.png",
+            "quadrant": "bottom_right",
+            "box_px": {
+              "left": 1024,
+              "top": 576,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 1024,
+              "top": 576,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Частые вопросы гостей про возврат залога после посуточной аренды квартиры",
+            "h2_anchor": "Кому писать, если бронь начала рассыпаться"
+          }
+        }
+      }
+    }
+  ],
+  "manifest": "cover/quad-manifest.json",
+  "html_inject": [
+    "skip inline_1: already correct under H2 — Коротко",
+    "skip inline_2: already correct under H2 — Что такое субаренда посуточно и почему это не всегда плохо",
+    "skip inline_3: already correct under H2 — Где реально теряют деньги",
+    "moved inline_4 → H2 — 7 проверок до оплаты (was under [7 проверок до оплаты]; removed=1)",
+    "moved inline_5 → H2 — У нас так (was under [у нас так]; removed=1)",
+    "moved inline_6 → H2 — Красные флаги: когда лучше не платить вообще (was under [кому писать, если бронь начала рассыпаться]; removed=1)",
+    "injected inline_7 after H2 — Кому писать, если бронь начала рассыпаться"
+  ],
+  "errors": [
+    "removed inline_2 from wrong H2 [что такое субаренда посуточно и почему это не всегда плохо] but target H2 not found — Субаренда",
+    "removed inline_3 from wrong H2 [где реально теряют деньги] but target H2 not found — Где теряют",
+    "inline_2 figure count after inject=0 (need exactly 1)",
+    "inline_3 figure count after inject=0 (need exactly 1)"
+  ]
+}
