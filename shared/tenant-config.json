@@ -147,8 +147,30 @@
   "dzen_publish": {
     "status": "TODO",
     "channel_url": "",
-    "note": "Нет аккаунта Дзена «Добрый дом» в config. Пишем dzen-excerpt.json на статью; постер владельца позже. НЕ постить в Дзен The Realtor / holyslav.",
-    "artifact": "dzen-excerpt.json"
+    "note": "Дзен — поверхность дистрибуции; статья на сайте должна стоять сама и конвертировать в TG/MAX. Пишем dzen-excerpt.json; постер позже. НЕ постить в Дзен The Realtor / holyslav.",
+    "artifact": "dzen-excerpt.json",
+    "writing_patterns_ref": "shared/article-style.md#dzen-feed--5-паттернов-scout--title--writer--sol",
+    "patterns": [
+      "numbered_list_promise_kept",
+      "case_with_sums_and_dates",
+      "fear_to_instruction_first_paragraph",
+      "contrast_with_answer_in_lead",
+      "local_seasonal_tyumen_hook"
+    ],
+    "headline_shapes_example": [
+      "5 вопросов хозяину до перевода предоплаты",
+      "Залог 5 000 ₽: когда удержат, когда вернут",
+      "Посуточно или отель в Тюмени на 2 ночи — где дешевле"
+    ],
+    "cover_ban": [
+      "wordpress_ui",
+      "caps_walls",
+      "red_arrows",
+      "top10_secrets",
+      "1000_percent_clickbait",
+      "off_season_winter",
+      "ai_drawn_logo"
+    ]
   },
   "social_funnel": {
     "seo_base": "site /blog article",
