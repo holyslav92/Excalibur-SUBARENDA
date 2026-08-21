@@ -3,7 +3,7 @@
   "source_channel": "https://t.me/klyshin_A",
   "source_label": "Алексей Клышин — юрист по недвижимости (angle only, не копировать сделки)",
   "tenant": "Добрый дом — посуточная аренда / субаренда Тюмень",
-  "updated_at": "2026-08-20",
+  "updated_at": "2026-08-21",
   "algorithm": "klyshin_hook → wordstat_probe → rework_for_demand → final_P0_or_skip_after_rework",
   "wordstat_gate": {
     "provider": "mcp-kv",
@@ -35,7 +35,9 @@
       "wordstat_probes": ["уборка квартиры перед выездом", "залог при аренде квартиры", "аренда квартиры тюмень"],
       "rework_hints": ["посуточно тюмень", "залог аренда"],
       "tyumen_localize": true,
-      "status": "seed"
+      "status": "skip",
+      "skip_reason": "anti-dup B02 + WP uборka-syomnoj-kvartiry",
+      "wordstat_probe_2026_08_21": { "phrase": "залог посуточно", "regions_225": 3674 }
     },
     {
       "id": "hidden_fees",
@@ -44,7 +46,8 @@
       "klyshin_signal": "«На словах всё включено» → пункты в договоре",
       "wordstat_probes": ["скрытые доплаты аренда квартиры", "аренда квартиры посуточно тюмень", "что входит в аренду квартиры"],
       "tyumen_localize": true,
-      "status": "seed"
+      "status": "skip",
+      "skip_reason": "anti-dup WP skrytye-doplaty"
     },
     {
       "id": "neighbors_relations",
@@ -52,7 +55,8 @@
       "angle": "7 шагов к добрым отношениям",
       "wordstat_probes": ["соседи аренда квартиры", "правила проживания аренда", "аренда квартиры тюмень"],
       "tyumen_localize": true,
-      "status": "seed"
+      "status": "skip",
+      "skip_reason": "anti-dup WP sosedy"
     },
     {
       "id": "price_from_ads",
@@ -60,7 +64,8 @@
       "angle": "5 вопросов до брони",
       "wordstat_probes": ["аренда квартиры посуточно тюмень", "цена аренды квартиры", "бронирование квартиры"],
       "tyumen_localize": true,
-      "status": "seed"
+      "status": "skip",
+      "skip_reason": "anti-dup WP czena-ot"
     },
     {
       "id": "utilities_counters",
@@ -68,7 +73,8 @@
       "angle": "как фиксировать при посуточной/субаренде",
       "wordstat_probes": ["показания счетчиков аренда", "жкх аренда квартиры", "коммунальные платежи аренда"],
       "tyumen_localize": true,
-      "status": "seed"
+      "status": "skip",
+      "skip_reason": "anti-dup WP pokazaniya-schyotchikov"
     },
     {
       "id": "contract_bans",
@@ -76,7 +82,8 @@
       "angle": "7 запретов до подписания",
       "wordstat_probes": ["договор аренды квартиры", "правила проживания аренда", "аренда квартиры условия"],
       "tyumen_localize": true,
-      "status": "seed"
+      "status": "skip",
+      "skip_reason": "anti-dup WP syomnaya-kvartira-chto-nelzya"
     },
     {
       "id": "sublease_chain",
@@ -84,7 +91,10 @@
       "angle": "проверка прав субарендатора",
       "wordstat_probes": ["субаренда квартиры", "субаренда квартиры тюмень", "аренда квартиры без посредников"],
       "tyumen_localize": true,
-      "status": "seed"
+      "status": "picked",
+      "topic_id": "B03",
+      "wordstat_rework_2026_08_21": "A субаренда квартиры 2954 → субаренда квартир посуточно 304 → B квартиры посуточно тюмень 14841 → final P0 субаренда квартиры 2954",
+      "wordstat_p0": { "phrase": "субаренда квартиры", "regions_225": 2954, "regions_55_11176": 65 }
     },
     {
       "id": "check_in_contactless",
@@ -92,7 +102,8 @@
       "angle": "инструкция, код, поддержка в мессенджере",
       "wordstat_probes": ["заселение в квартиру", "аренда квартиры посуточно", "квартиры посуточно тюмень"],
       "tyumen_localize": true,
-      "status": "seed"
+      "status": "skip",
+      "skip_reason": "anti-dup B01"
     },
     {
       "id": "move_one_day",
@@ -100,7 +111,8 @@
       "angle": "12 шагов для гостя посуточно",
       "wordstat_probes": ["переезд чеклист", "аренда квартиры на сутки", "квартира посуточно"],
       "tyumen_localize": true,
-      "status": "seed"
+      "status": "skip",
+      "skip_reason": "weak/generic probe (переезд чеклист ~5; аренда на сутки 2433)"
     },
     {
       "id": "internet_tv_rental",
@@ -108,7 +120,8 @@
       "angle": "что проверить в апартаментах",
       "wordstat_probes": ["интернет в арендованной квартире", "аренда квартиры с wifi", "квартира посуточно тюмень"],
       "tyumen_localize": true,
-      "status": "seed"
+      "status": "skip",
+      "skip_reason": "anti-dup WP internet-i-tv"
     }
   ]
 }
