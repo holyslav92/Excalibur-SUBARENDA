@@ -12,6 +12,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 from excalibur_blog_identity_real import pick_identity_reference
+from excalibur_blog_image_provider import resolve_image_flow
 from excalibur_blog_quad_slots import (
     CANVAS_1_SLOTS,
     active_inline_keys,
@@ -508,9 +509,10 @@ def build_prompt(
             emotion_clause = f"Expr: {cover_emotion}." if cover_emotion else ""
             panel_lines.append(
                 f"TL COVER WOW POSTER (magazine, not stock): «{cover_hook_text}» bold DISPLAY Cyrillic readable, {highlight_rule}; "
-                f"sticky «{cover_sticky or 'Залог вернут?'}»; scene props; Aug Tyumen warm light, NO winter/snow. "
+                f"sticky «{cover_sticky or 'Залог вернут?'}»; scene props; natural daylight clean white balance, "
+                f"NO yellow/amber cast, NO muddy skin, NO winter/snow. "
                 f"NO logo/phone in gen. "
-                f"{emotion_clause} sun flare; gold tape; 1-3 Wordstat; "
+                f"{emotion_clause} soft daylight crisp sharp; gold tape; 1-3 Wordstat; "
                 f"{compact(cover_scene, COVER_SCENE_HINT_COMPACT)}; cat bottom-left ≤12%; "
                 f"TOP-RIGHT empty pad; no logo in gen; {BOARD_STATIONERY}; #FFF"
             )
@@ -523,7 +525,7 @@ def build_prompt(
             panel_lines.append(
                 f"TL COVER TXT «{cover_hook_text}» bold Cyrillic black, {highlight_rule}.{sticky_lock} "
                 f"Phone EXACT «{cover_phone_cta}» readable CTA sticker. "
-                f"Host i2i left ({BODY_LOCK}); {emotion_clause} sun flare; "
+                f"Host i2i left ({BODY_LOCK}); {emotion_clause} natural daylight, no yellow cast; "
                 f"{compact(cover_scene, COVER_SCENE_HINT_COMPACT)}; "
                 f"1-2 meme stickers; {BOARD_STATIONERY}; Wordstat/Tyumen; #FFF; perfect Cyrillic"
             )
@@ -710,6 +712,7 @@ def main() -> int:
         if batch_ref_url and not brand_logo_paste:
             api_input["input_urls"] = [batch_ref_url]
 
+        image_flow = resolve_image_flow(root)
         batch = {
             "pipeline": manifest.get("pipeline") or "quad_canvas_2x_image_api_longform",
             "canvas_index": spec["index"],
@@ -720,14 +723,10 @@ def main() -> int:
             "result_path": spec["result_file"],
             "slots": list(canvas_slots),
             "preferred_image_flow": {
-                "provider": "derouter-rest",
-                "script": "scripts/excalibur_blog_derouter_gpt_image2_api.py",
+                "provider": image_flow["provider"],
+                "script": image_flow["script"],
                 "resolution": MCP_RESOLUTION,
-                "note": (
-                    "PRIMARY: Derouter REST image API (api-direct, 2K 16:9). "
-                    "Fallback: excalibur_blog_kie_gpt_image2_api.py when DEROUTER auth/5xx. "
-                    "FORBIDDEN: flux2-pro-*, Seedream, nano_banana*, z-image, mcp-derouter/start-mcp.sh."
-                ),
+                "note": image_flow["note"],
                 "apply_script": (
                     "python3 scripts/excalibur_blog_quad_apply.py "
                     f"--article-dir <article_dir> --canvas-index {spec['index']} --inject-html"
@@ -736,7 +735,7 @@ def main() -> int:
             "jobs": [
                 {
                     "slot": "canvas_quad",
-                    "tool": "derouter-rest",
+                    "tool": image_flow["provider"],
                     "mcp_args": api_input,
                 }
             ],

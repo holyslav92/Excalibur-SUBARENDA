@@ -15,6 +15,7 @@
   "publisher_display": "Добрый дом",
   "host_face_todo": "TODO: заменить memory/cover/assets/identity-real/ на фото ведущего/бренда; blog-hero.json → status NEED_REPLACE",
   "publish_format": "longform",
+  "IMAGE_PROVIDER": "grsai",
   "inline_image_count": 7,
   "publish_schedule": {
     "timezone": "Asia/Yekaterinburg",
@@ -30,8 +31,8 @@
     "note": "Longform Cursor Automation: 4 weekday slots YEKT (owner 9–17). NOT 20:00. Publish only when FTP secrets + EXCALIBUR_BLOG_ALLOW_PUBLISH=yes on process (never git)."
   },
   "image_generation": {
-    "provider": "derouter-rest",
-    "script": "scripts/excalibur_blog_derouter_gpt_image2_api.py",
+    "provider": "grsai",
+    "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
     "resolution": "2K",
     "canvases_per_article": 2,
     "panels_per_canvas": 4,
@@ -276,22 +277,24 @@
     }
   },
   "image_api": {
-    "provider": "derouter-rest",
-    "script": "scripts/excalibur_blog_derouter_gpt_image2_api.py",
-    "probe_script": "scripts/excalibur_blog_derouter_image_base_probe.py",
-    "contract": "shared/derouter-gpt-image-api-contract.md",
-    "model_env": "DEROUTER_IMAGE_MODEL",
+    "provider": "grsai",
+    "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
+    "probe_script": "scripts/excalibur_blog_grsai_base_probe.py",
+    "contract": "shared/grsai-gpt-image-api-contract.md",
+    "model_env": "GRSAI_IMAGE_MODEL",
+    "api_key_env": "GRSAI_API_KEY",
+    "provider_env": "IMAGE_PROVIDER",
     "base_override_env": [
-      "DEROUTER_IMAGE_API_BASE",
-      "DEROUTER_API_BASE"
+      "GRSAI_API_BASE"
     ],
     "base_candidates": [
-      "https://api.derouter.ai/openai/v1",
-      "https://api.apikey.cloud/openai/v1",
-      "https://api-direct.derouter.ai/openai/v1",
-      "https://api-direct.apikey.cloud/openai/v1"
+      "https://grsaiapi.com",
+      "https://grsai.dakka.com.cn"
     ],
-    "default_size": "2048x1152"
+    "default_aspect_ratio": "16:9",
+    "default_quality": "high",
+    "default_size": "2048x1152",
+    "note": "16:9 canvas upscaled to 2048x1152 after download"
   },
   "interlink_old_articles": true,
   "style_files": {

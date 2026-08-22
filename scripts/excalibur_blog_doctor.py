@@ -475,13 +475,53 @@ def main() -> int:
         warn=not derouter_key,
     )
     derouter_image_model = os.environ.get("DEROUTER_IMAGE_MODEL", "").strip()
-    check(
-        bool(derouter_image_model),
-        "DEROUTER_IMAGE_MODEL set (Cover image model id)",
-        errors,
-        warnings,
-        warn=True,
-    )
+    image_api_cfg = tenant.get("image_api") or {}
+    image_gen_cfg = tenant.get("image_generation") or {}
+    image_provider = (
+        os.environ.get(str(image_api_cfg.get("provider_env") or "IMAGE_PROVIDER"), "").strip()
+        or str(image_api_cfg.get("provider") or image_gen_cfg.get("provider") or "").strip()
+        or "derouter-rest"
+    ).casefold()
+    if image_provider == "grsai":
+        grsai_key = os.environ.get("GRSAI_API_KEY", "").strip()
+        check(
+            bool(grsai_key),
+            "GRSAI_API_KEY set (Cover image; missing → GRSAI BLOCKER)",
+            errors,
+            warnings,
+            warn=True,
+        )
+        grsai_model = (
+            os.environ.get(str(image_api_cfg.get("model_env") or "GRSAI_IMAGE_MODEL"), "").strip()
+            or os.environ.get("GRSAI_IMAGE_MODEL", "").strip()
+        )
+        check(
+            bool(grsai_model) and not grsai_model.casefold().endswith("-vip"),
+            f"Grsai image model set and not vip ({grsai_model})",
+            errors,
+            warnings,
+            warn=not grsai_key,
+        )
+        check(
+            image_api_cfg.get("script") == "scripts/excalibur_blog_grsai_gpt_image2_api.py",
+            "tenant image_api.script → excalibur_blog_grsai_gpt_image2_api.py",
+            errors,
+            warnings,
+        )
+        check(
+            image_api_cfg.get("contract") == "shared/grsai-gpt-image-api-contract.md",
+            "tenant image_api.contract → grsai-gpt-image-api-contract.md",
+            errors,
+            warnings,
+        )
+    else:
+        check(
+            bool(derouter_image_model),
+            "DEROUTER_IMAGE_MODEL set (Cover image model id)",
+            errors,
+            warnings,
+            warn=True,
+        )
     brain = tenant.get("writing_model") or {}
     check(
         brain.get("script") == "scripts/excalibur_blog_derouter_opus_chat.py",
