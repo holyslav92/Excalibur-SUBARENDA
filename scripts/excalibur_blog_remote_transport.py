@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""FTP remote transport for Excalibur BLOG publish (Timeweb PASV NAT fix)."""
+"""FTP/SFTP remote transport for Excalibur BLOG publish (Timeweb PASV NAT fix)."""
 
 from __future__ import annotations
 
 import io
 import os
 import socket
+import sys
 import time
 from ftplib import FTP, error_perm
 from typing import Any
@@ -49,9 +50,89 @@ class TimewebPasvFTP(FTP):
         return host, port
 
 
+def normalize_remote_root_value(value: str) -> str:
+    """Empty or ``/`` → ``.`` (login cwd, usually public_html with wp-load.php)."""
+    raw = (value or "").strip()
+    if not raw or raw in {"/", "./"}:
+        return "."
+    return raw.strip("/")
+
+
+def configured_remote_root(env: dict[str, str]) -> str:
+    return normalize_remote_root_value(
+        env.get("SSH_ROOT") or env.get("FTP_ROOT") or env.get("FTP_PATH") or ""
+    )
+
+
+def remote_root_label(env: dict[str, str]) -> str:
+    root = configured_remote_root(env)
+    if root in {".", "./"}:
+        return "dot"
+    return "configured-non-dot"
+
+
+def remote_root_candidates(env: dict[str, str]) -> list[str]:
+    root = configured_remote_root(env)
+    if root and root not in {".", "./"}:
+        return [root, "."]
+    return ["."]
+
+
+def remote_path(env: dict[str, str], remote: str, root_override: str | None = None) -> str:
+    root = (
+        configured_remote_root(env)
+        if root_override is None
+        else normalize_remote_root_value(root_override)
+    )
+    name = remote.lstrip("/")
+    if not root or root in {".", "./"}:
+        return name
+    return root.rstrip("/") + "/" + name
+
+
+def resolve_publish_transport(env: dict[str, str]) -> str:
+    """Return ``ftp`` or ``sftp`` from env (FTP_PORT=21 → ftp; FTP_TRANSPORT=ftp overrides)."""
+    explicit = (env.get("FTP_TRANSPORT") or env.get("PUBLISH_TRANSPORT") or "").strip().lower()
+    if explicit in {"ftp", "ftps"}:
+        return "ftp"
+    if explicit in {"sftp", "ssh"}:
+        return "sftp"
+    port_raw = (env.get("FTP_PORT") or env.get("SSH_PORT") or "").strip()
+    if port_raw == "21":
+        return "ftp"
+    if port_raw == "22":
+        return "sftp"
+    return "sftp"
+
+
 def transport_mode(env: dict[str, str]) -> str:
-    mode = (env.get("FTP_TRANSPORT") or "sftp").strip().lower()
-    return "ftp" if mode == "ftp" else "sftp"
+    return resolve_publish_transport(env)
+
+
+def is_missing_remote_path_error(exc: BaseException) -> bool:
+    errno_value = getattr(exc, "errno", None)
+    if errno_value == 2:
+        return True
+    text = str(exc).lower()
+    return (
+        "no such file" in text
+        or "enoent" in text
+        or "can't change directory" in text
+        or "550" in text
+    )
+
+
+def transport_note(env: dict[str, str]) -> str:
+    mode = resolve_publish_transport(env)
+    if mode == "ftp":
+        return (
+            "FTP passive upload (FTP_PORT=21 or FTP_TRANSPORT=ftp). "
+            "FTP_ROOT is relative to FTP login cwd."
+        )
+    return (
+        "SFTP/SSH upload (default). FTP_* names are aliases for the same SFTP account "
+        "unless FTP_PORT=21 or FTP_TRANSPORT=ftp."
+    )
 
 
 def ftp_creds(env: dict[str, str]) -> tuple[str, int, str, str]:
@@ -150,6 +231,85 @@ def _ftp_cwd_root(ftp: FTP, root: str, login_cwd: str) -> None:
     for part in root.split("/"):
         if part and part != ".":
             ftp.cwd(part)
+
+
+def upload_text_file(env: dict[str, str], remote: str, data: bytes) -> str:
+    """Upload a small UTF-8 text artifact to the WP site root."""
+    if resolve_publish_transport(env) == "ftp":
+        return _upload_text_ftp(env, remote, data)
+    return _upload_text_sftp(env, remote, data)
+
+
+def _upload_text_sftp(env: dict[str, str], remote: str, data: bytes) -> str:
+    import paramiko
+
+    host, port, user, password = ftp_creds(env)
+    if resolve_publish_transport(env) != "ftp":
+        port = int((env.get("SSH_PORT") or env.get("FTP_PORT") or "22").strip() or "22")
+    transport = paramiko.Transport((host, port))
+    transport.connect(username=user, password=password)
+    sftp = paramiko.SFTPClient.from_transport(transport)
+    try:
+        candidates = remote_root_candidates(env)
+        for index, root_candidate in enumerate(candidates):
+            remote_target = remote_path(env, remote, root_candidate)
+            try:
+                with sftp.open(remote_target, "w") as handle:
+                    handle.write(data.decode("utf-8"))
+                if index > 0:
+                    print(
+                        "WARN SFTP root fallback: configured remote root was not found; "
+                        "used '.' for bootstrap. Update SSH_ROOT/FTP_ROOT to '.' in Cloud Secrets "
+                        "if this is the intended SFTP login cwd.",
+                        file=sys.stderr,
+                    )
+                print(f"SFTP upload OK: {remote_target} ({len(data)} bytes)")
+                return remote_target
+            except OSError as exc:
+                if index < len(candidates) - 1 and is_missing_remote_path_error(exc):
+                    print(
+                        "WARN SFTP upload: configured remote root returned ENOENT; retrying bootstrap at '.'.",
+                        file=sys.stderr,
+                    )
+                    continue
+                raise
+    finally:
+        sftp.close()
+        transport.close()
+    raise RuntimeError("SFTP upload did not complete")
+
+
+def _upload_text_ftp(env: dict[str, str], remote: str, data: bytes) -> str:
+    filename = remote.split("/")[-1]
+    candidates = remote_root_candidates(env)
+    last_error: Exception | None = None
+    for index, root_candidate in enumerate(candidates):
+        env_copy = dict(env)
+        env_copy["FTP_ROOT"] = root_candidate
+        try:
+            selected_root, _probe = find_wp_root(env_copy)
+            root = selected_root or root_candidate
+            env_copy["FTP_ROOT"] = root
+            env_copy["SSH_ROOT"] = root
+            upload_bytes(env_copy, filename, data, root=root)
+            remote_target = remote_path(env_copy, remote, root)
+            if index > 0 and not selected_root:
+                print(
+                    "WARN FTP root fallback: configured FTP_ROOT was not found; "
+                    "used login cwd ('.'). Update FTP_ROOT if needed.",
+                    file=sys.stderr,
+                )
+            return remote_target
+        except (error_perm, OSError, TimeoutError, socket.timeout) as exc:
+            last_error = exc
+            if index < len(candidates) - 1 and is_missing_remote_path_error(exc):
+                print(
+                    "WARN FTP upload: configured FTP_ROOT failed; retrying at login cwd.",
+                    file=sys.stderr,
+                )
+                continue
+            raise
+    raise RuntimeError(f"FTP upload did not complete: {last_error}")
 
 
 def _ftp_stor_with_retry(

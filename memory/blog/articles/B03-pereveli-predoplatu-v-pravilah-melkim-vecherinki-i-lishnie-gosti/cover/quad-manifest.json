@@ -1,0 +1,122 @@
+{
+  "topic_id": "B03",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "Шесть гостей — залог не вернули",
+  "cover_hook_highlight": "гостей",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "wordstat_stickers": [
+    "аренда квартиры тюмень посуточно",
+    "снять посуточно"
+  ],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "Журнальный коллаж: раскрытая памятка с крупной цифрой «6» в центре, компактная компания гостей у входа, солнечный блик; свободный белый пад 10% сверху справа.",
+    "location": "Светлая двушка в центре Тюмени, августовский вечер, открытое окно с летним городским светом.",
+    "meme": "Небольшой стикер кота внизу слева: кот в очках держит табличку «Я только на час?»",
+    "prop_set": "Телефон с открытым сообщением правил, бумажная памятка, шесть ярких браслетов гостей, дверной коврик, летние кеды.",
+    "sticker_set": [
+      "аренда квартиры тюмень посуточно",
+      "снять посуточно",
+      "Правила до оплаты"
+    ],
+    "joke": "Шесть браслетов гостей высыпаются из памятки с правилом «до 4», а кот подозрительно считает лапой."
+  },
+  "cover_emotion": "ошеломлённое недоумение",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Постер: шесть гостей у двери в августовской квартире Тюмени — правила в телефоне, залог не вернули.",
+      "scene_hint": "Август Тюмень: 6 гостей у двери, телефон с правилами, бело-золотой коллаж, TOP-RIGHT empty pad, cat ≤12% bottom-left.",
+      "meme_caption_ru": "",
+      "sticky": "Правила до оплаты"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "1. Сколько гостей можно — и кто вообще считается гостем",
+      "visual_type": "comparison_table",
+      "scene_hint": "Compare table: до 4 vs двое в правилах, строка гость на час; gold markers, TOP-RIGHT empty pad.",
+      "alt": "Сравнительная таблица допустимого числа гостей и условий для гостя на час.",
+      "labels": ["до 4 гостей", "двое в правилах", "гость на час"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "2. Вечеринки: что хозяин называет тихим отдыхом",
+      "visual_type": "process_flow",
+      "scene_hint": "Flow: шумная компания → тишина ночью → жалоба соседей; стрелки, sound icons, tiny cat sticker corner.",
+      "alt": "Схема последствий ночного шума: от шумной компании до жалобы соседей.",
+      "labels": ["тишина ночью", "шумная компания", "жалоба соседей"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "3. Курение: балкон, вейп и кальян — это не одно «ну я же не в комнате»",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Checklist: курение балкон, вейп кальян, сумма нарушения; gold ticks, smoke crossed, TOP-RIGHT empty pad.",
+      "alt": "Чек-лист правил курения на балконе, вейпа и кальяна.",
+      "labels": ["курение на балконе", "вейп и кальян", "сумма за нарушение"]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "4. Заселение и выезд: два часа могут сломать следующий заезд",
+      "visual_type": "bar_timeline_chart",
+      "scene_hint": "Timeline bar: ранний заезд → после 14 → выезд до 12; yellow sun accent, no people.",
+      "alt": "Временная шкала заезда после 14, раннего заезда и выезда до 12.",
+      "labels": ["заезд после 14", "выезд до 12", "ранний заезд"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "5. Залог: когда его вернут и за что могут удержать",
+      "visual_type": "structure_diagram",
+      "scene_hint": "Deposit jar diagram: удержат курение, лишние гости, срок возврата; gold arrows, tiny cat bottom.",
+      "alt": "Схема причин удержания залога и срока его возврата.",
+      "labels": ["удержат за курение", "лишние гости", "срок возврата"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "6. Фото при заселении: пять минут, которые спасают от спора",
+      "visual_type": "fact_card",
+      "scene_hint": "Phone filmstrip: видео дублем, пятна в день, сколы в день; checkmarks, check-in date, summer light.",
+      "alt": "Карточка с правилами фотофиксации квартиры в день заселения.",
+      "labels": ["видео одним дублем", "пятна в день", "сколы в день"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "7. Где должны быть правила: в чате до оплаты",
+      "visual_type": "schema_faq_ui",
+      "scene_hint": "FAQ UI flow: правила до оплаты → текстом в чат → одна переписка; gold message cards, TOP-RIGHT empty pad.",
+      "alt": "Схема, как получить правила до оплаты и сохранить их в одной переписке.",
+      "labels": ["правила до оплаты", "текстом в чат", "одна переписка"]
+    }
+  },
+  "cover_keys_ru": [
+    "аренда квартиры тюмень посуточно",
+    "снять посуточно"
+  ]
+}

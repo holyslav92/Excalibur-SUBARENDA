@@ -184,38 +184,34 @@ def validate_publish_env(env: dict[str, str]) -> list[str]:
 
 
 def publish_env_check_report(env: dict[str, str]) -> dict[str, object]:
-    from excalibur_blog_remote_transport import transport_mode
+    from excalibur_blog_remote_transport import (
+        remote_root_label,
+        resolve_publish_transport,
+        transport_note,
+    )
 
-    root_label = sftp_root_label(env)
-    mode = transport_mode(env)
-    transport_block: dict[str, object] = {
-        "mode": mode,
-        "host_configured": bool(env.get("SSH_HOST") or env.get("FTP_HOST")),
-        "user_configured": bool(env.get("SSH_USER") or env.get("FTP_USER")),
-        "password_configured": bool(
-            env.get("SSH_PASS")
-            or env.get("FTP_PASS")
-            or env.get("SSH_PASSWORD")
-            or env.get("FTP_PASSWORD")
-        ),
-        "root": root_label,
-        "port": env.get("FTP_PORT") or ("21" if mode == "ftp" else "22"),
-    }
-    if mode == "ftp":
-        transport_block["pasv_rewrite_ip"] = "188.225.40.162"
-        transport_block["timeout_seconds"] = 60
-    else:
-        transport_block["ftp_aliases_are_sftp"] = True
-        transport_block["dot_fallback_enabled"] = root_label == "configured-non-dot"
+    root_label = remote_root_label(env)
+    transport = resolve_publish_transport(env)
     return {
         "allow_publish": env.get("EXCALIBUR_BLOG_ALLOW_PUBLISH", "").strip().lower() == "yes",
         "public_site_url_configured": bool(env.get("PUBLIC_SITE_URL") or env.get("WP_HOME") or env.get("WP_SITE_URL")),
-        "transport": transport_block,
+        "transport": transport,
+        "remote": {
+            "host_configured": bool(env.get("SSH_HOST") or env.get("FTP_HOST")),
+            "user_configured": bool(env.get("SSH_USER") or env.get("FTP_USER")),
+            "password_configured": bool(
+                env.get("SSH_PASS")
+                or env.get("FTP_PASS")
+                or env.get("SSH_PASSWORD")
+                or env.get("FTP_PASSWORD")
+            ),
+            "root": root_label,
+            "ftp_root": env.get("FTP_ROOT") or ".",
+            "ftp_port": env.get("FTP_PORT") or ("21" if transport == "ftp" else "22"),
+            "dot_fallback_enabled": root_label == "configured-non-dot",
+        },
         "missing": validate_publish_env(env),
-        "note": (
-            "FTP_TRANSPORT=ftp uses Timeweb PASV rewrite (188.225.40.162); "
-            "otherwise SFTP on port 22."
-        ),
+        "note": transport_note(env),
     }
 
 
@@ -1572,6 +1568,7 @@ def main() -> int:
             body_probe=body_probe,
             verify_media=True,
             expected_permalink=permalink,
+            expected_schema_jsonld=str(payload.get("schema_jsonld") or ""),
         )
     except Exception as exc:  # network failure is a blocker, never a fake PASS
         live_errors = [f"live page fetch failed: {type(exc).__name__}: {exc}"]

@@ -1,0 +1,35 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 2,
+  "identity_reference_local": "",
+  "identity_reference_id": "",
+  "reference_url_hosted": "",
+  "output_canvas": "cover/canvas-quad-02.png",
+  "result_path": "cover/quad-mcp-result-02.json",
+  "slots": [
+    "inline_4",
+    "inline_5",
+    "inline_6",
+    "inline_7"
+  ],
+  "preferred_image_flow": {
+    "provider": "derouter-rest",
+    "resolution": "2K"
+  },
+  "jobs": [
+    {
+      "slot": "canvas_quad",
+      "tool": "derouter-rest",
+      "mcp_args": {
+        "prompt": "High-key bright RU editorial collage, airy #FFFFFF, sun flare, Aug 2026 Tyumen summer, NO winter/snow. Comfort+ cozy apartment, NOT hotel-luxe. NO host/Shakin. NO brand logo in generation.\nCanvas 2048x1152 2x2; four 16:9 panels; thin white gutters.\nBan: dark cinematic; WordPress UI; stock realtor; large meme human; icon soup; overlapping zones.\nTEXT LOCK: Russian Cyrillic labels only per panel.\nFORBID ALL panels: any logo/wordmark/lockup; «Добрый дом» text; green curtains+red flower icon; dashed logo frame; gold house-with-heart; УЮТНЫЕ КВАРТИРЫ subtitle; white box/card/plate/tablichka under top-right corner; second logo; logo comparison table.\nALL 4 inlines: content in LEFT 85%; top-right corner blank wall/ceiling texture ONLY — NO logo anywhere on these panels.\nTop-left inline_4: timeline bar ранний заезд→после 14→выезд до 12; yellow accent. TXT:заезд после 14|выезд до 12|ранний заезд.\nTop-right inline_5: deposit jar diagram удержат курение, лишние гости, срок возврата. TXT:удержат за курение|лишние гости|срок возврата.\nBottom-left inline_6: phone filmstrip видео дублем, пятна, сколы в день. TXT:видео одним дублем|пятна в день|сколы в день.\nBottom-right inline_7: FAQ flow правила до оплаты→текстом в чат→одна переписка; cards LEFT 85%; TOP-RIGHT 10%×26% = plain empty wall/ceiling only — same color as room, NO graphics, NO text, NO logo, NO white rectangle, NO rounded card; factory pastes PNG later on 3 panels only. TXT:правила до оплаты|текстом в чат|одна переписка.\nInline all: #FFF collage, gold/black Cyrillic, no logos any corner except empty top-right pad on inline_7 only.",
+        "aspect_ratio": "16:9",
+        "resolution": "2K"
+      }
+    }
+  ],
+  "validation": {
+    "prompt_chars": 1603,
+    "max_prompt_chars": 3500,
+    "resolution": "2K"
+  }
+}

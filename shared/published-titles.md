@@ -10,3 +10,5 @@ lessons, benchmarks, QA reports или соседние research-notes как о
 | topic_id | slug | title | status |
 |----------|------|-------|--------|
 | B01 | beskontaktnoe-zaselenie-posutochno-tyumen | Оплатил квартиру посуточно. Код прислали от чужой двери | published |
+| B03 | pereveli-predoplatu-v-pravilah-melkim-vecherinki-i-lishnie-gosti | Перевели предоплату. В правилах мелким: вечеринки и лишние гости | published |
+| B02 | perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem | Снял квартиру посуточно. Залог не вернули — нашли скол на плите | published |

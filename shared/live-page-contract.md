@@ -49,6 +49,11 @@ python3 scripts/excalibur_blog_live_page_gate.py \
 - нет дублей CTA/контента;
 - cover/inline media доступны, alt честен;
 - schema и canonical относятся к текущей статье.
+- для тем с `entry-content` / `wp-post-image` (Добрый дом / default WP) gate
+  принимает эти селекторы вместо `#article-content` / `.post-thumbnail`;
+- если live Yoast выводит только `@graph` Article, publish передаёт
+  `expected_schema_jsonld` из payload — FAQ parity сверяется с ним
+  (`tenant-config.publish_options.live_page_gate.merge_publish_schema_jsonld`).
 
 FAIL = `LIVE PAGE BLOCKER`: нельзя писать `PIPELINE DONE`, обновлять ledger как
 успешно опубликованный или запускать post-run learning как успешный запуск.

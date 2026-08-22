@@ -1,0 +1,86 @@
+{
+  "topic_id": "B03",
+  "slug": "pereveli-predoplatu-v-pravilah-melkim-vecherinki-i-lishnie-gosti",
+  "cover_family": "brand_collage",
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "file": "cover/cover.png",
+  "alt": "Постер: шесть гостей у двери в августовской квартире Тюмени — правила в телефоне, залог не вернули.",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-quad-01.png",
+  "generated_at": "2026-08-22T06:54:43+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Постер: шесть гостей у двери в августовской квартире Тюмени — правила в телефоне, залог не вернули.",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Сравнительная таблица допустимого числа гостей и условий для гостя на час.",
+      "h2_anchor": "1. Сколько гостей можно — и кто вообще считается гостем",
+      "visual_type": "comparison_table",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Схема последствий ночного шума: от шумной компании до жалобы соседей.",
+      "h2_anchor": "2. Вечеринки: что хозяин называет тихим отдыхом",
+      "visual_type": "process_flow",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Чек-лист правил курения на балконе, вейпа и кальяна.",
+      "h2_anchor": "3. Курение: балкон, вейп и кальян — это не одно «ну я же не в комнате»",
+      "visual_type": "labeled_checklist",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_4",
+      "file": "cover/inline-04.png",
+      "alt": "Временная шкала заезда после 14, раннего заезда и выезда до 12.",
+      "h2_anchor": "4. Заселение и выезд: два часа могут сломать следующий заезд",
+      "visual_type": "bar_timeline_chart",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_5",
+      "file": "cover/inline-05.png",
+      "alt": "Схема причин удержания залога и срока его возврата.",
+      "h2_anchor": "5. Залог: когда его вернут и за что могут удержать",
+      "visual_type": "structure_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_6",
+      "file": "cover/inline-06.png",
+      "alt": "Карточка с правилами фотофиксации квартиры в день заселения.",
+      "h2_anchor": "6. Фото при заселении: пять минут, которые спасают от спора",
+      "visual_type": "fact_card",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_7",
+      "file": "cover/inline-07.png",
+      "alt": "Схема, как получить правила до оплаты и сохранить их в одной переписке.",
+      "h2_anchor": "7. Где должны быть правила: в чате до оплаты",
+      "visual_type": "schema_faq_ui",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}

@@ -16,7 +16,9 @@ from urllib.parse import urlparse
 
 from excalibur_blog_site_base import (
     SITE_BASE_PLACEHOLDER,
+    encode_request_url,
     expand_site_base,
+    hosts_equivalent,
     normalize_public_base,
     redact_site_base,
     redact_structure,
@@ -54,8 +56,9 @@ def extract_links(html: str) -> list[str]:
 
 def check_url(url: str, timeout: float, user_agent: str) -> dict[str, Any]:
     ctx = ssl.create_default_context()
+    request_url = encode_request_url(url)
     req = urllib.request.Request(
-        url,
+        request_url,
         method="HEAD",
         headers={"User-Agent": user_agent},
     )
@@ -88,7 +91,8 @@ def check_url(url: str, timeout: float, user_agent: str) -> dict[str, Any]:
 def _get_fallback(
     url: str, timeout: float, user_agent: str, ctx: ssl.SSLContext, head_error: str
 ) -> dict[str, Any]:
-    req = urllib.request.Request(url, headers={"User-Agent": user_agent})
+    request_url = encode_request_url(url)
+    req = urllib.request.Request(request_url, headers={"User-Agent": user_agent})
     try:
         with urllib.request.urlopen(req, timeout=timeout, context=ctx) as resp:
             return {
@@ -124,7 +128,7 @@ def classify_link(href: str, site_base: str | None) -> str:
         return "internal_relative"
     if site_base:
         base = urlparse(site_base if "://" in site_base else f"https://{site_base}")
-        if parsed.netloc == base.netloc:
+        if hosts_equivalent(parsed.netloc, base.netloc):
             return "internal_absolute"
     return "external"
 

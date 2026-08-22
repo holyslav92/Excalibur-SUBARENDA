@@ -124,7 +124,11 @@
   "publish_options": {
     "deploy_llms_after_publish": true,
     "derouter_image_quality": "high",
-    "auto_interlink_after_publish": true
+    "auto_interlink_after_publish": true,
+    "live_page_gate": {
+      "merge_publish_schema_jsonld": true,
+      "theme_profile": "dobry_dom_wp_default"
+    }
   },
   "cover_mode": "brand_logo_paste",
   "logo_composite": {
