@@ -16,14 +16,24 @@ from typing import Any
 from urllib.request import Request, urlopen
 from zoneinfo import ZoneInfo
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+from excalibur_blog_image_provider import resolve_image_script  # noqa: E402
+
 ROOT = Path(__file__).resolve().parents[1]
 PUBLIC = os.environ.get("PUBLIC_SITE_URL", "").rstrip("/")
 YEKT = ZoneInfo("Asia/Yekaterinburg")
 AUG22 = "2026-08-22"
 LOGO_REL = ROOT / "memory/cover/assets/brand/logo-dobry-dom.png"
 LOGO_CANONICAL_URL_SUFFIX = "wp-content/uploads/2026/03/cropped-img_7143.png"
-GRSAI_IMAGE_SCRIPT = "scripts/excalibur_blog_grsai_gpt_image2_api.py"
 DISCOVERY_CACHE = ROOT / "memory/blog/aug22-slugs-discovery.json"
+
+# Точный scope Aug-22 regen (FULL 8 images each). Без priehal-v-sem-utra (Aug 21).
+AUG22_REGEN_SLUGS: tuple[str, ...] = (
+    "dogovor-arendy-pravila-prozhivaniya-posutochno",
+    "otmena-bronirovaniya-posutochno-vozvrat-predoplaty",
+    "pereveli-predoplatu-v-pravilah-melkim-vecherinki-i-lishnie-gosti",
+    "zabroniroval-posutochno-vyyasnilos-kvartira-v-subarende",
+)
 
 DAYLIGHT_SCENE_SUFFIX = (
     "natural daylight, clean white balance, NO yellow/amber cast, NO muddy faces, "
@@ -408,6 +418,7 @@ def run(cmd: list[str], *, cwd: Path | None = None) -> None:
 
 def pipeline(adir: Path) -> None:
     rel = adir.relative_to(ROOT)
+    image_script = resolve_image_script(ROOT)
     run([sys.executable, "scripts/excalibur_blog_cover_text_gate.py", "--article-dir", str(rel)])
     manifest_path = adir / "cover" / "quad-manifest.json"
     if manifest_path.is_file():
@@ -512,8 +523,10 @@ def main() -> int:
 
     if args.slug:
         slugs = [args.slug]
+    elif args.refresh_discovery:
+        slugs = discover_aug22_slugs(refresh=True)
     else:
-        slugs = discover_aug22_slugs(refresh=args.refresh_discovery)
+        slugs = list(AUG22_REGEN_SLUGS)
 
     if not slugs:
         print("no Aug-22 slugs found", file=sys.stderr)
