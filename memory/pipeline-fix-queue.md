@@ -55,4 +55,4 @@ checks_run:
 - `python3 -m py_compile` on changed scripts
 - `python3 scripts/excalibur_blog_llms_deploy.py --dry-run` → transport ftp, files present
 - `python3 -m unittest tests.test_publish_transport tests.test_live_page_gate` → 8/8 PASS
-commit: pending-parent-commit
+commit: f0a685b
