@@ -76,7 +76,10 @@
       "angle": "7 запретов до подписания",
       "wordstat_probes": ["договор аренды квартиры", "правила проживания аренда", "аренда квартиры условия"],
       "tyumen_localize": true,
-      "status": "seed"
+      "status": "used",
+      "last_seen": "2026-08-22",
+      "final_p0": "аренда квартиры посуточно 48407",
+      "used_in_articles": ["B03"]
     },
     {
       "id": "sublease_chain",
