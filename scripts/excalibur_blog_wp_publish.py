@@ -19,6 +19,7 @@ from excalibur_blog_site_base import (
     REDACTED_LITERAL,
     SITE_BASE_PLACEHOLDER,
     expand_site_base,
+    normalize_public_base,
     redact_site_base,
     redact_structure,
 )
@@ -459,6 +460,23 @@ def rss_safe_excerpt(
     return desc
 
 
+def rewrite_schema_urls_for_blog_permalink(
+    schema_raw: str, *, slug: str, public_base: str
+) -> str:
+    """Map committed /{slug}/ schema URLs to live /blog/{slug}/ WP permalinks."""
+    slug = (slug or "").strip().strip("/")
+    base = normalize_public_base(public_base)
+    if not schema_raw or not slug or not base:
+        return schema_raw
+    out = schema_raw
+    for old, new in (
+        (f"{base}/{slug}/", f"{base}/blog/{slug}/"),
+        (f"{base}/{slug}#", f"{base}/blog/{slug}#"),
+    ):
+        out = out.replace(old, new)
+    return out
+
+
 def load_article(article_dir: Path, *, public_base: str = "") -> dict:
     meta_path = article_dir / "article.meta.json"
     html_path = article_dir / "article.html"
@@ -486,6 +504,11 @@ def load_article(article_dir: Path, *, public_base: str = "") -> dict:
     # Runtime expand only — on-disk artifacts keep {{SITE_BASE}} for secret-scan-safe commits.
     content = expand_site_base(content, public_base)
     schema_raw = expand_site_base(schema_raw, public_base)
+    schema_raw = rewrite_schema_urls_for_blog_permalink(
+        schema_raw,
+        slug=str(meta.get("slug") or "").strip("/"),
+        public_base=public_base,
+    )
 
     registry: dict[str, Any] = {}
     if cover_reg.is_file():
@@ -1545,6 +1568,15 @@ def main() -> int:
         print("BLOCKER: publish media/post incomplete:", file=sys.stderr)
         for err in media["errors"]:
             print(f"  - {err}", file=sys.stderr)
+        return 1
+
+    try:
+        from excalibur_blog_theme_contract_deploy import deploy as deploy_theme_contract
+
+        theme_slug = deploy_theme_contract()
+        print(f"OK theme_contract_deploy theme={theme_slug}")
+    except Exception as exc:
+        print(f"BLOCKER: theme contract deploy failed: {type(exc).__name__}: {exc}", file=sys.stderr)
         return 1
 
     # Publishing is not complete until the live theme respects the Excalibur

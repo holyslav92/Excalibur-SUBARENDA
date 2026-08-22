@@ -1,0 +1,115 @@
+{
+  "topic_id": "B03",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "Перед оплатой прочитайте правила аренды",
+  "cover_hook_highlight": "оплатой",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "договор аренды квартиры"
+  ],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "Белый журнальный постер: лист правил на золотой прищепке, рука над кнопкой перевода, солнечный дверной проём",
+    "location": "Светлая прихожая квартиры посуточно Тюмень август зелёный двор за окном",
+    "meme": "Стикер-кот подозрительный прищур bottom-left ≤12%, never top-right pad",
+    "prop_set": "Лист 7 чекбоксов, смартфон перевод, золотая прищепка, ключ-карта, sun flare",
+    "sticker_set": ["квартиры посуточно тюмень", "договор аренды квартиры"],
+    "joke": "Кот с лупой над мелким шрифтом пока рука на «оплатить»"
+  },
+  "cover_emotion": "настороженное «стоп, сначала проверю» — рука замирает над оплатой",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Постер: гость завис над переводом предоплаты, а лист с семью правилами аренды подсвечен августовским солнцем — Тюмень.",
+      "scene_hint": "Hand over payment, rules sheet 7 checkboxes, sunny August hallway; TOP-RIGHT empty sky pad; cat bottom-left.",
+      "meme_caption_ru": "",
+      "sticky": "Сначала прочитайте условия"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Быстрый инсайт",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Checklist 7 gold ticks, 3-min timer, tape on white; TOP-RIGHT empty wall pad.",
+      "alt": "Семь пунктов договора посуточной аренды, которые стоит прочитать до перевода предоплаты",
+      "labels": ["7 запретов", "3 минуты чтения", "правила до оплаты", "оплата = согласие"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Почему перевод денег иногда считается согласием",
+      "visual_type": "comparison_table",
+      "scene_hint": "Table Оплата vs Акцепт: two columns; clean TOP-RIGHT, no logo.",
+      "alt": "Оплата брони может быть акцептом оферты, если условия были доступны до перевода",
+      "labels": ["ст. 438 ГК", "оплата как согласие", "оферта на сайте", "правила до перевода"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Вот где подставят, если читать договор после перевода",
+      "visual_type": "comparison_table",
+      "scene_hint": "Table Реклама vs Договор, torn paper; TOP-RIGHT empty wall pad.",
+      "alt": "Типовые ловушки в правилах проживания: заезд, гости, отмена, ключи",
+      "labels": ["заезд с 15:00", "не больше 2 гостей", "отмена без возврата", "балкон: не курить"]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Семь пунктов, которые читают до перевода",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Checklist 7 rows, gold labels, torn paper; no logo on panel.",
+      "alt": "Семь условий в договоре посуточного найма: часы, гости, ключи, курение, отмена, назначение, залог",
+      "labels": ["часы заезда", "число гостей", "ключи и коды", "отмена и возврат", "обеспечительный платёж"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Что проверить за три минуты до перевода",
+      "visual_type": "process_flow",
+      "scene_hint": "Flow 3 cards оферта→детали→чат, timer 3:00; no logo.",
+      "alt": "Чеклист перед оплатой посуточной квартиры: оферта, гости, отмена, ключи",
+      "labels": ["оферта до оплаты", "адрес и даты", "рейс против часов", "гости как в брони", "сохраните чат"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "У нас в «Добром доме» так",
+      "visual_type": "process_flow",
+      "scene_hint": "Flow 4 steps site→codes→door; keybox; no faces, no logo.",
+      "alt": "Посуточные квартиры в Тюмени: условия на сайте до брони и бесконтактное заселение",
+      "labels": ["условия до брони", "бесконтактный заезд", "коды заранее", "ранний заезд заранее", "телефон для связи"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Частые вопросы",
+      "visual_type": "schema_faq_ui",
+      "scene_hint": "FAQ 4 Q&A cards, gold markers, cat corner; TOP-RIGHT empty pad.",
+      "alt": "Частые вопросы гостей про договор и правила проживания при посуточной аренде",
+      "labels": ["перевод не всё решает", "код другу: правила", "ранний заезд не сразу", "залог: срок удержания"]
+    }
+  },
+  "cover_keys_ru": ["квартиры посуточно тюмень", "договор аренды квартиры"]
+}

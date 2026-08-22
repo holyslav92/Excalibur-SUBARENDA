@@ -3,9 +3,11 @@
   "status": "brand_logo_paste",
   "name_ru": "Добрый дом",
   "cover_mode": "brand_logo_paste",
-  "reference_images": ["memory/cover/assets/brand/logo-dobry-dom.png"],
+  "reference_images": [
+    "memory/cover/assets/brand/logo-dobry-dom.png"
+  ],
   "reference_image": "memory/cover/assets/brand/logo-dobry-dom.png",
-  "reference_url_hosted": "[REDACTED]/wp-content/uploads/2026/03/img_7143.png",
+  "reference_url_hosted": "{{SITE_BASE}}/wp-content/uploads/2026/03/img_7143.png",
   "reference_url_source": "добрыйдом-72.рф canonical logo (curtains+flower)",
   "visual_notes": "memory/cover/visual-notes-dobry-dom.json",
   "logo_composite": {
@@ -14,14 +16,18 @@
     "canonical_sha256": "eaf97915a9830ffd31b5c08b128e8b60dc0b0b9a8ee85fc4083f32c49040ee3f",
     "forbid_ai_drawn_logo": true,
     "cover_phone_post_composite": true,
-    "max_width_fraction": 0.10,
+    "max_width_fraction": 0.1,
     "min_width_fraction": 0.08,
     "max_width_fraction_cap": 0.12,
     "margin_px": 20,
     "logo_corner": "top_right",
     "inline_logo_count_min": 2,
     "inline_logo_count_max": 3,
-    "inline_logo_slots_default": ["inline_1", "inline_3", "inline_7"]
+    "inline_logo_slots_default": [
+      "inline_1",
+      "inline_3",
+      "inline_7"
+    ]
   },
   "wow_cover_rules": {
     "forbid_wordpress_ui_in_art": true,
@@ -38,5 +44,6 @@
     "cover_phone": "+7 (993) 574-83-22 post-composite bottom-left on cover only — NEVER in logo pad; NEVER in generation"
   },
   "cover_canon": "memory/cover/cover-canon.json",
-  "host_face_todo": "skip_human_host — brand logo paste mode"
+  "host_face_todo": "skip_human_host — brand logo paste mode",
+  "reference_url_updated_at": "2026-08-22T12:25:30+00:00"
 }

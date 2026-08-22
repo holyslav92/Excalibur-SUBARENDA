@@ -122,6 +122,7 @@
   },
   "wp_categories_required": true,
   "publish_options": {
+    "wp_theme_slug": "theme",
     "deploy_llms_after_publish": true,
     "derouter_image_quality": "high",
     "auto_interlink_after_publish": true

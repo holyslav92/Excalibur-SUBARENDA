@@ -1,0 +1,218 @@
+{
+  "agent": "excalibur-blog",
+  "date_context": {
+    "timezone": "Europe/Moscow",
+    "today_iso": "2026-08-22",
+    "today_ru": "22.08.2026",
+    "year": 2026,
+    "month": 8,
+    "month_name_ru": "август",
+    "weekday_ru": "суббота"
+  },
+  "topic": {
+    "topic_id": "B03",
+    "title": "договор аренды правила проживания посуточно",
+    "h1": "договор аренды правила проживания посуточно",
+    "slug": "dogovor-arendy-pravila-prozhivaniya-posutochno",
+    "primary_query": "договор аренды правила проживания посуточно",
+    "priority": "P0"
+  },
+  "searches": [
+    {
+      "query_id": "primary_fresh",
+      "query": "договор аренды правила проживания посуточно 2026",
+      "purpose": "актуальный SERP",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Договор посуточной аренды квартиры — образец 2026, скачать посуточный ...",
+          "url": "https://dogovorforma.ru/dogovory/dogovor-posutochnoy-arendy-kvartiry/",
+          "snippet": ""
+        },
+        {
+          "title": "Договор посуточного найма квартиры шаблоны и образцы на 2026 год ...",
+          "url": "https://datadoc.ru/ru/templates/Dogovori_na_okazanie_uslug/Nedvizhimost/Dogovor_posutochnogo_naima_kvartiri/",
+          "snippet": "Шаблон договора посуточной аренды (найма) квартиры для физлиц. Заполните даты, стоимость суток, залог, распечатайте готовый PDF/DOCX."
+        },
+        {
+          "title": "Шаблон договора посуточной аренды составить и скачать онлайн за 5 минут",
+          "url": "https://dogovor.ru/contracts/view/dogowor-posutochnoy-arendy",
+          "snippet": "Договор посуточного найма квартиры - актуальная база шаблонов и образцы на 2026 год. Договор посуточного найма квартиры - онлайн генерация и грамотное составление с сервисом DataDoc."
+        },
+        {
+          "title": "Договор посуточной аренды квартиры - образец и бланк",
+          "url": "https://nalog-nalog.ru/blanks/dogovor-posutochnoj-arendy-kvartiry/",
+          "snippet": "Выберите условия онлайн и скачайте договор посуточной аренды в нужном формате (DOCX и PDF) за 5 минут! Просто кликните на нужные вам условия, конструктор сам соберет договор у вас на глазах."
+        },
+        {
+          "title": "Договор посуточной аренды квартиры: скачать бланк и образец 2026",
+          "url": "https://dogovor-arendy.ru/zhilaya-nedvizhimost/kvartiry-posutochno.html",
+          "snippet": "Посуточная аренда отличается от аренды на более длительный срок рядом нюансов. Для сдачи в аренду жилого помещения на несколько суток воспользуйтесь образцом, представленным ниже."
+        },
+        {
+          "title": "Договор посуточной аренды квартиры — образец и бланк | 2026",
+          "url": "https://blanker.ru/doc/dogovor-posutochnoy-arendy-kvartiry",
+          "snippet": "Чтобы сделка с квартиросъемщиком прошла безопасно собственнику необходим юридически грамотный договор посуточной аренды, бланк которого можно скачать здесь. Предварительно можно ознакомиться с образцом его заполнения, а также изучить его форму, структуру и используемые формулировки."
+        }
+      ],
+      "searched_at": "2026-08-22"
+    },
+    {
+      "query_id": "title_fresh",
+      "query": "договор аренды правила проживания посуточно 2026",
+      "purpose": "SERP по человеческому title",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Договор посуточной аренды квартиры — образец 2026, скачать посуточный ...",
+          "url": "https://dogovorforma.ru/dogovory/dogovor-posutochnoy-arendy-kvartiry/",
+          "snippet": ""
+        },
+        {
+          "title": "Договор посуточного найма квартиры шаблоны и образцы на 2026 год ...",
+          "url": "https://datadoc.ru/ru/templates/Dogovori_na_okazanie_uslug/Nedvizhimost/Dogovor_posutochnogo_naima_kvartiri/",
+          "snippet": "Шаблон договора посуточной аренды (найма) квартиры для физлиц. Заполните даты, стоимость суток, залог, распечатайте готовый PDF/DOCX."
+        },
+        {
+          "title": "Шаблон договора посуточной аренды составить и скачать онлайн за 5 минут",
+          "url": "https://dogovor.ru/contracts/view/dogowor-posutochnoy-arendy",
+          "snippet": "Договор посуточного найма квартиры - актуальная база шаблонов и образцы на 2026 год. Договор посуточного найма квартиры - онлайн генерация и грамотное составление с сервисом DataDoc."
+        },
+        {
+          "title": "Договор посуточной аренды квартиры - образец и бланк",
+          "url": "https://nalog-nalog.ru/blanks/dogovor-posutochnoj-arendy-kvartiry/",
+          "snippet": "Выберите условия онлайн и скачайте договор посуточной аренды в нужном формате (DOCX и PDF) за 5 минут! Просто кликните на нужные вам условия, конструктор сам соберет договор у вас на глазах."
+        },
+        {
+          "title": "Договор посуточной аренды квартиры: скачать бланк и образец 2026",
+          "url": "https://dogovor-arendy.ru/zhilaya-nedvizhimost/kvartiry-posutochno.html",
+          "snippet": "Посуточная аренда отличается от аренды на более длительный срок рядом нюансов. Для сдачи в аренду жилого помещения на несколько суток воспользуйтесь образцом, представленным ниже."
+        },
+        {
+          "title": "Договор посуточной аренды квартиры — образец и бланк | 2026",
+          "url": "https://blanker.ru/doc/dogovor-posutochnoy-arendy-kvartiry",
+          "snippet": "Чтобы сделка с квартиросъемщиком прошла безопасно собственнику необходим юридически грамотный договор посуточной аренды, бланк которого можно скачать здесь. Предварительно можно ознакомиться с образцом его заполнения, а также изучить его форму, структуру и используемые формулировки."
+        }
+      ],
+      "searched_at": "2026-08-22"
+    },
+    {
+      "query_id": "official_docs",
+      "query": "договор аренды правила проживания посуточно official docs 2026",
+      "purpose": "официальные docs",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Договор посуточной аренды квартиры — образец 2026, скачать посуточный ...",
+          "url": "https://dogovorforma.ru/dogovory/dogovor-posutochnoy-arendy-kvartiry/",
+          "snippet": ""
+        },
+        {
+          "title": "Договор посуточной аренды квартиры — образец и бланк | 2026",
+          "url": "https://blanker.ru/doc/dogovor-posutochnoy-arendy-kvartiry",
+          "snippet": "Шаблон договора посуточной аренды (найма) квартиры для физлиц. Заполните даты, стоимость суток, залог, распечатайте готовый PDF/DOCX."
+        },
+        {
+          "title": "Договор посуточной аренды квартиры: скачать бланк и образец 2026",
+          "url": "https://dogovor-arendy.ru/zhilaya-nedvizhimost/kvartiry-posutochno.html",
+          "snippet": "Договор посуточной аренды квартиры используется при краткосрочной сдаче жилья на срок от одних суток и более, когда квартира предоставляется для временного проживания с посуточной оплатой."
+        },
+        {
+          "title": "Договор посуточной аренды жилого помещения, 2026 - Договор аренды ...",
+          "url": "https://dogovor-urist.ru/%D0%B4%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D1%8B/%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%B5%D1%86-%D0%B4%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80_%D0%BF%D0%BE%D1%81%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D0%B9_%D0%B0%D1%80%D0%B5%D0%BD%D0%B4%D1%8B_%D0%B6%D0%B8%D0%BB%D0%BE%D0%B3%D0%BE_%D0%BF%D0%BE%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D1%8F/",
+          "snippet": "Чтобы сделка с квартиросъемщиком прошла безопасно собственнику необходим юридически грамотный договор посуточной аренды, бланк которого можно скачать здесь. Предварительно можно ознакомиться с образцом его заполнения, а также изучить его форму, структуру и используемые формулировки."
+        },
+        {
+          "title": "Шаблон договора посуточной аренды составить и скачать онлайн за 5 минут",
+          "url": "https://dogovor.ru/contracts/view/dogowor-posutochnoy-arendy",
+          "snippet": "При расторжении договора в процессе проживания по инициативе Нанимателя, удерживается сумма 30% от оставшейся, но не менее стоимости трех суток проживания."
+        },
+        {
+          "title": "Договор аренды квартиры посуточно-бланк и образец",
+          "url": "https://spmag.ru/blanks/obrazec-dogovora-arendy-kvartiry-posutochno",
+          "snippet": "Выберите условия онлайн и скачайте договор посуточной аренды в нужном формате (DOCX и PDF) за 5 минут! Просто кликните на нужные вам условия, конструктор сам соберет договор у вас на глазах."
+        }
+      ],
+      "searched_at": "2026-08-22"
+    },
+    {
+      "query_id": "github_evidence",
+      "query": "site:github.com договор аренды правила проживания посуточно 2026",
+      "purpose": "GitHub evidence",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "GitHub - iavianm/books-api",
+          "url": "https://github.com/iavianm/books-api",
+          "snippet": ""
+        },
+        {
+          "title": "slackmoji/emoji/blob/blob-wine-gif.gif at master · seanprashad ...",
+          "url": "https://github.com/seanprashad/slackmoji/blob/master/emoji/blob/blob-wine-gif.gif/",
+          "snippet": "Contribute to iavianm/books-api development by creating an account on GitHub."
+        },
+        {
+          "title": "sltblockfire-cmyk's gists · GitHub",
+          "url": "https://gist.github.com/sltblockfire-cmyk",
+          "snippet": "A collection of 1,000+ emoji for Slack. Contribute to seanprashad/slackmoji development by creating an account on GitHub."
+        },
+        {
+          "title": "RimWorld AutoTranslation Cache - Russian / Русский (Yandex)",
+          "url": "https://gist.github.com/csh1668/33f5dd6f96afc0aef381ffb072156c44",
+          "snippet": "Почему доверие к подрядчику — это вопрос жизни и смерти sltblockfire-cmyk seo-1787033691331.md August 18, 2026 06:14"
+        },
+        {
+          "title": "valley-of-ai/apps/2026/03/06/word-scramble/thumbnail.svg at main ...",
+          "url": "https://github.com/jeffholst/valley-of-ai/blob/main/apps/2026/03/06/word-scramble/thumbnail.svg",
+          "snippet": "Это означает, что вы можете быстро копировать и вставлять выбранные объекты и комнаты, не создавая новых чертежей. Вы также можете использовать новую комбинацию клавиш, настраиваемую в параметрах мода (по умолчанию ..."
+        },
+        {
+          "title": "wifi-densepose/assets/screen.png at main · tatocode/wifi-densepose",
+          "url": "https://github.com/tatocode/wifi-densepose/blob/main/assets/screen.png",
+          "snippet": "Contribute to jeffholst/valley-of-ai development by creating an account on GitHub."
+        }
+      ],
+      "searched_at": "2026-08-22"
+    },
+    {
+      "query_id": "community_experience",
+      "query": "договор аренды правила проживания посуточно forum problems опыт 2026",
+      "purpose": "форумы и живые проблемы",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Договор посуточной аренды квартиры — образец 2026, скачать посуточный ...",
+          "url": "https://dogovorforma.ru/dogovory/dogovor-posutochnoy-arendy-kvartiry/",
+          "snippet": ""
+        },
+        {
+          "title": "Как правильно сдавать квартиру в 2026 году: юридические нюансы ...",
+          "url": "https://prostorent.ru/blog/kak-pravilno-sdavat-kvartiru-v-2026-godu-yuridicheskie-nyuansy-posutochnoy-arendy",
+          "snippet": "Шаблон подходит для краткосрочной аренды квартиры, когда жилье сдается на несколько дней или недель и требуется зафиксировать правила проживания и залог. Ваши данные остаются на вашем устройстве и не передаются на сервер. Укажите стороны, квартиру, срок аренды, оплату и депозит."
+        },
+        {
+          "title": "Договор посуточной аренды жилого помещения, 2026 - Договор аренды ...",
+          "url": "https://dogovor-urist.ru/%D0%B4%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D1%8B/%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%B5%D1%86-%D0%B4%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80_%D0%BF%D0%BE%D1%81%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D0%B9_%D0%B0%D1%80%D0%B5%D0%BD%D0%B4%D1%8B_%D0%B6%D0%B8%D0%BB%D0%BE%D0%B3%D0%BE_%D0%BF%D0%BE%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D1%8F/",
+          "snippet": "Узнайте, какие документы нужны при посуточной сдаче квартиры, как составить безопасный договор, оформить налоги и снизить юридические риски в 2026 году."
+        },
+        {
+          "title": "Договор посуточной аренды квартиры: скачать бланк и образец 2026",
+          "url": "https://dogovor-arendy.ru/zhilaya-nedvizhimost/kvartiry-posutochno.html",
+          "snippet": "При расторжении договора в процессе проживания по инициативе Нанимателя, удерживается сумма 30% от оставшейся, но не менее стоимости трех суток проживания."
+        },
+        {
+          "title": "Договор посуточной аренды квартиры — образец и бланк | 2026",
+          "url": "https://blanker.ru/doc/dogovor-posutochnoy-arendy-kvartiry",
+          "snippet": "Чтобы сделка с квартиросъемщиком прошла безопасно собственнику необходим юридически грамотный договор посуточной аренды, бланк которого можно скачать здесь. Предварительно можно ознакомиться с образцом его заполнения, а также изучить его форму, структуру и используемые формулировки."
+        },
+        {
+          "title": "Как сдавать квартиру посуточно в 2026 году: правила и советы",
+          "url": "https://isvest.ru/news/kak-sdavat-kvartiru-posutochno-pravila-i-prakticheskie-sovety",
+          "snippet": "Договор посуточной аренды квартиры используется при краткосрочной сдаче жилья на срок от одних суток и более, когда квартира предоставляется для временного проживания с посуточной оплатой. В таких случаях применяется договор посуточной аренды (коммерческого найма) квартиры."
+        }
+      ],
+      "searched_at": "2026-08-22"
+    }
+  ],
+  "errors": []
+}

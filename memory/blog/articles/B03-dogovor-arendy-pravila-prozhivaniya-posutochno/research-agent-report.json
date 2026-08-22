@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "research_date": "2026-08-22",
+  "topic_id": "B03",
+  "topic": "договор аренды / правила проживания посуточно",
+  "fresh_signal": "https://t.me/klyshin_A — пост о договоре, подготовленном заранее, с риском обнаружить существенное условие только на сделке",
+  "fresh_signal_audit": {
+    "status": "PASS",
+    "source": "https://t.me/klyshin_A",
+    "source_type": "community",
+    "accessed_at": "2026-08-22",
+    "relevance": "Паттерн «мелкий шрифт в договоре»: формально документ готов, важные условия читают слишком поздно"
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "queries_checked": 4,
+    "partial_query": "что нельзя при аренде квартиры",
+    "note": "WORDSTAT PARTIAL (totalCount only) — не blocker"
+  },
+  "official_source_audit": {
+    "status": "NOT_REQUIRED",
+    "reason": "Нет тарифов/комиссий банков или госорганов с точными цифрами"
+  },
+  "overlap_audit": {
+    "status": "PASS",
+    "excluded_topics": [
+      "бесконтактное заселение (B01)",
+      "залог и скол (B02)",
+      "вечеринки и лишние гости как самостоятельная тема (WP 2026-08-22)"
+    ]
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "derouter-opus-stamp-research.json"
+  }
+}

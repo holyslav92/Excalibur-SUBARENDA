@@ -1,0 +1,25 @@
+{
+  "topic_id": "B03",
+  "slug": "dogovor-arendy-pravila-prozhivaniya-posutochno",
+  "h1": "Перевёл предоплату — потом прочитал 7 запретов в договоре",
+  "title": "Перевёл предоплату — потом прочитал 7 запретов в договоре",
+  "subject": "Гость посуточной квартиры, который оплачивает бронь до чтения оферты и правил проживания",
+  "angle": "Оплата может означать акцепт заранее доступной оферты, поэтому существенные ограничения стоит увидеть до перевода предоплаты.",
+  "char_count": 57,
+  "generated_via": "excalibur_blog_derouter_opus_chat.py --role title",
+  "wordstat": {
+    "p0": "договор аренды квартиры",
+    "tyumen_frequency": 1974,
+    "role": "demand spine под H1, не вынесена в заголовок сырой фразой"
+  },
+  "dzen_pattern": 1,
+  "checks": {
+    "klyshin_rhythm": true,
+    "dzen_pattern_1_numbered_list": true,
+    "anti_dup_b01_b02": true,
+    "no_seo_tail": true,
+    "no_empty_clickbait": true,
+    "length_50_70": true
+  },
+  "verdict": "PASS"
+}

@@ -38,6 +38,11 @@ python3 scripts/excalibur_blog_live_page_gate.py \
   FAQ body до share row (INC-20260720-2036);
 - FAQPage JSON-LD parity с visible FAQ использует ту же нормализацию пробелов
   после strip inline `<a>`, что и `schema_gate` (INC-20260720-2028);
+- селекторы контента: `#article-content` (после theme contract) или fallback
+  `.articles-typical__content` / `.entry-content`; обложка: `.post-thumbnail` или
+  `.articles-typical__image` (INC-20260822-1311);
+- BlogPosting URL parity: schema хранит `{{SITE_BASE}}/<slug>/`, permalink WP
+  может быть `/blog/<slug>/` — gate сверяет по slug-suffix, не только exact URL;
 - dash parity: WP `wptexturize` может заменить ASCII `--` в HTML на em dash
   (`—` / `&#8212;`), пока FAQPage JSON-LD хранит `--` — gate схлопывает
   em/en dash и `--+` в один `-` (INC-20260721-1655);

@@ -1,0 +1,62 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/dogovor-arendy-pravila-prozhivaniya-posutochno/#article",
+  "url": "{{SITE_BASE}}/dogovor-arendy-pravila-prozhivaniya-posutochno/",
+  "headline": "Перевёл предоплату — потом прочитал 7 запретов в договоре",
+  "description": "Как не попасть в ловушку договора посуточной аренды: читать правила до перевода предоплаты, семь пунктов оферты, акцепт оплатой и что проверить за три минуты в Тюмени.",
+  "inLanguage": "ru-RU",
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "author": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/dogovor-arendy-pravila-prozhivaniya-posutochno/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/"
+  },
+  "mainEntity": {
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Если я перевёл предоплату, значит, согласился со всеми правилами?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Не обязательно. Оплата может считаться согласием, если условия были доступны вам до перевода. Если правила показали только после оплаты, ситуация другая."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Можно передать код от квартиры другу или коллеге?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Сначала проверьте правила. Во многих объектах передавать ключи и коды третьим лицам нельзя."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ранний заезд можно считать включённым?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Нет. Его лучше согласовать заранее и сохранить договорённость в переписке."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Когда вернут обеспечительный платёж?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Это зависит от условий брони: заранее посмотрите сумму, срок возврата и причины возможного удержания."
+        }
+      }
+    ]
+  }
+}
