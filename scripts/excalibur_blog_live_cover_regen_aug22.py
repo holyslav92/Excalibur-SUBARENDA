@@ -475,6 +475,36 @@ def _panels_have_drawn_lockup(adir: Path, panel_names: tuple[str, ...]) -> bool:
     return False
 
 
+def _repair_logo_panels(adir: Path, panel_names: tuple[str, ...]) -> bool:
+    """Снять AI-lockup в top-right pad и перепастить factory logo."""
+    from excalibur_blog_live_plate_remove_relogo import fix_image
+
+    cover = adir / "cover"
+    logo_slots = {"cover.png", "inline-01.png", "inline-03.png", "inline-07.png"}
+    repaired = False
+    for name in panel_names:
+        path = cover / name
+        if not path.is_file():
+            continue
+        paste_logo = name in logo_slots
+        add_phone = name == "cover.png"
+        try:
+            data, verify = fix_image(
+                path.read_bytes(),
+                add_phone=add_phone,
+                paste_logo=paste_logo,
+            )
+            path.write_bytes(data)
+            repaired = True
+            print(
+                f"OK pad-repair {name} clear_passes={verify.get('clear_passes')}",
+                flush=True,
+            )
+        except Exception as exc:  # noqa: BLE001
+            print(f"WARN pad-repair failed for {name}: {exc}", flush=True)
+    return repaired
+
+
 def _run_allow_fail(cmd: list[str], *, cwd: Path | None = None) -> int:
     print("+", " ".join(cmd), flush=True)
     proc = subprocess.run(cmd, cwd=cwd or ROOT, env={**os.environ, "PYTHONPATH": str(ROOT / "scripts")})
@@ -517,25 +547,34 @@ def _apply_canvas(rel: Path, canvas_index: int) -> int:
 
 
 def _canvas_sheet_ok(adir: Path, rel: Path, image_script: str, *, batch_file: str, result_file: str, canvas_index: int, logo_panels: tuple[str, ...]) -> bool:
-    """Один sheet: auto (primary→vip на API fail) → apply; при lockup — vip только если ещё не был."""
+    """Один sheet: auto → apply → pad-repair → vip (если ещё не был) → apply."""
     if not _generate_canvas(image_script, rel, batch_file=batch_file, result_file=result_file, model_tier="auto"):
         return False
     result_path = adir / "cover" / Path(result_file).name
     used_vip = False
     if result_path.is_file():
         used_vip = bool(json.loads(result_path.read_text(encoding="utf-8")).get("used_vip_fallback"))
-    rc = _apply_canvas(rel, canvas_index)
-    if rc == 0 and not _panels_have_drawn_lockup(adir, logo_panels):
+    _apply_canvas(rel, canvas_index)
+    if _panels_have_drawn_lockup(adir, logo_panels):
+        if _repair_logo_panels(adir, logo_panels) and not _panels_have_drawn_lockup(adir, logo_panels):
+            print("OK pad-repair cleared drawn-lockup for this sheet", flush=True)
+            return True
+    else:
         return True
     if used_vip:
-        print("WARN sheet lockup/apply fail after vip already used", flush=True)
+        print("WARN sheet lockup remains after vip already used", flush=True)
         return False
     print("WARN primary sheet failed lockup/apply; one vip regen for this sheet", flush=True)
     if not _generate_canvas(image_script, rel, batch_file=batch_file, result_file=result_file, model_tier="vip"):
         print("WARN vip tier API failed for this sheet", flush=True)
         return False
-    rc = _apply_canvas(rel, canvas_index)
-    return rc == 0 and not _panels_have_drawn_lockup(adir, logo_panels)
+    _apply_canvas(rel, canvas_index)
+    if _panels_have_drawn_lockup(adir, logo_panels):
+        if _repair_logo_panels(adir, logo_panels) and not _panels_have_drawn_lockup(adir, logo_panels):
+            print("OK pad-repair cleared drawn-lockup after vip sheet", flush=True)
+            return True
+        return False
+    return True
 
 
 def pipeline(adir: Path) -> None:
