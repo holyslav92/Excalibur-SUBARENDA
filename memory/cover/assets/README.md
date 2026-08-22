@@ -6,16 +6,17 @@
 
 | Файл | Роль |
 |------|------|
-| `brand/logo-dobry-dom.png` | **Единственный** allowed lockup — alpha PNG overlay после генерации (без белой подложки) |
+| `brand/logo-dobry-dom.png` | **Единственный** allowed lockup — alpha PNG overlay после генерации (без белой/серой подложки) |
 
-**Канон:** «Логотип Добрый дом — только alpha-PNG overlay, без белой подложки и без квадрата.»
+**Источник (LOCKED):** `wp-content/uploads/2026/03/cropped-img_7143.png`
 
-**NEVER** просить image model нарисовать логотип, wordmark, curtains+flower, dashed frame, gold house **или белую табличку/карточку/подложку** под logo pad.
+**Канон:** alpha only — `prepare_logo_rgba` crop `getbbox()`, `alpha_composite` onto scene.  
+**NEVER** redraw, **NEVER** white/gray plate/card/tablichka behind lockup.
+
+**NEVER** просить image model нарисовать логотип, wordmark, curtains+flower, dashed frame, gold house **или белую/серую табличку/карточку/подложку** под logo pad.
 Factory paste: `scripts/excalibur_blog_brand_logo_composite.py` → TOP-RIGHT 8–12% на cover + 2–3 inline.
 
 Legacy alias `brand/dobry-dom-logo.png` — тот же файл (backward compat).
-
-Hosted URL: `blog-hero.json` → `reference_url_hosted` (WP media on добрыйдом-72.рф).
 
 ## Identity-real (DISABLED)
 
@@ -36,4 +37,5 @@ Inbox: `memory/setup/visual-inbox/` (logo updates → copy to `brand/logo-dobry-
 ## Запреты
 
 Shakin/face-studio identity lock, plastic/uncanny face, AI hero-ref как лицо, decorative-only inline,
-AI-drawn «Добрый дом» lockup in generation, logo on all 7 inlines, 2+ logos per frame.
+AI-drawn «Добрый дом» lockup in generation, logo on all 7 inlines, 2+ logos per frame,
+white/gray rectangular plate under logo pad.
