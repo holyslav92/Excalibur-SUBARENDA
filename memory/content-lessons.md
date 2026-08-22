@@ -130,7 +130,10 @@ confidence: high
 - Target: `scripts/excalibur_blog_live_page_gate.py` and/or theme deploy `scripts/excalibur_blog_theme_contract_deploy.py` after live HTML inspection.
 
 ### Durable applied
-- none — pending fixer (≥3 runs evidence: B01, B02, B03)
+- `scripts/excalibur_blog_live_page_gate.py` — Dobry dom selectors, `/blog/` parity, `expected_schema_jsonld` (INC-20260822-1017).
+- `scripts/excalibur_blog_wp_publish.py` — auto theme contract deploy + schema fallback to live gate.
+- `scripts/excalibur_blog_derouter_opus_chat.py` — second role attempt before BLOCKER.
+- Metrika credentials: **needs-human** (Cloud Secrets).
 
 ### Resolution
-status: recorded
+status: fixed (live-page + derouter); metrika pending secrets

@@ -62,6 +62,11 @@ DEROUTER <ROLE> BLOCKER
 reason: DEROUTER_API_KEY missing or Derouter chat API unavailable; <tier> model not invoked
 ```
 
+Скрипт делает **два полных вызова** роли (пауза `DEFAULT_RETRY_WAIT_SECONDS`, сейчас 5 с)
+после первого `DerouterChatError`, прежде чем печатать BLOCKER (INC-20260822-1017).
+Директор/Research при ручном recovery после BLOCKER обязан залогировать
+`derouter_status` + `derouter_note` в `research-agent-report.json`.
+
 Директор **останавливает** пайплайн. **Запрещено:** молча переключиться на Cursor Composer для article text.
 
 ## Smoke

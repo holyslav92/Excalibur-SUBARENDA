@@ -5,7 +5,7 @@ Durable incident memory for Director and fixer. No secrets in this file.
 ---
 
 ## INC-20260822-1017-content-learner-metrika-credentials
-status: open
+status: needs-human
 run_date: 2026-08-22
 role: excalibur-blog-content-learner
 topic_id: B03
@@ -33,12 +33,13 @@ category: env
 - none recorded (configure in Cloud Secrets only)
 
 ### Fixer resolution
-- pending
+- needs-human: no repo change can inject Cloud Secrets; configure `YANDEX_METRIKA_OAUTH_TOKEN` + `YANDEX_METRIKA_COUNTER_ID`.
 
 ---
 
 ## INC-20260822-1017-research-derouter-blocker-stub
-status: open
+status: fixed
+fixed_at: 2026-08-22
 run_date: 2026-08-22
 role: excalibur-blog-research
 topic_id: B03
@@ -66,12 +67,21 @@ category: api
 - none recorded
 
 ### Fixer resolution
-- pending
+fix_summary:
+- `excalibur_blog_derouter_opus_chat.py`: second full role call after first `DerouterChatError` (5 s pause) before BLOCKER.
+- `shared/derouter-opus-brain-contract.md`: documented two-attempt policy (INC-20260822-1017).
+files_changed:
+- `scripts/excalibur_blog_derouter_opus_chat.py`
+- `shared/derouter-opus-brain-contract.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_derouter_opus_chat.py`
+commit: pending-parent-commit
 
 ---
 
 ## INC-20260822-1017-fixer-live-page-theme-gate
-status: open
+status: fixed
+fixed_at: 2026-08-22
 run_date: 2026-08-22
 role: excalibur-blog-publish
 topic_id: B03
@@ -101,4 +111,16 @@ category: qa
 - none recorded
 
 ### Fixer resolution
-- pending
+fix_summary:
+- Re-applied Dobry dom live-page gate parity (orphaned 801bd33): theme body/featured selectors, `/blog/` permalink equivalence, `expected_schema_jsonld` fallback when theme head lacks JSON-LD.
+- `excalibur_blog_wp_publish.py`: passes `expected_schema_jsonld`; auto `theme_contract_deploy` before SFTP (override `--skip-theme-deploy`).
+- `tests/test_live_page_gate.py`: regression tests for helpers + FAQ parity.
+files_changed:
+- `scripts/excalibur_blog_live_page_gate.py`
+- `scripts/excalibur_blog_wp_publish.py`
+- `shared/live-page-contract.md`
+- `tests/test_live_page_gate.py`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_live_page_gate.py scripts/excalibur_blog_wp_publish.py`
+- `python3 -m unittest tests.test_live_page_gate -v`
+commit: pending-parent-commit
