@@ -3,7 +3,7 @@
   "source_channel": "https://t.me/klyshin_A",
   "source_label": "Алексей Клышин — юрист по недвижимости (angle only, не копировать сделки)",
   "tenant": "Добрый дом — посуточная аренда / субаренда Тюмень",
-  "updated_at": "2026-08-20",
+  "updated_at": "2026-08-22",
   "algorithm": "klyshin_hook → wordstat_probe → rework_for_demand → final_P0_or_skip_after_rework",
   "wordstat_gate": {
     "provider": "mcp-kv",
@@ -73,10 +73,15 @@
     {
       "id": "contract_bans",
       "hook_ru": "что нельзя делать по договору аренды",
-      "angle": "7 запретов до подписания",
-      "wordstat_probes": ["договор аренды квартиры", "правила проживания аренда", "аренда квартиры условия"],
+      "angle": "7 запретов в правилах проживания до оплаты посуточно",
+      "klyshin_signal": "https://t.me/klyshin_A — «Нотариус заранее подготовил договор…» (риск мелкого шрифта)",
+      "wordstat_probes": ["договор аренды квартиры", "правила проживания аренда", "что нельзя при аренде квартиры"],
+      "wordstat_rework_log": "probe «что нельзя при аренде квартиры» 10 (225) → «правила проживания посуточной аренды» 77 (225) → final P0 «договор аренды квартиры» 1974 (55+11176), 130904 (225)",
+      "final_p0": { "phrase": "договор аренды квартиры", "freq_tyumen": 1974, "freq_ru": 130904 },
+      "used_in_articles": ["B03"],
+      "last_seen": "2026-08-22",
       "tyumen_localize": true,
-      "status": "seed"
+      "status": "picked"
     },
     {
       "id": "sublease_chain",
