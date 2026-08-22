@@ -232,6 +232,33 @@ def normalize_blog_hrefs(content: str, slug_index: dict[str, Any]) -> tuple[str,
     return updated, changes
 
 
+def fix_blog_index_trailing_slash(content: str) -> tuple[str, list[dict[str, str]]]:
+    """«Вернуться назад» and other links: href=\"/blog\" → href=\"/blog/\"."""
+    changes: list[dict[str, str]] = []
+    pattern = re.compile(
+        r'<a\b([^>]*?)href=(["\'])/blog\2([^>]*)>(.*?)</a>',
+        re.I | re.S,
+    )
+
+    def repl(match: re.Match[str]) -> str:
+        anchor = unescape(re.sub(r"\s+", " ", match.group(4))).strip()
+        changes.append(
+            {
+                "action": "blog_index_slash",
+                "from": "/blog",
+                "to": "/blog/",
+                "anchor": anchor[:80],
+            }
+        )
+        return (
+            f"<a{match.group(1)}href={match.group(2)}/blog/{match.group(2)}"
+            f"{match.group(3)}>{match.group(4)}</a>"
+        )
+
+    updated = pattern.sub(repl, content)
+    return updated, changes
+
+
 def fix_mashed_cta_spacing(content: str) -> tuple[str, list[str]]:
     changes: list[str] = []
     replacements = [
@@ -423,6 +450,7 @@ def main() -> int:
         slug = str(row.get("slug") or "")
         content = str(row.get("content") or "")
         fixed, href_changes = normalize_blog_hrefs(content, slug_index)
+        fixed, blog_index_changes = fix_blog_index_trailing_slash(fixed)
         fixed, mashed_changes = fix_mashed_cta_spacing(fixed)
         fixed, unwrap_changes = unwrap_mismatched_blog_links(fixed, catalog=catalog)
         fixed, restore_changes = restore_plain_crosslinks(fixed, catalog=catalog)
@@ -439,6 +467,7 @@ def main() -> int:
             "slug": slug,
             "post_id": row.get("post_id"),
             "href_changes": href_changes,
+            "blog_index_changes": blog_index_changes,
             "unwrap_changes": unwrap_changes,
             "restore_changes": restore_changes,
             "mashed_changes": mashed_changes,
