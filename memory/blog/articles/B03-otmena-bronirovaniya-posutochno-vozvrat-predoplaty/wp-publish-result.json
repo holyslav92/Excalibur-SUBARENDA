@@ -1,0 +1,33 @@
+{
+  "slug": "otmena-bronirovaniya-posutochno-vozvrat-predoplaty",
+  "topic_id": "B03",
+  "permalink": "{{SITE_BASE}}/blog/otmena-bronirovaniya-posutochno-vozvrat-predoplaty/",
+  "publish_method": "ftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B03-otmena-bronirovaniya-posutochno-vozvrat-predoplaty/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1224424,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=3845 slug=otmena-bronirovaniya-posutochno-vozvrat-predoplaty\nOK categories=101,106\nOK featured_image=3846\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=3847 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/08/otmena-bronirovaniya-posutochno-vozvrat-predoplaty-inline-01.png\nOK inline_alt=3847\nOK inline_caption=3847\nOK inline_description=3847\nOK inline_image_upload=3848 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/08/otmena-bronirovaniya-posutochno-vozvrat-predoplaty-inline-02.png\nOK inline_alt=3848\nOK inline_caption=3848\nOK inline_description=3848\nOK inline_image_upload=3849 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/08/otmena-bronirovaniya-posutochno-vozvrat-predoplaty-inline-03.png\nOK inline_alt=3849\nOK inline_caption=3849\nOK inline_description=3849\nOK inline_image_upload=3850 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/08/otmena-bronirovaniya-posutochno-vozvrat-predoplaty-inline-04.png\nOK inline_alt=3850\nOK inline_caption=3850\nOK inline_description=3850\nOK inline_image_upload=3851 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/08/otmena-bronirovaniya-posutochno-vozvrat-predoplaty-inline-05.png\nOK inline_alt=3851\nOK inline_caption=3851\nOK inline_description=3851\nOK inline_image_upload=3852 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/08/otmena-bronirovaniya-posutochno-vozvrat-predoplaty-inline-06.png\nOK inline_alt=3852\nOK inline_caption=3852\nOK inline_description=3852\nOK inline_image_upload=3853 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/08/otmena-bronirovaniya-posutochno-vozvrat-predoplaty-inline-07.png\nOK inline_alt=3853\nOK inline_caption=3853\nOK inline_description=3853\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/otmena-bronirovaniya-posutochno-vozvrat-predoplaty/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "fail",
+  "live_page": {
+    "gate": "live-page",
+    "status": "BLOCK",
+    "permalink": "{{SITE_BASE}}/blog/otmena-bronirovaniya-posutochno-vozvrat-predoplaty/",
+    "errors": [
+      "FAQPage JSON-LD count must match visible FAQ sections (jsonld=0, visible=1)",
+      "live BlogPosting JSON-LD URL does not exactly match permalink",
+      "article-content container missing",
+      "featured image container missing",
+      "live FAQPage question/answer pairs differ from visible thematic FAQ"
+    ]
+  }
+}
