@@ -14,6 +14,7 @@
     "description_ctr": "Планы сорвались — предоплату удержали. Что выяснить до оплаты",
     "description_aeo": "Планы сорвались — предоплату удержали. Что выяснить до оплаты"
   },
+  "wp_category_slugs": ["posutochnaya-arenda", "sovety-gostyam"],
   "theme_blocks": {
     "faq": "skip",
     "quiz": "skip",
