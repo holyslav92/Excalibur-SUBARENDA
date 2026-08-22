@@ -1,0 +1,86 @@
+{
+  "topic_id": "B03",
+  "slug": "otmena-bronirovaniya-posutochno-vozvrat-predoplaty",
+  "cover_family": "brand_collage",
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "file": "cover/cover.png",
+  "alt": "Постер: гость на диване читает в телефоне «оплата невозвратная» — август, Тюмень, отмена брони.",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-quad-01.png",
+  "generated_at": "2026-08-22T09:42:19+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Постер: гость на диване читает в телефоне «оплата невозвратная» — август, Тюмень, отмена брони.",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Отель и квартира посуточно — разные правила отмены брони и возврата предоплаты",
+      "h2_anchor": "Отель и квартира посуточно — это разные истории",
+      "visual_type": "comparison_table",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "ИП, самозанятый или частное лицо — от статуса хозяина зависит возврат предоплаты",
+      "h2_anchor": "Кто сдаёт квартиру — от этого зависят правила",
+      "visual_type": "structure_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Ловушки при отмене брони: оферта, короткое окно отмены, слово задаток в чате",
+      "h2_anchor": "Где подставляют чаще всего",
+      "visual_type": "labeled_checklist",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_4",
+      "file": "cover/inline-04.png",
+      "alt": "Пять вопросов хозяину до перевода предоплаты за посуточную квартиру",
+      "h2_anchor": "Пять вопросов до оплаты — сохраните себе",
+      "visual_type": "labeled_checklist",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_5",
+      "file": "cover/inline-05.png",
+      "alt": "Что сохранить в переписке и как запросить расчёт удержания предоплаты",
+      "h2_anchor": "Если отмена уже случилась",
+      "visual_type": "process_flow",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_6",
+      "file": "cover/inline-06.png",
+      "alt": "Посуточные квартиры в Тюмени: условия отмены текстом до оплаты",
+      "h2_anchor": "У нас так",
+      "visual_type": "comfort_plus_interior",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_7",
+      "file": "cover/inline-07.png",
+      "alt": "Частые вопросы про возврат предоплаты при отмене бронирования посуточно",
+      "h2_anchor": "Частые вопросы",
+      "visual_type": "schema_faq_ui",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}
