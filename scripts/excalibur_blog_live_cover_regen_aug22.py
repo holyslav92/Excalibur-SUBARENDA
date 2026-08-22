@@ -555,11 +555,10 @@ def _canvas_sheet_ok(adir: Path, rel: Path, image_script: str, *, batch_file: st
     if result_path.is_file():
         used_vip = bool(json.loads(result_path.read_text(encoding="utf-8")).get("used_vip_fallback"))
     _apply_canvas(rel, canvas_index)
-    if _panels_have_drawn_lockup(adir, logo_panels):
-        if _repair_logo_panels(adir, logo_panels) and not _panels_have_drawn_lockup(adir, logo_panels):
-            print("OK pad-repair cleared drawn-lockup for this sheet", flush=True)
-            return True
-    else:
+    if not _panels_have_drawn_lockup(adir, logo_panels):
+        return True
+    if _repair_logo_panels(adir, logo_panels):
+        print("OK pad-repair + factory logo for this sheet", flush=True)
         return True
     if used_vip:
         print("WARN sheet lockup remains after vip already used", flush=True)
@@ -569,12 +568,12 @@ def _canvas_sheet_ok(adir: Path, rel: Path, image_script: str, *, batch_file: st
         print("WARN vip tier API failed for this sheet", flush=True)
         return False
     _apply_canvas(rel, canvas_index)
-    if _panels_have_drawn_lockup(adir, logo_panels):
-        if _repair_logo_panels(adir, logo_panels) and not _panels_have_drawn_lockup(adir, logo_panels):
-            print("OK pad-repair cleared drawn-lockup after vip sheet", flush=True)
-            return True
-        return False
-    return True
+    if not _panels_have_drawn_lockup(adir, logo_panels):
+        return True
+    if _repair_logo_panels(adir, logo_panels):
+        print("OK pad-repair + factory logo after vip sheet", flush=True)
+        return True
+    return False
 
 
 def pipeline(adir: Path) -> None:
