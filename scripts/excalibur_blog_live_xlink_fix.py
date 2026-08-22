@@ -32,7 +32,23 @@ from excalibur_blog_remote_transport import delete_remote_file, find_wp_root, up
 
 
 def run_bootstrap(env: dict[str, str], php: str, public_base: str, *, bootstrap_name: str) -> str:
-    """Upload bootstrap via FTP and trigger with curl (avoid 120s webfetch fallback wait)."""
+    """Upload bootstrap via SFTP/FTP and trigger with curl (avoid 120s webfetch fallback wait)."""
+    configured_root = (env.get("FTP_ROOT") or env.get("SSH_ROOT") or "").strip()
+    if configured_root:
+        from excalibur_blog_wp_publish import publish_via_sftp
+
+        runtime_env = dict(env)
+        runtime_env["SSH_ROOT"] = configured_root
+        runtime_env["FTP_ROOT"] = configured_root
+        # Timeweb ca21576: SFTP/22 works when passive FTP data channel is blocked.
+        if not (runtime_env.get("SSH_HOST") or "").strip():
+            runtime_env["SSH_HOST"] = (
+                runtime_env.get("FTP_HOST") or "188.225.40.162"
+            ).strip()
+        if not (runtime_env.get("SSH_PORT") or "").strip():
+            runtime_env["SSH_PORT"] = "22"
+        return publish_via_sftp(runtime_env, php, public_base, bootstrap_name=bootstrap_name)
+
     selected_root, probe_log = find_wp_root(env)
     if not selected_root:
         raise RuntimeError(f"FTP BLOCKER: wp-load.php not found; probe={probe_log}")

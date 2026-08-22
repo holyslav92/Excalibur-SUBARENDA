@@ -1,0 +1,39 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 2,
+  "identity_reference_local": "",
+  "identity_reference_id": "",
+  "reference_url_hosted": "",
+  "output_canvas": "cover/canvas-quad-02.png",
+  "result_path": "cover/quad-mcp-result-02.json",
+  "slots": [
+    "inline_4",
+    "inline_5",
+    "inline_6",
+    "inline_7"
+  ],
+  "preferred_image_flow": {
+    "provider": "derouter-rest",
+    "script": "scripts/excalibur_blog_derouter_gpt_image2_api.py",
+    "resolution": "2K",
+    "note": "PRIMARY: Derouter REST image API (api-direct, 2K 16:9). Fallback: excalibur_blog_kie_gpt_image2_api.py when DEROUTER auth/5xx. FORBIDDEN: flux2-pro-*, Seedream, nano_banana*, z-image, mcp-derouter/start-mcp.sh.",
+    "apply_script": "python3 scripts/excalibur_blog_quad_apply.py --article-dir <article_dir> --canvas-index 2 --inject-html"
+  },
+  "jobs": [
+    {
+      "slot": "canvas_quad",
+      "tool": "derouter-rest",
+      "mcp_args": {
+        "prompt": "High-key bright RU editorial collage, airy #FFFFFF, sun flare, warm hospitality mood. Comfort+ cozy apartment interiors — NOT hotel-luxe. NO host face. NO identity-real. CRITICAL: ZERO brand logos in image — no Добрый дом, no house icon, no green curtain, no terracotta wordmark, no logo lockup ANYWHERE on ANY panel. Factory pastes PNG later. NO white box/card/plate in corners.\nCanvas 2048x1152 2x2; four 16:9 panels; thin white gutters.\nBan: ANY logo/wordmark/brand mark; green curtain icon; terracotta serif brand text; gold house; white rectangle in corners; dark mood; stock man presenter; meme person >15%.\nTEXT: Russian Cyrillic only; exact LABELS per panel.\nTop-left: bar_timeline_chart early check-in cost; timeline 06:00→07:00→14:00 gold markers cozy living room bg.. TXT:06:00 | 07:00 | 14:00. Entire top-right corner BLANK white margin 15% — nothing drawn there.\nTop-right: process_flow doorstep emergency; guest with suitcase at apartment entrance phone chat arrows.. TXT:у подъезда | написать | ждать. Entire top-right corner BLANK white margin 15% for later logo paste — absolutely empty, no text no icons.\nBottom-left: labeled_checklist morning keys; numbered checklist torn paper gold checks.. TXT:накануне | время | чат. Entire top-right corner BLANK white margin 15%.\nBottom-right: comparison_table two columns правильный путь vs ошибка на пороге; torn notes gold ✓/✗; bright sofa interior.. TXT:правильный путь | ошибка. Entire top-right corner BLANK white margin 15% for later logo — empty white only. Tiny cat sticker bottom-left ≤10% only.\nInline all: #FFF/gold collage tape scraps; high-key; exact TXT; no logos anywhere; no brand marks; zero typos.",
+        "aspect_ratio": "16:9",
+        "resolution": "2K"
+      }
+    }
+  ],
+  "validation": {
+    "prompt_chars": 1674,
+    "max_prompt_chars": 3500,
+    "required_reference_host": "",
+    "resolution": "2K"
+  }
+}
