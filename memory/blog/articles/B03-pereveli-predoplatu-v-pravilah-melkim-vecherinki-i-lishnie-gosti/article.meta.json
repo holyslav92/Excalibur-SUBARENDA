@@ -19,6 +19,7 @@
     "quiz": "skip",
     "side_stickers": "skip"
   },
+  "wp_category_slugs": ["dogovor-i-pravila", "posutochnaya-arenda"],
   "date": "2026-08-22",
   "pipeline_canon": "human-first-v2",
   "editorial_swarm": false

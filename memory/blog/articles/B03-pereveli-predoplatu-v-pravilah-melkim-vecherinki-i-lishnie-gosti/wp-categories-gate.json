@@ -1,8 +1,10 @@
 {
   "category_ids": [
+    103,
     101
   ],
   "category_slugs": [
+    "dogovor-i-pravila",
     "posutochnaya-arenda"
   ],
   "errors": [],

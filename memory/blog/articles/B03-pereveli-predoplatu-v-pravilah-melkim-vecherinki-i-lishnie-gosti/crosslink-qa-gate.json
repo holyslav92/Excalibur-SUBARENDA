@@ -11,7 +11,7 @@
       "http_ok": true,
       "title_ok": true,
       "path_ok": true,
-      "http_skipped": true
+      "http_status": 200
     },
     {
       "href": "/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/",
@@ -21,7 +21,7 @@
       "http_ok": true,
       "title_ok": true,
       "path_ok": true,
-      "http_skipped": true
+      "http_status": 200
     }
   ],
   "catalog_count": 96,
