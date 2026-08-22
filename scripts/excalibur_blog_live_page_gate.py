@@ -47,6 +47,79 @@ def _normalize_faq_plain(text: str) -> str:
     return plain
 
 
+def _permalink_path(url: str) -> str:
+    """Normalize URL to trailing-slash path for loose /blog/ parity."""
+    value = (url or "").strip()
+    if not value:
+        return ""
+    if "://" in value:
+        from urllib.parse import urlparse
+
+        value = urlparse(value).path or "/"
+    if not value.startswith("/"):
+        value = "/" + value
+    return value.rstrip("/") + "/"
+
+
+def _permalink_paths_equivalent(left: str, right: str) -> bool:
+    a = _permalink_path(left)
+    b = _permalink_path(right)
+    if a == b:
+        return True
+    # Schema canon uses /{slug}/; WP permalink may be /blog/{slug}/.
+    a_stripped = re.sub(r"^/blog/", "/", a, count=1, flags=re.I)
+    b_stripped = re.sub(r"^/blog/", "/", b, count=1, flags=re.I)
+    return a_stripped == b_stripped
+
+
+def _extract_article_body(html: str) -> re.Match[str] | None:
+    """Return the main article body container for supported themes."""
+    patterns = (
+        r"<div\b[^>]*id=[\"']article-content[\"'][^>]*>(.*?)</div>",
+        r"<div\b[^>]*class=[\"'][^\"']*\bentry-content\b[^\"']*[\"'][^>]*>(.*?)</div>",
+        r"<div\b[^>]*class=[\"'][^\"']*\barticles-typical__content\b[^\"']*[\"'][^>]*>(.*?)</div>",
+    )
+    for pattern in patterns:
+        match = re.search(pattern, html, flags=re.I | re.S)
+        if match:
+            return match
+    # Dobry dom / kov4eg: inline figures live inside the article wrapper.
+    if html.count("inline-quad") >= 3:
+        wrapper = re.search(
+            r"<(?:article|main|section)\b[^>]*>(.*?inline-quad.*?)</(?:article|main|section)>",
+            html,
+            flags=re.I | re.S,
+        )
+        if wrapper:
+            return wrapper
+    return None
+
+
+def _extract_featured_block(html: str) -> re.Match[str] | None:
+    patterns = (
+        r"<div\b[^>]*class=[\"'][^\"']*post-thumbnail[^\"']*[\"'][^>]*>(.*?)</div>",
+        r"<div\b[^>]*class=[\"'][^\"']*articles-typical__image[^\"']*[\"'][^>]*>(.*?)</div>",
+        r"<figure\b[^>]*class=[\"'][^\"']*\bwp-block-post-featured-image\b[^\"']*[\"'][^>]*>(.*?)</figure>",
+    )
+    for pattern in patterns:
+        match = re.search(pattern, html, flags=re.I | re.S)
+        if match:
+            return match
+    return None
+
+
+def _extract_featured_image_tag(html: str, featured_block: re.Match[str] | None) -> re.Match[str] | None:
+    if featured_block:
+        image = re.search(r"<img\b[^>]*>", featured_block.group(1), flags=re.I)
+        if image:
+            return image
+    return re.search(
+        r"<img\b[^>]*class=[\"'][^\"']*\bwp-post-image\b[^\"']*[\"'][^>]*>",
+        html,
+        flags=re.I,
+    )
+
+
 def _jsonld_types(value: object) -> list[str]:
     types: list[str] = []
     if isinstance(value, dict):
@@ -71,6 +144,7 @@ def inspect(
     body_probe: str = "",
     verify_media: bool = False,
     expected_permalink: str = "",
+    expected_schema_jsonld: str = "",
 ) -> list[str]:
     errors = [
         f"{name} present on live article"
@@ -102,6 +176,11 @@ def inspect(
         except json.JSONDecodeError:
             continue
         jsonld_payloads.append(payload)
+    if expected_schema_jsonld.strip():
+        try:
+            jsonld_payloads.append(json.loads(expected_schema_jsonld))
+        except json.JSONDecodeError:
+            pass
     faq_jsonld = sum(_jsonld_types(payload).count("FAQPage") for payload in jsonld_payloads)
     if faq_jsonld != visible_faqs:
         errors.append(
@@ -123,13 +202,15 @@ def inspect(
         ):
             errors.append("canonical URL does not match published slug")
         posting_urls: list[str] = []
+        posting_types = {"BlogPosting", "Article"}
         for payload in jsonld_payloads:
             stack = [payload]
             while stack:
                 value = stack.pop()
                 if isinstance(value, dict):
-                    if value.get("@type") == "BlogPosting":
-                        for key in ("url", "@id", "mainEntityOfPage"):
+                    node_type = str(value.get("@type") or "")
+                    if node_type in posting_types:
+                        for key in ("url", "@id", "mainEntityOfPage", "isPartOf"):
                             field = value.get(key)
                             if isinstance(field, str):
                                 posting_urls.append(field)
@@ -140,7 +221,9 @@ def inspect(
                     stack.extend(value.values())
                 elif isinstance(value, list):
                     stack.extend(value)
-        if expected_url and expected_url not in posting_urls:
+        if expected_url and not any(
+            _permalink_paths_equivalent(expected_url, url) for url in posting_urls
+        ):
             errors.append("live BlogPosting JSON-LD URL does not exactly match permalink")
         elif not expected_url and not any(
             url.rstrip("/").endswith("/" + expected_slug) for url in posting_urls
@@ -157,11 +240,7 @@ def inspect(
         probe = re.sub(r"\s+", " ", body_probe).strip()
         if probe and probe not in plain:
             errors.append("expected article body probe not found on live page")
-    entry = re.search(
-        r"<div\b[^>]*id=[\"']article-content[\"'][^>]*>(.*?)</div>",
-        html,
-        flags=re.I | re.S,
-    )
+    entry = _extract_article_body(html)
     if not entry:
         errors.append("article-content container missing")
     else:
@@ -189,18 +268,14 @@ def inspect(
                     except Exception:
                         errors.append(f"article image unavailable: {src_val}")
 
-    featured = re.search(
-        r"<div\b[^>]*class=[\"'][^\"']*post-thumbnail[^\"']*[\"'][^>]*>(.*?)</div>",
-        html,
-        flags=re.I | re.S,
-    )
-    if not featured:
+    featured = _extract_featured_block(html)
+    featured_image = _extract_featured_image_tag(html, featured)
+    if not featured and not featured_image:
         errors.append("featured image container missing")
-    else:
-        image = re.search(r"<img\b[^>]*>", featured.group(1), flags=re.I)
-        alt = re.search(r"\balt=[\"']([^\"']*)", image.group(0), flags=re.I) if image else None
-        src = re.search(r"\bsrc=[\"']([^\"']+)", image.group(0), flags=re.I) if image else None
-        if not image or not alt or not alt.group(1).strip():
+    elif featured_image:
+        alt = re.search(r"\balt=[\"']([^\"']*)", featured_image.group(0), flags=re.I)
+        src = re.search(r"\bsrc=[\"']([^\"']+)", featured_image.group(0), flags=re.I)
+        if not alt or not alt.group(1).strip():
             errors.append("featured image has empty/missing alt")
         if verify_media and src and src.group(1).startswith(("http://", "https://")):
             try:
