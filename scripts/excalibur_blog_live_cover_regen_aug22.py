@@ -6,6 +6,7 @@ from __future__ import annotations
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 import time
@@ -416,6 +417,69 @@ def run(cmd: list[str], *, cwd: Path | None = None) -> None:
         raise RuntimeError(f"command failed ({proc.returncode}): {' '.join(cmd)}")
 
 
+MAX_COVER_CANVAS_RETRIES = 5
+CANVAS1_LOGO_PANELS = ("cover.png", "inline-01.png", "inline-03.png")
+CANVAS2_LOGO_PANELS = ("inline-07.png",)
+
+
+def _clear_cover_canvas_artifacts(adir: Path) -> None:
+    """Сбросить cover + inline 1–3 и pre-composite перед повторной генерацией canvas 1."""
+    cover = adir / "cover"
+    for name in (
+        "cover.png",
+        "inline-01.png",
+        "inline-02.png",
+        "inline-03.png",
+        "canvas-quad-01.png",
+    ):
+        path = cover / name
+        if path.is_file():
+            path.unlink()
+    pre = cover / "pre-composite"
+    if pre.is_dir():
+        shutil.rmtree(pre)
+
+
+def _clear_inline_canvas_artifacts(adir: Path) -> None:
+    """Сбросить inline 4–7 перед повторной генерацией canvas 2."""
+    cover = adir / "cover"
+    for name in (
+        "inline-04.png",
+        "inline-05.png",
+        "inline-06.png",
+        "inline-07.png",
+        "canvas-quad-02.png",
+    ):
+        path = cover / name
+        if path.is_file():
+            path.unlink()
+    pre = cover / "pre-composite"
+    if pre.is_dir():
+        shutil.rmtree(pre)
+
+
+def _panels_have_drawn_lockup(adir: Path, panel_names: tuple[str, ...]) -> bool:
+    from excalibur_blog_brand_logo_composite import assert_no_drawn_lockup_before_paste
+
+    cover = adir / "cover"
+    for name in panel_names:
+        path = cover / name
+        if not path.is_file():
+            return True
+        try:
+            assert_no_drawn_lockup_before_paste(path)
+        except ValueError as exc:
+            print(f"drawn-lockup on {name}: {exc}", flush=True)
+            return True
+    return False
+
+
+def _run_allow_fail(cmd: list[str], *, cwd: Path | None = None) -> int:
+    print("+", " ".join(cmd), flush=True)
+    proc = subprocess.run(cmd, cwd=cwd or ROOT, env={**os.environ, "PYTHONPATH": str(ROOT / "scripts")})
+    return proc.returncode
+
+
 def pipeline(adir: Path) -> None:
     rel = adir.relative_to(ROOT)
     image_script = resolve_image_script(ROOT)
@@ -434,19 +498,68 @@ def pipeline(adir: Path) -> None:
         if idx:
             args.extend(["--canvas-index", str(idx)])
         run(args)
-    for batch_no in ("01", "02"):
+    for attempt in range(1, MAX_COVER_CANVAS_RETRIES + 1):
         run([
             sys.executable,
             image_script,
             "--article-dir",
             str(rel),
             "--batch",
-            f"cover/quad-mcp-batch-{batch_no}.json",
+            "cover/quad-mcp-batch-01.json",
             "--result",
-            f"cover/quad-mcp-result-{batch_no}.json",
+            "cover/quad-mcp-result-01.json",
         ])
-    run([sys.executable, "scripts/excalibur_blog_quad_apply.py", "--article-dir", str(rel), "--canvas-index", "1", "--inject-html"])
-    run([sys.executable, "scripts/excalibur_blog_quad_apply.py", "--article-dir", str(rel), "--canvas-index", "2", "--inject-html"])
+        rc = _run_allow_fail([
+            sys.executable,
+            "scripts/excalibur_blog_quad_apply.py",
+            "--article-dir",
+            str(rel),
+            "--canvas-index",
+            "1",
+            "--inject-html",
+        ])
+        if rc == 0 and not _panels_have_drawn_lockup(adir, CANVAS1_LOGO_PANELS):
+            print(f"canvas 1 OK on attempt {attempt}", flush=True)
+            break
+        print(
+            f"WARN canvas 1 drawn-lockup or apply fail — retry ({attempt}/{MAX_COVER_CANVAS_RETRIES})",
+            flush=True,
+        )
+        if attempt >= MAX_COVER_CANVAS_RETRIES:
+            raise RuntimeError("canvas 1 failed drawn-lockup gate after max retries")
+        _clear_cover_canvas_artifacts(adir)
+
+    for attempt in range(1, MAX_COVER_CANVAS_RETRIES + 1):
+        run([
+            sys.executable,
+            image_script,
+            "--article-dir",
+            str(rel),
+            "--batch",
+            "cover/quad-mcp-batch-02.json",
+            "--result",
+            "cover/quad-mcp-result-02.json",
+        ])
+        rc = _run_allow_fail([
+            sys.executable,
+            "scripts/excalibur_blog_quad_apply.py",
+            "--article-dir",
+            str(rel),
+            "--canvas-index",
+            "2",
+            "--inject-html",
+        ])
+        logo_panels = CANVAS1_LOGO_PANELS + CANVAS2_LOGO_PANELS
+        if rc == 0 and not _panels_have_drawn_lockup(adir, logo_panels):
+            print(f"canvas 2 OK on attempt {attempt}", flush=True)
+            break
+        print(
+            f"WARN canvas 2 drawn-lockup or apply fail — retry ({attempt}/{MAX_COVER_CANVAS_RETRIES})",
+            flush=True,
+        )
+        if attempt >= MAX_COVER_CANVAS_RETRIES:
+            raise RuntimeError("canvas 2 failed drawn-lockup gate after max retries")
+        _clear_inline_canvas_artifacts(adir)
     run([sys.executable, "scripts/excalibur_blog_brand_logo_composite.py", "--article-dir", str(rel)])
     run([sys.executable, "scripts/excalibur_blog_drawn_logo_gate.py", "--article-dir", str(rel)])
 
