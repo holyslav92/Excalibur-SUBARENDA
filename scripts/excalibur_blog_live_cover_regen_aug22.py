@@ -437,7 +437,7 @@ def pipeline(adir: Path) -> None:
     for batch_no in ("01", "02"):
         run([
             sys.executable,
-            GRSAI_IMAGE_SCRIPT,
+            image_script,
             "--article-dir",
             str(rel),
             "--batch",
@@ -535,6 +535,11 @@ def main() -> int:
     if not os.environ.get("GRSAI_API_KEY", "").strip() and not args.bootstrap_only and not args.upload_only:
         print("❌ GRSAI API KEY MISSING: set GRSAI_API_KEY before regen", file=sys.stderr)
         return 1
+
+    if not os.environ.get("GRSAI_IMAGE_MODEL", "").strip():
+        fallback_model = os.environ.get("DEROUTER_IMAGE_MODEL", "").strip()
+        if fallback_model:
+            os.environ["GRSAI_IMAGE_MODEL"] = fallback_model
 
     all_urls: dict[str, list[str]] = {}
     host_used: str | None = None
