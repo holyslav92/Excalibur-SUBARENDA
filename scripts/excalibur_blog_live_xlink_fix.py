@@ -32,7 +32,23 @@ from excalibur_blog_remote_transport import delete_remote_file, find_wp_root, up
 
 
 def run_bootstrap(env: dict[str, str], php: str, public_base: str, *, bootstrap_name: str) -> str:
-    """Upload bootstrap via FTP and trigger with curl (avoid 120s webfetch fallback wait)."""
+    """Upload bootstrap via SFTP/FTP and trigger with curl (avoid 120s webfetch fallback wait)."""
+    configured_root = (env.get("FTP_ROOT") or env.get("SSH_ROOT") or "").strip()
+    if configured_root:
+        from excalibur_blog_wp_publish import publish_via_sftp
+
+        runtime_env = dict(env)
+        runtime_env["SSH_ROOT"] = configured_root
+        runtime_env["FTP_ROOT"] = configured_root
+        # Timeweb ca21576: SFTP/22 works when passive FTP data channel is blocked.
+        if not (runtime_env.get("SSH_HOST") or "").strip():
+            runtime_env["SSH_HOST"] = (
+                runtime_env.get("FTP_HOST") or "188.225.40.162"
+            ).strip()
+        if not (runtime_env.get("SSH_PORT") or "").strip():
+            runtime_env["SSH_PORT"] = "22"
+        return publish_via_sftp(runtime_env, php, public_base, bootstrap_name=bootstrap_name)
+
     selected_root, probe_log = find_wp_root(env)
     if not selected_root:
         raise RuntimeError(f"FTP BLOCKER: wp-load.php not found; probe={probe_log}")
@@ -213,6 +229,33 @@ def normalize_blog_hrefs(content: str, slug_index: dict[str, Any]) -> tuple[str,
         return match.group(0)
 
     updated = re.sub(r'href=(["\'])(/[^"\']+)\1', repl, content)
+    return updated, changes
+
+
+def fix_blog_index_trailing_slash(content: str) -> tuple[str, list[dict[str, str]]]:
+    """«Вернуться назад» and other links: href=\"/blog\" → href=\"/blog/\"."""
+    changes: list[dict[str, str]] = []
+    pattern = re.compile(
+        r'<a\b([^>]*?)href=(["\'])/blog\2([^>]*)>(.*?)</a>',
+        re.I | re.S,
+    )
+
+    def repl(match: re.Match[str]) -> str:
+        anchor = unescape(re.sub(r"\s+", " ", match.group(4))).strip()
+        changes.append(
+            {
+                "action": "blog_index_slash",
+                "from": "/blog",
+                "to": "/blog/",
+                "anchor": anchor[:80],
+            }
+        )
+        return (
+            f"<a{match.group(1)}href={match.group(2)}/blog/{match.group(2)}"
+            f"{match.group(3)}>{match.group(4)}</a>"
+        )
+
+    updated = pattern.sub(repl, content)
     return updated, changes
 
 
@@ -407,6 +450,7 @@ def main() -> int:
         slug = str(row.get("slug") or "")
         content = str(row.get("content") or "")
         fixed, href_changes = normalize_blog_hrefs(content, slug_index)
+        fixed, blog_index_changes = fix_blog_index_trailing_slash(fixed)
         fixed, mashed_changes = fix_mashed_cta_spacing(fixed)
         fixed, unwrap_changes = unwrap_mismatched_blog_links(fixed, catalog=catalog)
         fixed, restore_changes = restore_plain_crosslinks(fixed, catalog=catalog)
@@ -423,6 +467,7 @@ def main() -> int:
             "slug": slug,
             "post_id": row.get("post_id"),
             "href_changes": href_changes,
+            "blog_index_changes": blog_index_changes,
             "unwrap_changes": unwrap_changes,
             "restore_changes": restore_changes,
             "mashed_changes": mashed_changes,

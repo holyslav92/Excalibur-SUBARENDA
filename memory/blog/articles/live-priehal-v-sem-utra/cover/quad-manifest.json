@@ -1,0 +1,72 @@
+{
+  "topic_id": "LIVE-sem-utra",
+  "slug": "priehal-v-sem-utra-kvartiru-dali-tolko-v-dva-chto-delat-do-zaseleniya",
+  "canvas_file": "cover/canvas-quad-02.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "Приехал в семь утра — квартиру дали только в два",
+  "cover_hook_highlight": "семь утра",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "wordstat_stickers": ["ранний заезд", "Тюмень"],
+  "logo_paste_inline_slots": ["inline_5", "inline_7"],
+  "cover_motifs": {
+    "composition": "bright collage early check-in timeline + doorstep scene",
+    "location": "Tyumen apartment entrance morning August warm light",
+    "meme": "tiny cat sticker bottom-left ≤12%, never top-right pad",
+    "prop_set": "keys, suitcase, phone chat, torn sticky, gold tape",
+    "sticker_set": ["ранний заезд", "Тюмень", "7 утра"],
+    "joke": "cat surprised at early arrival"
+  },
+  "cover_emotion": "гость у подъезда в семь утра ждёт ключи",
+  "slots": {
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Сколько стоит зайти раньше",
+      "visual_type": "bar_timeline_chart",
+      "scene_hint": "Timeline bar 06:00→07:00→14:00 gold markers early cost chips.",
+      "alt": "Шкала раннего приезда 06:00–14:00: сколько стоит зайти раньше",
+      "labels": ["06:00", "07:00", "14:00"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Что делать, если вы уже стоите у подъезда",
+      "visual_type": "process_flow",
+      "scene_hint": "Mini-flow at entrance: message host, wait safe, confirm time.",
+      "alt": "Мини-схема у подъезда: что делать, если уже приехали",
+      "labels": ["у подъезда", "написать", "ждать"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Чеклист: как получить ключи в семь утра",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Morning checklist: confirm night before, time slot, chat not door.",
+      "alt": "Чеклист: как получить ключи в семь утра",
+      "labels": ["накануне", "время", "чат"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "У нас так",
+      "visual_type": "comparison_table",
+      "scene_hint": "Two-column torn notes: правильный путь vs ошибка; gold ✓/✗.",
+      "alt": "Две колонки: правильный путь и ошибка на пороге",
+      "labels": ["правильный путь", "ошибка"]
+    }
+  },
+  "cover_keys_ru": ["ранний заезд", "Тюмень"]
+}
