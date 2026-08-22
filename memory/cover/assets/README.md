@@ -8,7 +8,7 @@
 |------|------|
 | `brand/logo-dobry-dom.png` | **Единственный** allowed lockup — alpha PNG overlay после генерации (без белой/серой подложки) |
 
-**Источник (LOCKED):** `wp-content/uploads/2026/03/cropped-img_7143.png`
+**Источник (LOCKED):** файл `cropped-img_7143.png` (uploads/2026/03 на WP-сайте тенанта).
 
 **Канон:** alpha only — `prepare_logo_rgba` crop `getbbox()`, `alpha_composite` onto scene.  
 **NEVER** redraw, **NEVER** white/gray plate/card/tablichka behind lockup.
