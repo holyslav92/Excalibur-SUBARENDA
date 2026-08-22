@@ -75,7 +75,7 @@ files_changed:
 - `shared/derouter-opus-brain-contract.md`
 checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_derouter_opus_chat.py`
-commit: pending-parent-commit
+commit: 73fa97e
 
 ---
 
@@ -123,4 +123,4 @@ files_changed:
 checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_live_page_gate.py scripts/excalibur_blog_wp_publish.py`
 - `python3 -m unittest tests.test_live_page_gate -v`
-commit: pending-parent-commit
+commit: 73fa97e
