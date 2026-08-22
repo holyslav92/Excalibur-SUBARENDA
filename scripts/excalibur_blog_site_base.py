@@ -10,7 +10,7 @@ from __future__ import annotations
 import os
 import re
 from typing import Any
-from urllib.parse import urlparse
+from urllib.parse import urlsplit, urlunsplit, urlparse
 
 
 SITE_BASE_PLACEHOLDER = "{{SITE_BASE}}"
@@ -166,6 +166,43 @@ def to_git_safe_site_url(url: str, public_base: str | None = None) -> str:
 def is_placeholder_site_url(url: str) -> bool:
     value = (url or "").strip()
     return value.startswith(SITE_BASE_PLACEHOLDER)
+
+
+def idna_hostname(host: str) -> str:
+    """ASCII/punycode hostname for HTTP clients that require latin-1 headers."""
+    value = (host or "").strip()
+    if not value:
+        return value
+    try:
+        value.encode("ascii")
+        return value
+    except UnicodeEncodeError:
+        return value.encode("idna").decode("ascii")
+
+
+def hosts_equivalent(left: str, right: str) -> bool:
+    """Compare hostnames with IDNA normalization (unicode vs punycode)."""
+    a = idna_hostname((left or "").lower().split(":", 1)[0])
+    b = idna_hostname((right or "").lower().split(":", 1)[0])
+    return bool(a) and a == b
+
+
+def encode_request_url(url: str) -> str:
+    """Encode IDN hostnames so urllib can issue the request."""
+    parts = urlsplit(url)
+    if parts.scheme not in ("http", "https") or not parts.hostname:
+        return url
+    ascii_host = idna_hostname(parts.hostname)
+    if ascii_host == parts.hostname:
+        return url
+    port = parts.port
+    netloc = f"{ascii_host}:{port}" if port else ascii_host
+    if parts.username:
+        auth = parts.username
+        if parts.password:
+            auth = f"{auth}:{parts.password}"
+        netloc = f"{auth}@{netloc}"
+    return urlunsplit((parts.scheme, netloc, parts.path, parts.query, parts.fragment))
 
 
 def path_from_site_url(url: str) -> str:
