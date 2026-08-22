@@ -1,0 +1,29 @@
+{
+  "topic_id": "B03",
+  "research_date": "2026-08-22",
+  "status": "PASS",
+  "summary": "Research notes for daily rental contract/house rules checklist before prepayment. Fresh signals: tenant TG @Dobriy_dom_72 summer 2026 + live Tyumen marketplace listings (Kvartirka, Sutochno) accessed 2026-08-22.",
+  "freshness_audit": {
+    "research_date": "2026-08-22",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://t.me/s/Dobriy_dom_72",
+      "published_at": "2026-08-22",
+      "note": "Live tenant channel: summer 2026 posts urging guests to verify booking conditions (check-in/out, hidden fees) before payment — overlaps B03 angle."
+    }
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176", "225"],
+    "final_p0": "аренда квартиры посуточно — 48407 RU / 787 Tyumen"
+  },
+  "official_source_audit": {
+    "status": "NOT_REQUIRED",
+    "reason": "Нет тарифов/комиссий банков; закон о тишине ТО — справочно, без штрафных сумм"
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  }
+}

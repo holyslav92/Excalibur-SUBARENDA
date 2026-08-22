@@ -1,0 +1,218 @@
+{
+  "agent": "excalibur-blog",
+  "date_context": {
+    "timezone": "Europe/Moscow",
+    "today_iso": "2026-08-22",
+    "today_ru": "22.08.2026",
+    "year": 2026,
+    "month": 8,
+    "month_name_ru": "август",
+    "weekday_ru": "суббота"
+  },
+  "topic": {
+    "topic_id": "B03",
+    "title": "Перевели предоплату. В правилах мелким: вечеринки и лишние гости",
+    "h1": "Перевели предоплату. В правилах мелким: вечеринки и лишние гости",
+    "slug": "pereveli-predoplatu-v-pravilah-melkim-vecherinki-i-lishnie-gosti",
+    "primary_query": "Перевели предоплату. В правилах мелким: вечеринки и лишние гости",
+    "priority": "P0"
+  },
+  "searches": [
+    {
+      "query_id": "primary_fresh",
+      "query": "Перевели предоплату. В правилах мелким: вечеринки и лишние гости 2026",
+      "purpose": "актуальный SERP",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Изменения в Правилах бронирования 2026: как отели снижают риски отмен",
+          "url": "https://comfortbooking.ru/blog/stati/novye-pravila-bronirovaniya-v-otelyakh-s-1-marta-2026/",
+          "snippet": ""
+        },
+        {
+          "title": "Правила бронирования отелей: что изменилось для гостей в 2026 году",
+          "url": "https://www.garant.ru/article/2066767/",
+          "snippet": "С 1 марта 2026 года в России вступили в силу изменения в Правила предоставления гостиничных услуг, которые заметно повлияли на систему взаимоотношений между отелями и гостями."
+        },
+        {
+          "title": "Новые правила для отелей и гостиниц в 2026 году",
+          "url": "https://bronirui-online.ru/jurnal/novosti/novye-pravila-dlya-otelej-i-gostinic-v-2026-godu/",
+          "snippet": "Весной 2026 года вступили в силу изменения, затрагивающие порядок предоставления гостиничных услуг. Теперь эти правила распространяются не только на гостиницы, но и на все средства размещения, подлежащие классификации: санатории, базы отдыха, кемпинги."
+        },
+        {
+          "title": "Новые правила бронирования отелей с 2026 года: возврат денег и ...",
+          "url": "https://harant.ru/blog/yuridicheskie-novosti/novye-pravila-bronirovaniya-otelej-s-marta-2026-goda/",
+          "snippet": "С 1 марта 2026 года вступили в силу обновленные правила предоставления гостиничных услуг и иные изменения в законодательстве."
+        },
+        {
+          "title": "Весной вступают в силу изменения в правилах бронирования гостиниц ...",
+          "url": "https://vk.com/wall-54527483_10521",
+          "snippet": "Возврат денег за отмену бронирования гостиницы по новым правилам 2026 года: разъясняем юридические гарантии для гостей и обязанности отелей."
+        },
+        {
+          "title": "Новые правила бронирования отелей с 1 марта 2026 — что изменилось для ...",
+          "url": "https://shop.renlife.ru/articles/novye-pravila-bronirovaniya-oteley-s-marta-2026-goda",
+          "snippet": "Изменения вступят в силу с 1 марта 2026 года. Речь идет о Постановлении Правительства РФ от 27.11.2025 № 1912 «Об утверждении Правил предоставления гостиничных услуг и услуг иных средств ..."
+        }
+      ],
+      "searched_at": "2026-08-22"
+    },
+    {
+      "query_id": "title_fresh",
+      "query": "Перевели предоплату. В правилах мелким: вечеринки и лишние гости 2026",
+      "purpose": "SERP по человеческому title",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Изменения в Правилах бронирования 2026: как отели снижают риски отмен",
+          "url": "https://comfortbooking.ru/blog/stati/novye-pravila-bronirovaniya-v-otelyakh-s-1-marta-2026/",
+          "snippet": ""
+        },
+        {
+          "title": "Бронирование гостиниц по-новому: отмена штрафов и новые правила с 2026 ...",
+          "url": "https://harant.ru/blog/grazhdanskoe-pravo/novye-pravila-bronirovaniya-gostinicz-chto-nas-zhdet-s-1-marta-2026-goda/",
+          "snippet": "С 1 марта 2026 года в России вступили в силу изменения в Правила предоставления гостиничных услуг, которые заметно повлияли на систему взаимоотношений между отелями и гостями."
+        },
+        {
+          "title": "Новые правила бронирования отелей с 1 марта 2026 — что изменилось для ...",
+          "url": "https://shop.renlife.ru/articles/novye-pravila-bronirovaniya-oteley-s-marta-2026-goda",
+          "snippet": "С будущего года отмена брони в отелях без штрафов — возврат предоплаты при раннем отказе! Новые правила и простая онлайн-регистрация гостей."
+        },
+        {
+          "title": "Новые правила бронирования отелей: как вернуть деньги в 2026",
+          "url": "https://bycepni.com/articles/kak-proverit-usloviya-bronirovaniya/",
+          "snippet": "С 1 марта 2026 года в России действуют обновлённые правила бронирования гостиниц. Разбираем возврат предоплаты, отмену негарантированного бронирования и новые обязанности агрегаторов."
+        },
+        {
+          "title": "Невозвратный тариф в отеле: новые правила для отельеров",
+          "url": "https://www.travelline.ru/blog/nevozvratnyy-tarif-v-otele/",
+          "snippet": "С 1 марта 2026 года эти категории из российских правил исключены. Для гостя важны два момента. Первый. Если бронь отменена до дня заезда, гостиница обязана вернуть всю предоплату."
+        },
+        {
+          "title": "Новые правила для отелей и гостиниц в 2026 году",
+          "url": "https://bronirui-online.ru/jurnal/novosti/novye-pravila-dlya-otelej-i-gostinic-v-2026-godu/",
+          "snippet": "С 1 марта 2026 года вступили в силу новые Правила предоставления гостиничных услуг от 27.11.2025 г. № 1912. Понятие «невозвратный тариф» в законе так и не появилось, а деление на гарантированное и негарантированное бронирование отменили."
+        }
+      ],
+      "searched_at": "2026-08-22"
+    },
+    {
+      "query_id": "official_docs",
+      "query": "Перевели предоплату. В правилах мелким: вечеринки и лишние гости official docs 2026",
+      "purpose": "официальные docs",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Новые правила бронирования отелей с 1 марта 2026 — что изменилось для ...",
+          "url": "https://shop.renlife.ru/articles/novye-pravila-bronirovaniya-oteley-s-marta-2026-goda",
+          "snippet": ""
+        },
+        {
+          "title": "С 1 марта в России меняются правила бронирования отелей: что важно ...",
+          "url": "https://journal.sovcombank.ru/news/meniaiutsia-pravila-bronirovaniia",
+          "snippet": "С 1 марта 2026 года в России действуют обновлённые правила бронирования гостиниц. Разбираем возврат предоплаты, отмену негарантированного бронирования и новые обязанности агрегаторов."
+        },
+        {
+          "title": "Новые правила бронирования отелей с 2026 года: возврат денег и ...",
+          "url": "https://harant.ru/blog/yuridicheskie-novosti/novye-pravila-bronirovaniya-otelej-s-marta-2026-goda/",
+          "snippet": "С 1 марта 2026 года в России меняются правила бронирования отелей. Нововведения касаются возврата предоплаты, прозрачности цен и работы агрегаторов."
+        },
+        {
+          "title": "Невозвратный тариф в отеле: новые правила для отельеров",
+          "url": "https://www.travelline.ru/blog/nevozvratnyy-tarif-v-otele/",
+          "snippet": "Документ по-новому регулирует бронирование, фиксирует порядок возврата денег при отмене поездки, вводит жёсткие требования к ценообразованию и впервые подробно описывает обязанности онлайн-площадок."
+        },
+        {
+          "title": "Новые правила предоставления гостиничных услуг 2026",
+          "url": "https://www.horecapoint.news/novosti/276-novyie-pravila-predostavleniya-gostinichnyix-uslug-2026.html",
+          "snippet": "С 1 марта 2026 года вступили в силу новые Правила предоставления гостиничных услуг от 27.11.2025 г. № 1912. Понятие «невозвратный тариф» в законе так и не появилось, а деление на гарантированное и негарантированное бронирование отменили."
+        },
+        {
+          "title": "Новые правила для отелей и гостиниц в 2026 году",
+          "url": "https://bronirui-online.ru/jurnal/novosti/novye-pravila-dlya-otelej-i-gostinic-v-2026-godu/",
+          "snippet": "С 1 марта 2026 года вступило в силу Постановление № 1912. Узнайте, как теперь возвращать предоплату, какие штрафы можно удерживать и как защитить доход отеля в новых правовых реалиях."
+        }
+      ],
+      "searched_at": "2026-08-22"
+    },
+    {
+      "query_id": "github_evidence",
+      "query": "site:github.com Перевели предоплату. В правилах мелким: вечеринки и лишние гости 2026",
+      "purpose": "GitHub evidence",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "py/Текстовый документ.pynb at main · gheorghegggg/py · GitHub",
+          "url": "https://github.com/gheorghegggg/py/blob/main/%D0%A2%D0%B5%D0%BA%D1%81%D1%82%D0%BE%D0%B2%D1%8B%D0%B9%20%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82.pynb",
+          "snippet": ""
+        },
+        {
+          "title": "GitHub - Karonus/tdanswers: Ответы для игры \"Смертельная вечеринка 2\"",
+          "url": "https://github.com/Karonus/tdanswers",
+          "snippet": "\"В переменной `our_text` сохранено некоторое предложение, в котором могут быть добавлены лишние пробелы."
+        },
+        {
+          "title": "Тестирование 1С:Професионал по УНФ · GitHub",
+          "url": "https://gist.github.com/glebliutsko/41ca7af30f5d9c20461a1bb6e4faf450",
+          "snippet": "Ответы для игры \"Смертельная вечеринка 2\". Contribute to Karonus/tdanswers development by creating an account on GitHub."
+        },
+        {
+          "title": "Шпаргалка по Markdown · GitHub",
+          "url": "https://gist.github.com/fomvasss/8dd8cd7f88c67a4e3727f9d39224a84c",
+          "snippet": "Нет, нельзя, так как в программе предусмотрена возможность введения учета только по одной организации. Да, если в настройках программы установлен соответствующий флажок."
+        },
+        {
+          "title": "unsupervised_topic_modeling/topics/ru/11/50/50/topics at master ...",
+          "url": "https://github.com/annontopicmodel/unsupervised_topic_modeling/blob/master/topics/ru/11/50/50/topics",
+          "snippet": "Обратите внимание на пустую строку выше и на пробелы в начале (нужен по меньшей мере один, но здесь мы добавили три, чтобы также выровнять необработанный Markdown)."
+        },
+        {
+          "title": "coursera-ddp-shiny/corpora/ru_50k.txt at master - GitHub",
+          "url": "https://github.com/spujadas/coursera-ddp-shiny/blob/master/corpora/ru_50k.txt",
+          "snippet": "Contribute to annontopicmodel/unsupervised_topic_modeling development by creating an account on GitHub."
+        }
+      ],
+      "searched_at": "2026-08-22"
+    },
+    {
+      "query_id": "community_experience",
+      "query": "Перевели предоплату. В правилах мелким: вечеринки и лишние гости forum problems опыт 2026",
+      "purpose": "форумы и живые проблемы",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Бронирование гостиниц по-новому: отмена штрафов и новые правила с 2026 ...",
+          "url": "https://harant.ru/blog/grazhdanskoe-pravo/novye-pravila-bronirovaniya-gostinicz-chto-nas-zhdet-s-1-marta-2026-goda/",
+          "snippet": ""
+        },
+        {
+          "title": "Новые правила для отелей и гостиниц в 2026 году",
+          "url": "https://bronirui-online.ru/jurnal/novosti/novye-pravila-dlya-otelej-i-gostinic-v-2026-godu/",
+          "snippet": "С будущего года отмена брони в отелях без штрафов — возврат предоплаты при раннем отказе! Новые правила и простая онлайн-регистрация гостей."
+        },
+        {
+          "title": "Отелям запретили удерживать всю предоплату за отмену брони",
+          "url": "https://www.vbr.ru/novosti/puteshestviya/2026/02/17/otelyam-zapretili/",
+          "snippet": "Изменения затронули порядок регистрационного и миграционного учета гостей, условия отмены бронирования, требования к публичной информации и оферте, правила использования русского языка в средствах размещения. Вместе с юристом Екатериной Семенец разобрали ключевые нововведения и ответили на самые частые вопросы отельеров."
+        },
+        {
+          "title": "С 1 марта 2026 года изменятся правила бронирования гостиниц",
+          "url": "https://azo-hotels.com/articles/novye-pravila-bronirovaniya-gostinic-s-01-03-2026",
+          "snippet": "С 1 марта 2026 года вступают в силу новые Правила предоставления гостиничных услуг, утверждённые постановлением Правительства РФ от 27 ноября 2025 года № 1912. Документ меняет порядок бронирования и возврата предоплаты для всех средств размещения — от крупных отелей до хостелов и гостевых домов."
+        },
+        {
+          "title": "Новые правила бронирования отелей с 2026 года: возврат денег и ...",
+          "url": "https://harant.ru/blog/yuridicheskie-novosti/novye-pravila-bronirovaniya-otelej-s-marta-2026-goda/",
+          "snippet": "С 1 марта 2026 года отели обязаны возвращать полную предоплату при отмене брони до дня заезда. Рассказываем о новых правилах бронирования, защите прав туристов и ограничениях для агрегаторов."
+        },
+        {
+          "title": "Отели вернут предоплату: новые правила бронирования вступают в силу с ...",
+          "url": "https://novos.mk.ru/economics/2026/02/13/oteli-vernut-predoplatu-novye-pravila-bronirovaniya-vstupayut-v-silu-s-marta.html",
+          "snippet": "Возврат денег за отмену бронирования гостиницы по новым правилам 2026 года: разъясняем юридические гарантии для гостей и обязанности отелей."
+        }
+      ],
+      "searched_at": "2026-08-22"
+    }
+  ],
+  "errors": []
+}
