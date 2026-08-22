@@ -1,0 +1,33 @@
+{
+  "slug": "dogovor-arendy-pravila-prozhivaniya-posutochno",
+  "topic_id": "B03",
+  "permalink": "{{SITE_BASE}}/blog/dogovor-arendy-pravila-prozhivaniya-posutochno/",
+  "publish_method": "ftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B03-dogovor-arendy-pravila-prozhivaniya-posutochno/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1159038,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=3855 slug=dogovor-arendy-pravila-prozhivaniya-posutochno\nOK categories=103,101\nOK featured_image=3856\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=3857 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/08/dogovor-arendy-pravila-prozhivaniya-posutochno-inline-01.png\nOK inline_alt=3857\nOK inline_caption=3857\nOK inline_description=3857\nOK inline_image_upload=3858 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/08/dogovor-arendy-pravila-prozhivaniya-posutochno-inline-02.png\nOK inline_alt=3858\nOK inline_caption=3858\nOK inline_description=3858\nOK inline_image_upload=3859 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/08/dogovor-arendy-pravila-prozhivaniya-posutochno-inline-03.png\nOK inline_alt=3859\nOK inline_caption=3859\nOK inline_description=3859\nOK inline_image_upload=3860 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/08/dogovor-arendy-pravila-prozhivaniya-posutochno-inline-04.png\nOK inline_alt=3860\nOK inline_caption=3860\nOK inline_description=3860\nOK inline_image_upload=3861 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/08/dogovor-arendy-pravila-prozhivaniya-posutochno-inline-05.png\nOK inline_alt=3861\nOK inline_caption=3861\nOK inline_description=3861\nOK inline_image_upload=3862 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/08/dogovor-arendy-pravila-prozhivaniya-posutochno-inline-06.png\nOK inline_alt=3862\nOK inline_caption=3862\nOK inline_description=3862\nOK inline_image_upload=3863 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/08/dogovor-arendy-pravila-prozhivaniya-posutochno-inline-07.png\nOK inline_alt=3863\nOK inline_caption=3863\nOK inline_description=3863\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/dogovor-arendy-pravila-prozhivaniya-posutochno/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "fail",
+  "live_page": {
+    "gate": "live-page",
+    "status": "BLOCK",
+    "permalink": "{{SITE_BASE}}/blog/dogovor-arendy-pravila-prozhivaniya-posutochno/",
+    "errors": [
+      "FAQPage JSON-LD count must match visible FAQ sections (jsonld=0, visible=1)",
+      "live BlogPosting JSON-LD URL does not exactly match permalink",
+      "article-content container missing",
+      "featured image container missing",
+      "live FAQPage question/answer pairs differ from visible thematic FAQ"
+    ]
+  }
+}
