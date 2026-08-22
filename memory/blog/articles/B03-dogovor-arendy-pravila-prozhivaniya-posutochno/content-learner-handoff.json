@@ -1,0 +1,24 @@
+{
+  "role": "excalibur-blog-content-learner",
+  "topic_id": "B03",
+  "article_dir": "memory/blog/articles/B03-dogovor-arendy-pravila-prozhivaniya-posutochno",
+  "run_date": "2026-08-22",
+  "evidence_gate": "SKIP",
+  "metrika_feedback": "BLOCKER",
+  "metrika_period_days": 30,
+  "metrika_matched_rows": 0,
+  "metrika_actionable_rows": 0,
+  "metrika_analytics": null,
+  "lesson_id": "LESSON-20260822-1307-B03-dogovor-preoplat-hook",
+  "lessons_recorded": 1,
+  "durable_applied": "none",
+  "rollback_check": "INSUFFICIENT_DATA",
+  "named_blockers": [
+    "EVIDENCE_SKIPPED",
+    "METRIKA_CREDENTIALS",
+    "LOW_SAMPLE",
+    "ASSUMED_BEHAVIOR"
+  ],
+  "incident_report": "memory/pipeline-fix-queue.md#INC-20260822-1307-content-learner-metrika-credentials",
+  "status": "blocker"
+}
