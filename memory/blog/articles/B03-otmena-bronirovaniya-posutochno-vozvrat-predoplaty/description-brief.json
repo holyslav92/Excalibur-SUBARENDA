@@ -1,0 +1,9 @@
+{
+  "topic_id": "B03",
+  "description": "«В отеле вернули бы всё» — так думают и о квартире посуточно в Тюмени. Но мартовские правила не спасают от удержания предоплаты: решает одна деталь брони.",
+  "rhythm": "klyshin_case_hook",
+  "geo": "Тюмень",
+  "not_equal_title": true,
+  "not_truncated_lead": true,
+  "verdict": "PASS"
+}
