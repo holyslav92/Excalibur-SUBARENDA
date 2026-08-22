@@ -1,0 +1,295 @@
+{
+  "agent": "excalibur-blog-cover-quad-split",
+  "status": "PASS",
+  "splits": [
+    {
+      "canvas_index": 1,
+      "manifest": "cover/quad-manifest.json",
+      "split": {
+        "source_canvas": "memory/blog/articles/B03-otmena-bronirovaniya-posutochno-vozvrat-predoplaty/cover/canvas-quad-01.png",
+        "source_size_px": [
+          2688,
+          1520
+        ],
+        "panel_size_px": [
+          1344,
+          760
+        ],
+        "split_meta": {
+          "split_mode": "mechanical_center",
+          "h_gutter_px": null,
+          "v_gutter_px": null,
+          "requested_mode": "auto",
+          "fallback_reason": "aspect_crop_loss_too_high",
+          "rejected_gutter": {
+            "h_gutter_px": {
+              "start": 751,
+              "end": 823
+            },
+            "v_gutter_px": {
+              "start": 1327,
+              "end": 1346
+            },
+            "gutter_quality": {
+              "h_center_offset_px": 27.0,
+              "v_center_offset_px": 7.5,
+              "max_aspect_crop_loss": 0.0768,
+              "per_panel_crop_loss": {
+                "top_left": 0.0067,
+                "top_right": 0.0,
+                "bottom_left": 0.0663,
+                "bottom_right": 0.0768
+              },
+              "reject_reason": "aspect_crop_loss_too_high"
+            }
+          }
+        },
+        "output_size_px": [
+          1200,
+          675
+        ],
+        "outputs": {
+          "cover": {
+            "file": "cover/cover.png",
+            "quadrant": "top_left",
+            "box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1344,
+              "bottom": 760
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1344,
+              "bottom": 760
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Постер: гость на диване читает в телефоне «оплата невозвратная» — август, Тюмень, отмена брони.",
+            "h2_anchor": null
+          },
+          "inline_1": {
+            "file": "cover/inline-01.png",
+            "quadrant": "top_right",
+            "box_px": {
+              "left": 1344,
+              "top": 0,
+              "right": 2688,
+              "bottom": 760
+            },
+            "raw_box_px": {
+              "left": 1344,
+              "top": 0,
+              "right": 2688,
+              "bottom": 760
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Отель и квартира посуточно — разные правила отмены брони и возврата предоплаты",
+            "h2_anchor": "Отель и квартира посуточно — это разные истории"
+          },
+          "inline_2": {
+            "file": "cover/inline-02.png",
+            "quadrant": "bottom_left",
+            "box_px": {
+              "left": 0,
+              "top": 760,
+              "right": 1344,
+              "bottom": 1520
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 760,
+              "right": 1344,
+              "bottom": 1520
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "ИП, самозанятый или частное лицо — от статуса хозяина зависит возврат предоплаты",
+            "h2_anchor": "Кто сдаёт квартиру — от этого зависят правила"
+          },
+          "inline_3": {
+            "file": "cover/inline-03.png",
+            "quadrant": "bottom_right",
+            "box_px": {
+              "left": 1344,
+              "top": 760,
+              "right": 2688,
+              "bottom": 1520
+            },
+            "raw_box_px": {
+              "left": 1344,
+              "top": 760,
+              "right": 2688,
+              "bottom": 1520
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Ловушки при отмене брони: оферта, короткое окно отмены, слово задаток в чате",
+            "h2_anchor": "Где подставляют чаще всего"
+          }
+        }
+      }
+    },
+    {
+      "canvas_index": 2,
+      "manifest": "cover/quad-manifest.json",
+      "split": {
+        "source_canvas": "memory/blog/articles/B03-otmena-bronirovaniya-posutochno-vozvrat-predoplaty/cover/canvas-quad-02.png",
+        "source_size_px": [
+          2048,
+          1152
+        ],
+        "panel_size_px": [
+          1016,
+          570
+        ],
+        "split_meta": {
+          "split_mode": "gutter_detect",
+          "h_gutter_px": {
+            "start": 570,
+            "end": 585
+          },
+          "v_gutter_px": {
+            "start": 1016,
+            "end": 1031
+          },
+          "requested_mode": "auto",
+          "gutter_quality": {
+            "h_center_offset_px": 1.5,
+            "v_center_offset_px": 0.5,
+            "max_aspect_crop_loss": 0.0088,
+            "per_panel_crop_loss": {
+              "top_left": 0.0,
+              "top_right": 0.0,
+              "bottom_left": 0.0079,
+              "bottom_right": 0.0088
+            },
+            "reject_reason": null
+          }
+        },
+        "output_size_px": [
+          1200,
+          675
+        ],
+        "outputs": {
+          "inline_4": {
+            "file": "cover/inline-04.png",
+            "quadrant": "top_left",
+            "box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1016,
+              "bottom": 570
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1016,
+              "bottom": 570
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Пять вопросов хозяину до перевода предоплаты за посуточную квартиру",
+            "h2_anchor": "Пять вопросов до оплаты — сохраните себе"
+          },
+          "inline_5": {
+            "file": "cover/inline-05.png",
+            "quadrant": "top_right",
+            "box_px": {
+              "left": 1031,
+              "top": 0,
+              "right": 2048,
+              "bottom": 570
+            },
+            "raw_box_px": {
+              "left": 1031,
+              "top": 0,
+              "right": 2048,
+              "bottom": 570
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Что сохранить в переписке и как запросить расчёт удержания предоплаты",
+            "h2_anchor": "Если отмена уже случилась"
+          },
+          "inline_6": {
+            "file": "cover/inline-06.png",
+            "quadrant": "bottom_left",
+            "box_px": {
+              "left": 4,
+              "top": 585,
+              "right": 1012,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 585,
+              "right": 1016,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Посуточные квартиры в Тюмени: условия отмены текстом до оплаты",
+            "h2_anchor": "У нас так"
+          },
+          "inline_7": {
+            "file": "cover/inline-07.png",
+            "quadrant": "bottom_right",
+            "box_px": {
+              "left": 1035,
+              "top": 585,
+              "right": 2043,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 1031,
+              "top": 585,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Частые вопросы про возврат предоплаты при отмене бронирования посуточно",
+            "h2_anchor": "Частые вопросы"
+          }
+        }
+      }
+    }
+  ],
+  "manifest": "cover/quad-manifest.json",
+  "html_inject": [
+    "skip inline_1: already correct under H2 — Отель и квартира посуточно — это разные истории",
+    "skip inline_2: already correct under H2 — Кто сдаёт квартиру — от этого зависят правила",
+    "skip inline_3: already correct under H2 — Где подставляют чаще всего",
+    "skip inline_4: already correct under H2 — Пять вопросов до оплаты — сохраните себе",
+    "skip inline_5: already correct under H2 — Если отмена уже случилась",
+    "skip inline_6: already correct under H2 — У нас так",
+    "skip inline_7: already correct under H2 — Частые вопросы"
+  ]
+}

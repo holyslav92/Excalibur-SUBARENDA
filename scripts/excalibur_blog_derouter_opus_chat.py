@@ -550,8 +550,23 @@ def run_chat(args: argparse.Namespace) -> int:
             max_retries=DEFAULT_MAX_RETRIES,
         )
     except DerouterChatError as exc:
-        print_blocker(role, str(exc))
-        return 2
+        print(
+            f"WARN role={role} attempt 1 failed: {exc}; retrying in {DEFAULT_RETRY_WAIT_SECONDS}s",
+            file=sys.stderr,
+        )
+        time.sleep(DEFAULT_RETRY_WAIT_SECONDS)
+        try:
+            text, response, endpoint, resolved_model = call_derouter_with_aliases(
+                system_prompt=system_prompt,
+                user_prompt=user_prompt,
+                tier=tier,
+                model=model,
+                timeout=timeout,
+                max_retries=DEFAULT_MAX_RETRIES,
+            )
+        except DerouterChatError as retry_exc:
+            print_blocker(role, str(retry_exc))
+            return 2
 
     if args.output:
         out = Path(args.output)

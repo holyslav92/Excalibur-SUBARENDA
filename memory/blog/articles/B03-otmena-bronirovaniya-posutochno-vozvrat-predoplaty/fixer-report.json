@@ -1,0 +1,22 @@
+{
+  "topic_id": "B03",
+  "slug": "otmena-bronirovaniya-posutochno-vozvrat-predoplaty",
+  "wp_post_id": 3845,
+  "run_date": "2026-08-22",
+  "status": "fixed",
+  "incidents": [
+    "INC-20260822-1017-fixer-live-page-theme-gate",
+    "INC-20260822-1017-research-derouter-blocker-stub",
+    "INC-20260822-1017-content-learner-metrika-credentials"
+  ],
+  "fixes_applied": [
+    "live_page_gate: Dobry dom selectors + /blog/ permalink parity + expected_schema_jsonld",
+    "wp_publish: theme_contract_deploy auto + expected_schema_jsonld to live gate",
+    "derouter: second full role attempt before BLOCKER"
+  ],
+  "needs_human": [
+    "YANDEX_METRIKA_OAUTH_TOKEN and YANDEX_METRIKA_COUNTER_ID in Cloud Secrets"
+  ],
+  "cover_qa_note": "Runtime logo pad clean + re-composite only; no script defect — cover_qa.json PASS",
+  "derouter_note": "Research used manual fallback this run; retry policy now in script for next run"
+}

@@ -26,6 +26,19 @@
         "sticker_set": "залог посуточно, тюмень, скол на плите",
         "joke": "cat reacts to countertop chip"
       }
+    },
+    {
+      "date": "2026-08-22",
+      "topic_id": "B03",
+      "slug": "",
+      "motifs": {
+        "composition": "magazine poster collage: hotel bell icon vs apartment key, phone refund chat bubble, cork investigation board, top-right empty logo pad",
+        "location": "tyumen apartment living room august sunny window, green birch trees, summer warmth",
+        "meme": "tiny confused cat sticker bottom-left ≤12%, never top-right pad",
+        "prop_set": "phone chat невозвратно, torn receipt, cancelled calendar, gold pushpins, torn paper tape",
+        "sticker_set": "штраф за отмену, возврат средств, суточно отмена",
+        "joke": "guest reads hotel refund headline on tablet while messenger says невозвратно"
+      }
     }
   ]
 }

@@ -1,0 +1,39 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 2,
+  "identity_reference_local": "",
+  "identity_reference_id": "",
+  "reference_url_hosted": "",
+  "output_canvas": "cover/canvas-quad-02.png",
+  "result_path": "cover/quad-mcp-result-02.json",
+  "slots": [
+    "inline_4",
+    "inline_5",
+    "inline_6",
+    "inline_7"
+  ],
+  "preferred_image_flow": {
+    "provider": "derouter-rest",
+    "script": "scripts/excalibur_blog_derouter_gpt_image2_api.py",
+    "resolution": "2K",
+    "note": "PRIMARY: Derouter REST image API (api-direct, 2K 16:9). Fallback: excalibur_blog_kie_gpt_image2_api.py when DEROUTER auth/5xx.",
+    "apply_script": "python3 scripts/excalibur_blog_quad_apply.py --article-dir <article_dir> --canvas-index 2 --inject-html"
+  },
+  "jobs": [
+    {
+      "slot": "canvas_quad",
+      "tool": "derouter-rest",
+      "mcp_args": {
+        "prompt": "High-key bright RU editorial collage, airy #FFFFFF, sun flare, warm hospitality mood (apartment stay, not realtor deal). Comfort+ lived-in cozy interiors for ordinary guests (командировки, семьи, пары) — NOT business-class, NOT hotel-luxe, NO marble palaces. NO host face / NO Shakin / NO identity-real. NO brand logo in generation — factory pastes canonical PNG after split. NO…\nCanvas 2048x1152 exact 2x2; four 16:9 panels (1024x576); thin white gutters; no bleed.\nBan: dark/low-key; inventory props; celebrity memes; EXCALIBUR stamp; chubby host; stock/generated man co-host on inline; large meme person on inline; icon slogans; empty cells; desk scene; cover copy; celebrity memes; stock model man; handsome realtor co-host; generated stranger presenter; large human on inline; meme person >15% frame; invented meme face.\nTEXT LANGUAGE LOCK: all visible text is RUSSIAN Cyrillic only; exact LABELS per panel only.\nInlines: NO host face; NO stock/generated man; NO large human co-host/presenter; NO brand logo in generation (factory pastes PNG on 2–3 panels only, TOP-RIGHT pad); people-memes only as tiny stickers (≤15% frame, never top-right pad) from real templates in memory/cover/meme-top100.json; mix sketch/table/chart/scheme collage — not text walls.\nTop-left inline: чеклист вопросов до оплаты; «Пять вопросов до оплаты — сохраните себе»; Checklist 5 вопросов окно, удержание, срок, чат, статус.. TXT:окно отмены | срок возврата | статус. TOP-RIGHT clean margin; NO factory logo here; NO drawn logos/house/heart.\nTop-right inline: шаги заселения / доступа; «Если отмена уже случилась»; Flow 4 шага переписка → расчёт → претензия → площадка.. TXT:переписка | расчёт | претензия. TOP-RIGHT clean margin; NO factory logo here; NO drawn logos/house/heart.\nBottom-left inline: comfort+ деталь интерьера (реалистично); «У нас так»; Cozy room август диван, мессенджер условия до оплаты.. TXT:до оплаты | август Тюмень. TOP-RIGHT clean margin; NO factory logo here; NO drawn logos/house/heart.\nBottom-right inline: schema_faq_ui; «Частые вопросы»; FAQ cards 4 Q невозвратная, окно, задаток, удержание; cat corner.. TXT:невозвратная | задаток | удержание. TOP-RIGHT: empty plain margin ONLY — NO logo, NO «Добрый дом»; factory pastes PNG later.\nInline all: #FFF collage, gold/black Cyrillic labels, tape/pins/strings/paper scraps; high-key #FFF/gold; not noir; dense facts/numbers; exact TXT per panel; meme only if +meme AND sticker-scale; no human hero on inline; no icon soup; zero typos.",
+        "aspect_ratio": "16:9",
+        "resolution": "2K"
+      }
+    }
+  ],
+  "validation": {
+    "prompt_chars": 2494,
+    "max_prompt_chars": 3500,
+    "required_reference_host": "{{SITE_HOST}}",
+    "resolution": "2K"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/",
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "anchor": "перевёл залог за посуточную, на выезде сказали «не вернём».У нас такМы сдаём квартиры посуточно в Тюмени в сегменте комфорт+ и тоже берём предоплату.Разница в том, что происходит вокруг неё.Условия отмены гость получает текстом до перевода денег — в том же мессенджере, где бронирует. Не ссылкой, которую нужно долго искать, а сообщением, к которому можно вернуться.Если планы изменились, пишете менеджеру. Мы разбираем ситуацию по датам и прямо говорим, какая часть возвращается и за сколько дней деньги придут на карту.Перед заездом отправляем инструкцию: адрес, подъезд, этаж, способ попасть в квартиру и контакты на случай вопросов. О бесконтактном заселении в Тюмени писали отдельно:",
+      "catalog_title": "Снял квартиру посуточно. Залог не вернули — нашли скол на плите",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "anchor": "как проходит бесконтактное заселение посуточно.Условия по конкретной квартире и датам лучше уточнить у менеджера. Они зависят от объекта и сезона. Август в Тюмени — плотный месяц, свободные окна закрываются быстро.Написать нам можно в",
+      "catalog_title": "Оплатил квартиру посуточно. Код прислали от чужой двери",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B03-otmena-bronirovaniya-posutochno-vozvrat-predoplaty",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}

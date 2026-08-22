@@ -1358,6 +1358,11 @@ def main() -> int:
         help="After successful publish, SFTP-upload memory/blog/llms.txt (+ llms-full.txt) to WP root",
     )
     ap.add_argument(
+        "--skip-theme-deploy",
+        action="store_true",
+        help="Skip idempotent WP theme contract patch before publish (emergency only)",
+    )
+    ap.add_argument(
         "--normalize-ledger",
         action="store_true",
         help="Rewrite legacy [REDACTED]/slug/ rows in published-articles.md to path-only and exit",
@@ -1509,6 +1514,16 @@ def main() -> int:
     if SITE_BASE_PLACEHOLDER in (payload.get("schema_jsonld") or ""):
         print("BLOCKER: schema still contains {{SITE_BASE}} after expand", file=sys.stderr)
         return 2
+    if not args.skip_theme_deploy:
+        try:
+            from excalibur_blog_theme_contract_deploy import deploy as deploy_theme_contract
+
+            deploy_theme_contract()
+        except Exception as exc:
+            print(
+                f"WARN theme_contract_deploy failed (live gate uses expected_schema_jsonld fallback): {exc}",
+                file=sys.stderr,
+            )
     out = publish_via_sftp(env, php, public)
     print(out)
 
@@ -1572,6 +1587,7 @@ def main() -> int:
             body_probe=body_probe,
             verify_media=True,
             expected_permalink=permalink,
+            expected_schema_jsonld=str(payload.get("schema_jsonld") or ""),
         )
     except Exception as exc:  # network failure is a blocker, never a fake PASS
         live_errors = [f"live page fetch failed: {type(exc).__name__}: {exc}"]
