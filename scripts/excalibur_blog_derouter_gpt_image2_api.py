@@ -43,6 +43,15 @@ DEFAULT_QUALITY = "auto"
 # Images MUST use api-direct — api.derouter.ai hits Cloudflare ~100s → HTTP 524 on gen.
 PRIMARY_DIRECT_BASE = "https://api-direct.derouter.ai/openai/v1"
 FALLBACK_DIRECT_BASE = "https://api-direct.apikey.cloud/openai/v1"
+# Ordered probe list (user canon 2026-08-22): swap only host, same /openai/v1 path + key.
+DEFAULT_IMAGE_API_BASE_CANDIDATES = [
+    "https://api.derouter.ai/openai/v1",
+    "https://api.apikey.cloud/openai/v1",
+    "https://api-direct.derouter.ai/openai/v1",
+    "https://api-direct.apikey.cloud/openai/v1",
+]
+DEROUTER_IMAGE_API_BASE_ENV = "DEROUTER_IMAGE_API_BASE"
+DEROUTER_API_BASE_ENV = "DEROUTER_API_BASE"
 DEFAULT_TIMEOUT_SECONDS = 600
 MIN_TIMEOUT_SECONDS = 240
 DEFAULT_MAX_RETRIES = 1
@@ -104,6 +113,48 @@ def default_size() -> str:
 
 def default_quality() -> str:
     return (os.environ.get(DEFAULT_QUALITY_ENV) or DEFAULT_QUALITY).strip() or DEFAULT_QUALITY
+
+
+def normalize_api_base(url: str) -> str:
+    base = str(url or "").strip().rstrip("/")
+    if not base:
+        return ""
+    if not base.endswith("/openai/v1"):
+        if base.endswith("/openai"):
+            base = f"{base}/v1"
+        elif base.endswith("/v1"):
+            base = base
+        else:
+            base = f"{base}/openai/v1"
+    return base
+
+
+def image_api_base_candidates(
+    *,
+    primary_base: str | None = None,
+    fallback_base: str | None = None,
+) -> list[str]:
+    """DEROUTER_IMAGE_API_BASE / DEROUTER_API_BASE override, then ordered fallbacks."""
+    out: list[str] = []
+    for raw in (
+        os.environ.get(DEROUTER_IMAGE_API_BASE_ENV, "").strip(),
+        os.environ.get(DEROUTER_API_BASE_ENV, "").strip(),
+        str(primary_base or "").strip(),
+        str(fallback_base or "").strip(),
+    ):
+        norm = normalize_api_base(raw)
+        if norm and norm not in out:
+            out.append(norm)
+    for candidate in DEFAULT_IMAGE_API_BASE_CANDIDATES:
+        norm = normalize_api_base(candidate)
+        if norm and norm not in out:
+            out.append(norm)
+    return out
+
+
+def is_discontinued_image_error(exc: BaseException) -> bool:
+    msg = str(exc).lower()
+    return "discontinued" in msg or "not available" in msg and "image" in msg
 
 
 def is_retryable_http(status: int) -> bool:
@@ -376,15 +427,15 @@ def generate_image(
 ) -> tuple[bytes, dict[str, Any]]:
     local_refs = resolve_local_reference_paths(root=root, batch_path=batch_path)
     use_edits = bool(local_refs)
-    bases = [primary_base]
-    if fallback_base and fallback_base != primary_base:
-        bases.append(fallback_base)
+    bases = image_api_base_candidates(primary_base=primary_base, fallback_base=fallback_base)
 
     last_error: BaseException | None = None
     attempts = 0
+    discontinued_hosts: list[str] = []
     for base in bases:
         for attempt in range(max_retries + 1):
             attempts += 1
+            host = urllib.parse.urlparse(base).netloc
             try:
                 if use_edits:
                     parsed = call_edits(
@@ -416,7 +467,8 @@ def generate_image(
                     "size": size,
                     "quality": quality,
                     "endpoint": kind,
-                    "host": urllib.parse.urlparse(base).netloc,
+                    "host": host,
+                    "api_base": base,
                     "response_kind": "b64_json",
                     "attempts": attempts,
                 }
@@ -428,15 +480,27 @@ def generate_image(
             except DerouterRetryable as exc:
                 last_error = exc
                 print(
-                    f"Derouter retryable ({exc}); host={urllib.parse.urlparse(base).netloc} "
+                    f"Derouter retryable ({exc}); host={host} "
                     f"attempt={attempt + 1}/{max_retries + 1}",
                     flush=True,
                 )
                 if attempt < max_retries and retry_wait > 0:
                     time.sleep(retry_wait)
                 continue
-            except DerouterApiError:
+            except DerouterApiError as exc:
+                last_error = exc
+                if is_discontinued_image_error(exc):
+                    discontinued_hosts.append(host)
+                    print(
+                        f"Derouter image discontinued on {host}; trying next base",
+                        flush=True,
+                    )
+                    break
                 raise
+    if discontinued_hosts and len(discontinued_hosts) >= len(bases):
+        raise DerouterApiError(
+            f"Derouter image model discontinued on all bases ({', '.join(discontinued_hosts)})"
+        )
     raise DerouterApiError(f"Derouter failed after retries: {last_error}")
 
 
@@ -499,6 +563,10 @@ def main() -> int:
             "model": model,
             "size": size,
             "quality": quality,
+            "api_base_candidates": image_api_base_candidates(
+                primary_base=args.primary_base,
+                fallback_base=args.fallback_base,
+            ),
             "primary_base": args.primary_base,
             "fallback_base": args.fallback_base,
             "timeout_seconds": max(MIN_TIMEOUT_SECONDS, int(args.timeout)),
@@ -506,7 +574,7 @@ def main() -> int:
             "local_references": [
                 str(p.relative_to(root)) if p.is_relative_to(root) else str(p) for p in local_refs
             ],
-            "note": "images always api-direct; no aspect_ratio field; response b64_json only",
+            "note": "images: try DEROUTER_IMAGE_API_BASE then 4 canonical hosts; b64_json only",
         }
         if args.dry_run:
             print(json.dumps(dry_payload, ensure_ascii=False, indent=2))

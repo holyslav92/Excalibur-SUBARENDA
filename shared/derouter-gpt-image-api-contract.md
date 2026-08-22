@@ -12,13 +12,27 @@ Primary Cloud path for Excalibur BLOG cover/inline quad canvas generation.
 
 **FORBIDDEN:** `flux2-pro-text-to-image`, `flux2-pro-image-to-image`, Seedream, `nano_banana*`, `z-image`, `mcp-derouter/start-mcp.sh` (broken stdio MCP).
 
-## Host (images — HARD)
+## Host (images)
 
-**Always** `https://api-direct.derouter.ai/openai/v1` for image gen/edits.
+Скрипт перебирает базы **в порядке** (тот же path `/openai/v1/images/generations`, тот же ключ):
+
+1. `DEROUTER_IMAGE_API_BASE` или `DEROUTER_API_BASE` (override на один прогон)
+2. `https://api.derouter.ai/openai/v1`
+3. `https://api.apikey.cloud/openai/v1`
+4. `https://api-direct.derouter.ai/openai/v1` (default primary)
+5. `https://api-direct.apikey.cloud/openai/v1` (default fallback)
+
+Проба всех баз:
+
+```bash
+python3 scripts/excalibur_blog_derouter_image_base_probe.py
+```
+
+→ `memory/blog/derouter-image-base-probe.json` (status + short error, без ключа).
 
 - Timeout: **≥240s** client; default script **600s**
-- **Do not** use `https://api.derouter.ai` for images — Cloudflare ~100s → **HTTP 524** on long gen
-- Fallback alias: `https://api-direct.apikey.cloud/openai/v1`
+- Для длинных gen предпочтительнее `api-direct.*` (меньше риск Cloudflare **HTTP 524** на `api.derouter.ai`)
+- Если все базы отвечают `discontinued` для `DEROUTER_IMAGE_MODEL` → **DEROUTER IMAGE BLOCKER**, затем Kie fallback
 
 Text (factory brain): `scripts/excalibur_blog_derouter_opus_chat.py` — Opus 5 = Writer only; everything else Terra. См. `shared/derouter-opus-brain-contract.md`.
 
@@ -65,6 +79,7 @@ Canvas 2: no local ref → `/images/generations` (t2i).
 - `DEROUTER_API_KEY` only (Cursor Cloud Secrets). Missing → `DEROUTER API KEY MISSING`
 - `DEROUTER_IMAGE_MODEL` required (id from GET `/v1/models`)
 - Optional: `DEROUTER_IMAGE_SIZE` (default `2048x1152`), `DEROUTER_IMAGE_QUALITY` (default `auto`)
+- Optional override host: `DEROUTER_IMAGE_API_BASE` or `DEROUTER_API_BASE` (must end with `/openai/v1` or bare host — script normalizes)
 - Never commit, print, or copy keys into git/PR/logs
 
 Doctor: **WARN** when `DEROUTER_API_KEY` or `DEROUTER_IMAGE_MODEL` missing; Cover gen **BLOCKs**.

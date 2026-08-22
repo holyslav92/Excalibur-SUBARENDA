@@ -275,6 +275,24 @@
       ]
     }
   },
+  "image_api": {
+    "provider": "derouter-rest",
+    "script": "scripts/excalibur_blog_derouter_gpt_image2_api.py",
+    "probe_script": "scripts/excalibur_blog_derouter_image_base_probe.py",
+    "contract": "shared/derouter-gpt-image-api-contract.md",
+    "model_env": "DEROUTER_IMAGE_MODEL",
+    "base_override_env": [
+      "DEROUTER_IMAGE_API_BASE",
+      "DEROUTER_API_BASE"
+    ],
+    "base_candidates": [
+      "https://api.derouter.ai/openai/v1",
+      "https://api.apikey.cloud/openai/v1",
+      "https://api-direct.derouter.ai/openai/v1",
+      "https://api-direct.apikey.cloud/openai/v1"
+    ],
+    "default_size": "2048x1152"
+  },
   "interlink_old_articles": true,
   "style_files": {
     "soul": "shared/SOUL.md",
