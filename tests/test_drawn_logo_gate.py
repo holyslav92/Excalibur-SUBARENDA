@@ -213,19 +213,28 @@ class DrawnLogoGateTest(unittest.TestCase):
         ):
             self.assertIn(key, gate_src)
 
+    def test_gray_card_in_logo_pad_fails_gate(self) -> None:
+        from excalibur_blog_drawn_logo_gate import detect_white_plate_in_pad
+
+        result = detect_white_plate_in_pad(Path("/tmp/bad-cover.png"))
+        self.assertTrue(result.get("detected"), result)
+        self.assertEqual(result.get("plate_kind"), "gray")
+
     def test_quad_prompt_hard_bans_drawn_lockup_and_white_plate(self) -> None:
         src = (ROOT / "scripts/excalibur_blog_cover_quad_prompt.py").read_text(encoding="utf-8")
         self.assertIn("LOGO_DRAW_HARD_BAN", src)
         self.assertIn("LOGO_WHITE_PLATE_BAN", src)
         self.assertIn("curtains+red flower", src)
         self.assertIn("dashed logo frame", src)
-        self.assertIn("white card", src.lower())
+        self.assertIn("white/gray", src)
+        self.assertIn("cropped-img_7143.png", src)
 
     def test_tenant_image_generation_forbids_drawn_logo(self) -> None:
         tenant = json.loads((ROOT / "shared/tenant-config.json").read_text(encoding="utf-8"))
         img = tenant.get("image_generation") or {}
         forbids = " ".join(img.get("forbid_in_generation") or []).lower()
         self.assertIn("добрый дом", forbids)
+        self.assertIn("gray box", forbids)
         self.assertIn("white box", forbids)
         self.assertIn("logo-dobry-dom.png", img.get("logo_factory_paste_only", ""))
 

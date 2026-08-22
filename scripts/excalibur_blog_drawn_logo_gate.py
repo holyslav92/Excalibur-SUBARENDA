@@ -20,6 +20,11 @@ WHITE_PLATE_LUMA_MIN = 235.0
 WHITE_PLATE_STD_MAX = 16.0
 WHITE_PLATE_MIN_AREA_RATIO = 1.12
 WHITE_PLATE_RING_PX = 12
+GRAY_PLATE_LUMA_MIN = 145.0
+GRAY_PLATE_LUMA_MAX = 234.0
+GRAY_PLATE_STD_MAX = 22.0
+GRAY_PLATE_MIN_PAD_RATIO = 0.28
+GRAY_PLATE_UNIFORMITY_RATIO = 0.72
 
 
 @dataclass
@@ -191,13 +196,34 @@ def _largest_low_variance_rect(gray, *, luma_min: float, std_max: float) -> dict
     return best
 
 
+def _plate_uniformity_vs_pad(gray, rect: dict[str, Any]) -> float:
+    """Насколько блок однороднее остального pad (1.0 = одинаково)."""
+    import numpy as np
+
+    bbox = rect.get("bbox")
+    if not bbox:
+        return 1.0
+    x0, y0, x1, y1 = bbox
+    mask = np.zeros(gray.shape, dtype=bool)
+    mask[y0:y1, x0:x1] = True
+    rest = gray[~mask]
+    block = gray[mask]
+    if block.size < 12 or rest.size < 12:
+        return 1.0
+    block_std = float(block.std())
+    rest_std = float(rest.std())
+    if rest_std < 1e-3:
+        return 0.0
+    return block_std / rest_std
+
+
 def detect_white_plate_in_pad(
     image_path: Path,
     *,
     pad_w_frac: float = PAD_WIDTH_FRACTION,
     pad_h_frac: float = PAD_HEIGHT_FRACTION,
 ) -> dict[str, Any]:
-    """FAIL helper: AI generation drew a white card/plate in the logo pad."""
+    """FAIL helper: AI generation drew a white/gray card/plate in the logo pad."""
     arr = np_array_rgb(image_path)
     h, w = arr.shape[:2]
     x0, y0, pad_w, pad_h = _pad_box(w, h, pad_w_frac=pad_w_frac, pad_h_frac=pad_h_frac)
@@ -207,28 +233,61 @@ def detect_white_plate_in_pad(
 
     gray = pad.mean(axis=2)
     global_mean = float(arr.mean())
-    rect = _largest_low_variance_rect(
-        gray, luma_min=WHITE_PLATE_LUMA_MIN, std_max=WHITE_PLATE_STD_MAX
-    )
     pad_area = int(pad_w * pad_h)
     min_area = max(900, int(pad_area * 0.18))
-    plate_mean = float(rect.get("mean") or 0.0)
-    plate_std = float(rect.get("std") or 0.0)
+
+    white_rect = _largest_low_variance_rect(
+        gray, luma_min=WHITE_PLATE_LUMA_MIN, std_max=WHITE_PLATE_STD_MAX
+    )
+    plate_mean = float(white_rect.get("mean") or 0.0)
+    plate_std = float(white_rect.get("std") or 0.0)
     brighter_than_scene = plate_mean >= max(WHITE_PLATE_LUMA_MIN, global_mean + 12.0)
-    detected = (
-        bool(rect.get("found"))
-        and int(rect.get("area") or 0) >= min_area
+    white_detected = (
+        bool(white_rect.get("found"))
+        and int(white_rect.get("area") or 0) >= min_area
         and brighter_than_scene
         and plate_std <= WHITE_PLATE_STD_MAX
     )
+    if white_detected:
+        return {
+            "detected": True,
+            "plate_kind": "white",
+            "pad_box": [x0, y0, pad_w, pad_h],
+            "plate_area": int(white_rect.get("area") or 0),
+            "plate_mean_luma": round(plate_mean, 2),
+            "plate_std": round(plate_std, 2),
+            "plate_bbox_local": white_rect.get("bbox"),
+            "min_area": min_area,
+        }
+
+    gray_rect = _largest_low_variance_rect(
+        gray, luma_min=GRAY_PLATE_LUMA_MIN, std_max=GRAY_PLATE_STD_MAX
+    )
+    gray_mean = float(gray_rect.get("mean") or 0.0)
+    gray_std = float(gray_rect.get("std") or 0.0)
+    gray_area = int(gray_rect.get("area") or 0)
+    pad_ratio = gray_area / max(pad_area, 1)
+    uniformity = _plate_uniformity_vs_pad(gray, gray_rect)
+    gray_detected = (
+        bool(gray_rect.get("found"))
+        and gray_area >= min_area
+        and GRAY_PLATE_LUMA_MIN <= gray_mean <= GRAY_PLATE_LUMA_MAX
+        and gray_std <= GRAY_PLATE_STD_MAX
+        and pad_ratio >= GRAY_PLATE_MIN_PAD_RATIO
+        and uniformity <= GRAY_PLATE_UNIFORMITY_RATIO
+    )
+    rect = gray_rect if gray_detected else white_rect
     return {
-        "detected": detected,
+        "detected": gray_detected,
+        "plate_kind": "gray" if gray_detected else "",
         "pad_box": [x0, y0, pad_w, pad_h],
         "plate_area": int(rect.get("area") or 0),
         "plate_mean_luma": round(float(rect.get("mean") or 0.0), 2),
         "plate_std": round(float(rect.get("std") or 0.0), 2),
         "plate_bbox_local": rect.get("bbox"),
         "min_area": min_area,
+        "pad_ratio": round(pad_ratio, 3) if gray_rect.get("found") else 0.0,
+        "uniformity_ratio": round(uniformity, 3) if gray_rect.get("found") else 1.0,
     }
 
 
@@ -302,10 +361,10 @@ def detect_white_plate_under_logo(
     std_luma = float(sample.std())
     white_frac = float((sample >= WHITE_PLATE_LUMA_MIN).mean()) if sample.size else 0.0
     low_var_white = mean_luma >= WHITE_PLATE_LUMA_MIN and std_luma <= WHITE_PLATE_STD_MAX
-    rect = _largest_low_variance_rect(
+    white_rect = _largest_low_variance_rect(
         gray, luma_min=WHITE_PLATE_LUMA_MIN, std_max=WHITE_PLATE_STD_MAX
     )
-    plate_area = int(rect.get("area") or 0)
+    plate_area = int(white_rect.get("area") or 0)
     plate_ratio = plate_area / max(glyph_bbox_area, 1)
     # Uniform near-white under transparent logo margins = backing plate on a non-white scene.
     backing_under_glyphs = (
@@ -314,17 +373,40 @@ def detect_white_plate_under_logo(
         and mean_luma >= WHITE_PLATE_LUMA_MIN
         and std_luma <= 8.0
     )
-    detected = backing_under_glyphs or (
+    white_detected = backing_under_glyphs or (
         low_var_white and plate_ratio >= WHITE_PLATE_MIN_AREA_RATIO
     )
+
+    gray_rect = _largest_low_variance_rect(
+        gray, luma_min=GRAY_PLATE_LUMA_MIN, std_max=GRAY_PLATE_STD_MAX
+    )
+    gray_area = int(gray_rect.get("area") or 0)
+    gray_ratio = gray_area / max(glyph_bbox_area, 1)
+    gray_mean = float(gray_rect.get("mean") or 0.0)
+    gray_std = float(gray_rect.get("std") or 0.0)
+    gray_uniformity = _plate_uniformity_vs_pad(gray, gray_rect)
+    gray_detected = (
+        bool(gray_rect.get("found"))
+        and GRAY_PLATE_LUMA_MIN <= gray_mean <= GRAY_PLATE_LUMA_MAX
+        and gray_std <= GRAY_PLATE_STD_MAX
+        and gray_ratio >= WHITE_PLATE_MIN_AREA_RATIO
+        and gray_uniformity <= GRAY_PLATE_UNIFORMITY_RATIO
+        and (
+            mean_luma >= GRAY_PLATE_LUMA_MIN
+            and std_luma <= GRAY_PLATE_STD_MAX
+        )
+    )
+    detected = white_detected or gray_detected
+    plate_kind = "white" if white_detected else ("gray" if gray_detected else "")
     return {
         "detected": detected,
+        "plate_kind": plate_kind,
         "mean_luma": round(mean_luma, 2),
         "std_luma": round(std_luma, 2),
         "glyph_bbox_area": glyph_bbox_area,
-        "plate_area": plate_area,
-        "plate_ratio": round(plate_ratio, 3),
-        "plate_bbox_local": rect.get("bbox"),
+        "plate_area": plate_area if white_detected else gray_area,
+        "plate_ratio": round(plate_ratio if white_detected else gray_ratio, 3),
+        "plate_bbox_local": (white_rect if white_detected else gray_rect).get("bbox"),
     }
 
 
@@ -515,8 +597,9 @@ def validate_article_logo_gates(article_dir: Path, root: Path) -> list[str]:
             )
         plate = detect_white_plate_in_pad(source)
         if plate.get("detected"):
+            kind = plate.get("plate_kind") or "light"
             errors.append(
-                f"pre-composite {name}: white logo plate/card in generation pad "
+                f"pre-composite {name}: {kind} logo plate/card in generation pad "
                 f"(area={plate.get('plate_area')}, luma={plate.get('plate_mean_luma')})"
             )
 
@@ -566,8 +649,9 @@ def validate_article_logo_gates(article_dir: Path, root: Path) -> list[str]:
             logo_height_px=logo_h,
         )
         if plate.get("detected"):
+            kind = plate.get("plate_kind") or "light"
             errors.append(
-                f"{name}: white plate/card under factory logo "
+                f"{name}: {kind} plate/card under factory logo "
                 f"(ratio={plate.get('plate_ratio')}, luma={plate.get('mean_luma')})"
             )
 
