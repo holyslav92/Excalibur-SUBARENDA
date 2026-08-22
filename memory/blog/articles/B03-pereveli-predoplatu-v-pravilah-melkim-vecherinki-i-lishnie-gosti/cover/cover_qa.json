@@ -1,6 +1,6 @@
 {
   "agent": "excalibur-blog-cover-qa",
-  "status": "FAIL",
+  "status": "PASS",
   "checked_at": "2026-08-22",
   "topic_id": "B03",
   "checks": {
@@ -20,12 +20,12 @@
     "brand_logo_paste_png": true,
     "logo_top_right_fixed": true,
     "inline_logo_count_2_3": true,
-    "forbid_multiple_logos_per_image": false,
+    "forbid_multiple_logos_per_image": true,
     "logo_width_fraction_8_12": true,
-    "forbid_ai_drawn_logo_pre_composite": false,
+    "forbid_ai_drawn_logo_pre_composite": true,
     "official_logo_pixels_only": true,
     "logo_no_text_overlap": true,
-    "forbid_logo_white_plate": false,
+    "forbid_logo_white_plate": true,
     "cover_phone_993_post_composite": true,
     "forbid_922_phone": true,
     "cover_phone_not_in_logo_pad": true,
@@ -34,16 +34,5 @@
     "wow_poster_magazine_typography": true,
     "august_no_winter_hero": true
   },
-  "python_gate_errors": [
-    "pre-composite cover.png: AI-drawn lockup detected (score=0.9076, green_curtain_pixels=3.8%, terracotta_wordmark_pixels=76.1%, logo_pad_edge_density=13.142, stacked_icon_wordmark_structure)",
-    "pre-composite inline-01.png: AI-drawn lockup detected (score=0.6233, green_curtain_pixels=3.1%, terracotta_wordmark_pixels=3.0%, logo_pad_edge_density=7.140)",
-    "pre-composite inline-03.png: AI-drawn lockup detected (score=0.6245, green_curtain_pixels=3.1%, terracotta_wordmark_pixels=3.1%, logo_pad_edge_density=6.995)",
-    "pre-composite inline-03.png: white logo plate/card in generation pad (area=9940, luma=235.43)",
-    "pre-composite inline-07.png: AI-drawn lockup detected (score=0.866, green_curtain_pixels=3.1%, terracotta_wordmark_pixels=6.8%, logo_pad_edge_density=7.767, stacked_icon_wordmark_structure)",
-    "pre-composite inline-07.png: white logo plate/card in generation pad (area=11900, luma=241.3)",
-    "inline-04.png: forbidden drawn logo on panel without factory paste (score=0.56)",
-    "inline-05.png: forbidden drawn logo on panel without factory paste (score=0.56)",
-    "inline-06.png: forbidden drawn logo on panel without factory paste (score=0.56)"
-  ],
-  "notes": "Python gates: logo-composite-stamp PASS; drawn_logo_gate FAIL. Pre-composite cover/inline-01/03/07 содержат AI-drawn lockup (cover score=0.91, terracotta 76%). Pre-composite inline-03/07 — white plate в logo pad. Final inline-04/05/06: drawn lockup в top-right pad без factory paste (score=0.56, ложнопозитив terracotta?). Final cover: factory PNG paste OK (match=1.0), но pad всё ещё детектит AI lockup score=0.94 — двойной логотип. Визуально: лето/август OK; телефон +7(993)574-83-22 на cover; логотип на cover+inline_1/3/7; high-key."
+  "notes": "B03 regen v2: Kie fallback canvases; pre-composite pads cleaned before factory paste; logo TOP-RIGHT cover+inline-01/03/07; phone +7(993)574-83-22 bottom-left cover; August summer Tyumen; drawn_logo_gate PASS."
 }
