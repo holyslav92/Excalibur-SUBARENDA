@@ -19,7 +19,12 @@
   "publish_schedule": {
     "timezone": "Asia/Yekaterinburg",
     "weekdays_only": true,
-    "slots_local": ["09:00", "12:00", "15:00", "17:00"],
+    "slots_local": [
+      "09:00",
+      "12:00",
+      "15:00",
+      "17:00"
+    ],
     "runs_per_day": 4,
     "window_local": "09:00-17:00",
     "note": "Longform Cursor Automation: 4 weekday slots YEKT (owner 9–17). NOT 20:00. Publish only when FTP secrets + EXCALIBUR_BLOG_ALLOW_PUBLISH=yes on process (never git)."
@@ -41,7 +46,9 @@
       "second logo copy",
       "logo comparison table",
       "white box under logo pad",
+      "gray box under logo pad",
       "white card behind logo",
+      "gray card behind logo",
       "logo plate or tablichka",
       "rounded rectangle logo backing"
     ],
@@ -53,8 +60,22 @@
     "not": "бизнес-класс, люкс, hotel-luxe, premium, мрамор, 5-star",
     "audience": "командировки, семьи, пары — обычные гости, без пафоса",
     "visual": "уютные «живые» интерьеры, не мраморные дворцы и не «бизнес-класс ЖК» как обещание бренда",
-    "voice_allowed": ["заранее", "спокойно", "на связи", "как для своих", "без лишней суеты"],
-    "voice_forbidden": ["лучшие", "№1", "premium", "бизнес-класс", "люкс", "мрамор", "как в пятизвёздочном отеле"]
+    "voice_allowed": [
+      "заранее",
+      "спокойно",
+      "на связи",
+      "как для своих",
+      "без лишней суеты"
+    ],
+    "voice_forbidden": [
+      "лучшие",
+      "№1",
+      "premium",
+      "бизнес-класс",
+      "люкс",
+      "мрамор",
+      "как в пятизвёздочном отеле"
+    ]
   },
   "factory_quality": {
     "min_score_target": 9,
@@ -81,10 +102,36 @@
       "manager_questions": "https://t.me/Dobriy_dom_Tyumen"
     },
     "tyumen_complexes_whitelist": [
-      {"name": "Европейский", "aliases": ["европейск", "tikhiy 6", "тихий 6"]},
-      {"name": "Novin / 50 let Oktyabrya", "aliases": ["новин", "50 лет окт"]},
-      {"name": "Zvezdnyy 2 / Charkova 87", "aliases": ["звёздн", "звездн", "чарков"]},
-      {"name": "center Dzerzhinskogo 23", "aliases": ["дзержинск", "центр"]}
+      {
+        "name": "Европейский",
+        "aliases": [
+          "европейск",
+          "tikhiy 6",
+          "тихий 6"
+        ]
+      },
+      {
+        "name": "Novin / 50 let Oktyabrya",
+        "aliases": [
+          "новин",
+          "50 лет окт"
+        ]
+      },
+      {
+        "name": "Zvezdnyy 2 / Charkova 87",
+        "aliases": [
+          "звёздн",
+          "звездн",
+          "чарков"
+        ]
+      },
+      {
+        "name": "center Dzerzhinskogo 23",
+        "aliases": [
+          "дзержинск",
+          "центр"
+        ]
+      }
     ],
     "brand_facts_allowed": [
       "бесконтактное заселение",
@@ -130,22 +177,27 @@
   "logo_composite": {
     "mode": "paste_png_alpha",
     "logo_asset": "memory/cover/assets/brand/logo-dobry-dom.png",
-    "canonical_url": "https://xn---72-9cdob8azaodt6k.xn--p1ai/wp-content/uploads/2026/03/img_7143.png",
-    "canonical_sha256": "eaf97915a9830ffd31b5c08b128e8b60dc0b0b9a8ee85fc4083f32c49040ee3f",
+    "canonical_url": "wp-content/uploads/2026/03/cropped-img_7143.png",
+    "canonical_source": "cropped-img_7143.png from site — alpha only, never redraw, never white/gray plate behind",
+    "canonical_sha256": "72e53ba966f0626cc6eaad0792e68b57c8da0ccd9265d6822fbc173fdb48b941",
     "forbid_ai_drawn_logo": true,
     "forbid_ai_drawn_logo_pre_composite": true,
     "official_logo_pixels_only": true,
     "logo_no_text_overlap": true,
     "forbid_logo_white_plate": true,
     "cover_phone_post_composite": true,
-    "max_width_fraction": 0.10,
+    "max_width_fraction": 0.1,
     "min_width_fraction": 0.08,
     "max_width_fraction_cap": 0.12,
     "margin_px": 20,
     "logo_corner": "top_right",
     "inline_logo_count_min": 2,
     "inline_logo_count_max": 3,
-    "inline_logo_slots_default": ["inline_1", "inline_3", "inline_7"]
+    "inline_logo_slots_default": [
+      "inline_1",
+      "inline_3",
+      "inline_7"
+    ]
   },
   "cover_identity_status": "brand_logo_only",
   "dzen_rf_pack": true,
@@ -204,12 +256,23 @@
       "model": "claude-opus-5",
       "model_env": "DEROUTER_OPUS_MODEL",
       "family": "claude-opus-5",
-      "roles": ["writer"]
+      "roles": [
+        "writer"
+      ]
     },
     "utility": {
       "model": "gpt-5.6-terra",
       "model_env": "DEROUTER_TERRA_MODEL",
-      "roles": ["scout", "title", "sol", "research", "description", "cover-text", "schema", "cover-scene"]
+      "roles": [
+        "scout",
+        "title",
+        "sol",
+        "research",
+        "description",
+        "cover-text",
+        "schema",
+        "cover-scene"
+      ]
     }
   },
   "interlink_old_articles": true,
@@ -230,7 +293,11 @@
     "forbid_logo_white_plate": true,
     "inline_logo_count_min": 2,
     "inline_logo_count_max": 3,
-    "inline_logo_slots_default": ["inline_1", "inline_3", "inline_7"],
+    "inline_logo_slots_default": [
+      "inline_1",
+      "inline_3",
+      "inline_7"
+    ],
     "logo_corner": "top_right",
     "logo_asset": "memory/cover/assets/brand/logo-dobry-dom.png",
     "cover_phone_display": "+7 (993) 574-83-22",
