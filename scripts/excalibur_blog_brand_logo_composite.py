@@ -280,6 +280,20 @@ def draw_phone_on_cover(
     draw.text((x1 + pad_x, y1 + pad_y - 1), text, font=font, fill=(20, 24, 33, 255))
 
 
+LOGO_SOURCE_CANVAS_PX = 512
+# cropped-img_7143.png opaque glyph bbox on 512² canvas (alpha-only outside).
+LOGO_CROP_BBOX_CANON = (18, 90, 490, 413)
+
+
+def assert_logo_paste_not_full_canvas(logo) -> None:
+    """Блок: paste полного 512² квадрата с пустым padding = opaque card на сцене."""
+    if logo.width >= LOGO_SOURCE_CANVAS_PX - 4 and logo.height >= LOGO_SOURCE_CANVAS_PX - 4:
+        raise ValueError(
+            f"logo paste is full {LOGO_SOURCE_CANVAS_PX}px canvas ({logo.width}x{logo.height}); "
+            "call prepare_logo_rgba (getbbox crop) before alpha_composite"
+        )
+
+
 def prepare_logo_rgba(logo_path: Path, max_width_px: int):
     """Crop logo to opaque bbox, resize to target width — RGBA only, no white flatten."""
     from PIL import Image
@@ -287,8 +301,10 @@ def prepare_logo_rgba(logo_path: Path, max_width_px: int):
     with Image.open(logo_path) as logo_img:
         logo = logo_img.convert("RGBA")
     bbox = logo.getbbox()
-    if bbox:
-        logo = logo.crop(bbox)
+    if not bbox:
+        raise ValueError(f"logo has no opaque pixels: {logo_path}")
+    logo = logo.crop(bbox)
+    assert_logo_paste_not_full_canvas(logo)
     max_w = max(32, int(max_width_px))
     if logo.width > max_w:
         scale = max_w / logo.width

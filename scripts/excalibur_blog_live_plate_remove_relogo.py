@@ -197,10 +197,12 @@ def clear_logo_pad(rgb_arr) -> None:
 def fix_image(data: bytes, *, add_phone: bool, paste_logo: bool, logo_fraction: float = 0.10) -> tuple[bytes, dict]:
     from PIL import Image
 
+    import uuid
+
     img = Image.open(BytesIO(data)).convert("RGBA")
     rgb = np_array_rgb_from_pil(img)
     clear_logo_pad(rgb)
-    tmp = Path("/tmp/live-fix-panel.png")
+    tmp = Path(f"/tmp/live-fix-panel-{uuid.uuid4().hex}.png")
     Image.fromarray(rgb).convert("RGBA").save(tmp)
 
     placement: dict = {}
@@ -240,6 +242,10 @@ def fix_image(data: bytes, *, add_phone: bool, paste_logo: bool, logo_fraction: 
             logo_width_px=int(placement.get("logo_width_px") or 0),
             logo_height_px=int(placement.get("logo_height_px") or 0),
         )
+    try:
+        tmp.unlink(missing_ok=True)
+    except OSError:
+        pass
     return out.getvalue(), verify
 
 
@@ -314,9 +320,11 @@ def process_article(spec: dict) -> list[str]:
 
 def main() -> int:
     import argparse
+    from concurrent.futures import ThreadPoolExecutor, as_completed
 
     ap = argparse.ArgumentParser()
     ap.add_argument("--slug", help="process single slug")
+    ap.add_argument("--workers", type=int, default=3, help="parallel articles (default 3)")
     args = ap.parse_args()
 
     if not PUBLIC:
@@ -327,9 +335,22 @@ def main() -> int:
         return 1
     report: dict[str, list[str]] = {}
     specs = [s for s in ARTICLES if not args.slug or s["slug"] == args.slug]
-    for spec in specs:
+    workers = max(1, min(int(args.workers), len(specs)))
+
+    def _run(spec: dict) -> tuple[str, list[str]]:
         print(f"\n=== FIX {spec['slug']} ===", flush=True)
-        report[spec["slug"]] = process_article(spec)
+        return spec["slug"], process_article(spec)
+
+    if workers == 1 or len(specs) == 1:
+        for spec in specs:
+            slug, urls = _run(spec)
+            report[slug] = urls
+    else:
+        with ThreadPoolExecutor(max_workers=workers) as pool:
+            futures = [pool.submit(_run, spec) for spec in specs]
+            for fut in as_completed(futures):
+                slug, urls = fut.result()
+                report[slug] = urls
     out = ROOT / "memory/blog/live-plate-fix-aug22-report.json"
     existing = {}
     if out.is_file():

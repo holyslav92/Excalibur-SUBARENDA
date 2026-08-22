@@ -220,7 +220,26 @@ class DrawnLogoGateTest(unittest.TestCase):
         self.assertTrue(result.get("detected"), result)
         self.assertEqual(result.get("plate_kind"), "gray")
 
-    def test_quad_prompt_hard_bans_drawn_lockup_and_white_plate(self) -> None:
+    def test_prepare_logo_rgba_crops_getbbox_not_full_canvas(self) -> None:
+        from excalibur_blog_brand_logo_composite import (
+            LOGO_CROP_BBOX_CANON,
+            LOGO_SOURCE_CANVAS_PX,
+            prepare_logo_rgba,
+        )
+        from PIL import Image
+
+        logo_path = ROOT / "memory/cover/assets/brand/logo-dobry-dom.png"
+        self.assertTrue(logo_path.is_file(), logo_path)
+        with Image.open(logo_path) as raw:
+            self.assertEqual(raw.size, (LOGO_SOURCE_CANVAS_PX, LOGO_SOURCE_CANVAS_PX))
+            self.assertEqual(raw.getbbox(), LOGO_CROP_BBOX_CANON)
+            corner = raw.convert("RGBA").getpixel((0, 0))
+            self.assertEqual(corner[3], 0, "corner must be transparent (alpha=0)")
+
+        cropped = prepare_logo_rgba(logo_path, 120)
+        self.assertLess(cropped.width, LOGO_SOURCE_CANVAS_PX - 4)
+        self.assertLess(cropped.height, LOGO_SOURCE_CANVAS_PX - 4)
+
         src = (ROOT / "scripts/excalibur_blog_cover_quad_prompt.py").read_text(encoding="utf-8")
         self.assertIn("LOGO_DRAW_HARD_BAN", src)
         self.assertIn("LOGO_WHITE_PLATE_BAN", src)
