@@ -55,7 +55,7 @@ python3 scripts/excalibur_blog_grsai_base_probe.py
 ```
 
 - **model:** primary tier first (see `excalibur_blog_grsai_gpt_image2_api.primary_model`); optional `GRSAI_IMAGE_MODEL` override (non-vip only)
-- **vip fallback:** one vip-tier attempt per sheet after primary failure
+- **vip fallback:** one vip-tier attempt per sheet after primary failure; vip uses `size: 2048x1152` (not `aspectRatio`)
 - **webHook:** `"-1"` → sync polling mode (no callback URL)
 - **images:** optional reference URLs or base64 data-URLs for i2i
 - Response: `data.id` = task id

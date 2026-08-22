@@ -488,7 +488,7 @@ def _generate_canvas(
     batch_file: str,
     result_file: str,
     model_tier: str = "auto",
-) -> None:
+) -> bool:
     cmd = [
         sys.executable,
         image_script,
@@ -501,7 +501,7 @@ def _generate_canvas(
     ]
     if model_tier != "auto":
         cmd.extend(["--model-tier", model_tier])
-    run(cmd)
+    return _run_allow_fail(cmd) == 0
 
 
 def _apply_canvas(rel: Path, canvas_index: int) -> int:
@@ -518,7 +518,8 @@ def _apply_canvas(rel: Path, canvas_index: int) -> int:
 
 def _canvas_sheet_ok(adir: Path, rel: Path, image_script: str, *, batch_file: str, result_file: str, canvas_index: int, logo_panels: tuple[str, ...]) -> bool:
     """Один sheet: auto (primary→vip на API fail) → apply; при lockup — vip только если ещё не был."""
-    _generate_canvas(image_script, rel, batch_file=batch_file, result_file=result_file, model_tier="auto")
+    if not _generate_canvas(image_script, rel, batch_file=batch_file, result_file=result_file, model_tier="auto"):
+        return False
     result_path = adir / "cover" / Path(result_file).name
     used_vip = False
     if result_path.is_file():
@@ -530,7 +531,9 @@ def _canvas_sheet_ok(adir: Path, rel: Path, image_script: str, *, batch_file: st
         print("WARN sheet lockup/apply fail after vip already used", flush=True)
         return False
     print("WARN primary sheet failed lockup/apply; one vip regen for this sheet", flush=True)
-    _generate_canvas(image_script, rel, batch_file=batch_file, result_file=result_file, model_tier="vip")
+    if not _generate_canvas(image_script, rel, batch_file=batch_file, result_file=result_file, model_tier="vip"):
+        print("WARN vip tier API failed for this sheet", flush=True)
+        return False
     rc = _apply_canvas(rel, canvas_index)
     return rc == 0 and not _panels_have_drawn_lockup(adir, logo_panels)
 

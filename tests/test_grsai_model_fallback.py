@@ -81,5 +81,31 @@ class GrsaiModelFallbackTests(unittest.TestCase):
                 )
 
 
+    def test_vip_payload_uses_pixel_size(self) -> None:
+        from excalibur_blog_grsai_gpt_image2_api import create_draw_payload
+
+        payload = create_draw_payload(
+            prompt="probe",
+            model=VIP_FALLBACK_MODEL_ID,
+            aspect_ratio="16:9",
+            quality="high",
+        )
+        self.assertIn("size", payload)
+        self.assertNotIn("aspectRatio", payload)
+        self.assertEqual(payload["size"], "2048x1152")
+
+    def test_primary_payload_uses_aspect_ratio(self) -> None:
+        from excalibur_blog_grsai_gpt_image2_api import create_draw_payload
+
+        payload = create_draw_payload(
+            prompt="probe",
+            model=PRIMARY_MODEL_ID,
+            aspect_ratio="16:9",
+            quality="high",
+        )
+        self.assertEqual(payload.get("aspectRatio"), "16:9")
+        self.assertNotIn("size", payload)
+
+
 if __name__ == "__main__":
     unittest.main()

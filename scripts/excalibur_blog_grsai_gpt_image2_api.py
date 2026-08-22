@@ -251,10 +251,14 @@ def create_draw_payload(
     payload: dict[str, Any] = {
         "model": model,
         "prompt": prompt,
-        "aspectRatio": aspect_ratio,
         "quality": quality,
         "webHook": "-1",
     }
+    if is_vip_model(model):
+        # vip tier: pixel size only (aspectRatio rejected by API)
+        payload["size"] = f"{TARGET_CANVAS_SIZE[0]}x{TARGET_CANVAS_SIZE[1]}"
+    else:
+        payload["aspectRatio"] = aspect_ratio
     if images:
         payload["urls"] = images
         payload["images"] = images
