@@ -1,3 +1,4 @@
 Pillow
 numpy
 paramiko
+opencv-python-headless
