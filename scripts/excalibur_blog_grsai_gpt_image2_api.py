@@ -534,6 +534,12 @@ def main() -> int:
     ap.add_argument("--max-wait", type=int, default=DEFAULT_MAX_WAIT)
     ap.add_argument("--timeout", type=int, default=DEFAULT_TIMEOUT)
     ap.add_argument("--fallback-kie", action="store_true")
+    ap.add_argument(
+        "--model-tier",
+        choices=("auto", "primary", "vip"),
+        default="auto",
+        help="auto=primary then one vip on API fail; primary=only primary; vip=only vip (one sheet)",
+    )
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
 
@@ -578,14 +584,33 @@ def main() -> int:
             )
             return 1
 
-        image_bytes, meta = generate_image_with_model_fallback(
-            image_input=image_input,
-            api_key=api_key,
-            quality=quality,
-            poll_interval=max(1, int(args.poll_interval)),
-            max_wait=max(60, int(args.max_wait)),
-            timeout=max(30, int(args.timeout)),
-        )
+        tier = str(args.model_tier or "auto").casefold()
+        poll_interval = max(1, int(args.poll_interval))
+        max_wait = max(60, int(args.max_wait))
+        timeout = max(30, int(args.timeout))
+        gen_kwargs = {
+            "image_input": image_input,
+            "api_key": api_key,
+            "quality": quality,
+            "poll_interval": poll_interval,
+            "max_wait": max_wait,
+            "timeout": timeout,
+        }
+        if tier == "vip":
+            vip = vip_fallback_model(model)
+            image_bytes, meta = generate_image(**gen_kwargs, model=vip)
+            meta["model_primary"] = model
+            meta["model_succeeded"] = vip
+            meta["used_vip_fallback"] = True
+            print(f"OK Grsai model={vip} host={meta.get('host')} (tier=vip)", flush=True)
+        elif tier == "primary":
+            image_bytes, meta = generate_image(**gen_kwargs, model=model)
+            meta["model_primary"] = model
+            meta["model_succeeded"] = model
+            meta["used_vip_fallback"] = False
+            print(f"OK Grsai model={model} host={meta.get('host')} (tier=primary)", flush=True)
+        else:
+            image_bytes, meta = generate_image_with_model_fallback(**gen_kwargs)
         model = str(meta.get("model_succeeded") or model)
 
         output_canvas = str(batch_meta.get("output_canvas") or "").strip()

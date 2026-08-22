@@ -38,7 +38,8 @@ AUG22_REGEN_SLUGS: tuple[str, ...] = (
 
 DAYLIGHT_SCENE_SUFFIX = (
     "natural daylight, clean white balance, NO yellow/amber cast, NO muddy faces, "
-    "sharp stylish comfort-realistic poster, empty top-right pad."
+    "sharp stylish comfort-realistic poster, empty top-right pad. "
+    "FORBIDDEN: any logo, brand mark, watermark, green curtains icon, Добрый дом text."
 )
 DAYLIGHT_LOCATION = "Tyumen apartment August natural daylight, clean whites, no yellow cast"
 
@@ -480,6 +481,60 @@ def _run_allow_fail(cmd: list[str], *, cwd: Path | None = None) -> int:
     return proc.returncode
 
 
+def _generate_canvas(
+    image_script: str,
+    rel: Path,
+    *,
+    batch_file: str,
+    result_file: str,
+    model_tier: str = "auto",
+) -> None:
+    cmd = [
+        sys.executable,
+        image_script,
+        "--article-dir",
+        str(rel),
+        "--batch",
+        batch_file,
+        "--result",
+        result_file,
+    ]
+    if model_tier != "auto":
+        cmd.extend(["--model-tier", model_tier])
+    run(cmd)
+
+
+def _apply_canvas(rel: Path, canvas_index: int) -> int:
+    return _run_allow_fail([
+        sys.executable,
+        "scripts/excalibur_blog_quad_apply.py",
+        "--article-dir",
+        str(rel),
+        "--canvas-index",
+        str(canvas_index),
+        "--inject-html",
+    ])
+
+
+def _canvas_sheet_ok(adir: Path, rel: Path, image_script: str, *, batch_file: str, result_file: str, canvas_index: int, logo_panels: tuple[str, ...]) -> bool:
+    """Один sheet: auto (primary→vip на API fail) → apply; при lockup — vip только если ещё не был."""
+    _generate_canvas(image_script, rel, batch_file=batch_file, result_file=result_file, model_tier="auto")
+    result_path = adir / "cover" / Path(result_file).name
+    used_vip = False
+    if result_path.is_file():
+        used_vip = bool(json.loads(result_path.read_text(encoding="utf-8")).get("used_vip_fallback"))
+    rc = _apply_canvas(rel, canvas_index)
+    if rc == 0 and not _panels_have_drawn_lockup(adir, logo_panels):
+        return True
+    if used_vip:
+        print("WARN sheet lockup/apply fail after vip already used", flush=True)
+        return False
+    print("WARN primary sheet failed lockup/apply; one vip regen for this sheet", flush=True)
+    _generate_canvas(image_script, rel, batch_file=batch_file, result_file=result_file, model_tier="vip")
+    rc = _apply_canvas(rel, canvas_index)
+    return rc == 0 and not _panels_have_drawn_lockup(adir, logo_panels)
+
+
 def pipeline(adir: Path) -> None:
     rel = adir.relative_to(ROOT)
     image_script = resolve_image_script(ROOT)
@@ -499,26 +554,15 @@ def pipeline(adir: Path) -> None:
             args.extend(["--canvas-index", str(idx)])
         run(args)
     for attempt in range(1, MAX_COVER_CANVAS_RETRIES + 1):
-        run([
-            sys.executable,
+        if _canvas_sheet_ok(
+            adir,
+            rel,
             image_script,
-            "--article-dir",
-            str(rel),
-            "--batch",
-            "cover/quad-mcp-batch-01.json",
-            "--result",
-            "cover/quad-mcp-result-01.json",
-        ])
-        rc = _run_allow_fail([
-            sys.executable,
-            "scripts/excalibur_blog_quad_apply.py",
-            "--article-dir",
-            str(rel),
-            "--canvas-index",
-            "1",
-            "--inject-html",
-        ])
-        if rc == 0 and not _panels_have_drawn_lockup(adir, CANVAS1_LOGO_PANELS):
+            batch_file="cover/quad-mcp-batch-01.json",
+            result_file="cover/quad-mcp-result-01.json",
+            canvas_index=1,
+            logo_panels=CANVAS1_LOGO_PANELS,
+        ):
             print(f"canvas 1 OK on attempt {attempt}", flush=True)
             break
         print(
@@ -530,27 +574,16 @@ def pipeline(adir: Path) -> None:
         _clear_cover_canvas_artifacts(adir)
 
     for attempt in range(1, MAX_COVER_CANVAS_RETRIES + 1):
-        run([
-            sys.executable,
-            image_script,
-            "--article-dir",
-            str(rel),
-            "--batch",
-            "cover/quad-mcp-batch-02.json",
-            "--result",
-            "cover/quad-mcp-result-02.json",
-        ])
-        rc = _run_allow_fail([
-            sys.executable,
-            "scripts/excalibur_blog_quad_apply.py",
-            "--article-dir",
-            str(rel),
-            "--canvas-index",
-            "2",
-            "--inject-html",
-        ])
         logo_panels = CANVAS1_LOGO_PANELS + CANVAS2_LOGO_PANELS
-        if rc == 0 and not _panels_have_drawn_lockup(adir, logo_panels):
+        if _canvas_sheet_ok(
+            adir,
+            rel,
+            image_script,
+            batch_file="cover/quad-mcp-batch-02.json",
+            result_file="cover/quad-mcp-result-02.json",
+            canvas_index=2,
+            logo_panels=logo_panels,
+        ):
             print(f"canvas 2 OK on attempt {attempt}", flush=True)
             break
         print(
