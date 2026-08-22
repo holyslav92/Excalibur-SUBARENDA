@@ -22,6 +22,17 @@ FORBIDDEN = {
     "generic_theme_faq": r"Часто задаваемые вопросы по теме\s*\(FAQ\)",
 }
 
+# WP default wrappers and tenant themes (e.g. Добрый дом `theme` → articles-typical__*).
+_ARTICLE_CONTENT_PATTERNS = (
+    r"<div\b[^>]*id=[\"']article-content[\"'][^>]*>(.*?)</div>",
+    r"<div\b[^>]*class=[\"'][^\"']*\barticles-typical__content\b[^\"']*[\"'][^>]*>(.*?)</div>",
+    r"<div\b[^>]*class=[\"'][^\"']*\bentry-content\b[^\"']*[\"'][^>]*>(.*?)</div>",
+)
+_FEATURED_IMAGE_PATTERNS = (
+    r"<div\b[^>]*class=[\"'][^\"']*\bpost-thumbnail\b[^\"']*[\"'][^>]*>(.*?)</div>",
+    r"<div\b[^>]*class=[\"'][^\"']*\barticles-typical__image\b[^\"']*[\"'][^>]*>(.*?)</div>",
+)
+
 # Theme share row after thematic FAQ — not part of FAQ answer text.
 _SHARE_CHROME_SPLIT = (
     r"(?:<!--\s*Share\s+buttons\s*-->|"
@@ -45,6 +56,31 @@ def _normalize_faq_plain(text: str) -> str:
     plain = plain.replace("\u2014", "-").replace("\u2013", "-")
     plain = re.sub(r"-{2,}", "-", plain)
     return plain
+
+
+def _extract_first_match(html: str, patterns: tuple[str, ...]) -> re.Match[str] | None:
+    for pattern in patterns:
+        match = re.search(pattern, html, flags=re.I | re.S)
+        if match:
+            return match
+    return None
+
+
+def _slug_suffix(url: str, slug: str) -> bool:
+    value = (url or "").strip().rstrip("/")
+    slug = (slug or "").strip().strip("/")
+    if not value or not slug:
+        return False
+    return value.endswith("/" + slug) or value.endswith("/" + slug + "/")
+
+
+def _posting_url_matches(posting_urls: list[str], *, expected_permalink: str, expected_slug: str) -> bool:
+    expected_url = expected_permalink.rstrip("/") + "/" if expected_permalink else ""
+    if expected_url and expected_url in posting_urls:
+        return True
+    if expected_slug and any(_slug_suffix(url, expected_slug) for url in posting_urls):
+        return True
+    return False
 
 
 def _jsonld_types(value: object) -> list[str]:
@@ -140,12 +176,12 @@ def inspect(
                     stack.extend(value.values())
                 elif isinstance(value, list):
                     stack.extend(value)
-        if expected_url and expected_url not in posting_urls:
-            errors.append("live BlogPosting JSON-LD URL does not exactly match permalink")
-        elif not expected_url and not any(
-            url.rstrip("/").endswith("/" + expected_slug) for url in posting_urls
+        if (expected_url or expected_slug) and not _posting_url_matches(
+            posting_urls,
+            expected_permalink=expected_permalink,
+            expected_slug=expected_slug,
         ):
-            errors.append("live BlogPosting JSON-LD URL does not match published slug")
+            errors.append("live BlogPosting JSON-LD URL does not exactly match permalink")
     if expected_title:
         title = re.search(r"<title\b[^>]*>(.*?)</title>", html, flags=re.I | re.S)
         title_text = html_lib.unescape(title.group(1)) if title else ""
@@ -157,11 +193,7 @@ def inspect(
         probe = re.sub(r"\s+", " ", body_probe).strip()
         if probe and probe not in plain:
             errors.append("expected article body probe not found on live page")
-    entry = re.search(
-        r"<div\b[^>]*id=[\"']article-content[\"'][^>]*>(.*?)</div>",
-        html,
-        flags=re.I | re.S,
-    )
+    entry = _extract_first_match(html, _ARTICLE_CONTENT_PATTERNS)
     if not entry:
         errors.append("article-content container missing")
     else:
@@ -189,11 +221,7 @@ def inspect(
                     except Exception:
                         errors.append(f"article image unavailable: {src_val}")
 
-    featured = re.search(
-        r"<div\b[^>]*class=[\"'][^\"']*post-thumbnail[^\"']*[\"'][^>]*>(.*?)</div>",
-        html,
-        flags=re.I | re.S,
-    )
+    featured = _extract_first_match(html, _FEATURED_IMAGE_PATTERNS)
     if not featured:
         errors.append("featured image container missing")
     else:

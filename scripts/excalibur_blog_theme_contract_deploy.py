@@ -3,13 +3,40 @@
 from __future__ import annotations
 
 import argparse
+import json
 import os
 import posixpath
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import Callable
 
 
-def patch_functions(text: str) -> str:
+SCHEMA_MARKER = "function excalibur_blog_output_schema_jsonld()"
+SCHEMA_HOOK = r"""
+
+// Excalibur future posts own their schema and topic FAQ.
+function excalibur_blog_output_schema_jsonld() {
+	if ( ! is_single() || '1' !== get_post_meta( get_the_ID(), '_excalibur_blog_skip_engagement_quiz', true ) ) {
+		return;
+	}
+	$schema = get_post_meta( get_the_ID(), '_excalibur_blog_schema_jsonld', true );
+	if ( is_string( $schema ) && '' !== trim( $schema ) ) {
+		echo '<script type="application/ld+json">' . $schema . '</script>' . PHP_EOL; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	}
+}
+add_action( 'wp_head', 'excalibur_blog_output_schema_jsonld', 20 );
+"""
+
+
+def _append_schema_hook(text: str, *, anchor: str) -> str:
+    if SCHEMA_MARKER in text:
+        return text
+    if anchor not in text:
+        raise ValueError(f"functions.php anchor not found: {anchor!r}")
+    return text.replace(anchor, anchor + SCHEMA_HOOK, 1)
+
+
+def patch_functions_kov4eg(text: str) -> str:
     old = "if ( is_single() && 'post' === get_post_type() ) {"
     new = (
         "if ( is_single() && 'post' === get_post_type() "
@@ -31,30 +58,17 @@ def patch_functions(text: str) -> str:
         patched_function = faq_function.replace(old, new, 1)
         text = text[:function_start] + patched_function + text[filter_anchor:]
 
-    schema_marker = "function excalibur_blog_output_schema_jsonld()"
-    if schema_marker not in text:
-        anchor = "add_filter( 'the_content', 'custom_theme_add_faq_to_single', 99 );"
-        if anchor not in text:
-            raise ValueError("functions.php FAQ filter anchor not found")
-        schema_hook = r"""
-
-// Excalibur future posts own their schema and topic FAQ.
-function excalibur_blog_output_schema_jsonld() {
-	if ( ! is_single() || '1' !== get_post_meta( get_the_ID(), '_excalibur_blog_skip_engagement_quiz', true ) ) {
-		return;
-	}
-	$schema = get_post_meta( get_the_ID(), '_excalibur_blog_schema_jsonld', true );
-	if ( is_string( $schema ) && '' !== trim( $schema ) ) {
-		echo '<script type="application/ld+json">' . $schema . '</script>' . PHP_EOL; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-	}
-}
-add_action( 'wp_head', 'excalibur_blog_output_schema_jsonld', 20 );
-"""
-        text = text.replace(anchor, anchor + schema_hook, 1)
-    return text
+    return _append_schema_hook(
+        text,
+        anchor="add_filter( 'the_content', 'custom_theme_add_faq_to_single', 99 );",
+    )
 
 
-def patch_single(text: str) -> str:
+def patch_functions_dobry_dom(text: str) -> str:
+    return _append_schema_hook(text, anchor="include_once 'inc/BEM_Walker_Nav_Menu.php';")
+
+
+def patch_single_kov4eg(text: str) -> str:
     marker = """\t\tthe_post();
 
 \t\t$excalibur_skip_side_stickers = '1' === get_post_meta( get_the_ID(), '_excalibur_blog_skip_side_stickers', true );
@@ -102,9 +116,55 @@ def patch_single(text: str) -> str:
     return text
 
 
+def patch_single_dobry_dom(text: str) -> str:
+    replacements = (
+        (
+            '<div class="articles-typical__image">',
+            '<div class="articles-typical__image post-thumbnail">',
+        ),
+        (
+            '<div class="articles-typical__content">',
+            '<div id="article-content" class="articles-typical__content">',
+        ),
+    )
+    for old, new in replacements:
+        if new in text:
+            continue
+        if old not in text:
+            raise ValueError(f"single.php anchor not found: {old!r}")
+        text = text.replace(old, new, 1)
+    return text
+
+
+THEME_PATCHERS: dict[str, tuple[Callable[[str], str], Callable[[str], str]]] = {
+    "theme": (patch_functions_dobry_dom, patch_single_dobry_dom),
+    "kov4eg-mcp-theme": (patch_functions_kov4eg, patch_single_kov4eg),
+}
+
+
+def project_root() -> Path:
+    return Path(__file__).resolve().parents[1]
+
+
+def theme_slug_candidates(root: Path | None = None) -> list[str]:
+    root = root or project_root()
+    configured: list[str] = []
+    tenant_path = root / "shared/tenant-config.json"
+    if tenant_path.is_file():
+        try:
+            tenant = json.loads(tenant_path.read_text(encoding="utf-8"))
+            slug = str((tenant.get("publish_options") or {}).get("wp_theme_slug") or "").strip()
+            if slug:
+                configured.append(slug)
+        except json.JSONDecodeError:
+            pass
+    defaults = ["theme", "kov4eg-mcp-theme"]
+    return list(dict.fromkeys(configured + defaults))
+
+
 def _settings() -> tuple[str, str, str, int, list[str]]:
     values = dict(os.environ)
-    local = Path(__file__).resolve().parents[1] / "memory/site.env.local"
+    local = project_root() / "memory/site.env.local"
     if local.is_file():
         for raw in local.read_text(encoding="utf-8").splitlines():
             line = raw.strip()
@@ -131,28 +191,36 @@ def _settings() -> tuple[str, str, str, int, list[str]]:
     return host, user, password, port, roots
 
 
-def deploy() -> None:
+def resolve_theme_base(sftp, roots: list[str], theme_slugs: list[str]) -> tuple[str, str]:
+    for root in roots:
+        for slug in theme_slugs:
+            candidate = posixpath.normpath(posixpath.join(root, "wp-content/themes", slug))
+            try:
+                sftp.stat(candidate)
+            except OSError:
+                continue
+            if slug not in THEME_PATCHERS:
+                raise RuntimeError(f"theme {slug!r} found but no patcher registered")
+            return candidate, slug
+    raise RuntimeError(
+        "WordPress theme path not found; tried: "
+        + ", ".join(theme_slugs)
+    )
+
+
+def deploy() -> str:
     import paramiko
 
     host, user, password, port, roots = _settings()
     transport = paramiko.Transport((host, port))
     transport.connect(username=user, password=password)
     sftp = paramiko.SFTPClient.from_transport(transport)
-    base = ""
     stamp = datetime.now(timezone.utc).strftime("%Y%m%d%H%M%S")
+    theme_slug = ""
     try:
-        for root in roots:
-            candidate = posixpath.normpath(
-                posixpath.join(root, "wp-content/themes/kov4eg-mcp-theme")
-            )
-            try:
-                sftp.stat(candidate)
-                base = candidate
-                break
-            except OSError:
-                continue
-        if not base:
-            raise RuntimeError("WordPress theme path not found in configured root or login cwd")
+        base, theme_slug = resolve_theme_base(sftp, roots, theme_slug_candidates())
+        patch_functions, patch_single = THEME_PATCHERS[theme_slug]
+        print(f"OK theme={theme_slug} path={base}")
         for name, patcher in (
             ("functions.php", patch_functions),
             ("single.php", patch_single),
@@ -173,6 +241,7 @@ def deploy() -> None:
     finally:
         sftp.close()
         transport.close()
+    return theme_slug
 
 
 def main() -> int:

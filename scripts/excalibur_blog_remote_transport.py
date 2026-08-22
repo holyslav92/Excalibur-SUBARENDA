@@ -54,6 +54,24 @@ def transport_mode(env: dict[str, str]) -> str:
     return "ftp" if mode == "ftp" else "sftp"
 
 
+def resolve_publish_transport(env: dict[str, str]) -> str:
+    """Return ``ftp`` or ``sftp`` for publish/llms deploy logging."""
+    return transport_mode(env)
+
+
+def upload_text_file(env: dict[str, str], remote_name: str, data: bytes) -> str:
+    """Upload a text artifact to WP root (FTP or SFTP cwd)."""
+    if transport_mode(env) == "ftp":
+        selected_root, _log = find_wp_root(env)
+        if not selected_root:
+            raise RuntimeError("wp-load.php not found for llms deploy")
+        upload_bytes(env, remote_name, data, root=selected_root)
+        return f"{selected_root}/{remote_name}"
+    from excalibur_blog_wp_publish import upload_bootstrap_sftp
+
+    return upload_bootstrap_sftp(env, remote_name, data)
+
+
 def ftp_creds(env: dict[str, str]) -> tuple[str, int, str, str]:
     host = (env.get("FTP_HOST") or env.get("SSH_HOST") or "").strip()
     port = int((env.get("FTP_PORT") or "21").strip() or "21")

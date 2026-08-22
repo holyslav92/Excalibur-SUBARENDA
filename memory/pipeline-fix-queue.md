@@ -1,37 +1,37 @@
 # Excalibur BLOG — pipeline fix queue
 
-Durable incident memory for Director and fixer. See `shared/pipeline-incident-fix-contract.md`.
-
-## INC-20260822-1307-content-learner-metrika-credentials
+## INC-20260822-1320-publish-b03-idn-link-verify
 status: open
 run_date: 2026-08-22
-role: excalibur-blog-content-learner
+role: excalibur-blog-publish
 topic_id: B03
-article_dir: memory/blog/articles/B03-dogovor-arendy-pravila-prozhivaniya-posutochno
-severity: blocker
-category: env
+symptom: link-verify FAIL on cyrillic IDN hrefs (добрыйдом-72.рф) — urllib latin-1 codec error
+fix_applied: replaced booking/site hrefs with {{SITE_BASE}}/booking/ and {{SITE_BASE}}/ in article.html before publish
+follow_up: teach link_verify classify_link to treat unicode host == punycode PUBLIC_SITE_URL as internal_absolute
 
-### What went wrong
-- `excalibur_blog_metrika_fetch.py --days 30 --ingest` exited 2 with `METRIKA CREDENTIALS BLOCKER`.
-- `YANDEX_METRIKA_OAUTH_TOKEN` and `YANDEX_METRIKA_COUNTER_ID` are not set in Cloud Secrets/env.
-- Post-publish content learning for B03 cannot ingest on-site behavioral signals (pageviews, bounce, duration).
+## INC-20260822-1315-publish-schema-wp-head
+status: open
+run_date: 2026-08-22
+role: excalibur-blog-publish
+topic_id: B03
+symptom: live gate jsonld=0 — excalibur schema meta set but not echoed in wp_head
+fix_applied: patched wp-content/themes/theme/functions.php to use get_queried_object_id() + is_singular('post') instead of get_the_ID() in wp_head
+follow_up: add same fix to theme_contract_deploy default patch; document `theme` slug for Добрый дом (not kov4eg-mcp-theme)
 
-### How the agent recovered this run
-- Recorded METRIKA FEEDBACK BLOCKER incident in this queue.
-- Wrote optional/low-confidence lesson in `memory/content-lessons.md` from publish artifacts only (evidence_gate=SKIP).
-- Did not invent Metrika metrics or content-evidence-report.json.
+## INC-20260822-1325-publish-schema-blog-permalink
+status: open
+run_date: 2026-08-22
+role: excalibur-blog-publish
+topic_id: B03
+symptom: BlogPosting JSON-LD URL mismatch — committed schema uses /{slug}/ but WP permalink is /blog/{slug}/
+fix_applied: rewrite_schema_urls_for_blog_permalink() in excalibur_blog_wp_publish.load_article at runtime
+follow_up: optional tenant-config blog_path_prefix for non-/blog tenants
 
-### Durable fix needed before next run
-- Add `YANDEX_METRIKA_OAUTH_TOKEN` (OAuth scope `metrika:read`) and `YANDEX_METRIKA_COUNTER_ID` to Cursor Cloud Secrets per `shared/yandex-metrika-contract.md`.
-- Re-run content-learner for B03 after credentials are available.
-
-### Suggested files to inspect/change
-- `shared/yandex-metrika-contract.md`
-- `scripts/excalibur_blog_metrika_fetch.py`
-- Cursor Cloud Secrets (tenant env)
-
-### Secrets
-- none recorded
-
-### Fixer resolution
-- pending
+## INC-20260822-1324-publish-llms-transport-import
+status: open
+run_date: 2026-08-22
+role: excalibur-blog-publish
+topic_id: B03
+symptom: publish crashed after live PASS — ImportError resolve_publish_transport from excalibur_blog_remote_transport
+fix_applied: added resolve_publish_transport + upload_text_file to remote_transport.py; ran llms deploy manually
+follow_up: none
