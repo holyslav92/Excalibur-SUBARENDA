@@ -1,0 +1,38 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 1,
+  "identity_reference_local": "",
+  "identity_reference_id": "",
+  "reference_url_hosted": "",
+  "output_canvas": "cover/canvas-quad-01.png",
+  "result_path": "cover/quad-mcp-result-01.json",
+  "slots": [
+    "cover",
+    "inline_1",
+    "inline_2",
+    "inline_3"
+  ],
+  "preferred_image_flow": {
+    "provider": "derouter-rest",
+    "script": "scripts/excalibur_blog_derouter_gpt_image2_api.py",
+    "resolution": "2K",
+    "note": "PRIMARY: Derouter REST image API (api-direct, 2K 16:9).",
+    "apply_script": "python3 scripts/excalibur_blog_quad_apply.py --article-dir <article_dir> --canvas-index 1 --inject-html"
+  },
+  "jobs": [
+    {
+      "slot": "canvas_quad",
+      "tool": "derouter-rest",
+      "mcp_args": {
+        "prompt": "WOW magazine poster RU editorial collage, airy #FFFFFF high-key, sun flare, warm hospitality (посуточно Тюмень, comfort+). Bold readable Russian DISPLAY type hook — NOT timid system font. NO host Shakin/identity-real. N…\nCanvas 2048x1152 exact 2x2; four 16:9 panels (1024x576); thin white gutters; no bleed.\nBan: dark/low-key; inventory props; celebrity memes; EXCALIBUR stamp; chubby host; stock/generated man co-host on inline; large meme person on inline; icon slogans; empty cells; desk scene; cover copy; celebrity memes; stock model man; handsome realtor co-host; generated stranger presenter; large human on inline; meme person >15% frame; invented meme face; WordPress; Gutenberg; wp-admin; block editor; theme chrome; cookie bar; overlapping headline stickers meme cat phone logo; timid system font; wall of tiny labels; empty stock; wordpress screenshot; WordPress; Gutenberg; Add title; Publish; Dashboard; wp-admin; block editor; theme chrome; cookie bar; timid system font; wall of tiny labels; empty stock; wordpress screenshot; NEVER draw/render/paint ANY brand logo, wordmark, lockup, icon, or subtitle in generation: NO «Добрый дом» text; NO green curtains+red flower icon; NO dashed logo frame/box; NO gold house-with-heart; NO terracotta serif wordmark; NO УЮТНЫЕ КВАРТИРЫ В АРЕНДУ subtitle; NO logo comparison table; NO second logo copy; factory pastes official PNG after split only; NEVER draw white box/white card/white square/rounded rectangle/paper tablichka/plate/podlozhka behind or under the TOP-RIGHT logo pad — pad stays organic scene/background only; factory alpha-PNG overlay after split, no backing shape in generation.\nTEXT LANGUAGE LOCK: all visible text is RUSSIAN Cyrillic only; exact LABELS per panel only.\nCover TL: NO host i2i; NO Shakin/identity-real; NO brand logo; NO phone in generation; WOW magazine poster collage with reserved TOP-RIGHT empty pad for ONE factory logo; organic scene/background only — NO white box/card/plate/tablichka under pad; NEVER multiple logos or logo comparison table; NEVER draw/render/paint ANY brand logo, wordmark, lockup, icon, or subtitle in generation: NO «Добрый дом» text; NO green curtains+red flower icon; NO dashed logo frame/box; NO gold house-with-heart; NO terracotta serif wordmark; NO УЮТНЫЕ КВАРТИРЫ В АРЕНДУ subtitle; NO logo comparison table; NO second logo copy; factory pastes official PNG after split only; NEVER draw white box/white card/white square/rounded rectangle/paper tablichka/plate/podlozhka behind or under the TOP-RIGHT logo pad — pad stays organic scene/background only; factory alpha-PNG overlay after split, no backing shape in generation; Separate zones — headline, Wordstat stickers, meme, cat bottom-left, people, TOP-RIGHT empty logo pad NEVER overlap each other; phone NOT in generation; Russian guest by topic allowed.\nTL COVER WOW POSTER (magazine, not stock): «Перед оплатой прочитайте правила аренды» bold DISPLAY Cyrillic readable, paint ONLY the highlight word \"оплатой\" in gold #dcc5a1; sticky «Сначала прочитайт…\nTop-right inline: чеклист вопросов до оплаты; «Быстрый инсайт»; Checklist: 7 gold ticks, «3 минуты» timer, «до оплаты» tape on white; TOP-RIGHT empty pad.. TXT:7 запретов | 3 минуты чтения | правила до оплаты. TOP-RIGHT empty pad for ONE factory logo 8–12%; organic scene only — NO white box/card/square/plate/tablichka/podlozhka under pad; NO drawn logo/wordmark/lockup/curtains+flower/dashed frame/gold house; NO multi logos.\nBottom-left inline: сравнение «в рекл…",
+        "aspect_ratio": "16:9",
+        "resolution": "2K"
+      }
+    }
+  ],
+  "validation": {
+    "prompt_chars": 3500,
+    "max_prompt_chars": 3500,
+    "resolution": "2K"
+  }
+}
