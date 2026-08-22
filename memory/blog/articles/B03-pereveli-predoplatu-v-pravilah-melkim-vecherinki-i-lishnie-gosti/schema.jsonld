@@ -1,0 +1,62 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/pereveli-predoplatu-v-pravilah-melkim-vecherinki-i-lishnie-gosti/#article",
+  "url": "{{SITE_BASE}}/pereveli-predoplatu-v-pravilah-melkim-vecherinki-i-lishnie-gosti/",
+  "headline": "Перевели предоплату. В правилах мелким: вечеринки и лишние гости",
+  "description": "Семь пунктов в правилах посуточной аренды, которые лучше проверить до предоплаты: гости, вечеринки, курение, время заезда и выезда, залог и последствия нарушений в Тюмени.",
+  "inLanguage": "ru-RU",
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "author": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/pereveli-predoplatu-v-pravilah-melkim-vecherinki-i-lishnie-gosti/"
+  },
+  "mainEntity": {
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Друг зашёл на два часа — это лишний гость?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Чаще всего да, если в правилах запрещены посещения третьими лицами. Лучше согласовать заранее в переписке. Обычно предупредить проще, чем объясняться ночью."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Я не читал правила. Они всё равно действуют?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Если правила прислали до оплаты, а после этого вы перевели деньги, хозяин считает это согласием. Две минуты чтения обычно дешевле залога."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Можно договориться на день рождения?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Иногда можно, за отдельную доплату и с увеличенным залогом. Но обсуждать это нужно до брони. Скрытая вечеринка часто заканчивается ночным выездом."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Что делать, если хозяин не даёт правил?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Попросите хотя бы текстом про гостей, тишину, курение и залог. Если прислать не готовы, лучше поискать другую квартиру."
+        }
+      }
+    ]
+  }
+}
