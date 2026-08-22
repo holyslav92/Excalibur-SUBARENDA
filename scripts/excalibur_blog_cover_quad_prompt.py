@@ -76,15 +76,11 @@ WOW_POSTER_BAN = (
     "wall of tiny labels; empty stock; wordpress screenshot"
 )
 LOGO_DRAW_HARD_BAN = (
-    "NEVER draw/render/paint ANY brand logo, wordmark, lockup, icon, or subtitle in generation: "
-    "NO «Добрый дом» text; NO green curtains+red flower icon; NO dashed logo frame/box; "
-    "NO gold house-with-heart; NO terracotta serif wordmark; NO УЮТНЫЕ КВАРТИРЫ В АРЕНДУ subtitle; "
-    "NO logo comparison table; NO second logo copy; factory pastes official PNG after split only"
+    "NO drawn logo/wordmark/lockup/curtains+red flower/dashed logo frame/gold house; "
+    "factory cropped-img_7143.png PNG paste after split"
 )
 LOGO_WHITE_PLATE_BAN = (
-    "NEVER draw white/gray box/card/square/rounded rectangle/paper tablichka/plate/podlozhka "
-    "behind or under the TOP-RIGHT logo pad — pad stays organic scene/background only; "
-    "factory alpha-PNG overlay after split (cropped-img_7143.png), no backing shape in generation"
+    "NO white/gray card/plate/tablichka under TOP-RIGHT pad; factory alpha PNG after split only"
 )
 NO_OVERLAP_RULE = (
     "Separate zones — headline, Wordstat stickers, meme, cat bottom-left, people, "
@@ -163,17 +159,9 @@ def inline_panel_prompt(slot: dict, types_catalog: dict, *, logo_paste: bool = F
             f"from {MEME_CATALOG_REL}; NO co-host human; NO presenter)."
         )
     if logo_paste:
-        base += (
-            " TOP-RIGHT empty pad for ONE factory logo 8–12%; organic scene only — "
-            "NO white/gray box/card/square/plate/tablichka/podlozhka under pad; "
-            "NO drawn logo/wordmark/lockup/curtains+flower/dashed frame/gold house; NO multi logos."
-        )
+        base += " TOP-RIGHT empty pad; no drawn logo; no white/gray plate."
     else:
-        base += (
-            " TOP-RIGHT clean margin; organic scene only — NO white/gray logo card/plate/tablichka; "
-            "NO factory logo here; "
-            "NO drawn logos/wordmark/lockup/curtains+flower/dashed frame/gold house."
-        )
+        base += " TOP-RIGHT clean; no logo; no white/gray plate."
     return base
 
 
@@ -521,11 +509,10 @@ def build_prompt(
             panel_lines.append(
                 f"TL COVER WOW POSTER (magazine, not stock): «{cover_hook_text}» bold DISPLAY Cyrillic readable, {highlight_rule}; "
                 f"sticky «{cover_sticky or 'Залог вернут?'}»; scene props; Aug Tyumen warm light, NO winter/snow. "
-                f"NO logo/phone in gen. {NO_OVERLAP_RULE}. "
+                f"NO logo/phone in gen. "
                 f"{emotion_clause} sun flare; gold tape; 1-3 Wordstat; "
                 f"{compact(cover_scene, COVER_SCENE_HINT_COMPACT)}; cat bottom-left ≤12%; "
-                f"TOP-RIGHT empty pad ONE factory logo; organic scene only — NO white/gray card/plate/box; "
-                f"NO multi logos; {BOARD_STATIONERY}; #FFF"
+                f"TOP-RIGHT empty pad; no logo in gen; {BOARD_STATIONERY}; #FFF"
             )
         else:
             emotion_clause = (
@@ -550,15 +537,11 @@ def build_prompt(
     ban_line = (
         "Ban: dark/low-key; inventory props; celebrity memes; EXCALIBUR stamp; chubby host; "
         f"stock/generated man co-host on inline; large meme person on inline; "
-        f"{INLINE_BAN_EXTRA}; {WOW_POSTER_BAN}; {LOGO_DRAW_HARD_BAN}; {LOGO_WHITE_PLATE_BAN}."
+        f"{INLINE_BAN_EXTRA}; {LOGO_DRAW_HARD_BAN}; {LOGO_WHITE_PLATE_BAN}."
     )
     if has_cover and brand_logo_paste:
         reference_line = (
-            "Cover TL: NO host i2i; NO Shakin/identity-real; NO brand logo; NO phone in generation; "
-            "WOW magazine poster collage with reserved TOP-RIGHT empty pad for ONE factory logo; "
-            "organic scene/background only — NO white/gray box/card/plate/tablichka under pad; "
-            "NEVER multiple logos or logo comparison table; "
-            f"{LOGO_DRAW_HARD_BAN}; {LOGO_WHITE_PLATE_BAN}; {NO_OVERLAP_RULE}; Russian guest by topic allowed."
+            "Cover TL: NO host; NO logo/phone in gen; TOP-RIGHT empty pad for factory PNG."
         )
     elif has_cover:
         reference_line = (
