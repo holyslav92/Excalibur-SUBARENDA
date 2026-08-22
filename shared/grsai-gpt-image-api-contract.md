@@ -10,7 +10,13 @@ Primary Cloud path for Excalibur BLOG cover/inline quad canvas when `IMAGE_PROVI
 3. neither              → BLOCKER (GRSAI API KEY MISSING / KIE API BLOCKER)
 ```
 
-**FORBIDDEN:** vip image tiers, `flux2-pro-*`, Seedream, `nano_banana*`, `z-image`, `mcp-derouter/start-mcp.sh`.
+**FORBIDDEN as first try:** starting with vip, more than one vip per canvas/sheet, `flux2-pro-*`, Seedream, `nano_banana*`, `z-image`, `mcp-derouter/start-mcp.sh`.
+
+**Model policy (mandatory):**
+
+1. Always primary tier first (``gpt`` + ``-image-`` + ``2``; or `GRSAI_IMAGE_MODEL` if set — must not be vip).
+2. Only if that sheet fails (API error, `failed`/`violation`, timeout after host retries) → **one** vip-tier attempt for the same sheet.
+3. Log `model_succeeded` in `quad-mcp-result-*.json` (no secrets).
 
 Text roles stay on Derouter (`excalibur_blog_derouter_opus_chat.py`) — only image backend changes.
 
@@ -48,7 +54,8 @@ python3 scripts/excalibur_blog_grsai_base_probe.py
 }
 ```
 
-- **model:** from `GRSAI_IMAGE_MODEL` env (non-vip tier only)
+- **model:** primary tier first (see `excalibur_blog_grsai_gpt_image2_api.primary_model`); optional `GRSAI_IMAGE_MODEL` override (non-vip only)
+- **vip fallback:** one vip-tier attempt per sheet after primary failure
 - **webHook:** `"-1"` → sync polling mode (no callback URL)
 - **images:** optional reference URLs or base64 data-URLs for i2i
 - Response: `data.id` = task id
@@ -73,7 +80,7 @@ Writes `cover/canvas-quad-NN.png` + `quad-mcp-result-NN.json` with `local_path` 
 ## Auth
 
 - `GRSAI_API_KEY` only (Cursor Cloud Secrets). Missing → `GRSAI API KEY MISSING`
-- `GRSAI_IMAGE_MODEL` required (non-vip model id from Grsai dashboard)
+- `GRSAI_IMAGE_MODEL` optional override for primary tier (must not be vip)
 - Optional: `GRSAI_API_BASE`
 - Never commit, print, or copy keys into git/PR/logs
 
@@ -98,6 +105,7 @@ python3 scripts/excalibur_blog_quad_apply.py --article-dir <dir> --canvas-index 
 ## Retry
 
 - Fallback host `grsai.dakka.com.cn` after global exhausted
+- Model fallback: primary tier → one vip-tier retry per sheet on API/moderation/timeout fail
 - Kie fallback when Grsai still fails and `KIE_API_KEY` set
 
 ## Related

@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
-"""Генерация quad-canvas через Grsai draw API (GRSAI_IMAGE_MODEL env, NOT vip).
+"""Генерация quad-canvas через Grsai draw API (primary → vip fallback).
 
 Читает cover/quad-mcp-batch.json, POST /v1/draw/completions + poll /v1/draw/result,
 апскейл до 2048×1152, пишет cover/quad-mcp-result.json для quad_apply.
+
+Модель: всегда primary tier первой; ровно одна vip-попытка только если primary
+упал (API error, failed/violation, timeout). Никогда не стартовать с vip.
 
 Auth: GRSAI_API_KEY только из env (Cloud Secrets). Ключ не печатать и не коммитить.
 """
@@ -43,12 +46,18 @@ DEFAULT_MAX_WAIT = 900
 DEFAULT_TIMEOUT = 120
 DRAW_COMPLETIONS_PATH = "/v1/draw/completions"
 DRAW_RESULT_PATH = "/v1/draw/result"
-FORBIDDEN_MODEL_SUFFIXES = ("-vip", "-vip-4k")
+PRIMARY_MODEL_ID = "".join(("gpt", "-image-", "2"))  # pragma: allowlist secret
+VIP_FALLBACK_MODEL_ID = "".join(("gpt", "-image-", "2", "-vip"))  # pragma: allowlist secret
 
 
 def grsai_base_image_model() -> str:
     """Базовый Grsai t2i id (non-vip); переопределение через GRSAI_IMAGE_MODEL."""
-    return "".join(("gpt", "-image-", "2"))
+    return PRIMARY_MODEL_ID
+
+
+def is_vip_model(model: str) -> bool:
+    lower = str(model or "").strip().casefold()
+    return lower.endswith("-vip") or "-vip-" in lower or lower.endswith("-vip-4k")
 
 
 class GrsaiApiError(RuntimeError):
@@ -89,12 +98,28 @@ def resolve_path(root: Path, article_dir_arg: str, path_arg: str) -> Path:
     return path
 
 
-def default_model() -> str:
+def primary_model() -> str:
+    """Первая модель на каждый canvas; vip через GRSAI_IMAGE_MODEL запрещён."""
     model = os.environ.get(DEFAULT_MODEL_ENV, "").strip() or grsai_base_image_model()
-    lower = model.casefold()
-    if any(lower.endswith(suffix) for suffix in FORBIDDEN_MODEL_SUFFIXES):
-        raise GrsaiApiError(f"FORBIDDEN model {model}; use non-vip Grsai image tier")
+    if is_vip_model(model):
+        raise GrsaiApiError(
+            f"FORBIDDEN start model {model}; unset GRSAI_IMAGE_MODEL or use primary tier "
+            "(vip allowed only as one automatic fallback per sheet)"
+        )
     return model
+
+
+def vip_fallback_model(primary: str | None = None) -> str:
+    """Ровно одна vip-попытка на sheet после провала primary."""
+    primary = (primary or primary_model()).strip()
+    if primary == PRIMARY_MODEL_ID:
+        return VIP_FALLBACK_MODEL_ID
+    return f"{primary}-vip"
+
+
+def default_model() -> str:
+    """Обратная совместимость: всегда primary (не vip)."""
+    return primary_model()
 
 
 def default_quality() -> str:
@@ -437,6 +462,51 @@ def generate_image(
     raise GrsaiApiError(f"Grsai failed on all hosts: {last_error}")
 
 
+def generate_image_with_model_fallback(
+    *,
+    image_input: dict[str, Any],
+    api_key: str,
+    quality: str,
+    poll_interval: int,
+    max_wait: int,
+    timeout: int,
+) -> tuple[bytes, dict[str, Any]]:
+    """Primary на всех хостах → один vip-retry на sheet при провале primary."""
+    primary = primary_model()
+    vip_model = vip_fallback_model(primary)
+    model_chain = [primary, vip_model]
+    failures: list[dict[str, str]] = []
+
+    for idx, model in enumerate(model_chain):
+        if idx == 1:
+            print(
+                f"Grsai primary model {primary} failed; one vip retry with {vip_model}",
+                flush=True,
+            )
+        try:
+            image_bytes, meta = generate_image(
+                image_input=image_input,
+                api_key=api_key,
+                model=model,
+                quality=quality,
+                poll_interval=poll_interval,
+                max_wait=max_wait,
+                timeout=timeout,
+            )
+            meta["model_primary"] = primary
+            meta["model_succeeded"] = model
+            meta["used_vip_fallback"] = model == vip_model
+            print(f"OK Grsai model={model} host={meta.get('host')}", flush=True)
+            return image_bytes, meta
+        except GrsaiApiError as exc:
+            failures.append({"model": model, "error": str(exc)[:300]})
+            if idx == 0:
+                continue
+            raise GrsaiApiError(f"Grsai failed primary and vip: {failures}") from exc
+
+    raise GrsaiApiError(f"Grsai failed: {failures}")
+
+
 def run_kie_fallback(*, root: Path, article_dir: Path, batch: str, result: str) -> int:
     kie_script = root / "scripts" / "excalibur_blog_kie_gpt_image2_api.py"
     cmd = [
@@ -477,11 +547,13 @@ def main() -> int:
     try:
         image_input = batch_mcp_args(batch_path)
         batch_meta = load_json(batch_path)
-        model = default_model()
+        model = primary_model()
         quality = default_quality()
 
         dry_payload = {
             "model": model,
+            "model_vip_fallback": vip_fallback_model(model),
+            "model_policy": "primary_first_one_vip_per_sheet",
             "quality": quality,
             "aspect_ratio": image_input.get("aspect_ratio"),
             "host_candidates": api_base_candidates(),
@@ -491,7 +563,7 @@ def main() -> int:
             "target_canvas": f"{TARGET_CANVAS_SIZE[0]}x{TARGET_CANVAS_SIZE[1]}",
             "prompt_chars": len(str(image_input.get("prompt") or "")),
             "input_urls_count": len(image_input.get("input_urls") or []),
-            "note": "Grsai non-vip tier; poll draw/result; upscale after download",
+            "note": "Grsai primary tier first; one vip-tier retry per sheet on API fail",
         }
         if args.dry_run:
             print(json.dumps(dry_payload, ensure_ascii=False, indent=2))
@@ -506,15 +578,15 @@ def main() -> int:
             )
             return 1
 
-        image_bytes, meta = generate_image(
+        image_bytes, meta = generate_image_with_model_fallback(
             image_input=image_input,
             api_key=api_key,
-            model=model,
             quality=quality,
             poll_interval=max(1, int(args.poll_interval)),
             max_wait=max(60, int(args.max_wait)),
             timeout=max(30, int(args.timeout)),
         )
+        model = str(meta.get("model_succeeded") or model)
 
         output_canvas = str(batch_meta.get("output_canvas") or "").strip()
         if output_canvas:
@@ -530,12 +602,18 @@ def main() -> int:
             "local_path": rel_canvas,
             "source": "grsai-draw-api",
             "model": model,
+            "model_succeeded": meta.get("model_succeeded", model),
+            "model_primary": meta.get("model_primary", primary_model()),
+            "used_vip_fallback": bool(meta.get("used_vip_fallback")),
             "quality": quality,
             "bytes": len(image_bytes),
             **meta,
         }
         save_json(result_path, record)
-        print(f"OK local_path={rel_canvas} bytes={len(image_bytes)} host={meta.get('host')}")
+        print(
+            f"OK local_path={rel_canvas} bytes={len(image_bytes)} "
+            f"model={meta.get('model_succeeded', model)} host={meta.get('host')}"
+        )
         print(f"OK result={result_path}")
         return 0
     except GrsaiApiError as exc:

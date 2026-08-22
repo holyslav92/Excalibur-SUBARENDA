@@ -417,7 +417,7 @@ def run(cmd: list[str], *, cwd: Path | None = None) -> None:
         raise RuntimeError(f"command failed ({proc.returncode}): {' '.join(cmd)}")
 
 
-MAX_COVER_CANVAS_RETRIES = 5
+MAX_COVER_CANVAS_RETRIES = 8
 CANVAS1_LOGO_PANELS = ("cover.png", "inline-01.png", "inline-03.png")
 CANVAS2_LOGO_PANELS = ("inline-07.png",)
 

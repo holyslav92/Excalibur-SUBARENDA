@@ -27,7 +27,7 @@ GRSAI_FLOW = {
     "probe_script": "scripts/excalibur_blog_grsai_base_probe.py",
     "contract": "shared/grsai-gpt-image-api-contract.md",
     "note": (
-        "PRIMARY: Grsai draw API (GRSAI_IMAGE_MODEL, 16:9 high, webHook=-1 polling). "
+        "PRIMARY: Grsai draw API (primary image tier first; one vip-tier retry per sheet on fail). "
         "Upscale to 2048x1152 before quad split. "
         "Fallback: excalibur_blog_kie_gpt_image2_api.py when Grsai fail. "
         "FORBIDDEN: flux2-pro-*, Seedream, nano_banana*, z-image, mcp-derouter/start-mcp.sh."
