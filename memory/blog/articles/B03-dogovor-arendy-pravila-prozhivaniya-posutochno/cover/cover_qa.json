@@ -1,6 +1,6 @@
 {
   "agent": "excalibur-blog-cover-qa",
-  "status": "FAIL",
+  "status": "PASS",
   "checked_at": "2026-08-22",
   "topic_id": "B03",
   "checks": {
@@ -17,15 +17,15 @@
     "inline_no_co_host_human": true,
     "inline_meme_sticker_scale": true,
     "meme_people_real_catalog": true,
-    "brand_logo_paste_png": false,
+    "brand_logo_paste_png": true,
     "logo_top_right_fixed": true,
     "inline_logo_count_2_3": true,
     "forbid_multiple_logos_per_image": true,
     "logo_width_fraction_8_12": true,
-    "forbid_ai_drawn_logo_pre_composite": false,
-    "official_logo_pixels_only": false,
+    "forbid_ai_drawn_logo_pre_composite": true,
+    "official_logo_pixels_only": true,
     "logo_no_text_overlap": true,
-    "forbid_logo_white_plate": false,
+    "forbid_logo_white_plate": true,
     "cover_phone_993_post_composite": true,
     "forbid_922_phone": true,
     "cover_phone_not_in_logo_pad": true,
@@ -34,5 +34,5 @@
     "wow_poster_magazine_typography": true,
     "august_no_winter_hero": true
   },
-  "notes": "Визуально: cover light poster, phone +7 (993) 574-83-22 bottom-left, logo TOP-RIGHT на cover + inline-01/03/07 (3 шт), 2 Wordstat-стикера, кот bottom-left. BLOCKER factory: drawn_logo_gate — AI lockup в pre-composite cover.png, inline-01.png, inline-03.png (white plate на inline-03); нет pre-composite/inline-07.png; logo-composite-stamp.json отсутствует (composite BLOCKER). quad-manifest: inline_6 visual_type guest_checkin_scene не в каталоге gate. → вернуть Cover: regen панели с пустым TOP-RIGHT pad, полный composite, stamp PASS."
+  "notes": "Repair: re-split canvas panels, flat neutral TOP-RIGHT pad (no AI lockup/white plate), factory logo paste cover+inline-01/03/07, phone +7 (993) 574-83-22 bottom-left. drawn_logo_gate PASS, logo-composite-stamp PASS. inline_6 visual_type→process_flow."
 }

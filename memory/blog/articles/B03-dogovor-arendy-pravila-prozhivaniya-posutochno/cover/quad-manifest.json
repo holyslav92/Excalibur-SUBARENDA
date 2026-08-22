@@ -50,7 +50,7 @@
       "quadrant": "top_left",
       "role": "cover_editorial_hero",
       "alt": "Постер: гость завис над переводом предоплаты, а лист с семью правилами аренды подсвечен августовским солнцем — Тюмень.",
-      "scene_hint": "Poster: hand over payment, rules sheet 7 checkboxes gold clip, sunny August hallway; TOP-RIGHT empty pad; cat ≤12% bottom-left.",
+      "scene_hint": "Hand over payment, rules sheet 7 checkboxes, sunny August hallway; TOP-RIGHT empty sky pad; cat bottom-left.",
       "meme_caption_ru": "",
       "sticky": "Сначала прочитайте условия"
     },
@@ -58,7 +58,7 @@
       "quadrant": "top_right",
       "h2_anchor": "Быстрый инсайт",
       "visual_type": "labeled_checklist",
-      "scene_hint": "Checklist: 7 gold ticks, «3 минуты» timer, «до оплаты» tape on white; TOP-RIGHT empty pad.",
+      "scene_hint": "Checklist 7 gold ticks, 3-min timer, tape on white; TOP-RIGHT empty wall pad.",
       "alt": "Семь пунктов договора посуточной аренды, которые стоит прочитать до перевода предоплаты",
       "labels": ["7 запретов", "3 минуты чтения", "правила до оплаты", "оплата = согласие"]
     },
@@ -66,7 +66,7 @@
       "quadrant": "bottom_left",
       "h2_anchor": "Почему перевод денег иногда считается согласием",
       "visual_type": "comparison_table",
-      "scene_hint": "Table «Оплата» vs «Акцепт»: two gold-black columns, equals if offer read; tiny cat corner.",
+      "scene_hint": "Table Оплата vs Акцепт: two columns; clean TOP-RIGHT, no logo.",
       "alt": "Оплата брони может быть акцептом оферты, если условия были доступны до перевода",
       "labels": ["ст. 438 ГК", "оплата как согласие", "оферта на сайте", "правила до перевода"]
     },
@@ -74,7 +74,7 @@
       "quadrant": "bottom_right",
       "h2_anchor": "Вот где подставят, если читать договор после перевода",
       "visual_type": "comparison_table",
-      "scene_hint": "Table «Реклама» vs «Договор»: promise left, real terms right; torn paper; TOP-RIGHT empty pad.",
+      "scene_hint": "Table Реклама vs Договор, torn paper; TOP-RIGHT empty wall pad.",
       "alt": "Типовые ловушки в правилах проживания: заезд, гости, отмена, ключи",
       "labels": ["заезд с 15:00", "не больше 2 гостей", "отмена без возврата", "балкон: не курить"]
     },
@@ -82,7 +82,7 @@
       "quadrant": "top_left",
       "h2_anchor": "Семь пунктов, которые читают до перевода",
       "visual_type": "labeled_checklist",
-      "scene_hint": "Numbered checklist 7 rows, gold labels, torn paper, sun flare; no people.",
+      "scene_hint": "Checklist 7 rows, gold labels, torn paper; no logo on panel.",
       "alt": "Семь условий в договоре посуточного найма: часы, гости, ключи, курение, отмена, назначение, залог",
       "labels": ["часы заезда", "число гостей", "ключи и коды", "отмена и возврат", "обеспечительный платёж"]
     },
@@ -90,15 +90,15 @@
       "quadrant": "top_right",
       "h2_anchor": "Что проверить за три минуты до перевода",
       "visual_type": "process_flow",
-      "scene_hint": "Flow 3 cards: оферта→детали→чат, timer 3:00, pictograms on white.",
+      "scene_hint": "Flow 3 cards оферта→детали→чат, timer 3:00; no logo.",
       "alt": "Чеклист перед оплатой посуточной квартиры: оферта, гости, отмена, ключи",
       "labels": ["оферта до оплаты", "адрес и даты", "рейс против часов", "гости как в брони", "сохраните чат"]
     },
     "inline_6": {
       "quadrant": "bottom_left",
       "h2_anchor": "У нас в «Добром доме» так",
-      "visual_type": "guest_checkin_scene",
-      "scene_hint": "Check-in diagram: door, phone code, keybox, arrows site→codes→entry; no faces.",
+      "visual_type": "process_flow",
+      "scene_hint": "Flow 4 steps site→codes→door; keybox; no faces, no logo.",
       "alt": "Посуточные квартиры в Тюмени: условия на сайте до брони и бесконтактное заселение",
       "labels": ["условия до брони", "бесконтактный заезд", "коды заранее", "ранний заезд заранее", "телефон для связи"]
     },
@@ -106,7 +106,7 @@
       "quadrant": "bottom_right",
       "h2_anchor": "Частые вопросы",
       "visual_type": "schema_faq_ui",
-      "scene_hint": "FAQ UI 4 Q&A cards, gold markers, cat sticker corner; TOP-RIGHT empty pad.",
+      "scene_hint": "FAQ 4 Q&A cards, gold markers, cat corner; TOP-RIGHT empty pad.",
       "alt": "Частые вопросы гостей про договор и правила проживания при посуточной аренде",
       "labels": ["перевод не всё решает", "код другу: правила", "ранний заезд не сразу", "залог: срок удержания"]
     }
