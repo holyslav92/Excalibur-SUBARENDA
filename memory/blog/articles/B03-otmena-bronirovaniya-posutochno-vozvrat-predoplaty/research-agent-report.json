@@ -1,0 +1,35 @@
+{
+  "topic_id": "B03",
+  "research_date": "2026-08-22",
+  "status": "PASS",
+  "summary": "Research notes for cancellation and prepayment refund in Tyumen short-term apartment rental. Fresh community signals verified live 2026-08-22: harant q-201970 (12k rub refusal, 5+ days cancel) and q-193619 (Avito 6h window). Hotel March 2026 rules separated as context only.",
+  "derouter_status": "BLOCKER",
+  "derouter_note": "Derouter utility returned BLOCKER stub; research-notes.md written manually from verified serp + harant + wordstat per fallback instruction.",
+  "freshness_audit": {
+    "research_date": "2026-08-22",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_verified_today": true,
+    "community_signal": {
+      "url": "https://harant.ru/questions/q-201970/",
+      "posted_at": "2026-06-12",
+      "accessed_at": "2026-08-22",
+      "note": "Guest house prepayment 12000 rub refused after cancellation 5+ days before check-in; lawyers cite ZPP art 32 and GK art 782."
+    }
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176", "225"],
+    "p0_phrase": "отмена бронирования",
+    "p0_volume_ru": 14147,
+    "p0_volume_tyumen": 104
+  },
+  "official_source_audit": {
+    "status": "NOT_REQUIRED",
+    "required": false,
+    "reason": "Нет тарифов/комиссий банков или госорганов с точными цифрами"
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  }
+}
