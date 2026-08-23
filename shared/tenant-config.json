@@ -19,16 +19,15 @@
   "inline_image_count": 7,
   "publish_schedule": {
     "timezone": "Asia/Yekaterinburg",
-    "weekdays_only": true,
+    "weekdays_only": false,
     "slots_local": [
-      "09:00",
-      "12:00",
-      "15:00",
+      "10:00",
+      "14:00",
       "17:00"
     ],
-    "runs_per_day": 4,
-    "window_local": "09:00-17:00",
-    "note": "Longform Cursor Automation: 4 weekday slots YEKT (owner 9–17). NOT 20:00. Publish only when FTP secrets + EXCALIBUR_BLOG_ALLOW_PUBLISH=yes on process (never git)."
+    "runs_per_day": 3,
+    "window_local": "10:00-17:00",
+    "note": "Longform Cursor Automation: 3 daily slots YEKT (10/14/17), including weekends. NOT 20:00. Publish only when FTP secrets + EXCALIBUR_BLOG_ALLOW_PUBLISH=yes on process (never git)."
   },
   "image_generation": {
     "provider": "grsai",

@@ -6,6 +6,6 @@
 
 | Файл | Назначение |
 |------|------------|
-| `dobry-dom-3x.yml` | 3 статьи/будни YEKT 10:00, 13:00, 17:00 — holyslav92/Excalibur-SUBARENDA |
+| `dobry-dom-3x.yml` | 3 статьи/день YEKT 10:00, 14:00, 17:00 — holyslav92/Excalibur-SUBARENDA |
 
 Канон расписания дублируется в `shared/tenant-config.json` → `publish_schedule` и `CLOUD-AUTOMATION.md`.

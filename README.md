@@ -41,7 +41,7 @@ Title → Writer → Sol → Cover/Schema → Indexer → Publish.
 
 - **WP / SFTP secrets** для добрыйдом-72.рф (не tymenrieltor.ru)
 - **Лицо ведущего / identity-real** — заменить фото (сейчас placeholder / NEED-REPLACE)
-- **Cursor Cloud Automation** — 3×/будни YEKT (10/13/17) — `.cursor/automations/dobry-dom-3x.yml`
+- **Cursor Cloud Automation** — 3×/день YEKT (10/14/17) — `.cursor/automations/dobry-dom-3x.yml`
 - **EXCALIBUR_BLOG_ALLOW_PUBLISH** — только `yes` в Secrets, когда готовы к live
 
 ## Лицензия / доступ

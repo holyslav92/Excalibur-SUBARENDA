@@ -10,29 +10,29 @@
 
 ## Расписание (owner: 10–17 YEKT)
 
-**3 запуска в будни** (пн–пт), часовой пояс **Asia/Yekaterinburg (YEKT, UTC+5)**:
+**3 запуска каждый день** (пн–вс), часовой пояс **Asia/Yekaterinburg (YEKT, UTC+5)**:
 
 | Слот | Время YEKT |
 |------|------------|
 | 1 | 10:00 |
-| 2 | 13:00 |
+| 2 | 14:00 |
 | 3 | 17:00 |
 
 - Окно владельца: **10:00–17:00** YEKT.
-- Выходные (сб–вс): longform automation **не запускать**, если owner не попросил отдельно.
+- Выходные (сб–вс): **включены** — те же три слота.
 
 ### Cursor Automation (не GitHub Actions)
 
 **Repo config:** `.cursor/automations/dobry-dom-3x.yml` — импорт в [Cursor → Automations](https://cursor.com/docs/cloud-agent/automations).
 
-Один триггер с тремя слотами (пн–пт):
+Один триггер с тремя слотами (каждый день):
 
 | Поле | Значение |
 |------|----------|
 | Имя | Добрый дом 3 статьи |
 | Репозиторий | `holyslav92/Excalibur-SUBARENDA` |
-| Cron (YEKT) | `CRON_TZ=Asia/Yekaterinburg 0 10,13,17 * * 1-5` |
-| Cron (UTC fallback) | `0 5,8,12 * * 1-5` (= 10/13/17 YEKT) |
+| Cron (YEKT) | `CRON_TZ=Asia/Yekaterinburg 0 10,14,17 * * *` |
+| Cron (UTC fallback) | `0 5,9,12 * * *` (= 10/14/17 YEKT) |
 | Memories | **OFF** |
 | MCP | MCP-KV `wordstat_*` only — **never** `wordpress_* |
 | Publish site | только **добрыйдом-72.рф** (FTP Timeweb) — **never** tymenrieltor.ru |
@@ -50,7 +50,7 @@ Scout? → research_start → Research → Title → Writer → Sol
 ```
 
 - **Publish** — **только если одновременно**:
-  1. Cloud Secrets FTP для **добрыйдом-72.рф** (vh368.timeweb.ru, port 21, root `sublease/public_html`);
+  1. Cloud Secrets FTP для **добрыйдом-72.рф** ([REDACTED], port 21, root `[REDACTED]`);
   2. `EXCALIBUR_BLOG_ALLOW_PUBLISH=yes` на процесс (**не git**).
 - **Never** tymenrieltor.ru, Excalibur-2-Cloud, MCP-KV `wordpress_*`.
 - Если allow flag или FTP **нет** — run завершается после Indexer + артефактов в репо.
