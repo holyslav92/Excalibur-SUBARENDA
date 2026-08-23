@@ -71,6 +71,12 @@ python3 scripts/excalibur_blog_wp_publish.py \
    - caption / description / title аналогично (description дополняется `h2_anchor` из registry, если есть)
    - `src` в `post_content` заменяется на WP media URL (HTML `alt` в теле поста сохраняется)
 6. **Media completeness**: `WARN cover` / неполный inline upload → publish **fail** (не `OK post=` alone)
+6b. **Dzen / WP intermediates (live overwrite):** `/feed/zen/` enclosure и `<img>` в RSS
+   часто ссылаются на **промежуточные** файлы (`-1024x576`, `-768x432`, `-300x169`,
+   `-150x150`), а не на full PNG. После SFTP-overwrite full cover/inline **обязательно**
+   прогон `scripts/excalibur_blog_wp_intermediate_refresh.py` (или live regen upload,
+   который вызывает его автоматически), затем `scripts/excalibur_blog_live_dzen_bump.py`
+   для `post_modified_gmt` в 7-дневном окне Дзена.
 7. Post meta `_excalibur_blog_schema_jsonld` — JSON-LD для `single.php`
 8. Post meta `_excalibur_blog_skip_theme_faq` = `1` — сигнал теме **не** добавлять глобальный FAQ-блок
 9. После publish — `llms.txt` + `llms-full.txt` в корень WP (`--deploy-llms` или `tenant-config.publish_options.deploy_llms_after_publish=true`)

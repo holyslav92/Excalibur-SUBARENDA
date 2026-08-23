@@ -708,6 +708,14 @@ def upload(spec: dict, adir: Path) -> list[str]:
     try:
         urls = upload_sftp(spec, adir / "cover")
         if urls:
+            try:
+                from excalibur_blog_wp_intermediate_refresh import refresh_after_full_upload
+
+                refresh_report = refresh_after_full_upload(spec)
+                uploaded = len(refresh_report.get("uploads") or [])
+                print(f"WP intermediate refresh: {uploaded} files updated for {spec['slug']}", flush=True)
+            except Exception as exc:
+                print(f"WARN WP intermediate refresh failed ({exc})", flush=True)
             cb = int(time.time())
             return [f"{u}?cb={cb}" if "?" not in u else f"{u}&cb={cb}" for u in urls]
     except Exception as exc:
