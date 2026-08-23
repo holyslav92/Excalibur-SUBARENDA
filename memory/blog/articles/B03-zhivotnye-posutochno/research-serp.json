@@ -1,0 +1,218 @@
+{
+  "agent": "excalibur-blog",
+  "date_context": {
+    "timezone": "Europe/Moscow",
+    "today_iso": "2026-08-23",
+    "today_ru": "23.08.2026",
+    "year": 2026,
+    "month": 8,
+    "month_name_ru": "август",
+    "weekday_ru": "воскресенье"
+  },
+  "topic": {
+    "topic_id": "B03",
+    "title": "животные посуточно",
+    "h1": "животные посуточно",
+    "slug": "zhivotnye-posutochno",
+    "primary_query": "животные посуточно",
+    "priority": "P0"
+  },
+  "searches": [
+    {
+      "query_id": "primary_fresh",
+      "query": "животные посуточно 2026",
+      "purpose": "актуальный SERP",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Снять частный сектор в России с животными 2026 цены недорого без ...",
+          "url": "https://travelandia.ru/russia/chastnyj_sektor/s-zhivotnymi/",
+          "snippet": ""
+        },
+        {
+          "title": "Животные — Русский тизер-трейлер (2026) - YouTube",
+          "url": "https://www.youtube.com/watch?v=eaHztBS9c7A",
+          "snippet": "Снять частный сектор в России с животными 2026 - низкие цены без посредников! Смотрите 3530 объявлений с ценами, телефонами, адресами, фотографиями и отзывами."
+        },
+        {
+          "title": "Отдых в России с питомцем. Цены 2026. Можно с животными",
+          "url": "https://forento.ru/rent?pets=1",
+          "snippet": "Русский тизер-трейлер фильма «Животные» 2026 годаСамые новые официальные трейлеры к фильмам, сериалам и ..."
+        },
+        {
+          "title": "Снять квартиру в Хосте с животными 2026 | Аренда посуточно | ПриветТур",
+          "url": "https://privettur.ru/hosta/kvartiry/t_zhivotnie/",
+          "snippet": "Где-то бесплатно, а где-то - за небольшую плату и по запросу. Вы сможете планировать отдых вместе со своим питомцем, отправив запрос в объекты, где принимают гостей с домашними животными."
+        },
+        {
+          "title": "Отели России для поездки с животными — цены 2026 на онлайн бронирование",
+          "url": "https://101hotels.com/russia/filter/pets",
+          "snippet": "Снять квартиру в Хосте с животными в 2026 году без посредников на ПриветТур. Бронирование жилья с кошками и собаками посуточно: низкие цены 2975 руб"
+        },
+        {
+          "title": "Животные (2026) — дата выхода в России и премьеры в мире — Кинопоиск",
+          "url": "https://www.kinopoisk.ru/film/5455343/dates/",
+          "snippet": "Перед вами отели с проживанием домашних животных в России: отзывы гостей и удобный поиск номеров. Путешествуйте вместе со своими хвостиками! Поиск отеля с размещением животных в России — важная часть поездки с ..."
+        }
+      ],
+      "searched_at": "2026-08-23"
+    },
+    {
+      "query_id": "title_fresh",
+      "query": "животные посуточно 2026",
+      "purpose": "SERP по человеческому title",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Снять частный сектор в России с животными 2026 цены недорого без ...",
+          "url": "https://travelandia.ru/russia/chastnyj_sektor/s-zhivotnymi/",
+          "snippet": ""
+        },
+        {
+          "title": "Животные — Русский тизер-трейлер (2026) - YouTube",
+          "url": "https://www.youtube.com/watch?v=eaHztBS9c7A",
+          "snippet": "Снять частный сектор в России с животными 2026 - низкие цены без посредников! Смотрите 3530 объявлений с ценами, телефонами, адресами, фотографиями и отзывами."
+        },
+        {
+          "title": "Отдых в России с питомцем. Цены 2026. Можно с животными",
+          "url": "https://forento.ru/rent?pets=1",
+          "snippet": "Русский тизер-трейлер фильма «Животные» 2026 годаСамые новые официальные трейлеры к фильмам, сериалам и ..."
+        },
+        {
+          "title": "Снять квартиру в Хосте с животными 2026 | Аренда посуточно | ПриветТур",
+          "url": "https://privettur.ru/hosta/kvartiry/t_zhivotnie/",
+          "snippet": "Где-то бесплатно, а где-то - за небольшую плату и по запросу. Вы сможете планировать отдых вместе со своим питомцем, отправив запрос в объекты, где принимают гостей с домашними животными."
+        },
+        {
+          "title": "Отели России для поездки с животными — цены 2026 на онлайн бронирование",
+          "url": "https://101hotels.com/russia/filter/pets",
+          "snippet": "Снять квартиру в Хосте с животными в 2026 году без посредников на ПриветТур. Бронирование жилья с кошками и собаками посуточно: низкие цены 2975 руб"
+        },
+        {
+          "title": "Животные (2026) — дата выхода в России и премьеры в мире — Кинопоиск",
+          "url": "https://www.kinopoisk.ru/film/5455343/dates/",
+          "snippet": "Перед вами отели с проживанием домашних животных в России: отзывы гостей и удобный поиск номеров. Путешествуйте вместе со своими хвостиками! Поиск отеля с размещением животных в России — важная часть поездки с ..."
+        }
+      ],
+      "searched_at": "2026-08-23"
+    },
+    {
+      "query_id": "official_docs",
+      "query": "животные посуточно official docs 2026",
+      "purpose": "официальные docs",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Перевозка животных в самолете 2026: правила, документы, переноски",
+          "url": "https://palmira-art.com/perevozka-zhivotnyh-v-samolyote-polnoe-rukovodstvo-2026-goda/",
+          "snippet": ""
+        },
+        {
+          "title": "Чек-лист документов для перевозки животных 2026",
+          "url": "https://deliveryanimal.com/chek-list-dokumentov-dlya-perevozki-zhivotnikh/",
+          "snippet": "Полный гид по авиаперевозке питомцев в 2026 году. Как собрать документы, выбрать авиакомпанию и подготовить переноску по стандартам IATA. Чеклист подготовки по дням."
+        },
+        {
+          "title": "Новые правила перевозки животных в самолётах: что изменится для ...",
+          "url": "https://www.frequentflyers.ru/2026/07/15/iata_new_petc/",
+          "snippet": "Полный чек-лист документов для перевозки животных в 2026 году: ветеринарный паспорт, микрочип, титры, сертификаты, другое."
+        },
+        {
+          "title": "Правила перевозки животных в самолете 2026: документы",
+          "url": "https://deliveryanimal.com/pravila-perevozki-zhivotnikh-v-samolete/",
+          "snippet": "Список видов, допущенных к полёту в салоне, не ограничивается теперь кошками и собаками: другие животные тоже могут быть приняты на борт, если вписываются в требования к контейнерам ..."
+        },
+        {
+          "title": "Путешествие с животными: новые правила 2026",
+          "url": "https://tot-tour.ru/blog/puteshestvie-s-zhivotnyimi-novyie-pravila-2026",
+          "snippet": "Правила перевозки животных в самолете 2026: узнайте требования к ветеринарному паспорту, чипам и вакцинам."
+        },
+        {
+          "title": "Новые правила перевозки животных в самолете 2026: что важно знать",
+          "url": "https://clublemurr.ru/novye-pravila-perevozki-zhivotnyh-v-samolete-2026-chto-vazhno-znat/",
+          "snippet": "В 2026 году правила перевозки животных за границу претерпели ряд изменений: где-то стало строже, где-то появились новые возможности для оформления. Разбираемся, какие документы нужны и к чему готовиться владельцам кошек и собак."
+        }
+      ],
+      "searched_at": "2026-08-23"
+    },
+    {
+      "query_id": "github_evidence",
+      "query": "site:github.com животные посуточно 2026",
+      "purpose": "GitHub evidence",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "список (словарь) животных · GitHub",
+          "url": "https://gist.github.com/oboshto/a0bf911b03068d43e41cf17da2331b0d",
+          "snippet": ""
+        },
+        {
+          "title": "RobustRAG/data/realtimeqa.json at main - GitHub",
+          "url": "https://github.com/inspire-group/RobustRAG/blob/main/data/realtimeqa.json",
+          "snippet": "список (словарь) животных. GitHub Gist: instantly share code, notes, and snippets."
+        },
+        {
+          "title": "Зоопарк · GitHub",
+          "url": "https://gist.github.com/HiddenUnSmiling007/adaa0c20a3ecde9a9d841c3e0a5719ac",
+          "snippet": "Contribute to inspire-group/RobustRAG development by creating an account on GitHub."
+        },
+        {
+          "title": "paperclip/doc/assets/header.png at master · paperclipai/paperclip",
+          "url": "https://github.com/paperclipai/paperclip/blob/master/doc/assets/header.png",
+          "snippet": "This file contains hidden or bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters. Learn more about bidirectional Unicode characters Show hidden characters namespace ConsoleApp { internal class Program { static void Main (string [] args) { Zoo zoo = new Zoo (); zoo.Work ..."
+        },
+        {
+          "title": "Releases · justagoodman/JMComic - GitHub",
+          "url": "https://github.com/justagoodman/JMComic/releases",
+          "snippet": "The open-source app everyone uses to manage agents at work - paperclipai/paperclip"
+        },
+        {
+          "title": "athar/favicon.svg at main · dandanml25/athar · GitHub",
+          "url": "https://github.com/dandanml25/athar/blob/main/favicon.svg",
+          "snippet": "Contribute to justagoodman/JMComic development by creating an account on GitHub."
+        }
+      ],
+      "searched_at": "2026-08-23"
+    },
+    {
+      "query_id": "community_experience",
+      "query": "животные посуточно forum problems опыт 2026",
+      "purpose": "форумы и живые проблемы",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Клуб любителей животных - Животные",
+          "url": "https://zooforum.top/viewforum.php?f=1",
+          "snippet": ""
+        },
+        {
+          "title": "Клуб любителей животных - Главная страница",
+          "url": "https://zooforum.top/",
+          "snippet": "У вас был опыт с дельфином? … Re: Алматы есть по теме?"
+        },
+        {
+          "title": "Форум о домашних животных - Моё зверьё",
+          "url": "https://animals.moe-online.ru/forum",
+          "snippet": "Всего сообщений: 40780 • Всего тем: 4808 • Всего пользователей: 5831 • Наши новые пользователи: dreams, Аноним2026, Sexdods, PioneerVolodka, Zimba."
+        },
+        {
+          "title": "Форум охотников - новости и отчеты с полей",
+          "url": "https://forum.donfisher.ru/index.php?board=60.0",
+          "snippet": "На форуме «Моё зверьё» владельцы собак, кошек, попугаев и других домашних животных рассказывают как ухаживать, кормить и лечить своих питомцев."
+        },
+        {
+          "title": "Медвет - Index page",
+          "url": "https://med-vet.ru/forum/",
+          "snippet": "Отчеты об охоте Цитата: Маэстро от 14 августа 2026, 21:08:01Вчерашний день. Теплак наше всё. На перепела? Теперь становится понятно выражение-\"Из пушки по воробьям.\""
+        },
+        {
+          "title": "Галактика ЖИЗНИ - Интернациональный форум о домашних животных: лошади ...",
+          "url": "https://forum.galaktikalife.ru/",
+          "snippet": "Who is online In total there are 20 users online :: 2 registered, 0 hidden and 18 guests (based on users active over the past 5 minutes) Most users ever online was 8963 on Fri Feb 20, 2026 6:33 am"
+        }
+      ],
+      "searched_at": "2026-08-23"
+    }
+  ],
+  "errors": []
+}

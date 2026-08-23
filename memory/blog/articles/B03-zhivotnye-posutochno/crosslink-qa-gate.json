@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/",
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "anchor": "про залог, который не вернули из-за скола на плите. С питомцем логика та же, только поводов для вопросов больше.Полный чеклист заезда с питомцем и дополнительные пункты, которые не поместились здесь, — в нашем Telegram-канале:",
+      "catalog_title": "Снял квартиру посуточно. Залог не вернули — нашли скол на плите",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "anchor": "как бывает при бесконтактном заселении.Хотите узнать условия по питомцу до оплаты — напишите нам в MAX:",
+      "catalog_title": "Оплатил квартиру посуточно. Код прислали от чужой двери",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B03-zhivotnye-posutochno",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}
