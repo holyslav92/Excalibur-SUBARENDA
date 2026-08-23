@@ -31,8 +31,12 @@ from excalibur_blog_live_cover_regen_aug22 import (  # noqa: E402
 from excalibur_blog_site_base import resolve_public_base_from_env  # noqa: E402
 from excalibur_blog_wp_publish import (  # noqa: E402
     delete_bootstrap_sftp,
+    is_missing_remote_path_error,
     load_env,
+    sftp_remote_path,
+    sftp_root_candidates,
     upload_bootstrap_sftp,
+    _ssh_creds,
 )
 
 DEFAULT_SLUGS: tuple[str, ...] = (
@@ -81,10 +85,9 @@ def make_dzen_thumb(cover_path: Path) -> bytes:
 
 
 def upload_logo_ref_files(spec: dict, adir: Path) -> dict[str, str]:
-    from excalibur_blog_remote_transport import connect_ftp, _ftp_cwd_root, _ftp_stor_with_retry
+    import paramiko
 
-    env = dict(os.environ)
-    root = (env.get("FTP_ROOT") or ".").strip() or "."
+    env = load_env(ROOT)
     remote_dir = "wp-content/uploads/2026/08"
     public = resolve_public_base_from_env() or os.environ.get("PUBLIC_SITE_URL", "").rstrip("/")
     urls: dict[str, str] = {}
@@ -98,22 +101,33 @@ def upload_logo_ref_files(spec: dict, adir: Path) -> dict[str, str]:
     files[cover_remote] = (adir / "cover" / "cover.png").read_bytes()
     files[dzen_remote] = make_dzen_thumb(adir / "cover" / "cover.png")
 
-    ftp = connect_ftp(env, timeout=180)
+    host, port, user, password = _ssh_creds(env)
+    transport = paramiko.Transport((host, port))
+    transport.connect(username=user, password=password)
+    sftp = paramiko.SFTPClient.from_transport(transport)
+    cache_bust = int(time.time())
     try:
-        login_cwd = ftp.pwd()
-        _ftp_cwd_root(ftp, root, login_cwd)
-        for part in remote_dir.split("/"):
-            if part:
-                ftp.cwd(part)
         for remote_name, data in files.items():
-            _ftp_stor_with_retry(ftp, remote_name, data, attempts=5, retry_pause_s=3.0)
-            print(f"FTP OK {remote_dir}/{remote_name} ({len(data)} bytes)", flush=True)
-            urls[remote_name] = f"{public}/{remote_dir}/{remote_name}?v={int(time.time())}"
+            remote_path = f"{remote_dir}/{remote_name}"
+            uploaded = False
+            for root_candidate in sftp_root_candidates(env):
+                full = sftp_remote_path(env, remote_path, root_candidate)
+                try:
+                    with sftp.open(full, "wb") as handle:
+                        handle.write(data)
+                    print(f"SFTP OK {full} ({len(data)} bytes)", flush=True)
+                    uploaded = True
+                    break
+                except OSError as exc:
+                    if is_missing_remote_path_error(exc):
+                        continue
+                    raise
+            if not uploaded:
+                raise RuntimeError(f"SFTP upload failed for {remote_path}")
+            urls[remote_name] = f"{public}/{remote_dir}/{remote_name}?v={cache_bust}"
     finally:
-        try:
-            ftp.quit()
-        except Exception:
-            ftp.close()
+        sftp.close()
+        transport.close()
 
     urls["cover"] = urls.get(cover_remote, "")
     urls["dzen"] = urls.get(dzen_remote, "")
@@ -172,7 +186,7 @@ $content = (string) $post->post_content;
 $inline_remote = (string) ($p['inline_remote'] ?? '');
 $slug_pat = preg_quote('{slug_quoted}', '/');
 for ($n = 1; $n <= (int) ($p['inline_count'] ?? 7); $n++) {{
-    $remote = str_replace('{n:02d}', sprintf('%02d', $n), $inline_remote);
+    $remote = str_replace('{{n:02d}}', sprintf('%02d', $n), $inline_remote);
     $content = preg_replace(
         '/' . $slug_pat . '[^"\\']*inline-' . sprintf('%02d', $n) . '[^"\\']*\\.png(\\?[^"\\']*)?/i',
         $remote . '?v=' . (int) $p['cache_bust'],
@@ -214,7 +228,7 @@ if (is_file($cover_path)) {{
 }}
 echo 'OK post_updated=' . $post_id . PHP_EOL;
 """
-    env = load_env()
+    env = load_env(ROOT)
     return run_php_bootstrap(env, php, public, bootstrap_name=f"excalibur-logo-ref-{slug[:24]}.php")
 
 
