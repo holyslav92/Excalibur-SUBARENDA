@@ -229,6 +229,24 @@ def make_dzen_thumb(data: bytes) -> bytes:
     return out.getvalue()
 
 
+TARGET_COVER_SHIP = (2048, 1152)
+PANEL_NATIVE = (1024, 576)
+
+
+def upscale_cover_for_ship(adir: Path) -> None:
+    from PIL import Image
+
+    cover_path = adir / "cover" / "cover.png"
+    if not cover_path.is_file():
+        return
+    with Image.open(cover_path) as img:
+        if max(img.size) >= TARGET_COVER_SHIP[0]:
+            return
+        up = img.resize(TARGET_COVER_SHIP, Image.Resampling.LANCZOS)
+        up.save(cover_path)
+    print(f"OK cover upscaled to {TARGET_COVER_SHIP[0]}x{TARGET_COVER_SHIP[1]}", flush=True)
+
+
 def _generate_and_apply_canvas(
     adir: Path,
     rel: Path,
@@ -248,6 +266,8 @@ def _generate_and_apply_canvas(
         str(rel),
         "--canvas-index",
         str(canvas_index),
+        "--output-size",
+        f"{PANEL_NATIVE[0]}x{PANEL_NATIVE[1]}",
     ]) == 0
 
 
@@ -311,6 +331,7 @@ def pipeline_v5(adir: Path, *, logo_url: str) -> dict[str, Any]:
             meta["canvas_results"].append(json.loads(rp.read_text(encoding="utf-8")))
 
     add_phone_cover_only(adir)
+    upscale_cover_for_ship(adir)
 
     sizes: dict[str, list[int]] = {}
     for name in ["cover.png", *[f"inline-{i:02d}.png" for i in range(1, 8)]]:
