@@ -1,0 +1,69 @@
+{
+  "topic_id": "B03",
+  "research_date": "2026-08-23",
+  "status": "PASS",
+  "summary": "Гость с питомцем посуточно: расхождение объявления и правил, вопросы до оплаты. Fresh: PPT.ru 20.08.2026 + klyshin_A handoff.",
+  "freshness_audit": {
+    "research_date": "2026-08-23",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://ppt.ru/art/dogovor-arendy/mozhno-li-ustanovit-v-dogovore-nayma-zapret-na-soderzhanie-zhivotnykh",
+      "published_at": "2026-08-20",
+      "note": "Разбор штрафов и запрета животных в договоре найма; обновление 20.08.2026"
+    }
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["225", "55", "11176"],
+    "p0_phrase": "аренда квартиры с животными",
+    "p0_volume_ru": 1095
+  },
+  "wordstat_p0": {
+    "phrase": "аренда квартиры с животными",
+    "volume_ru_225": 1095,
+    "volume_tyumen_55_11176": 4,
+    "sticker_posutochno": 45,
+    "sticker_dogovor": 185
+  },
+  "fresh_signal": {
+    "status": "PASS",
+    "sources": [
+      {
+        "type": "legal_news",
+        "url": "https://ppt.ru/art/dogovor-arendy/mozhno-li-ustanovit-v-dogovore-nayma-zapret-na-soderzhanie-zhivotnykh",
+        "date": "2026-08-20",
+        "note": "штрафы и запрет животных в договоре найма"
+      },
+      {
+        "type": "channel",
+        "url": "https://t.me/klyshin_A",
+        "date": "2026-08-23",
+        "note": "handoff: устные обещания vs письменные условия договора"
+      }
+    ]
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "reason": "Нет тарифов/комиссий банков или госорганов; рыночные суммы помечены как примеры",
+    "verified_claims": 0,
+    "entities_checked": [],
+    "errors": []
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "derouter-opus-stamp-research.json"
+  },
+  "overlap_check": "published-titles-only.md — B01 заселение, B02 залог; дубликата нет",
+  "writer_key_facts": [
+    "Объявление «можно с котом» ≠ полный набор условий — сверить правила и договор до оплаты",
+    "Устное разрешение не заменяет пункт в договоре/правилах",
+    "Штраф (неустойка) и компенсация ущерба — разные строки",
+    "Проверить: какое животное разрешено, доплата/депозит, основания штрафа, фиксация состояния при заезде",
+    "Формулировка «по согласованию» без согласования = риск",
+    "Суммы залога/штрафа «Добрый дом» — только из бронирования/менеджера, не выдумывать"
+  ]
+}

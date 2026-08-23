@@ -1,0 +1,26 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/v-obyavlenii-mozhno-s-kotom-v-pravilah-shtraf/#article",
+  "url": "{{SITE_BASE}}/v-obyavlenii-mozhno-s-kotom-v-pravilah-shtraf/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/v-obyavlenii-mozhno-s-kotom-v-pravilah-shtraf/"
+  },
+  "headline": "Хозяин разрешил кота в объявлении. В договоре — штраф за шерсть",
+  "description": "Посуточная аренда с котом требует проверить правила и договор до оплаты: задайте пять важных вопросов и получите письменное разрешение на животное. Штраф за нарушение условий отличается от возмещения реального ущерба.",
+  "datePublished": "2026-08-23",
+  "dateModified": "2026-08-23",
+  "inLanguage": "ru-RU",
+  "author": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "jobTitle": "Апартаменты и квартиры посуточно в Тюмени",
+    "url": "{{SITE_BASE}}/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/"
+  }
+}

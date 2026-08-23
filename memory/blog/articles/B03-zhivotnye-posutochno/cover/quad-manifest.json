@@ -1,0 +1,117 @@
+{
+  "topic_id": "B03",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "Кота разрешили, но будет штраф",
+  "cover_hook_highlight": "штраф",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_emotion": "шок гостя: в чате «можно с котом», в правилах — штраф за шерсть",
+  "wordstat_stickers": [
+    "посуточно квартиры с животными",
+    "снять квартиру посуточно с животными",
+    "тюмень квартира посуточно с животными"
+  ],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "split collage phone penalty chat + cat carrier sunny balcony door bold headline TOP-RIGHT empty pad",
+    "location": "Tyumen apartment August 2026 sunny balcony warm green trees birch",
+    "meme": "tiny smudge cat sticker bottom-left ≤12% never top-right pad",
+    "prop_set": "pet carrier phone chat screenshot torn rules gold tape miska",
+    "sticker_set": "посуточно с животными тюмень договор",
+    "joke": "cat side-eyes penalty clause on phone screen"
+  },
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Август, Тюмень: гостья с переноской для кота читает на телефоне штраф в правилах — «можно с животными» в объявлении.",
+      "scene_hint": "WOW poster collage August sun: woman with pet carrier on sunny balcony reads phone chat showing penalty clause; bold Cyrillic hook; torn rules paper; TOP-RIGHT empty logo pad; phone prominent; smudge cat sticker ≤12% bottom-left; NO logo in gen.",
+      "meme_caption_ru": "",
+      "sticky": "Читайте правила до оплаты",
+      "cover_emotion": "шок: разрешили кота, но в правилах штраф"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Пять вопросов до оплаты",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Interactive checklist board 5 guest questions about cat permission: weight, name, deposit; torn paper gold ink chips; TOP-RIGHT empty logo pad.",
+      "alt": "Пять вопросов хозяину до оплаты: разрешён ли именно ваш кот, вес, кличка, доплата и штраф",
+      "labels": ["Разрешён именно кот", "Вес и кличка", "Разрешение на вашего", "Спросите до оплаты"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Пять вопросов до оплаты",
+      "visual_type": "comparison_table",
+      "scene_hint": "3-column table: доплата за питомца / разово vs посуточно / залог 3000–5000 ₽; sketch annotations gold bars.",
+      "alt": "Доплата за питомца при посуточной аренде: разовый платёж, посуточная ставка и обеспечительный залог",
+      "labels": ["Доплата за питомца", "Разово или посуточно", "Уборка шерсти включена", "3000–5000 ₽ залог"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Штраф — не ущерб",
+      "visual_type": "fact_card",
+      "scene_hint": "Fact card: penalty clause excerpt vs contract icon; red highlight on штраф sum; gold tape collage; TOP-RIGHT empty logo pad.",
+      "alt": "Штраф за нарушение правил проживания с питомцем — сумма и пункт в договоре до оплаты",
+      "labels": ["Штраф: сумма и пункт", "Правила целиком", "Договор до оплаты", "Не только объявление"]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Три места, где условия могут разойтись",
+      "visual_type": "process_flow",
+      "scene_hint": "3-step flow diagram: объявление → переписка → договор; diverging arrows when texts differ; sticky notes.",
+      "alt": "Три слоя условий с питомцем: объявление, переписка и подписанные правила могут не совпадать",
+      "labels": ["Объявление — витрина", "Переписка остаётся", "Правила считают выезд", "Сверьте все три"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Штраф — не ущерб",
+      "visual_type": "comparison_table",
+      "scene_hint": "Two-column compare штраф vs ущерб with example scratched curtain; sketch red/gold labels.",
+      "alt": "Разница между штрафом за нарушение правил и компенсацией ущерба за повреждение имущества",
+      "labels": ["Штраф — нарушение", "Ущерб — повреждение", "Царапина на шторе", "Нужен акт"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Чеклист перед заселением с котом",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Check-in checklist board: video tour, sofa photo, chat upload; phone mockup with timestamp; lived-in comfort+ room corner.",
+      "alt": "Чеклист фиксации состояния квартиры при заезде с котом: видео, фото мебели и отправка в чат",
+      "labels": ["Опись при заселении", "Видео квартиры", "Фото дивана и штор", "Отправьте в чат"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Чеклист перед заселением с котом",
+      "visual_type": "comfort_plus_interior",
+      "scene_hint": "Cozy lived-in corner: litter box spot, pet bowls, balcony door label; price tag ~1000 ₽/сутки example; tiny polite cat sticker; TOP-RIGHT empty logo pad.",
+      "alt": "Где поставить лоток и миски, можно ли на балкон и пример доплаты за питомца при посуточной аренде",
+      "labels": ["Лоток и миски", "Проверьте балкон", "Дата на фото", "Около 1000 ₽/сутки"]
+    }
+  },
+  "cover_keys_ru": ["посуточно с животными", "Тюмень", "штраф"]
+}
