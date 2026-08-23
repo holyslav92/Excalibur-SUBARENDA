@@ -1,0 +1,24 @@
+{
+  "cover_emotion": "усталость и раздражение: гость с переноской у подъезда, хозяйка показывает доплату в правилах",
+  "scene_hint": "POSTER collage август Тюмень жара: подъезд квартиры, переноска с котом, телефон с объявлением «можно с котом» и мелким текстом доплаты, чемодан, ключи; NO host face close-up; NO logo; TOP-RIGHT empty pad; cat meme sticker bottom-left ≤12%; bright summer NO snow",
+  "cover_motifs": {
+    "composition": "poster collage: pet carrier at door + phone listing + rules paper with hidden fee + bold Cyrillic headline, TOP-RIGHT empty pad",
+    "location": "Tyumen apartment entrance August hot sunny day green trees",
+    "meme": "tiny cat in sunglasses sticker bottom-left ≤12%, never top-right pad",
+    "prop_set": "pet carrier, phone screen, rules paper, suitcase, keys, sun flare",
+    "sticker_set": ["посуточно с животными", "доплата", "Тюмень"],
+    "joke": "cat judges hidden pet fee"
+  },
+  "wordstat_stickers": ["посуточно с животными", "доплата", "Тюмень"],
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "slots": {
+    "inline_1": {"scene_hint": "Sketch scene: guest with pet carrier at sunny Tyumen doorway, speech bubble surprise fee; TOP-RIGHT empty pad"},
+    "inline_2": {"scene_hint": "Checklist table: cat vs dog weight breed count questions on torn paper; gold markers"},
+    "inline_3": {"scene_hint": "3-column compare доплата/залог/уборка infographic sketch; TOP-RIGHT empty pad"},
+    "inline_4": {"scene_hint": "Floor plan doodle: sofa no-go zones, litter box kitchen, dog walk path arrows"},
+    "inline_5": {"scene_hint": "Phone mockup photo checklist at check-in with timestamp arrow to chat"},
+    "inline_6": {"scene_hint": "8-point message checklist copy-paste card with checkboxes"},
+    "inline_7": {"scene_hint": "Brand fact card cozy apartment + manager chat bubbles; TOP-RIGHT empty pad"}
+  }
+}

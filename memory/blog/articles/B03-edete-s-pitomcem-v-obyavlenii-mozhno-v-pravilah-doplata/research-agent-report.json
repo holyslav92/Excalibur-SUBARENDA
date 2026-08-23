@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "research_date": "2026-08-23",
+  "topic": "посуточно с животными",
+  "fresh_signal": "avito.ru/blog/gosti-s-pitomcami + vc.ru posutochno filter",
+  "official_source_audit": {
+    "status": "NOT_REQUIRED",
+    "reason": "Нет тарифов банков/госорганов"
+  }
+}
