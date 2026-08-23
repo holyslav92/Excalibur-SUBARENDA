@@ -166,10 +166,13 @@ def run_php_bootstrap(env: dict[str, str], php: str, public_base: str, *, bootst
 def update_wp_post(spec: dict, urls: dict[str, str], post_id: int) -> str:
     public = resolve_public_base_from_env() or os.environ.get("PUBLIC_SITE_URL", "").rstrip("/")
     slug = spec["slug"]
+    version_tag = spec.get("version_tag") or VERSION_TAG
+    dzen_remote = f"{spec['slug']}-cover-{version_tag}-1024x576.png"
     payload = {
         "post_id": post_id,
         "slug": slug,
         "cover_remote": spec["cover_remote"],
+        "dzen_remote": dzen_remote,
         "inline_remote": spec["inline_remote"],
         "inline_count": 7,
         "cache_bust": int(time.time()),
@@ -208,7 +211,10 @@ wp_update_post([
     'post_modified_gmt' => $now_gmt,
 ]);
 $upload_dir = wp_upload_dir();
-$cover_path = $upload_dir['basedir'] . '/2026/08/' . $cover_remote;
+$subdir = '2026/08';
+$cover_path = $upload_dir['basedir'] . '/' . $subdir . '/' . $cover_remote;
+$dzen_remote = (string) ($p['dzen_remote'] ?? '');
+$dzen_path = $dzen_remote !== '' ? $upload_dir['basedir'] . '/' . $subdir . '/' . $dzen_remote : '';
 if (is_file($cover_path)) {{
     require_once ABSPATH . 'wp-admin/includes/image.php';
     $filetype = wp_check_filetype($cover_remote, null);
@@ -220,10 +226,39 @@ if (is_file($cover_path)) {{
     ];
     $attach_id = wp_insert_attachment($attachment, $cover_path, $post_id);
     if ($attach_id && !is_wp_error($attach_id)) {{
-        $meta = wp_generate_attachment_metadata($attach_id, $cover_path);
+        $size = @getimagesize($cover_path);
+        $full_w = is_array($size) ? (int) ($size[0] ?? 0) : 0;
+        $full_h = is_array($size) ? (int) ($size[1] ?? 0) : 0;
+        $meta = [
+            'width' => $full_w,
+            'height' => $full_h,
+            'file' => $subdir . '/' . $cover_remote,
+            'sizes' => [],
+        ];
+        if ($dzen_remote !== '' && is_file($dzen_path)) {{
+            $dzen_size = @getimagesize($dzen_path);
+            $dzen_w = is_array($dzen_size) ? (int) ($dzen_size[0] ?? 1024) : 1024;
+            $dzen_h = is_array($dzen_size) ? (int) ($dzen_size[1] ?? 576) : 576;
+            $size_entry = [
+                'file' => $dzen_remote,
+                'width' => $dzen_w,
+                'height' => $dzen_h,
+                'mime-type' => 'image/png',
+            ];
+            $meta['sizes'] = [
+                'medium_large' => $size_entry,
+                'large' => $size_entry,
+                'post-thumbnail' => $size_entry,
+            ];
+        }} else {{
+            $meta = wp_generate_attachment_metadata($attach_id, $cover_path);
+        }}
         wp_update_attachment_metadata($attach_id, $meta);
         set_post_thumbnail($post_id, $attach_id);
         echo 'OK featured=' . $attach_id . PHP_EOL;
+        if ($dzen_remote !== '') {{
+            echo 'OK dzen_remote=' . $dzen_remote . PHP_EOL;
+        }}
     }}
 }}
 echo 'OK post_updated=' . $post_id . PHP_EOL;
