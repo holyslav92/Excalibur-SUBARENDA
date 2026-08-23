@@ -356,8 +356,10 @@ def process_article(
         "dzen_filename": dzen_fn,
         "old_url_fragments": sorted(set(old_fragments)),
     }
+    runtime_env = dict(env)
+    runtime_env["FTP_TRANSPORT"] = "sftp"
     php_out = publish_via_sftp(
-        env,
+        runtime_env,
         build_php(payload),
         public_base,
         bootstrap_name="excalibur-dzen-cover-cache-bust-once.php",
