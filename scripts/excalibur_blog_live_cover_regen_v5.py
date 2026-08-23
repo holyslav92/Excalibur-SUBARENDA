@@ -393,6 +393,7 @@ def build_publish_php(spec: dict, *, version_suffix: str | None = None) -> str:
     slug = spec["slug"]
     full_fn, dzen_fn = dzen_filenames(slug, version_suffix=version_suffix)
     inlines = [spec["inline_remote"].format(n=n) for n in range(1, 8)]
+    old_fragments = collect_old_fragments(slug)
     payload = {
         "slug": slug,
         "upload_subdir": UPLOAD_SUBDIR,
@@ -400,6 +401,7 @@ def build_publish_php(spec: dict, *, version_suffix: str | None = None) -> str:
         "dzen_filename": dzen_fn,
         "cover_remote": spec["cover_remote"],
         "inlines": inlines,
+        "old_url_fragments": old_fragments,
     }
     b64 = base64.b64encode(json.dumps(payload, ensure_ascii=False).encode("utf-8")).decode("ascii")
     return f"""<?php
@@ -417,9 +419,11 @@ $subdir = (string) ($p['upload_subdir'] ?? '2026/08');
 $cover = (string) ($p['cover_remote'] ?? '');
 $dzen_fn = (string) ($p['dzen_filename'] ?? '');
 $inlines = $p['inlines'] ?? [];
+$old_fragments = $p['old_url_fragments'] ?? [];
 $upload = wp_upload_dir();
 $base = $upload['baseurl'] . '/' . $subdir . '/';
 $full_path = $upload['basedir'] . '/' . $subdir . '/' . $cover;
+$dzen_path = $upload['basedir'] . '/' . $subdir . '/' . $dzen_fn;
 $content = (string) get_post_field('post_content', $post_id);
 $idx = 0;
 $content = preg_replace_callback(
@@ -433,6 +437,19 @@ $content = preg_replace_callback(
     }},
     $content
 );
+$full_url = $base . $cover;
+$dzen_url = $base . $dzen_fn;
+foreach ($old_fragments as $frag) {{
+    $frag = (string) $frag;
+    if ($frag === '') {{
+        continue;
+    }}
+    $content = preg_replace(
+        '#https?://[^"\\'\\s>]+' . preg_quote($frag, '#') . '(?:-1024x576|-\\d+x\\d+)?\\.png#i',
+        $full_url,
+        $content
+    ) ?? $content;
+}}
 wp_update_post([
     'ID' => $post_id,
     'post_content' => wp_slash($content),
@@ -454,14 +471,56 @@ if ($att_id <= 0 && is_file($full_path)) {{
         'post_status' => 'inherit',
     ];
     $att_id = (int) wp_insert_attachment($attachment, $full_path, $post_id);
-    $meta = wp_generate_attachment_metadata($att_id, $full_path);
-    wp_update_attachment_metadata($att_id, $meta);
 }}
-if ($att_id > 0) {{
+if ($att_id > 0 && is_file($full_path)) {{
+    $size = @getimagesize($full_path);
+    $full_w = is_array($size) ? (int) ($size[0] ?? 0) : 0;
+    $full_h = is_array($size) ? (int) ($size[1] ?? 0) : 0;
+    $dzen_w = 1024;
+    $dzen_h = 576;
+    if (is_file($dzen_path)) {{
+        $dzen_size = @getimagesize($dzen_path);
+        $dzen_w = is_array($dzen_size) ? (int) ($dzen_size[0] ?? 1024) : 1024;
+        $dzen_h = is_array($dzen_size) ? (int) ($dzen_size[1] ?? 576) : 576;
+    }}
+    $dzen_fn_only = basename($dzen_fn);
+    $size_entry = [
+        'file' => $dzen_fn_only,
+        'width' => $dzen_w,
+        'height' => $dzen_h,
+        'mime-type' => 'image/png',
+    ];
+    $meta = [
+        'width' => $full_w,
+        'height' => $full_h,
+        'file' => $subdir . '/' . $cover,
+        'sizes' => [
+            'medium_large' => $size_entry,
+            'large' => $size_entry,
+            'post-thumbnail' => $size_entry,
+        ],
+    ];
+    wp_update_attachment_metadata($att_id, $meta);
     set_post_thumbnail($post_id, $att_id);
 }}
-$full_url = $base . $cover;
-$dzen_url = $base . $dzen_fn;
+$og_image_keys = [
+    '_yoast_wpseo_opengraph-image',
+    'rank_math_facebook_image',
+    '_og_image',
+    'og_image',
+];
+$og_id_keys = [
+    '_yoast_wpseo_opengraph-image-id',
+    'rank_math_facebook_image_id',
+];
+foreach ($og_image_keys as $key) {{
+    update_post_meta($post_id, $key, $full_url);
+    echo 'OK og_meta=' . $key . PHP_EOL;
+}}
+foreach ($og_id_keys as $key) {{
+    update_post_meta($post_id, $key, (string) $att_id);
+    echo 'OK og_meta=' . $key . PHP_EOL;
+}}
 echo 'OK publish_v5 post=' . $post_id . ' slug=' . $slug . PHP_EOL;
 echo 'OK permalink=' . get_permalink($post_id) . PHP_EOL;
 echo 'OK featured_image=' . $att_id . PHP_EOL;
@@ -528,6 +587,7 @@ def main() -> int:
     ap.add_argument("--version-suffix", default=VERSION_SUFFIX, help="filename suffix, e.g. regen-v6")
     ap.add_argument("--bootstrap-only", action="store_true")
     ap.add_argument("--upload-only", action="store_true")
+    ap.add_argument("--repoint-only", action="store_true", help="WP meta/featured/og/zen bump only (no regen/upload)")
     args = ap.parse_args()
     VERSION_SUFFIX = args.version_suffix
 
@@ -562,16 +622,20 @@ def main() -> int:
         adir = article_dir(spec)
         article_report: dict[str, Any] = {"spec": spec}
 
-        if not args.upload_only:
+        if not args.upload_only and not args.repoint_only:
             bootstrap(spec)
             if args.bootstrap_only:
                 continue
             article_report["pipeline"] = pipeline_v5(adir, logo_url=logo_url)
 
-        urls = upload_all(spec, adir, version_suffix=VERSION_SUFFIX)
-        article_report["uploaded_urls"] = urls
+        if not args.repoint_only:
+            urls = upload_all(spec, adir, version_suffix=VERSION_SUFFIX)
+            article_report["uploaded_urls"] = urls
+        else:
+            urls = {}
         article_report["publish"] = publish_wp(spec, version_suffix=VERSION_SUFFIX)
-        article_report["intermediates_updated"] = refresh_intermediates(spec)
+        if not args.repoint_only:
+            article_report["intermediates_updated"] = refresh_intermediates(spec)
         article_report["permalink"] = article_report["publish"].get("permalink", f"{PUBLIC}/blog/{slug}/")
         article_report["cover_url"] = article_report["publish"].get("cover_url", urls.get(spec["cover_remote"], ""))
         article_report["native_sizes"] = article_report.get("pipeline", {}).get("native_sizes", {})
