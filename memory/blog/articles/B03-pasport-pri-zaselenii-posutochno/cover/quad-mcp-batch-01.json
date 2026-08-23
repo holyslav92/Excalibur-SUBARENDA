@@ -1,0 +1,39 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 1,
+  "identity_reference_local": "",
+  "identity_reference_id": "",
+  "reference_url_hosted": "",
+  "output_canvas": "cover/canvas-quad-01.png",
+  "result_path": "cover/quad-mcp-result-01.json",
+  "slots": [
+    "cover",
+    "inline_1",
+    "inline_2",
+    "inline_3"
+  ],
+  "preferred_image_flow": {
+    "provider": "derouter-rest",
+    "script": "scripts/excalibur_blog_derouter_gpt_image2_api.py",
+    "resolution": "2K",
+    "note": "PRIMARY: Derouter REST image API (api-direct, 2K 16:9). Fallback: excalibur_blog_kie_gpt_image2_api.py when DEROUTER auth/5xx. FORBIDDEN: flux2-pro-*, Seedream, nano_banana*, z-image, mcp-derouter/start-mcp.sh.",
+    "apply_script": "python3 scripts/excalibur_blog_quad_apply.py --article-dir <article_dir> --canvas-index 1 --inject-html"
+  },
+  "jobs": [
+    {
+      "slot": "canvas_quad",
+      "tool": "derouter-rest",
+      "mcp_args": {
+        "prompt": "WOW RU collage #FFFFFF high-key sun flare Tyumen Aug NO winter NO yellow cast. ALL panels: top-right 12% = pure blank white #FFF, ZERO graphics/text/logo/Добрый дом/curtains/plate. Factory pastes logo AFTER — never draw logo. Cover: NO phone number text.\nCanvas 2048x1152 2x2; 4x 16:9 panels; white gutters.\nBan: dark; WP UI; host; stock man; co-host inline; large meme person; drawn logo; white/gray plate under TR.\nCover TL: «После оплаты просят паспорт» DISPLAY Cyrillic, gold \"паспорт\"; sticky «Не спешите отправлять»; phone+messenger+paused hand+red «НЕ СПЕШИТЕ»; cat BL ≤12%; TR blank white ONLY.\nTR inline: 3-channel trust diagram platform/call/unknown chat; gold arrows. TXT:После предоплаты|Незнакомый номер|Не чат площадки|Задайте 3 вопроса. TR blank white.\nBL inline: hotel Digital ID vs messenger passport 2 cards. TXT:Только для отелей|Не фото паспорта|Квартира — отдельно|Проверьте правила.\nBR inline: phone photo ≠ original at check-in; big ≠. TXT:Фото не заменяет|Нужен оригинал|Показать при встрече|Видео как вариант. TR blank white.\nInline all: gold/black Cyrillic labels, tape, facts, no human hero.",
+        "aspect_ratio": "16:9",
+        "resolution": "2K"
+      }
+    }
+  ],
+  "validation": {
+    "prompt_chars": 3291,
+    "max_prompt_chars": 3500,
+    "required_reference_host": "{{SITE_HOST}}",
+    "resolution": "2K"
+  }
+}

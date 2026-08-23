@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "mode": "paste_png_alpha",
+  "logo_path": "memory/cover/assets/brand/logo-dobry-dom.png",
+  "logo_corner_fixed": "top_right",
+  "cover_phone_display": "+7 (993) 574-83-22",
+  "cover_phone_post_composite": true,
+  "inline_logo_slots": [
+    "inline_1",
+    "inline_3",
+    "inline_7"
+  ],
+  "provider": "grsai",
+  "resolution": "2K",
+  "note": "Derouter image discontinued; GRSAI fallback; pad-clear+factory paste"
+}

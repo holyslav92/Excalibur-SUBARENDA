@@ -1,0 +1,295 @@
+{
+  "agent": "excalibur-blog-cover-quad-split",
+  "status": "PASS",
+  "splits": [
+    {
+      "canvas_index": 2,
+      "manifest": "cover/quad-manifest.json",
+      "split": {
+        "source_canvas": "memory/blog/articles/B03-pasport-pri-zaselenii-posutochno/cover/canvas-quad-02.png",
+        "source_size_px": [
+          1672,
+          941
+        ],
+        "panel_size_px": [
+          830,
+          464
+        ],
+        "split_meta": {
+          "split_mode": "gutter_detect",
+          "h_gutter_px": {
+            "start": 464,
+            "end": 477
+          },
+          "v_gutter_px": {
+            "start": 830,
+            "end": 841
+          },
+          "requested_mode": "auto",
+          "gutter_quality": {
+            "h_center_offset_px": 0.0,
+            "v_center_offset_px": 0.5,
+            "max_aspect_crop_loss": 0.0072,
+            "per_panel_crop_loss": {
+              "top_left": 0.006,
+              "top_right": 0.0072,
+              "bottom_left": 0.006,
+              "bottom_right": 0.0072
+            },
+            "reject_reason": null
+          }
+        },
+        "output_size_px": [
+          1200,
+          675
+        ],
+        "outputs": {
+          "inline_4": {
+            "file": "cover/inline-04.png",
+            "quadrant": "top_left",
+            "box_px": {
+              "left": 2,
+              "top": 0,
+              "right": 827,
+              "bottom": 464
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 830,
+              "bottom": 464
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Шесть вопросов гостю до предоплаты: канал, документы, оригинал и что будет при отказе",
+            "h2_anchor": "Шесть вопросов, которые задают до предоплаты"
+          },
+          "inline_5": {
+            "file": "cover/inline-05.png",
+            "quadrant": "top_right",
+            "box_px": {
+              "left": 844,
+              "top": 0,
+              "right": 1669,
+              "bottom": 464
+            },
+            "raw_box_px": {
+              "left": 841,
+              "top": 0,
+              "right": 1672,
+              "bottom": 464
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Порядок для иностранного гостя: уточнить правила и документы до оплаты, сверка при заезде",
+            "h2_anchor": "Если гость — иностранный гражданин"
+          },
+          "inline_6": {
+            "file": "cover/inline-06.png",
+            "quadrant": "bottom_left",
+            "box_px": {
+              "left": 2,
+              "top": 477,
+              "right": 827,
+              "bottom": 941
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 477,
+              "right": 830,
+              "bottom": 941
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Что делать, если отказывают в заселении при готовности показать оригинал паспорта",
+            "h2_anchor": "Если хозяин отказывается заселять, хотя вы готовы показать оригинал"
+          },
+          "inline_7": {
+            "file": "cover/inline-07.png",
+            "quadrant": "bottom_right",
+            "box_px": {
+              "left": 844,
+              "top": 477,
+              "right": 1669,
+              "bottom": 941
+            },
+            "raw_box_px": {
+              "left": 841,
+              "top": 477,
+              "right": 1672,
+              "bottom": 941
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Как «Добрый дом» устраивает заселение: понятные правила до оплаты и сверка при заезде",
+            "h2_anchor": "Как это устроено у нас"
+          }
+        }
+      }
+    },
+    {
+      "canvas_index": 1,
+      "manifest": "cover/quad-manifest.json",
+      "split": {
+        "source_canvas": "memory/blog/articles/B03-pasport-pri-zaselenii-posutochno/cover/canvas-quad-01.png",
+        "source_size_px": [
+          1672,
+          941
+        ],
+        "panel_size_px": [
+          836,
+          470
+        ],
+        "split_meta": {
+          "split_mode": "mechanical_center",
+          "h_gutter_px": null,
+          "v_gutter_px": null,
+          "requested_mode": "auto",
+          "fallback_reason": "gutter_too_far_from_center",
+          "rejected_gutter": {
+            "h_gutter_px": {
+              "start": 472,
+              "end": 528
+            },
+            "v_gutter_px": {
+              "start": 806,
+              "end": 864
+            },
+            "gutter_quality": {
+              "h_center_offset_px": 29.5,
+              "v_center_offset_px": 1.0,
+              "max_aspect_crop_loss": 0.0916,
+              "per_panel_crop_loss": {
+                "top_left": 0.0403,
+                "top_right": 0.0381,
+                "bottom_left": 0.0893,
+                "bottom_right": 0.0916
+              },
+              "reject_reason": "gutter_too_far_from_center"
+            }
+          }
+        },
+        "output_size_px": [
+          1200,
+          675
+        ],
+        "outputs": {
+          "cover": {
+            "file": "cover/cover.png",
+            "quadrant": "top_left",
+            "box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 836,
+              "bottom": 470
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 836,
+              "bottom": 470
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Постер: после оплаты незнакомый номер просит фото паспорта — рука зависла над отправкой, август Тюмень.",
+            "h2_anchor": null
+          },
+          "inline_1": {
+            "file": "cover/inline-01.png",
+            "quadrant": "top_right",
+            "box_px": {
+              "left": 836,
+              "top": 0,
+              "right": 1672,
+              "bottom": 470
+            },
+            "raw_box_px": {
+              "left": 836,
+              "top": 0,
+              "right": 1672,
+              "bottom": 470
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Когда и через какой канал просят паспорт: официальное бронирование, звонок и неизвестный чат после оплаты",
+            "h2_anchor": "Вот где обычно подставляют — не паспортом, а моментом и каналом"
+          },
+          "inline_2": {
+            "file": "cover/inline-02.png",
+            "quadrant": "bottom_left",
+            "box_px": {
+              "left": 0,
+              "top": 470,
+              "right": 836,
+              "bottom": 941
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 470,
+              "right": 836,
+              "bottom": 941
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Цифровой ID в отеле и фото паспорта в личном мессенджере — разные ситуации по рискам",
+            "h2_anchor": "Новости про цифровой ID в отелях — это не про вашу квартиру"
+          },
+          "inline_3": {
+            "file": "cover/inline-03.png",
+            "quadrant": "bottom_right",
+            "box_px": {
+              "left": 836,
+              "top": 470,
+              "right": 1672,
+              "bottom": 941
+            },
+            "raw_box_px": {
+              "left": 836,
+              "top": 470,
+              "right": 1672,
+              "bottom": 941
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Фото паспорта в телефоне не заменяет предъявление оригинала при заселении",
+            "h2_anchor": "Фото паспорта не заменяет оригинал"
+          }
+        }
+      }
+    }
+  ],
+  "manifest": "cover/quad-manifest.json",
+  "html_inject": [
+    "skip inline_1: already correct under H2 — Вот где обычно подставляют — не паспортом, а моментом и каналом",
+    "skip inline_2: already correct under H2 — Новости про цифровой ID в отелях — это не про вашу квартиру",
+    "skip inline_3: already correct under H2 — Фото паспорта не заменяет оригинал",
+    "skip inline_4: already correct under H2 — Шесть вопросов, которые задают до предоплаты",
+    "skip inline_5: already correct under H2 — Если гость — иностранный гражданин",
+    "skip inline_6: already correct under H2 — Если хозяин отказывается заселять, хотя вы готовы показать оригинал",
+    "skip inline_7: already correct under H2 — Как это устроено у нас"
+  ]
+}

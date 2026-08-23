@@ -1,0 +1,117 @@
+{
+  "topic_id": "B03",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "После оплаты просят паспорт",
+  "cover_hook_highlight": "паспорт",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "wordstat_stickers": [
+    "паспорт при заселении",
+    "просят фото паспорта",
+    "фото паспорта посуточно"
+  ],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "magazine collage: smartphone + paused hand center-left, red stop card diagonal, clean TOP-RIGHT logo pad",
+    "location": "warm August daytime Tyumen residential courtyard green trees soft sun",
+    "meme": "tiny suspicious side-eye cat sticker ≤12%, never top-right pad",
+    "prop_set": "phone messenger bubble, closed passport card, red stop card, torn paper, gold tape",
+    "sticker_set": "паспорт при заселении, просят фото паспорта, фото паспорта посуточно",
+    "joke": "cat spots suspicious send button before human does"
+  },
+  "cover_emotion": "настороженный side-eye: оплатил, но рука зависла перед отправкой фото паспорта",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Постер: после оплаты незнакомый номер просит фото паспорта — рука зависла над отправкой, август Тюмень.",
+      "scene_hint": "Aug Tyumen courtyard: phone messenger asks passport photo, hand paused, red «НЕ СПЕШИТЕ» card; TOP-RIGHT empty pad; cat ≤12%.",
+      "meme_caption_ru": "",
+      "sticky": "Не спешите отправлять",
+      "cover_emotion": "настороженный side-eye: оплатил, но рука зависла перед отправкой фото паспорта"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Вот где обычно подставляют — не паспортом, а моментом и каналом",
+      "visual_type": "comparison_table",
+      "scene_hint": "3-channel trust compare: platform / call / unknown chat; gold arrows; TOP-RIGHT empty pad.",
+      "alt": "Когда и через какой канал просят паспорт: официальное бронирование, звонок и неизвестный чат после оплаты",
+      "labels": ["После предоплаты", "Незнакомый номер", "Не чат площадки", "Задайте 3 вопроса"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Новости про цифровой ID в отелях — это не про вашу квартиру",
+      "visual_type": "comparison_table",
+      "scene_hint": "2 cards: hotel Digital ID vs messenger passport photo; 3 traits each; white gold tape.",
+      "alt": "Цифровой ID в отеле и фото паспорта в личном мессенджере — разные ситуации по рискам",
+      "labels": ["Только для отелей", "Не фото паспорта", "Квартира — отдельно", "Проверьте правила"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Фото паспорта не заменяет оригинал",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Split: phone photo ≠ original at check-in; big ≠ sign; TOP-RIGHT empty pad.",
+      "alt": "Фото паспорта в телефоне не заменяет предъявление оригинала при заселении",
+      "labels": ["Фото не заменяет", "Нужен оригинал", "Показать при встрече", "Видео как вариант"]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Шесть вопросов, которые задают до предоплаты",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Checklist 6 cards: channel, docs, verify, confirm, refusal; gold markers.",
+      "alt": "Шесть вопросов гостю до предоплаты: канал, документы, оригинал и что будет при отказе",
+      "labels": ["Документы заранее?", "Какие сведения?", "Какой канал?", "Оригинал или видео?", "Что с копией?", "Кто принимает?"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Если гость — иностранный гражданин",
+      "visual_type": "process_flow",
+      "scene_hint": "4-step foreign guest flow: rules, docs, channel, verify; globe/shield icons.",
+      "alt": "Порядок для иностранного гостя: уточнить правила и документы до оплаты, сверка при заезде",
+      "labels": ["Миграционный учёт", "Данных больше", "Отдельные правила", "Уточнить до оплаты"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Если хозяин отказывается заселять, хотя вы готовы показать оригинал",
+      "visual_type": "structure_diagram",
+      "scene_hint": "Decision tree: booking → terms → identity → check-in/refusal; gold arrows.",
+      "alt": "Что делать, если отказывают в заселении при готовности показать оригинал паспорта",
+      "labels": ["Сохранить переписку", "Сохранить чек", "Готов показать оригинал", "Поддержка площадки"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Как это устроено у нас",
+      "visual_type": "process_flow",
+      "scene_hint": "5-step flow: book→confirm→docs→verify→check-in; shield no unknown chat; TOP-RIGHT pad.",
+      "alt": "Как «Добрый дом» устраивает заселение: понятные правила до оплаты и сверка при заезде",
+      "labels": ["10 лет работаем", "Инструкция заранее", "До оплаты", "Оригинал при встрече", "Бесконтактное заселение"]
+    }
+  },
+  "cover_keys_ru": ["паспорт при заселении", "Тюмень"]
+}
