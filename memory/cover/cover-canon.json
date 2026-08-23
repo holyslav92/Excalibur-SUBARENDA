@@ -75,7 +75,7 @@
   "forbidden_daypart_formula": {
     "status": "REJECTED_BY_OWNER",
     "never_use": true,
-    "note": "Расписание публикаций 09/12/15/17 YEKT (будни) ≠ формула обложки."
+    "note": "Расписание публикаций 10/14/17 YEKT (каждый день) ≠ формула обложки."
   },
   "invention_rule": "Cover agent INVENTS every cover from scratch to surprise. No inventory lock. No recurring default props. Variety is the product.",
   "anti_repeat": {
