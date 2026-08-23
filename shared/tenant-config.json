@@ -306,7 +306,7 @@
   },
   "cover_wow_rules": {
     "status": "slim",
-    "philosophy": "beauty = agent judgment on topic; brand lock = official logo paste + phone + no plate + no WP UI",
+    "philosophy": "top-100 meme energy ON TOPIC + comfort+ brand; hard lock = official logo paste + empty top-right pad + phone + no plate + no WP UI; max-2 gen → paste-and-ship",
     "max_generation_attempts_per_canvas": 2,
     "paste_and_ship_on_exhaust": true,
     "logo_asset": "memory/cover/assets/brand/logo-dobry-dom.png",

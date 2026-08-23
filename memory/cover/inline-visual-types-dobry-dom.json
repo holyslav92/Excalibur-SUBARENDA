@@ -1,10 +1,10 @@
 {
   "status": "locked",
   "tenant": "dobry-dom",
-  "comment": "Добрый дом WOW cover rules — Cover-QA FAIL if broken. Logo: cover always + 2-3 inlines only, TOP-RIGHT pad.",
+  "comment": "Добрый дом — meme energy + utility inlines. Logo: cover always + 2-3 inlines only, TOP-RIGHT pad. Slim Cover-QA: brand lock only.",
   "wow_cover_rules_ref": "memory/cover/visual-notes-dobry-dom.json",
-  "utility_test": "Inline must teach OR show lived-in comfort+ OR infographic utility. Pure decorative icon row = FAIL.",
-  "style_lock": "WOW magazine poster cover + high-key #FFFFFF utility inlines. ONE small official logo TOP-RIGHT on cover + 2-3 inlines only (factory paste). NO overlapping zones.",
+  "utility_test": "Inline must teach OR show lived-in comfort+ OR meme-on-topic OR infographic utility. Pure decorative icon row = FAIL.",
+  "style_lock": "Magazine poster cover + meme energy; high-key #FFFFFF inlines. ONE official logo TOP-RIGHT on cover + 2-3 inlines (factory paste). Meme panels on 2–4 of 7 OK.",
   "forbidden_all_panels": [
     "WordPress",
     "Gutenberg",
@@ -27,7 +27,10 @@
     "logo on all 7 inlines",
     "two or more logos on one frame",
     "overlapping headline and logo pad",
-    "decorative icon row without lived-in scene"
+    "decorative icon row without lived-in scene",
+    "random unrelated meme off-topic",
+    "logo under meme stickers",
+    "snow/winter off-season scene"
   ],
   "logo_inline_rules": {
     "count_min": 2,
@@ -39,13 +42,16 @@
   },
   "preferred_order": [
     "lived_in_room",
+    "meme_panel",
     "guest_checkin_scene",
+    "reaction_card",
     "comfort_plus_interior",
     "labeled_checklist",
     "comparison_table",
     "process_flow"
   ],
   "min_lived_in_inlines": 2,
+  "max_meme_inlines": 4,
   "max_decorative_inlines": 4,
   "types": {
     "lived_in_room": {
@@ -77,6 +83,20 @@
       "label_ru": "шаги заселения / доступа",
       "utility": "Numbered steps: book → instruction → door — one failure point",
       "keywords": ["шаг", "инструк", "доступ", "порядок"]
+    },
+    "meme_panel": {
+      "label_ru": "мем-панель по теме (top-100 energy)",
+      "utility": "Before/after, caption panel, comic beat — ON TOPIC посуточно pains; catalog from meme-top100.json",
+      "keywords": ["мем", "до/после", "ожидание", "реальность", "залог", "код", "чемодан"],
+      "formats": ["before_after", "caption_panel", "comic_beat"]
+    },
+    "reaction_card": {
+      "label_ru": "реакция-лицо / reaction card",
+      "utility": "Recognizable reaction face sticker or small panel — guest pain moment, not random meme",
+      "keywords": ["реакция", "ожидание", "шок", "залог", "домофон", "ключ"],
+      "formats": ["reaction_face", "meme_sticker"],
+      "catalog": "memory/cover/meme-top100.json",
+      "max_frame_share": 0.15
     }
   }
 }

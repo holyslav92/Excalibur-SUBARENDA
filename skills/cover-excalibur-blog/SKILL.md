@@ -1,16 +1,19 @@
 ---
 name: cover-excalibur-blog
-description: "④a Cover: 2× quad Grsai 2K, max-2 gen + paste-and-ship, factory logo."
+description: "④a Cover: 2× quad Grsai 2K, meme energy, max-2 gen + paste-and-ship, factory logo."
 ---
 
 # Cover Agent — longform 8 images
 
 ## Philosophy (slim factory)
 
-**Beauty = agent judgment on topic.** Agent picks scene, typography, meme/stickers, Wordstat labels.
+**Meme energy ON TOPIC + beauty = agent judgment.** Cover + 2–4 inlines: witty top-100 meme framing (reaction face, before/after, caption panel, comic beat) tied to посуточная аренда pains — funny, screenshot-worthy, comfort+ brand. Catalog: `memory/cover/meme-top100.json`. Inline types: `meme_panel`, `reaction_card` in `inline-visual-types-dobry-dom.json`.
+
+**Ban:** random unrelated memes, logo under stickers, snow/winter off-season, luxury flex.
 
 **Brand lock (hard only):**
 - Official logo PNG paste (`logo-dobry-dom.png` / `cropped-img_7143.png`) — NEVER AI-drawn lockup
+- Empty top-right pad in generation → factory paste only
 - NO gray/white plate under logo pad
 - Phone **+7 (993) 574-83-22** on cover post-composite only
 - NO WordPress UI in art
@@ -85,6 +88,13 @@ python3 scripts/excalibur_blog_brand_logo_composite.py --article-dir "$ARTICLE"
 ```
 
 If gen attempt 2 still has drawn lockup in cover pad → pad-clear → composite → ship.
+
+## Meme + inline visual types
+
+- **Cover:** 1–2 meme beats + Wordstat stickers + scene line — magazine poster energy
+- **Inline:** mix utility (`lived_in_room`, `labeled_checklist`, …) with **2–4** `meme_panel` / `reaction_card` on-topic
+- Agent picks format freely; must match H2 pain (залог, код, чемодан, домофон)
+- Meme stickers ≤15% frame on inline; never cover logo pad
 
 ## Blockers
 

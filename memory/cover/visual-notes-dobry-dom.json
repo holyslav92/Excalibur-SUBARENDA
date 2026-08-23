@@ -1,8 +1,20 @@
 {
   "tenant": "dobry-dom",
   "status": "slim",
-  "label_ru": "Добрый дом — brand lock only; beauty = agent judgment",
-  "philosophy": "Cover agent decides scene, typography, meme/stickers for topic. Hard gates: official logo PNG paste, phone on cover, no plate under logo, no WordPress UI.",
+  "label_ru": "Добрый дом — meme energy + brand lock; beauty = agent judgment",
+  "philosophy": "Top-100 meme energy ON TOPIC (посуточная аренда pains): witty, recognizable framing — reaction face, before/after, caption panel, comic beat. Agent picks format. Hard gates only: official logo PNG paste, empty top-right pad, phone on cover, no plate, no WP UI, max-2 gen → paste-and-ship.",
+  "meme_energy": {
+    "cover": "Magazine poster + 1–2 meme beats from meme-top100.json — funny, screenshot-worthy, comfort+ brand",
+    "inline_slots": "2–4 of 7 may use meme_panel / reaction_card (see inline-visual-types-dobry-dom.json)",
+    "formats": ["reaction_face", "before_after", "caption_panel", "comic_beat", "meme_sticker"],
+    "catalog": "memory/cover/meme-top100.json",
+    "forbidden": [
+      "random unrelated memes off-topic",
+      "logo under stickers or meme overlays",
+      "snow/winter off-season",
+      "luxury flex / marble / five-star lobby"
+    ]
+  },
   "brand_lock": {
     "logo_asset": "memory/cover/assets/brand/logo-dobry-dom.png",
     "canonical_url": "wp-content/uploads/2026/03/cropped-img_7143.png",
