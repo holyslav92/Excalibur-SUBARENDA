@@ -206,6 +206,8 @@
     "channel_url": "",
     "note": "Дзен — поверхность дистрибуции; статья на сайте должна стоять сама и конвертировать в TG/MAX. Пишем dzen-excerpt.json; постер позже. НЕ постить в Дзен The Realtor / holyslav.",
     "artifact": "dzen-excerpt.json",
+    "cover_cache_bust_ref": "shared/dzen-cover-cache-bust.md",
+    "cover_cache_bust_script": "scripts/excalibur_blog_dzen_cover_cache_bust.py",
     "writing_patterns_ref": "shared/article-style.md#dzen-feed--5-паттернов-scout--title--writer--sol",
     "patterns": [
       "numbered_list_promise_kept",
