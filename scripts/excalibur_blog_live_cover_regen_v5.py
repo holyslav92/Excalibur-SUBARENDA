@@ -238,10 +238,17 @@ def _generate_and_apply_canvas(
     result_file: str,
     canvas_index: int,
 ) -> bool:
-    """Генерация + apply без drawn-lockup gate (logo baked via reference)."""
+    """Генерация + apply без inject-html (избегаем factory composite на baked-in logo)."""
     if not _generate_canvas(image_script, rel, batch_file=batch_file, result_file=result_file, model_tier="auto"):
         return False
-    return _apply_canvas(rel, canvas_index) == 0
+    return _run_allow_fail([
+        sys.executable,
+        "scripts/excalibur_blog_quad_apply.py",
+        "--article-dir",
+        str(rel),
+        "--canvas-index",
+        str(canvas_index),
+    ]) == 0
 
 
 def pipeline_v5(adir: Path, *, logo_url: str) -> dict[str, Any]:
