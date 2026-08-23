@@ -1,0 +1,218 @@
+{
+  "agent": "excalibur-blog",
+  "date_context": {
+    "timezone": "Europe/Moscow",
+    "today_iso": "2026-08-23",
+    "today_ru": "23.08.2026",
+    "year": 2026,
+    "month": 8,
+    "month_name_ru": "август",
+    "weekday_ru": "воскресенье"
+  },
+  "topic": {
+    "topic_id": "B03",
+    "title": "Забронировал посуточно с собакой",
+    "h1": "Забронировал посуточно с собакой",
+    "slug": "zabroniroval-posutochno-s-sobakoj",
+    "primary_query": "Забронировал посуточно с собакой",
+    "priority": "P0"
+  },
+  "searches": [
+    {
+      "query_id": "primary_fresh",
+      "query": "Забронировал посуточно с собакой 2026",
+      "purpose": "актуальный SERP",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Как путешествовать с собакой: отели, транспорт и документы в 2026",
+          "url": "https://dzen.ru/a/akfRFt2uBzqio9Tt",
+          "snippet": ""
+        },
+        {
+          "title": "Где отдохнуть с собакой: гид по dog-friendly отелям и глэмпингам",
+          "url": "https://cuva.ru/blog-new/gde-otdohnut-s-sobakoy",
+          "snippet": "В этой статье я разложу по полочкам всё, что нужно знать, чтобы ваше путешествие с собакой в 2026 году не превратилось в адский квест."
+        },
+        {
+          "title": "Путешествие с собакой: полный гид 2026. Документы, перелет, отели и как ...",
+          "url": "https://sobakaulybaka.ru/blog/puteshestvie-s-khvostom-polnyy-gid-po-poezdkam-s-sobakoy-po-strane-i-miru/",
+          "snippet": "Отдых с собакой — это реально! В этом гайде собрали все места, где пёс будет счастлив, как и вы. Хотите взять собаку в отпуск, но боитесь проблем? Не все места приветствуют питомцев, но их оказывается больше, чем кажется. Мы собрали полный гайд по dog-friendly местам: от курортов до гостиниц."
+        },
+        {
+          "title": "Pet&Rent - Сервис поиска отелей для животных и для отдыха с животными",
+          "url": "https://petandrent.ru/",
+          "snippet": "Подробное руководство по поездкам с собакой по России и миру. Все о документах, правилах авиакомпаний, выборе жилья и сборе аптечки."
+        },
+        {
+          "title": "Как путешествовать с питомцем в 2026: правила и отели",
+          "url": "https://isvest.ru/news/kak-puteshestvovat-s-pitomtsem-pravila-perevozki-i-oteli",
+          "snippet": "Сервис поиска зоогостиниц по всей России. Бронируйте онлайн на Pet&Rent!"
+        },
+        {
+          "title": "Отдых на море с собакой 2026 - ВКонтакте",
+          "url": "https://vk.com/public123089559",
+          "snippet": "Актуальные правила перевозки животных в РФ и за рубежом в 2026 году: авиакомпании, РЖД, отели pet-friendly. Чек-лист и типичные ошибки."
+        }
+      ],
+      "searched_at": "2026-08-23"
+    },
+    {
+      "query_id": "title_fresh",
+      "query": "Забронировал посуточно с собакой 2026",
+      "purpose": "SERP по человеческому title",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Где отдохнуть с собакой: гид по dog-friendly отелям и глэмпингам",
+          "url": "https://cuva.ru/blog-new/gde-otdohnut-s-sobakoy",
+          "snippet": ""
+        },
+        {
+          "title": "Отдых в Кабардинке с размещением с животными, с собакой 2026 - цены на ...",
+          "url": "https://edem-v-gosti.ru/rus/otdykh-v-kabardinke-s-razmeshcheniem-s-zhivotnymi/",
+          "snippet": "Отдых с собакой — это реально! В этом гайде собрали все места, где пёс будет счастлив, как и вы. Хотите взять собаку в отпуск, но боитесь проблем? Не все места приветствуют питомцев, но их оказывается больше, чем кажется. Мы собрали полный гайд по dog-friendly местам: от курортов до гостиниц."
+        },
+        {
+          "title": "Отдых в России с питомцем. Цены 2026. Можно с животными",
+          "url": "https://forento.ru/rent?pets=1",
+          "snippet": "Кабардинка, отдых с размещением с животными 2026 - забронировать отдых в Кабардинке посуточно недорого. Большой выбор объектов для отдыха. Сравнивайте цены, читайте отзывы, смотрите фото ..."
+        },
+        {
+          "title": "Как путешествовать с собакой: отели, транспорт и документы в 2026",
+          "url": "https://dzen.ru/a/akfRFt2uBzqio9Tt",
+          "snippet": "Где-то бесплатно, а где-то - за небольшую плату и по запросу. Вы сможете планировать отдых вместе со своим питомцем, отправив запрос в объекты, где принимают гостей с домашними животными."
+        },
+        {
+          "title": "Путешествие с собакой: полный гид 2026. Документы, перелет, отели и как ...",
+          "url": "https://sobakaulybaka.ru/blog/puteshestvie-s-khvostom-polnyy-gid-po-poezdkam-s-sobakoy-po-strane-i-miru/",
+          "snippet": "В этой статье я разложу по полочкам всё, что нужно знать, чтобы ваше путешествие с собакой в 2026 году не превратилось в адский квест."
+        },
+        {
+          "title": "Сдаются посуточно 4 дома для отдыха. Разрешено с собаками. Ничего не ...",
+          "url": "https://vk.ru/wall566860858_1645",
+          "snippet": "Подробное руководство по поездкам с собакой по России и миру. Все о документах, правилах авиакомпаний, выборе жилья и сборе аптечки."
+        }
+      ],
+      "searched_at": "2026-08-23"
+    },
+    {
+      "query_id": "official_docs",
+      "query": "Забронировал посуточно с собакой official docs 2026",
+      "purpose": "официальные docs",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Как путешествовать с собакой: отели, транспорт и документы в 2026",
+          "url": "https://dzen.ru/a/akfRFt2uBzqio9Tt",
+          "snippet": ""
+        },
+        {
+          "title": "Путешествие с собакой: полный гид 2026. Документы, перелет, отели и как ...",
+          "url": "https://sobakaulybaka.ru/blog/puteshestvie-s-khvostom-polnyy-gid-po-poezdkam-s-sobakoy-po-strane-i-miru/",
+          "snippet": "В этой статье я разложу по полочкам всё, что нужно знать, чтобы ваше путешествие с собакой в 2026 году не превратилось в адский квест."
+        },
+        {
+          "title": "Новые правила ввоза собак в ЕС: ужесточение 2026",
+          "url": "https://www.honestdog.de/ru/tsentr-obrazovaniya/zhurnal/pravila-vvoza-sobak-v-es-2026",
+          "snippet": "Подробное руководство по поездкам с собакой по России и миру. Все о документах, правилах авиакомпаний, выборе жилья и сборе аптечки."
+        },
+        {
+          "title": "Как путешествовать с питомцем в 2026: правила и отели",
+          "url": "https://isvest.ru/news/kak-puteshestvovat-s-pitomtsem-pravila-perevozki-i-oteli",
+          "snippet": "Действующие правила ввоза собак в ЕС и требования для поездок по Европе с питомцами в 2026 году: лимиты, чипирование и важные документы."
+        },
+        {
+          "title": "Перевозка животных в самолёте в 2026 году: полный гид от веса переноски ...",
+          "url": "https://zooturisto.com/blog/perevozka-zhivotnykh-v-samolyote-v-2026-godu-polnyy-gid-ot-vesa-perenoski-do-vetspravki",
+          "snippet": "Следующий шаг: скачайте бесплатный чек-лист «Путешествие с питомцем» от Isvest — он включает образцы заявлений, шаблоны запросов в отели и актуальные ссылки на госсервисы."
+        },
+        {
+          "title": "Путешествие с животными 2026: правила, документы, советы | Быстроденьги ...",
+          "url": "https://bistrodengi.ru/articles/puteshestvie-s-domashnimi-zhivotnymi/",
+          "snippet": "Именно поэтому взвешивать переноску вместе с животным нужно заранее, а не в аэропорту. Что главное и что делать дальше Перелёт с питомцем в 2026 году — это решаемая задача."
+        }
+      ],
+      "searched_at": "2026-08-23"
+    },
+    {
+      "query_id": "github_evidence",
+      "query": "site:github.com Забронировал посуточно с собакой 2026",
+      "purpose": "GitHub evidence",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "GitHub - Rajesh49735/program-20",
+          "url": "https://github.com/Rajesh49735/program-20",
+          "snippet": ""
+        },
+        {
+          "title": "TextRecogn/static/sponsor.jpg at main · fslongjin/TextRecogn",
+          "url": "https://github.com/fslongjin/TextRecogn/blob/main/static/sponsor.jpg",
+          "snippet": "Contribute to Rajesh49735/program-20 development by creating an account on GitHub."
+        },
+        {
+          "title": "wahda_websit/public/window.svg at main - GitHub",
+          "url": "https://github.com/OmarAfoshAhmad/wahda_websit/blob/main/public/window.svg",
+          "snippet": "Uncovering AIGC Texts with Machine Learning. Contribute to fslongjin/TextRecogn development by creating an account on GitHub."
+        },
+        {
+          "title": "Voxbee/src/voxbee_full.png at main · boris-agent007/Voxbee",
+          "url": "https://github.com/boris-agent007/Voxbee/blob/main/src/voxbee_full.png",
+          "snippet": "Contribute to OmarAfoshAhmad/wahda_websit development by creating an account on GitHub."
+        },
+        {
+          "title": "tx-ui/media/token.png at main · Incognito-Coder/tx-ui · GitHub",
+          "url": "https://github.com/Incognito-Coder/tx-ui/blob/main/media/token.png",
+          "snippet": "Free open-source voice input for Windows. Type with your voice anywhere using Whisper speech recognition. - Voxbee/src/voxbee_full.png at main · boris-agent007/Voxbee."
+        },
+        {
+          "title": "doctor-swag (doctor swag) · GitHub",
+          "url": "https://github.com/doctor-swag",
+          "snippet": "Advanced Xray Panel Support Multi Protocols, Based on MHSanaei/3x-ui Focusing on Stability - tx-ui/media/token.png at main · Incognito-Coder/tx-ui"
+        }
+      ],
+      "searched_at": "2026-08-23"
+    },
+    {
+      "query_id": "community_experience",
+      "query": "Забронировал посуточно с собакой forum problems опыт 2026",
+      "purpose": "форумы и живые проблемы",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Путешествие с собакой по России: как снять квартиру, собрать чемодан и ...",
+          "url": "https://vk.com/wall-220175979_460",
+          "snippet": ""
+        },
+        {
+          "title": "Как путешествовать с собакой: отели, транспорт и документы в 2026",
+          "url": "https://dzen.ru/a/akfRFt2uBzqio9Tt",
+          "snippet": "Чек-лист. Квартира посуточно с собакой без отказов и унижений. Личный опыт путешествий с корги: где искать жильё, что взять с собой, как подготовить квартиру и питомца."
+        },
+        {
+          "title": "С собакой на море - 40 ответов на форуме Woman.ru (5128106)",
+          "url": "https://www.woman.ru/rest/travel/thread/5128106/",
+          "snippet": "В этой статье я разложу по полочкам всё, что нужно знать, чтобы ваше путешествие с собакой в 2026 году не превратилось в адский квест."
+        },
+        {
+          "title": "Сдать квартиру посуточно с собакой",
+          "url": "https://u-mama.ru/forum/family/housing/979973/",
+          "snippet": "Номер уже забронировали, там можно с собакой. Расскажите, пожалуйста, какие трудности могут возникнуть во время пребывания на море с собакой? Как помочь ей избежать стресса от временной..."
+        },
+        {
+          "title": "Путешествие с собакой: полный гид 2026. Документы, перелет, отели и как ...",
+          "url": "https://sobakaulybaka.ru/blog/puteshestvie-s-khvostom-polnyy-gid-po-poezdkam-s-sobakoy-po-strane-i-miru/",
+          "snippet": "Когда мы сами снимали жилье в разных городах, путешествуя с собакой, всегда была наценка. Где то сумма в сутки. Где то сумма общая однократно за весь период проживания. И залог."
+        },
+        {
+          "title": "Апартаменты посуточно с животными: чек-лист для владельцев собак и кошек",
+          "url": "https://petandrent.ru/blog/na-chto-obratit-vnimanie-pri-posutochnoj-arende-apartamentov-kogda-puteshestvuesh-s-pitomcem/",
+          "snippet": "Подробное руководство по поездкам с собакой по России и миру. Все о документах, правилах авиакомпаний, выборе жилья и сборе аптечки."
+        }
+      ],
+      "searched_at": "2026-08-23"
+    }
+  ],
+  "errors": []
+}

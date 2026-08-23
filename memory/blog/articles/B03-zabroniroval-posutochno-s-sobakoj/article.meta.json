@@ -1,0 +1,15 @@
+{
+  "topic_id": "B03",
+  "slug": "zabroniroval-posutochno-s-sobakoj",
+  "title": "Забронировал квартиру посуточно с собакой, а в правилах оказался запрет",
+  "h1": "Забронировал квартиру посуточно с собакой, а в правилах оказался запрет",
+  "description": "В объявлении «с собакой можно», а в правилах мелким — запрет. Что спросить в переписке до оплаты, чтобы не стоять у двери с чемоданом и питомцем.",
+  "wp_category_slugs": ["posutochnaya-arenda", "sovety-gostyam"],
+  "theme_blocks": {"faq": "skip", "quiz": "skip", "side_stickers": "skip"},
+  "status": "draft",
+  "author_id": "dobry-dom",
+  "article_mode": "B",
+  "date": "2026-08-23",
+  "pipeline_canon": "human-first-v2",
+  "editorial_swarm": false
+}
