@@ -318,7 +318,12 @@ def bootstrap(spec: dict) -> Path:
     inline_labels = {}
     for i, h2 in enumerate(spec["h2s"], 1):
         words = [w for w in re.split(r"[\s—–:]+", h2) if len(w) > 2][:4]
-        inline_labels[f"inline_{i}"] = words[:4] if words else [h2[:12]]
+        if len(words) < 2:
+            words = [w for w in re.split(r"[\s—–:]+", h2) if w.strip()][:4]
+        if len(words) < 2:
+            fallback = (spec.get("wordstat") or ["Тюмень", "посуточно"])[:2]
+            words = fallback if len(fallback) >= 2 else [h2[:12], "Тюмень"]
+        inline_labels[f"inline_{i}"] = words[:4]
 
     (cover / "cover-text.json").write_text(
         json.dumps(
@@ -648,6 +653,24 @@ def pipeline(adir: Path) -> None:
             raise RuntimeError("canvas 2 failed drawn-lockup gate after max retries")
         _clear_inline_canvas_artifacts(adir)
     _finalize_panels_for_factory_logo(adir)
+    rel = adir.relative_to(ROOT)
+    for pad_round in range(3):
+        from excalibur_blog_drawn_logo_gate import detect_drawn_lockup_in_image
+
+        logo_panels = list(CANVAS1_LOGO_PANELS) + list(CANVAS2_LOGO_PANELS)
+        bad = [
+            name
+            for name in sorted(set(logo_panels + ["inline-02.png", "inline-04.png", "inline-05.png", "inline-06.png"]))
+            if (adir / "cover" / name).is_file()
+            and detect_drawn_lockup_in_image(adir / "cover" / name).get("detected")
+        ]
+        if not bad:
+            break
+        print(f"WARN pre-composite lockup panels {bad} — pad-clear round {pad_round + 1}", flush=True)
+        _repair_logo_panels(adir, tuple(bad))
+    pre = adir / "cover" / "pre-composite"
+    if pre.is_dir():
+        shutil.rmtree(pre)
     run([sys.executable, "scripts/excalibur_blog_brand_logo_composite.py", "--article-dir", str(rel)])
     gate_rc = _run_allow_fail([sys.executable, "scripts/excalibur_blog_drawn_logo_gate.py", "--article-dir", str(rel)])
     if gate_rc != 0:
