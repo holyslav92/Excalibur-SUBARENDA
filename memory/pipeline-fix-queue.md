@@ -61,7 +61,7 @@ files_changed:
 checks_run:
 - python3 -m py_compile scripts/excalibur_blog_cover_image_preflight.py scripts/excalibur_blog_kie_gpt_image2_api.py scripts/excalibur_blog_doctor.py
 - python3 -m unittest tests.test_cover_image_preflight -v
-commit: pending
+commit: 79a24f8
 
 ## INC-20260823-1235-content-learner-metrika-credentials
 status: open
