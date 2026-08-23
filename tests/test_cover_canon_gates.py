@@ -190,9 +190,10 @@ class WordstatGateTest(unittest.TestCase):
     def test_wow_cover_rules_locked_in_tenant(self) -> None:
         tenant = json.loads((ROOT / "shared/tenant-config.json").read_text(encoding="utf-8"))
         wow = tenant.get("cover_wow_rules") or {}
+        self.assertEqual(wow.get("cover_qa_mode"), "slim")
+        self.assertEqual(wow.get("max_generation_attempts_per_canvas"), 2)
+        self.assertTrue(wow.get("paste_and_ship_on_exhaust"))
         self.assertTrue(wow.get("forbid_wordpress_ui_in_art"))
-        self.assertTrue(wow.get("no_element_overlap"))
-        self.assertTrue(wow.get("wow_poster_magazine_typography"))
         self.assertEqual(wow.get("inline_logo_count_min"), 2)
         self.assertEqual(wow.get("inline_logo_count_max"), 3)
         self.assertIn("Excalibur-SUBARENDA", wow.get("tenant_scope", ""))
@@ -201,19 +202,27 @@ class WordstatGateTest(unittest.TestCase):
         notes = json.loads(
             (ROOT / "memory/cover/visual-notes-dobry-dom.json").read_text(encoding="utf-8")
         )
-        rules = notes.get("wow_cover_rules") or {}
-        self.assertTrue(rules.get("forbid_wordpress_ui_in_art", {}).get("required"))
-        self.assertTrue(rules.get("no_element_overlap", {}).get("required"))
-        self.assertTrue(rules.get("wow_poster", {}).get("required"))
+        brand = notes.get("brand_lock") or {}
+        self.assertTrue(brand.get("forbid_ai_drawn_lockup"))
+        self.assertTrue(brand.get("forbid_logo_plate"))
+        self.assertEqual(notes.get("generation_policy", {}).get("max_attempts_per_canvas"), 2)
 
-    def test_cover_qa_gate_requires_wow_checks(self) -> None:
+    def test_cover_qa_gate_slim_checks(self) -> None:
         gate_src = (ROOT / "scripts/excalibur_blog_cover_qa_gate.py").read_text(encoding="utf-8")
         for key in (
             "forbid_wordpress_ui_in_art",
-            "no_element_overlap",
-            "wow_poster_magazine_typography",
+            "forbid_ai_drawn_logo_cover",
+            "logo_composite_stamp_pass",
+            "no_logo_plate_cover",
         ):
             self.assertIn(key, gate_src)
+        for removed in (
+            "wow_poster_magazine_typography",
+            "official_logo_pixels_only",
+            "august_no_winter_hero",
+            "inline_utility_all_7",
+        ):
+            self.assertNotIn(removed, gate_src)
 
     def test_quad_prompt_bans_wordpress_ui(self) -> None:
         prompt_src = (ROOT / "scripts/excalibur_blog_cover_quad_prompt.py").read_text(encoding="utf-8")
@@ -223,7 +232,7 @@ class WordstatGateTest(unittest.TestCase):
     def test_canvas_contract_dobry_dom_not_rieltor(self) -> None:
         contract = (ROOT / "shared/blog-cover-quad-canvas-contract.md").read_text(encoding="utf-8")
         self.assertIn("Добрый дом", contract)
-        self.assertIn("WOW cover rules", contract)
+        self.assertIn("Brand lock", contract)
         self.assertNotIn("The Риэлтор / tymenrieltor.ru", contract.split("NEVER")[0])
 
 

@@ -104,7 +104,7 @@ python3 scripts/excalibur_blog_cover_motif_gate.py record --topic-id <id> --comp
 - **Factory logo paste** on cover + 2–3 inlines (default inline_1, inline_3, inline_7) — NOT on all 7
 - **NO host face / NO Shakin** на inline
 - Cover-text labels = **факты** из статьи, не слоганы
-- Cover-QA checks: `forbid_ai_drawn_logo_pre_composite`, `official_logo_pixels_only`, `inline_logo_count_2_3`, `inline_utility_all_7`
+- Cover-QA slim: `logo_composite_stamp_pass`, `forbid_ai_drawn_logo_cover`, `inline_logo_count_2_3`, `no_logo_plate_cover`
 
 ## Blockers
 

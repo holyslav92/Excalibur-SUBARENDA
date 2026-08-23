@@ -1,89 +1,41 @@
 {
   "tenant": "dobry-dom",
-  "status": "locked",
-  "label_ru": "Добрый дом — WOW poster cover + factory logo paste",
-  "canon_files": [
-    "memory/cover/cover-canon.json",
-    "memory/cover/cover-design-code.json",
-    "shared/tenant-config.json",
-    "shared/blog-cover-quad-canvas-contract.md"
-  ],
-  "wow_cover_rules": {
-    "forbid_wordpress_ui_in_art": {
-      "required": true,
-      "cover_qa_check": "forbid_wordpress_ui_in_art",
-      "forbidden_tokens": [
-        "WordPress",
-        "Gutenberg",
-        "Add title",
-        "Publish",
-        "Dashboard",
-        "wp-admin",
-        "block editor",
-        "theme chrome",
-        "cookie bar",
-        "cookie banner"
-      ],
-      "note": "Generated art must never look like a CMS screenshot or admin UI."
-    },
-    "no_element_overlap": {
-      "required": true,
-      "cover_qa_check": "no_element_overlap",
-      "elements": [
-        "headline",
-        "wordstat_stickers",
-        "meme_sticker",
-        "cat_sticker",
-        "phone_cta",
-        "people",
-        "logo_pad"
-      ],
-      "logo_pad": {
-        "corner": "top_right",
-        "reserved_empty_in_generation": true,
-        "factory_paste_only": true,
-        "asset": "memory/cover/assets/brand/logo-dobry-dom.png",
-        "width_fraction": "8-12%",
-        "forbid_phone_in_pad": true
-      },
-      "phone_on_cover_only": {
-        "display": "+7 (993) 574-83-22",
-        "placement": "bottom_left_post_composite",
-        "forbidden_in_logo_pad": true
-      },
-      "note": "Headline, stickers, meme, cat, phone, people, logo never sit on each other."
-    },
-    "wow_poster": {
-      "required": true,
-      "cover_qa_check": "wow_poster_magazine_typography",
-      "must": [
-        "magazine cover poster composition",
-        "beautiful readable Russian display type for hook",
-        "one sharp scene line + props",
-        "high-key editorial collage"
-      ],
-      "forbidden": [
-        "timid system font",
-        "wall of tiny labels",
-        "empty stock photo",
-        "wordpress screenshot",
-        "doc-only office hero"
-      ]
-    },
-    "inline_logo": {
-      "required": true,
-      "cover_qa_checks": [
-        "inline_logo_count_2_3",
-        "forbid_multiple_logos_per_image",
-        "logo_top_right_fixed"
-      ],
-      "count_min": 2,
-      "count_max": 3,
-      "default_slots": ["inline_1", "inline_3", "inline_7"],
-      "corner": "top_right",
-      "same_pad_as_cover": true,
-      "forbid_two_plus_logos_per_frame": true
-    }
+  "status": "slim",
+  "label_ru": "Добрый дом — brand lock only; beauty = agent judgment",
+  "philosophy": "Cover agent decides scene, typography, meme/stickers for topic. Hard gates: official logo PNG paste, phone on cover, no plate under logo, no WordPress UI.",
+  "brand_lock": {
+    "logo_asset": "memory/cover/assets/brand/logo-dobry-dom.png",
+    "canonical_url": "wp-content/uploads/2026/03/cropped-img_7143.png",
+    "paste_corner": "top_right",
+    "width_fraction": "8-12%",
+    "cover_always": true,
+    "inline_count": "2-3 of 7",
+    "default_inline_slots": ["inline_1", "inline_3", "inline_7"],
+    "forbid_ai_drawn_lockup": true,
+    "forbid_logo_plate": true,
+    "cover_phone": "+7 (993) 574-83-22",
+    "cover_phone_placement": "bottom_left_post_composite"
   },
+  "generation_policy": {
+    "provider": "grsai",
+    "max_attempts_per_canvas": 2,
+    "vip_retry": "one per sheet if primary API fails",
+    "on_exhaust": "pad-clear top-right + factory paste + continue to publish"
+  },
+  "cover_qa_slim_checks": [
+    "eight_png_exist",
+    "logo_composite_stamp_pass",
+    "cover_logo_pasted",
+    "inline_logo_count_2_3",
+    "cover_phone_993_post_composite",
+    "forbid_922_phone",
+    "forbid_ai_drawn_logo_cover",
+    "forbid_wordpress_ui_in_art",
+    "no_logo_plate_cover",
+    "quad_manifest_valid",
+    "wordstat_stickers_1_3",
+    "motif_no_collision_14d",
+    "light_high_key"
+  ],
   "tenant_scope": "holyslav92/Excalibur-SUBARENDA — Добрый дом / добрыйдом-72.рф ONLY. Never tymenrieltor.ru / Excalibur-2-Cloud rieltor canon."
 }

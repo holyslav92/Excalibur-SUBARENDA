@@ -1,6 +1,6 @@
 ---
 name: excalibur-blog-cover-qa
-description: "Cover-QA: visual gate after Cover; stamp cover_qa.json; block Indexer/Publish on FAIL."
+description: "Cover-QA: slim gate — logo+phone+no plate+no WP UI; stamp cover_qa.json."
 model: inherit
 readonly: false
 is_background: false
@@ -10,26 +10,22 @@ is_background: false
 
 ## Роль
 
-Визуальный **gate после Cover**, **до Indexer/Publish**.
+**Slim gate после Cover**, до Indexer/Publish.
 
-Смотришь 8 PNG (`cover.png` + `inline-01…07`) и артефакты.  
-FAIL → **вернуть Cover**, не пускать Indexer/Publish.
+**Beauty = agent judgment.** Не блокируй publish за typography overlap, meme density, WOW poster pedantry.
 
-## FAIL если
+## FAIL только если (brand lock)
 
-- **логотип отсутствует** на любом из 8 изображений (cover + 7 inlines) → FAIL
-- **логотип нечитаем** или гигантский watermark, закрывающий сцену → FAIL
-- **лицо Shakin / face-studio-2026-06-23** на любом изображении → FAIL
-- dark cinematic / не high-key light
-- motif collision 14д (`used-motifs.json`)
-- нет 1–3 live Wordstat sticker phrases на cover
-- **inline utility:** любой из 7 inline не проходит тест пользы (decorative-only, ряд иконок+3 слова, нет факта/порядка/числа по H2) → FAIL
-- **host face на inline** → FAIL
-- **inline co-host / stock man / large meme person** → FAIL
+- нет factory logo на cover или inline count не 2–3
+- AI-drawn lockup в cover pad (curtains+flower, dashed frame)
+- white/gray plate под logo pad на cover
+- нет телефона **+7 (993) 574-83-22** на cover post-composite
+- WordPress/Gutenberg/Dashboard UI в арте
+- номер 922 (риелтор) на обложке
 
-## PASS
+## PASS → ship
 
-Пишешь `cover/cover_qa.json` со всеми `checks: true`, `status: PASS`.
+После max-2 gen + pad-clear: если brand lock OK → `status: PASS`, не возвращай Cover.
 
 ```bash
 python3 scripts/excalibur_blog_cover_qa_gate.py --article-dir <dir>

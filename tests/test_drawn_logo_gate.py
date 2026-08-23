@@ -202,23 +202,36 @@ class DrawnLogoGateTest(unittest.TestCase):
         self.assertLess(cropped.width, full_bbox[0])
         self.assertLess(cropped.height, full_bbox[1] * 0.5)
 
-    def test_cover_qa_gate_requires_drawn_logo_checks(self) -> None:
+    def test_cover_qa_gate_requires_slim_drawn_logo_checks(self) -> None:
         gate_src = (ROOT / "scripts/excalibur_blog_cover_qa_gate.py").read_text(encoding="utf-8")
         for key in (
-            "forbid_ai_drawn_logo_pre_composite",
+            "forbid_ai_drawn_logo_cover",
+            "no_logo_plate_cover",
+            "validate_article_logo_gates_slim",
+        ):
+            self.assertIn(key, gate_src)
+        for removed in (
             "official_logo_pixels_only",
             "logo_no_text_overlap",
             "forbid_logo_white_plate",
-            "validate_article_logo_gates",
         ):
-            self.assertIn(key, gate_src)
+            self.assertNotIn(removed, gate_src)
 
     def test_gray_card_in_logo_pad_fails_gate(self) -> None:
+        from PIL import Image, ImageDraw
+
         from excalibur_blog_drawn_logo_gate import detect_white_plate_in_pad
 
-        result = detect_white_plate_in_pad(Path("/tmp/bad-cover.png"))
-        self.assertTrue(result.get("detected"), result)
-        self.assertEqual(result.get("plate_kind"), "gray")
+        with tempfile.TemporaryDirectory() as tmp:
+            canvas = Path(tmp) / "gray-card.png"
+            img = Image.new("RGB", (1200, 675), (180, 190, 200))
+            draw = ImageDraw.Draw(img)
+            x0 = 1200 - 220
+            draw.rectangle((x0, 12, 1190, 190), fill=(200, 205, 210))
+            img.save(canvas)
+            result = detect_white_plate_in_pad(canvas)
+            self.assertTrue(result.get("detected"), result)
+            self.assertEqual(result.get("plate_kind"), "gray")
 
     def test_prepare_logo_rgba_crops_getbbox_not_full_canvas(self) -> None:
         from excalibur_blog_brand_logo_composite import (

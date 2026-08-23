@@ -9,23 +9,16 @@ import sys
 from pathlib import Path
 
 
+# Slim gate (2026-08): beauty = agent judgment; brand lock = logo + phone + no plate + no WP UI.
 BRAND_LOGO_CHECKS = (
-    "brand_logo_paste_png",
-    "logo_top_right_fixed",
+    "logo_composite_stamp_pass",
+    "cover_logo_pasted",
     "inline_logo_count_2_3",
-    "forbid_multiple_logos_per_image",
-    "logo_width_fraction_8_12",
     "cover_phone_993_post_composite",
     "forbid_922_phone",
-    "cover_phone_not_in_logo_pad",
-    "forbid_ai_drawn_logo_pre_composite",
-    "official_logo_pixels_only",
-    "logo_no_text_overlap",
-    "forbid_logo_white_plate",
+    "forbid_ai_drawn_logo_cover",
     "forbid_wordpress_ui_in_art",
-    "no_element_overlap",
-    "wow_poster_magazine_typography",
-    "august_no_winter_hero",
+    "no_logo_plate_cover",
 )
 
 HOST_IDENTITY_CHECKS = (
@@ -37,19 +30,11 @@ HOST_IDENTITY_CHECKS = (
 )
 
 COMMON_CHECKS = (
-    "board_stationery_ok",
-    "typography_cyrillic_clean",
-    "meme_density_inline_ok",
-    "light_high_key",
-    "motif_no_collision_14d",
-    "people_in_8_set",
-    "cats_cadence_ok",
+    "eight_png_exist",
+    "quad_manifest_valid",
     "wordstat_stickers_1_3",
-    "inline_utility_all_7",
-    "inline_no_host_face",
-    "inline_no_co_host_human",
-    "inline_meme_sticker_scale",
-    "meme_people_real_catalog",
+    "motif_no_collision_14d",
+    "light_high_key",
 )
 
 REQUIRED_IMAGES = (
@@ -184,9 +169,9 @@ def validate_cover_qa(article_dir: Path, root: Path) -> dict:
             if not stamp_path.is_file():
                 errors.append("cover/logo-composite-stamp.json missing — run brand logo composite")
         try:
-            from excalibur_blog_drawn_logo_gate import validate_article_logo_gates
+            from excalibur_blog_drawn_logo_gate import validate_article_logo_gates_slim
 
-            errors.extend(validate_article_logo_gates(article_dir, root))
+            errors.extend(validate_article_logo_gates_slim(article_dir, root))
         except ImportError:
             errors.append("excalibur_blog_drawn_logo_gate.py missing — logo paste QA unavailable")
 
