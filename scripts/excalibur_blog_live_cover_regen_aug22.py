@@ -702,6 +702,17 @@ def pipeline(adir: Path) -> None:
 
 
 def upload(spec: dict, adir: Path) -> list[str]:
+    """Upload 8 PNGs to wp-content/uploads/2026/08 (SFTP primary; FTP fallback)."""
+    from excalibur_blog_live_plate_remove_relogo import upload_sftp
+
+    try:
+        urls = upload_sftp(spec, adir / "cover")
+        if urls:
+            cb = int(time.time())
+            return [f"{u}?cb={cb}" if "?" not in u else f"{u}&cb={cb}" for u in urls]
+    except Exception as exc:
+        print(f"WARN SFTP upload failed ({exc}); trying FTP", flush=True)
+
     from excalibur_blog_remote_transport import connect_ftp, _ftp_cwd_root, _ftp_stor_with_retry
 
     env = dict(os.environ)
