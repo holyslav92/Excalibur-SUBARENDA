@@ -1,0 +1,43 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 1,
+  "identity_reference_local": "",
+  "identity_reference_id": "",
+  "logo_reference_url": "{{SITE_BASE}}/wp-content/uploads/2026/03/cropped-img_7143.png",
+  "reference_url_hosted": "{{SITE_BASE}}/wp-content/uploads/2026/03/cropped-img_7143.png",
+  "output_canvas": "cover/canvas-quad-01.png",
+  "result_path": "cover/quad-mcp-result-01.json",
+  "slots": [
+    "cover",
+    "inline_1",
+    "inline_2",
+    "inline_3"
+  ],
+  "preferred_image_flow": {
+    "provider": "grsai",
+    "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
+    "resolution": "2K",
+    "note": "PRIMARY: Grsai draw API (primary image tier first; one vip-tier retry per sheet on fail). Upscale to 2048x1152 before quad split. Fallback: excalibur_blog_kie_gpt_image2_api.py when Grsai fail. FORBIDDEN: flux2-pro-*, Seedream, nano_banana*, z-image, mcp-derouter/start-mcp.sh.",
+    "apply_script": "python3 scripts/excalibur_blog_quad_apply.py --article-dir <article_dir> --canvas-index 1 --inject-html"
+  },
+  "jobs": [
+    {
+      "slot": "canvas_quad",
+      "tool": "grsai",
+      "mcp_args": {
+        "prompt": "WOW magazine poster RU editorial collage, airy #FFFFFF high-key, sun flare, warm hospitality (посуточно Тюмень, comfort+). Bold readable Russian DISPLAY type hook — NOT timid system font. NO host Shakin/identity-real. NO brand logo in generation — factory pastes canonical PNG TOP-RIGHT 8–12% on cover + 2–3 inlines only. TOP-RIGHT empty pad reserved; meme/cat bottom-left ≤12%;…\nCanvas 2048x1152 exact 2x2; four 16:9 panels (1024x576); thin white gutters; no bleed.\nBan: dark/low-key; inventory props; celebrity memes; EXCALIBUR stamp; chubby host; stock/generated man co-host on inline; large meme person on inline; icon slogans; empty cells; desk scene; cover copy; celebrity memes; stock model man; handsome realtor co-host; generated stranger presenter; large human on inline; meme person >15% frame; invented meme face; WordPress; Gutenberg; wp-admin; block editor; theme chrome; cookie bar; overlapping headline stickers meme cat phone logo; timid system font; wall of tiny labels; empty stock; wordpress screenshot; NO drawn logo/wordmark/lockup/curtains+red flower/dashed logo frame/gold house; factory cropped-img_7143.png PNG paste after split; NO white/gray card/plate/tablichka under TOP-RIGHT pad; factory alpha PNG after split only.\nTEXT LANGUAGE LOCK: all visible text is RUSSIAN Cyrillic only; exact LABELS per panel only.\nCover TL: input reference URLs = OFFICIAL «Добрый дом» logo aroma — place top-right transparent, never redraw from scratch; NO gray/white plate; phone in generation on cover only.\nTL COVER WOW POSTER (magazine meme energy): «Счётчики снимайте при заезде» bold DISPLAY Cyrillic readable, paint ONLY the highlight word \"при заезде\" in gold #dcc5a1; sticky «Не доплатите на выезде»; Phone EXACT «+7 (993) 574-83-22» readable bottom-left CTA sticker. OFFICIAL brand logo from input reference URLs — top-right 8-12% width, transparent alpha baked naturally, NO gray/white plate/card/tablichka. Viral rental-pain meme sticker bottom-left ≤12%. Expr: шок от доплаты по счётчикам после обещания «коммуналка в цене». natural daylight clean whites; gold tape; 1-3 Wordstat; Poster collage: phone chat utility bill shock, bold Cyrillic hook, TOP-RIGHT empty pad; natural daylight Tyumen; NO logo in gen.; tape/pins/strings/paper scraps; high-key #FFF/gold; not noir; #FFF\nTop-right inline: сравнение «в рекламе / на деле»; «Сцена: «в цене всё включено» — и счёт на выезде»; Split UI ad «включено» vs checkout bill comparison table, Cyrillic labels, sketch style.. TXT:В цене всё | Счёт на выезде | Доплата ЖКХ. TOP-RIGHT: replay OFFICIAL logo from input reference URLs — transparent alpha, no gray/white plate/card.\nBottom-left inline: workflow_diagram; «Что на самом деле «включено» в цену суток»; 3-scheme flow: all included, norm limit, pay per meter; hand-drawn arrows.. TXT:Включено vs норма | Лимит воды | По счётчикам. TOP-RIGHT clean; no logo; no white/gray plate.\nBottom-right inline: checklist_board; «Какие счётчики снять при заселении»; Checklist board meters HVS GVS electricity gas, gold markers bathroom.. TXT:ХВС и ГВС | Электричество | Чек-лист. TOP-RIGHT: replay OFFICIAL logo from input reference URLs — transparent alpha, no gray/white plate/card.\nInline all: #FFF collage, gold/black Cyrillic labels, tape/pins/strings/paper scraps; high-key #FFF/gold; not noir; dense facts/numbers; exact TXT per panel; meme only if +meme AND sticker-scale; no human hero on inline; no icon soup; zero typos.",
+        "aspect_ratio": "16:9",
+        "resolution": "2K",
+        "input_urls": [
+          "{{SITE_BASE}}/wp-content/uploads/2026/03/cropped-img_7143.png"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "prompt_chars": 3443,
+    "max_prompt_chars": 3500,
+    "required_reference_host": "{{SITE_HOST}}",
+    "resolution": "2K"
+  }
+}

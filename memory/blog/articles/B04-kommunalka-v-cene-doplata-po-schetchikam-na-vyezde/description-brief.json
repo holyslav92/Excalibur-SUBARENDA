@@ -1,0 +1,9 @@
+{
+  "topic_id": "B04",
+  "description": "В объявлении «коммуналка в цене», на выезде — расчёт по счётчикам. Что снять при заселении, чтобы не доплатить неожиданную сумму за воду и свет.",
+  "rhythm": "klyshin_fear_hook",
+  "geo": "Тюмень",
+  "not_equal_title": true,
+  "not_truncated_lead": true,
+  "verdict": "PASS"
+}

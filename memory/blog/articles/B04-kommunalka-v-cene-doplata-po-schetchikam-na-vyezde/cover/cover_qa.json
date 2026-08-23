@@ -1,0 +1,20 @@
+{
+  "agent": "excalibur-blog-cover-qa",
+  "status": "PASS",
+  "checked_at": "2026-08-23",
+  "topic_id": "B04",
+  "checks": {
+    "eight_png_exist": true,
+    "logo_reference_in_generation": true,
+    "cover_phone_in_generation": true,
+    "forbid_922_phone": true,
+    "forbid_ai_drawn_logo_cover": true,
+    "forbid_wordpress_ui_in_art": true,
+    "no_logo_plate_cover": true,
+    "quad_manifest_valid": true,
+    "wordstat_stickers_1_3": true,
+    "motif_no_collision_14d": true,
+    "light_high_key": true
+  },
+  "notes": "brand_logo_reference via Grsai urls — utilities/JKH meme energy"
+}

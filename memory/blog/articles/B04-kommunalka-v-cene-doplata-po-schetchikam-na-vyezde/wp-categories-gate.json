@@ -1,0 +1,14 @@
+{
+  "category_ids": [
+    101,
+    104,
+    106
+  ],
+  "category_slugs": [
+    "posutochnaya-arenda",
+    "zhkh-i-doplaty",
+    "sovety-gostyam"
+  ],
+  "errors": [],
+  "status": "PASS"
+}

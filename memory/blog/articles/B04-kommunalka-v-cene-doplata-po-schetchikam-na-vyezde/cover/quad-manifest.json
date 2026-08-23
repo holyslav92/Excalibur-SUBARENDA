@@ -1,0 +1,112 @@
+{
+  "topic_id": "B04",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "Счётчики снимайте при заезде",
+  "cover_hook_highlight": "при заезде",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "wordstat_stickers": ["коммунальные платежи", "показания счётчиков", "Тюмень"],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "utility meters bill shock poster collage, TOP-RIGHT empty logo pad",
+    "location": "Tyumen apartment August natural daylight clean whites bathroom meter",
+    "meme": "top-100 style reaction meme sticker bottom-left ≤10% — shocked guest face at utility bill / meter reading message in chat, rental utilities pain humor NOT random cat",
+    "prop_set": "water meter dial, electric panel numbers, phone chat bill screenshot",
+    "sticker_set": ["коммунальные платежи", "показания счётчиков", "Тюмень"],
+    "joke": "viral meme reaction to «доплата по счётчикам» after «всё включено» ad"
+  },
+  "cover_emotion": "шок от доплаты по счётчикам после обещания «коммуналка в цене»",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Гость читает в мессенджере доплату по счётчикам после «коммуналка в цене» — август, Тюмень.",
+      "scene_hint": "Poster collage: phone chat utility bill shock, bold Cyrillic hook, TOP-RIGHT empty pad; natural daylight Tyumen; NO logo in gen.",
+      "meme_caption_ru": "",
+      "sticky": "Не доплатите на выезде"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Сцена: «в цене всё включено» — и счёт на выезде",
+      "visual_type": "comparison_table",
+      "scene_hint": "Split UI ad «включено» vs checkout bill comparison table, Cyrillic labels, sketch style.",
+      "alt": "Доплата по счётчикам на выезде после «коммуналка в цене» — посуточная аренда",
+      "labels": ["В цене всё", "Счёт на выезде", "Доплата ЖКХ"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Что на самом деле «включено» в цену суток",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "3-scheme flow: all included, norm limit, pay per meter; hand-drawn arrows.",
+      "alt": "Что значит «коммуналка включена» в посуточной аренде — норма vs счётчики",
+      "labels": ["Включено vs норма", "Лимит воды", "По счётчикам"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Какие счётчики снять при заселении",
+      "visual_type": "checklist_board",
+      "scene_hint": "Checklist board meters HVS GVS electricity gas, gold markers bathroom.",
+      "alt": "Показания счётчиков при заселении посуточно — вода, свет, чек-лист",
+      "labels": ["ХВС и ГВС", "Электричество", "Чек-лист"]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Как зафиксировать показания в чате",
+      "visual_type": "schema_faq_ui",
+      "scene_hint": "FAQ UI card 4-step chat protocol for meter photos with timestamps.",
+      "alt": "Как отправить показания счётчиков хозяину в чат при заселении посуточно",
+      "labels": ["Фото в чат", "Дата и время", "Подтвердите базу"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Как считают доплату: формула без магии",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Formula card (out-in)×tariff with water and kWh example numbers.",
+      "alt": "Расчёт доплаты по счётчикам при посуточной аренде — формула вода и свет",
+      "labels": ["Формула расчёта", "Тариф по строке", "М³ и кВт·ч"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Что писать, если на выезде требуют доплатить",
+      "visual_type": "comparison_table",
+      "scene_hint": "4-message dispute script table for utility overcharge on checkout.",
+      "alt": "Что ответить хозяину, если на выезде доплата по счётчикам посуточно",
+      "labels": ["Пересчитайте", "Мои фото заезда", "Цитата из чата"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Как мы в «Добрый дом» фиксируем ЖКХ",
+      "visual_type": "tool_screenshot",
+      "scene_hint": "Booking chat mock meter confirmation + Добрый дом comfort+ apartment preview.",
+      "alt": "Как «Добрый дом» в Тюмени фиксирует коммуналку при посуточной аренде",
+      "labels": ["Добрый дом", "Прозрачный ЖКХ", "Фиксация в чате"]
+    }
+  },
+  "cover_keys_ru": []
+}

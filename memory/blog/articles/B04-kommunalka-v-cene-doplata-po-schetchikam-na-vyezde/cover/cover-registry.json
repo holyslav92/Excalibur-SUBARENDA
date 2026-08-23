@@ -1,0 +1,86 @@
+{
+  "topic_id": "B04",
+  "slug": "kommunalka-v-cene-doplata-po-schetchikam-na-vyezde",
+  "cover_family": "brand_collage",
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "file": "cover/cover.png",
+  "alt": "Гость читает в мессенджере доплату по счётчикам после «коммуналка в цене» — август, Тюмень.",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-quad-01.png",
+  "generated_at": "2026-08-23T18:40:06+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Гость читает в мессенджере доплату по счётчикам после «коммуналка в цене» — август, Тюмень.",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Доплата по счётчикам на выезде после «коммуналка в цене» — посуточная аренда",
+      "h2_anchor": "Сцена: «в цене всё включено» — и счёт на выезде",
+      "visual_type": "comparison_table",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Что значит «коммуналка включена» в посуточной аренде — норма vs счётчики",
+      "h2_anchor": "Что на самом деле «включено» в цену суток",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Показания счётчиков при заселении посуточно — вода, свет, чек-лист",
+      "h2_anchor": "Какие счётчики снять при заселении",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_4",
+      "file": "cover/inline-04.png",
+      "alt": "Как отправить показания счётчиков хозяину в чат при заселении посуточно",
+      "h2_anchor": "Как зафиксировать показания в чате",
+      "visual_type": "schema_faq_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_5",
+      "file": "cover/inline-05.png",
+      "alt": "Расчёт доплаты по счётчикам при посуточной аренде — формула вода и свет",
+      "h2_anchor": "Как считают доплату: формула без магии",
+      "visual_type": "labeled_checklist",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_6",
+      "file": "cover/inline-06.png",
+      "alt": "Что ответить хозяину, если на выезде доплата по счётчикам посуточно",
+      "h2_anchor": "Что писать, если на выезде требуют доплатить",
+      "visual_type": "comparison_table",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_7",
+      "file": "cover/inline-07.png",
+      "alt": "Как «Добрый дом» в Тюмени фиксирует коммуналку при посуточной аренде",
+      "h2_anchor": "Как мы в «Добрый дом» фиксируем ЖКХ",
+      "visual_type": "tool_screenshot",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}
