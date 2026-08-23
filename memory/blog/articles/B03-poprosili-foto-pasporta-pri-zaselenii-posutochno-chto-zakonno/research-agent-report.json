@@ -1,0 +1,33 @@
+{
+  "topic_id": "B03",
+  "research_date": "2026-08-23",
+  "status": "PASS",
+  "summary": "Research notes for passport photo request at daily rental check-in — legal boundaries, guest rights, safe alternatives. Fresh news signal: brief24.ru MVD passport clarification 15.08.2026.",
+  "freshness_audit": {
+    "research_date": "2026-08-23",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://brief24.ru/news/2026/8/15/296294",
+      "published_at": "2026-08-15",
+      "note": "MVD press service: passport not required to carry always, but needed for legal actions including identity verification at check-in."
+    }
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["225", "55", "11176"],
+    "parent_phrase": "фото паспорта при заселении",
+    "parent_total_count": 474
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": true,
+    "verified_claims": 4,
+    "entities_checked": ["152-fz", "koap"],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  }
+}
