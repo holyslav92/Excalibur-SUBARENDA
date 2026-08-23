@@ -279,6 +279,7 @@
     "provider": "derouter-rest",
     "script": "scripts/excalibur_blog_derouter_gpt_image2_api.py",
     "probe_script": "scripts/excalibur_blog_derouter_image_base_probe.py",
+    "preflight_script": "scripts/excalibur_blog_cover_image_preflight.py",
     "contract": "shared/derouter-gpt-image-api-contract.md",
     "model_env": "DEROUTER_IMAGE_MODEL",
     "base_override_env": [

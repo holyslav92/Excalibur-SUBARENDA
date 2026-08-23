@@ -58,6 +58,10 @@ class KieApiError(RuntimeError):
     """Raised for API or response-shape failures."""
 
 
+class KieCreditsBlocker(KieApiError):
+    """HTTP 402 / insufficient credits — needs human top-up, not retry."""
+
+
 class KieRetryableFail(KieApiError):
     """Terminal recordInfo fail that may warrant one new createTask (not re-poll)."""
 
@@ -166,6 +170,13 @@ def resolve_path(root: Path, article_dir_arg: str, path_arg: str) -> Path:
     return path
 
 
+def is_kie_credits_error(status: int, body: str) -> bool:
+    if status == 402:
+        return True
+    lower = body.lower()
+    return "credits insufficient" in lower or "insufficient credit" in lower
+
+
 def http_json(method: str, url: str, api_key: str, payload: dict[str, Any] | None = None) -> dict[str, Any]:
     data = None
     headers = {
@@ -182,6 +193,11 @@ def http_json(method: str, url: str, api_key: str, payload: dict[str, Any] | Non
             body = response.read().decode("utf-8")
     except urllib.error.HTTPError as exc:
         body = exc.read().decode("utf-8", errors="replace")
+        if is_kie_credits_error(exc.code, body):
+            raise KieCreditsBlocker(
+                "KIE CREDITS BLOCKER: Kie createTask HTTP 402 — credits insufficient; "
+                "top up Kie account or restore Derouter image model (see shared/kie-gpt-image-api-contract.md)"
+            ) from exc
         raise KieApiError(f"Kie API HTTP {exc.code}: {body}") from exc
     except urllib.error.URLError as exc:
         raise KieApiError(f"Kie API network error: {exc.reason}") from exc
@@ -899,6 +915,9 @@ def main() -> int:
         print(f"OK url={record['url']}")
         print(f"OK result={result_path}")
         return 0
+    except KieCreditsBlocker as exc:
+        print(f"❌ {exc}", file=sys.stderr)
+        return 1
     except KieApiError as exc:
         print(f"❌ KIE API BLOCKER: {exc}", file=sys.stderr)
         return 1

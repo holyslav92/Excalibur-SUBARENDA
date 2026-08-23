@@ -30,6 +30,16 @@ python3 scripts/excalibur_blog_derouter_image_base_probe.py
 
 → `memory/blog/derouter-image-base-probe.json` (status + short error, без ключа).
 
+**Preflight перед Cover** (после cover-text PASS, до cover-scene / quad-prompt):
+
+```bash
+python3 scripts/excalibur_blog_cover_image_preflight.py \
+  --article-dir memory/blog/articles/<topic_id>-<slug> \
+  --topic-id <id> --probe --write-blocker
+```
+
+Exit `0` = Derouter winner или Kie fallback доступен; exit `2` = **COVER IMAGE PREFLIGHT BLOCKER** (discontinued + нет Kie / известен 402) — не тратить токены на scene/batch.
+
 - Timeout: **≥240s** client; default script **600s**
 - Для длинных gen предпочтительнее `api-direct.*` (меньше риск Cloudflare **HTTP 524** на `api.derouter.ai`)
 - Если все базы отвечают `discontinued` для `DEROUTER_IMAGE_MODEL` → **DEROUTER IMAGE BLOCKER**, затем Kie fallback

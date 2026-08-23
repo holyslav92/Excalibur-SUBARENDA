@@ -482,6 +482,30 @@ def main() -> int:
         warnings,
         warn=True,
     )
+    probe_path = root / "memory/blog/derouter-image-base-probe.json"
+    if probe_path.is_file():
+        try:
+            probe = json.loads(probe_path.read_text(encoding="utf-8"))
+            winner = probe.get("winner")
+            results = probe.get("results") or []
+            all_discontinued = bool(results) and not winner and all(
+                "discontinued" in str(row.get("error") or "").lower()
+                for row in results
+                if isinstance(row, dict)
+            )
+            if all_discontinued:
+                kie_key = os.environ.get("KIE_API_KEY", "").strip()
+                label = (
+                    "Derouter image discontinued on all bases (derouter-image-base-probe.json); "
+                    + (
+                        "Kie fallback only — verify credits before Cover"
+                        if kie_key
+                        else "KIE_API_KEY missing — COVER IMAGE BLOCKER"
+                    )
+                )
+                check(False, label, errors, warnings, warn=True)
+        except json.JSONDecodeError:
+            check(False, "derouter-image-base-probe.json valid JSON", errors, warnings, warn=True)
     brain = tenant.get("writing_model") or {}
     check(
         brain.get("script") == "scripts/excalibur_blog_derouter_opus_chat.py",

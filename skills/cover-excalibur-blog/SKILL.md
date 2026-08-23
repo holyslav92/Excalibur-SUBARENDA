@@ -95,6 +95,8 @@ ARTICLE="memory/blog/articles/<topic_id>-<slug>"
 
 python3 scripts/excalibur_blog_hero_reference_url.py
 python3 scripts/excalibur_blog_cover_text_gate.py --article-dir "$ARTICLE"
+python3 scripts/excalibur_blog_cover_image_preflight.py --article-dir "$ARTICLE" \
+  --topic-id <id> --probe --write-blocker
 python3 scripts/excalibur_blog_quad_manifest.py --article-dir "$ARTICLE" --merge
 
 # Agent fills scene_hint, cover_motifs, wordstat_stickers in quad-manifest.json
@@ -135,7 +137,8 @@ python3 scripts/excalibur_blog_cover_motif_gate.py record --topic-id <id> --comp
 
 - COVER MOTIF BLOCKER (14-day collision)
 - COVER HERO BLOCKER (identity-real missing)
-- DEROUTER API KEY MISSING / DEROUTER BLOCKER / KIE API BLOCKER
+- **COVER IMAGE PREFLIGHT BLOCKER** — Derouter discontinued + Kie missing/402 (`cover_image_preflight.py`)
+- DEROUTER API KEY MISSING / DEROUTER BLOCKER / KIE API BLOCKER / **KIE CREDITS BLOCKER**
 - **IMAGE MODEL BLOCKER** — Flux/Seedream/nano_banana/z-image or off-pipeline demo canvas
 - daypart formula / inventory default / doc-only office / dark cinematic
 

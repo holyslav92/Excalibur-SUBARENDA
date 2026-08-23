@@ -39,6 +39,7 @@ This keeps waiting in the shell process instead of a single MCP request.
 - Env var: `KIE_API_KEY`
 - Store only in Cursor Cloud Secrets / environment.
 - Never commit, print, or copy the key into handoff, PR bodies, article files, or logs.
+- **HTTP 402 / credits insufficient** on `createTask` → **KIE CREDITS BLOCKER** (no retry). Top up Kie or restore Derouter image model. Preflight: `scripts/excalibur_blog_cover_image_preflight.py`.
 
 ## Cover command
 

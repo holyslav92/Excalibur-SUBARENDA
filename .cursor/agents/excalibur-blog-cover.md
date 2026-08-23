@@ -54,6 +54,8 @@ ARTICLE="memory/blog/articles/<topic_id>-<slug>"
 
 python3 scripts/excalibur_blog_hero_reference_url.py
 python3 scripts/excalibur_blog_cover_text_gate.py --article-dir "$ARTICLE"
+python3 scripts/excalibur_blog_cover_image_preflight.py --article-dir "$ARTICLE" \
+  --topic-id <id> --probe --write-blocker
 python3 scripts/excalibur_blog_quad_manifest.py --article-dir "$ARTICLE" --merge
 
 # quad-manifest.json: scene_hint, cover_motifs, wordstat_stickers (1-3 phrases)
