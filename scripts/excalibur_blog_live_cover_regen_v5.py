@@ -229,6 +229,21 @@ def make_dzen_thumb(data: bytes) -> bytes:
     return out.getvalue()
 
 
+def _generate_and_apply_canvas(
+    adir: Path,
+    rel: Path,
+    image_script: str,
+    *,
+    batch_file: str,
+    result_file: str,
+    canvas_index: int,
+) -> bool:
+    """Генерация + apply без drawn-lockup gate (logo baked via reference)."""
+    if not _generate_canvas(image_script, rel, batch_file=batch_file, result_file=result_file, model_tier="auto"):
+        return False
+    return _apply_canvas(rel, canvas_index) == 0
+
+
 def pipeline_v5(adir: Path, *, logo_url: str) -> dict[str, Any]:
     rel = adir.relative_to(ROOT)
     image_script = resolve_image_script(ROOT)
@@ -252,37 +267,34 @@ def pipeline_v5(adir: Path, *, logo_url: str) -> dict[str, Any]:
     patch_batches_logo_reference(adir, logo_url=logo_url)
 
     for attempt in range(1, 3):
-        if _canvas_sheet_ok(
+        if _generate_and_apply_canvas(
             adir,
             rel,
             image_script,
             batch_file="cover/quad-mcp-batch-01.json",
             result_file="cover/quad-mcp-result-01.json",
             canvas_index=1,
-            logo_panels=CANVAS1_LOGO_PANELS,
         ):
             print(f"canvas 1 OK attempt {attempt}", flush=True)
             break
+        print(f"WARN canvas 1 retry {attempt}", flush=True)
         if attempt >= 2:
-            _repair_logo_panels(adir, CANVAS1_LOGO_PANELS)
             break
         _clear_cover_canvas_artifacts(adir)
 
     for attempt in range(1, 3):
-        logo_panels = CANVAS1_LOGO_PANELS + CANVAS2_LOGO_PANELS
-        if _canvas_sheet_ok(
+        if _generate_and_apply_canvas(
             adir,
             rel,
             image_script,
             batch_file="cover/quad-mcp-batch-02.json",
             result_file="cover/quad-mcp-result-02.json",
             canvas_index=2,
-            logo_panels=logo_panels,
         ):
             print(f"canvas 2 OK attempt {attempt}", flush=True)
             break
+        print(f"WARN canvas 2 retry {attempt}", flush=True)
         if attempt >= 2:
-            _repair_logo_panels(adir, logo_panels)
             break
         _clear_inline_canvas_artifacts(adir)
 
