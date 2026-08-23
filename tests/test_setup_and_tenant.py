@@ -40,9 +40,10 @@ class SetupTenantTests(unittest.TestCase):
         self.assertEqual(hints.get("transport"), "ftp")
         self.assertEqual(hints.get("ftp_root"), "sublease/public_html")
         schedule = tenant.get("publish_schedule") or {}
-        self.assertEqual(schedule.get("slots_local"), ["10:00", "13:00", "17:00"])
+        self.assertEqual(schedule.get("slots_local"), ["10:00", "14:00", "17:00"])
         self.assertEqual(schedule.get("runs_per_day"), 3)
         self.assertEqual(schedule.get("timezone"), "Asia/Yekaterinburg")
+        self.assertFalse(schedule.get("weekdays_only"))
         self.assertTrue(tenant.get("cta_required"))
         links = tenant.get("cta_links") or []
         self.assertTrue(any("blog" in x for x in links))
@@ -76,7 +77,7 @@ class SetupTenantTests(unittest.TestCase):
         text = automation.read_text(encoding="utf-8")
         self.assertIn("Добрый дом 3 статьи", text)
         self.assertIn("holyslav92/Excalibur-SUBARENDA", text)
-        self.assertIn("0 10,13,17 * * 1-5", text)
+        self.assertIn("0 10,14,17 * * *", text)
         self.assertIn("memories: false", text)
         self.assertIn("wordpress_*", text)
         self.assertNotIn("FTP_PASS:", text.replace("# FTP_PASS", ""))  # no committed password value

@@ -1,4 +1,4 @@
-# Cursor Cloud Automation — Добрый дом (3 статьи / будни)
+# Cursor Cloud Automation — Добрый дом (3 статьи / каждый день)
 # Repository: holyslav92/Excalibur-SUBARENDA ONLY (never Excalibur-2-Cloud / tymenrieltor.ru)
 # Import: Cursor → Automations → create from repo file or /automate skill
 # Docs: https://cursor.com/docs/cloud-agent/automations
@@ -16,18 +16,18 @@ environment:
 
 trigger:
   - type: scheduled
-    weekdays_only: true
+    weekdays_only: false
     # Preferred (YEKT explicit):
-    cron: "0 10,13,17 * * 1-5"
+    cron: "0 10,14,17 * * *"
     cron_tz: Asia/Yekaterinburg
     # Equivalent shell form:
-    # CRON_TZ=Asia/Yekaterinburg 0 10,13,17 * * 1-5
+    # CRON_TZ=Asia/Yekaterinburg 0 10,14,17 * * *
     # If Cursor UI stores cron in UTC only (YEKT = UTC+5):
-    cron_utc_fallback: "0 5,8,12 * * 1-5"
+    cron_utc_fallback: "0 5,9,12 * * *"
 
 schedule_slots_yekt:
   - "10:00"
-  - "13:00"
+  - "14:00"
   - "17:00"
 
 tools:
