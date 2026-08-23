@@ -1,6 +1,6 @@
 ---
 name: cover-excalibur-blog
-description: "④a Cover: 2× quad Grsai 2K, meme energy, max-2 gen + paste-and-ship, factory logo."
+description: "④a Cover: 2× quad Grsai 2K, meme energy, logo reference-in-generation, max-2 + vip."
 ---
 
 # Cover Agent — longform 8 images
@@ -12,10 +12,10 @@ description: "④a Cover: 2× quad Grsai 2K, meme energy, max-2 gen + paste-and-
 **Ban:** random unrelated memes, logo under stickers, snow/winter off-season, luxury flex.
 
 **Brand lock (hard only):**
-- Official logo PNG paste (`logo-dobry-dom.png` / `cropped-img_7143.png`) — NEVER AI-drawn lockup
-- Empty top-right pad in generation → factory paste only
-- NO gray/white plate under logo pad
-- Phone **+7 (993) 574-83-22** on cover post-composite only
+- Logo **in generation** via Grsai `urls`/aroma — official `logo-dobry-dom.png` / `cropped-img_7143.png` reference
+- Integrate THIS exact mark small top-right, transparent, **NO** gray/white plate/card/backing
+- Phone **+7 (993) 574-83-22** on cover post-composite only (`brand_logo_composite.py --phone-only`)
+- Emergency alpha-paste only: `brand_logo_composite.py --emergency` (disabled by default)
 - NO WordPress UI in art
 
 ## Generation policy (HARD)
@@ -23,8 +23,8 @@ description: "④a Cover: 2× quad Grsai 2K, meme energy, max-2 gen + paste-and-
 | Rule | Value |
 |------|-------|
 | Provider | **Grsai** (see `shared/grsai-gpt-image-api-contract.md`) |
-| VIP retry | **1** per sheet **only** if non-vip cannot deliver ≥2K (long side &lt;2048) or hard API fail |
-| Max attempts | **2** per canvas → then **pad-clear + factory paste + ship** (no loop) |
+| VIP retry | **1** per sheet only if non-vip cannot deliver ≥2K (long side &lt;2048) or hard API fail |
+| Max attempts | **2** per canvas → pad-clear if plate + phone-only post-composite + ship |
 | Prose/scene | Derouter Terra `--role cover-scene` only |
 
 ```bash
@@ -49,22 +49,25 @@ python3 scripts/excalibur_blog_derouter_opus_chat.py \
   canvas 1: cover + inline_1..3
   canvas 2: inline_4..7
 → split 2×2 → cover.png + inline-01..07.png
-→ brand_logo_composite (cover always + 2–3 inline, default 1/3/7)
+→ phone-only post-composite on cover (reference mode)
 → Cover-QA slim → Indexer
 ```
 
-On attempt 2 fail: `live_plate_remove_relogo.clear_logo_pad()` → `brand_logo_composite.py` → **continue**.
+On attempt 2 fail / logo plate: `live_plate_remove_relogo.clear_logo_pad()` → `--phone-only` → **continue**.
 
-## Logo paste (HARD)
+## Logo reference (HARD — default)
+
+`logo_mode=reference_in_generation` in `shared/tenant-config.json`. Every Grsai draw call includes logo reference URL in `urls`/aroma.
 
 ```bash
-python3 scripts/excalibur_blog_brand_logo_composite.py --article-dir "$ARTICLE"
+python3 scripts/excalibur_blog_brand_logo_composite.py --article-dir "$ARTICLE" --phone-only
 ```
 
-- Asset: `memory/cover/assets/brand/logo-dobry-dom.png` (alpha, top-right 8–12%)
-- Cover: logo + phone bottom-left post-composite
-- Inline: logo on **2–3 of 7** only (default inline_1, inline_3, inline_7)
-- **Never** logo on all 8 panels
+Emergency alpha-paste (only if reference gen failed):
+
+```bash
+python3 scripts/excalibur_blog_brand_logo_composite.py --article-dir "$ARTICLE" --emergency
+```
 
 ## Runbook
 
@@ -84,7 +87,7 @@ python3 scripts/excalibur_blog_grsai_gpt_image2_api.py --article-dir "$ARTICLE" 
 
 python3 scripts/excalibur_blog_quad_apply.py --article-dir "$ARTICLE" --canvas-index 1 --inject-html
 python3 scripts/excalibur_blog_quad_apply.py --article-dir "$ARTICLE" --canvas-index 2 --inject-html
-python3 scripts/excalibur_blog_brand_logo_composite.py --article-dir "$ARTICLE"
+python3 scripts/excalibur_blog_brand_logo_composite.py --article-dir "$ARTICLE" --phone-only
 ```
 
 If gen attempt 2 still has drawn lockup in cover pad → pad-clear → composite → ship.

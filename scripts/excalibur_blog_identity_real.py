@@ -51,8 +51,30 @@ def cover_mode(root: Path | None = None) -> str:
     return str(tenant.get("cover_mode") or "brand_logo_paste").strip()
 
 
+def logo_mode(root: Path | None = None) -> str:
+    """logo_mode overrides cover_mode for logo pipeline when set."""
+    tenant = load_tenant_config(root)
+    explicit = str(tenant.get("logo_mode") or "").strip()
+    if explicit:
+        return explicit
+    return cover_mode(root)
+
+
+LOGO_REFERENCE_MODES = frozenset(
+    {"reference_in_generation", "logo_reference_in_generation", "reference_in_gen"}
+)
+
+
+def tenant_uses_logo_reference_in_generation(root: Path | None = None) -> bool:
+    """Logo baked into Grsai draw via urls/aroma reference — not alpha-pasted after."""
+    mode = logo_mode(root).casefold()
+    return mode in LOGO_REFERENCE_MODES
+
+
 def is_logo_lockup_mode(root: Path | None = None) -> bool:
     mode = cover_mode(root).casefold()
+    if tenant_uses_logo_reference_in_generation(root):
+        return True
     return mode in {"logo_lockup", "brand_logo_paste", "brand_logo_composite", "paste_png", "illustrative"}
 
 
@@ -127,6 +149,59 @@ def pick_logo_reference(topic_id: str = "", slug: str = "") -> dict[str, str]:
         "id": "logo_dobry_dom",
         "path": str(LOGO_LOCKUP_REL),
         "role": "logo_lockup",
+    }
+
+
+def resolve_logo_reference_url(root: Path | None = None) -> str:
+    """Публичный URL официального логотипа для Grsai urls/aroma reference."""
+    root = root or project_root()
+    from excalibur_blog_site_base import expand_site_base, resolve_public_base_from_env
+
+    live = resolve_public_base_from_env()
+    tenant = load_tenant_config(root)
+    composite = tenant.get("logo_composite") or {}
+    hero_rel = (tenant.get("cover_files") or {}).get("hero") or "memory/cover/blog-hero.json"
+    hero_path = root / hero_rel
+    hero_hosted = ""
+    if hero_path.is_file():
+        try:
+            hero = json.loads(hero_path.read_text(encoding="utf-8"))
+            hero_hosted = str(hero.get("reference_url_hosted") or "").strip()
+        except json.JSONDecodeError:
+            hero_hosted = ""
+
+    canonical = str(composite.get("canonical_url") or "").strip()
+    candidates: list[str] = []
+    if canonical:
+        candidates.append(canonical)
+    if hero_hosted:
+        candidates.append(hero_hosted)
+
+    if not live:
+        return ""
+
+    for raw in candidates:
+        value = str(raw or "").strip()
+        if not value:
+            continue
+        if value.startswith("http://") or value.startswith("https://"):
+            return value
+        path = value if value.startswith("/") else f"/{value}"
+        return expand_site_base(f"{{{{SITE_BASE}}}}{path}", live)
+    return ""
+
+
+def resolve_logo_reference_for_api(root: Path | None = None) -> dict[str, str]:
+    """Локальный путь + публичный URL логотипа для batch/grsai."""
+    root = root or project_root()
+    path = logo_lockup_path(root)
+    rel = str(path.relative_to(root)) if path.is_relative_to(root) else str(path)
+    return {
+        "id": "logo_dobry_dom",
+        "path": str(path),
+        "local": rel,
+        "url": resolve_logo_reference_url(root),
+        "role": "logo_reference_in_generation",
     }
 
 

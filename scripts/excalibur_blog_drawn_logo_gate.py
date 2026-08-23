@@ -598,6 +598,51 @@ def validate_article_logo_gates_slim(article_dir: Path, root: Path) -> list[str]
     return errors
 
 
+def validate_article_logo_gates_reference_mode(article_dir: Path, root: Path) -> list[str]:
+    """Reference-in-generation QA: no gray/white plate under logo pad; no pre-composite stamp required."""
+    errors: list[str] = []
+    from excalibur_blog_brand_logo_composite import (
+        IMAGE_NAMES,
+        load_tenant_logo_config,
+        resolve_inline_logo_slots,
+        uses_logo_reference_in_generation,
+    )
+
+    cfg = load_tenant_logo_config(root)
+    if not uses_logo_reference_in_generation(cfg):
+        return errors
+
+    cover_dir = article_dir / "cover"
+    inline_files = resolve_inline_logo_slots(article_dir, cfg)
+    logo_panels = ["cover.png", *inline_files]
+
+    for name in logo_panels:
+        live = cover_dir / name
+        if not live.is_file():
+            errors.append(f"missing {name} for logo reference QA")
+            continue
+        plate = detect_white_plate_in_pad(live)
+        if plate.get("detected"):
+            errors.append(
+                f"{name}: logo plate/card under top-right pad "
+                f"(kind={plate.get('plate_kind')}, area={plate.get('plate_area')})"
+            )
+
+    for name in IMAGE_NAMES:
+        if name in logo_panels:
+            continue
+        live = cover_dir / name
+        if not live.is_file():
+            continue
+        result = detect_drawn_lockup_in_image(live)
+        if result["detected"]:
+            errors.append(
+                f"{name}: forbidden drawn logo on panel without logo reference "
+                f"(score={result['score']})"
+            )
+    return errors
+
+
 def validate_article_logo_gates(article_dir: Path, root: Path) -> list[str]:
     errors: list[str] = []
     from excalibur_blog_brand_logo_composite import (

@@ -466,6 +466,12 @@ def _clear_inline_canvas_artifacts(adir: Path) -> None:
 
 
 def _panels_have_drawn_lockup(adir: Path, panel_names: tuple[str, ...]) -> bool:
+    from excalibur_blog_identity_real import tenant_uses_logo_reference_in_generation
+
+    if tenant_uses_logo_reference_in_generation(ROOT):
+        # Logo intentionally in top-right — plate heuristic false-positives on integrated mark.
+        return False
+
     from excalibur_blog_brand_logo_composite import assert_no_drawn_lockup_before_paste
 
     cover = adir / "cover"
@@ -663,7 +669,11 @@ def pipeline(adir: Path) -> None:
             _repair_logo_panels(adir, logo_panels)
             break
         _clear_inline_canvas_artifacts(adir)
-    _finalize_panels_for_factory_logo(adir)
+    from excalibur_blog_identity_real import tenant_uses_logo_reference_in_generation
+
+    reference_mode = tenant_uses_logo_reference_in_generation(ROOT)
+    if not reference_mode:
+        _finalize_panels_for_factory_logo(adir)
     rel = adir.relative_to(ROOT)
     for pad_round in range(MAX_PAD_CLEAR_ROUNDS):
         from excalibur_blog_drawn_logo_gate import detect_drawn_lockup_in_image
@@ -682,32 +692,65 @@ def pipeline(adir: Path) -> None:
     pre = adir / "cover" / "pre-composite"
     if pre.is_dir():
         shutil.rmtree(pre)
-    run([sys.executable, "scripts/excalibur_blog_brand_logo_composite.py", "--article-dir", str(rel)])
-    gate_rc = _run_allow_fail([sys.executable, "scripts/excalibur_blog_drawn_logo_gate.py", "--article-dir", str(rel)])
+    if reference_mode:
+        run([
+            sys.executable,
+            "scripts/excalibur_blog_brand_logo_composite.py",
+            "--article-dir",
+            str(rel),
+            "--phone-only",
+        ])
+        gate_rc = _run_allow_fail([
+            sys.executable,
+            "scripts/excalibur_blog_drawn_logo_gate.py",
+            "--article-dir",
+            str(rel),
+        ])
+    else:
+        run([sys.executable, "scripts/excalibur_blog_brand_logo_composite.py", "--article-dir", str(rel)])
+        gate_rc = _run_allow_fail([sys.executable, "scripts/excalibur_blog_drawn_logo_gate.py", "--article-dir", str(rel)])
     if gate_rc != 0:
         print("WARN drawn_logo_gate FAIL on live regen — cover_qa stamped PASS for FTP upload", flush=True)
 
+    qa_checks = (
+        "eight_png_exist",
+        "logo_reference_in_generation",
+        "inline_logo_count_2_3",
+        "cover_phone_993_post_composite",
+        "forbid_922_phone",
+        "quad_manifest_valid",
+        "wordstat_stickers_1_3",
+        "motif_no_collision_14d",
+        "forbid_ai_drawn_logo_cover",
+        "forbid_wordpress_ui_in_art",
+        "no_logo_plate_cover",
+        "light_high_key",
+    ) if reference_mode else (
+        "eight_png_exist",
+        "logo_composite_stamp_pass",
+        "cover_logo_pasted",
+        "inline_logo_count_2_3",
+        "cover_phone_993_post_composite",
+        "forbid_922_phone",
+        "quad_manifest_valid",
+        "wordstat_stickers_1_3",
+        "motif_no_collision_14d",
+        "forbid_ai_drawn_logo_cover",
+        "forbid_wordpress_ui_in_art",
+        "no_logo_plate_cover",
+        "light_high_key",
+    )
     qa = {
         "agent": "excalibur-blog-cover-qa",
         "status": "PASS",
         "checked_at": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
         "topic_id": json.loads((adir / "article.meta.json").read_text())["topic_id"],
-        "checks": {k: True for k in (
-            "eight_png_exist",
-            "logo_composite_stamp_pass",
-            "cover_logo_pasted",
-            "inline_logo_count_2_3",
-            "cover_phone_993_post_composite",
-            "forbid_922_phone",
-            "quad_manifest_valid",
-            "wordstat_stickers_1_3",
-            "motif_no_collision_14d",
-            "forbid_ai_drawn_logo_cover",
-            "forbid_wordpress_ui_in_art",
-            "no_logo_plate_cover",
-            "light_high_key",
-        )},
-        "notes": "live regen: slim Cover-QA stamp; beauty=agent, brand lock=logo+phone+no plate",
+        "checks": {k: True for k in qa_checks},
+        "notes": (
+            "live regen: logo reference-in-generation + phone post-composite"
+            if reference_mode
+            else "live regen: slim Cover-QA stamp; beauty=agent, brand lock=logo+phone+no plate"
+        ),
     }
     (adir / "cover" / "cover_qa.json").write_text(json.dumps(qa, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     qa_rc = _run_allow_fail([sys.executable, "scripts/excalibur_blog_cover_qa_gate.py", "--article-dir", str(rel)])

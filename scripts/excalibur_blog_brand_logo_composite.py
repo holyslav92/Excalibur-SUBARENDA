@@ -86,6 +86,7 @@ def load_tenant_logo_config(root: Path) -> dict[str, Any]:
     phone_raw = str(channels.get("phone") or "+79935748322").strip()
     return {
         "cover_mode": tenant.get("cover_mode") or hero.get("cover_mode") or "",
+        "logo_mode": tenant.get("logo_mode") or tenant.get("cover_mode") or hero.get("cover_mode") or "",
         "logo_rel": str(logo_rel),
         "logo_sha256": str(composite.get("canonical_sha256") or CANONICAL_SHA256),
         "max_width_fraction": float(
@@ -112,7 +113,15 @@ def load_tenant_logo_config(root: Path) -> dict[str, Any]:
 
 def uses_brand_logo_paste(cfg: dict[str, Any]) -> bool:
     mode = str(cfg.get("cover_mode") or "").strip().casefold()
+    logo_mode = str(cfg.get("logo_mode") or mode).strip().casefold()
+    if logo_mode in {"reference_in_generation", "logo_reference_in_generation", "reference_in_gen"}:
+        return False
     return mode in {"brand_logo_paste", "brand_logo_composite", "paste_png"}
+
+
+def uses_logo_reference_in_generation(cfg: dict[str, Any]) -> bool:
+    mode = str(cfg.get("logo_mode") or cfg.get("cover_mode") or "").strip().casefold()
+    return mode in {"reference_in_generation", "logo_reference_in_generation", "reference_in_gen"}
 
 
 def _load_font(size: int):
@@ -418,12 +427,52 @@ def composite_article_images(
     *,
     force: bool = False,
     cover_only: bool = False,
+    phone_only: bool = False,
+    emergency: bool = False,
 ) -> dict[str, Any]:
     cfg = load_tenant_logo_config(root)
-    if not uses_brand_logo_paste(cfg) and not force:
+    reference_mode = uses_logo_reference_in_generation(cfg)
+    if reference_mode and not force and not emergency and not phone_only:
+        return {
+            "status": "SKIP",
+            "reason": "logo_mode=reference_in_generation — logo baked in Grsai; use --phone-only or --emergency",
+        }
+    if not uses_brand_logo_paste(cfg) and not force and not phone_only:
         return {"status": "SKIP", "reason": "cover_mode is not brand_logo_paste"}
 
     logo_path = root / cfg["logo_rel"]
+    if phone_only:
+        if not logo_path.is_file():
+            raise FileNotFoundError(f"brand logo missing: {logo_path}")
+        phone_display = str(cfg.get("phone_display") or DEFAULT_PHONE_DISPLAY)
+        cover_path = article_dir / "cover" / "cover.png"
+        if not cover_path.is_file():
+            raise FileNotFoundError(f"missing cover.png for phone-only composite: {cover_path}")
+        phone_anchor = phone_anchor_for_logo_corner(str(cfg.get("logo_corner") or FIXED_LOGO_CORNER))
+        from PIL import Image
+
+        with Image.open(cover_path) as img:
+            base = img.convert("RGBA")
+        draw_phone_on_cover(
+            base,
+            phone_display,
+            anchor=phone_anchor,
+            margin_px=int(cfg.get("margin_px") or 20),
+        )
+        base.save(cover_path, format="PNG")
+        stamp = {
+            "status": "PASS",
+            "mode": "phone_only_post_composite",
+            "cover_phone_display": phone_display,
+            "cover_phone_post_composite": True,
+            "logo_pasted": False,
+            "logo_reference_in_generation": True,
+            "composed_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+            "images": ["cover/cover.png"],
+        }
+        stamp_path = article_dir / "cover" / "logo-composite-stamp.json"
+        stamp_path.write_text(json.dumps(stamp, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        return stamp
     if not logo_path.is_file():
         raise FileNotFoundError(f"brand logo missing: {logo_path}")
 
@@ -613,6 +662,16 @@ def main() -> int:
     ap.add_argument("--article-dir", required=True)
     ap.add_argument("--force", action="store_true", help="Composite even if cover_mode unset")
     ap.add_argument("--cover-only", action="store_true", help="Composite cover.png only")
+    ap.add_argument(
+        "--phone-only",
+        action="store_true",
+        help="Post-composite phone on cover only (reference_in_generation mode)",
+    )
+    ap.add_argument(
+        "--emergency",
+        action="store_true",
+        help="Emergency alpha-paste pipeline even when logo_mode=reference_in_generation",
+    )
     args = ap.parse_args()
     root = project_root()
     article_dir = Path(args.article_dir)
@@ -624,6 +683,8 @@ def main() -> int:
             root,
             force=bool(args.force),
             cover_only=bool(args.cover_only),
+            phone_only=bool(args.phone_only),
+            emergency=bool(args.emergency),
         )
     except (FileNotFoundError, ValueError) as exc:
         print(f"BLOCKER: {exc}", file=sys.stderr)

@@ -18,6 +18,7 @@ import argparse
 import base64
 import io
 import json
+import mimetypes
 import os
 import subprocess
 import sys
@@ -208,11 +209,63 @@ def batch_mcp_args(batch_path: Path) -> dict[str, Any]:
         expanded = expand_input_urls(input_urls)
         if expanded:
             out["input_urls"] = expanded
+
+    logo_ref_url = str(args.get("logo_reference_url") or batch.get("logo_reference_url") or "").strip()
+    if logo_ref_url:
+        if SITE_BASE_PLACEHOLDER in logo_ref_url:
+            live = resolve_public_base_from_env()
+            if not live:
+                raise GrsaiApiError(
+                    f"batch logo_reference_url contains {SITE_BASE_PLACEHOLDER} but PUBLIC_SITE_URL unset"
+                )
+            logo_ref_url = expand_site_base(logo_ref_url, live)
+        out.setdefault("input_urls", [])
+        if logo_ref_url not in out["input_urls"]:
+            out["input_urls"].append(logo_ref_url)
+
+    logo_local = str(
+        args.get("logo_reference_local")
+        or batch.get("logo_reference_local")
+        or ""
+    ).strip()
+    if logo_local:
+        out["logo_reference_local"] = logo_local
+    if args.get("logo_reference_in_generation") or batch.get("logo_reference_in_generation"):
+        out["logo_reference_in_generation"] = True
     return out
 
 
-def is_retryable_http(status: int) -> bool:
-    return status in {408, 429, 500, 502, 503, 504}
+def local_image_to_data_url(path: Path) -> str:
+    mime = mimetypes.guess_type(path.name)[0] or "image/png"
+    encoded = base64.b64encode(path.read_bytes()).decode("ascii")
+    return f"data:{mime};base64,{encoded}"
+
+
+def resolve_logo_reference_images(
+    image_input: dict[str, Any],
+    *,
+    root: Path,
+) -> list[str] | None:
+    """Full-res logo reference для Grsai urls/aroma — локальный PNG без downscale."""
+    refs: list[str] = []
+    logo_local = str(image_input.get("logo_reference_local") or "").strip()
+    if logo_local:
+        local_path = Path(logo_local)
+        if not local_path.is_absolute():
+            local_path = root / local_path
+        if local_path.is_file():
+            refs.append(local_image_to_data_url(local_path))
+
+    if refs:
+        return refs
+
+    raw_urls = image_input.get("input_urls")
+    if isinstance(raw_urls, list):
+        for raw in raw_urls:
+            url = str(raw or "").strip()
+            if url:
+                refs.append(url)
+    return refs or None
 
 
 def http_json_post(url: str, api_key: str, payload: dict[str, Any], *, timeout: int) -> dict[str, Any]:
@@ -509,9 +562,10 @@ def generate_image(
     poll_interval: int,
     max_wait: int,
     timeout: int,
+    root: Path | None = None,
 ) -> tuple[bytes, dict[str, Any]]:
-    refs = image_input.get("input_urls")
-    images = refs if isinstance(refs, list) and refs else None
+    root = root or project_root()
+    images = resolve_logo_reference_images(image_input, root=root)
     aspect_ratio = str(image_input.get("aspect_ratio") or DEFAULT_ASPECT_RATIO)
     resolution = str(image_input.get("resolution") or DEFAULT_RESOLUTION)
     prompt = str(image_input["prompt"])
@@ -558,6 +612,7 @@ def generate_image(
             }
             if images:
                 meta["input_urls_count"] = len(images)
+                meta["logo_reference_in_generation"] = bool(image_input.get("logo_reference_in_generation"))
             return image_bytes, meta
         except Grsai2KNotMetError as exc:
             # Не жечь host-retry на quality/size для non-vip.
@@ -591,6 +646,7 @@ def generate_image_with_model_fallback(
     poll_interval: int,
     max_wait: int,
     timeout: int,
+    root: Path | None = None,
 ) -> tuple[bytes, dict[str, Any]]:
     """Non-vip first; vip только если primary не дал ≥2K или hard API fail."""
     primary = primary_model()
@@ -606,6 +662,7 @@ def generate_image_with_model_fallback(
             poll_interval=poll_interval,
             max_wait=max_wait,
             timeout=timeout,
+            root=root,
         )
         meta["model_primary"] = primary
         meta["model_succeeded"] = primary
@@ -638,6 +695,7 @@ def generate_image_with_model_fallback(
             poll_interval=poll_interval,
             max_wait=max_wait,
             timeout=timeout,
+            root=root,
         )
         meta["model_primary"] = primary
         meta["model_succeeded"] = vip_model
@@ -743,6 +801,7 @@ def main() -> int:
             "poll_interval": poll_interval,
             "max_wait": max_wait,
             "timeout": timeout,
+            "root": root,
         }
         if tier == "vip":
             vip = vip_fallback_model(model)

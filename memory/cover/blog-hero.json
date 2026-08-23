@@ -1,17 +1,18 @@
 {
   "hero_id": "dobry-dom-brand",
-  "status": "brand_logo_paste",
+  "status": "logo_reference_in_generation",
   "name_ru": "Добрый дом",
-  "cover_mode": "brand_logo_paste",
+  "cover_mode": "reference_in_generation",
+  "logo_mode": "reference_in_generation",
   "reference_images": [
     "memory/cover/assets/brand/logo-dobry-dom.png"
   ],
   "reference_image": "memory/cover/assets/brand/logo-dobry-dom.png",
   "reference_url_hosted": "wp-content/uploads/2026/03/cropped-img_7143.png",
-  "reference_url_source": "cropped-img_7143.png — alpha PNG only, never redraw, never white/gray plate behind",
+  "reference_url_source": "cropped-img_7143.png — official alpha PNG for Grsai urls/aroma reference",
   "visual_notes": "memory/cover/visual-notes-dobry-dom.json",
   "logo_composite": {
-    "mode": "paste_png_alpha",
+    "mode": "emergency_paste_only",
     "logo_asset": "memory/cover/assets/brand/logo-dobry-dom.png",
     "canonical_sha256": "72e53ba966f0626cc6eaad0792e68b57c8da0ccd9265d6822fbc173fdb48b941",
     "forbid_ai_drawn_logo": true,
@@ -37,12 +38,12 @@
   },
   "visual_lock": {
     "person": "NO Shakin/rieltor identity — Russian guests fitting check-in topic only",
-    "wow_poster": "Magazine cover poster: bold readable Russian DISPLAY type hook + one sharp scene line. NOT timid system font; NOT label wall; NOT empty stock; NOT WordPress screenshot",
-    "forbid_wordpress_ui": "NEVER WordPress, Gutenberg, Add title, Publish, Dashboard, wp-admin, block editor, theme chrome, cookie bars in generated art",
-    "no_overlap": "Headline, Wordstat stickers, meme, cat, phone, people, logo pad NEVER overlap — separate composition zones",
-    "logo_lockup": "PASTE official PNG 1:1 alpha overlay — COVER always ONE small logo TOP-RIGHT; INLINES logo on 2–3 panels only (same corner pad); reserved organic scene in generation (NO white box/card/plate); NEVER AI-drawn logo; NEVER 2+ logos per frame",
-    "cover_phone": "+7 (993) 574-83-22 post-composite bottom-left on cover only — NEVER in logo pad; NEVER in generation"
+    "wow_poster": "Magazine cover poster: bold readable Russian DISPLAY type hook + one sharp scene line",
+    "forbid_wordpress_ui": "NEVER WordPress, Gutenberg, wp-admin, block editor, theme chrome, cookie bars in generated art",
+    "no_overlap": "Headline, Wordstat stickers, meme, cat, phone, people, logo NEVER overlap — separate zones",
+    "logo_lockup": "Grsai reference urls/aroma — integrate official PNG small TOP-RIGHT in generation; transparent alpha; NO white/gray plate; cover always + 2–3 inline; NEVER 2+ logos per frame",
+    "cover_phone": "+7 (993) 574-83-22 post-composite bottom-left on cover only — NEVER in generation"
   },
   "cover_canon": "memory/cover/cover-canon.json",
-  "host_face_todo": "skip_human_host — brand logo paste mode"
+  "host_face_todo": "skip_human_host — logo reference in generation mode"
 }

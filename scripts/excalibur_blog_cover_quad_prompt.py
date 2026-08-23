@@ -11,7 +11,11 @@ import sys
 from pathlib import Path
 from urllib.parse import urlparse
 
-from excalibur_blog_identity_real import pick_identity_reference
+from excalibur_blog_identity_real import (
+    pick_identity_reference,
+    resolve_logo_reference_for_api,
+    tenant_uses_logo_reference_in_generation,
+)
 from excalibur_blog_image_provider import resolve_image_flow
 from excalibur_blog_quad_slots import (
     CANVAS_1_SLOTS,
@@ -83,6 +87,13 @@ LOGO_DRAW_HARD_BAN = (
 LOGO_WHITE_PLATE_BAN = (
     "NO white/gray card/plate/tablichka under TOP-RIGHT pad; factory alpha PNG after split only"
 )
+LOGO_REFERENCE_INTEGRATION = (
+    "Reference logo: exact brand mark small top-right, transparent alpha, NO white/gray plate/card"
+)
+LOGO_REFERENCE_BAN = (
+    "NO second logo copy; NO logo comparison table; NO dashed logo frame; "
+    "NO gold house-with-heart logo; NO УЮТНЫЕ КВАРТИРЫ В АРЕНДУ subtitle in art"
+)
 NO_OVERLAP_RULE = (
     "Separate zones — headline, Wordstat stickers, meme, cat bottom-left, people, "
     "TOP-RIGHT empty logo pad NEVER overlap each other; phone NOT in generation"
@@ -142,7 +153,13 @@ def compact(value: object, limit: int) -> str:
     return text[: limit - 1].rstrip() + "…"
 
 
-def inline_panel_prompt(slot: dict, types_catalog: dict, *, logo_paste: bool = False) -> str:
+def inline_panel_prompt(
+    slot: dict,
+    types_catalog: dict,
+    *,
+    logo_paste: bool = False,
+    logo_reference: bool = False,
+) -> str:
     type_id = slot.get("visual_type") or "fact_card"
     type_def = (types_catalog.get("types") or {}).get(type_id) or {}
     label = type_def.get("label_ru", type_id)
@@ -159,8 +176,12 @@ def inline_panel_prompt(slot: dict, types_catalog: dict, *, logo_paste: bool = F
             f"bottom-left or bottom-right corner only — NEVER top-right pad; "
             f"from {MEME_CATALOG_REL}; NO co-host human; NO presenter)."
         )
-    if logo_paste:
+    if logo_reference and logo_paste:
+        base += " Logo ref top-right, no plate."
+    elif logo_paste:
         base += " TOP-RIGHT empty pad; no drawn logo; no white/gray plate."
+    elif logo_reference:
+        base += " TOP-RIGHT clean; NO visible brand logo on this panel; no white/gray plate."
     else:
         base += " TOP-RIGHT clean; no logo; no white/gray plate."
     return base
@@ -398,6 +419,8 @@ def load_tenant_cover_config(root: Path) -> dict:
 
 
 def tenant_uses_brand_logo_paste(root: Path, style: dict | None = None) -> bool:
+    if tenant_uses_logo_reference_in_generation(root):
+        return False
     tenant = load_tenant_cover_config(root)
     mode = str(tenant.get("cover_mode") or "").strip().casefold()
     if mode in {"brand_logo_paste", "brand_logo_composite", "paste_png"}:
@@ -452,6 +475,7 @@ def build_prompt(
     canvas_slots: tuple[str, ...] | None = None,
     has_cover: bool = True,
     brand_logo_paste: bool = False,
+    logo_reference_in_generation: bool = False,
     cover_phone_cta: str = DEFAULT_COVER_PHONE_CTA,
     inline_logo_keys: set[str] | None = None,
 ) -> str:
@@ -484,7 +508,12 @@ def build_prompt(
     inline_logo_keys = inline_logo_keys or set()
 
     def inline_prompt_for(key: str) -> str:
-        return inline_panel_prompt(slot(key), types_catalog, logo_paste=(key in inline_logo_keys))
+        return inline_panel_prompt(
+            slot(key),
+            types_catalog,
+            logo_paste=(key in inline_logo_keys),
+            logo_reference=logo_reference_in_generation,
+        )
 
     if has_cover and "cover" in canvas_slots:
         cover = slot("cover")
@@ -505,7 +534,18 @@ def build_prompt(
             if cover_sticky
             else ""
         )
-        if brand_logo_paste:
+        if logo_reference_in_generation:
+            emotion_clause = f"Expr: {cover_emotion}." if cover_emotion else ""
+            panel_lines.append(
+                f"TL COVER WOW POSTER (magazine, not stock): «{cover_hook_text}» bold DISPLAY Cyrillic readable, {highlight_rule}; "
+                f"sticky «{cover_sticky or 'Залог вернут?'}»; scene props; natural daylight clean white balance, "
+                f"NO yellow/amber cast, NO muddy skin, NO winter/snow. "
+                f"NO phone in gen. {LOGO_REFERENCE_INTEGRATION}. "
+                f"{emotion_clause} soft daylight crisp sharp; gold tape; 1-3 Wordstat; "
+                f"{compact(cover_scene, COVER_SCENE_HINT_COMPACT)}; cat bottom-left ≤12%; "
+                f"{BOARD_STATIONERY}; #FFF"
+            )
+        elif brand_logo_paste:
             emotion_clause = f"Expr: {cover_emotion}." if cover_emotion else ""
             panel_lines.append(
                 f"TL COVER WOW POSTER (magazine, not stock): «{cover_hook_text}» bold DISPLAY Cyrillic readable, {highlight_rule}; "
@@ -536,12 +576,24 @@ def build_prompt(
         for label, key in zip(quadrant_labels, list(canvas_slots)[:4]):
             panel_lines.append(f"{label} inline: {inline_prompt_for(key)}")
 
-    ban_line = (
-        "Ban: dark/low-key; inventory props; celebrity memes; EXCALIBUR stamp; chubby host; "
-        f"stock/generated man co-host on inline; large meme person on inline; "
-        f"{INLINE_BAN_EXTRA}; {LOGO_DRAW_HARD_BAN}; {LOGO_WHITE_PLATE_BAN}."
-    )
-    if has_cover and brand_logo_paste:
+    if logo_reference_in_generation:
+        ban_line = (
+            "Ban: dark/low-key; inventory props; celebrity memes; EXCALIBUR stamp; chubby host; "
+            f"stock/generated man co-host on inline; large meme person on inline; "
+            f"{INLINE_BAN_EXTRA}; {LOGO_REFERENCE_BAN}; NO white/gray plate under logo."
+        )
+    else:
+        ban_line = (
+            "Ban: dark/low-key; inventory props; celebrity memes; EXCALIBUR stamp; chubby host; "
+            f"stock/generated man co-host on inline; large meme person on inline; "
+            f"{INLINE_BAN_EXTRA}; {LOGO_DRAW_HARD_BAN}; {LOGO_WHITE_PLATE_BAN}."
+        )
+    if has_cover and logo_reference_in_generation:
+        reference_line = (
+            f"Cover TL: logo from reference image only — {LOGO_REFERENCE_INTEGRATION}; "
+            "NO phone in generation (factory adds post-composite)."
+        )
+    elif has_cover and brand_logo_paste:
         reference_line = (
             "Cover TL: NO host; NO logo/phone in gen; TOP-RIGHT empty pad for factory PNG."
         )
@@ -549,6 +601,15 @@ def build_prompt(
         reference_line = (
             f"Cover TL only: i2i face-studio-2026-06-23 ({BODY_LOCK}); {I2I_EXPRESSION_LOCK}; "
             "invent scene; no AI hero-ref."
+        )
+    elif logo_reference_in_generation:
+        reference_line = (
+            f"Inlines: logo from reference on 2–3 panels only (inline_1/3/7 default); "
+            f"{LOGO_REFERENCE_INTEGRATION}; other panels NO visible logo; "
+            f"{LOGO_REFERENCE_BAN}; "
+            f"people-memes only as tiny stickers (≤{int(MEME_STICKER_INLINE_MAX_SHARE * 100)}% frame, "
+            f"never top-right pad) from real templates in {MEME_CATALOG_REL}; "
+            "mix sketch/table/chart/scheme collage — not text walls."
         )
     else:
         reference_line = (
@@ -620,6 +681,7 @@ def main() -> int:
     cat_hero = style_is_situational_cat_hero(style)
     local_reference = str(style.get("local_reference") or "").strip()
     brand_logo_paste = tenant_uses_brand_logo_paste(root, style)
+    logo_reference_in_generation = tenant_uses_logo_reference_in_generation(root)
     cover_phone_cta = cover_phone_cta_for_manifest(manifest, root)
 
     inline_count = inline_count_from_manifest(manifest)
@@ -635,7 +697,7 @@ def main() -> int:
         canvas_slots = tuple(spec["slots"])
         identity_spec: dict[str, str] = {}
         identity_rel = ""
-        if has_cover and not brand_logo_paste:
+        if has_cover and not brand_logo_paste and not logo_reference_in_generation:
             topic_id = str(manifest.get("topic_id") or "").strip()
             slug = str(manifest.get("slug") or article_dir.name).strip()
             identity_spec = pick_identity_reference(topic_id, slug)
@@ -670,6 +732,7 @@ def main() -> int:
             canvas_slots=canvas_slots,
             has_cover=has_cover,
             brand_logo_paste=brand_logo_paste,
+            logo_reference_in_generation=logo_reference_in_generation,
             cover_phone_cta=cover_phone_cta,
             inline_logo_keys=inline_logo_keys,
         )
@@ -704,20 +767,39 @@ def main() -> int:
                 print(f"  - {err}", file=sys.stderr)
             return 1
 
+        logo_ref_spec = resolve_logo_reference_for_api(root) if logo_reference_in_generation else {}
+        logo_ref_url = ""
+        if logo_reference_in_generation:
+            raw_logo_url = str(logo_ref_spec.get("url") or "").strip()
+            if raw_logo_url:
+                if validate_reference_url(raw_logo_url):
+                    logo_ref_url = git_safe_reference_url(raw_logo_url)
+                else:
+                    logo_ref_url = raw_logo_url if raw_logo_url.startswith("http") else ""
+
         api_input: dict[str, object] = {
             "prompt": prompt,
             "aspect_ratio": "16:9",
             "resolution": MCP_RESOLUTION,
         }
-        if batch_ref_url and not brand_logo_paste:
+        if batch_ref_url and not brand_logo_paste and not logo_reference_in_generation:
             api_input["input_urls"] = [batch_ref_url]
+        if logo_reference_in_generation:
+            api_input["logo_reference_local"] = str(logo_ref_spec.get("local") or "")
+            api_input["logo_reference_url"] = logo_ref_url
+            api_input["logo_reference_in_generation"] = True
+            if logo_ref_url:
+                api_input["input_urls"] = [logo_ref_url]
 
         image_flow = resolve_image_flow(root)
         batch = {
             "pipeline": manifest.get("pipeline") or "quad_canvas_2x_image_api_longform",
             "canvas_index": spec["index"],
-            "identity_reference_local": identity_rel if has_cover and not brand_logo_paste else "",
-            "identity_reference_id": identity_spec.get("id", "") if has_cover and not brand_logo_paste else "",
+            "identity_reference_local": identity_rel if has_cover and not brand_logo_paste and not logo_reference_in_generation else "",
+            "identity_reference_id": identity_spec.get("id", "") if has_cover and not brand_logo_paste and not logo_reference_in_generation else "",
+            "logo_reference_local": str(logo_ref_spec.get("local") or "") if logo_reference_in_generation else "",
+            "logo_reference_url": logo_ref_url if logo_reference_in_generation else "",
+            "logo_reference_in_generation": bool(logo_reference_in_generation),
             "reference_url_hosted": batch_ref_url,
             "output_canvas": spec["canvas_file"],
             "result_path": spec["result_file"],

@@ -10,7 +10,7 @@ from pathlib import Path
 
 
 # Slim gate (2026-08): beauty = agent judgment; brand lock = logo + phone + no plate + no WP UI.
-BRAND_LOGO_CHECKS = (
+BRAND_LOGO_PASTE_CHECKS = (
     "logo_composite_stamp_pass",
     "cover_logo_pasted",
     "inline_logo_count_2_3",
@@ -19,6 +19,16 @@ BRAND_LOGO_CHECKS = (
     "forbid_ai_drawn_logo_cover",
     "forbid_wordpress_ui_in_art",
     "no_logo_plate_cover",
+)
+
+LOGO_REFERENCE_CHECKS = (
+    "logo_reference_in_generation",
+    "cover_phone_993_post_composite",
+    "forbid_922_phone",
+    "forbid_ai_drawn_logo_cover",
+    "forbid_wordpress_ui_in_art",
+    "no_logo_plate_cover",
+    "inline_logo_count_2_3",
 )
 
 HOST_IDENTITY_CHECKS = (
@@ -67,8 +77,16 @@ def load_tenant_cover_mode(root: Path) -> dict:
         return {}
     channels = tenant.get("cta_channels") or {}
     mode = str(tenant.get("cover_mode") or "").strip().casefold()
+    logo_mode = str(tenant.get("logo_mode") or tenant.get("cover_mode") or "").strip().casefold()
+    logo_reference = logo_mode in {
+        "reference_in_generation",
+        "logo_reference_in_generation",
+        "reference_in_gen",
+    }
     return {
-        "brand_logo_paste": mode in {"brand_logo_paste", "brand_logo_composite", "paste_png"},
+        "brand_logo_paste": mode in {"brand_logo_paste", "brand_logo_composite", "paste_png"}
+        and not logo_reference,
+        "logo_reference_in_generation": logo_reference,
         "phone_display": str(channels.get("phone_display") or "+7 (993) 574-83-22").strip(),
     }
 
@@ -78,6 +96,7 @@ def validate_cover_qa(article_dir: Path, root: Path) -> dict:
     qa_path = article_dir / "cover" / "cover_qa.json"
     tenant_cover = load_tenant_cover_mode(root)
     brand_logo_paste = bool(tenant_cover.get("brand_logo_paste"))
+    logo_reference = bool(tenant_cover.get("logo_reference_in_generation"))
 
     from excalibur_blog_identity_real import missing_identity_files
 
@@ -107,7 +126,9 @@ def validate_cover_qa(article_dir: Path, root: Path) -> dict:
     checks = qa.get("checks") or {}
     required = list(COMMON_CHECKS)
     if brand_logo_paste:
-        required.extend(BRAND_LOGO_CHECKS)
+        required.extend(BRAND_LOGO_PASTE_CHECKS)
+    elif logo_reference:
+        required.extend(LOGO_REFERENCE_CHECKS)
     else:
         required.extend(HOST_IDENTITY_CHECKS)
     for key in required:
@@ -174,6 +195,21 @@ def validate_cover_qa(article_dir: Path, root: Path) -> dict:
             errors.extend(validate_article_logo_gates_slim(article_dir, root))
         except ImportError:
             errors.append("excalibur_blog_drawn_logo_gate.py missing — logo paste QA unavailable")
+    elif logo_reference:
+        stamp_path = article_dir / "cover" / "logo-composite-stamp.json"
+        if stamp_path.is_file():
+            try:
+                stamp = load_json(stamp_path)
+                if str(stamp.get("status") or "").upper() != "PASS":
+                    errors.append("logo-composite-stamp.json status != PASS (phone-only expected)")
+            except json.JSONDecodeError:
+                errors.append("logo-composite-stamp.json invalid JSON")
+        try:
+            from excalibur_blog_drawn_logo_gate import validate_article_logo_gates_reference_mode
+
+            errors.extend(validate_article_logo_gates_reference_mode(article_dir, root))
+        except ImportError:
+            errors.append("excalibur_blog_drawn_logo_gate.py missing — logo reference QA unavailable")
 
     status = "PASS" if not errors else "FAIL"
     return {"status": status, "errors": errors}
