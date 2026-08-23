@@ -113,27 +113,29 @@ def logo_reference_url() -> str:
     return f"{PUBLIC}/{LOGO_CANONICAL_URL_SUFFIX}"
 
 
-def remote_filenames(slug: str) -> tuple[str, str]:
-    cover = f"{slug}-cover-{VERSION_SUFFIX}.png"
-    inline = f"{slug}-inline-{{n:02d}}-{VERSION_SUFFIX}.png"
+def remote_filenames(slug: str, *, version_suffix: str | None = None) -> tuple[str, str]:
+    vs = version_suffix or VERSION_SUFFIX
+    cover = f"{slug}-cover-{vs}.png"
+    inline = f"{slug}-inline-{{n:02d}}-{vs}.png"
     return cover, inline
 
 
-def dzen_filenames(slug: str) -> tuple[str, str]:
-    full, _ = remote_filenames(slug)
+def dzen_filenames(slug: str, *, version_suffix: str | None = None) -> tuple[str, str]:
+    full, _ = remote_filenames(slug, version_suffix=version_suffix)
     stem = full[:-4]
     return full, f"{stem}-1024x576.png"
 
 
-def patch_spec_for_v5(spec: dict) -> dict:
+def patch_spec_for_v5(spec: dict, *, version_suffix: str | None = None) -> dict:
     slug = spec["slug"]
-    cover_remote, inline_remote = remote_filenames(slug)
+    vs = version_suffix or VERSION_SUFFIX
+    cover_remote, inline_remote = remote_filenames(slug, version_suffix=vs)
     out = dict(spec)
     out["old_cover_remote"] = spec.get("cover_remote", "")
     out["old_inline_remote"] = spec.get("inline_remote", "")
     out["cover_remote"] = cover_remote
     out["inline_remote"] = inline_remote
-    out["version_suffix"] = VERSION_SUFFIX
+    out["version_suffix"] = vs
     return out
 
 
@@ -360,12 +362,12 @@ def pipeline_v5(adir: Path, *, logo_url: str) -> dict[str, Any]:
     return meta
 
 
-def upload_all(spec: dict, adir: Path) -> dict[str, str]:
+def upload_all(spec: dict, adir: Path, *, version_suffix: str | None = None) -> dict[str, str]:
     from excalibur_blog_live_plate_remove_relogo import upload_sftp
 
     urls_list = upload_sftp(spec, adir / "cover")
     slug = spec["slug"]
-    full_fn, dzen_fn = dzen_filenames(slug)
+    full_fn, dzen_fn = dzen_filenames(slug, version_suffix=version_suffix)
     cover_bytes = (adir / "cover" / "cover.png").read_bytes()
     dzen_bytes = make_dzen_thumb(cover_bytes)
 
@@ -387,18 +389,17 @@ def upload_all(spec: dict, adir: Path) -> dict[str, str]:
     return urls
 
 
-def build_publish_php(spec: dict, old_fragments: list[str]) -> str:
+def build_publish_php(spec: dict, *, version_suffix: str | None = None) -> str:
     slug = spec["slug"]
-    full_fn, dzen_fn = dzen_filenames(slug)
+    full_fn, dzen_fn = dzen_filenames(slug, version_suffix=version_suffix)
+    inlines = [spec["inline_remote"].format(n=n) for n in range(1, 8)]
     payload = {
         "slug": slug,
         "upload_subdir": UPLOAD_SUBDIR,
         "full_filename": full_fn,
         "dzen_filename": dzen_fn,
         "cover_remote": spec["cover_remote"],
-        "inline_remote": spec["inline_remote"],
-        "inline_count": 7,
-        "old_url_fragments": sorted(set(old_fragments)),
+        "inlines": inlines,
     }
     b64 = base64.b64encode(json.dumps(payload, ensure_ascii=False).encode("utf-8")).decode("ascii")
     return f"""<?php
@@ -413,68 +414,60 @@ if (!$post instanceof WP_Post) {{
 }}
 $post_id = (int) $post->ID;
 $subdir = (string) ($p['upload_subdir'] ?? '2026/08');
-$full_fn = (string) ($p['full_filename'] ?? '');
+$cover = (string) ($p['cover_remote'] ?? '');
 $dzen_fn = (string) ($p['dzen_filename'] ?? '');
+$inlines = $p['inlines'] ?? [];
 $upload = wp_upload_dir();
-$full_path = $upload['basedir'] . '/' . $subdir . '/' . $full_fn;
-$dzen_path = $upload['basedir'] . '/' . $subdir . '/' . $dzen_fn;
-if (!is_file($full_path)) {{
-    echo 'ERR missing_cover_file' . PHP_EOL;
-    exit(1);
-}}
-$attachment = [
-    'post_mime_type' => 'image/png',
-    'post_title' => sanitize_file_name(preg_replace('/\\.png$/i', '', $full_fn)),
-    'post_content' => '',
-    'post_status' => 'inherit',
-];
-$att_id = (int) wp_insert_attachment($attachment, $full_path, $post_id);
-if ($att_id <= 0) {{
-    echo 'ERR attachment_failed' . PHP_EOL;
-    exit(1);
-}}
-$meta = wp_generate_attachment_metadata($att_id, $full_path);
-wp_update_attachment_metadata($att_id, $meta);
-set_post_thumbnail($post_id, $att_id);
-$full_url = $upload['baseurl'] . '/' . $subdir . '/' . $full_fn;
-$dzen_url = is_file($dzen_path) ? ($upload['baseurl'] . '/' . $subdir . '/' . $dzen_fn) : $full_url;
+$base = $upload['baseurl'] . '/' . $subdir . '/';
+$full_path = $upload['basedir'] . '/' . $subdir . '/' . $cover;
 $content = (string) get_post_field('post_content', $post_id);
-$updated = $content;
-foreach (($p['old_url_fragments'] ?? []) as $frag) {{
-    $frag = (string) $frag;
-    if ($frag === '') continue;
-    $updated = preg_replace(
-        '#https?://[^"\\'\\s>]+' . preg_quote($frag, '#') . '(?:-1024x576|-\\d+x\\d+)?\\.png#i',
-        $full_url,
-        $updated
-    ) ?? $updated;
-}}
-$inline_pat = (string) ($p['inline_remote'] ?? '');
-for ($n = 1; $n <= (int) ($p['inline_count'] ?? 7); $n++) {{
-    $remote = str_replace('{{n:02d}}', sprintf('%02d', $n), $inline_pat);
-    $new_url = $upload['baseurl'] . '/' . $subdir . '/' . $remote;
-    $updated = preg_replace(
-        '#https?://[^"\\'\\s>]+' . preg_quote($remote, '#') . '(?:-\\d+x\\d+)?\\.png#i',
-        $new_url,
-        $updated
-    ) ?? $updated;
-    $updated = preg_replace(
-        '#uploads/' . preg_quote($subdir, '#') . '/[^"\\'\\s>]*inline-' . sprintf('%02d', $n) . '[^"\\'\\s>]*\\.png#i',
-        'uploads/' . $subdir . '/' . $remote,
-        $updated
-    ) ?? $updated;
-}}
+$idx = 0;
+$content = preg_replace_callback(
+    '/(<img[^>]+src=")([^"]+)("[^>]*>)/i',
+    function ($m) use ($base, $inlines, &$idx) {{
+        $idx++;
+        if ($idx > count($inlines)) {{
+            return $m[0];
+        }}
+        return $m[1] . $base . $inlines[$idx - 1] . $m[3];
+    }},
+    $content
+);
 wp_update_post([
     'ID' => $post_id,
-    'post_content' => wp_slash($updated),
+    'post_content' => wp_slash($content),
     'post_modified' => current_time('mysql'),
     'post_modified_gmt' => gmdate('Y-m-d H:i:s'),
 ]);
+$att_id = 0;
+global $wpdb;
+$like = '%/' . $cover;
+$att_id = (int) $wpdb->get_var($wpdb->prepare(
+    "SELECT ID FROM {{$wpdb->posts}} WHERE post_type='attachment' AND guid LIKE %s ORDER BY ID DESC LIMIT 1",
+    $like
+));
+if ($att_id <= 0 && is_file($full_path)) {{
+    $attachment = [
+        'post_mime_type' => 'image/png',
+        'post_title' => sanitize_file_name(preg_replace('/\\.png$/i', '', $cover)),
+        'post_content' => '',
+        'post_status' => 'inherit',
+    ];
+    $att_id = (int) wp_insert_attachment($attachment, $full_path, $post_id);
+    $meta = wp_generate_attachment_metadata($att_id, $full_path);
+    wp_update_attachment_metadata($att_id, $meta);
+}}
+if ($att_id > 0) {{
+    set_post_thumbnail($post_id, $att_id);
+}}
+$full_url = $base . $cover;
+$dzen_url = $base . $dzen_fn;
 echo 'OK publish_v5 post=' . $post_id . ' slug=' . $slug . PHP_EOL;
 echo 'OK permalink=' . get_permalink($post_id) . PHP_EOL;
 echo 'OK featured_image=' . $att_id . PHP_EOL;
 echo 'OK cover_url=' . $full_url . PHP_EOL;
 echo 'OK dzen_url=' . $dzen_url . PHP_EOL;
+echo 'OK inline_imgs_mapped=' . $idx . PHP_EOL;
 echo 'OK post_modified_gmt=' . get_post_field('post_modified_gmt', $post_id) . PHP_EOL;
 """
 
@@ -497,14 +490,13 @@ def collect_old_fragments(slug: str) -> list[str]:
     return sorted(set(frags))
 
 
-def publish_wp(spec: dict) -> dict[str, str]:
+def publish_wp(spec: dict, *, version_suffix: str | None = None) -> dict[str, str]:
     env = load_env(ROOT)
     runtime_env = dict(env)
     runtime_env["FTP_TRANSPORT"] = "sftp"
-    old_frags = collect_old_fragments(spec["slug"])
     php_out = publish_via_sftp(
         runtime_env,
-        build_publish_php(spec, old_frags),
+        build_publish_php(spec, version_suffix=version_suffix),
         PUBLIC,
         bootstrap_name="excalibur-cover-regen-v5-once.php",
     )
@@ -530,11 +522,14 @@ def refresh_intermediates(spec: dict) -> int:
 
 
 def main() -> int:
+    global VERSION_SUFFIX
     ap = argparse.ArgumentParser()
     ap.add_argument("--slug", help="single slug")
+    ap.add_argument("--version-suffix", default=VERSION_SUFFIX, help="filename suffix, e.g. regen-v6")
     ap.add_argument("--bootstrap-only", action="store_true")
     ap.add_argument("--upload-only", action="store_true")
     args = ap.parse_args()
+    VERSION_SUFFIX = args.version_suffix
 
     slugs = [args.slug] if args.slug else list(REGEN_V5_SLUGS)
     if not PUBLIC:
@@ -563,7 +558,7 @@ def main() -> int:
     for slug in slugs:
         print(f"\n{'='*60}\n=== {slug} ===", flush=True)
         spec = build_spec_from_wp(slug)
-        spec = patch_spec_for_v5(spec)
+        spec = patch_spec_for_v5(spec, version_suffix=VERSION_SUFFIX)
         adir = article_dir(spec)
         article_report: dict[str, Any] = {"spec": spec}
 
@@ -573,9 +568,9 @@ def main() -> int:
                 continue
             article_report["pipeline"] = pipeline_v5(adir, logo_url=logo_url)
 
-        urls = upload_all(spec, adir)
+        urls = upload_all(spec, adir, version_suffix=VERSION_SUFFIX)
         article_report["uploaded_urls"] = urls
-        article_report["publish"] = publish_wp(spec)
+        article_report["publish"] = publish_wp(spec, version_suffix=VERSION_SUFFIX)
         article_report["intermediates_updated"] = refresh_intermediates(spec)
         article_report["permalink"] = article_report["publish"].get("permalink", f"{PUBLIC}/blog/{slug}/")
         article_report["cover_url"] = article_report["publish"].get("cover_url", urls.get(spec["cover_remote"], ""))
