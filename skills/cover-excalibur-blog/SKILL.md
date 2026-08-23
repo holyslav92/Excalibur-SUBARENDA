@@ -23,7 +23,7 @@ description: "④a Cover: 2× quad Grsai 2K, meme energy, max-2 gen + paste-and-
 | Rule | Value |
 |------|-------|
 | Provider | **Grsai** (see `shared/grsai-gpt-image-api-contract.md`) |
-| VIP retry | **1** per sheet if primary API fails |
+| VIP retry | **1** per sheet **only** if non-vip cannot deliver ≥2K (long side &lt;2048) or hard API fail |
 | Max attempts | **2** per canvas → then **pad-clear + factory paste + ship** (no loop) |
 | Prose/scene | Derouter Terra `--role cover-scene` only |
 
@@ -100,7 +100,7 @@ If gen attempt 2 still has drawn lockup in cover pad → pad-clear → composite
 
 - COVER MOTIF BLOCKER (14-day collision)
 - DEROUTER COVER-SCENE BLOCKER
-- GRSAI API BLOCKER (after primary + 1 vip)
+- GRSAI API BLOCKER (after non-vip + 1 vip when 2K/API exhausted)
 - IMAGE MODEL BLOCKER — Flux/Seedream/nano_banana/z-image
 
 ## QA

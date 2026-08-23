@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from excalibur_blog_grsai_gpt_image2_api import (  # noqa: E402
+    DEFAULT_RESOLUTION,
     FALLBACK_BASE,
     PRIMARY_BASE,
     GrsaiApiError,
@@ -21,8 +22,8 @@ from excalibur_blog_grsai_gpt_image2_api import (  # noqa: E402
     create_task,
     default_model,
     download_image,
+    ensure_2k_canvas,
     poll_result,
-    upscale_canvas_if_needed,
 )
 
 
@@ -36,6 +37,7 @@ def probe_one(*, base: str, api_key: str, model: str, timeout: int, max_wait: in
             prompt="tiny probe: bright collage, empty top-right pad, no logo, no text",
             aspect_ratio="16:9",
             quality="high",
+            resolution=DEFAULT_RESOLUTION,
             images=None,
             timeout=timeout,
         )
@@ -48,7 +50,7 @@ def probe_one(*, base: str, api_key: str, model: str, timeout: int, max_wait: in
             timeout=timeout,
         )
         raw = download_image(image_url, timeout=timeout)
-        image_bytes = upscale_canvas_if_needed(raw)
+        image_bytes, size_meta = ensure_2k_canvas(raw, model=model)
         return {
             "base": base,
             "host": host,
@@ -56,6 +58,8 @@ def probe_one(*, base: str, api_key: str, model: str, timeout: int, max_wait: in
             "ok": True,
             "task_id": task_id,
             "bytes": len(image_bytes),
+            "native_long_side": size_meta.get("native_long_side"),
+            "delivery": size_meta.get("delivery"),
             "error": "",
         }
     except GrsaiApiError as exc:

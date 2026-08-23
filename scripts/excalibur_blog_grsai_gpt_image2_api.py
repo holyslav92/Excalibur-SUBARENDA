@@ -2,10 +2,12 @@
 """Генерация quad-canvas через Grsai draw API (primary → vip fallback).
 
 Читает cover/quad-mcp-batch.json, POST /v1/draw/completions + poll /v1/draw/result,
-апскейл до 2048×1152, пишет cover/quad-mcp-result.json для quad_apply.
+проверяет ≥2K (длинная сторона ≥2048), пишет cover/quad-mcp-result.json для quad_apply.
 
-Модель: всегда primary tier первой; ровно одна vip-попытка только если primary
-упал (API error, failed/violation, timeout). Никогда не стартовать с vip.
+Модель: всегда non-vip primary tier первой; ровно одна vip-попытка на sheet если:
+  1) primary не может отдать ≥2K (отказ API size/aspect, undersized, fail 2K request);
+  2) secondary — hard API fail после host retries.
+Никогда не стартовать с vip; не жечь retry non-vip на quality/size.
 
 Auth: GRSAI_API_KEY только из env (Cloud Secrets). Ключ не печатать и не коммитить.
 """
@@ -39,8 +41,20 @@ DEFAULT_BASE_ENV = "GRSAI_API_BASE"
 PRIMARY_BASE = "https://grsaiapi.com"
 FALLBACK_BASE = "https://grsai.dakka.com.cn"
 TARGET_CANVAS_SIZE = (2048, 1152)
+MIN_LONG_SIDE_2K = 2048
+# Апскейл только если native уже «2K-class» (близко к 2K); ~1672×941 → vip, не upscale.
+NATIVE_2K_CLASS_MIN_LONG_SIDE = 1920
 DEFAULT_ASPECT_RATIO = "16:9"
+DEFAULT_RESOLUTION = "2K"
 DEFAULT_QUALITY = "high"
+# Grsai aspectRatio → native long side при resolution=2K (документировано в contract).
+ASPECT_RATIO_2K_LONG_SIDE: dict[str, int] = {
+    "16:9": 2048,
+    "9:16": 2048,
+    "1:1": 2048,
+    "4:3": 2048,
+    "3:4": 2048,
+}
 DEFAULT_POLL_INTERVAL = 5
 DEFAULT_MAX_WAIT = 900
 DEFAULT_TIMEOUT = 120
@@ -69,6 +83,14 @@ class GrsaiRetryable(GrsaiApiError):
 
     def __init__(self, message: str, *, status: int | None = None) -> None:
         self.status = status
+        super().__init__(message)
+
+
+class Grsai2KNotMetError(GrsaiApiError):
+    """Non-vip не отдал ≥2K — немедленный vip без retry primary на quality/size."""
+
+    def __init__(self, message: str, *, native_size: tuple[int, int] | None = None) -> None:
+        self.native_size = native_size
         super().__init__(message)
 
 
@@ -240,12 +262,43 @@ def extract_task_id(parsed: dict[str, Any]) -> str:
     return task_id
 
 
+def is_2k_request_rejected(exc: BaseException) -> bool:
+    """True если API отклонил size/aspect/resolution на non-vip."""
+    msg = str(exc).casefold()
+    needles = (
+        "size",
+        "aspect",
+        "resolution",
+        "dimension",
+        "2k",
+        "2048",
+        "invalid parameter",
+        "not support",
+        "unsupported",
+    )
+    return any(n in msg for n in needles)
+
+
+def image_dimensions(image_bytes: bytes) -> tuple[int, int]:
+    try:
+        from PIL import Image
+    except ImportError as exc:
+        raise GrsaiApiError("Pillow required for Grsai dimension check") from exc
+    with Image.open(io.BytesIO(image_bytes)) as img:
+        return img.size
+
+
+def long_side(width: int, height: int) -> int:
+    return max(width, height)
+
+
 def create_draw_payload(
     *,
     prompt: str,
     model: str,
     aspect_ratio: str,
     quality: str,
+    resolution: str = DEFAULT_RESOLUTION,
     images: list[str] | None = None,
 ) -> dict[str, Any]:
     payload: dict[str, Any] = {
@@ -255,10 +308,12 @@ def create_draw_payload(
         "webHook": "-1",
     }
     if is_vip_model(model):
-        # vip tier: pixel size only (aspectRatio rejected by API)
+        # vip tier: native pixel size 2048×1152 (aspectRatio rejected by API)
         payload["size"] = f"{TARGET_CANVAS_SIZE[0]}x{TARGET_CANVAS_SIZE[1]}"
     else:
+        # non-vip: явный 2K request (aspectRatio + resolution)
         payload["aspectRatio"] = aspect_ratio
+        payload["resolution"] = resolution
     if images:
         payload["urls"] = images
         payload["images"] = images
@@ -273,6 +328,7 @@ def create_task(
     prompt: str,
     aspect_ratio: str,
     quality: str,
+    resolution: str,
     images: list[str] | None,
     timeout: int,
 ) -> str:
@@ -284,6 +340,7 @@ def create_task(
         model=model,
         aspect_ratio=aspect_ratio,
         quality=quality,
+        resolution=resolution,
         images=images,
     )
     created = http_json_post(create_url, api_key, payload, timeout=timeout)
@@ -385,7 +442,7 @@ def download_image(url: str, *, timeout: int) -> bytes:
 
 
 def upscale_canvas_if_needed(image_bytes: bytes, target_size: tuple[int, int] = TARGET_CANVAS_SIZE) -> bytes:
-    """Апскейл canvas до 2048×1152 (Grsai 16:9 ≈1672×941)."""
+    """Апскейл canvas до 2048×1152 только если native уже 2K-class."""
     try:
         from PIL import Image
     except ImportError as exc:
@@ -398,6 +455,49 @@ def upscale_canvas_if_needed(image_bytes: bytes, target_size: tuple[int, int] = 
         out = io.BytesIO()
         resized.save(out, format="PNG")
         return out.getvalue()
+
+
+def ensure_2k_canvas(
+    image_bytes: bytes,
+    *,
+    model: str,
+    target_size: tuple[int, int] = TARGET_CANVAS_SIZE,
+) -> tuple[bytes, dict[str, Any]]:
+    """Проверка ≥2K; upscale только для 2K-class native; иначе Grsai2KNotMetError."""
+    width, height = image_dimensions(image_bytes)
+    native_long = long_side(width, height)
+    meta: dict[str, Any] = {
+        "native_width": width,
+        "native_height": height,
+        "native_long_side": native_long,
+        "min_long_side_required": MIN_LONG_SIDE_2K,
+    }
+
+    if native_long >= MIN_LONG_SIDE_2K:
+        if (width, height) == target_size:
+            meta["delivery"] = "native_2k"
+            return image_bytes, meta
+        upscaled = upscale_canvas_if_needed(image_bytes, target_size)
+        meta["delivery"] = "native_2k_normalized"
+        meta["normalized_to"] = f"{target_size[0]}x{target_size[1]}"
+        return upscaled, meta
+
+    if native_long >= NATIVE_2K_CLASS_MIN_LONG_SIDE:
+        upscaled = upscale_canvas_if_needed(image_bytes, target_size)
+        meta["delivery"] = "upscaled_2k_class"
+        meta["upscaled_to"] = f"{target_size[0]}x{target_size[1]}"
+        return upscaled, meta
+
+    if is_vip_model(model):
+        raise Grsai2KNotMetError(
+            f"vip model returned undersized {width}x{height} (long={native_long} < {MIN_LONG_SIDE_2K})",
+            native_size=(width, height),
+        )
+    raise Grsai2KNotMetError(
+        f"primary returned undersized {width}x{height} (long={native_long} < "
+        f"{NATIVE_2K_CLASS_MIN_LONG_SIDE}); vip required for native 2K",
+        native_size=(width, height),
+    )
 
 
 def generate_image(
@@ -413,8 +513,10 @@ def generate_image(
     refs = image_input.get("input_urls")
     images = refs if isinstance(refs, list) and refs else None
     aspect_ratio = str(image_input.get("aspect_ratio") or DEFAULT_ASPECT_RATIO)
+    resolution = str(image_input.get("resolution") or DEFAULT_RESOLUTION)
     prompt = str(image_input["prompt"])
     last_error: BaseException | None = None
+    last_2k_error: Grsai2KNotMetError | None = None
 
     for host in api_base_candidates():
         host_label = urllib.parse.urlparse(host).netloc or host
@@ -426,6 +528,7 @@ def generate_image(
                 prompt=prompt,
                 aspect_ratio=aspect_ratio,
                 quality=quality,
+                resolution=resolution,
                 images=images,
                 timeout=timeout,
             )
@@ -438,31 +541,45 @@ def generate_image(
                 timeout=timeout,
             )
             raw = download_image(image_url, timeout=timeout)
-            image_bytes = upscale_canvas_if_needed(raw)
+            image_bytes, size_meta = ensure_2k_canvas(raw, model=model)
             meta = {
                 "source": "grsai-draw-api",
                 "model": model,
                 "quality": quality,
                 "aspect_ratio": aspect_ratio,
+                "resolution": resolution,
                 "endpoint": "draw/completions+result",
                 "host": host_label,
                 "api_base": host,
                 "response_kind": "url",
                 "task_id": task_id,
-                "upscaled_to": f"{TARGET_CANVAS_SIZE[0]}x{TARGET_CANVAS_SIZE[1]}",
+                "target_canvas": f"{TARGET_CANVAS_SIZE[0]}x{TARGET_CANVAS_SIZE[1]}",
+                **size_meta,
             }
             if images:
                 meta["input_urls_count"] = len(images)
             return image_bytes, meta
+        except Grsai2KNotMetError as exc:
+            # Не жечь host-retry на quality/size для non-vip.
+            last_2k_error = exc
+            print(f"Grsai 2K not met on {host_label}: {exc}", flush=True)
+            if not is_vip_model(model):
+                raise
+            last_error = exc
+            continue
         except GrsaiRetryable as exc:
             last_error = exc
             print(f"Grsai retryable on {host_label}: {exc}", flush=True)
             continue
         except GrsaiApiError as exc:
             last_error = exc
+            if not is_vip_model(model) and is_2k_request_rejected(exc):
+                raise Grsai2KNotMetError(str(exc)) from exc
             print(f"Grsai error on {host_label}: {exc}", flush=True)
             continue
 
+    if last_2k_error is not None:
+        raise last_2k_error
     raise GrsaiApiError(f"Grsai failed on all hosts: {last_error}")
 
 
@@ -475,40 +592,62 @@ def generate_image_with_model_fallback(
     max_wait: int,
     timeout: int,
 ) -> tuple[bytes, dict[str, Any]]:
-    """Primary на всех хостах → один vip-retry на sheet при провале primary."""
+    """Non-vip first; vip только если primary не дал ≥2K или hard API fail."""
     primary = primary_model()
     vip_model = vip_fallback_model(primary)
-    model_chain = [primary, vip_model]
     failures: list[dict[str, str]] = []
 
-    for idx, model in enumerate(model_chain):
-        if idx == 1:
-            print(
-                f"Grsai primary model {primary} failed; one vip retry with {vip_model}",
-                flush=True,
-            )
-        try:
-            image_bytes, meta = generate_image(
-                image_input=image_input,
-                api_key=api_key,
-                model=model,
-                quality=quality,
-                poll_interval=poll_interval,
-                max_wait=max_wait,
-                timeout=timeout,
-            )
-            meta["model_primary"] = primary
-            meta["model_succeeded"] = model
-            meta["used_vip_fallback"] = model == vip_model
-            print(f"OK Grsai model={model} host={meta.get('host')}", flush=True)
-            return image_bytes, meta
-        except GrsaiApiError as exc:
-            failures.append({"model": model, "error": str(exc)[:300]})
-            if idx == 0:
-                continue
-            raise GrsaiApiError(f"Grsai failed primary and vip: {failures}") from exc
+    try:
+        image_bytes, meta = generate_image(
+            image_input=image_input,
+            api_key=api_key,
+            model=primary,
+            quality=quality,
+            poll_interval=poll_interval,
+            max_wait=max_wait,
+            timeout=timeout,
+        )
+        meta["model_primary"] = primary
+        meta["model_succeeded"] = primary
+        meta["used_vip_fallback"] = False
+        meta["vip_trigger"] = None
+        print(f"OK Grsai model={primary} host={meta.get('host')} (native 2K)", flush=True)
+        return image_bytes, meta
+    except Grsai2KNotMetError as exc:
+        failures.append({"model": primary, "error": str(exc)[:300], "kind": "2k_not_met"})
+        vip_trigger = "2k_not_possible_on_primary"
+        print(
+            f"Grsai primary {primary} cannot deliver ≥2K ({exc}); "
+            f"one vip retry with {vip_model} (no more primary retries)",
+            flush=True,
+        )
+    except GrsaiApiError as exc:
+        failures.append({"model": primary, "error": str(exc)[:300], "kind": "api_failure"})
+        vip_trigger = "api_failure"
+        print(
+            f"Grsai primary {primary} API failed ({exc}); one vip retry with {vip_model}",
+            flush=True,
+        )
 
-    raise GrsaiApiError(f"Grsai failed: {failures}")
+    try:
+        image_bytes, meta = generate_image(
+            image_input=image_input,
+            api_key=api_key,
+            model=vip_model,
+            quality=quality,
+            poll_interval=poll_interval,
+            max_wait=max_wait,
+            timeout=timeout,
+        )
+        meta["model_primary"] = primary
+        meta["model_succeeded"] = vip_model
+        meta["used_vip_fallback"] = True
+        meta["vip_trigger"] = vip_trigger
+        print(f"OK Grsai model={vip_model} host={meta.get('host')} (vip)", flush=True)
+        return image_bytes, meta
+    except GrsaiApiError as exc:
+        failures.append({"model": vip_model, "error": str(exc)[:300]})
+        raise GrsaiApiError(f"Grsai failed primary and vip: {failures}") from exc
 
 
 def run_kie_fallback(*, root: Path, article_dir: Path, batch: str, result: str) -> int:
@@ -542,7 +681,7 @@ def main() -> int:
         "--model-tier",
         choices=("auto", "primary", "vip"),
         default="auto",
-        help="auto=primary then one vip on API fail; primary=only primary; vip=only vip (one sheet)",
+        help="auto=non-vip 2K first then one vip on 2K fail or API fail; primary=only non-vip; vip=only vip (one sheet)",
     )
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
@@ -563,17 +702,22 @@ def main() -> int:
         dry_payload = {
             "model": model,
             "model_vip_fallback": vip_fallback_model(model),
-            "model_policy": "primary_first_one_vip_per_sheet",
+            "model_policy": "primary_2k_first_vip_on_2k_fail_or_api_fail",
             "quality": quality,
             "aspect_ratio": image_input.get("aspect_ratio"),
+            "resolution": image_input.get("resolution") or DEFAULT_RESOLUTION,
+            "min_long_side_2k": MIN_LONG_SIDE_2K,
+            "target_canvas": f"{TARGET_CANVAS_SIZE[0]}x{TARGET_CANVAS_SIZE[1]}",
             "host_candidates": api_base_candidates(),
             "create_path": DRAW_COMPLETIONS_PATH,
             "result_path": DRAW_RESULT_PATH,
             "webHook": "-1",
-            "target_canvas": f"{TARGET_CANVAS_SIZE[0]}x{TARGET_CANVAS_SIZE[1]}",
             "prompt_chars": len(str(image_input.get("prompt") or "")),
             "input_urls_count": len(image_input.get("input_urls") or []),
-            "note": "Grsai primary tier first; one vip-tier retry per sheet on API fail",
+            "note": (
+                "non-vip primary tier with aspectRatio+resolution=2K first; "
+                "vip only if primary cannot deliver long_side>=2048 or hard API fail"
+            ),
         }
         if args.dry_run:
             print(json.dumps(dry_payload, ensure_ascii=False, indent=2))

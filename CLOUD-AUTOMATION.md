@@ -61,7 +61,7 @@ Scout? → research_start → Research → Title → Writer → Sol
 - **No plate** under logo pad (alpha paste only).
 - Cover phone: **+7 (993) 574-83-22** post-composite bottom-left.
 - NO host face / NO Shakin identity.
-- Images: **Grsai** (`excalibur_blog_grsai_gpt_image2_api.py`, primary + **one vip retry/sheet**, max **2 attempts/canvas**). On exhaust: pad-clear + factory paste → **continue to publish** (no Cover-QA loop).
+- Images: **Grsai** (`excalibur_blog_grsai_gpt_image2_api.py`, non-vip **2K first** + **one vip/sheet** only when ≥2K impossible on non-vip or hard API fail; ship **2048×1152**). On exhaust: pad-clear + factory paste → **continue to publish** (no Cover-QA loop).
 - **Cover-QA slim:** logo official, no plate, phone on cover, no WP UI. Beauty = agent judgment on topic.
 - After full upload: refresh WP intermediates (`*-1024x576`) for `/feed/zen/`.
 - **Prose** — Derouter (`excalibur_blog_derouter_opus_chat.py`). Not Flux/Seedream/nano_banana/mcp-derouter.

@@ -12,19 +12,27 @@ Primary Cloud path for Excalibur BLOG cover/inline quad canvas when `IMAGE_PROVI
 
 **FORBIDDEN as first try:** starting with vip, more than one vip per canvas/sheet, `flux2-pro-*`, Seedream, `nano_banana*`, `z-image`, `mcp-derouter/start-mcp.sh`.
 
-**Model policy (mandatory):**
+## 2K quality policy (mandatory — owner)
 
-1. Always primary tier first (``gpt`` + ``-image-`` + ``2``; or `GRSAI_IMAGE_MODEL` if set — must not be vip).
-2. Only if that sheet fails (API error, `failed`/`violation`, timeout after host retries) → **one** vip-tier attempt for the same sheet.
-3. Log `model_succeeded` in `quad-mcp-result-*.json` (no secrets).
+1. **Ship only ≥2K:** factory canvas / output long side **≥2048** (quad contract **2048×1152** for 16:9).
+2. **Prefer non-vip** primary tier (`GRSAI_IMAGE_MODEL`) when it delivers ≥2K natively.
+3. **VIP trigger (primary):** non-vip cannot achieve ≥2K — API rejects size/aspect/resolution, returns undersized (long side &lt;1920), or 2K request fails → **one** vip-tier attempt **immediately**; **no** quality/size retries on non-vip.
+4. **Do not default to VIP** when non-vip successfully returns long side ≥2048.
+5. **VIP trigger (secondary):** hard API failure (timeout, moderation, all hosts exhausted) after non-vip host retries.
 
-Text roles stay on Derouter (`excalibur_blog_derouter_opus_chat.py`) — only image backend changes.
+Logged in `quad-mcp-result-*.json`: `model_succeeded`, `used_vip_fallback`, `vip_trigger` (`2k_not_possible_on_primary` | `api_failure` | null), `native_long_side`, `delivery`.
+
+## Model policy
+
+1. Always **non-vip** first (`GRSAI_IMAGE_MODEL` — must not be vip).
+2. **One vip** per sheet only when rules above fire.
+3. Text roles stay on Derouter (`excalibur_blog_derouter_opus_chat.py`) — only image backend changes.
 
 ## Host
 
 | Priority | Base URL | Region |
 |----------|----------|--------|
-| 1 (default) | `https://grsaiapi.com` | Global |
+| 1 (default) | global Grsai host (see probe) | Global |
 | 2 (fallback) | `https://grsai.dakka.com.cn` | China |
 
 Override one run: `GRSAI_API_BASE` (bare host, no path).
@@ -43,22 +51,47 @@ python3 scripts/excalibur_blog_grsai_base_probe.py
 
 `POST {base}/v1/draw/completions` (JSON):
 
+**Non-vip (2K request):**
+
 ```json
 {
   "model": "<GRSAI_IMAGE_MODEL>",
   "prompt": "...",
   "aspectRatio": "16:9",
+  "resolution": "2K",
   "quality": "high",
   "webHook": "-1",
   "images": []
 }
 ```
 
-- **model:** primary tier first (see `excalibur_blog_grsai_gpt_image2_api.primary_model`); optional `GRSAI_IMAGE_MODEL` override (non-vip only)
-- **vip fallback:** one vip-tier attempt per sheet after primary failure; vip uses `size: 2048x1152` (not `aspectRatio`)
+**VIP (native pixel size — aspectRatio rejected):**
+
+```json
+{
+  "model": "<GRSAI_IMAGE_MODEL>-vip",
+  "prompt": "...",
+  "size": "2048x1152",
+  "quality": "high",
+  "webHook": "-1"
+}
+```
+
 - **webHook:** `"-1"` → sync polling mode (no callback URL)
 - **images:** optional reference URLs or base64 data-URLs for i2i
 - Response: `data.id` = task id
+
+### aspectRatio → 2K long side (Grsai, resolution=2K)
+
+| aspectRatio | Expected native long side | Factory target (16:9 quad) |
+|-------------|---------------------------|----------------------------|
+| `16:9` | 2048 (vip) / ~1672 (non-vip aspect-only — **undersized → vip**) | **2048×1152** |
+| `9:16` | 2048 | per aspect |
+| `1:1` | 2048 | 2048×2048 |
+| `4:3` | 2048 | per aspect |
+| `3:4` | 2048 | per aspect |
+
+Non-vip with `aspectRatio`+`resolution=2K` may still return &lt;1920 long side → script raises `Grsai2KNotMetError` and escalates to vip **without** upscaling soft frames.
 
 ### 2. Poll result
 
@@ -71,9 +104,11 @@ python3 scripts/excalibur_blog_grsai_base_probe.py
 - `status`: `running` → wait; `succeeded` → `results[0].url`; `failed` / `violation` → BLOCKER
 - Default poll: 5s interval, max 900s
 
-### 3. Download + upscale
+### 3. Download + 2K gate
 
-Script downloads `results[0].url`, then **upscales canvas to 2048×1152** if Grsai returned a smaller 16:9 frame.
+1. Download `results[0].url`
+2. Assert **long side ≥2048** (or native ≥1920 → Lanczos upscale to **2048×1152** only for 2K-class sources)
+3. If long side &lt;1920 on non-vip → **vip** (no upscale of soft ~1672×941 frames)
 
 Writes `cover/canvas-quad-NN.png` + `quad-mcp-result-NN.json` with `local_path` for `quad_apply`.
 
@@ -104,8 +139,8 @@ python3 scripts/excalibur_blog_quad_apply.py --article-dir <dir> --canvas-index 
 
 ## Retry
 
-- Fallback host `grsai.dakka.com.cn` after global exhausted
-- Model fallback: primary tier → one vip-tier retry per sheet on API/moderation/timeout fail
+- Fallback host `grsai.dakka.com.cn` after global exhausted (hard API only — **not** for 2K/size on non-vip)
+- Model fallback: non-vip → one vip per sheet (`2k_not_possible_on_primary` or `api_failure`)
 - Kie fallback when Grsai still fails and `KIE_API_KEY` set
 
 ## Related
