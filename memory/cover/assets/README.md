@@ -39,3 +39,9 @@ Inbox: `memory/setup/visual-inbox/` (logo updates → copy to `brand/logo-dobry-
 Shakin/face-studio identity lock, plastic/uncanny face, AI hero-ref как лицо, decorative-only inline,
 AI-drawn «Добрый дом» lockup in generation, logo on all 7 inlines, 2+ logos per frame,
 white/gray rectangular plate under logo pad.
+
+## Dzen cover updates (cache-bust)
+
+Дзен CDN кэширует enclosure по URL. **Не перезаписывать** тот же `-cover.png` / `-1024x576.png` —
+загружать **новое имя** (`{slug}-cover-dzen-vN.png` + `-1024x576`). Скрипт:
+`scripts/excalibur_blog_dzen_cover_cache_bust.py`. Канон: `shared/dzen-cover-cache-bust.md`.
