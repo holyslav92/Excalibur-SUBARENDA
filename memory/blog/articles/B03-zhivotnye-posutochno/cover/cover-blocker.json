@@ -1,0 +1,41 @@
+{
+  "status": "BLOCKER",
+  "topic_id": "B03",
+  "article_dir": "memory/blog/articles/B03-zhivotnye-posutochno",
+  "blockers": [
+    {
+      "code": "DEROUTER IMAGE BLOCKER",
+      "detail": "DEROUTER_IMAGE_MODEL image generation discontinued on all Derouter bases (api-direct.derouter.ai, api-direct.apikey.cloud, api.derouter.ai, api.apikey.cloud)"
+    },
+    {
+      "code": "KIE API BLOCKER",
+      "detail": "Kie fallback createTask HTTP 402 — Credits insufficient"
+    }
+  ],
+  "completed_steps": [
+    "cover-text gate PASS",
+    "quad-manifest.json with cover_motifs + wordstat_stickers",
+    "motif gate check PASS (14d anti-repeat)",
+    "quad-mcp-prompt-01.txt + quad-mcp-batch-01.json",
+    "quad-mcp-prompt-02.txt + quad-mcp-batch-02.json"
+  ],
+  "pending_steps": [
+    "derouter_gpt_image2_api canvas 1+2",
+    "quad_apply canvas 1+2 --inject-html",
+    "brand_logo_composite",
+    "motif gate record"
+  ],
+  "artifacts_missing": [
+    "cover/canvas-quad-01.png",
+    "cover/canvas-quad-02.png",
+    "cover/cover.png",
+    "cover/inline-01.png",
+    "cover/inline-02.png",
+    "cover/inline-03.png",
+    "cover/inline-04.png",
+    "cover/inline-05.png",
+    "cover/inline-06.png",
+    "cover/inline-07.png"
+  ],
+  "remediation": "Restore Derouter image generation for DEROUTER_IMAGE_MODEL or top up Kie credits; rerun derouter_gpt_image2_api for both batches."
+}
