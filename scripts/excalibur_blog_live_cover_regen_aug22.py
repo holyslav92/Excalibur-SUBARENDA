@@ -712,24 +712,24 @@ def upload(spec: dict, adir: Path) -> list[str]:
     for n in range(1, 8):
         mapping.append((f"inline-{n:02d}.png", spec["inline_remote"].format(n=n)))
 
-    ftp = connect_ftp(env)
-    try:
-        login_cwd = ftp.pwd()
-        _ftp_cwd_root(ftp, root, login_cwd)
-        for part in remote_dir.split("/"):
-            if part:
-                ftp.cwd(part)
-        for local_name, remote_name in mapping:
-            data = (adir / "cover" / local_name).read_bytes()
-            _ftp_stor_with_retry(ftp, remote_name, data)
-            print(f"FTP upload OK: {remote_dir}/{remote_name} ({len(data)} bytes)")
+    for local_name, remote_name in mapping:
+        data = (adir / "cover" / local_name).read_bytes()
+        ftp = connect_ftp(env, timeout=180)
+        try:
+            login_cwd = ftp.pwd()
+            _ftp_cwd_root(ftp, root, login_cwd)
+            for part in remote_dir.split("/"):
+                if part:
+                    ftp.cwd(part)
+            _ftp_stor_with_retry(ftp, remote_name, data, attempts=5, retry_pause_s=3.0)
+            print(f"FTP upload OK: {remote_dir}/{remote_name} ({len(data)} bytes)", flush=True)
             if PUBLIC:
                 urls.append(f"{PUBLIC}/{remote_dir}/{remote_name}?v={int(time.time())}")
-    finally:
-        try:
-            ftp.quit()
-        except Exception:
-            ftp.close()
+        finally:
+            try:
+                ftp.quit()
+            except Exception:
+                ftp.close()
     return urls
 
 
