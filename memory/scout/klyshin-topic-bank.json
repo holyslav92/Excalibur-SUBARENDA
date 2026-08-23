@@ -3,7 +3,7 @@
   "source_channel": "https://t.me/klyshin_A",
   "source_label": "Алексей Клышин — юрист по недвижимости (angle only, не копировать сделки)",
   "tenant": "Добрый дом — посуточная аренда / субаренда Тюмень",
-  "updated_at": "2026-08-20",
+  "updated_at": "2026-08-23",
   "algorithm": "klyshin_hook → wordstat_probe → rework_for_demand → final_P0_or_skip_after_rework",
   "wordstat_gate": {
     "provider": "mcp-kv",
@@ -65,10 +65,16 @@
     {
       "id": "utilities_counters",
       "hook_ru": "показания счётчиков — не переплатить ЖКХ",
-      "angle": "как фиксировать при посуточной/субаренде",
+      "angle": "как фиксировать при посуточной/субаренде; «коммуналка в цене» vs доплата на выезде",
       "wordstat_probes": ["показания счетчиков аренда", "жкх аренда квартиры", "коммунальные платежи аренда"],
       "tyumen_localize": true,
-      "status": "seed"
+      "status": "used",
+      "last_seen": "2026-08-23",
+      "klyshin_signal": "https://t.me/klyshin_A (angle bank; live feed Aug 2026 — сделки/ЕГРН, angle only)",
+      "wordstat_rework_log": "показания счетчиков аренда 3 → коммунальные платежи аренда 24 → жкх аренда 6 → что такое жку при снятии квартиры 13 → final P0 коммунальные платежи квартира 105 (RU 12751)",
+      "final_p0": "коммунальные платежи квартира",
+      "final_p0_volume_tyumen": 105,
+      "used_in_articles": ["B04"]
     },
     {
       "id": "contract_bans",
