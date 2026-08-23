@@ -61,10 +61,12 @@ tenant:
   # FTP_PASS — ONLY Cloud Secrets (never commit)
 
 cover:
-  mode: logo_lockup
+  mode: brand_logo_paste
   logo: memory/cover/assets/brand/logo-dobry-dom.png
   images_per_article: 8
-  rule: logo lockup on cover + all 7 inlines; NO host face / NO Shakin identity
+  max_attempts_per_canvas: 2
+  paste_and_ship_on_exhaust: true
+  rule: official logo on cover + 2-3 inline (default 1/3/7); NO host face / NO Shakin; beauty=agent judgment
 
 brain_and_images:
   prose: scripts/excalibur_blog_derouter_opus_chat.py

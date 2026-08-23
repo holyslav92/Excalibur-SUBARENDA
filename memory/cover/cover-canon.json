@@ -113,6 +113,14 @@
     "forbidden_phone": "+7 922 001 65 05",
     "composite_script": "scripts/excalibur_blog_brand_logo_composite.py"
   },
+  "generation_policy": {
+    "provider": "grsai",
+    "max_attempts_per_canvas": 2,
+    "vip_retry_per_sheet": 1,
+    "on_exhaust": "pad-clear + official paste + continue (no Cover-QA loop)",
+    "cover_qa_mode": "slim",
+    "philosophy": "beauty = agent judgment on topic; brand lock = logo + phone + no plate + no WP UI"
+  },
   "meme_system": {
     "required": true,
     "catalog": "memory/cover/meme-top100.json",

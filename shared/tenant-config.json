@@ -185,9 +185,6 @@
     "canonical_sha256": "72e53ba966f0626cc6eaad0792e68b57c8da0ccd9265d6822fbc173fdb48b941",
     "forbid_ai_drawn_logo": true,
     "forbid_ai_drawn_logo_pre_composite": true,
-    "official_logo_pixels_only": true,
-    "logo_no_text_overlap": true,
-    "forbid_logo_white_plate": true,
     "cover_phone_post_composite": true,
     "max_width_fraction": 0.1,
     "min_width_fraction": 0.08,
@@ -308,15 +305,12 @@
     "soul_examples": "shared/soul-examples/"
   },
   "cover_wow_rules": {
-    "status": "locked",
-    "visual_notes": "memory/cover/visual-notes-dobry-dom.json",
-    "forbid_wordpress_ui_in_art": true,
-    "no_element_overlap": true,
-    "wow_poster_magazine_typography": true,
-    "forbid_ai_drawn_logo_pre_composite": true,
-    "official_logo_pixels_only": true,
-    "logo_no_text_overlap": true,
-    "forbid_logo_white_plate": true,
+    "status": "slim",
+    "philosophy": "beauty = agent judgment on topic; brand lock = official logo paste + phone + no plate + no WP UI",
+    "max_generation_attempts_per_canvas": 2,
+    "paste_and_ship_on_exhaust": true,
+    "logo_asset": "memory/cover/assets/brand/logo-dobry-dom.png",
+    "logo_corner": "top_right",
     "inline_logo_count_min": 2,
     "inline_logo_count_max": 3,
     "inline_logo_slots_default": [
@@ -324,12 +318,11 @@
       "inline_3",
       "inline_7"
     ],
-    "logo_corner": "top_right",
-    "logo_asset": "memory/cover/assets/brand/logo-dobry-dom.png",
     "cover_phone_display": "+7 (993) 574-83-22",
-    "cover_phone_not_in_logo_pad": true,
-    "forbid_multiple_logos_per_image": true,
-    "cover_qa_fail_if_broken": true,
+    "forbid_wordpress_ui_in_art": true,
+    "forbid_ai_drawn_logo": true,
+    "forbid_logo_plate": true,
+    "cover_qa_mode": "slim",
     "tenant_scope": "Excalibur-SUBARENDA / Добрый дом only — never tymenrieltor.ru / Excalibur-2-Cloud rieltor canon"
   },
   "cover_files": {

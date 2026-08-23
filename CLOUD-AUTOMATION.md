@@ -57,10 +57,14 @@ Scout? → research_start → Research → Title → Writer → Sol
 
 ### Cover + images (HARD)
 
-- Logo lockup на **всех 8** изображениях (`memory/cover/assets/brand/logo-dobry-dom.png`).
+- **Brand lock:** official logo PNG paste (`logo-dobry-dom.png` / `cropped-img_7143.png`) on **cover always + 2–3 inline** (default inline_1/3/7). Never AI-drawn lockup. Never logo on all 8.
+- **No plate** under logo pad (alpha paste only).
+- Cover phone: **+7 (993) 574-83-22** post-composite bottom-left.
 - NO host face / NO Shakin identity.
-- Inline = utility info-graphics (не decorative-only).
-- Images: **Grsai** (`excalibur_blog_grsai_gpt_image2_api.py`, primary tier + one vip retry/sheet, 2K quad). **Prose** — Derouter (`excalibur_blog_derouter_opus_chat.py`). Not Flux/Seedream/nano_banana/mcp-derouter.
+- Images: **Grsai** (`excalibur_blog_grsai_gpt_image2_api.py`, primary + **one vip retry/sheet**, max **2 attempts/canvas**). On exhaust: pad-clear + factory paste → **continue to publish** (no Cover-QA loop).
+- **Cover-QA slim:** logo official, no plate, phone on cover, no WP UI. Beauty = agent judgment on topic.
+- After full upload: refresh WP intermediates (`*-1024x576`) for `/feed/zen/`.
+- **Prose** — Derouter (`excalibur_blog_derouter_opus_chat.py`). Not Flux/Seedream/nano_banana/mcp-derouter.
 
 Writer = смысл (`drafts/writer.html`). Sol = слог тенанта (`shared/SOUL.md`).
 

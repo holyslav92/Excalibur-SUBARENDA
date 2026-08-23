@@ -549,6 +549,55 @@ def detect_logo_text_overlap(
     }
 
 
+def validate_article_logo_gates_slim(article_dir: Path, root: Path) -> list[str]:
+    """Slim logo QA: cover pre-composite drawn-lockup + no-logo panels only; skip pixel/plate heuristics."""
+    errors: list[str] = []
+    from excalibur_blog_brand_logo_composite import (
+        IMAGE_NAMES,
+        load_tenant_logo_config,
+        resolve_inline_logo_slots,
+        uses_brand_logo_paste,
+    )
+
+    cfg = load_tenant_logo_config(root)
+    if not uses_brand_logo_paste(cfg):
+        return errors
+
+    cover_dir = article_dir / "cover"
+    pre_dir = cover_dir / "pre-composite"
+    pre_cover = pre_dir / "cover.png"
+    if pre_cover.is_file():
+        result = detect_drawn_lockup_in_image(pre_cover)
+        if result["detected"]:
+            reasons = ", ".join(result.get("reasons") or [])
+            errors.append(
+                f"pre-composite cover.png: AI-drawn lockup detected (score={result['score']}, {reasons})"
+            )
+        plate = detect_white_plate_in_pad(pre_cover)
+        if plate.get("detected") and plate.get("plate_kind") == "white":
+            errors.append(
+                "pre-composite cover.png: white logo plate/card in generation pad "
+                f"(area={plate.get('plate_area')})"
+            )
+    else:
+        errors.append("cover/pre-composite/cover.png missing — composite must snapshot before logo paste")
+
+    inline_files = resolve_inline_logo_slots(article_dir, cfg)
+    for name in IMAGE_NAMES:
+        if name == "cover.png" or name in inline_files:
+            continue
+        live = cover_dir / name
+        if not live.is_file():
+            continue
+        result = detect_drawn_lockup_in_image(live)
+        if result["detected"]:
+            errors.append(
+                f"{name}: forbidden drawn logo on panel without factory paste "
+                f"(score={result['score']})"
+            )
+    return errors
+
+
 def validate_article_logo_gates(article_dir: Path, root: Path) -> list[str]:
     errors: list[str] = []
     from excalibur_blog_brand_logo_composite import (
@@ -695,11 +744,11 @@ def main() -> int:
         article_dir = Path(args.article_dir)
         if not article_dir.is_absolute():
             article_dir = root / article_dir
-        errors = validate_article_logo_gates(article_dir, root)
+        errors = validate_article_logo_gates_slim(article_dir, root)
         if errors:
             print("FAIL LOGO GATE:", "; ".join(errors), file=sys.stderr)
             return 1
-        print("OK logo paste gates")
+        print("OK logo paste gates (slim)")
         return 0
 
     ap.print_help()

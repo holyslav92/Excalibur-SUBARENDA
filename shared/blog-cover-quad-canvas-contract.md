@@ -7,14 +7,18 @@
 
 Cover после `article.html` + Sol PASS.
 
-## WOW cover rules (Cover-QA FAIL if broken)
+## Brand lock (Cover-QA slim — FAIL if broken)
 
-Locked in: `shared/tenant-config.json` → `cover_wow_rules`, `memory/cover/visual-notes-dobry-dom.json`, `memory/cover/cover-canon.json`.
+Canon: `shared/tenant-config.json` → `cover_wow_rules`, `memory/cover/visual-notes-dobry-dom.json`.
 
-1. **NO WordPress UI in art** — WordPress, Gutenberg, Add title, Publish, Dashboard, wp-admin, block editor, theme chrome, cookie bars.
-2. **NO overlapping** — headline, stickers, meme, cat, phone, people, logo never sit on each other. Logo = official PNG, ONE small stamp **TOP-RIGHT**, reserved empty pad. Phone **+7 993 574-83-22** on cover only (post-composite), not in logo pad.
-3. **WOW poster** — magazine cover, beautiful readable Russian display type, scene + one sharp line. Not timid system font, not wall of tiny labels, not empty stock, not WP screenshot.
-4. **Inlines** — logo on **2–3 of 7** only, same top-right pad; never 2+ logos on one frame.
+**Philosophy:** beauty = agent judgment on topic; brand lock = logo + phone + no plate + no WP UI.
+
+1. **Official logo PNG paste** — `logo-dobry-dom.png` / `cropped-img_7143.png`, top-right 8–12%. Cover always + **2–3 inline** (default 1/3/7). Never AI-drawn lockup. Never logo on all 8.
+2. **NO plate** under logo pad — alpha paste only, no white/gray card.
+3. **Phone** **+7 (993) 574-83-22** on cover post-composite bottom-left only.
+4. **NO WordPress UI** in art.
+
+**Generation:** Grsai API, max **2 attempts/canvas** (+ 1 vip retry/sheet on API fail). On exhaust: pad-clear + factory paste → continue to publish.
 
 Factory logo paste: `scripts/excalibur_blog_brand_logo_composite.py` — never ask image model to draw logo.
 
