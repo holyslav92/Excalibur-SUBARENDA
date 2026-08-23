@@ -60,7 +60,7 @@ Scout? → research_start → Research → Title → Writer → Sol
 - Logo lockup на **всех 8** изображениях (`memory/cover/assets/brand/logo-dobry-dom.png`).
 - NO host face / NO Shakin identity.
 - Inline = utility info-graphics (не decorative-only).
-- Images: **Derouter REST** (`excalibur_blog_derouter_gpt_image2_api.py`) — not Flux/Seedream/nano_banana/mcp-derouter.
+- Images: **Grsai** (`excalibur_blog_grsai_gpt_image2_api.py`, primary tier + one vip retry/sheet, 2K quad). **Prose** — Derouter (`excalibur_blog_derouter_opus_chat.py`). Not Flux/Seedream/nano_banana/mcp-derouter.
 
 Writer = смысл (`drafts/writer.html`). Sol = слог тенанта (`shared/SOUL.md`).
 

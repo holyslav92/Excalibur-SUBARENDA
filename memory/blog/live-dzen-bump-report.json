@@ -1,6 +1,6 @@
 {
-  "bumped_at_yekt": "2026-08-23T18:28:03.237867+05:00",
-  "cache_bust": 1787491673,
+  "bumped_at_yekt": "2026-08-23T18:30:57.506925+05:00",
+  "cache_bust": 1787491847,
   "slugs": [
     "dogovor-arendy-pravila-prozhivaniya-posutochno",
     "otmena-bronirovaniya-posutochno-vozvrat-predoplaty",
@@ -8,43 +8,43 @@
     "zabroniroval-posutochno-vyyasnilos-kvartira-v-subarende"
   ],
   "before_modified_gmt": {
-    "dogovor-arendy-pravila-prozhivaniya-posutochno": "2026-08-23T13:26:43",
-    "otmena-bronirovaniya-posutochno-vozvrat-predoplaty": "2026-08-23T13:26:43",
-    "pereveli-predoplatu-v-pravilah-melkim-vecherinki-i-lishnie-gosti": "2026-08-23T13:26:43",
-    "zabroniroval-posutochno-vyyasnilos-kvartira-v-subarende": "2026-08-23T13:26:44"
-  },
-  "after_modified_gmt": {
     "dogovor-arendy-pravila-prozhivaniya-posutochno": "2026-08-23T13:27:55",
     "otmena-bronirovaniya-posutochno-vozvrat-predoplaty": "2026-08-23T13:27:55",
     "pereveli-predoplatu-v-pravilah-melkim-vecherinki-i-lishnie-gosti": "2026-08-23T13:27:56",
     "zabroniroval-posutochno-vyyasnilos-kvartira-v-subarende": "2026-08-23T13:27:56"
   },
+  "after_modified_gmt": {
+    "dogovor-arendy-pravila-prozhivaniya-posutochno": "2026-08-23T13:30:50",
+    "otmena-bronirovaniya-posutochno-vozvrat-predoplaty": "2026-08-23T13:30:50",
+    "pereveli-predoplatu-v-pravilah-melkim-vecherinki-i-lishnie-gosti": "2026-08-23T13:30:50",
+    "zabroniroval-posutochno-vyyasnilos-kvartira-v-subarende": "2026-08-23T13:30:50"
+  },
   "bootstrap_rows": [
     {
       "post_id": 3855,
       "slug": "dogovor-arendy-pravila-prozhivaniya-posutochno",
-      "modified_gmt": "2026-08-23 13:27:55",
+      "modified_gmt": "2026-08-23 13:30:50",
       "cover_remote": "dogovor-arendy-pravila-prozhivaniya-posutochno-cover-1.png",
       "cover_attachment_id": 3865
     },
     {
       "post_id": 3845,
       "slug": "otmena-bronirovaniya-posutochno-vozvrat-predoplaty",
-      "modified_gmt": "2026-08-23 13:27:55",
+      "modified_gmt": "2026-08-23 13:30:50",
       "cover_remote": "otmena-bronirovaniya-posutochno-vozvrat-predoplaty-cover.png",
       "cover_attachment_id": 3846
     },
     {
       "post_id": 3835,
       "slug": "pereveli-predoplatu-v-pravilah-melkim-vecherinki-i-lishnie-gosti",
-      "modified_gmt": "2026-08-23 13:27:56",
+      "modified_gmt": "2026-08-23 13:30:50",
       "cover_remote": "pereveli-predoplatu-v-pravilah-melkim-vecherinki-i-lishnie-gosti-cover.png",
       "cover_attachment_id": 3836
     },
     {
       "post_id": 3797,
       "slug": "zabroniroval-posutochno-vyyasnilos-kvartira-v-subarende",
-      "modified_gmt": "2026-08-23 13:27:56",
+      "modified_gmt": "2026-08-23 13:30:50",
       "cover_remote": "zabroniroval-posutochno-vyyasnilos-kvartira-v-subarende-cover-2.png",
       "cover_attachment_id": 3821
     }
