@@ -429,6 +429,48 @@ CANVAS1_LOGO_PANELS = ("cover.png", "inline-01.png", "inline-03.png")
 CANVAS2_LOGO_PANELS = ("inline-07.png",)
 
 
+def _read_grsai_result_meta(result_path: Path) -> dict[str, Any]:
+    if not result_path.is_file():
+        return {}
+    try:
+        data = json.loads(result_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return {}
+    return data if isinstance(data, dict) else {}
+
+
+def _canvas_dimensions(adir: Path, canvas_index: int) -> tuple[int, int]:
+    path = adir / "cover" / f"canvas-quad-{canvas_index:02d}.png"
+    if not path.is_file():
+        return 0, 0
+    from PIL import Image
+
+    with Image.open(path) as img:
+        return img.size
+
+
+def _canvas_meets_2k_policy(adir: Path, canvas_index: int) -> bool:
+    from excalibur_blog_grsai_gpt_image2_api import MIN_LONG_SIDE_2K, TARGET_CANVAS_SIZE
+
+    width, height = _canvas_dimensions(adir, canvas_index)
+    if width <= 0 or height <= 0:
+        return False
+    long_side = max(width, height)
+    short_side = min(width, height)
+    return long_side >= MIN_LONG_SIDE_2K and short_side >= TARGET_CANVAS_SIZE[1]
+
+
+def _enforce_canvas_2k_or_block(adir: Path, canvas_index: int) -> bool:
+    width, height = _canvas_dimensions(adir, canvas_index)
+    if _canvas_meets_2k_policy(adir, canvas_index):
+        return True
+    print(
+        f"BLOCKER canvas {canvas_index} {width}x{height} — policy requires ≥2048×1152 (long≥2048)",
+        flush=True,
+    )
+    return False
+
+
 def _clear_cover_canvas_artifacts(adir: Path) -> None:
     """Сбросить cover + inline 1–3 и pre-composite перед повторной генерацией canvas 1."""
     cover = adir / "cover"
@@ -572,32 +614,32 @@ def _apply_canvas(rel: Path, canvas_index: int) -> int:
 
 
 def _canvas_sheet_ok(adir: Path, rel: Path, image_script: str, *, batch_file: str, result_file: str, canvas_index: int, logo_panels: tuple[str, ...]) -> bool:
-    """Один sheet: auto → apply → pad-repair → vip (если ещё не был) → apply."""
+    """Один sheet: auto (primary 2K → vip только при fail 2K) → apply → pad-repair; без vip для lockup."""
     if not _generate_canvas(image_script, rel, batch_file=batch_file, result_file=result_file, model_tier="auto"):
         return False
     result_path = adir / "cover" / Path(result_file).name
-    used_vip = False
-    if result_path.is_file():
-        used_vip = bool(json.loads(result_path.read_text(encoding="utf-8")).get("used_vip_fallback"))
+    result_meta = _read_grsai_result_meta(result_path)
+    used_vip = bool(result_meta.get("used_vip_fallback"))
+    model_succeeded = str(result_meta.get("model_succeeded") or result_meta.get("model") or "")
+    width, height = _canvas_dimensions(adir, canvas_index)
+    if not _enforce_canvas_2k_or_block(adir, canvas_index):
+        return False
+    tier_label = "vip" if used_vip else "primary"
+    print(
+        f"OK sheet canvas {canvas_index} {width}x{height} model={model_succeeded} tier={tier_label}",
+        flush=True,
+    )
     _apply_canvas(rel, canvas_index)
     if not _panels_have_drawn_lockup(adir, logo_panels):
         return True
     if _repair_logo_panels(adir, logo_panels):
         print("OK pad-clear for this sheet", flush=True)
         return True
-    if used_vip:
-        print("WARN sheet lockup remains after vip already used", flush=True)
-        return False
-    print("WARN primary sheet failed lockup/apply; one vip regen for this sheet", flush=True)
-    if not _generate_canvas(image_script, rel, batch_file=batch_file, result_file=result_file, model_tier="vip"):
-        print("WARN vip tier API failed for this sheet", flush=True)
-        return False
-    _apply_canvas(rel, canvas_index)
-    if not _panels_have_drawn_lockup(adir, logo_panels):
-        return True
-    if _repair_logo_panels(adir, logo_panels):
-        print("OK pad-clear after vip sheet", flush=True)
-        return True
+    # Lockup: retry primary only — vip внутри auto только для 2K fail, не для lockup
+    print(
+        "WARN sheet lockup remains — retry primary (no extra vip when primary already delivered 2K)",
+        flush=True,
+    )
     return False
 
 
@@ -669,6 +711,13 @@ def pipeline(adir: Path) -> None:
             _repair_logo_panels(adir, logo_panels)
             break
         _clear_inline_canvas_artifacts(adir)
+
+    for canvas_index in (1, 2):
+        if not _enforce_canvas_2k_or_block(adir, canvas_index):
+            raise RuntimeError(
+                f"LIVE REGEN BLOCKER: canvas {canvas_index} does not meet ≥2048×1152 policy"
+            )
+
     from excalibur_blog_identity_real import tenant_uses_logo_reference_in_generation
 
     reference_mode = tenant_uses_logo_reference_in_generation(ROOT)
