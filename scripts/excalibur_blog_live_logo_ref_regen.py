@@ -45,6 +45,9 @@ DEFAULT_SLUGS: tuple[str, ...] = (
 )
 VERSION_TAG = "logo-ref-v2"
 DZEN_SIZE = (1024, 576)
+MIN_LONG_SIDE_2K = 2048
+TARGET_COVER_SIZE = (2048, 1152)
+INLINE_TARGET_SIZE = (1024, 576)
 REPORT_PATH = ROOT / "memory/blog/live-logo-ref-regen-report.json"
 
 SLUG_META: dict[str, dict[str, Any]] = {
@@ -72,6 +75,45 @@ def spec_with_logo_ref_names(slug: str, version_tag: str = VERSION_TAG) -> dict[
     spec["inline_remote"] = f"{slug}-inline-{{n:02d}}-{version_tag}.png"
     spec["version_tag"] = version_tag
     return spec
+
+
+def assert_ship_dimensions(adir: Path) -> dict[str, Any]:
+    """Блокировать публикацию, если cover/inlines не ≥2K-класса (cover long≥2048)."""
+    from PIL import Image
+
+    dims: dict[str, Any] = {}
+    cover_path = adir / "cover" / "cover.png"
+    if not cover_path.is_file():
+        raise RuntimeError(f"SHIP BLOCKER: missing {cover_path}")
+    with Image.open(cover_path) as img:
+        cover_w, cover_h = img.size
+    long_side = max(cover_w, cover_h)
+    if long_side < MIN_LONG_SIDE_2K:
+        raise RuntimeError(
+            f"SHIP BLOCKER: cover {cover_w}x{cover_h} long side {long_side} < {MIN_LONG_SIDE_2K}"
+        )
+    if (cover_w, cover_h) != TARGET_COVER_SIZE:
+        print(
+            f"WARN cover size {cover_w}x{cover_h} != target {TARGET_COVER_SIZE[0]}x{TARGET_COVER_SIZE[1]} "
+            f"(long side OK)",
+            flush=True,
+        )
+    dims["cover"] = {"width": cover_w, "height": cover_h, "long_side": long_side}
+    inlines: list[dict[str, int]] = []
+    for n in range(1, 8):
+        inline_path = adir / "cover" / f"inline-{n:02d}.png"
+        if not inline_path.is_file():
+            raise RuntimeError(f"SHIP BLOCKER: missing {inline_path}")
+        with Image.open(inline_path) as img:
+            iw, ih = img.size
+        if max(iw, ih) < INLINE_TARGET_SIZE[0]:
+            raise RuntimeError(
+                f"SHIP BLOCKER: inline-{n:02d} {iw}x{ih} long side < {INLINE_TARGET_SIZE[0]}"
+            )
+        inlines.append({"n": n, "width": iw, "height": ih})
+    dims["inlines"] = inlines
+    print(f"OK ship dimensions: cover {cover_w}x{cover_h}, inlines 7× from 2K quads", flush=True)
+    return dims
 
 
 def make_dzen_thumb(cover_path: Path) -> bytes:
@@ -292,6 +334,7 @@ def process_slug(slug: str, *, upload_only: bool, version_tag: str) -> dict[str,
             shutil.rmtree(adir)
         bootstrap(spec)
         pipeline(adir)
+    ship_dims = assert_ship_dimensions(adir)
     urls = upload_logo_ref_files(spec, adir)
     posts = wp_get(f"/wp-json/wp/v2/posts?slug={slug}")
     post_id = int(posts[0]["id"])
@@ -302,6 +345,7 @@ def process_slug(slug: str, *, upload_only: bool, version_tag: str) -> dict[str,
         "slug": slug,
         "version_tag": version_tag,
         "cover_url": urls.get("cover"),
+        "cover_pixels": ship_dims.get("cover"),
         "dzen_thumb_url": urls.get("dzen"),
         "zen_enclosure": enclosure,
         "post_id": post_id,
