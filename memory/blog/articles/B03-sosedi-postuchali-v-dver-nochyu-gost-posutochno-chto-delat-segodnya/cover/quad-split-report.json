@@ -23,22 +23,22 @@
           "fallback_reason": "aspect_crop_loss_too_high",
           "rejected_gutter": {
             "h_gutter_px": {
-              "start": 567,
-              "end": 595
+              "start": 578,
+              "end": 591
             },
             "v_gutter_px": {
-              "start": 1015,
-              "end": 1056
+              "start": 1022,
+              "end": 1028
             },
             "gutter_quality": {
-              "h_center_offset_px": 5.0,
-              "v_center_offset_px": 11.5,
-              "max_aspect_crop_loss": 0.0246,
+              "h_center_offset_px": 8.5,
+              "v_center_offset_px": 1.0,
+              "max_aspect_crop_loss": 0.0245,
               "per_panel_crop_loss": {
-                "top_left": 0.0069,
-                "top_right": 0.0159,
-                "bottom_left": 0.0246,
-                "bottom_right": 0.0
+                "top_left": 0.0,
+                "top_right": 0.0069,
+                "bottom_left": 0.0245,
+                "bottom_right": 0.0225
               },
               "reject_reason": "aspect_crop_loss_too_high"
             }
@@ -154,36 +154,31 @@
           1152
         ],
         "panel_size_px": [
-          1024,
-          576
+          1015,
+          568
         ],
         "split_meta": {
-          "split_mode": "mechanical_center",
-          "h_gutter_px": null,
-          "v_gutter_px": null,
+          "split_mode": "gutter_detect",
+          "h_gutter_px": {
+            "start": 568,
+            "end": 584
+          },
+          "v_gutter_px": {
+            "start": 1015,
+            "end": 1033
+          },
           "requested_mode": "auto",
-          "fallback_reason": "aspect_crop_loss_too_high",
-          "rejected_gutter": {
-            "h_gutter_px": {
-              "start": 572,
-              "end": 609
+          "gutter_quality": {
+            "h_center_offset_px": 0.0,
+            "v_center_offset_px": 0.0,
+            "max_aspect_crop_loss": 0.0,
+            "per_panel_crop_loss": {
+              "top_left": 0.0,
+              "top_right": 0.0,
+              "bottom_left": 0.0,
+              "bottom_right": 0.0
             },
-            "v_gutter_px": {
-              "start": 1019,
-              "end": 1047
-            },
-            "gutter_quality": {
-              "h_center_offset_px": 14.5,
-              "v_center_offset_px": 9.0,
-              "max_aspect_crop_loss": 0.053,
-              "per_panel_crop_loss": {
-                "top_left": 0.0,
-                "top_right": 0.0157,
-                "bottom_left": 0.053,
-                "bottom_right": 0.036
-              },
-              "reject_reason": "aspect_crop_loss_too_high"
-            }
+            "reject_reason": null
           }
         },
         "output_size_px": [
@@ -197,14 +192,14 @@
             "box_px": {
               "left": 0,
               "top": 0,
-              "right": 1024,
-              "bottom": 576
+              "right": 1015,
+              "bottom": 568
             },
             "raw_box_px": {
               "left": 0,
               "top": 0,
-              "right": 1024,
-              "bottom": 576
+              "right": 1015,
+              "bottom": 568
             },
             "size_px": [
               1200,
@@ -218,16 +213,16 @@
             "file": "cover/inline-05.png",
             "quadrant": "top_right",
             "box_px": {
-              "left": 1024,
+              "left": 1033,
               "top": 0,
               "right": 2048,
-              "bottom": 576
+              "bottom": 568
             },
             "raw_box_px": {
-              "left": 1024,
+              "left": 1033,
               "top": 0,
               "right": 2048,
-              "bottom": 576
+              "bottom": 568
             },
             "size_px": [
               1200,
@@ -242,14 +237,14 @@
             "quadrant": "bottom_left",
             "box_px": {
               "left": 0,
-              "top": 576,
-              "right": 1024,
+              "top": 584,
+              "right": 1015,
               "bottom": 1152
             },
             "raw_box_px": {
               "left": 0,
-              "top": 576,
-              "right": 1024,
+              "top": 584,
+              "right": 1015,
               "bottom": 1152
             },
             "size_px": [
@@ -264,14 +259,14 @@
             "file": "cover/inline-07.png",
             "quadrant": "bottom_right",
             "box_px": {
-              "left": 1024,
-              "top": 576,
+              "left": 1033,
+              "top": 584,
               "right": 2048,
               "bottom": 1152
             },
             "raw_box_px": {
-              "left": 1024,
-              "top": 576,
+              "left": 1033,
+              "top": 584,
               "right": 2048,
               "bottom": 1152
             },

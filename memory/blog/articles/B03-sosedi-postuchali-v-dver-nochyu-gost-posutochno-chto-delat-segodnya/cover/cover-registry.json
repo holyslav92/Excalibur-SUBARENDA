@@ -8,7 +8,7 @@
   "alt": "Гость в квартире ночью выключает колонку после стука соседа в дверь; на экране телефона открыт чат с хостом.",
   "aspect_ratio": "16:9",
   "canvas_source": "cover/canvas-quad-01.png",
-  "generated_at": "2026-08-24T12:29:00+00:00",
+  "generated_at": "2026-08-24T14:48:50+00:00",
   "assets": [
     {
       "role": "cover",
@@ -25,7 +25,7 @@
       "file": "cover/inline-01.png",
       "alt": "Ночной чек-лист первых действий: выключить звук, не открывать дверь и написать хосту.",
       "h2_anchor": "Быстрый инсайт",
-      "visual_type": "comparison_table_ui",
+      "visual_type": "comparison_table",
       "aspect_ratio": "16:9"
     },
     {

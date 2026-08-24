@@ -52,7 +52,11 @@
       "angle": "7 шагов к добрым отношениям",
       "wordstat_probes": ["соседи аренда квартиры", "правила проживания аренда", "аренда квартиры тюмень"],
       "tyumen_localize": true,
-      "status": "seed"
+      "status": "used",
+      "last_seen": "2026-08-24",
+      "wordstat_rework_log": "соседи аренда 14/899 → шум ночью 12/866 → P0 шум от соседей ночью 213 + Tyumen посуточно 208",
+      "final_p0": "шум от соседей ночью 213 (225); аренда квартир посуточно тюмень 208 (55+11176)",
+      "used_in_articles": ["B03-sosedi-postuchali-nochyu-gost-posutochno-chto-delat"]
     },
     {
       "id": "price_from_ads",

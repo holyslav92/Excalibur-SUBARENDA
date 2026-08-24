@@ -30,14 +30,12 @@
     {
       "date": "2026-08-24",
       "topic_id": "B03",
-      "slug": "sosedi-postuchali-v-dver-nochyu-gost-posutochno-chto-delat-segodnya",
+      "slug": "",
       "motifs": {
-        "composition": "вертикально-диагональная журнальная композиция: дверь и ручка справа, зона выключателя и телефона слева, reaction-cat bottom-left, logo reference top-right",
-        "location": "светлая прихожая comfort+ квартиры тюмень, поздний август 02:40, лето без снега",
-        "meme": "кот 02:40 bottom-left, гость спокойно выключает звук",
-        "prop_set": "дверь со стуком, выключатель, смартфон беззвучный, чемодан, тапки, часы 02:40",
-        "sticker_set": "шум ночью, тихие часы 22:00, сначала выключите всё",
-        "joke": "кот уже написал объяснительную, гость просто выключает звук"
+        "composition": "night door knock guest quiet",
+        "location": "tyumen summer apartment",
+        "meme": "volume down reaction",
+        "sticker_set": "шум ночью, тихие часы 22:00"
       }
     }
   ]

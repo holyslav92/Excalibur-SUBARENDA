@@ -1,0 +1,62 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/sosedi-postuchali-v-dver-nochyu-gost-posutochno-chto-delat-segodnya/#article",
+  "url": "{{SITE_BASE}}/sosedi-postuchali-v-dver-nochyu-gost-posutochno-chto-delat-segodnya/",
+  "headline": "Соседи стучат ночью: сняли посуточно — что делать сейчас",
+  "description": "Что делать, если соседи стучат ночью в арендованную посуточно квартиру в Тюмени: пошаговый план на первые десять минут, правила тишины и советы, как избежать конфликта.",
+  "inLanguage": "ru-RU",
+  "datePublished": "2026-08-24",
+  "dateModified": "2026-08-24",
+  "author": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/sosedi-postuchali-v-dver-nochyu-gost-posutochno-chto-delat-segodnya/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/"
+  },
+  "mainEntity": {
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Соседи вызвали полицию, а мы просто разговаривали. Что будет?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Как правило, попросят снизить шум. Спокойно скажите, что квартира снята посуточно, назовите хоста, покажите подтверждение брони. Потом сразу напишите хосту."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Нужно открывать дверь соседу ночью?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Не обязательно. Можно ответить через дверь, извиниться и выключить звук. Разговор лицом к лицу лучше перенести на утро: ночью он легко превращается в спор."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Во сколько можно снова включить музыку?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "После 08:00 в будни и после 09:00 в выходные и праздники. И не забывайте про тихий час с 13:00 до 15:00."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Шумели один раз. Хост может выселить?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Если после предупреждения стало тихо — обычно нет. Риск выше при повторе, вечеринке или лишних гостях, которых не указали в брони. Поэтому сообщения хоста лучше не игнорировать."
+        }
+      }
+    ]
+  }
+}
