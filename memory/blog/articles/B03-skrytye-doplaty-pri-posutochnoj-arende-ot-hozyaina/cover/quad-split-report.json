@@ -1,0 +1,290 @@
+{
+  "agent": "excalibur-blog-cover-quad-split",
+  "status": "PASS",
+  "splits": [
+    {
+      "canvas_index": 1,
+      "manifest": "cover/quad-manifest.json",
+      "split": {
+        "source_canvas": "memory/blog/articles/B03-skrytye-doplaty-pri-posutochnoj-arende-ot-hozyaina/cover/canvas-quad-01.png",
+        "source_size_px": [
+          2048,
+          1152
+        ],
+        "panel_size_px": [
+          1016,
+          570
+        ],
+        "split_meta": {
+          "split_mode": "gutter_detect",
+          "h_gutter_px": {
+            "start": 570,
+            "end": 586
+          },
+          "v_gutter_px": {
+            "start": 1016,
+            "end": 1032
+          },
+          "requested_mode": "auto",
+          "gutter_quality": {
+            "h_center_offset_px": 2.0,
+            "v_center_offset_px": 0.0,
+            "max_aspect_crop_loss": 0.0098,
+            "per_panel_crop_loss": {
+              "top_left": 0.0,
+              "top_right": 0.0,
+              "bottom_left": 0.0098,
+              "bottom_right": 0.0098
+            },
+            "reject_reason": null
+          }
+        },
+        "output_size_px": [
+          1200,
+          675
+        ],
+        "outputs": {
+          "cover": {
+            "file": "cover/cover.png",
+            "quadrant": "top_left",
+            "box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1016,
+              "bottom": 570
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1016,
+              "bottom": 570
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Летний постер: гость в светлой тюменской квартире смотрит в телефон на сюрприз-доплаты за уборку — август 2026.",
+            "h2_anchor": null
+          },
+          "inline_1": {
+            "file": "cover/inline-01.png",
+            "quadrant": "top_right",
+            "box_px": {
+              "left": 1032,
+              "top": 0,
+              "right": 2048,
+              "bottom": 570
+            },
+            "raw_box_px": {
+              "left": 1032,
+              "top": 0,
+              "right": 2048,
+              "bottom": 570
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Сравнение цены двух ночей и итога с отдельной уборкой — насколько растёт сумма поездки",
+            "h2_anchor": "Почему две ночи по 2500 ₽ — это ещё не вся поездка"
+          },
+          "inline_2": {
+            "file": "cover/inline-02.png",
+            "quadrant": "bottom_left",
+            "box_px": {
+              "left": 5,
+              "top": 586,
+              "right": 1011,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 586,
+              "right": 1016,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Пять вопросов хозяину посуточной квартиры до перевода денег: итог, уборка, гости, парковка, фиксация",
+            "h2_anchor": "Пять вопросов хозяину до перевода денег"
+          },
+          "inline_3": {
+            "file": "cover/inline-03.png",
+            "quadrant": "bottom_right",
+            "box_px": {
+              "left": 1037,
+              "top": 586,
+              "right": 2043,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 1032,
+              "top": 586,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Уборка как отдельная строка в расчёте посуточной аренды — когда доплата заметно увеличивает бюджет",
+            "h2_anchor": "Уборка отдельной строкой: когда +500 ₽ превращается в +30%"
+          }
+        }
+      }
+    },
+    {
+      "canvas_index": 2,
+      "manifest": "cover/quad-manifest.json",
+      "split": {
+        "source_canvas": "memory/blog/articles/B03-skrytye-doplaty-pri-posutochnoj-arende-ot-hozyaina/cover/canvas-quad-02.png",
+        "source_size_px": [
+          2048,
+          1152
+        ],
+        "panel_size_px": [
+          1012,
+          569
+        ],
+        "split_meta": {
+          "split_mode": "gutter_detect",
+          "h_gutter_px": {
+            "start": 569,
+            "end": 584
+          },
+          "v_gutter_px": {
+            "start": 1012,
+            "end": 1030
+          },
+          "requested_mode": "auto",
+          "gutter_quality": {
+            "h_center_offset_px": 0.5,
+            "v_center_offset_px": 3.0,
+            "max_aspect_crop_loss": 0.0079,
+            "per_panel_crop_loss": {
+              "top_left": 0.0,
+              "top_right": 0.0059,
+              "bottom_left": 0.0,
+              "bottom_right": 0.0079
+            },
+            "reject_reason": null
+          }
+        },
+        "output_size_px": [
+          1200,
+          675
+        ],
+        "outputs": {
+          "inline_4": {
+            "file": "cover/inline-04.png",
+            "quadrant": "top_left",
+            "box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1012,
+              "bottom": 569
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1012,
+              "bottom": 569
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Доплаты за гостей, питомца и бельё при посуточной аренде — что уточнить до оплаты",
+            "h2_anchor": "Гости, питомец и бельё: что спросить до оплаты"
+          },
+          "inline_5": {
+            "file": "cover/inline-05.png",
+            "quadrant": "top_right",
+            "box_px": {
+              "left": 1033,
+              "top": 0,
+              "right": 2045,
+              "bottom": 569
+            },
+            "raw_box_px": {
+              "left": 1030,
+              "top": 0,
+              "right": 2048,
+              "bottom": 569
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Ранний заезд и поздний выезд при посуточной аренде — стандартное время и платные исключения",
+            "h2_anchor": "Ранний заезд и поздний выезд — платные ли они"
+          },
+          "inline_6": {
+            "file": "cover/inline-06.png",
+            "quadrant": "bottom_left",
+            "box_px": {
+              "left": 0,
+              "top": 584,
+              "right": 1012,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 584,
+              "right": 1012,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Четыре разные строки в расчёте посуточной аренды: проживание, предоплата, залог и сервисный сбор",
+            "h2_anchor": "Проживание, предоплата, залог и сбор платформы — четыре разные строки"
+          },
+          "inline_7": {
+            "file": "cover/inline-07.png",
+            "quadrant": "bottom_right",
+            "box_px": {
+              "left": 1034,
+              "top": 584,
+              "right": 2044,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 1030,
+              "top": 584,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Шаблон сообщения хозяину для фиксации итоговой суммы и условий до оплаты посуточной аренды",
+            "h2_anchor": "Как зафиксировать итог в переписке одним сообщением"
+          }
+        }
+      }
+    }
+  ],
+  "manifest": "cover/quad-manifest.json",
+  "html_inject": [
+    "skip inline_1: already correct under H2 — Почему две ночи по 2500 ₽ — это ещё не вся поездка",
+    "skip inline_2: already correct under H2 — Пять вопросов хозяину до перевода денег",
+    "skip inline_3: already correct under H2 — Уборка отдельной строкой: когда +500 ₽ превращается в +30%",
+    "moved inline_4 → H2 — Гости, питомец и бельё: что спросить до оплаты (was under [гости, питомец и бельё: что спросить до оплаты]; removed=1)",
+    "moved inline_5 → H2 — Ранний заезд и поздний выезд — платные ли они (was under [ранний заезд и поздний выезд — платные ли они]; removed=1)",
+    "moved inline_6 → H2 — Проживание, предоплата, залог и сбор платформы — четыре разные строки (was under [проживание, предоплата, залог и сбор платформы — четыре разные строки]; removed=1)",
+    "moved inline_7 → H2 — Как зафиксировать итог в переписке одним сообщением (was under [как зафиксировать итог в переписке одним сообщением]; removed=1)"
+  ]
+}

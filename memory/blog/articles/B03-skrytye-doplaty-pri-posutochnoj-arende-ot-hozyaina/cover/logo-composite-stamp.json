@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "mode": "paste_png_alpha",
+  "inline_logo_files": [
+    "inline-01.png",
+    "inline-03.png",
+    "inline-07.png"
+  ],
+  "inline_logo_count": 3,
+  "cover_phone_display": "+7 (993) 574-83-22",
+  "composed_at": "2026-08-24T10:06:27+00:00",
+  "images": [
+    "cover/cover.png",
+    "cover/inline-01.png",
+    "cover/inline-02.png",
+    "cover/inline-03.png",
+    "cover/inline-04.png",
+    "cover/inline-05.png",
+    "cover/inline-06.png",
+    "cover/inline-07.png"
+  ],
+  "logo_pasted": true,
+  "cover_phone_post_composite": true
+}

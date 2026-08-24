@@ -1,0 +1,86 @@
+{
+  "topic_id": "B03",
+  "slug": "skrytye-doplaty-pri-posutochnoj-arende-ot-hozyaina",
+  "cover_family": "brand_collage",
+  "style_preset": "the_rieltor_twilight_gold",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "file": "cover/cover.png",
+  "alt": "Летний постер: гость в светлой тюменской квартире смотрит в телефон на сюрприз-доплаты за уборку — август 2026.",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-quad-01.png",
+  "generated_at": "2026-08-24T09:46:24+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Летний постер: гость в светлой тюменской квартире смотрит в телефон на сюрприз-доплаты за уборку — август 2026.",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Сравнение цены двух ночей и итога с отдельной уборкой — насколько растёт сумма поездки",
+      "h2_anchor": "Почему две ночи по 2500 ₽ — это ещё не вся поездка",
+      "visual_type": "comparison_table",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Пять вопросов хозяину посуточной квартиры до перевода денег: итог, уборка, гости, парковка, фиксация",
+      "h2_anchor": "Пять вопросов хозяину до перевода денег",
+      "visual_type": "labeled_checklist",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Уборка как отдельная строка в расчёте посуточной аренды — когда доплата заметно увеличивает бюджет",
+      "h2_anchor": "Уборка отдельной строкой: когда +500 ₽ превращается в +30%",
+      "visual_type": "bar_timeline_chart",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_4",
+      "file": "cover/inline-04.png",
+      "alt": "Доплаты за гостей, питомца и бельё при посуточной аренде — что уточнить до оплаты",
+      "h2_anchor": "Гости, питомец и бельё: что спросить до оплаты",
+      "visual_type": "labeled_checklist",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_5",
+      "file": "cover/inline-05.png",
+      "alt": "Ранний заезд и поздний выезд при посуточной аренде — стандартное время и платные исключения",
+      "h2_anchor": "Ранний заезд и поздний выезд — платные ли они",
+      "visual_type": "process_flow",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_6",
+      "file": "cover/inline-06.png",
+      "alt": "Четыре разные строки в расчёте посуточной аренды: проживание, предоплата, залог и сервисный сбор",
+      "h2_anchor": "Проживание, предоплата, залог и сбор платформы — четыре разные строки",
+      "visual_type": "comparison_table",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_7",
+      "file": "cover/inline-07.png",
+      "alt": "Шаблон сообщения хозяину для фиксации итоговой суммы и условий до оплаты посуточной аренды",
+      "h2_anchor": "Как зафиксировать итог в переписке одним сообщением",
+      "visual_type": "meme_panel",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}
