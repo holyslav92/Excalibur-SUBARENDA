@@ -103,12 +103,16 @@
       "status": "seed"
     },
     {
-      "id": "internet_tv_rental",
-      "hook_ru": "интернет и ТВ в съёмной — подключить за день",
-      "angle": "что проверить в апартаментах",
-      "wordstat_probes": ["интернет в арендованной квартире", "аренда квартиры с wifi", "квартира посуточно тюмень"],
+      "id": "pets_short_term",
+      "hook_ru": "посуточно с собакой — в правилах мелким запрет",
+      "angle": "5 вопросов до оплаты + письменное подтверждение",
+      "klyshin_signal": "contract_bans bank + Wordstat P0 снять квартиру посуточно с животными 1165",
+      "wordstat_probes": ["снять квартиру посуточно с животными", "посуточно квартиры с животными"],
+      "final_p0": "снять квартиру посуточно с животными — 1165",
       "tyumen_localize": true,
-      "status": "seed"
-    }
+      "status": "used",
+      "used_in_articles": ["B03-zabroniroval-posutochno-s-sobakoj"],
+      "last_seen": "2026-08-23"
+    },
   ]
 }

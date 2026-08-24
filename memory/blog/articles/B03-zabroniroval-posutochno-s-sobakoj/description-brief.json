@@ -1,0 +1,9 @@
+{
+  "topic_id": "B03",
+  "description": "В объявлении «с собакой можно», а в правилах мелким — запрет. Что спросить в переписке до оплаты, чтобы не стоять у двери с чемоданом и питомцем.",
+  "rhythm": "klyshin_contrast",
+  "geo": "Тюмень",
+  "not_equal_title": true,
+  "not_truncated_lead": true,
+  "verdict": "PASS"
+}

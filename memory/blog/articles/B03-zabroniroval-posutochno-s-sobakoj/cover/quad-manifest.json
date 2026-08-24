@@ -1,0 +1,112 @@
+{
+  "topic_id": "B03",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "С собакой можно? Проверьте до оплаты",
+  "cover_hook_highlight": "собакой",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "wordstat_stickers": ["посуточно с животными", "Тюмень"],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "poster collage dog at apartment door + phone chat bubble + rules paper, TOP-RIGHT empty logo pad",
+    "location": "Tyumen apartment entryway August warm evening green courtyard through door",
+    "meme": "small surprised corgi meme sticker bottom-left ≤10%, never top-right pad",
+    "prop_set": "leash, suitcase, phone bubble, torn rules paper, gold tape",
+    "sticker_set": ["посуточно с животными", "Тюмень", "с собакой"],
+    "joke": "corgi head tilt reading contradictory chat messages"
+  },
+  "cover_emotion": "bewildered guest with dog at door reading phone rules conflict",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Постер: гость с собакой у двери квартиры читает на телефоне «с животными не сдаём» — август, Тюмень.",
+      "scene_hint": "Poster collage: medium dog on leash, suitcase, phone bubble «можно с собакой» vs torn rules «запрещено», bold Cyrillic headline, TOP-RIGHT empty pad; август Тюмень warm light; NO logo in gen.",
+      "meme_caption_ru": "",
+      "sticky": "Животные в правилах"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Сколько стоит собака: доплата, депозит",
+      "visual_type": "comparison_table",
+      "scene_hint": "Sketch+table 3-col compare доплата/депозит/уборка, torn paper, gold ink chips.",
+      "alt": "Доплата за питомца и депозит при посуточной аренде — разные строки в переписке",
+      "labels": ["доплата ≠ залог", "депозит", "питомец", "строки в чате"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Как написать хозяину",
+      "visual_type": "process_flow",
+      "scene_hint": "Hand-drawn chat template flow: порода вес даты → скриншот; phone mockup arrows.",
+      "alt": "Шаблон сообщения хозяину перед бронированием с собакой",
+      "labels": ["шаблон сообщения", "порода вес", "скриншот", "до оплаты"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Где искать правило про животных",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Checklist board 5 items: описание, правила, депозит, анкета, инструкция; magnifying glass on tiny text.",
+      "alt": "Где искать запрет на животных в карточке квартиры и правилах",
+      "labels": ["5 мест в карточке", "правила дома", "мелкий шрифт", "животные"]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Фото при заезде с питомцем",
+      "visual_type": "process_flow",
+      "scene_hint": "Sketch flow video tour: диван, ковролин, углы, двери; camera path arrows.",
+      "alt": "Видео квартиры при заезде с собакой: диван, пол, углы",
+      "labels": ["видео заезда", "диван ковролин", "собака", "углы"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Развернули на пороге",
+      "visual_type": "structure_diagram",
+      "scene_hint": "Flowchart 5 steps at doorway: скрин, причина, не подписывать, второй вариант, фиксация.",
+      "alt": "Что делать, если не пускают с собакой на заселении",
+      "labels": ["не пускают", "у двери", "скрин переписки", "второй вариант"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Как это устроено у нас",
+      "visual_type": "fact_card",
+      "scene_hint": "Warm card cozy apartment + dog bed icon; labels Добрый дом Тюмень до брони.",
+      "alt": "Посуточные квартиры в Тюмени: условия с питомцем до оплаты",
+      "labels": ["Добрый дом", "Тюмень", "до брони", "комфорт+"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Частые вопросы",
+      "visual_type": "schema_faq_ui",
+      "scene_hint": "FAQ UI cards 4 Q&A expand chevrons; small cat sticker bottom-left only.",
+      "alt": "Частые вопросы про посуточную аренду с собакой",
+      "labels": ["вопросы питомец", "кот vs собака", "одна в квартире", "депозит"]
+    }
+  },
+  "cover_keys_ru": ["посуточно с животными", "Тюмень"]
+}
