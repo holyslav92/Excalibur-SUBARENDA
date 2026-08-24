@@ -48,7 +48,10 @@ python3 scripts/excalibur_blog_live_page_gate.py \
 - нет theme quiz и side stickers;
 - нет дублей CTA/контента;
 - cover/inline media доступны, alt честен;
-- schema и canonical относятся к текущей статье.
+- schema и canonical относятся к текущей статье;
+- BlogPosting JSON-LD `url` parity: WP permalink может быть `/blog/{slug}/`, а
+  committed schema — `{{SITE_BASE}}/{slug}/` (без `/blog/`). Gate нормализует
+  optional `/blog/` prefix перед сравнением (INC-20260824-1038).
 
 FAIL = `LIVE PAGE BLOCKER`: нельзя писать `PIPELINE DONE`, обновлять ledger как
 успешно опубликованный или запускать post-run learning как успешный запуск.
