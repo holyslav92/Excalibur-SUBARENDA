@@ -96,12 +96,7 @@ if ($base === '' || !is_array($slugs) || !$slugs) {{
     exit(1);
 }}
 function excalibur_abs_hrefs($html, $base) {{
-    $html = preg_replace(
-        '#href=(["\\'])/blog/vtorichka-i-riski/#i',
-        'href=$1' . $base . '/blog/',
-        $html
-    );
-    $html = str_replace($base . '/blog/vtorichka-i-riski/', $base . '/blog/', $html);
+    $html = preg_replace('#/blog/vtorichka-i-riski/#i', '/blog/', $html);
     $html = preg_replace_callback(
         '#href=(["\\'])(/[^"\\']*)\\1#i',
         function ($m) use ($base) {{
