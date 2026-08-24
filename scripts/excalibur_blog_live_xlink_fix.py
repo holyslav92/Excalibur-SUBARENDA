@@ -52,6 +52,7 @@ def run_bootstrap(env: dict[str, str], php: str, public_base: str, *, bootstrap_
             ).strip()
         if not (runtime_env.get("SSH_PORT") or "").strip():
             runtime_env["SSH_PORT"] = "22"
+        runtime_env["FTP_TRANSPORT"] = "sftp"
         return publish_via_sftp(runtime_env, php, public_base, bootstrap_name=bootstrap_name)
 
     selected_root, probe_log = find_wp_root(env)
