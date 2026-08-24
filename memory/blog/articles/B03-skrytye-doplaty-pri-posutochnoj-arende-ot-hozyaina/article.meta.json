@@ -5,7 +5,8 @@
   "topic_id": "B03",
   "author_id": "dobry-dom",
   "article_mode": "B",
-  "description": "«Всё включено», сказал хозяин. Я уточнил итоговую сумму",
+  "description": "«Всё включено» — это пока не сумма. В Тюмени у «Доброго дома» две ночи по 2500 ₽ легко становятся 6500: уборка и гости всплывают перед оплатой.",
+  "wp_category_slugs": ["posutochnaya-arenda", "zhkh-i-doplaty"],
   "meta_ab": {
     "title_seo": "«Всё включено», сказал хозяин. Я уточнил итоговую сумму",
     "title_ctr": "«Всё включено», сказал хозяин. Я уточнил итоговую сумму",
@@ -20,6 +21,7 @@
     "side_stickers": "skip"
   },
   "date": "2026-08-24",
+  "wp_post_id": 3947,
   "pipeline_canon": "human-first-v2",
   "editorial_swarm": false
 }

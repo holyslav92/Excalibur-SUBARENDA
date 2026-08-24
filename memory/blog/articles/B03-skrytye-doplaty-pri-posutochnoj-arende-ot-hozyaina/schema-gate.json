@@ -1,8 +1,11 @@
 {
-  "status": "PASS",
+  "status": "FAIL",
   "article_dir": "memory/blog/articles/B03-skrytye-doplaty-pri-posutochnoj-arende-ot-hozyaina",
   "schema_path": "memory/blog/articles/B03-skrytye-doplaty-pri-posutochnoj-arende-ot-hozyaina/schema.jsonld",
   "has_site_base_placeholder": true,
-  "errors": [],
+  "errors": [
+    "schema article URLs must be {{SITE_BASE}}/<slug>/, not /blog/<slug>/",
+    "BlogPosting URL/@id must include exact canonical {{SITE_BASE}}/skrytye-doplaty-pri-posutochnoj-arende-ot-hozyaina/"
+  ],
   "warnings": []
 }
