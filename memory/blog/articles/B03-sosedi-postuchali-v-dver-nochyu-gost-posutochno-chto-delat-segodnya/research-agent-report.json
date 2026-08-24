@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "research_date": "2026-08-24",
+  "topic_id": "B03",
+  "topic": "гость посуточно — соседи стучат ночью / как не шуметь",
+  "fresh_signal": "56.ru/E1.RU 2026-08-16 ночной шум от арендаторов + NEWS.ru 2026-07-26 посуточная аренда и тишина",
+  "wordstat_spine": {
+    "phrase": "шум от соседей ночью",
+    "region_225": 213,
+    "region_tyumen": 1,
+    "tyumen_supply": "аренда квартир посуточно тюмень — 208"
+  },
+  "official_source_audit": {
+    "required": true,
+    "status": "PASS",
+    "verified_claims": 5,
+    "entities_checked": ["tyumen_region_silence_law"],
+    "errors": []
+  }
+}
