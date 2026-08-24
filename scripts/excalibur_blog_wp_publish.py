@@ -18,6 +18,7 @@ from asset_download import download_url_bytes
 from excalibur_blog_site_base import (
     REDACTED_LITERAL,
     SITE_BASE_PLACEHOLDER,
+    absolutize_root_relative_hrefs,
     expand_site_base,
     redact_site_base,
     redact_structure,
@@ -486,6 +487,9 @@ def load_article(article_dir: Path, *, public_base: str = "") -> dict:
     # Runtime expand only — on-disk artifacts keep {{SITE_BASE}} for secret-scan-safe commits.
     content = expand_site_base(content, public_base)
     schema_raw = expand_site_base(schema_raw, public_base)
+    # Dzen/RSS resolve relative /blog/ against dzen.ru — WP payload must be absolute.
+    if public_base:
+        content = absolutize_root_relative_hrefs(content, public_base)
 
     registry: dict[str, Any] = {}
     if cover_reg.is_file():

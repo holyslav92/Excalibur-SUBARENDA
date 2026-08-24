@@ -135,6 +135,7 @@ Skill: `skills/publish-excalibur-blog/SKILL.md`
 Git-safe artifacts **must** use `{{SITE_BASE}}` instead of the live host (Cursor secret scan blocks commits with `PUBLIC_SITE_URL`).
 Never write tool-display mask `[REDACTED]` into schema/llms as a fake URL.
 Publish expands `{{SITE_BASE}}` → `PUBLIC_SITE_URL` in the WP payload only (`load_article`); committed files keep `{{SITE_BASE}}`.
+В том же `load_article` корневые `href="/…"` (в т.ч. `/blog/…`) становятся абсолютными — иначе Дзен резолвит их от `dzen.ru`.
 Dry-run reports `schema_placeholder_remaining` and exits non-zero if expand failed.
 `shared/published-articles.md` stores path-only URLs (`/slug/`) via `ledger_url_for_commit`.
 

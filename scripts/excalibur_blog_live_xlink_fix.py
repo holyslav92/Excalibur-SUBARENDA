@@ -26,7 +26,12 @@ from excalibur_blog_live_catalog import (
     slug_from_blog_href,
 )
 from excalibur_blog_link_verify import check_url_with_connection_reset_retry
-from excalibur_blog_site_base import normalize_public_base, resolve_public_base_from_env
+from excalibur_blog_site_base import (
+    absolutize_root_relative_hrefs,
+    normalize_public_base,
+    redact_site_base,
+    resolve_public_base_from_env,
+)
 from excalibur_blog_wp_publish import load_env, project_root
 from excalibur_blog_remote_transport import delete_remote_file, find_wp_root, upload_bytes
 
@@ -338,20 +343,52 @@ def unwrap_mismatched_blog_links(
     return updated, changes
 
 
+def strip_legacy_category_blog_hrefs(content: str) -> tuple[str, list[dict[str, str]]]:
+    """Убрать наследие /blog/vtorichka-i-riski/{slug}/ → /blog/{slug}/."""
+    changes: list[dict[str, str]] = []
+
+    def repl(match: re.Match[str]) -> str:
+        quote = match.group(1)
+        slug = match.group(2)
+        old = f"/blog/vtorichka-i-riski/{slug}/"
+        new = f"/blog/{slug}/"
+        changes.append({"from": old, "to": new, "slug": slug})
+        return f"href={quote}{new}{quote}"
+
+    updated = re.sub(
+        r'href=(["\'])/blog/vtorichka-i-riski/([a-z0-9][a-z0-9-]*)/?\1',
+        repl,
+        content,
+        flags=re.I,
+    )
+    return updated, changes
+
+
 def verify_hrefs(content: str, site_base: str) -> list[str]:
     errors: list[str] = []
+    base = site_base.rstrip("/")
     for match in re.finditer(r'href=(["\'])([^"\']+)\1', content):
         href = match.group(2)
-        if not href.startswith("/blog/"):
+        if href.startswith(base + "/blog/"):
+            url = href
+        elif href.startswith("/blog/"):
+            url = base + href
+        else:
             continue
-        slug = slug_from_blog_href(href)
+        slug = slug_from_blog_href(href if href.startswith("/") else urlparse_path(href))
         if not slug:
             continue
-        url = site_base.rstrip("/") + blog_path_for_slug(slug)
-        result = check_url_with_connection_reset_retry(url, 15.0, "ExcaliburBlogLiveXlinkFix/1.0")
+        check_url = url if url.startswith("http") else base + blog_path_for_slug(slug)
+        result = check_url_with_connection_reset_retry(check_url, 15.0, "ExcaliburBlogLiveXlinkFix/1.0")
         if not result.get("ok"):
             errors.append(f"{href} -> HTTP {result.get('status')} {result.get('error')}")
     return errors
+
+
+def urlparse_path(url: str) -> str:
+    from urllib.parse import urlparse
+
+    return urlparse(url).path or url
 
 
 def post_date_is_target(post_date: str, target: str) -> bool:
@@ -367,6 +404,12 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--slug", action="append", default=[])
     ap.add_argument("--date", default="", help="Asia/Yekaterinburg YYYY-MM-DD")
+    ap.add_argument(
+        "--latest",
+        type=int,
+        default=0,
+        help="Только N последних постов с /blog/ listing (стр. 1 = новые)",
+    )
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--apply", action="store_true")
     args = ap.parse_args()
@@ -387,11 +430,6 @@ def main() -> int:
         catalog = refresh_catalog(root)
     slug_index = catalog.get("slug_index") or {}
 
-    audit_extras = (
-        "beskontaktnoe-zaselenie-posutochno-tyumen",
-        "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
-    )
-
     slugs = [s.strip() for s in args.slug if s.strip()]
     candidate_slugs = slugs[:]
     if not candidate_slugs:
@@ -403,9 +441,19 @@ def main() -> int:
                 break
             for row in parse_listing_html(html):
                 slug = str(row.get("slug") or "").strip()
-                if slug:
+                if slug and slug not in listing_slugs:
                     listing_slugs.append(slug)
-        candidate_slugs = sorted(set(listing_slugs + list(audit_extras)))
+        candidate_slugs = listing_slugs[:]
+        if args.latest and args.latest > 0:
+            candidate_slugs = candidate_slugs[: args.latest]
+        else:
+            extra = [
+                "beskontaktnoe-zaselenie-posutochno-tyumen",
+                "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+            ]
+            for slug in extra:
+                if slug not in candidate_slugs:
+                    candidate_slugs.append(slug)
 
     if not candidate_slugs:
         print("Nothing to fix (no slugs).", file=sys.stderr)
@@ -423,9 +471,9 @@ def main() -> int:
             for row in parse_meta_lines(meta_out)
             if post_date_is_target(str(row.get("date") or ""), args.date)
         ]
-        slugs = sorted(set(dated + list(audit_extras)))
+        slugs = dated
     else:
-        slugs = candidate_slugs if not slugs else sorted(set(slugs + list(audit_extras)))
+        slugs = candidate_slugs if not slugs else slugs
 
     if not slugs:
         print(f"No posts for date {args.date}", file=sys.stderr)
@@ -450,10 +498,14 @@ def main() -> int:
         slug = str(row.get("slug") or "")
         content = str(row.get("content") or "")
         fixed, href_changes = normalize_blog_hrefs(content, slug_index)
+        fixed, legacy_cat_changes = strip_legacy_category_blog_hrefs(fixed)
         fixed, blog_index_changes = fix_blog_index_trailing_slash(fixed)
         fixed, mashed_changes = fix_mashed_cta_spacing(fixed)
         fixed, unwrap_changes = unwrap_mismatched_blog_links(fixed, catalog=catalog)
         fixed, restore_changes = restore_plain_crosslinks(fixed, catalog=catalog)
+        before_abs = fixed
+        fixed = absolutize_root_relative_hrefs(fixed, public_base)
+        abs_count = 0 if before_abs == fixed else before_abs.count('href="/')
         validation = validate_article_crosslinks(
             fixed,
             catalog=catalog,
@@ -462,15 +514,17 @@ def main() -> int:
             timeout=8.0,
             skip_http=True,
         )
-        href_errors = verify_hrefs(fixed, public_base) if fixed != content else []
+        href_errors = [] if args.dry_run else verify_hrefs(fixed, public_base)
         entry = {
             "slug": slug,
             "post_id": row.get("post_id"),
             "href_changes": href_changes,
+            "legacy_category_changes": legacy_cat_changes,
             "blog_index_changes": blog_index_changes,
             "unwrap_changes": unwrap_changes,
             "restore_changes": restore_changes,
             "mashed_changes": mashed_changes,
+            "absolutized_root_hrefs": abs_count,
             "validation_status": validation.get("status"),
             "validation_errors": validation.get("errors"),
             "href_http_errors": href_errors,
@@ -500,7 +554,8 @@ def main() -> int:
     report = {
         "status": "OK",
         "dry_run": bool(args.dry_run or not args.apply),
-        "public_base": public_base,
+        "public_base": redact_site_base(public_base, public_base),
+        "latest": args.latest,
         "posts": report_rows,
     }
     out_path = root / "memory/live-xlink-fix-report.json"

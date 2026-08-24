@@ -52,6 +52,35 @@ def expand_site_base(text: str, public_base: str) -> str:
     return text.replace(SITE_BASE_PLACEHOLDER, base)
 
 
+_ROOT_HREF_RE = re.compile(r"""href=(["'])(/[^"']*)\1""", re.I)
+
+
+def absolutize_root_relative_hrefs(html: str, public_base: str) -> str:
+    """Turn root-relative href="/…" into absolute URLs for RSS/Dzen.
+
+    Writer/Sol keep ``/blog/…`` in git. Dzen resolves relative links against
+    dzen.ru, so WP ``post_content`` and inbound interlink must ship
+    ``https://host/blog/…``. Protocol-relative ``//…`` is left unchanged.
+    Already-absolute http(s) hrefs are not matched.
+    """
+    if not html:
+        return html
+    base = normalize_public_base(public_base)
+    if not base:
+        return html
+    if REDACTED_LITERAL in base:
+        raise ValueError("public base must not be the tool-mask literal [REDACTED]")
+
+    def repl(match: re.Match[str]) -> str:
+        quote = match.group(1)
+        path = match.group(2)
+        if path.startswith("//"):
+            return match.group(0)
+        return f"href={quote}{base}{path}{quote}"
+
+    return _ROOT_HREF_RE.sub(repl, html)
+
+
 def _candidate_bases(public_base: str | None) -> list[str]:
     bases: list[str] = []
     for raw in (public_base, resolve_public_base_from_env()):

@@ -15,7 +15,7 @@
 
 - Не более **3 inbound** правок за один publish-run.
 - Не трогать посты со `status != published` в ledger.
-- URL только path из ledger или `{{SITE_BASE}}/slug/` после expand.
+- URL: Writer/Sol в git пишут `/blog/{slug}/`. **Publish** (`load_article`) раскрывает в абсолютный `PUBLIC_SITE_URL/blog/{slug}/` — иначе Дзен открывает `dzen.ru/blog/…`. Inbound «Читайте также» тоже абсолютный URL. Не класть live-host в git.
 - Не переписывать тело статьи — только append блока, если ссылки ещё нет.
 - Live publish только при `EXCALIBUR_BLOG_ALLOW_PUBLISH=yes` (env, не git).
 

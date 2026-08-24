@@ -54,7 +54,7 @@ class WpCategoriesInterlinkTests(unittest.TestCase):
 
     def test_interlink_gate_pass_with_outbound(self) -> None:
         (self.article_dir / "article.html").write_text(
-            '<p>См. <a href="/blog/vtorichka-i-riski/rosfinmonitoring-sdelka-nedvizhimost-cheklis-tyumen-2026/">чеклист</a>.</p>\n',
+            '<p>См. <a href="/blog/beskontaktnoe-zaselenie-posutochno-tyumen/">бесконтактное заселение</a>.</p>\n',
             encoding="utf-8",
         )
         proc = subprocess.run(
