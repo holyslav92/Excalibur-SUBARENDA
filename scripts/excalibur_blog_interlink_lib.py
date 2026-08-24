@@ -57,6 +57,27 @@ def load_siblings(root: Path) -> list[dict[str, Any]]:
     return [item for item in siblings if isinstance(item, dict) and item.get("slug")]
 
 
+def post_id_from_article_meta(root: Path, slug: str) -> int | None:
+    """Resolve wp_post_id from a published sibling's article.meta.json when ledger lacks it."""
+    articles_root = root / "memory/blog/articles"
+    if not articles_root.is_dir():
+        return None
+    for meta_path in articles_root.glob("*/article.meta.json"):
+        try:
+            meta = json.loads(meta_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        if str(meta.get("slug") or "").strip() != slug:
+            continue
+        raw = meta.get("wp_post_id") or meta.get("post_id")
+        if raw:
+            try:
+                return int(raw)
+            except (TypeError, ValueError):
+                return None
+    return None
+
+
 def all_interlink_candidates(root: Path, *, exclude_topic_id: str = "") -> list[dict[str, Any]]:
     ledger = parse_ledger(root / "shared/published-articles.md")
     siblings = load_siblings(root)
@@ -93,6 +114,11 @@ def all_interlink_candidates(root: Path, *, exclude_topic_id: str = "") -> list[
                 merged[slug]["post_id"] = row.get("post_id")
             if row.get("title"):
                 merged[slug]["title"] = row.get("title")
+    for slug, row in merged.items():
+        if not row.get("post_id"):
+            pid = post_id_from_article_meta(root, slug)
+            if pid:
+                row["post_id"] = pid
     return list(merged.values())
 
 

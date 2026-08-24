@@ -73,6 +73,8 @@ def main() -> int:
         try:
             prev = json.loads(result_path.read_text(encoding="utf-8"))
             published_path = str(prev.get("permalink") or "").strip()
+            if SITE_BASE_PLACEHOLDER in published_path and public:
+                published_path = expand_site_base(published_path, public)
             if published_path.startswith("/"):
                 new_url = expand_site_base(f"{SITE_BASE_PLACEHOLDER}{published_path}", public) if public else published_path
             elif published_path.startswith("http"):
