@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "topic_id": "B03",
+  "research_date": "2026-08-24",
+  "summary": "Research notes for hidden fees / «всё включено» when renting daily from host in Tyumen. Fresh signals: live Avito Tyumen posutochno SERP (2026-08-24), MCP-KV Wordstat snapshot, Telegram @Dobriy_dom_72/95 (2026-08-21), Dzen Dobry Dom (2026-08-15).",
+  "freshness_audit": {
+    "research_date": "2026-08-24",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://www.avito.ru/tyumen/kvartiry/sdam/posutochno/-ASgBAgICAkSSA8gQ8AeSUg",
+      "published_at": "2026-08-24",
+      "note": "Live marketplace snapshot: Tyumen daily-rent listings with line-item surcharges (cleaning, extra guests, linen, early/late check-in, deposit) visible at booking step."
+    },
+    "supporting_signals": [
+      {
+        "url": "https://t.me/Dobriy_dom_72/95",
+        "published_at": "2026-08-21",
+        "note": "Tenant Telegram: unchecked conditions before check-in."
+      },
+      {
+        "url": "https://dzen.ru/a/aoA5pGni3D3wQXo3",
+        "published_at": "2026-08-15",
+        "note": "Dzen: vague talk about deposit and extra fees before booking."
+      }
+    ]
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176", "225"],
+    "p0_phrase": "снять квартиру посуточно от хозяина",
+    "p0_volume_tyumen": 326
+  },
+  "official_source_audit": {
+    "status": "NOT_REQUIRED",
+    "reason": "Нет тарифов/комиссий банков или госорганов с точными цифрами"
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "overlap_guard": {
+    "status": "PASS",
+    "avoided": ["B01 contactless check-in codes", "B02 deposit dispute on checkout"]
+  }
+}

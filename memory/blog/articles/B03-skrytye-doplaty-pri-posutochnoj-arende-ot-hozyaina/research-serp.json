@@ -1,0 +1,218 @@
+{
+  "agent": "excalibur-blog",
+  "date_context": {
+    "timezone": "Europe/Moscow",
+    "today_iso": "2026-08-24",
+    "today_ru": "24.08.2026",
+    "year": 2026,
+    "month": 8,
+    "month_name_ru": "август",
+    "weekday_ru": "понедельник"
+  },
+  "topic": {
+    "topic_id": "B03",
+    "title": "Скрытые доплаты при посуточной аренде от хозяина",
+    "h1": "Скрытые доплаты при посуточной аренде от хозяина",
+    "slug": "skrytye-doplaty-pri-posutochnoj-arende-ot-hozyaina",
+    "primary_query": "Скрытые доплаты при посуточной аренде от хозяина",
+    "priority": "P0"
+  },
+  "searches": [
+    {
+      "query_id": "primary_fresh",
+      "query": "Скрытые доплаты при посуточной аренде от хозяина 2026",
+      "purpose": "актуальный SERP",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Скрытые платежи при аренде посуточной квартиры — что нужно знать?",
+          "url": "https://tp36.ru/skritie-platezhi-pri-arende-posutochnoj-kvartiri-chto-nuzhno-znat/",
+          "snippet": ""
+        },
+        {
+          "title": "Скрытые расходы при посуточной аренде - Что нужно знать, чтобы избежать ...",
+          "url": "https://spb-zapchast.ru/skritie-raskhodi-pri-posutochnoj-arende-chto-nuzhno-znat-chtobi-izbezhat-poter/",
+          "snippet": "В данной статье мы рассмотрим основные виды скрытых платежей, которые могут возникнуть при аренде жилья, и дадим советы, как минимизировать риски."
+        },
+        {
+          "title": "Почему дешёвая квартира может обойтись дороже: скрытые расходы при ...",
+          "url": "https://kakdoma-sutochno.ru/blog/pochemu-deshevaya-kvartira-mozhet-obojtis-dorozhe/",
+          "snippet": "В этой статье мы рассмотрим основные скрытые расходы, связанные с посуточной арендой, и поделимся полезными советами, которые помогут вам сделать осознанный выбор и защитят ваши ..."
+        },
+        {
+          "title": "Юридические тонкости посуточной аренды: объясняет юрист",
+          "url": "https://www.cian.ru/stati-juridicheskie-tonkosti-posutochnoj-arendy-objasnjaet-jurist-341001/",
+          "snippet": "Но при проживании несколько дней ситуация меняется. Постоянно питаться в кафе или заказывать доставку может оказаться значительно дороже, чем купить продукты и приготовить простой завтрак или ужин самостоятельно."
+        },
+        {
+          "title": "Скрытые доплаты при аренде квартиры: как не переплатить",
+          "url": "https://dzen.ru/a/aoV_xGni3D3wS_wH",
+          "snippet": "Если нет путей эвакуации, противопожарных средств и не соблюдаются другие требования — это грозит штрафами. Кроме того, при обнаружении недекларированного дохода придётся уплатить НДФЛ или УСН, а также пени за просрочку."
+        },
+        {
+          "title": "Снять квартиру — скрытые платежи при посуточной аренде и как их увидеть ...",
+          "url": "https://dzen.ru/a/aeMDQziGoGguAjTz",
+          "snippet": "Статья автора «Добрый Дом | посуточно квартиры в Тюмени» в Дзене : Скрытые доплаты при аренде квартиры чаще всего появляются не из-за самой цены за сутки, а из-за неуточнённых условий: уборки,..."
+        }
+      ],
+      "searched_at": "2026-08-24"
+    },
+    {
+      "query_id": "title_fresh",
+      "query": "Скрытые доплаты при посуточной аренде от хозяина 2026",
+      "purpose": "SERP по человеческому title",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Скрытые платежи при аренде посуточной квартиры — что нужно знать?",
+          "url": "https://tp36.ru/skritie-platezhi-pri-arende-posutochnoj-kvartiri-chto-nuzhno-znat/",
+          "snippet": ""
+        },
+        {
+          "title": "Скрытые расходы при посуточной аренде - Что нужно знать, чтобы избежать ...",
+          "url": "https://spb-zapchast.ru/skritie-raskhodi-pri-posutochnoj-arende-chto-nuzhno-znat-chtobi-izbezhat-poter/",
+          "snippet": "В данной статье мы рассмотрим основные виды скрытых платежей, которые могут возникнуть при аренде жилья, и дадим советы, как минимизировать риски."
+        },
+        {
+          "title": "Юридические тонкости посуточной аренды: объясняет юрист",
+          "url": "https://www.cian.ru/stati-juridicheskie-tonkosti-posutochnoj-arendy-objasnjaet-jurist-341001/",
+          "snippet": "В этой статье мы рассмотрим основные скрытые расходы, связанные с посуточной арендой, и поделимся полезными советами, которые помогут вам сделать осознанный выбор и защитят ваши ..."
+        },
+        {
+          "title": "Почему дешёвая квартира может обойтись дороже: скрытые расходы при ...",
+          "url": "https://kakdoma-sutochno.ru/blog/pochemu-deshevaya-kvartira-mozhet-obojtis-dorozhe/",
+          "snippet": "В разных регионах России отношение к посуточной аренде и меры регулирования существенно различаются. Где-то уже есть судебные прецеденты, а где-то только разрабатываются законопроекты."
+        },
+        {
+          "title": "Скрытые доплаты при аренде квартиры: как не переплатить",
+          "url": "https://dzen.ru/a/aoV_xGni3D3wS_wH",
+          "snippet": "Но при проживании несколько дней ситуация меняется. Постоянно питаться в кафе или заказывать доставку может оказаться значительно дороже, чем купить продукты и приготовить простой завтрак или ужин самостоятельно."
+        },
+        {
+          "title": "Партнерское вознаграждение в Домклик24: сколько платит Хозяин?",
+          "url": "https://24.domclick.ru/help/host/pervye_shagi/oplata_komissiya_i_nalogi/kakaya-komissiya-u-domklik24",
+          "snippet": "Статья автора «Добрый Дом | посуточно квартиры в Тюмени» в Дзене : Скрытые доплаты при аренде квартиры чаще всего появляются не из-за самой цены за сутки, а из-за неуточнённых условий: уборки,..."
+        }
+      ],
+      "searched_at": "2026-08-24"
+    },
+    {
+      "query_id": "official_docs",
+      "query": "Скрытые доплаты при посуточной аренде от хозяина official docs 2026",
+      "purpose": "официальные docs",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Юридические тонкости посуточной аренды: объясняет юрист",
+          "url": "https://www.cian.ru/stati-juridicheskie-tonkosti-posutochnoj-arendy-objasnjaet-jurist-341001/",
+          "snippet": ""
+        },
+        {
+          "title": "Новые требования к посуточной аренде квартир",
+          "url": "https://samolet.ru/journal/izmenenija-posutochnaja-arenda-kvartir/",
+          "snippet": "Где грань между наймом и гостиничными услугами и как действовать законно — вместе с юристом Татьяной Рисованной разбираемся, что важно знать арендодателю."
+        },
+        {
+          "title": "Как снизить недопонимание по залогу и доплатам в посуточной аренде",
+          "url": "https://www.see-house.ru/pages/kak-snizit-nedoponimanie-po-zalogu-i-doplatam-v-posutochnoi-arende-2026.php",
+          "snippet": "Рассказываем, что изменилось для собственников квартир в связи новыми требованиями к посуточной аренде."
+        },
+        {
+          "title": "Скрытые платежи при аренде в Москве: как не переплатить",
+          "url": "https://vk.ru/@gblogger-skrytye-platezhi-pri-arende-v-moskve-kak-ne-pereplatit",
+          "snippet": "Как правильно объяснить залог, доплаты, поздний заезд и дополнительные условия проживания без конфликтов с гостями."
+        },
+        {
+          "title": "Владельцу посуточного жилья: как минимизировать риски и спокойно работать",
+          "url": "https://extranet.sutochno.ru/blog/legal-issues",
+          "snippet": "Скрытые платежи при аренде жилья — это дополнительные расходы, о которых арендатор узнает уже после подписания договора: завышенные агентские комиссии, непрозрачные тарифы ЖКХ ..."
+        },
+        {
+          "title": "Сдача в аренду: новые законы и правила с 2025 года — что изменилось",
+          "url": "https://new.realtycalendar.ru/blog/zakony-o-posutochnoj-arende-chto-izmenilos-v-2025-godu-i-chego-zhdat-dalshe",
+          "snippet": "У вас есть право брать доплату за антитабачную обработку (длительное проветривание, поглотители запаха, стирку штор и покрывал) и устанавливать свои правила, но только если они не противоречат закону. Что это значит на практике:"
+        }
+      ],
+      "searched_at": "2026-08-24"
+    },
+    {
+      "query_id": "github_evidence",
+      "query": "site:github.com Скрытые доплаты при посуточной аренде от хозяина 2026",
+      "purpose": "GitHub evidence",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "GitHub - Kusov777/maksim-rent: Сайт посуточной аренды квартир в СПб ...",
+          "url": "https://github.com/Kusov777/maksim-rent",
+          "snippet": ""
+        },
+        {
+          "title": "Поиск по аккаунту в VK (OSINT 2026) - GitHub",
+          "url": "https://github.com/olegakanom/VK-OSINT",
+          "snippet": "Сайт посуточной аренды квартир в СПб — прямое бронирование у хозяина - Kusov777/maksim-rent"
+        },
+        {
+          "title": "Частые полезные настройки VS Code · GitHub",
+          "url": "https://gist.github.com/muks999/50caf7ba36c4899233d25cd620ed4b79",
+          "snippet": "Многие сервисы (особенно x-ray, 220vk и боты) требуют VPN из-за блокировок в РФ. Для графов друзей используй только публичные профили — приватные не парсятся. Проверяй актуальность ботов: VK часто режет API, поэтому некоторые инструменты теряют функционал со временем."
+        },
+        {
+          "title": "GitHub - SistemasTecTlaxiaco/Mapa-mental-sofia",
+          "url": "https://github.com/SistemasTecTlaxiaco/Mapa-mental-sofia",
+          "snippet": "При отображении сообщения \"Код потребляет большое количество процессорного времени при запуске\" вы можете исключить большие папки, чтобы уменьшить первоначальную загрузку."
+        },
+        {
+          "title": "portofolio_RAMANDHAAKBAR/project-placeholder.svg at main ... - GitHub",
+          "url": "https://github.com/ramandhaakbar04-cloud/portofolio_RAMANDHAAKBAR/blob/main/project-placeholder.svg",
+          "snippet": "Contribute to SistemasTecTlaxiaco/Mapa-mental-sofia development by creating an account on GitHub."
+        },
+        {
+          "title": "App Modernization Solutions | GitHub",
+          "url": "https://github.com/solutions/use-case/app-modernization",
+          "snippet": "Contribute to ramandhaakbar04-cloud/portofolio_RAMANDHAAKBAR development by creating an account on GitHub."
+        }
+      ],
+      "searched_at": "2026-08-24"
+    },
+    {
+      "query_id": "community_experience",
+      "query": "Скрытые доплаты при посуточной аренде от хозяина forum problems опыт 2026",
+      "purpose": "форумы и живые проблемы",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Как снизить недопонимание по залогу и доплатам в посуточной аренде",
+          "url": "https://www.see-house.ru/pages/kak-snizit-nedoponimanie-po-zalogu-i-doplatam-v-posutochnoi-arende-2026.php",
+          "snippet": ""
+        },
+        {
+          "title": "Доплата за каждого гостя при посуточной аренде: законно ли?",
+          "url": "https://pravoved.ru/question/3965989/",
+          "snippet": "Как правильно объяснить залог, доплаты, поздний заезд и дополнительные условия проживания без конфликтов с гостями."
+        },
+        {
+          "title": "Скрытые доплаты при аренде квартиры: как не переплатить",
+          "url": "https://dzen.ru/a/aoV_xGni3D3wS_wH",
+          "snippet": "Разбираемся, имеет ли право арендодатель взимать дополнительную плату за каждого гостя при посуточной аренде квартиры сверх оговоренной суммы."
+        },
+        {
+          "title": "Скрытые платежи при аренде посуточной квартиры — что нужно знать?",
+          "url": "https://tp36.ru/skritie-platezhi-pri-arende-posutochnoj-kvartiri-chto-nuzhno-znat/",
+          "snippet": "Статья автора «Добрый Дом | посуточно квартиры в Тюмени» в Дзене : Скрытые доплаты при аренде квартиры чаще всего появляются не из-за самой цены за сутки, а из-за неуточнённых условий: уборки,..."
+        },
+        {
+          "title": "Юридические тонкости посуточной аренды: объясняет юрист",
+          "url": "https://www.cian.ru/stati-juridicheskie-tonkosti-posutochnoj-arendy-objasnjaet-jurist-341001/",
+          "snippet": "В данной статье мы рассмотрим основные виды скрытых платежей, которые могут возникнуть при аренде жилья, и дадим советы, как минимизировать риски."
+        },
+        {
+          "title": "Схемы мошенников при посуточной аренде | Пикабу",
+          "url": "https://pikabu.ru/story/skhemyi_moshennikov_pri_posutochnoy_arende_5201360",
+          "snippet": "Юридические вопросы в посуточной аренде вызывают споры даже у опытных хостов. Где грань между наймом и гостиничными услугами и как действовать законно — вместе с юристом Татьяной Рисованной разбираемся, что важно знать арендодателю."
+        }
+      ],
+      "searched_at": "2026-08-24"
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,25 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/skrytye-doplaty-pri-posutochnoj-arende-ot-hozyaina/#article",
+  "url": "{{SITE_BASE}}/skrytye-doplaty-pri-posutochnoj-arende-ot-hozyaina/",
+  "headline": "«Всё включено», сказал хозяин. Я уточнил итоговую сумму",
+  "description": "Как не попасть на скрытые доплаты при посуточной аренде от хозяина: итоговая сумма за весь срок, уборка, гости, ранний заезд — пять вопросов до перевода денег в Тюмени.",
+  "inLanguage": "ru-RU",
+  "datePublished": "2026-08-24",
+  "dateModified": "2026-08-24",
+  "author": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/skrytye-doplaty-pri-posutochnoj-arende-ot-hozyaina/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/"
+  }
+}

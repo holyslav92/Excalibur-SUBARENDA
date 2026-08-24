@@ -1,0 +1,28 @@
+{
+  "slug": "skrytye-doplaty-pri-posutochnoj-arende-ot-hozyaina",
+  "topic_id": "B03",
+  "permalink": "{{SITE_BASE}}/blog/skrytye-doplaty-pri-posutochnoj-arende-ot-hozyaina/",
+  "publish_method": "ftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B03-skrytye-doplaty-pri-posutochnoj-arende-ot-hozyaina/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1138617,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=3947 slug=skrytye-doplaty-pri-posutochnoj-arende-ot-hozyaina\nOK categories=101,104\nOK featured_image=3948\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=3949 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/08/skrytye-doplaty-pri-posutochnoj-arende-ot-hozyaina-inline-01.png\nOK inline_alt=3949\nOK inline_caption=3949\nOK inline_description=3949\nOK inline_image_upload=3950 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/08/skrytye-doplaty-pri-posutochnoj-arende-ot-hozyaina-inline-02.png\nOK inline_alt=3950\nOK inline_caption=3950\nOK inline_description=3950\nOK inline_image_upload=3951 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/08/skrytye-doplaty-pri-posutochnoj-arende-ot-hozyaina-inline-03.png\nOK inline_alt=3951\nOK inline_caption=3951\nOK inline_description=3951\nOK inline_image_upload=3952 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/08/skrytye-doplaty-pri-posutochnoj-arende-ot-hozyaina-inline-04.png\nOK inline_alt=3952\nOK inline_caption=3952\nOK inline_description=3952\nOK inline_image_upload=3953 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/08/skrytye-doplaty-pri-posutochnoj-arende-ot-hozyaina-inline-05.png\nOK inline_alt=3953\nOK inline_caption=3953\nOK inline_description=3953\nOK inline_image_upload=3954 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/08/skrytye-doplaty-pri-posutochnoj-arende-ot-hozyaina-inline-06.png\nOK inline_alt=3954\nOK inline_caption=3954\nOK inline_description=3954\nOK inline_image_upload=3955 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/08/skrytye-doplaty-pri-posutochnoj-arende-ot-hozyaina-inline-07.png\nOK inline_alt=3955\nOK inline_caption=3955\nOK inline_description=3955\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/skrytye-doplaty-pri-posutochnoj-arende-ot-hozyaina/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "post_id": 3947,
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/skrytye-doplaty-pri-posutochnoj-arende-ot-hozyaina/",
+    "errors": []
+  }
+}

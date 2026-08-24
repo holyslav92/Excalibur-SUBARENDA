@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "topic_id": "B03",
+  "slug": "skrytye-doplaty-pri-posutochnoj-arende-ot-hozyaina",
+  "candidates_count": 6,
+  "outbound_found": [
+    {
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "title": "beskontaktnoe-zaselenie-posutochno-tyumen"
+    },
+    {
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "title": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem"
+    }
+  ],
+  "outbound_required_min": 1,
+  "errors": []
+}
