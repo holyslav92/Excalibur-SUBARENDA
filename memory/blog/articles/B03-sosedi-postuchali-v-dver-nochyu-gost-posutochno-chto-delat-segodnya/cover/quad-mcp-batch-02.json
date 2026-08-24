@@ -1,0 +1,48 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 2,
+  "identity_reference_local": "",
+  "identity_reference_id": "",
+  "logo_reference_local": "memory/cover/assets/brand/logo-dobry-dom.png",
+  "logo_reference_url": "{{SITE_BASE}}/wp-content/uploads/2026/03/cropped-img_7143.png",
+  "logo_reference_in_generation": true,
+  "reference_url_hosted": "",
+  "output_canvas": "cover/canvas-quad-02.png",
+  "result_path": "cover/quad-mcp-result-02.json",
+  "slots": [
+    "inline_4",
+    "inline_5",
+    "inline_6",
+    "inline_7"
+  ],
+  "preferred_image_flow": {
+    "provider": "grsai",
+    "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
+    "resolution": "2K",
+    "note": "PRIMARY: Grsai draw API (non-vip primary tier + resolution=2K first; one vip retry/sheet only when primary cannot deliver long_side>=2048 or hard API fail). Fallback: excalibur_blog_kie_gpt_image2_api.py when Grsai fail. FORBIDDEN: flux2-pro-*, Seedream, nano_banana*, z-image, mcp-derouter/start-mcp.sh.",
+    "apply_script": "python3 scripts/excalibur_blog_quad_apply.py --article-dir <article_dir> --canvas-index 2 --inject-html"
+  },
+  "jobs": [
+    {
+      "slot": "canvas_quad",
+      "tool": "grsai",
+      "mcp_args": {
+        "prompt": "WOW magazine poster RU editorial collage, airy #FFFFFF high-key, sun flare, warm hospitality (посуточно Тюмень, comfort+). Bold readable Russian DISPLAY type hook — NOT timid system font. NO host Shakin/identity-real. NO brand logo in generation — factory pastes canonical PNG TOP-RIGHT 8–12% on cover + 2–3 inlines only. TOP-RIGHT empty pad reserved; meme/cat bottom-left ≤12%;…\nCanvas 2048x1152 exact 2x2; four 16:9 panels (1024x576); thin white gutters; no bleed.\nBan: dark/low-key; inventory props; celebrity memes; EXCALIBUR stamp; chubby host; stock/generated man co-host on inline; large meme person on inline; icon slogans; empty cells; desk scene; cover copy; celebrity memes; stock model man; handsome realtor co-host; generated stranger presenter; large human on inline; meme person >15% frame; invented meme face; WordPress; Gutenberg; wp-admin; block editor; theme chrome; cookie bar; overlapping headline stickers meme cat phone logo; timid system font; wall of tiny labels; empty stock; wordpress screenshot; NO second logo copy; NO logo comparison table; NO dashed logo frame; NO gold house-with-heart logo; NO УЮТНЫЕ КВАРТИРЫ В АРЕНДУ subtitle in art; NO white/gray plate under logo.\nTEXT LANGUAGE LOCK: all visible text is RUSSIAN Cyrillic only; exact LABELS per panel only.\nInlines: logo from reference on 2–3 panels only (inline_1/3/7 default); Reference logo: exact brand mark small top-right, transparent alpha, NO white/gray plate/card; other panels NO visible logo; NO second logo copy; NO logo comparison table; NO dashed logo frame; NO gold house-with-heart logo; NO УЮТНЫЕ КВАРТИРЫ В АРЕНДУ subtitle in art; people-memes only as tiny stickers (≤15% frame, never top-right pad) from real templates in memory/cover/meme-top100.json; mix sketch/table/chart/scheme collage — not text walls.\nTop-left inline: checklist_board; «Тихие часы в Тюмени: когда нельзя шуметь»; Подъезд-схема: лифт, лестница, балкон, тапки, такси без сигнала. TXT:подъезд как труба | лифт и лестница | не курить на балконе | такси без сигнала | тапки вместо каблуков. TOP-RIGHT clean; NO visible brand logo on this panel; no white/gray plate.\nTop-right inline: schema_faq_ui; «Иногда шумите не вы — а подъезд»; Гость→хост→сосед схема, семейный дом, без вечеринок; FAQ card. TXT:напишите сразу | хост говорит с соседом | не вечеринки | комфорт+ | обычные семьи рядом. TOP-RIGHT clean; NO visible brand logo on this panel; no white/gray plate.\nBottom-left inline: tool_screenshot; «Как это устроено у нас»; Карточки залог, предупреждение, гости, курение, видео заезда. TXT:залог не за настроение | после предупреждения | лишние гости | курение на балконе | видео при заезде. TOP-RIGHT clean; NO visible brand logo on this panel; no white/gray plate.\nBottom-right inline: infographic_card; «Жалоба соседа и залог: когда деньги правда могут удержать»; FAQ: полиция, дверь, музыка после 08:00, повтор=риск; cat sticker. TXT:полиция — снизить шум | дверь не обязательна | музыка после 08:00 | повтор — риск | правила заранее. Logo ref top-right, no plate.\nInline all: #FFF collage, gold/black Cyrillic labels, tape/pins/strings/paper scraps; high-key #FFF/gold; not noir; dense facts/numbers; exact TXT per panel; meme only if +meme AND sticker-scale; no human hero on inline; no icon soup; zero typos.",
+        "aspect_ratio": "16:9",
+        "resolution": "2K",
+        "logo_reference_local": "memory/cover/assets/brand/logo-dobry-dom.png",
+        "logo_reference_url": "{{SITE_BASE}}/wp-content/uploads/2026/03/cropped-img_7143.png",
+        "logo_reference_in_generation": true,
+        "input_urls": [
+          "{{SITE_BASE}}/wp-content/uploads/2026/03/cropped-img_7143.png"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "prompt_chars": 3293,
+    "max_prompt_chars": 3500,
+    "required_reference_host": "",
+    "resolution": "2K"
+  }
+}

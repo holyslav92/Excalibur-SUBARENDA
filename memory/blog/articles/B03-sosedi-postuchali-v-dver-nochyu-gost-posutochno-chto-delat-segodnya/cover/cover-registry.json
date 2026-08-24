@@ -1,0 +1,86 @@
+{
+  "topic_id": "B03",
+  "slug": "sosedi-postuchali-v-dver-nochyu-gost-posutochno-chto-delat-segodnya",
+  "cover_family": "brand_collage",
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "file": "cover/cover.png",
+  "alt": "Гость в квартире ночью выключает колонку после стука соседа в дверь; на экране телефона открыт чат с хостом.",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-quad-01.png",
+  "generated_at": "2026-08-24T12:29:00+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Гость в квартире ночью выключает колонку после стука соседа в дверь; на экране телефона открыт чат с хостом.",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Ночной чек-лист первых действий: выключить звук, не открывать дверь и написать хосту.",
+      "h2_anchor": "Быстрый инсайт",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Схема из семи спокойных шагов для гостя, когда сосед стучит ночью.",
+      "h2_anchor": "Что сделать сразу: 7 коротких шагов",
+      "visual_type": "process_flow",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Временная схема тихих часов с источниками шума в квартире и подъезде.",
+      "h2_anchor": "Первые 10 минут: что делать по порядку",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_4",
+      "file": "cover/inline-04.png",
+      "alt": "Чек-лист тихого поведения в подъезде: лифт, лестница, балкон, такси и обувь.",
+      "h2_anchor": "Тихие часы в Тюмени: когда нельзя шуметь",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_5",
+      "file": "cover/inline-05.png",
+      "alt": "Схема общения гостя, хоста и соседа при жалобе на шум.",
+      "h2_anchor": "Иногда шумите не вы — а подъезд",
+      "visual_type": "schema_faq_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_6",
+      "file": "cover/inline-06.png",
+      "alt": "Карточка правил аренды о залоге, предупреждениях, гостях, курении и видео при заезде.",
+      "h2_anchor": "Как это устроено у нас",
+      "visual_type": "tool_screenshot",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_7",
+      "file": "cover/inline-07.png",
+      "alt": "Инфографика о снижении шума, закрытой двери, повторных жалобах и рисках для залога.",
+      "h2_anchor": "Жалоба соседа и залог: когда деньги правда могут удержать",
+      "visual_type": "infographic_card",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}
