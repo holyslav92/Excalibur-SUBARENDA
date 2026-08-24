@@ -11,3 +11,4 @@ lessons, benchmarks, QA reports или соседние research-notes как о
 |----------|------|-------|--------|
 | B01 | beskontaktnoe-zaselenie-posutochno-tyumen | Оплатил квартиру посуточно. Код прислали от чужой двери | published |
 | B02 | perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem | Снял квартиру посуточно. Залог не вернули — нашли скол на плите | published |
+| B03 | zabroniroval-posutochno-s-sobakoj-na-zaselenii-skazali-ne-puskaem | Забронировал жильё с собакой — у двери сказали: «Не пустим» | published |
