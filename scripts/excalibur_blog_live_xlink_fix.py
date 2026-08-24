@@ -410,6 +410,11 @@ def main() -> int:
     )
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--apply", action="store_true")
+    ap.add_argument(
+        "--check-http",
+        action="store_true",
+        help="HTTP 200 для каждого /blog/ href (медленно; по умолчанию выкл.)",
+    )
     args = ap.parse_args()
 
     root = project_root()
@@ -512,7 +517,7 @@ def main() -> int:
             timeout=8.0,
             skip_http=True,
         )
-        href_errors = [] if args.dry_run else verify_hrefs(fixed, public_base)
+        href_errors = verify_hrefs(fixed, public_base) if args.check_http else []
         entry = {
             "slug": slug,
             "post_id": row.get("post_id"),
