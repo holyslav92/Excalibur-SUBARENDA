@@ -1,0 +1,87 @@
+{
+  "status": "PASS",
+  "topic_id": "B03",
+  "research_date": "2026-08-24",
+  "tenant": "Добрый дом",
+  "location": "Тюмень",
+  "topic": "Что делать гостю посуточной квартиры, если ночью стучат соседи или поступила жалоба на шум",
+  "fresh_signal_check": {
+    "status": "PASS",
+    "source": "Газета.Ru",
+    "url": "https://www.gazeta.ru/social/news/2026/03/29/28153003.shtml",
+    "publication_date": "2026-03-29",
+    "accessed_at": "2026-08-24",
+    "note": "Свежий новостной сигнал о конфликте между краткосрочной арендой и спокойствием общего жилого пространства."
+  },
+  "wordstat_check": {
+    "status": "PASS",
+    "accessed_at": "2026-08-24",
+    "queries_checked": [
+      {
+        "query": "шум от соседей ночью",
+        "totalCount": 213
+      },
+      {
+        "query": "шум ночью соседи",
+        "totalCount": 866
+      },
+      {
+        "query": "ночью шум от соседей что делать",
+        "totalCount": 10
+      },
+      {
+        "query": "посуточная аренда квартир согласие соседей",
+        "totalCount": 15
+      },
+      {
+        "query": "аренда квартир посуточно тюмень",
+        "totalCount": 208,
+        "additional_signal": "55+11176"
+      }
+    ],
+    "note": "Проверены несколько смежных формулировок: родительская тема ночного шума, практический вопрос и угол посуточной аренды."
+  },
+  "source_freshness": {
+    "status": "PASS",
+    "all_sources_accessed_at": "2026-08-24",
+    "source_count": 11
+  },
+  "official_source_audit": {
+    "status": "NOT_APPLICABLE",
+    "reason": "В материале нет банковских тарифов, комиссий, ставок, лимитов или условий компаний, требующих official-source gate.",
+    "regional_law_reference_used": "https://tyumen-pravo.ru/zakon/2022/03/29/n-3/"
+  },
+  "angle_check": {
+    "status": "PASS",
+    "note": "Материал сохраняет угол гостя посуточной квартиры: действия после стука или жалобы и профилактика шума. Не дублирует типовой SERP-угол пострадавшего соседа."
+  },
+  "overlap_check": {
+    "status": "PASS",
+    "checked_scope": "published-titles-only",
+    "relevant_published_siblings": [
+      {
+        "topic_id": "B01",
+        "url": "/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+        "relation": "поддержка и бесконтактное заселение"
+      },
+      {
+        "topic_id": "B02",
+        "url": "/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/",
+        "relation": "залог и возможное удержание"
+      }
+    ]
+  },
+  "safety_check": {
+    "status": "PASS",
+    "notes": [
+      "Нет вымышленных штрафов и точных денежных санкций.",
+      "Нет юридических гарантий о возврате или удержании залога.",
+      "Вызов полиции не подаётся как главный совет.",
+      "Практические рекомендации отделены от утверждений о законе."
+    ]
+  },
+  "output_files": [
+    "research-notes.md",
+    "research-agent-report.json"
+  ]
+}

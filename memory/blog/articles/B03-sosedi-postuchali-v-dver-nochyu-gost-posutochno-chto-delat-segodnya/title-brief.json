@@ -1,0 +1,10 @@
+{
+  "topic_id": "B03",
+  "h1": "Соседи стучат ночью: сняли посуточно — что делать сейчас",
+  "title": "Соседи стучат ночью: сняли посуточно — что делать сейчас",
+  "slug": "sosedi-postuchali-v-dver-nochyu-gost-posutochno-chto-delat-segodnya",
+  "verdict": "PASS",
+  "dzen_pattern": 3,
+  "wordstat_p0": "шум от соседей ночью",
+  "generated_via": "excalibur_blog_derouter_opus_chat.py --role title"
+}

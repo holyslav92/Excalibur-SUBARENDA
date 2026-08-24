@@ -1,0 +1,27 @@
+{
+  "slug": "sosedi-postuchali-v-dver-nochyu-gost-posutochno-chto-delat-segodnya",
+  "topic_id": "B03",
+  "permalink": "{{SITE_BASE}}/blog/sosedi-postuchali-v-dver-nochyu-gost-posutochno-chto-delat-segodnya/",
+  "publish_method": "ftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B03-sosedi-postuchali-v-dver-nochyu-gost-posutochno-chto-delat-segodnya/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1046350,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=3969 slug=sosedi-postuchali-v-dver-nochyu-gost-posutochno-chto-delat-segodnya\nOK categories=101\nOK featured_image=3981\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=3982 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/08/sosedi-postuchali-v-dver-nochyu-gost-posutochno-chto-delat-segodnya-inline-01-1.png\nOK inline_alt=3982\nOK inline_caption=3982\nOK inline_description=3982\nOK inline_image_upload=3983 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/08/sosedi-postuchali-v-dver-nochyu-gost-posutochno-chto-delat-segodnya-inline-02-1.png\nOK inline_alt=3983\nOK inline_caption=3983\nOK inline_description=3983\nOK inline_image_upload=3984 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/08/sosedi-postuchali-v-dver-nochyu-gost-posutochno-chto-delat-segodnya-inline-03-1.png\nOK inline_alt=3984\nOK inline_caption=3984\nOK inline_description=3984\nOK inline_image_upload=3985 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/08/sosedi-postuchali-v-dver-nochyu-gost-posutochno-chto-delat-segodnya-inline-04-1.png\nOK inline_alt=3985\nOK inline_caption=3985\nOK inline_description=3985\nOK inline_image_upload=3986 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/08/sosedi-postuchali-v-dver-nochyu-gost-posutochno-chto-delat-segodnya-inline-05-1.png\nOK inline_alt=3986\nOK inline_caption=3986\nOK inline_description=3986\nOK inline_image_upload=3987 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/08/sosedi-postuchali-v-dver-nochyu-gost-posutochno-chto-delat-segodnya-inline-06-1.png\nOK inline_alt=3987\nOK inline_caption=3987\nOK inline_description=3987\nOK inline_image_upload=3988 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/08/sosedi-postuchali-v-dver-nochyu-gost-posutochno-chto-delat-segodnya-inline-07-1.png\nOK inline_alt=3988\nOK inline_caption=3988\nOK inline_description=3988\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/sosedi-postuchali-v-dver-nochyu-gost-posutochno-chto-delat-segodnya/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/sosedi-postuchali-v-dver-nochyu-gost-posutochno-chto-delat-segodnya/",
+    "errors": []
+  }
+}

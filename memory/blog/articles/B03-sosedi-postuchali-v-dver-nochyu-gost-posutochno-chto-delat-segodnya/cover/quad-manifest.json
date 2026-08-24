@@ -1,0 +1,180 @@
+{
+  "topic_id": "B03",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": [
+        "inline_4",
+        "inline_5",
+        "inline_6",
+        "inline_7"
+      ],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "Сосед стучит: что делать",
+  "cover_hook_highlight": "стучит",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "wordstat_stickers": [
+    "шум ночью",
+    "тихие часы 22:00"
+  ],
+  "logo_paste_inline_slots": [
+    "inline_1",
+    "inline_3",
+    "inline_7"
+  ],
+  "cover_emotion": "Спокойная ночная тревога, быстро переходящая в ощущение контроля: не паникуем, действуем тихо и по шагам.",
+  "cover_motifs": {
+    "composition": "Вертикально-диагональная журнальная композиция: дверь и ручка справа, зона выключателя и телефона слева, reaction-cat ≤12% bottom-left, logo reference top-right без плашки",
+    "location": "Светлая прихожая comfort+ квартиры Тюмень, поздний август 02:40, лето без снега",
+    "meme": "Кот 02:40 😳 bottom-left, гость спокойно выключает звук",
+    "prop_set": "дверь со стуком, выключатель, смартфон беззвучный, чемодан, тапки, часы 02:40",
+    "sticker_set": [
+      "шум ночью",
+      "тихие часы 22:00",
+      "Сначала выключите всё"
+    ],
+    "joke": "Кот уже написал объяснительную, гость просто выключает звук"
+  },
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Derouter REST (DEROUTER_API_KEY) — 2K 16:9, one job per canvas (2×). Cover agent invents cover_hook + scene_hint/alt before --write-batch. Host lock = blog-hero.json (navy blazer, not hoodie).",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Гость в квартире ночью выключает колонку после стука соседа в дверь; на экране телефона открыт чат с хостом.",
+      "scene_hint": "Летняя ночь Тюмень: гость выключает колонку, стук у двери, телефон. Пустой верхний правый угол БЕЗ логотипа и БЕЗ подложки.",
+      "meme_caption_ru": "",
+      "sticky": "Сначала выключите всё"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Быстрый инсайт",
+      "visual_type": "comparison_table",
+      "scene_hint": "Чек-лист 02:40: выключить звук, не открывать дверь, написать хосту; reaction card, лето Пустой top-right без логотипа.",
+      "alt": "Ночной чек-лист первых действий: выключить звук, не открывать дверь и написать хосту.",
+      "labels": [
+        "02:40 жалоба соседа",
+        "первые 10 минут",
+        "звук выключить полностью",
+        "не открывать дверь",
+        "написать хосту"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Что сделать сразу: 7 коротких шагов",
+      "visual_type": "process_flow",
+      "scene_hint": "7 шагов flow: тишина, ответ через дверь, окно, хост, утро; без лиц",
+      "alt": "Схема из семи спокойных шагов для гостя, когда сосед стучит ночью.",
+      "labels": [
+        "7 шагов ночью",
+        "ответьте через дверь",
+        "не спорить",
+        "закройте окна",
+        "утром извинитесь"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Первые 10 минут: что делать по порядку",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Таймлайн 22:00–08:00, выходные 09:00, 13:00–15:00; иконки колонка/окно/каблуки Пустой top-right без логотипа.",
+      "alt": "Временная схема тихих часов с источниками шума в квартире и подъезде.",
+      "labels": [
+        "будни 22:00–08:00",
+        "выходные до 09:00",
+        "днём 13:00–15:00",
+        "не только колонка",
+        "21:30 тоже риск"
+      ]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Тихие часы в Тюмени: когда нельзя шуметь",
+      "visual_type": "checklist_board",
+      "scene_hint": "Подъезд-схема: лифт, лестница, балкон, тапки, такси без сигнала Пустой top-right без логотипа и подложки.",
+      "alt": "Чек-лист тихого поведения в подъезде: лифт, лестница, балкон, такси и обувь.",
+      "labels": [
+        "подъезд как труба",
+        "лифт и лестница",
+        "не курить на балконе",
+        "такси без сигнала",
+        "тапки вместо каблуков"
+      ]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Иногда шумите не вы — а подъезд",
+      "visual_type": "schema_faq_ui",
+      "scene_hint": "Гость→хост→сосед схема, семейный дом, без вечеринок; FAQ card Пустой top-right без логотипа и подложки.",
+      "alt": "Схема общения гостя, хоста и соседа при жалобе на шум.",
+      "labels": [
+        "напишите сразу",
+        "хост говорит с соседом",
+        "не вечеринки",
+        "комфорт+",
+        "обычные семьи рядом"
+      ]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Как это устроено у нас",
+      "visual_type": "tool_screenshot",
+      "scene_hint": "Карточки залог, предупреждение, гости, курение, видео заезда Пустой top-right без логотипа и подложки.",
+      "alt": "Карточка правил аренды о залоге, предупреждениях, гостях, курении и видео при заезде.",
+      "labels": [
+        "залог не за настроение",
+        "после предупреждения",
+        "лишние гости",
+        "курение на балконе",
+        "видео при заезде"
+      ]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Жалоба соседа и залог: когда деньги правда могут удержать",
+      "visual_type": "infographic_card",
+      "scene_hint": "FAQ: полиция, дверь, музыка после 08:00, повтор=риск; cat sticker Пустой top-right без логотипа и подложки.",
+      "alt": "Инфографика о снижении шума, закрытой двери, повторных жалобах и рисках для залога.",
+      "labels": [
+        "полиция — снизить шум",
+        "дверь не обязательна",
+        "музыка после 08:00",
+        "повтор — риск",
+        "правила заранее"
+      ]
+    }
+  },
+  "cover_keys_ru": [
+    "шум ночью",
+    "тихие часы 22:00"
+  ]
+}
