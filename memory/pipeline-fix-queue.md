@@ -1,5 +1,12 @@
 # Pipeline fix queue
 
+## INC-20260824-1050 — Metrika credentials missing (Content-learner B03)
+
+- **Symptom:** `excalibur_blog_metrika_fetch.py --days 30 --ingest` exits 2 with `METRIKA CREDENTIALS BLOCKER`; no `memory/analytics/metrika-latest.json`.
+- **Cause:** `YANDEX_METRIKA_OAUTH_TOKEN` and `YANDEX_METRIKA_COUNTER_ID` not set in Cloud Secrets/env; `memory/site.env.local` absent.
+- **Fix:** tenant adds OAuth token (`metrika:read`) + counter id to Cloud Secrets; re-run Metrika fetch after publish.
+- **Status:** open — blocks Metrika feedback loop for B03 Content-learner; evidence gate SKIP is normal.
+
 ## INC-20260824-1038 — live-page gate /blog permalink vs schema URL
 
 - **Symptom:** `live BlogPosting JSON-LD URL does not exactly match permalink` after successful FTP publish (B03).
