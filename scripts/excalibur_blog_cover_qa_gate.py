@@ -67,6 +67,23 @@ def load_json(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def article_emergency_logo_paste(article_dir: Path) -> bool:
+    """Emergency alpha-paste after reference_in_generation exhaust → slim paste QA path."""
+    stamp_path = article_dir / "cover" / "logo-composite-stamp.json"
+    if not stamp_path.is_file():
+        return False
+    try:
+        stamp = load_json(stamp_path)
+    except json.JSONDecodeError:
+        return False
+    mode = str(stamp.get("mode") or "").strip().casefold()
+    return str(stamp.get("status") or "").upper() == "PASS" and mode in {
+        "paste_png_alpha",
+        "paste_png",
+        "emergency_paste",
+    }
+
+
 def load_tenant_cover_mode(root: Path) -> dict:
     cfg_path = root / "shared" / "tenant-config.json"
     if not cfg_path.is_file():
@@ -97,6 +114,9 @@ def validate_cover_qa(article_dir: Path, root: Path) -> dict:
     tenant_cover = load_tenant_cover_mode(root)
     brand_logo_paste = bool(tenant_cover.get("brand_logo_paste"))
     logo_reference = bool(tenant_cover.get("logo_reference_in_generation"))
+    if article_emergency_logo_paste(article_dir):
+        brand_logo_paste = True
+        logo_reference = False
 
     from excalibur_blog_identity_real import missing_identity_files
 
@@ -166,6 +186,8 @@ def validate_cover_qa(article_dir: Path, root: Path) -> dict:
                 "schema_faq_ui",
                 "tool_screenshot",
                 "infographic_card",
+                "meme_panel",
+                "reaction_card",
             }
             for i in range(1, 8):
                 key = f"inline_{i}"
