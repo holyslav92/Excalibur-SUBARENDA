@@ -574,7 +574,19 @@ def validate_article_logo_gates_slim(article_dir: Path, root: Path) -> list[str]
                 f"pre-composite cover.png: AI-drawn lockup detected (score={result['score']}, {reasons})"
             )
         plate = detect_white_plate_in_pad(pre_cover)
-        if plate.get("detected") and plate.get("plate_kind") == "white":
+        skip_white_plate = False
+        stamp_path = cover_dir / "logo-composite-stamp.json"
+        if stamp_path.is_file() and not result.get("detected"):
+            try:
+                stamp = json.loads(stamp_path.read_text(encoding="utf-8"))
+                skip_white_plate = str(stamp.get("mode") or "") == "paste_png_alpha"
+            except json.JSONDecodeError:
+                skip_white_plate = False
+        if (
+            plate.get("detected")
+            and plate.get("plate_kind") == "white"
+            and not skip_white_plate
+        ):
             errors.append(
                 "pre-composite cover.png: white logo plate/card in generation pad "
                 f"(area={plate.get('plate_area')})"

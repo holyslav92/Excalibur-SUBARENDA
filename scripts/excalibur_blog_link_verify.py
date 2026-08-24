@@ -52,7 +52,31 @@ def extract_links(html: str) -> list[str]:
     return out
 
 
+def idna_encode_url(url: str) -> str:
+    """Encode IDN hostnames for urllib (latin-1 safe)."""
+    from urllib.parse import urlsplit, urlunsplit
+
+    parts = urlsplit(url)
+    host = parts.hostname or ""
+    if not host or host.isascii():
+        return url
+    try:
+        ascii_host = host.encode("idna").decode("ascii")
+    except UnicodeError:
+        return url
+    netloc = ascii_host
+    if parts.port:
+        netloc = f"{ascii_host}:{parts.port}"
+    if parts.username:
+        auth = parts.username
+        if parts.password:
+            auth = f"{auth}:{parts.password}"
+        netloc = f"{auth}@{netloc}"
+    return urlunsplit((parts.scheme, netloc, parts.path, parts.query, parts.fragment))
+
+
 def check_url(url: str, timeout: float, user_agent: str) -> dict[str, Any]:
+    url = idna_encode_url(url)
     ctx = ssl.create_default_context()
     req = urllib.request.Request(
         url,

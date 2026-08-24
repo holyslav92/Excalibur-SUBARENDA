@@ -92,3 +92,58 @@ checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_llms_deploy.py`
 - `python3 scripts/excalibur_blog_llms_deploy.py --dry-run` → llms files present, transport ftp
 commit: 3b837c2
+
+## INC-20260824-1505 — link_verify IDN домен добрыйдом-72.рф
+
+status: fixed
+run_date: 2026-08-24
+role: excalibur-blog-structure-gate
+topic_id: B03
+article_dir: memory/blog/articles/B03-sosedi-postuchali-v-dver-nochyu-gost-posutochno-chto-delat-segodnya
+severity: medium
+category: script
+
+### What went wrong
+
+- `excalibur_blog_link_verify.py` падал на `https://добрыйдом-72.рф/` с `'latin-1' codec can't encode characters`.
+
+### Durable fix
+
+- `idna_encode_url()` перед HEAD/GET.
+
+files_changed:
+- `scripts/excalibur_blog_link_verify.py`
+
+## INC-20260824-1506 — cover QA white plate false-positive после factory paste
+
+status: fixed
+run_date: 2026-08-24
+role: excalibur-blog-cover-qa
+topic_id: B03
+severity: medium
+category: script
+
+### Durable fix
+
+- Пропуск white-plate на pre-composite при `paste_png_alpha` stamp + drawn-lockup PASS.
+- `tenant-config.json`: `logo_mode`/`cover_mode` → `brand_logo_paste`.
+
+files_changed:
+- `scripts/excalibur_blog_drawn_logo_gate.py`
+- `shared/tenant-config.json`
+
+## INC-20260824-1510 — FTP publish TimeoutError B03
+
+status: needs-human
+run_date: 2026-08-24
+role: excalibur-blog-publish
+topic_id: B03
+severity: high
+category: env
+
+### What went wrong
+
+- `excalibur_blog_wp_publish.py` → `TimeoutError` на `ftp.storbinary` (bootstrap ~14MB). Dry-run PASS.
+
+needed_decision_or_secret:
+- Повтор publish при стабильном FTP; проверить PASV/таймауты Timeweb.

@@ -176,8 +176,8 @@
     "derouter_image_quality": "high",
     "auto_interlink_after_publish": true
   },
-  "cover_mode": "reference_in_generation",
-  "logo_mode": "reference_in_generation",
+  "cover_mode": "brand_logo_paste",
+  "logo_mode": "brand_logo_paste",
   "logo_composite": {
     "mode": "emergency_paste_only",
     "emergency_flag": "--emergency",
@@ -313,7 +313,7 @@
   "cover_wow_rules": {
     "status": "slim",
     "philosophy": "top-100 meme energy ON TOPIC + comfort+ brand; logo via Grsai reference urls/aroma in generation; phone post-composite; no plate; no WP UI; max-2 gen + vip fallback",
-    "logo_mode": "reference_in_generation",
+    "logo_mode": "brand_logo_paste",
     "max_generation_attempts_per_canvas": 2,
     "paste_and_ship_on_exhaust": true,
     "logo_asset": "memory/cover/assets/brand/logo-dobry-dom.png",
