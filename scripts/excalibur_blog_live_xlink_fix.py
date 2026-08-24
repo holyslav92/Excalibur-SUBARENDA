@@ -82,7 +82,70 @@ def run_bootstrap(env: dict[str, str], php: str, public_base: str, *, bootstrap_
 YEKT = ZoneInfo("Asia/Yekaterinburg")
 
 
-def build_meta_bootstrap(slugs: list[str]) -> str:
+def build_server_absolutize_php(slugs: list[str], public_base: str) -> str:
+    """Маленький bootstrap: переписать href на сервере без выгрузки HTML в Python."""
+    payload = {"slugs": slugs, "base": normalize_public_base(public_base)}
+    encoded = base64.b64encode(json.dumps(payload, ensure_ascii=False).encode("utf-8")).decode("ascii")
+    return f"""<?php
+require __DIR__ . '/wp-load.php';
+$p = json_decode(base64_decode('{encoded}'), true);
+$base = rtrim((string) ($p['base'] ?? ''), '/');
+$slugs = $p['slugs'] ?? [];
+if ($base === '' || !is_array($slugs) || !$slugs) {{
+    echo 'ERR abs: empty payload' . PHP_EOL;
+    exit(1);
+}}
+function excalibur_abs_hrefs($html, $base) {{
+    $html = preg_replace(
+        '#href=(["\\'])/blog/vtorichka-i-riski/#i',
+        'href=$1' . $base . '/blog/',
+        $html
+    );
+    $html = str_replace($base . '/blog/vtorichka-i-riski/', $base . '/blog/', $html);
+    $html = preg_replace_callback(
+        '#href=(["\\'])(/[^"\\']*)\\1#i',
+        function ($m) use ($base) {{
+            $path = $m[2];
+            if (strpos($path, '//') === 0) {{
+                return $m[0];
+            }}
+            return 'href=' . $m[1] . $base . $path . $m[1];
+        }},
+        $html
+    );
+    return $html;
+}}
+foreach ($slugs as $slug) {{
+    $slug = sanitize_title((string) $slug);
+    if ($slug === '') {{
+        echo 'ERR abs: bad slug' . PHP_EOL;
+        continue;
+    }}
+    $posts = get_posts([
+        'name' => $slug,
+        'post_type' => 'post',
+        'post_status' => 'publish',
+        'numberposts' => 1,
+    ]);
+    if (!$posts) {{
+        echo 'ERR abs: missing post slug=' . $slug . PHP_EOL;
+        continue;
+    }}
+    $post = $posts[0];
+    $old = (string) $post->post_content;
+    $new = excalibur_abs_hrefs($old, $base);
+    if ($new === $old) {{
+        echo 'OK abs_skip=' . $post->ID . ' slug=' . $slug . PHP_EOL;
+        continue;
+    }}
+    wp_update_post([
+        'ID' => (int) $post->ID,
+        'post_content' => wp_slash($new),
+    ]);
+    echo 'OK abs_update=' . $post->ID . ' slug=' . $slug . PHP_EOL;
+}}
+echo 'OK abs_done' . PHP_EOL;
+"""
     payload = {"slugs": slugs}
     encoded = base64.b64encode(json.dumps(payload, ensure_ascii=False).encode("utf-8")).decode("ascii")
     return f"""<?php
@@ -411,9 +474,9 @@ def main() -> int:
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--apply", action="store_true")
     ap.add_argument(
-        "--check-http",
+        "--server-rewrite",
         action="store_true",
-        help="HTTP 200 для каждого /blog/ href (медленно; по умолчанию выкл.)",
+        help="Переписать href в WP на сервере (без выгрузки HTML). Нужен --apply.",
     )
     args = ap.parse_args()
 
@@ -481,6 +544,22 @@ def main() -> int:
     if not slugs:
         print(f"No posts for date {args.date}", file=sys.stderr)
         return 1
+
+    if args.server_rewrite:
+        if not args.apply or args.dry_run:
+            print("OK server-rewrite plan slugs=" + ",".join(slugs))
+            return 0
+        out = run_bootstrap(
+            env,
+            build_server_absolutize_php(slugs, public_base),
+            public_base,
+            bootstrap_name="excalibur-blog-abs-href-once.php",
+        )
+        print(out)
+        if "OK abs_done" not in out:
+            print("FAIL server-rewrite", file=sys.stderr)
+            return 1
+        return 0
 
     fetch_out = run_bootstrap(
         env,
