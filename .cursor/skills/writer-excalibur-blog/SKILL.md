@@ -64,6 +64,7 @@ python3 scripts/excalibur_blog_derouter_opus_chat.py \
 - CTA: TG канал, MAX, booking, tel из `tenant-config`.
 - Положи `dzen-excerpt.json` (hook + first_screen + takeaway) для будущего Дзена.
 - **Interlink (если `interlink_old_articles=true`):** 1–3 контекстные `<a href="/blog/...">` на
+  published siblings. В git — относительный путь; publish делает абсолютный URL для WP/RSS/Дзен.
   опубликованные sibling из ledger; якорь по смыслу H2, не «читайте также» в каждом абзаце.
   **Перекрёстные ссылки** только на уже живые посты с `/blog/`; нет поста — нет ссылки. Перед публикацией гейт бьёт HTTP 200.
 - Не читай чужие article.html / live-сайт / уже опубликованные статьи сайта / topics.

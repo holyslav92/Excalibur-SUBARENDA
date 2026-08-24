@@ -151,9 +151,11 @@ def append_interlink_block(content: str, *, from_slug: str, target_url: str, tar
     )
 
 
-def permalink_path_for_slug(slug: str, category_slug: str = "vtorichka-i-riski") -> str:
+def permalink_path_for_slug(slug: str, category_slug: str = "") -> str:
+    """Live posts are /blog/{slug}/ (no WP category in the path)."""
     slug = slug.strip("/")
-    return f"/blog/{category_slug}/{slug}/"
+    _ = category_slug  # leftover from other tenants; path is uncategorized
+    return f"/blog/{slug}/"
 
 
 def resolve_public_path(candidate: dict[str, Any], public_base: str = "") -> str:

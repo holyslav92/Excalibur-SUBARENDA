@@ -1,6 +1,58 @@
 # Pipeline fix queue
 
+## INC-20260824-1305 — Dzen relative /blog/ href 404
+
+status: fixed
+run_date: 2026-08-24
+role: excalibur-blog-fixer
+topic_id: LIVE
+severity: high
+category: script
+
+### What went wrong
+
+- Outbound interlink in `article.html` is `href="/blog/{slug}/"`. On the site this works; in Яндекс.Дзен RSS `content:encoded` resolves against `dzen.ru` → 404.
+- Inbound default path used `/blog/vtorichka-i-riski/{slug}/` (чужой тенант) instead of `/blog/{slug}/`.
+
+### How the agent recovered this run
+
+- `absolutize_root_relative_hrefs()` in `load_article` at publish.
+- Live xfix `--latest 9 --apply` for already published posts.
+- Inbound permalink = `/blog/{slug}/` + absolute URL when `PUBLIC_SITE_URL` set.
+
+### Durable fix needed before next run
+
+- WP payload must never ship root-relative `/blog/` hrefs.
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_site_base.py`
+- `scripts/excalibur_blog_wp_publish.py`
+- `scripts/excalibur_blog_live_xlink_fix.py`
+- `scripts/excalibur_blog_interlink_lib.py`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-08-24
+fix_summary:
+- Publish absolutizes root-relative hrefs for Dzen/RSS.
+- Live xfix converts existing posts; inbound path without WP category slug.
+files_changed:
+- `scripts/excalibur_blog_site_base.py`
+- `scripts/excalibur_blog_wp_publish.py`
+- `scripts/excalibur_blog_live_xlink_fix.py`
+- `scripts/excalibur_blog_interlink_lib.py`
+- `scripts/excalibur_blog_post_publish_interlink.py`
+checks_run:
+- `python3 -m unittest tests/test_absolutize_hrefs.py`
+commit: pending-parent-commit
+
 ## INC-20260824-1038 — live-page gate /blog permalink vs schema URL
+
 
 status: fixed
 run_date: 2026-08-24

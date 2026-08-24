@@ -155,6 +155,7 @@ Indexer/schema/cover **must** leave `{{SITE_BASE}}` in committed artifacts (not 
 `schema.jsonld`, llms, `link-verify.json`, `cover/quad-mcp-batch.json`, `wp-publish-result.json`.
 
 `excalibur_blog_wp_publish.py` expands `{{SITE_BASE}}` → `PUBLIC_SITE_URL` **at publish time only** in `load_article` (content + schema meta payload).
+Затем **все корневые** `href="/…"` (включая `/blog/…`) превращаются в абсолютные URL того же хоста. Иначе RSS/Дзен резолвят `/blog/…` как `dzen.ru/blog/…` (404). On-disk `article.html` остаётся с относительными путями / `{{SITE_BASE}}`.
 On-disk artifacts stay with the placeholder. Dry-run fails if `schema_placeholder_remaining` after expand (missing `PUBLIC_SITE_URL`/`--public-base`).
 After publish, `wp-publish-result.json` is written with live host already redacted to `{{SITE_BASE}}` (permalink + raw_output).
 Ledger (`shared/published-articles.md`) writes path-only `/slug/` via `ledger_url_for_commit`.

@@ -26,7 +26,12 @@ from excalibur_blog_live_catalog import (
     slug_from_blog_href,
 )
 from excalibur_blog_link_verify import check_url_with_connection_reset_retry
-from excalibur_blog_site_base import normalize_public_base, resolve_public_base_from_env
+from excalibur_blog_site_base import (
+    absolutize_root_relative_hrefs,
+    normalize_public_base,
+    redact_site_base,
+    resolve_public_base_from_env,
+)
 from excalibur_blog_wp_publish import load_env, project_root
 from excalibur_blog_remote_transport import delete_remote_file, find_wp_root, upload_bytes
 
@@ -47,6 +52,7 @@ def run_bootstrap(env: dict[str, str], php: str, public_base: str, *, bootstrap_
             ).strip()
         if not (runtime_env.get("SSH_PORT") or "").strip():
             runtime_env["SSH_PORT"] = "22"
+        runtime_env["FTP_TRANSPORT"] = "sftp"
         return publish_via_sftp(runtime_env, php, public_base, bootstrap_name=bootstrap_name)
 
     selected_root, probe_log = find_wp_root(env)
@@ -77,7 +83,65 @@ def run_bootstrap(env: dict[str, str], php: str, public_base: str, *, bootstrap_
 YEKT = ZoneInfo("Asia/Yekaterinburg")
 
 
-def build_meta_bootstrap(slugs: list[str]) -> str:
+def build_server_absolutize_php(slugs: list[str], public_base: str) -> str:
+    """Маленький bootstrap: переписать href на сервере без выгрузки HTML в Python."""
+    payload = {"slugs": slugs, "base": normalize_public_base(public_base)}
+    encoded = base64.b64encode(json.dumps(payload, ensure_ascii=False).encode("utf-8")).decode("ascii")
+    return f"""<?php
+require __DIR__ . '/wp-load.php';
+$p = json_decode(base64_decode('{encoded}'), true);
+$base = rtrim((string) ($p['base'] ?? ''), '/');
+$slugs = $p['slugs'] ?? [];
+if ($base === '' || !is_array($slugs) || !$slugs) {{
+    echo 'ERR abs: empty payload' . PHP_EOL;
+    exit(1);
+}}
+function excalibur_abs_hrefs($html, $base) {{
+    $html = preg_replace('#/blog/vtorichka-i-riski/#i', '/blog/', $html);
+    $html = preg_replace_callback(
+        '#href=(["\\'])(/[^"\\']*)\\1#i',
+        function ($m) use ($base) {{
+            $path = $m[2];
+            if (strpos($path, '//') === 0) {{
+                return $m[0];
+            }}
+            return 'href=' . $m[1] . $base . $path . $m[1];
+        }},
+        $html
+    );
+    return $html;
+}}
+foreach ($slugs as $slug) {{
+    $slug = sanitize_title((string) $slug);
+    if ($slug === '') {{
+        echo 'ERR abs: bad slug' . PHP_EOL;
+        continue;
+    }}
+    $posts = get_posts([
+        'name' => $slug,
+        'post_type' => 'post',
+        'post_status' => 'publish',
+        'numberposts' => 1,
+    ]);
+    if (!$posts) {{
+        echo 'ERR abs: missing post slug=' . $slug . PHP_EOL;
+        continue;
+    }}
+    $post = $posts[0];
+    $old = (string) $post->post_content;
+    $new = excalibur_abs_hrefs($old, $base);
+    if ($new === $old) {{
+        echo 'OK abs_skip=' . $post->ID . ' slug=' . $slug . PHP_EOL;
+        continue;
+    }}
+    wp_update_post([
+        'ID' => (int) $post->ID,
+        'post_content' => wp_slash($new),
+    ]);
+    echo 'OK abs_update=' . $post->ID . ' slug=' . $slug . PHP_EOL;
+}}
+echo 'OK abs_done' . PHP_EOL;
+"""
     payload = {"slugs": slugs}
     encoded = base64.b64encode(json.dumps(payload, ensure_ascii=False).encode("utf-8")).decode("ascii")
     return f"""<?php
@@ -338,20 +402,50 @@ def unwrap_mismatched_blog_links(
     return updated, changes
 
 
+def strip_legacy_category_blog_hrefs(content: str) -> tuple[str, list[dict[str, str]]]:
+    """Убрать наследие /blog/vtorichka-i-riski/{slug}/ → /blog/{slug}/ (и в абсолютных URL)."""
+    changes: list[dict[str, str]] = []
+    needle = "/blog/vtorichka-i-riski/"
+
+    def repl(match: re.Match[str]) -> str:
+        quote = match.group(1)
+        href = match.group(2)
+        if needle not in href:
+            return match.group(0)
+        new = href.replace(needle, "/blog/")
+        slug = slug_from_blog_href(new) or ""
+        changes.append({"from": href, "to": new, "slug": slug})
+        return f"href={quote}{new}{quote}"
+
+    updated = re.sub(r'href=(["\'])([^"\']+)\1', repl, content, flags=re.I)
+    return updated, changes
+
+
 def verify_hrefs(content: str, site_base: str) -> list[str]:
     errors: list[str] = []
+    base = site_base.rstrip("/")
     for match in re.finditer(r'href=(["\'])([^"\']+)\1', content):
         href = match.group(2)
-        if not href.startswith("/blog/"):
+        if href.startswith(base + "/blog/"):
+            url = href
+        elif href.startswith("/blog/"):
+            url = base + href
+        else:
             continue
-        slug = slug_from_blog_href(href)
+        slug = slug_from_blog_href(href if href.startswith("/") else urlparse_path(href))
         if not slug:
             continue
-        url = site_base.rstrip("/") + blog_path_for_slug(slug)
-        result = check_url_with_connection_reset_retry(url, 15.0, "ExcaliburBlogLiveXlinkFix/1.0")
+        check_url = url if url.startswith("http") else base + blog_path_for_slug(slug)
+        result = check_url_with_connection_reset_retry(check_url, 15.0, "ExcaliburBlogLiveXlinkFix/1.0")
         if not result.get("ok"):
             errors.append(f"{href} -> HTTP {result.get('status')} {result.get('error')}")
     return errors
+
+
+def urlparse_path(url: str) -> str:
+    from urllib.parse import urlparse
+
+    return urlparse(url).path or url
 
 
 def post_date_is_target(post_date: str, target: str) -> bool:
@@ -367,8 +461,19 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--slug", action="append", default=[])
     ap.add_argument("--date", default="", help="Asia/Yekaterinburg YYYY-MM-DD")
+    ap.add_argument(
+        "--latest",
+        type=int,
+        default=0,
+        help="Только N последних постов с /blog/ listing (стр. 1 = новые)",
+    )
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--apply", action="store_true")
+    ap.add_argument(
+        "--server-rewrite",
+        action="store_true",
+        help="Переписать href в WP на сервере (без выгрузки HTML). Нужен --apply.",
+    )
     args = ap.parse_args()
 
     root = project_root()
@@ -387,11 +492,6 @@ def main() -> int:
         catalog = refresh_catalog(root)
     slug_index = catalog.get("slug_index") or {}
 
-    audit_extras = (
-        "beskontaktnoe-zaselenie-posutochno-tyumen",
-        "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
-    )
-
     slugs = [s.strip() for s in args.slug if s.strip()]
     candidate_slugs = slugs[:]
     if not candidate_slugs:
@@ -403,9 +503,19 @@ def main() -> int:
                 break
             for row in parse_listing_html(html):
                 slug = str(row.get("slug") or "").strip()
-                if slug:
+                if slug and slug not in listing_slugs:
                     listing_slugs.append(slug)
-        candidate_slugs = sorted(set(listing_slugs + list(audit_extras)))
+        candidate_slugs = listing_slugs[:]
+        if args.latest and args.latest > 0:
+            candidate_slugs = candidate_slugs[: args.latest]
+        else:
+            extra = [
+                "beskontaktnoe-zaselenie-posutochno-tyumen",
+                "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+            ]
+            for slug in extra:
+                if slug not in candidate_slugs:
+                    candidate_slugs.append(slug)
 
     if not candidate_slugs:
         print("Nothing to fix (no slugs).", file=sys.stderr)
@@ -423,13 +533,29 @@ def main() -> int:
             for row in parse_meta_lines(meta_out)
             if post_date_is_target(str(row.get("date") or ""), args.date)
         ]
-        slugs = sorted(set(dated + list(audit_extras)))
+        slugs = dated
     else:
-        slugs = candidate_slugs if not slugs else sorted(set(slugs + list(audit_extras)))
+        slugs = candidate_slugs if not slugs else slugs
 
     if not slugs:
         print(f"No posts for date {args.date}", file=sys.stderr)
         return 1
+
+    if args.server_rewrite:
+        if not args.apply or args.dry_run:
+            print("OK server-rewrite plan slugs=" + ",".join(slugs))
+            return 0
+        out = run_bootstrap(
+            env,
+            build_server_absolutize_php(slugs, public_base),
+            public_base,
+            bootstrap_name="excalibur-blog-abs-href-once.php",
+        )
+        print(out)
+        if "OK abs_done" not in out:
+            print("FAIL server-rewrite", file=sys.stderr)
+            return 1
+        return 0
 
     fetch_out = run_bootstrap(
         env,
@@ -450,10 +576,14 @@ def main() -> int:
         slug = str(row.get("slug") or "")
         content = str(row.get("content") or "")
         fixed, href_changes = normalize_blog_hrefs(content, slug_index)
+        fixed, legacy_cat_changes = strip_legacy_category_blog_hrefs(fixed)
         fixed, blog_index_changes = fix_blog_index_trailing_slash(fixed)
         fixed, mashed_changes = fix_mashed_cta_spacing(fixed)
         fixed, unwrap_changes = unwrap_mismatched_blog_links(fixed, catalog=catalog)
         fixed, restore_changes = restore_plain_crosslinks(fixed, catalog=catalog)
+        before_abs = fixed
+        fixed = absolutize_root_relative_hrefs(fixed, public_base)
+        abs_count = 0 if before_abs == fixed else before_abs.count('href="/')
         validation = validate_article_crosslinks(
             fixed,
             catalog=catalog,
@@ -462,15 +592,17 @@ def main() -> int:
             timeout=8.0,
             skip_http=True,
         )
-        href_errors = verify_hrefs(fixed, public_base) if fixed != content else []
+        href_errors = verify_hrefs(fixed, public_base) if args.check_http else []
         entry = {
             "slug": slug,
             "post_id": row.get("post_id"),
             "href_changes": href_changes,
+            "legacy_category_changes": legacy_cat_changes,
             "blog_index_changes": blog_index_changes,
             "unwrap_changes": unwrap_changes,
             "restore_changes": restore_changes,
             "mashed_changes": mashed_changes,
+            "absolutized_root_hrefs": abs_count,
             "validation_status": validation.get("status"),
             "validation_errors": validation.get("errors"),
             "href_http_errors": href_errors,
@@ -500,7 +632,8 @@ def main() -> int:
     report = {
         "status": "OK",
         "dry_run": bool(args.dry_run or not args.apply),
-        "public_base": public_base,
+        "public_base": redact_site_base(public_base, public_base),
+        "latest": args.latest,
         "posts": report_rows,
     }
     out_path = root / "memory/live-xlink-fix-report.json"

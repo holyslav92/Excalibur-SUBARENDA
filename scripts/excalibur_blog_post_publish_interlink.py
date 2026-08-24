@@ -55,7 +55,7 @@ def main() -> int:
     inbound_targets = pick_inbound_targets(candidates, new_slug=slug, max_inbound=args.max_inbound)
 
     public = os.environ.get("PUBLIC_SITE_URL", "").strip()
-    new_path = f"/blog/vtorichka-i-riski/{slug}/"
+    new_path = f"/blog/{slug}/"
     if public:
         new_url = expand_site_base(f"{SITE_BASE_PLACEHOLDER}{new_path}", public)
     else:
