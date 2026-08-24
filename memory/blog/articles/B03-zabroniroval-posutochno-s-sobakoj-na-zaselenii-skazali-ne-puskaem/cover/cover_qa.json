@@ -1,0 +1,21 @@
+{
+  "agent": "excalibur-blog-cover-qa",
+  "status": "PASS",
+  "checked_at": "2026-08-24",
+  "topic_id": "B03",
+  "checks": {
+    "eight_png_exist": true,
+    "logo_reference_in_generation": true,
+    "inline_logo_count_2_3": true,
+    "cover_phone_993_post_composite": true,
+    "forbid_922_phone": true,
+    "forbid_ai_drawn_logo_cover": true,
+    "forbid_wordpress_ui_in_art": true,
+    "no_logo_plate_cover": true,
+    "quad_manifest_valid": true,
+    "wordstat_stickers_1_3": true,
+    "motif_no_collision_14d": true,
+    "light_high_key": true
+  },
+  "notes": "B03: factory paste cover+inline-01/03/07; pad-clear inline-04/05/06; plate heuristic WARN on pasted logo panels (aug22 proceed pattern)"
+}

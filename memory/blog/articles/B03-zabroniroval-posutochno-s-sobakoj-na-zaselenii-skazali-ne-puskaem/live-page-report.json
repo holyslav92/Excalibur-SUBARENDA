@@ -1,0 +1,8 @@
+{
+  "gate": "live-page",
+  "status": "BLOCK",
+  "permalink": "{{SITE_BASE}}/blog/zabroniroval-posutochno-s-sobakoj-na-zaselenii-skazali-ne-puskaem/",
+  "errors": [
+    "live BlogPosting JSON-LD URL does not exactly match permalink"
+  ]
+}

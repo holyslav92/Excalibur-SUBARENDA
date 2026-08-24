@@ -1,0 +1,64 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "{{SITE_BASE}}/zabroniroval-posutochno-s-sobakoj-na-zaselenii-skazali-ne-puskaem/#blogposting",
+      "url": "{{SITE_BASE}}/zabroniroval-posutochno-s-sobakoj-na-zaselenii-skazali-ne-puskaem/",
+      "headline": "Забронировал жильё с собакой — у двери сказали: «Не пустим»",
+      "datePublished": "2026-08-24",
+      "dateModified": "2026-08-24",
+      "author": {
+        "@type": "Organization",
+        "name": "Добрый дом",
+        "url": "{{SITE_BASE}}/"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{SITE_BASE}}/zabroniroval-posutochno-s-sobakoj-na-zaselenii-skazali-ne-puskaem/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Добрый дом",
+        "url": "{{SITE_BASE}}/"
+      },
+      "mainEntity": {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Если в объявлении написано «можно с животными», могут отказать?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "На практике можно упереться в закрытую дверь, даже если хочется спорить. Поэтому главное — получить письменное подтверждение до оплаты. Тогда разговор идёт не на словах, а по переписке."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Кот — это тоже «животное»?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Да. Про кота тоже лучше написать честно и заранее. Хозяева могут переживать за мягкую мебель и запах, поэтому «маленький и тихий» не заменяет нормального согласования."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Что делать, если доплату называют уже на пороге?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Покажите переписку, где о ней не было речи. Если хозяин всё равно настаивает, иногда проще заплатить и заехать, чем искать жильё вечером. Но попросите зафиксировать доплату в чате, чтобы она не всплыла ещё раз при возврате залога."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Как доказать, что пятно было до нас?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Видео при заезде и сообщение в чат в первый час. Это спокойнее, чем вспоминать детали уже с чемоданами в руках."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
