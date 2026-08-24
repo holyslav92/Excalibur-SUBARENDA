@@ -344,23 +344,21 @@ def unwrap_mismatched_blog_links(
 
 
 def strip_legacy_category_blog_hrefs(content: str) -> tuple[str, list[dict[str, str]]]:
-    """Убрать наследие /blog/vtorichka-i-riski/{slug}/ → /blog/{slug}/."""
+    """Убрать наследие /blog/vtorichka-i-riski/{slug}/ → /blog/{slug}/ (и в абсолютных URL)."""
     changes: list[dict[str, str]] = []
+    needle = "/blog/vtorichka-i-riski/"
 
     def repl(match: re.Match[str]) -> str:
         quote = match.group(1)
-        slug = match.group(2)
-        old = f"/blog/vtorichka-i-riski/{slug}/"
-        new = f"/blog/{slug}/"
-        changes.append({"from": old, "to": new, "slug": slug})
+        href = match.group(2)
+        if needle not in href:
+            return match.group(0)
+        new = href.replace(needle, "/blog/")
+        slug = slug_from_blog_href(new) or ""
+        changes.append({"from": href, "to": new, "slug": slug})
         return f"href={quote}{new}{quote}"
 
-    updated = re.sub(
-        r'href=(["\'])/blog/vtorichka-i-riski/([a-z0-9][a-z0-9-]*)/?\1',
-        repl,
-        content,
-        flags=re.I,
-    )
+    updated = re.sub(r'href=(["\'])([^"\']+)\1', repl, content, flags=re.I)
     return updated, changes
 
 

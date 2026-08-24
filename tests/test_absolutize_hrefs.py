@@ -54,10 +54,16 @@ class AbsolutizeHrefsTests(unittest.TestCase):
         html = (
             '<a href="/blog/vtorichka-i-riski/rosfinmonitoring-sdelka-nedvizhimost-cheklis-tyumen-2026/">'
             "чеклист</a>"
+            '<a href="https://example.test/blog/vtorichka-i-riski/skrytye-doplaty-pri-posutochnoj-arende-ot-hozyaina/">'
+            "доплаты</a>"
         )
         out, changes = strip_legacy_category_blog_hrefs(html)
-        self.assertEqual(len(changes), 1)
+        self.assertEqual(len(changes), 2)
         self.assertIn("/blog/rosfinmonitoring-sdelka-nedvizhimost-cheklis-tyumen-2026/", out)
+        self.assertIn(
+            "https://example.test/blog/skrytye-doplaty-pri-posutochnoj-arende-ot-hozyaina/",
+            out,
+        )
         self.assertNotIn("vtorichka-i-riski", out)
 
 

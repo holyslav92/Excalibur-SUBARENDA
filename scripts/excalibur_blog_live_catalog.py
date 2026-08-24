@@ -53,7 +53,11 @@ def slug_from_blog_href(href: str, *, site_host: str = "") -> str | None:
         return None
     if parts[1].startswith("page") or parts[1] in {"feed", "category", "tag"}:
         return None
-    slug = parts[1]
+    # Наследие чужого permalink: /blog/{category}/{slug}/
+    if len(parts) >= 3 and parts[1] == "vtorichka-i-riski":
+        slug = parts[2]
+    else:
+        slug = parts[1]
     if not slug or slug == "blog":
         return None
     return slug
