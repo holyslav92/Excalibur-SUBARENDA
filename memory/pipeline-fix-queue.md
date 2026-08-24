@@ -4,7 +4,7 @@
 
 status: fixed
 run_date: 2026-08-24
-role: excalibibur-blog-publish
+role: excalibur-blog-publish
 topic_id: B03
 article_dir: memory/blog/articles/B03-skrytye-doplaty-pri-posutochnoj-arende-ot-hozyaina
 severity: medium
