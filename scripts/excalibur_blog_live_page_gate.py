@@ -8,6 +8,7 @@ import json
 import re
 import urllib.request
 from pathlib import Path
+from urllib.parse import urlparse
 
 from excalibur_blog_html_linter import (
     extract_faq_answer_after_h3,
@@ -29,6 +30,19 @@ _SHARE_CHROME_SPLIT = (
     r"<aside\b[^>]*\bclass=[\"'][^\"']*\barticle-share\b|"
     r"<section\b[^>]*\bclass=[\"'][^\"']*\barticle-share\b)"
 )
+
+
+def _canonical_article_path(url: str) -> str:
+    """Normalize article paths for permalink vs schema JSON-LD (WP /blog/{slug}/ vs /{slug}/)."""
+    raw = (url or "").strip()
+    if not raw:
+        return ""
+    path = urlparse(raw).path if "://" in raw else raw
+    path = "/" + path.strip("/")
+    # Strip optional /blog prefix so schema {{SITE_BASE}}/<slug>/ matches WP permalink.
+    if path.startswith("/blog/"):
+        path = path[5:]
+    return path.rstrip("/") + "/"
 
 
 def _normalize_faq_plain(text: str) -> str:
@@ -140,8 +154,11 @@ def inspect(
                     stack.extend(value.values())
                 elif isinstance(value, list):
                     stack.extend(value)
-        if expected_url and expected_url not in posting_urls:
-            errors.append("live BlogPosting JSON-LD URL does not exactly match permalink")
+        if expected_url:
+            norm_expected = _canonical_article_path(expected_url)
+            norm_posting = {_canonical_article_path(u) for u in posting_urls if u}
+            if norm_expected not in norm_posting and expected_url not in posting_urls:
+                errors.append("live BlogPosting JSON-LD URL does not exactly match permalink")
         elif not expected_url and not any(
             url.rstrip("/").endswith("/" + expected_slug) for url in posting_urls
         ):
