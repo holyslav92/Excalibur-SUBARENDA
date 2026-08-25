@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "research_date": "2026-08-25",
+  "topic_id": "B03",
+  "fresh_signal": "geotapp.com 2026-08-25 dezhurstvo rabochee vremya + klyshin sept_business_trip",
+  "official_source_audit": {
+    "status": "NOT_REQUIRED",
+    "reason": "Нет тарифов/комиссий банков или госорганов"
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "agent": "excalibur-blog",
+  "date_context": {
+    "timezone": "Europe/Moscow",
+    "today_iso": "2026-08-25",
+    "today_ru": "25.08.2026",
+    "year": 2026,
+    "month": 8,
+    "month_name_ru": "август",
+    "weekday_ru": "вторник"
+  },
+  "topic": {
+    "topic_id": "B03",
+    "title": "Звонок в 10:00. Заселение в 22:00 — где работать в квартире посуточно",
+    "h1": "Звонок в 10:00. Заселение в 22:00 — где работать в квартире посуточно",
+    "slug": "zvonok-v-10-00-zaselenie-v-22-00-gde-rabotat-v-kvartire-posutochno",
+    "primary_query": "Звонок в 10:00. Заселение в 22:00 — где работать в квартире посуточно",
+    "priority": "P0"
+  },
+  "searches": [
+    {
+      "query_id": "primary_fresh",
+      "query": "Звонок в 10:00. Заселение в 22:00 — где работать в квартире посуточно 2026",
+      "purpose": "актуальный SERP",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Дежурство и выезд: когда это рабочее время",
+          "url": "https://geotapp.com/blog/ru/2026/08/25/dezhurstvo-i-vyezd-rabochee-vremya/",
+          "snippet": ""
+        },
+        {
+          "title": "Ранний заезд и поздний выезд при аренде жилья — как договориться",
+          "url": "https://sutochno.ru/sj/ranniy-zaezd-i-pozdniy-vyezd",
+          "snippet": "Начать бесплатно Блог Michele Angelo PetraroliGeoTapp Clock-in Date25.08.2026 Duration00:06:00 В этой статье Что говорит закон о дежурстве и о фактически отработанном времени Разница между ожиданием и выездом Доказанное время закрывает спор ..."
+        },
+        {
+          "title": "Ночной труд в России: ночное время (22:00‑06:00), оплата и оформление",
+          "url": "https://yuridicheskii-kompas-prava.ru/polnoe-rukovodstvo-po-nochnoj-rabote-v-rossii-v-2026-godu.html",
+          "snippet": "Узнайте, как получить ранний заезд или задержаться в квартире без доплат. Советы по переговорам с арендодателями."
+        },
+        {
+          "title": "Со Скольки до Скольки Можно Звонить | Юридическая поддержка#",
+          "url": "https://bizkompass.com/So-Skolki-do-Skolki-Mozhno-Zvonit-ai01ni.html",
+          "snippet": "Полное руководство по ночной работе в России в 2026 году Узнайте, что считается ночным временем по ТК РФ (22:00‑06:00), как правильно рассчитывать повышенную оплату, какие документы оформить и ..."
+        },
+        {
+          "title": "ТРУДОВОЙ КОДЕКС - Глава 16. РЕЖИМ РАБОЧЕГО ВРЕМЕНИ",
+          "url": "https://trudkodeks.ru/trudkodeks/trud/trudovoj_kodeks_-_glava_16.html",
+          "snippet": "Итак, в какое время можно звонить? В рамках правил и этикета звонки лучше делать в рабочее время, обычно с 10 утра до 22 часов вечера."
+        },
+        {
+          "title": "Рабочее время: дежурство на дому по ТК в 2026 году",
+          "url": "https://ppt.ru/art/kadri/dezhurstvo-na-domu-kak-organizovano-i-kak-oplachivaetsya",
+          "snippet": "Нам выдали новую инструкцию, где указано что мы сторожа должны выполнять работы по уборке территории от листьев, в зимнее время уборка снега по всей территории и поливка зелёных насаждений ..."
+        }
+      ],
+      "searched_at": "2026-08-25"
+    },
+    {
+      "query_id": "title_fresh",
+      "query": "Звонок в 10:00. Заселение в 22:00 — где работать в квартире посуточно 2026",
+      "purpose": "SERP по человеческому title",
+      "result_count": 0,
+      "results": [],
+      "searched_at": "2026-08-25"
+    },
+    {
+      "query_id": "official_docs",
+      "query": "Звонок в 10:00. Заселение в 22:00 — где работать в квартире посуточно official docs 2026",
+      "purpose": "официальные docs",
+      "result_count": 0,
+      "results": [],
+      "searched_at": "2026-08-25"
+    },
+    {
+      "query_id": "github_evidence",
+      "query": "site:github.com Звонок в 10:00. Заселение в 22:00 — где работать в квартире посуточно 2026",
+      "purpose": "GitHub evidence",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "GitHub - xorty-v/sql-academy_solutions: Решение заданий из тренажера ...",
+          "url": "https://github.com/xorty-v/sql-academy_solutions",
+          "snippet": ""
+        },
+        {
+          "title": "GitHub · Change is constant. GitHub keeps you ahead. · GitHub",
+          "url": "https://github.com/",
+          "snippet": "Задание 74: Выведите идентификатор и признак наличия интернета в помещении. Если интернет в сдаваемом жилье присутствует, то выведите «YES», иначе «NO»."
+        },
+        {
+          "title": "GitHub",
+          "url": "https://github.com/favicon.ico",
+          "snippet": "From your first line of code to final deployment, GitHub provides AI and automation tools to help you build and ship better software faster. A Copilot chat window with the 'Ask' mode enabled."
+        },
+        {
+          "title": "GitHub - e-katkov/SQL-Academy-Solved-Exercises",
+          "url": "https://github.com/e-katkov/SQL-Academy-Solved-Exercises",
+          "snippet": "Б о х я я Ї ™ я , \\ Б \" 4 я я я я Џ 0 ящ н я ц 8 @ л я я я я - њ я ь ы ; : з я я љ Щ я я O L я я Ъ ц я р с я ц ч я б б я ч Ю я щ !"
+        },
+        {
+          "title": "Sign in to GitHub · GitHub",
+          "url": "https://github.com/login",
+          "snippet": "Определить, сколько потратил в 2005 году каждый из членов семьи. В результирующей выборке не выводите тех членов семьи, которые ничего не потратили. Поля в результирующей таблице: member_name, status, costs"
+        },
+        {
+          "title": "[ВОЗМОЖНО ФИКС] (ОБНОВЛЕНО) Как починить звонки в Discord",
+          "url": "https://github.com/Flowseal/zapret-discord-youtube/issues/12508",
+          "snippet": "GitHub is where people build software. More than 150 million people use GitHub to discover, fork, and contribute to over 420 million projects."
+        }
+      ],
+      "searched_at": "2026-08-25"
+    },
+    {
+      "query_id": "community_experience",
+      "query": "Звонок в 10:00. Заселение в 22:00 — где работать в квартире посуточно forum problems опыт 2026",
+      "purpose": "форумы и живые проблемы",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Ранний заезд и поздний выезд при аренде жилья — как договориться",
+          "url": "https://sutochno.ru/sj/ranniy-zaezd-i-pozdniy-vyezd",
+          "snippet": ""
+        },
+        {
+          "title": "Бесконтактное заселение в квартиру: как это работает, плюсы и минусы ...",
+          "url": "https://samoletplus.ru/journal/kak-organizovat-beskontaktnoe-zaselenie-pri-sdache-kvartiry-v-arendu/",
+          "snippet": "Узнайте, как получить ранний заезд или задержаться в квартире без доплат. Советы по переговорам с арендодателями."
+        },
+        {
+          "title": "Бесконтактное заселение в квартиру посуточно: как происходит чек-ин ...",
+          "url": "https://travel.yandex.ru/pro/beskontaktnoe-zaselenie-v-kvartiru/",
+          "snippet": "Что такое бесконтактное заселение в квартиру, плюсы и минусы для арендодателей. Как происходит самозаселение и как его организовать: электронные замки, договор и оплата."
+        },
+        {
+          "title": "Телефонный этикет: правила общения по телефону",
+          "url": "https://delo-v-lidah.ru/blog/telefonnyj-etiket-pravila-obshheniya-po-telefonu",
+          "snippet": "Гостя может встретить владелец или управляющий, но чаще всего заселяться в квартиры с краткосрочной арендой предлагают бесконтактно. Такой способ чек-ина в большинстве случаев оказывается удобнее и экономичнее. Расскажем, как регистрировать гостя и как решать проблемы при бесконтактном заселении."
+        },
+        {
+          "title": "Памятка: правила проживания в квартире посуточно",
+          "url": "https://realty.yandex.ru/journal/post/pamyatka-pravila-prozhivaniya-v-kvartire-posutochno-/",
+          "snippet": "Время звонка — один из самых чувствительных вопросов телефонного этикета. Общепринятые рамки для личных звонков: с 9:00 до 22:00 в будни и с 10:00 до 22:00 в выходные. Это ориентир, а не закон, — всё зависит от отношений с человеком и его образа жизни."
+        },
+        {
+          "title": "Бесконтактное заселение в квартиру: как работает и что учесть",
+          "url": "https://darstroy-yug.ru/articles/beskontaktnoe-zaselenie-v-kvartiru/",
+          "snippet": "Рассмотрим правила проживания в квартире при аренде посуточно. Гражданский кодекс России позволяет арендовать квартиру на любой срок, в том числе — и на один сутки. Главным условием является легальное ведение бизнеса, включая уплату налогов, заключение договора найма и соблюдение прав соседей."
+        }
+      ],
+      "searched_at": "2026-08-25"
+    }
+  ],
+  "errors": []
+}
