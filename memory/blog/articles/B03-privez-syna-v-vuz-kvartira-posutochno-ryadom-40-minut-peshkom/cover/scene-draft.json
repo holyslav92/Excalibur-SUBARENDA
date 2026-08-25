@@ -1,0 +1,282 @@
+{
+  "version": "1.0",
+  "role": "cover-scene",
+  "article_brand": "Добрый дом",
+  "topic_id": "B03",
+  "season": {
+    "period": "конец августа 2026",
+    "weather": "солнечное летнее утро",
+    "location": "Тюмень",
+    "exclude": [
+      "зима",
+      "снег",
+      "лед",
+      "мороз",
+      "осенний холод",
+      "новогодние детали"
+    ]
+  },
+  "article_angle": "Родитель снял квартиру на 3 ночи для сына-первокурсника. В объявлении «рядом с вузом» оказалось 40 минут пешком до нужного корпуса. Сначала нужно проверить маршрут до точного адреса корпуса, затем оплачивать.",
+  "brand": {
+    "name": "Добрый дом",
+    "category": "посуточная аренда квартир в Тюмени",
+    "positioning": "comfort+",
+    "logo_mode": "reference_in_generation",
+    "logo_reference": "official logo-dobry-dom.png / cropped-img_7143.png",
+    "logo_rendering": "small exact official mark in the top-right reserved pad, transparent, no gray or white plate, no sticker, no backing",
+    "phone": {
+      "value": "+7 (993) 574-83-22",
+      "rendering": "post-composite only",
+      "exclude_from_generation": true
+    }
+  },
+  "global_style": {
+    "format": "WOW magazine poster collage",
+    "palette": [
+      "#FFFFFF",
+      "sunny warm yellow",
+      "gold",
+      "black",
+      "fresh linden green",
+      "muted Tyumen summer blue"
+    ],
+    "visual_language": [
+      "high-key editorial composition",
+      "sun flare",
+      "gold and black accents",
+      "torn paper collage",
+      "clean readable hierarchy",
+      "comfort+ everyday realism",
+      "witty on-topic meme energy"
+    ],
+    "avoid": [
+      "luxury flex",
+      "winter atmosphere",
+      "unrelated memes",
+      "host Shakin",
+      "WordPress UI",
+      "hotel lobby aesthetic",
+      "dark gloomy grading",
+      "fake brand lockups",
+      "phone number in generated artwork"
+    ]
+  },
+  "cover": {
+    "canvas": "quad_2048x1152",
+    "role": "cover",
+    "composition": "split route-map poster. Left side: parent and teenage son on a sunny bench near a Tyumen campus avenue, two suitcases and backpack visible. Right side: oversized smartphone mockup showing a 40-minute walking route in 2GIS toward the exact university building, beside a torn rental listing claiming «5 мин до вуза». A bold editorial headline bridges the two halves. Gold tape route arrows and a printed campus map create a tactile collage.",
+    "location": "Tyumen campus avenue in late August 2026, sunny morning, warm light, green linden trees, distant university facade, active but calm student-arrival atmosphere",
+    "characters": {
+      "parent": "practical attentive parent, casual summer clothing, checking the route before paying",
+      "teen": "first-year university applicant, backpack, documents folder, slightly surprised but relieved",
+      "host": "exclude"
+    },
+    "props": [
+      "2GIS smartphone mockup with clear 40-minute walking route",
+      "printed campus map",
+      "two suitcases",
+      "backpack with documents folder",
+      "torn rental listing",
+      "small torn listing sticker reading «5 мин до вуза»",
+      "gold tape route arrows",
+      "sunny bench",
+      "distant university facade"
+    ],
+    "meme": {
+      "format": "tiny Drake pointing meme sticker",
+      "placement": "bottom-left only",
+      "maximum_frame_area": "12%",
+      "joke": "Drake rejects the vague «рядом с вузом» rental ad and accepts checking the exact 2GIS walking time",
+      "exclude_from": [
+        "top-right logo pad",
+        "headline area",
+        "phone screen"
+      ]
+    },
+    "text": {
+      "hook": "Проверьте путь до корпуса",
+      "highlight": "путь",
+      "sticky": "Сначала маршрут",
+      "wordstat_stickers": [
+        "квартиры посуточно тюмень",
+        "снять квартиру посуточно в тюмени",
+        "квартиры посуточно в тюмени недорого"
+      ],
+      "inscription_policy": "preserve exact Russian inscriptions; make the main hook highly legible and the three Wordstat phrases smaller editorial stickers"
+    },
+    "logo_pad": {
+      "position": "top-right",
+      "size": "8-12% of canvas width",
+      "background": "clean scene continuation, no card or plate",
+      "keep_empty": true,
+      "reserve_for_reference_logo": true
+    },
+    "generation_prompt": "Create a high-key WOW magazine poster cover about checking the exact route to a university building before paying for a short-term rental. Split route-map collage: a practical parent and first-year student with two suitcases sit on a sunny bench on a Tyumen campus avenue in late August; green linden trees, warm morning sun, distant university facade. Opposite them, a large smartphone mockup displays a clear 2GIS-style 40-minute walking route to the exact building, next to a torn rental advertisement claiming «5 мин до вуза». Add printed campus map, gold tape route arrows, backpack with documents folder, and a tiny Drake reaction sticker at bottom-left. Editorial gold-black-white typography with the exact headline «Проверьте путь до корпуса», highlighted word «путь», sticky note «Сначала маршрут», and the three exact Wordstat stickers. Leave a clean 8-12% top-right pad for the official Добрый дом logo reference, with no backing plate. Summer only, no snow, no winter, no host, no phone number, no WordPress UI.",
+    "negative_prompt": [
+      "winter",
+      "snow",
+      "ice",
+      "frost",
+      "autumn cold",
+      "luxury flex",
+      "unrelated meme",
+      "large meme sticker",
+      "logo on a card",
+      "gray logo plate",
+      "white logo plate",
+      "phone number",
+      "host Shakin",
+      "WordPress interface",
+      "illegible headline",
+      "random university branding"
+    ]
+  },
+  "inlines": [
+    {
+      "slot": "inline_1",
+      "scene_hint": "«Вот где подставят» — comparison of vague «рядом с вузом» wording versus the exact address of the required university building",
+      "visual_type": "comparison_table",
+      "composition": "clean high-key white editorial comparison card split into two columns: misleading listing promise on the left, exact-building verification on the right; route distance and walking time visually contrasted",
+      "required_elements": [
+        "torn listing phrase «рядом с вузом»",
+        "exact корпус address marker",
+        "short misleading distance versus actual 40-minute walk",
+        "small route-map fragment",
+        "clear comparison arrows"
+      ],
+      "meme_energy": "subtle reaction beat: parent points at the exact building pin while the vague ad is pushed aside",
+      "logo_pad": "top-right empty pad for reference logo",
+      "alt": "Сравнение обещания «рядом с вузом» и маршрута до точного корпуса: перед оплатой проверяют адрес и время пешком."
+    },
+    {
+      "slot": "inline_2",
+      "scene_hint": "«Почему «рядом с вузом» ничего не значит» — several Tyumen university campus pins show that different buildings can be far apart",
+      "visual_type": "labeled_checklist",
+      "composition": "high-key map infographic with multiple campus pins for ТюмГУ, ТИУ and ТГМУ, each connected to different streets and walking times; a compact checklist explains what «рядом» must be tied to",
+      "required_elements": [
+        "pins labeled ТюмГУ, ТИУ, ТГМУ",
+        "different building markers",
+        "walking-time labels",
+        "exact корпус field",
+        "street or entrance verification"
+      ],
+      "meme_energy": "small visual punchline: one giant vague «рядом» bubble breaks into three different route times",
+      "alt": "Карта Тюмени с несколькими корпусами ТюмГУ, ТИУ и ТГМУ показывает, почему слово «рядом» без точного адреса бесполезно."
+    },
+    {
+      "slot": "inline_3",
+      "scene_hint": "«Диалог, который решает всё» — bad versus good questions to ask the host before booking",
+      "visual_type": "meme_panel",
+      "composition": "two-panel chat-bubble comic on white background. Bad panel contains a vague question and confused reaction; good panel contains a precise question about the exact building, entrance and walking route",
+      "required_elements": [
+        "bad question bubble",
+        "good precise question bubble",
+        "reaction contrast",
+        "map-pin icon",
+        "route-time confirmation"
+      ],
+      "meme_energy": "reaction-card beat: confident before payment versus relieved after receiving the exact address",
+      "logo_pad": "top-right empty pad for reference logo",
+      "alt": "Два варианта переписки с арендодателем: вместо «далеко ли до вуза?» спрашивают точный корпус, вход и время пешком."
+    },
+    {
+      "slot": "inline_4",
+      "scene_hint": "«Мораль простая» — concise prepayment verification checklist",
+      "visual_type": "labeled_checklist",
+      "composition": "bright white checklist sheet with black typography, gold checkmarks and small route-map illustrations; visually calm and practical",
+      "required_elements": [
+        "точный адрес корпуса",
+        "маршрут в 2GIS",
+        "время пешком с багажом",
+        "вход и домофон",
+        "условия заселения",
+        "только потом оплата"
+      ],
+      "meme_energy": "tiny bottom caption-style joke: «рядом» без маршрута — это не измерение",
+      "alt": "Чек-лист перед оплатой посуточной квартиры: адрес корпуса, маршрут, время пешком, вход и условия заселения."
+    },
+    {
+      "slot": "inline_5",
+      "scene_hint": "«Что проверить до оплаты» — step-by-step 2GIS route check",
+      "visual_type": "process_flow",
+      "composition": "four-step horizontal process flow on a high-key white canvas: copy exact building address, paste into 2GIS, choose walking mode, compare time with arrival schedule",
+      "required_elements": [
+        "step numbers 1-4",
+        "2GIS-style route interface",
+        "walking mode icon",
+        "40-minute example",
+        "arrival-time comparison"
+      ],
+      "meme_energy": "small reaction panel at the end: suitcase emoji-like character sees 40 minutes and turns back to check another apartment",
+      "alt": "Четыре шага проверки в 2GIS: найти точный корпус, построить пеший маршрут, оценить время с чемоданом и сопоставить его с расписанием."
+    },
+    {
+      "slot": "inline_6",
+      "scene_hint": "«Вопрос, на который у всех разный ответ» — comfort+ lived-in room for a short 2-4 night stay",
+      "visual_type": "lived_in_room",
+      "composition": "sunlit, tidy comfort+ apartment room prepared for two to four nights: made bed, compact work surface, charging points, clean towels, luggage bench and practical storage; no luxury flex",
+      "required_elements": [
+        "comfortable bed",
+        "small work desk",
+        "phone charging point",
+        "clean towels",
+        "space for two suitcases",
+        "documents folder",
+        "warm summer daylight"
+      ],
+      "meme_energy": "small reaction-card detail: teenager chooses a convenient route and a practical room over vague marketing words",
+      "alt": "Комфортная жилая квартира для двух-четырёх ночей: место для чемоданов, рабочая поверхность, зарядка и всё необходимое без лишней роскоши."
+    },
+    {
+      "slot": "inline_7",
+      "scene_hint": "«Конец августа: почему окно узкое» — timeline for TIU student settlement from 28 to 30 August",
+      "visual_type": "fact_card",
+      "composition": "clean editorial timeline spanning 28, 29 and 30 August, with student arrival, route check, apartment settlement and reserve-plan moments; gold-black markers on a white background with summer green accents",
+      "required_elements": [
+        "dates 28-30 августа",
+        "ТИУ settlement context",
+        "arrival and luggage",
+        "route verification before payment",
+        "limited booking window",
+        "backup option marker"
+      ],
+      "meme_energy": "small urgency reaction: calendar page and suitcase race toward the correct корпус pin",
+      "logo_pad": "top-right empty pad for reference logo",
+      "alt": "Таймлайн 28–30 августа для заселения в ТИУ: из-за узкого окна нужно заранее проверить маршрут и иметь запасной вариант."
+    }
+  ],
+  "quad_layout": {
+    "canvas_1": [
+      "cover",
+      "inline_1",
+      "inline_2",
+      "inline_3"
+    ],
+    "canvas_2": [
+      "inline_4",
+      "inline_5",
+      "inline_6",
+      "inline_7"
+    ],
+    "split": "2x2",
+    "target_output": [
+      "cover.png",
+      "inline-01.png",
+      "inline-02.png",
+      "inline-03.png",
+      "inline-04.png",
+      "inline-05.png",
+      "inline-06.png",
+      "inline-07.png"
+    ]
+  },
+  "quality_constraints": {
+    "cover_resolution": "minimum 2048px on long side",
+    "inline_background": "#FFFFFF high-key",
+    "inline_meme_area": "no more than 15% per inline",
+    "cover_meme_area": "Drake sticker no more than 12% of frame",
+    "logo_pad": "must remain unobstructed on cover and inline_1, inline_3, inline_7",
+    "text": "preserve supplied Russian inscriptions exactly; no invented phone number",
+    "brand_composite_after_generation": true
+  }
+}

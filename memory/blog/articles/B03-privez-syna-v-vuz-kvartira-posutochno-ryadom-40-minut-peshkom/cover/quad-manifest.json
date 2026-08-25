@@ -1,0 +1,116 @@
+{
+  "topic_id": "B03",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "Проверьте путь до корпуса",
+  "cover_hook_highlight": "путь",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "снять квартиру посуточно в тюмени",
+    "квартиры посуточно в тюмени недорого"
+  ],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "split route-map poster parent teen sunny bench phone 2GIS 40-min walk vs torn ad рядом с вузом bold headline TOP-RIGHT empty pad",
+    "location": "Tyumen August 2026 sunny morning campus avenue green linden trees warm light university facade distant",
+    "meme": "tiny Drake pointing meme sticker bottom-left ≤12% never top-right pad",
+    "prop_set": "2GIS phone mockup printed campus map two suitcases torn listing sticky 5 мин до вуза gold tape route arrows backpack documents",
+    "sticker_set": ["квартиры посуточно тюмень", "снять квартиру посуточно в тюмени", "квартиры посуточно в тюмени недорого"],
+    "joke": "Drake rejects рядом с вузом ad accepts 2GIS walk-time check"
+  },
+  "cover_emotion": "родитель с сыном у кампусной аллеи: в объявлении «рядом», в 2GIS — 40 минут пешком",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Постер: родитель и сын с чемоданами проверяют в 2GIS маршрут 40 минут пешком до корпуса — август, Тюмень.",
+      "scene_hint": "Route-map poster: parent+teen bench, 2GIS 40-min walk, torn «5 мин до вуза»; linden ave Aug sun; Drake BL≤12%; TR empty pad; no logo/phone.",
+      "meme_caption_ru": "",
+      "sticky": "Сначала маршрут"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Вот где подставят",
+      "visual_type": "comparison_table",
+      "scene_hint": "2-col compare «рядом с вузом» vs exact корпус + 40-min walk; torn paper; TR empty pad.",
+      "alt": "Сравнение обещания «рядом с вузом» и маршрута до точного корпуса перед оплатой посуточной квартиры",
+      "labels": ["«Рядом с вузом»", "Не точный адрес", "Окно 2–4 дня", "Дорога съедает время"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Почему «рядом с вузом» ничего не значит",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Map pins ТюмГУ/ТИУ/ТГМУ + checklist: «рядом» needs exact building; white high-key.",
+      "alt": "Карта корпусов ТюмГУ, ТИУ и ТГМУ показывает, почему «рядом» без адреса бесполезно",
+      "labels": ["ТюмГУ: Республики 9", "ТюмГУ: Ленина 16", "ТИУ: Луначарского", "Мельникайте ≠ Ленина"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Диалог, который решает всё",
+      "visual_type": "meme_panel",
+      "scene_hint": "Chat panels: bad vague Q vs good «минут до Ленина 16»; reaction; TR empty pad.",
+      "alt": "Переписка с арендодателем: точный вопрос про корпус и время пешком вместо «рядом с университетом»",
+      "labels": ["Спросите минуты пешком", "Корпус на Ленина 16", "Пять остановок — отказ", "Норма: 12 минут пешком"]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Мораль простая",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Checklist: адрес корпуса, 2GIS route, minutes, entrance, then pay; gold checks.",
+      "alt": "Чек-лист перед оплатой: адрес корпуса, маршрут, время пешком, вход и условия заселения",
+      "labels": ["Улица и дом", "Маршрут в 2ГИС", "Проверьте утром", "Залог письменно"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Что проверить до оплаты",
+      "visual_type": "process_flow",
+      "scene_hint": "4-step flow: address → 2GIS walk mode → 40 min → schedule; phone mockup.",
+      "alt": "Четыре шага проверки маршрута в 2GIS до оплаты посуточной квартиры в Тюмени",
+      "labels": ["Маршрут в 2ГИС", "Минуты от хозяина", "Ключи, код, связь", "Даты 2 или 4 ночи"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Вопрос, на который у всех разный ответ",
+      "visual_type": "lived_in_room",
+      "scene_hint": "Comfort+ room 2-4 nights: bed, desk, charge, towels, luggage; Aug daylight.",
+      "alt": "Уютная комната comfort+ на 2–4 ночи: место для чемоданов, зарядка и рабочая поверхность",
+      "labels": ["Комфорт плюс", "Три ночи для семьи", "Заезд объясним заранее", "Маршрут до оплаты"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Конец августа: почему окно узкое",
+      "visual_type": "fact_card",
+      "scene_hint": "Timeline 28-30 Aug TIU: arrival, route check, booking window; TR empty pad.",
+      "alt": "Таймлайн 28–30 августа: узкое окно заселения в ТИУ и запасной вариант жилья",
+      "labels": ["Заселение ТИУ: 28 августа", "1519 мест", "Окно 28–30 августа", "4026 объявлений"]
+    }
+  },
+  "cover_keys_ru": ["квартиры посуточно тюмень", "снять квартиру посуточно в тюмени"]
+}
