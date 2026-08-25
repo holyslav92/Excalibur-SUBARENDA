@@ -1,30 +1,102 @@
-# Research inputs — B03
+# Research inputs — B03 (assembled 2026-08-25)
 
 Read: research-context.json, research-serp.json, memory/scout/scout-handoff-b03.md
-Date: 2026-08-25 (Asia/Yekaterinburg / Europe/Moscow)
+Date: 2026-08-25 (Europe/Moscow)
 Topic: родители с первокурсником ~1 сентября — посуточно 2–4 ночи у вуза в Тюмени, НЕ семестр
 Tenant: Добрый дом — посуточная аренда Тюмень, humble warm host voice
 Anti-dup: B01 = бесконтакт/коды; B02 = залог; B03 = «рядом с вузом» vs реальность (кровати, кухня, парковка, check-in)
 
-Wordstat (regions 55+11176, MCP-KV 2026-08-25):
-- WORDSTAT PARTIAL — empty API response; pinned P0: квартира посуточно возле вуза
-- clusters: снять квартиру 1 сентября / жилье родители первокурсник
+## Wordstat (regions 55+11176, MCP-KV 2026-08-25)
 
-SERP signals (accessed 2026-08-25):
-- cian.ru juridicheskie-tonkosti-posutochnoj-arendy — посуточная vs общежитие для абитуриентов
-- rg.ru 2026 dormitory rights — общежитие не у всех, ключ не готов 1 сентября
-- t-j.ru ask-dormitory — права в общежитии, заселение
-- spbdnevnik.ru 2026-08-25 — первоочередное общежитие (fresh news angle)
-- studygood.com — как получить общежитие, сроки
+**Status:** WORDSTAT PARTIAL — MCP returned empty `{}` on probes: «квартира посуточно возле вуза», «снять квартиру 1 сентября», «жилье родители первокурсник» (RU 225 also empty). Pinned P0: квартира посуточно возле вуза. Clusters from scout: снять квартиру 1 сентября / жилье родители первокурсник.
 
-Tyumen context to research:
-- ТюмГУ, ТИУ, Медуниверситет — районы, не «15 мин пешком» без карты
-- 1 сентября — очередь у общежития, ключ от комнаты не в день заезда
-- родители: 2–4 ночи, нужны 2 спальных места + кухня + стиралка
-- парковка разгрузки: 2 часа у подъезда — спрашивать до оплаты
+## Live research findings (accessed 2026-08-25)
 
-CTA channels: booking https://добрыйдом-72.рф/booking/, TG https://t.me/Dobriy_dom_72, MAX https://max.ru/id660300569233_biz, manager https://t.me/Dobriy_dom_Tyumen, phone +7 993 574-83-22
-Interlink: B01 contactless check-in; B02 deposit return
+### Fresh community/news this week (Aug 2026)
 
-Output research-notes.md with source_table, writer_safe_urls, reader_problem, practical_facts, wordstat_stickers for cover (посуточно вуз, 1 сентября, Тюмень).
-Season: late August 2026 — no winter/snow references.
+1. **СПб Дневник, 25.08.2026** — https://spbdnevnik.ru/news/2026-08-25/stalo-izvestno-kto-imeet-pravo-na-pervoocherednoe-poluchenie-mest-v-studencheskikh-obshchezhitiyakh
+   - По ФЗ «Об образовании» первоочередь в общежитиях: дети-сироты; дети-инвалиды, инвалиды I–II групп, инвалиды с детства; ветераны боевых действий; граждане с контрактной военной службой ≥3 лет.
+   - Пресс-служба: конкретные правила — в локальных актах вузов.
+
+2. **Комсомольская правда — Тюмень, 19.08.2026** — https://www.tumen.kp.ru/daily/277808/5291613/
+   - Тюмень, финал приёмной кампании 2026.
+   - **ТюмГУ:** заявления на общежитие — бюджетники 8–16 августа, договорники 28–30 августа; ответ бюджетникам 21 августа, платникам 31 августа (ЕЛК / корпоративная почта).
+   - Выдача студенческих пакетов первокурсникам: 27, 28, 29 и 31 августа; фото на студбилет — до 23 августа.
+   - **ТИУ:** на договор уже зачислены 646; магистратура — приказы 25 (бюджет) и 28–29 августа (договор).
+
+### Official Tyumen university sources
+
+3. **ТюмГУ — списки на заселение** — https://www.utmn.ru/studentam/obshchezhitiya/studencheskie-obshchezhitiya/zaselenie/spiski-studentov/
+   - Первокурсники, подавшие заявление на общежитие: **23–25 августа** — результат на корпоративную почту и в ЛК «Вместе».
+   - Центр по работе с общежитиями: тел. 59-75-69, ул. Красина, 19.
+
+4. **ТюмГУ — общежития (адреса)** — https://www.utmn.ru/abiturient/pochemu-tyumgu/kampus-tyumgu/studencheskie-obshchezhitiya/
+   - Общежития в Тюмени: Комсомольская 7; Мельникайте 93А; Пирогова 3 к.1; Красина 19.
+   - Микрорайоны: Центральный, Заречный, Ленинский.
+
+5. **ТИУ — списки на заселение** — https://www.tyuiu.ru/opublikovany-spiski-na-zaselenie-v-obshhezhitiya/
+   - Заселение **26 августа – 5 сентября**, 09:00–18:00 (воскресенье 09:00–14:00).
+   - Списки на странице Студсовета общежитий.
+   - Документы: копия паспорта с пропиской, 6 фото 3×4, флюорография; договор подписывают на месте.
+   - Не заселился в срок без уважительной причины — место аннулируют.
+   - Кампусы общежитий: Луначарского, Мельникайте, Республики (1519 мест, 13 общежитий по данным ТИУ).
+
+6. **ТИУ — информация для родителей первокурсников** (news.tyuiu.ru, SERP):
+   - Заселение первого курса с **28 августа**; первый этап 28 августа – 2 сентября.
+   - Несовершеннолетних заселяют **только с родителем/опекуном** или представителем с **нотариальной доверенностью** на заключение договора найма.
+
+7. **ТИУ — адреса общежитий** — https://www.tyuiu.ru/index.php/infrastruktura/studenceskii-gorodok_/obshhezitiia
+   - Нагорная 6, 34; Мельникайте 42, 44, 61Б; Бабарынка 20б; Киевская 80; Котовского 54а.
+
+### Context / rights (not Tyumen-only)
+
+8. **Т—Ж, ask-dormitory** — https://t-j.ru/ask-dormitory/
+   - Мест в общежитиях часто не хватает; приоритет — льготные категории, затем иногородние бюджетники.
+   - Правила проживания — в локальных актах вуза.
+
+9. **Циан, юридические тонкости посуточной** — https://www.cian.ru/stati-juridicheskie-tonkosti-posutochnoj-arendy-objasnjaet-jurist-341001/
+   - Для абитуриентов без общежития посуточная — альтернатива; важно различать найм и гостиничные услуги (контекст для хоста, не юридический вывод статьи).
+
+### Tyumen market / distance trap
+
+10. Объявления посуточно «рядом с вузом» часто привязаны к **Мельникайте** (ТИУ, ТюмГНГУ, ТюмГМУ в одном кластере) — но «близость» в тексте ≠ пешая доступность без карты.
+11. Агрегаторы (Ostrovok): посуточно в Тюмени от ~2373 ₽/сутки (вилка рынка, не цена «Доброго дома»).
+12. URA.RU (2023, фон): в ТюмГУ очередь >5000 при ~1500 мест; в ТюмГМУ ~1060 мест и дефицит к 1 сентября — использовать только как фон дефицита, не как свежую дату.
+
+## Reader scenario (scout burn)
+
+- Семья приезжает на 2–4 ночи: ребёнок — первокурсник, родители не ночуют в общежитии.
+- Общежитие: ключ/комната могут быть не готовы в день приезда; очередь у общежития; несовершеннолетний — нужен родитель с доверенностью.
+- Объявление «15 минут пешком до вуза» vs реальность: одна кровать, нет кухни/стиралки, негде разгрузить машину.
+- Lockpick вопросы: сколько спальных мест? кухня? стиралка? парковка на 2 часа у подъезда? check-in вечером 31 августа / 1 сентября?
+
+## Tenant brand facts (allowed)
+
+- бесконтактное заселение, инструкция заранее
+- две спальные зоны для родителей+ребёнка
+- стиралка, кухня — проверять до оплаты
+- парковка/разгрузка — спрашивать заранее
+
+## CTA channels
+
+- booking: https://добрыйдом-72.рф/booking/
+- TG channel: https://t.me/Dobriy_dom_72
+- TG manager: https://t.me/Dobriy_dom_Tyumen
+- MAX: https://max.ru/id660300569233_biz
+- phone: +7 993 574-83-22
+
+## Interlink siblings (published)
+
+- B01 https://добрыйдом-72.рф/blog/beskontaktnoe-zaselenie-posutochno-tyumen/
+- B02 https://добрыйдом-72.рф/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/
+
+## Bans
+
+- ЕГРН, наследство, ипотека, Шакин, Москва
+- semester lease framing
+- snow / winter hero
+- «5 советов» skeleton
+
+## Output requirements
+
+research-notes.md: source_table (accessed_at 2026-08-25), writer_safe_urls, reader_problem, reader_outcome, practical_facts, constraints, voice_angle, surprising_fact (if sourced), wordstat_stickers for cover (посуточно вуз, 1 сентября, Тюмень). No h2_outline, no lead, no FAQ skeleton. Season: late August 2026.

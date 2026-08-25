@@ -1,0 +1,30 @@
+{
+  "topic_id": "B03",
+  "research_date": "2026-08-25",
+  "status": "PASS",
+  "summary": "Research for parents + first-year student short-term rental near Tyumen universities around Sept 1 (2–4 nights, not semester). Fresh signals: SPB Dnevnik 25.08.2026 (dorm priority rights); KP Tyumen 19.08.2026 (Tyumen university dorm calendars); TIU/UTMN official settlement pages accessed live.",
+  "freshness_audit": {
+    "research_date": "2026-08-25",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://spbdnevnik.ru/news/2026-08-25/stalo-izvestno-kto-imeet-pravo-na-pervoocherednoe-poluchenie-mest-v-studencheskikh-obshchezhitiyakh",
+      "published_at": "2026-08-25",
+      "note": "Federal dorm priority categories news; Tyumen local angle reinforced by KP Tyumen 19.08.2026 admission/dorm schedule."
+    }
+  },
+  "wordstat_audit": {
+    "status": "PARTIAL",
+    "regions": ["55", "11176"],
+    "note": "MCP-KV returned empty {} on 3 probes; pinned P0 clusters retained from scout handoff."
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "note": "No bank/developer tariff claims; university dorm pages used as official context only."
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  }
+}
