@@ -1,0 +1,50 @@
+{
+  "cover": {
+    "scene_hint": "Summer rental bathroom, guest checks cold faucet, warm light, meme reaction. TOP-RIGHT CORNER COMPLETELY EMPTY — no logo, no plate, no mark, no card.",
+    "alt": "Гость в летней ванной проверяет кран — идёт только холодная вода.",
+    "visual_type": "meme_panel",
+    "labels": ["нет горячей воды", "посуточно", "проверить кран"]
+  },
+  "inline_1": {
+    "scene_hint": "Flowchart: check both taps, find boiler, wait, contact host. Icons, arrows, summer bathroom props.",
+    "alt": "Схема первых проверок при отсутствии горячей воды.",
+    "visual_type": "labeled_checklist",
+    "labels": ["Проверьте оба крана", "Откройте на минуту", "Есть ли напор"]
+  },
+  "inline_2": {
+    "scene_hint": "Split diagram: central GVS off vs boiler off. Two panels, pipes icons, warm palette.",
+    "alt": "Два сценария: отключение в доме или выключенный бойлер.",
+    "visual_type": "comparison_table",
+    "labels": ["Дом без ГВС", "Бойлер выключен", "Когда включат"]
+  },
+  "inline_3": {
+    "scene_hint": "Timeline chart: check UK site, Gosuslugi, kogdavoda.ru by address. Save screenshot.",
+    "alt": "Где проверить график отключений по адресу.",
+    "visual_type": "bar_timeline_chart",
+    "labels": ["Сайт УК", "Госуслуги", "Сохранить скрин"]
+  },
+  "inline_4": {
+    "scene_hint": "Workflow: 5 question cards before payment — water, boiler, shutdown, channel.",
+    "alt": "Пять вопросов хозяину до оплаты.",
+    "visual_type": "workflow_diagram",
+    "labels": ["5 вопросов", "До оплаты", "Письменно"]
+  },
+  "inline_5": {
+    "scene_hint": "Checklist board: test taps, photo boiler, check pressure, message host with photo.",
+    "alt": "Чеклист первого часа после заселения.",
+    "visual_type": "checklist_board",
+    "labels": ["Проверить краны", "Фото бойлера", "Написать хозяину"]
+  },
+  "inline_6": {
+    "scene_hint": "Messenger mockup: instruction arrives before check-in, support replies about water.",
+    "alt": "Инструкция и поддержка Добрый дом в мессенджере.",
+    "visual_type": "schema_faq_ui",
+    "labels": ["Инструкция заранее", "На связи", "До брони"]
+  },
+  "inline_7": {
+    "scene_hint": "Summary card: house shutdown OR boiler — 5 questions prevent both. Booking CTA.",
+    "alt": "Короткая схема: два сценария и пять вопросов.",
+    "visual_type": "tool_screenshot",
+    "labels": ["Два сценария", "5 вопросов", "Бронь"]
+  }
+}

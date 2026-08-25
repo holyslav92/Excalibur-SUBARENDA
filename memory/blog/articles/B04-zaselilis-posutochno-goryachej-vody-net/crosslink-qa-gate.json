@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/",
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "anchor": "Снял квартиру посуточно. Залог не вернули — нашли скол на плите.У нас в Добрый дом такМы решили не проверять гостей на смекалку в тёмной квартире.Инструкция приходит в мессенджер заранее, а не выдаётся у двери. Как попасть внутрь, где щиток, где бойлер, где его выключатель и что делать, если вода холодная.Гость открывает переписку и находит ответ раньше, чем успевает занервничать. Подробнее о нашем подходе — в статье",
+      "catalog_title": "Снял квартиру посуточно. Залог не вернули — нашли скол на плите",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "anchor": "Оплатил квартиру посуточно. Код прислали от чужой двери.Поддержка на связи в мессенджере. Вопрос про воду не должен ждать утра.Если ситуацию нельзя решить одной кнопкой и получасовым ожиданием, подключается менеджер. Вместе с гостем разбираемся, что делать дальше. Про плановые отключения по адресу говорим до брони.Это не героизм. Это нормальная работа хозяина.Хотите так же спокойно — напишите нам до заезда, а не после: MAX",
+      "catalog_title": "Оплатил квартиру посуточно. Код прислали от чужой двери",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B04-zaselilis-posutochno-goryachej-vody-net",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}
