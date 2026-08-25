@@ -12,6 +12,15 @@ from pathlib import Path
 
 CYRILLIC_RE = re.compile(r"[А-Яа-яЁё]")
 TAG_RE = re.compile(r"<[^>]+>")
+FORBIDDEN_AUTHOR_RE = re.compile(
+    r"шакин|the\s*риэлтор|история\s+святослава",
+    re.IGNORECASE,
+)
+BRAND_PRICE_RE = re.compile(r"добр\w*\s+дом", re.IGNORECASE)
+PRICE_LADDER_RE = re.compile(
+    r"\d{3,5}\s*(?:₽|руб\.?)?\s*(?:→|->|—>|–>| стало | выходит | преврат)",
+    re.IGNORECASE,
+)
 
 
 def project_root() -> Path:
@@ -40,6 +49,33 @@ def normalize(text: str) -> str:
     return " ".join(str(text or "").casefold().split())
 
 
+def description_og_factory_errors(description: str) -> list[str]:
+    """OG/description factory rules (Добрый дом)."""
+    errors: list[str] = []
+    if not description:
+        return errors
+    if FORBIDDEN_AUTHOR_RE.search(description):
+        errors.append(
+            "description must not mention Шакин / The Риэлтор "
+            "(author = Добрый дом; live bug: «история Святослава Шакина»)"
+        )
+    if BRAND_PRICE_RE.search(description) and re.search(r"\d{3,5}", description):
+        errors.append(
+            "description must not pair «Добрый дом» with ₽ amounts "
+            "(guest-burn arithmetic as brand price; e.g. «у Доброго дома … 2500 … 6500»)"
+        )
+    prices = re.findall(r"\b\d{3,5}\b", description)
+    if len(set(prices)) >= 2 and (
+        PRICE_LADDER_RE.search(description)
+        or re.search(r"по\s+\d{3,5}", description, re.I)
+    ):
+        errors.append(
+            "description must not use guest-burn price arithmetic in og:description "
+            "(e.g. 2500→6500 as if it is Добрый дом's own price)"
+        )
+    return errors
+
+
 def validate_description_brief(article_dir: Path) -> dict:
     errors: list[str] = []
     brief_path = article_dir / "description-brief.json"
@@ -63,6 +99,8 @@ def validate_description_brief(article_dir: Path) -> dict:
         errors.append(f"description too long ({len(description)} chars, max 250)")
     if description and not CYRILLIC_RE.search(description):
         errors.append("description must contain Cyrillic")
+
+    errors.extend(description_og_factory_errors(description))
 
     title_h1 = ""
     if title_path.is_file():

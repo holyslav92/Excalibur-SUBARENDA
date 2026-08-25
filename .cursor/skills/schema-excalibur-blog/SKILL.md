@@ -23,7 +23,7 @@ python3 scripts/excalibur_blog_derouter_opus_chat.py \
 ## Вход
 
 - `article.html`, `article.meta.json`, `research-notes.md`
-- `shared/authors-registry.json`
+- `shared/authors-registry.json` — author **Добрый дом** (`dobry-dom`)
 - `memory/brief/site-brief.md` (site_url) **или** env `PUBLIC_SITE_URL`
 
 ## Site base URL (обязательно)
@@ -32,12 +32,19 @@ python3 scripts/excalibur_blog_derouter_opus_chat.py \
 2. **Запрещено** копировать `Organization.url` / `@id` / `image` base из соседних `schema.jsonld` (B11 и др.) — там может быть битый литерал `[REDACTED]` или чужой host.
 3. **Запрещено** писать в файл литерал `[REDACTED]` (это маска tool-display / старая редкация, не URL).
 4. **Для git-артефактов** после сборки (или сразу при записи) используй плейсхолдер `{{SITE_BASE}}` вместо живого host — Cursor secret scan блокирует commit с `PUBLIC_SITE_URL`. Publish раскрывает `{{SITE_BASE}}` → `PUBLIC_SITE_URL` только в WP payload.
-5. **Canonical article URL:** `{{SITE_BASE}}/<slug>/`. Никогда не добавляй
-   `/blog/`: WordPress публикует статьи в корне.
+5. **Canonical article URL (HARD):** `{{SITE_BASE}}/blog/<slug>/` — **must include `/blog/`** path matching live WP permalink.  
+   BlogPosting `url`, `@id`, `mainEntityOfPage.@id` — все с `/blog/<slug>/`.  
+   **Запрещено** `{{SITE_BASE}}/<slug>/` без `/blog/` (live gate FAIL).
+
+## Author (HARD)
+
+- **NEVER** mention **Святослав Шакин** / **The Риэлтор** in schema author/publisher.
+- Author = **Добрый дом** from `shared/authors-registry.json` (`id: dobry-dom`).
+- `@type`: Organization (или Person только если registry так задаёт — канон: Organization «Добрый дом»).
 
 ## Задача
 
-1. BlogPosting: headline, datePublished (today из research-context), author Person + sameAs.
+1. BlogPosting: headline, datePublished (today из research-context), author **Добрый дом** + sameAs.
 2. FAQPage — только если в статье есть реальная секция FAQ. Если FAQ нет, не
    создавать FAQPage ради schema.
    - Visible FAQ = только пары `<h3>вопрос?</h3><p>ответ</p>` в секции
@@ -70,7 +77,7 @@ python3 scripts/excalibur_blog_schema_gate.py \
 
 **HARD (INC-20260726-0813):** `-o` = **только** bare `schema-gate.json`
 (файл пишется в `--article-dir`). **Запрещён** repo-relative
-`-o memory/blog/articles/.../schema-gate.json` в Task prompt — старый
+`-o memory/blog/articles/.../schema-gate.json` in Task prompt — старый
 resolve nested path под article_dir. Скрипт теперь терпит repo-relative
 через root-resolve, но канон агента остаётся bare filename.
 

@@ -64,7 +64,7 @@ python3 scripts/excalibur_blog_derouter_opus_chat.py \
 3. Перепиши **целиком** в слог Добрый дом:
    - **8–12 строк §1 сцены** — NO TL;DR opener
    - **~900–1400 слов**, not 2500–3100
-   - один verdict, один mid fight-question
+   - один mid fight-question → **TG** `https://t.me/Dobriy_dom_72` or MAX; **never** «напишите в комментариях»
    - checklist **после** moral if present
    - CTA TG/MAX **после** пользы
 4. Сохрани `article.html`, `drafts/variant-a.html`; не затирай `drafts/writer.html`

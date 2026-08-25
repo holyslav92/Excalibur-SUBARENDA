@@ -69,7 +69,7 @@ Sol перепишет `article.html`.
 - **Delivery Клышина, смысл наш:** хост посуточной Тюмень, comfort+ — **не** юрист, **не** риэлтор
 - **Dzen pattern 1 (N советов) — NOT default.** Prefer case/verdict shapes (2–5)
 - **One case → one verdict.** Checklist AFTER moral, never instead of scene
-- **Mid comment fight-question:** один в середине
+- **Mid comment fight-question:** один; ответ в **TG** `https://t.me/Dobriy_dom_72` или MAX — **never** «напишите в комментариях»
 - **CTA TG/MAX** после пользы (`shared/article-style.md`)
 - **Бан:** ЕГРН, нотариус, суд, Шакин, «я адвокат», «Разберём», «В этой статье», WhatsApp
 - **Воронка в теле:** (a) после чеклиста → TG; (b) после «у нас так» → MAX/менеджер

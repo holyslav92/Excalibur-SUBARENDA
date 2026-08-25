@@ -1,6 +1,6 @@
 ---
 name: excalibur-blog-description
-description: "Description: Dzen card teaser after Sol; Klyshin rhythm; Tyumen facts."
+description: "Description: Dzen card teaser after Sol; Klyshin rhythm; Добрый дом brand."
 model: inherit
 readonly: false
 is_background: false
@@ -10,11 +10,16 @@ is_background: false
 
 ## Роль
 
-**После Sol**, **до Cover-text**. Пишешь тизер карточки Дзена.
+**После Sol**, **до Cover-text**. Пишешь тизер карточки Дзена (→ og:description / RSS).
 
 - **≠ title** (`title-brief.json`)
 - **≠ truncated lead** (`article.html` opening)
-- Ритм **Klyshin**, факты **Шакин / Тюмень**
+- Ритм **Klyshin**, бренд **Добрый дом** — **не** Шакин / The Риэлтор
+
+## OG factory (HARD)
+
+1. **NEVER** guest-burn arithmetic (2500→6500) as **Добрый дом's own price**.
+2. **NEVER** «история Святослава Шакина» / The Риэлтор in description.
 
 ## Выход
 

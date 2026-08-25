@@ -23,7 +23,7 @@ python3 scripts/excalibur_blog_derouter_opus_chat.py \
 ## Когда
 
 **После Sol** (`article.html` + `pipeline_canon` stamp).  
-**До Cover-text** (и параллельно Schema можно готовить позже, но Description — до cover-text).
+**До Cover-text**.
 
 ## Вход
 
@@ -32,12 +32,18 @@ python3 scripts/excalibur_blog_derouter_opus_chat.py \
 - `research-notes.md` — Wordstat / угол
 - `shared/dzen-description-rules.md` — **обязательно**
 
+## OG / description factory (HARD)
+
+1. **NEVER** put guest-burn arithmetic (e.g. 2500→6500) in og:description **as if it is Добрый дом's own price**.
+2. **NEVER** mention **Святослав Шакин** / **The Риэлтор** in og:description. Author = **Добрый дом**.
+3. Teaser = **ожог/риск** (Klyshin rhythm), не прайс-лист и не «история Шакина».
+
 ## Что пишешь
 
 **1–2 предложения** для карточки Дзена (~120–220 символов):
 
 - **Ритм Klyshin** — case hook, разговорная первая реплика, интрига.
-- **Факты / город:** Святослав Шакин / Тюмень.
+- **Бренд:** Добрый дом / guest pain Тюмень — **не** Шакин, **не** риэлтор.
 - **≠ title** — другая формулировка, не SEO-хвост H1.
 - **≠ truncated lead** — не первые абзацы статьи (double card).
 
@@ -46,9 +52,10 @@ python3 scripts/excalibur_blog_derouter_opus_chat.py \
 ```json
 {
   "topic_id": "B01",
-  "description": "Продавец говорит «всё чисто». Одна строка в реквизите 4 говорит обратное — и аванс уже поздно отменять без нервов.",
+  "description": "Хост пишет «утром будет». Вы уже в квартире — где бойлер, спросите до того, как замёрзнете.",
   "rhythm": "klyshin_case_hook",
   "geo": "Тюмень",
+  "author_brand": "Добрый дом",
   "not_equal_title": true,
   "not_truncated_lead": true,
   "verdict": "PASS"
@@ -65,9 +72,11 @@ python3 scripts/excalibur_blog_description_gate.py --article-dir <dir>
 
 ## Запрещено
 
+- Guest-burn price ladder (2500→6500) как цена **Доброго дома**
+- Шакин / The Риэлтор / «история Святослава»
 - Копировать H1 из title-brief
 - Обрезать первый абзац article.html
-- Brand vanity «риэлтор тюмень» как единственный смысл
+- ЕГРН / наследство / ипотека как spine
 - Плагиат постов @klyshin_A
 
 Agent: `agents/excalibur-blog-description.md`
