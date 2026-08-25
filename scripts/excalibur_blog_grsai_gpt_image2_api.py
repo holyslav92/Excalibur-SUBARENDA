@@ -65,6 +65,14 @@ PRIMARY_MODEL_ID = "".join(("gpt", "-image-", "2"))  # pragma: allowlist secret
 VIP_DISABLED = True
 
 
+def forbid_vip() -> bool:
+    """VIP tier запрещён: постоянный канон + опционально GRSAI_FORBID_VIP в env."""
+    if VIP_DISABLED:
+        return True
+    raw = str(os.environ.get("GRSAI_FORBID_VIP", "")).strip().casefold()
+    return raw in {"1", "true", "yes", "on"}
+
+
 def grsai_base_image_model() -> str:
     """Базовый Grsai t2i id (non-vip); переопределение через GRSAI_IMAGE_MODEL."""
     return PRIMARY_MODEL_ID
