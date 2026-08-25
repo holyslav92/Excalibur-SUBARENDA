@@ -131,8 +131,14 @@ def funnel_window_positions(html: str, phone_digits: str, window: int = 700) -> 
     return hits
 
 
+def find_funnel_paragraphs(html: str, phone_digits: str) -> list[str]:
+    """Paragraphs (<p>…</p>) that contain a full funnel."""
+    blocks = re.findall(r"<p[^>]*>.*?</p>", html or "", flags=re.I | re.S)
+    return [b for b in blocks if slice_has_full_funnel(b, phone_digits)]
+
+
 def check_funnel_hooks(html: str, phone: str = "") -> list[str]:
-    """Два блока полной воронки: после moral (mid) и в конце. Голос хоста, не баннер."""
+    """Один блок полной воронки в конце. Голос хоста, не баннер. Без double CTA."""
     errors: list[str] = []
     body = html or ""
     lower = body.casefold()
@@ -140,31 +146,31 @@ def check_funnel_hooks(html: str, phone: str = "") -> list[str]:
     n = max(len(body), 1)
 
     if n < 200:
-        errors.append("funnel: article too short for double full-funnel blocks")
+        errors.append("funnel: article too short for end full-funnel block")
 
     opening = body[: int(n * 0.15)]
     if slice_has_full_funnel(opening, phone_digits):
         errors.append(
-            "funnel: full CTA block in opening — first funnel goes after moral/checklist, not in §1"
+            "funnel: full CTA block in opening — CTA goes at end only, not in §1"
         )
 
-    windows = funnel_window_positions(body, phone_digits)
-    if len(windows) < 2:
+    funnel_paras = find_funnel_paragraphs(body, phone_digits)
+    if not funnel_paras:
         errors.append(
-            "funnel: need two full-funnel blocks (TG+MAX+site+phone+manager) — mid after moral and at end"
+            "funnel: end block missing full funnel "
+            "(TG https://t.me/Dobriy_dom_72 + MAX + site + phone + manager)"
+        )
+    elif len(funnel_paras) > 1:
+        errors.append(
+            "funnel: multiple full CTA paragraphs — one block at end only "
+            "(no double MAXили / double funnel)"
         )
     else:
-        mid_hit = any(pos < int(n * 0.72) and pos > int(n * 0.12) for pos in windows)
-        end_hit = any(pos > int(n * 0.45) for pos in windows)
-        if not mid_hit:
+        para = funnel_paras[0]
+        para_pos = body.rfind(para)
+        if para_pos >= 0 and para_pos < int(n * 0.45):
             errors.append(
-                "funnel: mid-article block (after moral) missing full funnel "
-                "(TG https://t.me/Dobriy_dom_72 + MAX + site + phone + manager)"
-            )
-        if not end_hit:
-            errors.append(
-                "funnel: end block missing full funnel "
-                "(TG https://t.me/Dobriy_dom_72 + MAX + site + phone + manager)"
+                "funnel: full CTA block too early — must be in final section after moral"
             )
 
     banned = (
