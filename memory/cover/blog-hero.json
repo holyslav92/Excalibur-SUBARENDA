@@ -1,22 +1,21 @@
 {
   "hero_id": "dobry-dom-brand",
-  "status": "logo_reference_in_generation",
+  "status": "brand_logo_paste",
   "name_ru": "Добрый дом",
-  "cover_mode": "reference_in_generation",
-  "logo_mode": "reference_in_generation",
-  "reference_images": [
-    "memory/cover/assets/brand/logo-dobry-dom.png"
-  ],
-  "reference_image": "memory/cover/assets/brand/logo-dobry-dom.png",
-  "reference_url_hosted": "wp-content/uploads/2026/03/cropped-img_7143.png",
-  "reference_url_source": "cropped-img_7143.png — official alpha PNG for Grsai urls/aroma reference",
+  "cover_mode": "brand_logo_paste",
+  "logo_mode": "brand_logo_paste",
+  "reference_images": [],
+  "reference_image": "",
+  "reference_url_hosted": "",
+  "reference_url_source": "NEVER send cropped-img_7143.png as generation reference — factory alpha overlay only",
   "visual_notes": "memory/cover/visual-notes-dobry-dom.json",
   "logo_composite": {
-    "mode": "emergency_paste_only",
+    "mode": "paste_png_alpha",
     "logo_asset": "memory/cover/assets/brand/logo-dobry-dom.png",
     "canonical_sha256": "72e53ba966f0626cc6eaad0792e68b57c8da0ccd9265d6822fbc173fdb48b941",
     "forbid_ai_drawn_logo": true,
-    "cover_phone_post_composite": true,
+    "cover_phone_in_scene_generation": true,
+    "cover_phone_post_composite": false,
     "max_width_fraction": 0.1,
     "min_width_fraction": 0.08,
     "max_width_fraction_cap": 0.12,
@@ -40,10 +39,10 @@
     "person": "NO Shakin/rieltor identity — Russian guests fitting check-in topic only",
     "wow_poster": "Magazine cover poster: bold readable Russian DISPLAY type hook + one sharp scene line",
     "forbid_wordpress_ui": "NEVER WordPress, Gutenberg, wp-admin, block editor, theme chrome, cookie bars in generated art",
-    "no_overlap": "Headline, Wordstat stickers, meme, cat, phone, people, logo NEVER overlap — separate zones",
-    "logo_lockup": "Grsai reference urls/aroma — integrate official PNG small TOP-RIGHT in generation; transparent alpha; NO white/gray plate; cover always + 2–3 inline; NEVER 2+ logos per frame",
-    "cover_phone": "+7 (993) 574-83-22 post-composite bottom-left on cover only — NEVER in generation"
+    "no_overlap": "Headline, Wordstat stickers, meme, cat bottom-left, phone quiet zone, logo pad NEVER overlap",
+    "logo_lockup": "TOP-RIGHT empty pad in generation; AFTER split factory pastes cropped-img_7143.png alpha PNG only — NO white/gray plate; cover always + 2–3 inline; NEVER send logo as Grsai reference",
+    "cover_phone": "+7 (993) 574-83-22 painted IN scene (tape strip, torn paper, door plate, fridge magnet) on bottom edge or side margin — readable, pretty, NOT over cat/meme/sticky/headline; NEVER post-composite pill/button/banner"
   },
   "cover_canon": "memory/cover/cover-canon.json",
-  "host_face_todo": "skip_human_host — logo reference in generation mode"
+  "host_face_todo": "skip_human_host — brand_logo_paste mode"
 }

@@ -261,6 +261,55 @@ class DrawnLogoGateTest(unittest.TestCase):
         self.assertIn("white/gray", src)
         self.assertIn("cropped-img_7143.png", src)
 
+    def test_phone_pill_post_composite_detected(self) -> None:
+        from PIL import Image, ImageDraw
+
+        from excalibur_blog_drawn_logo_gate import (
+            detect_phone_pill_post_composite,
+            detect_phone_pill_overlaps_cat_zone,
+        )
+
+        with tempfile.TemporaryDirectory() as tmp:
+            canvas = Path(tmp) / "pill.png"
+            img = Image.new("RGB", (1200, 675), (200, 210, 220))
+            draw = ImageDraw.Draw(img)
+            draw.rounded_rectangle((40, 610, 420, 660), radius=8, fill=(252, 252, 252), outline=(20, 24, 33), width=2)
+            draw.text((55, 620), "+7 (993) 574-83-22", fill=(20, 24, 33))
+            img.save(canvas)
+            pill = detect_phone_pill_post_composite(canvas)
+            self.assertTrue(pill.get("detected"), pill)
+
+        with tempfile.TemporaryDirectory() as tmp:
+            canvas = Path(tmp) / "pill-on-cat.png"
+            img = Image.new("RGB", (1200, 675), (200, 210, 220))
+            draw = ImageDraw.Draw(img)
+            draw.rectangle((20, 520, 200, 660), fill=(120, 80, 60))
+            draw.rounded_rectangle((30, 600, 360, 655), radius=8, fill=(250, 250, 250))
+            img.save(canvas)
+            overlap = detect_phone_pill_overlaps_cat_zone(canvas)
+            self.assertTrue(overlap.get("overlap"), overlap)
+
+    def test_phone_only_composite_flag_blocked(self) -> None:
+        from excalibur_blog_brand_logo_composite import composite_article_images
+
+        with tempfile.TemporaryDirectory() as tmp:
+            tenant_root = Path(tmp) / "repo"
+            article = tenant_root / "memory/blog/articles/test-phone"
+            cover = article / "cover"
+            cover.mkdir(parents=True)
+            shutil.copytree(ROOT / "shared", tenant_root / "shared")
+            shutil.copytree(ROOT / "memory/cover/assets", tenant_root / "memory/cover/assets")
+            (tenant_root / "scripts").mkdir()
+            shutil.copy2(
+                ROOT / "scripts/excalibur_blog_brand_logo_composite.py",
+                tenant_root / "scripts/excalibur_blog_brand_logo_composite.py",
+            )
+            from PIL import Image
+
+            Image.new("RGBA", (1200, 675), (255, 255, 255, 255)).save(cover / "cover.png")
+            with self.assertRaises(ValueError):
+                composite_article_images(article, tenant_root, phone_only=True)
+
     def test_tenant_image_generation_forbids_drawn_logo(self) -> None:
         tenant = json.loads((ROOT / "shared/tenant-config.json").read_text(encoding="utf-8"))
         img = tenant.get("image_generation") or {}
@@ -268,6 +317,8 @@ class DrawnLogoGateTest(unittest.TestCase):
         self.assertIn("добрый дом", forbids)
         self.assertIn("gray box", forbids)
         self.assertIn("white box", forbids)
+        self.assertIn("phone pill", forbids)
+        self.assertTrue(img.get("logo_never_as_generation_reference"))
         self.assertIn("logo-dobry-dom.png", img.get("logo_factory_paste_only", ""))
 
 

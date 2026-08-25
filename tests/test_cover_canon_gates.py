@@ -191,12 +191,20 @@ class WordstatGateTest(unittest.TestCase):
         tenant = json.loads((ROOT / "shared/tenant-config.json").read_text(encoding="utf-8"))
         wow = tenant.get("cover_wow_rules") or {}
         self.assertEqual(wow.get("cover_qa_mode"), "slim")
+        self.assertEqual(wow.get("logo_mode"), "brand_logo_paste")
+        self.assertTrue(wow.get("forbid_logo_reference_in_generation"))
+        self.assertTrue(wow.get("cover_phone_in_scene_generation"))
+        self.assertTrue(wow.get("forbid_cover_phone_post_composite_pill"))
         self.assertEqual(wow.get("max_generation_attempts_per_canvas"), 2)
         self.assertTrue(wow.get("paste_and_ship_on_exhaust"))
         self.assertTrue(wow.get("forbid_wordpress_ui_in_art"))
         self.assertEqual(wow.get("inline_logo_count_min"), 2)
         self.assertEqual(wow.get("inline_logo_count_max"), 3)
         self.assertIn("Excalibur-SUBARENDA", wow.get("tenant_scope", ""))
+        self.assertEqual(tenant.get("cover_mode"), "brand_logo_paste")
+        img = tenant.get("image_generation") or {}
+        self.assertTrue(img.get("logo_never_as_generation_reference"))
+        self.assertTrue(img.get("forbid_cover_phone_post_composite_pill"))
 
     def test_visual_notes_dobry_dom(self) -> None:
         notes = json.loads(
@@ -214,6 +222,10 @@ class WordstatGateTest(unittest.TestCase):
             "forbid_ai_drawn_logo_cover",
             "logo_composite_stamp_pass",
             "no_logo_plate_cover",
+            "cover_phone_993_in_scene",
+            "forbid_phone_pill_post_composite",
+            "forbid_logo_overlaps_meme_cat_headline",
+            "validate_cover_phone_and_overlap_gates",
         ):
             self.assertIn(key, gate_src)
         for removed in (

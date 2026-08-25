@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Paste canonical Dobry Dom brand PNG onto cover/inline panels (alpha composite).
 
-NEVER ask image models to draw/restyle the logo — factory pastes this file 1:1.
+NEVER ask image models to draw/restyle the logo — factory pastes cropped-img_7143.png 1:1.
 Crop to non-transparent getbbox() before resize — never paste the full empty square.
 Never draw white/card/plate backing under the lockup — alpha overlay only.
-Cover panel also gets tenant phone (post-composite text), not AI-drawn.
+Cover phone is painted IN the scene during generation — NEVER post-composite pill overlay.
 """
 
 from __future__ import annotations
@@ -255,38 +255,11 @@ def fixed_logo_xy(base, logo_w: int, logo_h: int, *, margin_px: int, corner: str
     return margin_px, margin_px
 
 
-def draw_phone_on_cover(
-    base,
-    phone_display: str,
-    *,
-    anchor: str,
-    margin_px: int,
-) -> None:
-    from PIL import ImageDraw
-
-    draw = ImageDraw.Draw(base)
-    font_size = max(16, base.width // 52)
-    font = _load_font(font_size)
-    text = phone_display.strip()
-    bbox = draw.textbbox((0, 0), text, font=font)
-    tw = bbox[2] - bbox[0]
-    th = bbox[3] - bbox[1]
-    pad_x, pad_y = 10, 6
-    block_w = tw + pad_x * 2
-    block_h = th + pad_y * 2
-
-    if anchor == "bottom_left":
-        x1, y1 = margin_px, base.height - block_h - margin_px
-    elif anchor == "bottom_right":
-        x1, y1 = base.width - block_w - margin_px, base.height - block_h - margin_px
-    elif anchor == "top_left":
-        x1, y1 = margin_px, margin_px
-    else:  # top_right
-        x1, y1 = base.width - block_w - margin_px, margin_px
-    x2 = x1 + block_w
-    y2 = y1 + block_h
-    draw.rounded_rectangle((x1, y1, x2, y2), radius=8, fill=(255, 255, 255, 230), outline=(20, 24, 33, 255), width=2)
-    draw.text((x1 + pad_x, y1 + pad_y - 1), text, font=font, fill=(20, 24, 33, 255))
+def draw_phone_on_cover(*_args, **_kwargs) -> None:
+    """Запрещено: post-composite pill перекрывал мем/кота на обложке 1 сент."""
+    raise ValueError(
+        "cover phone post-composite pill is forbidden — paint +7 (993) 574-83-22 IN the scene during generation"
+    )
 
 
 LOGO_SOURCE_CANVAS_PX = 512
@@ -431,48 +404,15 @@ def composite_article_images(
     emergency: bool = False,
 ) -> dict[str, Any]:
     cfg = load_tenant_logo_config(root)
-    reference_mode = uses_logo_reference_in_generation(cfg)
-    if reference_mode and not force and not emergency and not phone_only:
-        return {
-            "status": "SKIP",
-            "reason": "logo_mode=reference_in_generation — logo baked in Grsai; use --phone-only or --emergency",
-        }
-    if not uses_brand_logo_paste(cfg) and not force and not phone_only:
+    if phone_only:
+        raise ValueError(
+            "--phone-only forbidden: cover phone must be painted IN the scene during generation, "
+            "never as post-composite pill overlay"
+        )
+    if not uses_brand_logo_paste(cfg) and not force and not emergency:
         return {"status": "SKIP", "reason": "cover_mode is not brand_logo_paste"}
 
     logo_path = root / cfg["logo_rel"]
-    if phone_only:
-        if not logo_path.is_file():
-            raise FileNotFoundError(f"brand logo missing: {logo_path}")
-        phone_display = str(cfg.get("phone_display") or DEFAULT_PHONE_DISPLAY)
-        cover_path = article_dir / "cover" / "cover.png"
-        if not cover_path.is_file():
-            raise FileNotFoundError(f"missing cover.png for phone-only composite: {cover_path}")
-        phone_anchor = phone_anchor_for_logo_corner(str(cfg.get("logo_corner") or FIXED_LOGO_CORNER))
-        from PIL import Image
-
-        with Image.open(cover_path) as img:
-            base = img.convert("RGBA")
-        draw_phone_on_cover(
-            base,
-            phone_display,
-            anchor=phone_anchor,
-            margin_px=int(cfg.get("margin_px") or 20),
-        )
-        base.save(cover_path, format="PNG")
-        stamp = {
-            "status": "PASS",
-            "mode": "phone_only_post_composite",
-            "cover_phone_display": phone_display,
-            "cover_phone_post_composite": True,
-            "logo_pasted": False,
-            "logo_reference_in_generation": True,
-            "composed_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-            "images": ["cover/cover.png"],
-        }
-        stamp_path = article_dir / "cover" / "logo-composite-stamp.json"
-        stamp_path.write_text(json.dumps(stamp, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-        return stamp
     if not logo_path.is_file():
         raise FileNotFoundError(f"brand logo missing: {logo_path}")
 
@@ -505,7 +445,7 @@ def composite_article_images(
             max_width_fraction=logo_fraction,
             margin_px=int(cfg.get("margin_px") or 20),
             phone_display=phone_display,
-            add_phone=(name == "cover.png"),
+            add_phone=False,
             adaptive_corner=False,
             fixed_corner=logo_corner,
             paste_logo=paste_logo,
@@ -532,6 +472,9 @@ def composite_article_images(
         "inline_logo_files": inline_logo_files,
         "inline_logo_count": len(inline_logo_files),
         "cover_phone_display": phone_display,
+        "cover_phone_in_scene_generation": True,
+        "cover_phone_post_composite": False,
+        "forbid_logo_as_generation_reference": True,
         "cover_logo_placement": cover_placement,
         "panel_logo_placements": panel_placements,
         "panel_logo_skipped": panel_skipped,
@@ -541,7 +484,6 @@ def composite_article_images(
         "forbid_logo_white_plate": True,
         "logo_crop_getbbox": True,
         "forbid_multiple_logos_per_image": True,
-        "cover_phone_post_composite": True,
         "adaptive_logo_corner_all_panels": False,
         "inline_phone_required": False,
         "pre_composite_dir": f"cover/{PRE_COMPOSITE_DIRNAME}",
@@ -574,6 +516,10 @@ def validate_logo_stamp(article_dir: Path, root: Path) -> list[str]:
     expected_phone = str(cfg.get("phone_display") or DEFAULT_PHONE_DISPLAY)
     if str(stamp.get("cover_phone_display") or "") != expected_phone:
         errors.append(f"logo-composite stamp phone must be {expected_phone!r}")
+    if stamp.get("cover_phone_post_composite") is True:
+        errors.append("logo-composite stamp must not set cover_phone_post_composite=true (phone in scene only)")
+    if stamp.get("cover_phone_in_scene_generation") is False:
+        errors.append("logo-composite stamp must set cover_phone_in_scene_generation=true")
 
     manifest_path = article_dir / "cover" / "quad-manifest.json"
     if manifest_path.is_file():

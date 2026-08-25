@@ -1,21 +1,23 @@
 ---
 name: cover-excalibur-blog
-description: "④a Cover: 2× quad Grsai 2K, meme energy, logo reference-in-generation, max-2 + vip."
+description: "④a Cover: 2× quad Grsai 2K, meme energy, factory logo overlay after split, phone in-scene."
 ---
 
 # Cover Agent — longform 8 images
 
 ## Philosophy (slim factory)
 
-**Meme energy ON TOPIC + beauty = agent judgment.** Cover + 2–4 inlines: witty top-100 meme framing (reaction face, before/after, caption panel, comic beat) tied to посуточная аренда pains — funny, screenshot-worthy, comfort+ brand. Catalog: `memory/cover/meme-top100.json`. Inline types: `meme_panel`, `reaction_card` in `inline-visual-types-dobry-dom.json`.
+**Meme energy ON TOPIC + beauty = agent judgment.** Cover + 2–4 inlines: witty top-100 meme framing tied to посуточная аренда pains — funny, screenshot-worthy, comfort+ brand. Catalog: `memory/cover/meme-top100.json`.
 
-**Ban:** random unrelated memes, logo under stickers, snow/winter off-season, luxury flex.
+**Ban:** random unrelated memes, logo under stickers, snow/winter off-season, luxury flex, **logo as generation reference**, **post-composite phone pill**.
 
-**Brand lock (hard only):**
-- Logo **in generation** via Grsai `urls`/aroma — official `logo-dobry-dom.png` / `cropped-img_7143.png` reference
-- Integrate THIS exact mark small top-right, transparent, **NO** gray/white plate/card/backing
-- Phone **+7 (993) 574-83-22** on cover post-composite only (`brand_logo_composite.py --phone-only`)
-- Emergency alpha-paste only: `brand_logo_composite.py --emergency` (disabled by default)
+**Brand lock FOREVER (hard only):**
+- **NEVER** send logo as Grsai/Derouter reference (`urls`/aroma/`input_urls`)
+- Prompt: empty clear **top-right** — no logo, no house icon, no «Добрый дом», no plate/sticker/business card
+- **AFTER split:** factory pastes official `cropped-img_7143.png` alpha PNG small top-right — RGBA only, no white/gray backing
+- Cover: logo always. Inlines: **2–3 of 7**
+- Phone **+7 (993) 574-83-22** painted **IN the scene** (tape strip, torn paper, door plate, magnet) on bottom edge or side quiet zone — readable, pretty, NOT over cat/meme/sticky/headline
+- **NEVER** `brand_logo_composite.py --phone-only` or post-composite pill
 - NO WordPress UI in art
 
 ## Generation policy (HARD)
@@ -23,24 +25,9 @@ description: "④a Cover: 2× quad Grsai 2K, meme energy, logo reference-in-gene
 | Rule | Value |
 |------|-------|
 | Provider | **Grsai** (see `shared/grsai-gpt-image-api-contract.md`) |
-| VIP retry | **1** per sheet only if non-vip cannot deliver ≥2K (long side &lt;2048) or hard API fail |
-| Max attempts | **2** per canvas → pad-clear if plate + phone-only post-composite + ship |
+| VIP retry | **1** per sheet only if non-vip cannot deliver ≥2K |
+| Max attempts | **2** per canvas → pad-clear + official logo paste if plate |
 | Prose/scene | Derouter Terra `--role cover-scene` only |
-
-```bash
-python3 scripts/excalibur_blog_derouter_opus_chat.py \
-  --role cover-scene \
-  --system-file skills/cover-excalibur-blog/SKILL.md \
-  --user-file <assembled-cover-scene-inputs.md> \
-  --output cover/scene-draft.json \
-  --article-dir <article_dir>
-```
-
-## Когда
-
-После Sol PASS + Description gate PASS + Cover-text gate PASS. Параллельно Schema.
-
-**После Cover:** `excalibur-blog-cover-qa` (slim gate) → Indexer.
 
 ## Архитектура
 
@@ -49,25 +36,19 @@ python3 scripts/excalibur_blog_derouter_opus_chat.py \
   canvas 1: cover + inline_1..3
   canvas 2: inline_4..7
 → split 2×2 → cover.png + inline-01..07.png
-→ phone-only post-composite on cover (reference mode)
+→ brand_logo_composite.py (logo overlay ONLY — no phone pill)
 → Cover-QA slim → Indexer
 ```
 
-On attempt 2 fail / logo plate: `live_plate_remove_relogo.clear_logo_pad()` → `--phone-only` → **continue**.
+## Logo overlay (HARD — default)
 
-## Logo reference (HARD — default)
-
-`logo_mode=reference_in_generation` in `shared/tenant-config.json`. Every Grsai draw call includes logo reference URL in `urls`/aroma.
+`cover_mode=brand_logo_paste` in `shared/tenant-config.json`. **Never** logo reference in generation.
 
 ```bash
-python3 scripts/excalibur_blog_brand_logo_composite.py --article-dir "$ARTICLE" --phone-only
+python3 scripts/excalibur_blog_brand_logo_composite.py --article-dir "$ARTICLE"
 ```
 
-Emergency alpha-paste (only if reference gen failed):
-
-```bash
-python3 scripts/excalibur_blog_brand_logo_composite.py --article-dir "$ARTICLE" --emergency
-```
+`--phone-only` and `--emergency` are blocked/disabled for normal pipeline.
 
 ## Runbook
 
@@ -78,34 +59,15 @@ python3 scripts/excalibur_blog_cover_text_gate.py --article-dir "$ARTICLE"
 python3 scripts/excalibur_blog_quad_manifest.py --article-dir "$ARTICLE" --merge
 python3 scripts/excalibur_blog_cover_motif_gate.py check --topic-id <id> \
   --composition "..." --location "..." --meme "..." --sticker-set "..."
-
 python3 scripts/excalibur_blog_cover_quad_prompt.py --article-dir "$ARTICLE" --write-batch
 python3 scripts/excalibur_blog_grsai_gpt_image2_api.py --article-dir "$ARTICLE" \
   --batch cover/quad-mcp-batch-01.json --result cover/quad-mcp-result-01.json
 python3 scripts/excalibur_blog_grsai_gpt_image2_api.py --article-dir "$ARTICLE" \
   --batch cover/quad-mcp-batch-02.json --result cover/quad-mcp-result-02.json
-
 python3 scripts/excalibur_blog_quad_apply.py --article-dir "$ARTICLE" --canvas-index 1 --inject-html
 python3 scripts/excalibur_blog_quad_apply.py --article-dir "$ARTICLE" --canvas-index 2 --inject-html
-python3 scripts/excalibur_blog_brand_logo_composite.py --article-dir "$ARTICLE" --phone-only
+python3 scripts/excalibur_blog_brand_logo_composite.py --article-dir "$ARTICLE"
+python3 scripts/excalibur_blog_cover_qa_gate.py --article-dir "$ARTICLE"
 ```
 
-If gen attempt 2 still has drawn lockup in cover pad → pad-clear → composite → ship.
-
-## Meme + inline visual types
-
-- **Cover:** 1–2 meme beats + Wordstat stickers + scene line — magazine poster energy
-- **Inline:** mix utility (`lived_in_room`, `labeled_checklist`, …) with **2–4** `meme_panel` / `reaction_card` on-topic
-- Agent picks format freely; must match H2 pain (залог, код, чемодан, домофон)
-- Meme stickers ≤15% frame on inline; never cover logo pad
-
-## Blockers
-
-- COVER MOTIF BLOCKER (14-day collision)
-- DEROUTER COVER-SCENE BLOCKER
-- GRSAI API BLOCKER (after non-vip + 1 vip when 2K/API exhausted)
-- IMAGE MODEL BLOCKER — Flux/Seedream/nano_banana/z-image
-
-## QA
-
-Slim Cover-QA only. Do **not** loop regen for typography/overlap/meme density — agent judgment.
+Contract: `shared/blog-cover-quad-canvas-contract.md`

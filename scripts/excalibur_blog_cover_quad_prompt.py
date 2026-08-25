@@ -95,8 +95,14 @@ LOGO_REFERENCE_BAN = (
     "NO gold house-with-heart logo; NO УЮТНЫЕ КВАРТИРЫ В АРЕНДУ subtitle in art"
 )
 NO_OVERLAP_RULE = (
-    "Separate zones — headline, Wordstat stickers, meme, cat bottom-left, people, "
-    "TOP-RIGHT empty logo pad NEVER overlap each other; phone NOT in generation"
+    "Separate zones — headline top, Wordstat stickers, meme cat bottom-left ≤12%, "
+    "phone quiet zone on bottom edge or side paper ONLY; TOP-RIGHT empty logo pad; "
+    "phone/logo NEVER over cat/meme/sticky/headline"
+)
+PHONE_IN_SCENE_RULE = (
+    "Phone EXACT «{phone}» painted IN scene as tape strip, torn paper, door plate, "
+    "fridge magnet, or poster edge — readable Cyrillic, pretty, NOT opaque pill/button/banner; "
+    "quiet zone on bottom edge or side margin; NEVER over cat bottom-left, sticky, meme, or headline"
 )
 MEME_CATALOG_REL = "memory/cover/meme-top100.json"
 MEME_STICKER_INLINE_MAX_SHARE = 0.15
@@ -547,14 +553,16 @@ def build_prompt(
             )
         elif brand_logo_paste:
             emotion_clause = f"Expr: {cover_emotion}." if cover_emotion else ""
+            phone_clause = PHONE_IN_SCENE_RULE.format(phone=cover_phone_cta)
             panel_lines.append(
                 f"TL COVER WOW POSTER (magazine, not stock): «{cover_hook_text}» bold DISPLAY Cyrillic readable, {highlight_rule}; "
                 f"sticky «{cover_sticky or 'Залог вернут?'}»; scene props; natural daylight clean white balance, "
                 f"NO yellow/amber cast, NO muddy skin, NO winter/snow. "
-                f"NO logo/phone in gen. "
+                f"NO logo in gen. {phone_clause}. "
                 f"{emotion_clause} soft daylight crisp sharp; gold tape; 1-3 Wordstat; "
                 f"{compact(cover_scene, COVER_SCENE_HINT_COMPACT)}; cat bottom-left ≤12%; "
-                f"TOP-RIGHT empty pad; no logo in gen; {BOARD_STATIONERY}; #FFF"
+                f"TOP-RIGHT empty clear pad — no logo, no house icon, no «Добрый дом» lettering, no plate, no sticker; "
+                f"{BOARD_STATIONERY}; #FFF"
             )
         else:
             emotion_clause = (
@@ -595,7 +603,9 @@ def build_prompt(
         )
     elif has_cover and brand_logo_paste:
         reference_line = (
-            "Cover TL: NO host; NO logo/phone in gen; TOP-RIGHT empty pad for factory PNG."
+            "Cover TL: NO host; NO logo in gen (factory cropped-img_7143.png alpha after split); "
+            f"phone IN scene only — {PHONE_IN_SCENE_RULE.format(phone=cover_phone_cta)}; "
+            "NEVER post-composite pill."
         )
     elif has_cover:
         reference_line = (

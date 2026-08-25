@@ -42,6 +42,9 @@
     "panels_per_canvas": 4,
     "total_images": 8,
     "forbid_in_generation": [
+      "any brand logo or wordmark",
+      "Добрый дом lettering",
+      "house icon lockup",
       "second logo copy",
       "logo comparison table",
       "white box under logo pad",
@@ -52,11 +55,13 @@
       "rounded rectangle logo backing",
       "dashed logo frame",
       "gold house-with-heart logo",
-      "УЮТНЫЕ КВАРТИРЫ В АРЕНДУ subtitle"
+      "УЮТНЫЕ КВАРТИРЫ В АРЕНДУ subtitle",
+      "opaque phone pill or CTA banner overlay"
     ],
-    "logo_reference_asset": "memory/cover/assets/brand/logo-dobry-dom.png",
-    "logo_reference_url": "wp-content/uploads/2026/03/cropped-img_7143.png",
-    "logo_reference_prompt": "Integrate THIS exact brand mark from reference — small top-right, transparent, no plate/card/backing, natural in scene"
+    "logo_factory_paste_only": "memory/cover/assets/brand/logo-dobry-dom.png",
+    "logo_never_as_generation_reference": true,
+    "cover_phone_in_scene_only": "+7 (993) 574-83-22",
+    "forbid_cover_phone_post_composite_pill": true
   },
   "brand_tone": {
     "positioning": "комфорт+",
@@ -176,18 +181,19 @@
     "derouter_image_quality": "high",
     "auto_interlink_after_publish": true
   },
-  "cover_mode": "reference_in_generation",
-  "logo_mode": "reference_in_generation",
+  "cover_mode": "brand_logo_paste",
+  "logo_mode": "brand_logo_paste",
   "logo_composite": {
-    "mode": "emergency_paste_only",
-    "emergency_flag": "--emergency",
+    "mode": "paste_png_alpha",
     "logo_asset": "memory/cover/assets/brand/logo-dobry-dom.png",
     "canonical_url": "wp-content/uploads/2026/03/cropped-img_7143.png",
     "canonical_source": "cropped-img_7143.png from site — alpha only, never redraw, never white/gray plate behind",
     "canonical_sha256": "72e53ba966f0626cc6eaad0792e68b57c8da0ccd9265d6822fbc173fdb48b941",
     "forbid_ai_drawn_logo": true,
     "forbid_ai_drawn_logo_pre_composite": true,
-    "cover_phone_post_composite": true,
+    "cover_phone_in_scene_generation": true,
+    "cover_phone_post_composite": false,
+    "forbid_logo_as_generation_reference": true,
     "max_width_fraction": 0.1,
     "min_width_fraction": 0.08,
     "max_width_fraction_cap": 0.12,
@@ -201,7 +207,7 @@
       "inline_7"
     ]
   },
-  "cover_identity_status": "logo_reference_in_generation",
+  "cover_identity_status": "brand_logo_only",
   "dzen_rf_pack": true,
   "dzen_publish": {
     "status": "TODO",
@@ -312,8 +318,11 @@
   },
   "cover_wow_rules": {
     "status": "slim",
-    "philosophy": "top-100 meme energy ON TOPIC + comfort+ brand; logo via Grsai reference urls/aroma in generation; phone post-composite; no plate; no WP UI; max-2 gen + vip fallback",
-    "logo_mode": "reference_in_generation",
+    "philosophy": "top-100 meme energy ON TOPIC + comfort+ brand; logo factory alpha PNG overlay AFTER gen only — NEVER Grsai reference; phone IN scene (tape/paper/magnet) — NEVER post-composite pill; no plate; no WP UI; max-2 gen + vip fallback",
+    "logo_mode": "brand_logo_paste",
+    "forbid_logo_reference_in_generation": true,
+    "cover_phone_in_scene_generation": true,
+    "forbid_cover_phone_post_composite_pill": true,
     "max_generation_attempts_per_canvas": 2,
     "paste_and_ship_on_exhaust": true,
     "logo_asset": "memory/cover/assets/brand/logo-dobry-dom.png",

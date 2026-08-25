@@ -232,7 +232,48 @@ def batch_mcp_args(batch_path: Path) -> dict[str, Any]:
         out["logo_reference_local"] = logo_local
     if args.get("logo_reference_in_generation") or batch.get("logo_reference_in_generation"):
         out["logo_reference_in_generation"] = True
+    if _tenant_forbids_logo_reference(project_root()):
+        _strip_logo_reference_fields(out)
     return out
+
+
+def _tenant_forbids_logo_reference(root: Path) -> bool:
+    cfg_path = root / "shared" / "tenant-config.json"
+    if not cfg_path.is_file():
+        return False
+    try:
+        tenant = json.loads(cfg_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return False
+    img = tenant.get("image_generation") or {}
+    if img.get("logo_never_as_generation_reference") is True:
+        return True
+    mode = str(tenant.get("cover_mode") or "").strip().casefold()
+    logo_mode = str(tenant.get("logo_mode") or mode).strip().casefold()
+    if logo_mode in {
+        "reference_in_generation",
+        "logo_reference_in_generation",
+        "reference_in_gen",
+    }:
+        return False
+    return mode in {"brand_logo_paste", "brand_logo_composite", "paste_png"}
+
+
+def _strip_logo_reference_fields(out: dict[str, Any]) -> None:
+    out.pop("logo_reference_local", None)
+    out.pop("logo_reference_in_generation", None)
+    urls = out.get("input_urls")
+    if isinstance(urls, list):
+        filtered = [
+            u
+            for u in urls
+            if "cropped-img_7143" not in str(u)
+            and "logo-dobry-dom" not in str(u)
+        ]
+        if filtered:
+            out["input_urls"] = filtered
+        else:
+            out.pop("input_urls", None)
 
 
 def local_image_to_data_url(path: Path) -> str:
@@ -247,6 +288,8 @@ def resolve_logo_reference_images(
     root: Path,
 ) -> list[str] | None:
     """Full-res logo reference для Grsai urls/aroma — локальный PNG без downscale."""
+    if _tenant_forbids_logo_reference(root):
+        return None
     refs: list[str] = []
     logo_local = str(image_input.get("logo_reference_local") or "").strip()
     if logo_local:

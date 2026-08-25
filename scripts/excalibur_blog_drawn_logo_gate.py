@@ -765,6 +765,149 @@ def validate_article_logo_gates(article_dir: Path, root: Path) -> list[str]:
     return errors
 
 
+PHONE_PILL_LUMA_MIN = 228.0
+PHONE_PILL_STD_MAX = 14.0
+PHONE_PILL_MIN_AREA_RATIO = 0.0045
+PHONE_PILL_MIN_ASPECT = 2.2
+CAT_ZONE_WIDTH_FRAC = 0.40
+CAT_ZONE_HEIGHT_FRAC = 0.45
+HEADLINE_BAND_HEIGHT_FRAC = 0.36
+
+
+def _rects_intersect(a: tuple[int, int, int, int], b: tuple[int, int, int, int]) -> bool:
+    ax0, ay0, ax1, ay1 = a
+    bx0, by0, bx1, by1 = b
+    return ax0 < bx1 and ax1 > bx0 and ay0 < by1 and ay1 > by0
+
+
+def detect_phone_pill_post_composite(image_path: Path) -> dict[str, Any]:
+    """FAIL: opaque white/gray pill/button pasted over finished cover (factory legacy)."""
+    arr = np_array_rgb(image_path)
+    h, w = arr.shape[:2]
+    band_y0 = int(h * 0.68)
+    band = arr[band_y0:h, :]
+    if band.size == 0:
+        return {"detected": False, "reason": "empty_bottom_band"}
+
+    gray = band.mean(axis=2)
+    rect = _largest_low_variance_rect(
+        gray, luma_min=PHONE_PILL_LUMA_MIN, std_max=PHONE_PILL_STD_MAX
+    )
+    if not rect.get("found"):
+        return {"detected": False, "reason": "no_uniform_block"}
+
+    x0, y0, x1, y1 = rect["bbox"]
+    block_w = max(1, x1 - x0)
+    block_h = max(1, y1 - y0)
+    aspect = block_w / block_h
+    area_ratio = int(rect.get("area") or 0) / max(w * h, 1)
+    detected = (
+        aspect >= PHONE_PILL_MIN_ASPECT
+        and area_ratio >= PHONE_PILL_MIN_AREA_RATIO
+        and float(rect.get("mean") or 0.0) >= PHONE_PILL_LUMA_MIN
+        and float(rect.get("std") or 0.0) <= PHONE_PILL_STD_MAX
+    )
+    global_bbox = (x0, band_y0 + y0, x1, band_y0 + y1)
+    return {
+        "detected": detected,
+        "bbox": global_bbox,
+        "aspect": round(aspect, 2),
+        "area_ratio": round(area_ratio, 4),
+        "mean_luma": round(float(rect.get("mean") or 0.0), 2),
+        "std_luma": round(float(rect.get("std") or 0.0), 2),
+    }
+
+
+def detect_logo_overlaps_protected_zones(
+    image_path: Path,
+    *,
+    logo_xy: tuple[int, int],
+    logo_width_px: int,
+    logo_height_px: int,
+) -> dict[str, Any]:
+    """FAIL if pasted logo intersects cat/meme bottom-left or headline band."""
+    arr = np_array_rgb(image_path)
+    h, w = arr.shape[:2]
+    x, y = logo_xy
+    logo_box = (x, y, min(w, x + logo_width_px), min(h, y + logo_height_px))
+    cat_zone = (0, int(h * (1.0 - CAT_ZONE_HEIGHT_FRAC)), int(w * CAT_ZONE_WIDTH_FRAC), h)
+    headline_band = (0, 0, int(w * 0.82), int(h * HEADLINE_BAND_HEIGHT_FRAC))
+    overlaps_cat = _rects_intersect(logo_box, cat_zone)
+    overlaps_headline = _rects_intersect(logo_box, headline_band)
+    return {
+        "overlap": overlaps_cat or overlaps_headline,
+        "overlaps_cat_zone": overlaps_cat,
+        "overlaps_headline_band": overlaps_headline,
+        "logo_box": logo_box,
+        "cat_zone": cat_zone,
+        "headline_band": headline_band,
+    }
+
+
+def detect_phone_pill_overlaps_cat_zone(image_path: Path) -> dict[str, Any]:
+    pill = detect_phone_pill_post_composite(image_path)
+    if not pill.get("detected"):
+        return {"overlap": False, "pill": pill}
+    arr = np_array_rgb(image_path)
+    h, w = arr.shape[:2]
+    cat_zone = (0, int(h * (1.0 - CAT_ZONE_HEIGHT_FRAC)), int(w * CAT_ZONE_WIDTH_FRAC), h)
+    bbox = pill.get("bbox") or (0, 0, 0, 0)
+    overlap = _rects_intersect(tuple(bbox), cat_zone)
+    return {"overlap": overlap, "pill": pill, "cat_zone": cat_zone}
+
+
+def validate_cover_phone_and_overlap_gates(article_dir: Path, root: Path) -> list[str]:
+    """Python gates: no post-composite phone pill; logo not over cat/headline zones."""
+    errors: list[str] = []
+    from excalibur_blog_brand_logo_composite import (
+        load_tenant_logo_config,
+        uses_brand_logo_paste,
+    )
+
+    cfg = load_tenant_logo_config(root)
+    if not uses_brand_logo_paste(cfg):
+        return errors
+
+    cover_path = article_dir / "cover" / "cover.png"
+    if not cover_path.is_file():
+        return errors
+
+    pill = detect_phone_pill_post_composite(cover_path)
+    if pill.get("detected"):
+        errors.append(
+            "cover.png: post-composite phone pill/button detected "
+            f"(aspect={pill.get('aspect')}, luma={pill.get('mean_luma')}) — regenerate with in-scene phone"
+        )
+    pill_overlap = detect_phone_pill_overlaps_cat_zone(cover_path)
+    if pill_overlap.get("overlap"):
+        errors.append("cover.png: phone pill overlaps cat/meme bottom-left zone")
+
+    stamp_path = article_dir / "cover" / "logo-composite-stamp.json"
+    if not stamp_path.is_file():
+        return errors
+    try:
+        stamp = json.loads(stamp_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return errors
+    placement = stamp.get("cover_logo_placement") or {}
+    xy = placement.get("logo_xy") or []
+    logo_w = int(placement.get("logo_width_px") or 0)
+    logo_h = int(placement.get("logo_height_px") or max(1, int(logo_w * 1.6)))
+    if len(xy) == 2 and logo_w > 0:
+        overlap = detect_logo_overlaps_protected_zones(
+            cover_path,
+            logo_xy=(int(xy[0]), int(xy[1])),
+            logo_width_px=logo_w,
+            logo_height_px=logo_h,
+        )
+        if overlap.get("overlaps_cat_zone"):
+            errors.append("cover.png: factory logo overlaps cat/meme bottom-left zone")
+        if overlap.get("overlaps_headline_band"):
+            errors.append("cover.png: factory logo overlaps headline band")
+
+    return errors
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--image", help="Single image path for drawn-lockup detect")

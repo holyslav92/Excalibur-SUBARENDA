@@ -1,8 +1,8 @@
 {
   "tenant": "dobry-dom",
   "status": "slim",
-  "label_ru": "Добрый дом — meme energy + logo reference-in-generation",
-  "philosophy": "Top-100 meme energy ON TOPIC (посуточная аренда pains): witty framing — reaction face, before/after, caption panel, comic beat. Logo baked into Grsai draw via official PNG reference (urls/aroma), NOT alpha-pasted after. Hard gates: no gray/white plate under logo, phone on cover post-composite, no WP UI, max-2 gen → vip fallback.",
+  "label_ru": "Добрый дом — meme energy + factory logo overlay",
+  "philosophy": "Top-100 meme energy ON TOPIC (посуточная аренда pains): witty framing — reaction face, before/after, caption panel, comic beat. Logo NEVER in Grsai reference — factory alpha PNG overlay AFTER split only. Phone IN scene on tape/paper/magnet — NEVER post-composite pill. Hard gates: no gray/white plate under logo, no WP UI, max-2 gen → vip fallback.",
   "meme_energy": {
     "cover": "Magazine poster + 1–2 meme beats from meme-top100.json — funny, screenshot-worthy, comfort+ brand",
     "inline_slots": "2–4 of 7 may use meme_panel / reaction_card (see inline-visual-types-dobry-dom.json)",
@@ -11,43 +11,47 @@
     "forbidden": [
       "random unrelated memes off-topic",
       "logo under stickers or meme overlays",
+      "phone pill covering cat or sticky punchline",
       "snow/winter off-season",
       "luxury flex / marble / five-star lobby"
     ]
   },
   "brand_lock": {
-    "logo_mode": "reference_in_generation",
+    "logo_mode": "brand_logo_paste",
     "logo_asset": "memory/cover/assets/brand/logo-dobry-dom.png",
     "canonical_url": "wp-content/uploads/2026/03/cropped-img_7143.png",
-    "grsai_reference": "urls/aroma on every cover/inline canvas draw call",
-    "integration_prompt": "Integrate THIS exact brand mark from reference — small top-right 8-10%, transparent alpha, NO white/gray plate/card/backing, natural in scene",
+    "factory_paste_only": "scripts/excalibur_blog_brand_logo_composite.py after split — alpha RGBA, no plate",
+    "generation_prompt": "TOP-RIGHT empty clear pad — no logo, no house icon, no «Добрый дом» lettering, no plate, no sticker, no business card",
     "paste_corner": "top_right",
     "width_fraction": "8-12%",
     "cover_always": true,
     "inline_count": "2-3 of 7",
     "default_inline_slots": ["inline_1", "inline_3", "inline_7"],
-    "emergency_paste_script": "scripts/excalibur_blog_brand_logo_composite.py --emergency",
     "forbid_ai_drawn_lockup": true,
     "forbid_logo_plate": true,
+    "forbid_logo_as_generation_reference": true,
     "cover_phone": "+7 (993) 574-83-22",
-    "cover_phone_placement": "bottom_left_post_composite"
+    "cover_phone_placement": "in_scene_bottom_or_side_quiet_zone"
   },
   "generation_policy": {
     "provider": "grsai",
     "max_attempts_per_canvas": 2,
     "vip_retry": "one per sheet if primary API fails",
-    "on_exhaust": "pad-clear top-right if needed + phone-only composite + continue to publish",
-    "default_brand_logo_composite": "disabled — emergency --emergency only"
+    "on_exhaust": "pad-clear top-right if needed + official logo paste + continue to publish",
+    "default_brand_logo_composite": "required after split — logo overlay only, no phone pill"
   },
   "cover_qa_slim_checks": [
     "eight_png_exist",
-    "logo_reference_in_generation",
-    "cover_phone_993_post_composite",
+    "logo_composite_stamp_pass",
+    "cover_logo_pasted",
+    "inline_logo_count_2_3",
+    "cover_phone_993_in_scene",
+    "forbid_phone_pill_post_composite",
     "forbid_922_phone",
     "forbid_ai_drawn_logo_cover",
     "forbid_wordpress_ui_in_art",
     "no_logo_plate_cover",
-    "inline_logo_count_2_3",
+    "forbid_logo_overlaps_meme_cat_headline",
     "quad_manifest_valid",
     "wordstat_stickers_1_3",
     "motif_no_collision_14d",

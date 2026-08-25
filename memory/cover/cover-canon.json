@@ -109,7 +109,9 @@
     "cover_always_one_logo": true,
     "inline_logo_count": "2-3 of 7",
     "inline_logo_slots_default": ["inline_1", "inline_3", "inline_7"],
-    "cover_phone_post_composite": "+7 (993) 574-83-22",
+    "cover_phone_in_scene": "+7 (993) 574-83-22",
+    "cover_phone_post_composite": false,
+    "forbid_cover_phone_post_composite_pill": true,
     "forbidden_phone": "+7 922 001 65 05",
     "composite_script": "scripts/excalibur_blog_brand_logo_composite.py"
   },

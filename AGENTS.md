@@ -64,6 +64,9 @@ python3 scripts/excalibur_blog_research_start.py --topic-id B111 --title "…"
 - Sol выдумывает факты, которых нет в `drafts/writer.html` / research
 - Cursor пишет Scout/Title/Writer/Sol/Description/Cover-text/Schema prose своей моделью вместо `excalibur_blog_derouter_opus_chat.py`
 - Запуск пайплайна до завершения Setup
+- Logo as Grsai/Derouter generation reference (`urls`/aroma/`input_urls` with cropped-img_7143) — factory alpha overlay AFTER split only
+- Post-composite phone pill/button on cover (`brand_logo_composite --phone-only` or `draw_phone_on_cover`)
+- White/gray/beige plate under logo pad; logo or phone overlapping cat/meme/sticky/headline
 
 ## Preflight
 
