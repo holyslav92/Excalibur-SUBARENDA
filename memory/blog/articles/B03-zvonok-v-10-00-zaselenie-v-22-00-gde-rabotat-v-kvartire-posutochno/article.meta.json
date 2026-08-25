@@ -2,7 +2,29 @@
   "topic_id": "B03",
   "slug": "zvonok-v-10-00-zaselenie-v-22-00-gde-rabotat-v-kvartire-posutochno",
   "title": "Гость снял квартиру на сутки: в 10:00 работал, к 22:00 искал кабель",
-  "wp_category_slugs": ["posutochnaya-arenda", "sovety-gostyam"],
+  "wp_category_slugs": [
+    "posutochnaya-arenda",
+    "sovety-gostyam"
+  ],
   "author_id": "dobry-dom",
-  "publish_date": "2026-08-25"
+  "publish_date": "2026-08-25",
+  "h1": "Гость снял квартиру на сутки: в 10:00 работал, к 22:00 искал кабель",
+  "article_mode": "B",
+  "description": "Гость снял квартиру на сутки: в 10:00 работал, к 22:00 искал кабель",
+  "meta_ab": {
+    "title_seo": "Гость снял квартиру на сутки: в 10:00 работал, к 22:00 искал кабель",
+    "title_ctr": "Гость снял квартиру на сутки: в 10:00 работал, к 22:00 искал кабель",
+    "title_aeo": "Гость снял квартиру на сутки: в 10:00 работал, к 22:00 искал кабель",
+    "description_seo": "Гость снял квартиру на сутки: в 10:00 работал, к 22:00 искал кабель",
+    "description_ctr": "Гость снял квартиру на сутки: в 10:00 работал, к 22:00 искал кабель",
+    "description_aeo": "Гость снял квартиру на сутки: в 10:00 работал, к 22:00 искал кабель"
+  },
+  "theme_blocks": {
+    "faq": "skip",
+    "quiz": "skip",
+    "side_stickers": "skip"
+  },
+  "date": "2026-08-25",
+  "pipeline_canon": "human-first-v2",
+  "editorial_swarm": false
 }

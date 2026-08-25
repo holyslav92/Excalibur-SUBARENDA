@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "topic_id": "B03",
+  "slug": "zvonok-v-10-00-zaselenie-v-22-00-gde-rabotat-v-kvartire-posutochno",
+  "candidates_count": 6,
+  "outbound_found": [
+    {
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "title": "beskontaktnoe-zaselenie-posutochno-tyumen"
+    },
+    {
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "title": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem"
+    },
+    {
+      "slug": "chto-vhodit-v-stoimost-kvartiry-posutochno-polnyj-spisok-uslug",
+      "title": "Что входит в стоимость квартиры посуточно: полный список услуг"
+    },
+    {
+      "slug": "pravila-prozhivaniya-v-otele-chto-proverit-do-oplaty-chtoby-ne-poteryat-dengi",
+      "title": "Правила проживания в отеле: что проверить до оплаты, чтобы не потерять деньги"
+    }
+  ],
+  "outbound_unique_slugs": [
+    "pravila-prozhivaniya-v-otele-chto-proverit-do-oplaty-chtoby-ne-poteryat-dengi",
+    "beskontaktnoe-zaselenie-posutochno-tyumen",
+    "chto-vhodit-v-stoimost-kvartiry-posutochno-polnyj-spisok-uslug",
+    "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "warnings": [],
+  "errors": []
+}

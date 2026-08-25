@@ -1,0 +1,27 @@
+{
+  "slug": "zvonok-v-10-00-zaselenie-v-22-00-gde-rabotat-v-kvartire-posutochno",
+  "topic_id": "B03",
+  "permalink": "{{SITE_BASE}}/blog/zvonok-v-10-00-zaselenie-v-22-00-gde-rabotat-v-kvartire-posutochno/",
+  "publish_method": "ftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B03-zvonok-v-10-00-zaselenie-v-22-00-gde-rabotat-v-kvartire-posutochno/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 775687,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4020 slug=zvonok-v-10-00-zaselenie-v-22-00-gde-rabotat-v-kvartire-posutochno\nOK categories=101,106\nOK dzen_yzen_meta=1\nOK featured_image=4021\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4022 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/08/zvonok-v-10-00-zaselenie-v-22-00-gde-rabotat-v-kvartire-posutochno-inline-01.png\nOK inline_alt=4022\nOK inline_caption=4022\nOK inline_description=4022\nOK inline_image_upload=4023 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/08/zvonok-v-10-00-zaselenie-v-22-00-gde-rabotat-v-kvartire-posutochno-inline-02.png\nOK inline_alt=4023\nOK inline_caption=4023\nOK inline_description=4023\nOK inline_image_upload=4024 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/08/zvonok-v-10-00-zaselenie-v-22-00-gde-rabotat-v-kvartire-posutochno-inline-03.png\nOK inline_alt=4024\nOK inline_caption=4024\nOK inline_description=4024\nOK inline_image_upload=4025 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/08/zvonok-v-10-00-zaselenie-v-22-00-gde-rabotat-v-kvartire-posutochno-inline-04.png\nOK inline_alt=4025\nOK inline_caption=4025\nOK inline_description=4025\nOK inline_image_upload=4026 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/08/zvonok-v-10-00-zaselenie-v-22-00-gde-rabotat-v-kvartire-posutochno-inline-05.png\nOK inline_alt=4026\nOK inline_caption=4026\nOK inline_description=4026\nOK inline_image_upload=4027 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/08/zvonok-v-10-00-zaselenie-v-22-00-gde-rabotat-v-kvartire-posutochno-inline-06.png\nOK inline_alt=4027\nOK inline_caption=4027\nOK inline_description=4027\nOK inline_image_upload=4028 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/08/zvonok-v-10-00-zaselenie-v-22-00-gde-rabotat-v-kvartire-posutochno-inline-07.png\nOK inline_alt=4028\nOK inline_caption=4028\nOK inline_description=4028\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/zvonok-v-10-00-zaselenie-v-22-00-gde-rabotat-v-kvartire-posutochno/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/zvonok-v-10-00-zaselenie-v-22-00-gde-rabotat-v-kvartire-posutochno/",
+    "errors": []
+  }
+}
