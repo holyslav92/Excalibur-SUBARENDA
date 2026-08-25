@@ -9,7 +9,9 @@ description: "④a Cover: 2× quad Grsai 2K, meme energy, factory logo overlay a
 
 **Meme energy ON TOPIC + beauty = agent judgment.** Cover + 2–4 inlines: witty top-100 meme framing tied to посуточная аренда pains — funny, screenshot-worthy, comfort+ brand. Catalog: `memory/cover/meme-top100.json`.
 
-**Ban:** random unrelated memes, logo under stickers, snow/winter off-season, luxury flex, **logo as generation reference**, **post-composite phone pill**.
+**Cat-meme quota (HARD):** max **1 cat-meme slot** per article across cover + 7 inlines. Prefer cover **OR** one inline — not both. All other meme slots = **people-memes** (Roll Safe, Harold, Pepe, Wojak, sacrednik, Жириновский…) — NOT grumpy/ginger/tardar/smudge cat repeats. Anti-repeat 14д: any cat-meme = same family collision.
+
+**Ban:** random unrelated memes, logo under stickers, snow/winter off-season, luxury flex, **logo as generation reference**, **post-composite phone pill**, **2+ cat-meme frames**.
 
 **Brand lock FOREVER (hard only):**
 - **NEVER** send logo as Grsai/Derouter reference (`urls`/aroma/`input_urls`)

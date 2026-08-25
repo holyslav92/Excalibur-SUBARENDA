@@ -64,7 +64,7 @@ Contracts: `shared/grsai-gpt-image-api-contract.md`, `shared/derouter-gpt-image-
 3. **Phone in scene** — +7 (993) 574-83-22 on tape/paper/magnet, never pill overlay.
 4. **Anti-repeat 14д** — `memory/cover/used-motifs.json` + `excalibur_blog_cover_motif_gate.py`.
 5. **Light & bright** — high-key, sun flare; dark cinematic запрещён.
-6. **Memes** — meme cat bottom-left ≤12% on cover; catalog people-memes tiny on inline only.
+6. **Memes** — max **1 cat-meme** per article (cover OR one inline, not both); other meme slots = people-memes/reaction templates from `meme-top100.json` (≤12–15% frame); Cover-QA FAIL if 2+ cat frames.
 7. **Wordstat stickers** — 1–3 readable stickers с live Wordstat (Тюмень regions 55+11176).
 8. **NO Shakin/rieltor host** — Russian guests by topic only.
 
@@ -87,8 +87,8 @@ python3 scripts/excalibur_blog_cover_qa_gate.py --article-dir <dir>
 ## Visual locks (Добрый дом)
 
 - Панели `#FFFFFF` high-key; ink `#141821`; gold `#dcc5a1` один accent
-- **Cover:** WOW poster; bold Cyrillic hook; Wordstat stickers; meme cat bottom-left; TOP-RIGHT empty logo pad; phone in-scene on bottom/side quiet zone
-- **Inline (7 шт.)** — logo paste on **2–3** panels only; meme sticker ≤15% frame, never top-right pad
+- **Cover:** WOW poster; bold Cyrillic hook; Wordstat stickers; ONE meme sticker (people-meme preferred; cat only if single cat slot); TOP-RIGHT empty logo pad; phone in-scene on bottom/side quiet zone
+- **Inline (7 шт.)** — logo paste on **2–3** panels only; people-meme sticker ≤15% frame; cat-meme only if article's ONE cat slot
 - Запреты: WordPress UI, logo reference in gen, phone pill overlay, overlapping logo/phone over cat/headline
 
 ## Blockers

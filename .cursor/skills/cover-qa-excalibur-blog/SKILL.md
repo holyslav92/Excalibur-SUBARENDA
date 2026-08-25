@@ -41,10 +41,11 @@ On drawn-lockup after max-2 gen: pad-clear → official paste → stamp PASS if 
 | `forbid_logo_overlaps_meme_cat_headline` | logo not over cat zone or headline band |
 | `quad_manifest_valid` | manifest structure OK |
 | `wordstat_stickers_1_3` | 1–3 Wordstat stickers |
-| `motif_no_collision_14d` | no 14d motif repeat |
+| `motif_no_collision_14d` | no 14d motif repeat (cat-meme = same family) |
+| `max_one_cat_meme_slot` | ≤1 cat-meme across cover+7 inlines; FAIL if 2+ |
 | `light_high_key` | agent: scene is bright (honor) |
 
-Python gates (automatic): `validate_article_logo_gates_slim` + `validate_cover_phone_and_overlap_gates`.
+Python gates (automatic): `validate_article_logo_gates_slim` + `validate_cover_phone_and_overlap_gates` + `validate_max_one_cat_meme` (quad-manifest).
 
 ## Выход: `cover/cover_qa.json`
 
@@ -69,6 +70,7 @@ Python gates (automatic): `validate_article_logo_gates_slim` + `validate_cover_p
     "quad_manifest_valid": true,
     "wordstat_stickers_1_3": true,
     "motif_no_collision_14d": true,
+    "max_one_cat_meme_slot": true,
     "light_high_key": true
   },
   "notes": "slim gate: logo overlay + phone in-scene OK"

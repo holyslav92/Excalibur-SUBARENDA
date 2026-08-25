@@ -91,7 +91,7 @@ FAIL: агрегаторный how-to без сцены; воронка толь
 9. **Один mid comment fight-question** — ответ в **TG** `https://t.me/Dobriy_dom_72` или **MAX**, never «напишите в комментариях».
 10. **Перекрёстные ссылки** — **3–4** уникальные живые `/blog/` (HTTP 200, разные slug, по теме).
 11. **Dzen-excerpt:** первый экран = карточка (крючок + takeaway).
-12. **Обложка:** wow-постер + meme energy; логотип только PNG-overlay после генерации (никогда reference-in-gen); телефон +7 (993) 574-83-22 только в сцене — без post-composite pill.
+12. **Обложка:** wow-постер + meme energy; **max 1 cat-meme** на статью (cover или один inline — не оба); остальные мем-слоты = people-memes из `meme-top100.json` (Roll Safe, Harold, Pepe…); логотип только PNG-overlay после генерации (никогда reference-in-gen); телефон +7 (993) 574-83-22 только в сцене — без post-composite pill.
 
 ---
 
