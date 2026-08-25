@@ -1,0 +1,151 @@
+{
+  "topic_id": "B04",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": [
+        "inline_4",
+        "inline_5",
+        "inline_6",
+        "inline_7"
+      ],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "В съёмной квартире нет горячей воды",
+  "cover_hook_highlight": "горячей",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Derouter REST (DEROUTER_API_KEY) — 2K 16:9, one job per canvas (2×). Cover agent invents cover_hook + scene_hint/alt before --write-batch. Host lock = blog-hero.json (navy blazer, not hoodie).",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Гость в летней ванной проверяет кран — идёт только холодная вода.",
+      "scene_hint": "Summer rental bathroom, guest checks cold faucet, warm light, meme reaction, logo top-right, no winter. EMPTY top-right: no logo, no plate.",
+      "meme_caption_ru": "",
+      "sticky": "Не паникуйте — проверьте первым",
+      "visual_type": "meme_panel",
+      "labels": [
+        "нет горячей воды",
+        "посуточно",
+        "проверить кран"
+      ]
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Первое, что делаем: проверяем, откуда вода",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Flowchart: check both taps, find boiler, wait, contact host. Icons, arrows, summer bathroom props. EMPTY top-right: no logo, no plate.",
+      "alt": "Схема первых проверок при отсутствии горячей воды.",
+      "labels": [
+        "Проверьте оба крана",
+        "Откройте на минуту",
+        "Есть ли напор"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Два сценария: дом или бойлер",
+      "visual_type": "comparison_table",
+      "scene_hint": "Split diagram: central GVS off vs boiler off. Two panels, pipes icons, warm palette. EMPTY top-right: no logo, no plate.",
+      "alt": "Два сценария: отключение в доме или выключенный бойлер.",
+      "labels": [
+        "Дом без ГВС",
+        "Бойлер выключен",
+        "Когда включат"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Где проверить график отключений",
+      "visual_type": "bar_timeline_chart",
+      "scene_hint": "Timeline chart: check UK site, Gosuslugi, kogdavoda.ru by address. Save screenshot. EMPTY top-right: no logo, no plate.",
+      "alt": "Где проверить график отключений по адресу.",
+      "labels": [
+        "Сайт УК",
+        "Госуслуги",
+        "Сохранить скрин"
+      ]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Пять вопросов хозяину до оплаты",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Workflow: 5 question cards before payment — water, boiler, shutdown, channel.",
+      "alt": "Пять вопросов хозяину до оплаты.",
+      "labels": [
+        "5 вопросов",
+        "До оплаты",
+        "Письменно"
+      ]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Что сделать в первый час после заселения",
+      "visual_type": "checklist_board",
+      "scene_hint": "Checklist board: test taps, photo boiler, check pressure, message host with photo.",
+      "alt": "Чеклист первого часа после заселения.",
+      "labels": [
+        "Проверить краны",
+        "Фото бойлера",
+        "Написать хозяину"
+      ]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "У нас в Добрый дом так",
+      "visual_type": "schema_faq_ui",
+      "scene_hint": "Messenger mockup: instruction arrives before check-in, support replies about water.",
+      "alt": "Инструкция и поддержка Добрый дом в мессенджере.",
+      "labels": [
+        "Инструкция заранее",
+        "На связи",
+        "До брони"
+      ]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Коротко",
+      "visual_type": "tool_screenshot",
+      "scene_hint": "Summary card: house shutdown OR boiler — 5 questions prevent both. Booking CTA.",
+      "alt": "Короткая схема: два сценария и пять вопросов.",
+      "labels": [
+        "Два сценария",
+        "5 вопросов",
+        "Бронь"
+      ]
+    }
+  },
+  "cover_keys_ru": [],
+  "wordstat_stickers": [
+    "нет горячей воды в квартире",
+    "аренда квартиры посуточно"
+  ],
+  "cover_phone_cta": "+7 (993) 574-83-22"
+}

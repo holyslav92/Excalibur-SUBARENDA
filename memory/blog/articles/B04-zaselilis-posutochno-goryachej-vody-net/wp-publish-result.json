@@ -1,0 +1,27 @@
+{
+  "slug": "zaselilis-posutochno-goryachej-vody-net",
+  "topic_id": "B04",
+  "permalink": "{{SITE_BASE}}/blog/zaselilis-posutochno-goryachej-vody-net/",
+  "publish_method": "ftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B04-zaselilis-posutochno-goryachej-vody-net/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 910783,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=3990 slug=zaselilis-posutochno-goryachej-vody-net\nOK categories=101,104\nOK featured_image=3991\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=3992 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/08/zaselilis-posutochno-goryachej-vody-net-inline-01.png\nOK inline_alt=3992\nOK inline_caption=3992\nOK inline_description=3992\nOK inline_image_upload=3993 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/08/zaselilis-posutochno-goryachej-vody-net-inline-02.png\nOK inline_alt=3993\nOK inline_caption=3993\nOK inline_description=3993\nOK inline_image_upload=3994 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/08/zaselilis-posutochno-goryachej-vody-net-inline-03.png\nOK inline_alt=3994\nOK inline_caption=3994\nOK inline_description=3994\nOK inline_image_upload=3995 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/08/zaselilis-posutochno-goryachej-vody-net-inline-04.png\nOK inline_alt=3995\nOK inline_caption=3995\nOK inline_description=3995\nOK inline_image_upload=3996 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/08/zaselilis-posutochno-goryachej-vody-net-inline-05.png\nOK inline_alt=3996\nOK inline_caption=3996\nOK inline_description=3996\nOK inline_image_upload=3997 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/08/zaselilis-posutochno-goryachej-vody-net-inline-06.png\nOK inline_alt=3997\nOK inline_caption=3997\nOK inline_description=3997\nOK inline_image_upload=3998 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/08/zaselilis-posutochno-goryachej-vody-net-inline-07.png\nOK inline_alt=3998\nOK inline_caption=3998\nOK inline_description=3998\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/zaselilis-posutochno-goryachej-vody-net/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/zaselilis-posutochno-goryachej-vody-net/",
+    "errors": []
+  }
+}

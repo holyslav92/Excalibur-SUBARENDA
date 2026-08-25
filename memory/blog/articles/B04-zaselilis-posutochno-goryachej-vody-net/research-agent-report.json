@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "topic_id": "B04",
+  "research_date": "2026-08-25",
+  "tenant": "Добрый дом, Тюмень, посуточная аренда",
+  "fresh_signal": true,
+  "freshness_audit": {
+    "research_date": "2026-08-25",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://vk.com/wall-177238440_5774",
+      "published_at": "2026-08-25",
+      "note": "Гость в апартаментах без ГВС ждёт ответа хозяйки"
+    }
+  },
+  "wordstat_audit": {
+    "status": "PARTIAL",
+    "regions": ["55", "11176", "225"]
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  }
+}

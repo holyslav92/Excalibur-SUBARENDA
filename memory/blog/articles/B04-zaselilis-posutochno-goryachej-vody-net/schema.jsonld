@@ -1,0 +1,19 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/zaselilis-posutochno-goryachej-vody-net/#blogposting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/zaselilis-posutochno-goryachej-vody-net/"
+  },
+  "headline": "Заселились посуточно — горячей воды нет: что проверить первым",
+  "datePublished": "2026-08-25",
+  "author": {
+    "@type": "Person",
+    "@id": "{{SITE_BASE}}/#/schema/person/dobry-dom",
+    "name": "Добрый Дом",
+    "sameAs": [
+      "{{SITE_BASE}}/"
+    ]
+  }
+}
