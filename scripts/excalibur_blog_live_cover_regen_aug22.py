@@ -756,7 +756,7 @@ def pipeline(adir: Path) -> None:
             str(rel),
         ])
     else:
-        run([sys.executable, "scripts/excalibur_blog_brand_logo_composite.py", "--article-dir", str(rel)])
+        run([sys.executable, "scripts/excalibur_blog_brand_logo_composite.py", "--article-dir", str(rel), "--after-pad-clear"])
         gate_rc = _run_allow_fail([sys.executable, "scripts/excalibur_blog_drawn_logo_gate.py", "--article-dir", str(rel)])
     if gate_rc != 0:
         print("WARN drawn_logo_gate FAIL on live regen — cover_qa stamped PASS for FTP upload", flush=True)

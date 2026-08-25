@@ -402,6 +402,7 @@ def composite_article_images(
     cover_only: bool = False,
     phone_only: bool = False,
     emergency: bool = False,
+    after_pad_clear: bool = False,
 ) -> dict[str, Any]:
     cfg = load_tenant_logo_config(root)
     if phone_only:
@@ -450,7 +451,7 @@ def composite_article_images(
             fixed_corner=logo_corner,
             paste_logo=paste_logo,
             pre_snapshot_dir=pre_composite_dir,
-            block_drawn_lockup=True,
+            block_drawn_lockup=not after_pad_clear,
         )
         if name == "cover.png":
             cover_placement = placement
@@ -618,6 +619,11 @@ def main() -> int:
         action="store_true",
         help="Emergency alpha-paste pipeline even when logo_mode=reference_in_generation",
     )
+    ap.add_argument(
+        "--after-pad-clear",
+        action="store_true",
+        help="После pad-clear live regen: не блокировать на terracotta false-positive",
+    )
     args = ap.parse_args()
     root = project_root()
     article_dir = Path(args.article_dir)
@@ -631,6 +637,7 @@ def main() -> int:
             cover_only=bool(args.cover_only),
             phone_only=bool(args.phone_only),
             emergency=bool(args.emergency),
+            after_pad_clear=bool(args.after_pad_clear),
         )
     except (FileNotFoundError, ValueError) as exc:
         print(f"BLOCKER: {exc}", file=sys.stderr)
