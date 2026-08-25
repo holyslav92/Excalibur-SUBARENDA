@@ -141,6 +141,11 @@ def check_funnel_hooks(html: str) -> list[str]:
             prose_lower = prose.casefold()
             if re.search(pat, prose_lower):
                 errors.append(msg)
+    if re.search(r"напиш\w*\s+в\s+комментар", lower):
+        errors.append(
+            "comment bait must send to https://t.me/Dobriy_dom_72 or MAX — "
+            "never «напишите в комментариях» (WP pages have no comment form)"
+        )
     return errors
 
 

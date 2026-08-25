@@ -37,8 +37,21 @@ def validate_schema_text(text: str) -> list[str]:
             f"schema.jsonld contains literal {REDACTED_LITERAL!r}; "
             f"use {SITE_BASE_PLACEHOLDER} (git-safe) or live PUBLIC_SITE_URL only in runtime expand, never copy from old schemas/tool display"
         )
-    if re.search(r"(?:\{\{SITE_BASE\}\}|https?://[^\"']+)/blog/", text):
-        errors.append("schema article URLs must be {{SITE_BASE}}/<slug>/, not /blog/<slug>/")
+    return errors
+
+
+def schema_author_errors(schema_data: dict[str, Any]) -> list[str]:
+    errors: list[str] = []
+    for item in _objects(schema_data):
+        item_type = str(item.get("@type") or "")
+        if item_type not in {"Person", "Organization"}:
+            continue
+        name = str(item.get("name") or "")
+        lower = name.casefold()
+        if re.search(r"шакин|the\s*риэлтор|\bриэлтор\b", lower):
+            errors.append(
+                f"schema author/publisher must be Добрый дом, not Шакин/Риэлтор (found {name!r})"
+            )
     return errors
 
 
@@ -208,12 +221,13 @@ def main() -> int:
                     posting_urls.extend(
                         str(value.get(k) or "") for k in ("@id", "url")
                     )
-        expected_suffix = f"/{slug}/"
+        expected_suffix = f"/blog/{slug}/"
         expected_url = f"{SITE_BASE_PLACEHOLDER}{expected_suffix}"
         if expected_url not in posting_urls:
             errors.append(
-                f"BlogPosting URL/@id must include exact canonical {expected_url}"
+                f"BlogPosting URL/@id must include /blog/ path matching live URL: {expected_url}"
             )
+        errors.extend(schema_author_errors(schema_data if isinstance(schema_data, dict) else {}))
         article_path = article_dir / "article.html"
         if article_path.is_file():
             errors.extend(

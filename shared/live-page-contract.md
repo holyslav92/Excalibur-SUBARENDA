@@ -49,9 +49,9 @@ python3 scripts/excalibur_blog_live_page_gate.py \
 - нет дублей CTA/контента;
 - cover/inline media доступны, alt честен;
 - schema и canonical относятся к текущей статье;
-- BlogPosting JSON-LD `url` parity: WP permalink может быть `/blog/{slug}/`, а
-  committed schema — `{{SITE_BASE}}/{slug}/` (без `/blog/`). Gate нормализует
-  optional `/blog/` prefix перед сравнением (INC-20260824-1038).
+- BlogPosting JSON-LD `url` / `@id` **must include** `/blog/{slug}/` matching live WP permalink.
+  Committed schema: `{{SITE_BASE}}/blog/{slug}/`. Gate requires `/blog/` in BlogPosting URLs
+  (INC-20260825-guest-factory). Live gate compares normalized paths with optional `/blog/` prefix.
 
 FAIL = `LIVE PAGE BLOCKER`: нельзя писать `PIPELINE DONE`, обновлять ledger как
 успешно опубликованный или запускать post-run learning как успешный запуск.

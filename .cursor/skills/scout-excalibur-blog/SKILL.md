@@ -1,6 +1,6 @@
 ---
 name: scout-excalibur-blog
-description: Pick P0 topic from Klyshin hooks × MCP-KV Wordstat — evaluate and rework for Tyumen demand.
+description: Pick P0 topic from Klyshin hooks × MCP-KV Wordstat — evaluate and rework for Tyumen guest demand.
 ---
 
 # Scout — Klyshin hooks × Wordstat (evaluate + rework)
@@ -24,31 +24,54 @@ python3 scripts/excalibur_blog_derouter_opus_chat.py \
 Тему выбираешь из **двух обязательных источников**:
 
 1. **Алексей Клышин (angle bank)** — `memory/scout/klyshin-topic-bank.md` + `.json`, канал `https://t.me/klyshin_A`.
-2. **Wordstat (demand spine)** — MCP-KV buyer-спрос в Тюмени/области (55 + 11176), сравнение с RU **225**.
+2. **Wordstat (demand spine)** — MCP-KV **guest**-спрос в Тюмени/области (55 + 11176), сравнение с RU **225**.
 
 Klyshin **не** заменяет частоты. Wordstat **не** binary skip gate.
+
+## Klyshin delivery — 10 правил (HARD, одна формулировка)
+
+1. §1 = ожог сейчас. First sentence already happened. Ban TL;DR / «в этой статье» / «разберём N».
+2. Paragraph = 1 hit. Often 1 sentence. If >3 sentences, cut.
+3. Reader is inside (you/present tense/body in apartment/taxi/chat).
+4. Number = price of burn or fix (00:12, 1500₽, 4 kg). Ban H1 list numbers («5 вопросов», «7 шагов») as article skeleton.
+5. Host/aggregator dialogue is evidence. Quote then break it.
+6. One case → one verdict. Checklist AFTER moral, never instead of scene.
+7. Moral: first X, then money/key. Not the reverse.
+8. One lockpick question (like «где спит бабушка?» mapped to guest: «Где бойлер?» / ««Можно» — какая собака и какая сумма?»).
+9. Refusal beat after excuse: «Нет. Так не заселяем / не отвечаем / не переводим.»
+10. Scout/Title = guest pain only. Delete ЕГРН/наследство/ипотека/Шакин. Sol MUST NOT replace burn scene with how-to.
 
 ## Алгоритм (канон)
 
 ```text
-1. Klyshin hook/angle (bank + live @klyshin_A)
-2. wordstat_get_top_requests: hook phrase + tyumen analogs (regions 55, 11176; compare 225)
-3. Слабый объём → НЕ drop. Rework:
-   - локализовать на Тюмень
-   - заменить жаргон на поисковые формулировки (егрн, наследство, ипотека, новостройка, аванс, пенсионер, доверенность, банкротство…)
-   - wordstat_get_top_requests по similar queries
-   - выбрать ближайший high-frequency cluster с тем же risk/story
-4. Title — ритм Klyshin (case hook). P0 Wordstat — demand spine под H1; stickers/H2 из reworked live queries
-5. Skip ТОЛЬКО если после rework нет честного buyer-intent кластера (не brand vanity)
-6. Лог: original Klyshin hook + final Wordstat P0 phrase+volume (+ rework steps)
+1. Прочитай published-titles (последние N=3) → angle rotation (см. klyshin-topic-bank.md)
+2. Klyshin hook/angle (bank + live @klyshin_A) — guest topic, NOT burn-at-door if saturated
+3. wordstat_get_top_requests: hook phrase + tyumen analogs (regions 55, 11176; compare 225)
+4. Слабый объём → НЕ drop. Rework guest clusters ONLY:
+   посуточно, залог, заселение, ранний заезд, уборка, ЖКХ, соседи, животные,
+   предоплата, отмена брони, посуточно или отель, парковка, вайфай, бойлер,
+   ключница, командировка, Тюмень
+5. Prefer high-volume guest P0 over clever-but-tiny hooks
+6. Title draft — ритм Klyshin (case hook). P0 Wordstat = demand spine; Title rides P0, not legal essay
+7. Skip ТОЛЬКО если после rework нет честного guest-intent кластера (не brand vanity)
+8. Лог: original Klyshin hook + final Wordstat P0 phrase+volume (+ rework steps)
 ```
+
+**Запрещено в rework:** егрн, наследство, ипотека, новостройка, маткапитал, аванс сделки, нотариус.
+
+## Angle rotation (HARD)
+
+Перед выбором hook — `shared/published-titles.md` (последние **N=3**).
+
+**Skip** hook из семейства **burn-at-door** (код / бесконтакт / «оплатил — дверь не та»),
+если последние N статей уже из этой семьи **без нового угла**.
 
 ## Klyshin — ALWAYS joint with Wordstat
 
 - Читай `memory/scout/klyshin-topic-bank.md` + свежий `https://t.me/s/klyshin_A`
 - После Scout **обнови** банк: `last_seen`, `wordstat_rework_log`, `final_p0`, `used_in_articles`
 - **Не копируй** Москву/Дубай/МКАД как P0 — локализуй на Тюмень или rework до Tyumen cluster
-- Факты в статье: **Святослав Шакин / Тюмень**, не копипаст канала
+- Факты в статье: **Добрый дом / хост посуточной Тюмень**, не копипаст канала, **не Шакин/риэлтор**
 
 `scout_signal_urls` (tenant-config): **klyshin_A** + dzen holyslav + site blog + t.me/holyslav92
 
@@ -70,17 +93,21 @@ python3 scripts/excalibur_blog_wordstat_gate.py config
 1. `wordstat_get_regions_tree` — если `memory/cover/wordstat-geo.json` устарел
 2. Канон после lookup: **Тюмень=55**, **Тюменская область=11176**, **Россия=225**
 
-### Rework vocabulary (buyer search spine)
+### Rework vocabulary (guest daily-rental ONLY)
 
-При слабом объёме на «юридическом» hook — пробуй живые кластеры:
+При слабом объёме на hook — пробуй **guest** кластеры:
 
-- егрн / выписка егрн / проверка егрн
-- наследство / наследники / отказ от наследства
-- ипотека / новостройка / вторичка
-- аванс / задаток / безопасный расчёт / аккредитив
-- пенсионер / пожилой продавец / опека
-- доверенность / банкротство / торги
-- маткапитал / детская доля
+- посуточно / квартира посуточно / аренда посуточно тюмень
+- залог / залог при аренде / вернут залог
+- заселение / бесконтактное заселение / код от двери
+- ранний заезд / поздний выезд
+- уборка / уборка перед выездом
+- ЖКХ / коммунальные / показания счётчиков
+- соседи / шум / правила проживания
+- животные / с собакой / доплата за питомца
+- предоплата / отмена брони / бронирование
+- посуточно или отель / командировка
+- парковка / ключница / вайфай / бойлер
 
 Для каждого rework-раунда — **отдельный** `top_requests` по probe; сохраняй частоты.
 
@@ -97,8 +124,9 @@ python3 scripts/excalibur_blog_wordstat_gate.py config
 ```text
 wordstat_preflight: mcp-kv wordstat_get_user_info OK
 klyshin_hook: <hook_id> | original: «…» | angle: <…> | signal: https://t.me/klyshin_A/…
-wordstat_rework: probe «…» <freq> → … → final P0 «купить квартиру в тюмени» 23060 | clusters tried: …
+wordstat_rework: probe «…» <freq> → … → final P0 «квартира посуточно тюмень» <freq> | clusters tried: …
 wordstat: mcp_kv live | regions 55,11176,compare225 | P0 «…» <freq> | …
+angle_rotation: checked last N=3 | burn-at-door skip: yes|no | reason: …
 ```
 
 ```bash
@@ -108,18 +136,21 @@ python3 scripts/excalibur_blog_wordstat_gate.py handoff
 ## Внешний сигнал
 
 1. **klyshin_A** + ≥1 другой URL из `scout_signal_urls` (сегодня)
-2. Wordstat final P0 buyer volume после rework-цикла
-3. `published-titles-only.md` — anti-dup only
+2. Wordstat final P0 **guest** volume после rework-цикла
+3. `published-titles-only.md` — anti-dup + angle rotation
 
 ## Dzen feed — угол темы (research авг 2026)
 
-Лента Дзена кликает: **число+список**, **страх денег/жилья**, **кейс с суммами**, **вопрос/контраст в заголовке**, **постер**. Добрый дом **не** копирует пустой кликбейт (CAPS, красные стрелки, «1000% годовых», luxury-flex).
+Лента Дзена кликает: **страх денег/жилья**, **кейс с суммами**, **вопрос/контраст в заголовке**, **постер**.
+Добрый дом **не** копирует пустой кликбейт (CAPS, красные стрелки, «1000% годовых», luxury-flex).
+
+**Dzen pattern 1** (N советов / N вопросов) — **NOT default**. Prefer **2–5**.
 
 Выбери **один** `dzen_pattern` для handoff (см. `shared/article-style.md`):
 
 | # | Паттерн | Пример угла |
 |---|---------|-------------|
-| 1 | Нумерованный список с обещанием | «5 вопросов хозяину до предоплаты» |
+| 1 | Нумерованный список с обещанием | «5 вопросов хозяину до предоплаты» — **NOT default** |
 | 2 | Кейс с суммами и датами | залог удержали / «посчитали на выезде» |
 | 3 | Страх → инструкция в §1 | «залог 5 000 ₽: когда вернут» |
 | 4 | Контраст с ответом в лиде | посуточно vs отель на 2 ночи |
@@ -131,14 +162,16 @@ python3 scripts/excalibur_blog_wordstat_gate.py handoff
 
 ## Выход
 
-`.cursor/excalibur-blog-handoff.md` — topic_id, title draft (Klyshin rhythm), `dzen_pattern`, external_signal, signal_urls, klyshin_hook + wordstat_rework + wordstat lines.
+`.cursor/excalibur-blog-handoff.md` — topic_id, title draft (Klyshin rhythm), `dzen_pattern`, external_signal, signal_urls, klyshin_hook + wordstat_rework + wordstat + angle_rotation lines.
 
 ## Чеклист
 
 1. `wordstat_get_user_info` → OK
 2. Fetch klyshin_A + holyslav/dzen signals
-3. Pick hook from bank or fresh post → update bank
-4. `wordstat_get_top_requests` на hook + probes (55+11176; compare 225)
-5. Слабый объём → rework (локализация + buyer jargon + similar queries) — **не** мгновенный skip
-6. Final P0 + title angle + `dzen_pattern` (1–5); лог original hook + final phrase+volume
-7. handoff + `wordstat_gate.py handoff` → стоп
+3. Check angle rotation (last N=3 published titles)
+4. Pick hook from bank or fresh post → update bank
+5. `wordstat_get_top_requests` на hook + probes (55+11176; compare 225)
+6. Слабый объём → rework **guest clusters only** — **не** мгновенный skip
+7. Prefer high-volume P0; `dzen_pattern` 2–5 (NOT default 1)
+8. Final P0 + title angle; лог original hook + final phrase+volume
+9. handoff + `wordstat_gate.py handoff` → стоп

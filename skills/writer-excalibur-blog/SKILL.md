@@ -21,20 +21,38 @@ python3 scripts/excalibur_blog_derouter_opus_chat.py \
 Контракт: `shared/derouter-opus-brain-contract.md`.
 `DEROUTER WRITER BLOCKER` → стоп. Запрещён тихий fallback на Composer/Auto.
 
-Тон Klyshin (кейс, короткие абзацы) допустим; **автор фактов** — Святослав / Тюмень.
+Тон Klyshin (кейс, короткие абзацы) допустим; **автор фактов** — Добрый дом / хост посуточной Тюмень (**не Шакин/риэлтор**).
 
 Ты пишешь **смысл**: факты, тезисы, ограничения, CTA.  
 Финал слога делает **Sol** (`excalibur-blog-sol`) по SOUL + examples.
 
 Выход: **`drafts/writer.html`** (чистый HTML-фрагмент без `<h1>`).  
-Можно положить ту же копию во временный `article.html`, но канон —
-`drafts/writer.html`. Sol перепишет `article.html`.
+Sol перепишет `article.html`.
+
+**Длина смысла:** ~900–1400 слов target. **Не** longform 2500–3100 how-to.
+
+---
+
+## Klyshin delivery — 10 правил (HARD, одна формулировка)
+
+1. §1 = ожог сейчас. First sentence already happened. Ban TL;DR / «в этой статье» / «разберём N».
+2. Paragraph = 1 hit. Often 1 sentence. If >3 sentences, cut.
+3. Reader is inside (you/present tense/body in apartment/taxi/chat).
+4. Number = price of burn or fix (00:12, 1500₽, 4 kg). Ban H1 list numbers («5 вопросов», «7 шагов») as article skeleton.
+5. Host/aggregator dialogue is evidence. Quote then break it.
+6. One case → one verdict. Checklist AFTER moral, never instead of scene.
+7. Moral: first X, then money/key. Not the reverse.
+8. One lockpick question (like «где спит бабушка?» mapped to guest: «Где бойлер?» / ««Можно» — какая собака и какая сумма?»).
+9. Refusal beat after excuse: «Нет. Так не заселяем / не отвечаем / не переводим.»
+10. Scout/Title = guest pain only. Delete ЕГРН/наследство/ипотека/Шакин. Sol MUST NOT replace burn scene with how-to.
+
+---
 
 ## Читаешь
 
 1. `shared/writer-master-prompt.md` (секция Writer / смысл)
 2. `research-notes.md`
-3. `title-brief.json`
+3. `title-brief.json` — H1 rides Wordstat P0 from Scout, not legal essay
 4. `published-titles-only.md`
 5. `shared/published-articles.md` — **только** `status=published` для outbound interlink
 6. `shared/dzen-content-rules.md` + RF (не герой Meta/…) — кратко
@@ -42,31 +60,24 @@ python3 scripts/excalibur_blog_derouter_opus_chat.py \
 ## Не обязан читать (это зона Sol)
 
 `shared/SOUL.md`, `shared/soul-examples/*` — Sol применит слог сам.
-Можешь писать ясно по-русски без SEO; не трать ход на косплей тенанта.
+
+---
 
 ## Правила смысла
 
-- **Простой разговорный русский** — короткие удары, сцена в §1, «где подставят», «что сделать сегодня».
-- **Delivery Клышина, смысл наш:** хост посуточной Тюмень, comfort+, чеклисты/заселение — не юрист.
-- **Dzen feed — выполни обещание H1** (`shared/article-style.md`, Scout `dzen_pattern`):
-  1. **Список с числом** — ровно N пунктов в теле, обещание из H1 выполнено.
-  2. **Кейс с суммами** — «показываю / посчитали» с датами; comfort+ цифры Тюмени из research, не выдуманный люкс.
-  3. **§1 страх→инструкция** — риск денег/жилья → сразу как проверить.
-  4. **Контраст** — вердикт в первой фразе лида, потом математика (не интрига ради интриги).
-  5. **Локальный + сезонный** — район/окно брони; supply только Тюмень.
-- **Engagement:** open loop / «а у вас как?»; один мягкий mid-body comment bait; чеклист со спорным пунктом; CTA TG/MAX после пользы (`shared/article-style.md`).
-- **Дзен — поверхность дистрибуции:** `dzen-excerpt.json` = карточка; статья конвертит в TG/MAX.
-- **Бан:** ЕГРН, нотариус, суд, «я адвокат», «мы лучшие», бизнес-класс, WhatsApp, другие телефоны (только +7 993 574-83-22).
-- **Воронка в теле:** (a) после чеклиста → TG канал «полный список»; (b) после «у нас так» → MAX или менеджер, инструкция до заселения.
-- Все факты только из research; не выдумывай.
-- **Supply:** только Тюмень. **Demand Wordstat:** RF-wide (225), cluster A без города + B с «тюмень».
-- H1 может быть без слова «Тюмень» — cable pain-scene.
-- CTA: TG канал, MAX, booking, tel из `tenant-config`.
-- Положи `dzen-excerpt.json` (hook + first_screen + takeaway) для будущего Дзена.
-- **Interlink (если `interlink_old_articles=true`):** 1–3 контекстные `<a href="/blog/...">` на
-  опубликованные sibling из ledger; якорь по смыслу H2, не «читайте также» в каждом абзаце.
-  **Перекрёстные ссылки** только на уже живые посты с `/blog/`; нет поста — нет ссылки. Перед публикацией гейт бьёт HTTP 200.
-- Не читай чужие article.html / live-сайт / уже опубликованные статьи сайта / topics.
+- **§1 сцена:** 8–12 коротких строк; ожог сейчас; **NO TL;DR block**
+- **Delivery Клышина, смысл наш:** хост посуточной Тюмень, comfort+ — **не** юрист, **не** риэлтор
+- **Dzen pattern 1 (N советов) — NOT default.** Prefer case/verdict shapes (2–5)
+- **One case → one verdict.** Checklist AFTER moral, never instead of scene
+- **Mid comment fight-question:** один; ответ в **TG** `https://t.me/Dobriy_dom_72` или MAX — **never** «напишите в комментариях»
+- **CTA TG/MAX** после пользы (`shared/article-style.md`)
+- **Бан:** ЕГРН, нотариус, суд, Шакин, «я адвокат», «Разберём», «В этой статье», WhatsApp
+- **Воронка в теле:** (a) после чеклиста → TG; (b) после «у нас так» → MAX/менеджер
+- Все факты только из research; не выдумывай
+- **Supply:** только Тюмень. **Demand Wordstat:** RF-wide (225)
+- H1 cable pain-scene; **ban** «5 вопросов» / «7 шагов» as skeleton
+- **Interlink (если `interlink_old_articles=true`):** 1–3 контекстные ссылки на sibling
+- Не читай чужие article.html / live-сайт / topics
 
 ## Handoff
 
