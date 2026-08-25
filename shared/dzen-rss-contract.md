@@ -50,10 +50,9 @@ Publish и `scripts/excalibur_blog_live_dzen_rss_fix.py` выставляют:
 
 ## Live fix одного поста
 
+Задайте `PUBLIC_SITE_URL` и FTP-учётные данные в env (см. `shared/excalibur-wp-publish-contract.md`), затем:
+
 ```bash
-export PUBLIC_SITE_URL={{SITE_BASE}}
-export FTP_TRANSPORT=ftp FTP_PORT=21
-export EXCALIBUR_BLOG_ALLOW_PUBLISH=yes
 python3 scripts/excalibur_blog_live_dzen_rss_fix.py --post-id 4002 \
   --slug posutochno-u-vuza-roditeli-s-pervokursnikom-na-3-nochi-ne-na-semestr
 python3 scripts/excalibur_blog_live_dzen_rss_fix.py --verify-only
