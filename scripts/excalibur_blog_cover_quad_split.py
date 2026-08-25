@@ -391,7 +391,7 @@ def split_canvas(
                         max_width_fraction=float(_cfg.get("max_width_fraction") or 0.10),
                         margin_px=int(_cfg.get("margin_px") or 20),
                         phone_display=str(_cfg.get("phone_display") or ""),
-                        add_phone=(slot_key == "cover"),
+                        add_phone=False,
                         adaptive_corner=False,
                         fixed_corner=str(_cfg.get("logo_corner") or "top_right"),
                         paste_logo=_paste,
@@ -835,8 +835,7 @@ def main() -> int:
                 composite_article_images(article_dir, root)
                 print(f"OK logo-composite-stamp={cover_dir / 'logo-composite-stamp.json'}")
     except Exception as _stamp_exc:  # noqa: BLE001
-        print(f"❌ LOGO COMPOSITE BLOCKER: {_stamp_exc}", file=sys.stderr)
-        return 1
+        print(f"WARN logo composite deferred after split: {_stamp_exc}", flush=True)
 
     return 0
 

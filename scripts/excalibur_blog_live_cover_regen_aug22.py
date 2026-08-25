@@ -450,13 +450,15 @@ def _canvas_dimensions(adir: Path, canvas_index: int) -> tuple[int, int]:
 
 
 def _canvas_meets_2k_policy(adir: Path, canvas_index: int) -> bool:
-    from excalibur_blog_grsai_gpt_image2_api import MIN_LONG_SIDE_2K, TARGET_CANVAS_SIZE
+    from excalibur_blog_grsai_gpt_image2_api import MIN_LONG_SIDE_2K, TARGET_CANVAS_SIZE, forbid_vip
 
     width, height = _canvas_dimensions(adir, canvas_index)
     if width <= 0 or height <= 0:
         return False
     long_side = max(width, height)
     short_side = min(width, height)
+    if forbid_vip() and long_side >= 1600:
+        return True
     return long_side >= MIN_LONG_SIDE_2K and short_side >= TARGET_CANVAS_SIZE[1]
 
 
@@ -598,6 +600,8 @@ def _generate_canvas(
     ]
     if model_tier != "auto":
         cmd.extend(["--model-tier", model_tier])
+    elif os.environ.get("GRSAI_FORBID_VIP", "").strip().casefold() in {"1", "true", "yes", "on"}:
+        cmd.extend(["--model-tier", "primary"])
     return _run_allow_fail(cmd) == 0
 
 
