@@ -1,0 +1,10 @@
+{
+  "topic_id": "B03",
+  "description": "Квартира рядом с вузом — ещё не удачная бронь. Добрый дом в Тюмени показывает, что проверить до заезда, чтобы короткая поездка не превратилась в ночёвку по очереди.",
+  "rhythm": "klyshin_case_hook",
+  "geo": "Тюмень",
+  "author_brand": "Добрый дом",
+  "not_equal_title": true,
+  "not_truncated_lead": true,
+  "verdict": "PASS"
+}

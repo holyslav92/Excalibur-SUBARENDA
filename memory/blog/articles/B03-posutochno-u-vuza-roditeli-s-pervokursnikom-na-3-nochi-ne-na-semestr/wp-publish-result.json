@@ -1,0 +1,27 @@
+{
+  "slug": "posutochno-u-vuza-roditeli-s-pervokursnikom-na-3-nochi-ne-na-semestr",
+  "topic_id": "B03",
+  "permalink": "{{SITE_BASE}}/blog/posutochno-u-vuza-roditeli-s-pervokursnikom-na-3-nochi-ne-na-semestr/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B03-posutochno-u-vuza-roditeli-s-pervokursnikom-na-3-nochi-ne-na-semestr/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 915150,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4002 slug=posutochno-u-vuza-roditeli-s-pervokursnikom-na-3-nochi-ne-na-semestr\nOK categories=101,106\nOK featured_image=4003\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4004 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/08/posutochno-u-vuza-roditeli-s-pervokursnikom-na-3-nochi-ne-na-semestr-inline-01.png\nOK inline_alt=4004\nOK inline_caption=4004\nOK inline_description=4004\nOK inline_image_upload=4005 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/08/posutochno-u-vuza-roditeli-s-pervokursnikom-na-3-nochi-ne-na-semestr-inline-02.png\nOK inline_alt=4005\nOK inline_caption=4005\nOK inline_description=4005\nOK inline_image_upload=4006 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/08/posutochno-u-vuza-roditeli-s-pervokursnikom-na-3-nochi-ne-na-semestr-inline-03.png\nOK inline_alt=4006\nOK inline_caption=4006\nOK inline_description=4006\nOK inline_image_upload=4007 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/08/posutochno-u-vuza-roditeli-s-pervokursnikom-na-3-nochi-ne-na-semestr-inline-04.png\nOK inline_alt=4007\nOK inline_caption=4007\nOK inline_description=4007\nOK inline_image_upload=4008 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/08/posutochno-u-vuza-roditeli-s-pervokursnikom-na-3-nochi-ne-na-semestr-inline-05.png\nOK inline_alt=4008\nOK inline_caption=4008\nOK inline_description=4008\nOK inline_image_upload=4009 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/08/posutochno-u-vuza-roditeli-s-pervokursnikom-na-3-nochi-ne-na-semestr-inline-06.png\nOK inline_alt=4009\nOK inline_caption=4009\nOK inline_description=4009\nOK inline_image_upload=4010 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/08/posutochno-u-vuza-roditeli-s-pervokursnikom-na-3-nochi-ne-na-semestr-inline-07.png\nOK inline_alt=4010\nOK inline_caption=4010\nOK inline_description=4010\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/posutochno-u-vuza-roditeli-s-pervokursnikom-na-3-nochi-ne-na-semestr/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/posutochno-u-vuza-roditeli-s-pervokursnikom-na-3-nochi-ne-na-semestr/",
+    "errors": []
+  }
+}

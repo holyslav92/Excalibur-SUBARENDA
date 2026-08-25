@@ -1,0 +1,290 @@
+{
+  "agent": "excalibur-blog-cover-quad-split",
+  "status": "PASS",
+  "splits": [
+    {
+      "canvas_index": 1,
+      "manifest": "cover/quad-manifest.json",
+      "split": {
+        "source_canvas": "memory/blog/articles/B03-posutochno-u-vuza-roditeli-s-pervokursnikom-na-3-nochi-ne-na-semestr/cover/canvas-quad-01.png",
+        "source_size_px": [
+          2048,
+          1152
+        ],
+        "panel_size_px": [
+          1019,
+          571
+        ],
+        "split_meta": {
+          "split_mode": "gutter_detect",
+          "h_gutter_px": {
+            "start": 571,
+            "end": 581
+          },
+          "v_gutter_px": {
+            "start": 1019,
+            "end": 1029
+          },
+          "requested_mode": "auto",
+          "gutter_quality": {
+            "h_center_offset_px": 0.0,
+            "v_center_offset_px": 0.0,
+            "max_aspect_crop_loss": 0.0,
+            "per_panel_crop_loss": {
+              "top_left": 0.0,
+              "top_right": 0.0,
+              "bottom_left": 0.0,
+              "bottom_right": 0.0
+            },
+            "reject_reason": null
+          }
+        },
+        "output_size_px": [
+          1200,
+          675
+        ],
+        "outputs": {
+          "cover": {
+            "file": "cover/cover.png",
+            "quadrant": "top_left",
+            "box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1019,
+              "bottom": 571
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1019,
+              "bottom": 571
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Родители с чемоданами у двери посуточной квартиры — одна кровать на троих, август Тюмень",
+            "h2_anchor": null
+          },
+          "inline_1": {
+            "file": "cover/inline-01.png",
+            "quadrant": "top_right",
+            "box_px": {
+              "left": 1029,
+              "top": 0,
+              "right": 2048,
+              "bottom": 571
+            },
+            "raw_box_px": {
+              "left": 1029,
+              "top": 0,
+              "right": 2048,
+              "bottom": 571
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Фраза «рядом с университетом» без адреса корпуса в объявлении",
+            "h2_anchor": "«Рядом с университетом» — это не адрес"
+          },
+          "inline_2": {
+            "file": "cover/inline-02.png",
+            "quadrant": "bottom_left",
+            "box_px": {
+              "left": 0,
+              "top": 581,
+              "right": 1019,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 581,
+              "right": 1019,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Три ночи посуточно, не семестр — разные сценарии для родителей первокурсника",
+            "h2_anchor": "Вы приехали не на семестр. Вы приехали на три ночи"
+          },
+          "inline_3": {
+            "file": "cover/inline-03.png",
+            "quadrant": "bottom_right",
+            "box_px": {
+              "left": 1029,
+              "top": 581,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 1029,
+              "top": 581,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Два вопроса до оплаты: спальные места и парковка на разгрузку",
+            "h2_anchor": "Два вопроса, которые надо задать до перевода денег"
+          }
+        }
+      }
+    },
+    {
+      "canvas_index": 2,
+      "manifest": "cover/quad-manifest.json",
+      "split": {
+        "source_canvas": "memory/blog/articles/B03-posutochno-u-vuza-roditeli-s-pervokursnikom-na-3-nochi-ne-na-semestr/cover/canvas-quad-02.png",
+        "source_size_px": [
+          2048,
+          1152
+        ],
+        "panel_size_px": [
+          1012,
+          568
+        ],
+        "split_meta": {
+          "split_mode": "gutter_detect",
+          "h_gutter_px": {
+            "start": 568,
+            "end": 590
+          },
+          "v_gutter_px": {
+            "start": 1012,
+            "end": 1046
+          },
+          "requested_mode": "auto",
+          "gutter_quality": {
+            "h_center_offset_px": 3.0,
+            "v_center_offset_px": 5.0,
+            "max_aspect_crop_loss": 0.0128,
+            "per_panel_crop_loss": {
+              "top_left": 0.0,
+              "top_right": 0.007,
+              "bottom_left": 0.0128,
+              "bottom_right": 0.0
+            },
+            "reject_reason": null
+          }
+        },
+        "output_size_px": [
+          1200,
+          675
+        ],
+        "outputs": {
+          "inline_4": {
+            "file": "cover/inline-04.png",
+            "quadrant": "top_left",
+            "box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1012,
+              "bottom": 568
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1012,
+              "bottom": 568
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Отказ бронировать без двух отдельных спальных мест",
+            "h2_anchor": "Ответ, который надо услышать без стеснения"
+          },
+          "inline_5": {
+            "file": "cover/inline-05.png",
+            "quadrant": "top_right",
+            "box_px": {
+              "left": 1046,
+              "top": 2,
+              "right": 2048,
+              "bottom": 566
+            },
+            "raw_box_px": {
+              "left": 1046,
+              "top": 0,
+              "right": 2048,
+              "bottom": 568
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Сначала кровати и адрес, потом цена — мораль перед чеклистом",
+            "h2_anchor": "Сначала кровати, потом цена"
+          },
+          "inline_6": {
+            "file": "cover/inline-06.png",
+            "quadrant": "bottom_left",
+            "box_px": {
+              "left": 6,
+              "top": 590,
+              "right": 1005,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 590,
+              "right": 1012,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Чеклист перед бронью на дни заселения в вуз Тюмени",
+            "h2_anchor": "Чеклист перед бронью на дни заселения"
+          },
+          "inline_7": {
+            "file": "cover/inline-07.png",
+            "quadrant": "bottom_right",
+            "box_px": {
+              "left": 1046,
+              "top": 590,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 1046,
+              "top": 590,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Спор родителей: 3 ночи посуточно или месяц на всякий случай",
+            "h2_anchor": "Вопрос, из-за которого спорят родители первокурсников"
+          }
+        }
+      }
+    }
+  ],
+  "manifest": "cover/quad-manifest.json",
+  "html_inject": [
+    "skip inline_1: already correct under H2 — «Рядом с университетом» — это не адрес",
+    "skip inline_2: already correct under H2 — Вы приехали не на семестр. Вы приехали на три ночи",
+    "skip inline_3: already correct under H2 — Два вопроса, которые надо задать до перевода денег",
+    "moved inline_4 → H2 — Ответ, который надо услышать без стеснения (was under [ответ, который надо услышать без стеснения]; removed=1)",
+    "moved inline_5 → H2 — Сначала кровати, потом цена (was under [сначала кровати, потом цена]; removed=1)",
+    "moved inline_6 → H2 — Чеклист перед бронью на дни заселения (was under [чеклист перед бронью на дни заселения]; removed=1)",
+    "moved inline_7 → H2 — Вопрос, из-за которого спорят родители первокурсников (was under [вопрос, из-за которого спорят родители первокурсников]; removed=1)"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "mode": "phone_only_post_composite",
+  "cover_phone_display": "+7 (993) 574-83-22",
+  "cover_phone_post_composite": true,
+  "logo_pasted": false,
+  "logo_reference_in_generation": true,
+  "composed_at": "2026-08-25T08:38:38+00:00",
+  "images": [
+    "cover/cover.png"
+  ]
+}

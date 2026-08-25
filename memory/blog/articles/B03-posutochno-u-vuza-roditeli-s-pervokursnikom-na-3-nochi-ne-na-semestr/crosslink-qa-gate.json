@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "/blog/zaselilis-posutochno-goryachej-vody-net/",
+      "slug": "zaselilis-posutochno-goryachej-vody-net",
+      "anchor": "если горячей нет — что проверить.Оплата. «Что именно входит в сумму и есть ли доплаты при выезде?»Связь. «Кто отвечает ночью, если код не сработал?» Ночью важнее инструкции, чем обещания — как в истории про",
+      "catalog_title": "Заселились посуточно — горячей воды нет: что проверить первым",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "/blog/sosedi-postuchali-v-dver-nochyu-gost-posutochno-chto-delat-segodnya/",
+      "slug": "sosedi-postuchali-v-dver-nochyu-gost-posutochno-chto-delat-segodnya",
+      "anchor": "соседей, которые стучат после полуночи.Восемь строк. Хозяин, который работает посуточно всерьёз, отвечает на них за пять минут. Хозяин, который сдаёт «когда получится», начинает объяснять, почему вопросы лишние.Вопрос, из-за которого спорят родители первокурсниковЧто честнее: снять на четыре ночи посуточно и уехать — или сразу снять комнату на месяц «на всякий случай, вдруг с общежитием не сложится»?Один лагерь говорит: месяц дешевле в пересчёте на сутки, страховка от очередей. Второй: вы платите за пустую комнату, потому что общежитие дадут, а деньги за месяц не вернут.Мы отвечаем в своём канале, там же спорят те, кто уже проходил заселение в Тюмени:",
+      "catalog_title": "Соседи стучат ночью: сняли посуточно — что делать сейчас",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "anchor": "бесконтактное заселение по кодам.Разгрузку обсуждаем в мессенджере до приезда: куда встать, сколько там реально свободно, нужен ли код на шлагбаум.Если везёте не только ребёнка — сразу уточняйте правила. «Можно с собакой» в объявлении и «не пустим» у двери — разные истории, мы писали отдельно про",
+      "catalog_title": "Оплатил квартиру посуточно. Код прислали от чужой двери",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "/blog/zabroniroval-posutochno-s-sobakoj-na-zaselenii-skazali-ne-puskaem/",
+      "slug": "zabroniroval-posutochno-s-sobakoj-na-zaselenii-skazali-ne-puskaem",
+      "anchor": "отказ на заселении с собакой.Про деньги тоже без сюрпризов: сумма в брони — итоговая, доплат «за уборку» и «за третьего» на выезде не появляется.И да: на семестр мы не сдаём. Нет. Мы посуточные, и это честнее, чем взять вашу предоплату за месяц и потом искать причины.Подпишись, чтобы не ловить это в ночи:",
+      "catalog_title": "Забронировал жильё с собакой — у двери сказали: «Не пустим»",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B03-posutochno-u-vuza-roditeli-s-pervokursnikom-na-3-nochi-ne-na-semestr",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}

@@ -1,0 +1,145 @@
+{
+  "topic_id": "B03",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": [
+        "inline_4",
+        "inline_5",
+        "inline_6",
+        "inline_7"
+      ],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "Родители приехали к вузу — кроватей не хватило",
+  "cover_hook_highlight": "кроватей",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Derouter REST (DEROUTER_API_KEY) — 2K 16:9, one job per canvas (2×). Cover agent invents cover_hook + scene_hint/alt before --write-batch. Host lock = blog-hero.json (navy blazer, not hoodie).",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Родители с чемоданами у двери посуточной квартиры — одна кровать на троих, август Тюмень",
+      "scene_hint": "Poster: parents+suitcases at door, one bed visible, phone «рядом с вузом», Aug Tyumen warm evening, TOP-RIGHT logo ref, NO snow.",
+      "meme_caption_ru": "",
+      "sticky": "Три ночи — три остановки"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "«Рядом с университетом» — это не адрес",
+      "visual_type": "comparison_table",
+      "scene_hint": "Sketch map: 3 bus stops vs walk to campus; torn sticky «рядом с вузом»; gold ink labels.",
+      "alt": "Фраза «рядом с университетом» без адреса корпуса в объявлении",
+      "labels": [
+        "3 ночи",
+        "рядом с вузом",
+        "3 остановки"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Вы приехали не на семестр. Вы приехали на три ночи",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Workflow: 3 nights vs semester lease; suitcases, dorm queue icon; meme reaction card.",
+      "alt": "Три ночи посуточно, не семестр — разные сценарии для родителей первокурсника",
+      "labels": [
+        "К 1 сентября",
+        "кроватей не хватило"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Два вопроса, которые надо задать до перевода денег",
+      "visual_type": "checklist_board",
+      "scene_hint": "Checklist board: 2 beds + parking 2h; phone chat bubbles; warm apartment hall.",
+      "alt": "Два вопроса до оплаты: спальные места и парковка на разгрузку",
+      "labels": [
+        "родители первокурсника",
+        "Тюмень"
+      ]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Ответ, который надо услышать без стеснения",
+      "visual_type": "schema_faq_ui",
+      "scene_hint": "Bold refusal card «Нет. Без двух кроватей»; parent with suitcase; comic beat.",
+      "alt": "Отказ бронировать без двух отдельных спальных мест",
+      "labels": [
+        "2 кровати",
+        "до оплаты"
+      ]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Сначала кровати, потом цена",
+      "visual_type": "tool_screenshot",
+      "scene_hint": "Bar compare 2900 vs 3400₽ vs cost of bad night; beds first moral.",
+      "alt": "Сначала кровати и адрес, потом цена — мораль перед чеклистом",
+      "labels": [
+        "чеклист",
+        "заселение"
+      ]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Чеклист перед бронью на дни заселения",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Labeled checklist 8 lines before booking; Добрый дом comfort+ sticker.",
+      "alt": "Чеклист перед бронью на дни заселения в вуз Тюмени",
+      "labels": [
+        "у нас так",
+        "Добрый дом"
+      ]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Вопрос, из-за которого спорят родители первокурсников",
+      "visual_type": "infographic_card",
+      "scene_hint": "Infographic: 3 nights vs 1 month debate; TG arrow; August Tyumen.",
+      "alt": "Спор родителей: 3 ночи посуточно или месяц на всякий случай",
+      "labels": [
+        "вопросы",
+        "3 ночи"
+      ]
+    }
+  },
+  "cover_keys_ru": [],
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "wordstat_stickers": [
+    "посуточно вуз",
+    "1 сентября",
+    "Тюмень"
+  ],
+  "logo_paste_inline_slots": [
+    "inline_1",
+    "inline_3",
+    "inline_7"
+  ]
+}

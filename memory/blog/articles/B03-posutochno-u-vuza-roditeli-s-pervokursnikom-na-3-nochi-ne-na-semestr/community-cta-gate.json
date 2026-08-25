@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "article_dir": "memory/blog/articles/B03-posutochno-u-vuza-roditeli-s-pervokursnikom-na-3-nochi-ne-na-semestr",
+  "cta_required": true,
+  "required": [
+    "https://t.me/Dobriy_dom_72",
+    "https://max.ru/id660300569233_biz",
+    "https://добрыйдом-72.рф/booking/",
+    "https://добрыйдом-72.рф/",
+    "tel:+79935748322"
+  ],
+  "present": {
+    "https://t.me/Dobriy_dom_72": true,
+    "https://max.ru/id660300569233_biz": true,
+    "https://добрыйдом-72.рф/booking/": true,
+    "https://добрыйдом-72.рф/": true,
+    "tel:+79935748322": true,
+    "cta_channels.max": true
+  },
+  "funnel_errors": [],
+  "errors": []
+}
