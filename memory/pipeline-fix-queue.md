@@ -92,3 +92,37 @@ checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_llms_deploy.py`
 - `python3 scripts/excalibur_blog_llms_deploy.py --dry-run` → llms files present, transport ftp
 commit: 3b837c2
+
+## INC-20260825-0600 — Metrika credentials missing (Content-learner)
+
+status: needs-human
+run_date: 2026-08-25
+role: excalibur-blog-content-learner
+topic_id: B04
+article_dir: memory/blog/articles/B04-zaselilis-posutochno-goryachej-vody-net
+severity: low
+category: env
+
+### What went wrong
+
+- `excalibur_blog_metrika_fetch.py --days 30 --ingest` → METRIKA CREDENTIALS BLOCKER.
+- YANDEX_METRIKA_OAUTH_TOKEN and YANDEX_METRIKA_COUNTER_ID not in Cloud Secrets.
+
+### How the agent recovered this run
+
+- Content evidence gate SKIP (optional report absent).
+- Recorded low-confidence lesson in `memory/content-lessons.md` without blocking publish.
+
+### Durable fix needed before next run
+
+- Add Metrika OAuth token + counter id to Cloud Secrets for post-publish feedback loop.
+
+### Suggested files to inspect/change
+
+- Cloud Secrets / env for automation VM
+- `scripts/excalibur_blog_metrika_fetch.py`
+
+### Secrets
+
+- YANDEX_METRIKA_OAUTH_TOKEN (not recorded)
+- YANDEX_METRIKA_COUNTER_ID (not recorded)
