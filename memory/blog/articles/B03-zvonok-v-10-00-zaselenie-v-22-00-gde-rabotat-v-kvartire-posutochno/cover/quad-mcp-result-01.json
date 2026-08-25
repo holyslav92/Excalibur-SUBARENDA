@@ -1,3 +1,8 @@
 {
-  "local_path": "cover/canvas-quad-01.png"
+  "local_path": "cover/canvas-quad-01.png",
+  "source": "grsai-draw-api",
+  "vip_disabled": true,
+  "native_width": 1672,
+  "native_height": 941,
+  "delivery": "native_undersized_vip_disabled"
 }
