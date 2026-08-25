@@ -94,10 +94,14 @@ Scout: prefer **2–5**. Title rides **Wordstat P0 demand**, not legal essay.
 
 ## CTA и воронка (HARD)
 
-1. **После чеклиста** (если есть — после moral): TG `https://t.me/Dobriy_dom_72`
-2. **После «у нас так»**: MAX или менеджер — инструкция **до заселения**
+**Два блока полной воронки** (голос хоста, не баннер):
+1. **После moral/чеклиста** (середина)
+2. **В конце** (после пользы)
 
-Финал: tel **+7 (993) 574-83-22**. CTA **после** пользы.
+Каждый блок: TG `https://t.me/Dobriy_dom_72` + MAX `https://max.ru/id660300569233_biz` +
+сайт `https://добрыйдом-72.рф/` + tel **+7 (993) 574-83-22** + менеджер `https://t.me/Dobriy_dom_Tyumen`
+
+**Перекрёстные ссылки:** **3–4** уникальные живые `/blog/` URL (разные slug, HTTP 200).
 
 **Бан:** ЕГРН, нотариус, суд, Шакин, риэлтор, WhatsApp.
 
@@ -111,5 +115,5 @@ Scout: prefer **2–5**. Title rides **Wordstat P0 demand**, not legal essay.
 4. One case → one verdict; checklist AFTER moral?
 5. One lockpick question + one mid fight-question?
 6. Refusal beat if host excuses?
-7. TG/MAX в теле после пользы?
+7. Две полные воронки (mid + end) с TG/MAX/site/tel/manager?
 8. ~900–1400 слов, not encyclopedia?

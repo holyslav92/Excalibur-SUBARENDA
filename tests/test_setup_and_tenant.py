@@ -103,9 +103,20 @@ class SetupTenantTests(unittest.TestCase):
             shutil.rmtree(article_dir)
         article_dir.mkdir(parents=True, exist_ok=True)
         try:
+            funnel = (
+                "<p>Если нужна квартира — канал "
+                '<a href="https://t.me/Dobriy_dom_72">Telegram</a>, '
+                '<a href="https://max.ru/id660300569233_biz">MAX</a>, '
+                '<a href="https://добрыйдом-72.рф/">сайт</a> '
+                '<a href="https://добрыйдом-72.рф/booking/">бронь</a>, '
+                '<a href="https://t.me/Dobriy_dom_Tyumen">менеджер</a>, '
+                '<a href="tel:+79935748322">+7 (993) 574-83-22</a>.</p>\n'
+            )
+            opening = "<p>" + "Сцена у двери. " * 30 + "</p>\n"
+            middle = "<p>" + "Вердикт после moral. " * 20 + "</p>\n"
+            end = "<p>" + "Финал. " * 15 + "</p>\n"
             (article_dir / "article.html").write_text(
-                '<p>Читайте <a href="https://xn---72-9cdob8azaodt6k.xn--p1ai/blog/">блог</a> и '
-                '<a href="https://xn---72-9cdob8azaodt6k.xn--p1ai/">сайт Добрый дом</a>.</p>\n',
+                opening + middle + funnel + end + funnel,
                 encoding="utf-8",
             )
             proc = subprocess.run(

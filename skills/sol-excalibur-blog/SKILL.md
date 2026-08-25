@@ -66,7 +66,8 @@ python3 scripts/excalibur_blog_derouter_opus_chat.py \
    - **~900–1400 слов**, not 2500–3100
    - один mid fight-question → **TG** `https://t.me/Dobriy_dom_72` or MAX; **never** «напишите в комментариях»
    - checklist **после** moral if present
-   - CTA TG/MAX **после** пользы
+   - **две** полные воронки (TG+MAX+site+tel+manager): после moral и в конце
+   - **3–4** outbound `/blog/` cross-links (живые, разные slug)
 4. Сохрани `article.html`, `drafts/variant-a.html`; не затирай `drafts/writer.html`
 5. Сверка с `bad-outputs.md` — especially encyclopedia/how-to FAIL
 

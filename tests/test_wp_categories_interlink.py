@@ -53,8 +53,13 @@ class WpCategoriesInterlinkTests(unittest.TestCase):
         self.assertIn("posutochnaya-arenda", report["category_slugs"])
 
     def test_interlink_gate_pass_with_outbound(self) -> None:
+        links = (
+            '<a href="/blog/beskontaktnoe-zaselenie-posutochno-tyumen/">бесконтактное заселение</a>, '
+            '<a href="/blog/chto-vhodit-v-stoimost-kvartiry-posutochno-polnyj-spisok-uslug/">стоимость</a> и '
+            '<a href="/blog/pravila-prozhivaniya-v-otele-chto-proverit-do-oplaty-chtoby-ne-poteryat-dengi/">правила</a>'
+        )
         (self.article_dir / "article.html").write_text(
-            '<p>См. <a href="/blog/vtorichka-i-riski/rosfinmonitoring-sdelka-nedvizhimost-cheklis-tyumen-2026/">чеклист</a>.</p>\n',
+            f"<p>См. {links}.</p>\n",
             encoding="utf-8",
         )
         proc = subprocess.run(
@@ -72,7 +77,8 @@ class WpCategoriesInterlinkTests(unittest.TestCase):
         self.assertEqual(proc.returncode, 0, proc.stdout + proc.stderr)
         report = json.loads((self.article_dir / "interlink-gate.json").read_text(encoding="utf-8"))
         self.assertEqual(report["status"], "PASS")
-        self.assertGreaterEqual(len(report["outbound_found"]), 1)
+        self.assertGreaterEqual(len(report.get("outbound_unique_slugs") or []), 3)
+        self.assertGreaterEqual(report.get("outbound_required_min", 0), 3)
 
     def test_ledger_upsert_dedupes_legacy_row(self) -> None:
         import sys

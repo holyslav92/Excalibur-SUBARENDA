@@ -95,37 +95,78 @@ def check_max_channel(html: str, max_cfg: str, phone: str) -> tuple[bool, str]:
     return True, ""
 
 
-def check_funnel_hooks(html: str) -> list[str]:
-    """Mid-body funnel: TG after checklist vibe; MAX/manager after brand block."""
+def slice_has_full_funnel(text: str, phone_digits: str) -> bool:
+    """Полная воронка: TG + MAX + site + manager + phone в срезе текста."""
+    lower = (text or "").casefold()
+    if "t.me/dobriy_dom_72" not in lower:
+        return False
+    if "max.ru/id660300569233_biz" not in lower:
+        return False
+    if "t.me/dobriy_dom_tyumen" not in lower and "dobriy_dom_tyumen" not in lower:
+        return False
+    has_site = (
+        ("добрыйдом" in lower and ".рф" in lower)
+        or "xn--" in lower  # punycode добрыйдом-72.рф
+        or "dobry" in lower and "dom" in lower and ".рф" in lower
+    )
+    if not has_site:
+        return False
+    tail = phone_digits[-10:] if len(phone_digits) >= 10 else phone_digits
+    if not tail:
+        return False
+    return tail in normalize_phone_digits(text)
+
+
+def funnel_window_positions(html: str, phone_digits: str, window: int = 700) -> list[int]:
+    """Позиции start, где окно window символов содержит полную воронку."""
+    body = html or ""
+    n = len(body)
+    if n < window:
+        return [0] if slice_has_full_funnel(body, phone_digits) else []
+    hits: list[int] = []
+    step = max(40, window // 5)
+    for start in range(0, n - window + 1, step):
+        if slice_has_full_funnel(body[start : start + window], phone_digits):
+            hits.append(start)
+    return hits
+
+
+def check_funnel_hooks(html: str, phone: str = "") -> list[str]:
+    """Два блока полной воронки: после moral (mid) и в конце. Голос хоста, не баннер."""
     errors: list[str] = []
     body = html or ""
     lower = body.casefold()
+    phone_digits = normalize_phone_digits(phone or "+79935748322")
     n = max(len(body), 1)
-    tg = "t.me/dobriy_dom_72"
-    tg_pos = lower.find(tg)
-    max_pos = lower.find("max.ru/id660300569233_biz")
-    mgr_pos = lower.find("t.me/dobriy_dom_tyumen")
-    if tg_pos < 0:
-        errors.append("funnel: missing Telegram channel https://t.me/Dobriy_dom_72 in body")
-    elif tg_pos > int(n * 0.82):
-        errors.append("funnel: Telegram channel link only at the end — move mid-article after checklist")
-    if tg_pos >= 0:
-        window = lower[max(0, tg_pos - 400) : tg_pos + 120]
-        if not re.search(r"канал|полн|список", window):
-            errors.append("funnel: TG hook should mention channel/full list near https://t.me/Dobriy_dom_72")
-    brand_markers = ("добр", "у нас", "мы сдаём", "мы шлём", "мы отправ")
-    brand_pos = -1
-    for m in brand_markers:
-        p = lower.find(m)
-        if p >= 0:
-            brand_pos = p if brand_pos < 0 else min(brand_pos, p)
-    mm_pos = max_pos if max_pos >= 0 else mgr_pos
-    if brand_pos >= 0 and mm_pos < 0:
-        errors.append("funnel: after brand block need MAX or manager link in body")
-    if mm_pos >= 0:
-        window = lower[max(0, mm_pos - 500) : mm_pos + 200]
-        if not re.search(r"инструк|засел|до заезд|до засел", window):
-            errors.append("funnel: MAX/manager hook should mention instruction before check-in")
+
+    if n < 200:
+        errors.append("funnel: article too short for double full-funnel blocks")
+
+    opening = body[: int(n * 0.15)]
+    if slice_has_full_funnel(opening, phone_digits):
+        errors.append(
+            "funnel: full CTA block in opening — first funnel goes after moral/checklist, not in §1"
+        )
+
+    windows = funnel_window_positions(body, phone_digits)
+    if len(windows) < 2:
+        errors.append(
+            "funnel: need two full-funnel blocks (TG+MAX+site+phone+manager) — mid after moral and at end"
+        )
+    else:
+        mid_hit = any(pos < int(n * 0.72) and pos > int(n * 0.12) for pos in windows)
+        end_hit = any(pos > int(n * 0.45) for pos in windows)
+        if not mid_hit:
+            errors.append(
+                "funnel: mid-article block (after moral) missing full funnel "
+                "(TG https://t.me/Dobriy_dom_72 + MAX + site + phone + manager)"
+            )
+        if not end_hit:
+            errors.append(
+                "funnel: end block missing full funnel "
+                "(TG https://t.me/Dobriy_dom_72 + MAX + site + phone + manager)"
+            )
+
     banned = (
         ("егрн", "banned topic: ЕГРН"),
         ("нотариус", "banned topic: нотариус"),
@@ -136,7 +177,6 @@ def check_funnel_hooks(html: str) -> list[str]:
     )
     for pat, msg in banned:
         if re.search(pat, lower):
-            # alt-тексты картинок не считаем телом статьи
             prose = re.sub(r"<img[^>]*alt=\"[^\"]*\"[^>]*>", "", body, flags=re.I)
             prose_lower = prose.casefold()
             if re.search(pat, prose_lower):
@@ -213,7 +253,7 @@ def main() -> int:
                 phone=phone,
             )
             errors.extend(link_errors)
-            errors.extend(check_funnel_hooks(html))
+            errors.extend(check_funnel_hooks(html, phone=phone))
     if not links and not cta_required:
         present = {}
 

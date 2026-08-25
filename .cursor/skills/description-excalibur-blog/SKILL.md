@@ -37,6 +37,7 @@ python3 scripts/excalibur_blog_derouter_opus_chat.py \
 1. **NEVER** put guest-burn arithmetic (e.g. 2500→6500) in og:description **as if it is Добрый дом's own price**.
 2. **NEVER** mention **Святослав Шакин** / **The Риэлтор** in og:description. Author = **Добрый дом**.
 3. Teaser = **ожог/риск** (Klyshin rhythm), не прайс-лист и не «история Шакина».
+4. **Не** дублировать полную воронку TG/MAX/booking — карточка ведёт в клик; каналы в двух блоках статьи.
 
 ## Что пишешь
 

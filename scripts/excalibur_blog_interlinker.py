@@ -10,9 +10,11 @@ from pathlib import Path
 
 from excalibur_blog_interlink_lib import (
     all_interlink_candidates,
+    compute_xlink_quota,
     load_tenant,
     outbound_links_in_html,
     project_root,
+    unique_blog_slugs_in_html,
 )
 
 
@@ -45,14 +47,22 @@ def main() -> int:
     html_path = article_dir / "article.html"
     html = html_path.read_text(encoding="utf-8") if html_path.is_file() else ""
     found = outbound_links_in_html(html, candidates)
-    min_required = 1 if candidates else 0
+    unique_slugs = unique_blog_slugs_in_html(html)
+    min_required, max_allowed, quota_warnings = compute_xlink_quota(len(candidates))
+    warnings: list[str] = list(quota_warnings)
 
     errors: list[str] = []
-    if candidates and len(found) < min_required:
-        missing = [row for row in candidates if row not in found][:3]
+    outbound_count = len(unique_slugs)
+    if min_required > 0 and outbound_count < min_required:
+        missing = [row for row in candidates if row not in found][:4]
         errors.append(
-            "interlink outbound: add 1–3 contextual links to related published articles "
-            f"(missing examples: {', '.join(str(r.get('slug')) for r in missing)})"
+            "interlink outbound: add 3–4 unique live /blog/ links to related published articles "
+            f"(found {outbound_count}, need {min_required}–{max_allowed}; "
+            f"missing examples: {', '.join(str(r.get('slug')) for r in missing)})"
+        )
+    if max_allowed > 0 and outbound_count > max_allowed:
+        errors.append(
+            f"interlink outbound: too many /blog/ cross-links ({outbound_count}); max {max_allowed}"
         )
 
     report = {
@@ -61,7 +71,10 @@ def main() -> int:
         "slug": slug,
         "candidates_count": len(candidates),
         "outbound_found": [{"slug": r.get("slug"), "title": r.get("title")} for r in found],
+        "outbound_unique_slugs": unique_slugs,
         "outbound_required_min": min_required,
+        "outbound_required_max": max_allowed,
+        "warnings": warnings,
         "errors": errors,
     }
     out = article_dir / args.output

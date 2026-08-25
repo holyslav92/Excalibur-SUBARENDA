@@ -1213,7 +1213,7 @@ def check_publish_prerequisites(
     if tenant.get("interlink_old_articles"):
         interlink_rc = _run_article_gate_script(root, article_dir, "excalibur_blog_interlinker.py")
         if interlink_rc != 0:
-            blockers.append("interlink-gate failed (add 1–3 outbound links to published siblings)")
+            blockers.append("interlink-gate failed (add 3–4 outbound live /blog/ links to published siblings)")
     interlink_gate = article_dir / "interlink-gate.json"
     if interlink_gate.is_file():
         try:

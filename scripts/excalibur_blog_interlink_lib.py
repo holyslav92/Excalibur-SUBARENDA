@@ -4,9 +4,15 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
+
+from excalibur_blog_live_catalog import slug_from_blog_href
+
+XLINK_MIN = 3
+XLINK_MAX = 4
 
 INTERLINK_MARKER_PREFIX = 'data-excalibur-interlink-from="'
 
@@ -128,6 +134,32 @@ def slug_in_html(html: str, slug: str) -> bool:
 
 def outbound_links_in_html(html: str, candidates: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return [row for row in candidates if slug_in_html(html, str(row.get("slug") or ""))]
+
+
+def unique_blog_slugs_in_html(html: str) -> list[str]:
+    """Уникальные slug из href=/blog/... в HTML (порядок первого появления)."""
+    slugs: list[str] = []
+    seen: set[str] = set()
+    for match in re.finditer(r"""href=["']([^"']+)["']""", html or "", re.I):
+        slug = slug_from_blog_href(match.group(1).strip())
+        if slug and slug not in seen:
+            seen.add(slug)
+            slugs.append(slug)
+    return slugs
+
+
+def compute_xlink_quota(available_count: int) -> tuple[int, int, list[str]]:
+    """(min_required, max_allowed, warnings) для квоты перекрёстных ссылок."""
+    warnings: list[str] = []
+    if available_count <= 0:
+        return 0, 0, warnings
+    if available_count < XLINK_MIN:
+        warnings.append(
+            f"xlink: only {available_count} live sibling(s) available — "
+            "link all live posts, never invent URLs"
+        )
+        return available_count, available_count, warnings
+    return XLINK_MIN, min(XLINK_MAX, available_count), warnings
 
 
 def interlink_block_html(*, from_slug: str, target_url: str, target_title: str) -> str:

@@ -17,6 +17,7 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
 
+from excalibur_blog_interlink_lib import compute_xlink_quota, unique_blog_slugs_in_html
 from excalibur_blog_link_verify import check_url_with_connection_reset_retry
 from excalibur_blog_live_catalog import (
     blog_path_for_slug,
@@ -223,6 +224,7 @@ def validate_article_crosslinks(
     tenant: dict[str, Any],
     timeout: float = 15.0,
     skip_http: bool = False,
+    current_slug: str = "",
 ) -> dict[str, Any]:
     runtime_base = resolve_runtime_base(site_base)
     site_host = (urlparse(runtime_base).hostname or "").lower()
@@ -315,6 +317,34 @@ def validate_article_crosslinks(
 
         checks.append(check)
 
+    slug_index = catalog.get("slug_index") or {}
+    catalog_slugs = set(slug_index.keys())
+    if current_slug:
+        catalog_slugs.discard(current_slug.strip())
+    available_live = len(catalog_slugs)
+    min_required, max_allowed, quota_warnings = compute_xlink_quota(available_live)
+    warnings.extend(quota_warnings)
+
+    valid_outbound_slugs: list[str] = []
+    for check in checks:
+        slug = str(check.get("slug") or "")
+        if not slug or check.get("error"):
+            continue
+        if check.get("title_ok") and check.get("path_ok") and check.get("http_ok") is not False:
+            valid_outbound_slugs.append(slug)
+
+    unique_valid = list(dict.fromkeys(valid_outbound_slugs))
+    outbound_count = len(unique_valid)
+    if min_required > 0 and outbound_count < min_required:
+        errors.append(
+            f"xlink quota: need {min_required}–{max_allowed} unique live /blog/ URLs "
+            f"(found {outbound_count} valid); related to topic, never invent slugs"
+        )
+    if max_allowed > 0 and outbound_count > max_allowed:
+        errors.append(
+            f"xlink quota: too many unique /blog/ cross-links ({outbound_count}); max {max_allowed}"
+        )
+
     status = "PASS" if not errors else "FAIL"
     return {
         "status": status,
@@ -322,6 +352,9 @@ def validate_article_crosslinks(
         "warnings": warnings,
         "checks": checks,
         "catalog_count": len(slug_index),
+        "outbound_unique_slugs": unique_valid,
+        "outbound_required_min": min_required,
+        "outbound_required_max": max_allowed,
         "site_base": runtime_base,
     }
 
@@ -368,6 +401,10 @@ def main() -> int:
         print(f"BLOCKER: live catalog refresh failed: {exc}", file=sys.stderr)
         return 2
 
+    meta_path = article_dir / "article.meta.json"
+    meta = json.loads(meta_path.read_text(encoding="utf-8")) if meta_path.is_file() else {}
+    current_slug = str(meta.get("slug") or "").strip()
+
     try:
         report = validate_article_crosslinks(
             html,
@@ -376,6 +413,7 @@ def main() -> int:
             tenant=tenant,
             timeout=args.timeout,
             skip_http=args.skip_http,
+            current_slug=current_slug,
         )
     except ValueError as exc:
         print(f"BLOCKER: {exc}", file=sys.stderr)

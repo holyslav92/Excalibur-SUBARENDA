@@ -70,13 +70,12 @@ Sol перепишет `article.html`.
 - **Dzen pattern 1 (N советов) — NOT default.** Prefer case/verdict shapes (2–5)
 - **One case → one verdict.** Checklist AFTER moral, never instead of scene
 - **Mid comment fight-question:** один; ответ в **TG** `https://t.me/Dobriy_dom_72` или MAX — **never** «напишите в комментариях»
-- **CTA TG/MAX** после пользы (`shared/article-style.md`)
+- **Воронка в теле:** два блока **полной** воронки (TG+MAX+site+tel+manager): после moral и в конце (`shared/article-style.md`)
 - **Бан:** ЕГРН, нотариус, суд, Шакин, «я адвокат», «Разберём», «В этой статье», WhatsApp
-- **Воронка в теле:** (a) после чеклиста → TG; (b) после «у нас так» → MAX/менеджер
 - Все факты только из research; не выдумывай
 - **Supply:** только Тюмень. **Demand Wordstat:** RF-wide (225)
 - H1 cable pain-scene; **ban** «5 вопросов» / «7 шагов» as skeleton
-- **Interlink (если `interlink_old_articles=true`):** 1–3 контекстные ссылки на sibling
+- **Interlink (если `interlink_old_articles=true`):** **3–4** контекстные ссылки на sibling
 - Не читай чужие article.html / live-сайт / topics
 
 ## Handoff

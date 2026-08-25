@@ -9,6 +9,24 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
+CATALOG_SLUGS = [
+    ("beskontaktnoe-zaselenie-posutochno-tyumen", "Бесконтактное заселение посуточно в Тюмени"),
+    ("perevel-zalog-za-posutochnuyu", "Перевёл залог за посуточную"),
+    ("chto-vhodit-v-stoimost", "Что входит в стоимость квартиры посуточно"),
+    ("pravila-prozhivaniya", "Правила проживания в отеле"),
+]
+
+
+def _build_catalog() -> dict:
+    posts = []
+    slug_index = {}
+    for slug, title in CATALOG_SLUGS:
+        href = f"/blog/{slug}/"
+        row = {"slug": slug, "title": title, "href": href}
+        posts.append(row)
+        slug_index[slug] = dict(row)
+    return {"posts": posts, "slug_index": slug_index}
+
 
 class CrosslinkQaGateTests(unittest.TestCase):
     def setUp(self) -> None:
@@ -29,29 +47,22 @@ class CrosslinkQaGateTests(unittest.TestCase):
             + "\n",
             encoding="utf-8",
         )
-        catalog = {
-            "posts": [
-                {
-                    "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
-                    "title": "Бесконтактное заселение посуточно в Тюмени",
-                    "href": "/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
-                }
-            ],
-            "slug_index": {
-                "beskontaktnoe-zaselenie-posutochno-tyumen": {
-                    "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
-                    "title": "Бесконтактное заселение посуточно в Тюмени",
-                    "href": "/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
-                }
-            },
-        }
-        (ROOT / "memory/live-catalog.json").write_text(
-            json.dumps(catalog, ensure_ascii=False, indent=2) + "\n",
+        self._catalog_backup = None
+        catalog_path = ROOT / "memory/live-catalog.json"
+        if catalog_path.is_file():
+            self._catalog_backup = catalog_path.read_text(encoding="utf-8")
+        catalog_path.write_text(
+            json.dumps(_build_catalog(), ensure_ascii=False, indent=2) + "\n",
             encoding="utf-8",
         )
 
     def tearDown(self) -> None:
         shutil.rmtree(self.article_dir, ignore_errors=True)
+        catalog_path = ROOT / "memory/live-catalog.json"
+        if self._catalog_backup is not None:
+            catalog_path.write_text(self._catalog_backup, encoding="utf-8")
+        elif catalog_path.is_file():
+            catalog_path.unlink()
 
     def _run_gate(self) -> subprocess.CompletedProcess[str]:
         return subprocess.run(
@@ -67,6 +78,14 @@ class CrosslinkQaGateTests(unittest.TestCase):
             capture_output=True,
             text=True,
             check=False,
+        )
+
+    def _three_link_html(self) -> str:
+        return (
+            "<p>Про "
+            '<a href="/blog/beskontaktnoe-zaselenie-posutochno-tyumen/">бесконтактное заселение</a>, '
+            '<a href="/blog/perevel-zalog-za-posutochnuyu/">залог при посуточной</a> и '
+            '<a href="/blog/chto-vhodit-v-stoimost/">что входит в стоимость</a>.</p>\n'
         )
 
     def test_fail_on_invented_slug(self) -> None:
@@ -91,15 +110,25 @@ class CrosslinkQaGateTests(unittest.TestCase):
         self.assertEqual(report["status"], "FAIL")
         self.assertTrue(any("пробесконтакт" in err for err in report["errors"]))
 
-    def test_pass_on_catalog_matching_href(self) -> None:
+    def test_fail_when_only_one_xlink(self) -> None:
         (self.article_dir / "article.html").write_text(
             '<p>Про <a href="/blog/beskontaktnoe-zaselenie-posutochno-tyumen/">бесконтактное заселение</a>.</p>\n',
             encoding="utf-8",
         )
         proc = self._run_gate()
+        self.assertNotEqual(proc.returncode, 0, proc.stdout + proc.stderr)
+        report = json.loads((self.article_dir / "crosslink-qa-gate.json").read_text(encoding="utf-8"))
+        self.assertEqual(report["status"], "FAIL")
+        self.assertTrue(any("xlink quota" in err for err in report["errors"]))
+        self.assertGreaterEqual(report.get("outbound_required_min", 0), 3)
+
+    def test_pass_on_three_catalog_matching_hrefs(self) -> None:
+        (self.article_dir / "article.html").write_text(self._three_link_html(), encoding="utf-8")
+        proc = self._run_gate()
         self.assertEqual(proc.returncode, 0, proc.stdout + proc.stderr)
         report = json.loads((self.article_dir / "crosslink-qa-gate.json").read_text(encoding="utf-8"))
         self.assertEqual(report["status"], "PASS")
+        self.assertGreaterEqual(len(report.get("outbound_unique_slugs") or []), 3)
 
 
 if __name__ == "__main__":
