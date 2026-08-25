@@ -75,7 +75,9 @@
       "dzen_pattern_prefer": [2, 5],
       "anti_dup": ["годовая аренда", "early_checkin"],
       "tyumen_localize": true,
-      "status": "queue_active"
+      "status": "saturated_live",
+      "last_seen": "2026-08-25",
+      "note": "published on live site 2026-08-25 — skip until new angle"
     },
     {
       "id": "sept_business_trip",
@@ -86,7 +88,30 @@
       "wordstat_probes": ["командировка тюмень квартира", "аренда квартиры посуточно", "квартира посуточно тюмень"],
       "dzen_pattern_prefer": [2, 3],
       "tyumen_localize": true,
-      "status": "queue_active"
+      "status": "handoff_B03",
+      "last_seen": "2026-08-25",
+      "used_in_articles": ["B03"],
+      "final_p0": {
+        "phrase": "квартиры посуточно тюмень",
+        "volume_tyumen_55_11176": 5875,
+        "volume_ru_225": 13271
+      },
+      "wordstat_rework_log": [
+        {"probe": "командировка тюмень квартира", "volume": null, "note": "API empty"},
+        {"probe": "командировка тюмень", "volume": 37},
+        {"probe": "квартира для командировки", "volume": 18},
+        {"probe": "аренда квартиры посуточно", "volume": 801},
+        {"probe": "снять квартиру посуточно в тюмени", "volume": 1902},
+        {"probe": "квартиры посуточно тюмень", "volume": 5875, "regions": "55+11176", "compare_225": 13271, "final": true}
+      ],
+      "compared_hooks": {
+        "parking_before_booking": {"best_probe": "парковка аренда квартиры", "volume": 3},
+        "kitchen_vs_hotel_cafes": {"best_probe": "посуточно или отель", "volume": 6},
+        "reviews_not_rating": {"best_probe": "суточно ру отзывы", "volume": 38}
+      },
+      "queue_slot": "2026-08-29 — 2026-08-31",
+      "topic_id": "B03",
+      "slug": "komandirovka-stol-rozetki-wifi-do-oplaty"
     },
     {
       "id": "kitchen_vs_hotel_cafes",

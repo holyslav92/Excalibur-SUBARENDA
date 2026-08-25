@@ -1,0 +1,25 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/zvonok-v-10-00-zaselenie-v-22-00-gde-rabotat-v-kvartire-posutochno/#article",
+  "url": "{{SITE_BASE}}/blog/zvonok-v-10-00-zaselenie-v-22-00-gde-rabotat-v-kvartire-posutochno/",
+  "headline": "Гость снял квартиру на сутки: в 10:00 работал, к 22:00 искал кабель",
+  "description": "В 10:00 — созвон, в 22:00 — заселение: где работать в квартире посуточно в Тюмени. Стол, розетки и Wi‑Fi проверяем до оплаты.",
+  "inLanguage": "ru-RU",
+  "datePublished": "2026-08-25",
+  "dateModified": "2026-08-25",
+  "author": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/zvonok-v-10-00-zaselenie-v-22-00-gde-rabotat-v-kvartire-posutochno/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/"
+  }
+}

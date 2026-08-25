@@ -1,0 +1,56 @@
+{
+  "cover_emotion": "Солнечная деловая собранность с лёгкой тревогой ожидания ключей",
+  "scene_hint": "Bright high-key August Tyumen apartment collage: traveler works between a 10:00 call and 22:00 keys, sunny trees outside, top-right blank pad.",
+  "cover_motifs": {
+    "composition": "White collage poster with a focused traveler at a desk, laptop and phone centered, bold torn-paper schedule reading «10:00 созвон — 22:00 ключи», with «ключи» highlighted and a sticky note «Где работать?». Keep the top-right 8–12% completely empty for post-render logo placement.",
+    "location": "Bright Tyumen apartment in August, compact work desk by a sunny window, green trees outside, clean walls, visible outlets and reliable Wi-Fi cues.",
+    "meme": "Small amused cat sticker peeking from the bottom-left corner, occupying no more than 12% of the cover, reacting to the delayed check-in.",
+    "prop_set": "Laptop, charging cable, power strip, coffee cup, phone, Wi-Fi symbol, gold tape, torn paper schedule, key-shaped paper cutout, apartment door plate.",
+    "sticker_set": [
+      "квартиры посуточно тюмень",
+      "Wi‑Fi",
+      "10:00 созвон",
+      "22:00 ключи",
+      "Где работать?"
+    ],
+    "joke": "The desk is ready for a full workday, but the oversized golden key sticker insists the real deadline is 22:00."
+  },
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "Wi‑Fi"
+  ],
+  "cover_phone_cta": "Paint +7 (993) 574-83-22 clearly inside the cover scene on a taped paper strip or apartment door plate, never in the empty logo pad.",
+  "logo_paste_inline_slots": {
+    "cover": "Reserve a clean empty top-right pad covering 8–12% of the composition for the factory logo after rendering; generate no logo or wordmark.",
+    "inline_1": "Reserve a small clean upper-right area for post-render logo placement; do not generate any logo, brand wordmark, or branded text.",
+    "inline_2": "Leave a bright uncluttered corner for the pasted logo after rendering; keep all generated surfaces unbranded.",
+    "inline_3": "Hold a clean white margin near the top edge for post-render logo placement, with no logo or wordmark generated.",
+    "inline_4": "Keep a blank high-key corner available for the factory logo paste; avoid all generated branding and readable brand names.",
+    "inline_5": "Provide a neat empty logo-safe area in the upper composition, added only after rendering and never shown in generation.",
+    "inline_6": "Leave bright negative space for the post-render logo while keeping the apartment scene, props, and signage unbranded.",
+    "inline_7": "Preserve a clean logo paste zone away from the main action; generate no logo, factory mark, or Добрый дом text."
+  },
+  "slots": {
+    "inline_1": {
+      "scene_hint": "Sunny desk close-up in an August Tyumen apartment: laptop, outlet, coffee, and Wi-Fi signal show a practical place to work before check-in."
+    },
+    "inline_2": {
+      "scene_hint": "Traveler joins a 10:00 video call beside a bright window with green trees, charging cable connected and a quiet work surface ready."
+    },
+    "inline_3": {
+      "scene_hint": "High-key apartment detail: multiple outlets, laptop charger, stable Wi-Fi cue, and gold tape labels make the workspace feel business-ready."
+    },
+    "inline_4": {
+      "scene_hint": "Torn-paper collage compares waiting outside with working indoors; a relaxed Russian business traveler chooses the bright desk and opens a laptop."
+    },
+    "inline_5": {
+      "scene_hint": "Close-up of a phone, notebook, and coffee on a clean desk, with sunny greenery beyond the window and a sticky note asking «Где работать?»."
+    },
+    "inline_6": {
+      "scene_hint": "Evening transition remains warm and summery: the traveler packs the laptop at the desk while a paper key icon marks the 22:00 check-in."
+    },
+    "inline_7": {
+      "scene_hint": "Playful apartment vignette with a tiny bottom-left cat sticker, gold tape, Wi-Fi badge, and organized desk props in bright white collage style."
+    }
+  }
+}
