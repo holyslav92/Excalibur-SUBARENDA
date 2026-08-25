@@ -22,6 +22,7 @@ is_background: false
 - нет телефона **+7 (993) 574-83-22** на cover post-composite
 - WordPress/Gutenberg/Dashboard UI в арте
 - номер 922 (риелтор) на обложке
+- **2+ frames с cat-meme** (max 1 cat slot на cover+7 inlines)
 
 ## PASS → ship
 

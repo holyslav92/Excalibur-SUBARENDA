@@ -46,6 +46,7 @@ COMMON_CHECKS = (
     "quad_manifest_valid",
     "wordstat_stickers_1_3",
     "motif_no_collision_14d",
+    "max_one_cat_meme_slot",
     "light_high_key",
 )
 
@@ -181,6 +182,14 @@ def validate_cover_qa(article_dir: Path, root: Path) -> dict:
                     errors.append(f"{key}.labels count {len(labels)}, need 2-6")
         except json.JSONDecodeError:
             errors.append("quad-manifest.json invalid JSON")
+        else:
+            try:
+                from excalibur_blog_meme_cat_gate import load_meme_catalog, validate_max_one_cat_meme
+
+                catalog = load_meme_catalog(root)
+                errors.extend(validate_max_one_cat_meme(manifest, catalog))
+            except ImportError:
+                errors.append("excalibur_blog_meme_cat_gate.py missing — cat-meme quota QA unavailable")
 
     if brand_logo_paste:
         try:

@@ -11,6 +11,12 @@ import sys
 from pathlib import Path
 from urllib.parse import urlparse
 
+from excalibur_blog_meme_cat_gate import (
+    count_cat_meme_slots,
+    load_meme_catalog,
+    pick_non_cat_meme_hint,
+    slot_has_cat_meme,
+)
 from excalibur_blog_identity_real import (
     pick_identity_reference,
     resolve_logo_reference_for_api,
@@ -106,6 +112,17 @@ PHONE_IN_SCENE_RULE = (
 )
 MEME_CATALOG_REL = "memory/cover/meme-top100.json"
 MEME_STICKER_INLINE_MAX_SHARE = 0.15
+MAX_CAT_MEME_SLOTS_PER_ARTICLE = 1
+CAT_MEME_QUOTA_RULE = (
+    "CAT-MEME QUOTA: max ONE cat-meme sticker across entire 8-panel set (cover + 7 inlines). "
+    "Prefer cover OR one inline — never both. All other meme slots = people-memes/reaction templates "
+    f"from {MEME_CATALOG_REL} (Roll Safe, Harold, Pepe, Wojak, Gigachad, etc.) — "
+    "NOT grumpy/ginger/tardar/smudge cat repeats."
+)
+NON_CAT_MEME_INLINE_HINT = (
+    f"tiny people-meme sticker only (≤{int(MEME_STICKER_INLINE_MAX_SHARE * 100)}% frame, "
+    f"corner accent — Roll Safe / Harold / Pepe / reaction face from {MEME_CATALOG_REL}; NO cat)"
+)
 MAX_MCP_PROMPT_CHARS = 3500
 # Compact limits leave headroom under 3500 after style boilerplate (INC-20260721-0837).
 # Cover raw ≈80–140 (from blog-hero lock); inline ≈100–220. Long MUST/face essays
@@ -165,6 +182,8 @@ def inline_panel_prompt(
     *,
     logo_paste: bool = False,
     logo_reference: bool = False,
+    cat_meme_allowed: bool = False,
+    people_meme_hint: str = "",
 ) -> str:
     type_id = slot.get("visual_type") or "fact_card"
     type_def = (types_catalog.get("types") or {}).get(type_id) or {}
@@ -176,12 +195,16 @@ def inline_panel_prompt(
     if labels:
         exact = " | ".join(labels)
         base += f" TXT:{exact}."
-    if slot.get("meme_sticker"):
-        base += (
-            f" +tiny meme sticker only (≤{int(MEME_STICKER_INLINE_MAX_SHARE * 100)}% frame, "
-            f"bottom-left or bottom-right corner only — NEVER top-right pad; "
-            f"from {MEME_CATALOG_REL}; NO co-host human; NO presenter)."
-        )
+    if slot.get("meme_sticker") or cat_meme_allowed:
+        if cat_meme_allowed:
+            base += (
+                f" +tiny cat-meme sticker only (≤{int(MEME_STICKER_INLINE_MAX_SHARE * 100)}% frame, "
+                f"bottom-left or bottom-right corner only — NEVER top-right pad; "
+                f"ONLY cat slot this article; from {MEME_CATALOG_REL}; NO co-host human)."
+            )
+        else:
+            hint = people_meme_hint or NON_CAT_MEME_INLINE_HINT
+            base += f" +{hint}."
     if logo_reference and logo_paste:
         base += " Logo ref top-right, no plate."
     elif logo_paste:
@@ -484,6 +507,7 @@ def build_prompt(
     logo_reference_in_generation: bool = False,
     cover_phone_cta: str = DEFAULT_COVER_PHONE_CTA,
     inline_logo_keys: set[str] | None = None,
+    meme_catalog: dict | None = None,
 ) -> str:
     slots = manifest.get("slots") or {}
     canvas_slots = canvas_slots or tuple(CANVAS_1_SLOTS)
@@ -494,6 +518,10 @@ def build_prompt(
     fact_locks = topic_fact_lock_lines(manifest, article_dir)
     cat_ok = style_allows_cat_stickers(style)
     cat_hero = style_is_situational_cat_hero(style)
+    catalog = meme_catalog or {}
+    _, cat_slot_keys = count_cat_meme_slots(manifest, catalog) if catalog else (0, [])
+    cover_cat_allowed = "cover" in cat_slot_keys
+    people_meme_hint = pick_non_cat_meme_hint(catalog) if catalog else ""
 
     style_prefix = compact(
         style.get("global_prompt_prefix")
@@ -519,6 +547,8 @@ def build_prompt(
             types_catalog,
             logo_paste=(key in inline_logo_keys),
             logo_reference=logo_reference_in_generation,
+            cat_meme_allowed=(key in cat_slot_keys),
+            people_meme_hint=people_meme_hint,
         )
 
     if has_cover and "cover" in canvas_slots:
@@ -540,6 +570,11 @@ def build_prompt(
             if cover_sticky
             else ""
         )
+        cover_meme_clause = (
+            "cat-meme sticker bottom-left ≤12% (ONLY cat slot this article)"
+            if cover_cat_allowed
+            else f"people-meme sticker bottom-left ≤12% ({people_meme_hint or 'Roll Safe / Harold / Pepe'}; NO cat)"
+        )
         if logo_reference_in_generation:
             emotion_clause = f"Expr: {cover_emotion}." if cover_emotion else ""
             panel_lines.append(
@@ -548,7 +583,7 @@ def build_prompt(
                 f"NO yellow/amber cast, NO muddy skin, NO winter/snow. "
                 f"NO phone in gen. {LOGO_REFERENCE_INTEGRATION}. "
                 f"{emotion_clause} soft daylight crisp sharp; gold tape; 1-3 Wordstat; "
-                f"{compact(cover_scene, COVER_SCENE_HINT_COMPACT)}; cat bottom-left ≤12%; "
+                f"{compact(cover_scene, COVER_SCENE_HINT_COMPACT)}; {cover_meme_clause}; "
                 f"{BOARD_STATIONERY}; #FFF"
             )
         elif brand_logo_paste:
@@ -560,7 +595,7 @@ def build_prompt(
                 f"NO yellow/amber cast, NO muddy skin, NO winter/snow. "
                 f"NO logo in gen. {phone_clause}. "
                 f"{emotion_clause} soft daylight crisp sharp; gold tape; 1-3 Wordstat; "
-                f"{compact(cover_scene, COVER_SCENE_HINT_COMPACT)}; cat bottom-left ≤12%; "
+                f"{compact(cover_scene, COVER_SCENE_HINT_COMPACT)}; {cover_meme_clause}; "
                 f"TOP-RIGHT empty clear pad — no logo, no house icon, no «Добрый дом» lettering, no plate, no sticker; "
                 f"{BOARD_STATIONERY}; #FFF"
             )
@@ -633,11 +668,13 @@ def build_prompt(
     inline_suffix = (
         f"Inline all: #FFF collage, gold/black Cyrillic labels, {BOARD_STATIONERY}; "
         "dense facts/numbers; exact TXT per panel; meme only if +meme AND sticker-scale; "
+        f"{CAT_MEME_QUOTA_RULE}; "
         "no human hero on inline; no icon soup; zero typos."
     )
 
     lines = [
         style_prefix,
+        CAT_MEME_QUOTA_RULE,
         "Canvas 2048x1152 exact 2x2; four 16:9 panels (1024x576); thin white gutters; no bleed.",
         "",
         ban_line,
@@ -687,6 +724,7 @@ def main() -> int:
     types_catalog = load_json(types_path) if types_path.is_file() else {"types": {}}
     design_code_path = root / style.get("design_code", "memory/cover/cover-design-code.json")
     design_code = load_json(design_code_path) if design_code_path.is_file() else {}
+    meme_catalog = load_meme_catalog(root)
 
     cat_hero = style_is_situational_cat_hero(style)
     local_reference = str(style.get("local_reference") or "").strip()
@@ -745,6 +783,7 @@ def main() -> int:
             logo_reference_in_generation=logo_reference_in_generation,
             cover_phone_cta=cover_phone_cta,
             inline_logo_keys=inline_logo_keys,
+            meme_catalog=meme_catalog,
         )
         if not validate_prompt_budget(prompt):
             return 1

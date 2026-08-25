@@ -240,6 +240,107 @@ class WordstatGateTest(unittest.TestCase):
         prompt_src = (ROOT / "scripts/excalibur_blog_cover_quad_prompt.py").read_text(encoding="utf-8")
         self.assertIn("WOW_POSTER_BAN", prompt_src)
         self.assertIn("WordPress", prompt_src)
+        self.assertIn("CAT_MEME_QUOTA_RULE", prompt_src)
+
+    def test_cover_canon_cat_meme_quota(self) -> None:
+        canon = json.loads((ROOT / "memory/cover/cover-canon.json").read_text(encoding="utf-8"))
+        meme = canon.get("meme_system") or {}
+        cats = meme.get("cats") or {}
+        self.assertEqual(cats.get("max_slots_per_article"), 1)
+        anti = canon.get("anti_repeat") or {}
+        self.assertTrue((anti.get("cat_meme_family") or {}).get("enabled"))
+        inline = canon.get("inline_utility") or {}
+        self.assertIn("max_one_cat_meme_slot", inline.get("cover_qa_checks") or [])
+
+    def test_meme_top100_cat_quota(self) -> None:
+        catalog = json.loads((ROOT / "memory/cover/meme-top100.json").read_text(encoding="utf-8"))
+        quota = (catalog.get("usage_rules") or {}).get("cat_meme_quota") or {}
+        self.assertEqual(quota.get("max_slots_per_article"), 1)
+
+    def test_meme_cat_gate_detects_two_cats(self) -> None:
+        sys.path.insert(0, str(ROOT / "scripts"))
+        from excalibur_blog_meme_cat_gate import (  # noqa: PLC0415
+            load_meme_catalog,
+            validate_max_one_cat_meme,
+        )
+
+        catalog = load_meme_catalog(ROOT)
+        manifest = {
+            "cover_motifs": {"meme": "tiny cat sticker bottom-left"},
+            "slots": {
+                "cover": {"scene_hint": "poster"},
+                "inline_7": {"scene_hint": "small cat sticker bottom-left only"},
+            },
+        }
+        errors = validate_max_one_cat_meme(manifest, catalog)
+        self.assertTrue(errors)
+        self.assertIn("cat-meme quota exceeded", errors[0])
+
+    def test_meme_cat_gate_allows_one_cat(self) -> None:
+        sys.path.insert(0, str(ROOT / "scripts"))
+        from excalibur_blog_meme_cat_gate import (  # noqa: PLC0415
+            load_meme_catalog,
+            validate_max_one_cat_meme,
+        )
+
+        catalog = load_meme_catalog(ROOT)
+        manifest = {
+            "cover_motifs": {"meme": "tiny cat sticker bottom-left"},
+            "slots": {
+                "cover": {"scene_hint": "poster"},
+                "inline_7": {"scene_hint": "checklist board", "meme_sticker": True},
+            },
+        }
+        errors = validate_max_one_cat_meme(manifest, catalog)
+        self.assertEqual(errors, [])
+
+    def test_motif_gate_cat_family_collision(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "memory/cover").mkdir(parents=True)
+            (root / "memory/cover/cover-canon.json").write_text("{}", encoding="utf-8")
+            catalog_src = ROOT / "memory/cover/meme-top100.json"
+            (root / "memory/cover/meme-top100.json").write_text(
+                catalog_src.read_text(encoding="utf-8"), encoding="utf-8"
+            )
+            log = {
+                "schema_version": 1,
+                "window_days": 14,
+                "entries": [
+                    {
+                        "date": "2026-08-17",
+                        "topic_id": "B100",
+                        "motifs": {"meme": "grumpy cat sticker"},
+                    }
+                ],
+            }
+            (root / "memory/cover/used-motifs.json").write_text(
+                json.dumps(log, ensure_ascii=False), encoding="utf-8"
+            )
+            env = {"EXCALIBUR_PROJECT_ROOT": str(root)}
+            proc = subprocess.run(
+                [
+                    sys.executable,
+                    str(ROOT / "scripts/excalibur_blog_cover_motif_gate.py"),
+                    "check",
+                    "--topic-id",
+                    "B101",
+                    "--meme",
+                    "smudge cat bottom-left",
+                ],
+                cwd=ROOT,
+                env={**dict(**{k: v for k, v in __import__("os").environ.items()}), **env},
+                capture_output=True,
+                text=True,
+                check=False,
+            )
+            self.assertEqual(proc.returncode, 1, proc.stdout)
+            self.assertIn("COLLISION", proc.stderr)
+
+    def test_cover_qa_gate_requires_cat_quota_check(self) -> None:
+        gate_src = (ROOT / "scripts/excalibur_blog_cover_qa_gate.py").read_text(encoding="utf-8")
+        self.assertIn("max_one_cat_meme_slot", gate_src)
+        self.assertIn("validate_max_one_cat_meme", gate_src)
 
     def test_canvas_contract_dobry_dom_not_rieltor(self) -> None:
         contract = (ROOT / "shared/blog-cover-quad-canvas-contract.md").read_text(encoding="utf-8")

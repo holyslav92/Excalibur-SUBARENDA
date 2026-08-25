@@ -41,7 +41,7 @@ Scout? → research_start → Research → Title → Writer(смысл)
 - **powerful** `claude-opus-5` (`DEROUTER_OPUS_MODEL`): Writer (article body / longform)
 - **utility** `gpt-5.6-terra` (`DEROUTER_TERRA_MODEL`): Scout, Title, Sol, Research synthesis, Description, Cover-text, Schema, Cover-scene
 При недоступности → `DEROUTER <ROLE> BLOCKER`, без тихого fallback на Composer. См. `shared/derouter-opus-brain-contract.md`.
-**Cover PNG:** Derouter REST image API — `shared/derouter-gpt-image-api-contract.md`.
+**Cover PNG:** Grsai PRIMARY_MODEL_ID only (`shared/grsai-gpt-image-api-contract.md`); **vip permanently disabled**. Derouter REST — legacy fallback (`shared/derouter-gpt-image-api-contract.md`).
 **Wordstat:** MCP-KV. **Cover-QA:** Python gates, не «глаз» агента.
 
 ```bash

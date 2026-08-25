@@ -116,7 +116,7 @@ class SetupTenantTests(unittest.TestCase):
             middle = "<p>" + "Вердикт после moral. " * 20 + "</p>\n"
             end = "<p>" + "Финал. " * 15 + "</p>\n"
             (article_dir / "article.html").write_text(
-                opening + middle + funnel + end + funnel,
+                opening + middle + end + funnel,
                 encoding="utf-8",
             )
             proc = subprocess.run(

@@ -2,10 +2,16 @@
   "tenant": "dobry-dom",
   "status": "slim",
   "label_ru": "Добрый дом — meme energy + factory logo overlay",
-  "philosophy": "Top-100 meme energy ON TOPIC (посуточная аренда pains): witty framing — reaction face, before/after, caption panel, comic beat. Logo NEVER in Grsai reference — factory alpha PNG overlay AFTER split only. Phone IN scene on tape/paper/magnet — NEVER post-composite pill. Hard gates: no gray/white plate under logo, no WP UI, max-2 gen → vip fallback.",
+  "philosophy": "Top-100 meme energy ON TOPIC (посуточная аренда pains): witty framing — reaction face, before/after, caption panel, comic beat. Logo NEVER in Grsai reference — factory alpha PNG overlay AFTER split only. Phone IN scene on tape/paper/magnet — NEVER post-composite pill. Hard gates: no gray/white plate under logo, no WP UI, max-2 gen; vip disabled.",
   "meme_energy": {
-    "cover": "Magazine poster + 1–2 meme beats from meme-top100.json — funny, screenshot-worthy, comfort+ brand",
+    "cover": "Magazine poster + meme beats from meme-top100.json — people-memes/reaction templates preferred; max 1 cat-meme per article",
     "inline_slots": "2–4 of 7 may use meme_panel / reaction_card (see inline-visual-types-dobry-dom.json)",
+    "cat_meme_quota": {
+      "max_slots": 1,
+      "scope": "cover + inline_1..inline_7",
+      "prefer": "cover OR one inline — not both",
+      "qa_fail_if": "2+ frames contain cat-meme"
+    },
     "formats": ["reaction_face", "before_after", "caption_panel", "comic_beat", "meme_sticker"],
     "catalog": "memory/cover/meme-top100.json",
     "forbidden": [
@@ -36,7 +42,8 @@
   "generation_policy": {
     "provider": "grsai",
     "max_attempts_per_canvas": 2,
-    "vip_retry": "one per sheet if primary API fails",
+    "vip_retry": "disabled — PRIMARY_MODEL_ID only",
+    "vip_disabled": true,
     "on_exhaust": "pad-clear top-right if needed + official logo paste + continue to publish",
     "default_brand_logo_composite": "required after split — logo overlay only, no phone pill"
   },
@@ -55,6 +62,7 @@
     "quad_manifest_valid",
     "wordstat_stickers_1_3",
     "motif_no_collision_14d",
+    "max_one_cat_meme_slot",
     "light_high_key"
   ],
   "tenant_scope": "holyslav92/Excalibur-SUBARENDA — Добрый дом / добрыйдом-72.рф ONLY. Never tymenrieltor.ru / Excalibur-2-Cloud rieltor canon."

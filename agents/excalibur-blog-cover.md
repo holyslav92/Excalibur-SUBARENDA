@@ -43,7 +43,7 @@ Leave **empty TOP-RIGHT pad** (8–12% width). Factory pastes official PNG after
 3. **Light & bright:** sun flare, light leak, glow, airy #FFFFFF — warm terracotta accents; no dark cinematic.
 4. **Factory logo paste:** cover always + **2–3 of 7** inlines get official PNG post-composite TOP-RIGHT 8–12%.
    Generation leaves empty pad — **NEVER** AI-drawn lockup.
-5. **Мемы:** meme cat + catalog people-meme **small stickers** on cover; inline = infographic; no co-host/stock man.
+5. **Мемы:** max **1 cat-meme** на статью (cover OR один inline). Остальные слоты — people-memes из `meme-top100.json` (≤12–15% frame). Anti-repeat: cat = одно семейство 14д.
 6. **1–3 Wordstat stickers** — live high-frequency RU queries (Тюмень/область), из research/handoff.
 7. **NO host face / NO Shakin identity** — люди по теме статьи OK (гости, семьи, уборщики), но без identity lock.
 

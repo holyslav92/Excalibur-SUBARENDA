@@ -9,8 +9,15 @@
     "Russian meme canon: sacrednik/priest, Жириновский, etc."
   ],
   "usage_rules": {
-    "cover": "NO locked host face. Logo lockup required. Topic-fit people OK. Meme people/cats = small sticker cutouts (1–2 on cover).",
-    "inline": "NO large human ever. Meme stickers only: max 15% frame area, corner/edge accent, never co-host/presenter slot.",
+    "cover": "NO locked host face. Logo lockup required. Topic-fit people OK. Meme stickers = people-memes/reaction templates preferred; cat-meme at most ONE slot per article (cover OR one inline).",
+    "inline": "NO large human ever. Meme stickers only: max 15% frame area, corner/edge accent, never co-host/presenter slot. Prefer people-memes; cat-meme only if article's single cat slot.",
+    "cat_meme_quota": {
+      "max_slots_per_article": 1,
+      "scope": "cover + inline_1..inline_7",
+      "anti_repeat_family": "__cat_meme_family__",
+      "rotate_non_cat": "Roll Safe, Harold, Pepe, Wojak, Gigachad, sacrednik, Жириновский, etc.",
+      "forbidden_cat_repeats": ["grumpy cat", "tardar sauce", "ginger cat", "smudge cat", "tabby repeat"]
+    },
     "forbidden": [
       "invented photogenic stranger",
       "AI-generated original face called meme",

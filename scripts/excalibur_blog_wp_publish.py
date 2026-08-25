@@ -32,6 +32,11 @@ from excalibur_blog_pipeline_canon import (
     validate_article_canon,
 )
 from excalibur_blog_wp_categories import category_gate_errors, resolve_category_ids
+from excalibur_blog_wp_dzen_rss import (
+    build_mu_plugin_deploy_bootstrap,
+    dzen_meta_php_snippet,
+    mu_plugin_bytes,
+)
 
 def load_tenant_config(root: Path) -> dict[str, Any]:
     path = root / "shared/tenant-config.json"
@@ -673,6 +678,8 @@ if (!empty($p['category_ids']) && is_array($p['category_ids'])) {{
     }}
 }}
 
+{dzen_meta_php_snippet()}
+
 if (!empty($p['cover_b64'])) {{
     $bin = base64_decode($p['cover_b64']);
     $tmp = wp_tempnam('excalibur-cover-' . $slug . '.png');
@@ -936,6 +943,12 @@ def publish_via_sftp(env: dict[str, str], php: str, public_base: str, *, bootstr
         except Exception as cleanup_error:  # noqa: BLE001
             print(f"WARN cleanup: could not delete bootstrap {remote}: {cleanup_error}", file=sys.stderr)
     return out
+
+
+def deploy_dzen_mu_plugin(env: dict[str, str], public_base: str) -> str:
+    """Upload MU-plugin that fixes Dzen enclosure/category directives."""
+    php = build_mu_plugin_deploy_bootstrap(mu_plugin_bytes().decode("utf-8"))
+    return publish_via_sftp(env, php, public_base, bootstrap_name="excalibur-dzen-mu-plugin-once.php")
 
 
 def publish_via_ftp(
@@ -1603,6 +1616,14 @@ def main() -> int:
         encoding="utf-8",
     )
     upsert_publish_ledger(root, payload, permalink or safe_permalink)
+    try:
+        mu_out = deploy_dzen_mu_plugin(env, public)
+        if "OK dzen_mu_plugin_done" not in mu_out:
+            print("WARN dzen_mu_plugin deploy incomplete", file=sys.stderr)
+        else:
+            print("OK dzen_mu_plugin_deployed=1")
+    except Exception as exc:  # noqa: BLE001
+        print(f"WARN dzen_mu_plugin deploy failed: {type(exc).__name__}: {exc}", file=sys.stderr)
     deploy_llms = bool(args.deploy_llms or tenant_deploy_llms_default(root))
     if deploy_llms:
         from excalibur_blog_llms_deploy import deploy_llms_files

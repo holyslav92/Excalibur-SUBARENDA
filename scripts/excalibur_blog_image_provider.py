@@ -27,10 +27,10 @@ GRSAI_FLOW = {
     "probe_script": "scripts/excalibur_blog_grsai_base_probe.py",
     "contract": "shared/grsai-gpt-image-api-contract.md",
     "note": (
-        "PRIMARY: Grsai draw API (non-vip primary tier + resolution=2K first; "
-        "one vip retry/sheet only when primary cannot deliver long_side>=2048 or hard API fail). "
+        "PRIMARY: Grsai draw API (PRIMARY_MODEL_ID only; vip permanently disabled; "
+        "aspectRatio+resolution=2K first, one explicit-size retry, ship native undersized). "
         "Fallback: excalibur_blog_kie_gpt_image2_api.py when Grsai fail. "
-        "FORBIDDEN: flux2-pro-*, Seedream, nano_banana*, z-image, mcp-derouter/start-mcp.sh."
+        "FORBIDDEN: *-vip, flux2-pro-*, Seedream, nano_banana*, z-image, mcp-derouter/start-mcp.sh."
     ),
 }
 

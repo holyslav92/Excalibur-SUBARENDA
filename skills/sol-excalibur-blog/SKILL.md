@@ -25,22 +25,22 @@ python3 scripts/excalibur_blog_derouter_opus_chat.py \
 Ты берёшь **смысл** черновика Writer и **переписываешь** статью слогом
 тенанта. Публикуется твой `article.html`, не сырой Writer.
 
-**Длина:** ~**900–1400 слов**. **Sol MUST NOT** replace burn scene with how-to encyclopedia.
+**Длина:** ~**1100–1800 слов**. **Sol MUST NOT** replace burn scene with how-to encyclopedia or checklist spine.
 
 ---
 
-## Klyshin delivery — 10 правил (HARD, одна формулировка)
+## CASE delivery — 10 правил (HARD, одна формулировка)
 
-1. §1 = ожог сейчас. First sentence already happened. Ban TL;DR / «в этой статье» / «разберём N».
-2. Paragraph = 1 hit. Often 1 sentence. If >3 sentences, cut.
-3. Reader is inside (you/present tense/body in apartment/taxi/chat).
-4. Number = price of burn or fix (00:12, 1500₽, 4 kg). Ban H1 list numbers («5 вопросов», «7 шагов») as article skeleton.
-5. Host/aggregator dialogue is evidence. Quote then break it.
-6. One case → one verdict. Checklist AFTER moral, never instead of scene.
-7. Moral: first X, then money/key. Not the reverse.
-8. One lockpick question (like «где спит бабушка?» mapped to guest: «Где бойлер?» / ««Можно» — какая собака и какая сумма?»).
-9. Refusal beat after excuse: «Нет. Так не заселяем / не отвечаем / не переводим.»
-10. Scout/Title = guest pain only. Delete ЕГРН/наследство/ипотека/Шакин. Sol MUST NOT replace burn scene with how-to.
+1. §1 = плотный кейс (1–2 абзаца). **BAN** chopped 3-word lead.
+2. Identity: «Я хост посуточной в Тюмени. Это «Добрый дом».» + Telegram · MAX.
+3. Reader is inside.
+4. Number = price of burn. Ban H1 list skeleton.
+5. Quote then illusion break in prose.
+6. One case → one verdict. Timeline numbers. Checklist AFTER moral.
+7. Moral: first X, then money/key.
+8. One lockpick question.
+9. One mid fight-question (TG/MAX).
+10. No ЕГРН/Шакин. Sol MUST NOT encyclopedia.
 
 ---
 
@@ -62,21 +62,25 @@ python3 scripts/excalibur_blog_derouter_opus_chat.py \
 1. Прочитай calibration leads + 5–8 блоков `good-outputs.md`.
 2. Извлеки из `drafts/writer.html` факты, сцену, verdict, CTA.
 3. Перепиши **целиком** в слог Добрый дом:
-   - **8–12 строк §1 сцены** — NO TL;DR opener
-   - **~900–1400 слов**, not 2500–3100
-   - один mid fight-question → **TG** `https://t.me/Dobriy_dom_72` or MAX; **never** «напишите в комментариях»
-   - checklist **после** moral if present
-   - **две** полные воронки (TG+MAX+site+tel+manager): после moral и в конце
+   - **1–2 плотных абзаца §1** — NO chopped lead; NO TL;DR
+   - identity one-liner + Telegram · MAX
+   - кейс с цифрами по таймлайну
+   - **~1100–1800 слов**, not checklist landing
+   - один mid fight-question → **TG** or MAX
+   - checklist **после** moral if present — never 8 H2 spine
+   - **один** CTA-блок в конце (TG+MAX+site+tel+manager) — not double
    - **3–4** outbound `/blog/` cross-links (живые, разные slug)
 4. Сохрани `article.html`, `drafts/variant-a.html`; не затирай `drafts/writer.html`
-5. Сверка с `bad-outputs.md` — especially encyclopedia/how-to FAIL
+5. Сверка с `bad-outputs.md` — especially chopped lead, encyclopedia, double CTA
 
 ## Запреты
 
-- **Sol MUST NOT** replace burn scene with how-to
+- **Sol MUST NOT** replace burn scene with how-to / FAQ spine
+- Chopped telegram-cosplay lead
 - Новые факты, цифры, URL вне Writer/research
 - TL;DR, «Разберём», «В этой статье», SEO encyclopedia
-- Шакин, риэлтор, ЕГРН, юридический дисклеймер
+- Шакин, риэлтор, ЕГРН, юридический дисклеймер, +7 922 001 65 05
+- Два CTA-блока подряд
 - Вложенные Task
 
 ## Handoff
