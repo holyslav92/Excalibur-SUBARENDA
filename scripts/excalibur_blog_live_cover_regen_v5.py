@@ -80,14 +80,13 @@ META_BY_SLUG = {
         "highlight": "3 ночи",
         "sticky": "не на семестр",
         "wordstat": ["посуточно у вуза", "Тюмень", "родители первокурсник"],
-        "cover_emotion": "усталость: 02:14, одна кровать, чемоданы в коридоре у вуза",
+        "cover_emotion": "усталость: 02:14, одна кровать, чемоданы в коридоре",
         "cover_scene": (
-            "02:14 night in modest Tyumen rental near university: tired parents with first-year "
-            "student, one cramped double bed, suitcases and bags in narrow hallway, phone clock "
-            "02:14, budget stay NOT luxury hotel; bold Cyrillic hook; warm dim lamp, realistic."
+            "02:14 night: parents + first-year, one bed, hallway bags; modest Tyumen rental "
+            "near uni; NOT luxury; bold Cyrillic hook."
         ),
-        "motif_location": "modest Tyumen apartment hallway night 02:14 near university, not luxury",
-        "inline_scene_light": "dim night lamp, modest rental realism",
+        "motif_location": "modest Tyumen apartment night 02:14 near university",
+        "inline_scene_light": "dim night lamp, modest rental",
         "motif_composition": "night arrival one-bed squeeze vs hallway luggage poster collage",
         "motif_meme": "tiny tabby cat sticker bottom-left ≤10%",
         "motif_props": "suitcases, single bed, hallway bags, phone 02:14",
