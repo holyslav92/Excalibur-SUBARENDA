@@ -1,4 +1,4 @@
-"""Double full-funnel CTA gate tests."""
+"""Single end-of-article full-funnel CTA gate tests."""
 from __future__ import annotations
 
 import json
@@ -21,9 +21,9 @@ FUNNEL_BLOCK = (
 )
 
 
-class DoubleFunnelGateTests(unittest.TestCase):
+class SingleFunnelGateTests(unittest.TestCase):
     def setUp(self) -> None:
-        self.article_dir = ROOT / "memory/blog/articles/_gate_fixture_double_funnel"
+        self.article_dir = ROOT / "memory/blog/articles/_gate_fixture_single_funnel"
         if self.article_dir.exists():
             shutil.rmtree(self.article_dir)
         self.article_dir.mkdir(parents=True)
@@ -48,24 +48,36 @@ class DoubleFunnelGateTests(unittest.TestCase):
             check=False,
         )
 
-    def test_fail_single_funnel_at_end_only(self) -> None:
+    def test_fail_no_funnel_at_end(self) -> None:
         opening = "<p>" + "Сцена заселения. " * 40 + "</p>\n"
-        proc = self._run_gate(opening + FUNNEL_BLOCK)
+        proc = self._run_gate(opening)
+        self.assertNotEqual(proc.returncode, 0, proc.stdout + proc.stderr)
+        report = json.loads((self.article_dir / "community-cta-gate.json").read_text(encoding="utf-8"))
+        self.assertEqual(report["status"], "FAIL")
+        self.assertTrue(
+            any("end block missing" in err for err in report.get("funnel_errors") or report["errors"])
+        )
+
+    def test_fail_mid_article_funnel(self) -> None:
+        opening = "<p>" + "Сцена заселения у двери. " * 30 + "</p>\n"
+        middle = "<p>" + "Вердикт и moral. " * 20 + "</p>\n"
+        end = "<p>" + "Финал после пользы. " * 15 + "</p>\n"
+        proc = self._run_gate(opening + middle + FUNNEL_BLOCK + end + FUNNEL_BLOCK)
         self.assertNotEqual(proc.returncode, 0, proc.stdout + proc.stderr)
         report = json.loads((self.article_dir / "community-cta-gate.json").read_text(encoding="utf-8"))
         self.assertEqual(report["status"], "FAIL")
         self.assertTrue(
             any(
-                "mid-article" in err or "two full-funnel" in err
+                "multiple full CTA" in err or "one block at end" in err
                 for err in report.get("funnel_errors") or report["errors"]
             )
         )
 
-    def test_pass_double_full_funnel(self) -> None:
+    def test_pass_single_funnel_at_end(self) -> None:
         opening = "<p>" + "Сцена заселения у двери. " * 30 + "</p>\n"
-        middle = "<p>" + "Вердикт и чеклист. " * 20 + "</p>\n"
+        middle = "<p>" + "Вердикт и moral. " * 20 + "</p>\n"
         end = "<p>" + "Финал после пользы. " * 15 + "</p>\n"
-        proc = self._run_gate(opening + middle + FUNNEL_BLOCK + end + FUNNEL_BLOCK)
+        proc = self._run_gate(opening + middle + end + FUNNEL_BLOCK)
         self.assertEqual(proc.returncode, 0, proc.stdout + proc.stderr)
         report = json.loads((self.article_dir / "community-cta-gate.json").read_text(encoding="utf-8"))
         self.assertEqual(report["status"], "PASS")

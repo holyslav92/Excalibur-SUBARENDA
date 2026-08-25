@@ -51,7 +51,7 @@ class WriterEditorialContractsTest(unittest.TestCase):
         self.assertNotIn("SETUP_REQUIRED", src)
         self.assertIn("Calibration", good)
         self.assertIn("Добрый дом", soul)
-        self.assertIn("битов", post.lower())
+        self.assertIn("CASE", post)
         self.assertIn("seo-робот", bad.lower())
         self.assertIn("чужой голос", bad.lower())
 
