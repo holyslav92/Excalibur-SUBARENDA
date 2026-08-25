@@ -1,0 +1,32 @@
+{
+  "agent": "excalibur-blog-cover-qa",
+  "status": "FAIL",
+  "checked_at": "2026-08-25",
+  "topic_id": "B03",
+  "checks": {
+    "eight_png_exist": true,
+    "logo_reference_in_generation": true,
+    "inline_logo_count_2_3": true,
+    "cover_phone_993_post_composite": true,
+    "forbid_922_phone": true,
+    "quad_manifest_valid": false,
+    "wordstat_stickers_1_3": true,
+    "motif_no_collision_14d": true,
+    "forbid_ai_drawn_logo_cover": false,
+    "forbid_wordpress_ui_in_art": true,
+    "no_logo_plate_cover": false,
+    "light_high_key": true
+  },
+  "issues": [
+    "quad-manifest: inline_3.visual_type=meme_panel not in allowed catalog",
+    "quad-manifest: inline_6.visual_type=lived_in_room not in allowed catalog",
+    "cover.png: white logo plate/card under top-right pad (area=6020)",
+    "inline-01.png: white logo plate/card under top-right pad (area=12880)",
+    "inline-03.png: white logo plate/card under top-right pad (area=12880)",
+    "inline-07.png: white logo plate/card under top-right pad (area=6532)",
+    "inline-02.png: forbidden drawn logo on panel without logo reference (score=0.5224)",
+    "inline-06.png: forbidden drawn logo on panel without logo reference (score=0.56)",
+    "cover.png: duplicate logos top-right (AI-drawn lockup + factory paste)"
+  ],
+  "notes": "slim gate FAIL: brand lock — white plates under logo pad on 4 panels; drawn lockup on inline-02/06; quad-manifest visual_type invalid for inline_3/inline_6. Return to Cover."
+}

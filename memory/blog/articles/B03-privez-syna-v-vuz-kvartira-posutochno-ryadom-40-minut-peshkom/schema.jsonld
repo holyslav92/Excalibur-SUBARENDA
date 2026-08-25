@@ -1,0 +1,79 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "{{SITE_BASE}}/blog/privez-syna-v-vuz-kvartira-posutochno-ryadom-40-minut-peshkom/#article",
+      "url": "{{SITE_BASE}}/blog/privez-syna-v-vuz-kvartira-posutochno-ryadom-40-minut-peshkom/",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{SITE_BASE}}/blog/privez-syna-v-vuz-kvartira-posutochno-ryadom-40-minut-peshkom/"
+      },
+      "headline": "Заселил сына на три ночи — до корпуса 40 минут пешком",
+      "description": "Перед оплатой посуточной квартиры в Тюмени проверьте пеший маршрут до точного адреса корпуса вуза — «рядом» в объявлении часто не означает близко к нужной двери.",
+      "datePublished": "2026-08-25",
+      "dateModified": "2026-08-25",
+      "inLanguage": "ru-RU",
+      "author": {
+        "@type": "Organization",
+        "@id": "{{SITE_BASE}}/#dobry-dom",
+        "name": "Добрый дом"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "{{SITE_BASE}}/#dobry-dom",
+        "name": "Добрый дом",
+        "url": "{{SITE_BASE}}/"
+      },
+      "mainEntity": {
+        "@id": "{{SITE_BASE}}/blog/privez-syna-v-vuz-kvartira-posutochno-ryadom-40-minut-peshkom/#faq"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "{{SITE_BASE}}/blog/privez-syna-v-vuz-kvartira-posutochno-ryadom-40-minut-peshkom/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Мы едем на две ночи. Стоит ли вообще заморачиваться с маршрутом?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Особенно стоит. На две ночи нет запасного дня. Одно опоздание — и переносить некуда."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Хозяин пишет «5 минут до университета». Верить?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Проверить. Откройте карту и постройте маршрут от адреса квартиры до адреса вашего корпуса. Тридцать секунд — и вопрос закрыт."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "А если нужный корпус только уточняется?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Тогда ориентируйтесь на приёмную комиссию и центр. Адреса приёма документов и расписание лучше смотреть на официальных страницах: порядок приёма документов ТюмГУ и информация ТИУ по заселению в общежитие."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Общежитие дадут — квартира не нужна?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Часто так и есть. Но заселение идёт волнами с 28 августа, и между приездом и ключом от комнаты иногда остаётся пара суток."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Можно продлить, если общежитие задержится?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Спрашивайте при бронировании, а не в последний вечер. Мы отвечаем по конкретным датам, наличие всегда подтверждаем отдельно."
+          }
+        }
+      ]
+    }
+  ]
+}

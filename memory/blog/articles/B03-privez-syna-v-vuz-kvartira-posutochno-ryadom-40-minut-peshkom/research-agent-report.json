@@ -1,0 +1,48 @@
+{
+  "topic_id": "B03",
+  "research_date": "2026-08-25",
+  "status": "PASS",
+  "summary": "Research notes for parent short-stay posutochno near Tyumen universities: verify walking route to specific campus before payment, not generic «ryadom s vuzom».",
+  "freshness_audit": {
+    "research_date": "2026-08-25",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://www.tyuiu.ru/vnimanie-zaselenie-v-obshhezhitie-informatsiya-dlya-pervokursnikov-i-ih-roditelej/",
+      "published_at": "2026-08-25",
+      "note": "Official TIU news for first-year dorm settlement from 28 Aug 2026; parent-facing; accessed live 2026-08-25 during pre-September window."
+    },
+    "secondary_signals": [
+      {
+        "url": "https://www.tumen.kp.ru/daily/277808/5291613/",
+        "type": "regional_news",
+        "accessed_at": "2026-08-25"
+      },
+      {
+        "url": "https://t.me/s/klyshin_A",
+        "type": "community_channel",
+        "accessed_at": "2026-08-25",
+        "note": "Scout rhythm lockpick; not factual source for Tyumen rental"
+      }
+    ]
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176"],
+    "p0_phrase": "квартиры посуточно тюмень",
+    "p0_volume": 5875,
+    "queries_probed": 4
+  },
+  "official_source_audit": {
+    "required": false,
+    "status": "PASS",
+    "verified_claims": 0,
+    "entities_checked": [],
+    "errors": [],
+    "note": "No bank/gov tariff claims; TIU/UTMN settlement facts from official university pages."
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  }
+}
