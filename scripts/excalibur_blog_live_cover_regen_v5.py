@@ -74,6 +74,25 @@ REGEN_V5_SLUGS: tuple[str, ...] = (
 
 META_BY_SLUG = {
     **META_BY_SLUG,
+    "posutochno-u-vuza-roditeli-s-pervokursnikom-na-3-nochi-ne-na-semestr": {
+        "topic_id": "LIVE-vuza-3nights",
+        "hook": "Приехали на 3 ночи к вузу",
+        "highlight": "3 ночи",
+        "sticky": "не на семестр",
+        "wordstat": ["посуточно у вуза", "Тюмень", "родители первокурсник"],
+        "cover_emotion": "усталость: 02:14, одна кровать, чемоданы в коридоре у вуза",
+        "cover_scene": (
+            "02:14 night in modest Tyumen rental near university: tired parents with first-year "
+            "student, one cramped double bed, suitcases and bags in narrow hallway, phone clock "
+            "02:14, budget stay NOT luxury hotel; bold Cyrillic hook; warm dim lamp, realistic."
+        ),
+        "motif_location": "modest Tyumen apartment hallway night 02:14 near university, not luxury",
+        "inline_scene_light": "dim night lamp, modest rental realism",
+        "motif_composition": "night arrival one-bed squeeze vs hallway luggage poster collage",
+        "motif_meme": "tiny tabby cat sticker bottom-left ≤10%",
+        "motif_props": "suitcases, single bed, hallway bags, phone 02:14",
+        "motif_joke": "cat judges cramped one-bed layout",
+    },
     "poprosili-foto-pasporta-pri-zaselenii-posutochno-chto-zakonno": {
         "topic_id": "LIVE-passport-foto",
         "hook": "Попросили фото паспорта при заселении",
