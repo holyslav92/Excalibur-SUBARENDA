@@ -52,6 +52,37 @@ def _hits(text: str) -> list[str]:
     return found
 
 
+# Telegram-cosplay / chopped 3-word line spam instead of dense CASE lead.
+CHOPPED_TIME_CITY_RE = re.compile(
+    r"^\s*\d{1,2}:\d{2}\.\s+\S+[.!]\s+\S+[.!]",
+    re.M,
+)
+
+
+def _is_chopped_lead(text: str) -> bool:
+    """True when opening is rubbled short lines instead of 1–2 dense case paragraphs."""
+    head = (text or "").strip()
+    if not head:
+        return False
+    lines = [ln.strip() for ln in re.split(r"[\n\r]+", head) if ln.strip()]
+    if len(lines) >= 6:
+        sample = lines[:12]
+        short = sum(1 for ln in sample if len(ln.split()) <= 4)
+        if short >= 5 and short / len(sample) >= 0.6:
+            return True
+    if CHOPPED_TIME_CITY_RE.search(head):
+        return True
+    # HTML: many tiny <p> one-liners in opening
+    paras = re.findall(r"<p[^>]*>(.*?)</p>", head, flags=re.I | re.S)
+    if len(paras) >= 6:
+        plain_paras = [_plain(p).strip() for p in paras[:12] if _plain(p).strip()]
+        if len(plain_paras) >= 6:
+            short_p = sum(1 for p in plain_paras if len(p.split()) <= 4)
+            if short_p >= 5 and short_p / len(plain_paras) >= 0.6:
+                return True
+    return False
+
+
 def check_article(article_dir: Path) -> dict[str, Any]:
     errors: list[str] = []
     orphan_lead = article_dir / "lead.md"
@@ -85,10 +116,14 @@ def check_article(article_dir: Path) -> dict[str, Any]:
         errors.append("article.meta.json missing")
 
     if html_path.is_file():
-        html = _plain(html_path.read_text(encoding="utf-8"))
+        raw_html = html_path.read_text(encoding="utf-8")
+        html = _plain(raw_html)
         head = html[:900]
+        raw_head = raw_html[:1400]
         for h in _hits(head):
             errors.append(f"article.html-head: {h}")
+        if _is_chopped_lead(head) or _is_chopped_lead(raw_head):
+            errors.append("article.html-head: chopped-lead (dense CASE paragraph required)")
         if STYK_API_RE.search(html):
             errors.append("article.html: api-calque-styk")
     else:

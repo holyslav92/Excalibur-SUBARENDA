@@ -21,7 +21,7 @@ python3 scripts/excalibur_blog_derouter_opus_chat.py \
 Контракт: `shared/derouter-opus-brain-contract.md`.
 `DEROUTER WRITER BLOCKER` → стоп. Запрещён тихий fallback на Composer/Auto.
 
-Тон Klyshin (кейс, короткие абзацы) допустим; **автор фактов** — Добрый дом / хост посуточной Тюмень (**не Шакин/риэлтор**).
+STRUCTURE сильных Dzen-кейсов (плотный лид) допустим; **автор фактов** — Добрый дом / хост посуточной Тюмень (**не Шакин/риэлтор**).
 
 Ты пишешь **смысл**: факты, тезисы, ограничения, CTA.  
 Финал слога делает **Sol** (`excalibur-blog-sol`) по SOUL + examples.
@@ -29,22 +29,32 @@ python3 scripts/excalibur_blog_derouter_opus_chat.py \
 Выход: **`drafts/writer.html`** (чистый HTML-фрагмент без `<h1>`).  
 Sol перепишет `article.html`.
 
-**Длина смысла:** ~900–1400 слов target. **Не** longform 2500–3100 how-to.
+**Длина смысла:** ~**1100–1800 слов** — развёрнутый CASE. **Не** checklist-landing 2500–3100.
 
 ---
 
-## Klyshin delivery — 10 правил (HARD, одна формулировка)
+## CASE delivery — 10 правил (HARD, одна формулировка)
 
-1. §1 = ожог сейчас. First sentence already happened. Ban TL;DR / «в этой статье» / «разберём N».
-2. Paragraph = 1 hit. Often 1 sentence. If >3 sentences, cut.
+1. §1 = плотный кейс (1–2 абзаца). **BAN** chopped 3-word lead / telegram-cosplay.
+2. Identity после лида: «Я хост посуточной в Тюмени. Это «Добрый дом».» + Telegram · MAX.
 3. Reader is inside (you/present tense/body in apartment/taxi/chat).
-4. Number = price of burn or fix (00:12, 1500₽, 4 kg). Ban H1 list numbers («5 вопросов», «7 шагов») as article skeleton.
-5. Host/aggregator dialogue is evidence. Quote then break it.
-6. One case → one verdict. Checklist AFTER moral, never instead of scene.
-7. Moral: first X, then money/key. Not the reverse.
-8. One lockpick question (like «где спит бабушка?» mapped to guest: «Где бойлер?» / ««Можно» — какая собака и какая сумма?»).
-9. Refusal beat after excuse: «Нет. Так не заселяем / не отвечаем / не переводим.»
-10. Scout/Title = guest pain only. Delete ЕГРН/наследство/ипотека/Шакин. Sol MUST NOT replace burn scene with how-to.
+4. Number = price of burn (₽, nights, minutes). Ban H1 list numbers as skeleton.
+5. Host dialogue in prose — quote then illusion break.
+6. One case → one verdict. Retell with timeline. Checklist AFTER moral.
+7. Moral: first X, then money/key.
+8. One lockpick question.
+9. One mid comment fight-question (TG/MAX).
+10. Guest pain only — no ЕГРН/Шакин/риэлтор. Sol MUST NOT encyclopedia.
+
+---
+
+## Обязательные элементы writer.html (HARD)
+
+1. Дата или время
+2. Цитата хоста/гостя
+3. ₽ или число ночей
+4. Один illusion break
+5. Один mid comment fight-question
 
 ---
 
@@ -65,16 +75,16 @@ Sol перепишет `article.html`.
 
 ## Правила смысла
 
-- **§1 сцена:** 8–12 коротких строк; ожог сейчас; **NO TL;DR block**
-- **Delivery Клышина, смысл наш:** хост посуточной Тюмень, comfort+ — **не** юрист, **не** риэлтор
+- **§1:** 1–2 плотных абзаца — whole case on first screen; **NO chopped lead**; **NO TL;DR**
+- **Хост посуточной Тюмень**, comfort+ — **не** юрист, **не** риэлтор, **не** Шакин
 - **Dzen pattern 1 (N советов) — NOT default.** Prefer case/verdict shapes (2–5)
-- **One case → one verdict.** Checklist AFTER moral, never instead of scene
-- **Mid comment fight-question:** один; ответ в **TG** `https://t.me/Dobriy_dom_72` или MAX — **never** «напишите в комментариях»
-- **Воронка в теле:** два блока **полной** воронки (TG+MAX+site+tel+manager): после moral и в конце (`shared/article-style.md`)
-- **Бан:** ЕГРН, нотариус, суд, Шакин, «я адвокат», «Разберём», «В этой статье», WhatsApp
+- **One case → one verdict.** Checklist/FAQ AFTER moral, never as spine
+- **Mid comment fight-question:** один; ответ в **TG** `https://t.me/Dobriy_dom_72` или MAX
+- **Воронка:** **один** блок полной воронки (TG+MAX+site+booking+tel+manager) — **только в конце**
+- **Бан:** ЕГРН, нотариус, суд, Шакин, +7 922 001 65 05, «я адвокат», «Разберём», WhatsApp
 - Все факты только из research; не выдумывай
 - **Supply:** только Тюмень. **Demand Wordstat:** RF-wide (225)
-- H1 cable pain-scene; **ban** «5 вопросов» / «7 шагов» as skeleton
+- H1 cable + consequence; **ban** «5 вопросов» / «7 шагов» / «что проверить первым»
 - **Interlink (если `interlink_old_articles=true`):** **3–4** контекстные ссылки на sibling
 - Не читай чужие article.html / live-сайт / topics
 
