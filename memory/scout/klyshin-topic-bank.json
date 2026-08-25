@@ -3,7 +3,13 @@
   "source_channel": "https://t.me/klyshin_A",
   "source_label": "Алексей Клышин — angle only (ритм delivery, не копировать сделки)",
   "tenant": "Добрый дом — посуточная аренда / субаренда Тюмень",
-  "updated_at": "2026-08-25",
+  "updated_at": "2026-08-25T09:05:00+05:00",
+  "last_scout_run": {
+    "date_yekt": "2026-08-25",
+    "topic_id": "B03",
+    "hook_id": "parents_sept_uni",
+    "handoff": ".cursor/excalibur-blog-handoff.md"
+  },
   "timezone": "Asia/Yekaterinburg",
   "algorithm": "klyshin_hook → wordstat_probe → rework_for_demand → final_P0_or_skip_after_rework",
   "angle_rotation": {
@@ -75,7 +81,17 @@
       "dzen_pattern_prefer": [2, 5],
       "anti_dup": ["годовая аренда", "early_checkin"],
       "tyumen_localize": true,
-      "status": "queue_active"
+      "status": "handoff_B03",
+      "last_seen": "2026-08-25",
+      "wordstat_rework_log": "probe «аренда квартиры на несколько дней» API empty → probe «квартира посуточно рядом с вузом» API empty → probe «снять квартиру на сутки тюмень» 391 → probe «снять квартиру посуточно в тюмени» 1902 → final P0 «квартиры посуточно тюмень» 5875",
+      "final_p0": {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 5875,
+        "regions": ["55", "11176"],
+        "compare_ru_phrase": "квартира посуточно",
+        "compare_ru_volume": 1271992
+      },
+      "used_in_articles": ["B03"]
     },
     {
       "id": "sept_business_trip",
