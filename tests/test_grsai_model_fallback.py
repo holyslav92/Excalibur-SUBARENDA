@@ -21,7 +21,9 @@ from excalibur_blog_grsai_gpt_image2_api import (  # noqa: E402
     PRIMARY_MODEL_ID,
     VIP_FALLBACK_MODEL_ID,
     create_draw_payload,
+    economy_skip_primary,
     ensure_2k_canvas,
+    generate_image_vip_economy,
     generate_image_with_model_fallback,
     is_2k_request_rejected,
     primary_model,
@@ -198,6 +200,41 @@ class GrsaiModelFallbackTests(unittest.TestCase):
         self.assertEqual(ctx.exception.native_size, (1672, 941))
         self.assertLess(1672, NATIVE_2K_CLASS_MIN_LONG_SIDE)
         self.assertLess(1672, MIN_LONG_SIDE_2K)
+
+    def test_economy_skip_primary_16_9(self) -> None:
+        with patch.dict(
+            os.environ,
+            {"GRSAI_VIP_ECONOMY": "1", "GRSAI_FORBID_VIP": ""},
+            clear=False,
+        ):
+            os.environ.pop("GRSAI_FORBID_VIP", None)
+            self.assertTrue(economy_skip_primary({"aspect_ratio": "16:9"}))
+            self.assertFalse(economy_skip_primary({"aspect_ratio": "1:1"}))
+
+    def test_vip_economy_single_call(self) -> None:
+        calls: list[str] = []
+
+        def fake_generate(*, model: str, **kwargs):  # noqa: ANN003
+            calls.append(model)
+            return _png_bytes(2048, 1152), {"host": "grsaiapi.com", "model": model, "delivery": "native_2k"}
+
+        with patch.dict(os.environ, {"GRSAI_VIP_ECONOMY": "1"}, clear=False):
+            with patch(
+                "excalibur_blog_grsai_gpt_image2_api.generate_image",
+                side_effect=fake_generate,
+            ):
+                _data, meta = generate_image_vip_economy(
+                    image_input={"prompt": "probe", "aspect_ratio": "16:9"},
+                    api_key="test-key",
+                    quality="high",
+                    poll_interval=1,
+                    max_wait=10,
+                    timeout=5,
+                )
+        self.assertEqual(calls, [VIP_FALLBACK_MODEL_ID])
+        self.assertEqual(meta["model_succeeded"], VIP_FALLBACK_MODEL_ID)
+        self.assertTrue(meta["used_vip_fallback"])
+        self.assertEqual(meta["vip_trigger"], "economy_skip_primary_16_9")
 
 
 if __name__ == "__main__":

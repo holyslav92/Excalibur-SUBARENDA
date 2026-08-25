@@ -233,6 +233,7 @@ def make_dzen_thumb(data: bytes) -> bytes:
 
 TARGET_COVER_SHIP = (2048, 1152)
 PANEL_NATIVE = (1024, 576)
+MIN_COVER_NATIVE_LONG = PANEL_NATIVE[0]  # native cover panel from 2K VIP split
 
 
 def upscale_cover_for_ship(adir: Path) -> None:
@@ -242,11 +243,19 @@ def upscale_cover_for_ship(adir: Path) -> None:
     if not cover_path.is_file():
         return
     with Image.open(cover_path) as img:
-        if max(img.size) >= TARGET_COVER_SHIP[0]:
+        w, h = img.size
+        long_side = max(w, h)
+        if long_side >= TARGET_COVER_SHIP[0]:
             return
-        up = img.resize(TARGET_COVER_SHIP, Image.Resampling.LANCZOS)
-        up.save(cover_path)
-    print(f"OK cover upscaled to {TARGET_COVER_SHIP[0]}x{TARGET_COVER_SHIP[1]}", flush=True)
+        if long_side >= MIN_COVER_NATIVE_LONG:
+            print(
+                f"OK cover ship native {w}x{h} (VIP 2K split, no Lanczos upscale)",
+                flush=True,
+            )
+            return
+        raise RuntimeError(
+            f"BLOCKER cover undersized {w}x{h} — regen with VIP native 2048×1152 canvas"
+        )
 
 
 def _generate_and_apply_canvas(

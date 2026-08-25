@@ -122,9 +122,23 @@ def resolve_path(root: Path, article_dir_arg: str, path_arg: str) -> Path:
 
 
 def forbid_vip() -> bool:
-    """Запрет vip tier: только primary, при ~1672 — ship native после 2 попыток."""
+    """Опциональный запрет vip (GRSAI_FORBID_VIP=1); по умолчанию vip разрешён."""
     raw = str(os.environ.get("GRSAI_FORBID_VIP", "")).strip().casefold()
     return raw in {"1", "true", "yes", "on"}
+
+
+def vip_economy_enabled() -> bool:
+    """Экономия: для 16:9 quad сразу один vip (primary ~1672 не даёт native 2K)."""
+    raw = str(os.environ.get("GRSAI_VIP_ECONOMY", "1")).strip().casefold()
+    return raw not in {"0", "false", "no", "off"}
+
+
+def economy_skip_primary(image_input: dict[str, Any]) -> bool:
+    """16:9 non-vip не отдаёт native 2048×1152 — пропускаем бесполезный primary."""
+    if not vip_economy_enabled() or forbid_vip():
+        return False
+    aspect = str(image_input.get("aspect_ratio") or DEFAULT_ASPECT_RATIO).strip()
+    return aspect == DEFAULT_ASPECT_RATIO
 
 
 def primary_model() -> str:
@@ -815,6 +829,41 @@ def generate_image_with_model_fallback(
         raise GrsaiApiError(f"Grsai failed primary and vip: {failures}") from exc
 
 
+def generate_image_vip_economy(
+    *,
+    image_input: dict[str, Any],
+    api_key: str,
+    quality: str,
+    poll_interval: int,
+    max_wait: int,
+    timeout: int,
+    root: Path | None = None,
+) -> tuple[bytes, dict[str, Any]]:
+    """Один vip на sheet для 16:9 — без лишнего primary (~1672), дешевле чем auto×2."""
+    primary = primary_model()
+    vip_model = vip_fallback_model(primary)
+    image_bytes, meta = generate_image(
+        image_input=image_input,
+        api_key=api_key,
+        model=vip_model,
+        quality=quality,
+        poll_interval=poll_interval,
+        max_wait=max_wait,
+        timeout=timeout,
+        root=root,
+    )
+    meta["model_primary"] = primary
+    meta["model_succeeded"] = vip_model
+    meta["used_vip_fallback"] = True
+    meta["vip_trigger"] = "economy_skip_primary_16_9"
+    print(
+        f"OK Grsai model={vip_model} host={meta.get('host')} "
+        f"(vip economy 16:9, skip primary)",
+        flush=True,
+    )
+    return image_bytes, meta
+
+
 def run_kie_fallback(*, root: Path, article_dir: Path, batch: str, result: str) -> int:
     kie_script = root / "scripts" / "excalibur_blog_kie_gpt_image2_api.py"
     cmd = [
@@ -927,6 +976,8 @@ def main() -> int:
             print(f"OK Grsai model={model} host={meta.get('host')} (tier=primary)", flush=True)
         elif forbid_vip():
             image_bytes, meta = generate_image_primary_no_vip(**gen_kwargs)
+        elif economy_skip_primary(image_input):
+            image_bytes, meta = generate_image_vip_economy(**gen_kwargs)
         else:
             image_bytes, meta = generate_image_with_model_fallback(**gen_kwargs)
         model = str(meta.get("model_succeeded") or model)
