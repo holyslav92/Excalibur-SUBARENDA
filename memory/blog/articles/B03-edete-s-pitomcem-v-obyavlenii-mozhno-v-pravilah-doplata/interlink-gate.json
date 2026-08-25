@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "topic_id": "B03",
+  "slug": "edete-s-pitomcem-v-obyavlenii-mozhno-v-pravilah-doplata",
+  "candidates_count": 6,
+  "outbound_found": [
+    {
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "title": "beskontaktnoe-zaselenie-posutochno-tyumen"
+    },
+    {
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "title": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem"
+    },
+    {
+      "slug": "skrytye-doplaty-pri-arende-kvartiry-kak-ne-pereplatit",
+      "title": "Скрытые доплаты при аренде квартиры: как не переплатить"
+    }
+  ],
+  "outbound_required_min": 1,
+  "errors": []
+}
