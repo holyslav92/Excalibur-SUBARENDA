@@ -77,6 +77,9 @@ python3 scripts/excalibur_blog_wp_publish.py \
    прогон `scripts/excalibur_blog_wp_intermediate_refresh.py` (или live regen upload,
    который вызывает его автоматически), затем `scripts/excalibur_blog_live_dzen_bump.py`
    для `post_modified_gmt` в 7-дневном окне Дзена.
+6c. **Dzen RSS directives:** publish выставляет yzen post meta (`native-yes`, `evergreen`,
+   `index`) и деплоит MU-plugin `factory/wp-mu-plugins/excalibur-dzen-rss.php` (одна
+   enclosure, `format-article`, без `native-no`). Канон: `shared/dzen-rss-contract.md`.
 7. Post meta `_excalibur_blog_schema_jsonld` — JSON-LD для `single.php`
 8. Post meta `_excalibur_blog_skip_theme_faq` = `1` — сигнал теме **не** добавлять глобальный FAQ-блок
 9. После publish — `llms.txt` + `llms-full.txt` в корень WP (`--deploy-llms` или `tenant-config.publish_options.deploy_llms_after_publish=true`)
