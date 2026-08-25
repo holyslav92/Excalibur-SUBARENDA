@@ -8,7 +8,7 @@ description: Excalibur BLOG Indexer — llms.txt for AI crawlers; no article.htm
 ```bash
 python3 scripts/excalibur_blog_llms_generator.py \
   --blog-dir memory/blog/articles \
-  --blog-path / \
+  --blog-path /blog/ \
   --out-dir memory/blog
 ```
 
