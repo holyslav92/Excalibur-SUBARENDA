@@ -385,13 +385,28 @@ def split_canvas(
                     _inline_logo_files = resolve_inline_logo_slots(_article_dir, _cfg)
                     _out_name = "cover.png" if slot_key == "cover" else INLINE_FILES[slot_key]
                     _paste = slot_key == "cover" or _out_name in _inline_logo_files
+                    _forbid_phone_pill = False
+                    _tenant_path = _root / "shared" / "tenant-config.json"
+                    if _tenant_path.is_file():
+                        try:
+                            _tc = json.loads(_tenant_path.read_text(encoding="utf-8"))
+                            _forbid_phone_pill = bool(
+                                (_tc.get("logo_composite") or {}).get(
+                                    "forbid_cover_phone_post_composite_pill"
+                                )
+                                or (_tc.get("image_generation") or {}).get(
+                                    "forbid_cover_phone_post_composite_pill"
+                                )
+                            )
+                        except json.JSONDecodeError:
+                            _forbid_phone_pill = False
                     composite_logo_onto_image(
                         out_path,
                         _logo,
                         max_width_fraction=float(_cfg.get("max_width_fraction") or 0.10),
                         margin_px=int(_cfg.get("margin_px") or 20),
                         phone_display=str(_cfg.get("phone_display") or ""),
-                        add_phone=(slot_key == "cover"),
+                        add_phone=(slot_key == "cover" and not _forbid_phone_pill),
                         adaptive_corner=False,
                         fixed_corner=str(_cfg.get("logo_corner") or "top_right"),
                         paste_logo=_paste,
