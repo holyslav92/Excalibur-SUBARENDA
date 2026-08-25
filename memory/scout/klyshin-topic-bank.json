@@ -1,16 +1,33 @@
 {
-  "bank_id": "klyshin_topic_bank_subarenda_v2",
+  "bank_id": "klyshin_topic_bank_subarenda_v3",
   "source_channel": "https://t.me/klyshin_A",
   "source_label": "Алексей Клышин — angle only (ритм delivery, не копировать сделки)",
   "tenant": "Добрый дом — посуточная аренда / субаренда Тюмень",
   "updated_at": "2026-08-25",
+  "timezone": "Asia/Yekaterinburg",
   "algorithm": "klyshin_hook → wordstat_probe → rework_for_demand → final_P0_or_skip_after_rework",
   "angle_rotation": {
     "last_n": 3,
     "burn_at_door_family": ["код", "бесконтакт", "заселение у двери", "оплатил — дверь"],
-    "rule": "skip if last N articles same family without new angle"
+    "skip_last5_family": ["hot water", "hot_water_boiler", "neighbors", "neighbors_night", "extra fees", "hidden_fees", "dog", "dog_breed_fee", "passport", "паспорт"],
+    "skip_used": ["early_checkin", "early check-in"],
+    "rule": "skip saturated families; near-term queue overrides seed bank"
   },
   "dzen_default": "pattern 1 (N советов) is NOT default — prefer 2-5",
+  "p0_queue": {
+    "range_yekt": "2026-08-26 — 2026-09-10",
+    "slots": [
+      {"window_yekt": "2026-08-26 — 2026-08-28", "queue_num": 1, "hook_id": "parents_sept_uni"},
+      {"window_yekt": "2026-08-29 — 2026-08-31", "queue_num": 2, "hook_id": "sept_business_trip"},
+      {"window_yekt": "2026-09-01 — 2026-09-03", "queue_num": 5, "hook_id": "reviews_not_rating"},
+      {"window_yekt": "2026-09-04 — 2026-09-07", "queue_num": 4, "hook_id": "parking_before_booking"},
+      {"window_yekt": "2026-09-08 — 2026-09-10", "queue_num": 3, "hook_id": "kitchen_vs_hotel_cafes"},
+      {"window_yekt": "2026-09-08 — 2026-09-10", "queue_num": 6, "hook_id": "pack_vs_flat"},
+      {"window_yekt": "2026-09-08 — 2026-09-10", "queue_num": 8, "hook_id": "checkout_train_bags"},
+      {"window_yekt": "2026-09-08 — 2026-09-10", "queue_num": 7, "hook_id": "quiet_center_maps"}
+    ],
+    "note": "Scout picks hook matching today YEKT window; 08-10.09 batch runs 3→6→8→7 if prior slots done"
+  },
   "wordstat_gate": {
     "provider": "mcp-kv",
     "regions": ["55", "11176"],
@@ -20,143 +37,141 @@
       "посуточно",
       "залог",
       "заселение",
-      "ранний заезд",
       "уборка",
-      "жкх",
-      "соседи",
-      "животные",
-      "предоплата",
-      "отмена брони",
-      "посуточно или отель",
       "парковка",
       "вайфай",
-      "бойлер",
-      "ключница",
       "командировка",
-      "тюмень"
+      "студент",
+      "вуз",
+      "отзывы",
+      "кухня",
+      "выезд",
+      "багаж",
+      "тюмень",
+      "бронирование"
     ],
     "forbidden_rework": [
       "егрн",
       "наследство",
       "ипотека",
-      "новостройка",
+      "новostройка",
       "маткапитал",
       "аванс",
       "нотариус",
-      "банкротство"
+      "банкротство",
+      "риэлтор"
     ],
-    "handoff_log_fields": ["klyshin_hook", "wordstat_rework", "wordstat"]
+    "handoff_log_fields": ["klyshin_hook", "wordstat_rework", "wordstat", "queue_slot"]
   },
   "localize_rule": "Facts and city = Тюмень, «Добрый дом», посуточная аренда. Не копировать Moscow/Dubai P0.",
   "hooks": [
     {
-      "id": "hot_water_boiler",
-      "hook_ru": "23:40 код есть — из крана льёт холодное",
-      "angle": "«утром будет» — сначала бойлер, потом сообщение",
-      "klyshin_signal": "Refusal beat + lockpick «Где бойлер?»",
-      "wordstat_probes": ["горячая вода квартира", "бойлер не работает", "аренда квартиры посуточно"],
+      "id": "parents_sept_uni",
+      "queue_num": 1,
+      "hook_ru": "Привёз сына в вуз. Три ночи. В объявлении — «рядом с вузом».",
+      "angle": "2–4 ночи на оформление, не годовая аренда; что проверить кроме «рядом»",
+      "klyshin_signal": "§1 = ожог сейчас; lockpick: сколько минут пешком до корпуса?",
+      "wordstat_probes": ["квартира посуточно тюмень", "аренда квартиры на несколько дней", "снять квартиру на сутки тюмень"],
+      "dzen_pattern_prefer": [2, 5],
+      "anti_dup": ["годовая аренда", "early_checkin"],
+      "tyumen_localize": true,
+      "status": "queue_active"
+    },
+    {
+      "id": "sept_business_trip",
+      "queue_num": 2,
+      "hook_ru": "Звонок в 10:00. Заселился в 22:00.",
+      "angle": "стол, розетки, реальный Wi‑Fi, закрывающие — до оплаты",
+      "klyshin_signal": "reader inside; moral: сначала созвон/доки, потом ключ",
+      "wordstat_probes": ["командировка тюмень квартира", "аренда квартиры посуточно", "квартира посуточно тюмень"],
       "dzen_pattern_prefer": [2, 3],
       "tyumen_localize": true,
-      "status": "seed"
+      "status": "queue_active"
     },
     {
-      "id": "neighbors_night",
-      "hook_ru": "02:40 ладонь в дверь — «я полицию»",
-      "angle": "звук в ноль, хост в чат — не бой через дверь",
-      "wordstat_probes": ["шум соседей аренда", "соседи аренда квартиры", "правила проживания аренда"],
+      "id": "kitchen_vs_hotel_cafes",
+      "queue_num": 3,
+      "hook_ru": "Три ночи. Кухня «есть» — или каждый день кафе?",
+      "angle": "контраст+цифра: кухня vs отель+кафе; NOT hidden_fees duplicate",
+      "klyshin_signal": "verdict in lead; number = price of burn",
+      "wordstat_probes": ["посуточно или отель", "квартира с кухней посуточно", "аренда квартиры посуточно"],
+      "dzen_pattern_prefer": [4, 2],
+      "anti_dup": ["hidden_fees", "скрытые доплаты", "доплата на месте"],
+      "tyumen_localize": true,
+      "status": "queue_active"
+    },
+    {
+      "id": "parking_before_booking",
+      "queue_num": 4,
+      "hook_ru": "«Парковка рядом» — шлагбаум не пускает",
+      "angle": "место, пропуск, номер — до брони, не у барьера",
+      "klyshin_signal": "lockpick: «Где именно место и как въезд?»",
+      "wordstat_probes": ["парковка аренда квартиры", "аренда квартиры посуточно тюмень", "квартира посуточно"],
+      "dzen_pattern_prefer": [3, 2],
+      "tyumen_localize": true,
+      "status": "queue_active"
+    },
+    {
+      "id": "reviews_not_rating",
+      "queue_num": 5,
+      "hook_ru": "4.8 — и два одинаковых «всё супер»",
+      "angle": "не звёзды: повторы, свежесть, Sutochno/Avito guest angle",
+      "klyshin_signal": "quote review → break; refusal: «Нет. Так не выбираем.»",
+      "wordstat_probes": ["отзывы аренда квартиры", "суточно отзывы", "аренда квартиры посуточно отзывы"],
       "dzen_pattern_prefer": [2, 3],
       "tyumen_localize": true,
-      "status": "seed"
+      "status": "queue_active"
     },
     {
-      "id": "dog_breed_fee",
-      "hook_ru": "в чате «можно» — у двери «не пустим»",
-      "angle": "сначала порода/вес/доплата в чате, потом перевод",
-      "wordstat_probes": ["можно с собакой аренда квартиры", "аренда с животными", "квартира посуточно с собакой"],
-      "dzen_pattern_prefer": [2, 4],
+      "id": "pack_vs_flat",
+      "queue_num": 6,
+      "hook_ru": "Собрал чемодан — в квартире нет полотенец",
+      "angle": "что везти vs что обязано быть в объявлении",
+      "klyshin_signal": "checklist AFTER moral",
+      "wordstat_probes": ["что нужно для аренды квартиры", "квартира посуточно", "аренда квартиры посуточно"],
+      "dzen_pattern_prefer": [2, 5],
       "tyumen_localize": true,
-      "status": "seed"
+      "status": "queue_active"
     },
     {
-      "id": "deposit_cleaning",
-      "hook_ru": "уборка перед выездом — залог вернут?",
-      "angle": "один кейс → один вердикт; чеклист после морали",
-      "wordstat_probes": ["уборка квартиры перед выездом", "залог при аренде квартиры", "аренда квартиры посуточно тюмень"],
+      "id": "quiet_center_maps",
+      "queue_num": 7,
+      "hook_ru": "«Тихий центр» — за окном стройка",
+      "angle": "7 минут в Картах/панорамах — не слова хоста",
+      "klyshin_signal": "reader inside; number = 7 min walk",
+      "wordstat_probes": ["аренда квартиры тюмень центр", "квартира посуточно тюмень", "снять квартиру посуточно"],
+      "dzen_pattern_prefer": [5, 2],
+      "tyumen_localize": true,
+      "status": "queue_active"
+    },
+    {
+      "id": "checkout_train_bags",
+      "queue_num": 8,
+      "hook_ru": "Выезд в 12:00. Поезд в 16:30.",
+      "angle": "куда чемоданы; NOT early check-in (already used)",
+      "klyshin_signal": "moral: сначала багаж/хранение, потом ключ",
+      "wordstat_probes": ["поздний выезд аренда", "хранение багажа", "аренда квартиры посуточно"],
       "dzen_pattern_prefer": [2, 3],
+      "anti_dup": ["early_checkin", "ранний заезд"],
       "tyumen_localize": true,
-      "status": "seed"
-    },
-    {
-      "id": "hidden_fees",
-      "hook_ru": "«всё включено» — на месте доплата 1500 ₽",
-      "angle": "диалог хоста как доказательство; quote then break",
-      "wordstat_probes": ["скрытые доплаты аренда квартиры", "что входит в аренду квартиры", "аренда квартиры посуточно"],
-      "dzen_pattern_prefer": [2, 3],
-      "tyumen_localize": true,
-      "status": "seed"
-    },
-    {
-      "id": "early_checkin",
-      "hook_ru": "ранний заезд — код ещё не живой",
-      "angle": "сначала время/ключ, потом деньги",
-      "wordstat_probes": ["ранний заезд аренда", "заселение в квартиру", "аренда квартиры на сутки"],
-      "dzen_pattern_prefer": [3, 4],
-      "tyumen_localize": true,
-      "status": "seed"
-    },
-    {
-      "id": "cancel_prepay",
-      "hook_ru": "отмена брони — предоплата сгорела",
-      "angle": "отказ после отговорки: «Нет. Так не переводим.»",
-      "wordstat_probes": ["отмена брони квартиры", "предоплата аренда", "бронирование квартиры отмена"],
-      "dzen_pattern_prefer": [2, 3],
-      "tyumen_localize": true,
-      "status": "seed"
-    },
-    {
-      "id": "hotel_vs_daily",
-      "hook_ru": "две ночи — посуточно или отель",
-      "angle": "вердикт в лиде, цифра = цена ожога",
-      "wordstat_probes": ["квартира посуточно или отель", "аренда квартиры посуточно", "командировка тюмень квартира"],
-      "dzen_pattern_prefer": [4, 5],
-      "tyumen_localize": true,
-      "status": "seed"
-    },
-    {
-      "id": "parking_keybox",
-      "hook_ru": "парковка «рядом» / ключница пустая",
-      "angle": "lockpick: «Где именно место?» до оплаты",
-      "wordstat_probes": ["парковка аренда квартиры", "ключница заселение", "аренда квартиры посуточно тюмень"],
-      "dzen_pattern_prefer": [3, 5],
-      "tyumen_localize": true,
-      "status": "seed"
-    },
-    {
-      "id": "wifi_boiler_check",
-      "hook_ru": "вайфай «есть» — в спальне не ловит",
-      "angle": "§1 = ожог сейчас; reader inside apartment",
-      "wordstat_probes": ["аренда квартиры с wifi", "интернет в арендованной квартире", "квартира посуточно"],
-      "dzen_pattern_prefer": [2, 3],
-      "tyumen_localize": true,
-      "status": "seed"
-    },
-    {
-      "id": "utilities_jkh",
-      "hook_ru": "ЖКХ «включено» — счётчик на выезде",
-      "angle": "moral: сначала показания, потом залог",
-      "wordstat_probes": ["жкх аренда квартиры", "коммунальные платежи аренда", "показания счетчиков аренда"],
-      "dzen_pattern_prefer": [2, 3],
-      "tyumen_localize": true,
-      "status": "seed"
-    },
-    {
-      "id": "sublease_risk",
-      "hook_ru": "субаренда — кто открывает при конфликте",
-      "angle": "guest pain only; один кейс → один вердикт",
-      "wordstat_probes": ["субаренда квартиры", "субаренда квартиры тюмень", "аренда квартиры без посредников"],
-      "dzen_pattern_prefer": [2, 3],
-      "tyumen_localize": true,
-      "status": "seed"
+      "status": "queue_active"
     }
-  ]
+  ],
+  "parked_hooks": {
+    "reason": "saturated last-5 + burn-at-door; restore after queue 2026-09-10",
+    "ids": [
+      "hot_water_boiler",
+      "neighbors_night",
+      "dog_breed_fee",
+      "hidden_fees",
+      "early_checkin",
+      "deposit_cleaning",
+      "cancel_prepay",
+      "hotel_vs_daily",
+      "parking_keybox",
+      "wifi_boiler_check",
+      "utilities_jkh",
+      "sublease_risk"
+    ]
+  }
 }
