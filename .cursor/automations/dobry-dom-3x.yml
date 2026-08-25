@@ -71,7 +71,7 @@ cover:
 brain_and_images:
   prose: scripts/excalibur_blog_derouter_opus_chat.py
   images: scripts/excalibur_blog_grsai_gpt_image2_api.py
-  image_models: "Grsai primary tier + one vip retry per sheet (see shared/grsai-gpt-image-api-contract.md)"
+  image_models: "Grsai PRIMARY_MODEL_ID only, vip disabled (see shared/grsai-gpt-image-api-contract.md)"
   forbid:
     - flux2-pro-*
     - seedream
@@ -107,7 +107,7 @@ instructions: |
   Scout: dual gate Klyshin × MCP-KV wordstat_* only (Tyumen 55+11176).
   Writer = meaning (drafts/writer.html). Sol = tenant voice (shared/SOUL.md).
   Cover: logo lockup on ALL 8 images (cover + 7 utility inlines); warm hospitality; no Shakin face.
-  Images: Grsai draw API (contract shared/grsai-gpt-image-api-contract.md; primary + one vip retry/sheet, 2K quad). Prose stays Derouter. No Flux/Seedream/nano_banana.
+  Images: Grsai draw API (contract shared/grsai-gpt-image-api-contract.md; PRIMARY_MODEL_ID only, vip disabled, 2K quad). Prose stays Derouter. No Flux/Seedream/nano_banana.
 
   Publish target ONLY добрыйдом-72.рф via FTP passive (vh368.timeweb.ru, port 21,
   root sublease/public_html). Publish ONLY when Cloud Secrets have FTP_* + EXCALIBUR_BLOG_ALLOW_PUBLISH=yes.

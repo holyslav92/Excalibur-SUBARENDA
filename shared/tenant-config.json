@@ -33,8 +33,8 @@
     "provider": "grsai",
     "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
     "model_primary": "gpt-image-\u0032",
-    "model_vip_fallback": "gpt-image-\u0032-vip",
-    "model_policy": "primary_2k_first_vip_on_2k_fail_or_api_fail",
+    "model_policy": "gpt_image_2_only_vip_disabled",
+    "vip_disabled": true,
     "min_long_side_px": 2048,
     "target_canvas": "2048x1152",
     "resolution": "2K",
@@ -291,8 +291,8 @@
     "probe_script": "scripts/excalibur_blog_grsai_base_probe.py",
     "contract": "shared/grsai-gpt-image-api-contract.md",
     "model_primary": "gpt-image-\u0032",
-    "model_vip_fallback": "gpt-image-\u0032-vip",
-    "model_policy": "primary_2k_first_vip_on_2k_fail_or_api_fail",
+    "model_policy": "gpt_image_2_only_vip_disabled",
+    "vip_disabled": true,
     "min_long_side_px": 2048,
     "model_env": "GRSAI_IMAGE_MODEL",
     "api_key_env": "GRSAI_API_KEY",
@@ -308,7 +308,7 @@
     "default_quality": "high",
     "default_size": "2048x1152",
     "min_long_side_px": 2048,
-    "note": "non-vip: aspectRatio+resolution=2K; vip: size 2048x1152; ship long_side>=2048"
+    "note": "gpt-image-\u0032 only; vip permanently disabled; aspectRatio+resolution=2K; ship native undersized if retry fails"
   },
   "interlink_old_articles": true,
   "style_files": {
@@ -318,7 +318,7 @@
   },
   "cover_wow_rules": {
     "status": "slim",
-    "philosophy": "top-100 meme energy ON TOPIC + comfort+ brand; logo factory alpha PNG overlay AFTER gen only — NEVER Grsai reference; phone IN scene (tape/paper/magnet) — NEVER post-composite pill; no plate; no WP UI; max-2 gen + vip fallback",
+    "philosophy": "top-100 meme energy ON TOPIC + comfort+ brand; logo factory alpha PNG overlay AFTER gen only — NEVER Grsai reference; phone IN scene (tape/paper/magnet) — NEVER post-composite pill; no plate; no WP UI; max-2 gen; vip disabled",
     "logo_mode": "brand_logo_paste",
     "forbid_logo_reference_in_generation": true,
     "cover_phone_in_scene_generation": true,

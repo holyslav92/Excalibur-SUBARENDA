@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
-"""Генерация quad-canvas через Grsai draw API (primary → vip fallback).
+"""Генерация quad-canvas через Grsai draw API (PRIMARY_MODEL_ID only, vip disabled).
 
 Читает cover/quad-mcp-batch.json, POST /v1/draw/completions + poll /v1/draw/result,
 проверяет ≥2K (длинная сторона ≥2048), пишет cover/quad-mcp-result.json для quad_apply.
 
-Модель: всегда non-vip primary tier первой; ровно одна vip-попытка на sheet если:
-  1) primary не может отдать ≥2K (отказ API size/aspect, undersized, fail 2K request);
-  2) secondary — hard API fail после host retries.
-Никогда не стартовать с vip; не жечь retry non-vip на quality/size.
+Модель: только PRIMARY_MODEL_ID; любые *-vip запрещены навсегда.
+При undersized (~1672×941): одна доп. попытка тем же non-vip (другой host / explicit size).
+Если после ретрая всё ещё undersized — отгружаем native non-vip кадр (vip_disabled, native WxH).
 
 Auth: GRSAI_API_KEY только из env (Cloud Secrets). Ключ не печатать и не коммитить.
 """
@@ -43,7 +42,7 @@ PRIMARY_BASE = "https://grsaiapi.com"
 FALLBACK_BASE = "https://grsai.dakka.com.cn"
 TARGET_CANVAS_SIZE = (2048, 1152)
 MIN_LONG_SIDE_2K = 2048
-# Апскейл только если native уже «2K-class» (близко к 2K); ~1672×941 → vip, не upscale.
+# Апскейл только если native уже «2K-class» (близко к 2K); ~1672×941 → ship native, не upscale.
 NATIVE_2K_CLASS_MIN_LONG_SIDE = 1920
 DEFAULT_ASPECT_RATIO = "16:9"
 DEFAULT_RESOLUTION = "2K"
@@ -62,7 +61,8 @@ DEFAULT_TIMEOUT = 120
 DRAW_COMPLETIONS_PATH = "/v1/draw/completions"
 DRAW_RESULT_PATH = "/v1/draw/result"
 PRIMARY_MODEL_ID = "".join(("gpt", "-image-", "2"))  # pragma: allowlist secret
-VIP_FALLBACK_MODEL_ID = "".join(("gpt", "-image-", "2", "-vip"))  # pragma: allowlist secret
+# VIP навсегда отключён — не вызывать, не POST, не эскалировать.
+VIP_DISABLED = True
 
 
 def grsai_base_image_model() -> str:
@@ -73,6 +73,14 @@ def grsai_base_image_model() -> str:
 def is_vip_model(model: str) -> bool:
     lower = str(model or "").strip().casefold()
     return lower.endswith("-vip") or "-vip-" in lower or lower.endswith("-vip-4k")
+
+
+def assert_non_vip_model(model: str) -> None:
+    """Запрет любых *-vip моделей — навсегда."""
+    if is_vip_model(model):
+        raise GrsaiApiError(
+            f"FORBIDDEN vip model {model}; vip_disabled forever — use {PRIMARY_MODEL_ID} only"
+        )
 
 
 class GrsaiApiError(RuntimeError):
@@ -88,10 +96,17 @@ class GrsaiRetryable(GrsaiApiError):
 
 
 class Grsai2KNotMetError(GrsaiApiError):
-    """Non-vip не отдал ≥2K — немедленный vip без retry primary на quality/size."""
+    """Non-vip не отдал ≥2K — можно explicit-size retry или ship native."""
 
-    def __init__(self, message: str, *, native_size: tuple[int, int] | None = None) -> None:
+    def __init__(
+        self,
+        message: str,
+        *,
+        native_size: tuple[int, int] | None = None,
+        image_bytes: bytes | None = None,
+    ) -> None:
         self.native_size = native_size
+        self.image_bytes = image_bytes
         super().__init__(message)
 
 
@@ -122,22 +137,17 @@ def resolve_path(root: Path, article_dir_arg: str, path_arg: str) -> Path:
 
 
 def primary_model() -> str:
-    """Первая модель на каждый canvas; vip через GRSAI_IMAGE_MODEL запрещён."""
+    """Единственная модель на каждый canvas; vip через GRSAI_IMAGE_MODEL запрещён."""
     model = os.environ.get(DEFAULT_MODEL_ENV, "").strip() or grsai_base_image_model()
-    if is_vip_model(model):
-        raise GrsaiApiError(
-            f"FORBIDDEN start model {model}; unset GRSAI_IMAGE_MODEL or use primary tier "
-            "(vip allowed only as one automatic fallback per sheet)"
-        )
+    assert_non_vip_model(model)
     return model
 
 
 def vip_fallback_model(primary: str | None = None) -> str:
-    """Ровно одна vip-попытка на sheet после провала primary."""
-    primary = (primary or primary_model()).strip()
-    if primary == PRIMARY_MODEL_ID:
-        return VIP_FALLBACK_MODEL_ID
-    return f"{primary}-vip"
+    """VIP отключён навсегда — вызов запрещён."""
+    raise GrsaiApiError(
+        "vip_disabled: *-vip permanently disabled; use PRIMARY_MODEL_ID only"
+    )
 
 
 def default_model() -> str:
@@ -396,15 +406,17 @@ def create_draw_payload(
     quality: str,
     resolution: str = DEFAULT_RESOLUTION,
     images: list[str] | None = None,
+    explicit_size: bool = False,
 ) -> dict[str, Any]:
+    assert_non_vip_model(model)
     payload: dict[str, Any] = {
         "model": model,
         "prompt": prompt,
         "quality": quality,
         "webHook": "-1",
     }
-    if is_vip_model(model):
-        # vip tier: native pixel size 2048×1152 (aspectRatio rejected by API)
+    if explicit_size:
+        # non-vip retry: явный pixel size 2048×1152
         payload["size"] = f"{TARGET_CANVAS_SIZE[0]}x{TARGET_CANVAS_SIZE[1]}"
     else:
         # non-vip: явный 2K request (aspectRatio + resolution)
@@ -427,6 +439,7 @@ def create_task(
     resolution: str,
     images: list[str] | None,
     timeout: int,
+    explicit_size: bool = False,
 ) -> str:
     """POST /v1/draw/completions → task id."""
     host = normalize_host(base_url)
@@ -438,6 +451,7 @@ def create_task(
         quality=quality,
         resolution=resolution,
         images=images,
+        explicit_size=explicit_size,
     )
     created = http_json_post(create_url, api_key, payload, timeout=timeout)
     return extract_task_id(created)
@@ -558,8 +572,10 @@ def ensure_2k_canvas(
     *,
     model: str,
     target_size: tuple[int, int] = TARGET_CANVAS_SIZE,
+    accept_undersized: bool = False,
 ) -> tuple[bytes, dict[str, Any]]:
-    """Проверка ≥2K; upscale только для 2K-class native; иначе Grsai2KNotMetError."""
+    """Проверка ≥2K; upscale только для 2K-class native; иначе Grsai2KNotMetError или ship native."""
+    assert_non_vip_model(model)
     width, height = image_dimensions(image_bytes)
     native_long = long_side(width, height)
     meta: dict[str, Any] = {
@@ -584,15 +600,21 @@ def ensure_2k_canvas(
         meta["upscaled_to"] = f"{target_size[0]}x{target_size[1]}"
         return upscaled, meta
 
-    if is_vip_model(model):
-        raise Grsai2KNotMetError(
-            f"vip model returned undersized {width}x{height} (long={native_long} < {MIN_LONG_SIDE_2K})",
-            native_size=(width, height),
+    if accept_undersized:
+        meta["delivery"] = "native_undersized_vip_disabled"
+        meta["vip_disabled"] = True
+        meta["shipped_native"] = f"{width}x{height}"
+        print(
+            f"vip_disabled: shipping largest native non-vip frame {width}x{height}",
+            flush=True,
         )
+        return image_bytes, meta
+
     raise Grsai2KNotMetError(
         f"primary returned undersized {width}x{height} (long={native_long} < "
-        f"{NATIVE_2K_CLASS_MIN_LONG_SIDE}); vip required for native 2K",
+        f"{NATIVE_2K_CLASS_MIN_LONG_SIDE}); explicit-size retry allowed",
         native_size=(width, height),
+        image_bytes=image_bytes,
     )
 
 
@@ -606,7 +628,11 @@ def generate_image(
     max_wait: int,
     timeout: int,
     root: Path | None = None,
+    explicit_size: bool = False,
+    accept_undersized: bool = False,
+    host_candidates_override: list[str] | None = None,
 ) -> tuple[bytes, dict[str, Any]]:
+    assert_non_vip_model(model)
     root = root or project_root()
     images = resolve_logo_reference_images(image_input, root=root)
     aspect_ratio = str(image_input.get("aspect_ratio") or DEFAULT_ASPECT_RATIO)
@@ -614,8 +640,10 @@ def generate_image(
     prompt = str(image_input["prompt"])
     last_error: BaseException | None = None
     last_2k_error: Grsai2KNotMetError | None = None
+    last_undersized_bytes: bytes | None = None
 
-    for host in api_base_candidates():
+    hosts = host_candidates_override if host_candidates_override is not None else api_base_candidates()
+    for host in hosts:
         host_label = urllib.parse.urlparse(host).netloc or host
         try:
             task_id = create_task(
@@ -628,6 +656,7 @@ def generate_image(
                 resolution=resolution,
                 images=images,
                 timeout=timeout,
+                explicit_size=explicit_size,
             )
             image_url = poll_result(
                 base_url=host,
@@ -638,19 +667,25 @@ def generate_image(
                 timeout=timeout,
             )
             raw = download_image(image_url, timeout=timeout)
-            image_bytes, size_meta = ensure_2k_canvas(raw, model=model)
+            image_bytes, size_meta = ensure_2k_canvas(
+                raw,
+                model=model,
+                accept_undersized=accept_undersized,
+            )
             meta = {
                 "source": "grsai-draw-api",
                 "model": model,
                 "quality": quality,
                 "aspect_ratio": aspect_ratio,
                 "resolution": resolution,
+                "explicit_size": explicit_size,
                 "endpoint": "draw/completions+result",
                 "host": host_label,
                 "api_base": host,
                 "response_kind": "url",
                 "task_id": task_id,
                 "target_canvas": f"{TARGET_CANVAS_SIZE[0]}x{TARGET_CANVAS_SIZE[1]}",
+                "vip_disabled": VIP_DISABLED,
                 **size_meta,
             }
             if images:
@@ -658,20 +693,40 @@ def generate_image(
                 meta["logo_reference_in_generation"] = bool(image_input.get("logo_reference_in_generation"))
             return image_bytes, meta
         except Grsai2KNotMetError as exc:
-            # Не жечь host-retry на quality/size для non-vip.
             last_2k_error = exc
+            if exc.image_bytes is not None:
+                last_undersized_bytes = exc.image_bytes
             print(f"Grsai 2K not met on {host_label}: {exc}", flush=True)
-            if not is_vip_model(model):
-                raise
-            last_error = exc
-            continue
+            if accept_undersized and last_undersized_bytes is not None:
+                image_bytes, size_meta = ensure_2k_canvas(
+                    last_undersized_bytes,
+                    model=model,
+                    accept_undersized=True,
+                )
+                meta = {
+                    "source": "grsai-draw-api",
+                    "model": model,
+                    "quality": quality,
+                    "aspect_ratio": aspect_ratio,
+                    "resolution": resolution,
+                    "explicit_size": explicit_size,
+                    "endpoint": "draw/completions+result",
+                    "host": host_label,
+                    "api_base": host,
+                    "response_kind": "url",
+                    "target_canvas": f"{TARGET_CANVAS_SIZE[0]}x{TARGET_CANVAS_SIZE[1]}",
+                    "vip_disabled": VIP_DISABLED,
+                    **size_meta,
+                }
+                return image_bytes, meta
+            raise
         except GrsaiRetryable as exc:
             last_error = exc
             print(f"Grsai retryable on {host_label}: {exc}", flush=True)
             continue
         except GrsaiApiError as exc:
             last_error = exc
-            if not is_vip_model(model) and is_2k_request_rejected(exc):
+            if is_2k_request_rejected(exc):
                 raise Grsai2KNotMetError(str(exc)) from exc
             print(f"Grsai error on {host_label}: {exc}", flush=True)
             continue
@@ -679,6 +734,14 @@ def generate_image(
     if last_2k_error is not None:
         raise last_2k_error
     raise GrsaiApiError(f"Grsai failed on all hosts: {last_error}")
+
+
+def _alternate_host_order() -> list[str]:
+    """Для explicit-size retry: сначала fallback host, потом primary."""
+    hosts = api_base_candidates()
+    if len(hosts) <= 1:
+        return hosts
+    return list(reversed(hosts))
 
 
 def generate_image_with_model_fallback(
@@ -691,64 +754,80 @@ def generate_image_with_model_fallback(
     timeout: int,
     root: Path | None = None,
 ) -> tuple[bytes, dict[str, Any]]:
-    """Non-vip first; vip только если primary не дал ≥2K или hard API fail."""
+    """Только PRIMARY_MODEL_ID: aspectRatio+2K → explicit-size retry → ship native undersized."""
     primary = primary_model()
-    vip_model = vip_fallback_model(primary)
-    failures: list[dict[str, str]] = []
+    gen_kwargs = {
+        "image_input": image_input,
+        "api_key": api_key,
+        "quality": quality,
+        "poll_interval": poll_interval,
+        "max_wait": max_wait,
+        "timeout": timeout,
+        "root": root,
+        "model": primary,
+    }
 
     try:
-        image_bytes, meta = generate_image(
-            image_input=image_input,
-            api_key=api_key,
-            model=primary,
-            quality=quality,
-            poll_interval=poll_interval,
-            max_wait=max_wait,
-            timeout=timeout,
-            root=root,
-        )
+        image_bytes, meta = generate_image(**gen_kwargs, explicit_size=False)
         meta["model_primary"] = primary
         meta["model_succeeded"] = primary
         meta["used_vip_fallback"] = False
+        meta["vip_disabled"] = True
         meta["vip_trigger"] = None
         print(f"OK Grsai model={primary} host={meta.get('host')} (native 2K)", flush=True)
         return image_bytes, meta
     except Grsai2KNotMetError as exc:
-        failures.append({"model": primary, "error": str(exc)[:300], "kind": "2k_not_met"})
-        vip_trigger = "2k_not_possible_on_primary"
         print(
-            f"Grsai primary {primary} cannot deliver ≥2K ({exc}); "
-            f"one vip retry with {vip_model} (no more primary retries)",
+            f"Grsai primary {primary} undersized ({exc}); "
+            f"one explicit-size retry on same model (vip_disabled)",
             flush=True,
         )
-    except GrsaiApiError as exc:
-        failures.append({"model": primary, "error": str(exc)[:300], "kind": "api_failure"})
-        vip_trigger = "api_failure"
-        print(
-            f"Grsai primary {primary} API failed ({exc}); one vip retry with {vip_model}",
-            flush=True,
-        )
-
-    try:
-        image_bytes, meta = generate_image(
-            image_input=image_input,
-            api_key=api_key,
-            model=vip_model,
-            quality=quality,
-            poll_interval=poll_interval,
-            max_wait=max_wait,
-            timeout=timeout,
-            root=root,
-        )
-        meta["model_primary"] = primary
-        meta["model_succeeded"] = vip_model
-        meta["used_vip_fallback"] = True
-        meta["vip_trigger"] = vip_trigger
-        print(f"OK Grsai model={vip_model} host={meta.get('host')} (vip)", flush=True)
-        return image_bytes, meta
-    except GrsaiApiError as exc:
-        failures.append({"model": vip_model, "error": str(exc)[:300]})
-        raise GrsaiApiError(f"Grsai failed primary and vip: {failures}") from exc
+        try:
+            image_bytes, meta = generate_image(
+                **gen_kwargs,
+                explicit_size=True,
+                host_candidates_override=_alternate_host_order(),
+            )
+            meta["model_primary"] = primary
+            meta["model_succeeded"] = primary
+            meta["used_vip_fallback"] = False
+            meta["vip_disabled"] = True
+            meta["vip_trigger"] = None
+            meta["undersized_retry"] = "explicit_size_alternate_host"
+            print(
+                f"OK Grsai model={primary} host={meta.get('host')} "
+                f"(explicit-size retry, delivery={meta.get('delivery')})",
+                flush=True,
+            )
+            return image_bytes, meta
+        except Grsai2KNotMetError as retry_exc:
+            if retry_exc.image_bytes is not None:
+                image_bytes, size_meta = ensure_2k_canvas(
+                    retry_exc.image_bytes,
+                    model=primary,
+                    accept_undersized=True,
+                )
+                meta = {
+                    "source": "grsai-draw-api",
+                    "model": primary,
+                    "quality": quality,
+                    "vip_disabled": True,
+                    "undersized_retry": "ship_native_vip_disabled",
+                    **size_meta,
+                }
+                meta["model_primary"] = primary
+                meta["model_succeeded"] = primary
+                meta["used_vip_fallback"] = False
+                meta["vip_trigger"] = None
+                print(
+                    f"OK Grsai model={primary} shipped native {meta.get('shipped_native')} "
+                    f"(vip_disabled)",
+                    flush=True,
+                )
+                return image_bytes, meta
+            raise GrsaiApiError(
+                f"Grsai primary {primary} undersized after retries and no native bytes to ship"
+            ) from retry_exc
 
 
 def run_kie_fallback(*, root: Path, article_dir: Path, batch: str, result: str) -> int:
@@ -780,9 +859,9 @@ def main() -> int:
     ap.add_argument("--fallback-kie", action="store_true")
     ap.add_argument(
         "--model-tier",
-        choices=("auto", "primary", "vip"),
+        choices=("auto", "primary"),
         default="auto",
-        help="auto=non-vip 2K first then one vip on 2K fail or API fail; primary=only non-vip; vip=only vip (one sheet)",
+        help="auto|primary=PRIMARY_MODEL_ID only (vip permanently disabled)",
     )
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
@@ -802,8 +881,8 @@ def main() -> int:
 
         dry_payload = {
             "model": model,
-            "model_vip_fallback": vip_fallback_model(model),
-            "model_policy": "primary_2k_first_vip_on_2k_fail_or_api_fail",
+            "model_policy": "gpt_image_2_only_vip_disabled",
+            "vip_disabled": True,
             "quality": quality,
             "aspect_ratio": image_input.get("aspect_ratio"),
             "resolution": image_input.get("resolution") or DEFAULT_RESOLUTION,
@@ -816,8 +895,8 @@ def main() -> int:
             "prompt_chars": len(str(image_input.get("prompt") or "")),
             "input_urls_count": len(image_input.get("input_urls") or []),
             "note": (
-                "non-vip primary tier with aspectRatio+resolution=2K first; "
-                "vip only if primary cannot deliver long_side>=2048 or hard API fail"
+                "PRIMARY_MODEL_ID only; vip permanently disabled; "
+                "aspectRatio+resolution=2K first, one explicit-size retry, then ship native undersized"
             ),
         }
         if args.dry_run:
@@ -846,18 +925,12 @@ def main() -> int:
             "timeout": timeout,
             "root": root,
         }
-        if tier == "vip":
-            vip = vip_fallback_model(model)
-            image_bytes, meta = generate_image(**gen_kwargs, model=vip)
-            meta["model_primary"] = model
-            meta["model_succeeded"] = vip
-            meta["used_vip_fallback"] = True
-            print(f"OK Grsai model={vip} host={meta.get('host')} (tier=vip)", flush=True)
-        elif tier == "primary":
+        if tier == "primary":
             image_bytes, meta = generate_image(**gen_kwargs, model=model)
             meta["model_primary"] = model
             meta["model_succeeded"] = model
             meta["used_vip_fallback"] = False
+            meta["vip_disabled"] = True
             print(f"OK Grsai model={model} host={meta.get('host')} (tier=primary)", flush=True)
         else:
             image_bytes, meta = generate_image_with_model_fallback(**gen_kwargs)
@@ -879,7 +952,8 @@ def main() -> int:
             "model": model,
             "model_succeeded": meta.get("model_succeeded", model),
             "model_primary": meta.get("model_primary", primary_model()),
-            "used_vip_fallback": bool(meta.get("used_vip_fallback")),
+            "used_vip_fallback": False,
+            "vip_disabled": True,
             "quality": quality,
             "bytes": len(image_bytes),
             **meta,

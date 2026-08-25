@@ -614,17 +614,17 @@ def _apply_canvas(rel: Path, canvas_index: int) -> int:
 
 
 def _canvas_sheet_ok(adir: Path, rel: Path, image_script: str, *, batch_file: str, result_file: str, canvas_index: int, logo_panels: tuple[str, ...]) -> bool:
-    """Один sheet: auto (primary 2K → vip только при fail 2K) → apply → pad-repair; без vip для lockup."""
+    """Один sheet: PRIMARY_MODEL_ID only (vip disabled) → apply → pad-repair."""
     if not _generate_canvas(image_script, rel, batch_file=batch_file, result_file=result_file, model_tier="auto"):
         return False
     result_path = adir / "cover" / Path(result_file).name
     result_meta = _read_grsai_result_meta(result_path)
-    used_vip = bool(result_meta.get("used_vip_fallback"))
+    used_vip = False  # vip permanently disabled
     model_succeeded = str(result_meta.get("model_succeeded") or result_meta.get("model") or "")
     width, height = _canvas_dimensions(adir, canvas_index)
     if not _enforce_canvas_2k_or_block(adir, canvas_index):
         return False
-    tier_label = "vip" if used_vip else "primary"
+    tier_label = "primary"
     print(
         f"OK sheet canvas {canvas_index} {width}x{height} model={model_succeeded} tier={tier_label}",
         flush=True,
@@ -635,9 +635,9 @@ def _canvas_sheet_ok(adir: Path, rel: Path, image_script: str, *, batch_file: st
     if _repair_logo_panels(adir, logo_panels):
         print("OK pad-clear for this sheet", flush=True)
         return True
-    # Lockup: retry primary only — vip внутри auto только для 2K fail, не для lockup
+    # Lockup: retry primary only — vip disabled forever
     print(
-        "WARN sheet lockup remains — retry primary (no extra vip when primary already delivered 2K)",
+        "WARN sheet lockup remains — retry primary (vip_disabled)",
         flush=True,
     )
     return False

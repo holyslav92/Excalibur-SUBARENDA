@@ -25,7 +25,7 @@ description: "④a Cover: 2× quad Grsai 2K, meme energy, factory logo overlay a
 | Rule | Value |
 |------|-------|
 | Provider | **Grsai** (see `shared/grsai-gpt-image-api-contract.md`) |
-| VIP retry | **1** per sheet only if non-vip cannot deliver ≥2K |
+| VIP retry | **disabled** — PRIMARY_MODEL_ID only; ship native undersized if retry fails |
 | Max attempts | **2** per canvas → pad-clear + official logo paste if plate |
 | Prose/scene | Derouter Terra `--role cover-scene` only |
 

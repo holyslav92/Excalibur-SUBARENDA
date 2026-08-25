@@ -118,7 +118,8 @@
   "generation_policy": {
     "provider": "grsai",
     "max_attempts_per_canvas": 2,
-    "vip_retry_per_sheet": 1,
+    "vip_retry_per_sheet": 0,
+    "vip_disabled": true,
     "on_exhaust": "pad-clear + official paste + continue (no Cover-QA loop)",
     "cover_qa_mode": "slim",
     "philosophy": "beauty = agent judgment on topic; brand lock = logo + phone + no plate + no WP UI"

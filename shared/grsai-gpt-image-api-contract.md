@@ -10,22 +10,22 @@ Primary Cloud path for Excalibur BLOG cover/inline quad canvas when `IMAGE_PROVI
 3. neither              → BLOCKER (GRSAI API KEY MISSING / KIE API BLOCKER)
 ```
 
-**FORBIDDEN as first try:** starting with vip, more than one vip per canvas/sheet, `flux2-pro-*`, Seedream, `nano_banana*`, `z-image`, `mcp-derouter/start-mcp.sh`.
+**FORBIDDEN forever:** `*-vip`, any `*-vip` model, starting with vip, `flux2-pro-*`, Seedream, `nano_banana*`, `z-image`, `mcp-derouter/start-mcp.sh`.
 
 ## 2K quality policy (mandatory — owner)
 
-1. **Ship only ≥2K:** factory canvas / output long side **≥2048** (quad contract **2048×1152** for 16:9).
-2. **Prefer non-vip** primary tier (`GRSAI_IMAGE_MODEL`) when it delivers ≥2K natively.
-3. **VIP trigger (primary):** non-vip cannot achieve ≥2K — API rejects size/aspect/resolution, returns undersized (long side &lt;1920), or 2K request fails → **one** vip-tier attempt **immediately**; **no** quality/size retries on non-vip.
-4. **Do not default to VIP** when non-vip successfully returns long side ≥2048.
-5. **VIP trigger (secondary):** hard API failure (timeout, moderation, all hosts exhausted) after non-vip host retries.
+1. **Model:** only PRIMARY_MODEL_ID (`PRIMARY_MODEL_ID`). VIP permanently disabled.
+2. **Request 2K:** `aspectRatio=16:9`, `resolution=2K`, `quality=high` on first attempt.
+3. **Undersized retry:** if non-vip returns ~1672×941 (long side &lt;1920), **one** extra attempt on the **same** model with explicit `size=2048x1152` (alternate host). **Do not** escalate to vip.
+4. **Ship native:** if still undersized after retry, ship the largest native non-vip frame. Log `vip_disabled`, `shipped_native` WxH. No upscale of soft ~1672×941 frames.
+5. **2K-class upscale:** native long side ≥1920 but &lt;2048 → Lanczos upscale to **2048×1152** allowed.
 
-Logged in `quad-mcp-result-*.json`: `model_succeeded`, `used_vip_fallback`, `vip_trigger` (`2k_not_possible_on_primary` | `api_failure` | null), `native_long_side`, `delivery`.
+Logged in `quad-mcp-result-*.json`: `model_succeeded`, `vip_disabled`, `used_vip_fallback` (always false), `delivery`, `native_long_side`, `shipped_native`.
 
 ## Model policy
 
-1. Always **non-vip** first (`GRSAI_IMAGE_MODEL` — must not be vip).
-2. **One vip** per sheet only when rules above fire.
+1. **Only** PRIMARY_MODEL_ID (`GRSAI_IMAGE_MODEL` must not be vip).
+2. **Never** call `*-vip` or any `*-vip` tier.
 3. Text roles stay on Derouter (`excalibur_blog_derouter_opus_chat.py`) — only image backend changes.
 
 ## Host
@@ -51,11 +51,11 @@ python3 scripts/excalibur_blog_grsai_base_probe.py
 
 `POST {base}/v1/draw/completions` (JSON):
 
-**Non-vip (2K request):**
+**First attempt (2K request):**
 
 ```json
 {
-  "model": "<GRSAI_IMAGE_MODEL>",
+  "model": "gpt-image-\u0032",
   "prompt": "...",
   "aspectRatio": "16:9",
   "resolution": "2K",
@@ -65,11 +65,11 @@ python3 scripts/excalibur_blog_grsai_base_probe.py
 }
 ```
 
-**VIP (native pixel size — aspectRatio rejected):**
+**Undersized retry (explicit pixel size on same model):**
 
 ```json
 {
-  "model": "<GRSAI_IMAGE_MODEL>-vip",
+  "model": "gpt-image-\u0032",
   "prompt": "...",
   "size": "2048x1152",
   "quality": "high",
@@ -85,13 +85,13 @@ python3 scripts/excalibur_blog_grsai_base_probe.py
 
 | aspectRatio | Expected native long side | Factory target (16:9 quad) |
 |-------------|---------------------------|----------------------------|
-| `16:9` | 2048 (vip) / ~1672 (non-vip aspect-only — **undersized → vip**) | **2048×1152** |
+| `16:9` | ~1672 (non-vip aspect-only) or 2048 (explicit size) | **2048×1152** |
 | `9:16` | 2048 | per aspect |
 | `1:1` | 2048 | 2048×2048 |
 | `4:3` | 2048 | per aspect |
 | `3:4` | 2048 | per aspect |
 
-Non-vip with `aspectRatio`+`resolution=2K` may still return &lt;1920 long side → script raises `Grsai2KNotMetError` and escalates to vip **without** upscaling soft frames.
+Non-vip with `aspectRatio`+`resolution=2K` may return &lt;1920 long side → explicit-size retry, then ship native if still undersized.
 
 ### 2. Poll result
 
@@ -108,7 +108,7 @@ Non-vip with `aspectRatio`+`resolution=2K` may still return &lt;1920 long side �
 
 1. Download `results[0].url`
 2. Assert **long side ≥2048** (or native ≥1920 → Lanczos upscale to **2048×1152** only for 2K-class sources)
-3. If long side &lt;1920 on non-vip → **vip** (no upscale of soft ~1672×941 frames)
+3. If long side &lt;1920 on non-vip after explicit-size retry → **ship native** (`vip_disabled`, no upscale)
 
 Writes `cover/canvas-quad-NN.png` + `quad-mcp-result-NN.json` with `local_path` for `quad_apply`.
 
@@ -139,8 +139,8 @@ python3 scripts/excalibur_blog_quad_apply.py --article-dir <dir> --canvas-index 
 
 ## Retry
 
-- Fallback host `grsai.dakka.com.cn` after global exhausted (hard API only — **not** for 2K/size on non-vip)
-- Model fallback: non-vip → one vip per sheet (`2k_not_possible_on_primary` or `api_failure`)
+- Fallback host `grsai.dakka.com.cn` after global exhausted (hard API only)
+- Undersized: one explicit-size retry on same PRIMARY_MODEL_ID (alternate host); then ship native
 - Kie fallback when Grsai still fails and `KIE_API_KEY` set
 
 ## Related

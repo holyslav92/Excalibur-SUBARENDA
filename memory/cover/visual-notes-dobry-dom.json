@@ -2,7 +2,7 @@
   "tenant": "dobry-dom",
   "status": "slim",
   "label_ru": "Добрый дом — meme energy + factory logo overlay",
-  "philosophy": "Top-100 meme energy ON TOPIC (посуточная аренда pains): witty framing — reaction face, before/after, caption panel, comic beat. Logo NEVER in Grsai reference — factory alpha PNG overlay AFTER split only. Phone IN scene on tape/paper/magnet — NEVER post-composite pill. Hard gates: no gray/white plate under logo, no WP UI, max-2 gen → vip fallback.",
+  "philosophy": "Top-100 meme energy ON TOPIC (посуточная аренда pains): witty framing — reaction face, before/after, caption panel, comic beat. Logo NEVER in Grsai reference — factory alpha PNG overlay AFTER split only. Phone IN scene on tape/paper/magnet — NEVER post-composite pill. Hard gates: no gray/white plate under logo, no WP UI, max-2 gen; vip disabled.",
   "meme_energy": {
     "cover": "Magazine poster + 1–2 meme beats from meme-top100.json — funny, screenshot-worthy, comfort+ brand",
     "inline_slots": "2–4 of 7 may use meme_panel / reaction_card (see inline-visual-types-dobry-dom.json)",
@@ -36,7 +36,8 @@
   "generation_policy": {
     "provider": "grsai",
     "max_attempts_per_canvas": 2,
-    "vip_retry": "one per sheet if primary API fails",
+    "vip_retry": "disabled — PRIMARY_MODEL_ID only",
+    "vip_disabled": true,
     "on_exhaust": "pad-clear top-right if needed + official logo paste + continue to publish",
     "default_brand_logo_composite": "required after split — logo overlay only, no phone pill"
   },
