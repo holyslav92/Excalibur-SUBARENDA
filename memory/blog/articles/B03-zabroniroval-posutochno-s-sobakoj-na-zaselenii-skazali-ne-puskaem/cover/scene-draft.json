@@ -1,0 +1,50 @@
+{
+  "cover_emotion": "усталость и шок: гость с собакой у двери квартиры, в телефоне «не пустим»",
+  "scene_hint": "POSTER collage август Тюмень лето: прихожая comfort+ квартира, чемодан, собака на поводке, телефон с отказом, закрытая дверь; headline «Забронировал жильё — не пустили с собакой»; stickers посуточно с собакой; TOP-RIGHT empty pad for logo; NO winter snow",
+  "cover_alt": "Гость с собакой у двери посуточной квартиры в Тюмени — отказ заселения после переписки «можно»",
+  "cover_motifs": {
+    "composition": "poster collage: dog at door + phone refusal bubble + headline + summer apartment props, TOP-RIGHT empty pad",
+    "location": "Tyumen apartment hallway August sunny warm light green trees in window",
+    "meme": "reaction face guest with dog at closed door, gentle humor not mocking pet",
+    "prop_set": "suitcase, dog leash, phone chat bubble, keys, summer light",
+    "sticker_set": ["посуточно с собакой", "снять квартиру посуточно с собакой"],
+    "joke": "chat said yes door says no"
+  },
+  "wordstat_stickers": ["посуточно с собакой", "снять квартиру посуточно с собакой"],
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "slots": {
+    "cover": {
+      "scene_hint": "Summer Tyumen apartment entry poster: guest with small dog, suitcase, phone showing «не пустим», warm august daylight, comfort+ interior, logo reference top-right small transparent, NO winter",
+      "alt": "Обложка: отказ заселения с собакой в посуточной квартире Тюмень"
+    },
+    "inline_1": {
+      "scene_hint": "Comparison table sketch: «можно в чате» vs «письменное разрешение» on torn paper board; summer apartment props; TOP-RIGHT empty pad for logo",
+      "alt": "Таблица: ответ в чате не равен разрешению на заселение с собакой"
+    },
+    "inline_2": {
+      "scene_hint": "Workflow diagram 4 steps: спросить → описать собаку → уточнить доплату → зафиксировать в переписке; hand-drawn arrows; no logo pad",
+      "alt": "Схема: как получить письменное согласие на собаку до оплаты"
+    },
+    "inline_3": {
+      "scene_hint": "Checklist board why door answer differs: wrong person answered, house rules, dog size surprise; sticky notes collage; TOP-RIGHT empty pad",
+      "alt": "Чеклист причин отказа у двери после «можно» в чате"
+    },
+    "inline_4": {
+      "scene_hint": "Infographic honest pet fee: уборка, шерсть, химчистка — labeled bars sketch; summer kitchen corner; no logo",
+      "alt": "Схема доплаты за питомца: за что берут и когда честно"
+    },
+    "inline_5": {
+      "scene_hint": "Video checklist at check-in with dog: phone recording apartment corners, bowl, furniture; sketch annotations; no logo",
+      "alt": "Чеклист видео квартиры при заселении с собакой для залога"
+    },
+    "inline_6": {
+      "scene_hint": "Flowchart at door refusal: show chat → ask refund text → find backup; numbered steps red gold nodes; no logo",
+      "alt": "Порядок действий если не пускают с собакой у двери"
+    },
+    "inline_7": {
+      "scene_hint": "Labeled checklist 6 questions before payment with toggle chips; FAQ card layout; TOP-RIGHT empty pad for logo",
+      "alt": "Чеклист из шести вопросов хозяину перед бронированием с питомцем"
+    }
+  }
+}

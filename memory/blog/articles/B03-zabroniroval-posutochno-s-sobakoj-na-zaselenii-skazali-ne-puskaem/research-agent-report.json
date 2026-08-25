@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "research_date": "2026-08-24",
+  "topic": "Посуточная аренда квартиры в Тюмени с собакой: согласование условий до оплаты и действия при отказе на заселении",
+  "reader_problem": "Гость получил устное согласие на проживание с собакой, но не зафиксировал доплату, депозит и правила до оплаты.",
+  "fresh_signal": {
+    "status": "PASS",
+    "minimum_one_source_this_week": true,
+    "sources": [
+      "https://travel.rambler.ru/lifehack/56764764",
+      "https://totdom.com/news/rynok_arendy_zhilya_v_2026"
+    ]
+  },
+  "wordstat": {
+    "status": "PASS",
+    "accessed_at": "2026-08-24",
+    "multiple_related_queries_used": true,
+    "queries": [
+      "посуточно с собакой",
+      "квартиры посуточно с собакой",
+      "снять квартиру посуточно с собакой",
+      "договор аренды квартиры с животными",
+      "пункт про животных в договоре аренды",
+      "аренда квартир посуточно тюмень"
+    ],
+    "partial": false
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "reason": "В материале нет банковских, государственных, застройщицких или иных официальных тарифов, комиссий, лимитов и сроков.",
+    "official_verifications": "N/A"
+  },
+  "source_table_complete": true,
+  "all_sources_accessed_at_research_date": true,
+  "writer_safe_urls_present": true,
+  "forbidden_structures_omitted": [
+    "h2_outline",
+    "pain_solution_map",
+    "action_outline",
+    "faq_skeleton",
+    "ready_lead"
+  ],
+  "overlap_scope": "Использованы только переданные опубликованные заголовки и handoff; соседние опубликованные статьи не использовались как образец прозы."
+}

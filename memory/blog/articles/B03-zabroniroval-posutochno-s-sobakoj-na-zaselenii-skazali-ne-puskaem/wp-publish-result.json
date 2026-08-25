@@ -1,0 +1,29 @@
+{
+  "slug": "zabroniroval-posutochno-s-sobakoj-na-zaselenii-skazali-ne-puskaem",
+  "topic_id": "B03",
+  "permalink": "{{SITE_BASE}}/blog/zabroniroval-posutochno-s-sobakoj-na-zaselenii-skazali-ne-puskaem/",
+  "publish_method": "ftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B03-zabroniroval-posutochno-s-sobakoj-na-zaselenii-skazali-ne-puskaem/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1184855,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=3928 slug=zabroniroval-posutochno-s-sobakoj-na-zaselenii-skazali-ne-puskaem\nOK categories=101,106\nOK featured_image=3938\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=3939 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/08/zabroniroval-posutochno-s-sobakoj-na-zaselenii-skazali-ne-puskaem-inline-01-1.png\nOK inline_alt=3939\nOK inline_caption=3939\nOK inline_description=3939\nOK inline_image_upload=3940 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/08/zabroniroval-posutochno-s-sobakoj-na-zaselenii-skazali-ne-puskaem-inline-02-1.png\nOK inline_alt=3940\nOK inline_caption=3940\nOK inline_description=3940\nOK inline_image_upload=3941 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/08/zabroniroval-posutochno-s-sobakoj-na-zaselenii-skazali-ne-puskaem-inline-03-1.png\nOK inline_alt=3941\nOK inline_caption=3941\nOK inline_description=3941\nOK inline_image_upload=3942 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/08/zabroniroval-posutochno-s-sobakoj-na-zaselenii-skazali-ne-puskaem-inline-04-1.png\nOK inline_alt=3942\nOK inline_caption=3942\nOK inline_description=3942\nOK inline_image_upload=3943 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/08/zabroniroval-posutochno-s-sobakoj-na-zaselenii-skazali-ne-puskaem-inline-05-1.png\nOK inline_alt=3943\nOK inline_caption=3943\nOK inline_description=3943\nOK inline_image_upload=3944 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/08/zabroniroval-posutochno-s-sobakoj-na-zaselenii-skazali-ne-puskaem-inline-06-1.png\nOK inline_alt=3944\nOK inline_caption=3944\nOK inline_description=3944\nOK inline_image_upload=3945 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/08/zabroniroval-posutochno-s-sobakoj-na-zaselenii-skazali-ne-puskaem-inline-07-1.png\nOK inline_alt=3945\nOK inline_caption=3945\nOK inline_description=3945\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/zabroniroval-posutochno-s-sobakoj-na-zaselenii-skazali-ne-puskaem/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "fail",
+  "live_page": {
+    "gate": "live-page",
+    "status": "BLOCK",
+    "permalink": "{{SITE_BASE}}/blog/zabroniroval-posutochno-s-sobakoj-na-zaselenii-skazali-ne-puskaem/",
+    "errors": [
+      "live BlogPosting JSON-LD URL does not exactly match permalink"
+    ]
+  }
+}

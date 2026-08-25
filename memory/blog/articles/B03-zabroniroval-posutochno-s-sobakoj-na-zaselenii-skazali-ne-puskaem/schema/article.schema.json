@@ -1,0 +1,27 @@
+Соберу входные данные статьи и автора, затем запущу обязательный derouter для генерации JSON-LD и проверю schema gate.Не могу прочитать локальные файлы или запустить обязательный `derouter` из этого API-чата. Для выполнения нужны путь к каталогу B03 (или содержимое файлов):
+
+- `article.html`
+- `title-brief.json` / `article.meta.json`
+- `shared/authors-registry.json`
+- `memory/brief/site-brief.md` либо `PUBLIC_SITE_URL`
+
+Генерацию нельзя выполнять вручную: по контракту она должна идти через:
+
+```bash
+python3 scripts/excalibur_blog_derouter_opus_chat.py \
+  --role schema \
+  --system-file skills/schema-excalibur-blog/SKILL.md \
+  --user-file <assembled-schema-inputs.md> \
+  --output schema.jsonld \
+  --article-dir memory/blog/articles/<topic_id>-<slug>
+```
+
+После полной записи `schema.jsonld` отдельно запустите:
+
+```bash
+python3 scripts/excalibur_blog_schema_gate.py \
+  --article-dir memory/blog/articles/<topic_id>-<slug> \
+  -o schema-gate.json
+```
+
+Пришлите содержимое файлов или предоставьте путь/доступ к рабочему репозиторию — тогда соберу корректный вход для derouter, включая только реальные FAQ-пары `h3 → первый p`, и подготовлю фрагмент после `PASS`.

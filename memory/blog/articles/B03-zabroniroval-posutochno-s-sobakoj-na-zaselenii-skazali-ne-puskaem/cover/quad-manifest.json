@@ -1,0 +1,162 @@
+{
+  "topic_id": "B03",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": [
+        "inline_4",
+        "inline_5",
+        "inline_6",
+        "inline_7"
+      ],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "the_rieltor_twilight_gold",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "cover_hook": "Забронировал жильё — не пустили с собакой",
+  "cover_hook_highlight": "не пустили",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Derouter REST (DEROUTER_API_KEY) — 2K 16:9, one job per canvas (2×). Cover agent invents cover_hook + scene_hint/alt before --write-batch. Host lock = blog-hero.json (navy blazer, not hoodie).",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Обложка: отказ заселения с собакой в посуточной квартире Тюмень",
+      "scene_hint": "Summer Tyumen apartment entry poster: guest with small dog, suitcase, phone showing «не пустим», warm august daylight, comfort+ interior, logo reference top-right small transparent, NO winter",
+      "meme_caption_ru": "",
+      "sticky": "Чат не считается разрешением"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Коротко",
+      "visual_type": "comparison_table",
+      "scene_hint": "Comparison table sketch: «можно в чате» vs «письменное разрешение» on torn paper board; summer apartment props; TOP-RIGHT empty pad for logo",
+      "alt": "Таблица: ответ в чате не равен разрешению на заселение с собакой",
+      "labels": [
+        "Ответ в чате",
+        "Это не разрешение",
+        "Нужно согласие хозяина"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "«Можно» в чате — ещё не разрешение",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Workflow diagram 4 steps: спросить → описать собаку → уточнить доплату → зафиксировать в переписке; hand-drawn arrows; no logo pad",
+      "alt": "Схема: как получить письменное согласие на собаку до оплаты",
+      "labels": [
+        "Правила меняются",
+        "У двери — отказ",
+        "Уточни до оплаты"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Почему у двери вдруг отвечают иначе",
+      "visual_type": "checklist_board",
+      "scene_hint": "Checklist board why door answer differs: wrong person answered, house rules, dog size surprise; sticky notes collage; TOP-RIGHT empty pad",
+      "alt": "Чеклист причин отказа у двери после «можно» в чате",
+      "labels": [
+        "Доплата за собаку",
+        "Сумма заранее",
+        "Запиши в договоре"
+      ]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Доплата за питомца: когда всё честно",
+      "visual_type": "structure_diagram",
+      "scene_hint": "Infographic honest pet fee: уборка, шерсть, химчистка — labeled bars sketch; summer kitchen corner; no logo",
+      "alt": "Схема доплаты за питомца: за что берут и когда честно",
+      "labels": [
+        "Залог за питомца",
+        "Условия возврата",
+        "Сумма в договоре"
+      ]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Залог и собака: где чаще всего теряют деньги",
+      "visual_type": "fact_card",
+      "scene_hint": "Video checklist at check-in with dog: phone recording apartment corners, bowl, furniture; sketch annotations; no logo",
+      "alt": "Чеклист видео квартиры при заселении с собакой для залога",
+      "labels": [
+        "Не пускают у двери",
+        "Не спорь на месте",
+        "Фиксируй отказ"
+      ]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Если вы уже у двери, а вас не пускают",
+      "visual_type": "infographic_card",
+      "scene_hint": "Flowchart at door refusal: show chat → ask refund text → find backup; numbered steps red gold nodes; no logo",
+      "alt": "Порядок действий если не пускают с собакой у двери",
+      "labels": [
+        "6 вопросов хозяину",
+        "Можно с собакой?",
+        "Есть доплата?",
+        "Какой залог?"
+      ]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Чеклист: 6 вопросов до оплаты",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Labeled checklist 6 questions before payment with toggle chips; FAQ card layout; TOP-RIGHT empty pad for logo",
+      "alt": "Чеклист из шести вопросов хозяину перед бронированием с питомцем",
+      "labels": [
+        "У нас в Тюмени",
+        "Проверь правила",
+        "Сохрани переписку"
+      ]
+    }
+  },
+  "cover_keys_ru": [],
+  "cover_motifs": {
+    "composition": "poster collage: dog at door + phone refusal bubble + headline + summer apartment props, TOP-RIGHT empty pad",
+    "location": "Tyumen apartment hallway August sunny warm light green trees in window",
+    "meme": "reaction face guest with dog at closed door, gentle humor not mocking pet",
+    "prop_set": "suitcase, dog leash, phone chat bubble, keys, summer light",
+    "sticker_set": [
+      "посуточно с собакой",
+      "снять квартиру посуточно с собакой"
+    ],
+    "joke": "chat said yes door says no"
+  },
+  "logo_paste_inline_slots": [
+    "inline_1",
+    "inline_3",
+    "inline_7"
+  ],
+  "wordstat_stickers": [
+    "посуточно с собакой",
+    "снять квартиру посуточно с собакой"
+  ],
+  "cover_phone_cta": "+7 (993) 574-83-22"
+}
