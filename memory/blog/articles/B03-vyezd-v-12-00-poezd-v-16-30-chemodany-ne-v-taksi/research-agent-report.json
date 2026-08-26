@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "topic_id": "B03",
+  "research_date": "2026-08-26",
+  "fresh_signal": "https://t-l.ru/406497.html (2026-08-21, СвЖД — камеры хранения вокзал Тюмень, онлайн-продление с 2026)",
+  "wordstat_status": "PASS",
+  "wordstat_queries": [
+    {"query": "квартиры посуточно тюмень", "totalCount": 5675},
+    {"query": "снять квартиру посуточно в тюмени", "totalCount": 1819},
+    {"query": "аренда квартир посуточно тюмень", "totalCount": 221},
+    {"query": "аренда квартиры посуточно", "totalCount": 821},
+    {"query": "поздний выезд", "totalCount": 130},
+    {"query": "хранение багажа", "totalCount": 122},
+    {"query": "хранение багажа тюмень", "totalCount": 22},
+    {"query": "камера хранения багажа тюмень", "totalCount": 13}
+  ],
+  "official_source_audit": {
+    "required": true,
+    "status": "PASS",
+    "verified_claims": 5,
+    "entities_checked": ["dobry-dom"],
+    "errors": []
+  },
+  "derouter": {
+    "status": "PASS",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "derouter-opus-stamp-research.json"
+  }
+}
