@@ -1,0 +1,151 @@
+{
+  "topic_id": "B03",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": [
+        "inline_4",
+        "inline_5",
+        "inline_6",
+        "inline_7"
+      ],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "Шлагбаум — въезда нет",
+  "cover_hook_highlight": "нет",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "wordstat_stickers": [
+    "посуточно тюмень"
+  ],
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Derouter REST (DEROUTER_API_KEY) — 2K 16:9, one job per canvas (2×). Cover agent invents cover_hook + scene_hint/alt before --write-batch. Host lock = blog-hero.json (navy blazer, not hoodie).",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Шлагбаум — машина ждёт",
+      "scene_hint": "Barrier queue Aug Tyumen summer light, Roll Safe people-meme sticker bottom-left, phone ONLY on brown kraft tape strip torn edge NOT white pill/button, +7 993 574-83-22 Cyrillic, top-right empty sky pad NO logo NO plate.",
+      "meme_caption_ru": "",
+      "sticky": "Номер заранее"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Две слова, за которыми может не быть парковки",
+      "visual_type": "comparison_table",
+      "scene_hint": "Table compare ad vs closed yard, sketch UI.",
+      "alt": "Таблица парковки",
+      "labels": [
+        "двор закрыт",
+        "улица рядом",
+        "шлагбаум",
+        "пропуск"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Разговор, в котором заканчивается красивая картинка",
+      "visual_type": "process_flow",
+      "scene_hint": "Chat flow plate 24h to barrier, arrows sketch.",
+      "alt": "Номер за сутки",
+      "labels": [
+        "номер авто",
+        "за сутки",
+        "схема",
+        "план Б"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "А разве парковка — не проблема хоста?",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Split host/guest duty diagram summer light.",
+      "alt": "Чья парковка",
+      "labels": [
+        "хост честно",
+        "не обещает",
+        "ответ",
+        "граница"
+      ]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Сначала схема въезда. Потом оплата",
+      "visual_type": "structure_diagram",
+      "scene_hint": "2-step flow scheme then pay, gold sketch.",
+      "alt": "Схема до оплаты",
+      "labels": [
+        "схема",
+        "потом оплата",
+        "до брони",
+        "не после"
+      ]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Один вопрос-отмычка",
+      "visual_type": "infographic_card",
+      "scene_hint": "Poster lockpick question card Cyrillic.",
+      "alt": "Вопрос до оплаты",
+      "labels": [
+        "где машина",
+        "как ночью",
+        "вопрос",
+        "до оплаты"
+      ]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Чек-лист после морали",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Cork checklist 8 chips parking Qs.",
+      "alt": "Чек-лист",
+      "labels": [
+        "8 вопросов",
+        "двор",
+        "ночной въезд",
+        "габариты"
+      ]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Как это устроено у нас",
+      "visual_type": "tool_screenshot",
+      "scene_hint": "Process card plate DB entry photo plan B.",
+      "alt": "У нас так",
+      "labels": [
+        "номер в базу",
+        "фото въезда",
+        "план Б",
+        "отказ"
+      ]
+    }
+  },
+  "cover_keys_ru": []
+}

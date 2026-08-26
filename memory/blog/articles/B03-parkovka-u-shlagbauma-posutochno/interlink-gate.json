@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "topic_id": "B03",
+  "slug": "parkovka-u-shlagbauma-posutochno",
+  "candidates_count": 6,
+  "outbound_found": [
+    {
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "title": "beskontaktnoe-zaselenie-posutochno-tyumen"
+    },
+    {
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "title": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem"
+    }
+  ],
+  "outbound_unique_slugs": [
+    "beskontaktnoe-zaselenie-posutochno-tyumen",
+    "skrytye-doplaty-pri-posutochnoj-arende-ot-hozyaina",
+    "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "warnings": [],
+  "errors": []
+}

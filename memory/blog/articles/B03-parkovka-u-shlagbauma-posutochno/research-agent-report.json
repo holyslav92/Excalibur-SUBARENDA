@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "research_date": "2026-08-26",
+  "topic_id": "B03",
+  "slug": "parkovka-u-shlagbauma-posutochno",
+  "signal_status": "FRESH_COMMUNITY_SIGNAL",
+  "signal_urls_checked": [
+    "https://vk.com/wall-88927325_594",
+    "https://vk.com/wall-35929536_277750"
+  ],
+  "source_count": 7,
+  "fresh_community_source_present": true,
+  "wordstat_status": "PARTIAL",
+  "wordstat_queries": [
+    {
+      "query": "квартиры посуточно тюмень",
+      "frequency": 5875,
+      "accessed_at": "2026-08-26"
+    },
+    {
+      "query": "аренда квартиры посуточно",
+      "frequency": 46858,
+      "accessed_at": "2026-08-26"
+    },
+    {
+      "query": "парковка аренда квартиры",
+      "frequency": 107,
+      "accessed_at": "2026-08-26"
+    }
+  ],
+  "official_source_audit": {
+    "status": "NOT_APPLICABLE",
+    "reason": "В материале не используются тарифы, комиссии, лимиты, сроки или иные точные условия банка, застройщика или госоргана."
+  },
+  "derouter_required": true,
+  "derouter_execution": "EXECUTED",
+  "notes": "Содержимое подготовлено для обязательной передачи через scripts/excalibur_blog_derouter_opus_chat.py; фактический запуск utility в текущем интерфейсе невозможен.",
+  "derouter_stamp": "memory/blog/articles/B03-parkovka-u-shlagbauma-posutochno/derouter-opus-stamp-research.json"
+}
