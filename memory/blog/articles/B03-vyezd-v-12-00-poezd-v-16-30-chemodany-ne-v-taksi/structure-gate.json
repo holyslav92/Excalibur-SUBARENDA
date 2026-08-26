@@ -1,0 +1,62 @@
+{
+  "gate": "structure",
+  "status": "FAIL",
+  "article_dir": "memory/blog/articles/B03-vyezd-v-12-00-poezd-v-16-30-chemodany-ne-v-taksi",
+  "checks": [
+    {
+      "name": "pipeline_canon",
+      "ok": true,
+      "detail": "exit=0"
+    },
+    {
+      "name": "research_agent_report",
+      "ok": true,
+      "detail": "status=PASS"
+    },
+    {
+      "name": "link_verify",
+      "ok": false,
+      "detail": "exit=1"
+    },
+    {
+      "name": "html_linter",
+      "ok": true,
+      "detail": "exit=0"
+    },
+    {
+      "name": "community_cta",
+      "ok": true,
+      "detail": "exit=0"
+    },
+    {
+      "name": "wp_categories",
+      "ok": true,
+      "detail": "exit=0"
+    },
+    {
+      "name": "interlink",
+      "ok": true,
+      "detail": "exit=0"
+    },
+    {
+      "name": "crosslink_qa",
+      "ok": false,
+      "detail": "exit=2"
+    },
+    {
+      "name": "research_official",
+      "ok": true,
+      "detail": "exit=0"
+    },
+    {
+      "name": "opening_meta",
+      "ok": true,
+      "detail": "exit=0"
+    }
+  ],
+  "failed": [
+    "link_verify",
+    "crosslink_qa"
+  ],
+  "note": "Structural/links/HTML only — does not rewrite prose."
+}
