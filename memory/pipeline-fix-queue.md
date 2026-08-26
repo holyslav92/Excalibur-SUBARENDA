@@ -184,7 +184,7 @@ checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_site_base.py scripts/excalibur_blog_link_verify.py`
 - `python3 -m unittest tests.test_link_verify_idna -v`
 - E2E link_verify on Cyrillic href → verdict pass
-commit: pending-parent-commit
+commit: bf563b1
 
 ## INC-20260826-1258 — cover QA white plate on pre-composite
 
@@ -233,4 +233,4 @@ files_changed:
 checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_brand_logo_composite.py scripts/excalibur_blog_cover_quad_prompt.py`
 - `python3 -m unittest tests.test_drawn_logo_gate.DrawnLogoGateTest.test_composite_blocks_white_plate_before_paste -v`
-commit: pending-parent-commit
+commit: 8651ae0
