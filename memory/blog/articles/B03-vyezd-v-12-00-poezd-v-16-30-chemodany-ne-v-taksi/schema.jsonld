@@ -1,0 +1,34 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "{{SITE_BASE}}/blog/vyezd-v-12-00-poezd-v-16-30-chemodany-ne-v-taksi/#article",
+      "url": "{{SITE_BASE}}/blog/vyezd-v-12-00-poezd-v-16-30-chemodany-ne-v-taksi/",
+      "headline": "Гость выехал в 12:00. Поезд в 16:30. Чемоданы — не в такси",
+      "description": "Как закрыть окно между выездом из посуточной квартиры в 12:00 и поездом вечером: камера хранения на вокзале Тюмени, поздний выезд по согласованию, что спросить до бронирования и почему чемоданы лучше решить до передачи ключей.",
+      "datePublished": "2026-08-26",
+      "dateModified": "2026-08-26",
+      "inLanguage": "ru-RU",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{SITE_BASE}}/blog/vyezd-v-12-00-poezd-v-16-30-chemodany-ne-v-taksi/"
+      },
+      "author": {
+        "@type": "Organization",
+        "@id": "{{SITE_BASE}}/#organization",
+        "name": "Добрый дом",
+        "url": "{{SITE_BASE}}/",
+        "sameAs": [
+          "{{SITE_BASE}}/"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "{{SITE_BASE}}/#organization",
+        "name": "Добрый дом",
+        "url": "{{SITE_BASE}}/"
+      }
+    }
+  ]
+}
