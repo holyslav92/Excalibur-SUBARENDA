@@ -638,9 +638,10 @@ def build_prompt(
         )
     elif has_cover and brand_logo_paste:
         reference_line = (
-            "Cover TL: NO host; NO logo in gen (factory cropped-img_7143.png alpha after split); "
-            f"phone IN scene only — {PHONE_IN_SCENE_RULE.format(phone=cover_phone_cta)}; "
-            "NEVER post-composite pill."
+            "Cover TL: NO host; NO logo/lockup/curtains/house/«Добрый дом» in gen; "
+            "TOP-RIGHT pad = empty bright wall ONLY, zero graphics; "
+            f"phone RIGHT margin VERTICAL torn paper ONLY — EXACT «{cover_phone_cta}»; "
+            "NEVER bottom horizontal strip/pill/banner; NEVER over cat/meme/sticky/headline."
         )
     elif has_cover:
         reference_line = (

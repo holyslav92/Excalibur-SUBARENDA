@@ -37,6 +37,12 @@ python3 scripts/excalibur_blog_wp_publish.py \
 
 `--dry-run` — проверка payload без SFTP upload.
 
+**IDN / Cyrillic site URLs (INC-20260826-1257):** `link_verify` and `crosslink_qa`
+encode Unicode hostnames to punycode before HTTP (`normalize_url_for_http` in
+`excalibur_blog_site_base.py`). Article CTA may use `https://добрыйдом-72.рф/…`
+or relative `/` / `/booking/` — do **not** rewrite to relative only to dodge
+preflight; the script handles IDNA. Relative paths remain valid for same-site links.
+
 ## Что делает publish
 
 1. **Preflight gates** (обязательно, иначе BLOCKER; emergency `--skip-gates`):

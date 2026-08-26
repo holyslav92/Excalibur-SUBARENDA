@@ -127,6 +127,11 @@ python3 scripts/excalibur_blog_link_verify.py \
 
 Gate: `link-verify.json` → pass. Иначе FIX (writer/QA) или BLOCKER.
 
+**IDN hosts (B03 / INC-20260826-1257):** Cyrillic `https://добрыйдом-72.рф/…` in CTA
+больше не ломает preflight — `link_verify` punycode-encode перед HTTP. Не
+переписывай абсолютные CTA в relative только ради обхода; relative `/` OK для
+same-site, но не обязателен.
+
 `link-verify.py` проверяет HTTP по живому `--site-base`/`PUBLIC_SITE_URL`, но файл `-o` всегда git-safe: internal `url`/`checked_url` с `{{SITE_BASE}}`, не live host и не `[REDACTED]`.
 
 Soft social hosts (`t.me` / `telegram.me` / `wa.me` / `vk.com`): DNS/resolver errors (`Name or service not known`, `errno -2`, `getaddrinfo`, unreachable) и timeouts → warning + `ok: true`, **не** FAIL. Cloud часто без DNS к Telegram — не BLOCKER и не удаляй `t.me` из статьи из‑за soft flake (INC-20260713-2014).

@@ -15,7 +15,7 @@ description: "④a Cover: 2× quad Grsai 2K, meme energy, factory logo overlay a
 
 **Brand lock FOREVER (hard only):**
 - **NEVER** send logo as Grsai/Derouter reference (`urls`/aroma/`input_urls`)
-- Prompt: empty clear **top-right** — no logo, no house icon, no «Добрый дом», no plate/sticker/business card
+- Prompt: empty clear **top-right** — no logo, no house icon, no «Добрый дом», no plate/sticker/business card; **bright wall ONLY, zero graphics** in pad (B03 / INC-20260826-1258)
 - **AFTER split:** factory pastes official `cropped-img_7143.png` alpha PNG small top-right — RGBA only, no white/gray backing
 - Cover: logo always. Inlines: **2–3 of 7**
 - Phone **+7 (993) 574-83-22** painted **IN the scene** (tape strip, torn paper, door plate, magnet) on bottom edge or side quiet zone — readable, pretty, NOT over cat/meme/sticky/headline
@@ -29,6 +29,7 @@ description: "④a Cover: 2× quad Grsai 2K, meme energy, factory logo overlay a
 | Provider | **Grsai** (see `shared/grsai-gpt-image-api-contract.md`) |
 | VIP retry | **disabled** — PRIMARY_MODEL_ID only; ship native undersized if retry fails |
 | Max attempts | **2** per canvas → pad-clear + official logo paste if plate |
+| Pre-paste gate | `brand_logo_composite` **BLOCKER** on white/gray plate in TOP-RIGHT pad (regen canvas, don't paste over plate) |
 | Prose/scene | Derouter Terra `--role cover-scene` only |
 
 ## Архитектура

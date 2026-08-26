@@ -132,3 +132,105 @@ checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_llms_deploy.py`
 - `python3 scripts/excalibur_blog_llms_deploy.py --dry-run` → llms files present, transport ftp
 commit: 3b837c2
+
+## INC-20260826-1257 — link_verify latin-1 on Cyrillic URLs
+
+status: fixed
+run_date: 2026-08-26
+role: excalibur-blog-publish
+topic_id: B03
+article_dir: memory/blog/articles/B03-vyezd-v-12-00-poezd-v-16-30-chemodany-ne-v-taksi
+severity: medium
+category: script
+
+### What went wrong
+
+- Preflight `excalibur_blog_link_verify.py` raised `UnicodeEncodeError: 'latin-1' codec can't encode characters` on CTA hrefs with Unicode host `https://добрыйдом-72.рф/` and `/booking/`.
+- `structure-gate` / `crosslink_qa` failed on same HTTP path.
+
+### How the agent recovered this run
+
+- Publish workaround: rewrote same-site CTA to relative `/` and `/booking/` in `article.html` so link_verify could run.
+
+### Durable fix needed before next run
+
+- Encode IDN hostnames to punycode before urllib HTTP checks; allow absolute Cyrillic CTA without manual relative rewrite.
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_link_verify.py`
+- `scripts/excalibur_blog_site_base.py`
+- `shared/excalibur-wp-publish-contract.md`
+- `skills/publish-excalibur-blog/SKILL.md`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-08-26
+fix_summary:
+- Added `normalize_url_for_http()` in `excalibur_blog_site_base.py` (IDNA punycode before HTTP).
+- `excalibur_blog_link_verify.check_url` uses punycode host; Cyrillic CTA no longer needs relative rewrite.
+files_changed:
+- `scripts/excalibur_blog_site_base.py`
+- `scripts/excalibur_blog_link_verify.py`
+- `tests/test_link_verify_idna.py`
+- `shared/excalibur-wp-publish-contract.md`
+- `skills/publish-excalibur-blog/SKILL.md`
+- `.cursor/skills/publish-excalibur-blog/SKILL.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_site_base.py scripts/excalibur_blog_link_verify.py`
+- `python3 -m unittest tests.test_link_verify_idna -v`
+- E2E link_verify on Cyrillic href → verdict pass
+commit: pending-parent-commit
+
+## INC-20260826-1258 — cover QA white plate on pre-composite
+
+status: fixed
+run_date: 2026-08-26
+role: excalibur-blog-cover
+topic_id: B03
+article_dir: memory/blog/articles/B03-vyezd-v-12-00-poezd-v-16-30-chemodany-ne-v-taksi
+severity: medium
+category: script
+
+### What went wrong
+
+- First canvas-quad-01 generation left white logo plate/card in TOP-RIGHT pad on `cover/pre-composite/cover.png`; Cover-QA / drawn_logo gate caught it after composite attempt.
+
+### How the agent recovered this run
+
+- Regenerated canvas-1 with stronger empty-pad prompt; factory logo paste on cover + inline-01/03/07; `cover_qa.json` PASS.
+
+### Durable fix needed before next run
+
+- Block logo composite when pre-composite pad has white/gray plate; strengthen default cover TL prompt for empty TOP-RIGHT pad.
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_brand_logo_composite.py`
+- `scripts/excalibur_blog_cover_quad_prompt.py`
+- `skills/cover-excalibur-blog/SKILL.md`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-08-26
+fix_summary:
+- `assert_no_white_plate_before_paste()` blocks factory logo paste when pad has white/gray plate.
+- Default cover TL prompt: TOP-RIGHT = empty bright wall ONLY; phone vertical on right margin.
+files_changed:
+- `scripts/excalibur_blog_brand_logo_composite.py`
+- `scripts/excalibur_blog_cover_quad_prompt.py`
+- `tests/test_drawn_logo_gate.py`
+- `skills/cover-excalibur-blog/SKILL.md`
+- `.cursor/skills/cover-excalibur-blog/SKILL.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_brand_logo_composite.py scripts/excalibur_blog_cover_quad_prompt.py`
+- `python3 -m unittest tests.test_drawn_logo_gate.DrawnLogoGateTest.test_composite_blocks_white_plate_before_paste -v`
+commit: pending-parent-commit
