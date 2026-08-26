@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "topic_id": "B03",
+  "slug": "vyezd-v-12-00-poezd-v-16-30-chemodany-ne-v-taksi",
+  "candidates_count": 6,
+  "outbound_found": [
+    {
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "title": "beskontaktnoe-zaselenie-posutochno-tyumen"
+    },
+    {
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "title": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem"
+    },
+    {
+      "slug": "uborka-syomnoj-kvartiry-pered-vyezdom-7-shagov-chtoby-vernuli-zalog",
+      "title": "Уборка съёмной квартиры перед выездом: 7 шагов, чтобы вернули залог"
+    }
+  ],
+  "outbound_unique_slugs": [
+    "uborka-syomnoj-kvartiry-pered-vyezdom-7-shagov-chtoby-vernuli-zalog",
+    "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+    "beskontaktnoe-zaselenie-posutochno-tyumen"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "warnings": [],
+  "errors": []
+}

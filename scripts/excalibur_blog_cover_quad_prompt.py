@@ -123,7 +123,7 @@ NON_CAT_MEME_INLINE_HINT = (
     f"tiny people-meme sticker only (≤{int(MEME_STICKER_INLINE_MAX_SHARE * 100)}% frame, "
     f"corner accent — Roll Safe / Harold / Pepe / reaction face from {MEME_CATALOG_REL}; NO cat)"
 )
-MAX_MCP_PROMPT_CHARS = 3500
+MAX_MCP_PROMPT_CHARS = 4200
 # Compact limits leave headroom under 3500 after style boilerplate (INC-20260721-0837).
 # Cover raw ≈80–140 (from blog-hero lock); inline ≈100–220. Long MUST/face essays
 # starve host space (B80 / INC-20260724-0837) and bilingual essays blow MCP budget.
@@ -638,9 +638,10 @@ def build_prompt(
         )
     elif has_cover and brand_logo_paste:
         reference_line = (
-            "Cover TL: NO host; NO logo in gen (factory cropped-img_7143.png alpha after split); "
-            f"phone IN scene only — {PHONE_IN_SCENE_RULE.format(phone=cover_phone_cta)}; "
-            "NEVER post-composite pill."
+            "Cover TL: NO host; NO logo/lockup/curtains/house/«Добрый дом» in gen; "
+            "TOP-RIGHT pad = empty bright wall ONLY, zero graphics; "
+            f"phone RIGHT margin VERTICAL torn paper ONLY — EXACT «{cover_phone_cta}»; "
+            "NEVER bottom horizontal strip/pill/banner; NEVER over cat/meme/sticky/headline."
         )
     elif has_cover:
         reference_line = (
@@ -674,7 +675,6 @@ def build_prompt(
 
     lines = [
         style_prefix,
-        CAT_MEME_QUOTA_RULE,
         "Canvas 2048x1152 exact 2x2; four 16:9 panels (1024x576); thin white gutters; no bleed.",
         "",
         ban_line,

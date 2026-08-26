@@ -29,6 +29,7 @@ description: "④a Cover: 2× quad Grsai 2K, meme energy, factory logo overlay a
 | Provider | **Grsai** (see `shared/grsai-gpt-image-api-contract.md`) |
 | VIP retry | **disabled** — PRIMARY_MODEL_ID only; ship native undersized if retry fails |
 | Max attempts | **2** per canvas → pad-clear + official logo paste if plate |
+| Pre-paste gate | `brand_logo_composite` **BLOCKER** on white/gray plate in TOP-RIGHT pad (regen canvas, don't paste over plate) |
 | Prose/scene | Derouter Terra `--role cover-scene` only |
 
 ## Архитектура

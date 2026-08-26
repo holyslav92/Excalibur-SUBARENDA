@@ -1,0 +1,42 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 1,
+  "identity_reference_local": "",
+  "identity_reference_id": "",
+  "logo_reference_local": "",
+  "logo_reference_url": "",
+  "logo_reference_in_generation": false,
+  "reference_url_hosted": "",
+  "output_canvas": "cover/canvas-quad-01.png",
+  "result_path": "cover/quad-mcp-result-01.json",
+  "slots": [
+    "cover",
+    "inline_1",
+    "inline_2",
+    "inline_3"
+  ],
+  "preferred_image_flow": {
+    "provider": "grsai",
+    "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
+    "resolution": "2K",
+    "note": "PRIMARY: Grsai draw API (PRIMARY_MODEL_ID only; vip permanently disabled; aspectRatio+resolution=2K first, one explicit-size retry, ship native undersized). Fallback: excalibur_blog_kie_gpt_image2_api.py when Grsai fail. FORBIDDEN: *-vip, flux2-pro-*, Seedream, nano_banana*, z-image, mcp-derouter/start-mcp.sh.",
+    "apply_script": "python3 scripts/excalibur_blog_quad_apply.py --article-dir <article_dir> --canvas-index 1 --inject-html"
+  },
+  "jobs": [
+    {
+      "slot": "canvas_quad",
+      "tool": "grsai",
+      "mcp_args": {
+        "prompt": "WOW magazine poster RU editorial collage, airy #FFFFFF high-key, sun flare, warm hospitality (посуточно Тюмень, comfort+). Bold readable Russian DISPLAY type hook — NOT timid system font. NO host Shakin/identity-real. NO brand logo in generation — factory pastes canonical PNG TOP-RIGHT 8–12% on cover + 2–3 inlines only. TOP-RIGHT empty pad reserved; meme/cat bottom-left ≤12%;…\nCanvas 2048x1152 exact 2x2; four 16:9 panels (1024x576); thin white gutters; no bleed.\nBan: dark/low-key; inventory props; celebrity memes; EXCALIBUR stamp; chubby host; stock/generated man co-host on inline; large meme person on inline; icon slogans; empty cells; desk scene; cover copy; celebrity memes; stock model man; handsome realtor co-host; generated stranger presenter; large human on inline; meme person >15% frame; invented meme face; WordPress; Gutenberg; wp-admin; block editor; theme chrome; cookie bar; overlapping headline stickers meme cat phone logo; timid system font; wall of tiny labels; empty stock; wordpress screenshot; NO drawn logo/wordmark/lockup/curtains+red flower/dashed logo frame/gold house; factory cropped-img_7143.png PNG paste after split; NO white/gray card/plate/tablichka under TOP-RIGHT pad; factory alpha PNG after split only.\nTEXT LANGUAGE LOCK: all visible text is RUSSIAN Cyrillic only; exact LABELS per panel only.\nCover TL: NO host; NO logo/lockup/curtains/house/«Добрый дом» in gen; TOP-RIGHT pad = empty bright wall ONLY, zero graphics; phone RIGHT margin VERTICAL torn paper ONLY — EXACT «+7 (993) 574-83-22»; NEVER bottom horizontal strip/pill/banner; NEVER over cat/meme/sticky/headline.\nTL COVER WOW POSTER (magazine, not stock): «До поезда — чемодан в руках» bold DISPLAY Cyrillic readable, paint ONLY the highlight word \"чемодан\" in gold #dcc5a1; sticky «Оставить негде»; Tyumen station lobby summer 2026 suitcases; natural daylight. NO logo in gen. Phone EXACT «+7 (993) 574-83-22» on RIGHT edge vertical torn paper — NOT bottom strip. Roll Safe ≤12% bottom-left. TOP-RIGHT empty clear pad — no logo, no house, no plate, no sticker, no terracotta wordmark; high-key #FFF; #FFF\nTop-right inline: шаги заселения / доступа; «Один день, который надо прочитать по часам»; Timeline 11:50→16:30 clocks; TOP-RIGHT empty pad.. TXT:11:50 сообщение | 12:00 выезд | 12:40 вокзал | 13:10 камера | поезд 16:30 | окно 4,5 часа. TOP-RIGHT empty pad; no drawn logo; no white/gray plate.\nBottom-left inline: сравнение «в рекламе / на деле»; ««Я думал, везде можно оставить вещи»»; Отель vs квартира columns.. TXT:Отель ≠ квартира | уборка 3 часа | заезд с 15:00 | поздний выезд | только по согласованию. TOP-RIGHT clean; no logo; no white/gray plate.\nBottom-right inline: fact_card; «Камера хранения: не запасной план, а нормальный маршрут»; Locker 60/90/180; TOP-RIGHT empty pad.. TXT:Привокзальная 22 | круглосуточно | 60/90/180 см | около 350 ₽ | два чемодана | ячейка 180 см. TOP-RIGHT empty pad; no drawn logo; no white/gray plate.\nInline all: #FFF collage, gold/black Cyrillic labels, tape/pins/strings/paper scraps; high-key #FFF/gold; not noir; dense facts/numbers; exact TXT per panel; meme only if +meme AND sticker-scale; CAT-MEME QUOTA: max ONE cat-meme sticker across entire 8-panel set (cover + 7 inlines). Prefer cover OR one inline — never both. All other meme slots = people-memes/reaction templates from memory/cover/meme-top100.json (Roll Safe, Harold, Pepe, Wojak, Gigachad, etc.) — NOT grumpy/ginger/tardar/smudge cat repeats.; no human hero on inline; no icon soup; zero typos.",
+        "aspect_ratio": "16:9",
+        "resolution": "2K"
+      }
+    }
+  ],
+  "validation": {
+    "prompt_chars": 3516,
+    "max_prompt_chars": 4200,
+    "required_reference_host": "{{SITE_HOST}}",
+    "resolution": "2K"
+  }
+}

@@ -3,14 +3,14 @@
   "source_channel": "https://t.me/klyshin_A",
   "source_label": "Алексей Клышин — angle only (ритм delivery, не копировать сделки)",
   "tenant": "Добрый дом — посуточная аренда / субаренда Тюмень",
-  "updated_at": "2026-08-25",
+  "updated_at": "2026-08-26",
   "timezone": "Asia/Yekaterinburg",
   "algorithm": "klyshin_hook → wordstat_probe → rework_for_demand → final_P0_or_skip_after_rework",
   "angle_rotation": {
     "last_n": 3,
     "burn_at_door_family": ["код", "бесконтакт", "заселение у двери", "оплатил — дверь"],
     "skip_last5_family": ["hot water", "hot_water_boiler", "neighbors", "neighbors_night", "extra fees", "hidden_fees", "dog", "dog_breed_fee", "passport", "паспорт"],
-    "skip_used": ["early_checkin", "early check-in"],
+    "skip_used": ["early_checkin", "early check-in", "parents_sept_uni", "sept_business_trip", "parking_before_booking"],
     "rule": "skip saturated families; near-term queue overrides seed bank"
   },
   "dzen_default": "pattern 1 (N советов) is NOT default — prefer 2-5",
@@ -75,7 +75,9 @@
       "dzen_pattern_prefer": [2, 5],
       "anti_dup": ["годовая аренда", "early_checkin"],
       "tyumen_localize": true,
-      "status": "queue_active"
+      "status": "saturated_wp",
+      "last_seen": "2026-08-25",
+      "saturated_note": "WP 2026-08-25 posutochno-u-vuza-roditeli"
     },
     {
       "id": "sept_business_trip",
@@ -86,7 +88,9 @@
       "wordstat_probes": ["командировка тюмень квартира", "аренда квартиры посуточно", "квартира посуточно тюмень"],
       "dzen_pattern_prefer": [2, 3],
       "tyumen_localize": true,
-      "status": "queue_active"
+      "status": "saturated_wp",
+      "last_seen": "2026-08-25",
+      "saturated_note": "WP 2026-08-25 zvonok-v-10-00-zaselenie-v-22-00"
     },
     {
       "id": "kitchen_vs_hotel_cafes",
@@ -109,7 +113,9 @@
       "wordstat_probes": ["парковка аренда квартиры", "аренда квартиры посуточно тюмень", "квартира посуточно"],
       "dzen_pattern_prefer": [3, 2],
       "tyumen_localize": true,
-      "status": "queue_active"
+      "status": "saturated_wp",
+      "last_seen": "2026-08-26",
+      "saturated_note": "WP 2026-08-26 parkovka-u-shlagbauma"
     },
     {
       "id": "reviews_not_rating",
@@ -154,7 +160,12 @@
       "dzen_pattern_prefer": [2, 3],
       "anti_dup": ["early_checkin", "ранний заезд"],
       "tyumen_localize": true,
-      "status": "queue_active"
+      "status": "handoff_B03",
+      "last_seen": "2026-08-26",
+      "wordstat_rework_log": "probe «хранение багажа» 122 → «хранение багажа тюмень» 22 → «поздний выезд» 130 → «аренда квартиры посуточно» 821 → final P0 «квартиры посуточно тюмень» 5675",
+      "final_p0": {"phrase": "квартиры посуточно тюмень", "volume_55_11176": 5675, "volume_ru_225": 12957},
+      "used_in_articles": ["B03"],
+      "scout_override": "2026-08-26 slot1 parents_sept_uni saturated → override queue slot 8"
     }
   ],
   "parked_hooks": {

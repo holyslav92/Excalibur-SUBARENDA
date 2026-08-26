@@ -10,7 +10,7 @@ from __future__ import annotations
 import os
 import re
 from typing import Any
-from urllib.parse import urlparse
+from urllib.parse import urlparse, urlunparse
 
 
 SITE_BASE_PLACEHOLDER = "{{SITE_BASE}}"
@@ -28,6 +28,41 @@ def host_from_public_base(public_base: str | None = None) -> str:
 
 def normalize_public_base(base: str | None) -> str:
     return (base or "").strip().rstrip("/")
+
+
+def normalize_url_for_http(url: str) -> str:
+    """Encode IDN hostnames to punycode so urllib HTTP headers stay latin-1 safe.
+
+    urllib.request builds Request-URI with latin-1; Cyrillic hosts like
+    добрыйдом-72.рф raise UnicodeEncodeError unless punycode-encoded first
+    (INC-20260826-1257 / B03 publish preflight).
+    """
+    raw = (url or "").strip()
+    if not raw or raw.startswith(("#", "/")):
+        return raw
+    parsed = urlparse(raw)
+    if parsed.scheme not in ("http", "https") or not parsed.netloc:
+        return raw
+    host = parsed.hostname
+    if not host:
+        return raw
+    try:
+        ascii_host = host.encode("idna").decode("ascii")
+    except UnicodeError:
+        return raw
+    if ascii_host == host:
+        return raw
+    netloc = ascii_host
+    if parsed.port:
+        netloc = f"{ascii_host}:{parsed.port}"
+    if parsed.username:
+        auth = parsed.username
+        if parsed.password:
+            auth = f"{auth}:{parsed.password}"
+        netloc = f"{auth}@{netloc}"
+    return urlunparse(
+        (parsed.scheme, netloc, parsed.path, parsed.params, parsed.query, parsed.fragment)
+    )
 
 
 def resolve_public_base_from_env() -> str:

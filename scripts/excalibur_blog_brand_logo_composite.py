@@ -335,6 +335,19 @@ def assert_no_drawn_lockup_before_paste(image_path: Path) -> None:
         )
 
 
+def assert_no_white_plate_before_paste(image_path: Path) -> None:
+    """Block factory paste when generation left a white/gray card in the logo pad."""
+    from excalibur_blog_drawn_logo_gate import detect_white_plate_in_pad
+
+    plate = detect_white_plate_in_pad(image_path)
+    if plate.get("detected") and plate.get("plate_kind") in ("white", "gray", "light"):
+        raise ValueError(
+            f"logo plate/card in {image_path.name} before factory paste "
+            f"(kind={plate.get('plate_kind')}, area={plate.get('plate_area')}) — "
+            "regenerate canvas with empty TOP-RIGHT pad (no white/gray tablichka)"
+        )
+
+
 def composite_logo_onto_image(
     image_path: Path,
     logo_path: Path,
@@ -355,6 +368,7 @@ def composite_logo_onto_image(
         pre_path, created = restore_or_snapshot_pre_composite(image_path, pre_snapshot_dir)
         if paste_logo and block_drawn_lockup and created:
             assert_no_drawn_lockup_before_paste(pre_path)
+            assert_no_white_plate_before_paste(pre_path)
 
     with Image.open(image_path) as base_img:
         base = base_img.convert("RGBA")

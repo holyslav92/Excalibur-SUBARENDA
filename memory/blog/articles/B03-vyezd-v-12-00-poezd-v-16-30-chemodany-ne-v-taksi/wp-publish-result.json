@@ -1,0 +1,27 @@
+{
+  "slug": "vyezd-v-12-00-poezd-v-16-30-chemodany-ne-v-taksi",
+  "topic_id": "B03",
+  "permalink": "{{SITE_BASE}}/blog/vyezd-v-12-00-poezd-v-16-30-chemodany-ne-v-taksi/",
+  "publish_method": "ftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B03-vyezd-v-12-00-poezd-v-16-30-chemodany-ne-v-taksi/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1063047,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4040 slug=vyezd-v-12-00-poezd-v-16-30-chemodany-ne-v-taksi\nOK categories=101,106\nOK dzen_yzen_meta=1\nOK featured_image=4041\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4042 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/08/vyezd-v-12-00-poezd-v-16-30-chemodany-ne-v-taksi-inline-01.png\nOK inline_alt=4042\nOK inline_caption=4042\nOK inline_description=4042\nOK inline_image_upload=4043 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/08/vyezd-v-12-00-poezd-v-16-30-chemodany-ne-v-taksi-inline-02.png\nOK inline_alt=4043\nOK inline_caption=4043\nOK inline_description=4043\nOK inline_image_upload=4044 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/08/vyezd-v-12-00-poezd-v-16-30-chemodany-ne-v-taksi-inline-03.png\nOK inline_alt=4044\nOK inline_caption=4044\nOK inline_description=4044\nOK inline_image_upload=4045 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/08/vyezd-v-12-00-poezd-v-16-30-chemodany-ne-v-taksi-inline-04.png\nOK inline_alt=4045\nOK inline_caption=4045\nOK inline_description=4045\nOK inline_image_upload=4046 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/08/vyezd-v-12-00-poezd-v-16-30-chemodany-ne-v-taksi-inline-05.png\nOK inline_alt=4046\nOK inline_caption=4046\nOK inline_description=4046\nOK inline_image_upload=4047 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/08/vyezd-v-12-00-poezd-v-16-30-chemodany-ne-v-taksi-inline-06.png\nOK inline_alt=4047\nOK inline_caption=4047\nOK inline_description=4047\nOK inline_image_upload=4048 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/08/vyezd-v-12-00-poezd-v-16-30-chemodany-ne-v-taksi-inline-07.png\nOK inline_alt=4048\nOK inline_caption=4048\nOK inline_description=4048\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/vyezd-v-12-00-poezd-v-16-30-chemodany-ne-v-taksi/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/vyezd-v-12-00-poezd-v-16-30-chemodany-ne-v-taksi/",
+    "errors": []
+  }
+}

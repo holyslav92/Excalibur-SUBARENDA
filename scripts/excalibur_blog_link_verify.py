@@ -18,6 +18,7 @@ from excalibur_blog_site_base import (
     SITE_BASE_PLACEHOLDER,
     expand_site_base,
     normalize_public_base,
+    normalize_url_for_http,
     redact_site_base,
     redact_structure,
     resolve_public_base_from_env,
@@ -53,9 +54,10 @@ def extract_links(html: str) -> list[str]:
 
 
 def check_url(url: str, timeout: float, user_agent: str) -> dict[str, Any]:
+    http_url = normalize_url_for_http(url)
     ctx = ssl.create_default_context()
     req = urllib.request.Request(
-        url,
+        http_url,
         method="HEAD",
         headers={"User-Agent": user_agent},
     )
@@ -73,7 +75,7 @@ def check_url(url: str, timeout: float, user_agent: str) -> dict[str, Any]:
         # Also retry when HEAD is disallowed / blocked (405/501/403/418).
         # VK kittenx (dev.vk.com) returns 418 on HEAD while GET 200 (B110).
         if e.code in (404, 405, 501, 403, 418):
-            return _get_fallback(url, timeout, user_agent, ctx, str(e))
+            return _get_fallback(http_url, timeout, user_agent, ctx, str(e))
         return {
             "url": url,
             "status": e.code,
@@ -82,7 +84,7 @@ def check_url(url: str, timeout: float, user_agent: str) -> dict[str, Any]:
             "error": str(e),
         }
     except Exception as e:  # noqa: BLE001
-        return _get_fallback(url, timeout, user_agent, ctx, str(e))
+        return _get_fallback(http_url, timeout, user_agent, ctx, str(e))
 
 
 def _get_fallback(

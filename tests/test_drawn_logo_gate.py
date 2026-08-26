@@ -92,6 +92,28 @@ class DrawnLogoGateTest(unittest.TestCase):
             )
             self.assertTrue(plate.get("detected"), plate)
 
+    def test_composite_blocks_white_plate_before_paste(self) -> None:
+        from PIL import Image, ImageDraw
+
+        from excalibur_blog_brand_logo_composite import composite_logo_onto_image
+
+        self.assertTrue(LOGO.is_file(), "official logo asset missing")
+        with tempfile.TemporaryDirectory() as tmp:
+            canvas = Path(tmp) / "cover.png"
+            img = Image.new("RGB", (1200, 675), (180, 190, 200))
+            draw = ImageDraw.Draw(img)
+            x0 = 1200 - 220
+            draw.rectangle((x0, 12, 1190, 190), fill=(252, 252, 252))
+            img.save(canvas)
+            with self.assertRaises(ValueError) as ctx:
+                composite_logo_onto_image(
+                    canvas,
+                    LOGO,
+                    paste_logo=True,
+                    pre_snapshot_dir=Path(tmp) / "pre-composite",
+                )
+            self.assertIn("logo plate/card", str(ctx.exception).casefold())
+
     def test_official_logo_pasted_region_matches_canonical(self) -> None:
         from PIL import Image
 
