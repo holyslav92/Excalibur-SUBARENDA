@@ -1,5 +1,45 @@
 # Pipeline fix queue
 
+## INC-20260826-1257 — Metrika credentials missing (Content-learner B03)
+
+status: open
+run_date: 2026-08-26
+role: excalibur-blog-content-learner
+topic_id: B03
+article_dir: memory/blog/articles/B03-vyezd-v-12-00-poezd-v-16-30-chemodany-ne-v-taksi
+severity: medium
+category: secrets
+
+### What went wrong
+
+- `excalibur_blog_metrika_fetch.py --days 30 --ingest` exit 2:
+  `METRIKA CREDENTIALS BLOCKER` — `YANDEX_METRIKA_OAUTH_TOKEN` and
+  `YANDEX_METRIKA_COUNTER_ID` not set in Cloud Secrets/env.
+- `memory/analytics/metrika-latest.json` not created; cohort analysis skipped.
+
+### How the agent recovered this run
+
+- evidence_gate=SKIP (no content-evidence-report.json — expected under human-first-v2).
+- Recorded low-confidence lesson `LESSON-20260826-1257-B03-bagazh-okno-vyezd` in
+  `memory/content-lessons.md` from pipeline artifacts only (title-brief, gates, publish).
+- No durable apply; rollback_check=INSUFFICIENT_DATA.
+
+### Durable fix needed before next run
+
+- Set `YANDEX_METRIKA_OAUTH_TOKEN` (OAuth scope `metrika:read`) and
+  `YANDEX_METRIKA_COUNTER_ID` in Cloud Secrets or `memory/site.env.local`.
+- Re-run Content-learner for B03 after credentials available to ingest Metrika cohort.
+
+### Suggested files to inspect/change
+
+- Cloud Secrets / `.env` per `CLOUD-FIRST-RUN.md` and `shared/yandex-metrika-contract.md`
+- `scripts/excalibur_blog_metrika_fetch.py`
+
+### Secrets
+
+- YANDEX_METRIKA_OAUTH_TOKEN — missing
+- YANDEX_METRIKA_COUNTER_ID — missing
+
 ## INC-20260824-1038 — live-page gate /blog permalink vs schema URL
 
 status: fixed
