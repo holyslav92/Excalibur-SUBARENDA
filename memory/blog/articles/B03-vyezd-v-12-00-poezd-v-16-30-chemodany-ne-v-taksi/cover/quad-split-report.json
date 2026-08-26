@@ -160,22 +160,22 @@
           "fallback_reason": "aspect_crop_loss_too_high",
           "rejected_gutter": {
             "h_gutter_px": {
-              "start": 573,
+              "start": 590,
               "end": 611
             },
             "v_gutter_px": {
               "start": 1017,
-              "end": 1043
+              "end": 1063
             },
             "gutter_quality": {
-              "h_center_offset_px": 16.0,
-              "v_center_offset_px": 6.0,
-              "max_aspect_crop_loss": 0.0541,
+              "h_center_offset_px": 24.5,
+              "v_center_offset_px": 16.0,
+              "max_aspect_crop_loss": 0.061,
               "per_panel_crop_loss": {
-                "top_left": 0.0,
-                "top_right": 0.014,
+                "top_left": 0.0305,
+                "top_right": 0.061,
                 "bottom_left": 0.0541,
-                "bottom_right": 0.0428
+                "bottom_right": 0.0234
               },
               "reject_reason": "aspect_crop_loss_too_high"
             }
