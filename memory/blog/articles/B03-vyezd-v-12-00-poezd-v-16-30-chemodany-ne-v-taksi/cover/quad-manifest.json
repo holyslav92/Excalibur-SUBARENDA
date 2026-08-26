@@ -1,0 +1,180 @@
+{
+  "topic_id": "B03",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": [
+        "inline_4",
+        "inline_5",
+        "inline_6",
+        "inline_7"
+      ],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "До поезда — чемодан в руках",
+  "cover_hook_highlight": "чемодан",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "wordstat_stickers": [
+    "хранение багажа тюмень",
+    "камера хранения багажа тюмень"
+  ],
+  "logo_paste_inline_slots": [
+    "inline_1",
+    "inline_3",
+    "inline_7"
+  ],
+  "cover_motifs": {
+    "composition": "train-station luggage timeline poster + bold Cyrillic headline + empty TOP-RIGHT logo pad",
+    "location": "Tyumen railway station lobby summer August bright sun through glass canopy",
+    "meme": "Roll Safe tap-temple people-meme sticker bottom-left ≤12%, non-feline",
+    "prop_set": "rolling suitcases, locker cells 60/90/180, train ticket, keys, torn timeline strip, gold tape",
+    "sticker_set": [
+      "хранение багажа тюмень",
+      "камера хранения багажа тюмень"
+    ],
+    "joke": "Roll Safe thinks station locker is genius before taxi ride"
+  },
+  "cover_emotion": "",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Гость с чемоданами у вокзала Тюмени: выезд 12:00, поезд 16:30",
+      "scene_hint": "Station lobby suitcases; TOP-RIGHT pad pure #FFF empty no gold; phone tape; Roll Safe ≤12%.",
+      "meme_caption_ru": "",
+      "sticky": "Оставить негде"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Один день, который надо прочитать по часам",
+      "visual_type": "process_flow",
+      "scene_hint": "Timeline 11:50→16:30 clocks; TOP-RIGHT empty pad.",
+      "alt": "Хронология дня: выезд 12:00, вокзал, камера, поезд 16:30",
+      "labels": [
+        "11:50 сообщение",
+        "12:00 выезд",
+        "12:40 вокзал",
+        "13:10 камера",
+        "поезд 16:30",
+        "окно 4,5 часа"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "«Я думал, везде можно оставить вещи»",
+      "visual_type": "comparison_table",
+      "scene_hint": "Отель vs квартира columns.",
+      "alt": "Отель и квартира: разница в хранении багажа",
+      "labels": [
+        "Отель ≠ квартира",
+        "уборка 3 часа",
+        "заезд с 15:00",
+        "поздний выезд",
+        "только по согласованию"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Камера хранения: не запасной план, а нормальный маршрут",
+      "visual_type": "fact_card",
+      "scene_hint": "Locker 60/90/180; TOP-RIGHT empty pad.",
+      "alt": "Камера хранения Тюмень: размеры ячеек и адрес",
+      "labels": [
+        "Привокзальная 22",
+        "круглосуточно",
+        "60/90/180 см",
+        "около 350 ₽",
+        "два чемодана",
+        "ячейка 180 см"
+      ]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Маршрут к поезду в 16:30",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Route keys→locker→platform.",
+      "alt": "Маршрут от выезда до поезда с запасом 30–45 минут",
+      "labels": [
+        "12:00 ключи",
+        "12:45 ячейка",
+        "15:45 забрать",
+        "16:00 платформа",
+        "запас 30–45 минут"
+      ]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Сначала багаж, потом ключ",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Checklist багаж→ключи.",
+      "alt": "Порядок: сначала багаж, потом ключи",
+      "labels": [
+        "Сначала багаж",
+        "потом ключи",
+        "уборка после 12",
+        "не задерживайте ключи",
+        "депозит под вопросом"
+      ]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Что спросить до бронирования",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "7 questions checklist.",
+      "alt": "Семь вопросов до бронирования про выезд и багаж",
+      "labels": [
+        "7 вопросов",
+        "время выезда",
+        "багаж после выезда",
+        "цена позднего",
+        "следующий гость",
+        "размер ячейки"
+      ]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "",
+      "visual_type": "fact_card",
+      "scene_hint": "Summary 15:00/12:00; TOP-RIGHT empty pad.",
+      "alt": "Заезд 15:00, выезд 12:00 — спросите про багаж до оплаты",
+      "labels": [
+        "заезд 15:00",
+        "выезд 12:00",
+        "напишите заранее",
+        "без ключей",
+        "чемоданы не в такси"
+      ]
+    }
+  },
+  "cover_keys_ru": [
+    "хранение багажа тюмень",
+    "камера хранения багажа тюмень"
+  ]
+}

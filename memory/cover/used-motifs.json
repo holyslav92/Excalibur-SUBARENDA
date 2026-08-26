@@ -26,6 +26,19 @@
         "sticker_set": "залог посуточно, тюмень, скол на плите",
         "joke": "cat reacts to countertop chip"
       }
+    },
+    {
+      "date": "2026-08-26",
+      "topic_id": "B03",
+      "slug": "",
+      "motifs": {
+        "composition": "train-station luggage timeline poster + bold cyrillic headline + empty top-right logo pad",
+        "location": "tyumen railway station lobby summer august bright sun through glass canopy",
+        "meme": "roll safe tap-temple people-meme sticker bottom-left ≤12%, non-feline",
+        "prop_set": "rolling suitcases, locker cells 60/90/180, train ticket, keys, torn timeline strip, gold tape",
+        "sticker_set": "хранение багажа тюмень, камера хранения багажа тюмень",
+        "joke": "roll safe thinks station locker is genius before taxi ride"
+      }
     }
   ]
 }
