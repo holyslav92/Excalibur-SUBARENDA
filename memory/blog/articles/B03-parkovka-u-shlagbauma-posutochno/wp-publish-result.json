@@ -1,0 +1,27 @@
+{
+  "slug": "parkovka-u-shlagbauma-posutochno",
+  "topic_id": "B03",
+  "permalink": "{{SITE_BASE}}/blog/parkovka-u-shlagbauma-posutochno/",
+  "publish_method": "ftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B03-parkovka-u-shlagbauma-posutochno/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1204698,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4030 slug=parkovka-u-shlagbauma-posutochno\nOK categories=101,106\nOK dzen_yzen_meta=1\nOK featured_image=4031\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4032 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/08/parkovka-u-shlagbauma-posutochno-inline-01.png\nOK inline_alt=4032\nOK inline_caption=4032\nOK inline_description=4032\nOK inline_image_upload=4033 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/08/parkovka-u-shlagbauma-posutochno-inline-02.png\nOK inline_alt=4033\nOK inline_caption=4033\nOK inline_description=4033\nOK inline_image_upload=4034 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/08/parkovka-u-shlagbauma-posutochno-inline-03.png\nOK inline_alt=4034\nOK inline_caption=4034\nOK inline_description=4034\nOK inline_image_upload=4035 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/08/parkovka-u-shlagbauma-posutochno-inline-04.png\nOK inline_alt=4035\nOK inline_caption=4035\nOK inline_description=4035\nOK inline_image_upload=4036 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/08/parkovka-u-shlagbauma-posutochno-inline-05.png\nOK inline_alt=4036\nOK inline_caption=4036\nOK inline_description=4036\nOK inline_image_upload=4037 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/08/parkovka-u-shlagbauma-posutochno-inline-06.png\nOK inline_alt=4037\nOK inline_caption=4037\nOK inline_description=4037\nOK inline_image_upload=4038 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/08/parkovka-u-shlagbauma-posutochno-inline-07.png\nOK inline_alt=4038\nOK inline_caption=4038\nOK inline_description=4038\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/parkovka-u-shlagbauma-posutochno/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/parkovka-u-shlagbauma-posutochno/",
+    "errors": []
+  }
+}

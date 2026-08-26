@@ -1,0 +1,25 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/parkovka-u-shlagbauma-posutochno/#article",
+  "url": "{{SITE_BASE}}/blog/parkovka-u-shlagbauma-posutochno/",
+  "headline": "Квартира посуточно: «парковка рядом» — как въехать ночью",
+  "description": "«Парковка рядом», говорите? Ночью эта фраза легко превращается в очередь у шлагбаума с детьми и сумками. Добрый дом в Тюмени разбирает, что спросить до брони — не у закрытого двора.",
+  "inLanguage": "ru-RU",
+  "datePublished": "2026-08-26",
+  "dateModified": "2026-08-26",
+  "author": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/parkovka-u-shlagbauma-posutochno/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/"
+  }
+}

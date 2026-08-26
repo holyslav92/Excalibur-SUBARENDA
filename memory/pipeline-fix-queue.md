@@ -92,3 +92,35 @@ checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_llms_deploy.py`
 - `python3 scripts/excalibur_blog_llms_deploy.py --dry-run` → llms files present, transport ftp
 commit: 3b837c2
+
+---
+
+## INC-20260826-0718 — link_verify latin-1 fail on IDN booking href
+
+status: fixed
+run_date: 2026-08-26
+role: excalibur-blog-publish
+topic_id: B03
+article_dir: memory/blog/articles/B03-parkovka-u-shlagbauma-posutochno
+severity: medium
+category: script
+
+### What went wrong
+
+- `link_verify` failed on unicode IDN booking/site href with latin-1 encode error.
+- Punycode-only href breaks `community_cta_gate`.
+
+### Durable fix
+
+- `idna_encode_url()` in link_verify before HTTP; unicode href stays in article HTML.
+
+### Fixer resolution
+
+fixed_at: 2026-08-26
+fix_summary:
+- IDN punycode encoding in link_verify HTTP client.
+files_changed:
+- `scripts/excalibur_blog_link_verify.py`
+checks_run:
+- link_verify verdict pass with unicode hrefs
+commit: pending

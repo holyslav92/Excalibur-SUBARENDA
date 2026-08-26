@@ -52,7 +52,33 @@ def extract_links(html: str) -> list[str]:
     return out
 
 
+from urllib.parse import urlsplit, urlunsplit
+
+
+def idna_encode_url(url: str) -> str:
+    """Кодирует IDN-хост в punycode для HTTP-клиента (latin-1 safe)."""
+    parts = urlsplit(url)
+    if not parts.hostname:
+        return url
+    try:
+        import idna
+
+        ascii_host = idna.encode(parts.hostname).decode("ascii")
+    except Exception:
+        return url
+    netloc = ascii_host
+    if parts.port:
+        netloc = f"{ascii_host}:{parts.port}"
+    if parts.username is not None:
+        auth = parts.username
+        if parts.password is not None:
+            auth = f"{auth}:{parts.password}"
+        netloc = f"{auth}@{netloc}"
+    return urlunsplit((parts.scheme, netloc, parts.path, parts.query, parts.fragment))
+
+
 def check_url(url: str, timeout: float, user_agent: str) -> dict[str, Any]:
+    url = idna_encode_url(url)
     ctx = ssl.create_default_context()
     req = urllib.request.Request(
         url,
