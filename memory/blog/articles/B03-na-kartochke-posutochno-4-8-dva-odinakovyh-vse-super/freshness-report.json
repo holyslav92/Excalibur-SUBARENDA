@@ -1,0 +1,13 @@
+{
+  "gate": "contract-freshness",
+  "status": "STALE",
+  "contracts_fingerprint": "cc0a5b742d93898d",
+  "newest_contract_mtime": 1787810565.7041948,
+  "missing_contracts": [],
+  "checked": [
+    "drafts/writer.html"
+  ],
+  "must_rerun": [
+    "article.html missing"
+  ]
+}

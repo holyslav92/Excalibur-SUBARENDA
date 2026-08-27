@@ -1,0 +1,26 @@
+{
+  "gate": "writer-draft",
+  "status": "PASS",
+  "file": "drafts/writer.html",
+  "checks": {
+    "html_linter": "pass",
+    "word_count": 1497,
+    "word_count_range": "1100-1800",
+    "derouter_stamp": "derouter-opus-stamp-writer.json",
+    "derouter_model": "claude-opus-5",
+    "required_elements": {
+      "date_or_time": true,
+      "quote": true,
+      "rub_or_nights": true,
+      "illusion_break": true,
+      "mid_fight_question": true,
+      "identity_line": true,
+      "checklist_after_moral": true,
+      "funnel_tg_after_checklist": true,
+      "funnel_max_after_u_nas": true,
+      "interlinks": 2
+    },
+    "banned_topics_absent": true
+  },
+  "writer_ready_gate_note": "excalibur_blog_writer_ready_gate.py targets post-Sol article.html; not applicable at Writer stage"
+}
