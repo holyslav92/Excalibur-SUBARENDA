@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "research_date": "2026-08-27",
+  "topic_id": "B03",
+  "topic": "отзывы перед бронированием посуточно — Авито/Суточно, не верить 4.8 с копипастами",
+  "fresh_signal": "sutochno.ru/votes (июль 2026, 2479 отзывов 9.0+ за месяц) + vc.ru Bayes HomeTech (обновлён 2026-08-03, Отелло июнь 2026) + scout klyshin_A",
+  "wordstat": {
+    "P0_RU": "суточно ру отзывы — 3715",
+    "P0_Tyumen": "квартиры посуточно тюмень — 5675",
+    "regions": "55,11176,compare225",
+    "accessed_at": "2026-08-27"
+  },
+  "official_source_audit": {
+    "required": false,
+    "status": "NOT_REQUIRED",
+    "reason": "Нет тарифов/комиссий банков или госорганов; платформенные правила из официальных страниц Авито и Суточно.ру"
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "derouter-opus-stamp-research.json"
+  }
+}
