@@ -1,0 +1,23 @@
+{
+  "topic_id": "B03",
+  "slug": "kvartira-posutochno-v-centre-tyumeni-tihij-rajon-ili-strojka-za-oknom",
+  "title": "Сняли квартиру посуточно в «тихом центре» — рядом стройка",
+  "h1": "Сняли квартиру посуточно в «тихом центре» — рядом стройка",
+  "description": "Заселение в Тюмени прошло гладко — пока не выяснилось, что важный вопрос никто не задал. Добрый дом разбирает гостевые риски до того, как они испортят поездку.",
+  "wp_category_slugs": [
+    "posutochnaya-arenda",
+    "sovety-gostyam"
+  ],
+  "theme_blocks": {
+    "faq": "skip",
+    "quiz": "skip",
+    "side_stickers": "skip"
+  },
+  "status": "published",
+  "author_id": "dobry-dom",
+  "article_mode": "B",
+  "date": "2026-08-27",
+  "pipeline_canon": "human-first-v2",
+  "editorial_swarm": false,
+  "wp_post_id": 4076
+}

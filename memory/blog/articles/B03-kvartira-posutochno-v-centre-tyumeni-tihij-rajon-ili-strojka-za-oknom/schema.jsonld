@@ -1,0 +1,34 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "{{SITE_BASE}}/blog/kvartira-posutochno-v-centre-tyumeni-tihij-rajon-ili-strojka-za-oknom/#article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{SITE_BASE}}/blog/kvartira-posutochno-v-centre-tyumeni-tihij-rajon-ili-strojka-za-oknom/"
+      },
+      "headline": "Сняли квартиру посуточно в «тихом центре» — рядом стройка",
+      "description": "Заселение в Тюмени прошло гладко — пока не выяснилось, что важный вопрос никто не задал. Добрый дом разбирает гостевые риски до того, как они испортят поездку.",
+      "datePublished": "2026-08-27",
+      "dateModified": "2026-08-27",
+      "author": {
+        "@type": "Organization",
+        "name": "Добрый дом",
+        "url": "{{SITE_BASE}}/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Добрый дом",
+        "url": "{{SITE_BASE}}/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/03/cropped-img_7143.png"
+        }
+      },
+      "image": "{{SITE_BASE}}/wp-content/uploads/cover/kvartira-posutochno-v-centre-tyumeni-tihij-rajon-ili-strojka-za-oknom-cover.png",
+      "url": "{{SITE_BASE}}/blog/kvartira-posutochno-v-centre-tyumeni-tihij-rajon-ili-strojka-za-oknom/",
+      "inLanguage": "ru-RU"
+    }
+  ]
+}

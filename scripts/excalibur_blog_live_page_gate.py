@@ -171,7 +171,7 @@ def inspect(
     if body_probe:
         plain = html_lib.unescape(re.sub(r"<[^>]+>", " ", html))
         plain = re.sub(r"\s+", " ", plain)
-        probe = re.sub(r"\s+", " ", body_probe).strip()
+        probe = html_lib.unescape(re.sub(r"\s+", " ", body_probe)).strip()
         if probe and probe not in plain:
             errors.append("expected article body probe not found on live page")
     entry = re.search(

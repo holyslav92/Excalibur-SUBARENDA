@@ -1,0 +1,8 @@
+High-key bright RU collage #FFFFFF sun flare. NO logo, NO house icon, NO brand name, NO wordmark anywhere. Empty top-right white pad on panels that need it.
+Canvas 2048x1152 2x2; thin gutters. Ban: logos, wordmarks, winter, brand text.
+TEXT: Russian Cyrillic TXT only.
+Top-left inline: reviews filter TXT:шум | стройка. NO logo.
+Top-right inline: chat 7:10 TXT:7:10 | среда. EMPTY top-right pad. NO logo text.
+Bottom-left inline: bedroom windows TXT:спальня | не кухня. EMPTY top-right pad. NO logo.
+Bottom-right inline: checklist TXT:чеклист | оплата. NO logo anywhere.
+Inline all: NO logos NO brand names; exact TXT; white high-key.

@@ -7,3 +7,4 @@ Excalibur-2-Cloud — не копировать URL tymenrieltor.ru.
 |------|----------|------|-----|--------|
 | 2026-08-20 | B01 | beskontaktnoe-zaselenie-posutochno-tyumen | https://добрыйдом-72.рф/blog/beskontaktnoe-zaselenie-posutochno-tyumen/ | published |
 | 2026-08-20 | B02 | perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem | https://xn---72-9cdob8azaodt6k.xn--p1ai/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/ | published |
+| 2026-08-27 | B03 | kvartira-posutochno-v-centre-tyumeni-tihij-rajon-ili-strojka-za-oknom | /blog/kvartira-posutochno-v-centre-tyumeni-tihij-rajon-ili-strojka-za-oknom/ | published |

@@ -1,0 +1,142 @@
+{
+  "topic_id": "B03",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": [
+        "inline_4",
+        "inline_5",
+        "inline_6",
+        "inline_7"
+      ],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "cover_hook": "Тихий центр — стройка за окном",
+  "cover_hook_highlight": "стройка",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "wordstat_stickers": [
+    "квартира посуточно тюмень",
+    "тихий центр"
+  ],
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Derouter REST (DEROUTER_API_KEY) — 2K 16:9, one job per canvas (2×). Cover agent invents cover_hook + scene_hint/alt before --write-batch. Host lock = blog-hero.json (navy blazer, not hoodie).",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Стройка за окном в тихом центре.",
+      "scene_hint": "Окно квартиры, кран во дворе, август, телефон на наклейке, пустый верхний правый угол.",
+      "meme_caption_ru": "",
+      "sticky": "В 7:10 молоток"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "«Тихий центр» — это не адрес, а обещание",
+      "visual_type": "comparison_table",
+      "scene_hint": "Таблица: тихий центр vs молоток 7:10.",
+      "alt": "Сравнение обещания и шума.",
+      "labels": [
+        "7:10 утра",
+        "молоток",
+        "кран"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Двадцать секунд видео дороже сорока отзывов",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Смартфон снимает окно, стикер «со звуком».",
+      "alt": "Видео из окна со звуком.",
+      "labels": [
+        "видео",
+        "из окна",
+        "со звуком"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Карты и панорамы: три минуты до перевода",
+      "visual_type": "checklist_board",
+      "scene_hint": "Карта, спутник, котлован у дома.",
+      "alt": "Проверка адреса на карте.",
+      "labels": [
+        "карта",
+        "спутник",
+        "панорама"
+      ]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Отзывы: шум редко называют шумом",
+      "visual_type": "schema_faq_ui",
+      "scene_hint": "Отзывы: слова шум и стройка.",
+      "alt": "Поиск шума в отзывах.",
+      "labels": [
+        "отзывы",
+        "шум",
+        "стройка"
+      ]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Один вопрос, которым можно открыть замок из общих слов",
+      "visual_type": "tool_screenshot",
+      "scene_hint": "Чат: что в 7:10 в среду?",
+      "alt": "Вопрос о шуме по часам.",
+      "labels": [
+        "7:10 в среду",
+        "тихо до 22"
+      ]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Что мы изменили в «Добром доме»",
+      "visual_type": "comparison_table",
+      "scene_hint": "Интерьер, окна спальни, не кухня.",
+      "alt": "Окна спальни в объявлении.",
+      "labels": [
+        "окна спальни",
+        "не кухни"
+      ]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Мораль: сначала время, потом деньги и ключ",
+      "visual_type": "infographic_card",
+      "scene_hint": "Чеклист 9 пунктов до оплаты.",
+      "alt": "Чеклист до брони.",
+      "labels": [
+        "чек лист",
+        "до оплаты"
+      ]
+    }
+  },
+  "cover_keys_ru": []
+}
