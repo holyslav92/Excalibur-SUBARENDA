@@ -1,0 +1,10 @@
+{
+  "local_path": "cover/canvas-quad-02.png",
+  "source": "grsai-draw-api",
+  "target_canvas": "2048x1152",
+  "native_width": 2048,
+  "native_height": 1152,
+  "native_long_side": 2048,
+  "delivery": "native_2k",
+  "vip_trigger": "economy_skip_primary_16_9"
+}

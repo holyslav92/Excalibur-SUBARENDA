@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "topic_id": "B03",
+  "slug": "kvartira-posutochno-kuhnya-est-ili-kazhdyj-den-kafe",
+  "candidates_count": 6,
+  "outbound_found": [
+    {
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "title": "beskontaktnoe-zaselenie-posutochno-tyumen"
+    },
+    {
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "title": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem"
+    },
+    {
+      "slug": "chto-vhodit-v-stoimost-kvartiry-posutochno-polnyj-spisok-uslug",
+      "title": "Что входит в стоимость квартиры посуточно: полный список услуг"
+    }
+  ],
+  "outbound_unique_slugs": [
+    "chto-vhodit-v-stoimost-kvartiry-posutochno-polnyj-spisok-uslug",
+    "beskontaktnoe-zaselenie-posutochno-tyumen",
+    "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "warnings": [],
+  "errors": []
+}

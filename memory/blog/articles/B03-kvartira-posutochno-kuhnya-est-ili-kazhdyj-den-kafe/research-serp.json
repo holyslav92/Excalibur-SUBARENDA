@@ -1,0 +1,218 @@
+{
+  "agent": "excalibur-blog",
+  "date_context": {
+    "timezone": "Europe/Moscow",
+    "today_iso": "2026-08-27",
+    "today_ru": "27.08.2026",
+    "year": 2026,
+    "month": 8,
+    "month_name_ru": "август",
+    "weekday_ru": "четверг"
+  },
+  "topic": {
+    "topic_id": "B03",
+    "title": "Квартира посуточно: кухня есть или каждый день кафе",
+    "h1": "Квартира посуточно: кухня есть или каждый день кафе",
+    "slug": "kvartira-posutochno-kuhnya-est-ili-kazhdyj-den-kafe",
+    "primary_query": "Квартира посуточно: кухня есть или каждый день кафе",
+    "priority": "P0"
+  },
+  "searches": [
+    {
+      "query_id": "primary_fresh",
+      "query": "Квартира посуточно: кухня есть или каждый день кафе 2026",
+      "purpose": "актуальный SERP",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Квартиры и дома посуточно по России — напрямую от хозяев | Spiti ...",
+          "url": "https://www.spiti.ru/",
+          "snippet": ""
+        },
+        {
+          "title": "ТОП-16 сайтов с посуточной арендой квартир: лучшие сервисы для ...",
+          "url": "https://craftum.com/blog/luchshie-sajty-po-posutochnoj-arende-kvartir/",
+          "snippet": "Spiti — это каталог посуточного жилья без посредников: квартиры в центре, студии, апартаменты и загородные дома/коттеджи для отдыха и праздников. Мы работаем в 380+ городах России и ещё в 10 странах."
+        },
+        {
+          "title": "Снять квартиру посуточно, аренда квартиры на сутки в Москве | Авито ...",
+          "url": "https://www.avito.ru/moskva/kvartiry/sdam/posutochno/-ASgBAgICAkSSA8gQ8AeSUg",
+          "snippet": "Рейтинг сайтов с посуточной арендой квартир. Представлен полный список сервисов с их преимуществами и недостатками для бронирования жилья на сутки."
+        },
+        {
+          "title": "Снять квартиру посуточно в 2026: пошаговая инструкция без посредников",
+          "url": "https://t-j.ru/daily-rent-flat/",
+          "snippet": "Вся необходимая бытовая техника и посуда. Квартира подойдёт для командированных, туристов, путешественников, квартира для свиданий или просто отдохнуть от городской суеты."
+        },
+        {
+          "title": "Как снять квартиру посуточно: пошаговая инструкция",
+          "url": "https://realty.yandex.ru/journal/post/kaksnyat-kvartiru-posutochno-poshagovaya-instrukciya/",
+          "snippet": "Пошаговая инструкция, как арендовать квартиру посуточно. Как безопасно снять квартиру на сутки в любом регионе России. Плюсы и минусы посуточной аренды квартир."
+        },
+        {
+          "title": "Новые требования к посуточной аренде квартир",
+          "url": "https://samolet.ru/journal/izmenenija-posutochnaja-arenda-kvartir/",
+          "snippet": "Рассказываем, как снять квартиру на сутки правильно, не нарваться на мошенников и не потерять деньги. Найти недвижимость на сутки можно в любой точке России. Чтобы не путаться в сотнях объявлений, рекомендуем использовать на сайтах-агрегаторах фильтры — выставляйте нужные параметры и просматривайте только подходящие варианты."
+        }
+      ],
+      "searched_at": "2026-08-27"
+    },
+    {
+      "query_id": "title_fresh",
+      "query": "Квартира посуточно: кухня есть или каждый день кафе 2026",
+      "purpose": "SERP по человеческому title",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Квартиры и дома посуточно по России — напрямую от хозяев | Spiti ...",
+          "url": "https://www.spiti.ru/",
+          "snippet": ""
+        },
+        {
+          "title": "Снять квартиру посуточно, аренда квартиры на сутки в Москве | Авито ...",
+          "url": "https://www.avito.ru/moskva/kvartiry/sdam/posutochno/-ASgBAgICAkSSA8gQ8AeSUg",
+          "snippet": "Spiti — это каталог посуточного жилья без посредников: квартиры в центре, студии, апартаменты и загородные дома/коттеджи для отдыха и праздников. Мы работаем в 380+ городах России и ещё в 10 странах."
+        },
+        {
+          "title": "ТОП-16 сайтов с посуточной арендой квартир: лучшие сервисы для ...",
+          "url": "https://craftum.com/blog/luchshie-sajty-po-posutochnoj-arende-kvartir/",
+          "snippet": "Вся необходимая бытовая техника и посуда. Квартира подойдёт для командированных, туристов, путешественников, квартира для свиданий или просто отдохнуть от городской суеты."
+        },
+        {
+          "title": "Снять квартиру посуточно в 2026: пошаговая инструкция без посредников",
+          "url": "https://t-j.ru/daily-rent-flat/",
+          "snippet": "Рейтинг сайтов с посуточной арендой квартир. Представлен полный список сервисов с их преимуществами и недостатками для бронирования жилья на сутки."
+        },
+        {
+          "title": "Как снять квартиру посуточно: пошаговая инструкция",
+          "url": "https://realty.yandex.ru/journal/post/kaksnyat-kvartiru-posutochno-poshagovaya-instrukciya/",
+          "snippet": "Пошаговая инструкция, как арендовать квартиру посуточно. Как безопасно снять квартиру на сутки в любом регионе России. Плюсы и минусы посуточной аренды квартир."
+        },
+        {
+          "title": "Сервис бронирования посуточного жилья • Посуточное.ру",
+          "url": "https://posutochnoe.ru/",
+          "snippet": "Рассказываем, как снять квартиру на сутки правильно, не нарваться на мошенников и не потерять деньги. Найти недвижимость на сутки можно в любой точке России. Чтобы не путаться в сотнях объявлений, рекомендуем использовать на сайтах-агрегаторах фильтры — выставляйте нужные параметры и просматривайте только подходящие варианты."
+        }
+      ],
+      "searched_at": "2026-08-27"
+    },
+    {
+      "query_id": "official_docs",
+      "query": "Квартира посуточно: кухня есть или каждый день кафе official docs 2026",
+      "purpose": "официальные docs",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Посуточная сдача жилья \\ 2026-2025-2024 год \\ Акты, образцы, формы ...",
+          "url": "https://www.consultant.ru/law/podborki/posutochnaya_sdacha_zhilya/",
+          "snippet": ""
+        },
+        {
+          "title": "Образец договора посуточной аренды квартиры - версия от 2026 года",
+          "url": "https://urika.ru/documents/contracts/obrazec-dogovora-posutochnoj-arendy-kvartiry/",
+          "snippet": "Посуточная сдача жилья ﻿ Подборка наиболее важных документов по запросу Посуточная сдача жилья (нормативно-правовые акты, формы, статьи, консультации экспертов и многое другое)."
+        },
+        {
+          "title": "Ашберн, Виргиния: отпускное жилье — Airbnb",
+          "url": "https://www.airbnb.ru/ashburn-va/stays",
+          "snippet": "Образец договора посуточной аренды квартиры. Квартира оборудована мебелью, аксессуарами и бытовой техникой. В стоимость аренды включены расходы по оплате коммунальных услуг и аренде постельного белья. Договор заключается между физическими лицами. Образец договора посуточной аренды квартиры."
+        },
+        {
+          "title": "Как правильно сдавать квартиру в 2026 году: юридические нюансы ...",
+          "url": "https://prostorent.ru/blog/kak-pravilno-sdavat-kvartiru-v-2026-godu-yuridicheskie-nyuansy-posutochnoy-arendy",
+          "snippet": "Этот очаровательный отдельно стоящий коттедж расположен рядом с местными виноградниками и идеально подходит для отдыха на выходных или в качестве альтернативы гостинице."
+        },
+        {
+          "title": "Сдача комнат посуточно закон 2026: разбираемся | Чайка Море",
+          "url": "https://chaykamore.ru/24032026-2/",
+          "snippet": "Узнайте, какие документы нужны при посуточной сдаче квартиры, как составить безопасный договор, оформить налоги и снизить юридические риски в 2026 году."
+        },
+        {
+          "title": "Новые требования к посуточной аренде квартир",
+          "url": "https://samolet.ru/journal/izmenenija-posutochnaja-arenda-kvartir/",
+          "snippet": "Оказывается, сдача комнат посуточно закон 2026 не запрещает. Более того, если вы не позиционируете себя как «гостевой дом», вы можете продолжать работать спокойно, используя привычные инструменты — бронирование, предоплату, рекламу в интернете."
+        }
+      ],
+      "searched_at": "2026-08-27"
+    },
+    {
+      "query_id": "github_evidence",
+      "query": "site:github.com Квартира посуточно: кухня есть или каждый день кафе 2026",
+      "purpose": "GitHub evidence",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "SQL-Learning/04.sql at main · DenysTymchenko/SQL-Learning",
+          "url": "https://github.com/DenysTymchenko/SQL-Learning/blob/main/04.sql",
+          "snippet": ""
+        },
+        {
+          "title": "coursera-ddp-shiny/corpora/ru_50k.txt at master - GitHub",
+          "url": "https://github.com/spujadas/coursera-ddp-shiny/blob/master/corpora/ru_50k.txt",
+          "snippet": "//Необходимо получить все комнаты, в которых есть как кухня (поле has_kitchen), так и интернет (поле has_internet)."
+        },
+        {
+          "title": "unsupervised_topic_modeling/topics/ru/11/50/100/topics at ... - GitHub",
+          "url": "https://github.com/annontopicmodel/unsupervised_topic_modeling/blob/master/topics/ru/11/50/100/topics",
+          "snippet": "Coursera Developing Data Products Week 4 Peer-graded Assignment: Shiny - spujadas/coursera-ddp-shiny"
+        },
+        {
+          "title": "mchv230vac1.5kw-33ak128mc106-acim-foc-pll/images ... - GitHub",
+          "url": "https://github.com/microchip-pic-avr-solutions/mchv230vac1.5kw-33ak128mc106-acim-foc-pll/blob/main/images/projectpropertiessettings.png",
+          "snippet": "Contribute to annontopicmodel/unsupervised_topic_modeling development by creating an account on GitHub."
+        },
+        {
+          "title": "unsupervised_topic_modeling/topics/ru/13/50/50/topics at ... - GitHub",
+          "url": "https://github.com/annontopicmodel/unsupervised_topic_modeling/blob/master/topics/ru/13/50/50/topics",
+          "snippet": "You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another"
+        },
+        {
+          "title": "pydqc/images/data_consist_summary.PNG at master · sosuneko/pydqc",
+          "url": "https://github.com/sosuneko/pydqc/blob/master/images/data_consist_summary.PNG",
+          "snippet": "Contribute to annontopicmodel/unsupervised_topic_modeling development by creating an account on GitHub."
+        }
+      ],
+      "searched_at": "2026-08-27"
+    },
+    {
+      "query_id": "community_experience",
+      "query": "Квартира посуточно: кухня есть или каждый день кафе forum problems опыт 2026",
+      "purpose": "форумы и живые проблемы",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Снять квартиру посуточно, аренда квартиры на сутки во всех регионах ...",
+          "url": "https://www.avito.ru/all/kvartiry/sdam/posutochno/-ASgBAgICAkSSA8gQ8AeSUg",
+          "snippet": ""
+        },
+        {
+          "title": "forum - Снять квартиру посуточно во всех регионах | Цены на аренду ...",
+          "url": "https://www.avito.ru/all/kvartiry/sdam/posutochno/-ASgBAgICAkSSA8gQ8AeSUg?q=forum",
+          "snippet": "Предлагается однокомнатная квартира с дизайнерским ремонтом, для уютного отдыха. В квартире имеется всё необходимое для комфортного пребывания: кондиционер, стиральная машинка, холодильник, фен, всегда чистое постельное белье и полотенца, одноразовые зубные щётки и средства гигиены, посуда, бокалы."
+        },
+        {
+          "title": "Жилье посуточно без посредников • Посуточное.ру",
+          "url": "https://pocutochnoe.ru/",
+          "snippet": "На Авито вы можете недорого снять квартиру посуточно, выбрав предложения без посредников. Цены на аренду квартир во всех регионах."
+        },
+        {
+          "title": "Снять квартиру посуточно - Аренда квартир на 2, 3 суток, на неделю ...",
+          "url": "https://dom.ria.com/posutochnaia-arenda-kvartir/",
+          "snippet": "Более 350 тысяч актуальных объявлений аренды жилья посуточно в России, странах СНГ и за рубежом. Лучшие предложения жилья посуточно без посредников. Сайт поможет найти и снять комфортные квартиры, дома и коттеджи на сутки, номера в отелях и гостиницах, гостевые дома, комнаты в частном секторе и хостелы напрямую от собственников. Более 350 тыс."
+        },
+        {
+          "title": "СУТОЧНО.РУ — найдём, где остановиться: отели, квартиры, гостевые дома",
+          "url": "https://sutochno.ru/",
+          "snippet": "Посуточная аренда жилья на сайте ️ проверенных объявлений DIM.RIA. ⏩ Смотрите предложения аренды квартир посуточно с актуальной ценой, фото и описанием."
+        },
+        {
+          "title": "Снять квартиру посуточно",
+          "url": "https://www.ozon.ru/travel/flats/",
+          "snippet": "Поможем найти и забронировать жильё посуточно в России и за рубежом. Более 390 тысяч вариантов во всех популярных направлениях для путешествий: Санкт-Петербург, Москва, Казань, Екатеринбург, Калининград, Новосибирск, Сочи, Крым, Минск, Абхазия и другие."
+        }
+      ],
+      "searched_at": "2026-08-27"
+    }
+  ],
+  "errors": []
+}

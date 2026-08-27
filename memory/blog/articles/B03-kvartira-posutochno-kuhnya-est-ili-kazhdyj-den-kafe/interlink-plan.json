@@ -1,0 +1,98 @@
+{
+  "topic_id": "B03",
+  "slug": "kvartira-posutochno-kuhnya-est-ili-kazhdyj-den-kafe",
+  "title": "Три ночи. «Кухня есть» — каждый завтрак всё равно в кафе",
+  "outbound_required_min": 1,
+  "outbound_found": [
+    {
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "title": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "permalink": "{{SITE_BASE}}/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+      "topic_id": "B01",
+      "post_id": 3745,
+      "source": "ledger"
+    },
+    {
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "title": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "permalink": "{{SITE_BASE}}/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/",
+      "topic_id": "B02",
+      "post_id": 3777,
+      "source": "ledger"
+    },
+    {
+      "slug": "chto-vhodit-v-stoimost-kvartiry-posutochno-polnyj-spisok-uslug",
+      "title": "Что входит в стоимость квартиры посуточно: полный список услуг",
+      "permalink": "",
+      "topic_id": "",
+      "post_id": null,
+      "source": "siblings"
+    }
+  ],
+  "outbound_missing_suggestions": [
+    {
+      "slug": "pravila-prozhivaniya-v-otele-chto-proverit-do-oplaty-chtoby-ne-poteryat-dengi",
+      "title": "Правила проживания в отеле: что проверить до оплаты, чтобы не потерять деньги",
+      "permalink": "",
+      "topic_id": "",
+      "post_id": null,
+      "source": "siblings"
+    },
+    {
+      "slug": "skrytye-doplaty-pri-arende-kvartiry-kak-ne-pereplatit",
+      "title": "Скрытые доплаты при аренде квартиры: как не переплатить",
+      "permalink": "",
+      "topic_id": "",
+      "post_id": null,
+      "source": "siblings"
+    },
+    {
+      "slug": "uborka-syomnoj-kvartiry-pered-vyezdom-7-shagov-chtoby-vernuli-zalog",
+      "title": "Уборка съёмной квартиры перед выездом: 7 шагов, чтобы вернули залог",
+      "permalink": "",
+      "topic_id": "",
+      "post_id": null,
+      "source": "siblings"
+    }
+  ],
+  "inbound_targets": [
+    {
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "title": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "permalink": "{{SITE_BASE}}/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+      "topic_id": "B01",
+      "post_id": 3745,
+      "source": "ledger"
+    },
+    {
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "title": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "permalink": "{{SITE_BASE}}/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/",
+      "topic_id": "B02",
+      "post_id": 3777,
+      "source": "ledger"
+    },
+    {
+      "slug": "chto-vhodit-v-stoimost-kvartiry-posutochno-polnyj-spisok-uslug",
+      "title": "Что входит в стоимость квартиры посуточно: полный список услуг",
+      "permalink": "",
+      "topic_id": "",
+      "post_id": null,
+      "source": "siblings"
+    }
+  ],
+  "inbound_updates": [
+    {
+      "post_id": 3745,
+      "marker": "data-excalibur-interlink-from=\"kvartira-posutochno-kuhnya-est-ili-kazhdyj-den-kafe\"",
+      "html": "<p class=\"excalibur-interlink-readalso\" data-excalibur-interlink-from=\"kvartira-posutochno-kuhnya-est-ili-kazhdyj-den-kafe\"><b>Читайте также:</b> <a href=\"{{SITE_BASE}}/blog/kvartira-posutochno-kuhnya-est-ili-kazhdyj-den-kafe/\">Три ночи. «Кухня есть» — каждый завтрак всё равно в кафе</a></p>"
+    },
+    {
+      "post_id": 3777,
+      "marker": "data-excalibur-interlink-from=\"kvartira-posutochno-kuhnya-est-ili-kazhdyj-den-kafe\"",
+      "html": "<p class=\"excalibur-interlink-readalso\" data-excalibur-interlink-from=\"kvartira-posutochno-kuhnya-est-ili-kazhdyj-den-kafe\"><b>Читайте также:</b> <a href=\"{{SITE_BASE}}/blog/kvartira-posutochno-kuhnya-est-ili-kazhdyj-den-kafe/\">Три ночи. «Кухня есть» — каждый завтрак всё равно в кафе</a></p>"
+    }
+  ],
+  "new_url": "{{SITE_BASE}}/blog/kvartira-posutochno-kuhnya-est-ili-kazhdyj-den-kafe/",
+  "dry_run": false
+}
