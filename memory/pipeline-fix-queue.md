@@ -196,7 +196,7 @@ files_changed:
 - `memory/pipeline-fix-queue.md`
 checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_cover_logo_pad_clear.py`
-commit: c8f07f2
+commit: 038fc30
 
 ## INC-20260827-0604-scout-derouter-mcp-workaround
 
@@ -245,4 +245,4 @@ files_changed:
 - `memory/pipeline-fix-queue.md`
 checks_run:
 - `rg 'CallDynamicTool.*DEROUTER' agents/excalibur-blog-scout.md skills/scout-excalibur-blog/SKILL.md` → forbid documented
-commit: c8f07f2
+commit: 038fc30
