@@ -1,5 +1,47 @@
 # Pipeline fix queue
 
+## INC-20260827-1140 — Metrika credentials missing (content-learner B03)
+
+status: open
+run_date: 2026-08-27
+role: excalibur-blog-content-learner
+topic_id: B03
+article_dir: memory/blog/articles/B03-kvartira-posutochno-kuhnya-est-ili-kazhdyj-den-kafe
+severity: medium
+category: secrets
+
+### What went wrong
+
+- `excalibur_blog_metrika_fetch.py --days 30 --ingest` exited 2 with
+  `METRIKA CREDENTIALS BLOCKER`: `YANDEX_METRIKA_OAUTH_TOKEN` and
+  `YANDEX_METRIKA_COUNTER_ID` not set in Cloud Secrets/env.
+- No `memory/analytics/metrika-latest.json` produced; behavioral cohort
+  analysis skipped for B03 kitchen article.
+
+### How the agent recovered this run
+
+- Recorded low-confidence pipeline lesson in `memory/content-lessons.md`
+  (LESSON-20260827-1140-B03-kitchen-quote-hook-utility) from structural
+  gates + title-brief/description-brief; no invented metrics.
+- evidence_gate=SKIP (human-first-v2, no content-evidence-report.json).
+
+### Durable fix needed before next run
+
+- Add Metrika OAuth token (scope `metrika:read`) and counter id to Cloud
+  Secrets; verify `python3 scripts/excalibur_blog_metrika_fetch.py --days 30 --ingest`
+  → `metrika_feedback: PASS`.
+
+### Suggested files to inspect/change
+
+- Cloud Secrets: `YANDEX_METRIKA_OAUTH_TOKEN`, `YANDEX_METRIKA_COUNTER_ID`
+- `shared/yandex-metrika-contract.md`
+- `scripts/excalibur_blog_metrika_fetch.py`
+
+### Secrets
+
+- YANDEX_METRIKA_OAUTH_TOKEN — missing
+- YANDEX_METRIKA_COUNTER_ID — missing
+
 ## INC-20260824-1038 — live-page gate /blog permalink vs schema URL
 
 status: fixed
