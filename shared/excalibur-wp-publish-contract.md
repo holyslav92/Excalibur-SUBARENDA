@@ -20,6 +20,8 @@ Excalibur BLOG готовит артефакты локально; публик�
 - **Секреты:** `FTP_HOST` / `FTP_USER` / `FTP_PASS` / `FTP_ROOT` / `FTP_PORT` / `FTP_TRANSPORT`
   - **SFTP (default):** port 22 — `FTP_*` = те же SFTP-учётные данные; `SSH_*` = алиасы
   - **FTP passive (Добрый дом / Timeweb):** `FTP_PORT=21` или `FTP_TRANSPORT=ftp`; `FTP_ROOT=sublease/public_html`
+- **FTP_TIMEOUT** (optional, 30–600s): override STOR/connect timeout; auto-scales to 180s/300s for ≥5 MB / ≥10 MB bootstrap
+- **PASV flake:** passive-first STOR with ACTIVE fallback (`scripts/excalibur_blog_remote_transport.py`)
 - Env precedence: переменные окружения перекрывают `memory/site.env.local`.
 - Root: `FTP_ROOT` относительно FTP login cwd (Timeweb: `sublease/public_html`). Пустой или `/` → `.`
 

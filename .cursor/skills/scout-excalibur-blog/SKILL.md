@@ -10,13 +10,15 @@ description: Pick P0 topic from Klyshin hooks × MCP-KV Wordstat — evaluate an
 Handoff-проза (topic, rework log, title draft) — **только** через Derouter utility tier (gpt-5.6-terra).
 Wordstat частоты — live MCP-KV (не Derouter). Cursor не пишет handoff своей моделью.
 
+**REST script only (HARD):** prose via `excalibur_blog_derouter_opus_chat.py` — **не** `CallDynamicTool` namespace `DEROUTER` / `mcp-derouter` (stdio MCP forbidden). Директор собирает Wordstat + bank facts в `memory/scout/scout-input-assembled-YYYY-MM-DD.md`, затем один вызов скрипта.
+
 ```bash
 python3 scripts/excalibur_blog_derouter_opus_chat.py \
   --role scout \
   --system-file skills/scout-excalibur-blog/SKILL.md \
-  --user-file <assembled-scout-inputs.md> \
+  --user-file memory/scout/scout-input-assembled-2026-08-27.md \
   --output .cursor/excalibur-blog-handoff.md \
-  --article-dir <article_dir_or_memory/scout>
+  --article-dir memory/scout
 ```
 
 `DEROUTER SCOUT BLOCKER` → стоп. Контракт: `shared/derouter-opus-brain-contract.md`.

@@ -37,6 +37,12 @@ Klyshin hook → Wordstat probe → rework if weak → final P0 (skip only after
 
 Частоты только live. Tool missing → **SCOUT BLOCK**.
 
+## Derouter scout prose (HARD)
+
+- Handoff text **only** `python3 scripts/excalibur_blog_derouter_opus_chat.py --role scout …`
+- **Forbidden:** `CallDynamicTool` namespace `DEROUTER`, `mcp-derouter/start-mcp.sh` — REST script is canonical (`shared/derouter-opus-brain-contract.md`)
+- Director assembles live Wordstat + Klyshin bank into `memory/scout/scout-input-assembled-YYYY-MM-DD.md` before derouter call (not Composer handoff prose)
+
 Handoff:
 
 ```text

@@ -38,6 +38,8 @@ python3 scripts/excalibur_blog_derouter_opus_chat.py \
   --article-dir memory/blog/articles/<topic_id>-<slug>
 ```
 
+**Scout:** Director assembles Wordstat + Klyshin bank into `memory/scout/scout-input-assembled-YYYY-MM-DD.md`; `--article-dir memory/scout`. **Не** `CallDynamicTool` namespace `DEROUTER`.
+
 1. Cursor **собирает** `--user-file` из входов (research, handoff, article.html…).
 2. Cursor **вызывает** скрипт; берёт `--output` **как есть**.
 3. Cursor **не переписывает** HTML/JSON/надписи после Derouter.

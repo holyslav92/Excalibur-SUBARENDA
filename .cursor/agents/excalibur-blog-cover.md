@@ -69,6 +69,8 @@ python3 scripts/excalibur_blog_derouter_gpt_image2_api.py --article-dir "$ARTICL
 python3 scripts/excalibur_blog_quad_apply.py --article-dir "$ARTICLE" --canvas-index 1 --inject-html
 python3 scripts/excalibur_blog_quad_apply.py --article-dir "$ARTICLE" --canvas-index 2 --inject-html
 
+python3 scripts/excalibur_blog_cover_logo_pad_clear.py --article-dir "$ARTICLE" --auto-detect --recomposite
+
 python3 scripts/excalibur_blog_brand_logo_composite.py --article-dir "$ARTICLE"
 
 python3 scripts/excalibur_blog_cover_motif_gate.py record --topic-id <id> --composition "..." ...
@@ -111,7 +113,7 @@ python3 scripts/excalibur_blog_cover_motif_gate.py record --topic-id <id> --comp
 | Код | Причина |
 |-----|---------|
 | COVER MOTIF BLOCKER | collision 14-day anti-repeat |
-| LOGO BLOCKER | нет logo-dobry-dom.png / pre-composite drawn lockup / composite stamp FAIL |
+| LOGO BLOCKER | нет logo-dobry-dom.png / pre-composite drawn lockup → `cover_logo_pad_clear.py --auto-detect --recomposite` / composite stamp FAIL |
 | DEROUTER API KEY MISSING / DEROUTER BLOCKER / KIE API BLOCKER | нет canvas URL/local_path после 2K |
 | IMAGE MODEL BLOCKER | Flux/Seedream/nano_banana/z-image или off-pipeline demo |
 | COVER STYLE BLOCKER | dark cinematic, daypart formula, inventory default props, decorative-only inline |

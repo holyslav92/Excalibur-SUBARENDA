@@ -18,6 +18,7 @@
 - Не более **3 inbound** правок за один publish-run.
 - Не трогать посты со `status != published` в ledger.
 - URL только path из ledger или `{{SITE_BASE}}/slug/` после expand.
+- **Outbound hrefs в `article.html`:** path-only `/blog/{slug}/` (relative или с ASCII `PUBLIC_SITE_URL`). Не full URL с кириллическим host — `link-verify` / `crosslink-qa` HTTP падают на IDNA/punycode mismatch (INC B03).
 - Не переписывать тело статьи — только append блока, если ссылки ещё нет.
 - Live publish только при `EXCALIBUR_BLOG_ALLOW_PUBLISH=yes` (env, не git).
 

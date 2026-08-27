@@ -94,6 +94,7 @@ checks_run:
 commit: 3b837c2
 
 ## INC-20260827-0815-publish-ftp-pasv-bootstrap
+
 status: fixed
 run_date: 2026-08-27
 role: excalibur-blog-publish
@@ -116,49 +117,132 @@ category: transport
 
 - Keep ACTIVE fallback and FTP_TIMEOUT=300 for 7-inline articles; prefer relative internal hrefs.
 
-fix_summary:
-- `excalibur_blog_remote_transport.py` PASV-then-ACTIVE STOR; env FTP_TIMEOUT.
-
-commit: pending
-
-## INC-20260827-1136-metrika-credentials-content-learner
-status: open
-run_date: 2026-08-27
-role: excalibur-blog-content-learner
-topic_id: B03
-article_dir: memory/blog/articles/B03-na-kartochke-posutochno-4-8-dva-odinakovyh-vse-super
-severity: high
-category: secrets
-
-### What went wrong
-
-- Post-publish Content-learner for B03 (reviews/отзывы angle, live
-  `/blog/na-kartochke-posutochno-4-8-dva-odinakovyh-vse-super/`) could not
-  run mandatory Metrika ingest:
-  `python3 scripts/excalibur_blog_metrika_fetch.py --days 30 --ingest` → exit 2
-  `METRIKA CREDENTIALS BLOCKER`.
-- `YANDEX_METRIKA_OAUTH_TOKEN` and `YANDEX_METRIKA_COUNTER_ID` unset in Cloud
-  Secrets/env. No `memory/analytics/metrika-latest.json` snapshot exists.
-
-### How the agent recovered this run
-
-- Evidence gate SKIP (no content-evidence-report.json — normal human-first-v2).
-- Recorded `METRIKA FEEDBACK BLOCKER` + lessons in `memory/content-lessons.md`
-  without inventing metrics. No durable content apply.
-
-### Durable fix needed before next run
-
-- Configure Metrika OAuth (metrika:read) + counter id per
-  `shared/yandex-metrika-contract.md`.
-- Re-run Content-learner for B03 (and subsequent publishes) with Metrika PASS.
-
 ### Suggested files to inspect/change
 
-- Cursor Cloud Secrets / `memory/site.env.local` (local only, never commit)
-- `shared/yandex-metrika-contract.md`
-- `scripts/excalibur_blog_metrika_fetch.py`
+- `scripts/excalibur_blog_remote_transport.py`
+- `skills/publish-excalibur-blog/SKILL.md`
+- `shared/excalibur-wp-publish-contract.md`
+- `shared/interlink-contract.md`
 
 ### Secrets
 
-- `YANDEX_METRIKA_OAUTH_TOKEN` — missing
-- `YANDEX_METRIKA_COUNTER_ID` — missing
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-08-27
+fix_summary:
+- `excalibur_blog_remote_transport.py`: PASV-then-ACTIVE STOR; `_ftp_upload_timeout()` auto-scales 180s/300s for ≥5MB/≥10MB payloads; env `FTP_TIMEOUT` 30–600.
+- Publish skill + wp-publish contract document large-bootstrap FTP behavior.
+- `shared/interlink-contract.md`: path-only `/blog/{slug}/` hrefs — no Cyrillic absolute host URLs for link-verify.
+files_changed:
+- `scripts/excalibur_blog_remote_transport.py`
+- `skills/publish-excalibur-blog/SKILL.md`
+- `.cursor/skills/publish-excalibur-blog/SKILL.md`
+- `shared/excalibur-wp-publish-contract.md`
+- `shared/interlink-contract.md`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_remote_transport.py`
+commit: pending-parent
+
+## INC-20260827-0820-cover-drawn-logo-pre-composite
+
+status: fixed
+run_date: 2026-08-27
+role: excalibur-blog-cover
+topic_id: B03
+article_dir: memory/blog/articles/B03-na-kartochke-posutochno-4-8-dva-odinakovyh-vse-super
+severity: medium
+category: qa
+
+### What went wrong
+
+- Canvas-01 first split had AI-drawn logo lockup in cover top-right pad (`pre-composite/cover.png`); drawn_logo_gate blocked factory paste until regen + pad-clear.
+
+### How the agent recovered this run
+
+- Regenerated canvas-01; pad-clear top-right pad; factory logo paste on cover + inline 01/03/07; cover_qa.json PASS.
+
+### Durable fix needed before next run
+
+- Standard cover runbook: auto-detect drawn lockup → pad-clear → `--after-pad-clear` composite without live-regen-only script.
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_cover_logo_pad_clear.py`
+- `skills/cover-excalibur-blog/SKILL.md`
+- `skills/cover-qa-excalibur-blog/SKILL.md`
+- `agents/excalibur-blog-cover.md`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-08-27
+fix_summary:
+- New `scripts/excalibur_blog_cover_logo_pad_clear.py` (`--auto-detect`, `--recomposite`).
+- Cover + Cover-QA skills/agents document recovery before `brand_logo_composite`.
+files_changed:
+- `scripts/excalibur_blog_cover_logo_pad_clear.py`
+- `skills/cover-excalibur-blog/SKILL.md`
+- `.cursor/skills/cover-excalibur-blog/SKILL.md`
+- `skills/cover-qa-excalibur-blog/SKILL.md`
+- `.cursor/skills/cover-qa-excalibur-blog/SKILL.md`
+- `agents/excalibur-blog-cover.md`
+- `.cursor/agents/excalibur-blog-cover.md`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_cover_logo_pad_clear.py`
+commit: pending-parent
+
+## INC-20260827-0604-scout-derouter-mcp-workaround
+
+status: fixed
+run_date: 2026-08-27
+role: excalibur-blog-scout
+topic_id: B03
+article_dir: n/a
+severity: low
+category: docs
+
+### What went wrong
+
+- Scout handoff prose risk: conductor may call `DEROUTER` MCP namespace instead of REST script; canonical path is `excalibur_blog_derouter_opus_chat.py` with assembled Wordstat inputs file.
+
+### How the agent recovered this run
+
+- Director assembled `memory/scout/scout-input-assembled-2026-08-27.md` (live Wordstat facts) + `derouter-opus-stamp-scout.json` via REST script; handoff written to `.cursor/excalibur-blog-handoff.md`.
+
+### Durable fix needed before next run
+
+- Scout agent/skill/derouter contract: REST script only; forbid DEROUTER MCP namespace for scout prose; document assembled-inputs filename pattern.
+
+### Suggested files to inspect/change
+
+- `agents/excalibur-blog-scout.md`
+- `skills/scout-excalibur-blog/SKILL.md`
+- `shared/derouter-opus-brain-contract.md`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-08-27
+fix_summary:
+- Scout agent + skill: REST script only; assembled `memory/scout/scout-input-assembled-YYYY-MM-DD.md`; forbid CallDynamicTool DEROUTER MCP.
+- `shared/derouter-opus-brain-contract.md`: scout assembled-inputs note.
+files_changed:
+- `agents/excalibur-blog-scout.md`
+- `.cursor/agents/excalibur-blog-scout.md`
+- `skills/scout-excalibur-blog/SKILL.md`
+- `.cursor/skills/scout-excalibur-blog/SKILL.md`
+- `shared/derouter-opus-brain-contract.md`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `rg 'CallDynamicTool.*DEROUTER' agents/excalibur-blog-scout.md skills/scout-excalibur-blog/SKILL.md` → forbid documented
+commit: pending-parent
