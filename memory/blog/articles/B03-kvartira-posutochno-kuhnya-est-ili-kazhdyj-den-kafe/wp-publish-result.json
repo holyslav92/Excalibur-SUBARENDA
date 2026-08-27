@@ -1,0 +1,27 @@
+{
+  "slug": "kvartira-posutochno-kuhnya-est-ili-kazhdyj-den-kafe",
+  "topic_id": "B03",
+  "permalink": "{{SITE_BASE}}/blog/kvartira-posutochno-kuhnya-est-ili-kazhdyj-den-kafe/",
+  "publish_method": "ftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B03-kvartira-posutochno-kuhnya-est-ili-kazhdyj-den-kafe/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1084883,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4064 slug=kvartira-posutochno-kuhnya-est-ili-kazhdyj-den-kafe\nOK categories=101,106\nOK dzen_yzen_meta=1\nOK featured_image=4065\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4066 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/08/kvartira-posutochno-kuhnya-est-ili-kazhdyj-den-kafe-inline-03.png\nOK inline_alt=4066\nOK inline_caption=4066\nOK inline_description=4066\nOK inline_image_upload=4067 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/08/kvartira-posutochno-kuhnya-est-ili-kazhdyj-den-kafe-inline-02.png\nOK inline_alt=4067\nOK inline_caption=4067\nOK inline_description=4067\nOK inline_image_upload=4068 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/08/kvartira-posutochno-kuhnya-est-ili-kazhdyj-den-kafe-inline-01.png\nOK inline_alt=4068\nOK inline_caption=4068\nOK inline_description=4068\nOK inline_image_upload=4069 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/08/kvartira-posutochno-kuhnya-est-ili-kazhdyj-den-kafe-inline-05.png\nOK inline_alt=4069\nOK inline_caption=4069\nOK inline_description=4069\nOK inline_image_upload=4070 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/08/kvartira-posutochno-kuhnya-est-ili-kazhdyj-den-kafe-inline-04.png\nOK inline_alt=4070\nOK inline_caption=4070\nOK inline_description=4070\nOK inline_image_upload=4071 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/08/kvartira-posutochno-kuhnya-est-ili-kazhdyj-den-kafe-inline-06.png\nOK inline_alt=4071\nOK inline_caption=4071\nOK inline_description=4071\nOK inline_image_upload=4072 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/08/kvartira-posutochno-kuhnya-est-ili-kazhdyj-den-kafe-inline-07.png\nOK inline_alt=4072\nOK inline_caption=4072\nOK inline_description=4072\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/kvartira-posutochno-kuhnya-est-ili-kazhdyj-den-kafe/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/kvartira-posutochno-kuhnya-est-ili-kazhdyj-den-kafe/",
+    "errors": []
+  }
+}
