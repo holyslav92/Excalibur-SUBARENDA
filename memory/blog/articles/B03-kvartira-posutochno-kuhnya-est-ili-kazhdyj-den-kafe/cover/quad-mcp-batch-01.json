@@ -1,0 +1,37 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 1,
+  "identity_reference_local": "",
+  "identity_reference_id": "",
+  "reference_url_hosted": "",
+  "output_canvas": "cover/canvas-quad-01.png",
+  "result_path": "cover/quad-mcp-result-01.json",
+  "slots": [
+    "cover",
+    "inline_1",
+    "inline_2",
+    "inline_3"
+  ],
+  "preferred_image_flow": {
+    "provider": "grsai",
+    "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
+    "resolution": "2K",
+    "apply_script": "python3 scripts/excalibur_blog_quad_apply.py --article-dir <article_dir> --canvas-index 1 --inject-html"
+  },
+  "jobs": [
+    {
+      "slot": "canvas_quad",
+      "tool": "grsai",
+      "mcp_args": {
+        "prompt": "High-key RU editorial collage #FFFFFF sun flare. NO logo/Добрый дом. NO winter. Canvas 2048x1152 2x2 thin gutters. Ban: bottom white bar; wide phone banner; pill button.\nTL COVER ONLY: sunny Tyumen kitchen Aug 2026; fridge; phone «+7 (993) 574-83-22» as SMALL vertical torn paper on upper-left wall (NOT bottom 40%, NOT wide bar); Roll Safe sticker bottom-RIGHT ≤12%; sticky «Вот и кухня»; hook «Кухня есть — завтраки в кафе» gold «кафе»; empty pan; Wordstat stickers; TOP-RIGHT empty pad.\nTR checklist board TXT:2 кружки|микроволновка|плита без сковородки. TOP-RIGHT empty pad.\nBL 3-col compare TXT:кухня или зона|плита и сковородка|микроволновка. NO logo.\nBR Harold ≤12% TXT:микроволновка не яичница|не включать. TOP-RIGHT empty pad.\nInline all: gold/black Cyrillic labels.",
+        "aspect_ratio": "16:9",
+        "resolution": "2K"
+      }
+    }
+  ],
+  "validation": {
+    "prompt_chars": 775,
+    "max_prompt_chars": 3500,
+    "resolution": "2K"
+  }
+}

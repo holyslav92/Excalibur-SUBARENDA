@@ -1,0 +1,37 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 2,
+  "identity_reference_local": "",
+  "identity_reference_id": "",
+  "reference_url_hosted": "",
+  "output_canvas": "cover/canvas-quad-02.png",
+  "result_path": "cover/quad-mcp-result-02.json",
+  "slots": [
+    "inline_4",
+    "inline_5",
+    "inline_6",
+    "inline_7"
+  ],
+  "preferred_image_flow": {
+    "provider": "grsai",
+    "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
+    "resolution": "2K",
+    "apply_script": "python3 scripts/excalibur_blog_quad_apply.py --article-dir <article_dir> --canvas-index 2 --inject-html"
+  },
+  "jobs": [
+    {
+      "slot": "canvas_quad",
+      "tool": "grsai",
+      "mcp_args": {
+        "prompt": "High-key bright RU editorial collage, airy #FFFFFF, sun flare, warm hospitality (посуточная аренда). NO host face; NO Shakin. ABSOLUTELY NO logo/wordmark/Добрый дом/house icon ANYWHERE in ANY panel. Factory paste only after split. NO winter/snow.\nCanvas 2048x1152 exact 2x2; four 16:9 panels; thin white gutters.\nBan: dark cinematic; WordPress UI; celebrity memes; drawn logo; white plate; rounded phone button/pill.\nTEXT LOCK: Russian Cyrillic only; exact LABELS per panel.\nALL four panels: NO logo NO wordmark NO house icon anywhere — plain white TOP-RIGHT on BR only.\nTL inline compare: «Три утра — счёт»; bar chart breakfasts vs hotel. TXT:3 завтрака | квартира vs отель | завтрак включён. NO logo.\nTR inline timeline: «Три утра — счёт»; 3-night cafe cost bars. TXT:1000–1700 ₽ | 3000–5000 ₽ кафе. NO logo.\nBL inline flow: «Сковородка первой»; steps плита→сковородка→посуда. TXT:плита | сковородка | посуда. NO logo.\nBR inline fact: «У нас»; kitchen card. TXT:кухня до брони | бесконтактное заселение. TOP-RIGHT empty white pad ONLY.\nInline all: #FFF collage gold/black labels; no logos except empty TOP-RIGHT pad on TR+BR only; people-memes tiny ≤12%; no human hero.",
+        "aspect_ratio": "16:9",
+        "resolution": "2K"
+      }
+    }
+  ],
+  "validation": {
+    "prompt_chars": 1171,
+    "max_prompt_chars": 3500,
+    "resolution": "2K"
+  }
+}

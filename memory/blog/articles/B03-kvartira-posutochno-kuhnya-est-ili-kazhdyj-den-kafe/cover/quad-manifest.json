@@ -1,0 +1,127 @@
+{
+  "topic_id": "B03",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": [
+        "inline_4",
+        "inline_5",
+        "inline_6",
+        "inline_7"
+      ],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "Кухня есть — завтраки в кафе",
+  "cover_hook_highlight": "кафе",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "wordstat_stickers": ["квартиры посуточно тюмень", "отель или посуточная квартира"],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "split kitchen counter empty pan vs cafe receipt stack — magazine poster collage, bold Cyrillic hook, TOP-RIGHT empty logo pad",
+    "location": "Tyumen apartment kitchen August sunny morning 2026 green trees window, high-key summer light",
+    "meme": "Roll Safe people-meme sticker bottom-left ≤12% temple tap microwave vs stove",
+    "prop_set": "empty frying pan, one plate one fork, microwave, tea kettle, eggs carton, cafe receipt tower, gold tape torn paper",
+    "sticker_set": ["квартиры посуточно тюмень", "отель или посуточная квартира"],
+    "joke": "Roll Safe realizes stove without pan = third morning at cafe"
+  },
+  "cover_emotion": "шок: кухня без сковородки",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Derouter REST (DEROUTER_API_KEY) — 2K 16:9, one job per canvas (2×). Cover agent invents cover_hook + scene_hint/alt before --write-batch. Host lock = blog-hero.json (navy blazer, not hoodie).",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Постер: гость у пустой сковородки смотрит на стопку чеков из кафе — август, Тюмень.",
+      "scene_hint": "Empty pan + receipts; pink «кафе»; Roll Safe ≤12%; phone paper; Wordstat; logo pad.",
+      "meme_caption_ru": "",
+      "sticky": "Вот и кухня"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "«Кухня есть» — что именно это значит",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Board: 2 кружки, чайник, микроволновка, плита без сковородки.",
+      "alt": "Что входит в «кухню» посуточной квартиры: чайник, микроволновка, одна посуда — без сковородки",
+      "labels": ["2 кружки", "микроволновка", "плита без сковородки"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "«Кухня есть» — что именно это значит",
+      "visual_type": "comparison_table",
+      "scene_hint": "Compare: кухня или зона / плита / микроволновка.",
+      "alt": "Сравнение кухонных зон: полная кухня с плитой и сковородкой против чайника с микроволновкой",
+      "labels": ["кухня или зона", "плита и сковородка", "микроволновка"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "«Кухня есть» — что именно это значит",
+      "visual_type": "fact_card",
+      "scene_hint": "микроволновка не яичница; Harold ≤12%.",
+      "alt": "Микроволновка не заменяет плиту: индукция требует посуды, технику иногда нельзя включать",
+      "labels": ["микроволновка не яичница", "не включать"]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Три утра и арифметика без красивых обещаний",
+      "visual_type": "comparison_table",
+      "scene_hint": "Bars: 3 завтрака; квартира vs отель.",
+      "alt": "Арифметика трёх завтраков: разница между квартирой и отелем с завтраком за три ночи",
+      "labels": ["3 завтрака", "квартира vs отель", "завтрак включён"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Три утра и арифметика без красивых обещаний",
+      "visual_type": "bar_timeline_chart",
+      "scene_hint": "Timeline: 1000–1700 ₽ + 3000–5000 ₽ кафе.",
+      "alt": "Сколько стоят три завтрака в кафе по сравнению с разницей квартира-отель за три ночи",
+      "labels": ["1000–1700 ₽", "3000–5000 ₽ кафе"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Сначала сковородка, потом деньги",
+      "visual_type": "process_flow",
+      "scene_hint": "Flow: плита → сковородка → посуда.",
+      "alt": "Порядок проверки кухни: плита, сковородка, посуда и базовые продукты до бронирования",
+      "labels": ["плита", "сковородка", "посуда"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Как это устроено у нас",
+      "visual_type": "fact_card",
+      "scene_hint": "Fact: кухня до брони, бесконтакт; logo pad.",
+      "alt": "Кухня «Добрый дом»: состав прописан до брони, бесконтактное заселение, ответ в мессенджере",
+      "labels": ["кухня до брони", "бесконтактное заселение"]
+    }
+  },
+  "cover_keys_ru": [
+    "квартиры посуточно тюмень",
+    "отель или посуточная квартира"
+  ]
+}
