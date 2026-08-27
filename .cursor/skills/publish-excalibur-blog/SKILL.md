@@ -71,6 +71,7 @@ openers). Канон в article — `<h2>Частые вопросы</h2>`; bare
 | Allow flag | `EXCALIBUR_BLOG_ALLOW_PUBLISH=yes` |
 
 **Агент знает:** для Добрый дом / Timeweb — **FTP passive port 21** (`FTP_TRANSPORT=ftp`, `FTP_ROOT=sublease/public_html`). SFTP:22 у extra FTP user = Permission denied. Для других тенантов — SFTP (port 22, default). Пароль только в Cloud Secrets, не в git.
+**FTP large bootstrap (7-inline ≈ 10–15 MB):** PASV→ACTIVE STOR fallback in `excalibur_blog_remote_transport.py`; timeout auto-scales (≥5 MB → 180s, ≥10 MB → 300s) or explicit `FTP_TIMEOUT` (30–600).
 
 Если allow flag ≠ yes → **`❌ PUBLISH BLOCKER`** (не silent skip).
 

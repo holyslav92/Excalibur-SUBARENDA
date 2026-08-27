@@ -84,6 +84,14 @@ ARTICLE="memory/blog/articles/<topic_id>-<slug>"
 python3 scripts/excalibur_blog_cover_qa_gate.py --article-dir "$ARTICLE"
 ```
 
+If `forbid_ai_drawn_logo_cover` fails on pre-composite snapshot:
+
+```bash
+python3 scripts/excalibur_blog_cover_logo_pad_clear.py --article-dir "$ARTICLE" --auto-detect --recomposite
+python3 scripts/excalibur_blog_drawn_logo_gate.py --article-dir "$ARTICLE"
+python3 scripts/excalibur_blog_cover_qa_gate.py --article-dir "$ARTICLE"
+```
+
 Только `OK cover QA stamp` → Indexer.
 
 Agent: `agents/excalibur-blog-cover-qa.md`

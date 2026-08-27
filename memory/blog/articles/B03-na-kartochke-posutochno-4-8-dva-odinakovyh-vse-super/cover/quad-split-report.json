@@ -1,0 +1,290 @@
+{
+  "agent": "excalibur-blog-cover-quad-split",
+  "status": "PASS",
+  "splits": [
+    {
+      "canvas_index": 2,
+      "manifest": "cover/quad-manifest.json",
+      "split": {
+        "source_canvas": "memory/blog/articles/B03-na-kartochke-posutochno-4-8-dva-odinakovyh-vse-super/cover/canvas-quad-02.png",
+        "source_size_px": [
+          2048,
+          1152
+        ],
+        "panel_size_px": [
+          1018,
+          569
+        ],
+        "split_meta": {
+          "split_mode": "gutter_detect",
+          "h_gutter_px": {
+            "start": 569,
+            "end": 583
+          },
+          "v_gutter_px": {
+            "start": 1018,
+            "end": 1030
+          },
+          "requested_mode": "auto",
+          "gutter_quality": {
+            "h_center_offset_px": 0.0,
+            "v_center_offset_px": 0.0,
+            "max_aspect_crop_loss": 0.0059,
+            "per_panel_crop_loss": {
+              "top_left": 0.0059,
+              "top_right": 0.0059,
+              "bottom_left": 0.0059,
+              "bottom_right": 0.0059
+            },
+            "reject_reason": null
+          }
+        },
+        "output_size_px": [
+          1200,
+          675
+        ],
+        "outputs": {
+          "inline_4": {
+            "file": "cover/inline-04.png",
+            "quadrant": "top_left",
+            "box_px": {
+              "left": 3,
+              "top": 0,
+              "right": 1015,
+              "bottom": 569
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1018,
+              "bottom": 569
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Порядок чтения отзывов: сначала низкие оценки 1–2–3 звезды, ищите повторяющиеся жалобы",
+            "h2_anchor": "Сначала плохое, потом хорошее"
+          },
+          "inline_5": {
+            "file": "cover/inline-05.png",
+            "quadrant": "top_right",
+            "box_px": {
+              "left": 1033,
+              "top": 0,
+              "right": 2045,
+              "bottom": 569
+            },
+            "raw_box_px": {
+              "left": 1030,
+              "top": 0,
+              "right": 2048,
+              "bottom": 569
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Три отзыва за один день на карточке: свежесть комментариев важнее средней оценки",
+            "h2_anchor": "Три отзыва за один день — повод смотреть внимательнее"
+          },
+          "inline_6": {
+            "file": "cover/inline-06.png",
+            "quadrant": "bottom_left",
+            "box_px": {
+              "left": 3,
+              "top": 583,
+              "right": 1015,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 583,
+              "right": 1018,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Один вопрос хозяину в чате площадки до оплаты: проверка актуальности жалобы из отзывов",
+            "h2_anchor": "Один вопрос в чат"
+          },
+          "inline_7": {
+            "file": "cover/inline-07.png",
+            "quadrant": "bottom_right",
+            "box_px": {
+              "left": 1033,
+              "top": 583,
+              "right": 2045,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 1030,
+              "top": 583,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Чеклист проверки отзывов за 5–10 минут до оплаты посуточной квартиры",
+            "h2_anchor": "Порядок проверки за 5–10 минут"
+          }
+        }
+      }
+    },
+    {
+      "canvas_index": 1,
+      "manifest": "cover/quad-manifest.json",
+      "split": {
+        "source_canvas": "memory/blog/articles/B03-na-kartochke-posutochno-4-8-dva-odinakovyh-vse-super/cover/canvas-quad-01.png",
+        "source_size_px": [
+          2048,
+          1152
+        ],
+        "panel_size_px": [
+          1017,
+          572
+        ],
+        "split_meta": {
+          "split_mode": "gutter_detect",
+          "h_gutter_px": {
+            "start": 572,
+            "end": 583
+          },
+          "v_gutter_px": {
+            "start": 1017,
+            "end": 1030
+          },
+          "requested_mode": "auto",
+          "gutter_quality": {
+            "h_center_offset_px": 1.5,
+            "v_center_offset_px": 0.5,
+            "max_aspect_crop_loss": 0.0059,
+            "per_panel_crop_loss": {
+              "top_left": 0.0,
+              "top_right": 0.0,
+              "bottom_left": 0.0,
+              "bottom_right": 0.0059
+            },
+            "reject_reason": null
+          }
+        },
+        "output_size_px": [
+          1200,
+          675
+        ],
+        "outputs": {
+          "cover": {
+            "file": "cover/cover.png",
+            "quadrant": "top_left",
+            "box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1017,
+              "bottom": 572
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1017,
+              "bottom": 572
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Постер: гость с двумя телефонами видит одинаковые отзывы «всё супер» на карточке 4,8 — август, Тюмень.",
+            "h2_anchor": null
+          },
+          "inline_1": {
+            "file": "cover/inline-01.png",
+            "quadrant": "top_right",
+            "box_px": {
+              "left": 1030,
+              "top": 0,
+              "right": 2048,
+              "bottom": 572
+            },
+            "raw_box_px": {
+              "left": 1030,
+              "top": 0,
+              "right": 2048,
+              "bottom": 572
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Сравнение шкал рейтинга: 4,8 на Авито и 9+ на Суточно.ру — разные линейки",
+            "h2_anchor": "4,8 и 9+ — это разные линейки"
+          },
+          "inline_2": {
+            "file": "cover/inline-02.png",
+            "quadrant": "bottom_left",
+            "box_px": {
+              "left": 0,
+              "top": 583,
+              "right": 1017,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 583,
+              "right": 1017,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Отзывы без оценки на Авито: «не договорились» и «не общались» не входят в звёздный рейтинг",
+            "h2_anchor": "Там, где звёзды не работают"
+          },
+          "inline_3": {
+            "file": "cover/inline-03.png",
+            "quadrant": "bottom_right",
+            "box_px": {
+              "left": 1033,
+              "top": 583,
+              "right": 2045,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 1030,
+              "top": 583,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Одинаковые ответы хозяина на отзывы: повтор текста не доказывает накрутку",
+            "h2_anchor": "Одинаковый ответ — не доказательство накрутки"
+          }
+        }
+      }
+    }
+  ],
+  "manifest": "cover/quad-manifest.json",
+  "html_inject": [
+    "skip inline_1: already correct under H2 — 4,8 и 9+ — это разные линейки",
+    "skip inline_2: already correct under H2 — Там, где звёзды не работают",
+    "skip inline_3: already correct under H2 — Одинаковый ответ — не доказательство накрутки",
+    "skip inline_4: already correct under H2 — Сначала плохое, потом хорошее",
+    "skip inline_5: already correct under H2 — Три отзыва за один день — повод смотреть внимательнее",
+    "skip inline_6: already correct under H2 — Один вопрос в чат",
+    "skip inline_7: already correct under H2 — Порядок проверки за 5–10 минут"
+  ]
+}

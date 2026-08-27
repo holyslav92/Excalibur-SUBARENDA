@@ -6,6 +6,7 @@ from __future__ import annotations
 import io
 import os
 import socket
+import sys
 import time
 from ftplib import FTP, error_perm
 from typing import Any
@@ -68,16 +69,51 @@ def ftp_creds(env: dict[str, str]) -> tuple[str, int, str, str]:
     return host, port, user, password
 
 
+def _ftp_timeout_from_env(env: dict[str, str] | None = None) -> int:
+    raw = ""
+    if env:
+        raw = (env.get("FTP_TIMEOUT") or os.environ.get("FTP_TIMEOUT") or "").strip()
+    if not raw:
+        raw = os.environ.get("FTP_TIMEOUT", "").strip()
+    try:
+        value = int(raw)
+        return max(30, min(value, 600))
+    except (TypeError, ValueError):
+        return DEFAULT_FTP_TIMEOUT
+
+
+def _ftp_upload_timeout(
+    env: dict[str, str],
+    data_len: int,
+    *,
+    explicit: int | None = None,
+) -> int:
+    """Scale STOR timeout for large bootstrap payloads (7-inline articles ≈ 10–15 MB)."""
+    base = explicit if explicit is not None else _ftp_timeout_from_env(env)
+    scaled = base
+    if data_len >= 10 * 1024 * 1024:
+        scaled = max(scaled, 300)
+    elif data_len >= 5 * 1024 * 1024:
+        scaled = max(scaled, 180)
+    if scaled > base:
+        print(
+            f"FTP timeout scaled to {scaled}s for {data_len} byte payload (PASV→ACTIVE fallback enabled)",
+            file=sys.stderr,
+        )
+    return min(scaled, 600)
+
+
 def connect_ftp(
     env: dict[str, str],
     *,
-    timeout: int = DEFAULT_FTP_TIMEOUT,
+    timeout: int | None = None,
 ) -> TimewebPasvFTP:
     host, port, user, password = ftp_creds(env)
     if not host or not user or not password:
         raise RuntimeError("FTP credentials missing (FTP_HOST/FTP_USER/FTP_PASS)")
-    ftp = TimewebPasvFTP(timeout=timeout)
-    ftp.connect(host, port, timeout=timeout)
+    effective_timeout = timeout if timeout is not None else _ftp_timeout_from_env(env)
+    ftp = TimewebPasvFTP(timeout=effective_timeout)
+    ftp.connect(host, port, timeout=effective_timeout)
     ftp.login(user, password)
     ftp.set_pasv(True)
     return ftp
@@ -160,19 +196,27 @@ def _ftp_stor_with_retry(
     attempts: int = 8,
     retry_pause_s: float = 2.0,
 ) -> None:
-    """Upload via passive STOR with short retries (Timeweb PASV ports can be flaky)."""
+    """Upload via STOR with passive-first then active fallback (Timeweb PASV can flake)."""
     last_exc: Exception | None = None
-    for attempt in range(1, attempts + 1):
+    for pasv in (True, False):
         try:
-            ftp.voidcmd("TYPE I")
-            bio = io.BytesIO(data)
-            ftp.storbinary(f"STOR {remote_name}", bio)
-            return
-        except (TimeoutError, OSError, error_perm) as exc:
-            last_exc = exc
-            if attempt >= attempts:
-                break
-            time.sleep(retry_pause_s)
+            ftp.set_pasv(pasv)
+        except Exception:
+            continue
+        mode_label = "PASV" if pasv else "ACTIVE"
+        for attempt in range(1, attempts + 1):
+            try:
+                ftp.voidcmd("TYPE I")
+                bio = io.BytesIO(data)
+                ftp.storbinary(f"STOR {remote_name}", bio)
+                if not pasv:
+                    print("FTP upload used ACTIVE mode after PASV failure", file=sys.stderr)
+                return
+            except (TimeoutError, OSError, error_perm) as exc:
+                last_exc = exc
+                if attempt >= attempts:
+                    break
+                time.sleep(retry_pause_s)
     assert last_exc is not None
     raise last_exc
 
@@ -183,10 +227,11 @@ def upload_bytes(
     data: bytes,
     *,
     root: str | None = None,
-    timeout: int = DEFAULT_FTP_TIMEOUT,
+    timeout: int | None = None,
 ) -> str:
     root = (root or env.get("FTP_ROOT") or env.get("SSH_ROOT") or ".").strip() or "."
-    ftp = connect_ftp(env, timeout=timeout)
+    effective_timeout = _ftp_upload_timeout(env, len(data), explicit=timeout)
+    ftp = connect_ftp(env, timeout=effective_timeout)
     try:
         login_cwd = ftp.pwd()
         _ftp_cwd_root(ftp, root, login_cwd)

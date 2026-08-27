@@ -1,0 +1,146 @@
+{
+  "topic_id": "B03",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": [
+        "inline_4",
+        "inline_5",
+        "inline_6",
+        "inline_7"
+      ],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "the_rieltor_twilight_gold",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "cover_hook": "Отзывы как под копирку",
+  "cover_hook_highlight": "копирку",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Derouter REST (DEROUTER_API_KEY) — 2K 16:9, one job per canvas (2×). Cover agent invents cover_hook + scene_hint/alt before --write-batch. Host lock = blog-hero.json (navy blazer, not hoodie).",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Постер: гость с двумя телефонами видит одинаковые отзывы «всё супер» на карточке 4,8 — август, Тюмень.",
+      "scene_hint": "Poster: corkboard + twin phones duplicate reviews, gold hook, phone on torn tape bottom, August sun flare, TOP-RIGHT empty pad; NO logo.",
+      "meme_caption_ru": "",
+      "sticky": "Рейтинг не всё скажет"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "4,8 и 9+ — это разные линейки",
+      "visual_type": "comparison_table",
+      "scene_hint": "Compare table: Avito 5★ vs Sutочно 10pt, arrows «не сравнивать», gold sketch.",
+      "alt": "Сравнение шкал рейтинга: 4,8 на Авито и 9+ на Суточно.ру — разные линейки",
+      "labels": [
+        "Шкала до пяти",
+        "Шкала до десяти",
+        "Не сравнивать"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Там, где звёзды не работают",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Review card sketch: grey «без оценки» zone, chips «не договорились», crossed stars.",
+      "alt": "Отзывы без оценки на Авито: «не договорились» и «не общались» не входят в звёздный рейтинг",
+      "labels": [
+        "Отзывы без оценки",
+        "Не договорились",
+        "В рейтинг не идут"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Одинаковый ответ — не доказательство накрутки",
+      "visual_type": "process_flow",
+      "scene_hint": "11 identical reply bubbles vs one complaint; arrow «повтор ≠ обман», gold tape.",
+      "alt": "Одинаковые ответы хозяина на отзывы: повтор текста не доказывает накрутку",
+      "labels": [
+        "11 ответов",
+        "Текст повторяется",
+        "Повтор не значит обман"
+      ]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Сначала плохое, потом хорошее",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Flow 1→2→3★ first: icons шум/вода/ключи, red pins, investigation board.",
+      "alt": "Порядок чтения отзывов: сначала низкие оценки 1–2–3 звезды, ищите повторяющиеся жалобы",
+      "labels": [
+        "Сначала 1–2–3 звезды",
+        "Шум",
+        "Вода",
+        "Ключи"
+      ]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Три отзыва за один день — повод смотреть внимательнее",
+      "visual_type": "bar_timeline_chart",
+      "scene_hint": "Timeline: 3 reviews same date vs fresh month-old, calendar chips, gold bars.",
+      "alt": "Три отзыва за один день на карточке: свежесть комментариев важнее средней оценки",
+      "labels": [
+        "Три отзыва",
+        "Одна дата",
+        "Свежесть важнее среднего"
+      ]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Один вопрос в чат",
+      "visual_type": "fact_card",
+      "scene_hint": "Chat mockup: one bold question bubble, platform icon, arrow «до оплаты».",
+      "alt": "Один вопрос хозяину в чате площадки до оплаты: проверка актуальности жалобы из отзывов",
+      "labels": [
+        "Один вопрос",
+        "До оплаты",
+        "Пишите в чате",
+        "На площадке"
+      ]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Порядок проверки за 5–10 минут",
+      "visual_type": "checklist_board",
+      "scene_hint": "Checklist 5 steps, timer «5–10 мин», Harold sticker ≤12% bottom-left.",
+      "alt": "Чеклист проверки отзывов за 5–10 минут до оплаты посуточной квартиры",
+      "labels": [
+        "5–10 минут",
+        "Проверяйте по порядку",
+        "Ответы вручную",
+        "Добрый дом"
+      ]
+    }
+  },
+  "cover_keys_ru": [
+    "квартиры посуточно тюмень",
+    "суточно ру отзывы"
+  ]
+}

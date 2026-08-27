@@ -68,6 +68,10 @@ python3 scripts/excalibur_blog_grsai_gpt_image2_api.py --article-dir "$ARTICLE" 
   --batch cover/quad-mcp-batch-02.json --result cover/quad-mcp-result-02.json
 python3 scripts/excalibur_blog_quad_apply.py --article-dir "$ARTICLE" --canvas-index 1 --inject-html
 python3 scripts/excalibur_blog_quad_apply.py --article-dir "$ARTICLE" --canvas-index 2 --inject-html
+
+# If drawn_logo_gate / composite reports AI lockup on pre-composite cover pad:
+python3 scripts/excalibur_blog_cover_logo_pad_clear.py --article-dir "$ARTICLE" --auto-detect --recomposite
+
 python3 scripts/excalibur_blog_brand_logo_composite.py --article-dir "$ARTICLE"
 python3 scripts/excalibur_blog_cover_qa_gate.py --article-dir "$ARTICLE"
 ```
