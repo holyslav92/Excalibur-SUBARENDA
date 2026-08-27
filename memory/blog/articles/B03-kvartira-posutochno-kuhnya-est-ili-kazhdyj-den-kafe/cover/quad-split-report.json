@@ -150,40 +150,35 @@
       "split": {
         "source_canvas": "memory/blog/articles/B03-kvartira-posutochno-kuhnya-est-ili-kazhdyj-den-kafe/cover/canvas-quad-01.png",
         "source_size_px": [
-          2048,
-          1152
+          1672,
+          941
         ],
         "panel_size_px": [
-          1024,
-          576
+          834,
+          468
         ],
         "split_meta": {
-          "split_mode": "mechanical_center",
-          "h_gutter_px": null,
-          "v_gutter_px": null,
+          "split_mode": "gutter_detect",
+          "h_gutter_px": {
+            "start": 468,
+            "end": 473
+          },
+          "v_gutter_px": {
+            "start": 834,
+            "end": 838
+          },
           "requested_mode": "auto",
-          "fallback_reason": "aspect_crop_loss_too_high",
-          "rejected_gutter": {
-            "h_gutter_px": {
-              "start": 569,
-              "end": 605
+          "gutter_quality": {
+            "h_center_offset_px": 0.0,
+            "v_center_offset_px": 0.0,
+            "max_aspect_crop_loss": 0.0,
+            "per_panel_crop_loss": {
+              "top_left": 0.0,
+              "top_right": 0.0,
+              "bottom_left": 0.0,
+              "bottom_right": 0.0
             },
-            "v_gutter_px": {
-              "start": 1016,
-              "end": 1029
-            },
-            "gutter_quality": {
-              "h_center_offset_px": 11.0,
-              "v_center_offset_px": 1.5,
-              "max_aspect_crop_loss": 0.0461,
-              "per_panel_crop_loss": {
-                "top_left": 0.0,
-                "top_right": 0.0069,
-                "bottom_left": 0.0433,
-                "bottom_right": 0.0461
-              },
-              "reject_reason": "aspect_crop_loss_too_high"
-            }
+            "reject_reason": null
           }
         },
         "output_size_px": [
@@ -197,14 +192,14 @@
             "box_px": {
               "left": 0,
               "top": 0,
-              "right": 1024,
-              "bottom": 576
+              "right": 834,
+              "bottom": 468
             },
             "raw_box_px": {
               "left": 0,
               "top": 0,
-              "right": 1024,
-              "bottom": 576
+              "right": 834,
+              "bottom": 468
             },
             "size_px": [
               1200,
@@ -218,16 +213,16 @@
             "file": "cover/inline-01.png",
             "quadrant": "top_right",
             "box_px": {
-              "left": 1024,
+              "left": 838,
               "top": 0,
-              "right": 2048,
-              "bottom": 576
+              "right": 1672,
+              "bottom": 468
             },
             "raw_box_px": {
-              "left": 1024,
+              "left": 838,
               "top": 0,
-              "right": 2048,
-              "bottom": 576
+              "right": 1672,
+              "bottom": 468
             },
             "size_px": [
               1200,
@@ -242,15 +237,15 @@
             "quadrant": "bottom_left",
             "box_px": {
               "left": 0,
-              "top": 576,
-              "right": 1024,
-              "bottom": 1152
+              "top": 473,
+              "right": 834,
+              "bottom": 941
             },
             "raw_box_px": {
               "left": 0,
-              "top": 576,
-              "right": 1024,
-              "bottom": 1152
+              "top": 473,
+              "right": 834,
+              "bottom": 941
             },
             "size_px": [
               1200,
@@ -264,16 +259,16 @@
             "file": "cover/inline-03.png",
             "quadrant": "bottom_right",
             "box_px": {
-              "left": 1024,
-              "top": 576,
-              "right": 2048,
-              "bottom": 1152
+              "left": 838,
+              "top": 473,
+              "right": 1672,
+              "bottom": 941
             },
             "raw_box_px": {
-              "left": 1024,
-              "top": 576,
-              "right": 2048,
-              "bottom": 1152
+              "left": 838,
+              "top": 473,
+              "right": 1672,
+              "bottom": 941
             },
             "size_px": [
               1200,
