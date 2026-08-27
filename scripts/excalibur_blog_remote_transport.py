@@ -6,6 +6,7 @@ from __future__ import annotations
 import io
 import os
 import socket
+import sys
 import time
 from ftplib import FTP, error_perm
 from typing import Any
@@ -79,6 +80,27 @@ def _ftp_timeout_from_env(env: dict[str, str] | None = None) -> int:
         return max(30, min(value, 600))
     except (TypeError, ValueError):
         return DEFAULT_FTP_TIMEOUT
+
+
+def _ftp_upload_timeout(
+    env: dict[str, str],
+    data_len: int,
+    *,
+    explicit: int | None = None,
+) -> int:
+    """Scale STOR timeout for large bootstrap payloads (7-inline articles ≈ 10–15 MB)."""
+    base = explicit if explicit is not None else _ftp_timeout_from_env(env)
+    scaled = base
+    if data_len >= 10 * 1024 * 1024:
+        scaled = max(scaled, 300)
+    elif data_len >= 5 * 1024 * 1024:
+        scaled = max(scaled, 180)
+    if scaled > base:
+        print(
+            f"FTP timeout scaled to {scaled}s for {data_len} byte payload (PASV→ACTIVE fallback enabled)",
+            file=sys.stderr,
+        )
+    return min(scaled, 600)
 
 
 def connect_ftp(
@@ -188,7 +210,7 @@ def _ftp_stor_with_retry(
                 bio = io.BytesIO(data)
                 ftp.storbinary(f"STOR {remote_name}", bio)
                 if not pasv:
-                    print(f"FTP upload used ACTIVE mode after PASV failure", file=__import__("sys").stderr)
+                    print("FTP upload used ACTIVE mode after PASV failure", file=sys.stderr)
                 return
             except (TimeoutError, OSError, error_perm) as exc:
                 last_exc = exc
@@ -208,7 +230,7 @@ def upload_bytes(
     timeout: int | None = None,
 ) -> str:
     root = (root or env.get("FTP_ROOT") or env.get("SSH_ROOT") or ".").strip() or "."
-    effective_timeout = timeout if timeout is not None else _ftp_timeout_from_env(env)
+    effective_timeout = _ftp_upload_timeout(env, len(data), explicit=timeout)
     ftp = connect_ftp(env, timeout=effective_timeout)
     try:
         login_cwd = ftp.pwd()
