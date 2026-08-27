@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "research_date": "2026-08-27",
+  "topic": "kitchen_vs_hotel_cafes — кухня посуточно vs отель и кафе на 3 ночи",
+  "fresh_signal": "RealtyCalendar/tposutochnik 27.08.2026 + dokrutim 03.08.2026 + Добрый дом blog",
+  "wordstat": {
+    "p0": "квартиры посуточно тюмень",
+    "p0_volume": 5583,
+    "contrast": "отель или посуточная квартира",
+    "contrast_volume_ru": 305,
+    "accessed_at": "2026-08-27"
+  },
+  "official_source_audit": {
+    "required": false,
+    "status": "NOT_REQUIRED",
+    "reason": "Нет тарифов/комиссий банков или госорганов с точными цифрами"
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "derouter-opus-stamp-research.json"
+  }
+}
