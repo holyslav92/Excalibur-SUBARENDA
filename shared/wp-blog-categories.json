@@ -31,6 +31,7 @@
     }
   },
   "topic_defaults": {
-    "B02": ["posutochnaya-arenda", "zalog-i-vyiezd"]
+    "B02": ["posutochnaya-arenda", "zalog-i-vyiezd"],
+    "B03": ["posutochnaya-arenda", "sovety-gostyam"]
   }
 }

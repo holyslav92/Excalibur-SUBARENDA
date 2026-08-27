@@ -3,6 +3,10 @@
   "h1": "Выбрал квартиру с оценкой 4,8. Перед оплатой нашёл одинаковые отзывы",
   "slug": "na-kartochke-posutochno-4-8-dva-odinakovyh-vse-super",
   "topic_id": "B03",
+  "wp_category_slugs": [
+    "posutochnaya-arenda",
+    "sovety-gostyam"
+  ],
   "author_id": "dobry-dom",
   "article_mode": "B",
   "description": "Выбрал квартиру с оценкой 4,8. Перед оплатой нашёл одинаковые отзывы",
