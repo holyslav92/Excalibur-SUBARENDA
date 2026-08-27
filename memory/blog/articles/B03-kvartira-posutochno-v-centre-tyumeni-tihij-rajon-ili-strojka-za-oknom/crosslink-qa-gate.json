@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "anchor": "оплатил квартиру посуточно — код от чужой двери,",
+      "catalog_title": "Оплатил квартиру посуточно. Код прислали от чужой двери",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/",
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "anchor": "залог не вернули — скол на плите и",
+      "catalog_title": "Снял квартиру посуточно. Залог не вернули — нашли скол на плите",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "/blog/arenda-bez-syurprizov-chto-eto-prostymi-slovami-i-kak-izbezhat-skrytyh-platezhej/",
+      "slug": "arenda-bez-syurprizov-chto-eto-prostymi-slovami-i-kak-izbezhat-skrytyh-platezhej",
+      "anchor": "аренда без сюрпризов и скрытые платежи.Что мы изменили в «Добром доме»После этой истории мы перестали писать «тихий центр» как самостоятельное преимущество. Теперь важнее указать время и направление: во сколько во дворе начинается движение, есть ли рядом работы, куда выходят окна спальни. Если во дворе меняют трубы или рядом появился строительный забор, говорим об этом до оплаты, а не после отзыва.Гость, который приезжает работать на созвонах, может сказать об этом заранее. Тогда мы подбираем квартиру под задачу, а не под красивое слово. Для одного человека шум с улицы — терпимый фон. Для другого это сорванный рабочий день и три ночи в наушниках.Если работы начались внезапно и мешают спать, мы предлагаем другую квартиру или считаем ночь. Это не жест доброй воли ради красивой истории. Один возврат дешевле, чем честный отзыв про отбойный молоток под окном и потерянные созвоны.Спросить про конкретную квартиру и окна можно в",
+      "catalog_title": "Аренда без сюрпризов: что это простыми словами и как избежать скрытых платежей",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "outbound_unique_slugs": [
+    "beskontaktnoe-zaselenie-posutochno-tyumen",
+    "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+    "arenda-bez-syurprizov-chto-eto-prostymi-slovami-i-kak-izbezhat-skrytyh-platezhej"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B03-kvartira-posutochno-v-centre-tyumeni-tihij-rajon-ili-strojka-za-oknom",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}

@@ -1,0 +1,283 @@
+{
+  "agent": "excalibur-blog-cover-quad-split",
+  "status": "BLOCK",
+  "splits": [
+    {
+      "canvas_index": 1,
+      "manifest": "cover/quad-manifest.json",
+      "split": {
+        "source_canvas": "memory/blog/articles/B03-kvartira-posutochno-v-centre-tyumeni-tihij-rajon-ili-strojka-za-oknom/cover/canvas-quad-01.png",
+        "source_size_px": [
+          2048,
+          1152
+        ],
+        "panel_size_px": [
+          1024,
+          576
+        ],
+        "split_meta": {
+          "split_mode": "mechanical_center",
+          "h_gutter_px": null,
+          "v_gutter_px": null,
+          "requested_mode": "auto",
+          "fallback_reason": "gutter_bands_not_found"
+        },
+        "output_size_px": [
+          1200,
+          675
+        ],
+        "outputs": {
+          "cover": {
+            "file": "cover/cover.png",
+            "quadrant": "top_left",
+            "box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1024,
+              "bottom": 576
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1024,
+              "bottom": 576
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Стройка за окном в тихом центре.",
+            "h2_anchor": null
+          },
+          "inline_1": {
+            "file": "cover/inline-01.png",
+            "quadrant": "top_right",
+            "box_px": {
+              "left": 1024,
+              "top": 0,
+              "right": 2048,
+              "bottom": 576
+            },
+            "raw_box_px": {
+              "left": 1024,
+              "top": 0,
+              "right": 2048,
+              "bottom": 576
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Сравнение обещания и шума.",
+            "h2_anchor": "«Тихий центр» — это не адрес, а обещание"
+          },
+          "inline_2": {
+            "file": "cover/inline-02.png",
+            "quadrant": "bottom_left",
+            "box_px": {
+              "left": 0,
+              "top": 576,
+              "right": 1024,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 576,
+              "right": 1024,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Видео из окна со звуком.",
+            "h2_anchor": "Двадцать секунд видео дороже сорока отзывов"
+          },
+          "inline_3": {
+            "file": "cover/inline-03.png",
+            "quadrant": "bottom_right",
+            "box_px": {
+              "left": 1024,
+              "top": 576,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 1024,
+              "top": 576,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Проверка адреса на карте.",
+            "h2_anchor": "Карты и панорамы: три минуты до перевода"
+          }
+        }
+      }
+    },
+    {
+      "canvas_index": 2,
+      "manifest": "cover/quad-manifest.json",
+      "split": {
+        "source_canvas": "memory/blog/articles/B03-kvartira-posutochno-v-centre-tyumeni-tihij-rajon-ili-strojka-za-oknom/cover/canvas-quad-02.png",
+        "source_size_px": [
+          2048,
+          1152
+        ],
+        "panel_size_px": [
+          1020,
+          572
+        ],
+        "split_meta": {
+          "split_mode": "gutter_detect",
+          "h_gutter_px": {
+            "start": 572,
+            "end": 580
+          },
+          "v_gutter_px": {
+            "start": 1020,
+            "end": 1028
+          },
+          "requested_mode": "auto",
+          "gutter_quality": {
+            "h_center_offset_px": 0.0,
+            "v_center_offset_px": 0.0,
+            "max_aspect_crop_loss": 0.0,
+            "per_panel_crop_loss": {
+              "top_left": 0.0,
+              "top_right": 0.0,
+              "bottom_left": 0.0,
+              "bottom_right": 0.0
+            },
+            "reject_reason": null
+          }
+        },
+        "output_size_px": [
+          1200,
+          675
+        ],
+        "outputs": {
+          "inline_4": {
+            "file": "cover/inline-04.png",
+            "quadrant": "top_left",
+            "box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1020,
+              "bottom": 572
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1020,
+              "bottom": 572
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Поиск шума в отзывах.",
+            "h2_anchor": "Отзывы: шум редко называют шумом"
+          },
+          "inline_5": {
+            "file": "cover/inline-05.png",
+            "quadrant": "top_right",
+            "box_px": {
+              "left": 1028,
+              "top": 0,
+              "right": 2048,
+              "bottom": 572
+            },
+            "raw_box_px": {
+              "left": 1028,
+              "top": 0,
+              "right": 2048,
+              "bottom": 572
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Вопрос о шуме по часам.",
+            "h2_anchor": "Один вопрос, которым можно открыть замок из общих слов"
+          },
+          "inline_6": {
+            "file": "cover/inline-06.png",
+            "quadrant": "bottom_left",
+            "box_px": {
+              "left": 0,
+              "top": 580,
+              "right": 1020,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 580,
+              "right": 1020,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Окна спальни в объявлении.",
+            "h2_anchor": "Что мы изменили в «Добром доме»"
+          },
+          "inline_7": {
+            "file": "cover/inline-07.png",
+            "quadrant": "bottom_right",
+            "box_px": {
+              "left": 1028,
+              "top": 580,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 1028,
+              "top": 580,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Чеклист до брони.",
+            "h2_anchor": "Мораль: сначала время, потом деньги и ключ"
+          }
+        }
+      }
+    }
+  ],
+  "manifest": "cover/quad-manifest.json",
+  "html_inject": [
+    "skip inline_1: already correct under H2 — «Тихий центр» — это не адрес, а обещание",
+    "skip inline_2: already correct under H2 — Двадцать секунд видео дороже сорока отзывов",
+    "skip inline_3: already correct under H2 — Карты и панорамы: три минуты до перевода",
+    "skip inline_4: already correct under H2 — Отзывы: шум редко называют шумом",
+    "skip inline_5: already correct under H2 — Один вопрос, которым можно открыть замок из общих слов",
+    "skip inline_6: already correct under H2 — Что мы изменили в «Добром доме»",
+    "skip inline_7: already correct under H2 — Мораль: сначала время, потом деньги и ключ"
+  ],
+  "errors": [
+    "skip inline_4: H2 not found — Отзывы шум",
+    "skip inline_5: H2 not found — Вопрос хосту",
+    "skip inline_6: H2 not found — Добрый дом",
+    "skip inline_7: H2 not found — Чеклист",
+    "inline_4 figure count after inject=0 (need exactly 1)",
+    "inline_5 figure count after inject=0 (need exactly 1)",
+    "inline_6 figure count after inject=0 (need exactly 1)",
+    "inline_7 figure count after inject=0 (need exactly 1)"
+  ]
+}

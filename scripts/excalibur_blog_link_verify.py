@@ -12,7 +12,7 @@ import urllib.request
 from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any
-from urllib.parse import urlparse
+from urllib.parse import urlparse, urlunparse
 
 from excalibur_blog_site_base import (
     SITE_BASE_PLACEHOLDER,
@@ -114,6 +114,23 @@ def _get_fallback(
             "method": "GET",
             "error": str(e),
         }
+
+
+def idna_ascii_url(url: str) -> str:
+    """Encode IDN host to punycode so urllib HTTP checks work (добрыйдом-72.рф)."""
+    parts = urlparse(url)
+    host = parts.hostname
+    if not host:
+        return url
+    try:
+        host.encode("ascii")
+        return url
+    except UnicodeEncodeError:
+        ascii_host = host.encode("idna").decode("ascii")
+        netloc = ascii_host
+        if parts.port:
+            netloc = f"{ascii_host}:{parts.port}"
+        return urlunparse(parts._replace(netloc=netloc))
 
 
 def classify_link(href: str, site_base: str | None) -> str:
@@ -427,7 +444,9 @@ def verify_article(
                 }
             )
             continue
-        r = check_url_with_connection_reset_retry(check_target, timeout, user_agent)
+        r = check_url_with_connection_reset_retry(
+            idna_ascii_url(check_target), timeout, user_agent
+        )
         r["kind"] = kind
         r["skipped"] = False
         # Keep original href in url; live target only in checked_url (redacted on write).
