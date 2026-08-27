@@ -1,0 +1,27 @@
+{
+  "slug": "na-kartochke-posutochno-4-8-dva-odinakovyh-vse-super",
+  "topic_id": "B03",
+  "permalink": "{{SITE_BASE}}/blog/na-kartochke-posutochno-4-8-dva-odinakovyh-vse-super/",
+  "publish_method": "ftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B03-na-kartochke-posutochno-4-8-dva-odinakovyh-vse-super/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1288390,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4052 slug=na-kartochke-posutochno-4-8-dva-odinakovyh-vse-super\nOK categories=101,106\nOK dzen_yzen_meta=1\nOK featured_image=4053\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4054 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/08/na-kartochke-posutochno-4-8-dva-odinakovyh-vse-super-inline-01.png\nOK inline_alt=4054\nOK inline_caption=4054\nOK inline_description=4054\nOK inline_image_upload=4055 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/08/na-kartochke-posutochno-4-8-dva-odinakovyh-vse-super-inline-02.png\nOK inline_alt=4055\nOK inline_caption=4055\nOK inline_description=4055\nOK inline_image_upload=4056 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/08/na-kartochke-posutochno-4-8-dva-odinakovyh-vse-super-inline-03.png\nOK inline_alt=4056\nOK inline_caption=4056\nOK inline_description=4056\nOK inline_image_upload=4057 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/08/na-kartochke-posutochno-4-8-dva-odinakovyh-vse-super-inline-04.png\nOK inline_alt=4057\nOK inline_caption=4057\nOK inline_description=4057\nOK inline_image_upload=4058 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/08/na-kartochke-posutochno-4-8-dva-odinakovyh-vse-super-inline-05.png\nOK inline_alt=4058\nOK inline_caption=4058\nOK inline_description=4058\nOK inline_image_upload=4059 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/08/na-kartochke-posutochno-4-8-dva-odinakovyh-vse-super-inline-06.png\nOK inline_alt=4059\nOK inline_caption=4059\nOK inline_description=4059\nOK inline_image_upload=4060 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/08/na-kartochke-posutochno-4-8-dva-odinakovyh-vse-super-inline-07.png\nOK inline_alt=4060\nOK inline_caption=4060\nOK inline_description=4060\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/na-kartochke-posutochno-4-8-dva-odinakovyh-vse-super/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/na-kartochke-posutochno-4-8-dva-odinakovyh-vse-super/",
+    "errors": []
+  }
+}

@@ -25,5 +25,7 @@
   },
   "date": "2026-08-27",
   "pipeline_canon": "human-first-v2",
-  "editorial_swarm": false
+  "editorial_swarm": false,
+  "status": "published",
+  "wp_post_id": 4052
 }
