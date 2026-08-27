@@ -1,0 +1,37 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 2,
+  "identity_reference_local": "",
+  "identity_reference_id": "",
+  "reference_url_hosted": "",
+  "output_canvas": "cover/canvas-quad-02.png",
+  "result_path": "cover/quad-mcp-result-02.json",
+  "slots": [
+    "inline_4",
+    "inline_5",
+    "inline_6",
+    "inline_7"
+  ],
+  "preferred_image_flow": {
+    "provider": "grsai",
+    "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
+    "resolution": "2K",
+    "apply_script": "python3 scripts/excalibur_blog_quad_apply.py --article-dir <article_dir> --canvas-index 2 --inject-html"
+  },
+  "jobs": [
+    {
+      "slot": "canvas_quad",
+      "tool": "grsai",
+      "mcp_args": {
+        "prompt": "High-key bright RU editorial collage, airy #FFFFFF, sun flare, warm hospitality (посуточно Тюмень, comfort+). NO host/Shakin. NO brand logo in gen — factory PNG after split. Late summer Aug 27, green trees, NO winter/snow.\nCanvas 2048x1152 exact 2x2; four 16:9 panels; thin white gutters.\nBan: dark cinematic; WordPress UI; winter/snow; stock co-host; meme >15%; icon soup; drawn logo.\nTEXT LOCK: Russian Cyrillic only; exact LABELS per panel.\nInlines: NO logo in gen; factory pastes PNG on 2–3 panels TOP-RIGHT only; people-meme stickers ≤12%.\nTL inline: workflow; «Сначала плохое, потом хорошее»; flow 1-2-3★ шум/вода/ключи.. TXT:Сначала 1–2–3 звезды | Шум | Вода | Ключи. No logo.\nTR inline: timeline chart; «Три отзыва за один день»; 3 same-date vs fresh.. TXT:Три отзыва | Одна дата | Свежесть важнее среднего. No logo.\nBL inline: fact card; «Один вопрос в чат»; chat bubble before pay.. TXT:Один вопрос | До оплаты | Пишите в чате | На площадке. No logo.\nBR inline: checklist board; «Порядок проверки за 5–10 минут»; 5 steps timer.. TXT:5–10 минут | Проверяйте по порядку | Ответы вручную | Добрый дом. Empty TR pad; Harold ≤12% BL.\nInline all: #FFF collage, gold/black Cyrillic, tape/pins; exact TXT; no human hero; zero typos.",
+        "aspect_ratio": "16:9",
+        "resolution": "2K"
+      }
+    }
+  ],
+  "validation": {
+    "prompt_chars": 1234,
+    "max_prompt_chars": 3500,
+    "resolution": "2K"
+  }
+}

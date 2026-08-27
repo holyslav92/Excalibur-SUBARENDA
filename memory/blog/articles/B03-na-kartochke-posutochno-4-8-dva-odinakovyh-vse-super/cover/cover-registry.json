@@ -1,0 +1,86 @@
+{
+  "topic_id": "B03",
+  "slug": "na-kartochke-posutochno-4-8-dva-odinakovyh-vse-super",
+  "cover_family": "brand_collage",
+  "style_preset": "the_rieltor_twilight_gold",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "file": "cover/cover.png",
+  "alt": "Постер: гость с двумя телефонами видит одинаковые отзывы «всё супер» на карточке 4,8 — август, Тюмень.",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-quad-01.png",
+  "generated_at": "2026-08-27T06:48:39+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Постер: гость с двумя телефонами видит одинаковые отзывы «всё супер» на карточке 4,8 — август, Тюмень.",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Сравнение шкал рейтинга: 4,8 на Авито и 9+ на Суточно.ру — разные линейки",
+      "h2_anchor": "4,8 и 9+ — это разные линейки",
+      "visual_type": "comparison_table",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Отзывы без оценки на Авито: «не договорились» и «не общались» не входят в звёздный рейтинг",
+      "h2_anchor": "Там, где звёзды не работают",
+      "visual_type": "labeled_checklist",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Одинаковые ответы хозяина на отзывы: повтор текста не доказывает накрутку",
+      "h2_anchor": "Одинаковый ответ — не доказательство накрутки",
+      "visual_type": "process_flow",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_4",
+      "file": "cover/inline-04.png",
+      "alt": "Порядок чтения отзывов: сначала низкие оценки 1–2–3 звезды, ищите повторяющиеся жалобы",
+      "h2_anchor": "Сначала плохое, потом хорошее",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_5",
+      "file": "cover/inline-05.png",
+      "alt": "Три отзыва за один день на карточке: свежесть комментариев важнее средней оценки",
+      "h2_anchor": "Три отзыва за один день — повод смотреть внимательнее",
+      "visual_type": "bar_timeline_chart",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_6",
+      "file": "cover/inline-06.png",
+      "alt": "Один вопрос хозяину в чате площадки до оплаты: проверка актуальности жалобы из отзывов",
+      "h2_anchor": "Один вопрос в чат",
+      "visual_type": "fact_card",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_7",
+      "file": "cover/inline-07.png",
+      "alt": "Чеклист проверки отзывов за 5–10 минут до оплаты посуточной квартиры",
+      "h2_anchor": "Порядок проверки за 5–10 минут",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}

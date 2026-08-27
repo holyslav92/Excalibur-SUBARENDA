@@ -1,0 +1,37 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 1,
+  "identity_reference_local": "",
+  "identity_reference_id": "",
+  "reference_url_hosted": "",
+  "output_canvas": "cover/canvas-quad-01.png",
+  "result_path": "cover/quad-mcp-result-01.json",
+  "slots": [
+    "cover",
+    "inline_1",
+    "inline_2",
+    "inline_3"
+  ],
+  "preferred_image_flow": {
+    "provider": "grsai",
+    "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
+    "resolution": "2K",
+    "apply_script": "python3 scripts/excalibur_blog_quad_apply.py --article-dir <article_dir> --canvas-index 1 --inject-html"
+  },
+  "jobs": [
+    {
+      "slot": "canvas_quad",
+      "tool": "grsai",
+      "mcp_args": {
+        "prompt": "High-key bright RU editorial collage, airy #FFFFFF, sun flare, warm hospitality (посуточно Тюмень, comfort+). NO host/Shakin. CRITICAL: absolutely NO brand logo, NO «Добрый дом» text, NO house icon, NO green curtains logo, NO wordmark anywhere — factory pastes PNG later. TOP-RIGHT corner must be plain empty white/cream margin 10% width. Late summer Aug 27, green trees, NO winter/snow.\nCanvas 2048x1152 exact 2x2; four 16:9 panels; thin white gutters.\nBan: ANY logo/wordmark/house-heart icon; dark cinematic; WordPress UI; winter/snow; stock co-host; drawn logo in top-right.\nTEXT LOCK: Russian Cyrillic only; exact LABELS per panel.\nCover TL: phone IN scene EXACT «+7 (993) 574-83-22» torn tape bottom-left edge; TOP-RIGHT = blank white margin ONLY — zero graphics, zero text, zero icons in that corner.\nTL COVER POSTER: «Отзывы как под копирку» bold Cyrillic left/center, gold «копирку»; sticky «Рейтинг не всё скажет»; twin phones duplicate «всё супер» reviews bottom-center, rating 4.8 chip; corkboard red string left side; Aug Tyumen sun flare. Roll Safe sticker ≤12% bottom-left. Wordstat stickers left area only. TOP-RIGHT completely empty white pad.\nTR inline: comparison table; «4,8 и 9+ — разные линейки»; 5★ vs 10pt scales center.. TXT:Шкала до пяти | Шкала до десяти | Не сравнивать. TOP-RIGHT blank white margin — NO logo NO icon.\nBL inline: checklist; «Там, где звёзды не работают»; grey «без оценки» chips center.. TXT:Отзывы без оценки | Не договорились | В рейтинг не идут. TOP-RIGHT clean white — no logo.\nBR inline: process flow; «Одинаковый ответ — не доказательство накрутки»; 11 identical reply bubbles center.. TXT:11 ответов | Текст повторяется | Повтор не значит обман. TOP-RIGHT blank white margin — NO logo NO house icon.\nInline all: #FFF collage, gold/black Cyrillic, tape/pins; exact TXT; no human hero; zero typos; NEVER draw logo in top-right.",
+        "aspect_ratio": "16:9",
+        "resolution": "2K"
+      }
+    }
+  ],
+  "validation": {
+    "prompt_chars": 1876,
+    "max_prompt_chars": 3500,
+    "resolution": "2K"
+  }
+}
