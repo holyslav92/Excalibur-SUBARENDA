@@ -1,0 +1,26 @@
+{
+  "status": "BLOCK",
+  "topic_id": "B03",
+  "slug": "kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki",
+  "candidates_count": 6,
+  "outbound_found": [
+    {
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "title": "beskontaktnoe-zaselenie-posutochno-tyumen"
+    },
+    {
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "title": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem"
+    }
+  ],
+  "outbound_unique_slugs": [
+    "beskontaktnoe-zaselenie-posutochno-tyumen",
+    "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "warnings": [],
+  "errors": [
+    "interlink outbound: add 3–4 unique live /blog/ links to related published articles (found 2, need 3–4; missing examples: chto-vhodit-v-stoimost-kvartiry-posutochno-polnyj-spisok-uslug, pravila-prozhivaniya-v-otele-chto-proverit-do-oplaty-chtoby-ne-poteryat-dengi, skrytye-doplaty-pri-arende-kvartiry-kak-ne-pereplatit, uborka-syomnoj-kvartiry-pered-vyezdom-7-shagov-chtoby-vernuli-zalog)"
+  ]
+}

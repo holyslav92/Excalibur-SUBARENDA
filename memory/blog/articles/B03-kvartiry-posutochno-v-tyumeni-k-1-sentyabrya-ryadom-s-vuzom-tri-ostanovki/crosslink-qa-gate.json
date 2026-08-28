@@ -1,0 +1,40 @@
+{
+  "status": "FAIL",
+  "errors": [
+    "xlink quota: need 3–4 unique live /blog/ URLs (found 2 valid); related to topic, never invent slugs"
+  ],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "anchor": "«Оплатил квартиру посуточно. Код прислали от чужой двери». А если хотите заранее понять, почему условия выезда и залог лучше обсуждать не на бегу, прочитайте",
+      "catalog_title": "Оплатил квартиру посуточно. Код прислали от чужой двери",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/",
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "anchor": "«Снял квартиру посуточно. Залог не вернули — нашли скол на плите».Связаться с «Добрым домом»Если знаете корпус и даты, напишите их сразу — так разговор получится предметным, без обещаний «где-то рядом».\nTelegram-канал:",
+      "catalog_title": "Снял квартиру посуточно. Залог не вернули — нашли скол на плите",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "outbound_unique_slugs": [
+    "beskontaktnoe-zaselenie-posutochno-tyumen",
+    "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B03-kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}

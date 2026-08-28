@@ -3,7 +3,7 @@
   "source_channel": "https://t.me/klyshin_A",
   "source_label": "Алексей Клышин — angle only (ритм delivery, не копировать сделки)",
   "tenant": "Добрый дом — посуточная аренда / субаренда Тюмень",
-  "updated_at": "2026-08-25",
+  "updated_at": "2026-08-28",
   "timezone": "Asia/Yekaterinburg",
   "algorithm": "klyshin_hook → wordstat_probe → rework_for_demand → final_P0_or_skip_after_rework",
   "angle_rotation": {
@@ -73,9 +73,14 @@
       "klyshin_signal": "§1 = ожог сейчас; lockpick: сколько минут пешком до корпуса?",
       "wordstat_probes": ["квартира посуточно тюмень", "аренда квартиры на несколько дней", "снять квартиру на сутки тюмень"],
       "dzen_pattern_prefer": [2, 5],
-      "anti_dup": ["годовая аренда", "early_checkin"],
+      "anti_dup": ["годовая аренда", "early_checkin", "кровати не хватило"],
       "tyumen_localize": true,
-      "status": "queue_active"
+      "status": "used",
+      "last_seen": "2026-08-28",
+      "queue_slot": "2026-08-26 — 2026-08-28",
+      "final_p0": {"phrase": "квартиры посуточно тюмень", "volume_tyumen": 5534, "volume_ru": 12553},
+      "wordstat_rework_log": "probe «аренда квартиры на несколько дней» 66 (225) → «снять квартиру на несколько дней тюмень» 1 (55+11176) → «снять квартиру на сутки тюмень» 363 → «аренда квартиры посуточно» 811/46755 → «снять квартиру посуточно в тюмени» 1749 → final P0 «квартиры посуточно тюмень» 5534/12553",
+      "used_in_articles": ["B03"]
     },
     {
       "id": "sept_business_trip",

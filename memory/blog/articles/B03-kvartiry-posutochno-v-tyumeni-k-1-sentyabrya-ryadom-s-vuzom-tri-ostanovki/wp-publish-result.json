@@ -1,0 +1,27 @@
+{
+  "slug": "kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki",
+  "topic_id": "B03",
+  "permalink": "{{SITE_BASE}}/blog/kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki/",
+  "publish_method": "ftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B03-kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1042555,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4108 slug=kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki\nOK categories=101\nOK dzen_yzen_meta=1\nOK featured_image=4109\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4110 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/08/kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki-inline-01.png\nOK inline_alt=4110\nOK inline_caption=4110\nOK inline_description=4110\nOK inline_image_upload=4111 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/08/kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki-inline-02.png\nOK inline_alt=4111\nOK inline_caption=4111\nOK inline_description=4111\nOK inline_image_upload=4112 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/08/kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki-inline-03.png\nOK inline_alt=4112\nOK inline_caption=4112\nOK inline_description=4112\nOK inline_image_upload=4113 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/08/kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki-inline-04.png\nOK inline_alt=4113\nOK inline_caption=4113\nOK inline_description=4113\nOK inline_image_upload=4114 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/08/kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki-inline-05.png\nOK inline_alt=4114\nOK inline_caption=4114\nOK inline_description=4114\nOK inline_image_upload=4115 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/08/kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki-inline-06.png\nOK inline_alt=4115\nOK inline_caption=4115\nOK inline_description=4115\nOK inline_image_upload=4116 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/08/kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki-inline-07.png\nOK inline_alt=4116\nOK inline_caption=4116\nOK inline_description=4116\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki/",
+    "errors": []
+  }
+}

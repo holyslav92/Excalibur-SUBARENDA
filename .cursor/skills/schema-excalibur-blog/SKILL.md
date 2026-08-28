@@ -18,6 +18,8 @@ python3 scripts/excalibur_blog_derouter_opus_chat.py \
   --article-dir <article_dir>
 ```
 
+Bare `--output` filenames resolve under `--article-dir` (same rule as schema-gate `-o`).
+
 `DEROUTER SCHEMA BLOCKER` → стоп. Контракт: `shared/derouter-opus-brain-contract.md`.
 
 ## Вход
