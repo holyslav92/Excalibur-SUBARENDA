@@ -35,13 +35,13 @@
     },
     {
       "name": "interlink",
-      "ok": false,
-      "detail": "exit=2"
+      "ok": true,
+      "detail": "exit=0"
     },
     {
       "name": "crosslink_qa",
-      "ok": false,
-      "detail": "exit=1"
+      "ok": true,
+      "detail": "exit=0"
     },
     {
       "name": "research_official",
@@ -55,9 +55,7 @@
     }
   ],
   "failed": [
-    "link_verify",
-    "interlink",
-    "crosslink_qa"
+    "link_verify"
   ],
   "note": "Structural/links/HTML only — does not rewrite prose."
 }
