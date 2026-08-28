@@ -138,7 +138,7 @@ files_changed:
 checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_derouter_opus_chat.py`
 - `python3 -m unittest tests.test_derouter_output_path -v`
-commit: pending
+commit: 06ef2a4
 
 ## INC-20260828-1335-link-verify-idna-cyrillic-host
 status: fixed
