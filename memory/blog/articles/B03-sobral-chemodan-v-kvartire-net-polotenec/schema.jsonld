@@ -1,0 +1,25 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/sobral-chemodan-v-kvartire-net-polotenec/#article",
+  "url": "{{SITE_BASE}}/blog/sobral-chemodan-v-kvartire-net-polotenec/",
+  "headline": "Собрал чемодан — в посуточной квартире нет полотенец, минус 500 ₽",
+  "description": "Ванная есть, а вытереться нечем. В Тюмени такие «мелочи» превращают заезд в лишние траты — Добрый дом проверяет их до ключей.",
+  "inLanguage": "ru-RU",
+  "datePublished": "2026-08-28",
+  "dateModified": "2026-08-28",
+  "author": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/sobral-chemodan-v-kvartire-net-polotenec/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/"
+  }
+}

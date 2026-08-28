@@ -1,0 +1,10 @@
+{
+  "topic_id": "B03",
+  "description": "Ванная есть, а вытереться нечем. В Тюмени такие «мелочи» превращают заезд в лишние траты — Добрый дом проверяет их до ключей.",
+  "rhythm": "klyshin_case_hook",
+  "geo": "Тюмень",
+  "author_brand": "Добрый дом",
+  "not_equal_title": true,
+  "not_truncated_lead": true,
+  "verdict": "PASS"
+}

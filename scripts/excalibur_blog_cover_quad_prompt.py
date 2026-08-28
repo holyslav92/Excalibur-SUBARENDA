@@ -123,7 +123,7 @@ NON_CAT_MEME_INLINE_HINT = (
     f"tiny people-meme sticker only (≤{int(MEME_STICKER_INLINE_MAX_SHARE * 100)}% frame, "
     f"corner accent — Roll Safe / Harold / Pepe / reaction face from {MEME_CATALOG_REL}; NO cat)"
 )
-MAX_MCP_PROMPT_CHARS = 3500
+MAX_MCP_PROMPT_CHARS = 4200
 # Compact limits leave headroom under 3500 after style boilerplate (INC-20260721-0837).
 # Cover raw ≈80–140 (from blog-hero lock); inline ≈100–220. Long MUST/face essays
 # starve host space (B80 / INC-20260724-0837) and bilingual essays blow MCP budget.

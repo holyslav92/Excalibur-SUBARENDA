@@ -1,0 +1,146 @@
+{
+  "topic_id": "B03",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": [
+        "inline_4",
+        "inline_5",
+        "inline_6",
+        "inline_7"
+      ],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "the_rieltor_twilight_gold",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "cover_hook": "Полотенец нет — 500 ₽",
+  "cover_hook_highlight": "500",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Derouter REST (DEROUTER_API_KEY) — 2K 16:9, one job per canvas (2×). Cover agent invents cover_hook + scene_hint/alt before --write-batch. Host lock = blog-hero.json (navy blazer, not hoodie).",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Летний вечер в Тюмени: гость с чемоданом у пустой ванной, на стикере «минус 500 ₽», телефон +7 (993) 574-83-22 на ленте.",
+      "scene_hint": "Летний постер: гость, пустая ванная, стикер 500₽, телефон на ленте.",
+      "meme_caption_ru": "",
+      "sticky": "В ванной пусто",
+      "labels": []
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Ванная первой встречает гостя с реальностью",
+      "visual_type": "comparison_table",
+      "scene_hint": "Таблица ожидание/реальность, пустые крючки.",
+      "alt": "Сравнительная таблица: обещание «всё для проживания» против пустой ванной без полотенец.",
+      "labels": [
+        "собран чемодан",
+        "пустые крючки",
+        "полотенец нет"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Хост может не врать — и от этого ситуация не становится лучше",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Схема чата: одно вафельное полотенце.",
+      "alt": "Диаграмма: ответ хоста «полотенца есть» ведёт к одному маленькому полотенцу в шкафу.",
+      "labels": [
+        "минус 500 ₽",
+        "фото ванной",
+        "написать хозяину"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "500 ₽ — только видимая часть потери",
+      "visual_type": "checklist_board",
+      "scene_hint": "Чеклист до заезда, чек 500₽.",
+      "alt": "Доска-чеклист вопросов до заезда и чек на 500 рублей за полотенца.",
+      "labels": [
+        "до заезда",
+        "проверить ванную",
+        "сохранить чат"
+      ]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Мораль: сначала то, что касается тела, потом деньги и ключ",
+      "visual_type": "schema_faq_ui",
+      "scene_hint": "FAQ: банное+для рук на гостя.",
+      "alt": "Схема стандарта: банное и для рук на гостя, бельё на все спальные места.",
+      "labels": [
+        "банное + для рук",
+        "на каждого гостя",
+        "бельё на места"
+      ]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Вопрос, который открывает шкаф заранее",
+      "visual_type": "tool_screenshot",
+      "scene_hint": "Карточка: сколько комплектов?",
+      "alt": "Зарисовка экрана с вопросом о количестве полотенец и стартовым набором расходников.",
+      "labels": [
+        "расходники старт",
+        "мыло шампунь",
+        "бумага губка"
+      ]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Что проверить до оплаты",
+      "visual_type": "infographic_card",
+      "scene_hint": "Инфографика вопросов до оплаты.",
+      "alt": "Инфографика: три вопроса хосту до оплаты про полотенца и бельё.",
+      "labels": [
+        "сколько комплектов",
+        "вопрос до оплаты",
+        "цифры не «всё»"
+      ]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Как это устроено у нас",
+      "visual_type": "comparison_table",
+      "scene_hint": "Таблица связи в 22:00.",
+      "alt": "Таблица: кому писать поздно вечером и зачем сохранять переписку до оплаты.",
+      "labels": [
+        "кому писать в 22:00",
+        "живой ответ",
+        "скрин переписки"
+      ]
+    }
+  },
+  "cover_keys_ru": [],
+  "wordstat_stickers": [
+    "посуточно тюмень",
+    "квартира посуточно тюмень"
+  ],
+  "cover_phone_cta": "+7 (993) 574-83-22"
+}

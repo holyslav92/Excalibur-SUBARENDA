@@ -1,0 +1,57 @@
+{
+  "topic_id": "B03",
+  "slug": "sobral-chemodan-v-kvartire-net-polotenec",
+  "title": "Собрал чемодан — в посуточной квартире нет полотенец, минус 500 ₽",
+  "outbound_required_min": 1,
+  "outbound_found": [
+    {
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "title": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "permalink": "{{SITE_BASE}}/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+      "topic_id": "B01",
+      "post_id": 3745,
+      "source": "ledger"
+    },
+    {
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "title": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "permalink": "{{SITE_BASE}}/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/",
+      "topic_id": "B02",
+      "post_id": 3777,
+      "source": "ledger"
+    }
+  ],
+  "outbound_missing_suggestions": [],
+  "inbound_targets": [
+    {
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "title": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "permalink": "{{SITE_BASE}}/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+      "topic_id": "B01",
+      "post_id": 3745,
+      "source": "ledger"
+    },
+    {
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "title": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "permalink": "{{SITE_BASE}}/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/",
+      "topic_id": "B02",
+      "post_id": 3777,
+      "source": "ledger"
+    }
+  ],
+  "inbound_updates": [
+    {
+      "post_id": 3745,
+      "marker": "data-excalibur-interlink-from=\"sobral-chemodan-v-kvartire-net-polotenec\"",
+      "html": "<p class=\"excalibur-interlink-readalso\" data-excalibur-interlink-from=\"sobral-chemodan-v-kvartire-net-polotenec\"><b>Читайте также:</b> <a href=\"{{SITE_BASE}}/blog/sobral-chemodan-v-kvartire-net-polotenec/\">Собрал чемодан — в посуточной квартире нет полотенец, минус 500 ₽</a></p>"
+    },
+    {
+      "post_id": 3777,
+      "marker": "data-excalibur-interlink-from=\"sobral-chemodan-v-kvartire-net-polotenec\"",
+      "html": "<p class=\"excalibur-interlink-readalso\" data-excalibur-interlink-from=\"sobral-chemodan-v-kvartire-net-polotenec\"><b>Читайте также:</b> <a href=\"{{SITE_BASE}}/blog/sobral-chemodan-v-kvartire-net-polotenec/\">Собрал чемодан — в посуточной квартире нет полотенец, минус 500 ₽</a></p>"
+    }
+  ],
+  "new_url": "{{SITE_BASE}}/blog/sobral-chemodan-v-kvartire-net-polotenec/",
+  "dry_run": false
+}
