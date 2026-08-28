@@ -92,3 +92,33 @@ checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_llms_deploy.py`
 - `python3 scripts/excalibur_blog_llms_deploy.py --dry-run` → llms files present, transport ftp
 commit: 3b837c2
+
+## INC-20260828-1246-schema-derouter-output-root
+status: open
+run_date: 2026-08-28
+role: excalibur-blog-schema
+topic_id: B03
+article_dir: memory/blog/articles/B03-kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki
+severity: medium
+category: script
+
+### What went wrong
+
+- `excalibur_blog_derouter_opus_chat.py --role schema --output schema.jsonld --article-dir memory/blog/articles/B03-…` wrote `schema.jsonld` to repo root (`workspace/schema.jsonld`), not under `--article-dir`. Stamp landed correctly in article dir; gate FAIL `missing schema.jsonld` until manual move.
+
+### How the agent recovered this run
+
+- Copied JSON-LD from root `schema.jsonld` into `memory/blog/articles/B03-…/schema.jsonld`, deleted stray root file, re-ran `excalibur_blog_schema_gate.py` → PASS.
+
+### Durable fix needed before next run
+
+- When `--article-dir` is set and `--output` is a bare filename, resolve output under article dir (mirror stamp path). Or skill must pass full repo-relative output path.
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_derouter_opus_chat.py`
+- `skills/schema-excalibur-blog/SKILL.md`
+
+### Secrets
+
+- none recorded
