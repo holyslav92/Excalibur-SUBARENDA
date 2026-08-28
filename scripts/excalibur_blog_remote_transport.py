@@ -11,6 +11,21 @@ from ftplib import FTP, error_perm
 from typing import Any
 
 DEFAULT_FTP_TIMEOUT = 90
+
+
+def ftp_timeout_seconds(env: dict[str, str] | None = None, default: int = DEFAULT_FTP_TIMEOUT) -> int:
+    """Resolve FTP socket timeout; large bootstrap uploads need 300s+ on Timeweb PASV."""
+    raw = ""
+    if env:
+        raw = (env.get("FTP_TIMEOUT") or env.get("FTP_TIMEOUT_SECONDS") or "").strip()
+    if not raw:
+        raw = (os.environ.get("FTP_TIMEOUT") or os.environ.get("FTP_TIMEOUT_SECONDS") or "").strip()
+    if raw:
+        try:
+            return max(30, int(raw))
+        except ValueError:
+            pass
+    return default
 PASV_REWRITE_IP = "188.225.40.162"
 PASV_ALLOWED_HOSTS = frozenset({"vh368.timeweb.ru", PASV_REWRITE_IP})
 WP_ROOT_CANDIDATES = (
@@ -71,13 +86,14 @@ def ftp_creds(env: dict[str, str]) -> tuple[str, int, str, str]:
 def connect_ftp(
     env: dict[str, str],
     *,
-    timeout: int = DEFAULT_FTP_TIMEOUT,
+    timeout: int | None = None,
 ) -> TimewebPasvFTP:
     host, port, user, password = ftp_creds(env)
     if not host or not user or not password:
         raise RuntimeError("FTP credentials missing (FTP_HOST/FTP_USER/FTP_PASS)")
-    ftp = TimewebPasvFTP(timeout=timeout)
-    ftp.connect(host, port, timeout=timeout)
+    resolved_timeout = timeout if timeout is not None else ftp_timeout_seconds(env)
+    ftp = TimewebPasvFTP(timeout=resolved_timeout)
+    ftp.connect(host, port, timeout=resolved_timeout)
     ftp.login(user, password)
     ftp.set_pasv(True)
     return ftp
@@ -100,7 +116,7 @@ def find_wp_root(
     env: dict[str, str],
     *,
     candidates: tuple[str, ...] = WP_ROOT_CANDIDATES,
-    timeout: int = DEFAULT_FTP_TIMEOUT,
+    timeout: int | None = None,
 ) -> tuple[str, dict[str, Any]]:
     """Return FTP cwd root containing wp-load.php and probe log."""
     log: dict[str, Any] = {"candidates": [], "wp_load_found": False, "selected_root": ""}
@@ -183,10 +199,11 @@ def upload_bytes(
     data: bytes,
     *,
     root: str | None = None,
-    timeout: int = DEFAULT_FTP_TIMEOUT,
+    timeout: int | None = None,
 ) -> str:
     root = (root or env.get("FTP_ROOT") or env.get("SSH_ROOT") or ".").strip() or "."
-    ftp = connect_ftp(env, timeout=timeout)
+    resolved_timeout = timeout if timeout is not None else ftp_timeout_seconds(env, default=300)
+    ftp = connect_ftp(env, timeout=resolved_timeout)
     try:
         login_cwd = ftp.pwd()
         _ftp_cwd_root(ftp, root, login_cwd)
