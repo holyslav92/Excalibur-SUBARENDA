@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "research_date": "2026-08-28",
+  "topic_id": "B03",
+  "slug": "sobral-chemodan-v-kvartire-net-polotenec",
+  "fresh_signal": "Авито Путешествия — исследование 27.08.2026 (om1.ru, sib.fm)",
+  "signal_freshness": {
+    "status": "PASS",
+    "publication_date": "2026-08-27",
+    "source_urls": [
+      "https://www.om1.ru/news/society/432037-issledovanie_avito_puteshestvijj_95_vladelcev_zhilja_dlja_posutochnojj_arendy_vkladyvajutsja_v_komfort_gostejj/",
+      "https://sib.fm/news/2026/08/27/avito-puteshestviya-rossijskie-arendodateli-massovo-investiruyut-v-komfort-i-gostepriimstvo-dlya-gostej-kratkosrochnoj-arendy"
+    ]
+  },
+  "official_source_audit": {
+    "status": "NOT_REQUIRED",
+    "reason": "Нет тарифов/комиссий банков или госорганов"
+  }
+}
