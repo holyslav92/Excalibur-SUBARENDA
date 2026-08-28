@@ -1,0 +1,86 @@
+{
+  "topic_id": "B03",
+  "slug": "kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki",
+  "cover_family": "brand_collage",
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "file": "cover/cover.png",
+  "alt": "Август в Тюмени: родители с будущим студентом у окна смотрят на карту — от квартиры до корпуса 40 минут пешком, а в объявлении «рядом».",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-quad-01.png",
+  "generated_at": "2026-08-28T13:07:03+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Август в Тюмени: родители с будущим студентом у окна смотрят на карту — от квартиры до корпуса 40 минут пешком, а в объявлении «рядом».",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "ТюмГУ — много корпусов: «рядом с вузом» в объявлении не равно пешая доступность до нужного корпуса",
+      "h2_anchor": "«Рядом с вузом» — это не адрес",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Утро перед оформлением: поезд утром, чемоданы с вами, заезд с 14:00 и долгий путь пешком до корпуса",
+      "h2_anchor": "Утро ломается не на расстоянии, а на уверенности",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Вопрос арендодателю: сколько минут пешком до конкретного корпуса — проверка на карте в режиме «пешком»",
+      "h2_anchor": "Вопрос, который вскрывает объявление",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_4",
+      "file": "cover/inline-04.png",
+      "alt": "Конец августа: давление «решать сегодня», предоплата до просмотра и низкая цена в объявлении — не ваша цена",
+      "h2_anchor": "Конец августа торопят",
+      "visual_type": "schema_faq_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_5",
+      "file": "cover/inline-05.png",
+      "alt": "Вердикт: сначала проверить маршрут на карте и корпус, потом переводить деньги и брать ключ",
+      "h2_anchor": "Карта, корпус, деньги",
+      "visual_type": "tool_screenshot",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_6",
+      "file": "cover/inline-06.png",
+      "alt": "Чеклист перед оплатой: адрес корпуса, адрес квартиры, маршрут пешком и время заезда-выезда письменно",
+      "h2_anchor": "Проверить перед оплатой",
+      "visual_type": "infographic_card",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_7",
+      "file": "cover/inline-07.png",
+      "alt": "Как «Добрый дом» отвечает на вопросы: корпус, минуты пешком честно, звонок до брони",
+      "h2_anchor": "Как говорим в Добром доме",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}

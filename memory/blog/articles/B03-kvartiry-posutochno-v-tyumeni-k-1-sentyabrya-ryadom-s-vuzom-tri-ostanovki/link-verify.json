@@ -1,0 +1,73 @@
+{
+  "source": "/workspace/memory/blog/articles/B03-kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki/article.html",
+  "total_links": 7,
+  "failed_count": 2,
+  "verdict": "fail",
+  "links": [
+    {
+      "url": "https://t.me/Dobriy_dom_72",
+      "status": 200,
+      "ok": true,
+      "method": "HEAD",
+      "error": null,
+      "kind": "external",
+      "skipped": false
+    },
+    {
+      "url": "https://max.ru/id660300569233_biz",
+      "status": 200,
+      "ok": true,
+      "method": "HEAD",
+      "error": null,
+      "kind": "external",
+      "skipped": false
+    },
+    {
+      "url": "{{SITE_BASE}}/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+      "status": 200,
+      "ok": true,
+      "method": "HEAD",
+      "error": null,
+      "kind": "internal_relative",
+      "skipped": false,
+      "checked_url": "{{SITE_BASE}}/blog/beskontaktnoe-zaselenie-posutochno-tyumen/"
+    },
+    {
+      "url": "{{SITE_BASE}}/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/",
+      "status": 200,
+      "ok": true,
+      "method": "HEAD",
+      "error": null,
+      "kind": "internal_relative",
+      "skipped": false,
+      "checked_url": "{{SITE_BASE}}/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/"
+    },
+    {
+      "url": "https://t.me/Dobriy_dom_Tyumen",
+      "status": 200,
+      "ok": true,
+      "method": "HEAD",
+      "error": null,
+      "kind": "external",
+      "skipped": false
+    },
+    {
+      "url": "https://добрыйдом-72.рф/",
+      "status": null,
+      "ok": false,
+      "method": "GET",
+      "error": "'latin-1' codec can't encode characters in position 0-8: ordinal not in range(256)",
+      "kind": "external",
+      "skipped": false
+    },
+    {
+      "url": "https://добрыйдом-72.рф/booking/",
+      "status": null,
+      "ok": false,
+      "method": "GET",
+      "error": "'latin-1' codec can't encode characters in position 0-8: ordinal not in range(256)",
+      "kind": "external",
+      "skipped": false
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "topic_id": "B03",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": [
+        "inline_4",
+        "inline_5",
+        "inline_6",
+        "inline_7"
+      ],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "«Рядом» — 40 минут до корпуса",
+  "cover_hook_highlight": "Рядом",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень рядом",
+    "снять квартиру посуточно в тюмени"
+  ],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "WOW poster collage: parents+student at sunny window, phone map 40min walk route vs ad «рядом», TOP-RIGHT empty logo pad",
+    "location": "august sunny tyumen apartment window green trees student district warm golden light NOT winter snow",
+    "meme": "Roll Safe people-meme sticker bottom-left ≤12%",
+    "prop_set": "printed campus map, suitcases, student folder, bus ticket stub, august calendar torn sticky",
+    "sticker_set": ["квартиры посуточно тюмень рядом", "снять квартиру посуточно в тюмени", "три остановки"],
+    "joke": "Roll Safe taps temple when ad says рядом but map shows 40 minutes пешком"
+  },
+  "cover_emotion": "",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Grsai image API 2K 16:9, one job per canvas. Factory logo paste after split.",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Август в Тюмени: родители с будущим студентом у окна смотрят на карту — от квартиры до корпуса 40 минут пешком, а в объявлении «рядом».",
+      "scene_hint": "August sunny parents+student window green trees; phone map 40min; pink ONLY «Рядом»; TOP-RIGHT continues window/trees NOT white box NOT logo.",
+      "meme_caption_ru": "",
+      "sticky": "Пешком, не на карте"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "«Рядом с вузом» — это не адрес",
+      "visual_type": "comparison_table",
+      "scene_hint": "Table 3-col: район вуза vs 3 остановки vs минуты пешком; bus vs walk icons; gold ink sketch.",
+      "alt": "ТюмГУ — много корпусов: «рядом с вузом» в объявлении не равно пешая доступность до нужного корпуса",
+      "labels": [
+        "ТюмГУ: много корпусов",
+        "три остановки ≠ пешком"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Утро ломается не на расстоянии, а на уверенности",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Flow 4 steps: поезд утром → чемоданы → заезд 14:00 → 40 мин пешком; august morning.",
+      "alt": "Утро перед оформлением: поезд утром, чемоданы с вами, заезд с 14:00 и долгий путь пешком до корпуса",
+      "labels": [
+        "40 минут пешком",
+        "заезд с 14:00"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Вопрос, который вскрывает объявление",
+      "visual_type": "checklist_board",
+      "scene_hint": "Checklist chips: минут до корпуса? карта пешком не далеко ли; Harold meme sticker corner.",
+      "alt": "Вопрос арендодателю: сколько минут пешком до конкретного корпуса — проверка на карте в режиме «пешком»",
+      "labels": [
+        "минут до корпуса?",
+        "карта: режим пешком"
+      ]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Почему в конце августа вас торопят",
+      "visual_type": "schema_faq_ui",
+      "scene_hint": "Funnel diagram: 1 сентября → решать сегодня → предоплата; от 1,5 тыс. market note.",
+      "alt": "Конец августа: давление «решать сегодня», предоплата до просмотра и низкая цена в объявлении — не ваша цена",
+      "labels": [
+        "решать сегодня",
+        "предоплата до просмотра"
+      ]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Вердикт: сначала карта и корпус, потом деньги и ключ",
+      "visual_type": "tool_screenshot",
+      "scene_hint": "Map mockup steps: карта пешком → точный корпус → деньги; gold arrows white collage.",
+      "alt": "Вердикт: сначала проверить маршрут на карте и корпус, потом переводить деньги и брать ключ",
+      "labels": [
+        "сначала карта",
+        "потом деньги"
+      ]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Что проверить перед оплатой",
+      "visual_type": "infographic_card",
+      "scene_hint": "4-block card: адрес корпуса, квартиры, маршрут пешком, заезд/выезд письменно.",
+      "alt": "Чеклист перед оплатой: адрес корпуса, адрес квартиры, маршрут пешком и время заезда-выезда письменно",
+      "labels": [
+        "адрес корпуса",
+        "маршрут пешком"
+      ]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Как мы говорим об этом в «Добром доме»",
+      "visual_type": "comparison_table",
+      "scene_hint": "Table: честный ответ vs рекламное «рядом»; корпус, минуты, звонок до брони.",
+      "alt": "Как «Добрый дом» отвечает на вопросы: корпус, минуты пешком честно, звонок до брони",
+      "labels": [
+        "спросить корпус",
+        "звонить до брони"
+      ]
+    }
+  },
+  "cover_keys_ru": ["квартиры посуточно тюмень", "рядом с вузом"]
+}
