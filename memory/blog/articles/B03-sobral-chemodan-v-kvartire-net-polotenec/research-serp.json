@@ -1,0 +1,182 @@
+{
+  "agent": "excalibur-blog",
+  "date_context": {
+    "timezone": "Europe/Moscow",
+    "today_iso": "2026-08-28",
+    "today_ru": "28.08.2026",
+    "year": 2026,
+    "month": 8,
+    "month_name_ru": "август",
+    "weekday_ru": "пятница"
+  },
+  "topic": {
+    "topic_id": "B03",
+    "title": "Собрал чемодан — в квартире нет полотенец",
+    "h1": "Собрал чемодан — в квартире нет полотенец",
+    "slug": "sobral-chemodan-v-kvartire-net-polotenec",
+    "primary_query": "Собрал чемодан — в квартире нет полотенец",
+    "priority": "P0"
+  },
+  "searches": [
+    {
+      "query_id": "primary_fresh",
+      "query": "Собрал чемодан — в квартире нет полотенец 2026",
+      "purpose": "актуальный SERP",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Как сложить полотенце, чтобы занял мало места в чемодане - лайфхаки",
+          "url": "https://rushnychok.com/ru/kak-kompaktno-slozhit-polotence-v-chemodan/",
+          "snippet": ""
+        },
+        {
+          "title": "Тревожный чемодан: пошаговая инструкция",
+          "url": "https://glavpost.com/stati/2026/05/24/kak-sobrat-trevozhnyy-chemodan-polnyy-spisok-2026/",
+          "snippet": "Собираетесь в путь? Узнайте, как компактно сложить полотенце в чемодан, чтобы сэкономить место. Пошаговые инструкции, лайфхаки и лучшие методы упаковки."
+        },
+        {
+          "title": "Как организовать хранение в квартире: ищем место в маленьком ...",
+          "url": "https://ngs.ru/text/house/2026/03/22/76324432/",
+          "snippet": "Этот гайд поможет собрать актуальный тревожный набор образца 2026 года, избежать распространённых ошибок и подобрать оптимальную комплектацию под разные бюджеты."
+        },
+        {
+          "title": "Как компактно уложить вещи в чемодан и не помять одежду - вместится ...",
+          "url": "https://travel.rambler.ru/lifehack/55989939-kak-kompaktno-ulozhit-veschi-v-chemodan-i-ne-pomyat-odezhdu-vmestitsya-ves-tvoy-garderob-i-dazhe-noski-sosedki/",
+          "snippet": "В маленькой квартире главный враг — не площадь, а беспорядок. Если грамотно задействовать вертикальные поверхности, подобрать функциональную мебель и не копить ненужное, даже ..."
+        },
+        {
+          "title": "Как собрать чемодан, чтобы вещи не помялись: 5 способов - Горящая изба",
+          "url": "https://burninghut.ru/kak-sobrat-chemodan/",
+          "snippet": "Собираясь в отпуск или командировку, многие сталкиваются с мучительной дилеммой: как уложить вещи так, чтобы они помещались в чемодан и оставались аккуратными?"
+        },
+        {
+          "title": "Как организовать хранение в квартире: ищем место в маленьком ...",
+          "url": "https://59.ru/text/house/2026/03/22/76324435/",
+          "snippet": "Собрать чемодан и избежать мятых вещей — искусство, которое даётся не каждому. К счастью, есть несколько хитростей, которые не дадут превратить ваши сборы в стресс. Рассказываем, как сложить вещи, чтобы они не помялись и заняли в чемодане как можно меньше места."
+        }
+      ],
+      "searched_at": "2026-08-28"
+    },
+    {
+      "query_id": "title_fresh",
+      "query": "Собрал чемодан — в квартире нет полотенец 2026",
+      "purpose": "SERP по человеческому title",
+      "result_count": 0,
+      "results": [],
+      "searched_at": "2026-08-28"
+    },
+    {
+      "query_id": "official_docs",
+      "query": "Собрал чемодан — в квартире нет полотенец official docs 2026",
+      "purpose": "официальные docs",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Муж собрал чемодан жены за неё. А через час пожалел об этом на всю жизнь",
+          "url": "https://optim1stka.ru/2026/08/08/muzh-sobral-chemodan-zheny-za-neyo-a-cherez-chas-pozhalel-ob-etom-na-vsyu-zhizn/",
+          "snippet": ""
+        },
+        {
+          "title": "Муж молча собрал чемодан и ушел из дома. Спустя полчаса он прислал фото ...",
+          "url": "https://www.youtube.com/watch?v=x38ReAoBOiU",
+          "snippet": "Смятый сарафан в углу, растоптанное белье, жирное пятно на стене — всё это казалось сюрреалистичным кошмаром. Человек, с которым она жила три года, превратился в кого-то другого."
+        },
+        {
+          "title": "Собрала чемоданы и ушла, поняв, что в доме мне места нет",
+          "url": "https://optim1stka.ru/2026/04/22/sobrala-chemodany-i-ushla-ponyav-chto-v-dome-mne-mesta-net/",
+          "snippet": "Муж молча собрал чемодан и ушел из дома. Спустя полчаса он прислал фото, как в самолёте целует..."
+        },
+        {
+          "title": "Кто-то из нас уже собрал чемодан и перепроверил всё по сто раз, а кто ...",
+          "url": "https://vk.com/wall-230560773_82",
+          "snippet": "Я специально убрала ее на нижнюю полку в прихожей, чтобы далеко не тянуться. Женщина стояла посреди коридора, растерянно глядя на опустевшее пространство в шкафу-купе."
+        },
+        {
+          "title": "Дети: — А вот моего папы нет... — Как это — \"нет\" — А он три года назад ...",
+          "url": "https://vk.com/wall-184389105_44608",
+          "snippet": "Кто-то из нас уже собрал чемодан и перепроверил всё по сто раз, а кто-то только начинает искать вторую шлепанцу 😌 Главное - не потерять голов"
+        },
+        {
+          "title": "Решил поселить сестру с её шкафом в моей квартире. Собирай чемодан и ...",
+          "url": "https://www.youtube.com/watch?v=pAA4EbueBsY",
+          "snippet": "Дети: — А вот моего папы нет... — Как это — \"нет\" — А он три года назад собрал чемодан с бельём и ушёл в баню. — А разве так долго моются?"
+        }
+      ],
+      "searched_at": "2026-08-28"
+    },
+    {
+      "query_id": "github_evidence",
+      "query": "site:github.com Собрал чемодан — в квартире нет полотенец 2026",
+      "purpose": "GitHub evidence",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "coursera-ddp-shiny/corpora/ru_50k.txt at master - GitHub",
+          "url": "https://github.com/spujadas/coursera-ddp-shiny/blob/master/corpora/ru_50k.txt",
+          "snippet": ""
+        },
+        {
+          "title": "seyi/image 2.svg at main · oluwaseyi-alpha/seyi · GitHub",
+          "url": "https://github.com/oluwaseyi-alpha/seyi/blob/main/image%202.svg",
+          "snippet": "Coursera Developing Data Products Week 4 Peer-graded Assignment: Shiny - spujadas/coursera-ddp-shiny"
+        },
+        {
+          "title": "tools/app_icon.svg at master · Ivor-aif/tools · GitHub",
+          "url": "https://github.com/Ivor-aif/tools/blob/master/app_icon.svg",
+          "snippet": "Contribute to oluwaseyi-alpha/seyi development by creating an account on GitHub."
+        },
+        {
+          "title": "opendatamaps/djangoapp/static/sample_screen_v.png at main · togashigg ...",
+          "url": "https://github.com/togashigg/opendatamaps/blob/main/djangoapp/static/sample_screen_v.png",
+          "snippet": "I don't know if it's practical or not, but it's a small Android tool. - tools/app_icon.svg at master · Ivor-aif/tools"
+        },
+        {
+          "title": "AzurPilot/doc/GUI.png at master · wess09/AzurPilot · GitHub",
+          "url": "https://github.com/wess09/AzurPilot/blob/master/doc/GUI.png",
+          "snippet": "Contribute to togashigg/opendatamaps development by creating an account on GitHub."
+        },
+        {
+          "title": "Files/schema.svg at main · MoonMan120/Files · GitHub",
+          "url": "https://github.com/MoonMan120/Files/blob/main/schema.svg",
+          "snippet": "AzurPilot CN 碧蓝航线脚本 | 无缝委托科研，全自动大世界 | AzurLaneAutoScript 的修改版 AzurPilot - AzurPilot/doc/GUI.png at master · wess09/AzurPilot"
+        }
+      ],
+      "searched_at": "2026-08-28"
+    },
+    {
+      "query_id": "community_experience",
+      "query": "посуточная аренда нет полотенец комплектация 2026",
+      "purpose": "форумы и живые проблемы",
+      "result_count": 5,
+      "results": [
+        {
+          "title": "Исследование Авито Путешествий: 95% владельцев жилья вкладываются в комфорт гостей",
+          "url": "https://www.om1.ru/news/society/432037-issledovanie_avito_puteshestvijj_95_vladelcev_zhilja_dlja_posutochnojj_arendy_vkladyvajutsja_v_komfort_gostejj/",
+          "snippet": "27.08.2026 — текстиль, посуда, интерьер; средние вложения ~135 тыс. ₽/год"
+        },
+        {
+          "title": "Авито Путешествия: арендодатели инвестируют в комфорт краткосрочной аренды",
+          "url": "https://sib.fm/news/2026/08/27/avito-puteshestviya-rossijskie-arendodateli-massovo-investiruyut-v-komfort-i-gostepriimstvo-dlya-gostej-kratkosrochnoj-arendy",
+          "snippet": "27.08.2026 — 95% хозяев обновляли объекты; текстиль в топе расходов"
+        },
+        {
+          "title": "Что должно быть в сдаваемой посуточно квартире",
+          "url": "https://xn----7sbfzhwgabgibqigp4e4c.xn--p1ai/%D1%87%D1%82%D0%BE-%D0%B4%D0%BE%D0%BB%D0%B6%D0%BD%D0%BE-%D0%B1%D1%8B%D1%82%D1%8C-%D0%B2-%D1%81%D0%B4%D0%B0%D0%B2%D0%B0%D0%B5%D0%BC%D0%BE%D0%B9-%D0%BA%D0%B2%D0%B0%D1%80%D1%82%D0%B8%D1%80%D0%B5/",
+          "snippet": "Застеленная кровать; полотенца; мыло; шампунь"
+        },
+        {
+          "title": "Как попросить полотенце? — Woman.ru",
+          "url": "https://www.woman.ru/home/economy/thread-kak-poprosit-polotentse-id6300910/",
+          "snippet": "Гостья в посуточной: в других местах давали, здесь ничего нет"
+        },
+        {
+          "title": "Что купить для сдачи квартиры в посуточную аренду: чек-лист",
+          "url": "https://new.realtycalendar.ru/blog/chto-kupit-dlya-sdachi-kvartiry-v-posutochnuyu-arendu-chek-list",
+          "snippet": "Полотенца по сценариям; жидкое мыло; шампунь; тапочки"
+        }
+      ],
+      "searched_at": "2026-08-28"
+    }
+  ],
+  "errors": []
+}

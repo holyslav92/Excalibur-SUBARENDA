@@ -1,0 +1,21 @@
+Проверю структуру статьи и обязательные источники, затем соберу Schema через Derouter, отдельно прогоню gate и создам fragment после PASS.Не могу собрать `schema.jsonld` без доступа к файлам репозитория и обязательным входам:
+
+- `article.html`
+- `article.meta.json`
+- `research-notes.md`
+- `shared/authors-registry.json`
+- `memory/brief/site-brief.md` или `PUBLIC_SITE_URL`
+
+Также по контракту итоговый файл должен быть:
+
+```text
+memory/blog/articles/B03-sobral-chemodan-v-kvartire-net-polotenec/schema.jsonld
+```
+
+а не `schema/blogposting.json`.
+
+После появления входных файлов нужно выполнить Derouter, затем отдельный schema gate и только после `PASS` создать:
+
+```text
+.cursor/excalibur-blog-fragments/schema.md
+```
