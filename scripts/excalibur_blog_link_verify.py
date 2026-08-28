@@ -12,7 +12,7 @@ import urllib.request
 from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any
-from urllib.parse import urlparse
+from urllib.parse import urlsplit, urlunsplit, urlparse
 
 from excalibur_blog_site_base import (
     SITE_BASE_PLACEHOLDER,
@@ -52,10 +52,34 @@ def extract_links(html: str) -> list[str]:
     return out
 
 
+def encode_idn_url(url: str) -> str:
+    """Punycode-encode IDN hostnames so urllib can request Cyrillic domains."""
+    parts = urlsplit(url)
+    if not parts.scheme or not parts.netloc:
+        return url
+    host = parts.hostname or ""
+    if not host or host.isascii():
+        return url
+    try:
+        host_ascii = host.encode("idna").decode("ascii")
+    except UnicodeError:
+        return url
+    port = parts.port
+    userinfo = parts.netloc.split("@", 1)
+    if len(userinfo) == 2:
+        netloc = f"{userinfo[0]}@{host_ascii}"
+    else:
+        netloc = host_ascii
+    if port is not None:
+        netloc = f"{netloc}:{port}"
+    return urlunsplit((parts.scheme, netloc, parts.path, parts.query, parts.fragment))
+
+
 def check_url(url: str, timeout: float, user_agent: str) -> dict[str, Any]:
     ctx = ssl.create_default_context()
+    request_url = encode_idn_url(url)
     req = urllib.request.Request(
-        url,
+        request_url,
         method="HEAD",
         headers={"User-Agent": user_agent},
     )
@@ -73,7 +97,7 @@ def check_url(url: str, timeout: float, user_agent: str) -> dict[str, Any]:
         # Also retry when HEAD is disallowed / blocked (405/501/403/418).
         # VK kittenx (dev.vk.com) returns 418 on HEAD while GET 200 (B110).
         if e.code in (404, 405, 501, 403, 418):
-            return _get_fallback(url, timeout, user_agent, ctx, str(e))
+            return _get_fallback(request_url, timeout, user_agent, ctx, str(e))
         return {
             "url": url,
             "status": e.code,
@@ -82,7 +106,7 @@ def check_url(url: str, timeout: float, user_agent: str) -> dict[str, Any]:
             "error": str(e),
         }
     except Exception as e:  # noqa: BLE001
-        return _get_fallback(url, timeout, user_agent, ctx, str(e))
+        return _get_fallback(request_url, timeout, user_agent, ctx, str(e))
 
 
 def _get_fallback(
