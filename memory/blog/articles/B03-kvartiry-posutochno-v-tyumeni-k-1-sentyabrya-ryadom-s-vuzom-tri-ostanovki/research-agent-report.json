@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "research_date": "2026-08-28",
+  "topic_id": "B03",
+  "topic": "квартиры посуточно Тюмень — «рядом с вузом» vs минуты пешком до корпуса",
+  "fresh_signal": "klyshin_A 26.08.2026 + 5-tv.ru 21.08.2026 student rental season",
+  "wordstat_p0": {
+    "phrase": "квартиры посуточно тюмень",
+    "volume_55_11176": 5534,
+    "volume_225": 12553
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "derouter-opus-stamp-research.json"
+  },
+  "official_source_audit": {
+    "status": "NOT_REQUIRED",
+    "reason": "Нет тарифов/комиссий банков или госорганов; цены — вилка рынка"
+  }
+}
