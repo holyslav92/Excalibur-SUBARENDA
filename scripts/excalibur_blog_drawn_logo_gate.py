@@ -549,6 +549,31 @@ def detect_logo_text_overlap(
     }
 
 
+def is_bright_window_pad_false_positive(
+    image_path: Path,
+    *,
+    lockup: dict[str, Any] | None = None,
+    plate: dict[str, Any] | None = None,
+) -> bool:
+    """Agent judgment: outdoor window blowout in TR pad mimics white plate, not an AI logo card."""
+    if lockup is None:
+        lockup = detect_drawn_lockup_in_image(image_path)
+    if lockup.get("detected"):
+        return False
+    if float(lockup.get("score") or 0.0) >= DRAWN_LOCKUP_SCORE_THRESHOLD:
+        return False
+    if plate is None:
+        plate = detect_white_plate_in_pad(image_path)
+    if not plate.get("detected") or plate.get("plate_kind") != "white":
+        return False
+    green_ratio = float(lockup.get("green_ratio") or 0.0)
+    terracotta_ratio = float(lockup.get("terracotta_ratio") or 0.0)
+    if green_ratio >= 0.02 or terracotta_ratio >= 0.012:
+        return False
+    plate_std = float(plate.get("plate_std") or 0.0)
+    return 12.0 <= plate_std <= WHITE_PLATE_STD_MAX + 1.5
+
+
 def validate_article_logo_gates_slim(article_dir: Path, root: Path) -> list[str]:
     """Slim logo QA: cover pre-composite drawn-lockup + no-logo panels only; skip pixel/plate heuristics."""
     errors: list[str] = []
@@ -575,10 +600,11 @@ def validate_article_logo_gates_slim(article_dir: Path, root: Path) -> list[str]
             )
         plate = detect_white_plate_in_pad(pre_cover)
         if plate.get("detected") and plate.get("plate_kind") == "white":
-            errors.append(
-                "pre-composite cover.png: white logo plate/card in generation pad "
-                f"(area={plate.get('plate_area')})"
-            )
+            if not is_bright_window_pad_false_positive(pre_cover, lockup=result, plate=plate):
+                errors.append(
+                    "pre-composite cover.png: white logo plate/card in generation pad "
+                    f"(area={plate.get('plate_area')})"
+                )
     else:
         errors.append("cover/pre-composite/cover.png missing — composite must snapshot before logo paste")
 
