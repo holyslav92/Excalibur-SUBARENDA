@@ -12,7 +12,7 @@ import urllib.request
 from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any
-from urllib.parse import urlparse
+from urllib.parse import urlparse, urlunparse
 
 from excalibur_blog_site_base import (
     SITE_BASE_PLACEHOLDER,
@@ -52,7 +52,27 @@ def extract_links(html: str) -> list[str]:
     return out
 
 
+def encode_idna_url(url: str) -> str:
+    """Encode Unicode hostnames to punycode for urllib (latin-1 safe)."""
+    parsed = urlparse(url)
+    if not parsed.netloc or parsed.scheme not in ("http", "https"):
+        return url
+    host = parsed.hostname or ""
+    if not host or host.isascii():
+        return url
+    try:
+        encoded_host = host.encode("idna").decode("ascii")
+    except UnicodeError:
+        return url
+    port = f":{parsed.port}" if parsed.port else ""
+    netloc = f"{encoded_host}{port}"
+    return urlunparse(
+        (parsed.scheme, netloc, parsed.path, parsed.params, parsed.query, parsed.fragment)
+    )
+
+
 def check_url(url: str, timeout: float, user_agent: str) -> dict[str, Any]:
+    url = encode_idna_url(url)
     ctx = ssl.create_default_context()
     req = urllib.request.Request(
         url,
