@@ -1,0 +1,15 @@
+{
+  "topic_id": "B03",
+  "slug": "dve-nochi-otel-ili-kvartira-posutochno",
+  "title": "2 ночи в командировке: отель 6 800 ₽ или квартира 4 200 ₽ — переплата",
+  "h1": "2 ночи в командировке: отель 6 800 ₽ или квартира 4 200 ₽ — переплата",
+  "description": "Отель 6 800 ₽ или квартира 4 200 ₽ на две ночи — разница не там, где вы смотрите. Считаем завтрак, парковку и дорогу до офиса до оплаты.",
+  "wp_category_slugs": ["posutochnaya-arenda", "sovety-gostyam"],
+  "theme_blocks": {"faq": "skip", "quiz": "skip", "side_stickers": "skip"},
+  "status": "draft_ready",
+  "author_id": "dobry-dom",
+  "article_mode": "B",
+  "date": "2026-08-28",
+  "pipeline_canon": "human-first-v2",
+  "editorial_swarm": false
+}

@@ -92,3 +92,46 @@ checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_llms_deploy.py`
 - `python3 scripts/excalibur_blog_llms_deploy.py --dry-run` → llms files present, transport ftp
 commit: 3b837c2
+
+## INC-20260828-1130 — link-verify IDN Cyrillic domain
+
+status: fixed
+run_date: 2026-08-28
+role: excalibur-blog-publish
+topic_id: B03
+article_dir: memory/blog/articles/B03-dve-nochi-otel-ili-kvartira-posutochno
+severity: medium
+category: script
+
+### What went wrong
+
+- `excalibur_blog_link_verify.py` failed on `https://добрыйдом-72.рф/` with latin-1 encode error — blocked publish dry-run.
+
+### Fixer resolution
+
+fixed_at: 2026-08-28
+fix_summary:
+- Added `encode_idn_url()` in `excalibur_blog_link_verify.py` for Cyrillic tenant domains.
+files_changed:
+- `scripts/excalibur_blog_link_verify.py`
+checks_run:
+- B03 link-verify.json verdict pass
+commit: 7fda1d2
+
+## INC-20260828-1131 — llms-full.txt FTP timeout
+
+status: needs-human
+run_date: 2026-08-28
+role: excalibur-blog-publish
+topic_id: B03
+severity: low
+category: env
+
+### What went wrong
+
+- Post-publish llms deploy: `llms.txt` OK; `llms-full.txt` (~55KB) FTP timeout. Article live PASS.
+
+### needed_decision_or_secret
+
+- Retry llms-full deploy off-peak or increase FTP timeout.
+

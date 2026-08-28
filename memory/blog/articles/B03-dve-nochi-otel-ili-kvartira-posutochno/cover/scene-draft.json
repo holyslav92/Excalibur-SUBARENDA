@@ -1,0 +1,41 @@
+{
+  "cover_emotion": "hotel vs flat price compare",
+  "scene_hint": "August Tyumen poster: hotel vs flat doors, 6800/4200 stickers, suitcase, phone tape +7 993 574-83-22, top-right empty, no winter",
+  "wordstat_stickers": ["отель или квартира", "Тюмень"],
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "slots": {
+    "cover": {
+      "scene_hint": "Split poster hotel vs flat, 6800/4200, August Tyumen, phone on tape, empty top-right pad",
+      "alt": "Отель 6800 или квартира 4200 — две ночи Тюмень"
+    },
+    "inline_1": {
+      "scene_hint": "Table: hotel 6800 + breakfast + parking rows, sketch arrows, empty top-right",
+      "alt": "Скрытые строки отеля"
+    },
+    "inline_2": {
+      "scene_hint": "Flow: flat 4200 + 4 taxi trips + cleaning, numbered, clean corner",
+      "alt": "Итог квартиры с дорогой"
+    },
+    "inline_3": {
+      "scene_hint": "Checklist hotel wins: docs, reception, 7am, empty top-right pad",
+      "alt": "Когда отель удобнее"
+    },
+    "inline_4": {
+      "scene_hint": "Kitchen morning: coffee, phone code, courtyard parking sketch",
+      "alt": "Утро в квартире"
+    },
+    "inline_5": {
+      "scene_hint": "7 questions board before pay, torn sticky toggles",
+      "alt": "Вопросы до оплаты"
+    },
+    "inline_6": {
+      "scene_hint": "Infographic total before booking, Tyumen cozy flat card",
+      "alt": "Итог до брони"
+    },
+    "inline_7": {
+      "scene_hint": "Compare table 2 nights hotel vs flat, empty top-right pad",
+      "alt": "Отель или квартира Тюмень"
+    }
+  }
+}

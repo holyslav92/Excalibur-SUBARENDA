@@ -1,0 +1,155 @@
+{
+  "topic_id": "B03",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": [
+        "inline_4",
+        "inline_5",
+        "inline_6",
+        "inline_7"
+      ],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "cover_hook": "6800 или 4200 — где переплата",
+  "cover_hook_highlight": "6800",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Derouter REST (DEROUTER_API_KEY) — 2K 16:9, one job per canvas (2×). Cover agent invents cover_hook + scene_hint/alt before --write-batch. Host lock = blog-hero.json (navy blazer, not hoodie).",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Отель 6800 или квартира 4200 — две ночи Тюмень",
+      "scene_hint": "Split poster hotel vs flat, 6800/4200, August Tyumen, phone on tape, empty top-right pad",
+      "meme_caption_ru": "",
+      "sticky": "Отель или квартира?"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "6 800 ₽ за отель: номер уже оплачен, а поездка ещё нет",
+      "visual_type": "comparison_table",
+      "scene_hint": "Table: hotel 6800 + breakfast + parking rows, sketch arrows, empty top-right",
+      "alt": "Скрытые строки отеля",
+      "labels": [
+        "6800 ₽ отель",
+        "завтрак",
+        "парковка",
+        "две ночи"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "4 200 ₽ за квартиру: дешевле не значит ближе",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Flow: flat 4200 + 4 taxi trips + cleaning, numbered, clean corner",
+      "alt": "Итог квартиры с дорогой",
+      "labels": [
+        "4200 ₽ квартира",
+        "25 мин до офиса",
+        "уборка",
+        "залог"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Когда отель выигрывает, даже если в объявлении он дороже",
+      "visual_type": "checklist_board",
+      "scene_hint": "Checklist hotel wins: docs, reception, 7am, empty top-right pad",
+      "alt": "Когда отель удобнее",
+      "labels": [
+        "документы",
+        "ресепшен",
+        "7 утра",
+        "отель выигрывает"
+      ]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Когда квартира выигрывает не скидкой, а двумя спокойными утрами",
+      "visual_type": "schema_faq_ui",
+      "scene_hint": "Kitchen morning: coffee, phone code, courtyard parking sketch",
+      "alt": "Утро в квартире",
+      "labels": [
+        "кухня",
+        "код в чате",
+        "парковка во дворе",
+        "два утра"
+      ]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Мораль: сначала утро, потом деньги и ключ",
+      "visual_type": "tool_screenshot",
+      "scene_hint": "7 questions board before pay, torn sticky toggles",
+      "alt": "Вопросы до оплаты",
+      "labels": [
+        "7 вопросов",
+        "до оплаты",
+        "итоговая сумма",
+        "список в чат"
+      ]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Что спросить до оплаты двух ночей",
+      "visual_type": "infographic_card",
+      "scene_hint": "Infographic total before booking, Tyumen cozy flat card",
+      "alt": "Итог до брони",
+      "labels": [
+        "Добрый дом",
+        "Тюмень",
+        "до брони",
+        "мессенджер"
+      ]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Как считаем итог в «Добром доме»",
+      "visual_type": "comparison_table",
+      "scene_hint": "Compare table 2 nights hotel vs flat, empty top-right pad",
+      "alt": "Отель или квартира Тюмень",
+      "labels": [
+        "командировка",
+        "2 ночи",
+        "отель vs квартира",
+        "Тюмень"
+      ]
+    }
+  },
+  "cover_keys_ru": [
+    "отель или квартира",
+    "Тюмень"
+  ],
+  "wordstat_stickers": [
+    "отель или квартира",
+    "Тюмень"
+  ],
+  "cover_phone_cta": "+7 (993) 574-83-22"
+}

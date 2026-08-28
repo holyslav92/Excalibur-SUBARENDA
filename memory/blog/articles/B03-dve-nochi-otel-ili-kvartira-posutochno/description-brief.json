@@ -1,0 +1,9 @@
+{
+  "topic_id": "B03",
+  "description": "Отель 6 800 ₽ или квартира 4 200 ₽ на две ночи — разница не там, где вы смотрите. Считаем завтрак, парковку и дорогу до офиса до оплаты.",
+  "rhythm": "klyshin_contrast",
+  "geo": "Тюмень",
+  "not_equal_title": true,
+  "not_truncated_lead": true,
+  "verdict": "PASS"
+}

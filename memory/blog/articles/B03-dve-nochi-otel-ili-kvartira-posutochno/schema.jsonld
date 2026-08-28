@@ -1,0 +1,62 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/dve-nochi-otel-ili-kvartira-posutochno/#article",
+  "url": "{{SITE_BASE}}/blog/dve-nochi-otel-ili-kvartira-posutochno/",
+  "headline": "2 ночи в командировке: отель 6 800 ₽ или квартира 4 200 ₽ — переплата",
+  "description": "Отель 6 800 ₽ или квартира 4 200 ₽ на две ночи — разница не там, где вы смотрите. Считаем завтрак, парковку и дорогу до офиса до оплаты.",
+  "inLanguage": "ru-RU",
+  "datePublished": "2026-08-28",
+  "dateModified": "2026-08-28",
+  "author": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/dve-nochi-otel-ili-kvartira-posutochno/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/"
+  },
+  "mainEntity": {
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Есть ли смысл снимать квартиру всего на две ночи?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Да, если она рядом с целью поездки, подходит по документам и у вас есть кухня или парковка, которыми вы действительно воспользуетесь."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Что в итоге дороже: 6 800 ₽ или 4 200 ₽?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Та сумма, к которой вы не прибавили обязательные расходы. Обе цифры могут быть только началом расчёта."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Дадут ли документы для отчёта по квартире?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Это нужно спросить до брони. Ответ должен быть конкретным: какие документы и когда вы их получите."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Что делать, если перенесли рейс?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "До оплаты уточнить условия переноса и отмены. На двух ночах штраф может стоить целой ночи."
+        }
+      }
+    ]
+  }
+}
