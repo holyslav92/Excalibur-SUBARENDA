@@ -321,6 +321,29 @@ class DrawnLogoGateTest(unittest.TestCase):
         self.assertTrue(img.get("logo_never_as_generation_reference"))
         self.assertIn("logo-dobry-dom.png", img.get("logo_factory_paste_only", ""))
 
+    def test_bright_window_pad_exempt_when_no_lockup_colors(self) -> None:
+        from excalibur_blog_drawn_logo_gate import (
+            detect_drawn_lockup_in_image,
+            detect_white_plate_in_pad,
+            is_bright_window_pad_false_positive,
+        )
+
+        cover = (
+            ROOT
+            / "memory/blog/articles/B03-kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki"
+            / "cover/pre-composite/cover.png"
+        )
+        self.assertTrue(cover.is_file(), cover)
+        lockup = detect_drawn_lockup_in_image(cover)
+        plate = detect_white_plate_in_pad(cover)
+        self.assertTrue(plate.get("detected"), plate)
+        self.assertEqual(plate.get("plate_kind"), "white")
+        self.assertFalse(lockup.get("detected"), lockup)
+        self.assertTrue(
+            is_bright_window_pad_false_positive(cover, lockup=lockup, plate=plate),
+            plate,
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -25,6 +25,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Callable
 
+from excalibur_repo_paths import resolve_article_dir, resolve_article_output
+
 DEFAULT_API_KEY_ENV = "DEROUTER_API_KEY"
 PRIMARY_ENDPOINT = "https://api.derouter.ai/openai/v1/chat/completions"
 FALLBACK_ENDPOINT = "https://api.apikey.cloud/openai/v1/chat/completions"
@@ -416,13 +418,27 @@ def write_stamp(
 
 def resolve_stamp_path(*, article_dir: str | None, role: str, root: Path) -> Path:
     if article_dir:
-        ad = Path(article_dir)
-        if not ad.is_absolute():
-            ad = root / ad
+        ad = resolve_article_dir(article_dir, root)
         return ad / f"derouter-opus-stamp-{role}.json"
     if role == "smoke":
         return root / "memory/setup/derouter-smoke-terra-stamp.json"
     return root / "memory/setup/derouter-opus-stamp.json"
+
+
+def resolve_derouter_output_path(
+    output: str,
+    *,
+    article_dir: str | None,
+    root: Path,
+) -> Path:
+    """Resolve ``--output`` under ``--article-dir`` for bare filenames (INC-20260828-1246)."""
+    out = Path(output)
+    if article_dir:
+        ad = resolve_article_dir(article_dir, root)
+        return resolve_article_output(out, article_dir=ad, root=root, default_name=out.name)
+    if out.is_absolute():
+        return out
+    return root / out
 
 
 def run_smoke_ping(
@@ -554,9 +570,7 @@ def run_chat(args: argparse.Namespace) -> int:
         return 2
 
     if args.output:
-        out = Path(args.output)
-        if not out.is_absolute():
-            out = root / out
+        out = resolve_derouter_output_path(args.output, article_dir=args.article_dir, root=root)
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(text if text.endswith("\n") else text + "\n", encoding="utf-8")
         print(f"WROTE {out.relative_to(root) if out.is_relative_to(root) else out}")

@@ -94,7 +94,7 @@ checks_run:
 commit: 3b837c2
 
 ## INC-20260828-1246-schema-derouter-output-root
-status: open
+status: fixed
 run_date: 2026-08-28
 role: excalibur-blog-schema
 topic_id: B03
@@ -122,3 +122,109 @@ category: script
 ### Secrets
 
 - none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-08-28
+fix_summary:
+- `resolve_derouter_output_path()` uses `resolve_article_output()` when `--article-dir` is set; bare filenames (e.g. `schema.jsonld`) land under article dir, not repo root.
+- Schema skill documents bare `--output` resolution rule.
+files_changed:
+- `scripts/excalibur_blog_derouter_opus_chat.py`
+- `skills/schema-excalibur-blog/SKILL.md`
+- `.cursor/skills/schema-excalibur-blog/SKILL.md`
+- `tests/test_derouter_output_path.py`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_derouter_opus_chat.py`
+- `python3 -m unittest tests.test_derouter_output_path -v`
+commit: pending
+
+## INC-20260828-1335-link-verify-idna-cyrillic-host
+status: fixed
+run_date: 2026-08-28
+role: excalibur-blog-publish
+topic_id: B03
+article_dir: memory/blog/articles/B03-kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki
+severity: medium
+category: script
+
+### What went wrong
+
+- `excalibur_blog_link_verify.py` with `--site-base` on Cyrillic IDN host (`добрыйдом-72.рф`) raised `UnicodeEncodeError: 'latin-1' codec can't encode characters` when urllib opened internal links.
+
+### How the agent recovered this run
+
+- Added `encode_idna_url()` (punycode host) before HTTP HEAD/GET; re-ran link-verify → PASS.
+
+### Durable fix needed before next run
+
+- All live HTTP checks must IDNA-encode non-ASCII hostnames before urllib.
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_link_verify.py`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-08-28
+fix_summary:
+- `encode_idna_url()` converts Unicode hostnames to punycode in `check_url()` (commit e1e4f72).
+- Regression test `tests/test_link_verify_idna.py`.
+files_changed:
+- `scripts/excalibur_blog_link_verify.py`
+- `tests/test_link_verify_idna.py`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_link_verify.py`
+- `python3 -m unittest tests.test_link_verify_idna -v`
+commit: e1e4f72
+
+## INC-20260828-1332-cover-qa-bright-window-false-positive
+status: fixed
+run_date: 2026-08-28
+role: excalibur-blog-cover-qa
+topic_id: B03
+article_dir: memory/blog/articles/B03-kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki
+severity: low
+category: script
+
+### What went wrong
+
+- Slim drawn-logo gate flagged cover `pre-composite/cover.png` for white logo plate in TR pad; outdoor window blowout (no AI lockup) was a false positive.
+
+### How the agent recovered this run
+
+- Added `is_bright_window_pad_false_positive()` exemption in slim gate; cleared inline-02 lockup remnant; re-stamped `cover_qa.json` PASS.
+
+### Durable fix needed before next run
+
+- Slim gate must exempt high-variance bright TR pads when no lockup brand colors detected.
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_drawn_logo_gate.py`
+- `tests/test_drawn_logo_gate.py`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-08-28
+fix_summary:
+- `is_bright_window_pad_false_positive()` skips white-plate FAIL when plate_std in window-blowout band and no green/terracotta lockup signal (commit f9c08e0).
+- Regression test in `tests/test_drawn_logo_gate.py`.
+files_changed:
+- `scripts/excalibur_blog_drawn_logo_gate.py`
+- `tests/test_drawn_logo_gate.py`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_drawn_logo_gate.py`
+- `python3 -m unittest tests.test_drawn_logo_gate.DrawnLogoGateTest.test_bright_window_pad_exempt_when_no_lockup_colors -v`
+commit: f9c08e0
