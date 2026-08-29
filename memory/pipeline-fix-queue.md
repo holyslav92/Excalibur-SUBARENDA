@@ -270,7 +270,7 @@ files_changed:
 - `memory/pipeline-fix-queue.md`
 checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_wp_publish.py`
-commit: pending-parent-commit
+commit: b09d3b4
 
 ## INC-20260829-0846-crosslink-qa-anchor-parser
 status: fixed
@@ -314,7 +314,7 @@ files_changed:
 checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_crosslink_qa_gate.py`
 - `python3 -m unittest tests.test_crosslink_qa_gate.CrosslinkQaGateTests.test_extract_anchor_only_inside_a_tag -v`
-commit: pending-parent-commit
+commit: b09d3b4
 
 ## INC-20260829-0846-metrika-credentials-missing
 status: open
