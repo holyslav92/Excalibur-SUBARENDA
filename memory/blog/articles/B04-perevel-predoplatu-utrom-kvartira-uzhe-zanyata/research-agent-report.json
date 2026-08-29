@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "research_date": "2026-08-29",
+  "topic_id": "B04",
+  "topic": "предоплата до заезда — утром «квартира уже занята»",
+  "fresh_signal": "prooren.ru 28.08.2026 + gosuslugi 25.08.2026 + tut-news 22.08.2026 (Мошеловка) + klyshin_A Aug 2026 hook",
+  "wordstat_p0": {
+    "phrase": "аренда квартиры посуточно",
+    "volume_55_11176": 794,
+    "volume_225_compare": null,
+    "secondary": {
+      "phrase": "аренда квартиры тюмень посуточно",
+      "volume_55_11176": 208
+    },
+    "fear_cluster": {
+      "phrase": "предоплата на авито за аренду квартиры посуточно",
+      "volume_225": 24
+    }
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "derouter-opus-stamp-research.json"
+  },
+  "official_source_audit": {
+    "required": false,
+    "status": "NOT_REQUIRED",
+    "reason": "Нет тарифов/комиссий банков; правила Авито — platform official journal, не банковский тариф"
+  }
+}

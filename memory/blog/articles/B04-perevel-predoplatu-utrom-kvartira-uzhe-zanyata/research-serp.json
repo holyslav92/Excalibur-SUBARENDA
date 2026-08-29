@@ -1,0 +1,218 @@
+{
+  "agent": "excalibur-blog",
+  "date_context": {
+    "timezone": "Europe/Moscow",
+    "today_iso": "2026-08-29",
+    "today_ru": "29.08.2026",
+    "year": 2026,
+    "month": 8,
+    "month_name_ru": "август",
+    "weekday_ru": "суббота"
+  },
+  "topic": {
+    "topic_id": "B04",
+    "title": "Перевёл предоплату — утром квартира уже занята",
+    "h1": "Перевёл предоплату — утром квартира уже занята",
+    "slug": "perevel-predoplatu-utrom-kvartira-uzhe-zanyata",
+    "primary_query": "Перевёл предоплату — утром квартира уже занята",
+    "priority": "P0"
+  },
+  "searches": [
+    {
+      "query_id": "primary_fresh",
+      "query": "Перевёл предоплату — утром квартира уже занята 2026",
+      "purpose": "актуальный SERP",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Лже-арендатор взяла с астраханца предоплату за квартиру, которая уже ...",
+          "url": "https://abnews.ru/ug/news/astrakhan/2026/7/19/zhitel-astrahanskoj-oblasti-perevel-dengi-za-uzhe-zanyatuyu-kvartiru",
+          "snippet": ""
+        },
+        {
+          "title": "Муж перевёл свою зарплату матери, а потом возмутился, почему я ...",
+          "url": "https://news39times.com/archives/56406",
+          "snippet": "В Приволжском районе Астраханской области расследуют мошенничество при аренде жилья. Местный житель 1959 года рождения потерял 11 тыс. рублей, переведя предоплату за квартиру, которая уже была занята. Мужчина нашел объявление о сдаче жилья в интернете и связался с женщиной, представившейся хозяйкой квартиры."
+        },
+        {
+          "title": "Муж перевёл свою зарплату матери, а потом возмутился, почему я ...",
+          "url": "https://nadoznat.com/archives/10162",
+          "snippet": "Муж перевёл свою зарплату матери, а потом возмутился, почему я перестала готовить August 24, 2026 by admin"
+        },
+        {
+          "title": "Предоплата арендной платы \\ 2026-2025-2024 год \\ Акты, образцы, формы ...",
+          "url": "https://www.consultant.ru/law/podborki/predoplata_arendnoj_platy/",
+          "snippet": "«Муж перевёл свою зарплату матери, а потом возмутился, почему я перестала готовить». Ольга перечитала фразу. В ней всё выглядело настолько просто, что даже объяснять было нечего."
+        },
+        {
+          "title": "Аренда квартиры с длительной предоплатой. Чем рискует собственник и ...",
+          "url": "https://gostgarant.ru/article/arenda-kvartiry-s-dlitelnoy-predoplatoy",
+          "snippet": "Долгом по арендной плате может быть и установленная договором сумма предоплаты, которая не уплачена за предстоящий период аренды. Это объясняется тем, что обязательства должны исполняться надлежащим образом в соответствии с условиями договора (ст. 309 ГК РФ)."
+        },
+        {
+          "title": "Можно ли вернуть предоплату за аренду квартиры, если вы не заехали: что ...",
+          "url": "https://financeanalitics.ru/blog/mozhno-li-vernut-predoplatu-za-arendu-kvartiry-esli-vy-ne-zaehali-chto-govorit-zakon-i-sudebnaya-praktika/",
+          "snippet": "Привычная схема аренды квартиры подразумевает предоплату за один месяц плюс залоговый платеж. Но что делать, если вы столкнулись с нестандартной ситуацией? Собственник просит деньги на полгода/год вперед либо арендатор готов закрыть оплату сразу на длительный срок."
+        }
+      ],
+      "searched_at": "2026-08-29"
+    },
+    {
+      "query_id": "title_fresh",
+      "query": "Перевёл предоплату — утром квартира уже занята 2026",
+      "purpose": "SERP по человеческому title",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Можно ли вернуть предоплату за аренду квартиры, если вы не заехали: что ...",
+          "url": "https://financeanalitics.ru/blog/mozhno-li-vernut-predoplatu-za-arendu-kvartiry-esli-vy-ne-zaehali-chto-govorit-zakon-i-sudebnaya-praktika/",
+          "snippet": ""
+        },
+        {
+          "title": "Муж перевёл свою зарплату матери, а потом возмутился, почему я ...",
+          "url": "https://nadoznat.com/archives/10162",
+          "snippet": "Разбираем, можно ли вернуть предоплату за аренду квартиры, если отменили бронь. Чем отличается аванс от задатка, что говорит закон и какие решения принимают суды."
+        },
+        {
+          "title": "Муж перевёл свою зарплату матери, а потом возмутился, почему я ...",
+          "url": "https://news39times.com/archives/56406",
+          "snippet": "«Муж перевёл свою зарплату матери, а потом возмутился, почему я перестала готовить». Ольга перечитала фразу. В ней всё выглядело настолько просто, что даже объяснять было нечего."
+        },
+        {
+          "title": "Аренда квартиры с длительной предоплатой. Чем рискует собственник и ...",
+          "url": "https://gostgarant.ru/article/arenda-kvartiry-s-dlitelnoy-predoplatoy",
+          "snippet": "Муж перевёл свою зарплату матери, а потом возмутился, почему я перестала готовить August 24, 2026 by admin"
+        },
+        {
+          "title": "Лже-арендатор взяла с астраханца предоплату за квартиру, которая уже ...",
+          "url": "https://abnews.ru/ug/news/astrakhan/2026/7/19/zhitel-astrahanskoj-oblasti-perevel-dengi-za-uzhe-zanyatuyu-kvartiru",
+          "snippet": "Привычная схема аренды квартиры подразумевает предоплату за один месяц плюс залоговый платеж. Но что делать, если вы столкнулись с нестандартной ситуацией? Собственник просит деньги на полгода/год вперед либо арендатор готов закрыть оплату сразу на длительный срок."
+        },
+        {
+          "title": "Возврат предоплаты за квартиру: как получить деньги, если не заехали ...",
+          "url": "https://harant.ru/blog/zashchita-prav-potrebitelej/sezon-otpuskov-mozhno-li-vernut-predoplatu-za-kvartiru-esli-vy-ne-zaehali/",
+          "snippet": "В Приволжском районе Астраханской области расследуют мошенничество при аренде жилья. Местный житель 1959 года рождения потерял 11 тыс. рублей, переведя предоплату за квартиру, которая уже была занята. Мужчина нашел объявление о сдаче жилья в интернете и связался с женщиной, представившейся хозяйкой квартиры."
+        }
+      ],
+      "searched_at": "2026-08-29"
+    },
+    {
+      "query_id": "official_docs",
+      "query": "Перевёл предоплату — утром квартира уже занята official docs 2026",
+      "purpose": "официальные docs",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Лже-арендатор взяла с астраханца предоплату за квартиру, которая уже ...",
+          "url": "https://abnews.ru/ug/news/astrakhan/2026/7/19/zhitel-astrahanskoj-oblasti-perevel-dengi-za-uzhe-zanyatuyu-kvartiru",
+          "snippet": ""
+        },
+        {
+          "title": "Несколько человек предупреждают о мошеннической схеме со сдачей ...",
+          "url": "https://vk.com/wall-29364280_1366020",
+          "snippet": "Мужчина нашел объявление о сдаче жилья в интернете и связался с женщиной, представившейся хозяйкой квартиры. После получения денег она перестала выходить на связь, а по указанному адресу оказались другие жильцы. Об этом пишет пресс-служба УМВД России по Астраханской области."
+        },
+        {
+          "title": "Россиянам объяснили, как не попасть на мошенников при аренде жилья",
+          "url": "https://www.1tv.ru/news/2026-03-11/536029",
+          "snippet": "Несколько человек предупреждают о мошеннической схеме со сдачей квартиры в аренду, минимум один перевёл предоплату."
+        },
+        {
+          "title": "Мошенничество с арендой жилья",
+          "url": "https://helpcenter.kufar.by/knowledge_base/item/341051",
+          "snippet": "В эфире программы «Доброе утро» на Первом канале россиянам объяснили, как мошенники обманывают граждан с арендой квартир. Первое, что должно насторожить нанимателя, — предложение собственника или..."
+        },
+        {
+          "title": "МВД: Мошенники похищают деньги через ссылки для оплаты аренды жилья",
+          "url": "https://rg.ru/2026/01/06/mvd-moshenniki-pridumali-novuiu-shemu-obmana-pod-predlogom-sdachi-kvartiry.html",
+          "snippet": "В этот момент обязательно стоит насторожиться и задать себе вопрос, а точно ли у него есть квартира или же вы сейчас переводите деньги незнакомцу, которого даже не видели."
+        },
+        {
+          "title": "Россиян предупредили о новой схеме мошенничества с квартирами",
+          "url": "https://lenta.ru/news/2026/01/06/kv-moshennik/",
+          "snippet": "Об этом сообщает ТАСС, ссылаясь на материалы МВД России. Аферисты размещают на популярных сайтах недвижимости объявления о сдаче квартиры в аренду. Тем, кто заинтересуется и позвонит по..."
+        }
+      ],
+      "searched_at": "2026-08-29"
+    },
+    {
+      "query_id": "github_evidence",
+      "query": "site:github.com Перевёл предоплату — утром квартира уже занята 2026",
+      "purpose": "GitHub evidence",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "localtuya/img/5-success.png at master · rospogrigio/localtuya",
+          "url": "https://github.com/rospogrigio/localtuya/blob/master/img/5-success.png",
+          "snippet": ""
+        },
+        {
+          "title": "Oblivionis/assets/overview.png at main · fyzhang1/Oblivionis",
+          "url": "https://github.com/fyzhang1/Oblivionis/blob/main/assets/overview.png",
+          "snippet": "Contribute to rospogrigio/localtuya development by creating an account on GitHub."
+        },
+        {
+          "title": "YOLOV7/figure_optimized.svg at main · qixi12580/YOLOV7 · GitHub",
+          "url": "https://github.com/qixi12580/YOLOV7/blob/main/figure_optimized.svg",
+          "snippet": "[AAAI 2026] Official Repository for \"Oblivionis: A Lightweight Learning and Unlearning Framework for Federated Large Language Models\" - Oblivionis/assets/overview.png at main · fyzhang1/Oblivionis"
+        },
+        {
+          "title": "mod-playerbots/icon.png at master · mod-playerbots/mod-playerbots",
+          "url": "https://github.com/mod-playerbots/mod-playerbots/blob/master/icon.png",
+          "snippet": "Contribute to qixi12580/YOLOV7 development by creating an account on GitHub."
+        },
+        {
+          "title": "EdgeBench/assets/fig_full_136_curve_fit_side_by_side.png at main ...",
+          "url": "https://github.com/ByteDance-Seed/EdgeBench/blob/main/assets/fig_full_136_curve_fit_side_by_side.png",
+          "snippet": "Contribute to mod-playerbots/mod-playerbots development by creating an account on GitHub."
+        },
+        {
+          "title": "GitHub - ricardojoserf/NativeDump: Dump lsass using only NTAPI ...",
+          "url": "https://github.com/ricardojoserf/NativeDump",
+          "snippet": "EdgeBench: Unveiling scaling laws of learning from real-world environments - ByteDance-Seed/EdgeBench"
+        }
+      ],
+      "searched_at": "2026-08-29"
+    },
+    {
+      "query_id": "community_experience",
+      "query": "Перевёл предоплату — утром квартира уже занята forum problems опыт 2026",
+      "purpose": "форумы и живые проблемы",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Лже-арендатор взяла с астраханца предоплату за квартиру, которая уже ...",
+          "url": "https://abnews.ru/ug/news/astrakhan/2026/7/19/zhitel-astrahanskoj-oblasti-perevel-dengi-za-uzhe-zanyatuyu-kvartiru",
+          "snippet": ""
+        },
+        {
+          "title": "Мошенничество с арендой жилья",
+          "url": "https://helpcenter.kufar.by/knowledge_base/item/341051",
+          "snippet": "В Приволжском районе Астраханской области расследуют мошенничество при аренде жилья. Местный житель 1959 года рождения потерял 11 тыс. рублей, переведя предоплату за квартиру, которая уже была занята. Мужчина нашел объявление о сдаче жилья в интернете и связался с женщиной, представившейся хозяйкой квартиры."
+        },
+        {
+          "title": "Даты свободны, но квартира занята\": как я столкнулась с подводными ...",
+          "url": "https://familytravelspb.livejournal.com/23933.html",
+          "snippet": "В этот момент обязательно стоит насторожиться и задать себе вопрос, а точно ли у него есть квартира или же вы сейчас переводите деньги незнакомцу, которого даже не видели."
+        },
+        {
+          "title": "Кто сталкивался. Реально ли на авито предоплату вернуть за жилье? Через ...",
+          "url": "https://vk.com/wall-25330665_757609",
+          "snippet": "Внесла предоплату. Арендодатель отвечает спустя 6 часов, что на эти даты, квартира занята. А вернуть предоплату уже не получится при отмене брони."
+        },
+        {
+          "title": "Как вернуть предоплату за квартиру: опыт с Avito в сложной ситуации ...",
+          "url": "https://harant.ru/questions/q-76885/",
+          "snippet": "Кто сталкивался. Реально ли на авито предоплату вернуть за жилье? Через поддержку, хотя бы часть? Т.к. бесплатная отмена уже прошла"
+        },
+        {
+          "title": "Можно ли вернуть предоплату за аренду квартиры, если вы не заехали: что ...",
+          "url": "https://financeanalitics.ru/blog/mozhno-li-vernut-predoplatu-za-arendu-kvartiry-esli-vy-ne-zaehali-chto-govorit-zakon-i-sudebnaya-praktika/",
+          "snippet": "Вернуть предоплату через Авито можно только при соблюдении условий возврата, установленных сервисом. Если условия не выполнены, предоплата не возвращается."
+        }
+      ],
+      "searched_at": "2026-08-29"
+    }
+  ],
+  "errors": []
+}
