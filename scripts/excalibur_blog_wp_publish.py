@@ -8,8 +8,10 @@ import io
 import json
 import os
 import re
+import socket
 import subprocess
 import sys
+import time
 import urllib.request
 from pathlib import Path
 from typing import Any
@@ -951,7 +953,13 @@ def deploy_dzen_mu_plugin(env: dict[str, str], public_base: str) -> str:
     return publish_via_sftp(env, php, public_base, bootstrap_name="excalibur-dzen-mu-plugin-once.php")
 
 
-def publish_via_ftp(
+FTP_PUBLISH_ATTEMPTS = 3
+FTP_PUBLISH_RETRY_PAUSE_S = 2.0
+POST_PUBLISH_INTERLINK_ATTEMPTS = 3
+POST_PUBLISH_INTERLINK_RETRY_PAUSE_S = 3.0
+
+
+def _publish_via_ftp_once(
     env: dict[str, str],
     php: str,
     public_base: str,
@@ -990,6 +998,43 @@ def publish_via_ftp(
         except Exception as cleanup_error:  # noqa: BLE001
             print(f"WARN cleanup: could not delete bootstrap {remote}: {cleanup_error}", file=sys.stderr)
     return out
+
+
+def publish_via_ftp(
+    env: dict[str, str],
+    php: str,
+    public_base: str,
+    *,
+    bootstrap_name: str = "excalibur-blog-publish-once.php",
+) -> str:
+    """Upload bootstrap via Timeweb FTP with PASV-flake retries (publish + interlink)."""
+    from ftplib import error_temp
+
+    transient_errors = (TimeoutError, OSError, socket.timeout, error_temp)
+    last_exc: BaseException | None = None
+    for attempt in range(1, FTP_PUBLISH_ATTEMPTS + 1):
+        try:
+            return _publish_via_ftp_once(
+                env,
+                php,
+                public_base,
+                bootstrap_name=bootstrap_name,
+            )
+        except transient_errors as exc:
+            last_exc = exc
+            if attempt >= FTP_PUBLISH_ATTEMPTS:
+                break
+            pause = FTP_PUBLISH_RETRY_PAUSE_S * attempt
+            print(
+                f"WARN FTP publish attempt {attempt}/{FTP_PUBLISH_ATTEMPTS} failed "
+                f"({type(exc).__name__}: {exc}); retry in {pause:.0f}s",
+                file=sys.stderr,
+            )
+            time.sleep(pause)
+    raise RuntimeError(
+        f"FTP BLOCKER: publish failed after {FTP_PUBLISH_ATTEMPTS} attempts "
+        f"({type(last_exc).__name__}: {last_exc})"
+    ) from last_exc
 
 
 def ledger_url_for_commit(permalink: str, slug: str = "") -> str:
@@ -1636,17 +1681,30 @@ def main() -> int:
     tenant = load_tenant_config(root)
     auto_interlink = bool((tenant.get("publish_options") or {}).get("auto_interlink_after_publish"))
     if auto_interlink and tenant.get("interlink_old_articles"):
-        interlink_proc = subprocess.run(
-            [
-                sys.executable,
-                str(root / "scripts/excalibur_blog_post_publish_interlink.py"),
-                "--article-dir",
-                str(article_dir.relative_to(root)),
-            ],
-            cwd=str(root),
-            check=False,
-        )
-        if interlink_proc.returncode != 0:
+        interlink_argv = [
+            sys.executable,
+            str(root / "scripts/excalibur_blog_post_publish_interlink.py"),
+            "--article-dir",
+            str(article_dir.relative_to(root)),
+        ]
+        interlink_proc: subprocess.CompletedProcess[str] | None = None
+        for attempt in range(1, POST_PUBLISH_INTERLINK_ATTEMPTS + 1):
+            interlink_proc = subprocess.run(
+                interlink_argv,
+                cwd=str(root),
+                check=False,
+            )
+            if interlink_proc.returncode == 0:
+                break
+            if attempt < POST_PUBLISH_INTERLINK_ATTEMPTS:
+                pause = POST_PUBLISH_INTERLINK_RETRY_PAUSE_S * attempt
+                print(
+                    f"WARN post-publish interlink attempt {attempt}/"
+                    f"{POST_PUBLISH_INTERLINK_ATTEMPTS} failed; retry in {pause:.0f}s",
+                    file=sys.stderr,
+                )
+                time.sleep(pause)
+        if interlink_proc is None or interlink_proc.returncode != 0:
             print("BLOCKER: post-publish interlink failed", file=sys.stderr)
             return 1
     return 0

@@ -134,6 +134,7 @@ class ArticleLinkExtractor(HTMLParser):
     def __init__(self) -> None:
         super().__init__()
         self.links: list[dict[str, str]] = []
+        self._in_a = False
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         if tag.lower() != "a":
@@ -143,9 +144,14 @@ class ArticleLinkExtractor(HTMLParser):
         if not href:
             return
         self.links.append({"href": href, "anchor": ""})
+        self._in_a = True
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag.lower() == "a":
+            self._in_a = False
 
     def handle_data(self, data: str) -> None:
-        if not self.links:
+        if not self._in_a or not self.links:
             return
         if data.strip():
             self.links[-1]["anchor"] += data

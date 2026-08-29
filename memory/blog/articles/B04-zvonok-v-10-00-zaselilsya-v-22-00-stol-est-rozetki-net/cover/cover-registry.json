@@ -1,0 +1,86 @@
+{
+  "topic_id": "B04",
+  "slug": "zvonok-v-10-00-zaselilsya-v-22-00-stol-est-rozetki-net",
+  "cover_family": "brand_collage",
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "file": "cover/cover.png",
+  "alt": "Август в Тюмени, 22:10: командировочный за узкой кухонной стойкой — ноутбук есть, розетка за холодильником, к утреннему звонку в 10:00 готовиться некуда.",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-quad-01.png",
+  "generated_at": "2026-08-29T07:55:53+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Август в Тюмени, 22:10: командировочный за узкой кухонной стойкой — ноутбук есть, розетка за холодильником, к утреннему звонку в 10:00 готовиться некуда.",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "22:10 в квартире: созвон в 10:00, стол — стойка, розетка за холодильником",
+      "h2_anchor": "Что на самом деле нужно проверить до оплаты",
+      "visual_type": "infographic_card",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Пять пунктов: розетка, стул, свет, размер, патч-корд",
+      "h2_anchor": "Что на самом деле нужно проверить до оплаты",
+      "visual_type": "labeled_checklist",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Фото стола с розеткой и двухминутный видеозвонок с рабочего места",
+      "h2_anchor": "Что на самом деле нужно проверить до оплаты",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_4",
+      "file": "cover/inline-04.png",
+      "alt": "Статус исполнителя, чек с QR, ИНН до перевода — не «потом»",
+      "h2_anchor": "Документы: слово «потом» стоит дороже, чем кажется",
+      "visual_type": "comparison_table",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_5",
+      "file": "cover/inline-05.png",
+      "alt": "Поезд 23:40, окно заселения и доплата за час",
+      "h2_anchor": "Поздний заезд и ранний выезд — это тоже часть цены",
+      "visual_type": "process_flow",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_6",
+      "file": "cover/inline-06.png",
+      "alt": "Время заезда, фото рабочего места, документы — деньги последний шаг",
+      "h2_anchor": "Поздний заезд и ранний выезд — это тоже часть цены",
+      "visual_type": "infographic_card",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_7",
+      "file": "cover/inline-07.png",
+      "alt": "Инструкция до оплаты, стол с розеткой, звонить до брони",
+      "h2_anchor": "Поздний заезд и ранний выезд — это тоже часть цены",
+      "visual_type": "comparison_table",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "slug": "zvonok-v-10-00-zaselilsya-v-22-00-stol-est-rozetki-net",
+  "topic_id": "B04",
+  "permalink": "{{SITE_BASE}}/blog/zvonok-v-10-00-zaselilsya-v-22-00-stol-est-rozetki-net/",
+  "publish_method": "ftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B04-zvonok-v-10-00-zaselilsya-v-22-00-stol-est-rozetki-net/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 829379,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4120 slug=zvonok-v-10-00-zaselilsya-v-22-00-stol-est-rozetki-net\nOK categories=101,106\nOK dzen_yzen_meta=1\nOK featured_image=4121\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4122 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/08/zvonok-v-10-00-zaselilsya-v-22-00-stol-est-rozetki-net-inline-03.png\nOK inline_alt=4122\nOK inline_caption=4122\nOK inline_description=4122\nOK inline_image_upload=4123 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/08/zvonok-v-10-00-zaselilsya-v-22-00-stol-est-rozetki-net-inline-02.png\nOK inline_alt=4123\nOK inline_caption=4123\nOK inline_description=4123\nOK inline_image_upload=4124 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/08/zvonok-v-10-00-zaselilsya-v-22-00-stol-est-rozetki-net-inline-01.png\nOK inline_alt=4124\nOK inline_caption=4124\nOK inline_description=4124\nOK inline_image_upload=4125 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/08/zvonok-v-10-00-zaselilsya-v-22-00-stol-est-rozetki-net-inline-04.png\nOK inline_alt=4125\nOK inline_caption=4125\nOK inline_description=4125\nOK inline_image_upload=4126 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/08/zvonok-v-10-00-zaselilsya-v-22-00-stol-est-rozetki-net-inline-07.png\nOK inline_alt=4126\nOK inline_caption=4126\nOK inline_description=4126\nOK inline_image_upload=4127 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/08/zvonok-v-10-00-zaselilsya-v-22-00-stol-est-rozetki-net-inline-06.png\nOK inline_alt=4127\nOK inline_caption=4127\nOK inline_description=4127\nOK inline_image_upload=4128 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/08/zvonok-v-10-00-zaselilsya-v-22-00-stol-est-rozetki-net-inline-05.png\nOK inline_alt=4128\nOK inline_caption=4128\nOK inline_description=4128\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/zvonok-v-10-00-zaselilsya-v-22-00-stol-est-rozetki-net/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/zvonok-v-10-00-zaselilsya-v-22-00-stol-est-rozetki-net/",
+    "errors": []
+  }
+}
