@@ -1,0 +1,33 @@
+{
+  "agent": "excalibur-blog-cover-qa",
+  "status": "FAIL",
+  "checked_at": "2026-08-29",
+  "topic_id": "B04",
+  "checks": {
+    "eight_png_exist": true,
+    "logo_composite_stamp_pass": true,
+    "cover_logo_pasted": true,
+    "inline_logo_count_2_3": true,
+    "cover_phone_993_in_scene": false,
+    "forbid_phone_pill_post_composite": false,
+    "forbid_922_phone": true,
+    "forbid_ai_drawn_logo_cover": false,
+    "forbid_wordpress_ui_in_art": true,
+    "no_logo_plate_cover": true,
+    "forbid_logo_overlaps_meme_cat_headline": false,
+    "quad_manifest_valid": false,
+    "wordstat_stickers_1_3": true,
+    "motif_no_collision_14d": true,
+    "max_one_cat_meme_slot": true,
+    "light_high_key": true
+  },
+  "blockers": [
+    "pre-composite cover.png: AI-drawn lockup under factory paste (score=0.8833) — regenerate cover with empty TOP-RIGHT pad, then re-paste logo",
+    "cover.png: phone on gold foil strip detected as post-composite pill (aspect=19.54) — paint +7 (993) 574-83-22 in-scene on tape/paper/magnet, not foil button",
+    "cover.png: phone strip overlaps cat/meme bottom-left zone — move phone anchor away from Roll Safe meme",
+    "inline-02.png: forbidden drawn logo on panel without factory paste (score=0.74) — clear AI lockup from generation",
+    "inline-04.png: forbidden drawn logo on panel without factory paste (score=0.3826) — clear AI lockup from generation",
+    "quad-manifest: inline_1 and inline_7 visual_type comparison_table_ui not in allowed catalog — use comparison_table"
+  ],
+  "notes": "slim gate FAIL — return to Cover for regen/composite fix; Indexer/Publish blocked"
+}
