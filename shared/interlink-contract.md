@@ -8,6 +8,10 @@
    уже опубликованные материалы из `shared/published-articles.md` (только
    `status=published`, **разные slug**, только живые HTTP 200 `/blog/` URL).
    Якорь — по смыслу H2, не «читайте также» в каждом абзаце.
+   **Cross-link QA** (`crosslink-qa-gate.py`) сравнивает текст **только внутри**
+   `<a>…</a>` с `title` из `memory/live-catalog.json` (допускается короткий
+   смысловой якорь или полный H1 sibling в кавычках «…»). Проза до/после ссылки
+   в якорь не входит — не полагайся на «склеенный» абзац.
    Если живых sibling <3 — линковать все доступные, never invent URL.
 2. **Inbound (старые live-посты)** — после успешного Publish, если флаг включён,
    post-publish interlink добавляет в 1–3 релевантных старых поста блок
@@ -38,3 +42,9 @@ append в 1–3 старых поста через bootstrap `excalibur-blog-int
 
 После publish скрипт `excalibur_blog_wp_publish.py` автоматически вызывает
 interlink, если `publish_options.auto_interlink_after_publish=true`.
+
+**FTP PASV (Timeweb):** post-publish inbound bootstrap может упасть по timeout на
+первой попытке после тяжёлого publish. `publish_via_ftp` и auto-interlink в
+`excalibur_blog_wp_publish.py` делают до 3 идемпотентных retry (inbound marker
+`data-excalibur-interlink-from`); ручной повтор `post_publish_interlink.py`
+безопасен.

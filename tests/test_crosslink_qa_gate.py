@@ -4,10 +4,17 @@ from __future__ import annotations
 import json
 import shutil
 import subprocess
+import sys
 import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+
+from excalibur_blog_crosslink_qa_gate import (  # noqa: E402
+    anchor_matches_catalog_title,
+    extract_article_links,
+)
 
 CATALOG_SLUGS = [
     ("beskontaktnoe-zaselenie-posutochno-tyumen", "Бесконтактное заселение посуточно в Тюмени"),
@@ -129,6 +136,23 @@ class CrosslinkQaGateTests(unittest.TestCase):
         report = json.loads((self.article_dir / "crosslink-qa-gate.json").read_text(encoding="utf-8"))
         self.assertEqual(report["status"], "PASS")
         self.assertGreaterEqual(len(report.get("outbound_unique_slugs") or []), 3)
+
+    def test_extract_anchor_only_inside_a_tag(self) -> None:
+        """Regression B04: prose before/after <a> must not pollute anchor for title match."""
+        html = (
+            "<p>Про залог см. "
+            '<a href="/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/">'
+            "«Снял квартиру посуточно. Залог не вернули — нашли скол на плите»"
+            "</a> и дальше текст.</p>\n"
+        )
+        links = extract_article_links(html)
+        self.assertEqual(len(links), 1)
+        anchor = links[0]["anchor"]
+        self.assertIn("Залог не вернули", anchor)
+        self.assertNotIn("Про залог", anchor)
+        self.assertNotIn("дальше текст", anchor)
+        catalog_title = "Снял квартиру посуточно. Залог не вернули — нашли скол на плите"
+        self.assertTrue(anchor_matches_catalog_title(anchor, catalog_title))
 
 
 if __name__ == "__main__":

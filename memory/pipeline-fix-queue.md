@@ -229,6 +229,93 @@ checks_run:
 - `python3 -m unittest tests.test_drawn_logo_gate.DrawnLogoGateTest.test_bright_window_pad_exempt_when_no_lockup_colors -v`
 commit: f9c08e0
 
+## INC-20260829-0846-publish-ftp-pasv-interlink-timeout
+status: fixed
+run_date: 2026-08-29
+role: excalibur-blog-publish
+topic_id: B04
+article_dir: memory/blog/articles/B04-zvonok-v-10-00-zaselilsya-v-22-00-stol-est-rozetki-net
+severity: medium
+category: script
+
+### What went wrong
+- После успешного FTP publish B04 первый post-publish inbound interlink упал по FTP PASV timeout; inbound в B01/B02 применился только после ручного retry.
+
+### How the agent recovered this run
+- Повторный запуск `excalibur_blog_post_publish_interlink.py` → inbound OK (B01 3745, B02 3777).
+
+### Durable fix needed before next run
+- Идемпотентный retry для FTP bootstrap (publish + interlink) и auto-interlink subprocess в `excalibur_blog_wp_publish.py`.
+
+### Suggested files to inspect/change
+- `scripts/excalibur_blog_wp_publish.py`
+- `scripts/excalibur_blog_remote_transport.py`
+- `shared/interlink-contract.md`
+- `skills/publish-excalibur-blog/SKILL.md`
+
+### Secrets
+- none recorded
+
+### Fixer resolution
+fixed_at: 2026-08-29
+fix_summary:
+- `publish_via_ftp` — до 3 retry на transient PASV/timeout (`OSError`, `socket.timeout`, `ftplib.error_temp`).
+- Auto post-publish interlink subprocess — до 3 retry с паузой (идемпотентный inbound marker).
+- Документировано в `shared/interlink-contract.md` и publish skill.
+files_changed:
+- `scripts/excalibur_blog_wp_publish.py`
+- `shared/interlink-contract.md`
+- `skills/publish-excalibur-blog/SKILL.md`
+- `.cursor/skills/publish-excalibur-blog/SKILL.md`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_wp_publish.py`
+commit: pending-parent-commit
+
+## INC-20260829-0846-crosslink-qa-anchor-parser
+status: fixed
+run_date: 2026-08-29
+role: excalibur-blog-publish
+topic_id: B04
+article_dir: memory/blog/articles/B04-zvonok-v-10-00-zaselilsya-v-22-00-stol-est-rozetki-net
+severity: medium
+category: script
+
+### What went wrong
+- `crosslink-qa-gate` FAIL anchor/title mismatch: `ArticleLinkExtractor` собирал весь текст абзаца после первого `<a>`, а не только внутри тега → ложный mismatch с catalog title sibling.
+
+### How the agent recovered this run
+- `_in_a` flag в `ArticleLinkExtractor`; якоря в `article.html` выровнены под catalog H1; gate PASS (commit 2bdbcfc).
+
+### Durable fix needed before next run
+- Regression test на extract anchor only inside `<a>`; контракт interlink/writer про якорь vs catalog title.
+
+### Suggested files to inspect/change
+- `scripts/excalibur_blog_crosslink_qa_gate.py`
+- `tests/test_crosslink_qa_gate.py`
+- `shared/interlink-contract.md`
+- `skills/writer-excalibur-blog/SKILL.md`
+
+### Secrets
+- none recorded
+
+### Fixer resolution
+fixed_at: 2026-08-29
+fix_summary:
+- Parser fix уже в 2bdbcfc (`_in_a` в `ArticleLinkExtractor`).
+- Regression test `test_extract_anchor_only_inside_a_tag`.
+- Якорь/interlink правила в `shared/interlink-contract.md` + writer skill.
+files_changed:
+- `tests/test_crosslink_qa_gate.py`
+- `shared/interlink-contract.md`
+- `skills/writer-excalibur-blog/SKILL.md`
+- `.cursor/skills/writer-excalibur-blog/SKILL.md`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_crosslink_qa_gate.py`
+- `python3 -m unittest tests.test_crosslink_qa_gate.CrosslinkQaGateTests.test_extract_anchor_only_inside_a_tag -v`
+commit: pending-parent-commit
+
 ## INC-20260829-0846-metrika-credentials-missing
 status: open
 run_date: 2026-08-29

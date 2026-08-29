@@ -214,6 +214,10 @@ python3 scripts/excalibur_blog_post_publish_interlink.py \
 
 Контракт: `shared/interlink-contract.md`.
 
+**FTP PASV flake после publish:** inbound interlink bootstrap может timeout на первой
+попытке (Timeweb). Скрипт автоматически retry до 3×; при BLOCKER — повтори
+`excalibur_blog_post_publish_interlink.py` (идемпотентно). Не откатывай publish.
+
 Опционально: `--deploy-llms` (или авто из tenant `publish_options.deploy_llms_after_publish`).
 
 ## Handoff block (шаблон)

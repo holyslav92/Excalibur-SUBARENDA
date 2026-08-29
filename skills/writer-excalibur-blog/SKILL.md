@@ -86,6 +86,8 @@ Sol перепишет `article.html`.
 - **Supply:** только Тюмень. **Demand Wordstat:** RF-wide (225)
 - H1 cable + consequence; **ban** «5 вопросов» / «7 шагов» / «что проверить первым»
 - **Interlink (если `interlink_old_articles=true`):** **3–4** контекстные ссылки на sibling
+  из `shared/published-articles.md`; якорь = боль/сцена (короткий) **или** H1 sibling
+  в «…» — gate читает только текст внутри `<a>`, сверяет с live-catalog title
 - Не читай чужие article.html / live-сайт / topics
 
 ## Handoff
