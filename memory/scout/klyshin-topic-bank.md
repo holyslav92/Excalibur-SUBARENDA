@@ -39,7 +39,7 @@ Prefer **high-volume guest P0** (Wordstat 55+11176, compare 225).
 | window (YEKT) | queue # | hook_id | topic |
 |---------------|---------|---------|-------|
 | 26–28.08 | 1 | `parents_sept_uni` | ✅ B03 handoff 2026-08-28 — P0 «квартиры посуточно тюмень» 5534 |
-| 29–31.08 | 2 | `sept_business_trip` | Командировка в сентябре: стол, розетки, реальный Wi‑Fi, закрывающие |
+| 29–31.08 | 2 | `sept_business_trip` | ✅ B04 handoff 2026-08-29 — P0 «квартиры посуточно тюмень» 5534 |
 | 01–03.09 | 5 | `reviews_not_rating` | Как читать отзывы: не 4.8, повторы и свежесть (Sutochno/Avito) |
 | 04–07.09 | 4 | `parking_before_booking` | Парковка до брони, не у шлагбаума |
 | 08–10.09 | 3 | `kitchen_vs_hotel_cafes` | Кухня на 3 ночи vs отель+кафе (контраст+цифра) |
