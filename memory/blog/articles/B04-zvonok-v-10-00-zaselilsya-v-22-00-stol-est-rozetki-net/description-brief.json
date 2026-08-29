@@ -1,0 +1,10 @@
+{
+  "topic_id": "B04",
+  "description": "«Рабочее место» в карточке звучит убедительно. Но если ноутбук нельзя подключить, а камера ловит только в коридоре, утром спасать созвон будет поздно.",
+  "rhythm": "klyshin_case_hook",
+  "geo": "Тюмень",
+  "author_brand": "Добрый дом",
+  "not_equal_title": true,
+  "not_truncated_lead": true,
+  "verdict": "PASS"
+}
