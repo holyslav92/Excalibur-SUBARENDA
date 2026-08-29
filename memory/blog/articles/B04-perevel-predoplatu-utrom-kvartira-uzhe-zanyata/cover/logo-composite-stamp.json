@@ -20,12 +20,12 @@
   "cover_logo_placement": {
     "logo_corner": "top_right",
     "logo_xy": [
-      1060,
+      902,
       20
     ],
-    "logo_width_px": 120,
-    "logo_height_px": 82,
-    "logo_width_fraction": 0.1,
+    "logo_width_px": 102,
+    "logo_height_px": 69,
+    "logo_width_fraction": 0.0996,
     "phone_anchor": "",
     "logo_pasted": true
   },
@@ -33,12 +33,12 @@
     "inline-01.png": {
       "logo_corner": "top_right",
       "logo_xy": [
-        1060,
+        902,
         20
       ],
-      "logo_width_px": 120,
-      "logo_height_px": 82,
-      "logo_width_fraction": 0.1,
+      "logo_width_px": 102,
+      "logo_height_px": 69,
+      "logo_width_fraction": 0.0996,
       "phone_anchor": "",
       "logo_pasted": true
     },
@@ -83,7 +83,7 @@
     "cover/inline-06.png",
     "cover/inline-07.png"
   ],
-  "composed_at": "2026-08-29T09:47:30+00:00",
+  "composed_at": "2026-08-29T10:27:02+00:00",
   "forbid_ai_drawn_logo": true,
   "forbid_logo_white_plate": true,
   "logo_crop_getbbox": true,

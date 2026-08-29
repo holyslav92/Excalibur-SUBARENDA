@@ -62,15 +62,15 @@
       "quadrant": "top_left",
       "role": "cover_editorial_hero",
       "alt": "Август в Тюмени: вечером гость оплатил по ссылке, утром у подъезда — чужие жильцы, а в чате «уже сдали».",
-      "scene_hint": "Aug eve pay vs morn door; gold «сдали»; phone tape; Harold ≤12%; TOP-RIGHT pad.",
+      "scene_hint": "Aug split eve/morn door; gold «сдали»; phone on door magnet MID-RIGHT sunny door NOT bottom edge; Roll Safe bottom-LEFT ≤12%; TOP-RIGHT empty sky NO logo NO house.",
       "meme_caption_ru": "",
       "sticky": "Бронь уже чужая?"
     },
     "inline_1": {
       "quadrant": "top_right",
       "h2_anchor": "«Уже сдали» — это не всегда одна и та же история",
-      "visual_type": "comparison_table_ui",
-      "scene_hint": "2-col: вне площадки scam vs внутри calendar clash; save chat chips; gold ink; TOP-RIGHT pad empty.",
+      "visual_type": "comparison_table",
+      "scene_hint": "2-col scam vs booking clash; gold ink; TOP-RIGHT empty white sky — NO logo NO brand mark.",
       "alt": "Два сценария «уже сдали»: мошенничество при оплате вне площадки и конфликт броней внутри сервиса",
       "labels": [
         "Вне площадки — обман",
@@ -82,7 +82,7 @@
       "quadrant": "bottom_left",
       "h2_anchor": "Кому переводить и где платить",
       "visual_type": "workflow_diagram",
-      "scene_hint": "Flow: ФИО → ссылка в чате → -20k → цена -15% flag; aug arrows white collage.",
+      "scene_hint": "Flow ФИО→ссылка→-20k→-15% flag; aug arrows; TOP-RIGHT clean white — NO logo NO brand NO house icon.",
       "alt": "Перед оплатой: сверить ФИО, не платить по ссылке из чата, помнить про 20 тысяч по фишинговой ссылке и цену ниже рынка",
       "labels": [
         "ФИО — в договоре",
@@ -106,7 +106,7 @@
       "quadrant": "top_left",
       "h2_anchor": "Когда календарь подвёл, а хозяин не мошенник",
       "visual_type": "schema_faq_ui",
-      "scene_hint": "Dual calendar desync Avito vs other; host real; «занято≠обман»; support chip.",
+      "scene_hint": "Dual calendar desync; «занято≠обман»; support chip; TOP-RIGHT empty white — NO logo NO brand.",
       "alt": "Рассинхрон календарей на двух площадках: хозяин настоящий, но даты заняты — это не автоматически мошенничество",
       "labels": [
         "Две площадки",
@@ -141,8 +141,8 @@
     "inline_7": {
       "quadrant": "bottom_right",
       "h2_anchor": "Посуточная Тюмень без сюрприза утром",
-      "visual_type": "comparison_table_ui",
-      "scene_hint": "Comfort+ door+key; TG/MAX icons; своя дверь vs scam link; aug flare; TOP-RIGHT pad empty.",
+      "visual_type": "comparison_table",
+      "scene_hint": "Comfort+ door+key; TG/MAX icons; aug flare; TOP-RIGHT empty sky — NO logo NO brand.",
       "alt": "Посуточная в Тюмени без утреннего сюрприза: условия до оплаты, связь в мессенджерах и своя дверь на заезд",
       "labels": [
         "Условия до оплаты",
