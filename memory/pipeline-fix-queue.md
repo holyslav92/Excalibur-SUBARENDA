@@ -228,3 +228,40 @@ checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_drawn_logo_gate.py`
 - `python3 -m unittest tests.test_drawn_logo_gate.DrawnLogoGateTest.test_bright_window_pad_exempt_when_no_lockup_colors -v`
 commit: f9c08e0
+
+## INC-20260829-1237-metrika-credentials-b04
+
+status: open
+run_date: 2026-08-29
+role: excalibur-blog-content-learner
+topic_id: B04
+article_dir: memory/blog/articles/B04-perevel-predoplatu-utrom-kvartira-uzhe-zanyata
+severity: medium
+category: credentials
+
+### What went wrong
+
+- `excalibur_blog_metrika_fetch.py --days 30 --ingest` exit 2: `METRIKA CREDENTIALS BLOCKER`.
+- `YANDEX_METRIKA_OAUTH_TOKEN` and `YANDEX_METRIKA_COUNTER_ID` not set in Cloud Secrets/env.
+- `memory/analytics/metrika-latest.json` absent; cohort match for B04 impossible.
+
+### How the agent recovered this run
+
+- Evidence gate SKIP (no content-evidence-report.json under human-first-v2).
+- Recorded named lessons from publish artifacts (title-brief, description-brief, article.html, interlink-plan).
+- Lessons marked low/medium confidence; no causal Metrika claims.
+
+### Durable fix needed before next run
+
+- Configure Yandex Metrika OAuth token + counter id in Cloud Secrets.
+- Re-run content-learner Metrika ingest after credentials available.
+
+### Suggested files to inspect/change
+
+- Cloud Secrets: `YANDEX_METRIKA_OAUTH_TOKEN`, `YANDEX_METRIKA_COUNTER_ID`
+- `scripts/excalibur_blog_metrika_fetch.py`
+
+### Secrets
+
+- YANDEX_METRIKA_OAUTH_TOKEN — missing
+- YANDEX_METRIKA_COUNTER_ID — missing
