@@ -228,3 +228,44 @@ checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_drawn_logo_gate.py`
 - `python3 -m unittest tests.test_drawn_logo_gate.DrawnLogoGateTest.test_bright_window_pad_exempt_when_no_lockup_colors -v`
 commit: f9c08e0
+
+## INC-20260829-0846-metrika-credentials-missing
+status: open
+run_date: 2026-08-29
+role: excalibur-blog-content-learner
+topic_id: B04
+article_dir: memory/blog/articles/B04-zvonok-v-10-00-zaselilsya-v-22-00-stol-est-rozetki-net
+severity: medium
+category: secrets
+
+### What went wrong
+
+- `excalibur_blog_metrika_fetch.py --days 30 --ingest` exit 2: `METRIKA CREDENTIALS BLOCKER` — `YANDEX_METRIKA_OAUTH_TOKEN` and `YANDEX_METRIKA_COUNTER_ID` not set in Cloud Secrets/env.
+- Content-learner cannot ingest `memory/analytics/metrika-latest.json`; behavioral cohort analysis blocked.
+- Repeat: same blocker on B03 content-learner run (2026-08-28).
+
+### How the agent recovered this run
+
+- Evidence gate SKIP (no content-evidence-report.json under human-first-v2) — continued.
+- Recorded 4 named lessons from publish artifacts (title-brief, article.html, description-brief, interlink-plan); no causal Metrika claims.
+- No durable code apply; lessons proposed in `memory/content-lessons.md`.
+
+### Durable fix needed before next run
+
+- Configure OAuth token (scope `metrika:read`) and numeric counter id per `shared/yandex-metrika-contract.md` / `CLOUD-FIRST-RUN.md`.
+- Re-run content-learner Metrika ingest after secrets are set.
+
+### Suggested files to inspect/change
+
+- Cloud Secrets: `YANDEX_METRIKA_OAUTH_TOKEN`, `YANDEX_METRIKA_COUNTER_ID`
+- `shared/yandex-metrika-contract.md`
+- `scripts/excalibur_blog_metrika_fetch.py`
+
+### Secrets
+
+- `YANDEX_METRIKA_OAUTH_TOKEN` — missing
+- `YANDEX_METRIKA_COUNTER_ID` — missing
+
+### Fixer resolution
+
+(fixed_at pending)
