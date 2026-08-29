@@ -1,0 +1,37 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/zvonok-v-10-00-zaselilsya-v-22-00-stol-est-rozetki-net/#article",
+  "url": "{{SITE_BASE}}/blog/zvonok-v-10-00-zaselilsya-v-22-00-stol-est-rozetki-net/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/zvonok-v-10-00-zaselilsya-v-22-00-stol-est-rozetki-net/"
+  },
+  "headline": "Звонок в 10:00. Заселился в 22:00 — у стола нет розетки",
+  "description": "Как до оплаты посуточной квартиры в Тюмени проверить рабочее место, розетку и Wi‑Fi для видеозвонка и документов. Разбираем, что уточнить при позднем заселении, чтобы утром не искать подходящее место для работы.",
+  "datePublished": "2026-08-29",
+  "dateModified": "2026-08-29",
+  "inLanguage": "ru-RU",
+  "author": {
+    "@type": "Organization",
+    "@id": "{{SITE_BASE}}/#organization",
+    "name": "Добрый дом",
+    "jobTitle": "Апартаменты и квартиры посуточно в Тюмени",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "{{SITE_BASE}}/#organization",
+    "name": "Добрый дом",
+    "jobTitle": "Апартаменты и квартиры посуточно в Тюмени",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  }
+}
