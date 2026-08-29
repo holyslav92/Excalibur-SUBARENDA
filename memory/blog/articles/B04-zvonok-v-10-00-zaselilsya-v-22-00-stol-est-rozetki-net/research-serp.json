@@ -1,0 +1,162 @@
+{
+  "agent": "excalibur-blog",
+  "date_context": {
+    "timezone": "Asia/Yekaterinburg",
+    "today_iso": "2026-08-29",
+    "today_ru": "29.08.2026",
+    "year": 2026,
+    "month": 8,
+    "month_name_ru": "август",
+    "weekday_ru": "суббота"
+  },
+  "topic": {
+    "topic_id": "B04",
+    "title": "Командировка в Тюмень: созвон в 10:00, заселение в 22:00 — что спросить до оплаты",
+    "h1": "Звонок в 10:00 — заселился в 22:00: стол есть, розетки нет",
+    "slug": "zvonok-v-10-00-zaselilsya-v-22-00-stol-est-rozetki-net",
+    "primary_query": "квартиры посуточно тюмень",
+    "priority": "P0"
+  },
+  "searches": [
+    {
+      "query_id": "p0_market",
+      "query": "квартиры посуточно тюмень",
+      "purpose": "P0 спрос + агрегаторы",
+      "result_count": 5,
+      "results": [
+        {
+          "title": "Снять квартиру посуточно в Тюмени — Яндекс Недвижимость",
+          "url": "https://realty.yandex.ru/tyumen/snyat/kvartira/posutochno/",
+          "snippet": "Аренда квартир посуточно в Тюмени; вилка «от 1,5 тыс. руб.» — ориентир рынка."
+        },
+        {
+          "title": "Квартиры и апартаменты посуточно в Тюмени — Суточно.ру",
+          "url": "https://tyumen.sutochno.ru/",
+          "snippet": "Карта объектов посуточной аренды в Тюмени."
+        },
+        {
+          "title": "Квартира посуточно, ул. Максима Горького, 68к2 — Kvartirka",
+          "url": "https://kvartirka.com/residence/479202/",
+          "snippet": "Wi‑Fi, рабочий стол; заезд с 14:00; отчётные документы; ранний/поздний заезд по тарифу."
+        },
+        {
+          "title": "Студия посуточно, 50 лет ВЛКСМ, 15к1 — Kvartirka",
+          "url": "https://kvartirka.com/residence/320398/",
+          "snippet": "Рабочий стол, Wi‑Fi, отчётные документы; заселение 12:00–21:00 vs заявление 24/7."
+        },
+        {
+          "title": "Отчетные документы — Апартаменты Столичный-72",
+          "url": "https://stolichnyi72.ru/docs/",
+          "snippet": "Бланк 3-Г, чек с QR-кодом, безналичный расчёт."
+        }
+      ],
+      "searched_at": "2026-08-29"
+    },
+    {
+      "query_id": "business_docs",
+      "query": "отчетные документы посуточная аренда квартира командировка",
+      "purpose": "закрывающие для бухгалтерии",
+      "result_count": 3,
+      "results": [
+        {
+          "title": "Как получить компенсацию за аренду квартиры в командировке — Яндекс для бизнеса",
+          "url": "https://business.go.yandex/travel/travelabroad/otchetnye-dokumenty-za-prozhivanie-v-kvartire",
+          "snippet": "Договор, акт, чек/БСО/ПП; для самозанятых — чек «Мой налог»; типичные ошибки бухгалтерии."
+        },
+        {
+          "title": "Отчетные документы при сдаче квартиры посуточно — Газета УНП",
+          "url": "https://www.gazeta-unp.ru/articles/55697-otchetnye-dokumenty-pri-sdache-kvartiry-posutochno-polnyy-paket-dlya-buhgalterii-statgb",
+          "snippet": "Пакет для командировочных: договор, акт, платёжный документ; самозанятый без чека — риск."
+        },
+        {
+          "title": "Квартира посуточно, Мельничная 24 — Kvartirka",
+          "url": "https://kvartirka.com/residence/56451/",
+          "snippet": "Командированным: счёт 3-Г, кассовый чек; для организаций — договор, акт, безнал."
+        }
+      ],
+      "searched_at": "2026-08-29"
+    },
+    {
+      "query_id": "wifi_workspace",
+      "query": "посуточная аренда Wi-Fi рабочее место командировка созвон",
+      "purpose": "Wi‑Fi / стол / розетки",
+      "result_count": 3,
+      "results": [
+        {
+          "title": "Посуточная аренда для командировки: Wi‑Fi, парковка — Live to Italy",
+          "url": "https://www.livetoitaly.com/posutochnaya-arenda-dlya-komandirovok-turin/",
+          "snippet": "Wi‑Fi проверять отдельно; рабочее место = стол, стул, свет, розетка; запасной интернет."
+        },
+        {
+          "title": "Опыт подключения к удалённому рабочему месту — Travelanswer",
+          "url": "https://travelanswer.ru/questions/opit-podklyucheniya-k-udalennomu-rabochemu-mestu-v-kitae-problemi-i-resheniya-na-haynane.html",
+          "snippet": "2 из 5 хозяев дали тестовый доступ для проверки скорости до брони."
+        },
+        {
+          "title": "RDP отключается по Wi‑Fi — CyberForum",
+          "url": "https://www.cyberforum.ru/networking-equipment/thread3222219.html",
+          "snippet": "По Wi‑Fi RDP может сбрасывать; по кабелю стабильнее (апр 2026)."
+        }
+      ],
+      "searched_at": "2026-08-29"
+    },
+    {
+      "query_id": "fresh_signal",
+      "query": "klyshin_A деньги под контролем договор август 2026",
+      "purpose": "свежий community/news сигнал",
+      "result_count": 2,
+      "results": [
+        {
+          "title": "Сделка с квартирой: деньги не получены после подписания договора — Клышин, 18.08.2026",
+          "url": "https://tvgram.ru/klyshin_A/3158",
+          "snippet": "«Сначала деньги под контролем. Потом договор.» — редакционный перенос на закрывающие до оплаты."
+        },
+        {
+          "title": "Иски к «Самолету» — Клышин, 26.08.2026",
+          "url": "https://tvgram.ru/klyshin_A/3167",
+          "snippet": "Презентация ≠ проверенный факт; перенос на галочки Wi‑Fi/документов в объявлении."
+        }
+      ],
+      "searched_at": "2026-08-29"
+    },
+    {
+      "query_id": "tenant_blog",
+      "query": "добрый дом блог командировка 10:00 кабель",
+      "purpose": "сигнал блога тенанта",
+      "result_count": 2,
+      "results": [
+        {
+          "title": "Блог «Добрый дом» — посуточная аренда в Тюмени",
+          "url": "https://добрыйдом-72.рф/blog/",
+          "snippet": "Кейс «в 10:00 работал, к 22:00 искал кабель»; сравнение отель vs квартира в командировке."
+        },
+        {
+          "title": "2 ночи в командировке: отель 6 800 ₽ или квартира 4 200 ₽",
+          "url": "https://добрыйдом-72.рф/blog/",
+          "snippet": "Командировочный контекст в ленте блога, август 2026."
+        }
+      ],
+      "searched_at": "2026-08-29"
+    }
+  ],
+  "wordstat": {
+    "source": "mcp-kv wordstat_get_top_requests",
+    "regions": ["55", "11176", "compare225"],
+    "p0": {
+      "phrase": "квартиры посуточно тюмень",
+      "volume_55_11176": 5534,
+      "volume_225": 12553
+    },
+    "secondary": {
+      "phrase": "снять квартиру посуточно в тюмени",
+      "volume_55_11176": 1749,
+      "volume_225": 4560
+    },
+    "angle": {
+      "phrase": "командировка квартира",
+      "volume_55_11176": 41
+    },
+    "measured_at": "2026-08-29"
+  },
+  "errors": []
+}
