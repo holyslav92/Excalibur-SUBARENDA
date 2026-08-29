@@ -21,5 +21,6 @@
   },
   "date": "2026-08-29",
   "pipeline_canon": "human-first-v2",
-  "editorial_swarm": false
+  "editorial_swarm": false,
+  "wp_category_slugs": ["posutochnaya-arenda", "sovety-gostyam"]
 }
