@@ -228,3 +228,59 @@ checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_drawn_logo_gate.py`
 - `python3 -m unittest tests.test_drawn_logo_gate.DrawnLogoGateTest.test_bright_window_pad_exempt_when_no_lockup_colors -v`
 commit: f9c08e0
+
+## INC-20260830-0800-live-page-gate-idna-cyrillic-host
+status: fixed
+run_date: 2026-08-30
+role: excalibur-blog-fixer
+topic_id: B04
+article_dir: memory/blog/articles/B04-zaselilsya-v-22-00-v-10-00-sozvon-a-zakryvayuschie-obeschayut-posle-vyezda
+severity: medium
+category: script
+
+### What went wrong
+
+- Post-publish fixer re-check: `excalibur_blog_live_page_gate.py` with Unicode permalink `https://добрыйдом-72.рф/blog/...` raised `UnicodeEncodeError: latin-1` (urllib host header). After IDNA fetch fix, canonical compare still BLOCKed: WP returns punycode canonical while fixer passes Unicode `--permalink`.
+
+### How the agent recovered this run
+
+- Imported `encode_idna_url` from `excalibur_blog_link_verify` for HTTP fetch + media HEAD in live-page gate and publish live fetch.
+- Added `_normalize_live_url()` for canonical/BlogPosting parity (Unicode host ≡ punycode).
+- Re-ran live-page gate + link-verify + image HEAD on B04 → all PASS. Article live page, 8 images, 8 links OK.
+
+### Durable fix needed before next run
+
+- Live-page gate and publish live fetch must IDNA-encode hosts; URL parity must not require matching Unicode vs punycode spelling.
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_live_page_gate.py`
+- `scripts/excalibur_blog_wp_publish.py`
+- `shared/live-page-contract.md`
+- `tests/test_live_page_gate_idna.py`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-08-30
+fix_summary:
+- `encode_idna_url()` on permalink fetch and media HEAD in `excalibur_blog_live_page_gate.py`.
+- `_normalize_live_url()` for canonical/BlogPosting URL parity (Unicode ≡ punycode).
+- Publish live HTML fetch uses `encode_idna_url(permalink)`.
+- Documented IDNA rule in `shared/live-page-contract.md`.
+files_changed:
+- `scripts/excalibur_blog_live_page_gate.py`
+- `scripts/excalibur_blog_wp_publish.py`
+- `shared/live-page-contract.md`
+- `tests/test_live_page_gate_idna.py`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_live_page_gate.py scripts/excalibur_blog_wp_publish.py`
+- `python3 -m unittest tests.test_live_page_gate_idna tests.test_link_verify_idna -v`
+- B04 live-page gate PASS (Unicode permalink)
+- B04 link-verify PASS (8/8 links)
+- B04 live images HEAD 8/8 HTTP 200 + alt present
+commit: pending

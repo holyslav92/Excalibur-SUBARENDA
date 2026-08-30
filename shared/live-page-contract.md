@@ -55,3 +55,10 @@ python3 scripts/excalibur_blog_live_page_gate.py \
 
 FAIL = `LIVE PAGE BLOCKER`: нельзя писать `PIPELINE DONE`, обновлять ledger как
 успешно опубликованный или запускать post-run learning как успешный запуск.
+
+## IDNA / Cyrillic host
+
+Live HTTP fetch (permalink, featured/inline media HEAD) must IDNA-encode
+non-ASCII hostnames before `urllib` (same as `excalibur_blog_link_verify.py`;
+INC-20260830). Canonical / BlogPosting URL parity compares IDNA-normalized
+hosts so Unicode `добрыйдом-72.рф` and punycode `xn--…` are equivalent.

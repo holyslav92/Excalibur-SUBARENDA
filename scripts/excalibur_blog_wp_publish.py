@@ -25,6 +25,7 @@ from excalibur_blog_site_base import (
 from excalibur_repo_paths import repo_relative
 from image_validate import sniff_image_format, validate_image_file
 from excalibur_blog_live_page_gate import inspect as inspect_live_page
+from excalibur_blog_link_verify import encode_idna_url
 from excalibur_blog_quad_slots import active_inline_keys, inline_count_from_tenant
 from excalibur_blog_pipeline_canon import (
     _plain,
@@ -1566,7 +1567,7 @@ def main() -> int:
     live_errors: list[str] = []
     try:
         request = urllib.request.Request(
-            permalink,
+            encode_idna_url(permalink),
             headers={"User-Agent": "ExcaliburBlogLiveGate/1.0"},
         )
         with urllib.request.urlopen(request, timeout=20) as response:
