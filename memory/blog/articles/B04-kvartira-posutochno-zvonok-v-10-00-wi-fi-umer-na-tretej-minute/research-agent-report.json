@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "research_date": "2026-08-30",
+  "topic_id": "B04",
+  "topic": "Квартира посуточно: звонок в 10:00 — Wi-Fi умер на третьей минуте",
+  "fresh_signal": "Raido guide internet-i-rabochee-mesto-v-komandirovke (accessed 2026-08-30) + Sutochno.ru/wifi promo until 31.08.2026 + vc.ru Avito Travel Wi-Fi failure case",
+  "freshness_audit": {
+    "research_date": "2026-08-30",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://vc.ru/services/1992198-otzyv-o-avito-puteshestviya",
+      "published_at": "2026",
+      "note": "User case: promised Wi-Fi not working in booked apartment; support resolved in ~1 hour. Complemented by Raido business-trip internet guide and Sutochno Wi-Fi catalog promo ending 31 Aug 2026."
+    },
+    "klyshin_angle": {
+      "hook_id": "sept_business_trip",
+      "scene": "Звонок в 10:00. Заселился в 22:00.",
+      "channel": "https://t.me/klyshin_A",
+      "note": "Angle from topic bank; channel active Aug 2026, no dedicated Wi-Fi post in feed"
+    }
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176"],
+    "p0_phrase": "квартиры посуточно тюмень",
+    "p0_volume_55_11176": 5500,
+    "p0_volume_225": 12325,
+    "secondary_phrase": "аренда квартиры посуточно",
+    "secondary_volume_55_11176": 792,
+    "partial_probes": [
+      "командировка квартира посуточно",
+      "интернет квартира посуточно"
+    ]
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "derouter-opus-stamp-research.json"
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "gate": "research-official-gate.json"
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  }
+}
