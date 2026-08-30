@@ -283,4 +283,4 @@ checks_run:
 - B04 live-page gate PASS (Unicode permalink)
 - B04 link-verify PASS (8/8 links)
 - B04 live images HEAD 8/8 HTTP 200 + alt present
-commit: pending
+commit: 87201ed
