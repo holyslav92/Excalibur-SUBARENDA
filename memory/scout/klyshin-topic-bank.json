@@ -3,7 +3,7 @@
   "source_channel": "https://t.me/klyshin_A",
   "source_label": "Алексей Клышин — angle only (ритм delivery, не копировать сделки)",
   "tenant": "Добрый дом — посуточная аренда / субаренда Тюмень",
-  "updated_at": "2026-08-28",
+  "updated_at": "2026-08-30",
   "timezone": "Asia/Yekaterinburg",
   "algorithm": "klyshin_hook → wordstat_probe → rework_for_demand → final_P0_or_skip_after_rework",
   "angle_rotation": {
@@ -86,12 +86,18 @@
       "id": "sept_business_trip",
       "queue_num": 2,
       "hook_ru": "Звонок в 10:00. Заселился в 22:00.",
-      "angle": "стол, розетки, реальный Wi‑Fi, закрывающие — до оплаты",
-      "klyshin_signal": "reader inside; moral: сначала созвон/доки, потом ключ",
+      "angle": "стол + Wi‑Fi на созвон + закрывающие до оплаты (NOT розетка — WP zvonok-v-10-00 duplicate)",
+      "klyshin_signal": "reader inside; moral: сначала созвон/доки, потом ключ; lockpick: закрывающие до выезда? upload Wi‑Fi для Zoom?",
       "wordstat_probes": ["командировка тюмень квартира", "аренда квартиры посуточно", "квартира посуточно тюмень"],
       "dzen_pattern_prefer": [2, 3],
+      "anti_dup": ["zvonok-v-10-00", "нет розетки", "розетка у стола"],
       "tyumen_localize": true,
-      "status": "queue_active"
+      "status": "used",
+      "last_seen": "2026-08-30",
+      "queue_slot": "2026-08-29 — 2026-08-31",
+      "final_p0": {"phrase": "квартиры посуточно тюмень", "volume_tyumen": 5523, "volume_ru": 12487},
+      "wordstat_rework_log": "probe «командировка тюмень квартира» ~1 (225) → «квартира на командировку тюмень» fail/0 → «командировочные расходы квартира» fail/0 → «вайфай аренда квартиры» ~2 → «посуточно или отель» 4 → «аренда квартиры посуточно» 794 → «снять квартиру на сутки тюмень» 363 → final P0 «квартиры посуточно тюмень» 5523/12487",
+      "used_in_articles": ["B04"]
     },
     {
       "id": "kitchen_vs_hotel_cafes",

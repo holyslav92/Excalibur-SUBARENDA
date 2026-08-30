@@ -15,6 +15,7 @@ from excalibur_blog_html_linter import (
     extract_thematic_faq_bodies,
     is_faq_section_heading,
 )
+from excalibur_blog_link_verify import encode_idna_url
 
 FORBIDDEN = {
     "engagement_quiz": r"engagement-quiz|КВЕСТ\s+[«\"]?КОНТЕНТ-ЗАВОД",
@@ -43,6 +44,16 @@ def _canonical_article_path(url: str) -> str:
     if path.startswith("/blog/"):
         path = path[5:]
     return path.rstrip("/") + "/"
+
+
+def _normalize_live_url(url: str) -> str:
+    """Normalize absolute URLs for parity checks (IDNA host + trailing slash)."""
+    raw = (url or "").strip()
+    if not raw:
+        return ""
+    if "://" in raw:
+        return encode_idna_url(raw.rstrip("/") + "/")
+    return raw.rstrip("/") + "/"
 
 
 def _normalize_faq_plain(text: str) -> str:
@@ -130,7 +141,7 @@ def inspect(
         )
         canonical_url = canonical.group(1).rstrip("/") + "/" if canonical else ""
         expected_url = expected_permalink.rstrip("/") + "/" if expected_permalink else ""
-        if expected_url and canonical_url != expected_url:
+        if expected_url and _normalize_live_url(canonical_url) != _normalize_live_url(expected_url):
             errors.append("canonical URL does not exactly match published permalink")
         elif not expected_url and (
             not canonical_url or not canonical_url.rstrip("/").endswith("/" + expected_slug)
@@ -155,9 +166,15 @@ def inspect(
                 elif isinstance(value, list):
                     stack.extend(value)
         if expected_url:
-            norm_expected = _canonical_article_path(expected_url)
-            norm_posting = {_canonical_article_path(u) for u in posting_urls if u}
-            if norm_expected not in norm_posting and expected_url not in posting_urls:
+            norm_expected = _canonical_article_path(_normalize_live_url(expected_url))
+            norm_posting = {
+                _canonical_article_path(_normalize_live_url(u)) for u in posting_urls if u
+            }
+            norm_posting_raw = {_normalize_live_url(u) for u in posting_urls if u}
+            if (
+                norm_expected not in norm_posting
+                and _normalize_live_url(expected_url) not in norm_posting_raw
+            ):
                 errors.append("live BlogPosting JSON-LD URL does not exactly match permalink")
         elif not expected_url and not any(
             url.rstrip("/").endswith("/" + expected_slug) for url in posting_urls
@@ -196,7 +213,7 @@ def inspect(
                 elif verify_media and src_val.startswith(("http://", "https://")):
                     try:
                         request = urllib.request.Request(
-                            src_val,
+                            encode_idna_url(src_val),
                             headers={"User-Agent": "ExcaliburBlogLiveGate/1.0"},
                             method="HEAD",
                         )
@@ -222,7 +239,7 @@ def inspect(
         if verify_media and src and src.group(1).startswith(("http://", "https://")):
             try:
                 request = urllib.request.Request(
-                    src.group(1),
+                    encode_idna_url(src.group(1)),
                     headers={"User-Agent": "ExcaliburBlogLiveGate/1.0"},
                     method="HEAD",
                 )
@@ -295,7 +312,8 @@ def main() -> int:
         html = Path(args.html_file).read_text(encoding="utf-8")
     else:
         request = urllib.request.Request(
-            args.permalink, headers={"User-Agent": "ExcaliburBlogLiveGate/1.0"}
+            encode_idna_url(args.permalink),
+            headers={"User-Agent": "ExcaliburBlogLiveGate/1.0"},
         )
         with urllib.request.urlopen(request, timeout=20) as response:
             html = response.read().decode("utf-8", errors="replace")

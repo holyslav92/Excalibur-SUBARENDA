@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "research_date": "2026-08-30",
+  "topic_id": "B04",
+  "topic": "командировка 2 ночи — Wi‑Fi, стол, закрывающие до оплаты",
+  "fresh_signal": "gazeta-unp.ru 05.08.2026 + @Dobriy_dom_72 авг 2026 + @klyshin_A авг 2026",
+  "wordstat_p0": {
+    "phrase": "квартиры посуточно тюмень",
+    "volume_55_11176": 5523,
+    "volume_225": 12487
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "derouter-opus-stamp-research.json"
+  },
+  "official_source_audit": {
+    "status": "NOT_REQUIRED",
+    "reason": "Нет тарифов/комиссий банков или застройщиков; Zoom Mbps — official tech source; цены — вилка рынка"
+  }
+}

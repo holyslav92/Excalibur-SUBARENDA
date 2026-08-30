@@ -1,0 +1,98 @@
+{
+  "topic_id": "B04",
+  "slug": "zaselilsya-v-22-00-v-10-00-sozvon-a-zakryvayuschie-obeschayut-posle-vyezda",
+  "title": "Заселился в 22:00. В 10:00 созвон — закрывающие обещают после выезда",
+  "outbound_required_min": 1,
+  "outbound_found": [
+    {
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "title": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "permalink": "/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+      "topic_id": "B01",
+      "post_id": 3745,
+      "source": "ledger"
+    },
+    {
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "title": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "permalink": "/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/",
+      "topic_id": "B02",
+      "post_id": 3777,
+      "source": "ledger"
+    },
+    {
+      "slug": "kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki",
+      "title": "kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki",
+      "permalink": "/blog/kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki/",
+      "topic_id": "B03",
+      "post_id": null,
+      "source": "ledger"
+    }
+  ],
+  "outbound_missing_suggestions": [
+    {
+      "slug": "chto-vhodit-v-stoimost-kvartiry-posutochno-polnyj-spisok-uslug",
+      "title": "Что входит в стоимость квартиры посуточно: полный список услуг",
+      "permalink": "",
+      "topic_id": "",
+      "post_id": null,
+      "source": "siblings"
+    },
+    {
+      "slug": "pravila-prozhivaniya-v-otele-chto-proverit-do-oplaty-chtoby-ne-poteryat-dengi",
+      "title": "Правила проживания в отеле: что проверить до оплаты, чтобы не потерять деньги",
+      "permalink": "",
+      "topic_id": "",
+      "post_id": null,
+      "source": "siblings"
+    },
+    {
+      "slug": "skrytye-doplaty-pri-arende-kvartiry-kak-ne-pereplatit",
+      "title": "Скрытые доплаты при аренде квартиры: как не переплатить",
+      "permalink": "",
+      "topic_id": "",
+      "post_id": null,
+      "source": "siblings"
+    }
+  ],
+  "inbound_targets": [
+    {
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "title": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "permalink": "/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+      "topic_id": "B01",
+      "post_id": 3745,
+      "source": "ledger"
+    },
+    {
+      "slug": "kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki",
+      "title": "kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki",
+      "permalink": "/blog/kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki/",
+      "topic_id": "B03",
+      "post_id": null,
+      "source": "ledger"
+    },
+    {
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "title": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "permalink": "/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/",
+      "topic_id": "B02",
+      "post_id": 3777,
+      "source": "ledger"
+    }
+  ],
+  "inbound_updates": [
+    {
+      "post_id": 3745,
+      "marker": "data-excalibur-interlink-from=\"zaselilsya-v-22-00-v-10-00-sozvon-a-zakryvayuschie-obeschayut-posle-vyezda\"",
+      "html": "<p class=\"excalibur-interlink-readalso\" data-excalibur-interlink-from=\"zaselilsya-v-22-00-v-10-00-sozvon-a-zakryvayuschie-obeschayut-posle-vyezda\"><b>Читайте также:</b> <a href=\"{{SITE_BASE}}/blog/zaselilsya-v-22-00-v-10-00-sozvon-a-zakryvayuschie-obeschayut-posle-vyezda/\">Заселился в 22:00. В 10:00 созвон — закрывающие обещают после выезда</a></p>"
+    },
+    {
+      "post_id": 3777,
+      "marker": "data-excalibur-interlink-from=\"zaselilsya-v-22-00-v-10-00-sozvon-a-zakryvayuschie-obeschayut-posle-vyezda\"",
+      "html": "<p class=\"excalibur-interlink-readalso\" data-excalibur-interlink-from=\"zaselilsya-v-22-00-v-10-00-sozvon-a-zakryvayuschie-obeschayut-posle-vyezda\"><b>Читайте также:</b> <a href=\"{{SITE_BASE}}/blog/zaselilsya-v-22-00-v-10-00-sozvon-a-zakryvayuschie-obeschayut-posle-vyezda/\">Заселился в 22:00. В 10:00 созвон — закрывающие обещают после выезда</a></p>"
+    }
+  ],
+  "new_url": "{{SITE_BASE}}/blog/zaselilsya-v-22-00-v-10-00-sozvon-a-zakryvayuschie-obeschayut-posle-vyezda/",
+  "dry_run": false
+}

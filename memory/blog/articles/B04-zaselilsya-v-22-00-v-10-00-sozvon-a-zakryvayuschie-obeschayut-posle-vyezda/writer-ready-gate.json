@@ -1,0 +1,36 @@
+{
+  "gate": "writer_ready",
+  "status": "PASS",
+  "article_dir": "memory/blog/articles/B04-zaselilsya-v-22-00-v-10-00-sozvon-a-zakryvayuschie-obeschayut-posle-vyezda",
+  "draft": "drafts/writer.html",
+  "derouter_stamp": "derouter-opus-stamp-writer.json",
+  "checks": [
+    {
+      "name": "derouter_opus_writer",
+      "ok": true,
+      "detail": "tier=powerful model=claude-opus-5"
+    },
+    {
+      "name": "html_linter",
+      "ok": true,
+      "detail": "PASS"
+    },
+    {
+      "name": "community_cta_draft",
+      "ok": true,
+      "detail": "writer-cta-gate.json PASS"
+    },
+    {
+      "name": "interlink_outbound",
+      "ok": true,
+      "detail": "3 siblings B01/B02/B03"
+    },
+    {
+      "name": "word_count",
+      "ok": true,
+      "detail": "~1449 words"
+    }
+  ],
+  "errors": [],
+  "next": "Sol"
+}
