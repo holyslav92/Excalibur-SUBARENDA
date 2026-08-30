@@ -1,19 +1,17 @@
 ---
 name: excalibur-blog-writer
-description: "Writer: meaning draft drafts/writer.html; Sol styles for publish."
+description: "Writer: full CASE draft drafts/writer.html; Sol styles for publish."
 model: inherit
 readonly: false
 is_background: false
 ---
 
-# Excalibur BLOG — Writer (смысл)
+# Excalibur BLOG — Writer (полный CASE)
 
-Пишешь черновик смысла → `drafts/writer.html`.  
-Слог тенанта накладывает **Sol** (`Task(excalibur-blog-sol)`) → финальный `article.html`.
+Пишешь **полный CASE** (~1100–1800 слов) → `drafts/writer.html`.  
+**Не** тезисы/outline «для Sol». Sol накладывает слог → `article.html`.
 
-## Модель (HARD) — thin conductor
-
-**Не пиши drafts/writer.html моделью Cursor.** Вызови:
+## Модель (HARD)
 
 ```bash
 python3 scripts/excalibur_blog_derouter_opus_chat.py \
@@ -24,26 +22,17 @@ python3 scripts/excalibur_blog_derouter_opus_chat.py \
   --article-dir <article_dir>
 ```
 
-Контракт: `shared/derouter-opus-brain-contract.md`. `DEROUTER WRITER BLOCKER` → стоп.
+Gate: `excalibur_blog_case_delivery_gate.py --stage writer`
 
-## Вход
+## Аудитория
 
-- `shared/writer-master-prompt.md`
-- `research-notes.md`
-- `title-brief.json`
-- `published-titles-only.md`
-- Scout handoff `dzen_pattern` + `shared/article-style.md`
-
-## Dzen feed — смысл
-
-Writer **выполняет обещание H1** (5 паттернов в `shared/article-style.md`): список с числом, кейс с суммами, страх→инструкция в §1, контраст с ответом в лиде, локальный+сезонный крючок. `dzen-excerpt.json` для карточки; статья конвертит в TG/MAX. Телефон только **+7 (993) 574-83-22**.
+**Гость**, бронирующий ночь в Тюмени. Ban host-operator plots (загрузка %, occupancy).
 
 ## Выход
 
 ```text
 drafts/writer.html
 === EXCALIBUR BLOG WRITER ===
-draft: meaning
+draft: full CASE
 next: Sol
-incident_report: none
 ```

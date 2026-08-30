@@ -141,6 +141,7 @@ def main() -> int:
         "scripts/excalibur_blog_pipeline_canon.py",
         "scripts/excalibur_blog_structure_gate.py",
         "scripts/excalibur_blog_opening_meta_gate.py",
+        "scripts/excalibur_blog_case_delivery_gate.py",
         "scripts/excalibur_blog_writer_ready_gate.py",
         "scripts/excalibur_blog_cover_text_gate.py",
         "scripts/excalibur_blog_derouter_opus_chat.py",

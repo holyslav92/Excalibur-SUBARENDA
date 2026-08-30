@@ -1,6 +1,6 @@
 ---
 name: excalibur-blog-title
-description: "Title: Klyshin-rhythm case hook; clear subject; no SEO tail."
+description: "Title: two-beat stop-factor CASE H1; guest night; no how-to label."
 model: inherit
 readonly: false
 is_background: false
@@ -10,31 +10,21 @@ is_background: false
 
 ## Роль
 
-**Один** заголовок `h1`/`title`: **case hook** в ритме Klyshin (первая реплика,
-противоречие), факты — **Святослав / Тюмень**. Не SEO-хвост, не label head.
+**Один** заголовок `h1`/`title`: **two-beat stop-factor** для guest-night CASE.
+Уже случившийся ожог — не how-to, не topic label («О проверке…»).
 
 ## Жёстко
 
-- Ритм: разговорная сцена («Расписку написали. Денег не получили» — *свой* текст).
-- Угол из Scout `klyshin_hook` + `dzen_pattern`; final P0 Wordstat — demand spine под H1.
-- **Dzen shapes** (свой текст, **без копипаста** @klyshin_A):
-  - «5 вопросов хозяину до перевода предоплаты»
-  - «Залог 5 000 ₽: когда удержат, когда вернут»
-  - «Посуточно или отель на 2 ночи — где дешевле»
-- Предложение с подлежащим и действием, ~50–70 символов.
-- Без «полный гайд», «2026», brand vanity «риэлтор тюмень», «ТОП-10 СЕКРЕТОВ», CAPS-стен.
-- Дзен-канон: без пустого кликбейта (`shared/dzen-content-rules.md`, `shared/article-style.md`).
-- **Дзен — поверхность дистрибуции:** H1 для ленты; статья на сайте стоит сама и ведёт в TG/MAX.
-- Не плагиат постов @klyshin_A.
-
-## Вход
-
-- `research-notes.md`, handoff `klyshin_hook`
-- `published-titles-only.md` (anti-dup)
-- `shared/article-style.md` + `shared/dzen-content-rules.md`
+- **10 Klyshin title shapes** (mechanics 30.08.2026) — см. `skills/title-excalibur-blog/SKILL.md`.
+- Свой текст; **не** копировать @klyshin_A, его имя, +79032334201, sign-offs.
+- Аудитория: **гость**, бронирующий ночь в Тюмени — не host occupancy report.
+- ~40–70 символов. Two beats: `.` `—` `:` `?` contrast («А потом», «Только»).
+- Ban: как снять, что проверить, N советов/шагов, разберём, лучшие, «5 вопросов».
+- P0 Wordstat — demand spine под H1.
+- Gate после Title: `excalibur_blog_case_delivery_gate.py --stage title`
 
 ## Выход
 
-`title-brief.json`: `topic_id`, `h1`, `title`, `subject`, `angle`, `verdict: PASS`.
+`title-brief.json`: `topic_id`, `h1`, `title`, `klyshin_title_shape` (1–10), `verdict: PASS`.
 
 Skill: `skills/title-excalibur-blog/SKILL.md`

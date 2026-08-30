@@ -82,9 +82,10 @@ python3 scripts/excalibur_blog_research_start.py --topic-id <ID> --title "<short
 python3 scripts/excalibur_blog_pipeline_canon.py --article-dir <dir> --stamp
 python3 scripts/excalibur_blog_html_linter.py <dir>/article.html
 python3 scripts/excalibur_blog_opening_meta_gate.py --article-dir <dir>
+python3 scripts/excalibur_blog_case_delivery_gate.py --article-dir <dir> --stage article
 ```
 
-Плохой **слог/открытие** → верни **Sol**.  
+Плохой **слог/открытие/how-to H1** → верни **Sol** (или **Title**, если case-delivery gate на H1).  
 Сломан **смысл/факты** → верни **Writer**, потом снова Sol.
 
 ### 5 Cover-text || Schema → Cover

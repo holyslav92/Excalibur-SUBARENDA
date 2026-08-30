@@ -1,65 +1,63 @@
 ---
 name: title-excalibur-blog
-description: Invent one catchy human H1 — cable pain-scene; Tyumen in H1 optional.
+description: Invent one catchy human H1 — two-beat stop-factor CASE; Tyumen in H1 optional.
 ---
 
-# Title Agent — цепкий заголовок
+# Title Agent — two-beat stop-factor H1
 
 ## Derouter utility (HARD)
 
 H1 — только через `excalibur_blog_derouter_opus_chat.py --role title` (gpt-5.6-terra).
 
+После Title — gate:
+
+```bash
+python3 scripts/excalibur_blog_case_delivery_gate.py --article-dir <dir> --stage title
+```
+
 ---
 
 ## CASE delivery — Title slice (HARD)
 
-1. **Cable case + consequence** — как сильные Dzen-H1, mapped to **guest daily-rental**.
-2. Сцена + итог/ущерб в заголовке — не «что проверить первым».
-3. Число = ₽, ночи, минуты — не «5 вопросов» / «7 шагов».
-4. Guest pain only: parents 1 Sept, deposit, parking, reviews, hot water, neighbors, dog.
-5. **«Тюмень» в H1 НЕ обязательна.**
+1. **Two-beat stop-factor** — уже случившийся ожог гостя, не how-to label.
+2. Аудитория: **гость**, бронирующий ночь в Тюмени — не host-operator report.
+3. Число = ₽ / ночи / минуты ожога — не «5 вопросов» / «7 шагов».
+4. Guest pain: deposit, code, dog, parking, neighbors, prepaid-to-card, «всё включено».
+5. **«Тюмень» в H1 НЕ обязательна.** ~40–70 символов.
 6. Title rides Wordstat P0 from Scout — not legal essay.
 7. **Dzen pattern 1 (N советов) — NOT default.**
-8. Ban ЕГРН/наследство/ипотека/Шакин/риэлтор.
-9. ~50–70 символов. Без «полный гайд», «2026», SEO-хвостов.
-10. Не копировать чужие H1 дословно — только shape.
+8. Ban: как снять, что проверить, разберём, лучшие, topic labels («О проверке…»).
+9. Ban ЕГРН/наследство/ипотека/Шакин/риэлтор/Клышин/+79032334201.
+10. **Свой текст** — structure from Klyshin TG rhythm only; never paste his plots/sign-offs.
 
 ---
 
-## Хороший H1 (shape calibration)
+## 10 FIRST-LINE FORMULAS (Klyshin mechanics 30.08.2026 → guest-night)
 
-Риэлтор-Dzen shape → guest mapping (свой текст):
+Write **original** copy. Never paste @klyshin_A sentences, his name, or his phone.
 
-| Shape | Guest daily-rental example |
-|-------|---------------------------|
-| «Чистая выписка… оспорили» | ««Рядом с вузом» — оказалось 40 минут пешком» |
-| «Суд отменил… вернуть 4,3 млн» | «Залог 5 000 ₽: на выезде сказали — не вернём» |
-| «Бабушку не нашли — аванс остановили» | «Код есть — парковки нет, эвакуатор утром» |
-| «В выписке ЕГРН есть строка…» | «В объявлении «тихий дом» — сосед в 02:40» |
-| «Почти внесли задаток — подарили дочери» | «Почти перевели предоплату — собаку не пустили» |
+| # | Shape | Guest-night example (calibration only) |
+|---|--------|----------------------------------------|
+| 1 | [Обыденное действие]. А потом [катастрофа] | Перевели залог. А утром написали «после уборки». |
+| 2 | [Утверждение]. Только [опровержение] | «Тихий дом» в объявлении. Только сосед в 02:40. |
+| 3 | [Прямая речь]. А потом [что вскрылось] | «Всё включено» — в чеке +1 500 ₽ за бельё. |
+| 4 | [Срок] назад сказали X. А нашли только сейчас | Три дня назад «парковка рядом». Шлагбаум — сегодня. |
+| 5 | Цифра = цена ожога | Залог 5 000 ₽: на выезде сказали — не вернём. |
+| 6 | Вопрос + «Похоже, да.» | Новое правило про залог? Похоже, да. |
+| 7 | Отрицание общей веры | «Всё включено» не значит, что включено. Цифры это подтверждают. |
+| 8 | «Пока вы искали жильё…» | Пока вы искали «рядом с вузом» — лучшие окна уже разобрали. |
+| 9 | Мягкий досуг-вход | **rare**, never default how-to |
+| 10 | Диагноз рынка одной фразой | Гость платит за «удобство», а получает 40 минут пешком. |
 
-Дополнительно: «23:40 — код есть, из крана холодное» · «Посуточно или отель на 2 ночи — где дешевле».
+**Ban H1:** topic label («О проверке квартиры», «Как снять»), list skeleton, SEO tail.
 
 ---
 
 ## Wordstat
 
-- Scout handoff: RF-wide **225**, regions 55+11176
-- P0 = demand spine **под** H1 — Title **не** изобретает legal essay
-- Stickers/H2 — из live guest queries (посуточно, залог, заселение…)
-
-## Supply vs demand
-
-- **Demand:** вся РФ ищет guest pain (залог, код, соседи, животные…)
-- **Supply:** статья только про аренду **в Тюмени**
-
-## Запрещено
-
-- Label head («Проверка заселения»)
-- «что проверить первым», «5 вопросов», «7 шагов»
-- ЕГРН, наследство, ипотека, Шакин, риэлтор, аванс-на-вторичке
-- H1 про Москву/Сочи как место аренды
+- Scout handoff: `dzen_pattern` (prefer 2–5) + RF-wide **225**, regions 55+11176
+- P0 = demand spine **под** H1
 
 ## Выход
 
-`title-brief.json` — один вариант, `verdict: PASS`
+`title-brief.json`: `topic_id`, `h1`, `title`, `subject`, `angle`, `klyshin_title_shape` (1–10), `verdict: PASS`

@@ -1,9 +1,9 @@
 ---
 name: writer-excalibur-blog
-description: Write meaning draft drafts/writer.html; Sol applies tenant SOUL style.
+description: Write full CASE draft drafts/writer.html; Sol applies tenant SOUL style.
 ---
 
-# Writer Skill — смысл статьи (черновик)
+# Writer Skill — полный CASE-черновик (не тезисы)
 
 ## Модель (HARD) — thin conductor
 
@@ -18,82 +18,61 @@ python3 scripts/excalibur_blog_derouter_opus_chat.py \
   --article-dir <article_dir>
 ```
 
+После Writer:
+
+```bash
+python3 scripts/excalibur_blog_case_delivery_gate.py --article-dir <dir> --stage writer
+```
+
 Контракт: `shared/derouter-opus-brain-contract.md`.
-`DEROUTER WRITER BLOCKER` → стоп. Запрещён тихий fallback на Composer/Auto.
+`DEROUTER WRITER BLOCKER` → стоп.
 
-STRUCTURE сильных Dzen-кейсов (плотный лид) допустим; **автор фактов** — Добрый дом / хост посуточной Тюмень (**не Шакин/риэлтор**).
+Ты пишешь **полный CASE** (~1100–1800 слов): плотный §1, identity, таймлайн, диалог, moral, mid fight-question, optional checklist после moral, один CTA.
+**Не** outline/тезисы «для Sol». Sol — слог, не encyclopedia из bullets.
 
-Ты пишешь **смысл**: факты, тезисы, ограничения, CTA.  
-Финал слога делает **Sol** (`excalibur-blog-sol`) по SOUL + examples.
-
-Выход: **`drafts/writer.html`** (чистый HTML-фрагмент без `<h1>`).  
-Sol перепишет `article.html`.
-
-**Длина смысла:** ~**1100–1800 слов** — развёрнутый CASE. **Не** checklist-landing 2500–3100.
+**Аудитория:** гость, бронирующий ночь в Тюмени. **Не** host-operator (загрузка %, «гость съехал»).
 
 ---
 
-## CASE delivery — 10 правил (HARD, одна формулировка)
+## CASE delivery — 10 правил (HARD)
 
-1. §1 = плотный кейс (1–2 абзаца). **BAN** chopped 3-word lead / telegram-cosplay.
-2. Identity после лида: «Я хост посуточной в Тюмени. Это «Добрый дом».» + Telegram · MAX.
-3. Reader is inside (you/present tense/body in apartment/taxi/chat).
-4. Number = price of burn (₽, nights, minutes). Ban H1 list numbers as skeleton.
-5. Host dialogue in prose — quote then illusion break.
-6. One case → one verdict. Retell with timeline. Checklist AFTER moral.
-7. Moral: first X, then money/key.
+1. §1 = 1–2 **плотных** абзаца (date, quote, ₽/nights, illusion break). **BAN** chopped TG-cosplay lead.
+2. Identity: «Я хост посуточной в Тюмени. Это «Добрый дом».» + Telegram · MAX.
+3. Reader inside (you/taxi/chat/apartment).
+4. Number = price of burn.
+5. Quote → illusion break / refusal («Так не заселяем.»).
+6. One case → one verdict. Checklist AFTER moral.
+7. Moral: first X, then money/key. «Сначала проверка. Потом перевод. Не наоборот.»
 8. One lockpick question.
-9. One mid comment fight-question (TG/MAX).
-10. Guest pain only — no ЕГРН/Шакин/риэлтор. Sol MUST NOT encyclopedia.
+9. One mid comment fight-question → TG/MAX (never WP comments).
+10. Guest pain only — no ЕГРН/Шакин/риэлтор/Клышин.
 
----
+Scout handoff `dzen_pattern` (prefer 2–5, NOT default 1).
+
+## Body devices (после dense §1)
+
+- «Не X. Не Y. А Z.» hammer
+- «Сначала… потом…» degradation → order-moral
+- Direct speech in quotes as scene
+- Aphoristic close: «Наш вывод простой.» + one metaphor
+- Refusal: «Так не заселяем.» / «Даже за двойную цену.» (structure only)
 
 ## Обязательные элементы writer.html (HARD)
 
-1. Дата или время
-2. Цитата хоста/гостя
-3. ₽ или число ночей
-4. Один illusion break
-5. Один mid comment fight-question
-
----
+1. Дата/время 2. Цитата 3. ₽/ночи/минуты 4. Illusion break 5. Mid fight-question
 
 ## Читаешь
 
-1. `shared/writer-master-prompt.md` (секция Writer / смысл)
-2. `research-notes.md`
-3. `title-brief.json` — H1 rides Wordstat P0 from Scout, not legal essay
-4. `published-titles-only.md`
-5. `shared/published-articles.md` — **только** `status=published` для outbound interlink
-6. `shared/dzen-content-rules.md` + RF (не герой Meta/…) — кратко
+`shared/writer-master-prompt.md`, `research-notes.md`, `title-brief.json`, `published-titles-only.md`
 
-## Не обязан читать (это зона Sol)
-
-`shared/SOUL.md`, `shared/soul-examples/*` — Sol применит слог сам.
-
----
-
-## Правила смысла
-
-- **§1:** 1–2 плотных абзаца — whole case on first screen; **NO chopped lead**; **NO TL;DR**
-- **Хост посуточной Тюмень**, comfort+ — **не** юрист, **не** риэлтор, **не** Шакин
-- **Dzen pattern 1 (N советов) — NOT default.** Prefer case/verdict shapes (2–5)
-- **One case → one verdict.** Checklist/FAQ AFTER moral, never as spine
-- **Mid comment fight-question:** один; ответ в **TG** `https://t.me/Dobriy_dom_72` или MAX
-- **Воронка:** **один** блок полной воронки (TG+MAX+site+booking+tel+manager) — **только в конце**
-- **Бан:** ЕГРН, нотариус, суд, Шакин, +7 922 001 65 05, «я адвокат», «Разберём», WhatsApp
-- Все факты только из research; не выдумывай
-- **Supply:** только Тюмень. **Demand Wordstat:** RF-wide (225)
-- H1 cable + consequence; **ban** «5 вопросов» / «7 шагов» / «что проверить первым»
-- **Interlink (если `interlink_old_articles=true`):** **3–4** контекстные ссылки на sibling
-- Не читай чужие article.html / live-сайт / topics
+**Не читай:** live-сайт, чужие `article.html`, уже опубликованные статьи сайта как образец.
 
 ## Handoff
 
 ```text
 drafts/writer.html
 === EXCALIBUR BLOG WRITER ===
-draft: meaning
+draft: full CASE (not theses)
 next: Sol
-incident_report: none | memory/pipeline-fix-queue.md#INC-...
+incident_report: none
 ```

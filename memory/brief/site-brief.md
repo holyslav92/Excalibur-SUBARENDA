@@ -29,7 +29,7 @@
 
 ## Редакция
 
-- **формат:** how-to / чеклист / troubleshooting проживания / залог / заселение
+- **формат:** Dzen-clickable **CASE** (two-beat stop-factor H1 + dense §1); чеклист только после moral
 - **стиль:** `shared/SOUL.md` — тёплый хост, не риэлтор сделок
 - **темы:** Scout × Klyshin angle × Wordstat — посуточно, субаренда, Тюмень
 - **anti-dup:** `shared/published-titles.md`; не копировать tymenrieltor.ru
