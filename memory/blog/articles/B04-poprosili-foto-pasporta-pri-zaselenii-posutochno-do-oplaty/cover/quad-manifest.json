@@ -69,10 +69,13 @@
     "inline_1": {
       "quadrant": "top_right",
       "h2_anchor": "Паспорт сам по себе мошенничество не доказывает",
-      "visual_type": "comparison_table_ui",
+      "visual_type": "comparison_table",
       "scene_hint": "2-col: договор vs давление.",
       "alt": "Паспорт для договора — не всегда скам",
-      "labels": ["адреса нет"]
+      "labels": [
+        "адреса нет",
+        "для договора"
+      ]
     },
     "inline_2": {
       "quadrant": "bottom_left",
@@ -80,7 +83,10 @@
       "visual_type": "workflow_diagram",
       "scene_hint": "Flow: адрес→даты→паспорт.",
       "alt": "Сначала адрес, потом паспорт",
-      "labels": ["для договора"]
+      "labels": [
+        "адрес сначала",
+        "для договора"
+      ]
     },
     "inline_3": {
       "quadrant": "bottom_right",
@@ -88,7 +94,10 @@
       "visual_type": "comparison_table",
       "scene_hint": "Red flags: срочный перевод.",
       "alt": "Срочный перевод — красный флаг",
-      "labels": ["адрес сначала"]
+      "labels": [
+        "адрес сначала",
+        "срочный перевод"
+      ]
     },
     "inline_4": {
       "quadrant": "top_left",
@@ -96,7 +105,10 @@
       "visual_type": "checklist_board",
       "scene_hint": "Checklist red flags.",
       "alt": "Красные флаги в переписке",
-      "labels": ["другой чат"]
+      "labels": [
+        "другой чат",
+        "проверка адреса"
+      ]
     },
     "inline_5": {
       "quadrant": "top_right",
@@ -104,7 +116,10 @@
       "visual_type": "schema_faq_ui",
       "scene_hint": "Outcome: verify address.",
       "alt": "Марина проверила адрес",
-      "labels": ["созвон"]
+      "labels": [
+        "созвон",
+        "проверка адреса"
+      ]
     },
     "inline_6": {
       "quadrant": "bottom_left",
@@ -112,7 +127,10 @@
       "visual_type": "process_flow",
       "scene_hint": "6-step order flow.",
       "alt": "Порядок действий",
-      "labels": ["адрес"]
+      "labels": [
+        "адрес",
+        "паспорт при заселении"
+      ]
     },
     "inline_7": {
       "quadrant": "bottom_right",
@@ -120,7 +138,10 @@
       "visual_type": "tool_screenshot",
       "scene_hint": "6-step Dobry Dom scheme.",
       "alt": "Заселение в Добром доме",
-      "labels": ["паспорт при заселении"]
+      "labels": [
+        "паспорт при заселении",
+        "проверка адреса"
+      ]
     }
   },
   "cover_keys_ru": ["паспорт при заселении", "посуточно тюмень"]
