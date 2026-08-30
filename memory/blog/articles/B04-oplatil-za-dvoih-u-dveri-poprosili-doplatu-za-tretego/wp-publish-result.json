@@ -1,0 +1,27 @@
+{
+  "slug": "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+  "topic_id": "B04",
+  "permalink": "{{SITE_BASE}}/blog/oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego/",
+  "publish_method": "ftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B04-oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 951123,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4178 slug=oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego\nOK categories=101\nOK dzen_yzen_meta=1\nOK featured_image=4179\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4180 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/08/oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego-inline-01.png\nOK inline_alt=4180\nOK inline_caption=4180\nOK inline_description=4180\nOK inline_image_upload=4181 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/08/oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego-inline-02.png\nOK inline_alt=4181\nOK inline_caption=4181\nOK inline_description=4181\nOK inline_image_upload=4182 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/08/oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego-inline-03.png\nOK inline_alt=4182\nOK inline_caption=4182\nOK inline_description=4182\nOK inline_image_upload=4183 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/08/oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego-inline-04.png\nOK inline_alt=4183\nOK inline_caption=4183\nOK inline_description=4183\nOK inline_image_upload=4184 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/08/oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego-inline-05.png\nOK inline_alt=4184\nOK inline_caption=4184\nOK inline_description=4184\nOK inline_image_upload=4185 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/08/oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego-inline-06.png\nOK inline_alt=4185\nOK inline_caption=4185\nOK inline_description=4185\nOK inline_image_upload=4186 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/08/oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego-inline-07.png\nOK inline_alt=4186\nOK inline_caption=4186\nOK inline_description=4186\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego/",
+    "errors": []
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "status": "PASS",
+  "topic_id": "B04",
+  "slug": "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+  "research_date": "2026-08-30",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Avito host course lessons 3 and 5",
+    "source_type": "official_platform_material",
+    "accessed_at": "2026-08-30",
+    "note": "Свежие материалы Avito для хозяев подтверждают настройки базового количества гостей, доплаты за дополнительного гостя и фиксацию количества гостей в договоре."
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "scope": "Настройки размещения и порядок фиксации условий на Avito",
+    "official_sources": [
+      {
+        "url": "https://host.avito.com/course/lesson-3",
+        "accessed_at": "2026-08-30",
+        "verified": [
+          "базовая цена",
+          "базовое количество гостей",
+          "доплата за дополнительного гостя",
+          "пример расчёта"
+        ]
+      },
+      {
+        "url": "https://host.avito.com/course/lesson-5",
+        "accessed_at": "2026-08-30",
+        "verified": [
+          "доплата за дополнительных гостей",
+          "количество гостей в договоре",
+          "порядок личного и удалённого заселения",
+          "общение в чате до предоплаты"
+        ]
+      }
+    ]
+  },
+  "wordstat": {
+    "status": "PASS",
+    "observations": [
+      {
+        "phrase": "доплата за гостя",
+        "volume": 272,
+        "region": "225"
+      },
+      {
+        "phrase": "доплата за гостей посуточно",
+        "volume": 18,
+        "region": "225"
+      },
+      {
+        "phrase": "квартира посуточно тюмень",
+        "volume": 5500,
+        "region": "55+11176"
+      }
+    ]
+  },
+  "source_count": 7,
+  "limitations": [
+    "Community signal describes a general discussion pattern and does not confirm a specific rental transaction.",
+    "The supplied sources do not establish a universal legal rule allowing or prohibiting a demand for extra payment at the door.",
+    "Avito and WeRent examples are not universal market tariffs."
+  ],
+  "writer_safe_urls": [
+    "https://host.avito.com/course/lesson-3",
+    "https://host.avito.com/course/lesson-5",
+    "https://werent.me"
+  ]
+}

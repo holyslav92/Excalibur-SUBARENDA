@@ -1,0 +1,28 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 2,
+  "output_canvas": "cover/canvas-quad-02.png",
+  "result_path": "cover/quad-mcp-result-02.json",
+  "slots": [
+    "inline_4",
+    "inline_5",
+    "inline_6",
+    "inline_7"
+  ],
+  "preferred_image_flow": {
+    "provider": "grsai",
+    "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
+    "resolution": "2K"
+  },
+  "jobs": [
+    {
+      "slot": "canvas_quad",
+      "tool": "grsai",
+      "mcp_args": {
+        "prompt": "WOW RU collage, airy #FFF high-key, warm comfort+ Tyumen. Bold Cyrillic hook. NO logo in gen — factory PNG TOP-RIGHT after split. Cat-meme max 1/8. Canvas 2048x1152 2x2; gutters. Ban: dark, WP UI, drawn logo, white plate, winter/snow, Shakin face. RU Cyrillic only.\nInlines: NO logo gen; tiny people-meme ≤15%; sketch/table mix.\nTL: FAQ «Спросить до оплаты» guest count price rules. TXT:Цена за всех|Правила гостей.\nTR: phone booking screenshot guest count highlighted. TXT:Кто гость|Условия.\nBL: bill 1500×nights formula. TXT:Цена за троих|Разница 1500 ₽.\nBR: 3 questions checklist at door. TXT:Проверить переписку|Уточнить сумму.",
+        "aspect_ratio": "16:9",
+        "resolution": "2K"
+      }
+    }
+  ]
+}

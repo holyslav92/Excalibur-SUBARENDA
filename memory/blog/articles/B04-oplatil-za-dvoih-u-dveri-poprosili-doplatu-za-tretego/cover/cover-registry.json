@@ -1,0 +1,86 @@
+{
+  "topic_id": "B04",
+  "slug": "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+  "cover_family": "brand_collage",
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "file": "cover/cover.png",
+  "alt": "Пара и сестра узнают у двери квартиры о доплате 1500 рублей за третьего гостя; на двери номер телефона.",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-quad-01.png",
+  "generated_at": "2026-08-30T16:58:29+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Пара и сестра узнают у двери квартиры о доплате 1500 рублей за третьего гостя; на двери номер телефона.",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Расчёт показывает: два гостя включены, за третьего берут 1500 рублей за ночь.",
+      "h2_anchor": "Как прошёл тот вечер",
+      "visual_type": "comparison_table",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Схема объясняет переход от двух заявленных гостей к трём фактическим.",
+      "h2_anchor": "Доплата сама по себе не проблема",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Сравнение стоимости проживания для двух и трёх гостей.",
+      "h2_anchor": "Почему сюрприз всегда появляется у порога",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_4",
+      "file": "cover/inline-04.png",
+      "alt": "Неловкий разговор гостей с хозяином о дополнительной оплате у двери.",
+      "h2_anchor": "Вопрос, который закрывает проблему до оплаты",
+      "visual_type": "schema_faq_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_5",
+      "file": "cover/inline-05.png",
+      "alt": "Гость проверяет в подтверждении брони число гостей, даты и стоимость.",
+      "h2_anchor": "Наше правило: сначала ясность, потом деньги и ключ",
+      "visual_type": "tool_screenshot",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_6",
+      "file": "cover/inline-06.png",
+      "alt": "Формула рассчитывает доплату: 1500 рублей умножить на число ночей.",
+      "h2_anchor": "Вывод",
+      "visual_type": "infographic_card",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_7",
+      "file": "cover/inline-07.png",
+      "alt": "Гости сверяют условия бронирования перед оплатой третьего места.",
+      "h2_anchor": "«Добрый дом» — посуточные квартиры в Тюмени",
+      "visual_type": "comparison_table",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}

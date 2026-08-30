@@ -4,6 +4,40 @@
 
 ---
 
+## LESSON-20260830-1745-B04-extra-guest-fee-at-door
+status: proposed
+topic_id: B04
+category: utility
+confidence: medium
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest BLOCKER по credentials.
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+
+### Keep
+- Two-beat H1 «Оплатили за двоих. У двери попросили доплату за третьего» — нормально → ужас у порога, не how-to.
+- §1 с датой, цитатой хоста и ₽ до идентичности хоста; Klyshin-отрез «Нет. Так не заселяем.» + «Сначала проверка. Потом перевод.»
+- Вопрос-отмычка: «Сколько человек входит в бронь и где это в итоговой сумме?» — mid-body → TG/MAX, не комментарии.
+- Wordstat P0 «доплата за гостя» 272 (RF) + spine «квартира посуточно тюмень» 5500 (Tyumen).
+
+### Change
+- В кейсах про доплату за гостя сразу в §1 называть итоговую сумму за N ночей, а не только «+1500 за ночь» — гость видит полную арифметику до двери.
+
+### Never again
+- How-to «как избежать доплаты» / чеклист до морали.
+- Доплата как сюрприз без цитаты у двери и без ₽ в opening.
+
+### Proposed apply
+- Scout: при hook extra_guest_fee требовать в handoff final P0 «доплата за гостя» + spine Tyumen.
+- Review only; Writer prompt не трогать автоматически.
+
+---
+
 ## LESSON-20260828-1446-B03-walking-minutes-not-ryadom
 status: proposed
 topic_id: B03
