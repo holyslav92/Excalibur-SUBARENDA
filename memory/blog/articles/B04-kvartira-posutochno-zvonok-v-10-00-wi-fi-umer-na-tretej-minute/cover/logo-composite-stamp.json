@@ -9,7 +9,7 @@
   "logo_width_fraction_max": 0.12,
   "inline_logo_files": [
     "inline-01.png",
-    "inline-03.png",
+    "inline-04.png",
     "inline-07.png"
   ],
   "inline_logo_count": 3,
@@ -42,7 +42,7 @@
       "phone_anchor": "",
       "logo_pasted": true
     },
-    "inline-03.png": {
+    "inline-04.png": {
       "logo_corner": "top_right",
       "logo_xy": [
         1060,
@@ -69,7 +69,7 @@
   },
   "panel_logo_skipped": {
     "inline-02.png": "no_factory_logo_by_rule",
-    "inline-04.png": "no_factory_logo_by_rule",
+    "inline-03.png": "no_factory_logo_by_rule",
     "inline-05.png": "no_factory_logo_by_rule",
     "inline-06.png": "no_factory_logo_by_rule"
   },
@@ -83,7 +83,7 @@
     "cover/inline-06.png",
     "cover/inline-07.png"
   ],
-  "composed_at": "2026-08-30T09:51:22+00:00",
+  "composed_at": "2026-08-30T10:00:01+00:00",
   "forbid_ai_drawn_logo": true,
   "forbid_logo_white_plate": true,
   "logo_crop_getbbox": true,

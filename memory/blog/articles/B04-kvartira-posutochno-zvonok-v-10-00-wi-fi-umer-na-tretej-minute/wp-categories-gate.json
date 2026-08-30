@@ -1,9 +1,11 @@
 {
   "category_ids": [
-    101
+    101,
+    106
   ],
   "category_slugs": [
-    "posutochnaya-arenda"
+    "posutochnaya-arenda",
+    "sovety-gostyam"
   ],
   "errors": [],
   "status": "PASS"
