@@ -39,7 +39,7 @@ openers). Канон в article — `<h2>Частые вопросы</h2>`; bare
 
 Ты обязан понимать и проверять:
 
-1. **Live URL постов = `/{slug}/`**, не `/blog/{slug}/`. После Indexer в HTML не должно быть `href="/blog/..."`.
+1. **Outbound xlinks:** `href="{{SITE_BASE}}/blog/{slug}/"` в артефактах; при publish expand в absolute `https://<site>/blog/{slug}/`. **Dzen:** never relative `href="/blog/..."`.
 2. **Media Library в WP** для каждой картинки (cover + inline):
    - **Атрибут alt** — осмысленный русский текст из registry / `<img alt>`
    - **Подпись (caption)** — осмысленный alt; deprecated `meme_caption_ru` игнорировать

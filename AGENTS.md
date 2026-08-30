@@ -58,6 +58,7 @@ python3 scripts/excalibur_blog_research_start.py --topic-id B111 --title "…"
 - Publish без `cover/cover_qa.json` PASS или без `description-brief.json`
 - Publish **без рубрик WP** (`wp_category_slugs` / `topic_defaults`) при `wp_categories_required=true`
 - Publish **без outbound interlink** (**3–4** уникальные live `/blog/` ссылки на published siblings) при `interlink_old_articles=true`
+- **Dzen:** в `article.html` и RSS — только `{{SITE_BASE}}/blog/{slug}/` (или expanded absolute); **никогда** `href="/blog/..."` (root-relative ломает Дзен in-app browser → 404)
 - Scout/тема без **Klyshin×Wordstat dual gate**, без rework-лога или с выдуманными частотами
 - Scout **drop hook** при слабом Wordstat без цикла rework (локализация Тюмень, buyer-жаргон: егрн, наследство, ипотека, аванс…)
 - Scout/тема про RF-blocked heroes без Дзен-канона (если `dzen_rf_pack`)
@@ -91,6 +92,7 @@ Setup: `.cursor/agents/excalibur-blog-setup.md` (не Task).
 
 **Перелинковка:** при `interlink_old_articles=true` Writer/Sol добавляют **3–4**
 контекстные ссылки на sibling из `shared/published-articles.md` (`status=published`,
-живые HTTP 200 `/blog/` URL, разные slug).
+живые HTTP 200 `/blog/` URL, разные slug). **Канон href в артефактах:** `{{SITE_BASE}}/blog/{slug}/`
+(expand при publish). **Dzen:** never relative `/blog/` hrefs.
 После publish — inbound «Читайте также» в 1–3 старых постах (авто из
 `publish_options.auto_interlink_after_publish`). Контракт: `shared/interlink-contract.md`.

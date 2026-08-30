@@ -28,7 +28,8 @@ Sol накладывает слог (SOUL, good/bad examples), **не** прев
 - Ссылки CTA: **только** из `tenant-config.cta_links` + MAX по `cta_channels.max`
   (`cta_required=true` — Telegram + tel + слово MAX обязательны)
 - При `interlink_old_articles=true`: **3–4** уникальные ссылки на slug из
-  `shared/published-articles.md` (контекстно, живые `/blog/`, по теме)
+  `shared/published-articles.md` (контекстно, живые `/blog/`, по теме).
+  **Канон href:** `{{SITE_BASE}}/blog/{slug}/` — **Dzen:** never relative `/blog/` hrefs.
 
 ### Обязательные элементы в writer.html (HARD)
 

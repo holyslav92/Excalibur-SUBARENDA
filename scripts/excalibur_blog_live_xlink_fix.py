@@ -17,7 +17,6 @@ from zoneinfo import ZoneInfo
 
 from excalibur_blog_crosslink_qa_gate import anchor_matches_catalog_title, validate_article_crosslinks
 from excalibur_blog_live_catalog import (
-    blog_path_for_slug,
     catalog_path,
     fetch_listing_page,
     load_catalog,
@@ -26,7 +25,16 @@ from excalibur_blog_live_catalog import (
     slug_from_blog_href,
 )
 from excalibur_blog_link_verify import check_url_with_connection_reset_retry
-from excalibur_blog_site_base import normalize_public_base, resolve_public_base_from_env
+from excalibur_blog_site_base import (
+    SITE_BASE_PLACEHOLDER,
+    blog_path_for_slug,
+    canonical_blog_xlink_href,
+    expand_blog_xlinks_in_html,
+    expand_site_base,
+    is_root_relative_blog_href,
+    normalize_public_base,
+    resolve_public_base_from_env,
+)
 from excalibur_blog_wp_publish import load_env, project_root
 from excalibur_blog_remote_transport import delete_remote_file, find_wp_root, upload_bytes
 
@@ -232,9 +240,39 @@ def normalize_blog_hrefs(content: str, slug_index: dict[str, Any]) -> tuple[str,
     return updated, changes
 
 
-def fix_blog_index_trailing_slash(content: str) -> tuple[str, list[dict[str, str]]]:
-    """«Вернуться назад» and other links: href=\"/blog\" → href=\"/blog/\"."""
+def absolute_blog_hrefs(content: str, site_base: str) -> tuple[str, list[dict[str, str]]]:
+    """Rewrite root-relative /blog/… hrefs to absolute URLs (Dzen-safe)."""
     changes: list[dict[str, str]] = []
+    base = normalize_public_base(site_base)
+    if not base:
+        return content, changes
+
+    def repl(match: re.Match[str]) -> str:
+        quote = match.group(1)
+        href = match.group(2).strip()
+        if href.startswith(SITE_BASE_PLACEHOLDER):
+            expanded = expand_site_base(href, base)
+            if expanded != href:
+                changes.append({"from": href, "to": expanded, "action": "expand_site_base"})
+                return f"href={quote}{expanded}{quote}"
+            return match.group(0)
+        if is_root_relative_blog_href(href):
+            path = href if href.endswith("/") else f"{href}/"
+            new_href = f"{base.rstrip('/')}{path}"
+            changes.append({"from": href, "to": new_href, "action": "absolute_blog"})
+            return f"href={quote}{new_href}{quote}"
+        return match.group(0)
+
+    updated = re.sub(r'href=(["\'])([^"\']+)\1', repl, content)
+    return updated, changes
+
+
+def absolute_blog_index_href(content: str, site_base: str) -> tuple[str, list[dict[str, str]]]:
+    """«Вернуться назад»: href=\"/blog\" → absolute https://site/blog/."""
+    changes: list[dict[str, str]] = []
+    base = normalize_public_base(site_base)
+    if not base:
+        return content, changes
     pattern = re.compile(
         r'<a\b([^>]*?)href=(["\'])/blog\2([^>]*)>(.*?)</a>',
         re.I | re.S,
@@ -242,16 +280,17 @@ def fix_blog_index_trailing_slash(content: str) -> tuple[str, list[dict[str, str
 
     def repl(match: re.Match[str]) -> str:
         anchor = unescape(re.sub(r"\s+", " ", match.group(4))).strip()
+        new_href = f"{base.rstrip('/')}/blog/"
         changes.append(
             {
-                "action": "blog_index_slash",
+                "action": "blog_index_absolute",
                 "from": "/blog",
-                "to": "/blog/",
+                "to": new_href,
                 "anchor": anchor[:80],
             }
         )
         return (
-            f"<a{match.group(1)}href={match.group(2)}/blog/{match.group(2)}"
+            f"<a{match.group(1)}href={match.group(2)}{new_href}{match.group(2)}"
             f"{match.group(3)}>{match.group(4)}</a>"
         )
 
@@ -342,12 +381,13 @@ def verify_hrefs(content: str, site_base: str) -> list[str]:
     errors: list[str] = []
     for match in re.finditer(r'href=(["\'])([^"\']+)\1', content):
         href = match.group(2)
-        if not href.startswith("/blog/"):
+        if is_root_relative_blog_href(href):
+            errors.append(f"Dzen-unsafe relative blog href remains: {href}")
             continue
         slug = slug_from_blog_href(href)
         if not slug:
             continue
-        url = site_base.rstrip("/") + blog_path_for_slug(slug)
+        url = href if href.startswith("http") else site_base.rstrip("/") + blog_path_for_slug(slug)
         result = check_url_with_connection_reset_retry(url, 15.0, "ExcaliburBlogLiveXlinkFix/1.0")
         if not result.get("ok"):
             errors.append(f"{href} -> HTTP {result.get('status')} {result.get('error')}")
@@ -450,10 +490,13 @@ def main() -> int:
         slug = str(row.get("slug") or "")
         content = str(row.get("content") or "")
         fixed, href_changes = normalize_blog_hrefs(content, slug_index)
-        fixed, blog_index_changes = fix_blog_index_trailing_slash(fixed)
+        fixed, abs_changes = absolute_blog_hrefs(fixed, public_base)
+        fixed, blog_index_changes = absolute_blog_index_href(fixed, public_base)
         fixed, mashed_changes = fix_mashed_cta_spacing(fixed)
         fixed, unwrap_changes = unwrap_mismatched_blog_links(fixed, catalog=catalog)
         fixed, restore_changes = restore_plain_crosslinks(fixed, catalog=catalog)
+        fixed, abs_final = absolute_blog_hrefs(fixed, public_base)
+        abs_changes.extend(abs_final)
         validation = validate_article_crosslinks(
             fixed,
             catalog=catalog,
@@ -467,6 +510,7 @@ def main() -> int:
             "slug": slug,
             "post_id": row.get("post_id"),
             "href_changes": href_changes,
+            "absolute_blog_changes": abs_changes,
             "blog_index_changes": blog_index_changes,
             "unwrap_changes": unwrap_changes,
             "restore_changes": restore_changes,

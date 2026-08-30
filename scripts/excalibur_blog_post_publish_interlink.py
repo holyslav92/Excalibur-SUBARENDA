@@ -18,7 +18,12 @@ from excalibur_blog_interlink_lib import (
     pick_inbound_targets,
     project_root,
 )
-from excalibur_blog_site_base import SITE_BASE_PLACEHOLDER, expand_site_base
+from excalibur_blog_site_base import (
+    SITE_BASE_PLACEHOLDER,
+    blog_path_for_slug,
+    canonical_blog_xlink_href,
+    expand_site_base,
+)
 
 
 def main() -> int:
@@ -55,11 +60,9 @@ def main() -> int:
     inbound_targets = pick_inbound_targets(candidates, new_slug=slug, max_inbound=args.max_inbound)
 
     public = os.environ.get("PUBLIC_SITE_URL", "").strip()
-    new_path = f"/blog/vtorichka-i-riski/{slug}/"
+    new_url = canonical_blog_xlink_href(slug)
     if public:
-        new_url = expand_site_base(f"{SITE_BASE_PLACEHOLDER}{new_path}", public)
-    else:
-        new_url = new_path
+        new_url = expand_site_base(new_url, public)
 
     inbound_updates = build_inbound_updates(
         new_slug=slug,

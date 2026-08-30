@@ -10,6 +10,7 @@ from typing import Any
 from urllib.parse import urlparse
 
 from excalibur_blog_live_catalog import slug_from_blog_href
+from excalibur_blog_site_base import SITE_BASE_PLACEHOLDER, blog_path_for_slug, canonical_blog_xlink_href
 
 XLINK_MIN = 3
 XLINK_MAX = 4
@@ -183,9 +184,10 @@ def append_interlink_block(content: str, *, from_slug: str, target_url: str, tar
     )
 
 
-def permalink_path_for_slug(slug: str, category_slug: str = "vtorichka-i-riski") -> str:
-    slug = slug.strip("/")
-    return f"/blog/{category_slug}/{slug}/"
+def permalink_path_for_slug(slug: str, category_slug: str = "") -> str:
+    """Canonical git-safe xlink href for a published sibling (Dzen-safe after publish expand)."""
+    _ = category_slug  # legacy arg; blog posts live at /blog/{slug}/
+    return canonical_blog_xlink_href(slug.strip("/"))
 
 
 def resolve_public_path(candidate: dict[str, Any], public_base: str = "") -> str:
