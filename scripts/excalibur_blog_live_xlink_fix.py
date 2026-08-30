@@ -36,32 +36,27 @@ from excalibur_blog_site_base import (
     resolve_public_base_from_env,
 )
 from excalibur_blog_wp_publish import load_env, project_root
-from excalibur_blog_remote_transport import delete_remote_file, find_wp_root, upload_bytes
 
 
 def run_bootstrap(env: dict[str, str], php: str, public_base: str, *, bootstrap_name: str) -> str:
-    """Upload bootstrap via SFTP/FTP and trigger with curl (avoid 120s webfetch fallback wait)."""
-    configured_root = (env.get("FTP_ROOT") or env.get("SSH_ROOT") or "").strip()
-    if configured_root:
-        selected_root = configured_root
-    else:
-        selected_root, probe_log = find_wp_root(env)
-        if not selected_root:
-            raise RuntimeError(f"FTP BLOCKER: wp-load.php not found; probe={probe_log}")
+    """Upload bootstrap via SFTP and trigger with curl (avoid FTP PASV hangs + webfetch fallback)."""
+    from excalibur_blog_wp_publish import delete_bootstrap_sftp, upload_bootstrap_sftp
 
     runtime_env = dict(env)
-    runtime_env["FTP_ROOT"] = selected_root
-    runtime_env["SSH_ROOT"] = selected_root
+    configured_root = (runtime_env.get("FTP_ROOT") or runtime_env.get("SSH_ROOT") or "").strip()
+    if configured_root:
+        runtime_env["SSH_ROOT"] = configured_root
+        runtime_env["FTP_ROOT"] = configured_root
     if not (runtime_env.get("SSH_HOST") or "").strip():
         runtime_env["SSH_HOST"] = (runtime_env.get("FTP_HOST") or "188.225.40.162").strip()
     if not (runtime_env.get("SSH_PORT") or "").strip():
         runtime_env["SSH_PORT"] = "22"
 
-    upload_bytes(runtime_env, bootstrap_name, php.encode("utf-8"), root=selected_root, timeout=90)
+    uploaded_path = upload_bootstrap_sftp(runtime_env, bootstrap_name, php.encode("utf-8"))
     url = public_base.rstrip("/") + "/" + bootstrap_name
     try:
         proc = subprocess.run(
-            ["curl", "-sS", "-m", "90", url],
+            ["curl", "-sS", "-m", "120", url],
             capture_output=True,
             text=True,
             check=False,
@@ -71,7 +66,7 @@ def run_bootstrap(env: dict[str, str], php: str, public_base: str, *, bootstrap_
         return proc.stdout
     finally:
         try:
-            delete_remote_file(runtime_env, bootstrap_name, root=selected_root)
+            delete_bootstrap_sftp(runtime_env, bootstrap_name, uploaded_path)
         except Exception:
             pass
 
@@ -334,6 +329,38 @@ def restore_plain_crosslinks(content: str, *, catalog: dict[str, Any]) -> tuple[
     return out, changes
 
 
+def unwrap_dead_blog_links(
+    content: str,
+    *,
+    site_base: str,
+    catalog: dict[str, Any],
+    timeout: float = 8.0,
+) -> tuple[str, list[dict[str, str]]]:
+    """Unwrap <a> when /blog/{slug}/ is not in live catalog or returns non-200."""
+    changes: list[dict[str, str]] = []
+    slug_index = catalog.get("slug_index") or {}
+    base = normalize_public_base(site_base)
+    pattern = re.compile(
+        r'<a\b([^>]*?)href=(["\'])(/blog/[^"\']+)\2([^>]*)>(.*?)</a>',
+        re.I | re.S,
+    )
+
+    def repl(match: re.Match[str]) -> str:
+        href = match.group(3).strip()
+        anchor = unescape(re.sub(r"\s+", " ", match.group(5))).strip()
+        slug = slug_from_blog_href(href)
+        if not slug:
+            return match.group(0)
+        row = slug_index.get(slug)
+        if not row:
+            changes.append({"action": "unwrap_dead", "href": href, "slug": slug, "reason": "not_in_catalog"})
+            return anchor
+        return match.group(0)
+
+    updated = pattern.sub(repl, content)
+    return updated, changes
+
+
 def unwrap_mismatched_blog_links(
     content: str,
     *,
@@ -397,9 +424,105 @@ def post_date_is_target(post_date: str, target: str) -> bool:
     return local == target
 
 
+def chunk_list(items: list[str], size: int) -> list[list[str]]:
+    if size <= 0:
+        return [items]
+    return [items[i : i + size] for i in range(0, len(items), size)]
+
+
+def process_slug_batch(
+    *,
+    env: dict[str, str],
+    public_base: str,
+    slugs: list[str],
+    catalog: dict[str, Any],
+    slug_index: dict[str, Any],
+    apply: bool,
+    dry_run: bool,
+    bootstrap_tag: str,
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """Fetch, fix, optionally update one slug batch. Returns (report_rows, updates)."""
+    fetch_out = run_bootstrap(
+        env,
+        build_fetch_bootstrap(slugs),
+        public_base,
+        bootstrap_name=f"excalibur-blog-xfix-fetch-{bootstrap_tag}.php",
+    )
+    rows = parse_fetch_lines(fetch_out)
+    if not rows:
+        raise RuntimeError(f"FAIL: no posts fetched for batch {bootstrap_tag}: {fetch_out[:500]}")
+
+    report_rows: list[dict[str, Any]] = []
+    updates: list[dict[str, Any]] = []
+
+    for row in rows:
+        slug = str(row.get("slug") or "")
+        content = str(row.get("content") or "")
+        fixed, href_changes = normalize_blog_hrefs(content, slug_index)
+        fixed, dead_unwrap = unwrap_dead_blog_links(fixed, site_base=public_base, catalog=catalog)
+        fixed, abs_changes = absolute_blog_hrefs(fixed, public_base)
+        fixed, blog_index_changes = absolute_blog_index_href(fixed, public_base)
+        fixed, mashed_changes = fix_mashed_cta_spacing(fixed)
+        fixed, unwrap_changes = unwrap_mismatched_blog_links(fixed, catalog=catalog)
+        fixed, restore_changes = restore_plain_crosslinks(fixed, catalog=catalog)
+        fixed, abs_final = absolute_blog_hrefs(fixed, public_base)
+        abs_changes.extend(abs_final)
+        validation = validate_article_crosslinks(
+            fixed,
+            catalog=catalog,
+            site_base=public_base,
+            tenant=json.loads((project_root() / "shared/tenant-config.json").read_text(encoding="utf-8")),
+            timeout=8.0,
+            skip_http=True,
+        )
+        href_errors: list[str] = []
+        for match in re.finditer(r'href=(["\'])([^"\']+)\1', fixed):
+            if is_root_relative_blog_href(match.group(2)):
+                href_errors.append(f"Dzen-unsafe relative blog href remains: {match.group(2)}")
+        entry = {
+            "slug": slug,
+            "post_id": row.get("post_id"),
+            "href_changes": href_changes,
+            "dead_unwrap_changes": dead_unwrap,
+            "absolute_blog_changes": abs_changes,
+            "blog_index_changes": blog_index_changes,
+            "unwrap_changes": unwrap_changes,
+            "restore_changes": restore_changes,
+            "mashed_changes": mashed_changes,
+            "validation_status": validation.get("status"),
+            "validation_errors": validation.get("errors"),
+            "href_http_errors": href_errors,
+            "changed": fixed != content,
+        }
+        report_rows.append(entry)
+        if fixed != content and apply and not dry_run:
+            updates.append(
+                {
+                    "post_id": row.get("post_id"),
+                    "content_b64": base64.b64encode(fixed.encode("utf-8")).decode("ascii"),
+                }
+            )
+
+    if apply and not dry_run and updates:
+        out = run_bootstrap(
+            env,
+            build_update_bootstrap(updates),
+            public_base,
+            bootstrap_name=f"excalibur-blog-xfix-update-{bootstrap_tag}.php",
+        )
+        if "OK xfix_update_done" not in out:
+            raise RuntimeError(f"FAIL update bootstrap {bootstrap_tag}: {out[:500]}")
+
+    return report_rows, updates
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--slug", action="append", default=[])
+    ap.add_argument("--slugs-file", help="newline-separated slugs to fix")
+    ap.add_argument("--exclude-slug", action="append", default=[], help="Skip slug(s), e.g. already-fixed B04")
+    ap.add_argument("--from-catalog", action="store_true", help="All slugs from live-catalog.json")
+    ap.add_argument("--batch-size", type=int, default=8, help="Slugs per fetch/update bootstrap batch")
     ap.add_argument("--date", default="", help="Asia/Yekaterinburg YYYY-MM-DD")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--apply", action="store_true")
@@ -425,21 +548,32 @@ def main() -> int:
         "beskontaktnoe-zaselenie-posutochno-tyumen",
         "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
     )
+    exclude = {s.strip() for s in args.exclude_slug if s.strip()}
 
     slugs = [s.strip() for s in args.slug if s.strip()]
+    if args.slugs_file:
+        slugs.extend(
+            line.strip()
+            for line in Path(args.slugs_file).read_text(encoding="utf-8").splitlines()
+            if line.strip() and not line.strip().startswith("#")
+        )
     candidate_slugs = slugs[:]
-    if not candidate_slugs:
+    if args.from_catalog:
+        candidate_slugs = sorted(str(s) for s in (slug_index.keys()) if str(s) not in exclude)
+    elif not candidate_slugs:
         listing_slugs: list[str] = []
-        for page in (1, 2, 3):
+        for page in (1, 2, 3, 4, 5, 6, 7, 8):
             try:
                 html = fetch_listing_page(public_base, page)
             except Exception:
                 break
             for row in parse_listing_html(html):
                 slug = str(row.get("slug") or "").strip()
-                if slug:
+                if slug and slug not in exclude:
                     listing_slugs.append(slug)
         candidate_slugs = sorted(set(listing_slugs + list(audit_extras)))
+
+    candidate_slugs = [s for s in candidate_slugs if s not in exclude]
 
     if not candidate_slugs:
         print("Nothing to fix (no slugs).", file=sys.stderr)
@@ -457,93 +591,56 @@ def main() -> int:
             for row in parse_meta_lines(meta_out)
             if post_date_is_target(str(row.get("date") or ""), args.date)
         ]
-        slugs = sorted(set(dated + list(audit_extras)))
+        slugs = sorted(set(dated + [s for s in audit_extras if s not in exclude]))
     else:
-        slugs = candidate_slugs if not slugs else sorted(set(slugs + list(audit_extras)))
+        slugs = candidate_slugs if not slugs else sorted(set(slugs))
+
+    slugs = [s for s in slugs if s not in exclude]
 
     if not slugs:
         print(f"No posts for date {args.date}", file=sys.stderr)
         return 1
 
-    fetch_out = run_bootstrap(
-        env,
-        build_fetch_bootstrap(slugs),
-        public_base,
-        bootstrap_name="excalibur-blog-xfix-fetch-once.php",
-    )
-    rows = parse_fetch_lines(fetch_out)
-    if not rows:
-        print("FAIL: no posts fetched", file=sys.stderr)
-        print(fetch_out[:2000], file=sys.stderr)
-        return 1
-
     report_rows: list[dict[str, Any]] = []
-    updates: list[dict[str, Any]] = []
+    all_updates: list[dict[str, Any]] = []
+    batches = chunk_list(slugs, max(1, args.batch_size))
+    print(
+        f"xlink-fix: {len(slugs)} slug(s) in {len(batches)} batch(es) "
+        f"(apply={args.apply and not args.dry_run})",
+        flush=True,
+    )
 
-    print(f"xlink-fix: processing {len(rows)} posts (apply={args.apply and not args.dry_run})", flush=True)
-
-    for row in rows:
-        slug = str(row.get("slug") or "")
-        content = str(row.get("content") or "")
-        fixed, href_changes = normalize_blog_hrefs(content, slug_index)
-        fixed, abs_changes = absolute_blog_hrefs(fixed, public_base)
-        fixed, blog_index_changes = absolute_blog_index_href(fixed, public_base)
-        fixed, mashed_changes = fix_mashed_cta_spacing(fixed)
-        fixed, unwrap_changes = unwrap_mismatched_blog_links(fixed, catalog=catalog)
-        fixed, restore_changes = restore_plain_crosslinks(fixed, catalog=catalog)
-        fixed, abs_final = absolute_blog_hrefs(fixed, public_base)
-        abs_changes.extend(abs_final)
-        validation = validate_article_crosslinks(
-            fixed,
+    for batch_idx, batch_slugs in enumerate(batches, start=1):
+        tag = f"b{batch_idx:02d}"
+        print(f"xlink-fix batch {tag}: {len(batch_slugs)} slugs", flush=True)
+        rows, updates = process_slug_batch(
+            env=env,
+            public_base=public_base,
+            slugs=batch_slugs,
             catalog=catalog,
-            site_base=public_base,
-            tenant=json.loads((root / "shared/tenant-config.json").read_text(encoding="utf-8")),
-            timeout=8.0,
-            skip_http=True,
+            slug_index=slug_index,
+            apply=bool(args.apply),
+            dry_run=bool(args.dry_run),
+            bootstrap_tag=tag,
         )
-        href_errors: list[str] = []
-        for match in re.finditer(r'href=(["\'])([^"\']+)\1', fixed):
-            if is_root_relative_blog_href(match.group(2)):
-                href_errors.append(f"Dzen-unsafe relative blog href remains: {match.group(2)}")
-        entry = {
-            "slug": slug,
-            "post_id": row.get("post_id"),
-            "href_changes": href_changes,
-            "absolute_blog_changes": abs_changes,
-            "blog_index_changes": blog_index_changes,
-            "unwrap_changes": unwrap_changes,
-            "restore_changes": restore_changes,
-            "mashed_changes": mashed_changes,
-            "validation_status": validation.get("status"),
-            "validation_errors": validation.get("errors"),
-            "href_http_errors": href_errors,
-            "changed": fixed != content,
-        }
-        report_rows.append(entry)
-        if fixed != content and args.apply and not args.dry_run:
-            updates.append(
-                {
-                    "post_id": row.get("post_id"),
-                    "content_b64": base64.b64encode(fixed.encode("utf-8")).decode("ascii"),
-                }
-            )
+        report_rows.extend(rows)
+        all_updates.extend(updates)
 
-    if args.apply and not args.dry_run and updates:
-        out = run_bootstrap(
-            env,
-            build_update_bootstrap(updates),
-            public_base,
-            bootstrap_name="excalibur-blog-xfix-update-once.php",
-        )
-        if "OK xfix_update_done" not in out:
-            print("FAIL update bootstrap", file=sys.stderr)
-            print(out, file=sys.stderr)
-            return 1
+    changed_count = sum(1 for row in report_rows if row.get("changed"))
+    dead_unwraps = [
+        change
+        for row in report_rows
+        for change in (row.get("dead_unwrap_changes") or [])
+    ]
 
     report = {
         "status": "OK",
         "dry_run": bool(args.dry_run or not args.apply),
         "public_base": public_base,
+        "posts_total": len(report_rows),
+        "posts_changed": changed_count,
+        "dead_unwrap_count": len(dead_unwraps),
+        "dead_unwraps": dead_unwraps,
         "posts": report_rows,
     }
     out_path = root / "memory/live-xlink-fix-report.json"

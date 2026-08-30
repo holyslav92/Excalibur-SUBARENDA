@@ -65,6 +65,43 @@ def run_php_bootstrap(env: dict[str, str], php: str, public_base: str, *, bootst
             pass
 
 
+def build_touch_modified_bootstrap(slugs: list[str]) -> str:
+    encoded = base64.b64encode(json.dumps({"slugs": slugs}, ensure_ascii=False).encode("utf-8")).decode("ascii")
+    return f"""<?php
+require __DIR__ . '/wp-load.php';
+$p = json_decode(base64_decode('{encoded}'), true);
+if (!is_array($p) || empty($p['slugs'])) {{
+    echo 'ERR dzen_touch: empty slugs' . PHP_EOL;
+    exit(1);
+}}
+$now_local = current_time('mysql');
+$now_gmt = current_time('mysql', true);
+foreach ($p['slugs'] as $slug) {{
+    $slug = sanitize_title((string) $slug);
+    if ($slug === '') {{
+        continue;
+    }}
+    $posts = get_posts([
+        'name' => $slug,
+        'post_type' => 'post',
+        'post_status' => 'publish',
+        'numberposts' => 1,
+    ]);
+    if (!$posts) {{
+        echo 'ERR dzen_touch: missing slug=' . $slug . PHP_EOL;
+        continue;
+    }}
+    wp_update_post([
+        'ID' => (int) $posts[0]->ID,
+        'post_modified' => $now_local,
+        'post_modified_gmt' => $now_gmt,
+    ]);
+    echo 'OK dzen_touch=' . $slug . PHP_EOL;
+}}
+echo 'OK dzen_touch_done' . PHP_EOL;
+"""
+
+
 def build_bump_bootstrap(items: list[dict[str, Any]], cache_bust: int) -> str:
     payload = {"items": items, "cache_bust": cache_bust}
     encoded = base64.b64encode(json.dumps(payload, ensure_ascii=False).encode("utf-8")).decode("ascii")
@@ -195,7 +232,9 @@ def wp_modified_gmt(slug: str, public_base: str) -> str:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--slug", help="single slug")
+    ap.add_argument("--slug", action="append", default=[], help="slug(s) to bump (repeatable)")
+    ap.add_argument("--slugs-file", help="newline-separated slugs file")
+    ap.add_argument("--touch-modified-only", action="store_true", help="Only bump post_modified (no cover/media refresh)")
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
 
@@ -205,7 +244,30 @@ def main() -> int:
         print("BLOCKER: PUBLIC_SITE_URL missing", file=sys.stderr)
         return 1
 
-    slugs = [args.slug] if args.slug else list(AUG22_REGEN_SLUGS)
+    slugs: list[str] = [s.strip() for s in args.slug if s.strip()]
+    if args.slugs_file:
+        slugs.extend(
+            line.strip()
+            for line in Path(args.slugs_file).read_text(encoding="utf-8").splitlines()
+            if line.strip() and not line.strip().startswith("#")
+        )
+    if not slugs:
+        slugs = list(AUG22_REGEN_SLUGS)
+    slugs = sorted(set(slugs))
+
+    if args.touch_modified_only:
+        if args.dry_run:
+            print(json.dumps({"slugs": slugs, "touch_modified_only": True}, indent=2))
+            return 0
+        php = build_touch_modified_bootstrap(slugs)
+        out = run_php_bootstrap(env, php, public_base, bootstrap_name="excalibur-blog-dzen-touch-once.php")
+        if "OK dzen_touch_done" not in out:
+            print("FAIL dzen touch bootstrap", file=sys.stderr)
+            print(out)
+            return 1
+        print(out)
+        return 0
+
     items: list[dict[str, Any]] = []
     before: dict[str, str] = {}
 
