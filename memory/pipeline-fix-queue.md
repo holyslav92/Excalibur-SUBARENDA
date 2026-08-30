@@ -272,11 +272,11 @@ files_changed:
 checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_drawn_logo_gate.py`
 - `python3 -m unittest tests.test_drawn_logo_gate.DrawnLogoGateTest.test_poster_split_flat_white_tr_pad_exempt -v`
-commit: pending
+commit: b053ff8
 
 ## INC-20260830-1343-metrika-credentials
 
-status: open
+status: needs-human
 run_date: 2026-08-30
 role: excalibur-blog-content-learner
 topic_id: B04
@@ -310,4 +310,18 @@ category: credentials
 
 ### Fixer resolution
 
-pending
+fixed_at: 2026-08-30
+reason:
+- Credentials cannot be set in git; tenant must add OAuth token + counter id to Cloud Secrets (see `CLOUD-FIRST-RUN.md`, `shared/yandex-metrika-contract.md`).
+needed_decision_or_secret:
+- `YANDEX_METRIKA_OAUTH_TOKEN` with scope `metrika:read`
+- `YANDEX_METRIKA_COUNTER_ID` for добрыйдом-72.рф counter
+fix_summary:
+- `excalibur_blog_doctor.py` now warns when Metrika secrets missing (preflight before content-learner).
+files_changed:
+- `scripts/excalibur_blog_doctor.py`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_doctor.py`
+- `python3 scripts/excalibur_blog_doctor.py` (Metrika warn visible when unset)
+commit: pending
