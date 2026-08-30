@@ -1,0 +1,29 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/poprosili-foto-pasporta-pri-zaselenii-posutochno-do-oplaty/#article",
+  "url": "{{SITE_BASE}}/blog/poprosili-foto-pasporta-pri-zaselenii-posutochno-do-oplaty/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/poprosili-foto-pasporta-pri-zaselenii-posutochno-do-oplaty/"
+  },
+  "headline": "Попросили фото паспорта до оплаты — под угрозой бронь и данные",
+  "description": "Как отличить обычный порядок передачи паспортных данных при посуточном найме от подозрительной схемы с требованием фото до оплаты. Разбираем, какие сведения и на каком этапе безопасно передавать при бронировании жилья в Тюмени.",
+  "datePublished": "2026-08-30",
+  "dateModified": "2026-08-30",
+  "inLanguage": "ru-RU",
+  "author": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/"
+  }
+}
