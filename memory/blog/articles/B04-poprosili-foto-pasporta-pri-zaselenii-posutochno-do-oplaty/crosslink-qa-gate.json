@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "/blog/kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki/",
+      "slug": "kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki",
+      "anchor": "«Привезли сына к вузу — «рядом» оказалось 40 минут пешком». Как именно вы попадёте внутрь и от какой двери код — тоже спрашивают заранее, об этом есть текст",
+      "catalog_title": "Привезли сына к вузу — «рядом» оказалось 40 минут пешком",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "anchor": "«Оплатил квартиру посуточно. Код прислали от чужой двери». И условия залога — когда его берут, когда возвращают, что считается повреждением —",
+      "catalog_title": "Оплатил квартиру посуточно. Код прислали от чужой двери",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/",
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "anchor": "«Снял квартиру посуточно. Залог не вернули — нашли скол на плите» лучше прочитать до заезда.И вот вопрос, который помогает понять разворот разговора: «Какой разворот вам нужен для договора — и можно показать оригинал при заселении?» Человек, которому паспорт нужен по делу, ответит конкретно. Тот, кому нужен именно файл, обычно снова начнёт торопить.Как устроено заселение в «Добром доме»У нас порядок обратный тому, что был у Марины. Сначала я называю точный адрес и этаж, даты и цену. Отвечаю на вопросы про подъезд, вход, залог и действия, если поезд опоздал. Потом фиксируем бронь. Данные для договора беру после этого и в минимальном объёме, а оригинал вы показываете при заселении — не отправляете неизвестному аккаунту, а показываете мне.Я не пишу «решайте сейчас, ещё двое смотрят». Если квартира занята, так и говорю и предлагаю другую дату. Спешка нужна тому, кому важнее получить ваш файл, чем спокойно организовать ваш заезд.Если едете в ТюменьПосмотреть квартиры и свободные даты можно на",
+      "catalog_title": "Снял квартиру посуточно. Залог не вернули — нашли скол на плите",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "outbound_unique_slugs": [
+    "kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki",
+    "beskontaktnoe-zaselenie-posutochno-tyumen",
+    "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B04-poprosili-foto-pasporta-pri-zaselenii-posutochno-do-oplaty",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}

@@ -1,0 +1,10 @@
+{
+  "topic_id": "B04",
+  "description": "«Сначала паспорт, потом адрес» — так безопасную бронь не начинают. Если вас торопят фразой «ещё двое смотрят», проверьте квартиру до отправки личных данных.",
+  "rhythm": "klyshin_case_hook",
+  "geo": "Тюмень",
+  "author_brand": "Добрый дом",
+  "not_equal_title": true,
+  "not_truncated_lead": true,
+  "verdict": "PASS"
+}

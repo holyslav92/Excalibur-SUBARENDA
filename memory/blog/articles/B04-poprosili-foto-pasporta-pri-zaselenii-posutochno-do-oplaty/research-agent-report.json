@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "research_date": "2026-08-30",
+  "topic_id": "B04",
+  "topic": "фото паспорта в чате до оплаты при посуточной аренде",
+  "freshness_audit": {
+    "research_date": "2026-08-30",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://dzen.ru/a/aos28V_t_ztBt-Qc",
+      "published_at": "2026-08-29",
+      "note": "Добрый дом Дзен: паспорт до заселения — норма vs опасная передача; красные флаги до оплаты"
+    },
+    "news_signals": [
+      {
+        "url": "https://russian.rt.com/russia/news/1673706-deputat-naim-zhilya",
+        "published_at": "2026-08-24",
+        "note": "Панеш: не платить за фиктивную бронь"
+      },
+      {
+        "url": "https://russian.rt.com/russia/news/1672684-moshenniki-kvartiry-vuzy-studenty",
+        "accessed_at": "2026-08-30",
+        "note": "Мошеловка: залог до осмотра перед учебным годом"
+      }
+    ]
+  },
+  "fresh_signal": "dzen Dobry Dom 29.08.2026 + RT 24.08.2026 rental season",
+  "wordstat_p0": {
+    "phrase": "паспорт при заселении в квартиру посуточно",
+    "volume_225": 99,
+    "phrase_secondary": "фото паспорта при заселении в квартиру посуточно",
+    "volume_secondary_225": 52,
+    "spine_tyumen": "квартиры посуточно тюмень",
+    "volume_55_11176": 5500
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176", "225"],
+    "partial": ["отправить фото паспорта аренда — totalCount-only"]
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "derouter-opus-stamp-research.json"
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "reason": "Нет тарифов/комиссий банков; суммы 5–30 тыс. ₽ — журналистский контекст RT о мошенничестве"
+  },
+  "official_gate": {
+    "script": "excalibur_blog_research_official_gate.py",
+    "status": "PASS"
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "topic_id": "B04",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": [
+        "inline_4",
+        "inline_5",
+        "inline_6",
+        "inline_7"
+      ],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "Паспорт в чат — адреса нет",
+  "cover_hook_highlight": "адреса",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "wordstat_stickers": [
+    "паспорт при заселении посуточно",
+    "фото паспорта посуточно"
+  ],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "WOW poster collage: guest at sunny august entryway holds phone with messenger demanding passport photos while address field empty, suitcase, TOP-RIGHT empty logo pad",
+    "location": "august sunny tyumen apartment hallway warm golden light green trees through window NOT winter snow",
+    "meme": "Hide the Pain Harold people-meme sticker bottom-left ≤12%",
+    "prop_set": "smartphone chat bubbles passport booklet closed suitcase august calendar sticky torn paper tape strip phone number",
+    "sticker_set": ["паспорт при заселении в квартиру посуточно", "фото паспорта при заселении в квартиру посуточно", "посуточно тюмень"],
+    "joke": "Harold sweats when chat asks all passport pages before revealing any address"
+  },
+  "cover_emotion": "anxious but calm",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Grsai image API 2K 16:9, one job per canvas. Factory logo paste after split.",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Август в Тюмени: гость у двери квартиры смотрит в телефон — в чате просят фото паспорта, а точного адреса ещё нет.",
+      "scene_hint": "August entryway phone chat; pink «адреса»; Harold sticker.",
+      "meme_caption_ru": "",
+      "sticky": "Бронь ещё не бронь"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Паспорт сам по себе мошенничество не доказывает",
+      "visual_type": "comparison_table",
+      "scene_hint": "2-col: договор vs давление.",
+      "alt": "Паспорт для договора — не всегда скам",
+      "labels": [
+        "адреса нет",
+        "для договора"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Граница проходит не по слову «паспорт», а по порядку",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Flow: адрес→даты→паспорт.",
+      "alt": "Сначала адрес, потом паспорт",
+      "labels": [
+        "адрес сначала",
+        "для договора"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Что выдает небрежную или опасную переписку",
+      "visual_type": "comparison_table",
+      "scene_hint": "Red flags: срочный перевод.",
+      "alt": "Срочный перевод — красный флаг",
+      "labels": [
+        "адрес сначала",
+        "срочный перевод"
+      ]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Чужой паспорт в ответ тоже не является гарантией",
+      "visual_type": "checklist_board",
+      "scene_hint": "Checklist red flags.",
+      "alt": "Красные флаги в переписке",
+      "labels": [
+        "другой чат",
+        "проверка адреса"
+      ]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Марина ничего не потеряла — и это был правильный финал",
+      "visual_type": "schema_faq_ui",
+      "scene_hint": "Outcome: verify address.",
+      "alt": "Марина проверила адрес",
+      "labels": [
+        "созвон",
+        "проверка адреса"
+      ]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Порядок, который стоит держать в голове",
+      "visual_type": "process_flow",
+      "scene_hint": "6-step order flow.",
+      "alt": "Порядок действий",
+      "labels": [
+        "адрес",
+        "паспорт при заселении"
+      ]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Как устроено заселение в «Добром доме»",
+      "visual_type": "tool_screenshot",
+      "scene_hint": "6-step Dobry Dom scheme.",
+      "alt": "Заселение в Добром доме",
+      "labels": [
+        "паспорт при заселении",
+        "проверка адреса"
+      ]
+    }
+  },
+  "cover_keys_ru": ["паспорт при заселении", "посуточно тюмень"]
+}

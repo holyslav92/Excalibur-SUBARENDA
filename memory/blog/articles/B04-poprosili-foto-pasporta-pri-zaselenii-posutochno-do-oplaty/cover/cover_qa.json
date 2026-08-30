@@ -1,0 +1,25 @@
+{
+  "agent": "excalibur-blog-cover-qa",
+  "status": "PASS",
+  "checked_at": "2026-08-30",
+  "topic_id": "B04",
+  "checks": {
+    "eight_png_exist": true,
+    "logo_composite_stamp_pass": true,
+    "cover_logo_pasted": true,
+    "inline_logo_count_2_3": true,
+    "cover_phone_993_in_scene": true,
+    "forbid_phone_pill_post_composite": true,
+    "forbid_922_phone": true,
+    "forbid_ai_drawn_logo_cover": true,
+    "forbid_wordpress_ui_in_art": true,
+    "no_logo_plate_cover": true,
+    "forbid_logo_overlaps_meme_cat_headline": true,
+    "quad_manifest_valid": true,
+    "wordstat_stickers_1_3": true,
+    "motif_no_collision_14d": true,
+    "max_one_cat_meme_slot": true,
+    "light_high_key": true
+  },
+  "notes": "slim gate PASS: factory logo cover+inline_1/3/7 only (3 inline); phone +7 (993) 574-83-22 in-scene on torn tape, not on logo; august sunny entryway summer season; pad-clear TR on inline_2/4/6; poster-split white TR pad = headline field FP"
+}

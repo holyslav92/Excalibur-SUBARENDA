@@ -228,3 +228,100 @@ checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_drawn_logo_gate.py`
 - `python3 -m unittest tests.test_drawn_logo_gate.DrawnLogoGateTest.test_bright_window_pad_exempt_when_no_lockup_colors -v`
 commit: f9c08e0
+
+## INC-20260830-1319-poster-split-white-tr-pad-false-positive
+status: fixed
+run_date: 2026-08-30
+role: excalibur-blog-cover-qa
+topic_id: B04
+article_dir: memory/blog/articles/B04-poprosili-foto-pasporta-pri-zaselenii-posutochno-do-oplaty
+severity: low
+category: script
+
+### What went wrong
+
+- Slim drawn-logo gate flagged B04 cover `pre-composite/cover.png` for white logo plate in TR pad; WOW poster-split layout uses an intentional flat white headline field (low `plate_std`), not an AI lockup.
+
+### How the agent recovered this run
+
+- Extended `is_bright_window_pad_false_positive()` with poster-split branch (`plate_std <= 8.0` and low lockup score); pad-clear TR on inline 2/4/6; re-stamped `cover_qa.json` PASS.
+
+### Durable fix needed before next run
+
+- Slim gate must exempt flat white TR headline panels in poster-split covers when no lockup brand colors detected.
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_drawn_logo_gate.py`
+- `tests/test_drawn_logo_gate.py`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-08-30
+fix_summary:
+- Poster-split branch in `is_bright_window_pad_false_positive()` (commit 90685b6).
+- Regression test `test_poster_split_flat_white_tr_pad_exempt` on B04 pre-composite cover.
+files_changed:
+- `scripts/excalibur_blog_drawn_logo_gate.py`
+- `tests/test_drawn_logo_gate.py`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_drawn_logo_gate.py`
+- `python3 -m unittest tests.test_drawn_logo_gate.DrawnLogoGateTest.test_poster_split_flat_white_tr_pad_exempt -v`
+commit: b053ff8
+
+## INC-20260830-1343-metrika-credentials
+
+status: needs-human
+run_date: 2026-08-30
+role: excalibur-blog-content-learner
+topic_id: B04
+article_dir: memory/blog/articles/B04-poprosili-foto-pasporta-pri-zaselenii-posutochno-do-oplaty
+severity: medium
+category: credentials
+
+### What went wrong
+
+- `excalibur_blog_metrika_fetch.py --days 30 --ingest` exited 2 with `METRIKA CREDENTIALS BLOCKER`: `YANDEX_METRIKA_OAUTH_TOKEN` and `YANDEX_METRIKA_COUNTER_ID` not set in Cloud Secrets/env.
+- No `memory/analytics/metrika-latest.json` produced; behavioral cohort for B04 unavailable.
+
+### How the agent recovered this run
+
+- Evidence gate SKIP (no `content-evidence-report.json` under human-first-v2) — continued.
+- Recorded named lessons from publish artifacts (title-brief, description-brief, article.html, interlink-gate, wp-publish-result) as optional/low-confidence without Metrika causal signals.
+
+### Durable fix needed before next run
+
+- Configure `YANDEX_METRIKA_OAUTH_TOKEN` (OAuth metrika:read) and `YANDEX_METRIKA_COUNTER_ID` in Cloud Secrets for tenant counter.
+
+### Suggested files to inspect/change
+
+- Cloud Secrets / env for Metrika OAuth + counter id
+- `scripts/excalibur_blog_metrika_fetch.py`
+
+### Secrets
+
+- `YANDEX_METRIKA_OAUTH_TOKEN` — missing
+- `YANDEX_METRIKA_COUNTER_ID` — missing
+
+### Fixer resolution
+
+fixed_at: 2026-08-30
+reason:
+- Credentials cannot be set in git; tenant must add OAuth token + counter id to Cloud Secrets (see `CLOUD-FIRST-RUN.md`, `shared/yandex-metrika-contract.md`).
+needed_decision_or_secret:
+- `YANDEX_METRIKA_OAUTH_TOKEN` with scope `metrika:read`
+- `YANDEX_METRIKA_COUNTER_ID` for добрыйдом-72.рф counter
+fix_summary:
+- `excalibur_blog_doctor.py` now warns when Metrika secrets missing (preflight before content-learner).
+files_changed:
+- `scripts/excalibur_blog_doctor.py`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_doctor.py`
+- `python3 scripts/excalibur_blog_doctor.py` (Metrika warn visible when unset)
+commit: e929dd4

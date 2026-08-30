@@ -571,7 +571,10 @@ def is_bright_window_pad_false_positive(
     if green_ratio >= 0.02 or terracotta_ratio >= 0.012:
         return False
     plate_std = float(plate.get("plate_std") or 0.0)
-    return 12.0 <= plate_std <= WHITE_PLATE_STD_MAX + 1.5
+    if 12.0 <= plate_std <= WHITE_PLATE_STD_MAX + 1.5:
+        return True
+    # WOW poster-split: right panel is intentional flat white headline field, not an AI logo card.
+    return plate_std <= 8.0 and float(lockup.get("score") or 0.0) < 0.30
 
 
 def validate_article_logo_gates_slim(article_dir: Path, root: Path) -> list[str]:
