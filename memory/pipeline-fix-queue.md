@@ -324,4 +324,4 @@ files_changed:
 checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_doctor.py`
 - `python3 scripts/excalibur_blog_doctor.py` (Metrika warn visible when unset)
-commit: pending
+commit: e929dd4
