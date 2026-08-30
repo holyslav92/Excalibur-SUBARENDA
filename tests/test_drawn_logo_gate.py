@@ -344,6 +344,32 @@ class DrawnLogoGateTest(unittest.TestCase):
             plate,
         )
 
+    def test_poster_split_flat_white_tr_pad_exempt(self) -> None:
+        """WOW poster-split: flat white TR headline field is not an AI logo card (B04)."""
+        from excalibur_blog_drawn_logo_gate import (
+            detect_drawn_lockup_in_image,
+            detect_white_plate_in_pad,
+            is_bright_window_pad_false_positive,
+        )
+
+        cover = (
+            ROOT
+            / "memory/blog/articles/B04-poprosili-foto-pasporta-pri-zaselenii-posutochno-do-oplaty"
+            / "cover/pre-composite/cover.png"
+        )
+        self.assertTrue(cover.is_file(), cover)
+        lockup = detect_drawn_lockup_in_image(cover)
+        plate = detect_white_plate_in_pad(cover)
+        self.assertTrue(plate.get("detected"), plate)
+        self.assertEqual(plate.get("plate_kind"), "white")
+        self.assertFalse(lockup.get("detected"), lockup)
+        self.assertLessEqual(float(plate.get("plate_std") or 99.0), 8.0, plate)
+        self.assertLess(float(lockup.get("score") or 1.0), 0.30, lockup)
+        self.assertTrue(
+            is_bright_window_pad_false_positive(cover, lockup=lockup, plate=plate),
+            plate,
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
