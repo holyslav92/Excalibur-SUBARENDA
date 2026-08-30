@@ -1,0 +1,115 @@
+{
+  "topic_id": "B04",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "Wi‑Fi умер на 3-й минуте",
+  "cover_hook_highlight": "3-й",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "аренда квартиры посуточно"
+  ],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "laptop frozen call, router hallway",
+    "location": "august sunny NOT winter",
+    "meme": "Roll Safe sticker",
+    "prop_set": "laptop, router, wifi bars",
+    "sticker_set": ["квартиры посуточно тюмень"],
+    "joke": "fast internet ad but call dies"
+  },
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "Grsai 2K 16:9, logo paste after split",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Видеосозвон завис на 3-й минуте — Wi‑Fi в прихожей.",
+      "scene_hint": "Aug sun apt; frozen video call; router in hallway; pink «3-й»; phone tape bottom edge.",
+      "sticky": "созвон в 10:00"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Что сломалось",
+      "visual_type": "comparison_table",
+      "scene_hint": "Table: evening chat OK vs morning call FAIL.",
+      "alt": "Вечером чат OK, утром созвон падает.",
+      "labels": ["заезд 22:10", "Wi‑Fi ловит"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Разговор за 2 мин",
+      "visual_type": "process_flow",
+      "scene_hint": "Flow: 2min test call before pay; router at desk.",
+      "alt": "Тестовый созвон до оплаты.",
+      "labels": ["созвон 2 минуты", "отказ без Wi‑Fi"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Вопрос-отмычка",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Checklist: test at desk not door; 3-5 Mbit up.",
+      "alt": "Замер у стола, не у двери.",
+      "labels": ["где роутер?", "3–5 Мбит"]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Мораль",
+      "visual_type": "process_flow",
+      "scene_hint": "Funnel: wifi first then key.",
+      "alt": "Сначала связь, потом ключ.",
+      "labels": ["сначала связь", "потом ключи"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "4 пункта",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "4 cards: password, speed test, repeater, 2min call.",
+      "alt": "4 вопроса до оплаты.",
+      "labels": ["сеть и пароль", "тестовый созвон"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "У нас так",
+      "visual_type": "reaction_card",
+      "scene_hint": "Card: instructions early, manager online.",
+      "alt": "Инструкция и Wi‑Fi заранее.",
+      "labels": ["инструкция заранее", "менеджер на связи"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Коротко",
+      "visual_type": "comparison_table",
+      "scene_hint": "Table: ad vs reality; 5600 lost.",
+      "alt": "Проверять до оплаты.",
+      "labels": ["10:03 картинка встала", "возврат 5600 ₽"]
+    }
+  },
+  "cover_keys_ru": ["квартиры посуточно тюмень", "аренда квартиры посуточно"]
+}
