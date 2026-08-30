@@ -21,7 +21,7 @@
   },
   "wow_cover_rules": [
     "NO WordPress words/UI in generated art: WordPress, Gutenberg, Add title, Publish, Dashboard, wp-admin, block editor, theme chrome, cookie bars",
-    "NO overlapping: headline, stickers, meme, cat, phone, people, logo never sit on each other. Logo = official PNG ONE small stamp TOP-RIGHT reserved empty pad. Phone +7 993 574-83-22 on cover only post-composite, NOT in logo pad",
+    "NO overlapping: headline, stickers, meme, cat, phone, people, logo never sit on each other. Logo = official PNG ONE small stamp TOP-RIGHT reserved empty pad. Phone +7 (993) 574-83-22 painted IN SCENE on cover (tape/paper/magnet) — NOT post-composite pill, NOT in logo pad",
     "WOW poster: magazine cover, beautiful readable Russian display type, scene + one sharp line. NOT timid system font, NOT wall of tiny labels, NOT empty stock, NOT WP screenshot",
     "Inlines: logo on 2-3 of 7 only same top-right pad; NEVER 2+ logos on one frame"
   ],
@@ -32,7 +32,7 @@
     "gate": "scripts/excalibur_blog_cover_motif_gate.py"
   },
   "forbidden_daypart_formula": "REJECTED: morning desk+document / day street / evening close talk / night split — never use",
-  "composition_rule": "Cover = magazine poster collage: bold Cyrillic hook + scene props + Wordstat stickers + ONE meme sticker (cat OR people-meme, max 1 cat/article). TOP-RIGHT empty pad for factory logo paste. NO logo/phone in generation.",
+  "composition_rule": "Cover = magazine poster collage: bold Cyrillic hook + scene props + Wordstat stickers + ONE meme sticker (cat OR people-meme, max 1 cat/article). TOP-RIGHT empty pad for factory logo paste. NO logo in generation. Phone +7 (993) 574-83-22 IN SCENE on cover.",
   "emotion_bank": [
     "спокойная уверенность",
     "настороженность",
@@ -44,7 +44,7 @@
   "cover_rules": [
     "WOW magazine poster — bold readable Russian display type for hook; one sharp scene line",
     "NO WordPress / CMS UI chrome in art — Cover-QA FAIL",
-    "NO overlapping elements — separate zones for headline, stickers, meme, cat, people; TOP-RIGHT empty logo pad; phone post-composite bottom-left on cover only",
+    "NO overlapping elements — separate zones for headline, stickers, meme, cat, people; TOP-RIGHT empty logo pad; phone +7 (993) 574-83-22 IN SCENE on cover (tape/paper/magnet) — no post-composite pill",
     "NO host Shakin/rieltor identity — Russian guests by topic only",
     "Factory pastes canonical PNG logo TOP-RIGHT 8–12% on cover + 2–3 inlines; NEVER AI-drawn logo",
     "LIGHT BRIGHT high-key: sun flare, light leak, glow, airy whites — no dark cinematic",
@@ -82,7 +82,7 @@
     "usage": "High-key #FFFFFF panels. Sun flare/glow allowed. No twilight/dark cinematic backgrounds."
   },
   "typography_reference": "Magazine cover display Cyrillic for hook (Cormorant Garamond / Manrope family feel). Bold readable hook — NOT timid system font.",
-  "cover_panel_prompt_block": "WOW magazine poster RU editorial collage, bright airy #FFFFFF, sun flare/light leak/glow. Bold readable Russian DISPLAY type hook + ONE sharp scene line. Scene props + 1-3 Wordstat sticker labels. ONE meme sticker bottom-left ≤12% (people-meme preferred; cat-meme only if article's single cat slot). TOP-RIGHT EMPTY PAD reserved for ONE factory logo paste (NO logo in generation). NO phone in generation. NO overlapping headline/stickers/meme/cat/people/pad zones. NO WordPress/Gutenberg/Dashboard/wp-admin/block editor/theme chrome/cookie bars. NO timid system font; NO wall of tiny labels; NO empty stock; NO WP screenshot. Comfort+ lived-in mood (посуточно Тюмень).",
+  "cover_panel_prompt_block": "WOW magazine poster RU editorial collage, bright airy #FFFFFF, sun flare/light leak/glow. Bold readable Russian DISPLAY type hook + ONE sharp scene line. Scene props + 1-3 Wordstat sticker labels. ONE meme sticker bottom-left ≤12% (people-meme preferred; cat-meme only if article's single cat slot). TOP-RIGHT EMPTY PAD reserved for ONE factory logo paste (NO logo in generation). Phone EXACT +7 (993) 574-83-22 painted IN SCENE as tape strip, torn paper, door plate, fridge magnet — readable Cyrillic, NOT opaque pill/button/banner. NO overlapping headline/stickers/meme/cat/people/pad zones. NO WordPress/Gutenberg/Dashboard/wp-admin/block editor/theme chrome/cookie bars. NO timid system font; NO wall of tiny labels; NO empty stock; NO WP screenshot. Comfort+ lived-in mood (посуточно Тюмень).",
   "inline_information_block": "INLINE UTILITY LOCK: same B02 bright collage (#FFF, gold/black, torn paper, tape, sun flare). Teach fact/order/number/comparison for THIS H2. TOP-RIGHT empty pad ONLY on 2-3 designated inline slots (factory logo paste); other inlines NO logo pad overlap. NO host face. NO stock man co-host. Optional tiny people-meme sticker (≤15% frame, never top-right pad); cat-meme only if article's ONE cat slot. Labels = facts from article. NO WordPress UI.",
   "global_negative": "WordPress, Gutenberg, Add title, Publish, Dashboard, wp-admin, block editor, theme chrome, cookie bar, dark cinematic, low-key noir, timid system font, wall of tiny labels, empty stock photo, wordpress screenshot, overlapping headline stickers meme cat phone logo, multiple logos per image, AI-drawn logo, drawn Добрый дом wordmark, green curtains+red flower icon, dashed logo frame, gold house-with-heart logo, УЮТНЫЕ КВАРТИРЫ В АРЕНДУ subtitle in art, white box white card logo plate tablichka podlozhka under logo pad, logo in generation, phone in generation, tymenrieltor, The Риэлтор, Shakin host, identity-real, marble palace, hotel-luxe, business-class marketing, SEO spam wall, stock model co-host, large meme person on inline"
 }

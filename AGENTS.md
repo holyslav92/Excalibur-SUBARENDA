@@ -20,11 +20,12 @@ Scout? → research_start → Research → Title → Writer(смысл)
 → Indexer(llms) → Publish → Fixer → merge → Content-learner
 ```
 
-**Writer** → `drafts/writer.html` (факты и смысл).  
+**Writer** → `drafts/writer.html` (полный CASE, не тезисы; `claude-opus-5`).  
 **Sol** (`excalibur-blog-sol`) → финальный `article.html` слогом тенанта
-(`shared/SOUL.md` + `shared/soul-examples/`).  
-После Sol — stamp `pipeline_canon` + structural checks. Прозу после Sol
-не переписывают (кроме возврата Sol при FAIL гейтов слога).
+(`shared/SOUL.md` + `shared/soul-examples/`; `gpt-5.6-terra`).  
+После Title и после Writer/Sol — `scripts/excalibur_blog_case_delivery_gate.py`
+(BLOCK → переписать роль, не публиковать). После Sol — stamp `pipeline_canon`
++ structural checks. Прозу после Sol не переписывают (кроме возврата Sol при FAIL гейтов слога).
 
 **Title** → `title-brief.json`. **Description** → `description-brief.json` (Дзен-карточка, после Sol).
 
@@ -63,6 +64,9 @@ python3 scripts/excalibur_blog_research_start.py --topic-id B111 --title "…"
 - Scout/тема про RF-blocked heroes без Дзен-канона (если `dzen_rf_pack`)
 - Sol выдумывает факты, которых нет в `drafts/writer.html` / research
 - Cursor пишет Scout/Title/Writer/Sol/Description/Cover-text/Schema prose своей моделью вместо `excalibur_blog_derouter_opus_chat.py`
+- Publish при FAIL `excalibur_blog_case_delivery_gate.py` (how-to H1, тонкое открытие, гайд вместо CASE)
+- Воронка CTA не в конце статьи (два блока, после чеклиста или «у нас так»)
+- Logo на всех 8 кадрах (канон: cover always + 2–3 inline, default 1/3/7)
 - Запуск пайплайна до завершения Setup
 - Logo as Grsai/Derouter generation reference (`urls`/aroma/`input_urls` with cropped-img_7143) — factory alpha overlay AFTER split only
 - Post-composite phone pill/button on cover (`brand_logo_composite --phone-only` or `draw_phone_on_cover`)

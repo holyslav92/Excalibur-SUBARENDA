@@ -52,12 +52,12 @@ tools:
 tenant:
   brand: Добрый дом
   site: добрыйдом-72.рф
-  public_site_url: https://xn---72-9cdob8azaodt6k.xn--p1ai
+  public_site_url: [REDACTED]
   publish_transport: ftp
-  ftp_host: vh368.timeweb.ru
+  ftp_host: [REDACTED]
   ftp_port: 21
   ftp_user: ca21576_svyat
-  ftp_root: sublease/public_html
+  ftp_root: [REDACTED]
   # FTP_PASS — ONLY Cloud Secrets (never commit)
 
 cover:
@@ -71,7 +71,7 @@ cover:
 brain_and_images:
   prose: scripts/excalibur_blog_derouter_opus_chat.py
   images: scripts/excalibur_blog_grsai_gpt_image2_api.py
-  image_models: "Grsai PRIMARY_MODEL_ID only, vip disabled (see shared/grsai-gpt-image-api-contract.md)"
+  image_models: "Grsai PRIMARY_MODEL_ID only, vip disabled"
   forbid:
     - flux2-pro-*
     - seedream
@@ -92,25 +92,25 @@ publish_gate:
     - FTP_ROOT
 
 instructions: |
-  Read AGENTS.md, CLOUD-AUTOMATION.md, CLOUD-FIRST-RUN.md, shared/pipeline-canon.json,
-  shared/tenant-config.json, and .cursor/automations/dobry-dom-3x.yml.
+  Один слот = ОДНА статья-кейс «Добрый дом» на Дзен-клик (лайк, коммент, подписка), не гайд. Реп только holyslav92/Excalibur-SUBARENDA, ветка main. Никогда Excalibur-2-Cloud и tymenrieltor.ru. MCP-KV только wordstat_get_*. Проза — Derouter REST скриптом репа (не Composer, не mcp-derouter). Картинки — Grsai PRIMARY_MODEL_ID, VIP выключен, 2 холста × 4 = 8. Нет ключа Derouter или Grsai → BLOCKER, не писать и не рисовать самому.
 
-  Repository: holyslav92/Excalibur-SUBARENDA only. Tenant: Добрый дом / добрыйдом-72.рф.
-  NEVER use Excalibur-2-Cloud, tymenrieltor.ru, or MCP-KV wordpress_* tools.
+  Канон ролей, без пропусков:
+  Scout? → research_start → Research → Title → Writer → Sol → Description → Cover-text || Schema → Cover → Cover-QA → Indexer → Publish? → Fixer → merge → Content-learner
 
-  If memory/setup/status.json complete != true → stop with BLOCKER.
+  Дирижёр Cursor не пишет абзацы и не рисует кадры. Writer = claude-opus-5 (полный CASE в drafts/writer.html, не тезисы). Scout / Research / Title / Sol / Description / Cover-text / Schema / Cover-scene = gpt-5.6-terra. Слог Sol — shared/SOUL.md + shared/soul-examples/. После Title и после Writer/Sol гонять scripts/excalibur_blog_case_delivery_gate.py. BLOCK → переписать роль, не публиковать.
 
-  Run ONE full longform article per automation trigger:
-  Scout? → research_start → Research → Title → Writer → Sol
-  → Description → Cover-text || Schema → Cover → Cover-QA → Indexer → Publish? → Fixer → Content-learner
+  Дата: сегодня Asia/Yekaterinburg. Обложка = текущий сезон. Зима героем летом — запрет, пока Wordstat сам не орёт.
 
-  Scout: dual gate Klyshin × MCP-KV wordstat_* only (Tyumen 55+11176).
-  Writer = meaning (drafts/writer.html). Sol = tenant voice (shared/SOUL.md).
-  Cover: logo lockup on ALL 8 images (cover + 7 utility inlines); warm hospitality; no Shakin face.
-  Images: Grsai draw API (contract shared/grsai-gpt-image-api-contract.md; PRIMARY_MODEL_ID only, vip disabled, 2K quad). Prose stays Derouter. No Flux/Seedream/nano_banana.
+  Wordstat: вся Россия (регион 225). Боли БЕЗ города и те же С Тюменью. Заголовок может быть без слова «Тюмень». Пишем и сдаём только Тюмень. Гостевая боль: залог, код, ключница, заселение, предоплата, бойлер, собака, соседи, «рядом с вузом», скрытая доплата. Не юр-крючок Клышина (ЕГРН, суд, наследники, Москва). Не дублировать уже вышедшие (published-titles / коды-заселение, залог-скол на плите и любой близкий H1).
 
-  Publish target ONLY добрыйдом-72.рф via FTP passive (vh368.timeweb.ru, port 21,
-  root sublease/public_html). Publish ONLY when Cloud Secrets have FTP_* + EXCALIBUR_BLOG_ALLOW_PUBLISH=yes.
-  Never write secrets to files or output.
+  ГОЛОС И ФОРМА (HARD, PR #52, слот не имеет права свернуть на гайд):
+  H1 = двухтактный стоп-фактор уже случившейся гостевой ночи: [нормально]. А потом [ужас] / цитата / цифра. Не тема, не SEO, не «как снять», не «что проверить», не «N советов/шагов», не «разберём».
+  §1 = 1–2 плотных абзаца: дата/время, цитата, ₽ или число ночей, что сломалось. Бан рубленый TG-лид, TL;DR, «Разберём». После лида: «Я хост посуточной в Тюмени. Это «Добрый дом».» Дальше удары Клышина: «Нет. Так не заселяем.» · «Не X. Не Y. А Z.» · вопрос-отмычка · «Сначала проверка. Потом перевод. Не наоборот.» 1100–1800 слов, один кейс. Чеклист только после морали. Один вопрос в середине → ответ в t.me/Dobriy_dom_72 или MAX, никогда «напишите в комментариях». Конец: «Наш вывод простой.» + один блок воронки. Цель 9–10.
 
-  If publish blocked → finish after Indexer with artifacts in repo. Report exact PASS/BLOCKER per step.
+  Воронка ОДИН раз в конце: TG https://t.me/Dobriy_dom_72 · MAX https://max.ru/id660300569233_biz · бронь https://добрыйдом-72.рф/ и /booking/ · тел. +7 993 574-83-22 · менеджер https://t.me/Dobriy_dom_Tyumen. 3–4 живые /blog/ HTTP 200. Бан +7 922 001 65 05.
+
+  Картинки: постер (человек в сцене + кириллический hook), 7 внутренних схемы/мемы. Grsai PRIMARY_MODEL_ID only, VIP off, 2×2048×1152, max 2 попытки, потом paste лого и ship. Кот максимум 1/8. Логотип только memory/cover/assets/brand/logo-dobry-dom.png alpha POST-gen top-right empty pad, no plate, never generation reference. Cover always + 2–3 inlines (1/3/7). Phone IN SCENE. No Shakin face. After upload: wp-content URLs + refresh *-1024x576 for /feed/zen/.
+
+  Publish only добрыйдом-72.рф FTP ([REDACTED]:21 PASV root [REDACTED] user ca21576_svyat, password Cloud Secrets, EXCALIBUR_BLOG_ALLOW_PUBLISH=yes not in git. No flag → stop after Indexer. Never print secrets.
+
+  Report: two-beat H1?, Wordstat angle, live URL or BLOCKER, word count, TG/MAX in body, 3–4 xlinks 200, which 2–3 frames have logo, 8 HTML images 200, case-delivery-gate PASS/BLOCK.
