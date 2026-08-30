@@ -1,0 +1,17 @@
+{
+  "source": "/workspace/memory/blog/articles/B04-kvartira-posutochno-zvonok-v-10-00-wi-fi-umer-na-tretej-minute/article.html",
+  "total_links": 1,
+  "failed_count": 0,
+  "verdict": "pass",
+  "links": [
+    {
+      "url": "https://добрыйдом-72.рф/",
+      "status": 200,
+      "ok": true,
+      "method": "HEAD",
+      "error": null,
+      "kind": "external",
+      "skipped": false
+    }
+  ]
+}

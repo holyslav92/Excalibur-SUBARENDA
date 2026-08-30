@@ -1,47 +1,64 @@
-# Scout assembled inputs — 2026-08-28 YEKT
+# Scout assembled inputs — 2026-08-30 YEKT
 
 ## CRITICAL INSTRUCTION FOR DEROUTER SCOUT
 Wordstat MCP-KV preflight and ALL probes were already executed by the orchestrator via live MCP-KV.
 wordstat_preflight: mcp-kv wordstat_get_user_info OK
 DO NOT refuse handoff. DO NOT claim CallMcpTool unavailable.
-Your job: write the complete `.cursor/excalibur-blog-handoff.md` using ONLY the verified data below.
+Your job: write the complete handoff markdown using ONLY the verified data below.
 
 ## Tenant
 - Brand: Добрый дом (посуточная / субаренда, Тюмень)
 - Voice: клышинская подача, комфорт+, от лица компании. НЕ ЕГРН, НЕ суд, НЕ «мы лучшие»
-- Cover season: лето (не зима героем)
+- Cover season: конец августа / лето (НЕ зима героем)
 - dzen_rf_pack: true
 
-## Angle rotation (last N=3)
-- B01: «Оплатил квартиру посуточно. Код прислали от чужой двери» — burn-at-door
-- B02: залог на выезде / «не вернём» — deposit family
+## Queue slot
+queue_slot: 2026-08-29 — 2026-08-31 | queue_num 2 | hook_id sept_business_trip
 
-angle_rotation: checked last N=3 | burn-at-door skip: yes | reason: B01 burn-at-door; new hook parents_sept_uni (university short stay, not code/door)
+## Angle rotation (last N=3 + recent WP)
+- B01: burn-at-door / код — SKIP family
+- B02: залог / скол на плите — SKIP
+- B03: вуз / «рядом» / родители сентябрь
+- WP 2026-08-30: закрывающие после выезда (22:00 + 10:00 созвон) — SKIP angle
+- WP 2026-08-29: розетки у стола — SKIP angle
+- WP 2026-08-25: где работать — SKIP angle
 
-Site blog anti-dup sibling (different angle required): «Приехали на 3 ночи к вузу — три остановки. Кровати не хватило» — our article = minutes walk to campus + enrollment window, NOT beds.
+angle_rotation: checked last N=3 | burn-at-door skip: yes | reason: B01; sept_business_trip rework to Wi-Fi on video call — fresh angle within queue
 
 ## Klyshin hook
-klyshin_hook: parents_sept_uni | original: «Привёз сына в вуз. Три ночи. В объявлении — «рядом с вузом».» | angle: 2–4 ночи на оформление, не годовая; lockpick: сколько минут пешком до корпуса? | signal: https://t.me/klyshin_A (live Aug 26 2026 — «формально чисто → риск», map to «рядом с вузом» в объявлении)
+klyshin_hook: sept_business_trip | original: «Звонок в 10:00. Заселился в 22:00.» | angle: Wi-Fi падает на видеосозвоне; в объявлении «быстрый интернет»; moral: сначала тест скорости/роутер, потом оплата | signal: https://t.me/klyshin_A
 
 ## Wordstat rework (LIVE MCP-KV — copy verbatim)
-wordstat_rework: probe «аренда квартиры на несколько дней» 66 (225) → probe «снять квартиру на несколько дней тюмень» 1 (55+11176) → probe «снять квартиру на сутки тюмень» 363 (55+11176) → probe «аренда квартиры посуточно» 811 (55+11176) / 46755 (225) → probe «снять квартиру посуточно в тюмени» 1749 (55+11176) → final P0 «квартиры посуточно тюмень» 5534 (55+11176) / 12553 (225) | clusters tried: несколько дней, студент, на сутки, посуточно, квартиры посуточно тюмень
+wordstat_rework: probe «командировка тюмень квартира» 1 (225) / пусто (55+11176) → probe «командировка квартира посуточно» 61 (225) → probe «аренда квартиры посуточно» 792 (55+11176) / 45932 (225) → probe «квартира посуточно тюмень» 5500 (55+11176) / 12325 (225) → final P0 «квартиры посуточно тюмень» 5500 (55+11176) / 12325 (225) | clusters tried: командировка, посуточно, квартиры посуточно тюмень
 
-wordstat: mcp_kv live | regions 55,11176,compare225 | P0 «квартиры посуточно тюмень» 5534 | RU compare 12553 | secondary «снять квартиру посуточно в тюмени» 1749
+wordstat: mcp_kv live | regions 55,11176,compare225 | P0 «квартиры посуточно тюмень» 5500 | RU compare 12325 | secondary «аренда квартиры посуточно» 792 / 45932
 
 ## topic_id
-B03
+B04
 
 ## short title for research_start (Klyshin rhythm, NOT final H1)
-Привёз сына в вуз на три ночи — «рядом» оказалось три остановки
+Звонок в 10:00 — Wi-Fi умер на третьей минуте
+
+## title_draft
+Звонок в 10:00. На третьей минуте Wi‑Fi умер — в объявлении «быстрый интернет»
 
 ## dzen_pattern
-5 — локальный + сезонный (1 сентября, родители + вуз, август бронь)
-dzen_shape_hint: «Три ночи к вузу: «рядом» в объявлении vs минуты пешком на карте»
+3 — страх → инструкция в §1 (созвон сорвался → что проверить до оплаты)
+dzen_shape_hint: «Созвон в 10:00: Wi‑Fi умер — что спросить у хоста до перевода»
 
 ## signal_urls
 - https://t.me/klyshin_A
 - https://добрыйдом-72.рф/blog/
-- https://dzen.ru/holyslav
+
+## cover_season_note
+YEKT 2026-08-30 — конец августа, летний свет; no winter/snow/ice hero
+
+## wp_category_hint
+posutochnaya-arenda
+
+## interlink_siblings
+- https://добрыйдом-72.рф/blog/beskontaktnoe-zaselenie-posutochno-tyumen/
+- https://добрыйдом-72.рф/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/
 
 ## Required handoff format
-Write markdown handoff with fields: topic_id, short_title, title_draft, dzen_pattern, dzen_shape_hint, external_signal, signal_urls, wordstat_preflight, klyshin_hook, wordstat_rework, wordstat, angle_rotation, queue_slot, cover_season_note, wp_category_hint (posutochnaya-arenda), interlink_siblings (B01, B02 URLs from published-articles).
+Write markdown handoff with fields: topic_id, slug suggestion, short_title, title_draft, dzen_pattern, dzen_shape_hint, external_signal, signal_urls, wordstat_preflight, klyshin_hook, wordstat_rework, wordstat, angle_rotation, queue_slot, cover_season_note, wp_category_hint, interlink_siblings.

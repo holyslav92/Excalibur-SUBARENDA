@@ -1,0 +1,32 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/kvartira-posutochno-zvonok-v-10-00-wi-fi-umer-na-tretej-minute/",
+  "url": "{{SITE_BASE}}/blog/kvartira-posutochno-zvonok-v-10-00-wi-fi-umer-na-tretej-minute/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/kvartira-posutochno-zvonok-v-10-00-wi-fi-umer-na-tretej-minute/"
+  },
+  "headline": "Созвон в 10:00 сорвался на 3-й минуте — Wi‑Fi подвёл",
+  "description": "Что проверить в посуточной квартире, если заявленный быстрый интернет оказался нестабильным во время видеозвонка.",
+  "datePublished": "2026-08-30",
+  "inLanguage": "ru-RU",
+  "author": {
+    "@type": "Organization",
+    "@id": "{{SITE_BASE}}/#organization",
+    "name": "Добрый дом",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "{{SITE_BASE}}/#organization",
+    "name": "Добрый дом",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  }
+}

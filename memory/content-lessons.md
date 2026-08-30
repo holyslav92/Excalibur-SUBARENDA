@@ -118,3 +118,38 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+---
+
+## LESSON-20260830-1000-B04-wifi-call-before-pay
+status: proposed
+topic_id: B04
+category: utility
+confidence: medium
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+- metrika_signal: none — METRIKA CREDENTIALS BLOCKER
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+
+### Keep
+- Klyshin sept_business_trip → Wi-Fi на видеосозвоне (не дубль codes/залог).
+- Чеклист 4 пункта → TG сразу после списка; «Как у нас» → MAX/менеджер.
+
+### Change
+- Cover: при drawn lockup на inline_4 — regen canvas-2 + logo slots inline_1/4/7.
+
+### Never again
+- Drop hook при слабом «командировка» без rework до «квартиры посуточно тюмень».
+
+### Proposed apply
+- Scout: логировать Wi-Fi sub-angle внутри sept_business_trip.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded

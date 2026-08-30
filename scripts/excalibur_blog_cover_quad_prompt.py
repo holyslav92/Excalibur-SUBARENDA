@@ -588,16 +588,14 @@ def build_prompt(
             )
         elif brand_logo_paste:
             emotion_clause = f"Expr: {cover_emotion}." if cover_emotion else ""
-            phone_clause = PHONE_IN_SCENE_RULE.format(phone=cover_phone_cta)
             panel_lines.append(
                 f"TL COVER WOW POSTER (magazine, not stock): «{cover_hook_text}» bold DISPLAY Cyrillic readable, {highlight_rule}; "
                 f"sticky «{cover_sticky or 'Залог вернут?'}»; scene props; natural daylight clean white balance, "
                 f"NO yellow/amber cast, NO muddy skin, NO winter/snow. "
-                f"NO logo in gen. {phone_clause}. "
+                f"NO logo in gen; phone per reference line. "
                 f"{emotion_clause} soft daylight crisp sharp; gold tape; 1-3 Wordstat; "
                 f"{compact(cover_scene, COVER_SCENE_HINT_COMPACT)}; {cover_meme_clause}; "
-                f"TOP-RIGHT empty clear pad — no logo, no house icon, no «Добрый дом» lettering, no plate, no sticker; "
-                f"{BOARD_STATIONERY}; #FFF"
+                f"TOP-RIGHT empty pad; {BOARD_STATIONERY}; #FFF"
             )
         else:
             emotion_clause = (
@@ -638,8 +636,8 @@ def build_prompt(
         )
     elif has_cover and brand_logo_paste:
         reference_line = (
-            "Cover TL: NO host; NO logo in gen (factory cropped-img_7143.png alpha after split); "
-            f"phone IN scene only — {PHONE_IN_SCENE_RULE.format(phone=cover_phone_cta)}; "
+            "Cover TL: NO host; NO logo in gen (factory PNG after split); "
+            f"phone EXACT «{cover_phone_cta}» painted in-scene (tape/paper/plate, bottom/side quiet zone); "
             "NEVER post-composite pill."
         )
     elif has_cover:
@@ -668,7 +666,6 @@ def build_prompt(
     inline_suffix = (
         f"Inline all: #FFF collage, gold/black Cyrillic labels, {BOARD_STATIONERY}; "
         "dense facts/numbers; exact TXT per panel; meme only if +meme AND sticker-scale; "
-        f"{CAT_MEME_QUOTA_RULE}; "
         "no human hero on inline; no icon soup; zero typos."
     )
 

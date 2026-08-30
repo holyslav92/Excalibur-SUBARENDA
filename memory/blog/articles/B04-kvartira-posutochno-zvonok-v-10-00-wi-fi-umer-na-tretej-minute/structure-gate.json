@@ -1,0 +1,64 @@
+{
+  "gate": "structure",
+  "status": "FAIL",
+  "article_dir": "memory/blog/articles/B04-kvartira-posutochno-zvonok-v-10-00-wi-fi-umer-na-tretej-minute",
+  "checks": [
+    {
+      "name": "pipeline_canon",
+      "ok": true,
+      "detail": "exit=0"
+    },
+    {
+      "name": "research_agent_report",
+      "ok": true,
+      "detail": "status=PASS"
+    },
+    {
+      "name": "link_verify",
+      "ok": true,
+      "detail": "exit=0"
+    },
+    {
+      "name": "html_linter",
+      "ok": false,
+      "detail": "exit=1"
+    },
+    {
+      "name": "community_cta",
+      "ok": false,
+      "detail": "exit=1"
+    },
+    {
+      "name": "wp_categories",
+      "ok": true,
+      "detail": "exit=0"
+    },
+    {
+      "name": "interlink",
+      "ok": false,
+      "detail": "exit=2"
+    },
+    {
+      "name": "crosslink_qa",
+      "ok": false,
+      "detail": "exit=1"
+    },
+    {
+      "name": "research_official",
+      "ok": true,
+      "detail": "exit=0"
+    },
+    {
+      "name": "opening_meta",
+      "ok": true,
+      "detail": "exit=0"
+    }
+  ],
+  "failed": [
+    "html_linter",
+    "community_cta",
+    "interlink",
+    "crosslink_qa"
+  ],
+  "note": "Structural/links/HTML only — does not rewrite prose."
+}

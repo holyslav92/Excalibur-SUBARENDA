@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "anchor": "бесконтактное заселение посуточно в Тюмени: гость знает всё до того, как выйдет из такси. Менеджер на связи — вечером, ночью, в 06:40 перед рейсом. Тестовый созвон делаем по запросу: скажите заранее, что едете работать, и мы созвонимся до заезда, чтобы вы увидели канал своими глазами.Мы не обещаем «100 Мбит гарантированно» — обещать цифру, которая зависит от соседей и вечерней нагрузки, было бы враньём. Мы обещаем другое: вы узнаете реальное положение дел до оплаты и сможете отказаться без потерь. И мы честно говорим «нет», если под вашу задачу квартира не тянет.Про деньги отдельно. Мы не берём наличный залог в конверте — именно потому, что чаще всего конфликт выглядит так же, как в истории выше: формально все правы, а гость без денег. Как это разворачивается в худшем случае, я разбирал в тексте про то,",
+      "catalog_title": "Оплатил квартиру посуточно. Код прислали от чужой двери",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/",
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "anchor": "как гость перевёл залог за посуточную, а на выезде сказали «не вернём». И да, эти же вопросы работают не только для командировок: родителям, которые снимают",
+      "catalog_title": "Снял квартиру посуточно. Залог не вернули — нашли скол на плите",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "/blog/kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki/",
+      "slug": "kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki",
+      "anchor": "квартиру посуточно в Тюмени к 1 сентября рядом с вузом, интернет нужен ровно так же — подавать документы онлайн из квартиры, где связь падает, отдельное удовольствие.Если едете в командировку и утром у вас созвон — напишите заранее, что именно вам нужно: камера, демонстрация экрана, выгрузки. Менеджер в",
+      "catalog_title": "Привезли сына к вузу — «рядом» оказалось 40 минут пешком",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "outbound_unique_slugs": [
+    "beskontaktnoe-zaselenie-posutochno-tyumen",
+    "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+    "kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B04-kvartira-posutochno-zvonok-v-10-00-wi-fi-umer-na-tretej-minute",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}
