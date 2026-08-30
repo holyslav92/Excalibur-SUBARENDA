@@ -1,0 +1,86 @@
+{
+  "topic_id": "B04",
+  "slug": "poprosili-foto-pasporta-pri-zaselenii-posutochno-do-oplaty",
+  "cover_family": "brand_collage",
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "file": "cover/cover.png",
+  "alt": "Август в Тюмени: гость у двери квартиры смотрит в телефон — в чате просят фото паспорта, а точного адреса ещё нет.",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-quad-01.png",
+  "generated_at": "2026-08-30T12:32:43+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Август в Тюмени: гость у двери квартиры смотрит в телефон — в чате просят фото паспорта, а точного адреса ещё нет.",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Паспорт для договора — не всегда скам",
+      "h2_anchor": "Паспорт сам по себе мошенничество не доказывает",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Сначала адрес, потом паспорт",
+      "h2_anchor": "Граница проходит не по слову «паспорт», а по порядку",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Срочный перевод — красный флаг",
+      "h2_anchor": "Что выдает небрежную или опасную переписку",
+      "visual_type": "comparison_table",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_4",
+      "file": "cover/inline-04.png",
+      "alt": "Красные флаги в переписке",
+      "h2_anchor": "Чужой паспорт в ответ тоже не является гарантией",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_5",
+      "file": "cover/inline-05.png",
+      "alt": "Марина проверила адрес",
+      "h2_anchor": "Марина ничего не потеряла — и это был правильный финал",
+      "visual_type": "schema_faq_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_6",
+      "file": "cover/inline-06.png",
+      "alt": "Порядок действий",
+      "h2_anchor": "Порядок, который стоит держать в голове",
+      "visual_type": "process_flow",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_7",
+      "file": "cover/inline-07.png",
+      "alt": "Заселение в Добром доме",
+      "h2_anchor": "Как устроено заселение в «Добром доме»",
+      "visual_type": "tool_screenshot",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}
