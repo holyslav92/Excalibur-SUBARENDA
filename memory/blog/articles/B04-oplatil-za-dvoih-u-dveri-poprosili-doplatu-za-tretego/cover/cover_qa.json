@@ -1,0 +1,14 @@
+{
+  "gate": "cover-qa",
+  "status": "PASS",
+  "mode": "live_cover_fix",
+  "checks": {
+    "logo_factory_paste": true,
+    "no_white_plate": true,
+    "phone_in_scene": true,
+    "phone_no_pill": true
+  },
+  "notes": [
+    "live regen v2 + pad-clear + in-scene phone tape + factory alpha logo"
+  ]
+}

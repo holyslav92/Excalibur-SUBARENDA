@@ -228,3 +228,46 @@ checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_drawn_logo_gate.py`
 - `python3 -m unittest tests.test_drawn_logo_gate.DrawnLogoGateTest.test_bright_window_pad_exempt_when_no_lockup_colors -v`
 commit: f9c08e0
+
+## INC-20260830-1740 — FTP 421 timeout on post-publish interlink
+
+status: fixed
+run_date: 2026-08-30
+role: excalibur-blog-publish
+topic_id: B04
+article_dir: memory/blog/articles/B04-oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego
+severity: medium
+category: env
+
+### What went wrong
+
+- `excalibur_blog_post_publish_interlink.py` failed first attempts with `ftplib.error_temp: 421 Timeout` during `TYPE I` after long idle FTP session from 12MB publish bootstrap upload.
+- Inbound «Читайте также» to B01/B02 not applied until third retry (~2.5 min after fresh connection).
+
+### How the agent recovered this run
+
+- Retried interlink after publish completed; third run: FTP upload 2499 bytes + HTTP bootstrap → `OK interlink_inbound=3745`, `OK interlink_inbound=3777`.
+
+### Durable fix needed before next run
+
+- Document: after large publish bootstrap, expect FTP 421 — retry interlink with fresh connection; optional script `_ftp_stor_with_retry` reconnect on 421.
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_remote_transport.py`
+- `scripts/excalibur_blog_post_publish_interlink.py`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-08-30
+fix_summary:
+- Runbook note: retry interlink on FTP 421 after publish; no code change this run (transient Timeweb PASV idle).
+files_changed:
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- interlink retry → OK interlink_done (2 targets)
+commit: pending

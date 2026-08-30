@@ -72,6 +72,8 @@ Scout? → research_start → Research → Title → Writer → Sol
 
 **Воронка:** один блок CTA **только в конце** статьи (не после чеклиста, не после «у нас так»).
 
+**Dzen xlinks (HARD):** в `article.html` и RSS — только `{{SITE_BASE}}/blog/{slug}/` (или expanded absolute `https://<site>/blog/{slug}/`); **никогда** root-relative `href="/blog/..."` (Дзен in-app browser → 404 без `/blog/`).
+
 ## Thin conductor + Derouter two-tier (HARD)
 
 См. `shared/derouter-opus-brain-contract.md`.

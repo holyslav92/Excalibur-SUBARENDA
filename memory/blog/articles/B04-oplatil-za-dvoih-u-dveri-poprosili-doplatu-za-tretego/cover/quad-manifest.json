@@ -1,0 +1,159 @@
+{
+  "topic_id": "B04",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": [
+        "inline_4",
+        "inline_5",
+        "inline_6",
+        "inline_7"
+      ],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "cover_hook": "У двери — доплата за третьего",
+  "cover_hook_highlight": "доплата",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Derouter REST (DEROUTER_API_KEY) — 2K 16:9, one job per canvas (2×). Cover agent invents cover_hook + scene_hint/alt before --write-batch. Host lock = blog-hero.json (navy blazer, not hoodie).",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Пара и сестра узнают у двери квартиры о доплате 1500 рублей за третьего гостя; на двери номер телефона.",
+      "scene_hint": "Aug evening stairwell: couple+sister at door, host shows 1500₽ fee; tape +7 993 574-83-22; TOP-RIGHT empty pad.",
+      "meme_caption_ru": "",
+      "sticky": "Об этом не предупредили"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Как прошёл тот вечер",
+      "visual_type": "comparison_table",
+      "scene_hint": "Booking sheet: 2 guests included, +1500₽/night third; three silhouettes.",
+      "alt": "Расчёт показывает: два гостя включены, за третьего берут 1500 рублей за ночь.",
+      "labels": [
+        "Оплата за двоих",
+        "3 человека",
+        "Заселение у двери"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Доплата сама по себе не проблема",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Diagram 2→3 guests arrow to extra fee; suitcases at door.",
+      "alt": "Схема объясняет переход от двух заявленных гостей к трём фактическим.",
+      "labels": [
+        "Третий гость",
+        "Доплата на месте",
+        "1500 ₽ за ночь"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Почему сюрприз всегда появляется у порога",
+      "visual_type": "checklist_board",
+      "scene_hint": "Two rows: 2 guests OK vs 3 guests +1500₽; light kitchen.",
+      "alt": "Сравнение стоимости проживания для двух и трёх гостей.",
+      "labels": [
+        "Цена изменилась",
+        "После оплаты",
+        "Передали ключи"
+      ]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Вопрос, который закрывает проблему до оплаты",
+      "visual_type": "schema_faq_ui",
+      "scene_hint": "Awkward door talk: surprised guest, host points rules; one people-meme.",
+      "alt": "Неловкий разговор гостей с хозяином о дополнительной оплате у двери.",
+      "labels": [
+        "Спросить до оплаты",
+        "Цена за всех",
+        "Правила гостей"
+      ]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Наше правило: сначала ясность, потом деньги и ключ",
+      "visual_type": "tool_screenshot",
+      "scene_hint": "Phone booking confirm: guest count, dates, total highlighted.",
+      "alt": "Гость проверяет в подтверждении брони число гостей, даты и стоимость.",
+      "labels": [
+        "Кто считается гостем",
+        "Доплата за ночь",
+        "Условия заселения"
+      ]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Вывод",
+      "visual_type": "infographic_card",
+      "scene_hint": "Mini bill: 1500₽×nights; calendar, three mugs.",
+      "alt": "Формула рассчитывает доплату: 1500 рублей умножить на число ночей.",
+      "labels": [
+        "Цена в объявлении",
+        "Цена за троих",
+        "Разница — 1500 ₽"
+      ]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "«Добрый дом» — посуточные квартиры в Тюмени",
+      "visual_type": "comparison_table",
+      "scene_hint": "Pre-pay checklist 3 questions at door; TOP-RIGHT empty.",
+      "alt": "Гости сверяют условия бронирования перед оплатой третьего места.",
+      "labels": [
+        "Проверить переписку",
+        "Сохранить условия",
+        "Уточнить сумму"
+      ]
+    }
+  },
+  "cover_keys_ru": [],
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "wordstat_stickers": [
+    "квартира посуточно Тюмень",
+    "доплата за третьего гостя",
+    "жильё посуточно Тюмень"
+  ],
+  "logo_paste_inline_slots": [
+    "inline_1",
+    "inline_3",
+    "inline_7"
+  ],
+  "cover_motifs": {
+    "composition": "Треугольная группа из пары и сестры у двери, хозяин в полуобороте показывает расчёт; акцент на жесте и листе.",
+    "location": "Светлая лестничная площадка у двери квартиры, поздний августовский вечер, тёплый солнечный свет.",
+    "meme": "Без cat-meme; лёгкая реакция удивления у одного гостя, реалистичная people-мимика.",
+    "prop_set": "Чемодан, ключи, лист расчёта, телефон, скотч с номером +7 (993) 574-83-22.",
+    "sticker_set": "Оставить чистые зоны под 1–3 Wordstat-стикера из research/handoff.",
+    "joke": "Все уже у двери, но третий человек внезапно превращается в отдельную строку тарифа."
+  }
+}

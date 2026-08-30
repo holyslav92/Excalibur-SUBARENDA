@@ -18,6 +18,7 @@ from asset_download import download_url_bytes
 from excalibur_blog_site_base import (
     REDACTED_LITERAL,
     SITE_BASE_PLACEHOLDER,
+    expand_blog_xlinks_in_html,
     expand_site_base,
     redact_site_base,
     redact_structure,
@@ -490,6 +491,7 @@ def load_article(article_dir: Path, *, public_base: str = "") -> dict:
         )
     # Runtime expand only — on-disk artifacts keep {{SITE_BASE}} for secret-scan-safe commits.
     content = expand_site_base(content, public_base)
+    content = expand_blog_xlinks_in_html(content, public_base)
     schema_raw = expand_site_base(schema_raw, public_base)
 
     registry: dict[str, Any] = {}

@@ -10,6 +10,7 @@ from typing import Any
 from urllib.parse import urlparse
 
 from excalibur_blog_live_catalog import slug_from_blog_href
+from excalibur_blog_site_base import SITE_BASE_PLACEHOLDER, blog_path_for_slug, canonical_blog_xlink_href, normalize_xlink_href_for_parsing
 
 XLINK_MIN = 3
 XLINK_MAX = 4
@@ -141,7 +142,8 @@ def unique_blog_slugs_in_html(html: str) -> list[str]:
     slugs: list[str] = []
     seen: set[str] = set()
     for match in re.finditer(r"""href=["']([^"']+)["']""", html or "", re.I):
-        slug = slug_from_blog_href(match.group(1).strip())
+        href = normalize_xlink_href_for_parsing(match.group(1).strip())
+        slug = slug_from_blog_href(href)
         if slug and slug not in seen:
             seen.add(slug)
             slugs.append(slug)
@@ -183,9 +185,10 @@ def append_interlink_block(content: str, *, from_slug: str, target_url: str, tar
     )
 
 
-def permalink_path_for_slug(slug: str, category_slug: str = "vtorichka-i-riski") -> str:
-    slug = slug.strip("/")
-    return f"/blog/{category_slug}/{slug}/"
+def permalink_path_for_slug(slug: str, category_slug: str = "") -> str:
+    """Canonical git-safe xlink href for a published sibling (Dzen-safe after publish expand)."""
+    _ = category_slug  # legacy arg; blog posts live at /blog/{slug}/
+    return canonical_blog_xlink_href(slug.strip("/"))
 
 
 def resolve_public_path(candidate: dict[str, Any], public_base: str = "") -> str:

@@ -1,0 +1,21 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 1,
+  "output_canvas": "cover/canvas-quad-01.png",
+  "result_path": "cover/quad-mcp-result-01.json",
+  "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+  "preferred_image_flow": {
+    "provider": "grsai",
+    "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
+    "resolution": "2K"
+  },
+  "jobs": [{
+    "slot": "canvas_quad",
+    "tool": "grsai",
+    "mcp_args": {
+      "prompt": "Canvas 2048x1152 2x2. COVER TL: doorway check-in, host sign «+1500₽», 3 guests suitcases. MUST: torn paper on door frame with large readable Cyrillic phone «+7 993 574-83-22» in scene. Hook «У двери — доплата за третьего» gold on «доплата». Cat ≤10%. COVER top-right: blank wall ONLY — absolutely NO logo NO brand NO white box. TR: table 2 vs 3 guests +1500₽. BL: icons 2→3. BR: checklist. NO logos any panel. Late summer.",
+      "aspect_ratio": "16:9",
+      "resolution": "2K"
+    }
+  }]
+}

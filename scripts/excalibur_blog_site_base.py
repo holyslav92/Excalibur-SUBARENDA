@@ -17,6 +17,62 @@ SITE_BASE_PLACEHOLDER = "{{SITE_BASE}}"
 SITE_HOST_PLACEHOLDER = "{{SITE_HOST}}"
 REDACTED_LITERAL = "[REDACTED]"
 
+# Root-relative /blog/… breaks Dzen in-app browser (RFC 3986 base ≠ site origin).
+RELATIVE_BLOG_HREF_RE = re.compile(r"^/blog/(?:[a-z0-9][a-z0-9-]*/?|)$", re.I)
+ROOT_SLUG_HREF_RE = re.compile(r"^/([a-z0-9][a-z0-9-]+)/?$", re.I)
+
+
+def blog_path_for_slug(slug: str) -> str:
+    """Canonical on-site path for a blog post (internal routing)."""
+    return f"/blog/{slug.strip('/')}/"
+
+
+def canonical_blog_xlink_href(slug: str) -> str:
+    """Git-safe artifact href for outbound /blog/ cross-links (Dzen-safe after publish expand)."""
+    return f"{SITE_BASE_PLACEHOLDER}{blog_path_for_slug(slug)}"
+
+
+def is_root_relative_blog_href(href: str) -> bool:
+    """True when href is ``/blog/…`` or ``/blog`` without scheme/host (Dzen-unsafe in RSS)."""
+    value = (href or "").strip()
+    if not value or "://" in value or value.startswith(SITE_BASE_PLACEHOLDER):
+        return False
+    if value == "/blog" or value == "/blog/":
+        return True
+    return bool(RELATIVE_BLOG_HREF_RE.match(value.rstrip("/") + "/"))
+
+
+def normalize_xlink_href_for_parsing(href: str) -> str:
+    """Strip {{SITE_BASE}} placeholder so slug parsers see ``/blog/{slug}/``."""
+    value = (href or "").strip()
+    if value.startswith(SITE_BASE_PLACEHOLDER):
+        rest = value[len(SITE_BASE_PLACEHOLDER) :]
+        return rest if rest.startswith("/") else f"/{rest}"
+    return value
+
+
+def expand_blog_xlinks_in_html(html: str, public_base: str) -> str:
+    """Expand git-safe and root-relative blog hrefs to absolute URLs for WP/RSS."""
+    if not html:
+        return html
+    base = normalize_public_base(public_base)
+    if not base:
+        return expand_site_base(html, public_base) if SITE_BASE_PLACEHOLDER in html else html
+
+    def repl(match: re.Match[str]) -> str:
+        quote = match.group(1)
+        href = match.group(2).strip()
+        if href.startswith(SITE_BASE_PLACEHOLDER):
+            expanded = expand_site_base(href, base)
+            return f"href={quote}{expanded}{quote}"
+        if is_root_relative_blog_href(href):
+            path = href if href.endswith("/") else f"{href}/"
+            return f"href={quote}{base.rstrip('/')}{path}{quote}"
+        return match.group(0)
+
+    out = re.sub(r'href=(["\'])([^"\']+)\1', repl, html or "")
+    return expand_site_base(out, base)
+
 
 def host_from_public_base(public_base: str | None = None) -> str:
     """Hostname from PUBLIC_SITE_URL / given base (no scheme). Empty if unknown."""

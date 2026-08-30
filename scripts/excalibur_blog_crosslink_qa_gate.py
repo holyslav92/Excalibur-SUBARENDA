@@ -29,8 +29,11 @@ from excalibur_blog_live_catalog import (
 )
 from excalibur_blog_site_base import (
     SITE_BASE_PLACEHOLDER,
+    canonical_blog_xlink_href,
     expand_site_base,
+    is_root_relative_blog_href,
     normalize_public_base,
+    normalize_xlink_href_for_parsing,
     redact_structure,
     resolve_public_base_from_env,
 )
@@ -254,8 +257,14 @@ def validate_article_crosslinks(
             errors.append(f"banned host in href: {href}")
             continue
 
-        slug = slug_from_blog_href(href, site_host=site_host)
+        slug = slug_from_blog_href(normalize_xlink_href_for_parsing(href), site_host=site_host)
         if slug is None:
+            if is_root_relative_blog_href(href):
+                errors.append(
+                    f"Dzen-unsafe root-relative blog href: {href} "
+                    f"(use {canonical_blog_xlink_href('slug')} or absolute https://<site>/blog/slug/)"
+                )
+                continue
             if href.startswith("/") and not is_cta_href(href, tenant):
                 # Root-relative article-ish paths without /blog/ prefix.
                 root_match = re.match(r"^/([a-z0-9][a-z0-9-]+)/?$", href.rstrip("/") + "/")
@@ -264,7 +273,7 @@ def validate_article_crosslinks(
                     if maybe in slug_index:
                         errors.append(
                             f"internal article href missing /blog/ prefix: {href} "
-                            f"(use {blog_path_for_slug(maybe)})"
+                            f"(use {canonical_blog_xlink_href(maybe)})"
                         )
             continue
 
@@ -293,9 +302,20 @@ def validate_article_crosslinks(
         else:
             check["title_ok"] = True
 
-        canonical_path = blog_path_for_slug(slug)
-        if href.startswith("/") and not href.startswith("/blog/"):
-            errors.append(f"/blog/ link must use catalog path {canonical_path}, got {href}")
+        if is_root_relative_blog_href(href):
+            errors.append(
+                f"Dzen-unsafe root-relative blog href: {href} "
+                f"(use {canonical_blog_xlink_href(slug)} or absolute https://<site>/blog/{slug}/)"
+            )
+            check["path_ok"] = False
+        elif href.startswith(SITE_BASE_PLACEHOLDER):
+            check["path_ok"] = True
+        elif href.startswith("http://") or href.startswith("https://"):
+            check["path_ok"] = True
+        elif href.startswith("/") and not href.startswith("/blog/"):
+            errors.append(
+                f"/blog/ link must use catalog path {blog_path_for_slug(slug)}, got {href}"
+            )
             check["path_ok"] = False
         else:
             check["path_ok"] = True

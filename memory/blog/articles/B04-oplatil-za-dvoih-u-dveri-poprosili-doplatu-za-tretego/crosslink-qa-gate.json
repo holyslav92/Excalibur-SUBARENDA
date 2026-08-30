@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "{{SITE_BASE}}/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "anchor": "«Оплатил квартиру посуточно. Код прислали от чужой двери». Про залог на выезде —",
+      "catalog_title": "Оплатил квартиру посуточно. Код прислали от чужой двери",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "{{SITE_BASE}}/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/",
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "anchor": "«Снял квартиру посуточно. Залог не вернули — нашли скол на плите». А когда «рядом» в объявлении не совпадает с маршрутом —",
+      "catalog_title": "Снял квартиру посуточно. Залог не вернули — нашли скол на плите",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "{{SITE_BASE}}/blog/kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki/",
+      "slug": "kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki",
+      "anchor": "«Привезли сына к вузу — «рядом» оказалось 40 минут пешком».Сюжеты разные, но механизм один: расхождение обнаруживается после оплаты. Не тогда, когда можно спокойно сравнить варианты. Не в переписке, где можно задать вопрос. А между лифтом и дверью, когда у гостя три чемодана, уехавшее такси и чужой человек, который уже называет новую сумму.Вопрос, который закрывает проблему до оплатыНе спрашивайте только: «А можно с третьим?» На это легко ответить: «Конечно, места хватит». Места действительно может хватить, но разговор был не о площади дивана.Спросите точнее: «Сколько человек входит в бронь и где это написано в итоговой сумме?»Нормальный ответ звучит без обходных слов: «В бронь входят двое. Третий — плюс 1 500 ₽ за ночь. Итог за две ночи — такая-то сумма». Лучше, если это останется в переписке и попадёт в подтверждение. Тогда у обеих сторон одна арифметика: не крупная цена в карточке отдельно и мелкое условие где-то ниже, а конкретная сумма за конкретное количество людей.А в вашей последней посуточной брони было прямо написано, сколько человек заселяется? Откройте чек или переписку сейчас. Если там стоит «2», а ехать вы собираетесь втроём, напишите нам в",
+      "catalog_title": "Привезли сына к вузу — «рядом» оказалось 40 минут пешком",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "{{SITE_BASE}}/blog/chto-vhodit-v-stoimost-kvartiry-posutochno-polnyj-spisok-uslug/",
+      "slug": "chto-vhodit-v-stoimost-kvartiry-posutochno-polnyj-spisok-uslug",
+      "anchor": "«Что входит в стоимость квартиры посуточно: полный список услуг».Размер, форма и срок возврата залога. Одной строкой, с понятной датой.Скриншот переписки с итоговой суммой. Не воспоминание «мы вроде договорились», а сохранённый экран с цифрой.Шесть вопросов займут около четырёх минут. Это дешевле, чем 3 000 ₽ на лестничной площадке, 2 400 ₽ невозврата и девять дней переписки с поддержкой.ВыводНаш вывод простой. Хороший хост — не обязательно тот, у кого самая низкая цена. Хороший хост — тот, у кого все цифры сказаны раньше, чем в руках гостя оказался чемодан. Если количество людей и итоговая стоимость не меняются внезапно у двери, это и есть нормальное гостеприимство.«Добрый дом» — посуточные квартиры в ТюмениЕсли знаете даты и сколько вас будет — напишите сразу, назовём итоговую сумму одной цифрой.\nTelegram-канал:",
+      "catalog_title": "Что входит в стоимость квартиры посуточно: полный список услуг",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "outbound_unique_slugs": [
+    "beskontaktnoe-zaselenie-posutochno-tyumen",
+    "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+    "kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki",
+    "chto-vhodit-v-stoimost-kvartiry-posutochno-polnyj-spisok-uslug"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B04-oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}
