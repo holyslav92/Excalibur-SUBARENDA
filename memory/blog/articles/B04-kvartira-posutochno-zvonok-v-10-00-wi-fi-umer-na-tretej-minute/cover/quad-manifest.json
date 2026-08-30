@@ -56,7 +56,7 @@
     },
     "inline_1": {
       "quadrant": "top_right",
-      "h2_anchor": "Что сломалось",
+      "h2_anchor": "Что на самом деле сломалось",
       "visual_type": "comparison_table",
       "scene_hint": "Table: evening chat OK vs morning call FAIL.",
       "alt": "Вечером чат OK, утром созвон падает.",
@@ -64,7 +64,7 @@
     },
     "inline_2": {
       "quadrant": "bottom_left",
-      "h2_anchor": "Разговор за 2 мин",
+      "h2_anchor": "Разговор, который решает всё за две минуты",
       "visual_type": "process_flow",
       "scene_hint": "Flow: 2min test call before pay; router at desk.",
       "alt": "Тестовый созвон до оплаты.",
@@ -72,7 +72,7 @@
     },
     "inline_3": {
       "quadrant": "bottom_right",
-      "h2_anchor": "Вопрос-отмычка",
+      "h2_anchor": "Один вопрос, который вскрывает объявление",
       "visual_type": "labeled_checklist",
       "scene_hint": "Checklist: test at desk not door; 3-5 Mbit up.",
       "alt": "Замер у стола, не у двери.",
@@ -88,7 +88,7 @@
     },
     "inline_5": {
       "quadrant": "top_right",
-      "h2_anchor": "4 пункта",
+      "h2_anchor": "Что спросить до оплаты: четыре пункта",
       "visual_type": "labeled_checklist",
       "scene_hint": "4 cards: password, speed test, repeater, 2min call.",
       "alt": "4 вопроса до оплаты.",
@@ -96,8 +96,8 @@
     },
     "inline_6": {
       "quadrant": "bottom_left",
-      "h2_anchor": "У нас так",
-      "visual_type": "reaction_card",
+      "h2_anchor": "Как это устроено у нас",
+      "visual_type": "fact_card",
       "scene_hint": "Card: instructions early, manager online.",
       "alt": "Инструкция и Wi‑Fi заранее.",
       "labels": ["инструкция заранее", "менеджер на связи"]
