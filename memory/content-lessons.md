@@ -118,3 +118,167 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+---
+
+## LESSON-20260829-1237-B04-dual-track-uze-sdali
+status: proposed
+topic_id: B04
+category: structure
+confidence: medium
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: opening paragraphs mirror 22:15 scene twice — fraud (link out of platform) vs in-platform calendar conflict; first H2 «Уже сдали — это не всегда одна и та же история» forks routes (police vs support).
+- metrika_signal: none — METRIKA CREDENTIALS BLOCKER (INC-20260829-1237); sample absent, no retention/scroll validation
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Одна утренняя фраза «уже сдали» → два маршрута (мошенничество / конфликт броней), не смешивать в один нарратив.
+- Lead с конкретным временем 28 августа 22:15 и 08:40 у подъезда — cable scene до ветвления.
+- Bold-разделители «Если платили вне площадки» / «Если платили внутри площадки» как decision tree для 08:40.
+
+### Change
+- Для fear-кластеров prepay/booking всегда ставить **fork в первые 2–3 абзаца**, не откладывать «мошенник или календарь» в середину.
+- Support vs police — назвать канал сразу после классификации, не после utility-блоков.
+
+### Never again
+- Писать «уже занято» как единую историю обмана без ветки легитимного рассинхрона календарей.
+- Смешивать фишинговую ссылку и Avito 6h cancel в одном абзаце без подзаголовка-развилки.
+
+### Proposed apply
+- Writer checklist (review-only): prepay/cancel hooks → dual-track opening + first H2 fork.
+- Scout handoff для fear_prepay: логировать **fraud path vs platform-conflict path** как обязательные углы.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260829-1237-B04-six-hour-cancel-window-math
+status: proposed
+topic_id: B04
+category: utility
+confidence: medium
+
+### Evidence
+- artifact: title-brief.json#stickers + article.html H2 «Шесть часов, которые легко проспать»
+  finding: concrete math — оплата 22:15 → окно до 04:15 → приезд 08:40 без бесплатной отмены; inline-03 alt дублирует таймлайн.
+- metrika_signal: none (credentials BLOCKER; cannot validate scroll-to-H2)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Числовой таймлайн вместо абстрактного «есть 6 часов на отмену».
+- Список тарифов Avito (1/3/5/7/14 дней, невозвратный, мгновенная бронь 2h / подтверждённая 12h) как utility-слой под таймлайном.
+- Sticker «На Авито бесплатная отмена — 6 часов после оплаты» из title-brief → body proof.
+
+### Change
+- Для evening-pay / morning-arrival сценариев всегда считать **конец free-cancel окна vs время заезда** явно (не только «ночью оплатил»).
+- Упоминать day-in-day exception (бронь день в день — без возврата) рядом с 6h rule.
+
+### Never again
+- Оставлять 6-часовое правило без привязки к часам оплаты и утреннего поезда/заезда.
+- Обещать возврат «в каждом случае» при platform-conflict (статья честно: зависит от тарифа).
+
+### Proposed apply
+- Research/Writer: при Avito prepay темах включать **sample timeline** (оплата HH:MM → cancel deadline → arrival HH:MM) в research-notes.
+- Description: не дублировать цифры H1 — держать «держу до полуночи» + вопрос про настоящую бронь (PASS в description-brief B04).
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260829-1237-B04-lk-not-chat-screenshot
+status: proposed
+topic_id: B04
+category: utility
+confidence: medium
+
+### Evidence
+- artifact: description-brief.json + article.html closing checklist item «Бронь видна в личном кабинете»
+  finding: diagnostic question «где подтверждение — в ЛК или скрин в чате?» в conclusion + CTA MAX; contrasts chat image «бронь подтверждена» in lead.
+- metrika_signal: none (credentials BLOCKER)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Один замок-вопрос в финале: ЛК vs картинка — повторяет description-brief без копипаста H1.
+- Lead: картинка «бронь подтверждена» после списания по ссылке — контраст с настоящей записью в заказах.
+- Sticker «Подтверждение брони — в личном кабинете, не скрин в мессенджере».
+
+### Change
+- Для prepay/fear тем выносить **LK-vs-screenshot check** в conclusion checklist (не только в description).
+- CTA «напишите в MAX» привязать к спорному тезису (перевод на карту = красный флаг), не generic.
+
+### Never again
+- Принимать скрин «бронь подтверждена» или код двери как доказательство брони без записи в ЛК/заказах.
+- Description дублировать H1 дословно (B04 description PASS — другой угол «держу до полуночи»).
+
+### Proposed apply
+- Description skill review: prepay fear → prefer chat-pressure phrase + LK diagnostic question.
+- Interlink to B01 (код от чужой двери) как sibling proof «код ≠ бронь».
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260829-1237-B04-prepay-title-klyshin-fork
+status: proposed
+topic_id: B04
+category: voice
+confidence: low
+
+### Evidence
+- artifact: title-brief.json#pain_scene + rejected_variants
+  finding: H1 «Перевёл предоплату… Утром её уже сдали» — Klyshin evening→morning rhythm; rejected copypaste hook and B01 «оплатил» overlap; «посуточно» holds Wordstat spine without raw P0 stuffing.
+- metrika_signal: none (credentials BLOCKER; no CTR causal claim)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Две фразы через точку: вечернее действие (перевёл) → утренний поворот (уже сдали).
+- Тюмень в lead, не в H1 (supply_vs_demand.city_in_h1=false).
+- b04_delta vs B01–B03: отдельный глагол/объект конфликта (предоплата, не код/залог/расстояние).
+
+### Change
+- Fear_prepay titles: prefer **перевёл/оплатил вечером + утренний обрыв** over «N вопросов» / SEO tail.
+- Wordstat spine «аренда квартиры посуточно» — через «посуточно» в H1, fear cluster в H2/body.
+
+### Never again
+- Дословная копия Klyshin hook в H1 (rejected: «Перевёл предоплату вечером. Утром — квартира уже занята»).
+- H1-паттерн «5 вопросов» или «полный гайд» для cancel_prepay angle.
+
+### Proposed apply
+- Title skill: prepay/cancel cluster — evening action + morning «уже сдали/занята» with distinct verb from sibling topics.
+- Scout: log original Klyshin hook + final P0 «аренда квартиры посуточно» (794 Tyumen) per handoff.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded

@@ -1,0 +1,27 @@
+{
+  "slug": "perevel-predoplatu-utrom-kvartira-uzhe-zanyata",
+  "topic_id": "B04",
+  "permalink": "{{SITE_BASE}}/blog/perevel-predoplatu-utrom-kvartira-uzhe-zanyata/",
+  "publish_method": "ftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B04-perevel-predoplatu-utrom-kvartira-uzhe-zanyata/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 775167,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4132 slug=perevel-predoplatu-utrom-kvartira-uzhe-zanyata\nOK categories=101\nOK dzen_yzen_meta=1\nOK featured_image=4133\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4134 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/08/perevel-predoplatu-utrom-kvartira-uzhe-zanyata-inline-01.png\nOK inline_alt=4134\nOK inline_caption=4134\nOK inline_description=4134\nOK inline_image_upload=4135 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/08/perevel-predoplatu-utrom-kvartira-uzhe-zanyata-inline-02.png\nOK inline_alt=4135\nOK inline_caption=4135\nOK inline_description=4135\nOK inline_image_upload=4136 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/08/perevel-predoplatu-utrom-kvartira-uzhe-zanyata-inline-03.png\nOK inline_alt=4136\nOK inline_caption=4136\nOK inline_description=4136\nOK inline_image_upload=4137 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/08/perevel-predoplatu-utrom-kvartira-uzhe-zanyata-inline-04.png\nOK inline_alt=4137\nOK inline_caption=4137\nOK inline_description=4137\nOK inline_image_upload=4138 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/08/perevel-predoplatu-utrom-kvartira-uzhe-zanyata-inline-05.png\nOK inline_alt=4138\nOK inline_caption=4138\nOK inline_description=4138\nOK inline_image_upload=4139 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/08/perevel-predoplatu-utrom-kvartira-uzhe-zanyata-inline-06.png\nOK inline_alt=4139\nOK inline_caption=4139\nOK inline_description=4139\nOK inline_image_upload=4140 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/08/perevel-predoplatu-utrom-kvartira-uzhe-zanyata-inline-07.png\nOK inline_alt=4140\nOK inline_caption=4140\nOK inline_description=4140\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/perevel-predoplatu-utrom-kvartira-uzhe-zanyata/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/perevel-predoplatu-utrom-kvartira-uzhe-zanyata/",
+    "errors": []
+  }
+}

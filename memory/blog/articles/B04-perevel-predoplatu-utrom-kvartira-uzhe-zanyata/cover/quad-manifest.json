@@ -1,0 +1,156 @@
+{
+  "topic_id": "B04",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": [
+        "inline_4",
+        "inline_5",
+        "inline_6",
+        "inline_7"
+      ],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "Деньги ушли — утром сдали",
+  "cover_hook_highlight": "сдали",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "wordstat_stickers": [
+    "аренда квартиры тюмень посуточно",
+    "авито аренда квартир посуточно"
+  ],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "WOW poster split evening phone payment vs morning apartment door shock, torn bank receipt collage, TOP-RIGHT empty logo pad",
+    "location": "august sunny tyumen apartment entryway morning golden light green trees warm summer NOT winter NOT snow",
+    "meme": "Hide the Pain Harold people-meme sticker bottom-left ≤12% at fake booking screenshot",
+    "prop_set": "smartphone bank -20000 notification, train ticket stub, dawn suitcase at door, torn payment receipt, august calendar",
+    "sticker_set": ["аренда квартиры тюмень посуточно", "авито аренда квартир посуточно"],
+    "joke": "Harold forced smile at «бронь подтверждена» chat pic while morning shows strangers behind door"
+  },
+  "cover_emotion": "shock then clarity",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Grsai image API 2K 16:9, one job per canvas. Factory logo paste after split. Phone +7 (993) 574-83-22 painted IN scene on cover only.",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Август в Тюмени: вечером гость оплатил по ссылке, утром у подъезда — чужие жильцы, а в чате «уже сдали».",
+      "scene_hint": "Aug split eve/morn door; gold «сдали»; phone on door magnet MID-RIGHT sunny door NOT bottom edge; Roll Safe bottom-LEFT ≤12%; TOP-RIGHT empty sky NO logo NO house.",
+      "meme_caption_ru": "",
+      "sticky": "Бронь уже чужая?"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "«Уже сдали» — это не всегда одна и та же история",
+      "visual_type": "comparison_table",
+      "scene_hint": "2-col scam vs booking clash; gold ink; TOP-RIGHT empty white sky — NO logo NO brand mark.",
+      "alt": "Два сценария «уже сдали»: мошенничество при оплате вне площадки и конфликт броней внутри сервиса",
+      "labels": [
+        "Вне площадки — обман",
+        "Внутри — конфликт броней",
+        "Сохранить переписку"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Кому переводить и где платить",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Flow ФИО→ссылка→-20k→-15% flag; aug arrows; TOP-RIGHT clean white — NO logo NO brand NO house icon.",
+      "alt": "Перед оплатой: сверить ФИО, не платить по ссылке из чата, помнить про 20 тысяч по фишинговой ссылке и цену ниже рынка",
+      "labels": [
+        "ФИО — в договоре",
+        "Ссылка ≠ площадка",
+        "20 тыс. по ссылке"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Шесть часов, которые легко проспать",
+      "visual_type": "checklist_board",
+      "scene_hint": "Timeline 22:15→04:15→08:40 at door; clock chips; Pepe ≤12%; TOP-RIGHT pad empty.",
+      "alt": "Окно бесплатной отмены 6 часов: оплата в 22:15, конец в 04:15, а в 08:40 гость уже у подъезда без возврата",
+      "labels": [
+        "6 часов на отмену",
+        "22:15 — оплата",
+        "08:40 — у подъезда"
+      ]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Когда календарь подвёл, а хозяин не мошенник",
+      "visual_type": "schema_faq_ui",
+      "scene_hint": "Dual calendar desync; «занято≠обман»; support chip; TOP-RIGHT empty white — NO logo NO brand.",
+      "alt": "Рассинхрон календарей на двух площадках: хозяин настоящий, но даты заняты — это не автоматически мошенничество",
+      "labels": [
+        "Две площадки",
+        "Занято ≠ обман",
+        "Поддержка площадки"
+      ]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Что должно остаться в чате до оплаты",
+      "visual_type": "tool_screenshot",
+      "scene_hint": "Chat bubbles: адрес, даты, цена, отмена, залог; code crossed; no voice-only.",
+      "alt": "До оплаты в переписке должны остаться адрес, даты, цена и правила — код двери сам по себе не доказывает бронь",
+      "labels": [
+        "Адрес до оплаты",
+        "Код ≠ доказательство",
+        "Не только голосовое"
+      ]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Вывод: сначала получатель, потом деньги и ключ",
+      "visual_type": "infographic_card",
+      "scene_hint": "Lock card: ФИО→pay in booking→ЛК confirm→тариф→police/support fork.",
+      "alt": "Порядок действий: проверить получателя и канал оплаты, убедиться в брони в личном кабинете, знать тариф отмены",
+      "labels": [
+        "ФИО получателя",
+        "Бронь в личном кабинете",
+        "Полиция или поддержка"
+      ]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Посуточная Тюмень без сюрприза утром",
+      "visual_type": "comparison_table",
+      "scene_hint": "Comfort+ door+key; TG/MAX icons; aug flare; TOP-RIGHT empty sky — NO logo NO brand.",
+      "alt": "Посуточная в Тюмени без утреннего сюрприза: условия до оплаты, связь в мессенджерах и своя дверь на заезд",
+      "labels": [
+        "Условия до оплаты",
+        "Телеграм и Макс",
+        "звонить до брони",
+        "Своя дверь утром"
+      ]
+    }
+  },
+  "cover_keys_ru": []
+}

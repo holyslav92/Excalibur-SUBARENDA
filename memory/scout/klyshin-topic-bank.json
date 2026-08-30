@@ -91,7 +91,26 @@
       "wordstat_probes": ["командировка тюмень квартира", "аренда квартиры посуточно", "квартира посуточно тюмень"],
       "dzen_pattern_prefer": [2, 3],
       "tyumen_localize": true,
-      "status": "queue_active"
+      "status": "used",
+      "last_seen": "2026-08-29",
+      "queue_slot": "2026-08-29 — 2026-08-31",
+      "used_in_articles": ["LIVE-zvonok-v-10-00-zaselilsya-v-22-00-stol-est-rozetki-net"]
+    },
+    {
+      "id": "cancel_prepay",
+      "queue_num": 9,
+      "hook_ru": "Перевёл предоплату вечером. Утром — «квартира уже занята».",
+      "angle": "сколько и когда платить, как зафиксировать бронь до перевода",
+      "klyshin_signal": "lockpick: кому переводим и что в переписке до денег?",
+      "wordstat_probes": ["предоплата за аренду квартиры посуточно", "аренда квартиры посуточно", "отмена брони посуточно"],
+      "dzen_pattern_prefer": [3, 2],
+      "tyumen_localize": true,
+      "status": "used",
+      "last_seen": "2026-08-29",
+      "queue_slot": "parked — B04 slot 2026-08-29",
+      "final_p0": {"phrase": "аренда квартиры посуточно", "volume_tyumen": 794, "volume_ru": null},
+      "wordstat_rework_log": "probe «предоплата за аренду квартиры посуточно» 42 (225) → «отмена брони посуточно» 102 (225) → final P0 «аренда квартиры посуточно» 794 (55+11176)",
+      "used_in_articles": ["B04"]
     },
     {
       "id": "kitchen_vs_hotel_cafes",
