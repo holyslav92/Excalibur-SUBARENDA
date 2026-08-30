@@ -1,58 +1,25 @@
 {
-  "bumped_at_yekt": "2026-08-23T18:30:57.506925+05:00",
-  "cache_bust": 1787491847,
+  "bumped_at_yekt": "2026-08-31T00:57:19.864149+05:00",
+  "cache_bust": 1788119832,
   "slugs": [
-    "dogovor-arendy-pravila-prozhivaniya-posutochno",
-    "otmena-bronirovaniya-posutochno-vozvrat-predoplaty",
-    "pereveli-predoplatu-v-pravilah-melkim-vecherinki-i-lishnie-gosti",
-    "zabroniroval-posutochno-vyyasnilos-kvartira-v-subarende"
+    "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego"
   ],
   "before_modified_gmt": {
-    "dogovor-arendy-pravila-prozhivaniya-posutochno": "2026-08-23T13:27:55",
-    "otmena-bronirovaniya-posutochno-vozvrat-predoplaty": "2026-08-23T13:27:55",
-    "pereveli-predoplatu-v-pravilah-melkim-vecherinki-i-lishnie-gosti": "2026-08-23T13:27:56",
-    "zabroniroval-posutochno-vyyasnilos-kvartira-v-subarende": "2026-08-23T13:27:56"
+    "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego": "2026-08-30T19:40:02"
   },
   "after_modified_gmt": {
-    "dogovor-arendy-pravila-prozhivaniya-posutochno": "2026-08-23T13:30:50",
-    "otmena-bronirovaniya-posutochno-vozvrat-predoplaty": "2026-08-23T13:30:50",
-    "pereveli-predoplatu-v-pravilah-melkim-vecherinki-i-lishnie-gosti": "2026-08-23T13:30:50",
-    "zabroniroval-posutochno-vyyasnilos-kvartira-v-subarende": "2026-08-23T13:30:50"
+    "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego": "2026-08-30T19:57:15"
   },
   "bootstrap_rows": [
     {
-      "post_id": 3855,
-      "slug": "dogovor-arendy-pravila-prozhivaniya-posutochno",
-      "modified_gmt": "2026-08-23 13:30:50",
-      "cover_remote": "dogovor-arendy-pravila-prozhivaniya-posutochno-cover-1.png",
-      "cover_attachment_id": 3865
-    },
-    {
-      "post_id": 3845,
-      "slug": "otmena-bronirovaniya-posutochno-vozvrat-predoplaty",
-      "modified_gmt": "2026-08-23 13:30:50",
-      "cover_remote": "otmena-bronirovaniya-posutochno-vozvrat-predoplaty-cover.png",
-      "cover_attachment_id": 3846
-    },
-    {
-      "post_id": 3835,
-      "slug": "pereveli-predoplatu-v-pravilah-melkim-vecherinki-i-lishnie-gosti",
-      "modified_gmt": "2026-08-23 13:30:50",
-      "cover_remote": "pereveli-predoplatu-v-pravilah-melkim-vecherinki-i-lishnie-gosti-cover.png",
-      "cover_attachment_id": 3836
-    },
-    {
-      "post_id": 3797,
-      "slug": "zabroniroval-posutochno-vyyasnilos-kvartira-v-subarende",
-      "modified_gmt": "2026-08-23 13:30:50",
-      "cover_remote": "zabroniroval-posutochno-vyyasnilos-kvartira-v-subarende-cover-2.png",
-      "cover_attachment_id": 3821
+      "post_id": 4178,
+      "slug": "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+      "modified_gmt": "2026-08-30 19:57:15",
+      "cover_remote": "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego-cover.png",
+      "cover_attachment_id": 4179
     }
   ],
   "permalink": {
-    "dogovor-arendy-pravila-prozhivaniya-posutochno": "/blog/dogovor-arendy-pravila-prozhivaniya-posutochno/",
-    "otmena-bronirovaniya-posutochno-vozvrat-predoplaty": "/blog/otmena-bronirovaniya-posutochno-vozvrat-predoplaty/",
-    "pereveli-predoplatu-v-pravilah-melkim-vecherinki-i-lishnie-gosti": "/blog/pereveli-predoplatu-v-pravilah-melkim-vecherinki-i-lishnie-gosti/",
-    "zabroniroval-posutochno-vyyasnilos-kvartira-v-subarende": "/blog/zabroniroval-posutochno-vyyasnilos-kvartira-v-subarende/"
+    "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego": "/blog/oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego/"
   }
 }

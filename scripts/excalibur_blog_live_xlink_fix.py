@@ -43,27 +43,21 @@ def run_bootstrap(env: dict[str, str], php: str, public_base: str, *, bootstrap_
     """Upload bootstrap via SFTP/FTP and trigger with curl (avoid 120s webfetch fallback wait)."""
     configured_root = (env.get("FTP_ROOT") or env.get("SSH_ROOT") or "").strip()
     if configured_root:
-        from excalibur_blog_wp_publish import publish_via_sftp
+        selected_root = configured_root
+    else:
+        selected_root, probe_log = find_wp_root(env)
+        if not selected_root:
+            raise RuntimeError(f"FTP BLOCKER: wp-load.php not found; probe={probe_log}")
 
-        runtime_env = dict(env)
-        runtime_env["SSH_ROOT"] = configured_root
-        runtime_env["FTP_ROOT"] = configured_root
-        # Timeweb ca21576: SFTP/22 works when passive FTP data channel is blocked.
-        if not (runtime_env.get("SSH_HOST") or "").strip():
-            runtime_env["SSH_HOST"] = (
-                runtime_env.get("FTP_HOST") or "188.225.40.162"
-            ).strip()
-        if not (runtime_env.get("SSH_PORT") or "").strip():
-            runtime_env["SSH_PORT"] = "22"
-        return publish_via_sftp(runtime_env, php, public_base, bootstrap_name=bootstrap_name)
-
-    selected_root, probe_log = find_wp_root(env)
-    if not selected_root:
-        raise RuntimeError(f"FTP BLOCKER: wp-load.php not found; probe={probe_log}")
     runtime_env = dict(env)
     runtime_env["FTP_ROOT"] = selected_root
     runtime_env["SSH_ROOT"] = selected_root
-    upload_bytes(runtime_env, bootstrap_name, php.encode("utf-8"), root=selected_root)
+    if not (runtime_env.get("SSH_HOST") or "").strip():
+        runtime_env["SSH_HOST"] = (runtime_env.get("FTP_HOST") or "188.225.40.162").strip()
+    if not (runtime_env.get("SSH_PORT") or "").strip():
+        runtime_env["SSH_PORT"] = "22"
+
+    upload_bytes(runtime_env, bootstrap_name, php.encode("utf-8"), root=selected_root, timeout=90)
     url = public_base.rstrip("/") + "/" + bootstrap_name
     try:
         proc = subprocess.run(
@@ -377,7 +371,7 @@ def unwrap_mismatched_blog_links(
     return updated, changes
 
 
-def verify_hrefs(content: str, site_base: str) -> list[str]:
+def verify_hrefs(content: str, site_base: str, *, timeout: float = 8.0) -> list[str]:
     errors: list[str] = []
     for match in re.finditer(r'href=(["\'])([^"\']+)\1', content):
         href = match.group(2)
@@ -388,7 +382,7 @@ def verify_hrefs(content: str, site_base: str) -> list[str]:
         if not slug:
             continue
         url = href if href.startswith("http") else site_base.rstrip("/") + blog_path_for_slug(slug)
-        result = check_url_with_connection_reset_retry(url, 15.0, "ExcaliburBlogLiveXlinkFix/1.0")
+        result = check_url_with_connection_reset_retry(url, timeout, "ExcaliburBlogLiveXlinkFix/1.0")
         if not result.get("ok"):
             errors.append(f"{href} -> HTTP {result.get('status')} {result.get('error')}")
     return errors
@@ -486,6 +480,8 @@ def main() -> int:
     report_rows: list[dict[str, Any]] = []
     updates: list[dict[str, Any]] = []
 
+    print(f"xlink-fix: processing {len(rows)} posts (apply={args.apply and not args.dry_run})", flush=True)
+
     for row in rows:
         slug = str(row.get("slug") or "")
         content = str(row.get("content") or "")
@@ -505,7 +501,10 @@ def main() -> int:
             timeout=8.0,
             skip_http=True,
         )
-        href_errors = verify_hrefs(fixed, public_base) if fixed != content else []
+        href_errors: list[str] = []
+        for match in re.finditer(r'href=(["\'])([^"\']+)\1', fixed):
+            if is_root_relative_blog_href(match.group(2)):
+                href_errors.append(f"Dzen-unsafe relative blog href remains: {match.group(2)}")
         entry = {
             "slug": slug,
             "post_id": row.get("post_id"),
