@@ -12,6 +12,12 @@
 
 ---
 
+## GOOD vs BAD — H1 + §1 (gate calibration)
+
+См. `shared/soul-examples/good-outputs.md` и `bad-outputs.md`. Gate: `scripts/excalibur_blog_case_delivery_gate.py`.
+
+---
+
 ## CASE delivery — 10 правил (HARD, одна формулировка)
 
 1. **§1 = плотный кейс.** 1–2 абзаца с датой, городом, цитатой, ₽/ночами, что сломалось. **BAN** chopped 3-word lead.
@@ -24,6 +30,20 @@
 8. One lockpick question.
 9. One mid comment fight-question (TG/MAX).
 10. Guest pain only — no ЕГРН/Шакин/риэлтор. Sol MUST NOT encyclopedia.
+
+---
+
+## Body devices (после dense §1, never instead)
+
+| Device | Пример shape |
+|--------|----------------|
+| «Не X. Не Y. А Z.» | Не «рядом». Не «5 минут». А 40 минут пешком с чемоданом. |
+| Degradation → moral | Сначала фото крана. Потом чат. Потом перевод. Не наоборот. |
+| Direct speech | «Утром будет» — в 00:12, а выезд в 11:00. |
+| Refusal | «Так не заселяем.» / «Даже за двойную цену.» |
+| Aphoristic close | «Наш вывод простой.» + one metaphor before CTA |
+
+**BAN:** vertical ladder (1 sentence per line) as §1 — Klyshin TG rhythm is for **Title** two-beat, not article lead.
 
 ---
 
@@ -51,13 +71,13 @@
 
 ## Русский язык (HARD FAIL)
 
-- **Пиши как гость говорит:** код, ключница, залог, подъезд, домофон.
-- **Запрещено:** «осуществить заселение», «данный объект», «в рамках», «является»,
+- **Пиши как гость говорит:** код, ключница, залог, подъезд, домофон. Без лишних англицизмов.
+- **Запрещён канцелярит:** «осуществить заселение», «данный объект», «в рамках», «является»,
   «справочный характер», «не заменяет юридическую консультацию».
 - **Ban openers:** TL;DR, chopped lead, «Разберём», «В этой статье», «что проверить первым».
 - Без «полный гайд», «2026», SEO-хвостов в H1.
 - **Ban H1 skeleton:** «5 вопросов», «7 шагов» as article structure.
-- Без эмодзи. `dzen_rf_pack` — мат запрещён.
+- Без эмодзи. `dzen_rf_pack` — мат запрещён (`shared/dzen-content-rules.md`).
 
 ---
 
@@ -68,7 +88,7 @@
 | 1 | **Нумерованный список** | **NOT default** | H1 с числом — rare | N пунктов only if H1 promises; not skeleton |
 | 2 | **Живой кейс с суммами** | залог / предоплата / удержали | сумма или время в H1 | one case → one verdict |
 | 3 | **Страх → сцена в §1** | risk money/housing | «залог 5 000 ₽: когда вернут» | плотный кейс, not how-to |
-| 4 | **Контраст с ответом в лиде** | посуточно vs отель | вердикт в первой фразе | математика после вердикта |
+| 4 | **Контраст с ответом в лиде** | посуточно или отель | вердикт в первой фразе | математика после вердикта |
 | 5 | **Локальный + сезонный** | район, 1 сент, окно брони | без «Тюмень» в H1 OK | supply только Тюмень |
 
 Scout: prefer **2–5**. Title rides **Wordstat P0 demand**, not legal essay.

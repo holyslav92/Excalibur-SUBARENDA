@@ -111,7 +111,13 @@
     "канал без копипаста",
     "полный гайд",
     "что такое",
-    "и как"
+    "и как",
+    "как снять",
+    "что проверить",
+    "разберём",
+    "5 вопросов",
+    "7 шагов",
+    "о проверке"
   ],
   "opening_rules": {
     "block_first": true,
@@ -123,7 +129,8 @@
     "style": "shared/article-style.md",
     "soul": "shared/SOUL.md",
     "soul_examples": "shared/soul-examples/",
-    "gate": "scripts/excalibur_blog_opening_meta_gate.py"
+    "gate": "scripts/excalibur_blog_opening_meta_gate.py",
+    "case_delivery_gate": "scripts/excalibur_blog_case_delivery_gate.py"
   },
   "h1_rules": {
     "no_series_templates": true,

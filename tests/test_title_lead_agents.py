@@ -24,7 +24,7 @@ class TitleWriterAgentsTest(unittest.TestCase):
         a = (ROOT / "agents/excalibur-blog-title.md").read_text(encoding="utf-8")
         s = (ROOT / "skills/title-excalibur-blog/SKILL.md").read_text(encoding="utf-8")
         self.assertIn("title-brief.json", a)
-        self.assertIn("без копипаста", a + s)
+        self.assertTrue("не копировать" in (a + s).lower() or "never paste" in (a + s).lower())
         self.assertNotIn('"title_id"', a + s)
         self.assertNotIn('"hook_id"', a + s)
 

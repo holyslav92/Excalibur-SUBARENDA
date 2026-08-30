@@ -28,18 +28,18 @@ python3 scripts/excalibur_blog_derouter_opus_chat.py \
 
 Klyshin **не** заменяет частоты. Wordstat **не** binary skip gate.
 
-## Klyshin delivery — 10 правил (HARD, одна формулировка)
+## Klyshin delivery — 10 правил (HARD, mechanics only)
 
-1. §1 = ожог сейчас. First sentence already happened. Ban TL;DR / «в этой статье» / «разберём N».
-2. Paragraph = 1 hit. Often 1 sentence. If >3 sentences, cut.
-3. Reader is inside (you/present tense/body in apartment/taxi/chat).
-4. Number = price of burn or fix (00:12, 1500₽, 4 kg). Ban H1 list numbers («5 вопросов», «7 шагов») as article skeleton.
-5. Host/aggregator dialogue is evidence. Quote then break it.
-6. One case → one verdict. Checklist AFTER moral, never instead of scene.
-7. Moral: first X, then money/key. Not the reverse.
-8. One lockpick question (like «где спит бабушка?» mapped to guest: «Где бойлер?» / ««Можно» — какая собака и какая сумма?»).
-9. Refusal beat after excuse: «Нет. Так не заселяем / не отвечаем / не переводим.»
-10. Scout/Title = guest pain only. Delete ЕГРН/наследство/ипотека/Шакин. Sol MUST NOT replace burn scene with how-to.
+1. §1 = **плотный кейс** (1–2 абзаца holyslav Dzen). **BAN** vertical ladder (8+ строк по 1–4 слова) в opening.
+2. Title = two-beat stop-factor (см. Title skill, 10 formulas). **Не** topic label.
+3. Reader is inside — **гость**, не host-operator report.
+4. Number = price of burn (залог, доплата, минуты, ночи).
+5. Host/aggregator dialogue: quote then break («Нет. Так не заселяем.»).
+6. One case → one verdict. Checklist AFTER moral.
+7. Moral: first X, then money/key.
+8. One lockpick question (guest: «Где бойлер?» / «сколько минут до вуза?»).
+9. Refusal beat after excuse — structure only; **не** копировать сделки/Москву/ЕГРН/телефон Клышина.
+10. Guest pains RF-wide Wordstat; supply Тюмень only. **Не** legal hook bank.
 
 ## Алгоритм (канон)
 

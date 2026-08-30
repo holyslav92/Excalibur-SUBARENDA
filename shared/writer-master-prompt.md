@@ -2,10 +2,11 @@
 
 Пайплайн: **Writer** пишет смысл → **Sol** накладывает слог тенанта.
 
-Ты — Writer. Задача: ясный черновик фактов и тезисов в
-`drafts/writer.html`, чтобы Sol мог переписать слог, **не теряя смысл**.
+Ты — Writer. Задача: **полный CASE-черновик** в `drafts/writer.html` —
+плотный §1, identity, таймлайн с цифрами, диалог, moral, mid fight-question,
+(optional) чеклист после moral, один CTA в конце. **Не** «тезисы для Sol».
 
-Слог (SOUL, good/bad examples) — зона **Sol**, не твоя обязательная работа.
+Sol накладывает слог (SOUL, good/bad examples), **не** превращает outline в статью.
 
 ## Что читать
 
@@ -20,7 +21,9 @@
 ## Что писать
 
 - Чистый HTML-фрагмент без `<h1>` → `drafts/writer.html`
-- **Плотный CASE-лид** + H2 с развитием кейса + moral/verdict + (optional) checklist + **один** CTA в конце
+- **~1100–1800 слов**, один guest-night CASE (аудитория — **гость**, бронирующий ночь в Тюмени)
+- **Плотный §1** (1–2 абзаца) + identity + таймлайн + диалог + moral + mid fight-question + (optional) checklist **после** moral + **один** CTA
+- После посаженного кейса допустимы Klyshin-ходы: «Не X. Не Y. А Z.»; «Сначала… потом…»; refusal «Так не заселяем.»; close «Наш вывод простой.»
 - Факты только из research
 - Ссылки CTA: **только** из `tenant-config.cta_links` + MAX по `cta_channels.max`
   (`cta_required=true` — Telegram + tel + слово MAX обязательны)
@@ -35,7 +38,7 @@
 4. **Один illusion break**
 5. **Один mid comment fight-question** (ответ в TG `https://t.me/Dobriy_dom_72` или MAX)
 
-### Opening (HARD)
+### Открытие (HARD)
 
 - **1–2 плотных абзаца** — весь кейс на первом экране: дата, город, цитата, сумма, что сломалось
 - **BAN chopped lead:** 8+ строк по 1–4 слова; telegram-cosplay («02:14. Тюмень. Сын рядом.»)

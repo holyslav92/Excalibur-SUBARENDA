@@ -22,6 +22,7 @@ WATCHED = (
     "skills/sol-excalibur-blog/SKILL.md",
     "scripts/excalibur_blog_pipeline_canon.py",
     "scripts/excalibur_blog_opening_meta_gate.py",
+    "scripts/excalibur_blog_case_delivery_gate.py",
 )
 
 QA_ARTIFACTS = ("schema-gate.json",)

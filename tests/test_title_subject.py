@@ -11,13 +11,13 @@ class TitleSubjectWordstatTest(unittest.TestCase):
     def test_title_skill_requires_subject_in_h1(self) -> None:
         s = (ROOT / "skills/title-excalibur-blog/SKILL.md").read_text(encoding="utf-8")
         low = s.lower()
-        self.assertIn("тема", low)
-        self.assertIn("label head", low)
-        self.assertIn("openai", low)
+        self.assertIn("guest", low)
+        self.assertIn("two-beat", low)
+        self.assertIn("dzen_pattern", low)
 
     def test_title_agent_bans_hiding_subject(self) -> None:
         a = (ROOT / "agents/excalibur-blog-title.md").read_text(encoding="utf-8")
-        self.assertIn("case hook", a.lower())
+        self.assertIn("stop-factor", a.lower())
 
     def test_scout_uses_multiple_wordstat_calls(self) -> None:
         s = (ROOT / "skills/scout-excalibur-blog/SKILL.md").read_text(encoding="utf-8")
