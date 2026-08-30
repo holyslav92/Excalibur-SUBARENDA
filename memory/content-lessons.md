@@ -118,3 +118,165 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+---
+
+## LESSON-20260830-0800-B04-after-checkout-docs-deadline
+status: proposed
+topic_id: B04
+category: utility
+confidence: medium
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: H2 «Обещание „после выезда“ иногда длиннее самой командировки»; lead: чек на 10-й день vs 3 рабочих дня на авансовый отчёт; 4 200 ₽ личными деньгами.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest BLOCKER (METRIKA CREDENTIALS)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Второй удар Klyshin в H1: не «нет чека», а «обещают **после выезда**» — иллюзия срока, не отсутствие документа.
+- Description не дублирует H1: вопрос ««После выезда» — это когда?» + авансовый отчёт (description-brief PASS).
+- Три письменных фиксации до оплаты: какие документы, кто выдаёт, **когда** у гостя (не «потом»).
+- Чеклист п.4–6: тип выдавшего (самозанятый/ИП/ООО), комплект, дата в рамках 3 рабочих дней.
+
+### Change
+- Для business-travel / командировка тем всегда связывать «после выезда» с **конкретной датой** и дедлайном бухгалтерии, не только с фактом выдачи.
+- Scout handoff: при hook про закрывающие логировать sub-angle «срок vs авансовый отчёт», не только «нужен чек».
+
+### Never again
+- Принимать «сделаем после выезда» как достаточное обещание без даты, когда гость отчитывается за 3 рабочих дня.
+- Писать командировочный материал только про Wi‑Fi/стол, игнорируя пакет закрывающих и срок.
+
+### Proposed apply
+- Writer checklist (review-only): командировка → документы + срок в одном материале с рабочим местом.
+- Interlink sibling B02 (залог на выезде) как «деньги после ключей», B04 — «документы после выезда».
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260830-0800-B04-wifi-desk-at-point
+status: proposed
+topic_id: B04
+category: utility
+confidence: medium
+
+### Evidence
+- artifact: title-brief.json#checks.not_rozetka_angle
+  finding: угол NOT «розетка» (WP duplicate); вместо этого стол + Wi‑Fi + чек до оплаты. Вопрос-отмычка: «Где будет стоять ноутбук — и какая скорость Wi‑Fi именно там?»
+- metrika_signal: none (METRIKA CREDENTIALS BLOCKER)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Разделение H2: «Wi‑Fi есть» ≠ рабочая связь; Zoom 720p/1080p с цифрами Мбит/с.
+- Барная стойка vs стол: «пришлите фото этого места» — не общее «да, есть».
+- Inline alt дублирует риск: Wi‑Fi в прихожей vs обрыв в дальней комнате на 3-й минуте.
+
+### Change
+- Для remote-work / видеосозвон тем парить **точку ноутбука** (фото + скриншот speedtest), не «есть интернет».
+- Отличать от розетка-angle в Scout: business-travel = стол + связь + документы.
+
+### Never again
+- Считать строку «Wi‑Fi и всё необходимое» доказательством готовности к 10:00 видеосозвону.
+- Принимать барную стойку за «рабочее место» без фото и розетки рядом.
+
+### Proposed apply
+- Cover-text / inline stickers: «скорость **у стола**», не «Wi‑Fi есть».
+- Title rejected_variant зафиксирован: чеклист «нужны» слабее, чем иллюзия «обещают после выезда».
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260830-0800-B04-late-checkin-morning-call-window
+status: proposed
+topic_id: B04
+category: structure
+confidence: medium
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: lead 22:10 заезд → 10:00 созвон; H2 «Заезд в 22:00 — это не полночи на проверку»: ~40 минут на проверку; ошибка всплывает при включённой камере.
+- metrika_signal: none (METRIKA CREDENTIALS BLOCKER)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Двойной якорь времени в H1 (22:00 + 10:00) сжимает день сильнее, чем одна метка.
+- Interlink B01 (бесконтакт): вопрос после перевода = ночная переписка.
+- Чеклист п.3: поздний заезд письменно до оплаты.
+
+### Change
+- Business-travel материалы: **окно между заездом и первым обязательным событием** (созвон/встреча) — отдельный слой боли, как у B03 parents+check-in.
+- При позднем заезде — все проверки (стол, Wi‑Fi, документы) **до** оплаты, не «успею утром».
+
+### Never again
+- Писать про 22:00 заезд без привязки к завтрашнему дедлайну (созвон, отчёт, выезд).
+- Оставлять проверку рабочего места на утро перед видеозвоном.
+
+### Proposed apply
+- Scout/Title: hook «поздний заезд» → handoff с **утренним якорем** (созвон/встреча/поезд).
+- Sibling cluster B01–B04: «деньги/ключи до проверки» как сквозная нить.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260830-0800-B04-title-double-time-klyshin
+status: proposed
+topic_id: B04
+category: voice
+confidence: low
+
+### Evidence
+- artifact: title-brief.json#pain_scene
+  finding: две короткие фразы (22:00 заселился / 10:00 созвон) + второй удар «закрывающие обещают после выезда»; demand spine «квартиры посуточно тюмень» (5523) не в H1.
+- metrika_signal: none (METRIKA CREDENTIALS BLOCKER; causal CTR не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Klyshin consequence: strong_verb «обещают после выезда» — не чеклист, а иллюзия срока.
+- length_50_70 PASS (68 chars); city_in_h1 false — geo в description/теле.
+
+### Change
+- Повторять формулу «два времени + обещание с подвохом» для business-travel hooks.
+- Rejected «5 вопросов» — держать историю, не N-вопросов в H1.
+
+### Never again
+- Заголовок-чеклист («нужны Wi‑Fi и чек») вместо сцены с ущербом/иллюзией.
+
+### Proposed apply
+- Title skill review: командировка — prefer double time anchor + misleading promise over checklist H1.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded

@@ -284,3 +284,36 @@ checks_run:
 - B04 link-verify PASS (8/8 links)
 - B04 live images HEAD 8/8 HTTP 200 + alt present
 commit: 87201ed
+
+## INC-20260830-0800-metrika-credentials-missing
+status: open
+run_date: 2026-08-30
+role: excalibur-blog-content-learner
+topic_id: B04
+article_dir: memory/blog/articles/B04-zaselilsya-v-22-00-v-10-00-sozvon-a-zakryvayuschie-obeschayut-posle-vyezda
+severity: medium
+category: secrets
+
+### What went wrong
+
+- `excalibur_blog_metrika_fetch.py --days 30 --ingest` exit 2: `METRIKA CREDENTIALS BLOCKER` — `YANDEX_METRIKA_OAUTH_TOKEN` and `YANDEX_METRIKA_COUNTER_ID` not set in Cloud Secrets/env.
+- `memory/analytics/metrika-latest.json` absent; behavioral cohort matching for B04 skipped.
+
+### How the agent recovered this run
+
+- Evidence gate SKIP (no content-evidence-report.json under human-first-v2) — pipeline not blocked.
+- Recorded 4 proposed lessons in `memory/content-lessons.md` from publish artifacts (Metrika-only signals unavailable; LOW_SAMPLE).
+
+### Durable fix needed before next run
+
+- Set `YANDEX_METRIKA_OAUTH_TOKEN` (OAuth scope `metrika:read`) and `YANDEX_METRIKA_COUNTER_ID` in Cloud Secrets; re-run Metrika ingest after publish.
+
+### Suggested files to inspect/change
+
+- Cloud Secrets / tenant env
+- `scripts/excalibur_blog_metrika_fetch.py`
+
+### Secrets
+
+- YANDEX_METRIKA_OAUTH_TOKEN — missing
+- YANDEX_METRIKA_COUNTER_ID — missing
