@@ -52,13 +52,13 @@
       "quadrant": "top_left",
       "role": "cover_editorial_hero",
       "alt": "Август: созвон в 10:00, чек обещают после выезда.",
-      "scene_hint": "Aug lamp bar laptop Zoom 10:00; pink «чек»; phone tape bottom; Harold ≤12%; TOP-RIGHT wall NOT logo.",
+      "scene_hint": "Aug warm lamp bar laptop Zoom; pink «чек»; phone on torn tape strip bottom NOT pill; Harold ≤12%; TOP-RIGHT empty wall/sky ONLY zero logo zero curtains zero house.",
       "meme_caption_ru": "",
       "sticky": "Так не планировал"
     },
     "inline_1": {
       "quadrant": "top_right",
-      "h2_anchor": "Заезд в 22:00",
+      "h2_anchor": "Заезд в 22:00 — это не полночи на проверку",
       "visual_type": "comparison_table",
       "scene_hint": "Timeline 15:00 vs 22:10 vs 40 min vs 10:00.",
       "alt": "Поздний заезд 22:10: 40 минут на проверку до созвона в 10:00.",
@@ -66,7 +66,7 @@
     },
     "inline_2": {
       "quadrant": "bottom_left",
-      "h2_anchor": "Wi‑Fi у стола",
+      "h2_anchor": "«Есть Wi‑Fi» — это ещё не рабочая связь",
       "visual_type": "process_flow",
       "scene_hint": "Hallway strong vs far room drop 3rd min.",
       "alt": "Wi‑Fi в прихожей держится, в дальней комнате обрыв на 3-й минуте.",
@@ -74,7 +74,7 @@
     },
     "inline_3": {
       "quadrant": "bottom_right",
-      "h2_anchor": "Стол vs стойка",
+      "h2_anchor": "Барная стойка красиво выглядит, но не заменяет стол",
       "visual_type": "labeled_checklist",
       "scene_hint": "Bar stool vs desk checklist chips.",
       "alt": "Барная стойка не заменяет стол — нужно фото и розетка.",
@@ -82,7 +82,7 @@
     },
     "inline_4": {
       "quadrant": "top_left",
-      "h2_anchor": "Чек после выезда",
+      "h2_anchor": "Обещание «после выезда» иногда длиннее самой командировки",
       "visual_type": "comparison_table",
       "scene_hint": "Calendar day0→day3 report→day10 receipt.",
       "alt": "Чек на 10-й день — отчёт нужен за 3 рабочих дня.",
@@ -90,7 +90,7 @@
     },
     "inline_5": {
       "quadrant": "top_right",
-      "h2_anchor": "Вердикт",
+      "h2_anchor": "Вердикт: сначала рабочее место, связь и документы. Потом деньги и ключ",
       "visual_type": "process_flow",
       "scene_hint": "Flow: стол+Wi-Fi+docs → деньги → ключ.",
       "alt": "Сначала стол, Wi‑Fi и документы — потом деньги.",
@@ -98,7 +98,7 @@
     },
     "inline_6": {
       "quadrant": "bottom_left",
-      "h2_anchor": "6 сообщений",
+      "h2_anchor": "Шесть сообщений перед оплатой",
       "visual_type": "labeled_checklist",
       "scene_hint": "6 numbered chat bubbles checklist.",
       "alt": "Шесть сообщений в чат до оплаты.",
@@ -106,7 +106,7 @@
     },
     "inline_7": {
       "quadrant": "bottom_right",
-      "h2_anchor": "До брони",
+      "h2_anchor": "Как мы проговариваем такие вещи в «Добром доме»",
       "visual_type": "comparison_table",
       "scene_hint": "2-col до брони vs после сюрприз.",
       "alt": "Стол и закрывающие уточняем до брони.",
