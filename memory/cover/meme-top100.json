@@ -1,7 +1,7 @@
 {
-  "catalog_id": "meme-top100-v1",
+  "catalog_id": "meme-top100-v2",
   "status": "ok",
-  "updated_at": "2026-08-20",
+  "updated_at": "2026-08-31",
   "sources": [
     "Know Your Meme Meme of the Year 2025 top 20 (knowyourmeme.com/editorials/poll/meme-of-the-year-the-top-20-memes-of-2025)",
     "Rolling Stone 25 Best Memes of 2025",
@@ -9,14 +9,20 @@
     "Russian meme canon: sacrednik/priest, Жириновский, etc."
   ],
   "usage_rules": {
-    "cover": "REQUIRED exactly ONE named catalog entry on every cover as designed sticker graphic. Prefer non-cat people-memes on cover (Roll Safe, Harold, Pepe, etc.) so inlines keep the cat slot free. Cat-meme on cover counts toward max 1 cat/article across cover+7 inlines. No invented faces. No 0 memes. No 2+ memes.",
+    "cover": "REQUIRED exactly ONE named catalog entry on every cover as die-cut sticker graphic. Pick by topic-tag overlap (scripts/excalibur_blog_meme_rotate.py); skip ids in last 8 live covers (memory/cover/meme-used.json). Prefer non-cat people-memes on cover. Cat-meme on cover counts toward max 1 cat/article across cover+7 inlines.",
     "inline": "NO large human ever. Meme stickers only: max 15% frame area, corner/edge accent, never co-host/presenter slot. Prefer people-memes; cat-meme only if article's single cat slot.",
     "cat_meme_quota": {
       "max_slots_per_article": 1,
       "scope": "cover + inline_1..inline_7",
       "anti_repeat_family": "__cat_meme_family__",
       "rotate_non_cat": "Roll Safe, Harold, Pepe, Wojak, Gigachad, sacrednik, Жириновский, etc.",
-      "forbidden_cat_repeats": ["grumpy cat", "tardar sauce", "ginger cat", "smudge cat", "tabby repeat"]
+      "forbidden_cat_repeats": [
+        "grumpy cat",
+        "tardar sauce",
+        "ginger cat",
+        "smudge cat",
+        "tabby repeat"
+      ]
     },
     "forbidden": [
       "invented photogenic stranger",
@@ -26,7 +32,15 @@
       "meme person in left portrait or pointing-at-table presenter role on inline"
     ],
     "sticker_scale_max": 0.15,
-    "sticker_scale_recommended": 0.08
+    "sticker_scale_recommended": 0.08,
+    "rotation": {
+      "pick_by": "topic_tag_overlap_with_article",
+      "skip_last_n_covers": 8,
+      "used_log": "memory/cover/meme-used.json",
+      "picker_script": "scripts/excalibur_blog_meme_rotate.py",
+      "never_same_face_twice_in_window": true,
+      "prefer_asset_file": "memory/cover/memes/<id>.png when present"
+    }
   },
   "banned_celebrity_templates": [
     "Salt Bae",
@@ -34,56 +48,1342 @@
     "Distracted Boyfriend actors by name"
   ],
   "entries": [
-    {"id": "roll_safe", "name_ru": "Roll Safe / Think About It", "category": "people", "aliases": ["think about it", "tap temple", "kayode ewumi"], "template": "Black man tapping temple, smug knowing look", "kye": "roll-safe", "allowed_on": ["cover", "inline"], "max_frame_share": 0.12},
-    {"id": "hide_pain_harold", "name_ru": "Hide the Pain Harold", "category": "people", "aliases": ["harold", "боль в глазах"], "template": "Older man forced smile, pain behind eyes", "allowed_on": ["cover", "inline"], "max_frame_share": 0.12},
-    {"id": "disappointed_black_guy", "name_ru": "Disappointed Black Guy", "category": "people", "aliases": ["disappointed guy", "side eye disapproval"], "template": "Man side-eyeing with disapproval", "allowed_on": ["cover", "inline"], "max_frame_share": 0.12},
-    {"id": "confused_math_lady", "name_ru": "Confused Math Lady", "category": "people", "aliases": ["confused calculations"], "template": "Woman with equations floating around head", "allowed_on": ["cover", "inline"], "max_frame_share": 0.12},
-    {"id": "success_kid", "name_ru": "Success Kid", "category": "people", "aliases": ["fist pump baby"], "template": "Baby fist pump on beach", "allowed_on": ["cover", "inline"], "max_frame_share": 0.10},
-    {"id": "side_eye_chloe", "name_ru": "Side Eyeing Chloe", "category": "people", "aliases": ["chloe side eye"], "template": "Little girl skeptical side glance", "allowed_on": ["cover", "inline"], "max_frame_share": 0.10},
-    {"id": "sacrednik_priest", "name_ru": "Священник / sacrednik", "category": "people", "aliases": ["priest meme", "священник мем", "orthodox priest reaction"], "template": "Russian Orthodox priest reaction face", "allowed_on": ["cover", "inline"], "max_frame_share": 0.12, "notes": "Owner-approved RU meme"},
-    {"id": "zhirinovsky", "name_ru": "Жириновский", "category": "people", "aliases": ["ldpr reaction", "жирик"], "template": "Vladimir Zhirinovsky exaggerated reaction", "allowed_on": ["cover", "inline"], "max_frame_share": 0.12, "notes": "Classic RU political reaction meme"},
-    {"id": "pepe_frog", "name_ru": "Pepe / Pepe the Frog", "category": "people", "aliases": ["pepe", "sad pepe", "feels good man"], "template": "Green frog reaction faces", "allowed_on": ["cover", "inline"], "max_frame_share": 0.12},
-    {"id": "wojak", "name_ru": "Wojak / Feels Guy", "category": "people", "aliases": ["feels guy", "wojak crying"], "template": "Simple line-drawn bald man reaction", "allowed_on": ["cover", "inline"], "max_frame_share": 0.12},
-    {"id": "gigachad", "name_ru": "Gigachad", "category": "people", "aliases": ["chad", "giga chad"], "template": "Hyper-masculine chiseled jaw black-and-white face", "allowed_on": ["cover", "inline"], "max_frame_share": 0.12, "notes": "Sticker only — never substitute for host"},
-    {"id": "crying_jordan", "name_ru": "Crying Jordan", "category": "people", "aliases": ["michael jordan cry"], "template": "Jordan crying meme face", "allowed_on": ["cover", "inline"], "max_frame_share": 0.10},
-    {"id": "this_is_fine_dog", "name_ru": "This Is Fine dog", "category": "people", "aliases": ["this is fine", "dog in fire"], "template": "Cartoon dog in burning room saying this is fine", "allowed_on": ["cover", "inline"], "max_frame_share": 0.12},
-    {"id": "surprised_pikachu", "name_ru": "Surprised Pikachu", "category": "people", "aliases": ["shocked pikachu"], "template": "Pikachu surprised face", "allowed_on": ["cover", "inline"], "max_frame_share": 0.10},
-    {"id": "stonks", "name_ru": "Stonks / Meme Man", "category": "people", "aliases": ["meme man", "stonks guy"], "template": "3D rendered bald head with nose", "allowed_on": ["cover", "inline"], "max_frame_share": 0.12},
-    {"id": "woman_yelling_cat", "name_ru": "Woman Yelling at Cat", "category": "people", "aliases": ["smudge cat table", "dinner table cat"], "template": "Split: yelling woman + cat at table (use cat half or tiny full)", "allowed_on": ["cover", "inline"], "max_frame_share": 0.12},
-    {"id": "expanding_brain", "name_ru": "Expanding Brain", "category": "people", "aliases": ["galaxy brain"], "template": "Four-panel brain expansion (use single brain panel as sticker)", "allowed_on": ["cover", "inline"], "max_frame_share": 0.10},
-    {"id": "two_buttons", "name_ru": "Two Buttons Sweating", "category": "people", "aliases": ["sweating buttons guy"], "template": "Man sweating over two red buttons", "allowed_on": ["cover", "inline"], "max_frame_share": 0.12},
-    {"id": "change_my_mind", "name_ru": "Change My Mind", "category": "people", "aliases": ["crowder table"], "template": "Man at table with sign (face only as small sticker)", "allowed_on": ["cover", "inline"], "max_frame_share": 0.12},
-    {"id": "blinking_white_guy", "name_ru": "Blinking White Guy", "category": "people", "aliases": ["drew scanlon blink"], "template": "Guy blinking in disbelief GIF still", "allowed_on": ["cover", "inline"], "max_frame_share": 0.10},
-    {"id": "disaster_girl", "name_ru": "Disaster Girl", "category": "people", "aliases": ["house fire girl smile"], "template": "Girl smirking in front of burning house", "allowed_on": ["cover", "inline"], "max_frame_share": 0.10},
-    {"id": "bad_luck_brian", "name_ru": "Bad Luck Brian", "category": "people", "aliases": ["unlucky school photo"], "template": "Awkward yearbook photo kid", "allowed_on": ["cover", "inline"], "max_frame_share": 0.10},
-    {"id": "grumpy_cat", "name_ru": "Grumpy Cat", "category": "cat", "aliases": ["tardar sauce"], "template": "Permanently frowning cat face", "allowed_on": ["cover", "inline"], "max_frame_share": 0.12},
-    {"id": "smudge_cat", "name_ru": "Smudge the Cat", "category": "cat", "aliases": ["table cat", "confused cat salad"], "template": "White cat confused at salad on table", "allowed_on": ["cover", "inline"], "max_frame_share": 0.12},
-    {"id": "woman_cat_yelling_cat_half", "name_ru": "Smudge / table cat (solo)", "category": "cat", "aliases": ["yelling cat meme cat only"], "template": "Cat half of woman-yelling-at-cat", "allowed_on": ["cover", "inline"], "max_frame_share": 0.12},
-    {"id": "cheems", "name_ru": "Cheems / Balltze", "category": "cat", "aliases": ["doge cheems", "bonk dog"], "template": "Shiba with ironic misspelling vibe", "allowed_on": ["cover", "inline"], "max_frame_share": 0.12},
-    {"id": "doge", "name_ru": "Doge", "category": "cat", "aliases": ["shiba inu", "much wow"], "template": "Shiba inu side-eye", "allowed_on": ["cover", "inline"], "max_frame_share": 0.12},
-    {"id": "crying_cat", "name_ru": "Crying Cat", "category": "cat", "aliases": ["sad cat thumbs up"], "template": "Cat with teary eyes giving thumbs up", "allowed_on": ["cover", "inline"], "max_frame_share": 0.12},
-    {"id": "polite_cat", "name_ru": "Polite Cat", "category": "cat", "aliases": ["beluga cat", "oval cat"], "template": "Cat with human-like polite smile", "allowed_on": ["cover", "inline"], "max_frame_share": 0.12},
-    {"id": "pop_cat", "name_ru": "Pop Cat", "category": "cat", "aliases": ["popcat", "open mouth cat"], "template": "Cat opening mouth rapidly meme", "allowed_on": ["cover", "inline"], "max_frame_share": 0.10},
-    {"id": "keyboard_cat", "name_ru": "Keyboard Cat", "category": "cat", "aliases": ["playing keyboard cat"], "template": "Cat paws on keyboard", "allowed_on": ["cover", "inline"], "max_frame_share": 0.10},
-    {"id": "long_cat", "name_ru": "Long Cat", "category": "cat", "aliases": ["nekogato", "stretch cat"], "template": "Absurdly long white cat", "allowed_on": ["cover", "inline"], "max_frame_share": 0.10},
-    {"id": "67_kid", "name_ru": "67 Kid / The 67 Kid", "category": "people", "aliases": ["six seven", "67 meme 2025"], "template": "Kid screaming six-seven (KYE 2025 #1)", "allowed_on": ["cover", "inline"], "max_frame_share": 0.12},
-    {"id": "james_doakes", "name_ru": "James Doakes Surprise", "category": "people", "aliases": ["doakes surprise motherfucker", "dexter doakes"], "template": "Doakes shocked/surprised reaction", "allowed_on": ["cover", "inline"], "max_frame_share": 0.12},
-    {"id": "italian_brainrot_shark", "name_ru": "Tralalero Tralala", "category": "people", "aliases": ["italian brainrot shark", "nike shark"], "template": "AI shark with sneakers (2025 brainrot)", "allowed_on": ["cover", "inline"], "max_frame_share": 0.12},
-    {"id": "chicken_jockey", "name_ru": "Chicken Jockey", "category": "people", "aliases": ["minecraft chicken jockey"], "template": "Minecraft baby zombie on chicken", "allowed_on": ["cover", "inline"], "max_frame_share": 0.12},
-    {"id": "ai_baby_laugh", "name_ru": "AI Baby Holding Laugh", "category": "people", "aliases": ["trying not to laugh baby"], "template": "Baby suppressing laugh (2025)", "allowed_on": ["cover", "inline"], "max_frame_share": 0.10},
-    {"id": "frieren_looking_up", "name_ru": "Frieren Looking Up", "category": "people", "aliases": ["frieren meme"], "template": "Anime character Frieren looking up", "allowed_on": ["cover", "inline"], "max_frame_share": 0.12},
-    {"id": "capybara_indifference", "name_ru": "Capybara of Indifference", "category": "cat", "aliases": ["unbothered capybara"], "template": "Capybara sitting calmly (2026 trend)", "allowed_on": ["cover", "inline"], "max_frame_share": 0.12},
-    {"id": "okay_punch_kid", "name_ru": "Okay Punch Kid", "category": "people", "aliases": ["okay kid punch"], "template": "Kid saying okay then punch (2026)", "allowed_on": ["cover", "inline"], "max_frame_share": 0.10},
-    {"id": "skeleton_shield", "name_ru": "Skeleton Banging Shield", "category": "people", "aliases": ["skeleton rage"], "template": "Skeleton angrily banging shield", "allowed_on": ["cover", "inline"], "max_frame_share": 0.12},
-    {"id": "nihilist_penguin", "name_ru": "Nihilist Penguin", "category": "cat", "aliases": ["lonely penguin walking away"], "template": "Penguin walking away from colony", "allowed_on": ["cover", "inline"], "max_frame_share": 0.12},
-    {"id": "trollface", "name_ru": "Trollface", "category": "people", "aliases": ["troll face", "problem"], "template": "Classic rage comic troll grin", "allowed_on": ["cover", "inline"], "max_frame_share": 0.10},
-    {"id": "yelling_at_clouds", "name_ru": "Yelling at Clouds", "category": "people", "aliases": ["simpsons old man clouds"], "template": "Old man shaking fist at sky", "allowed_on": ["cover", "inline"], "max_frame_share": 0.12},
-    {"id": "leonardo_dicaprio_cheers", "name_ru": "DiCaprio Cheers", "category": "people", "aliases": ["great gatsby toast"], "template": "DiCaprio raising glass (tiny sticker only)", "allowed_on": ["cover", "inline"], "max_frame_share": 0.10},
-    {"id": "surprised_tom", "name_ru": "Surprised Tom", "category": "cat", "aliases": ["tom and jerry surprised"], "template": "Tom cat shocked face", "allowed_on": ["cover", "inline"], "max_frame_share": 0.10},
-    {"id": "nyan_cat", "name_ru": "Nyan Cat", "category": "cat", "aliases": ["pop tart cat"], "template": "Pixel cat with rainbow trail", "allowed_on": ["cover", "inline"], "max_frame_share": 0.10},
-    {"id": "distracted_boyfriend", "name_ru": "Distracted Boyfriend (tiny)", "category": "people", "aliases": ["guy looking back"], "template": "Man looking back at other woman (sticker crop — no celebrity names in prompt)", "allowed_on": ["cover", "inline"], "max_frame_share": 0.10},
-    {"id": "drake_no_yes", "name_ru": "Drake format (BANNED full panel)", "category": "banned", "aliases": ["drake hotline"], "template": "BANNED — use other reaction memes", "allowed_on": [], "max_frame_share": 0},
-    {"id": "salt_bae", "name_ru": "Salt Bae (BANNED)", "category": "banned", "aliases": ["nusret"], "template": "BANNED per inline-visual-types", "allowed_on": [], "max_frame_share": 0},
-    {"id": "stock_handsome_man", "name_ru": "Stock handsome man (BANNED)", "category": "banned", "aliases": ["generated realtor", "co-host model", "handsome man pointing"], "template": "BANNED — owner FAIL; never generate", "allowed_on": [], "max_frame_share": 0}
+    {
+      "id": "roll_safe",
+      "name_ru": "Roll Safe / Think About It",
+      "category": "people",
+      "aliases": [
+        "think about it",
+        "tap temple",
+        "kayode ewumi"
+      ],
+      "template": "Black man tapping temple, smug knowing look",
+      "kye": "roll-safe",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12,
+      "tags": [
+        "deal",
+        "surprise"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "hide_pain_harold",
+      "name_ru": "Hide the Pain Harold",
+      "category": "people",
+      "aliases": [
+        "harold",
+        "боль в глазах"
+      ],
+      "template": "Older man forced smile, pain behind eyes",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12,
+      "tags": [
+        "betrayal",
+        "extra-fee",
+        "deposit"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "disappointed_black_guy",
+      "name_ru": "Disappointed Black Guy",
+      "category": "people",
+      "aliases": [
+        "disappointed guy",
+        "side eye disapproval"
+      ],
+      "template": "Man side-eyeing with disapproval",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12,
+      "tags": [
+        "betrayal",
+        "surprise"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "confused_math_lady",
+      "name_ru": "Confused Math Lady",
+      "category": "people",
+      "aliases": [
+        "confused calculations"
+      ],
+      "template": "Woman with equations floating around head",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12,
+      "tags": [
+        "money",
+        "deal"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "success_kid",
+      "name_ru": "Success Kid",
+      "category": "people",
+      "aliases": [
+        "fist pump baby"
+      ],
+      "template": "Baby fist pump on beach",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.1,
+      "tags": [
+        "deal",
+        "check-in"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "side_eye_chloe",
+      "name_ru": "Side Eyeing Chloe",
+      "category": "people",
+      "aliases": [
+        "chloe side eye"
+      ],
+      "template": "Little girl skeptical side glance",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.1,
+      "tags": [
+        "surprise",
+        "betrayal"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "sacrednik_priest",
+      "name_ru": "Священник / sacrednik",
+      "category": "people",
+      "aliases": [
+        "priest meme",
+        "священник мем",
+        "orthodox priest reaction"
+      ],
+      "template": "Russian Orthodox priest reaction face",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12,
+      "notes": "Owner-approved RU meme",
+      "tags": [
+        "surprise",
+        "documents"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "zhirinovsky",
+      "name_ru": "Жириновский",
+      "category": "people",
+      "aliases": [
+        "ldpr reaction",
+        "жирик"
+      ],
+      "template": "Vladimir Zhirinovsky exaggerated reaction",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12,
+      "notes": "Classic RU political reaction meme",
+      "tags": [
+        "surprise",
+        "neighbors"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "pepe_frog",
+      "name_ru": "Pepe / Pepe the Frog",
+      "category": "people",
+      "aliases": [
+        "pepe",
+        "sad pepe",
+        "feels good man"
+      ],
+      "template": "Green frog reaction faces",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12,
+      "tags": [
+        "betrayal",
+        "money"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "wojak",
+      "name_ru": "Wojak / Feels Guy",
+      "category": "people",
+      "aliases": [
+        "feels guy",
+        "wojak crying"
+      ],
+      "template": "Simple line-drawn bald man reaction",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12,
+      "tags": [
+        "betrayal",
+        "deposit"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "gigachad",
+      "name_ru": "Gigachad",
+      "category": "people",
+      "aliases": [
+        "chad",
+        "giga chad"
+      ],
+      "template": "Hyper-masculine chiseled jaw black-and-white face",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12,
+      "notes": "Sticker only — never substitute for host",
+      "tags": [
+        "deal",
+        "check-in"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "crying_jordan",
+      "name_ru": "Crying Jordan",
+      "category": "people",
+      "aliases": [
+        "michael jordan cry"
+      ],
+      "template": "Jordan crying meme face",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.1,
+      "tags": [
+        "betrayal",
+        "deposit"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "this_is_fine_dog",
+      "name_ru": "This Is Fine dog",
+      "category": "people",
+      "aliases": [
+        "this is fine",
+        "dog in fire"
+      ],
+      "template": "Cartoon dog in burning room saying this is fine",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12,
+      "tags": [
+        "neighbors",
+        "cleaning"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "surprised_pikachu",
+      "name_ru": "Surprised Pikachu",
+      "category": "people",
+      "aliases": [
+        "shocked pikachu"
+      ],
+      "template": "Pikachu surprised face",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.1,
+      "tags": [
+        "surprise",
+        "extra-fee"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "stonks",
+      "name_ru": "Stonks / Meme Man",
+      "category": "people",
+      "aliases": [
+        "meme man",
+        "stonks guy"
+      ],
+      "template": "3D rendered bald head with nose",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12,
+      "tags": [
+        "money",
+        "deal"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "woman_yelling_cat",
+      "name_ru": "Woman Yelling at Cat",
+      "category": "people",
+      "aliases": [
+        "smudge cat table",
+        "dinner table cat"
+      ],
+      "template": "Split: yelling woman + cat at table (use cat half or tiny full)",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12,
+      "tags": [
+        "neighbors",
+        "pets"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "expanding_brain",
+      "name_ru": "Expanding Brain",
+      "category": "people",
+      "aliases": [
+        "galaxy brain"
+      ],
+      "template": "Four-panel brain expansion (use single brain panel as sticker)",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.1,
+      "tags": [
+        "deal",
+        "documents"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "two_buttons",
+      "name_ru": "Two Buttons Sweating",
+      "category": "people",
+      "aliases": [
+        "sweating buttons guy"
+      ],
+      "template": "Man sweating over two red buttons",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12,
+      "tags": [
+        "deal",
+        "money"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "change_my_mind",
+      "name_ru": "Change My Mind",
+      "category": "people",
+      "aliases": [
+        "crowder table"
+      ],
+      "template": "Man at table with sign (face only as small sticker)",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12,
+      "tags": [
+        "deal",
+        "documents"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "blinking_white_guy",
+      "name_ru": "Blinking White Guy",
+      "category": "people",
+      "aliases": [
+        "drew scanlon blink"
+      ],
+      "template": "Guy blinking in disbelief GIF still",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.1,
+      "tags": [
+        "surprise",
+        "check-in"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "disaster_girl",
+      "name_ru": "Disaster Girl",
+      "category": "people",
+      "aliases": [
+        "house fire girl smile"
+      ],
+      "template": "Girl smirking in front of burning house",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.1,
+      "tags": [
+        "betrayal",
+        "deposit"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "bad_luck_brian",
+      "name_ru": "Bad Luck Brian",
+      "category": "people",
+      "aliases": [
+        "unlucky school photo"
+      ],
+      "template": "Awkward yearbook photo kid",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.1,
+      "tags": [
+        "betrayal",
+        "check-in"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "grumpy_cat",
+      "name_ru": "Grumpy Cat",
+      "category": "cat",
+      "aliases": [
+        "tardar sauce"
+      ],
+      "template": "Permanently frowning cat face",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12,
+      "tags": [
+        "pets",
+        "neighbors"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "smudge_cat",
+      "name_ru": "Smudge the Cat",
+      "category": "cat",
+      "aliases": [
+        "table cat",
+        "confused cat salad"
+      ],
+      "template": "White cat confused at salad on table",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12,
+      "tags": [
+        "pets",
+        "family"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "woman_cat_yelling_cat_half",
+      "name_ru": "Smudge / table cat (solo)",
+      "category": "cat",
+      "aliases": [
+        "yelling cat meme cat only"
+      ],
+      "template": "Cat half of woman-yelling-at-cat",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12,
+      "tags": [
+        "pets",
+        "family"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "cheems",
+      "name_ru": "Cheems / Balltze",
+      "category": "cat",
+      "aliases": [
+        "doge cheems",
+        "bonk dog"
+      ],
+      "template": "Shiba with ironic misspelling vibe",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12,
+      "tags": [
+        "pets",
+        "money"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "doge",
+      "name_ru": "Doge",
+      "category": "cat",
+      "aliases": [
+        "shiba inu",
+        "much wow"
+      ],
+      "template": "Shiba inu side-eye",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12,
+      "tags": [
+        "pets",
+        "deal"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "crying_cat",
+      "name_ru": "Crying Cat",
+      "category": "cat",
+      "aliases": [
+        "sad cat thumbs up"
+      ],
+      "template": "Cat with teary eyes giving thumbs up",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12,
+      "tags": [
+        "pets",
+        "deposit"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "polite_cat",
+      "name_ru": "Polite Cat",
+      "category": "cat",
+      "aliases": [
+        "beluga cat",
+        "oval cat"
+      ],
+      "template": "Cat with human-like polite smile",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12,
+      "tags": [
+        "pets",
+        "check-in"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "pop_cat",
+      "name_ru": "Pop Cat",
+      "category": "cat",
+      "aliases": [
+        "popcat",
+        "open mouth cat"
+      ],
+      "template": "Cat opening mouth rapidly meme",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.1,
+      "tags": [
+        "pets",
+        "surprise"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "keyboard_cat",
+      "name_ru": "Keyboard Cat",
+      "category": "cat",
+      "aliases": [
+        "playing keyboard cat"
+      ],
+      "template": "Cat paws on keyboard",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.1,
+      "tags": [
+        "pets",
+        "check-in"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "long_cat",
+      "name_ru": "Long Cat",
+      "category": "cat",
+      "aliases": [
+        "nekogato",
+        "stretch cat"
+      ],
+      "template": "Absurdly long white cat",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.1,
+      "tags": [
+        "pets",
+        "surprise"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "67_kid",
+      "name_ru": "67 Kid / The 67 Kid",
+      "category": "people",
+      "aliases": [
+        "six seven",
+        "67 meme 2025"
+      ],
+      "template": "Kid screaming six-seven (KYE 2025 #1)",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12,
+      "tags": [
+        "surprise",
+        "family"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "james_doakes",
+      "name_ru": "James Doakes Surprise",
+      "category": "people",
+      "aliases": [
+        "doakes surprise motherfucker",
+        "dexter doakes"
+      ],
+      "template": "Doakes shocked/surprised reaction",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12,
+      "tags": [
+        "surprise",
+        "check-in"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "italian_brainrot_shark",
+      "name_ru": "Tralalero Tralala",
+      "category": "people",
+      "aliases": [
+        "italian brainrot shark",
+        "nike shark"
+      ],
+      "template": "AI shark with sneakers (2025 brainrot)",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12,
+      "tags": [
+        "surprise",
+        "deal"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "chicken_jockey",
+      "name_ru": "Chicken Jockey",
+      "category": "people",
+      "aliases": [
+        "minecraft chicken jockey"
+      ],
+      "template": "Minecraft baby zombie on chicken",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12,
+      "tags": [
+        "surprise",
+        "family"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "ai_baby_laugh",
+      "name_ru": "AI Baby Holding Laugh",
+      "category": "people",
+      "aliases": [
+        "trying not to laugh baby"
+      ],
+      "template": "Baby suppressing laugh (2025)",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.1,
+      "tags": [
+        "surprise",
+        "betrayal"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "frieren_looking_up",
+      "name_ru": "Frieren Looking Up",
+      "category": "people",
+      "aliases": [
+        "frieren meme"
+      ],
+      "template": "Anime character Frieren looking up",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12,
+      "tags": [
+        "surprise",
+        "deal"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "capybara_indifference",
+      "name_ru": "Capybara of Indifference",
+      "category": "cat",
+      "aliases": [
+        "unbothered capybara"
+      ],
+      "template": "Capybara sitting calmly (2026 trend)",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12,
+      "tags": [
+        "pets",
+        "neighbors"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "okay_punch_kid",
+      "name_ru": "Okay Punch Kid",
+      "category": "people",
+      "aliases": [
+        "okay kid punch"
+      ],
+      "template": "Kid saying okay then punch (2026)",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.1,
+      "tags": [
+        "surprise",
+        "betrayal"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "skeleton_shield",
+      "name_ru": "Skeleton Banging Shield",
+      "category": "people",
+      "aliases": [
+        "skeleton rage"
+      ],
+      "template": "Skeleton angrily banging shield",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12,
+      "tags": [
+        "betrayal",
+        "deposit"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "nihilist_penguin",
+      "name_ru": "Nihilist Penguin",
+      "category": "cat",
+      "aliases": [
+        "lonely penguin walking away"
+      ],
+      "template": "Penguin walking away from colony",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12,
+      "tags": [
+        "pets",
+        "betrayal",
+        "neighbors"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "trollface",
+      "name_ru": "Trollface",
+      "category": "people",
+      "aliases": [
+        "troll face",
+        "problem"
+      ],
+      "template": "Classic rage comic troll grin",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.1,
+      "tags": [
+        "betrayal",
+        "deal"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "yelling_at_clouds",
+      "name_ru": "Yelling at Clouds",
+      "category": "people",
+      "aliases": [
+        "simpsons old man clouds"
+      ],
+      "template": "Old man shaking fist at sky",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12,
+      "tags": [
+        "neighbors",
+        "betrayal"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "leonardo_dicaprio_cheers",
+      "name_ru": "DiCaprio Cheers",
+      "category": "people",
+      "aliases": [
+        "great gatsby toast"
+      ],
+      "template": "DiCaprio raising glass (tiny sticker only)",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.1,
+      "tags": [
+        "deal",
+        "check-in"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "surprised_tom",
+      "name_ru": "Surprised Tom",
+      "category": "cat",
+      "aliases": [
+        "tom and jerry surprised"
+      ],
+      "template": "Tom cat shocked face",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.1,
+      "tags": [
+        "pets",
+        "surprise"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "nyan_cat",
+      "name_ru": "Nyan Cat",
+      "category": "cat",
+      "aliases": [
+        "pop tart cat"
+      ],
+      "template": "Pixel cat with rainbow trail",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.1,
+      "tags": [
+        "pets",
+        "deal"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "distracted_boyfriend",
+      "name_ru": "Distracted Boyfriend (tiny)",
+      "category": "people",
+      "aliases": [
+        "guy looking back"
+      ],
+      "template": "Man looking back at other woman (sticker crop — no celebrity names in prompt)",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.1,
+      "tags": [
+        "betrayal",
+        "deal"
+      ],
+      "era_year": 2016
+    },
+    {
+      "id": "drake_no_yes",
+      "name_ru": "Drake format (BANNED full panel)",
+      "category": "banned",
+      "aliases": [
+        "drake hotline"
+      ],
+      "template": "BANNED — use other reaction memes",
+      "allowed_on": [],
+      "max_frame_share": 0
+    },
+    {
+      "id": "salt_bae",
+      "name_ru": "Salt Bae (BANNED)",
+      "category": "banned",
+      "aliases": [
+        "nusret"
+      ],
+      "template": "BANNED per inline-visual-types",
+      "allowed_on": [],
+      "max_frame_share": 0
+    },
+    {
+      "id": "stock_handsome_man",
+      "name_ru": "Stock handsome man (BANNED)",
+      "category": "banned",
+      "aliases": [
+        "generated realtor",
+        "co-host model",
+        "handsome man pointing"
+      ],
+      "template": "BANNED — owner FAIL; never generate",
+      "allowed_on": [],
+      "max_frame_share": 0
+    },
+    {
+      "id": "is_this_a_pigeon",
+      "name_ru": "Is This a Pigeon?",
+      "category": "people",
+      "era_year": 2018,
+      "tags": [
+        "surprise",
+        "documents",
+        "deal"
+      ],
+      "aliases": [
+        "anime butterfly guy"
+      ],
+      "template": "Anime character pointing at butterfly",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12
+    },
+    {
+      "id": "arthur_fist",
+      "name_ru": "Arthur Fist",
+      "category": "people",
+      "era_year": 2016,
+      "tags": [
+        "betrayal",
+        "neighbors",
+        "extra-fee"
+      ],
+      "aliases": [
+        "clenched fist cartoon"
+      ],
+      "template": "Cartoon aardvark clenched fist of rage",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12
+    },
+    {
+      "id": "kermit_tea",
+      "name_ru": "Kermit Sipping Tea",
+      "category": "people",
+      "era_year": 2016,
+      "tags": [
+        "betrayal",
+        "neighbors",
+        "surprise"
+      ],
+      "aliases": [
+        "but thats none of my business"
+      ],
+      "template": "Kermit sipping tea, passive judgment",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12
+    },
+    {
+      "id": "trade_offer",
+      "name_ru": "Trade Offer",
+      "category": "people",
+      "era_year": 2021,
+      "tags": [
+        "deal",
+        "money",
+        "extra-fee"
+      ],
+      "aliases": [
+        "i receive you receive"
+      ],
+      "template": "Man presenting trade offer meme",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12
+    },
+    {
+      "id": "mocking_spongebob",
+      "name_ru": "Mocking SpongeBob",
+      "category": "people",
+      "era_year": 2017,
+      "tags": [
+        "betrayal",
+        "surprise",
+        "deal"
+      ],
+      "aliases": [
+        "chicken spongebob"
+      ],
+      "template": "SpongeBob chicken pose alternating caps",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12
+    },
+    {
+      "id": "left_exit_12",
+      "name_ru": "Left Exit 12 Off Ramp",
+      "category": "people",
+      "era_year": 2020,
+      "tags": [
+        "surprise",
+        "check-in",
+        "deal"
+      ],
+      "aliases": [
+        "car swerve meme"
+      ],
+      "template": "Car swerving toward sudden exit",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12
+    },
+    {
+      "id": "unsettled_tom",
+      "name_ru": "Unsettled Tom",
+      "category": "people",
+      "era_year": 2019,
+      "tags": [
+        "surprise",
+        "extra-fee",
+        "deposit"
+      ],
+      "aliases": [
+        "concerned tom"
+      ],
+      "template": "Tom and Jerry disturbed face close-up",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12
+    },
+    {
+      "id": "bernie_mittens",
+      "name_ru": "Bernie Mittens",
+      "category": "people",
+      "era_year": 2021,
+      "tags": [
+        "check-in",
+        "family",
+        "deal"
+      ],
+      "aliases": [
+        "bernie sitting"
+      ],
+      "template": "Bernie Sanders in mittens at inauguration",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.1
+    },
+    {
+      "id": "one_does_not_simply",
+      "name_ru": "One Does Not Simply",
+      "category": "people",
+      "era_year": 2016,
+      "tags": [
+        "deal",
+        "documents",
+        "check-in"
+      ],
+      "aliases": [
+        "boromir meme"
+      ],
+      "template": "Boromir one does not simply walk",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12
+    },
+    {
+      "id": "ancient_aliens",
+      "name_ru": "Ancient Aliens Guy",
+      "category": "people",
+      "era_year": 2016,
+      "tags": [
+        "surprise",
+        "documents",
+        "deal"
+      ],
+      "aliases": [
+        "giorgio tsoukalos hair"
+      ],
+      "template": "Wild hair guy aliens theory",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12
+    },
+    {
+      "id": "condescending_wonka",
+      "name_ru": "Condescending Wonka",
+      "category": "people",
+      "era_year": 2016,
+      "tags": [
+        "betrayal",
+        "extra-fee",
+        "deal"
+      ],
+      "aliases": [
+        "gene wilder wonka"
+      ],
+      "template": "Wonka smug lean tell me more",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12
+    },
+    {
+      "id": "socially_awkward_penguin",
+      "name_ru": "Socially Awkward Penguin",
+      "category": "people",
+      "era_year": 2016,
+      "tags": [
+        "check-in",
+        "neighbors",
+        "family"
+      ],
+      "aliases": [
+        "awkward penguin"
+      ],
+      "template": "Blue-background awkward penguin advice animal",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.1
+    },
+    {
+      "id": "scumbag_steve",
+      "name_ru": "Scumbag Steve",
+      "category": "people",
+      "era_year": 2016,
+      "tags": [
+        "betrayal",
+        "extra-fee",
+        "deposit"
+      ],
+      "aliases": [
+        "scumbag hat"
+      ],
+      "template": "Guy in scumbag hat bad behavior",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12
+    },
+    {
+      "id": "good_guy_greg",
+      "name_ru": "Good Guy Greg",
+      "category": "people",
+      "era_year": 2016,
+      "tags": [
+        "deal",
+        "check-in",
+        "keys"
+      ],
+      "aliases": [
+        "ggg"
+      ],
+      "template": "Friendly guy doing the right thing",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12
+    },
+    {
+      "id": "coffin_dance",
+      "name_ru": "Coffin Dance / Astronomia",
+      "category": "people",
+      "era_year": 2020,
+      "tags": [
+        "betrayal",
+        "deposit",
+        "money"
+      ],
+      "aliases": [
+        "dancing pallbearers"
+      ],
+      "template": "Ghana pallbearers dancing with coffin",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12
+    },
+    {
+      "id": "oprah_you_get",
+      "name_ru": "Oprah You Get a Car",
+      "category": "people",
+      "era_year": 2018,
+      "tags": [
+        "deal",
+        "surprise",
+        "money"
+      ],
+      "aliases": [
+        "you get a car"
+      ],
+      "template": "Oprah pointing you get meme",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.1
+    },
+    {
+      "id": "distracted_girlfriend",
+      "name_ru": "Distracted Girlfriend (tiny)",
+      "category": "people",
+      "era_year": 2017,
+      "tags": [
+        "betrayal",
+        "deal",
+        "surprise"
+      ],
+      "aliases": [
+        "jealous girlfriend meme"
+      ],
+      "template": "Woman glaring at distracted boyfriend (sticker crop)",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.1
+    },
+    {
+      "id": "waiting_skeleton",
+      "name_ru": "Waiting Skeleton",
+      "category": "people",
+      "era_year": 2018,
+      "tags": [
+        "check-in",
+        "keys",
+        "deal"
+      ],
+      "aliases": [
+        "bench skeleton"
+      ],
+      "template": "Skeleton still waiting on bench",
+      "allowed_on": [
+        "cover",
+        "inline"
+      ],
+      "max_frame_share": 0.12
+    }
   ]
 }

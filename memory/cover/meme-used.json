@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "rotation_window": 8,
+  "updated_at": "2026-08-31",
+  "notes": "Skip meme ids from last 8 live covers; burned_for_article blocks reuse on regen of same article.",
+  "burned_for_article": {
+    "LIVE-lapoy": ["hide_the_pain_harold", "roll_safe"],
+    "razreshili-s-lapoy-doplatu-nazvali-posle-zaseleniya": ["hide_the_pain_harold", "roll_safe"]
+  },
+  "recent_covers": [
+    {
+      "date": "2026-08-20",
+      "topic_id": "B01",
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "meme_id": "blinking_white_guy"
+    },
+    {
+      "date": "2026-08-20",
+      "topic_id": "B02",
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "meme_id": "grumpy_cat"
+    },
+    {
+      "date": "2026-08-28",
+      "topic_id": "B03",
+      "slug": "",
+      "meme_id": "roll_safe"
+    },
+    {
+      "date": "2026-08-31",
+      "topic_id": "LIVE-lapoy",
+      "slug": "razreshili-s-lapoy-doplatu-nazvali-posle-zaseleniya",
+      "meme_id": "hide_the_pain_harold"
+    }
+  ]
+}
