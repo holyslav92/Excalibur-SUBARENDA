@@ -16,6 +16,9 @@ PAD_HEIGHT_FRACTION = 0.26
 DRAWN_LOCKUP_SCORE_THRESHOLD = 0.38
 OFFICIAL_PASTE_MAE_MAX = 36.0
 OFFICIAL_PASTE_MATCH_MIN = 0.78
+LIGHT_PLATE_LUMA_MIN = 200.0
+LIGHT_PLATE_STD_MAX = 26.0
+LIGHT_PLATE_MIN_PAD_RATIO = 0.06
 WHITE_PLATE_LUMA_MIN = 235.0
 WHITE_PLATE_STD_MAX = 16.0
 WHITE_PLATE_MIN_AREA_RATIO = 1.12
@@ -234,18 +237,52 @@ def detect_white_plate_in_pad(
     gray = pad.mean(axis=2)
     global_mean = float(arr.mean())
     pad_area = int(pad_w * pad_h)
-    min_area = max(900, int(pad_area * 0.18))
+    min_area = max(400, int(pad_area * LIGHT_PLATE_MIN_PAD_RATIO))
+
+    light_rect = _largest_low_variance_rect(
+        gray, luma_min=LIGHT_PLATE_LUMA_MIN, std_max=LIGHT_PLATE_STD_MAX
+    )
+    light_area = int(light_rect.get("area") or 0)
+    light_mean = float(light_rect.get("mean") or 0.0)
+    light_std = float(light_rect.get("std") or 0.0)
+    light_pad_ratio = light_area / max(pad_area, 1)
+    brighter_than_scene = light_mean >= max(LIGHT_PLATE_LUMA_MIN, global_mean + 8.0)
+    light_detected = (
+        bool(light_rect.get("found"))
+        and light_area >= min_area
+        and brighter_than_scene
+        and light_std <= LIGHT_PLATE_STD_MAX
+        and light_pad_ratio >= LIGHT_PLATE_MIN_PAD_RATIO
+    )
+    if light_detected:
+        plate_kind = "white" if light_mean >= WHITE_PLATE_LUMA_MIN else "light"
+        if light_mean < WHITE_PLATE_LUMA_MIN and GRAY_PLATE_LUMA_MIN <= light_mean <= GRAY_PLATE_LUMA_MAX:
+            plate_kind = "gray"
+        if light_mean >= WHITE_PLATE_LUMA_MIN - 15 and light_mean < WHITE_PLATE_LUMA_MIN:
+            plate_kind = "cream"
+        return {
+            "detected": True,
+            "plate_kind": plate_kind,
+            "pad_box": [x0, y0, pad_w, pad_h],
+            "plate_area": light_area,
+            "plate_mean_luma": round(light_mean, 2),
+            "plate_std": round(light_std, 2),
+            "plate_bbox_local": light_rect.get("bbox"),
+            "min_area": min_area,
+            "pad_ratio": round(light_pad_ratio, 3),
+        }
 
     white_rect = _largest_low_variance_rect(
         gray, luma_min=WHITE_PLATE_LUMA_MIN, std_max=WHITE_PLATE_STD_MAX
     )
     plate_mean = float(white_rect.get("mean") or 0.0)
     plate_std = float(white_rect.get("std") or 0.0)
-    brighter_than_scene = plate_mean >= max(WHITE_PLATE_LUMA_MIN, global_mean + 12.0)
+    white_brighter = plate_mean >= max(WHITE_PLATE_LUMA_MIN, global_mean + 12.0)
+    white_area = int(white_rect.get("area") or 0)
     white_detected = (
         bool(white_rect.get("found"))
-        and int(white_rect.get("area") or 0) >= min_area
-        and brighter_than_scene
+        and white_area >= min_area
+        and white_brighter
         and plate_std <= WHITE_PLATE_STD_MAX
     )
     if white_detected:
@@ -253,7 +290,7 @@ def detect_white_plate_in_pad(
             "detected": True,
             "plate_kind": "white",
             "pad_box": [x0, y0, pad_w, pad_h],
-            "plate_area": int(white_rect.get("area") or 0),
+            "plate_area": white_area,
             "plate_mean_luma": round(plate_mean, 2),
             "plate_std": round(plate_std, 2),
             "plate_bbox_local": white_rect.get("bbox"),

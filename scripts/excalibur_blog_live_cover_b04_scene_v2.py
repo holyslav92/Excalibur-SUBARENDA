@@ -136,6 +136,24 @@ def apply_cover_pipeline(adir: Path) -> Path:
     )
     if proc.returncode != 0:
         raise RuntimeError(f"standalone apply failed: {proc.stderr or proc.stdout}")
+    rel = adir.relative_to(ROOT)
+    proc2 = subprocess.run(
+        [
+            sys.executable,
+            str(ROOT / "scripts/excalibur_blog_brand_logo_composite.py"),
+            "--article-dir",
+            str(rel),
+            "--cover-only",
+            "--after-pad-clear",
+        ],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+        check=False,
+        env={**os.environ, "PYTHONPATH": str(ROOT / "scripts")},
+    )
+    if proc2.returncode != 0:
+        raise RuntimeError(f"logo composite failed: {proc2.stderr or proc2.stdout}")
     cover_path = adir / "cover" / "cover.png"
     if not cover_path.is_file():
         raise FileNotFoundError("cover.png missing after apply")

@@ -212,6 +212,37 @@ class TypeMemeStickerCoverGateTest(unittest.TestCase):
         self.assertIn("standalone", contract.lower())
         self.assertIn("cover-canvas.png", contract)
 
+    def test_live_lapoy_fixture_fails_type_meme_gates(self) -> None:
+        """Regression: shipped people-scene lapoy cover must FAIL all v3 gates."""
+        fixture = ROOT / "tests/fixtures/lapoy-live-cover-bad.png"
+        self.assertTrue(fixture.is_file(), fixture)
+        from excalibur_blog_cover_collage_gate import validate_cover_type_meme_sticker_gates
+        from excalibur_blog_drawn_logo_gate import detect_white_plate_in_pad
+
+        errors = validate_cover_type_meme_sticker_gates(fixture)
+        self.assertTrue(errors)
+        joined = " ".join(errors).lower()
+        self.assertIn("people-heavy", joined)
+        self.assertIn("meme", joined)
+        self.assertIn("headline", joined)
+        self.assertIn("phone", joined)
+        plate = detect_white_plate_in_pad(fixture)
+        self.assertTrue(plate.get("detected"), plate)
+
+    def test_cream_tr_plate_fails_detect(self) -> None:
+        from excalibur_blog_drawn_logo_gate import detect_white_plate_in_pad
+
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "cream-tr.png"
+            img = Image.new("RGB", (1200, 675), (100, 110, 120))
+            draw = ImageDraw.Draw(img)
+            x0 = 1200 - 200
+            draw.rectangle((x0, 12, 1190, 140), fill=(225, 222, 215))
+            img.save(path)
+            result = detect_white_plate_in_pad(path)
+            self.assertTrue(result.get("detected"), result)
+            self.assertGreaterEqual(float(result.get("plate_mean_luma") or 0), 200.0)
+
 
 if __name__ == "__main__":
     unittest.main()

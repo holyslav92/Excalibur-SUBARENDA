@@ -93,7 +93,13 @@ LOGO_DRAW_HARD_BAN = (
     "factory cropped-img_7143.png PNG paste after split"
 )
 LOGO_WHITE_PLATE_BAN = (
-    "NO white/gray card/plate/tablichka under TOP-RIGHT pad; factory alpha PNG after split only"
+    "NO white/gray/cream card/square/plate/tablichka/box in TOP-RIGHT pad — "
+    "pad must be continuous scene texture; factory alpha PNG after split only"
+)
+TOP_RIGHT_PAD_SCENE_RULE = (
+    "TOP-RIGHT pad 8-12% width — continuous SCENE only (wall/wood/sky/pattern texture); "
+    "NEVER white/gray/cream card/square/plate/box/tablichka; "
+    "model does NOT draw logo, «Добрый дом», house-with-heart, or any brand lockup"
 )
 LOGO_REFERENCE_INTEGRATION = (
     "Reference logo: exact brand mark small top-right, transparent alpha, NO white/gray plate/card"
@@ -815,7 +821,7 @@ def build_standalone_cover_prompt(
         "PEOPLE: default ZERO — at most tiny silhouette/hands/back-of-head if case absolutely needs; NEVER group scene.",
         f"Case mood/on-theme: {compact(cover_scene, COVER_SCENE_HINT_COMPACT)}." if cover_scene else "",
         emotion_clause,
-        "TOP-RIGHT empty clear pad 8-12% — no logo, no house icon, no «Добрый дом», no plate.",
+        "TOP-RIGHT pad 8-12% — scene continuation only; " + TOP_RIGHT_PAD_SCENE_RULE + ".",
         SCENE_POSTER_COVER_BAN + ".",
         "TEXT LANGUAGE LOCK: visible text RUSSIAN Cyrillic only; headline readable at Dzen thumb.",
         "High-key Comfort+ Tyumen mood — thoughtful designed poster like premium inline frame.",

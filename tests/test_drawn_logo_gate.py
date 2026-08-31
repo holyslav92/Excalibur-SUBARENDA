@@ -233,6 +233,22 @@ class DrawnLogoGateTest(unittest.TestCase):
             self.assertTrue(result.get("detected"), result)
             self.assertEqual(result.get("plate_kind"), "gray")
 
+    def test_cream_card_lum220_in_tr_pad_fails_gate(self) -> None:
+        from PIL import Image, ImageDraw
+
+        from excalibur_blog_drawn_logo_gate import detect_white_plate_in_pad
+
+        with tempfile.TemporaryDirectory() as tmp:
+            canvas = Path(tmp) / "cream-card.png"
+            img = Image.new("RGB", (1200, 675), (90, 100, 110))
+            draw = ImageDraw.Draw(img)
+            x0 = 1200 - 200
+            draw.rectangle((x0, 12, 1190, 140), fill=(225, 222, 215))
+            img.save(canvas)
+            result = detect_white_plate_in_pad(canvas)
+            self.assertTrue(result.get("detected"), result)
+            self.assertGreaterEqual(float(result.get("plate_mean_luma") or 0), 200.0)
+
     def test_prepare_logo_rgba_crops_getbbox_not_full_canvas(self) -> None:
         from excalibur_blog_brand_logo_composite import (
             LOGO_CROP_BBOX_CANON,
