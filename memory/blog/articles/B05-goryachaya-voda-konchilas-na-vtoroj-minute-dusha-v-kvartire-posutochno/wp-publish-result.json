@@ -1,0 +1,27 @@
+{
+  "slug": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno",
+  "topic_id": "B05",
+  "permalink": "{{SITE_BASE}}/blog/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno/",
+  "publish_method": "ftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B05-goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1256503,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4232 slug=goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno\nOK categories=101\nOK dzen_yzen_meta=1\nOK featured_image=4233\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4234 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-01.png\nOK inline_alt=4234\nOK inline_caption=4234\nOK inline_description=4234\nOK inline_image_upload=4235 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-06.png\nOK inline_alt=4235\nOK inline_caption=4235\nOK inline_description=4235\nOK inline_image_upload=4236 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-02.png\nOK inline_alt=4236\nOK inline_caption=4236\nOK inline_description=4236\nOK inline_image_upload=4237 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-03.png\nOK inline_alt=4237\nOK inline_caption=4237\nOK inline_description=4237\nOK inline_image_upload=4238 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-04.png\nOK inline_alt=4238\nOK inline_caption=4238\nOK inline_description=4238\nOK inline_image_upload=4239 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-05.png\nOK inline_alt=4239\nOK inline_caption=4239\nOK inline_description=4239\nOK inline_image_upload=4240 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-07.png\nOK inline_alt=4240\nOK inline_caption=4240\nOK inline_description=4240\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno/",
+    "errors": []
+  }
+}
