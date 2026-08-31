@@ -1,0 +1,30 @@
+{
+  "status": "FAIL",
+  "article_dir": "memory/blog/articles/B05-parkovka-u-shlagbauma-posutochno-tyumen",
+  "cta_required": true,
+  "required": [
+    "https://t.me/Dobriy_dom_72",
+    "https://max.ru/id660300569233_biz",
+    "https://добрыйдом-72.рф/booking/",
+    "https://добрыйдом-72.рф/",
+    "tel:+79935748322"
+  ],
+  "present": {
+    "https://t.me/Dobriy_dom_72": false,
+    "https://max.ru/id660300569233_biz": false,
+    "https://добрыйдом-72.рф/booking/": false,
+    "https://добрыйдом-72.рф/": true,
+    "tel:+79935748322": false,
+    "cta_channels.max": true
+  },
+  "funnel_errors": [
+    "funnel: end block missing full funnel (TG https://t.me/Dobriy_dom_72 + MAX + site + phone + manager)"
+  ],
+  "errors": [
+    "missing required CTA href https://t.me/Dobriy_dom_72",
+    "missing required CTA href https://max.ru/id660300569233_biz",
+    "missing required CTA href https://добрыйдом-72.рф/booking/",
+    "missing required CTA href tel:+79935748322",
+    "funnel: end block missing full funnel (TG https://t.me/Dobriy_dom_72 + MAX + site + phone + manager)"
+  ]
+}

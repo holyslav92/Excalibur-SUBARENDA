@@ -1,0 +1,31 @@
+{
+  "agent": "excalibur-blog-cover-qa",
+  "status": "PASS",
+  "checked_at": "2026-08-31",
+  "topic_id": "B05",
+  "checks": {
+    "eight_png_exist": true,
+    "logo_composite_stamp_pass": true,
+    "cover_logo_pasted": true,
+    "inline_no_logo_on_inlines": true,
+    "cover_phone_993_large_sticker": true,
+    "forbid_phone_pill_post_composite": true,
+    "forbid_922_phone": true,
+    "forbid_ai_drawn_logo_cover": true,
+    "forbid_wordpress_ui_in_art": true,
+    "no_logo_plate_cover": true,
+    "forbid_logo_overlaps_headline_phone": true,
+    "type_meme_sticker_editorial": true,
+    "require_cover_meme_sticker": true,
+    "require_display_headline": true,
+    "require_large_phone_sticker": true,
+    "forbid_people_heavy_cover": true,
+    "forbid_split_white_collage": true,
+    "quad_manifest_valid": true,
+    "wordstat_stickers_1_3": true,
+    "motif_no_collision_14d": true,
+    "max_one_cat_meme_slot": true,
+    "light_high_key": true
+  },
+  "notes": "tender_light_v1 cover + 7 inlines; factory alpha logo cover only; zero inline logos; phone tablo in-scene"
+}

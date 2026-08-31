@@ -1,0 +1,16 @@
+{
+  "file": "article.html",
+  "verdict": "fail",
+  "total_errors": 9,
+  "errors": [
+    "Line 1, Col 0: Forbidden HTML tag <h1> used.",
+    "Line 3, Col 290: Forbidden HTML tag <em> used.",
+    "Line 5, Col 460: Forbidden HTML tag <strong> used.",
+    "Line 52, Col 5: Forbidden HTML tag <strong> used.",
+    "Line 63, Col 3: Forbidden HTML tag <strong> used.",
+    "Line 104, Col 108: Forbidden HTML tag <em> used.",
+    "Line 104, Col 137: Forbidden HTML tag <em> used.",
+    "Line 122, Col 0: Forbidden HTML tag <div> used.",
+    "Line 123, Col 5: Forbidden HTML tag <strong> used."
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "title": "«Парковка бесплатно». У шлагбаума попросили 800 ₽",
+  "h1": "«Парковка бесплатно». У шлагбаума попросили 800 ₽",
+  "slug": "parking-besplatno-shlagbaum-poprosili-800-rub",
+  "topic_id": "B05",
+  "author_id": "dobry-dom",
+  "article_mode": "B",
+  "description": "Шлагбаум опущен, ребёнок в машине, а «парковка есть» внезапно оказывается платной. Как не попасть на 800 ₽ у ворот посуточной квартиры в Тюмени.",
+  "date": "2026-08-31",
+  "pipeline_canon": "human-first-v2",
+  "editorial_swarm": false,
+  "wp_category_slugs": [
+    "posutochnaya-arenda",
+    "sovety-gostyam"
+  ],
+  "theme_blocks": {
+    "faq": "skip",
+    "quiz": "skip",
+    "side_stickers": "skip"
+  }
+}

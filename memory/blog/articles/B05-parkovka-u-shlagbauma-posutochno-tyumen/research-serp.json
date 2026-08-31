@@ -1,0 +1,218 @@
+{
+  "agent": "excalibur-blog",
+  "date_context": {
+    "timezone": "Europe/Moscow",
+    "today_iso": "2026-08-31",
+    "today_ru": "31.08.2026",
+    "year": 2026,
+    "month": 8,
+    "month_name_ru": "август",
+    "weekday_ru": "понедельник"
+  },
+  "topic": {
+    "topic_id": "B05",
+    "title": "Парковка у шлагбаума посуточно Тюмень",
+    "h1": "Парковка у шлагбаума посуточно Тюмень",
+    "slug": "parkovka-u-shlagbauma-posutochno-tyumen",
+    "primary_query": "Парковка у шлагбаума посуточно Тюмень",
+    "priority": "P0"
+  },
+  "searches": [
+    {
+      "query_id": "primary_fresh",
+      "query": "Парковка у шлагбаума посуточно Тюмень 2026",
+      "purpose": "актуальный SERP",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Парковки в Тюмени 2026: платные и бесплатные места, тарифы и штрафы",
+          "url": "https://visittyumen.ru/what-to-do/prigoditsya-v-puteshestvii/parkovki-v-tyumeni-polnyy-gid-dlya-avtoputeshestvennikov/",
+          "snippet": ""
+        },
+        {
+          "title": "Парковку на набережной временно закрыли — шлагбаум опущен",
+          "url": "https://tyumen72.info/2026/05/08/parkovku-na-naberezhnoi-vremenno-zakryli-shlagbaum-opushchen/",
+          "snippet": "В Тюмени два типа парковок, каждый имеет свою особенность. Это огражденные территории со шлагбаумом и автоматической кассой для оплаты. Например, большая парковка на набережной в районе моста Влюбленных или у Городской площади (ул. Первомайская, 20)."
+        },
+        {
+          "title": "Шлагбаум раздора появился в Тюмени — его хозяина ищут - 10 июня 2026 ...",
+          "url": "https://72.ru/text/gorod/2026/06/10/76471940/",
+          "snippet": "Шлагбаум на въезде на набережную опущен, парковка временно недоступна. Рекомендуем учитывать это при планировании маршрута и искать альтернативные места для стоянки."
+        },
+        {
+          "title": "Штрафы за неоплаченную парковку в Тюмени",
+          "url": "https://shtrafy-gibdd.ru/articles/shtrafy-za-neoplachennuyu-parkovku-v-tyumeni-proverit-oplatit",
+          "snippet": "Родители тюменских футболистов пожаловались на установленный шлагбаум на парковку, которая находится недалеко от стадиона «Геолог» и совсем рядом со Дворцом спорта на Розы ..."
+        },
+        {
+          "title": "Парковки Тюмени: с 2 июня платить придётся ещё на 10 улицах",
+          "url": "https://megatyumen.ru/avto/shtraf-mozhno-poluchit-uzhe-segodnya-v-tyumeni-zarabotali-novye-platnye-parkovki/",
+          "snippet": "Рассказываем, как это сделать, какой штраф за неоплату парковки в Тюмени и где смотреть штрафы за парковку в Тюмени."
+        },
+        {
+          "title": "В Тюмени неизвестные установили шлагбаум, перекрывающий парковку ...",
+          "url": "https://72.ru/text/gorod/2026/06/10/76471940/comments/",
+          "snippet": "Платные парковки в Тюмени расширили с 2 июня 2026 года. Узнайте, на каких улицах появились новые платные зоны, сколько стоит парковка, как ее оплатить и какие изменения ждут ..."
+        }
+      ],
+      "searched_at": "2026-08-31"
+    },
+    {
+      "query_id": "title_fresh",
+      "query": "Парковка у шлагбаума посуточно Тюмень 2026",
+      "purpose": "SERP по человеческому title",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Парковки в Тюмени 2026: платные и бесплатные места, тарифы и штрафы",
+          "url": "https://visittyumen.ru/what-to-do/prigoditsya-v-puteshestvii/parkovki-v-tyumeni-polnyy-gid-dlya-avtoputeshestvennikov/",
+          "snippet": ""
+        },
+        {
+          "title": "Парковку на набережной временно закрыли — шлагбаум опущен",
+          "url": "https://tyumen72.info/2026/05/08/parkovku-na-naberezhnoi-vremenno-zakryli-shlagbaum-opushchen/",
+          "snippet": "В Тюмени два типа парковок, каждый имеет свою особенность. Это огражденные территории со шлагбаумом и автоматической кассой для оплаты. Например, большая парковка на набережной в районе моста Влюбленных или у Городской площади (ул. Первомайская, 20)."
+        },
+        {
+          "title": "Шлагбаум раздора появился в Тюмени — его хозяина ищут - 10 июня 2026 ...",
+          "url": "https://72.ru/text/gorod/2026/06/10/76471940/",
+          "snippet": "Шлагбаум на въезде на набережную опущен, парковка временно недоступна. Рекомендуем учитывать это при планировании маршрута и искать альтернативные места для стоянки."
+        },
+        {
+          "title": "Штрафы за неоплаченную парковку в Тюмени",
+          "url": "https://shtrafy-gibdd.ru/articles/shtrafy-za-neoplachennuyu-parkovku-v-tyumeni-proverit-oplatit",
+          "snippet": "Родители тюменских футболистов пожаловались на установленный шлагбаум на парковку, которая находится недалеко от стадиона «Геолог» и совсем рядом со Дворцом спорта на Розы ..."
+        },
+        {
+          "title": "Парковки Тюмени: с 2 июня платить придётся ещё на 10 улицах",
+          "url": "https://megatyumen.ru/avto/shtraf-mozhno-poluchit-uzhe-segodnya-v-tyumeni-zarabotali-novye-platnye-parkovki/",
+          "snippet": "Рассказываем, как это сделать, какой штраф за неоплату парковки в Тюмени и где смотреть штрафы за парковку в Тюмени."
+        },
+        {
+          "title": "В Тюмени неизвестные установили шлагбаум, перекрывающий парковку ...",
+          "url": "https://72.ru/text/gorod/2026/06/10/76471940/comments/",
+          "snippet": "Платные парковки в Тюмени расширили с 2 июня 2026 года. Узнайте, на каких улицах появились новые платные зоны, сколько стоит парковка, как ее оплатить и какие изменения ждут ..."
+        }
+      ],
+      "searched_at": "2026-08-31"
+    },
+    {
+      "query_id": "official_docs",
+      "query": "Парковка у шлагбаума посуточно Тюмень official docs 2026",
+      "purpose": "официальные docs",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Парковки в Тюмени 2026: платные и бесплатные места, тарифы и штрафы",
+          "url": "https://visittyumen.ru/what-to-do/prigoditsya-v-puteshestvii/parkovki-v-tyumeni-polnyy-gid-dlya-avtoputeshestvennikov/",
+          "snippet": ""
+        },
+        {
+          "title": "В Тюмени неизвестные установили шлагбаум, перекрывающий парковку ...",
+          "url": "https://72.ru/text/gorod/2026/06/10/76471940/comments/",
+          "snippet": "В Тюмени два типа парковок, каждый имеет свою особенность. Это огражденные территории со шлагбаумом и автоматической кассой для оплаты. Например, большая парковка на набережной в районе моста Влюбленных или у Городской площади (ул. Первомайская, 20)."
+        },
+        {
+          "title": "Как работают платные парковки в центре Тюмени: подробная инструкция",
+          "url": "https://fedpress.ru/article/2884772",
+          "snippet": "Шлагбаум раздора появился в Тюмени — его хозяина ищут. Количество комментариев 47 | 72.ру."
+        },
+        {
+          "title": "Парковку на набережной временно закрыли — шлагбаум опущен",
+          "url": "https://tyumen72.info/2026/05/08/parkovku-na-naberezhnoi-vremenno-zakryli-shlagbaum-opushchen/",
+          "snippet": "Платные парковки в Тюмени работают с 9:00 до 18:00 по будням согласно производственному календарю. Стоимость часа варьируется от 25 до 40 рублей в зависимости от расположения и загруженности..."
+        },
+        {
+          "title": "Шлагбаум раздора появился в Тюмени — его хозяина ищут - 10 июня 2026 ...",
+          "url": "https://72.ru/text/gorod/2026/06/10/76471940/",
+          "snippet": "Шлагбаум на въезде на набережную опущен, парковка временно недоступна. Рекомендуем учитывать это при планировании маршрута и искать альтернативные места для стоянки."
+        },
+        {
+          "title": "Мошенники предлагают парковаться в закрытых дворах за деньги: Как они ...",
+          "url": "https://rg.ru/2026/03/09/shlagbaum-po-shodnoj-cene.html",
+          "snippet": "В центре Тюмени появился шлагбаум, который перегородил проезд к футбольной школе. Родители тюменских футболистов пожаловались на установленный шлагбаум на парковку, которая находится недалеко от стадиона «Геолог» и совсем рядом со Дворцом спорта на Розы Люксембург, 12."
+        }
+      ],
+      "searched_at": "2026-08-31"
+    },
+    {
+      "query_id": "github_evidence",
+      "query": "site:github.com Парковка у шлагбаума посуточно Тюмень 2026",
+      "purpose": "GitHub evidence",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "GitHub - i-saw/Parking-entrance-management: Автоматизация шлагбаума ...",
+          "url": "https://github.com/i-saw/Parking-entrance-management",
+          "snippet": ""
+        },
+        {
+          "title": "SlayTheSpire2ModdingTutorials/images/image22.png at master ...",
+          "url": "https://github.com/GlitchedReme/SlayTheSpire2ModdingTutorials/blob/master/images/image22.png",
+          "snippet": "Основной целью разработки программы было создание системы автоматического контроля доступа на парковку, которая могла бы: Распознавать транспортные средства на видеопотоке или видеофайле."
+        },
+        {
+          "title": "himekuri/docs/app-icon.png at main · pluk-inc/himekuri · GitHub",
+          "url": "https://github.com/pluk-inc/himekuri/blob/main/docs/app-icon.png",
+          "snippet": "Contribute to GlitchedReme/SlayTheSpire2ModdingTutorials development by creating an account on GitHub."
+        },
+        {
+          "title": "GitHub - massgravel/Microsoft-Activation-Scripts: Open-source Windows ...",
+          "url": "https://github.com/massgravel/Microsoft-Activation-Scripts",
+          "snippet": "Contribute to pluk-inc/himekuri development by creating an account on GitHub."
+        },
+        {
+          "title": "jedogeub/placeholder.svg at main · jedhd/jedogeub · GitHub",
+          "url": "https://github.com/jedhd/jedogeub/blob/main/placeholder.svg",
+          "snippet": "Open-source Windows and Office activator featuring HWID, Ohook, TSforge, and Online KMS activation methods, along with advanced troubleshooting. How to Activate Windows / Office / Extended Security Updates (ESU)? Click the Start Menu, type PowerShell, and open it. Copy and paste the code below and press Enter. Script not launching?"
+        },
+        {
+          "title": "123usef/images/html.svg at main · 123usef/123usef · GitHub",
+          "url": "https://github.com/123usef/123usef/blob/main/images/html.svg",
+          "snippet": "Version 5 is finally here! Contribute to jedhd/jedogeub development by creating an account on GitHub."
+        }
+      ],
+      "searched_at": "2026-08-31"
+    },
+    {
+      "query_id": "community_experience",
+      "query": "Парковка у шлагбаума посуточно Тюмень forum problems опыт 2026",
+      "purpose": "форумы и живые проблемы",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "В Тюмени неизвестные установили шлагбаум, перекрывающий парковку ...",
+          "url": "https://72.ru/text/gorod/2026/06/10/76471940/comments/",
+          "snippet": ""
+        },
+        {
+          "title": "Шлагбаум раздора появился в Тюмени — его хозяина ищут - 10 июня 2026 ...",
+          "url": "https://72.ru/text/gorod/2026/06/10/76471940/",
+          "snippet": "Шлагбаум раздора появился в Тюмени — его хозяина ищут. Количество комментариев 47 | 72.ру."
+        },
+        {
+          "title": "Мошенники предлагают парковаться в закрытых дворах за деньги: Как они ...",
+          "url": "https://rg.ru/2026/03/09/shlagbaum-po-shodnoj-cene.html",
+          "snippet": "В центре Тюмени появился шлагбаум, который перегородил проезд к футбольной школе. Родители тюменских футболистов пожаловались на установленный шлагбаум на парковку, которая находится недалеко от стадиона «Геолог» и совсем рядом со Дворцом спорта на Розы Люксембург, 12."
+        },
+        {
+          "title": "Тюменский вуз судится с УК из-за самовольной парковки и шлагбаума ...",
+          "url": "https://vk.com/wall-18884270_84314",
+          "snippet": "С неприятной ситуацией начали сталкиваться жители многоэтажных домов, на подъездах к двору которых дорогу перекрывает шлагбаум. Мошенники научились неплохо зарабатывать на столичных..."
+        },
+        {
+          "title": "Тюменцы ломают и срывают замки со шлагбаума, чтобы проехать 800 метров ...",
+          "url": "https://vk.com/wall-53124420_12070",
+          "snippet": "Речь идет о территории на улице Котовского-Одесская. По данным проверки Росреестра, часть земли университета площадью 622 кв. м используется под парковку, контейнерную площадку и ..."
+        },
+        {
+          "title": "Парковки в Тюмени 2026: платные и бесплатные места, тарифы и штрафы",
+          "url": "https://visittyumen.ru/what-to-do/prigoditsya-v-puteshestvii/parkovki-v-tyumeni-polnyy-gid-dlya-avtoputeshestvennikov/",
+          "snippet": "Ситуация у городского пляжа возле лесопарка имени Ю. А. Гагарина обостряется: жители уже дважды ломали запирающие устройства, чтобы попасть на территорию на машине."
+        }
+      ],
+      "searched_at": "2026-08-31"
+    }
+  ],
+  "errors": []
+}

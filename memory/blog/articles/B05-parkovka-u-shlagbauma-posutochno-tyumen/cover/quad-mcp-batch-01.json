@@ -1,0 +1,24 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 1,
+  "standalone_cover": false,
+  "output_canvas": "cover/canvas-quad-01.png",
+  "result_path": "cover/quad-mcp-result-01.json",
+  "slots": [
+    "inline_1",
+    "inline_2",
+    "inline_3",
+    "inline_4"
+  ],
+  "jobs": [
+    {
+      "slot": "canvas_quad",
+      "tool": "grsai",
+      "mcp_args": {
+        "prompt": "Designed RU editorial grid, airy #FFFFFF high-key, comfort+ Tyumen. Bold Cyrillic labels. NO logo in gen — ZERO logos on all inlines. Cat-meme max 1/8. Canvas 2048x1152 2x2; gutters. Ban: dark, WP UI, drawn logo, white plate, Shakin face, logo on inline.\nTL inline: comparison table 4 parking types street/yard/gate/paid. TXT:рядом с домом|во дворе|шлагбаум|платная улица.\nTR inline: workflow host never drove → guest at barrier. TXT:Где машина?|Цена въезда.\nBL inline: checklist ask before booking. TXT:Ответ письменно|Не у ворот.\nBR inline: FAQ pass code booth 800₽. TXT:Пропуск|800 ₽ наличными.",
+        "aspect_ratio": "16:9",
+        "resolution": "2K"
+      }
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+Designed RU editorial grid, airy #FFFFFF high-key, comfort+ Tyumen. Bold Cyrillic labels. NO logo in gen — ZERO logos on all inlines. Cat-meme max 1/8. Canvas 2048x1152 2x2; gutters. Ban: dark, WP UI, drawn logo, white plate, Shakin face, logo on inline.
+TL inline: comparison table 4 parking types street/yard/gate/paid. TXT:рядом с домом|во дворе|шлагбаум|платная улица.
+TR inline: workflow host never drove → guest at barrier. TXT:Где машина?|Цена въезда.
+BL inline: checklist ask before booking. TXT:Ответ письменно|Не у ворот.
+BR inline: FAQ pass code booth 800₽. TXT:Пропуск|800 ₽ наличными.
