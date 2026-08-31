@@ -1,0 +1,10 @@
+{
+  "gate": "case-delivery",
+  "status": "PASS",
+  "stage": "title",
+  "checks_run": [
+    "title-brief"
+  ],
+  "errors": [],
+  "article_dir": "/workspace/memory/blog/articles/B05-goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno"
+}
