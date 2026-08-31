@@ -108,21 +108,62 @@ def expand_site_base(text: str, public_base: str) -> str:
     return text.replace(SITE_BASE_PLACEHOLDER, base)
 
 
+def _idna_punycode_host(host: str) -> str:
+    """Encode Unicode hostname to punycode (ASCII) for tenant URL redaction."""
+    host = (host or "").strip()
+    if not host:
+        return ""
+    try:
+        import idna
+
+        return idna.encode(host).decode("ascii")
+    except Exception:
+        return ""
+
+
+def _scheme_host_variants(base: str) -> list[str]:
+    """https/http alternates plus IDNA punycode host (INC-20260831 sol-punycode-xlinks)."""
+    out: list[str] = []
+    normalized = normalize_public_base(base)
+    if not normalized:
+        return out
+    out.append(normalized)
+    if normalized.startswith("https://"):
+        alt = "http://" + normalized[len("https://") :]
+        if alt not in out:
+            out.append(alt)
+    elif normalized.startswith("http://"):
+        alt = "https://" + normalized[len("http://") :]
+        if alt not in out:
+            out.append(alt)
+    parsed = urlparse(normalized if "://" in normalized else f"https://{normalized}")
+    host = (parsed.hostname or "").strip()
+    puny = _idna_punycode_host(host)
+    if puny and puny != host:
+        port = f":{parsed.port}" if parsed.port else ""
+        path = parsed.path or ""
+        for scheme in ("https", "http"):
+            puny_base = normalize_public_base(f"{scheme}://{puny}{port}{path}")
+            if puny_base and puny_base not in out:
+                out.append(puny_base)
+            flip = "http://" if scheme == "https" else "https://"
+            puny_flip = normalize_public_base(f"{flip}{puny}{port}{path}")
+            if puny_flip and puny_flip not in out:
+                out.append(puny_flip)
+    return out
+
+
 def _candidate_bases(public_base: str | None) -> list[str]:
     bases: list[str] = []
     for raw in (public_base, resolve_public_base_from_env()):
-        base = normalize_public_base(raw)
-        if base and base not in bases:
-            bases.append(base)
-        if base.startswith("https://"):
-            alt = "http://" + base[len("https://") :]
-            if alt not in bases:
-                bases.append(alt)
-        elif base.startswith("http://"):
-            alt = "https://" + base[len("http://") :]
-            if alt not in bases:
-                bases.append(alt)
+        for candidate in _scheme_host_variants(normalize_public_base(raw)):
+            if candidate and candidate not in bases:
+                bases.append(candidate)
     return bases
+
+
+PUNYCODE_HREF_RE = re.compile(r"""href=(["'])(https?://xn--[^"']+)\1""", re.I)
+ROOT_BLOG_HREF_RE = re.compile(r"""href=(["'])(/blog/[^"']*)\1""", re.I)
 
 
 def redact_site_base(text: str, public_base: str | None = None) -> str:
@@ -187,6 +228,43 @@ def find_live_site_host_hits(text: str, public_base: str | None = None) -> list[
     return hits
 
 
+def find_punycode_href_hits(text: str) -> list[str]:
+    """Return punycode http(s) href targets — must be {{SITE_BASE}} in committed HTML."""
+    if not text:
+        return []
+    hits: list[str] = []
+    for match in PUNYCODE_HREF_RE.finditer(text):
+        url = match.group(2)
+        if url not in hits:
+            hits.append(url)
+    return hits
+
+
+def normalize_committed_html_site_urls(html: str, public_base: str | None = None) -> str:
+    """Normalize article HTML to git-safe {{SITE_BASE}} hrefs (unicode, punycode, /blog/)."""
+    if not html:
+        return html
+    out = redact_site_base(html, public_base)
+
+    def puny_repl(match: re.Match[str]) -> str:
+        quote = match.group(1)
+        url = match.group(2)
+        path = urlparse(url).path or "/"
+        if not path.startswith("/"):
+            path = f"/{path}"
+        return f"href={quote}{SITE_BASE_PLACEHOLDER}{path}{quote}"
+
+    out = PUNYCODE_HREF_RE.sub(puny_repl, out)
+
+    def root_blog_repl(match: re.Match[str]) -> str:
+        quote = match.group(1)
+        path = match.group(2)
+        return f"href={quote}{SITE_BASE_PLACEHOLDER}{path}{quote}"
+
+    out = ROOT_BLOG_HREF_RE.sub(root_blog_repl, out)
+    return out
+
+
 def find_redacted_mask_hits(text: str) -> list[str]:
     """Return tool-display mask literals that must not appear in committed artifacts.
 
@@ -200,8 +278,11 @@ def find_redacted_mask_hits(text: str) -> list[str]:
 
 
 def find_secret_scan_hits(text: str, public_base: str | None = None) -> list[str]:
-    """Union of live-host hits and forbidden tool-display mask hits."""
+    """Union of live-host, punycode href, and forbidden tool-display mask hits."""
     hits = list(find_live_site_host_hits(text, public_base))
+    for hit in find_punycode_href_hits(text):
+        if hit not in hits:
+            hits.append(hit)
     for hit in find_redacted_mask_hits(text):
         if hit not in hits:
             hits.append(hit)
