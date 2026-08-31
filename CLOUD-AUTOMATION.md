@@ -55,14 +55,15 @@ Scout? → research_start → Research → Title → Writer → Sol
 - **Never** tymenrieltor.ru, Excalibur-2-Cloud, MCP-KV `wordpress_*`.
 - Если allow flag или FTP **нет** — run завершается после Indexer + артефактов в репо.
 
-### Cover + images (HARD)
+### Cover + images (HARD — scene_poster_v2)
 
-- **Brand lock:** official logo PNG paste (`logo-dobry-dom.png` / `cropped-img_7143.png`) on **cover always + 2–3 inline** (default inline_1/3/7). Never AI-drawn lockup. Never logo on all 8.
+- **COVER** = standalone editorial scene poster 2048×1152 (`dobry_dom_scene_poster_v2`) — NOT quad collage. BAN meme/sticker soup/split-white-panel on cover.
+- **INLINES** = 2× quad designed grid unchanged; meme OK max 1 cat/article.
+- **Brand lock:** official logo PNG paste on **cover always + 2–3 inline** (default inline_1/3/7). Never AI-drawn lockup.
 - **No plate** under logo pad (alpha paste only).
-- Cover phone: **+7 (993) 574-83-22** painted **IN SCENE** (tape/paper/magnet) — **no** post-composite pill.
-- NO host face / NO Shakin identity.
-- Images: **Grsai** (`excalibur_blog_grsai_gpt_image2_api.py`, **PRIMARY_MODEL_ID only**, **vip disabled**; 2×2048×1152 quad). On exhaust: pad-clear + factory paste → **continue to publish** (no Cover-QA loop).
-- **Cover-QA slim:** logo official, no plate, phone in scene on cover, no WP UI. Beauty = agent judgment on topic.
+- Cover phone: **+7 (993) 574-83-22** painted **IN SCENE** — **no** post-composite pill.
+- Images: **Grsai** PRIMARY only, **vip disabled**, max 2 attempts/canvas. On exhaust: pad-clear + factory paste → ship.
+- **Cover-QA slim:** scene poster, no collage/meme on cover, logo official, phone in scene, no WP UI.
 - After full upload: refresh WP intermediates (`*-1024x576`) for `/feed/zen/`.
 - **Prose** — Derouter REST (`excalibur_blog_derouter_opus_chat.py`). Not Composer, not Flux/Seedream/nano_banana/mcp-derouter.
 

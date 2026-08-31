@@ -34,7 +34,7 @@ Scout? → research_start → Research → Title → Writer(смысл)
 Никто не читает уже опубликованные статьи сайта — только
 `published-titles-only.md` / `shared/published-titles.md` для anti-dup.
 
-`memory/topics/` запрещена. Scout → handoff + `signal_urls` + **dual gate: Klyshin hooks (`memory/scout/klyshin-topic-bank.*`) × MCP-KV Wordstat** (Tyumen 55+11176, compare RU 225). Klyshin = angle/hook; Wordstat = **evaluate + rework for demand** (не binary skip: слабый объём → локализация/переформулировка до buyer P0; skip только если после rework нет честного buyer-intent кластера). В handoff логировать **original Klyshin hook** + **final P0 phrase+volume**. Cover canon: `memory/cover/cover-canon.json`.
+`memory/topics/` запрещена. Scout → handoff + `signal_urls` + **dual gate: Klyshin hooks (`memory/scout/klyshin-topic-bank.*`) × MCP-KV Wordstat** (Tyumen 55+11176, compare RU 225). Klyshin = angle/hook; Wordstat = **evaluate + rework for demand** (не binary skip: слабый объём → локализация/переформулировка до buyer P0; skip только если после rework нет честного buyer-intent кластера). В handoff логировать **original Klyshin hook** + **final P0 phrase+volume**. Cover canon: `memory/cover/cover-canon.json` (`dobry_dom_scene_poster_v2` — standalone scene poster, NO meme/collage on cover; inlines unchanged).
 
 **Factory brain (двухуровневый split):** Cursor — **тонкий дирижёр** (default Composer; не переключать модель Cursor).
 Прозу пишет только `scripts/excalibur_blog_derouter_opus_chat.py` → Derouter REST (`DEROUTER_API_KEY`):

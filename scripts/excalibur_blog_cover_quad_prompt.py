@@ -26,8 +26,10 @@ from excalibur_blog_image_provider import resolve_image_flow
 from excalibur_blog_quad_slots import (
     CANVAS_1_SLOTS,
     active_inline_keys,
+    all_canvas_specs,
     canvas_specs_for_inline_count,
     inline_count_from_manifest,
+    uses_scene_poster_v2,
 )
 from excalibur_blog_site_base import (
     REDACTED_LITERAL,
@@ -691,6 +693,52 @@ def build_prompt(
     return "\n".join(line for line in lines if line)
 
 
+SCENE_POSTER_COVER_BAN = (
+    "BAN: meme cutouts, cat stickers, Roll Safe, Harold, Pepe, Wordstat sticker soup, "
+    "torn-paper collage, gold-glitter type, yellow sticky notes, split white-panel+photo, "
+    "phone pill, post-composite phone, model-drawn logo, house-with-heart, logo plate, "
+    "empty stock room, WordPress UI, wow poster collage, dark cinematic"
+)
+
+
+def build_standalone_cover_prompt(
+    manifest: dict,
+    style: dict,
+    design_code: dict,
+    *,
+    cover_phone_cta: str = DEFAULT_COVER_PHONE_CTA,
+) -> str:
+    cover = (manifest.get("slots") or {}).get("cover") or {}
+    style_prefix = compact(
+        style.get("cover_standalone_prompt_prefix")
+        or design_code.get("cover_panel_prompt_block")
+        or "",
+        520,
+    )
+    cover_hook = compact(manifest.get("cover_hook", ""), 80)
+    cover_scene = sanitize_cover_scene_hint(
+        str(cover.get("scene_hint") or manifest.get("cover_scene") or ""),
+        str(manifest.get("cover_hook_highlight") or ""),
+    )
+    cover_emotion = compact(str(cover.get("cover_emotion") or manifest.get("cover_emotion") or ""), 120)
+    phone_clause = PHONE_IN_SCENE_RULE.format(phone=cover_phone_cta)
+    hook_clause = f'Optional short Cyrillic hook in scene: «{cover_hook}».' if cover_hook else ""
+    emotion_clause = f"Emotion: {cover_emotion}." if cover_emotion else ""
+    lines = [
+        style_prefix,
+        "Standalone cover canvas 2048x1152 exact 16:9 full-bleed — NOT a quad quadrant.",
+        hook_clause,
+        emotion_clause,
+        phone_clause,
+        f"Scene: {compact(cover_scene, COVER_SCENE_HINT_COMPACT)}.",
+        "TOP-RIGHT empty clear pad 8-12% — no logo, no house icon, no «Добрый дом», no plate.",
+        SCENE_POSTER_COVER_BAN + ".",
+        "TEXT LANGUAGE LOCK: visible text RUSSIAN Cyrillic only; short readable labels.",
+        "Magazine-clean editorial still — designed inline energy as cinematic scene poster.",
+    ]
+    return "\n".join(line for line in lines if line)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--article-dir", required=True)
@@ -733,7 +781,8 @@ def main() -> int:
     cover_phone_cta = cover_phone_cta_for_manifest(manifest, root)
 
     inline_count = inline_count_from_manifest(manifest)
-    canvas_specs = canvas_specs_for_inline_count(inline_count)
+    scene_v2 = uses_scene_poster_v2(root)
+    canvas_specs = all_canvas_specs(inline_count) if scene_v2 else canvas_specs_for_inline_count(inline_count)
     if args.canvas_index:
         canvas_specs = [s for s in canvas_specs if s["index"] == args.canvas_index]
         if not canvas_specs:
@@ -742,10 +791,11 @@ def main() -> int:
 
     for spec in canvas_specs:
         has_cover = bool(spec.get("has_cover"))
+        standalone_cover = bool(spec.get("standalone_cover"))
         canvas_slots = tuple(spec["slots"])
         identity_spec: dict[str, str] = {}
         identity_rel = ""
-        if has_cover and not brand_logo_paste and not logo_reference_in_generation:
+        if has_cover and not standalone_cover and not brand_logo_paste and not logo_reference_in_generation:
             topic_id = str(manifest.get("topic_id") or "").strip()
             slug = str(manifest.get("slug") or article_dir.name).strip()
             identity_spec = pick_identity_reference(topic_id, slug)
@@ -770,21 +820,29 @@ def main() -> int:
 
         warn_long_scene_hints(manifest)
         inline_logo_keys = resolve_manifest_inline_logo_keys(manifest, root)
-        prompt = build_prompt(
-            manifest,
-            style,
-            hero,
-            types_catalog,
-            design_code,
-            article_dir=article_dir,
-            canvas_slots=canvas_slots,
-            has_cover=has_cover,
-            brand_logo_paste=brand_logo_paste,
-            logo_reference_in_generation=logo_reference_in_generation,
-            cover_phone_cta=cover_phone_cta,
-            inline_logo_keys=inline_logo_keys,
-            meme_catalog=meme_catalog,
-        )
+        if standalone_cover:
+            prompt = build_standalone_cover_prompt(
+                manifest,
+                style,
+                design_code,
+                cover_phone_cta=cover_phone_cta,
+            )
+        else:
+            prompt = build_prompt(
+                manifest,
+                style,
+                hero,
+                types_catalog,
+                design_code,
+                article_dir=article_dir,
+                canvas_slots=canvas_slots,
+                has_cover=has_cover,
+                brand_logo_paste=brand_logo_paste,
+                logo_reference_in_generation=logo_reference_in_generation,
+                cover_phone_cta=cover_phone_cta,
+                inline_logo_keys=inline_logo_keys,
+                meme_catalog=meme_catalog,
+            )
         if not validate_prompt_budget(prompt):
             return 1
         prompt_path = article_dir / "cover" / Path(str(spec["prompt_file"])).name
@@ -794,17 +852,22 @@ def main() -> int:
         if not args.write_batch:
             continue
 
-        if has_cover and not run_motif_gate(root, manifest, article_dir):
+        if has_cover and not standalone_cover and not run_motif_gate(root, manifest, article_dir):
+            print("❌ COVER MOTIF BLOCKER: 14-day anti-repeat collision", file=sys.stderr)
+            return 1
+        if standalone_cover and not run_motif_gate(root, manifest, article_dir):
             print("❌ COVER MOTIF BLOCKER: 14-day anti-repeat collision", file=sys.stderr)
             return 1
 
         required_errors: list[str] = []
-        if has_cover:
+        if has_cover or standalone_cover:
             if not str(manifest.get("cover_hook") or "").strip():
                 required_errors.append("cover_hook empty")
             if not str(manifest.get("cover_hook_highlight") or "").strip():
                 required_errors.append("cover_hook_highlight empty")
         for key in canvas_slots:
+            if key in {"panel_quiet_pad"}:
+                continue
             slot_data = (manifest.get("slots") or {}).get(key) or {}
             if not str(slot_data.get("scene_hint") or "").strip():
                 required_errors.append(f"{key}.scene_hint empty")
@@ -841,9 +904,21 @@ def main() -> int:
                 api_input["input_urls"] = [logo_ref_url]
 
         image_flow = resolve_image_flow(root)
+        apply_script = (
+            "python3 scripts/excalibur_blog_cover_standalone_apply.py "
+            f"--article-dir <article_dir>"
+            if standalone_cover
+            else (
+                "python3 scripts/excalibur_blog_quad_apply.py "
+                f"--article-dir <article_dir> --canvas-index {spec['index']} --inject-html"
+            )
+        )
         batch = {
-            "pipeline": manifest.get("pipeline") or "quad_canvas_2x_image_api_longform",
+            "pipeline": manifest.get("pipeline") or (
+                "scene_poster_v2_standalone_cover" if standalone_cover else "quad_canvas_2x_image_api_longform"
+            ),
             "canvas_index": spec["index"],
+            "standalone_cover": standalone_cover,
             "identity_reference_local": identity_rel if has_cover and not brand_logo_paste and not logo_reference_in_generation else "",
             "identity_reference_id": identity_spec.get("id", "") if has_cover and not brand_logo_paste and not logo_reference_in_generation else "",
             "logo_reference_local": str(logo_ref_spec.get("local") or "") if logo_reference_in_generation else "",
@@ -858,10 +933,7 @@ def main() -> int:
                 "script": image_flow["script"],
                 "resolution": MCP_RESOLUTION,
                 "note": image_flow["note"],
-                "apply_script": (
-                    "python3 scripts/excalibur_blog_quad_apply.py "
-                    f"--article-dir <article_dir> --canvas-index {spec['index']} --inject-html"
-                ),
+                "apply_script": apply_script,
             },
             "jobs": [
                 {

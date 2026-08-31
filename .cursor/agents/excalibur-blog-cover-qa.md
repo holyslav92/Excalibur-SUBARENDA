@@ -1,6 +1,6 @@
 ---
 name: excalibur-blog-cover-qa
-description: "Cover-QA: slim gate — logo+phone+no plate+no WP UI; stamp cover_qa.json."
+description: "Cover-QA: scene poster v2 — no meme/collage on cover, logo+phone in-scene, stamp cover_qa.json."
 model: inherit
 readonly: false
 is_background: false
@@ -12,21 +12,17 @@ is_background: false
 
 **Slim gate после Cover**, до Indexer/Publish.
 
-**Beauty = agent judgment.** Не блокируй publish за typography overlap, meme density, WOW poster pedantry.
+## FAIL только если (brand lock + scene_poster_v2)
 
-## FAIL только если (brand lock)
-
+- meme/collage on cover (`forbid_cover_meme_collage`, `forbid_split_white_collage`)
 - нет factory logo на cover или inline count не 2–3
-- AI-drawn lockup в cover pad (curtains+flower, dashed frame)
-- white/gray plate под logo pad на cover
-- нет телефона **+7 (993) 574-83-22** на cover post-composite
-- WordPress/Gutenberg/Dashboard UI в арте
-- номер 922 (риелтор) на обложке
-- **2+ frames с cat-meme** (max 1 cat slot на cover+7 inlines)
+- AI-drawn lockup / house-with-heart / plate под logo
+- phone pill / post-composite phone (must be IN SCENE)
+- WordPress UI в арте
+- номер 922
+- 2+ cat-meme frames (max 1 on inlines only — NOT on cover)
 
 ## PASS → ship
-
-После max-2 gen + pad-clear: если brand lock OK → `status: PASS`, не возвращай Cover.
 
 ```bash
 python3 scripts/excalibur_blog_cover_qa_gate.py --article-dir <dir>

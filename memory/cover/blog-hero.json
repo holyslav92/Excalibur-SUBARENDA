@@ -4,6 +4,7 @@
   "name_ru": "Добрый дом",
   "cover_mode": "brand_logo_paste",
   "logo_mode": "brand_logo_paste",
+  "cover_generation_mode": "standalone_16_9",
   "reference_images": [],
   "reference_image": "",
   "reference_url_hosted": "",
@@ -29,19 +30,21 @@
       "inline_7"
     ]
   },
-  "wow_cover_rules": {
+  "scene_poster_rules": {
+    "canon_id": "dobry_dom_scene_poster_v2",
     "forbid_wordpress_ui_in_art": true,
     "no_element_overlap": true,
-    "wow_poster_magazine_typography": true,
+    "scene_poster_editorial": true,
+    "forbid_cover_meme_collage": true,
     "cover_qa_fail_if_broken": true
   },
   "visual_lock": {
     "person": "NO Shakin/rieltor identity — Russian guests fitting check-in topic only",
-    "wow_poster": "Magazine cover poster: bold readable Russian DISPLAY type hook + one sharp scene line",
+    "scene_poster": "Editorial scene poster: full-bleed cinematic still of guest-night wound; designed inline energy; optional 2-6 word Cyrillic hook",
     "forbid_wordpress_ui": "NEVER WordPress, Gutenberg, wp-admin, block editor, theme chrome, cookie bars in generated art",
-    "no_overlap": "Headline, Wordstat stickers, meme, cat bottom-left, phone quiet zone, logo pad NEVER overlap",
-    "logo_lockup": "TOP-RIGHT empty pad in generation; AFTER split factory pastes cropped-img_7143.png alpha PNG only — NO white/gray plate; cover always + 2–3 inline; NEVER send logo as Grsai reference",
-    "cover_phone": "+7 (993) 574-83-22 painted IN scene (tape strip, torn paper, door plate, fridge magnet) on bottom edge or side margin — readable, pretty, NOT over cat/meme/sticky/headline; NEVER post-composite pill/button/banner"
+    "no_overlap": "Headline, phone in-scene, people, logo pad NEVER overlap",
+    "logo_lockup": "TOP-RIGHT empty pad in generation; AFTER apply factory pastes cropped-img_7143.png alpha PNG only — NO white/gray plate; cover always + 2–3 inline; NEVER send logo as Grsai reference",
+    "cover_phone": "+7 (993) 574-83-22 painted IN scene (door intercom, paper on door, host card, fridge magnet) — readable, pretty; NEVER post-composite pill/button/banner; NEVER meme/sticky over phone"
   },
   "cover_canon": "memory/cover/cover-canon.json",
   "host_face_todo": "skip_human_host — brand_logo_paste mode"

@@ -3,70 +3,58 @@
 > **TENANT:** Добрый дом / добрыйдом-72.рф — `holyslav92/Excalibur-SUBARENDA`.  
 > **NEVER** tymenrieltor.ru / Excalibur-2-Cloud rieltor identity or phone +7 922.
 
-# Excalibur BLOG — Quad Canvas (Grsai / Derouter REST 2K)
+# Excalibur BLOG — Cover scene poster v2 + inline quads (Grsai 2K)
 
 Cover после `article.html` + Sol PASS.
 
 ## Brand lock FOREVER (Cover-QA slim — FAIL if broken)
 
-Canon: `shared/tenant-config.json` → `cover_wow_rules`, `memory/cover/visual-notes-dobry-dom.json`.
+Canon: `memory/cover/cover-canon.json` (`dobry_dom_scene_poster_v2`), `shared/tenant-config.json` → `cover_wow_rules`.
 
-**Philosophy:** beauty = agent judgment on topic; brand lock = official logo overlay + phone in scene + no plate + no WP UI.
+**Philosophy:** COVER = editorial scene poster (inline-quality design energy as cinematic still). INLINES = designed grid unchanged.
 
 ### Logo — NEVER draw in generation
 
-- Prompt MUST reserve **empty clear top-right corner**: no logo, no house icon, no «Добрый дом» lettering, no plate, no sticker, no business card.
-- **NEVER** send `cropped-img_7143.png` / `logo-dobry-dom.png` as Grsai/Derouter generation reference (`urls`/aroma/`input_urls`).
-- **AFTER** split: factory pastes official alpha PNG only — `scripts/excalibur_blog_brand_logo_composite.py`.
-- Cover: logo always. Inlines: **2–3 of 7** (default inline_1/3/7). Same top-right pad.
-- **GATE fail:** white/gray/beige rectangle/card/circle under logo; logo over meme/cat/sticky/headline/phone.
+- Prompt MUST reserve **empty clear top-right corner 8–12%**: no logo, no house icon, no «Добрый дом» lettering, no plate.
+- **NEVER** send `cropped-img_7143.png` / `logo-dobry-dom.png` as Grsai reference.
+- **AFTER** standalone cover apply: factory pastes official alpha PNG — `scripts/excalibur_blog_brand_logo_composite.py`.
+- Cover: logo always. Inlines: **2–3 of 7** (default inline_1/3/7).
+- **GATE fail:** white/gray/beige plate under logo; logo over headline/phone.
 
 ### Phone — IN scene only
 
 - Number **+7 (993) 574-83-22** only (never +7 922).
-- **Do NOT** post-paste pill/button/banner (`draw_phone_on_cover` forbidden).
-- Phone MUST be **generated in the artwork**: tape strip, torn paper, door plate, fridge magnet, poster edge — readable, pretty, quiet zone on bottom edge or side margin.
-- **GATE fail:** phone pill overlapping cat/meme/sticky/headline; opaque fill covering joke.
+- **Do NOT** post-paste pill/button/banner.
+- Phone MUST be **generated in the artwork**: door intercom, paper on door, host card, fridge magnet — readable, in-scene.
+- **GATE fail:** phone pill; post-composite overlay.
 
-Factory logo paste: `scripts/excalibur_blog_brand_logo_composite.py` — logo overlay only, no phone overlay.
+### COVER BAN (scene_poster_v2)
+
+Meme cutouts, Wordstat sticker soup, torn-paper/gold-glitter/sticky collage, split white-panel+photo, phone pill, model-drawn logo, house-with-heart, logo plate, empty stock, WP UI.
 
 ## Longform: 8 изображений
 
-- `cover.png` 1200×675
-- `inline-01.png` … `inline-07.png` (7× `figure.inline-quad`, data-slot `inline_1`…`inline_7`)
-- **2 canvas** `2048×1152` (2×2, панели 16:9)
+- `cover.png` 1200×675 (from standalone `cover-canvas.png` 2048×1152)
+- `inline-01.png` … `inline-07.png` (7× `figure.inline-quad`)
+- **1 standalone cover canvas** + **2 inline quad canvases** `2048×1152` (2×2)
 
 | Canvas | Файл | Слоты |
 |--------|------|-------|
-| 1 | `canvas-quad-01.png` | cover, inline_1…3 |
-| 2 | `canvas-quad-02.png` | inline_4…7 |
+| 0 (cover) | `cover/cover-canvas.png` | standalone 16:9 scene poster |
+| 1 | `canvas-quad-01.png` | inline_1…inline_4 |
+| 2 | `canvas-quad-02.png` | inline_5…inline_7 + quiet pad (not exported) |
 
-PRIMARY: **Grsai** (`GRSAI_API_KEY`) or **Derouter REST** (`DEROUTER_API_KEY`), `resolution: 2K`, 16:9.
+PRIMARY: **Grsai** (`GRSAI_API_KEY`), `resolution: 2K`, 16:9, **vip disabled**, max **2** attempts.
 
-## Image model lock (HARD — owner)
+## Cover canon (Добрый дом scene_poster_v2)
 
-```text
-1. GRSAI_API_KEY → scripts/excalibur_blog_grsai_gpt_image2_api.py (2K, no logo reference)
-2. DEROUTER_API_KEY → scripts/excalibur_blog_derouter_gpt_image2_api.py (fallback)
-3. neither → BLOCKER
-```
-
-**FORBIDDEN:** logo as generation reference; post-composite phone pill; flux2-pro-*, Seedream, nano_banana*, z-image.
-
-Contracts: `shared/grsai-gpt-image-api-contract.md`, `shared/derouter-gpt-image-api-contract.md`
-
-## Cover canon (Добрый дом)
-
-Канон: `memory/cover/cover-canon.json` · Style: `memory/cover/quad-style-dobry-dom.json`
-
-1. **WOW magazine poster** — bold readable Russian display hook + scene; high-key collage.
-2. **Brand logo paste** — NO logo in generation; factory pastes PNG TOP-RIGHT 8–12% on cover + 2–3 inlines.
-3. **Phone in scene** — +7 (993) 574-83-22 on tape/paper/magnet, never pill overlay.
-4. **Anti-repeat 14д** — `memory/cover/used-motifs.json` + `excalibur_blog_cover_motif_gate.py`.
-5. **Light & bright** — high-key, sun flare; dark cinematic запрещён.
-6. **Memes** — max **1 cat-meme** per article (cover OR one inline, not both); other meme slots = people-memes/reaction templates from `meme-top100.json` (≤12–15% frame); Cover-QA FAIL if 2+ cat frames.
-7. **Wordstat stickers** — 1–3 readable stickers с live Wordstat (Тюмень regions 55+11176).
-8. **NO Shakin/rieltor host** — Russian guests by topic only.
+1. **Editorial scene poster** — full-bleed cinematic still of guest-night wound; optional 2–6 word Cyrillic hook.
+2. **Brand logo paste** — NO logo in generation; factory pastes PNG TOP-RIGHT 8–12%.
+3. **Phone in scene** — +7 (993) 574-83-22 on door plate / host card / paper / magnet.
+4. **Anti-repeat 14д** — `memory/cover/used-motifs.json`.
+5. **Light & bright** — natural daylight; dark cinematic запрещён.
+6. **NO memes on cover** — meme energy on inlines only (max 1 cat/article).
+7. **NO Shakin/rieltor host** — Russian guests by topic only.
 
 ## Workflow
 
@@ -75,24 +63,17 @@ python3 scripts/excalibur_blog_cover_text_gate.py --article-dir <dir>
 python3 scripts/excalibur_blog_quad_manifest.py --article-dir <dir> --merge
 python3 scripts/excalibur_blog_cover_motif_gate.py check --topic-id <id> --composition "..." ...
 python3 scripts/excalibur_blog_cover_quad_prompt.py --article-dir <dir> --write-batch
+python3 scripts/excalibur_blog_grsai_gpt_image2_api.py --article-dir <dir> --batch cover/cover-mcp-batch.json --result cover/cover-mcp-result.json
+python3 scripts/excalibur_blog_cover_standalone_apply.py --article-dir <dir>
 python3 scripts/excalibur_blog_grsai_gpt_image2_api.py --article-dir <dir> --batch cover/quad-mcp-batch-01.json --result cover/quad-mcp-result-01.json
 python3 scripts/excalibur_blog_grsai_gpt_image2_api.py --article-dir <dir> --batch cover/quad-mcp-batch-02.json --result cover/quad-mcp-result-02.json
 python3 scripts/excalibur_blog_quad_apply.py --article-dir <dir> --canvas-index 1 --inject-html
 python3 scripts/excalibur_blog_quad_apply.py --article-dir <dir> --canvas-index 2 --inject-html
 python3 scripts/excalibur_blog_brand_logo_composite.py --article-dir <dir>
-python3 scripts/excalibur_blog_cover_motif_gate.py record --topic-id <id> ...
 python3 scripts/excalibur_blog_cover_qa_gate.py --article-dir <dir>
 ```
 
-## Visual locks (Добрый дом)
-
-- Панели `#FFFFFF` high-key; ink `#141821`; gold `#dcc5a1` один accent
-- **Cover:** WOW poster; bold Cyrillic hook; Wordstat stickers; ONE meme sticker (people-meme preferred; cat only if single cat slot); TOP-RIGHT empty logo pad; phone in-scene on bottom/side quiet zone
-- **Inline (7 шт.)** — logo paste on **2–3** panels only; people-meme sticker ≤15% frame; cat-meme only if article's ONE cat slot
-- Запреты: WordPress UI, logo reference in gen, phone pill overlay, overlapping logo/phone over cat/headline
-
 ## Blockers
 
-- `COVER QA BLOCKER` — brand lock check false in `cover/cover_qa.json` or Python phone/plate gates
-- logo composite stamp FAIL or inline logo count outside 2–3
-- post-composite phone pill detected on cover.png
+- `COVER QA BLOCKER` — collage/meme on cover, phone pill, logo plate, missing top-right pad
+- `forbid_split_white_collage` / `forbid_cover_meme_collage` on cover.png

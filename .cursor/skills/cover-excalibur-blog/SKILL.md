@@ -1,56 +1,48 @@
 ---
 name: cover-excalibur-blog
-description: "④a Cover: 2× quad Grsai 2K, meme energy, factory logo overlay after split, phone in-scene."
+description: "④a Cover: standalone scene poster 2K + 2× inline quads, factory logo overlay, phone in-scene."
 ---
 
-# Cover Agent — longform 8 images
+# Cover Agent — longform 8 images (scene_poster_v2)
 
-## Philosophy (slim factory)
+## Philosophy
 
-**Meme energy ON TOPIC + beauty = agent judgment.** Cover + 2–4 inlines: witty top-100 meme framing tied to посуточная аренда pains — funny, screenshot-worthy, comfort+ brand. Catalog: `memory/cover/meme-top100.json`.
+**COVER = editorial scene poster** — designed inline energy as a full-bleed cinematic still. One glance = the guest-night wound. **NO meme/collage on cover.**
 
-**Cat-meme quota (HARD):** max **1 cat-meme slot** per article across cover + 7 inlines. Prefer cover **OR** one inline — not both. All other meme slots = **people-memes** (Roll Safe, Harold, Pepe, Wojak, sacrednik, Жириновский…) — NOT grumpy/ginger/tardar/smudge cat repeats. Anti-repeat 14д: any cat-meme = same family collision.
+**INLINES unchanged** — 2× quad designed grid; meme allowed (max 1 cat/article); logo on 2–3 of 7.
 
-**Ban:** random unrelated memes, logo under stickers, snow/winter off-season, luxury flex, **logo as generation reference**, **post-composite phone pill**, **2+ cat-meme frames**.
-
-**Brand lock FOREVER (hard only):**
-- **NEVER** send logo as Grsai/Derouter reference (`urls`/aroma/`input_urls`)
-- Prompt: empty clear **top-right** — no logo, no house icon, no «Добрый дом», no plate/sticker/business card
-- **AFTER split:** factory pastes official `cropped-img_7143.png` alpha PNG small top-right — RGBA only, no white/gray backing
-- Cover: logo always. Inlines: **2–3 of 7**
-- Phone **+7 (993) 574-83-22** painted **IN the scene** (tape strip, torn paper, door plate, magnet) on bottom edge or side quiet zone — readable, pretty, NOT over cat/meme/sticky/headline
-- **NEVER** `brand_logo_composite.py --phone-only` or post-composite pill
-- NO WordPress UI in art
+**Ban on COVER:** meme cutouts, Wordstat sticker soup, torn-paper/gold-glitter/sticky collage, split white-panel+photo, phone pill, model-drawn logo, house-with-heart, logo plate.
 
 ## Generation policy (HARD)
 
 | Rule | Value |
 |------|-------|
-| Provider | **Grsai** (see `shared/grsai-gpt-image-api-contract.md`) |
-| VIP retry | **disabled** — PRIMARY_MODEL_ID only; ship native undersized if retry fails |
-| Max attempts | **2** per canvas → pad-clear + official logo paste if plate |
+| Cover canvas | **Standalone** 2048×1152 → `cover.png` 1200×675 |
+| Inline canvases | 2× quad 2048×1152 (inline_1..4, inline_5..7) |
+| Provider | **Grsai** — PRIMARY_MODEL_ID only |
+| VIP retry | **disabled** |
+| Max attempts | **2** per canvas → pad-clear + logo paste if needed |
 | Prose/scene | Derouter Terra `--role cover-scene` only |
 
 ## Архитектура
 
 ```text
-2× quad canvas 2048×1152 (Grsai API, max 2 attempts/canvas)
-  canvas 1: cover + inline_1..3
-  canvas 2: inline_4..7
-→ split 2×2 → cover.png + inline-01..07.png
+standalone cover canvas 2048×1152 (Grsai, max 2 attempts)
+  → cover_standalone_apply.py → cover.png 1200×675
+2× quad canvas 2048×1152
+  canvas 1: inline_1..4
+  canvas 2: inline_5..7
+→ split 2×2 → inline-01..07.png
 → brand_logo_composite.py (logo overlay ONLY — no phone pill)
 → Cover-QA slim → Indexer
 ```
 
-## Logo overlay (HARD — default)
+## Brand lock
 
-`cover_mode=brand_logo_paste` in `shared/tenant-config.json`. **Never** logo reference in generation.
-
-```bash
-python3 scripts/excalibur_blog_brand_logo_composite.py --article-dir "$ARTICLE"
-```
-
-`--phone-only` and `--emergency` are blocked/disabled for normal pipeline.
+- **NEVER** logo as Grsai reference
+- Empty **top-right pad 8–12%** in generation
+- **AFTER apply:** factory pastes official alpha PNG
+- Phone **+7 (993) 574-83-22** **IN SCENE** — never pill
 
 ## Runbook
 
@@ -60,8 +52,11 @@ ARTICLE="memory/blog/articles/<topic_id>-<slug>"
 python3 scripts/excalibur_blog_cover_text_gate.py --article-dir "$ARTICLE"
 python3 scripts/excalibur_blog_quad_manifest.py --article-dir "$ARTICLE" --merge
 python3 scripts/excalibur_blog_cover_motif_gate.py check --topic-id <id> \
-  --composition "..." --location "..." --meme "..." --sticker-set "..."
+  --composition "..." --location "..." --prop-set "..."
 python3 scripts/excalibur_blog_cover_quad_prompt.py --article-dir "$ARTICLE" --write-batch
+python3 scripts/excalibur_blog_grsai_gpt_image2_api.py --article-dir "$ARTICLE" \
+  --batch cover/cover-mcp-batch.json --result cover/cover-mcp-result.json
+python3 scripts/excalibur_blog_cover_standalone_apply.py --article-dir "$ARTICLE"
 python3 scripts/excalibur_blog_grsai_gpt_image2_api.py --article-dir "$ARTICLE" \
   --batch cover/quad-mcp-batch-01.json --result cover/quad-mcp-result-01.json
 python3 scripts/excalibur_blog_grsai_gpt_image2_api.py --article-dir "$ARTICLE" \
@@ -72,4 +67,4 @@ python3 scripts/excalibur_blog_brand_logo_composite.py --article-dir "$ARTICLE"
 python3 scripts/excalibur_blog_cover_qa_gate.py --article-dir "$ARTICLE"
 ```
 
-Contract: `shared/blog-cover-quad-canvas-contract.md`
+Contract: `shared/blog-cover-quad-canvas-contract.md` · Canon: `dobry_dom_scene_poster_v2`
