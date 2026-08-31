@@ -92,6 +92,9 @@
       "полный\\s+гайд",
       "полный\\s+список",
       "вс[её]\\s+что\\s+нужно\\s+знать",
+      "что\\s+нужно\\s+знать",
+      "пошагов\\w*\\s+инструкц",
+      "как\\s+снять\\s+посуточно",
       "top[- ]?ошиб",
       "топ[- ]?\\d+",
       "гайд\\s+20\\d{2}"
@@ -199,13 +202,15 @@
     "max_width_fraction_cap": 0.12,
     "margin_px": 20,
     "logo_corner": "top_right",
-    "inline_logo_count_min": 2,
-    "inline_logo_count_max": 3,
-    "inline_logo_slots_default": [
-      "inline_1",
-      "inline_3",
-      "inline_7"
-    ]
+    "inline_logo_count_min": 0,
+    "inline_logo_count_max": 0,
+    "inline_logo_slots_default": [],
+    "inline_phone_tablo_slots_default": [
+      "inline_2",
+      "inline_5"
+    ],
+    "inline_phone_tablo_count_min": 1,
+    "inline_phone_tablo_count_max": 2
   },
   "cover_identity_status": "brand_logo_only",
   "dzen_rf_pack": true,
@@ -317,9 +322,9 @@
     "soul_examples": "shared/soul-examples/"
   },
   "cover_wow_rules": {
-    "status": "type_meme_sticker_v3",
-    "canon_id": "dobry_dom_type_meme_sticker_v3",
-    "philosophy": "COVER = type-led magazine poster (standalone 2048×1152): spectacular headline + exactly 1 catalog meme + LARGE phone sticker. Steal inline designed-text/grid energy — NOT people-photo scene. INLINES = 2× quad unchanged. Logo factory alpha PNG overlay AFTER gen — NEVER Grsai reference. max-2 gen, vip off.",
+    "status": "tender_light_v1",
+    "canon_id": "dobry_dom_tender_light_v1",
+    "philosophy": "COVER = tender-light case poster (lapoy-cover-v12 etalon): Cormorant+Onest two-beat type, 1 catalog meme, cream kitchen-tablo phone +7 (993) 574-83-22, official alpha logo overlay AFTER gen top-right — NO plate. INLINES = 2× quad, ZERO company logos; phone tablo on 1–2 frames optional. Grsai PRIMARY image API, VIP off, max 2 gen/canvas.",
     "cover_generation_mode": "standalone_16_9",
     "logo_mode": "brand_logo_paste",
     "forbid_logo_reference_in_generation": true,
@@ -335,13 +340,15 @@
     "paste_and_ship_on_exhaust": true,
     "logo_asset": "memory/cover/assets/brand/logo-dobry-dom.png",
     "logo_corner": "top_right",
-    "inline_logo_count_min": 2,
-    "inline_logo_count_max": 3,
-    "inline_logo_slots_default": [
-      "inline_1",
-      "inline_3",
-      "inline_7"
+    "inline_logo_count_min": 0,
+    "inline_logo_count_max": 0,
+    "inline_logo_slots_default": [],
+    "inline_phone_tablo_slots_default": [
+      "inline_2",
+      "inline_5"
     ],
+    "inline_phone_tablo_count_min": 1,
+    "inline_phone_tablo_count_max": 2,
     "cover_phone_display": "+7 (993) 574-83-22",
     "forbid_wordpress_ui_in_art": true,
     "forbid_ai_drawn_logo": true,

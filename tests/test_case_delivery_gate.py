@@ -35,6 +35,20 @@ class CaseDeliveryGateTest(unittest.TestCase):
         errors = check_h1("О проверке квартиры перед заселением")
         self.assertTrue(any("topic label" in e for e in errors))
 
+    def test_blocks_how_to_chto_nuzhno_znat(self) -> None:
+        errors = check_h1("Что нужно знать перед посуточной арендой в Тюмени")
+        self.assertTrue(errors)
+        joined = " ".join(errors).lower()
+        self.assertTrue("how-to" in joined or "что нужно" in joined)
+
+    def test_blocks_h1_without_figure(self) -> None:
+        errors = check_h1("Обещали парковку рядом. Шлагбаум не пустил")
+        self.assertTrue(any("figure" in e or "цифра" in e for e in errors))
+
+    def test_passes_h1_with_figure(self) -> None:
+        errors = check_h1("«Парковка бесплатно». У шлагбаума попросили 500 ₽")
+        self.assertEqual(errors, [], errors)
+
     def test_passes_two_beat_case_h1(self) -> None:
         errors = check_h1(
             "Хозяин сказал «всё включено». В такси доплатили 2 400 ₽"
@@ -46,7 +60,7 @@ class CaseDeliveryGateTest(unittest.TestCase):
         self.assertEqual(errors, [], errors)
 
     def test_passes_h1_without_clock_utrom(self) -> None:
-        errors = check_h1("Перевёл предоплату. Утром квартиру уже сдали")
+        errors = check_h1("Перевёл 3 000 ₽ предоплаты. Утром квартиру уже сдали")
         self.assertEqual(errors, [], errors)
 
     def test_blocks_h1_with_clock(self) -> None:

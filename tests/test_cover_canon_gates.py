@@ -191,7 +191,7 @@ class WordstatGateTest(unittest.TestCase):
         tenant = json.loads((ROOT / "shared/tenant-config.json").read_text(encoding="utf-8"))
         wow = tenant.get("cover_wow_rules") or {}
         self.assertEqual(wow.get("cover_qa_mode"), "slim")
-        self.assertEqual(wow.get("canon_id"), "dobry_dom_type_meme_sticker_v3")
+        self.assertEqual(wow.get("canon_id"), "dobry_dom_tender_light_v1")
         self.assertEqual(wow.get("cover_generation_mode"), "standalone_16_9")
         self.assertEqual(wow.get("logo_mode"), "brand_logo_paste")
         self.assertTrue(wow.get("forbid_logo_reference_in_generation"))
@@ -202,8 +202,8 @@ class WordstatGateTest(unittest.TestCase):
         self.assertEqual(wow.get("max_generation_attempts_per_canvas"), 2)
         self.assertTrue(wow.get("paste_and_ship_on_exhaust"))
         self.assertTrue(wow.get("forbid_wordpress_ui_in_art"))
-        self.assertEqual(wow.get("inline_logo_count_min"), 2)
-        self.assertEqual(wow.get("inline_logo_count_max"), 3)
+        self.assertEqual(wow.get("inline_logo_count_min"), 0)
+        self.assertEqual(wow.get("inline_logo_count_max"), 0)
         self.assertIn("Excalibur-SUBARENDA", wow.get("tenant_scope", ""))
         self.assertEqual(tenant.get("cover_mode"), "brand_logo_paste")
         img = tenant.get("image_generation") or {}
@@ -226,6 +226,7 @@ class WordstatGateTest(unittest.TestCase):
             "forbid_ai_drawn_logo_cover",
             "logo_composite_stamp_pass",
             "no_logo_plate_cover",
+            "inline_no_logo_on_inlines",
             "cover_phone_993_large_sticker",
             "forbid_phone_pill_post_composite",
             "forbid_logo_overlaps_headline_phone",
@@ -248,9 +249,9 @@ class WordstatGateTest(unittest.TestCase):
         self.assertIn("WordPress", prompt_src)
         self.assertIn("CAT_MEME_QUOTA_RULE", prompt_src)
 
-    def test_cover_canon_type_meme_sticker_v3(self) -> None:
+    def test_cover_canon_tender_light_v1(self) -> None:
         canon = json.loads((ROOT / "memory/cover/cover-canon.json").read_text(encoding="utf-8"))
-        self.assertEqual(canon["canon_id"], "dobry_dom_type_meme_sticker_v3")
+        self.assertEqual(canon["canon_id"], "dobry_dom_tender_light_v1")
         phone = canon["wow_cover_rules"]["no_element_overlap"]["cover_phone"]
         self.assertEqual(phone.get("mode"), "large_hotel_lobby_info_board")
         self.assertFalse(phone["post_composite_bottom_left"])

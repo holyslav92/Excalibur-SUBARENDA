@@ -66,7 +66,7 @@ cover:
   images_per_article: 8
   max_attempts_per_canvas: 2
   paste_and_ship_on_exhaust: true
-  rule: official logo on cover + 2-3 inline (default 1/3/7); NO host face / NO Shakin; beauty=agent judgment
+  rule: official logo on cover ONLY (ZERO on inlines); NO host face / NO Shakin; beauty=agent judgment
 
 brain_and_images:
   prose: scripts/excalibur_blog_derouter_opus_chat.py
@@ -103,14 +103,14 @@ instructions: |
 
   Wordstat: вся Россия (регион 225). Боли БЕЗ города и те же С Тюменью. Заголовок может быть без слова «Тюмень». Пишем и сдаём только Тюмень. Гостевая боль: залог, код, ключница, заселение, предоплата, бойлер, собака, соседи, «рядом с вузом», скрытая доплата. Не юр-крючок Клышина (ЕГРН, суд, наследники, Москва). Не дублировать уже вышедшие (published-titles / коды-заселение, залог-скол на плите и любой близкий H1).
 
-  ГОЛОС И ФОРМА (HARD, PR #52, слот не имеет права свернуть на гайд):
-  H1 = двухтактный стоп-фактор уже случившейся гостевой ночи: [нормально]. А потом [ужас] / цитата / цифра. Не тема, не SEO, не «как снять», не «что проверить», не «N советов/шагов», не «разберём».
+  ГОЛОС И ФОРМА (HARD, factory lock — слот не имеет права свернуть на гайд):
+  H1 = крик + казус + цифра (₽/ночи/люди) + правда из текста: двухтактный стоп-фактор уже случившейся гостевой ночи. BAN how-to: «как снять посуточно», «N советов», «пошаговая инструкция», «что нужно знать», duty-log «дата+часы+двор», chopped SEO leads.
   §1 = 1–2 плотных абзаца holyslav: цитата → удар, ₽ или число ночей, что сломалось. **BAN duty-log** (день недели, календарная дата, часы HH:MM, «Тюмень, двор» в первом ударе). Бан рубленый TG-лид, TL;DR, «Разберём». H1 без часов HH:MM (слова «утром» OK). После лида: «Я хост посуточной в Тюмени. Это «Добрый дом».» Дальше удары Клышина: «Нет. Так не заселяем.» · «Не X. Не Y. А Z.» · вопрос-отмычка · «Сначала проверка. Потом перевод. Не наоборот.» 1100–1800 слов, один кейс, одна красная линия. Чеклист только после морали. Один вопрос в середине → ответ в t.me/Dobriy_dom_72 или MAX, никогда «напишите в комментариях». Конец: «Наш вывод простой.» + один блок воронки. Цель 9–10.
 
   Воронка ОДИН раз в конце: TG https://t.me/Dobriy_dom_72 · MAX https://max.ru/id660300569233_biz · бронь https://добрыйдом-72.рф/ и /booking/ · тел. +7 993 574-83-22 · менеджер https://t.me/Dobriy_dom_Tyumen. 3–4 живые /blog/ HTTP 200. Бан +7 922 001 65 05.
 
-  Картинки: COVER = standalone type_meme_sticker_v3 poster (spectacular Cyrillic headline + exactly 1 catalog meme + LARGE phone die-cut sticker / info-board tablo). ZERO people on cover. INLINES = 2× quad designed grid unchanged. Grsai PRIMARY_MODEL_ID only, VIP off, standalone cover 2048×1152 + 2 inline quads, max 2 попытки/canvas, потом pad-clear (scene inpaint, NOT white fill) + factory alpha logo paste. Кот максимум 1/8. Логотип только memory/cover/assets/brand/logo-dobry-dom.png POST-gen top-right on scene texture — NO plate/card/box, never generation reference. Cover always + 2–3 inlines (1/3/7). Phone +7 (993) 574-83-22 as LARGE designed sticker — NOT tiny door magnet, NOT in-scene pill. build_standalone_cover_prompt() for cover; BAN people-photo scene cover. After upload: wp-content URLs + refresh *-1024x576 for /feed/zen/.
+  Картинки: COVER = tender_light_v1 poster (Cormorant+Onest, 1 meme, cream kitchen-tablo phone +7 (993) 574-83-22). ZERO people on cover. INLINES = 2× quad; ZERO company logos on all 7; phone tablo on 1–2 optional. Grsai PRIMARY image API PRIMARY only, VIP off, 2×4=8 ≥2K, max 2 попытки/canvas, потом pad-clear + factory alpha logo overlay on cover only. Кот максимум 1/8. Логотип только memory/cover/assets/brand/logo-dobry-dom.png POST-gen top-right on cover — NO plate/card/box, never generation reference. NEVER +7 922 001 65 05.
 
   Publish only добрыйдом-72.рф FTP ([REDACTED]:21 PASV root [REDACTED] user ca21576_svyat, password Cloud Secrets, EXCALIBUR_BLOG_ALLOW_PUBLISH=yes not in git. No flag → stop after Indexer. Never print secrets.
 
-  Report: two-beat H1?, Wordstat angle, live URL or BLOCKER, word count, TG/MAX in body, 3–4 xlinks 200, which 2–3 frames have logo, 8 HTML images 200, case-delivery-gate PASS/BLOCK.
+  Report: two-beat H1 with figure?, Wordstat angle, live URL or BLOCKER, word count, TG/MAX in body, 3–4 xlinks 200, cover logo only (zero inline logos), 8 HTML images 200, case-delivery-gate PASS/BLOCK.

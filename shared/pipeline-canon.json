@@ -136,6 +136,16 @@
     "no_series_templates": true,
     "max_len": 70,
     "style": "shared/article-style.md",
-    "soul": "shared/SOUL.md"
+    "soul": "shared/SOUL.md",
+    "dzen_shape": "крик (shout/already-happened) + казус (incident) + цифра (₽/ночи/люди) + правда из текста",
+    "ban_how_to": [
+      "как снять посуточно",
+      "N советов",
+      "пошаговая инструкция",
+      "что нужно знать",
+      "chopped three-word SEO leads",
+      "duty-log дата+часы+двор"
+    ],
+    "gate": "scripts/excalibur_blog_case_delivery_gate.py"
   }
 }

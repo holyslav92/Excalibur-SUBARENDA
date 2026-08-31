@@ -326,6 +326,25 @@ class DrawnLogoGateTest(unittest.TestCase):
             with self.assertRaises(ValueError):
                 composite_article_images(article, tenant_root, phone_only=True)
 
+    def test_factory_inline_logo_count_zero(self) -> None:
+        tenant = json.loads((ROOT / "shared/tenant-config.json").read_text(encoding="utf-8"))
+        composite = tenant.get("logo_composite") or {}
+        self.assertEqual(composite.get("inline_logo_count_min"), 0)
+        self.assertEqual(composite.get("inline_logo_count_max"), 0)
+        wow = tenant.get("cover_wow_rules") or {}
+        self.assertEqual(wow.get("inline_logo_count_min"), 0)
+
+    def test_resolve_inline_logo_slots_returns_empty(self) -> None:
+        sys.path.insert(0, str(ROOT / "scripts"))
+        from excalibur_blog_brand_logo_composite import (  # noqa: PLC0415
+            load_tenant_logo_config,
+            resolve_inline_logo_slots,
+        )
+
+        cfg = load_tenant_logo_config(ROOT)
+        slots = resolve_inline_logo_slots(ROOT / "memory/blog/articles/B04-oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego", cfg)
+        self.assertEqual(slots, [])
+
     def test_tenant_image_generation_forbids_drawn_logo(self) -> None:
         tenant = json.loads((ROOT / "shared/tenant-config.json").read_text(encoding="utf-8"))
         img = tenant.get("image_generation") or {}

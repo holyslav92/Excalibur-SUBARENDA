@@ -20,7 +20,7 @@ description: "Cover-QA: type_meme_sticker_v3 — require meme+headline+large pho
 | `forbid_logo_plaque_cover` | no white/gray plaque under logo pad |
 | `forbid_house_heart_lockup` | no model-drawn house-with-heart lockup |
 | `cover_logo_pasted` | factory logo on cover |
-| `inline_logo_count_2_3` | 2–3 inline logos (inlines unchanged) |
+| `inline_no_logo_on_inlines` | ZERO company logos on all 7 inline frames (cover only) |
 | `cover_phone_993_large_sticker` | large phone sticker in artwork, not pill |
 | `forbid_phone_pill_post_composite` | no opaque phone button/chip |
 | `no_logo_plate_cover` | no plate under logo |

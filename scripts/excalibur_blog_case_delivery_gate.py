@@ -49,6 +49,8 @@ HOW_TO_H1_RES = (
     re.compile(r"\bинструкция\s+по\b", re.I),
     re.compile(r"\bгайд\s+по\b", re.I),
     re.compile(r"\bпошагов\w*\b", re.I),
+    re.compile(r"\bпошагов\w*\s+инструкц", re.I),
+    re.compile(r"\bчто\s+нужно\s+знать\b", re.I),
     re.compile(r"\bсоветы\s+по\b", re.I),
     re.compile(r"\bчек[-\s]?лист\s+(для|по)\b", re.I),
     re.compile(
@@ -61,6 +63,16 @@ HOW_TO_H1_RES = (
 
 TOPIC_LABEL_H1_RE = re.compile(
     r"^(?:о|об|про|всё\s+о)\s+[\w«\"]",
+    re.I,
+)
+
+H1_FIGURE_RE = re.compile(
+    r"(?:"
+    r"\d[\d\s]*\s*(?:₽|руб\.?)"
+    r"|\d+\s*(?:ноч|чел|гост|час|минут)"
+    r"|\b\d{3,}\b"
+    r"|\b(?:двух|двоих|трёх|троих|треть\w+|втор\w+|четверт\w+)\b"
+    r")",
     re.I,
 )
 
@@ -184,6 +196,10 @@ def check_h1(h1: str) -> list[str]:
         errors.append(
             "h1: missing two-beat stop-factor "
             "(clause break: . — : ? ! «А потом» «Только» contrast)"
+        )
+    if not H1_FIGURE_RE.search(title):
+        errors.append(
+            "h1: missing figure (цифра ₽/ночи/люди) — Dzen CASE needs крик+казус+цифра"
         )
     return errors
 

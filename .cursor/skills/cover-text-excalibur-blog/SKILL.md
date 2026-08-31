@@ -10,7 +10,7 @@ description: "Cover-text: exact Russian inscriptions in cover-text.json, gate PA
 - **Spectacular headline 2–8 слов** — hero display typography (NOT wall of type, NOT gold glitter)
 - **Телефон +7 (993) 574-83-22 LARGE die-cut sticker** — BIG readable graphic, **без pill**, **не** tiny in-scene door number
 - **Ровно 1 meme** из meme-top100.json на обложке (named entry)
-- **Логотип:** factory paste alpha PNG top-right empty pad — **не** рисовать в генерации
+- **Логотип:** factory paste alpha PNG top-right on **cover only** — **ZERO** logos on inlines — **не** рисовать в генерации
 - **NO people-heavy scene photo on cover**
 - **NO host face** на обложке
 - **NO +7 922 001 65 05**

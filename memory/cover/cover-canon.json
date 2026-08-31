@@ -1,8 +1,8 @@
 {
-  "canon_id": "dobry_dom_type_meme_sticker_v3",
+  "canon_id": "dobry_dom_tender_light_v1",
   "status": "locked",
   "tenant": "dobry-dom",
-  "label_ru": "Добрый дом — type+meme+phone-sticker poster v3, factory logo paste, inlines unchanged",
+  "label_ru": "Добрый дом — tender light type+meme+info-board cover v1 (lapoy-cover-v12 approved), zero inline logos",
   "tenant_scope": "holyslav92/Excalibur-SUBARENDA ONLY. Never tymenrieltor.ru / Excalibur-2-Cloud rieltor identity.",
   "cover_generation": {
     "mode": "standalone_16_9",
@@ -102,13 +102,12 @@
     },
     "inline_logo": {
       "cover_qa_checks": [
-        "inline_logo_count_2_3",
-        "forbid_multiple_logos_per_image",
-        "logo_top_right_fixed"
+        "inline_no_logo_on_inlines",
+        "forbid_multiple_logos_per_image"
       ],
-      "count": "2-3 of 7 inlines only",
-      "default_slots": ["inline_1", "inline_3", "inline_7"],
-      "corner": "top_right",
+      "count": "0 of 7 — cover only",
+      "default_slots": [],
+      "never_on_inline": true,
       "never_two_plus_logos_per_frame": true
     }
   },
@@ -146,8 +145,8 @@
     "logo_corner": "top_right",
     "logo_width_fraction": "8-12%",
     "cover_always_one_logo": true,
-    "inline_logo_count": "2-3 of 7",
-    "inline_logo_slots_default": ["inline_1", "inline_3", "inline_7"],
+    "inline_logo_count": "0 of 7 — cover only",
+    "inline_logo_slots_default": [],
     "cover_phone_large_sticker": "+7 (993) 574-83-22",
     "cover_phone_post_composite": false,
     "forbid_cover_phone_post_composite_pill": true,
@@ -196,7 +195,7 @@
     "no_stock_model": true,
     "meme_sticker_max_frame_share": 0.15,
     "meme_people_catalog": "memory/cover/meme-top100.json",
-    "logo_on_inline": "factory paste 2-3 of 7 only, same TOP-RIGHT pad; never 2+ logos on one frame",
+    "logo_on_inline": "NEVER — zero company logos on all 7 inline frames; phone tablo on 1–2 optional",
     "preferred_types": [
       "lived_in_room",
       "guest_checkin_scene",
@@ -232,7 +231,7 @@
       "require_large_phone_sticker",
       "forbid_people_heavy_cover",
       "forbid_split_white_collage",
-      "inline_logo_count_2_3",
+      "inline_no_logo_on_inlines",
       "forbid_multiple_logos_per_image",
       "logo_top_right_fixed",
       "max_one_cat_meme_slot"

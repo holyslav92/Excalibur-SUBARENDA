@@ -55,15 +55,13 @@ Scout? → research_start → Research → Title → Writer → Sol
 - **Never** tymenrieltor.ru, Excalibur-2-Cloud, MCP-KV `wordpress_*`.
 - Если allow flag или FTP **нет** — run завершается после Indexer + артефактов в репо.
 
-### Cover + images (HARD — type_meme_sticker_v3)
+### Cover + images (HARD — dobry_dom_tender_light_v1)
 
-- **COVER** = standalone designed TYPE poster 2048×1152 (`dobry_dom_type_meme_sticker_v3`) — spectacular headline + exactly 1 catalog meme + LARGE phone sticker. NOT people-photo scene. NOT quad collage.
-- **INLINES** = 2× quad designed grid unchanged; meme optional max 1 cat/article.
-- **Brand lock:** official logo PNG paste on **cover always + 2–3 inline** (default inline_1/3/7). Never AI-drawn lockup.
-- **No plate** under logo pad (alpha paste only).
-- Cover phone: **+7 (993) 574-83-22** as **LARGE die-cut vinyl sticker** — **no** tiny in-scene door number, **no** post-composite pill.
-- Images: **Grsai** PRIMARY only, **vip disabled**, max 2 attempts/canvas. On exhaust: pad-clear + factory paste → ship.
-- **Cover-QA slim:** type poster, require meme+headline+large phone, ban people-heavy scene, logo official, no WP UI.
+- **COVER** = tender-light case poster 2048×1152 (`dobry_dom_tender_light_v1`, etalon `lapoy-cover-v12`) — Cormorant italic + Onest extra-bold two-beat Cyrillic, exactly 1 catalog meme, cream kitchen-tablo phone **+7 (993) 574-83-22**. Official alpha logo PNG paste **after** generation top-right — **NO** white/gray plaque; model MUST NOT draw logo.
+- **INLINES** = 2× quad designed grid; **ZERO** company logos on all 7 frames. Phone tablo on **1–2** inlines optional (kitchen sticker, not pill).
+- **H1 / Dzen title** = крик + казус + цифра (₽/ночи/люди) + правда из текста. **BAN** how-to: «как снять посуточно», «N советов», «пошаговая инструкция», «что нужно знать», duty-log «дата+часы+двор». Gate: `scripts/excalibur_blog_case_delivery_gate.py`.
+- Images: **Grsai** PRIMARY image API PRIMARY, **vip disabled**, 2×4=8, ≥2K. Max 2 attempts/canvas. On exhaust: pad-clear + factory logo overlay → ship.
+- **Cover-QA slim:** tender-light poster, meme+headline+tablo phone, ban people-heavy scene, cover logo official, **inline_no_logo_on_inlines**, no WP UI.
 - After full upload: refresh WP intermediates (`*-1024x576`) for `/feed/zen/`.
 - **Prose** — Derouter REST (`excalibur_blog_derouter_opus_chat.py`). Not Composer, not Flux/Seedream/nano_banana/mcp-derouter.
 

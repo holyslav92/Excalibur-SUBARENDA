@@ -19,14 +19,14 @@ python3 scripts/excalibur_blog_case_delivery_gate.py --article-dir <dir> --stage
 
 ## CASE delivery — Title slice (HARD)
 
-1. **Two-beat stop-factor** — уже случившийся ожог гостя, не how-to label.
+1. **Two-beat stop-factor** — крик + казус + цифра (₽/ночи/люди); уже случившийся ожог, не how-to label.
 2. Аудитория: **гость**, бронирующий ночь в Тюмени — не host-operator report.
 3. Число = ₽ / ночи / минуты ожога — не «5 вопросов» / «7 шагов». **BAN `HH:MM` в H1** (слова «утром» OK).
 4. Guest pain: deposit, code, dog, parking, neighbors, prepaid-to-card, «всё включено».
 5. **«Тюмень» в H1 НЕ обязательна.** ~40–70 символов.
 6. Title rides Wordstat P0 from Scout — not legal essay.
 7. **Dzen pattern 1 (N советов) — NOT default.**
-8. Ban: как снять, что проверить, разберём, лучшие, topic labels («О проверке…»).
+8. Ban: как снять, что проверить, разберём, лучшие, topic labels («О проверке…»), «что нужно знать», «пошаговая инструкция».
 9. Ban ЕГРН/наследство/ипотека/Шакин/риэлтор/Клышин/+79032334201.
 10. **Свой текст** — structure from Klyshin TG rhythm only; never paste his plots/sign-offs.
 

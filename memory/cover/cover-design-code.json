@@ -74,8 +74,8 @@
     "logo_corner": "top_right",
     "width_fraction": "8-12%",
     "cover_always": true,
-    "inline_count": "2-3 of 7",
-    "inline_slots_default": ["inline_1", "inline_3", "inline_7"],
+    "inline_count": "0 of 7 — cover only",
+    "inline_slots_default": [],
     "forbid_ai_drawn_logo": true,
     "forbid_multiple_logos_per_image": true
   },
@@ -87,7 +87,7 @@
     "PEOPLE default ZERO — max tiny silhouette/hands if case needs; NEVER group scene / host+guests photo",
     "TOP-RIGHT empty clear pad 8-12% — factory pastes official alpha PNG after generation",
     "BAN on cover: 0 memes, 2+ memes, meme soup, people-heavy photo, Wordstat sticker soup, metallic gold/brass/3D gold type, dark leather, wood+Harold lobby, split white-panel+photo, phone pill/peel-pill/magnet/gold plaque, model-drawn logo, house-with-heart, logo plate",
-    "Inlines: unchanged 2× quad — designed grid, meme optional (max 1 cat/article), logo on 2-3 of 7"
+    "Inlines: unchanged 2× quad — designed grid, meme optional (max 1 cat/article), ZERO company logos on all 7; phone tablo on 1–2 optional"
   ],
   "invention_rule": "Каждая обложка — новый выдуманный type-led poster под wound статьи. Без inventory lock и без дефолтных props.",
   "anti_repeat": {
@@ -123,7 +123,7 @@
     "Longform: 7 inline (inline_1…inline_7) — UTILITY-FIRST per H2",
     "Стиль = B02-approved designed grid: #FFFFFF high-key, gold #dcc5a1 / black #141821, clean labels",
     "Meme optional on inlines: people-meme or max 1 cat/article ≤15% frame",
-    "Logo factory paste on 2–3 inlines only (default inline_1, inline_3, inline_7) — same TOP-RIGHT pad",
+    "Logo factory paste on cover ONLY — ZERO logos on inline_1..inline_7",
     "NO host face / Shakin / identity-real on inline",
     "UTILITY TEST (FAIL): без абзаца читатель не выносит факт/порядок/число/сравнение",
     "Запрещено: WordPress UI, logo on all 7 inlines, overlapping headline+labels, icon soup, empty UI"
