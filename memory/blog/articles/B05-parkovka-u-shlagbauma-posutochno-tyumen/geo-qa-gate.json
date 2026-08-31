@@ -1,0 +1,69 @@
+{
+  "gate": "structure",
+  "status": "FAIL",
+  "article_dir": "memory/blog/articles/B05-parkovka-u-shlagbauma-posutochno-tyumen",
+  "checks": [
+    {
+      "name": "pipeline_canon",
+      "ok": true,
+      "detail": "exit=0"
+    },
+    {
+      "name": "research_agent_report",
+      "ok": false,
+      "detail": "status=None"
+    },
+    {
+      "name": "link_verify",
+      "ok": true,
+      "detail": "exit=0"
+    },
+    {
+      "name": "html_linter",
+      "ok": false,
+      "detail": "exit=1"
+    },
+    {
+      "name": "community_cta",
+      "ok": false,
+      "detail": "exit=1"
+    },
+    {
+      "name": "wp_categories",
+      "ok": true,
+      "detail": "exit=0"
+    },
+    {
+      "name": "interlink",
+      "ok": true,
+      "detail": "exit=0"
+    },
+    {
+      "name": "crosslink_qa",
+      "ok": false,
+      "detail": "exit=1"
+    },
+    {
+      "name": "research_official",
+      "ok": true,
+      "detail": "exit=0"
+    },
+    {
+      "name": "opening_meta",
+      "ok": true,
+      "detail": "exit=0"
+    },
+    {
+      "name": "case_delivery",
+      "ok": true,
+      "detail": "exit=0"
+    }
+  ],
+  "failed": [
+    "research_agent_report",
+    "html_linter",
+    "community_cta",
+    "crosslink_qa"
+  ],
+  "note": "Structural/links/HTML only — does not rewrite prose."
+}

@@ -102,6 +102,8 @@ LEGACY_BATCH_FILE = "cover/quad-mcp-batch.json"
 LEGACY_RESULT_FILE = "cover/quad-mcp-result.json"
 
 TYPE_MEME_STICKER_CANON_ID = "dobry_dom_type_meme_sticker_v3"
+TENDER_LIGHT_CANON_ID = "dobry_dom_tender_light_v1"
+STANDALONE_COVER_CANON_IDS = frozenset({TYPE_MEME_STICKER_CANON_ID, TENDER_LIGHT_CANON_ID})
 SCENE_POSTER_CANON_ID = TYPE_MEME_STICKER_CANON_ID  # backward-compat alias
 
 
@@ -122,7 +124,7 @@ def load_cover_canon_id(root: Path | None = None) -> str:
 
 
 def uses_type_meme_sticker_v3(root: Path | None = None) -> bool:
-    return load_cover_canon_id(root) == TYPE_MEME_STICKER_CANON_ID
+    return load_cover_canon_id(root) in STANDALONE_COVER_CANON_IDS
 
 
 def uses_scene_poster_v2(root: Path | None = None) -> bool:

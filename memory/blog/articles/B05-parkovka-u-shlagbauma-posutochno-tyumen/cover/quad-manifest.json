@@ -1,0 +1,167 @@
+{
+  "topic_id": "B05",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": [
+        "inline_4",
+        "inline_5",
+        "inline_6",
+        "inline_7"
+      ],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_tender_light_v1",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "cover_hook": "Бесплатно — до шлагбаума",
+  "cover_hook_highlight": "шлагбаума",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Derouter REST (DEROUTER_API_KEY) — 2K 16:9, one job per canvas (2×). Cover agent invents cover_hook + scene_hint/alt before --write-batch. Host lock = blog-hero.json (navy blazer, not hoodie).",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Обложка: бесплатная парковка в чате, у шлагбаума 800 ₽, табличка с телефоном.",
+      "scene_hint": "Cream hallway; L1 «в чате: бесплатно»; L2 «у шлагбаума: 800 ₽»; trade_offer meme; tablo phone; TR pad empty.",
+      "meme_caption_ru": "",
+      "sticky": "800 ₽ у ворот",
+      "meme_id": "car_swerve"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "У слова «парковка» нет одного смысла",
+      "visual_type": "comparison_table",
+      "scene_hint": "Comfort+ labels panel.",
+      "alt": "Сравнение четырёх видов парковки у посуточной квартиры.",
+      "labels": [
+        "рядом с домом",
+        "во дворе",
+        "закрытый шлагбаум",
+        "платная улица"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Хозяин может не врать — и всё равно подставить гостя",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Comfort+ labels panel.",
+      "alt": "Хозяин не заезжал во двор — гость упирается в шлагбаум.",
+      "labels": [
+        "Где стоит машина?",
+        "Как открыть въезд?",
+        "Номер за сутки",
+        "Цена въезда"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Вопрос, который нужно задать до брони",
+      "visual_type": "checklist_board",
+      "scene_hint": "Comfort+ labels panel.",
+      "alt": "Чеклист вопросов про въезд до оплаты.",
+      "labels": [
+        "Ответ письменно",
+        "Въезд входит",
+        "Платно — заранее",
+        "Не у ворот"
+      ]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Почему мы не оставляем гостя «разбираться на месте»",
+      "visual_type": "schema_faq_ui",
+      "scene_hint": "Comfort+ labels panel.",
+      "alt": "Пропуск, код УК, будка и 800 ₽ наличными.",
+      "labels": [
+        "Пропуск по номеру",
+        "Код от УК",
+        "Будка у ворот",
+        "800 ₽ наличными"
+      ]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Что делать, если шлагбаум уже опущен",
+      "visual_type": "tool_screenshot",
+      "scene_hint": "Comfort+ labels panel.",
+      "alt": "Табличка с телефоном на кухне — спросить до оплаты.",
+      "labels": [
+        "Табличка на кухне",
+        "Телефон на связи",
+        "Спросить до оплаты"
+      ]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Как мы закрываем парковку у «Добрый дом»",
+      "visual_type": "infographic_card",
+      "scene_hint": "Comfort+ labels panel.",
+      "alt": "Улица, двор и платная зона — три разных смысла.",
+      "labels": [
+        "Улица vs двор",
+        "Платная зона",
+        "Свободное место"
+      ]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Наш вывод: сначала проверка, потом деньги",
+      "visual_type": "comparison_table",
+      "scene_hint": "Comfort+ labels panel.",
+      "alt": "Сохранить переписку и фото въезда до оплаты.",
+      "labels": [
+        "Сохранить переписку",
+        "Фото въезда",
+        "Проверить до оплаты"
+      ]
+    },
+    "panel_quiet_pad": {
+      "scene_hint": "quiet pad",
+      "alt": "quiet panel pad"
+    }
+  },
+  "cover_keys_ru": [],
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_motif": {
+    "meme_id": "trade_offer"
+  },
+  "cover_meme_id": "trade_offer",
+  "logo_paste_inline_slots": [],
+  "wordstat_stickers": [
+    "квартира посуточно Тюмень",
+    "посуточно с парковкой",
+    "аренда посуточно Тюмень"
+  ],
+  "cover_motifs": {
+    "composition": "Cream hallway tender-light poster, two-beat Cyrillic type, trade_offer meme, info-board phone.",
+    "location": "Bright Comfort+ apartment hallway, pale oak bench, houseplant.",
+    "meme": "trade_offer die-cut sticker bottom-left.",
+    "prop_set": "Cream kitchen tablo +7 (993) 574-83-22, lowered barrier motif in type not photo scene.",
+    "joke": "Free in chat, 800 ₽ at barrier."
+  }
+}

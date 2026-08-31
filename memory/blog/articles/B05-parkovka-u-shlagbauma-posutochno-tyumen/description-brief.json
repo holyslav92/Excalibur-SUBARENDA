@@ -1,0 +1,10 @@
+{
+  "topic_id": "B05",
+  "description": "Шлагбаум опущен, ребёнок в машине, а «парковка есть» внезапно оказывается платным въездом. «Добрый дом» в Тюмени объясняет, что спросить у хоста до брони.",
+  "rhythm": "klyshin_case_hook",
+  "geo": "Тюмень",
+  "author_brand": "Добрый дом",
+  "not_equal_title": true,
+  "not_truncated_lead": true,
+  "verdict": "PASS"
+}

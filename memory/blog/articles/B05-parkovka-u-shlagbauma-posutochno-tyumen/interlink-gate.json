@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "topic_id": "B05",
+  "slug": "parking-besplatno-shlagbaum-poprosili-800-rub",
+  "candidates_count": 8,
+  "outbound_found": [
+    {
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "title": "beskontaktnoe-zaselenie-posutochno-tyumen"
+    },
+    {
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "title": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem"
+    },
+    {
+      "slug": "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+      "title": "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego"
+    }
+  ],
+  "outbound_unique_slugs": [
+    "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+    "beskontaktnoe-zaselenie-posutochno-tyumen",
+    "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "warnings": [],
+  "errors": []
+}

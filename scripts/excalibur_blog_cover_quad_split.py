@@ -809,6 +809,8 @@ def main() -> int:
         return 1
 
     for slot_key in slot_keys:
+        if slot_key in NON_EXPORT_SLOTS:
+            continue
         if slot_key == "cover":
             print(f"OK cover={cover_dir / 'cover.png'}")
         else:
