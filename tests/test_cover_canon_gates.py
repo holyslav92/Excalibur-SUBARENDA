@@ -191,10 +191,14 @@ class WordstatGateTest(unittest.TestCase):
         tenant = json.loads((ROOT / "shared/tenant-config.json").read_text(encoding="utf-8"))
         wow = tenant.get("cover_wow_rules") or {}
         self.assertEqual(wow.get("cover_qa_mode"), "slim")
+        self.assertEqual(wow.get("canon_id"), "dobry_dom_scene_poster_v2")
+        self.assertEqual(wow.get("cover_generation_mode"), "standalone_16_9")
         self.assertEqual(wow.get("logo_mode"), "brand_logo_paste")
         self.assertTrue(wow.get("forbid_logo_reference_in_generation"))
         self.assertTrue(wow.get("cover_phone_in_scene_generation"))
         self.assertTrue(wow.get("forbid_cover_phone_post_composite_pill"))
+        self.assertTrue(wow.get("forbid_cover_meme_collage"))
+        self.assertTrue(wow.get("vip_disabled"))
         self.assertEqual(wow.get("max_generation_attempts_per_canvas"), 2)
         self.assertTrue(wow.get("paste_and_ship_on_exhaust"))
         self.assertTrue(wow.get("forbid_wordpress_ui_in_art"))
@@ -224,8 +228,10 @@ class WordstatGateTest(unittest.TestCase):
             "no_logo_plate_cover",
             "cover_phone_993_in_scene",
             "forbid_phone_pill_post_composite",
-            "forbid_logo_overlaps_meme_cat_headline",
+            "forbid_logo_overlaps_headline_phone",
             "validate_cover_phone_and_overlap_gates",
+            "validate_cover_scene_poster_gates",
+            "forbid_split_white_collage",
         ):
             self.assertIn(key, gate_src)
         for removed in (
@@ -242,15 +248,13 @@ class WordstatGateTest(unittest.TestCase):
         self.assertIn("WordPress", prompt_src)
         self.assertIn("CAT_MEME_QUOTA_RULE", prompt_src)
 
-    def test_cover_canon_cat_meme_quota(self) -> None:
+    def test_cover_canon_scene_poster_v2(self) -> None:
         canon = json.loads((ROOT / "memory/cover/cover-canon.json").read_text(encoding="utf-8"))
+        self.assertEqual(canon["canon_id"], "dobry_dom_scene_poster_v2")
+        phone = canon["wow_cover_rules"]["no_element_overlap"]["cover_phone"]
+        self.assertFalse(phone["post_composite_bottom_left"])
         meme = canon.get("meme_system") or {}
-        cats = meme.get("cats") or {}
-        self.assertEqual(cats.get("max_slots_per_article"), 1)
-        anti = canon.get("anti_repeat") or {}
-        self.assertTrue((anti.get("cat_meme_family") or {}).get("enabled"))
-        inline = canon.get("inline_utility") or {}
-        self.assertIn("max_one_cat_meme_slot", inline.get("cover_qa_checks") or [])
+        self.assertIn("FORBIDDEN", str(meme.get("cover", "")))
 
     def test_meme_top100_cat_quota(self) -> None:
         catalog = json.loads((ROOT / "memory/cover/meme-top100.json").read_text(encoding="utf-8"))

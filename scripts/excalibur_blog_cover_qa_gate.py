@@ -20,7 +20,10 @@ BRAND_LOGO_PASTE_CHECKS = (
     "forbid_ai_drawn_logo_cover",
     "forbid_wordpress_ui_in_art",
     "no_logo_plate_cover",
-    "forbid_logo_overlaps_meme_cat_headline",
+    "forbid_logo_overlaps_headline_phone",
+    "scene_poster_editorial",
+    "forbid_cover_meme_collage",
+    "forbid_split_white_collage",
 )
 
 LOGO_REFERENCE_CHECKS = (
@@ -208,6 +211,12 @@ def validate_cover_qa(article_dir: Path, root: Path) -> dict:
 
             errors.extend(validate_article_logo_gates_slim(article_dir, root))
             errors.extend(validate_cover_phone_and_overlap_gates(article_dir, root))
+            try:
+                from excalibur_blog_cover_collage_gate import validate_cover_scene_poster_gates
+
+                errors.extend(validate_cover_scene_poster_gates(article_dir / "cover" / "cover.png"))
+            except ImportError:
+                errors.append("excalibur_blog_cover_collage_gate.py missing — scene poster QA unavailable")
         except ImportError:
             errors.append("excalibur_blog_drawn_logo_gate.py missing — logo paste QA unavailable")
     elif logo_reference:

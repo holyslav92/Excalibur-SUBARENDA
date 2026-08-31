@@ -16,10 +16,14 @@ from excalibur_blog_quad_slots import (
     CANVAS_1_SLOTS,
     DEFAULT_SLOT_MAP,
     INLINE_FILES,
+    NON_EXPORT_SLOTS,
     active_inline_keys,
     all_split_slot_keys,
     canvas_specs_for_inline_count,
+    exportable_slots,
     inline_count_from_manifest,
+    slot_map_for_mode,
+    uses_scene_poster_v2,
 )
 PANEL_ASPECT = 16 / 9
 RECOMMENDED_CANVAS = (2048, 1152)  # 2×2 grid of 1024×576 (16:9 each)
@@ -319,11 +323,13 @@ def validate_panel_boxes(boxes: dict[str, tuple[int, int, int, int]]) -> list[st
     return errors
 
 
-def resolve_quadrant(slot: dict[str, Any], slot_key: str) -> str:
+def resolve_quadrant(slot: dict[str, Any], slot_key: str, *, scene_poster_v2: bool | None = None) -> str:
     q = slot.get("quadrant")
     if q:
         return str(q)
-    return DEFAULT_SLOT_MAP[slot_key]
+    v2 = uses_scene_poster_v2() if scene_poster_v2 is None else scene_poster_v2
+    slot_map = slot_map_for_mode(scene_poster_v2=v2)
+    return slot_map.get(slot_key, DEFAULT_SLOT_MAP.get(slot_key, "top_left"))
 
 
 def split_canvas(
@@ -354,10 +360,12 @@ def split_canvas(
 
         outputs: dict[str, Any] = {}
         slots = manifest.get("slots") or {}
+        v2 = uses_scene_poster_v2()
+        export_keys = exportable_slots(slot_keys)
 
-        for slot_key in slot_keys:
+        for slot_key in export_keys:
             slot = slots.get(slot_key) or {}
-            quadrant = resolve_quadrant(slot, slot_key)
+            quadrant = resolve_quadrant(slot, slot_key, scene_poster_v2=v2)
             raw_box = quadrant_boxes[quadrant]
             box = center_crop_to_aspect(raw_box)
             crop = source.crop(box)
@@ -449,7 +457,7 @@ def build_registry(
     return {
         "topic_id": manifest.get("topic_id") or meta.get("topic_id"),
         "slug": meta.get("slug"),
-        "cover_family": meta.get("cover_family") or "brand_collage",
+        "cover_family": meta.get("cover_family") or ("scene_poster_v2" if uses_scene_poster_v2() else "brand_collage"),
         "style_preset": style,
         "pipeline": manifest.get("pipeline") or "quad_canvas_1x_mcp",
         "file": "cover/cover.png",

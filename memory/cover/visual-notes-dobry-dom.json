@@ -1,23 +1,42 @@
 {
   "tenant": "dobry-dom",
-  "status": "slim",
-  "label_ru": "Добрый дом — meme energy + factory logo overlay",
-  "philosophy": "Top-100 meme energy ON TOPIC (посуточная аренда pains): witty framing — reaction face, before/after, caption panel, comic beat. Logo NEVER in Grsai reference — factory alpha PNG overlay AFTER split only. Phone IN scene on tape/paper/magnet — NEVER post-composite pill. Hard gates: no gray/white plate under logo, no WP UI, max-2 gen; vip disabled.",
+  "status": "scene_poster_v2",
+  "label_ru": "Добрый дом — cover scene poster v2 + inline designed grid",
+  "philosophy": "COVER = editorial scene poster (inline-quality design energy as cinematic still). INLINES = designed grid, meme allowed (max 1 cat/article). Logo NEVER in Grsai reference — factory alpha PNG overlay AFTER gen only. Phone IN scene on cover — NEVER post-composite pill. Hard gates: no meme/collage on cover, no plate under logo, no WP UI, max-2 gen; vip disabled.",
+  "cover_scene_poster": {
+    "mode": "standalone_16_9",
+    "quality_bar": "Same design thoughtfulness as inline frames — but full-bleed cinematic still of the case",
+    "must": [
+      "people in scene",
+      "guest-night wound visible",
+      "phone in-scene",
+      "top-right logo pad empty in generation"
+    ],
+    "forbidden": [
+      "meme cutouts on cover",
+      "sticker soup",
+      "torn-paper collage",
+      "split white-panel layout",
+      "phone pill",
+      "model-drawn logo",
+      "house-with-heart"
+    ]
+  },
   "meme_energy": {
-    "cover": "Magazine poster + meme beats from meme-top100.json — people-memes/reaction templates preferred; max 1 cat-meme per article",
+    "cover": "FORBIDDEN — scene poster only, no meme cutouts",
     "inline_slots": "2–4 of 7 may use meme_panel / reaction_card (see inline-visual-types-dobry-dom.json)",
     "cat_meme_quota": {
       "max_slots": 1,
-      "scope": "cover + inline_1..inline_7",
-      "prefer": "cover OR one inline — not both",
-      "qa_fail_if": "2+ frames contain cat-meme"
+      "scope": "inline_1..inline_7 only (NOT cover)",
+      "prefer": "one inline — never cover",
+      "qa_fail_if": "cover has meme OR 2+ inline frames contain cat-meme"
     },
     "formats": ["reaction_face", "before_after", "caption_panel", "comic_beat", "meme_sticker"],
     "catalog": "memory/cover/meme-top100.json",
     "forbidden": [
-      "random unrelated memes off-topic",
+      "meme on cover",
       "logo under stickers or meme overlays",
-      "phone pill covering cat or sticky punchline",
+      "phone pill covering headline",
       "snow/winter off-season",
       "luxury flex / marble / five-star lobby"
     ]
@@ -26,8 +45,8 @@
     "logo_mode": "brand_logo_paste",
     "logo_asset": "memory/cover/assets/brand/logo-dobry-dom.png",
     "canonical_url": "wp-content/uploads/2026/03/cropped-img_7143.png",
-    "factory_paste_only": "scripts/excalibur_blog_brand_logo_composite.py after split — alpha RGBA, no plate",
-    "generation_prompt": "TOP-RIGHT empty clear pad — no logo, no house icon, no «Добрый дом» lettering, no plate, no sticker, no business card",
+    "factory_paste_only": "scripts/excalibur_blog_brand_logo_composite.py after standalone cover apply — alpha RGBA, no plate",
+    "generation_prompt": "TOP-RIGHT empty clear pad 8-12% — no logo, no house icon, no «Добрый дом» lettering, no plate, no sticker, no business card",
     "paste_corner": "top_right",
     "width_fraction": "8-12%",
     "cover_always": true,
@@ -37,7 +56,7 @@
     "forbid_logo_plate": true,
     "forbid_logo_as_generation_reference": true,
     "cover_phone": "+7 (993) 574-83-22",
-    "cover_phone_placement": "in_scene_bottom_or_side_quiet_zone"
+    "cover_phone_placement": "in_scene_door_card_paper_magnet_intercom"
   },
   "generation_policy": {
     "provider": "grsai",
@@ -45,7 +64,7 @@
     "vip_retry": "disabled — PRIMARY_MODEL_ID only",
     "vip_disabled": true,
     "on_exhaust": "pad-clear top-right if needed + official logo paste + continue to publish",
-    "default_brand_logo_composite": "required after split — logo overlay only, no phone pill"
+    "default_brand_logo_composite": "required after standalone cover apply — logo overlay only, no phone pill"
   },
   "cover_qa_slim_checks": [
     "eight_png_exist",
@@ -58,9 +77,11 @@
     "forbid_ai_drawn_logo_cover",
     "forbid_wordpress_ui_in_art",
     "no_logo_plate_cover",
-    "forbid_logo_overlaps_meme_cat_headline",
+    "forbid_logo_overlaps_headline_phone",
+    "scene_poster_editorial",
+    "forbid_cover_meme_collage",
+    "forbid_split_white_collage",
     "quad_manifest_valid",
-    "wordstat_stickers_1_3",
     "motif_no_collision_14d",
     "max_one_cat_meme_slot",
     "light_high_key"

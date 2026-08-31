@@ -1,9 +1,53 @@
 {
-  "canon_id": "dobry_dom_wow_poster_logo_paste_v1",
+  "canon_id": "dobry_dom_scene_poster_v2",
   "status": "locked",
   "tenant": "dobry-dom",
-  "label_ru": "Добрый дом — WOW magazine poster, factory logo paste, light/meme/Wordstat",
+  "label_ru": "Добрый дом — editorial scene poster v2, factory logo paste, inlines unchanged",
   "tenant_scope": "holyslav92/Excalibur-SUBARENDA ONLY. Never tymenrieltor.ru / Excalibur-2-Cloud rieltor identity.",
+  "cover_generation": {
+    "mode": "standalone_16_9",
+    "canvas_size": "2048x1152",
+    "export_size": "1200x675",
+    "dzen_thumb": "1024x576",
+    "canvas_file": "cover/cover-canvas.png",
+    "batch_file": "cover/cover-mcp-batch.json",
+    "result_file": "cover/cover-mcp-result.json",
+    "prompt_file": "cover/cover-mcp-prompt.txt",
+    "not_quad_quadrant": true,
+    "provider": "grsai",
+    "model_policy": "primary_non_vip_only",
+    "vip_disabled": true,
+    "max_generation_attempts": 2,
+    "on_exhaust": "pad_clear_top_right + factory_logo_paste + ship"
+  },
+  "scene_poster_rules": {
+    "cover_qa_check": "scene_poster_editorial",
+    "philosophy": "Designed editorial SCENE of THIS article guest-night wound — magazine-clean cinematic still, inline-quality design energy. One glance = the case.",
+    "must": [
+      "full-bleed 16:9 editorial scene poster",
+      "comfort+ Tyumen apartment, natural light, people in scene",
+      "one short readable Cyrillic hook 2-6 words IN artwork if it helps",
+      "phone +7 (993) 574-83-22 painted IN SCENE (door intercom, paper on door, host card, fridge magnet)",
+      "empty clear TOP-RIGHT pad 8-12% for factory logo paste",
+      "high-key bright lived-in mood"
+    ],
+    "forbidden_on_cover": [
+      "meme cutouts (Roll Safe, Harold, Pepe, cat stickers)",
+      "wordstat sticker soup",
+      "torn-paper collage",
+      "gold-glitter typography",
+      "yellow sticky notes",
+      "split white-panel + photo layout",
+      "beige gray white phone pill",
+      "post-composite phone overlay",
+      "model-drawn logo",
+      "house-with-heart lockup",
+      "white gray plaque under logo",
+      "empty stock room",
+      "wordpress UI",
+      "wow_poster magazine collage"
+    ]
+  },
   "wow_cover_rules": {
     "forbid_wordpress_ui_in_art": {
       "cover_qa_check": "forbid_wordpress_ui_in_art",
@@ -24,9 +68,6 @@
       "cover_qa_check": "no_element_overlap",
       "elements_never_overlap": [
         "headline",
-        "wordstat_stickers",
-        "meme_sticker",
-        "cat_sticker",
         "phone_cta",
         "people",
         "logo_pad"
@@ -40,25 +81,11 @@
       },
       "cover_phone": {
         "display": "+7 (993) 574-83-22",
-        "post_composite_bottom_left": true,
+        "in_scene_only": true,
+        "post_composite_bottom_left": false,
         "never_in_logo_pad": true,
         "cover_only": true
       }
-    },
-    "wow_poster": {
-      "cover_qa_check": "wow_poster_magazine_typography",
-      "must": [
-        "magazine cover poster",
-        "beautiful readable Russian display type",
-        "scene + one sharp hook line",
-        "high-key editorial collage"
-      ],
-      "forbidden": [
-        "timid system font",
-        "wall of tiny labels",
-        "empty stock",
-        "wordpress screenshot"
-      ]
     },
     "inline_logo": {
       "cover_qa_checks": [
@@ -75,32 +102,25 @@
   "forbidden_daypart_formula": {
     "status": "REJECTED_BY_OWNER",
     "never_use": true,
-    "note": "Расписание публикаций 10/14/17 YEKT (каждый день) ≠ формула обложки."
+    "note": "Расписание публикаций 09/12/15/17 YEKT (будни) ≠ формула обложки."
   },
-  "invention_rule": "Cover agent INVENTS every cover from scratch to surprise. No inventory lock. No recurring default props. Variety is the product.",
+  "invention_rule": "Cover agent INVENTS every cover scene from scratch for THIS article wound. No inventory lock. No recurring default props. Variety is the product.",
   "anti_repeat": {
     "window_days": 14,
     "log_file": "memory/cover/used-motifs.json",
     "collision_fields": [
       "composition",
       "location",
-      "meme",
       "prop_set",
-      "sticker_set",
       "joke"
     ],
-    "cat_meme_family": {
-      "enabled": true,
-      "normalize_to": "__cat_meme_family__",
-      "note": "Любой cat-meme (grumpy/smudge/ginger/tardar/…) = одно семейство для 14д anti-repeat"
-    },
     "preflight_script": "scripts/excalibur_blog_cover_motif_gate.py",
     "after_14_days_motif_may_return": true
   },
   "light_bright": {
     "required": true,
     "style": "high-key, светлые картинки, airy",
-    "effects": ["sun flare", "light leak", "glow", "soft bloom"],
+    "effects": ["soft natural daylight", "clean white balance"],
     "forbidden": ["dark cinematic", "twilight mood panel", "low-key noir", "moody black background"]
   },
   "brand_logo_paste": {
@@ -120,60 +140,37 @@
     "forbidden_phone": "+7 922 001 65 05",
     "composite_script": "scripts/excalibur_blog_brand_logo_composite.py"
   },
-  "generation_policy": {
-    "provider": "grsai",
-    "max_attempts_per_canvas": 2,
-    "vip_retry_per_sheet": 0,
-    "vip_disabled": true,
-    "on_exhaust": "pad-clear + official paste + continue (no Cover-QA loop)",
-    "cover_qa_mode": "slim",
-    "philosophy": "beauty = agent judgment on topic; brand lock = logo + phone + no plate + no WP UI"
-  },
   "meme_system": {
-    "required": true,
-    "catalog": "memory/cover/meme-top100.json",
-    "host_human_rule": "NO Shakin/rieltor host — Russian guests fitting check-in topic only; never large co-host on inline.",
-    "people": "Cover + inlines: people-memes/reaction templates from meme-top100.json — SMALL stickers (≤12–15% frame). Rotate across articles.",
-    "cats": {
-      "max_slots_per_article": 1,
-      "scope": "cover + 7 inlines (8 frames total)",
-      "prefer": "cover OR one inline — not both",
-      "forbidden_repeats": ["grumpy cat", "tardar", "ginger cat", "smudge cat", "tabby repeat"],
-      "note": "Cat-meme = rare accent; other meme slots MUST be non-cat people-memes"
-    },
-    "per_article_8_set": {
-      "must_include_people_or_guest_scene": true,
-      "max_cat_meme_slots": 1,
-      "inline_people_meme_max_panels": 3,
-      "inline_people_meme_max_frame_share": 0.15,
-      "forbidden": [
-        "empty stock photo cover",
-        "sterile text-only cover without scene",
-        "stock/generated handsome man as co-host on inline",
-        "meme person >15% of inline frame area",
-        "2+ frames with cat-meme stickers"
-      ]
+    "cover": "FORBIDDEN — no meme cutouts on cover (scene poster only)",
+    "inline": {
+      "allowed": true,
+      "catalog": "memory/cover/meme-top100.json",
+      "max_cat_slots_per_article": 1,
+      "people_meme_max_frame_share": 0.15,
+      "note": "Meme energy stays on inlines only — designed grid/collage OK there"
     }
   },
   "wordstat_stickers": {
-    "required": true,
-    "count": "1–3 readable designer stickers per cover",
-    "source": "live Wordstat top + similar queries for topic",
-    "geo": "memory/cover/wordstat-geo.json",
-    "not": ["random words", "spam wall", "SEO tail dump"]
+    "cover": "FORBIDDEN on cover — scene poster has no sticker soup",
+    "inline": {
+      "allowed": true,
+      "count": "0-3 per inline panel as designed labels",
+      "source": "live Wordstat + article facts",
+      "geo": "memory/cover/wordstat-geo.json"
+    }
   },
   "pipeline": {
-    "primary": "derouter-rest",
+    "primary": "grsai",
+    "cover": "standalone 2048x1152 → cover.png 1200x675",
+    "inlines": "2x quad canvas 2048x1152 (canvas1: inline_1..4, canvas2: inline_5..7 + quiet pad)",
     "resolution": "2K",
-    "canvases": 2,
-    "panels_per_canvas": 4,
-    "total_images": 8,
-    "split": "2x2 per canvas"
+    "canvases": 3,
+    "total_images": 8
   },
   "inline_utility": {
     "catalog": "memory/cover/inline-visual-types-dobry-dom.json",
     "utility_test": "Reader without paragraph extracts fact/order/number/comparison for H2; icon row + 3-word captions = FAIL",
-    "style_match_cover": "B02-approved: #FFFFFF high-key, gold/black, torn paper, tape, sun flare, collage",
+    "style_match_cover": "B02-approved designed grid: #FFFFFF high-key, gold/black, clean labels — NOT cover collage style",
     "no_host_face": true,
     "no_co_host_human": true,
     "no_stock_model": true,
@@ -207,21 +204,22 @@
       "inline_no_co_host_human",
       "inline_meme_sticker_scale",
       "meme_people_real_catalog",
-      "max_one_cat_meme_slot",
       "forbid_wordpress_ui_in_art",
       "no_element_overlap",
-      "wow_poster_magazine_typography",
+      "scene_poster_editorial",
+      "forbid_cover_meme_collage",
+      "forbid_split_white_collage",
       "inline_logo_count_2_3",
       "forbid_multiple_logos_per_image",
-      "logo_top_right_fixed"
+      "logo_top_right_fixed",
+      "max_one_cat_meme_slot"
     ]
   },
   "owner_visual_polish": {
     "cover_phone_required": "+7 (993) 574-83-22",
     "cover_phone_forbidden": "+7 922 001 65 05",
-    "board_stationery": "light tape/pins/strings on white investigation board — high-key, not noir",
-    "meme_density": "max 1 cat-meme slot per article (cover OR one inline); 2–3 other frames use people-memes from meme-top100.json; Cover-QA FAIL if 2+ cat frames",
-    "typography": "WOW magazine display Cyrillic for cover hook; zero spelling errors; no Latin garbage; not timid system font",
-    "inline_density": "informational labels per panel; utility test still required; no empty cells"
+    "cover_style": "editorial scene poster — designed inline energy as cinematic still, NOT accidental collage",
+    "typography": "Short Cyrillic hook 2-6 words if needed; readable; no wall of type; no gold glitter",
+    "inline_density": "informational labels per panel; utility test still required; meme allowed on inlines max 1 cat/article"
   }
 }
