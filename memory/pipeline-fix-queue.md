@@ -272,9 +272,71 @@ checks_run:
 - interlink retry → OK interlink_done (2 targets)
 commit: pending
 
+## INC-20260831-1400-sol-punycode-xlinks
+
+status: fixed
+run_date: 2026-08-31
+role: excalibur-blog-publish
+topic_id: B05
+article_dir: memory/blog/articles/B05-goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno
+severity: medium
+category: script
+
+### What went wrong
+
+- After Sol (Derouter), `article.html` / `drafts/variant-a.html` contained punycode tenant hrefs (`https://xn--…/blog/…`) copied from Writer draft; publish preflight manually rewrote to `{{SITE_BASE}}` before link-verify (see `memory/blog/wp-publish-log.md` B05).
+- Derouter punycode may differ from IDNA of `PUBLIC_SITE_URL` unicode host — `redact_site_base` alone did not catch it.
+
+### How the agent recovered this run
+
+- Manual sed on `article.html` punycode → `{{SITE_BASE}}`; link-verify and publish proceeded.
+
+### Durable fix needed before next run
+
+- Post-Sol auto-normalize + structure gate FAIL on punycode/live tenant hrefs in committed `article.html`.
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_site_base.py`
+- `scripts/excalibur_blog_normalize_article_site_urls.py`
+- `scripts/excalibur_blog_article_site_base_gate.py`
+- `scripts/excalibur_blog_structure_gate.py`
+- `skills/sol-excalibur-blog/SKILL.md`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-08-31
+fix_summary:
+- `normalize_committed_html_site_urls()` rewrites any punycode `href="https://xn--…"` to `{{SITE_BASE}}/path` and root `/blog/` hrefs to placeholder form.
+- `_candidate_bases()` adds IDNA punycode variants for unicode `PUBLIC_SITE_URL`.
+- New CLI `excalibur_blog_normalize_article_site_urls.py --fix` (Sol post-step) and `excalibur_blog_article_site_base_gate.py` wired into structure gate.
+- Sol/Writer skills document `{{SITE_BASE}}` href contract.
+files_changed:
+- `scripts/excalibur_blog_site_base.py`
+- `scripts/excalibur_blog_normalize_article_site_urls.py`
+- `scripts/excalibur_blog_article_site_base_gate.py`
+- `scripts/excalibur_blog_structure_gate.py`
+- `skills/sol-excalibur-blog/SKILL.md`
+- `.cursor/skills/sol-excalibur-blog/SKILL.md`
+- `skills/writer-excalibur-blog/SKILL.md`
+- `.cursor/skills/writer-excalibur-blog/SKILL.md`
+- `agents/excalibur-blog-sol.md`
+- `.cursor/agents/excalibur-blog-sol.md`
+- `tests/test_site_base_normalize.py`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_site_base.py scripts/excalibur_blog_article_site_base_gate.py scripts/excalibur_blog_normalize_article_site_urls.py`
+- `python3 -m unittest tests.test_site_base_normalize tests.test_site_base_xlink -v`
+- B05 normalize `--fix --also-variant-a` → PASS; article-site-base gate PASS
+commit: pending
+
 ## INC-20260831-1654 — Metrika credentials missing (content-learner B05)
 
-status: open
+status: needs-human
 run_date: 2026-08-31
 role: excalibur-blog-content-learner
 topic_id: B05
@@ -308,4 +370,14 @@ category: env
 
 ### Fixer resolution
 
-pending
+fixed_at: 2026-08-31
+reason:
+- Metrika OAuth token and counter ID are tenant Cloud Secrets; not fixable in repo without credentials.
+needed_decision_or_secret:
+- Set `YANDEX_METRIKA_OAUTH_TOKEN` (scope metrika:read) and `YANDEX_METRIKA_COUNTER_ID` in Cursor Cloud Secrets for this tenant.
+- Re-run `python3 scripts/excalibur_blog_metrika_fetch.py --days 30 --ingest` after secrets are present.
+files_changed:
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- Confirmed `excalibur_blog_metrika_fetch.py` exits BLOCKER when env vars absent (expected).
+commit: pending

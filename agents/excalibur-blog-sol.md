@@ -27,6 +27,14 @@ python3 scripts/excalibur_blog_derouter_opus_chat.py \
 `cp article.html drafts/variant-a.html` — shell, не рерайт Cursor.
 Контракт: `shared/derouter-opus-brain-contract.md`. `DEROUTER SOL BLOCKER` → стоп.
 
+**Post-Sol (HARD):**
+
+```bash
+python3 scripts/excalibur_blog_normalize_article_site_urls.py \
+  --article-dir <article_dir> --fix --also-variant-a
+python3 scripts/excalibur_blog_article_site_base_gate.py --article-dir <article_dir>
+```
+
 Skill: `skills/sol-excalibur-blog/SKILL.md`  
 Душа: `shared/SOUL.md` + `shared/soul-examples/`  
 Корпус слога: см. `shared/soul-examples/SOURCE.md` (после Setup Voice).
