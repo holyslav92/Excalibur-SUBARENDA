@@ -1,0 +1,165 @@
+{
+  "topic_id": "B05",
+  "slug": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": [
+        "inline_1",
+        "inline_2",
+        "inline_3",
+        "inline_4"
+      ],
+      "has_cover": false
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": [
+        "inline_5",
+        "inline_6",
+        "inline_7",
+        "panel_quiet_pad"
+      ],
+      "has_cover": false
+    }
+  ],
+  "standalone_cover": true,
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "cover_hook": "Вода кончилась прямо в душе",
+  "cover_hook_highlight": "кончилась",
+  "cover_emotion": "Резкий бытовой облом после дороги: тёплая надежда за две минуты сменяется холодной водой, усталостью и злой иронией.",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "Grsai VIP: standalone cover + 2× quad inline canvases. Derouter Terra cover-scene. Factory logo paste after gen.",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Уставший гость в ванной посуточной квартиры: душ стал холодным через две минуты, рядом виден бойлер и номер телефона на приклеенной записке.",
+      "scene_hint": "Aug bathroom: wet guest, cold shower, boiler, huge hook, taped +7 note, TOP-RIGHT pad.",
+      "meme_caption_ru": "",
+      "sticky": "А бойлер просто висит",
+      "meme_id": "roll_safe"
+    },
+    "inline_1": {
+      "quadrant": "top_left",
+      "h2_anchor": "Две минуты, после которых уже не работает инструкция",
+      "visual_type": "process_flow",
+      "scene_hint": "02:00 timer, chat; labels прилёт, 3500₽.",
+      "alt": "Сетка с таймером двух минут, когда горячая вода в душе закончилась после позднего заезда.",
+      "labels": [
+        "поздний прилёт",
+        "3500 ₽"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "top_right",
+      "h2_anchor": "Что на самом деле происходит с баком",
+      "visual_type": "structure_diagram",
+      "scene_hint": "Boiler cutaway; labels вода есть, до заезда.",
+      "alt": "Схема накопительного бойлера: запас горячей воды заканчивается, повторный нагрев требует времени.",
+      "labels": [
+        "вода есть",
+        "до заезда"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Вопрос был не про бойлер",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Chat vs Q минут?; labels 2 мин, душ сорвался.",
+      "alt": "Правильный вопрос: не есть ли бойлер, а сколько минут горячей воды хватит сейчас.",
+      "labels": [
+        "2 мин тепла",
+        "душ сорвался"
+      ]
+    },
+    "inline_4": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Две отмычки перед переводом",
+      "visual_type": "comparison_table",
+      "scene_hint": "Roll Safe ≤12%; labels бойлер, 50 л.",
+      "alt": "Мем Roll Safe и три вопроса о бойлере перед оплатой: объём, нагрев, хватит ли воды.",
+      "labels": [
+        "бойлер",
+        "50 л"
+      ],
+      "meme_id": "roll_safe"
+    },
+    "inline_5": {
+      "quadrant": "top_left",
+      "h2_anchor": "Наш вывод после этой ночи",
+      "visual_type": "fact_card",
+      "scene_hint": "Suitcase, keypad, 3500₽, icy shower; labels 1 гость, 10–15 мин, пустой бак.",
+      "alt": "Вывод: предоплата и самозаезд не заменяют проверку горячей воды перед душем.",
+      "labels": [
+        "на одного человека",
+        "10–15 минут",
+        "пустой бак"
+      ]
+    },
+    "inline_6": {
+      "quadrant": "top_right",
+      "h2_anchor": "Что на самом деле происходит с баком",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Checklist объём, нагрев 1ч; labels греть час, гости до вас, не проверили.",
+      "alt": "Чек-лист проверки бойлера после уборки и перед поздним заездом.",
+      "labels": [
+        "греть около часа",
+        "гости до вас",
+        "после уборки не проверили"
+      ]
+    },
+    "inline_7": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Если нужна квартира в Тюмени на ночь",
+      "visual_type": "comparison_table",
+      "scene_hint": "Q-cards бойлер? вода? до оплаты; Tyumen pin.",
+      "alt": "Вопросы перед оплатой квартиры в Тюмени: статус бойлера и запас горячей воды.",
+      "labels": [
+        "бойлер включён",
+        "сколько воды",
+        "спросить до оплаты"
+      ]
+    },
+    "panel_quiet_pad": {
+      "quadrant": "bottom_right",
+      "scene_hint": "quiet warm tile texture pad",
+      "alt": "Декоративная пустая панель квад-холста."
+    }
+  },
+  "cover_keys_ru": [],
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "wordstat_stickers": [
+    "посуточно тюмень",
+    "бойлер в квартире",
+    "нет горячей воды"
+  ],
+  "logo_paste_inline_slots": [
+    "inline_1",
+    "inline_3",
+    "inline_7"
+  ],
+  "cover_motifs": {
+    "composition": "Magazine poster wet guest in shower huge Cyrillic hook taped phone note boiler visible",
+    "location": "Tyumen rental bathroom late August warm evening no winter",
+    "meme": "Roll Safe people-meme inline_4 sticker only",
+    "prop_set": "shower towel boiler chat receipt keybox",
+    "sticker_set": "wordstat посуточно тюмень бойлер нет горячей воды",
+    "joke": "two-minute hot water trial then ice"
+  }
+}

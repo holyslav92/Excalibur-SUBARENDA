@@ -1,0 +1,50 @@
+{
+  "cover_emotion": "Резкий бытовой облом после дороги: тёплая надежда за две минуты сменяется холодной водой, усталостью и злой иронией.",
+  "cover_motifs": {
+    "composition": "Magazine type poster: wet tired guest in shower at left, dramatic large Cyrillic hook across center, empty clean top-right 10% logo pad; large taped phone-note sticker near bathroom door, no logo drawn.",
+    "location": "Tyumen rental apartment bathroom, warm late-August evening mood, steamed mirror, shower curtain, boiler visible outside/above bathroom doorway; no winter cues.",
+    "meme": "No meme on cover. One catalog Roll Safe meme only on inline_4.",
+    "prop_set": "shower head with cold stream, wet towel, fogged mirror, compact storage boiler, red/blue mixer, self-check-in keybox card, prepaid 3500 ₽ receipt, chat bubble printout.",
+    "sticker_set": "Large die-cut headline sticker «ВОДА КОНЧИЛАСЬ ПРЯМО В ДУШЕ», accent sticker «А БОЙЛЕР ПРОСТО ВИСИТ», large taped note in scene «+7 (993) 574-83-22».",
+    "joke": "Инструкция обещает горячую воду, а бак воспринимает её как двухминутный бесплатный пробник."
+  },
+  "wordstat_stickers": [
+    "посуточно тюмень",
+    "бойлер в квартире",
+    "нет горячей воды"
+  ],
+  "slots": {
+    "cover": {
+      "scene_hint": "Type-poster bathroom: мокрый уставший гость under suddenly cold shower, boiler visible, huge «ВОДА КОНЧИЛАСЬ ПРЯМО В ДУШЕ», taped +7 note, clean empty top-right 10%.",
+      "alt": "Уставший гость в ванной посуточной квартиры: душ стал холодным через две минуты, рядом виден бойлер и номер телефона на приклеенной записке."
+    },
+    "inline_1": {
+      "scene_hint": "2x2 grid card: timer 02:00, warm-to-blue shower icons, wet towel, headline «Две минуты, после которых уже не работает инструкция»; leave logo-safe top-right.",
+      "alt": "Сетка с таймером двух минут, обозначающим момент, когда горячая вода в душе закончилась."
+    },
+    "inline_2": {
+      "scene_hint": "2x2 explainer grid: storage boiler cutaway, empty tank level, heating element, arrows «нагрев / расход / пауза», bold label «Что происходит с баком».",
+      "alt": "Инфографика накопительного бойлера: запас горячей воды заканчивается, а повторный нагрев требует времени."
+    },
+    "inline_3": {
+      "scene_hint": "2x2 editorial grid: chat «горячая вода есть», crossed vague answer, guest question card «На сколько минут хватит?», label «Вопрос был не про бойлер»; logo-safe top-right.",
+      "alt": "Карточка о правильном вопросе владельцу: не есть ли бойлер, а на сколько минут горячей воды хватает."
+    },
+    "inline_4": {
+      "scene_hint": "2x2 grid with ONE small catalog Roll Safe meme panel, finger-to-temple gesture; adjacent cards: «объём?», «когда грелся?», «хватит после дороги?»; no cats.",
+      "alt": "Карточка с мемом Roll Safe и тремя уточняющими вопросами о бойлере перед оплатой."
+    },
+    "inline_5": {
+      "scene_hint": "2x2 verdict grid: late-flight suitcase, self-check-in keypad, 3500 ₽ prepaid tag, icy shower stream, strong quote «Наш вывод после этой ночи».",
+      "alt": "Вывод после ночного заселения: предоплата и самозаезд не заменяют проверку горячей воды."
+    },
+    "inline_6": {
+      "scene_hint": "Clean technical checklist grid, labels only: «объём бака», «время нагрева», «последний душ», «давление», «смеситель», «фото бойлера»; no meme.",
+      "alt": "Технический чек-лист для проверки бойлера и горячей воды в квартире перед бронированием."
+    },
+    "inline_7": {
+      "scene_hint": "2x2 booking-prep grid: Tyumen map pin, night arrival icon, question cards «вода?», «заезд?», «контакт?», calm CTA «Если нужна квартира в Тюмени на ночь»; logo-safe top-right.",
+      "alt": "Карточка с вопросами перед оплатой квартиры в Тюмени на ночь: горячая вода, условия заезда и контакт."
+    }
+  }
+}

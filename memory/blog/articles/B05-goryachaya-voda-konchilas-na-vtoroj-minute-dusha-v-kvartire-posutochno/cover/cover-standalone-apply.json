@@ -1,0 +1,12 @@
+{
+  "source": "cover/cover-canvas.png",
+  "output": "cover/cover.png",
+  "source_size_px": [2048, 1152],
+  "output_size_px": [1200, 675],
+  "mode": "standalone_16_9",
+  "pad_clear_passes": 0,
+  "pad_clear_method": "manual_texture_clone_top_right",
+  "logo_paste": "brand_logo_composite",
+  "generation_attempts": 2,
+  "model": "vip"
+}

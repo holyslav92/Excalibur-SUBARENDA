@@ -1,0 +1,20 @@
+{
+  "pipeline": "b05_standalone_cover_vip_attempt2",
+  "canvas_index": 0,
+  "standalone_cover": true,
+  "model_policy": "vip_primary",
+  "vip_disabled": false,
+  "max_generation_attempts": 2,
+  "output_canvas": "cover/cover-canvas.png",
+  "result_path": "cover/cover-mcp-result.json",
+  "slots": ["cover"],
+  "jobs": [{
+    "slot": "canvas_quad",
+    "tool": "grsai",
+    "mcp_args": {
+      "prompt": "2048x1152 standalone cover August bathroom. Single wet guest from behind in shower — person IN SCENE not empty room, NOT group. HUGE Cyrillic «Вода кончилась прямо в душе» gold «кончилась». One small gold label «А бойлер просто висит». LARGE die-cut vinyl phone sticker «+7 (993) 574-83-22» bottom-left BIG. ONE Roll Safe meme sticker bottom-right ≤10% only. TOP-RIGHT 10% continuous tile EMPTY no box. Boiler glimpse. #FFF high-key late August NO snow NO torn-paper soup NO WordPress NO drawn logo.",
+      "aspect_ratio": "16:9",
+      "resolution": "2K"
+    }
+  }]
+}

@@ -1,0 +1,24 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 1,
+  "model_policy": "vip_primary",
+  "vip_disabled": false,
+  "max_generation_attempts": 2,
+  "output_canvas": "cover/canvas-quad-01.png",
+  "result_path": "cover/quad-mcp-result-01.json",
+  "slots": ["inline_1", "inline_2", "inline_3", "inline_4"],
+  "preferred_image_flow": {
+    "provider": "grsai",
+    "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
+    "resolution": "2K"
+  },
+  "jobs": [{
+    "slot": "canvas_quad",
+    "tool": "grsai",
+    "mcp_args": {
+      "prompt": "Canvas 2048x1152 2x2 thin gutters. TL: 02:00 timer warm→cold shower, chat «горячая вода есть», labels поздний прилёт 3500₽; TOP-RIGHT pad. TR: boiler cutaway tank level arrows, labels вода есть до заезда. BL: chat vs Q сколько минут, labels 2 мин душ сорвался; TOP-RIGHT pad. BR: Roll Safe sticker ≤12% + Q-cards, labels бойлер 50л. #FFF gold/black Cyrillic editorial collage August NO winter. NO logos NO host face NO WordPress.",
+      "aspect_ratio": "16:9",
+      "resolution": "2K"
+    }
+  }]
+}

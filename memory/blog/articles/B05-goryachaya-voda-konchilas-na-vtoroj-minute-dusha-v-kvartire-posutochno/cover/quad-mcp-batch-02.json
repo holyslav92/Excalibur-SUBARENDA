@@ -1,0 +1,24 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 2,
+  "model_policy": "vip_primary",
+  "vip_disabled": false,
+  "max_generation_attempts": 2,
+  "output_canvas": "cover/canvas-quad-02.png",
+  "result_path": "cover/quad-mcp-result-02.json",
+  "slots": ["inline_5", "inline_6", "inline_7", "panel_quiet_pad"],
+  "preferred_image_flow": {
+    "provider": "grsai",
+    "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
+    "resolution": "2K"
+  },
+  "jobs": [{
+    "slot": "canvas_quad",
+    "tool": "grsai",
+    "mcp_args": {
+      "prompt": "Canvas 2048x1152 2x2. TL: suitcase keypad 3500₽ icy shower, labels 1 гость 10-15 мин пустой бак. TR: checklist нагрев 1ч labels греть час не проверили. BL: Q-cards бойлер? вода? до оплаты Tyumen pin; TOP-RIGHT pad. BR: quiet warm tile texture pad only. #FFF high-key August NO winter. NO logos.",
+      "aspect_ratio": "16:9",
+      "resolution": "2K"
+    }
+  }]
+}
