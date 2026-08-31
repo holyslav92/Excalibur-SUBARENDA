@@ -102,9 +102,8 @@ class OpeningMetaGateTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as td:
             d = Path(td)
             dense = (
-                "<p>1 сентября, Тюмень. Отец с сыном-первокурсником забронировал три ночи: "
-                "в объявлении — «рядом с ТИУ», 8 400 ₽. На месте оказалось 40 минут пешком "
-                "с чемоданом — сын опоздал на оформление, хост пишет «вы же не спросили адрес».</p>\n"
+                "<p>«Оплатили за двоих» — в чате бронь закрыта. У двери просят ещё 2 400 ₽ "
+                "за третьего. Нет. Так не заселяем.</p>\n"
             )
             (d / "article.html").write_text(dense, encoding="utf-8")
             (d / "article.meta.json").write_text(
@@ -113,6 +112,22 @@ class OpeningMetaGateTest(unittest.TestCase):
             )
             report = check_article(d)
             self.assertEqual(report["status"], "PASS", report)
+
+    def test_blocks_duty_log_opening(self) -> None:
+        with tempfile.TemporaryDirectory() as td:
+            d = Path(td)
+            duty = (
+                "<p>29 августа, 22:10, Тюмень. Инженер выходит из такси у подъезда: "
+                "командировка, две ночи, утром созвон.</p>\n"
+            )
+            (d / "article.html").write_text(duty, encoding="utf-8")
+            (d / "article.meta.json").write_text(
+                json.dumps({"description": "Короткий teaser без спойлера."}, ensure_ascii=False),
+                encoding="utf-8",
+            )
+            report = check_article(d)
+            self.assertEqual(report["status"], "BLOCK")
+            self.assertTrue(any("duty-log" in e for e in report["errors"]))
 
     def test_b135_passes_after_fix(self) -> None:
         art = ROOT / "memory/blog/articles/B135-hark-pustil-agenta-klikat-po-sajtam"

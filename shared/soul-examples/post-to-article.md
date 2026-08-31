@@ -18,7 +18,7 @@
 ## Канон сборки
 
 1. **Не копипаст** одного calibration lead на весь `article.html`.
-2. Статья = **CASE**: плотный лид → identity → таймлайн с цифрами → moral/verdict → (optional checklist) → один CTA.
+2. Статья = **CASE**: плотный лид (цитата → удар) → identity → развитие с цифрами → moral/verdict → (optional checklist) → один CTA.
 3. **Факты** — только из `drafts/writer.html` / research.
 4. Лид: **1–2 плотных абзаца**. **NO chopped lead.** **NO TL;DR.**
 5. H1 из `title-brief.json`. Cable + consequence. **Ban** «5 вопросов» / «7 шагов» as skeleton.

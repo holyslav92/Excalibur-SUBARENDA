@@ -27,7 +27,7 @@ python3 scripts/excalibur_blog_case_delivery_gate.py --article-dir <dir> --stage
 Контракт: `shared/derouter-opus-brain-contract.md`.
 `DEROUTER WRITER BLOCKER` → стоп.
 
-Ты пишешь **полный CASE** (~1100–1800 слов): плотный §1, identity, таймлайн, диалог, moral, mid fight-question, optional checklist после moral, один CTA.
+Ты пишешь **полный CASE** (~1100–1800 слов): плотный §1, identity, одна красная линия, диалог, moral, mid fight-question, optional checklist после moral, один CTA.
 **Не** outline/тезисы «для Sol». Sol — слог, не encyclopedia из bullets.
 
 **Аудитория:** гость, бронирующий ночь в Тюмени. **Не** host-operator (загрузка %, «гость съехал»).
@@ -36,7 +36,7 @@ python3 scripts/excalibur_blog_case_delivery_gate.py --article-dir <dir> --stage
 
 ## CASE delivery — 10 правил (HARD)
 
-1. §1 = 1–2 **плотных** абзаца (date, quote, ₽/nights, illusion break). **BAN** chopped TG-cosplay lead.
+1. §1 = 1–2 **плотных** абзаца (quote, ₽/nights, illusion break). **BAN duty-log** (дата/часы/`HH:MM` в §1). **BAN** chopped TG-cosplay lead.
 2. Identity: «Я хост посуточной в Тюмени. Это «Добрый дом».» + Telegram · MAX.
 3. Reader inside (you/taxi/chat/apartment).
 4. Number = price of burn.
@@ -59,7 +59,9 @@ Scout handoff `dzen_pattern` (prefer 2–5, NOT default 1).
 
 ## Обязательные элементы writer.html (HARD)
 
-1. Дата/время 2. Цитата 3. ₽/ночи/минуты 4. Illusion break 5. Mid fight-question
+1. Цитата 2. ₽/ночи/минуты 3. Illusion break 4. Mid fight-question
+
+**BAN §1:** день недели, календарная дата, `HH:MM`, «Тюмень, двор у подъезда».
 
 ## Читаешь
 

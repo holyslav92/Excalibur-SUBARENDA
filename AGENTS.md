@@ -65,7 +65,8 @@ python3 scripts/excalibur_blog_research_start.py --topic-id B111 --title "…"
 - Scout/тема про RF-blocked heroes без Дзен-канона (если `dzen_rf_pack`)
 - Sol выдумывает факты, которых нет в `drafts/writer.html` / research
 - Cursor пишет Scout/Title/Writer/Sol/Description/Cover-text/Schema prose своей моделью вместо `excalibur_blog_derouter_opus_chat.py`
-- Publish при FAIL `excalibur_blog_case_delivery_gate.py` (how-to H1, тонкое открытие, гайд вместо CASE)
+- Publish при FAIL `excalibur_blog_case_delivery_gate.py` (how-to H1, duty-log/clock lead, тонкое открытие, гайд вместо CASE)
+- Duty-log lead в §1 (день недели, календарная дата, `HH:MM`, «Тюмень, двор») или часы в H1
 - Воронка CTA не в конце статьи (два блока, после чеклиста или «у нас так»)
 - Logo на всех 8 кадрах (канон: cover always + 2–3 inline, default 1/3/7)
 - Запуск пайплайна до завершения Setup
