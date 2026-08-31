@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "{{SITE_BASE}}/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "anchor": "бесконтактном заселении посуточно в Тюмени. Залог тоже должен быть понятен до оплаты, а не в момент выезда — это видно в истории",
+      "catalog_title": "Оплатил квартиру посуточно. Код прислали от чужой двери",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "{{SITE_BASE}}/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/",
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "anchor": "про залог, который «не вернут». С фотографиями та же проблема: разницу между картинкой и квартирой мы показывали на примере",
+      "catalog_title": "Снял квартиру посуточно. Залог не вернули — нашли скол на плите",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "{{SITE_BASE}}/blog/kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki/",
+      "slug": "kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki",
+      "anchor": "квартир рядом с вузом. А доплата у двери — это денежная версия того же холодного душа, как в случае, когда",
+      "catalog_title": "Привезли сына к вузу — «рядом» оказалось 40 минут пешком",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "{{SITE_BASE}}/blog/oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego/",
+      "slug": "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+      "anchor": "оплатили за двоих, а за третьего попросили отдельно.Сначала звучит общее обещание. Потом переводятся деньги. Потом выясняются детали. И именно это «потом» почти всегда бьёт по гостю: он уже внутри, уже устал, уже заплатил и уже не хочет искать новую квартиру ночью.Наш вывод после этой ночиСначала проверка. Потом перевод. Не наоборот.После уборки нужно зафиксировать состояние бойлера. Перед поздним заездом хост должен посмотреть этот статус и написать гостю одной понятной фразой: бойлер включён или нет, бак полный или пустой, сколько воды доступно и сколько займёт нагрев.Если бак холодный, гость узнаёт это до оплаты и сам решает, готов ли ждать. Если бойлер неисправен, квартиру на эту ночь не сдают. Это честнее, чем заселить человека, вернуть 3 500 ₽ после конфликта и получить отзыв о ледяном душе.После морального вывода список вопросов всё-таки полезен. Не как замена нормальной работе хоста, а как две минуты защиты перед переводом:Бойлер включён прямо сейчас или его включат к моему приезду?Какой объём бака и на сколько душей его хватает?Сколько времени он греется, если бак пустой?Если нас двое, хватит ли воды подряд или нужен перерыв?Что вы делаете, если горячей воды не будет: переселяете или возвращаете деньги?Инструкция по бойлеру придёт отдельным сообщением или спрятана в общем файле?Шесть вопросов. Две минуты переписки. Примерно столько же, сколько у нашего гостя в ту ночь было тёплой воды.Бойлер — это не кран с бесконечным запасом. В нём ровно столько тепла, сколько успели налить и нагреть до вас. Хост, который знает это число, скажет его до перевода. Хост, который не знает, отправит инструкцию, когда вы уже стоите под холодной водой.Если нужна квартира в Тюмени на ночьМы — «Добрый дом». Перед оплатой пишем статус квартиры, отвечаем в мессенджерах, принимаем поздние заезды и заселяем по коду.Разборы и свободные даты —",
+      "catalog_title": "Оплатили за двоих. У двери попросили доплату за третьего",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "outbound_unique_slugs": [
+    "beskontaktnoe-zaselenie-posutochno-tyumen",
+    "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+    "kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki",
+    "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B05-goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}
