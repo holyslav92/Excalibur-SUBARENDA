@@ -67,7 +67,7 @@ class TypeMemeStickerCoverGateTest(unittest.TestCase):
         canon = json.loads((ROOT / "memory/cover/cover-canon.json").read_text(encoding="utf-8"))
         self.assertEqual(canon["canon_id"], "dobry_dom_type_meme_sticker_v3")
         phone = canon["wow_cover_rules"]["no_element_overlap"]["cover_phone"]
-        self.assertEqual(phone.get("mode"), "large_die_cut_sticker")
+        self.assertEqual(phone.get("mode"), "large_hotel_lobby_info_board")
         self.assertFalse(phone["post_composite_bottom_left"])
         self.assertEqual(canon["cover_generation"]["mode"], "standalone_16_9")
         meme = canon.get("meme_system") or {}
@@ -140,12 +140,18 @@ class TypeMemeStickerCoverGateTest(unittest.TestCase):
         style = json.loads((ROOT / "memory/cover/quad-style-dobry-dom.json").read_text(encoding="utf-8"))
         design = json.loads((ROOT / "memory/cover/cover-design-code.json").read_text(encoding="utf-8"))
         manifest = {"cover_hook": "У двери — доплата за третьего", "cover_scene": "доплата за третьего гостя"}
-        prompt = build_standalone_cover_prompt(manifest, style, design, meme_catalog=catalog)
+        prompt = build_standalone_cover_prompt(manifest, style, design, meme_catalog=catalog, root=ROOT)
         lowered = prompt.casefold()
-        self.assertIn("hero headline", lowered)
-        self.assertIn("exactly one meme", lowered)
-        self.assertIn("large die-cut", lowered)
+        self.assertIn("not a template", lowered)
+        self.assertIn("tender light", lowered)
+        self.assertIn("cormorant", lowered)
+        self.assertIn("onest", lowered)
+        self.assertIn("terracotta", lowered)
+        self.assertIn("exactly one catalog meme", lowered)
+        self.assertIn("information board", lowered)
+        self.assertIn("добрый дом • тюмень", lowered)
         self.assertIn("default zero", lowered)
+        self.assertNotIn("gold #dcc5a1", lowered)
         self.assertNotIn("optional short cyrillic hook in scene", lowered)
         self.assertNotIn("people in scene", lowered)
 
@@ -206,7 +212,51 @@ class TypeMemeStickerCoverGateTest(unittest.TestCase):
             result = detect_yellow_sticky_soup(path)
             self.assertTrue(result.get("detected"), result)
 
-    def test_contract_type_meme_sticker_v3(self) -> None:
+    def test_collage_gate_fails_metallic_gold(self) -> None:
+        from excalibur_blog_cover_collage_gate import detect_metallic_gold_dominance
+
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "gold.png"
+            img = Image.new("RGB", (1200, 675), (245, 240, 230))
+            draw = ImageDraw.Draw(img)
+            draw.rectangle((80, 40, 700, 220), fill=(218, 165, 32))
+            for x in range(90, 680, 12):
+                draw.rectangle((x, 60, x + 8, 100), fill=(255, 215, 0))
+            img.save(path)
+            result = detect_metallic_gold_dominance(path)
+            self.assertTrue(result.get("detected"), result)
+
+    def test_collage_gate_fails_dark_leather(self) -> None:
+        from excalibur_blog_cover_collage_gate import detect_dark_leather_dominance
+
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "leather.png"
+            img = Image.new("RGB", (1200, 675), (45, 30, 20))
+            draw = ImageDraw.Draw(img)
+            draw.rectangle((0, 0, 1200, 675), fill=(55, 35, 22))
+            img.save(path)
+            result = detect_dark_leather_dominance(path)
+            self.assertTrue(result.get("detected"), result)
+
+    def test_two_beat_headline_in_prompt(self) -> None:
+        from excalibur_blog_cover_quad_prompt import build_standalone_cover_prompt, build_case_cover_context
+        from excalibur_blog_meme_cat_gate import load_meme_catalog
+
+        manifest = {
+            "cover_headline_line1": "в чате: можно с лапой",
+            "cover_headline_line2": "у двери: +3000 ₽",
+            "cover_hook": "После заселения — доплата 3000 за лапу",
+        }
+        case = build_case_cover_context(manifest)
+        self.assertEqual(case["headline_line1"], "в чате: можно с лапой")
+        self.assertEqual(case["headline_line2"], "у двери: +3000 ₽")
+        catalog = load_meme_catalog(ROOT)
+        style = json.loads((ROOT / "memory/cover/quad-style-dobry-dom.json").read_text(encoding="utf-8"))
+        design = json.loads((ROOT / "memory/cover/cover-design-code.json").read_text(encoding="utf-8"))
+        prompt = build_standalone_cover_prompt(manifest, style, design, meme_catalog=catalog, root=ROOT)
+        self.assertIn("в чате: можно с лапой", prompt)
+        self.assertIn("у двери: +3000 ₽", prompt)
+
         contract = (ROOT / "shared/blog-cover-quad-canvas-contract.md").read_text(encoding="utf-8")
         self.assertIn("type_meme_sticker_v3", contract)
         self.assertIn("standalone", contract.lower())

@@ -17,6 +17,7 @@ from excalibur_blog_meme_cat_gate import (
     pick_non_cat_meme_hint,
     slot_has_cat_meme,
 )
+from excalibur_blog_meme_rotate import pick_cover_meme
 from excalibur_blog_identity_real import (
     pick_identity_reference,
     resolve_logo_reference_for_api,
@@ -747,34 +748,113 @@ def build_prompt(
 
 SCENE_POSTER_COVER_BAN = (
     "BAN: 0 memes, 2+ memes, meme soup, people-heavy group photo, tiny in-scene phone on door, "
-    "Wordstat sticker soup, torn-paper collage, gold-glitter type, yellow sticky notes, "
-    "split white-panel+photo, phone pill, post-composite phone chip, model-drawn logo, "
+    "Wordstat sticker soup, torn-paper collage, metallic gold, brass, 3D gold type, gold-glitter type, "
+    "dark leather, wood+Harold lobby stamp, yellow sticky notes, "
+    "split white-panel+photo, phone pill, peel-pill phone, fridge magnet phone, gold brass plaque, "
+    "post-composite phone chip, model-drawn logo, "
     "house-with-heart, logo plate, empty stock room, WordPress UI, wow poster collage soup, dark cinematic"
 )
 
-PHONE_STICKER_RULE = (
-    "Phone EXACT «{phone}» as ONE LARGE die-cut vinyl peel-sticker graphic — BIG, readable at Dzen thumb; "
-    "white/outline peel edge, designed sticker NOT tiny number on door/intercom/paper, "
-    "NOT beige/gray UI pill/button/banner, NOT bottom-left post-composite chip"
+PHONE_INFO_BOARD_RULE = (
+    "Phone EXACT «{phone}» on ONE LARGE light information board (painted ceramic / pale wood kitchen tablo) "
+    "— cream/sage panel, BIG Cyrillic digits readable at Dzen thumb; caption «добрый дом • тюмень» under digits; "
+    "NOT fridge magnet, NOT peel-pill, NOT realtor scrap, NOT gold/brass plaque, "
+    "NOT tiny door/intercom number, NOT beige/gray UI pill/button/banner, NOT bottom-left post-composite chip"
+)
+TENDER_LIGHT_CANON = (
+    "TENDER LIGHT: cream/linen hallway, pale oak, houseplant, soft daylight; palette warm milk/oatmeal + "
+    "matte terracotta rgb(158,74,54) + charcoal rgb(33,29,26); BAN metallic gold/brass/3D gold/dark leather/wood+Harold lobby"
+)
+HEADLINE_TYPO_RULE = (
+    "Two-beat CASE Cyrillic in-frame: L1 Cormorant Garamond SemiBold Italic terracotta tracking+2; "
+    "L2 Onest 860 charcoal lowercase — NOT Arial/Impact/Unbounded, NOT 3D gold"
+)
+COVER_NOT_A_TEMPLATE_RULE = (
+    "NOT A TEMPLATE — rebuild THIS cover from THIS article case only (H1, bait/switch, figure, quote). "
+    "Cyrillic display lines must be unique punchlines for THIS story — NEVER recycle default stamps "
+    "(wood texture + Harold + peel-pill phone combo or any fixed prop soup)."
 )
 
 
-def resolve_cover_meme_entry(manifest: dict, catalog: dict) -> tuple[str, str]:
-    """Имя и id мема для обложки — из manifest или people-meme из каталога."""
+def build_case_cover_context(manifest: dict) -> dict[str, str]:
+    """Per-article case atoms for cover prompt — not a reusable template."""
+    cover_slot = (manifest.get("slots") or {}).get("cover") or {}
+    motifs = manifest.get("cover_motifs") or {}
+    highlight = compact(str(manifest.get("cover_hook_highlight") or ""), 24)
+    h1 = compact(str(manifest.get("cover_hook") or ""), 120)
+    line1 = compact(
+        str(manifest.get("cover_headline_line1") or motifs.get("headline_line1") or ""),
+        72,
+    )
+    line2 = compact(
+        str(manifest.get("cover_headline_line2") or motifs.get("headline_line2") or ""),
+        72,
+    )
+    if not line1 and h1:
+        if " — " in h1:
+            line1, _, line2 = [compact(x, 72) for x in h1.partition(" — ")]
+        elif ". " in h1:
+            parts = h1.split(". ", 1)
+            line1 = compact(parts[0], 72)
+            line2 = compact(parts[1], 72) if len(parts) > 1 else ""
+        else:
+            line1 = h1
+    bait_switch = compact(
+        str(manifest.get("cover_bait_switch") or motifs.get("joke") or manifest.get("cover_joke") or ""),
+        160,
+    )
+    figure = compact(str(manifest.get("cover_figure") or motifs.get("prop_set") or ""), 160)
+    quote = compact(
+        str(cover_slot.get("sticky") or manifest.get("cover_quote") or cover_slot.get("meme_caption_ru") or ""),
+        72,
+    )
+    scene = sanitize_cover_scene_hint(
+        str(cover_slot.get("scene_hint") or manifest.get("cover_scene") or ""),
+        highlight,
+    )
+    emotion = compact(
+        str(cover_slot.get("cover_emotion") or manifest.get("cover_emotion") or ""),
+        120,
+    )
+    return {
+        "h1": h1,
+        "headline_line1": line1,
+        "headline_line2": line2,
+        "highlight": highlight,
+        "bait_switch": bait_switch,
+        "figure": figure,
+        "quote": quote,
+        "scene": compact(scene, COVER_SCENE_HINT_COMPACT),
+        "emotion": emotion,
+    }
+
+
+def resolve_cover_meme_entry(
+    manifest: dict,
+    catalog: dict,
+    *,
+    root: Path | None = None,
+) -> tuple[str, str, str, str]:
+    """Имя, id, asset path, picker note для обложки."""
+    if root is not None:
+        picked = pick_cover_meme(manifest, catalog, root)
+        asset = str(picked.get("asset") or "").strip()
+        asset_clause = f" paste real asset {asset}" if asset else " name meme for image model"
+        picker = str(picked.get("picked_by") or "rotate")
+        return (
+            str(picked.get("name_ru") or picked.get("id") or ""),
+            str(picked.get("id") or ""),
+            asset,
+            f"{picker}{asset_clause}",
+        )
     cover_slot = (manifest.get("slots") or {}).get("cover") or {}
     motifs = manifest.get("cover_motifs") or {}
     meme_id = str(cover_slot.get("meme_id") or motifs.get("meme_id") or "").strip()
     entries = {str(e.get("id") or ""): e for e in (catalog.get("entries") or [])}
     if meme_id and meme_id in entries:
         entry = entries[meme_id]
-        name = str(entry.get("name_ru") or meme_id)
-        return name, meme_id
-    for entry in catalog.get("entries") or []:
-        category = str(entry.get("category") or "").casefold()
-        entry_id = str(entry.get("id") or "").strip()
-        if category == "people" and entry_id and "cover" in (entry.get("allowed_on") or []):
-            return str(entry.get("name_ru") or entry_id), entry_id
-    return "Roll Safe / Hide the Pain Harold", "roll_safe"
+        return str(entry.get("name_ru") or meme_id), meme_id, "", "manifest_fallback"
+    return "Wojak / Feels Guy", "wojak", "", "catalog_fallback"
 
 
 def build_standalone_cover_prompt(
@@ -784,47 +864,72 @@ def build_standalone_cover_prompt(
     *,
     cover_phone_cta: str = DEFAULT_COVER_PHONE_CTA,
     meme_catalog: dict | None = None,
+    root: Path | None = None,
 ) -> str:
     style_prefix = compact(
         style.get("cover_standalone_prompt_prefix")
         or design_code.get("cover_panel_prompt_block")
         or "",
-        520,
+        220,
     )
-    cover = (manifest.get("slots") or {}).get("cover") or {}
-    cover_hook = compact(manifest.get("cover_hook", ""), 80)
-    cover_scene = sanitize_cover_scene_hint(
-        str(cover.get("scene_hint") or manifest.get("cover_scene") or ""),
-        str(manifest.get("cover_hook_highlight") or ""),
-    )
-    cover_emotion = compact(str(cover.get("cover_emotion") or manifest.get("cover_emotion") or ""), 120)
-    phone_clause = PHONE_STICKER_RULE.format(phone=cover_phone_cta)
+    case = build_case_cover_context(manifest)
+    phone_clause = PHONE_INFO_BOARD_RULE.format(phone=cover_phone_cta)
     catalog = meme_catalog or {}
-    meme_name, meme_id = resolve_cover_meme_entry(manifest, catalog)
-    headline_clause = (
-        f"HERO HEADLINE — spectacular Cyrillic display typography 2-8 words: «{cover_hook}» — type is the star."
-        if cover_hook
-        else "HERO HEADLINE — spectacular Cyrillic display typography 2-8 words of THIS article hook — type is the star."
+    meme_name, meme_id, meme_asset, picker_note = resolve_cover_meme_entry(
+        manifest, catalog, root=root
     )
+    if case["headline_line1"] and case["headline_line2"]:
+        headline_clause = (
+            f"HERO two-beat CASE headline — L1 «{case['headline_line1']}» + L2 «{case['headline_line2']}»; "
+            f"{HEADLINE_TYPO_RULE}; NOT a recycled stamp."
+        )
+    elif case["headline_line1"]:
+        headline_clause = (
+            f"HERO CASE headline L1 «{case['headline_line1']}»; {HEADLINE_TYPO_RULE}; invent matching L2 for THIS wound."
+        )
+    elif case["h1"]:
+        headline_clause = (
+            f"HERO CASE headline from hook «{case['h1']}» — split into two beats; {HEADLINE_TYPO_RULE}."
+        )
+    else:
+        headline_clause = (
+            f"HERO two-beat CASE headline invented for THIS article wound; {HEADLINE_TYPO_RULE}."
+        )
+    case_lines: list[str] = [COVER_NOT_A_TEMPLATE_RULE, TENDER_LIGHT_CANON, headline_clause]
+    if case["bait_switch"]:
+        case_lines.append(f"BAIT/SWITCH for THIS story: {case['bait_switch']}.")
+    if case["figure"]:
+        case_lines.append(f"CASE FIGURE/PROP (invent layout around it): {case['figure']}.")
+    if case["quote"]:
+        case_lines.append(
+            f"QUOTE PUNCHLINE sticker EXACT Cyrillic «{case['quote']}» — unique to THIS case, not a recycled factory stamp."
+        )
+    asset_hint = f" Prefer pasting real file {meme_asset}." if meme_asset else ""
     meme_clause = (
-        f"EXACTLY ONE meme sticker from meme-top100.json: «{meme_name}» (id={meme_id}) — "
-        "designed graphic cutout sticker, NOT invented face; prefer people-meme on cover; NOT 0, NOT 2+."
+        f"EXACTLY ONE catalog meme die-cut sticker with white peel border: «{meme_name}» (id={meme_id}; picked={picker_note})."
+        f"{asset_hint} NEVER hide_the_pain_harold or roll_safe; NOT invented face; NOT 0 memes; NOT 2+; never same face as last 8 covers."
     )
-    emotion_clause = f"Case emotion: {cover_emotion}." if cover_emotion else ""
+    emotion_clause = f"Case emotion: {case['emotion']}." if case["emotion"] else ""
+    scene_clause = (
+        f"Case scene on tender-light hallway mood: {case['scene']}."
+        if case["scene"]
+        else "Scene: bright cream/linen hallway, pale oak, houseplant, soft daylight — people default ZERO."
+    )
     lines = [
         style_prefix,
         "Standalone cover canvas 2048x1152 exact 16:9 full-bleed — NOT a quad quadrant.",
-        "TYPE-LED MAGAZINE POSTER — designed inline-grid energy, NOT people-photo scene.",
-        headline_clause,
+        "TYPE-LED EDITORIAL MAGAZINE POSTER — tender light, NOT people-photo scene, NOT 3D gold.",
+        *case_lines,
         meme_clause,
         phone_clause,
         "PEOPLE: default ZERO — at most tiny silhouette/hands/back-of-head if case absolutely needs; NEVER group scene.",
-        f"Case mood/on-theme: {compact(cover_scene, COVER_SCENE_HINT_COMPACT)}." if cover_scene else "",
+        scene_clause,
         emotion_clause,
-        "TOP-RIGHT pad 8-12% — scene continuation only; " + TOP_RIGHT_PAD_SCENE_RULE + ".",
+        "TOP-RIGHT pad 8-12% — scene continuation only; " + TOP_RIGHT_PAD_SCENE_RULE.split(";")[0] + ".",
+        "Factory pastes official alpha PNG logo AFTER generation — NEVER send logo as Grsai reference.",
         SCENE_POSTER_COVER_BAN + ".",
         "TEXT LANGUAGE LOCK: visible text RUSSIAN Cyrillic only; headline readable at Dzen thumb.",
-        "High-key Comfort+ Tyumen mood — thoughtful designed poster like premium inline frame.",
+        "Grsai primary image API, non-VIP, max 2 gens; on exhaust neighbor-clone pad-clear TR + factory logo paste.",
     ]
     return "\n".join(line for line in lines if line)
 
@@ -911,6 +1016,7 @@ def main() -> int:
                 design_code,
                 cover_phone_cta=cover_phone_cta,
                 meme_catalog=meme_catalog,
+                root=root,
             )
         else:
             prompt = build_prompt(

@@ -252,7 +252,7 @@ class WordstatGateTest(unittest.TestCase):
         canon = json.loads((ROOT / "memory/cover/cover-canon.json").read_text(encoding="utf-8"))
         self.assertEqual(canon["canon_id"], "dobry_dom_type_meme_sticker_v3")
         phone = canon["wow_cover_rules"]["no_element_overlap"]["cover_phone"]
-        self.assertEqual(phone.get("mode"), "large_die_cut_sticker")
+        self.assertEqual(phone.get("mode"), "large_hotel_lobby_info_board")
         self.assertFalse(phone["post_composite_bottom_left"])
         meme = canon.get("meme_system") or {}
         self.assertIn("REQUIRED", str(meme.get("cover", "")))

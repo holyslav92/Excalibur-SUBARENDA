@@ -44,6 +44,14 @@ Bare `--output` filenames resolve under `--article-dir` (same rule as schema-gat
 - Author = **Добрый дом** from `shared/authors-registry.json` (`id: dobry-dom`).
 - `@type`: Organization (или Person только если registry так задаёт — канон: Organization «Добрый дом»).
 
+## GEO-AI schema (HARD)
+
+- **LocalBusiness** (or Organization from registry) with NAP: «Добрый дом», **Тюмень**, phone **+7 (993) 574-83-22**
+- BlogPosting headline/date/author «Добрый дом»; city in meta when local intent is honest
+- FAQPage only from visible FAQ section — answers weave live Wordstat query shapes naturally (see `memory/cover/wordstat-geo.json`)
+- **BAN** stuffing and banned weak cluster «посуточная аренда тюмень»
+- **NEVER** mention Святослав Шакин / The Риэлтор
+
 ## Задача
 
 1. BlogPosting: headline, datePublished (today из research-context), author **Добрый дом** + sameAs.

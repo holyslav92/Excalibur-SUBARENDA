@@ -22,12 +22,13 @@
   },
   "type_meme_sticker_rules": {
     "cover_qa_check": "type_meme_sticker_editorial",
-    "philosophy": "Designed magazine TYPE poster — spectacular Cyrillic headline hero + exactly ONE catalog meme sticker + LARGE phone die-cut sticker. Steal inline designed-text/grid energy, NOT people-photo scene energy.",
+    "philosophy": "Designed magazine TYPE poster — spectacular Cyrillic headline hero + exactly ONE catalog meme sticker + LARGE hotel-lobby information-board phone. Steal inline designed-text/grid energy, NOT people-photo scene energy.",
     "must": [
       "full-bleed 16:9 designed magazine poster",
       "spectacular Cyrillic display headline 2-8 words as visual hero — type is the star",
-      "exactly ONE named meme from memory/cover/meme-top100.json as designed graphic sticker (not invented face)",
-      "LARGE die-cut vinyl phone sticker +7 (993) 574-83-22 — BIG, readable at Dzen thumb",
+      "cover prompt rebuilt per article case (H1, bait/switch, figure, quote) — NOT a recycled template",
+      "exactly ONE named meme from memory/cover/meme-top100.json picked by topic-tag overlap; skip last 8 used ids (memory/cover/meme-used.json)",
+      "LARGE hotel-lobby information-board phone +7 (993) 574-83-22 — BIG, Dzen-thumb readable",
       "default ZERO people — at most tiny silhouette/hands/back-of-head if case absolutely needs",
       "empty clear TOP-RIGHT pad 8-12% for factory logo paste",
       "high-key bright Comfort+ Tyumen mood, on-theme of THIS case"
@@ -40,6 +41,10 @@
       "wordstat sticker soup",
       "torn-paper collage",
       "gold-glitter typography",
+      "metallic gold or brass type",
+      "3D gold typography",
+      "dark leather dominance",
+      "wood+Harold lobby stamp",
       "yellow sticky notes",
       "split white-panel + photo layout",
       "beige gray white phone pill",
@@ -86,12 +91,13 @@
       },
       "cover_phone": {
         "display": "+7 (993) 574-83-22",
-        "mode": "large_die_cut_sticker",
-        "in_scene_only": false,
+        "mode": "large_hotel_lobby_info_board",
+        "in_scene_only": true,
         "post_composite_bottom_left": false,
         "never_in_logo_pad": true,
         "cover_only": true,
-        "min_thumb_readable": true
+        "min_thumb_readable": true,
+        "forbidden_modes": ["fridge_magnet", "peel_pill", "realtor_scrap", "beige_ui_pill"]
       }
     },
     "inline_logo": {
@@ -149,7 +155,12 @@
     "composite_script": "scripts/excalibur_blog_brand_logo_composite.py"
   },
   "meme_system": {
-    "cover": "REQUIRED — exactly ONE named entry from memory/cover/meme-top100.json as designed sticker graphic on every cover",
+    "cover": "REQUIRED — exactly ONE named entry from memory/cover/meme-top100.json; pick by topic-tag overlap; skip ids in last 8 covers (memory/cover/meme-used.json); prefer memory/cover/memes/<id>.png when present",
+    "rotation": {
+      "window": 8,
+      "log": "memory/cover/meme-used.json",
+      "picker": "scripts/excalibur_blog_meme_rotate.py"
+    },
     "inline": {
       "allowed": true,
       "optional": true,
