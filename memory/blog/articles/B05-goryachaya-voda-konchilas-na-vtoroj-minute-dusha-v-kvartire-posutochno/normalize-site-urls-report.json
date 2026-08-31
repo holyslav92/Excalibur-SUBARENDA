@@ -1,0 +1,31 @@
+{
+  "script": "normalize_article_site_urls",
+  "dry_run": false,
+  "article_dir": "memory/blog/articles/B05-goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno",
+  "files": [
+    {
+      "path": "/workspace/memory/blog/articles/B05-goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno/article.html",
+      "changed": false,
+      "punycode_before": [],
+      "punycode_after": [],
+      "secret_scan_after": []
+    },
+    {
+      "path": "/workspace/memory/blog/articles/B05-goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno/drafts/variant-a.html",
+      "changed": true,
+      "punycode_before": [
+        "https://xn----7sbabcgi5aqbrdkdcgs2f.xn--p1ai/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+        "https://xn----7sbabcgi5aqbrdkdcgs2f.xn--p1ai/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/",
+        "https://xn----7sbabcgi5aqbrdkdcgs2f.xn--p1ai/blog/kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki/",
+        "https://xn----7sbabcgi5aqbrdkdcgs2f.xn--p1ai/blog/oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego/",
+        "https://xn----7sbabcgi5aqbrdkdcgs2f.xn--p1ai/",
+        "https://xn----7sbabcgi5aqbrdkdcgs2f.xn--p1ai/booking/"
+      ],
+      "punycode_after": [],
+      "secret_scan_after": []
+    }
+  ],
+  "any_changed": true,
+  "remaining_secret_scan_hits": [],
+  "status": "PASS"
+}

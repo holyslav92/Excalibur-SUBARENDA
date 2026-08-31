@@ -71,13 +71,23 @@ python3 scripts/excalibur_blog_derouter_opus_chat.py \
    - **один** CTA-блок в конце (TG+MAX+site+tel+manager) — not double
    - **3–4** outbound `/blog/` cross-links (живые, разные slug)
 4. Сохрани `article.html`, `drafts/variant-a.html`; не затирай `drafts/writer.html`
-5. Сверка с `bad-outputs.md` — especially chopped lead, encyclopedia, double CTA
+5. **Post-Sol normalize (HARD)** — Derouter часто копирует punycode из Writer; нормализуй до stamp:
+
+```bash
+python3 scripts/excalibur_blog_normalize_article_site_urls.py \
+  --article-dir <article_dir> --fix --also-variant-a
+python3 scripts/excalibur_blog_article_site_base_gate.py --article-dir <article_dir>
+```
+
+   Внутренние href — только `{{SITE_BASE}}/blog/{slug}/`, never `https://xn--…` или live unicode host.
+6. Сверка с `bad-outputs.md` — especially chopped lead, encyclopedia, double CTA
 
 ## Запреты
 
 - **Sol MUST NOT** replace burn scene with how-to / FAQ spine
 - Chopped telegram-cosplay lead
 - Новые факты, цифры, URL вне Writer/research
+- Live/punycode tenant URLs в href — только `{{SITE_BASE}}/path`
 - TL;DR, «Разберём», «В этой статье», SEO encyclopedia
 - Шакин, риэлтор, ЕГРН, юридический дисклеймер, +7 922 001 65 05
 - Два CTA-блока подряд

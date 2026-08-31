@@ -239,6 +239,22 @@ def main() -> int:
     case = _load_json(article_dir / "case-delivery-gate.json")
     record("case_delivery", case_rc == 0 and _hard_ok(case), f"exit={case_rc}")
 
+    site_base_rc = run_cmd(
+        root,
+        [
+            py,
+            str(scripts / "excalibur_blog_article_site_base_gate.py"),
+            "--article-dir",
+            str(article_dir),
+        ],
+    )
+    site_base = _load_json(article_dir / "article-site-base-gate.json")
+    record(
+        "article_site_base",
+        site_base_rc == 0 and _hard_ok(site_base),
+        f"exit={site_base_rc}",
+    )
+
     failed = [check["name"] for check in checks if not check["ok"]]
     report = {
         "gate": "structure",

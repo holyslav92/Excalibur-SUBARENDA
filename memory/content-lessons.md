@@ -4,6 +4,128 @@
 
 ---
 
+## LESSON-20260831-1654-B05-boiler-on-wall-not-hot-now
+status: proposed
+topic_id: B05
+category: utility
+confidence: medium
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP. Урок из publish-артефактов: article.html §«Две отмычки», research-notes.md Wordstat, title-brief angle.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest BLOCKER по credentials.
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+
+### Keep
+- Разведение «бойлер есть» и «горячая вода будет прямо сейчас» — в §1 цитата «Горячая вода есть, заходите» vs факт пустого бака после предыдущих гостей.
+- Две отмычки перед переводом: «Бойлер включён — или просто висит на стене?» + «Сколько минут горячей воды сейчас в баке и через сколько он нагреется, если я приеду поздно?»
+- Klyshin-отрез «Нет. Так не заселяем.» + «Сначала проверка. Потом перевод.»
+- Три сценария отказа (расходован запас / не нагрелся / неисправность) — не сводить всё к «маленькому баку».
+- Wordstat P0 «бойлер горячая вода» 374 (Tyumen) + spine «квартиры посуточно тюмень» 5463.
+
+### Change
+- В boiler/STR-темах сразу в lead называть объём бака (50 л) и ориентир 10–15 мин / ~час нагрева — не прятать цифры в H2 «Что на самом деле происходит с баком».
+- Хост-ответ шаблон: «50 литров, бойлер включён, бак полный, воды хватит на два душа» или «бак пустой, нагрев ~час» — до оплаты.
+
+### Never again
+- Принимать «горячая вода есть» / «всё есть, не переживайте» как ответ на вопрос о бойлере.
+- Отправлять инструкцию PDF вместо статуса бака в момент, когда гость уже под холодной водой.
+- How-to «как включить бойлер» без морали про обещание vs факт из крана.
+
+### Proposed apply
+- Scout: при hook sept_business_trip / late_checkin + boiler rework логировать final P0 «бойлер горячая вода» + late-arrival sub-angle.
+- Review only; Writer prompt не трогать автоматически.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260831-1654-B05-late-flight-boiler-preheat
+status: proposed
+topic_id: B05
+category: structure
+confidence: medium
+
+### Evidence
+- artifact: research-notes.md#reader_problem
+  finding: поздний заезд после рейса + накопительный бойлер; article.html H2 «Две минуты…» и чат-переписка «мокрый стою».
+- metrika_signal: none (credentials unavailable)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Слой «поздний рейс → код → сумка → сразу душ» поверх технического объяснения бака.
+- Связка с B01 (бесконтактный заезд): чат = часть замка; инструкция не заменяет проверку перед душем.
+- Вопрос-отмычка mid-body: «сорок минут ждать нагрев после позднего перелёта — нормально или перебор?» → TG/MAX.
+- ₽ в opening (3 500 предоплатой) — арифметика боли, как в B04.
+
+### Change
+- Для late-checkin + boiler тем всегда включать **окно нагрева** (40–60 мин) в utility-блок рядом с кодами/залогом, не только «бойлер есть».
+- Interlink: B01 codes + B02 deposit + B04 door fee как sibling «обещание → оплата → сюрприз».
+
+### Never again
+- Писать late-arrival материал только про код/домофон, игнорируя готовность горячей воды к первому душу.
+- Считать «инструкцию отправил» достаточной защитой хоста при позднем заезде.
+
+### Proposed apply
+- Writer checklist (review-only): late_checkin + boiler → preheat window + two unlock questions в одном материале.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260831-1654-B05-two-minute-title-reveal
+status: proposed
+topic_id: B05
+category: voice
+confidence: low
+
+### Evidence
+- artifact: title-brief.json#klyshin_title_shape
+  finding: H1 shape 2 «Горячая вода была. На второй минуте душ — холод»; description-brief not_equal_title PASS («После рейса… бойлер»).
+- metrika_signal: none (credentials unavailable; causal CTR не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Cable pain-scene: обещание в прошлом («была») + измеримый контрфакт («вторая минута» / «холод»), без SEO-хвоста в H1.
+- Cover hook «Вода кончилась прямо в душе» + sticky «А бойлер просто висит» — визуальный дубль H1, не дубль description.
+- Lead opens with quoted host message «Горячая вода есть, заходите» — не дублирует H1 дословно.
+
+### Change
+- Повторять формулу «обещание в кавычках / прошлое → время/температура-контрфакт» для amenity-failure hooks (Wi‑Fi, вода, розетки).
+
+### Never again
+- Заголовок-спойлер со всей механикой («бойлер 50 л выключен после уборки») — оставлять раскрытие в lead/H2.
+
+### Proposed apply
+- Title skill review: amenity-failure — prefer two-beat time/temperature reveal over equipment spec in H1.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
 ## LESSON-20260830-1745-B04-extra-guest-fee-at-door
 status: proposed
 topic_id: B04

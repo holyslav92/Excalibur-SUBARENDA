@@ -1,0 +1,16 @@
+{
+  "pipeline": "quad_canvas_inline_regen_v3_nologo",
+  "canvas_index": 2,
+  "output_canvas": "cover/canvas-quad-02.png",
+  "result_path": "cover/quad-mcp-result-02.json",
+  "slots": ["inline_5", "inline_6", "inline_7", "panel_quiet_pad"],
+  "jobs": [{
+    "slot": "canvas_quad",
+    "tool": "grsai",
+    "mcp_args": {
+      "prompt": "2048x1152 2x2 grid. TL: suitcase keypad 3500₽ icy shower icons; labels 1 гость 10-15 мин пустой бак. TR: checklist нагрев 1ч; labels греть час не проверили; ABSOLUTE BAN logo brand Добрый дом house icon lockup wordmark curtains. BL: Q-cards бойлер вода до оплаты Tyumen pin; empty TR pad. BR: quiet warm tile texture pad only. #FFF high-key August NO winter NO WordPress NO drawn logos on ANY panel.",
+      "aspect_ratio": "16:9",
+      "resolution": "2K"
+    }
+  }]
+}

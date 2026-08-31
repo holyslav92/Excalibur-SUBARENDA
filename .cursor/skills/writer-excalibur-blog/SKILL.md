@@ -63,6 +63,8 @@ Scout handoff `dzen_pattern` (prefer 2–5, NOT default 1).
 
 **BAN §1:** день недели, календарная дата, `HH:MM`, «Тюмень, двор у подъезда».
 
+**Outbound interlink hrefs:** `{{SITE_BASE}}/blog/{slug}/` only — never punycode (`xn--`) or live unicode host (Sol gate FAIL).
+
 ## Читаешь
 
 `shared/writer-master-prompt.md`, `research-notes.md`, `title-brief.json`, `published-titles-only.md`

@@ -1,0 +1,973 @@
+{
+  "slugs": [
+    "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno"
+  ],
+  "results": [
+    {
+      "slug": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno",
+      "full_images": [
+        {
+          "full_remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-cover.png",
+          "full_bytes": 1256503,
+          "full_sha256": "8eef75a3da18eac636df923e2918b4430f4559c007f889deb2e717e4720cc299",
+          "intermediates": [
+            {
+              "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-cover-1024x576.png",
+              "width": 1024,
+              "height": 576,
+              "crop": false,
+              "bytes": 931329,
+              "sha256": "9bfae8acfafc19cc6ce517784b3a464b24a195b9256b608dc2c3711d716f6c13",
+              "live_sha256": "9a9229b1ede8fb14514fcc82670a0b029db3b9a169912b6108e564bcc91a5b5f",
+              "live_bytes": 830705,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-cover-1024x576.png"
+            },
+            {
+              "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-cover-150x150.png",
+              "width": 150,
+              "height": 150,
+              "crop": true,
+              "bytes": 45621,
+              "sha256": "8fb4ff40e1d9f22518bb2ecefa7036cacbe778fcf117874737f6ca79f7a9c29f",
+              "live_sha256": "25c1de289378eeb992629ba29a22dd4c348e84bfb45ef0c555de124ee521db01",
+              "live_bytes": 42551,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-cover-150x150.png"
+            },
+            {
+              "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-cover-300x169.png",
+              "width": 300,
+              "height": 169,
+              "crop": false,
+              "bytes": 93362,
+              "sha256": "66a42f4f9ce6bb24e52459be6505ce018c5bf9d29b14d1b1e923dedfef4ecc9b",
+              "live_sha256": "77ad8c0cda761857af9520263d05c53ffb087dc53b4dcebe88f52da90a8dcadc",
+              "live_bytes": 86432,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-cover-300x169.png"
+            },
+            {
+              "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-cover-768x432.png",
+              "width": 768,
+              "height": 432,
+              "crop": false,
+              "bytes": 537471,
+              "sha256": "54dcb249ae8e5f3629021058b9e7c06e210e384e27a83467a6f102ffbb401061",
+              "live_sha256": "7055f52ce7d6210a8377c57ce63e16aa0ecace81794f5cf06394c2bc6289732e",
+              "live_bytes": 480572,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-cover-768x432.png"
+            }
+          ]
+        },
+        {
+          "full_remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-01.png",
+          "full_bytes": 1081505,
+          "full_sha256": "f77f9ff6cada0d9c574f22edf352a4525a5c42f1a25e3b59dde41fe478db47db",
+          "intermediates": [
+            {
+              "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-01-1024x576.png",
+              "width": 1024,
+              "height": 576,
+              "crop": false,
+              "bytes": 853680,
+              "sha256": "1e516b9663448c3972625d1d5625065957373376316e40aef4b2bc5f87eefd72",
+              "live_sha256": "b0d3d3987398997a226a12061291c32c88c4974083e84379ec6e24c21422b258",
+              "live_bytes": 752594,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-01-1024x576.png"
+            },
+            {
+              "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-01-150x150.png",
+              "width": 150,
+              "height": 150,
+              "crop": true,
+              "bytes": 41155,
+              "sha256": "d6e93cbec5246468cfc423938729376af8a713735290599ec35ac285bf30a19e",
+              "live_sha256": "be27d50aaa0a92b27d6170ddfa1adfdc48ba417cd6bcebf2fbd953a3fbbdb5b9",
+              "live_bytes": 36423,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-01-150x150.png"
+            },
+            {
+              "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-01-300x169.png",
+              "width": 300,
+              "height": 169,
+              "crop": false,
+              "bytes": 92001,
+              "sha256": "172346c5ae18f63d0e09a678425e48f29b2742e9c4dffa80401c3a0ee47289e8",
+              "live_sha256": "3af205d7d0f15632894fee8336efbe7d0ca14b2955ae7a4f849e9bfc5b19dc09",
+              "live_bytes": 82168,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-01-300x169.png"
+            },
+            {
+              "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-01-768x432.png",
+              "width": 768,
+              "height": 432,
+              "crop": false,
+              "bytes": 511447,
+              "sha256": "6ed579bf84a102bbe324b68744cfe857c8b2d70eaf5b4c41a793c9d87178e48d",
+              "live_sha256": "3d5dfab73ca9d841d868f5fdfd7d8ce05f48c21016a0a7bce708482a8b5fe78e",
+              "live_bytes": 444926,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-01-768x432.png"
+            }
+          ]
+        },
+        {
+          "full_remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-02.png",
+          "full_bytes": 872551,
+          "full_sha256": "f034f0d5ee9d1a4fbb2070c45348964e7a6729be2a891dc4a73d9ab1e57ca047",
+          "intermediates": [
+            {
+              "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-02-1024x576.png",
+              "width": 1024,
+              "height": 576,
+              "crop": false,
+              "bytes": 659710,
+              "sha256": "f97d97aa2ebfa93af28a95d2e99e22368a346b07c9f86a75f465d9033ced76d3",
+              "live_sha256": "b75e4de458820ec1f2db4b60e02a4ec67d0caf220a02f5de578a047e8167f600",
+              "live_bytes": 564385,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-02-1024x576.png"
+            },
+            {
+              "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-02-150x150.png",
+              "width": 150,
+              "height": 150,
+              "crop": true,
+              "bytes": 29426,
+              "sha256": "4b61870682bc5fd2fb7f87ac973ffc35dd656ace66a0ee15fa9158dae8ce23a3",
+              "live_sha256": "cb497e50f3b7dd4f3fc7ce896d165b0b8d56281c3b1cb5f5f731058b5eb09c44",
+              "live_bytes": 25968,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-02-150x150.png"
+            },
+            {
+              "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-02-300x169.png",
+              "width": 300,
+              "height": 169,
+              "crop": false,
+              "bytes": 64250,
+              "sha256": "15e0953dc8482fef4bfca303fc7c53506c22f308be8bed882f0526be100a1c9e",
+              "live_sha256": "3e1eb007e2de3eecdb9c3bf6e6909161deed1acce8644a4dd0f4f914ba81db0f",
+              "live_bytes": 57196,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-02-300x169.png"
+            },
+            {
+              "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-02-768x432.png",
+              "width": 768,
+              "height": 432,
+              "crop": false,
+              "bytes": 385073,
+              "sha256": "6d1ba40c2d88c54e4a7dfb447d87de5984a0cc0ad9bc4edd8ca2c518b989bf04",
+              "live_sha256": "dbc992d94b566a692a706f9d48e9e924b73144b048a202b28185f2f92d2047c2",
+              "live_bytes": 325081,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-02-768x432.png"
+            }
+          ]
+        },
+        {
+          "full_remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-03.png",
+          "full_bytes": 668299,
+          "full_sha256": "ddd2f099e5f950ce6581c4e2a3bcafe417bb70c61ee10bbb5d7520296fa6d417",
+          "intermediates": [
+            {
+              "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-03-1024x576.png",
+              "width": 1024,
+              "height": 576,
+              "crop": false,
+              "bytes": 547416,
+              "sha256": "d4aa4d5dd477cdbacfb4d7da3549cb0df458ac2fda06b8769a003bef5767f2c1",
+              "live_sha256": "91a3901ab391f2b4737a88c1181e3c772f2aa9ddf480c7519c97b7c546ed8a62",
+              "live_bytes": 493481,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-03-1024x576.png"
+            },
+            {
+              "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-03-150x150.png",
+              "width": 150,
+              "height": 150,
+              "crop": true,
+              "bytes": 33627,
+              "sha256": "08fef6784973eddac443500de84dac1abf18bcecdbefd8cacd3c91dfbc22f0e5",
+              "live_sha256": "8aaebfd02170067b8d9e8877069acb988a4c73250dbf1f989fc5927f4fead5a3",
+              "live_bytes": 29289,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-03-150x150.png"
+            },
+            {
+              "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-03-300x169.png",
+              "width": 300,
+              "height": 169,
+              "crop": false,
+              "bytes": 73281,
+              "sha256": "cfdcdc5d24d553a3a61f71bf963618ea1e6004256ec163e19e15c2cc7b7e2f36",
+              "live_sha256": "f246fc65523c952e5c0137f7bf03c6838fdf5eaeb3c7f61661f585d51f9bfb60",
+              "live_bytes": 63803,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-03-300x169.png"
+            },
+            {
+              "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-03-768x432.png",
+              "width": 768,
+              "height": 432,
+              "crop": false,
+              "bytes": 345938,
+              "sha256": "f2a40d4da5b732d8f867048ffd85f325081c59a4fb1d11b453bae81648a5b5ce",
+              "live_sha256": "d16111e9c9301714c6b2433d36676cad6a6068b6e7812ca3e06af3b7acf687e4",
+              "live_bytes": 305451,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-03-768x432.png"
+            }
+          ]
+        },
+        {
+          "full_remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-04.png",
+          "full_bytes": 772816,
+          "full_sha256": "5d267b1d17d7b05691132f6ccc4fd5e3ce9568830cf0feac92c0a7f4fa3028a0",
+          "intermediates": [
+            {
+              "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-04-1024x576.png",
+              "width": 1024,
+              "height": 576,
+              "crop": false,
+              "bytes": 590007,
+              "sha256": "2faa4eb4b650dde8122f27bd5042d8093d29f79507cfa360251ec337037f3da9",
+              "live_sha256": "5355318eb01afad053964dde2b5b8efa1e691ca006ee1739dfe4a4e0a911f5b6",
+              "live_bytes": 521667,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-04-1024x576.png"
+            },
+            {
+              "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-04-150x150.png",
+              "width": 150,
+              "height": 150,
+              "crop": true,
+              "bytes": 31653,
+              "sha256": "836e149ff9f0b295629f7267b23e1edaeac48b950d6d1e34ee733a6abe4baa2e",
+              "live_sha256": "12a0f1af784e567c4ae1c296f14232a1f7b900724a50dcad4dd10b90e4aa195d",
+              "live_bytes": 27969,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-04-150x150.png"
+            },
+            {
+              "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-04-300x169.png",
+              "width": 300,
+              "height": 169,
+              "crop": false,
+              "bytes": 67141,
+              "sha256": "9e1951b11135efc9af7116f7dfa43f1329cd58d64c30931071f82aabf617cad3",
+              "live_sha256": "6acfad34ee46a1a44c7bc8ec16780e4e096c446af88e49d79df1e835ab1580f6",
+              "live_bytes": 59264,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-04-300x169.png"
+            },
+            {
+              "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-04-768x432.png",
+              "width": 768,
+              "height": 432,
+              "crop": false,
+              "bytes": 355707,
+              "sha256": "733ce9be698652daf95eb54ca6c8e561be45609cc66e4f0ba32a5b1d4a87a2f0",
+              "live_sha256": "a052b2948141ef59bc63e566c52cb140beb5e5e5efce798677078aff650039d1",
+              "live_bytes": 308532,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-04-768x432.png"
+            }
+          ]
+        },
+        {
+          "full_remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-05.png",
+          "full_bytes": 1074088,
+          "full_sha256": "b632651bd88bf66f5d44c2ee6c3792fecd53cacebc8ea082a167d209e70211a1",
+          "intermediates": [
+            {
+              "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-05-1024x576.png",
+              "width": 1024,
+              "height": 576,
+              "crop": false,
+              "bytes": 835733,
+              "sha256": "023a71e46c771b3f0e526ad811b04bcbaf1598978e6be37bb0c95548cc265a20",
+              "live_sha256": "042a533500e66523cff25fe1e940bc527f73eed836c769b7f7deea8cb2c2a052",
+              "live_bytes": 709090,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-05-1024x576.png"
+            },
+            {
+              "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-05-150x150.png",
+              "width": 150,
+              "height": 150,
+              "crop": true,
+              "bytes": 34255,
+              "sha256": "c571187e092c68c4f33caee9b4f855a9c64200ddfa74e1aa6079a405ff67bd3d",
+              "live_sha256": "3f04e7e5d2efb8799514dda19a59bdc43230a0885617cf01ed7b53bf1ae534fd",
+              "live_bytes": 29219,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-05-150x150.png"
+            },
+            {
+              "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-05-300x169.png",
+              "width": 300,
+              "height": 169,
+              "crop": false,
+              "bytes": 69293,
+              "sha256": "174976e2fe778718bc0bda2b648c073529d402fbbc4def21dc344ec13d56c8ce",
+              "live_sha256": "27dd57aad31b358034618c2189dc138a2131af5715f9bbebe3b45820955cdcae",
+              "live_bytes": 60286,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-05-300x169.png"
+            },
+            {
+              "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-05-768x432.png",
+              "width": 768,
+              "height": 432,
+              "crop": false,
+              "bytes": 476857,
+              "sha256": "fa9affdece88b846841842ba05e64e453893e0537313f887c2cbeb862aba63b4",
+              "live_sha256": "d871932069663dc6d1327ddc1dad9f70214b8b35aabeba8c346780f64b152110",
+              "live_bytes": 398873,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-05-768x432.png"
+            }
+          ]
+        },
+        {
+          "full_remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-06.png",
+          "full_bytes": 1083242,
+          "full_sha256": "01871366532408bdbd2627329d7e8c6b31699d308682de39abdb140a9df713e3",
+          "intermediates": [
+            {
+              "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-06-1024x576.png",
+              "width": 1024,
+              "height": 576,
+              "crop": false,
+              "bytes": 794490,
+              "sha256": "778c63fe5d14b43c6414989145e1a6f3eb0ac1d8ae22723297bce6e8eec66d9e",
+              "live_sha256": "58e238868b189ac401ac1f689a51e11ce79d3b1c4660f289c85f0baea033181c",
+              "live_bytes": 676482,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-06-1024x576.png"
+            },
+            {
+              "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-06-150x150.png",
+              "width": 150,
+              "height": 150,
+              "crop": true,
+              "bytes": 28241,
+              "sha256": "70d89ec13b13fe1b28e402cd9922f1879ea6d7736d303bbf97c6f4ba6af666d9",
+              "live_sha256": "e09751646989334ed4518f69cd0eb6a31faf13513bf8c06a2ef8601a0ac4df27",
+              "live_bytes": 24340,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-06-150x150.png"
+            },
+            {
+              "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-06-300x169.png",
+              "width": 300,
+              "height": 169,
+              "crop": false,
+              "bytes": 59491,
+              "sha256": "bf02414bc7727c5613b8d7e6294a392ac40325a8708f5784ae3228d4d74dabdc",
+              "live_sha256": "814cd1eded7d63a8aa12e6421e0fbe5ef9ffec111a4e5a753e9dde5f3b059f69",
+              "live_bytes": 52281,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-06-300x169.png"
+            },
+            {
+              "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-06-768x432.png",
+              "width": 768,
+              "height": 432,
+              "crop": false,
+              "bytes": 455411,
+              "sha256": "d8a2a1ed66ea7d828bac1e1136cc5551e38c51e3c40f20ece1b420cb556ac168",
+              "live_sha256": "e58f448ed1a6383bc4fdac130b0dfff498b99eb47b1190be0a3c19ab5e788f29",
+              "live_bytes": 383560,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-06-768x432.png"
+            }
+          ]
+        },
+        {
+          "full_remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-07.png",
+          "full_bytes": 980295,
+          "full_sha256": "be9fe3ecc82a200556d4dc6a40a3b555ffaca2fd7e534d70a4dc7f5acacae6e3",
+          "intermediates": [
+            {
+              "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-07-1024x576.png",
+              "width": 1024,
+              "height": 576,
+              "crop": false,
+              "bytes": 768132,
+              "sha256": "a4e3c64255a2b22f449e58bf20da2bd580dac17441d1e9772f2bdb2da07b9219",
+              "live_sha256": "58d9547103bf148dc2aec104cc794bfd1151bbd5b37da57d81f2809eb0d7fa5a",
+              "live_bytes": 646635,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-07-1024x576.png"
+            },
+            {
+              "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-07-150x150.png",
+              "width": 150,
+              "height": 150,
+              "crop": true,
+              "bytes": 28098,
+              "sha256": "2a52d46515ae00fb307b4129e27f71761e7fb86fbf59608fe9046405dbdba587",
+              "live_sha256": "982dc0df9baaea1837fa338cee7c295114d05d468031359d954be6be23650dd7",
+              "live_bytes": 23829,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-07-150x150.png"
+            },
+            {
+              "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-07-300x169.png",
+              "width": 300,
+              "height": 169,
+              "crop": false,
+              "bytes": 67760,
+              "sha256": "1e79a881a2fcdb4ea68a46961db2232aa0a46f5a5a051ca70934d35b013302a9",
+              "live_sha256": "0a0d698d0ac3804d41c665889fcfcdab25f9248ea6d9a1b2667a83a1e459d7db",
+              "live_bytes": 59838,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-07-300x169.png"
+            },
+            {
+              "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-07-768x432.png",
+              "width": 768,
+              "height": 432,
+              "crop": false,
+              "bytes": 439273,
+              "sha256": "fedf7e6225255b72af6c9b38347b5deccaa1f0260e26481734eaae7da1747515",
+              "live_sha256": "05ae1895cb580f46be9f176cc9c4eacaea1b16aac51e6db524af37f36c04d16a",
+              "live_bytes": 366547,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-07-768x432.png"
+            }
+          ]
+        }
+      ],
+      "uploads": [
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-cover-1024x576.png",
+          "width": 1024,
+          "height": 576,
+          "crop": false,
+          "bytes": 931329,
+          "sha256": "9bfae8acfafc19cc6ce517784b3a464b24a195b9256b608dc2c3711d716f6c13",
+          "live_sha256": "9a9229b1ede8fb14514fcc82670a0b029db3b9a169912b6108e564bcc91a5b5f",
+          "live_bytes": 830705,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-cover-1024x576.png"
+        },
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-cover-150x150.png",
+          "width": 150,
+          "height": 150,
+          "crop": true,
+          "bytes": 45621,
+          "sha256": "8fb4ff40e1d9f22518bb2ecefa7036cacbe778fcf117874737f6ca79f7a9c29f",
+          "live_sha256": "25c1de289378eeb992629ba29a22dd4c348e84bfb45ef0c555de124ee521db01",
+          "live_bytes": 42551,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-cover-150x150.png"
+        },
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-cover-300x169.png",
+          "width": 300,
+          "height": 169,
+          "crop": false,
+          "bytes": 93362,
+          "sha256": "66a42f4f9ce6bb24e52459be6505ce018c5bf9d29b14d1b1e923dedfef4ecc9b",
+          "live_sha256": "77ad8c0cda761857af9520263d05c53ffb087dc53b4dcebe88f52da90a8dcadc",
+          "live_bytes": 86432,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-cover-300x169.png"
+        },
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-cover-768x432.png",
+          "width": 768,
+          "height": 432,
+          "crop": false,
+          "bytes": 537471,
+          "sha256": "54dcb249ae8e5f3629021058b9e7c06e210e384e27a83467a6f102ffbb401061",
+          "live_sha256": "7055f52ce7d6210a8377c57ce63e16aa0ecace81794f5cf06394c2bc6289732e",
+          "live_bytes": 480572,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-cover-768x432.png"
+        },
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-01-1024x576.png",
+          "width": 1024,
+          "height": 576,
+          "crop": false,
+          "bytes": 853680,
+          "sha256": "1e516b9663448c3972625d1d5625065957373376316e40aef4b2bc5f87eefd72",
+          "live_sha256": "b0d3d3987398997a226a12061291c32c88c4974083e84379ec6e24c21422b258",
+          "live_bytes": 752594,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-01-1024x576.png"
+        },
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-01-150x150.png",
+          "width": 150,
+          "height": 150,
+          "crop": true,
+          "bytes": 41155,
+          "sha256": "d6e93cbec5246468cfc423938729376af8a713735290599ec35ac285bf30a19e",
+          "live_sha256": "be27d50aaa0a92b27d6170ddfa1adfdc48ba417cd6bcebf2fbd953a3fbbdb5b9",
+          "live_bytes": 36423,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-01-150x150.png"
+        },
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-01-300x169.png",
+          "width": 300,
+          "height": 169,
+          "crop": false,
+          "bytes": 92001,
+          "sha256": "172346c5ae18f63d0e09a678425e48f29b2742e9c4dffa80401c3a0ee47289e8",
+          "live_sha256": "3af205d7d0f15632894fee8336efbe7d0ca14b2955ae7a4f849e9bfc5b19dc09",
+          "live_bytes": 82168,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-01-300x169.png"
+        },
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-01-768x432.png",
+          "width": 768,
+          "height": 432,
+          "crop": false,
+          "bytes": 511447,
+          "sha256": "6ed579bf84a102bbe324b68744cfe857c8b2d70eaf5b4c41a793c9d87178e48d",
+          "live_sha256": "3d5dfab73ca9d841d868f5fdfd7d8ce05f48c21016a0a7bce708482a8b5fe78e",
+          "live_bytes": 444926,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-01-768x432.png"
+        },
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-02-1024x576.png",
+          "width": 1024,
+          "height": 576,
+          "crop": false,
+          "bytes": 659710,
+          "sha256": "f97d97aa2ebfa93af28a95d2e99e22368a346b07c9f86a75f465d9033ced76d3",
+          "live_sha256": "b75e4de458820ec1f2db4b60e02a4ec67d0caf220a02f5de578a047e8167f600",
+          "live_bytes": 564385,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-02-1024x576.png"
+        },
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-02-150x150.png",
+          "width": 150,
+          "height": 150,
+          "crop": true,
+          "bytes": 29426,
+          "sha256": "4b61870682bc5fd2fb7f87ac973ffc35dd656ace66a0ee15fa9158dae8ce23a3",
+          "live_sha256": "cb497e50f3b7dd4f3fc7ce896d165b0b8d56281c3b1cb5f5f731058b5eb09c44",
+          "live_bytes": 25968,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-02-150x150.png"
+        },
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-02-300x169.png",
+          "width": 300,
+          "height": 169,
+          "crop": false,
+          "bytes": 64250,
+          "sha256": "15e0953dc8482fef4bfca303fc7c53506c22f308be8bed882f0526be100a1c9e",
+          "live_sha256": "3e1eb007e2de3eecdb9c3bf6e6909161deed1acce8644a4dd0f4f914ba81db0f",
+          "live_bytes": 57196,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-02-300x169.png"
+        },
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-02-768x432.png",
+          "width": 768,
+          "height": 432,
+          "crop": false,
+          "bytes": 385073,
+          "sha256": "6d1ba40c2d88c54e4a7dfb447d87de5984a0cc0ad9bc4edd8ca2c518b989bf04",
+          "live_sha256": "dbc992d94b566a692a706f9d48e9e924b73144b048a202b28185f2f92d2047c2",
+          "live_bytes": 325081,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-02-768x432.png"
+        },
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-03-1024x576.png",
+          "width": 1024,
+          "height": 576,
+          "crop": false,
+          "bytes": 547416,
+          "sha256": "d4aa4d5dd477cdbacfb4d7da3549cb0df458ac2fda06b8769a003bef5767f2c1",
+          "live_sha256": "91a3901ab391f2b4737a88c1181e3c772f2aa9ddf480c7519c97b7c546ed8a62",
+          "live_bytes": 493481,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-03-1024x576.png"
+        },
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-03-150x150.png",
+          "width": 150,
+          "height": 150,
+          "crop": true,
+          "bytes": 33627,
+          "sha256": "08fef6784973eddac443500de84dac1abf18bcecdbefd8cacd3c91dfbc22f0e5",
+          "live_sha256": "8aaebfd02170067b8d9e8877069acb988a4c73250dbf1f989fc5927f4fead5a3",
+          "live_bytes": 29289,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-03-150x150.png"
+        },
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-03-300x169.png",
+          "width": 300,
+          "height": 169,
+          "crop": false,
+          "bytes": 73281,
+          "sha256": "cfdcdc5d24d553a3a61f71bf963618ea1e6004256ec163e19e15c2cc7b7e2f36",
+          "live_sha256": "f246fc65523c952e5c0137f7bf03c6838fdf5eaeb3c7f61661f585d51f9bfb60",
+          "live_bytes": 63803,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-03-300x169.png"
+        },
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-03-768x432.png",
+          "width": 768,
+          "height": 432,
+          "crop": false,
+          "bytes": 345938,
+          "sha256": "f2a40d4da5b732d8f867048ffd85f325081c59a4fb1d11b453bae81648a5b5ce",
+          "live_sha256": "d16111e9c9301714c6b2433d36676cad6a6068b6e7812ca3e06af3b7acf687e4",
+          "live_bytes": 305451,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-03-768x432.png"
+        },
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-04-1024x576.png",
+          "width": 1024,
+          "height": 576,
+          "crop": false,
+          "bytes": 590007,
+          "sha256": "2faa4eb4b650dde8122f27bd5042d8093d29f79507cfa360251ec337037f3da9",
+          "live_sha256": "5355318eb01afad053964dde2b5b8efa1e691ca006ee1739dfe4a4e0a911f5b6",
+          "live_bytes": 521667,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-04-1024x576.png"
+        },
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-04-150x150.png",
+          "width": 150,
+          "height": 150,
+          "crop": true,
+          "bytes": 31653,
+          "sha256": "836e149ff9f0b295629f7267b23e1edaeac48b950d6d1e34ee733a6abe4baa2e",
+          "live_sha256": "12a0f1af784e567c4ae1c296f14232a1f7b900724a50dcad4dd10b90e4aa195d",
+          "live_bytes": 27969,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-04-150x150.png"
+        },
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-04-300x169.png",
+          "width": 300,
+          "height": 169,
+          "crop": false,
+          "bytes": 67141,
+          "sha256": "9e1951b11135efc9af7116f7dfa43f1329cd58d64c30931071f82aabf617cad3",
+          "live_sha256": "6acfad34ee46a1a44c7bc8ec16780e4e096c446af88e49d79df1e835ab1580f6",
+          "live_bytes": 59264,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-04-300x169.png"
+        },
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-04-768x432.png",
+          "width": 768,
+          "height": 432,
+          "crop": false,
+          "bytes": 355707,
+          "sha256": "733ce9be698652daf95eb54ca6c8e561be45609cc66e4f0ba32a5b1d4a87a2f0",
+          "live_sha256": "a052b2948141ef59bc63e566c52cb140beb5e5e5efce798677078aff650039d1",
+          "live_bytes": 308532,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-04-768x432.png"
+        },
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-05-1024x576.png",
+          "width": 1024,
+          "height": 576,
+          "crop": false,
+          "bytes": 835733,
+          "sha256": "023a71e46c771b3f0e526ad811b04bcbaf1598978e6be37bb0c95548cc265a20",
+          "live_sha256": "042a533500e66523cff25fe1e940bc527f73eed836c769b7f7deea8cb2c2a052",
+          "live_bytes": 709090,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-05-1024x576.png"
+        },
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-05-150x150.png",
+          "width": 150,
+          "height": 150,
+          "crop": true,
+          "bytes": 34255,
+          "sha256": "c571187e092c68c4f33caee9b4f855a9c64200ddfa74e1aa6079a405ff67bd3d",
+          "live_sha256": "3f04e7e5d2efb8799514dda19a59bdc43230a0885617cf01ed7b53bf1ae534fd",
+          "live_bytes": 29219,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-05-150x150.png"
+        },
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-05-300x169.png",
+          "width": 300,
+          "height": 169,
+          "crop": false,
+          "bytes": 69293,
+          "sha256": "174976e2fe778718bc0bda2b648c073529d402fbbc4def21dc344ec13d56c8ce",
+          "live_sha256": "27dd57aad31b358034618c2189dc138a2131af5715f9bbebe3b45820955cdcae",
+          "live_bytes": 60286,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-05-300x169.png"
+        },
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-05-768x432.png",
+          "width": 768,
+          "height": 432,
+          "crop": false,
+          "bytes": 476857,
+          "sha256": "fa9affdece88b846841842ba05e64e453893e0537313f887c2cbeb862aba63b4",
+          "live_sha256": "d871932069663dc6d1327ddc1dad9f70214b8b35aabeba8c346780f64b152110",
+          "live_bytes": 398873,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-05-768x432.png"
+        },
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-06-1024x576.png",
+          "width": 1024,
+          "height": 576,
+          "crop": false,
+          "bytes": 794490,
+          "sha256": "778c63fe5d14b43c6414989145e1a6f3eb0ac1d8ae22723297bce6e8eec66d9e",
+          "live_sha256": "58e238868b189ac401ac1f689a51e11ce79d3b1c4660f289c85f0baea033181c",
+          "live_bytes": 676482,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-06-1024x576.png"
+        },
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-06-150x150.png",
+          "width": 150,
+          "height": 150,
+          "crop": true,
+          "bytes": 28241,
+          "sha256": "70d89ec13b13fe1b28e402cd9922f1879ea6d7736d303bbf97c6f4ba6af666d9",
+          "live_sha256": "e09751646989334ed4518f69cd0eb6a31faf13513bf8c06a2ef8601a0ac4df27",
+          "live_bytes": 24340,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-06-150x150.png"
+        },
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-06-300x169.png",
+          "width": 300,
+          "height": 169,
+          "crop": false,
+          "bytes": 59491,
+          "sha256": "bf02414bc7727c5613b8d7e6294a392ac40325a8708f5784ae3228d4d74dabdc",
+          "live_sha256": "814cd1eded7d63a8aa12e6421e0fbe5ef9ffec111a4e5a753e9dde5f3b059f69",
+          "live_bytes": 52281,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-06-300x169.png"
+        },
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-06-768x432.png",
+          "width": 768,
+          "height": 432,
+          "crop": false,
+          "bytes": 455411,
+          "sha256": "d8a2a1ed66ea7d828bac1e1136cc5551e38c51e3c40f20ece1b420cb556ac168",
+          "live_sha256": "e58f448ed1a6383bc4fdac130b0dfff498b99eb47b1190be0a3c19ab5e788f29",
+          "live_bytes": 383560,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-06-768x432.png"
+        },
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-07-1024x576.png",
+          "width": 1024,
+          "height": 576,
+          "crop": false,
+          "bytes": 768132,
+          "sha256": "a4e3c64255a2b22f449e58bf20da2bd580dac17441d1e9772f2bdb2da07b9219",
+          "live_sha256": "58d9547103bf148dc2aec104cc794bfd1151bbd5b37da57d81f2809eb0d7fa5a",
+          "live_bytes": 646635,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-07-1024x576.png"
+        },
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-07-150x150.png",
+          "width": 150,
+          "height": 150,
+          "crop": true,
+          "bytes": 28098,
+          "sha256": "2a52d46515ae00fb307b4129e27f71761e7fb86fbf59608fe9046405dbdba587",
+          "live_sha256": "982dc0df9baaea1837fa338cee7c295114d05d468031359d954be6be23650dd7",
+          "live_bytes": 23829,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-07-150x150.png"
+        },
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-07-300x169.png",
+          "width": 300,
+          "height": 169,
+          "crop": false,
+          "bytes": 67760,
+          "sha256": "1e79a881a2fcdb4ea68a46961db2232aa0a46f5a5a051ca70934d35b013302a9",
+          "live_sha256": "0a0d698d0ac3804d41c665889fcfcdab25f9248ea6d9a1b2667a83a1e459d7db",
+          "live_bytes": 59838,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-07-300x169.png"
+        },
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-07-768x432.png",
+          "width": 768,
+          "height": 432,
+          "crop": false,
+          "bytes": 439273,
+          "sha256": "fedf7e6225255b72af6c9b38347b5deccaa1f0260e26481734eaae7da1747515",
+          "live_sha256": "05ae1895cb580f46be9f176cc9c4eacaea1b16aac51e6db524af37f36c04d16a",
+          "live_bytes": 366547,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-07-768x432.png"
+        }
+      ],
+      "skipped_same_hash": [],
+      "zen_enclosures": [
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-cover-1024x576.png",
+          "width": 1024,
+          "height": 576,
+          "crop": false,
+          "bytes": 931329,
+          "sha256": "9bfae8acfafc19cc6ce517784b3a464b24a195b9256b608dc2c3711d716f6c13",
+          "live_sha256": "9a9229b1ede8fb14514fcc82670a0b029db3b9a169912b6108e564bcc91a5b5f",
+          "live_bytes": 830705,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-cover-1024x576.png"
+        },
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-cover-150x150.png",
+          "width": 150,
+          "height": 150,
+          "crop": true,
+          "bytes": 45621,
+          "sha256": "8fb4ff40e1d9f22518bb2ecefa7036cacbe778fcf117874737f6ca79f7a9c29f",
+          "live_sha256": "25c1de289378eeb992629ba29a22dd4c348e84bfb45ef0c555de124ee521db01",
+          "live_bytes": 42551,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-cover-150x150.png"
+        },
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-cover-300x169.png",
+          "width": 300,
+          "height": 169,
+          "crop": false,
+          "bytes": 93362,
+          "sha256": "66a42f4f9ce6bb24e52459be6505ce018c5bf9d29b14d1b1e923dedfef4ecc9b",
+          "live_sha256": "77ad8c0cda761857af9520263d05c53ffb087dc53b4dcebe88f52da90a8dcadc",
+          "live_bytes": 86432,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-cover-300x169.png"
+        },
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-cover-768x432.png",
+          "width": 768,
+          "height": 432,
+          "crop": false,
+          "bytes": 537471,
+          "sha256": "54dcb249ae8e5f3629021058b9e7c06e210e384e27a83467a6f102ffbb401061",
+          "live_sha256": "7055f52ce7d6210a8377c57ce63e16aa0ecace81794f5cf06394c2bc6289732e",
+          "live_bytes": 480572,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-cover-768x432.png"
+        },
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-01-1024x576.png",
+          "width": 1024,
+          "height": 576,
+          "crop": false,
+          "bytes": 853680,
+          "sha256": "1e516b9663448c3972625d1d5625065957373376316e40aef4b2bc5f87eefd72",
+          "live_sha256": "b0d3d3987398997a226a12061291c32c88c4974083e84379ec6e24c21422b258",
+          "live_bytes": 752594,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-01-1024x576.png"
+        },
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-02-1024x576.png",
+          "width": 1024,
+          "height": 576,
+          "crop": false,
+          "bytes": 659710,
+          "sha256": "f97d97aa2ebfa93af28a95d2e99e22368a346b07c9f86a75f465d9033ced76d3",
+          "live_sha256": "b75e4de458820ec1f2db4b60e02a4ec67d0caf220a02f5de578a047e8167f600",
+          "live_bytes": 564385,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-02-1024x576.png"
+        },
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-03-1024x576.png",
+          "width": 1024,
+          "height": 576,
+          "crop": false,
+          "bytes": 547416,
+          "sha256": "d4aa4d5dd477cdbacfb4d7da3549cb0df458ac2fda06b8769a003bef5767f2c1",
+          "live_sha256": "91a3901ab391f2b4737a88c1181e3c772f2aa9ddf480c7519c97b7c546ed8a62",
+          "live_bytes": 493481,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-03-1024x576.png"
+        },
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-04-1024x576.png",
+          "width": 1024,
+          "height": 576,
+          "crop": false,
+          "bytes": 590007,
+          "sha256": "2faa4eb4b650dde8122f27bd5042d8093d29f79507cfa360251ec337037f3da9",
+          "live_sha256": "5355318eb01afad053964dde2b5b8efa1e691ca006ee1739dfe4a4e0a911f5b6",
+          "live_bytes": 521667,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-04-1024x576.png"
+        },
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-05-1024x576.png",
+          "width": 1024,
+          "height": 576,
+          "crop": false,
+          "bytes": 835733,
+          "sha256": "023a71e46c771b3f0e526ad811b04bcbaf1598978e6be37bb0c95548cc265a20",
+          "live_sha256": "042a533500e66523cff25fe1e940bc527f73eed836c769b7f7deea8cb2c2a052",
+          "live_bytes": 709090,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-05-1024x576.png"
+        },
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-06-1024x576.png",
+          "width": 1024,
+          "height": 576,
+          "crop": false,
+          "bytes": 794490,
+          "sha256": "778c63fe5d14b43c6414989145e1a6f3eb0ac1d8ae22723297bce6e8eec66d9e",
+          "live_sha256": "58e238868b189ac401ac1f689a51e11ce79d3b1c4660f289c85f0baea033181c",
+          "live_bytes": 676482,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-06-1024x576.png"
+        },
+        {
+          "remote": "goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-07-1024x576.png",
+          "width": 1024,
+          "height": 576,
+          "crop": false,
+          "bytes": 768132,
+          "sha256": "a4e3c64255a2b22f449e58bf20da2bd580dac17441d1e9772f2bdb2da07b9219",
+          "live_sha256": "58d9547103bf148dc2aec104cc794bfd1151bbd5b37da57d81f2809eb0d7fa5a",
+          "live_bytes": 646635,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/08/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno-inline-07-1024x576.png"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno/#article",
+  "url": "{{SITE_BASE}}/blog/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno/"
+  },
+  "headline": "Горячая вода была. На второй минуте душ — холод",
+  "description": "Бойлер в квартире посуточно не гарантирует горячую воду сразу после позднего заселения. До душа стоит проверить статус бака и время его нагрева.",
+  "datePublished": "2026-08-31",
+  "dateModified": "2026-08-31",
+  "inLanguage": "ru-RU",
+  "author": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "pipeline": "quad_canvas_inline_regen_v3_nologo",
+  "canvas_index": 1,
+  "output_canvas": "cover/canvas-quad-01.png",
+  "result_path": "cover/quad-mcp-result-01.json",
+  "slots": ["inline_1", "inline_2", "inline_3", "inline_4"],
+  "jobs": [{
+    "slot": "canvas_quad",
+    "tool": "grsai",
+    "mcp_args": {
+      "prompt": "2048x1152 2x2 editorial grid gutters. TL: 02:00 timer warm→cold chat; labels поздний прилёт 3500₽; empty TR pad texture only. TR: boiler cutaway tank arrows diagram ONLY; labels вода есть до заезда; ABSOLUTE BAN any logo brand Добрый дом curtains flower house icon lockup wordmark. BL: chat Q сколько минут; labels 2 мин душ сорвался; empty TR pad. BR: comparison table 3 Q-cards; labels бойлер 50л; BAN meme BAN logo BAN brand. #FFF black terracotta Cyrillic August high-key NO winter NO WordPress NO drawn logos on ANY quadrant.",
+      "aspect_ratio": "16:9",
+      "resolution": "2K"
+    }
+  }]
+}

@@ -1,0 +1,17 @@
+{
+  "local_path": "cover/cover-canvas.png",
+  "source": "grsai-draw-api",
+  "quality": "high",
+  "bytes": 3440842,
+  "aspect_ratio": "16:9",
+  "resolution": "2K",
+  "endpoint": "draw/completions+result",
+  "response_kind": "url",
+  "task_id": "12-8a535220-e417-4969-9150-4c2b7ac59333",
+  "target_canvas": "2048x1152",
+  "native_width": 2048,
+  "native_height": 1152,
+  "native_long_side": 2048,
+  "min_long_side_required": 2048,
+  "delivery": "native_2k"
+}

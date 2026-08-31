@@ -1,0 +1,10 @@
+{
+  "topic_id": "B05",
+  "description": "После рейса хочется только в душ. В Добром доме уточните, набран ли бойлер: «включён» ещё не значит, что горячей воды хватит до конца.",
+  "rhythm": "klyshin_case_hook",
+  "geo": "Тюмень",
+  "author_brand": "Добрый дом",
+  "not_equal_title": true,
+  "not_truncated_lead": true,
+  "verdict": "PASS"
+}
