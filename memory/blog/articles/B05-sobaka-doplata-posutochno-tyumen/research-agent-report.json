@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "topic_id": "B05",
+  "slug": "razreshili-s-lapoy-doplatu-nazvali-posle-zaseleniya",
+  "research_date": "2026-08-31",
+  "fresh_signal": {
+    "source": "vk-community-surcharge",
+    "url": "https://vk.com/wall-224399874_267",
+    "accessed_at": "2026-08-31",
+    "note": "Community post on post-arrival surcharges in daily rental"
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "verified": ["avito-host-lesson-3", "avito-pets-filter"]
+  },
+  "wordstat_probes": [
+    {"phrase": "посуточная квартира с собакой", "volume_ru": 600},
+    {"phrase": "аренда квартиры посуточно", "volume_tyumen": 792, "volume_ru": 45932}
+  ],
+  "blockers": []
+}

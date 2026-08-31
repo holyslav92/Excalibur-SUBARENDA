@@ -1,0 +1,151 @@
+{
+  "topic_id": "B05",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": [
+        "inline_4",
+        "inline_5",
+        "inline_6",
+        "inline_7"
+      ],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "the_rieltor_twilight_gold",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "cover_hook": "С собакой — плюс три тысячи",
+  "cover_hook_highlight": "тысячи",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Derouter REST (DEROUTER_API_KEY) — 2K 16:9, one job per canvas (2×). Cover agent invents cover_hook + scene_hint/alt before --write-batch. Host lock = blog-hero.json (navy blazer, not hoodie).",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Гость с корги у двери квартиры получает сообщение о доплате 3000 рублей за питомца; на двери магнит с телефоном.",
+      "scene_hint": "Guest+corgi at door summer evening; phone +3000₽ msg; magnet +7 993 574-83-22; TOP-RIGHT empty.",
+      "meme_caption_ru": "",
+      "sticky": "После заселения"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Фильтр «можно с животными» — это не договор",
+      "visual_type": "comparison_table",
+      "scene_hint": "Table: pets filter vs real pet fee.",
+      "alt": "Сравнение фильтра «можно с животными» и реальной доплаты за питомца.",
+      "labels": [
+        "«Можно с лапой»",
+        "доплата три тысячи",
+        "после заселения"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Что было в переписке",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Chat 4 msgs dog allowed.",
+      "alt": "Переписка из четырёх сообщений: хозяин разрешил собаку без суммы.",
+      "labels": [
+        "гость с собакой",
+        "сообщение в телефоне",
+        "три тысячи сверху"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "А вы бы заплатили?",
+      "visual_type": "comparison_table",
+      "scene_hint": "Meme dilemma pay or leave with dog.",
+      "alt": "Гость с собакой и чемоданом выбирает: заплатить или уйти.",
+      "labels": [
+        "корги двенадцать кг",
+        "доплата после кода",
+        "три тысячи рублей"
+      ]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Как это выглядит у нас",
+      "visual_type": "checklist_board",
+      "scene_hint": "Checklist breed weight before pay.",
+      "alt": "Чек-лист: спросить породу и вес до оплаты.",
+      "labels": [
+        "спросить до оплаты",
+        "порода и вес",
+        "итог в чате"
+      ]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Вопрос до оплаты",
+      "visual_type": "schema_faq_ui",
+      "scene_hint": "Filter icon vs hidden price trap.",
+      "alt": "Иконка фильтра «с питомцами» напротив скрытой цены.",
+      "labels": [
+        "фильтр «с животными»",
+        "не цена",
+        "приманка"
+      ]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Мораль",
+      "visual_type": "tool_screenshot",
+      "scene_hint": "Bill 4200+3000 after door.",
+      "alt": "Расчёт: 4200 рублей бронь плюс 3000 после заселения.",
+      "labels": [
+        "четыре двести бронь",
+        "плюс три тысячи",
+        "после двери"
+      ]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Короткий чек-лист перед предоплатой с питомцем",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Save chat screenshot before transfer.",
+      "alt": "Скриншот чата: сохранить условия до перевода.",
+      "labels": [
+        "скрин переписки",
+        "до перевода",
+        "не наоборот"
+      ]
+    }
+  },
+  "cover_keys_ru": [],
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "wordstat_stickers": [
+    "посуточная квартира с собакой — 600",
+    "аренда квартиры посуточно",
+    "снять квартиру посуточно в тюмени"
+  ],
+  "logo_paste_inline_slots": [
+    "inline_1",
+    "inline_3",
+    "inline_7"
+  ]
+}

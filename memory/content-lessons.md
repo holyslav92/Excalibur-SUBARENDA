@@ -4,6 +4,40 @@
 
 ---
 
+## LESSON-20260831-0705-B05-pet-surcharge-after-checkin
+status: proposed
+topic_id: B05
+category: utility
+confidence: medium
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest BLOCKER по credentials.
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+
+### Keep
+- Двухтактный H1 ««Можно с лапой» — после заселения назвали доплату 3 000 ₽»: разрешение → счёт после двери.
+- §1 с корги, 4 200 ₽ за две ночи и SMS «плюс три за уборку» до идентичности хоста.
+- Klyshin-цепочка: переписка-улика → «Нет. Так не заселяем.» → «Сначала проверка. Потом перевод.»
+- Wordstat P0 «посуточная квартира с собакой» 600 (RF) + spine «аренда квартиры посуточно» / «снять квартиру посуточно в тюмени».
+
+### Change
+- В pet-case сразу фиксировать вопрос «Какая порода и сколько весит?» в mid-body до чеклиста — отмычка против «можно» без цифры.
+
+### Never again
+- «Можно с лапой» как тема без ₽ и момента после заселения.
+- Чеклист до морали в pet-surcharge кейсах.
+
+### Proposed apply
+- Scout: при hook dog_breed_fee требовать final P0 «посуточная квартира с собакой» + rework-лог Tyumen spine.
+- Review only; Writer prompt не трогать автоматически.
+
+---
+
 ## LESSON-20260830-1745-B04-extra-guest-fee-at-door
 status: proposed
 topic_id: B04
