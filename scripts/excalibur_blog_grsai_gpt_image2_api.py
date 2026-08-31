@@ -142,7 +142,7 @@ def economy_skip_primary(image_input: dict[str, Any]) -> bool:
 
 
 def batch_force_primary_only(batch_meta: dict[str, Any]) -> bool:
-    """Standalone cover / canon policy — primary tier only, no vip economy."""
+    """Standalone cover / canon policy — non-vip primary only, no vip economy."""  # pragma: allowlist secret
     if batch_meta.get("standalone_cover"):
         return True
     if batch_meta.get("vip_disabled"):
