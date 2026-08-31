@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Live cover-only regen — lapoy article, type_meme_sticker_v3, cover-v3.png cache-bust."""
+"""Live cover-only regen — lapoy article, type_meme_sticker_v3, cover-v5.png cache-bust."""
 
 from __future__ import annotations
 
@@ -82,7 +82,7 @@ def bootstrap_manifest(adir: Path) -> None:
         "cover_motifs": {
             "composition": "lapa doplata 3000 type poster headline meme phone tablo",
             "location": "tyumen apartment rental designed poster wall",
-            "meme": "hide the pain harold",
+            "meme": "roll safe think about it",
             "prop_set": "phone info board paw surcharge sticker",
             "joke": "smile hides pet fee shock after checkin",
         },
@@ -91,8 +91,8 @@ def bootstrap_manifest(adir: Path) -> None:
             "cover": {
                 "role": "cover_type_poster",
                 "meme_id": MEME_ID,
-                "alt": "Типографический постер: доплата 3000 ₽ за лапу после заселения, мем Hide the Pain Harold, табло с телефоном.",
-                "scene_hint": "TYPE poster: headline лапа/3000/после заселения, Hide the Pain Harold meme sticker, large phone tablo",
+                "alt": "Типографический постер: доплата 3000 ₽ за лапу после заселения, мем Roll Safe Think About It, табло с телефоном.",
+                "scene_hint": "TYPE poster: headline лапа/3000/после заселения, Roll Safe meme sticker, large hotel-lobby phone tablo",
             }
         },
     }
@@ -134,13 +134,14 @@ def write_standalone_batch(adir: Path) -> None:
         manifest, style, design, cover_phone_cta=phone, meme_catalog=catalog
     )
     prompt += (
-        "\nLAYOUT LOCK: top band = HUGE black Cyrillic display headline "
-        "«ПОСЛЕ ЗАСЕЛЕНИЯ» + «+3000 ₽ ЗА ЛАПУ» on designed poster — type is hero. "
-        "Bottom-left corner ONLY: large Hide the Pain Harold face cutout sticker with white peel border. "
-        "Bottom-right = HUGE blue vinyl phone info-board sticker +7 (993) 574-83-22. "
-        "Center = small paw icon graphic only — NO dog photo, NO human, NO backpack. "
-        "TOP-RIGHT 12% = continuous wood/wall texture — NO card/plate/box. "
-        "BAN yellow sticky notes, torn paper, door magnet phone, sunset doorway scene."
+        "\nLAYOUT LOCK: top band = SPECTACULAR Cyrillic display headline "
+        "«МОЖНО С ЛАПОЙ» and/or «+3000 ₽ ПОСЛЕ ДВЕРИ» on designed poster — type is hero. "
+        "Strong designed palette: navy or terracotta — NOT bland wood, NO motion-blur, NO glitch. "
+        "Bottom-left corner ONLY: large Roll Safe / Think About It meme cutout sticker with white peel border. "
+        "Bottom-right = HUGE hotel-lobby information-board banner +7 (993) 574-83-22 — NOT peel pill, NOT door magnet. "
+        "Center = small paw icon graphic only — NO dog photo, NO human scene, NO people. "
+        "TOP-RIGHT 12% = empty continuation of background for factory logo paste — NO card/plate/box/rectangle. "
+        "BAN yellow sticky notes, torn paper, Hide the Pain Harold, sunset doorway scene."
     )
     if not validate_prompt_budget(prompt):
         raise RuntimeError("standalone cover prompt exceeds budget")
@@ -203,7 +204,7 @@ def canvas_acceptable(errors: list[str], canvas_path: Path) -> bool:
     return True
 
 
-def generate_cover_canvas_with_qa(adir: Path, *, max_attempts: int = 4) -> Path:
+def generate_cover_canvas_with_qa(adir: Path, *, max_attempts: int = 2) -> Path:
     for attempt in range(1, max_attempts + 1):
         print(f"STEP generate cover canvas attempt {attempt}", flush=True)
         if attempt > 1:
@@ -460,7 +461,7 @@ echo 'OK cover_url=' . $cover_url . PHP_EOL;
 echo 'OK dzen_url=' . $dzen_url . PHP_EOL;
 """
     env = load_env(ROOT)
-    bootstrap_name = f"excalibur-cover-v3-{SLUG[:20]}.php"
+    bootstrap_name = f"excalibur-cover-v5-{SLUG[:20]}.php"
     if (env.get("FTP_TRANSPORT") or "").strip().lower() == "ftp":
         return publish_via_sftp(env, php, public, bootstrap_name=bootstrap_name)
     uploaded_path = upload_bootstrap_sftp(env, bootstrap_name, php.encode("utf-8"))
@@ -542,7 +543,7 @@ def main() -> int:
         "tr_plate": plate,
         "wp_output": wp_out.strip(),
     }
-    report_path = ROOT / "memory/blog/live-cover-lapoy-v3-report.json"
+    report_path = ROOT / "memory/blog/live-cover-lapoy-v5-report.json"
     report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(report, ensure_ascii=False, indent=2))
     return 0 if code == 200 and not plate.get("detected") else 1
