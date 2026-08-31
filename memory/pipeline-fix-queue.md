@@ -332,7 +332,7 @@ checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_site_base.py scripts/excalibur_blog_article_site_base_gate.py scripts/excalibur_blog_normalize_article_site_urls.py`
 - `python3 -m unittest tests.test_site_base_normalize tests.test_site_base_xlink -v`
 - B05 normalize `--fix --also-variant-a` → PASS; article-site-base gate PASS
-commit: pending
+commit: e926467, 13ef684
 
 ## INC-20260831-1654 — Metrika credentials missing (content-learner B05)
 
@@ -380,4 +380,4 @@ files_changed:
 - `memory/pipeline-fix-queue.md`
 checks_run:
 - Confirmed `excalibur_blog_metrika_fetch.py` exits BLOCKER when env vars absent (expected).
-commit: pending
+commit: 13ef684
