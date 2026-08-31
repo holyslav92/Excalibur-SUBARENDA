@@ -8,7 +8,7 @@
   "alt": "Горячая вода была. На второй минуте душ — холод",
   "aspect_ratio": "16:9",
   "canvas_source": "cover/canvas-quad-01.png",
-  "generated_at": "2026-08-31T09:54:12+00:00",
+  "generated_at": "2026-08-31T12:53:47+00:00",
   "assets": [
     {
       "role": "inline",
@@ -41,7 +41,7 @@
       "role": "inline",
       "slot": "inline_4",
       "file": "cover/inline-04.png",
-      "alt": "Мем Roll Safe и три вопроса о бойлере перед оплатой: объём, нагрев, хватит ли воды.",
+      "alt": "Три вопроса о бойлере перед оплатой: объём, нагрев, хватит ли воды.",
       "h2_anchor": "Две отмычки перед переводом",
       "visual_type": "comparison_table",
       "aspect_ratio": "16:9"

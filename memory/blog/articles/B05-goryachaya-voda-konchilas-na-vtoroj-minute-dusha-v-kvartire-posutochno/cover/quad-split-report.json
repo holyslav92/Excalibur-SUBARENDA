@@ -12,31 +12,36 @@
           1152
         ],
         "panel_size_px": [
-          1017,
-          569
+          1024,
+          576
         ],
         "split_meta": {
-          "split_mode": "gutter_detect",
-          "h_gutter_px": {
-            "start": 569,
-            "end": 580
-          },
-          "v_gutter_px": {
-            "start": 1017,
-            "end": 1029
-          },
+          "split_mode": "mechanical_center",
+          "h_gutter_px": null,
+          "v_gutter_px": null,
           "requested_mode": "auto",
-          "gutter_quality": {
-            "h_center_offset_px": 1.5,
-            "v_center_offset_px": 1.0,
-            "max_aspect_crop_loss": 0.0069,
-            "per_panel_crop_loss": {
-              "top_left": 0.0,
-              "top_right": 0.0069,
-              "bottom_left": 0.0,
-              "bottom_right": 0.0
+          "fallback_reason": "gutter_too_far_from_center",
+          "rejected_gutter": {
+            "h_gutter_px": {
+              "start": 546,
+              "end": 575
             },
-            "reject_reason": null
+            "v_gutter_px": {
+              "start": 944,
+              "end": 1023
+            },
+            "gutter_quality": {
+              "h_center_offset_px": 15.5,
+              "v_center_offset_px": 40.5,
+              "max_aspect_crop_loss": 0.0797,
+              "per_panel_crop_loss": {
+                "top_left": 0.0275,
+                "top_right": 0.0527,
+                "bottom_left": 0.0797,
+                "bottom_right": 0.0
+              },
+              "reject_reason": "gutter_too_far_from_center"
+            }
           }
         },
         "output_size_px": [
@@ -50,14 +55,14 @@
             "box_px": {
               "left": 0,
               "top": 0,
-              "right": 1017,
-              "bottom": 569
+              "right": 1024,
+              "bottom": 576
             },
             "raw_box_px": {
               "left": 0,
               "top": 0,
-              "right": 1017,
-              "bottom": 569
+              "right": 1024,
+              "bottom": 576
             },
             "size_px": [
               1200,
@@ -71,16 +76,16 @@
             "file": "cover/inline-02.png",
             "quadrant": "top_right",
             "box_px": {
-              "left": 1032,
-              "top": 0,
-              "right": 2044,
-              "bottom": 569
-            },
-            "raw_box_px": {
-              "left": 1029,
+              "left": 1024,
               "top": 0,
               "right": 2048,
-              "bottom": 569
+              "bottom": 576
+            },
+            "raw_box_px": {
+              "left": 1024,
+              "top": 0,
+              "right": 2048,
+              "bottom": 576
             },
             "size_px": [
               1200,
@@ -95,14 +100,14 @@
             "quadrant": "bottom_left",
             "box_px": {
               "left": 0,
-              "top": 580,
-              "right": 1017,
+              "top": 576,
+              "right": 1024,
               "bottom": 1152
             },
             "raw_box_px": {
               "left": 0,
-              "top": 580,
-              "right": 1017,
+              "top": 576,
+              "right": 1024,
               "bottom": 1152
             },
             "size_px": [
@@ -117,14 +122,14 @@
             "file": "cover/inline-04.png",
             "quadrant": "bottom_right",
             "box_px": {
-              "left": 1029,
-              "top": 580,
+              "left": 1024,
+              "top": 576,
               "right": 2048,
               "bottom": 1152
             },
             "raw_box_px": {
-              "left": 1029,
-              "top": 580,
+              "left": 1024,
+              "top": 576,
               "right": 2048,
               "bottom": 1152
             },
@@ -133,7 +138,7 @@
               675
             ],
             "aspect_ratio": "16:9",
-            "alt": "Мем Roll Safe и три вопроса о бойлере перед оплатой: объём, нагрев, хватит ли воды.",
+            "alt": "Три вопроса о бойлере перед оплатой: объём, нагрев, хватит ли воды.",
             "h2_anchor": "Две отмычки перед переводом"
           }
         }
@@ -149,29 +154,29 @@
           1152
         ],
         "panel_size_px": [
-          1018,
-          572
+          1017,
+          570
         ],
         "split_meta": {
           "split_mode": "gutter_detect",
           "h_gutter_px": {
-            "start": 572,
-            "end": 581
+            "start": 570,
+            "end": 584
           },
           "v_gutter_px": {
-            "start": 1018,
-            "end": 1027
+            "start": 1017,
+            "end": 1031
           },
           "requested_mode": "auto",
           "gutter_quality": {
-            "h_center_offset_px": 0.5,
-            "v_center_offset_px": 1.5,
-            "max_aspect_crop_loss": 0.0059,
+            "h_center_offset_px": 1.0,
+            "v_center_offset_px": 0.0,
+            "max_aspect_crop_loss": 0.0069,
             "per_panel_crop_loss": {
               "top_left": 0.0,
               "top_right": 0.0,
-              "bottom_left": 0.0,
-              "bottom_right": 0.0059
+              "bottom_left": 0.0069,
+              "bottom_right": 0.0069
             },
             "reject_reason": null
           }
@@ -187,14 +192,14 @@
             "box_px": {
               "left": 0,
               "top": 0,
-              "right": 1018,
-              "bottom": 572
+              "right": 1017,
+              "bottom": 570
             },
             "raw_box_px": {
               "left": 0,
               "top": 0,
-              "right": 1018,
-              "bottom": 572
+              "right": 1017,
+              "bottom": 570
             },
             "size_px": [
               1200,
@@ -208,16 +213,16 @@
             "file": "cover/inline-06.png",
             "quadrant": "top_right",
             "box_px": {
-              "left": 1027,
+              "left": 1031,
               "top": 0,
               "right": 2048,
-              "bottom": 572
+              "bottom": 570
             },
             "raw_box_px": {
-              "left": 1027,
+              "left": 1031,
               "top": 0,
               "right": 2048,
-              "bottom": 572
+              "bottom": 570
             },
             "size_px": [
               1200,
@@ -231,15 +236,15 @@
             "file": "cover/inline-07.png",
             "quadrant": "bottom_left",
             "box_px": {
-              "left": 0,
-              "top": 581,
-              "right": 1018,
+              "left": 3,
+              "top": 584,
+              "right": 1013,
               "bottom": 1152
             },
             "raw_box_px": {
               "left": 0,
-              "top": 581,
-              "right": 1018,
+              "top": 584,
+              "right": 1017,
               "bottom": 1152
             },
             "size_px": [
@@ -260,9 +265,9 @@
     "skip inline_2: already correct under H2 — Что на самом деле происходит с баком",
     "skip inline_3: already correct under H2 — Вопрос был не про бойлер",
     "skip inline_4: already correct under H2 — Две отмычки перед переводом",
-    "injected inline_5 after H2 — Наш вывод после этой ночи",
-    "injected inline_6 after H2 — Что на самом деле происходит с баком",
-    "injected inline_7 after H2 — Если нужна квартира в Тюмени на ночь"
+    "skip inline_5: already correct under H2 — Наш вывод после этой ночи",
+    "skip inline_6: already correct under H2 — Что на самом деле происходит с баком",
+    "skip inline_7: already correct under H2 — Если нужна квартира в Тюмени на ночь"
   ],
   "errors": [
     "skip inline_1: H2 not found — Две минуты — инструкция не работает",

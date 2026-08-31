@@ -1,20 +1,22 @@
 {
-  "pipeline": "b05_standalone_cover_vip_attempt2",
+  "pipeline": "type_meme_sticker_v3_cover_regen_attempt2",
   "canvas_index": 0,
   "standalone_cover": true,
-  "model_policy": "vip_primary",
-  "vip_disabled": false,
   "max_generation_attempts": 2,
   "output_canvas": "cover/cover-canvas.png",
   "result_path": "cover/cover-mcp-result.json",
-  "slots": ["cover"],
-  "jobs": [{
-    "slot": "canvas_quad",
-    "tool": "grsai",
-    "mcp_args": {
-      "prompt": "2048x1152 standalone cover August bathroom. Single wet guest from behind in shower — person IN SCENE not empty room, NOT group. HUGE Cyrillic «Вода кончилась прямо в душе» gold «кончилась». One small gold label «А бойлер просто висит». LARGE die-cut vinyl phone sticker «+7 (993) 574-83-22» bottom-left BIG. ONE Roll Safe meme sticker bottom-right ≤10% only. TOP-RIGHT 10% continuous tile EMPTY no box. Boiler glimpse. #FFF high-key late August NO snow NO torn-paper soup NO WordPress NO drawn logo.",
-      "aspect_ratio": "16:9",
-      "resolution": "2K"
+  "slots": [
+    "cover"
+  ],
+  "jobs": [
+    {
+      "slot": "cover_standalone",
+      "tool": "grsai",
+      "mcp_args": {
+        "prompt": "TYPE-LED MAGAZINE POSTER 16:9 standalone cover 2048x1152 full-bleed designed poster. HERO: spectacular Cyrillic display headline 2-8 words — type is the star. EXACTLY ONE named meme sticker from meme-top100.json as designed graphic. Phone +7 (993) 574-83-22 as LARGE die-cut vinyl peel-sticker / info-board tablo — BIG Dzen-thumb readable, NOT tiny door magnet, NOT pill. PEOPLE default ZERO. Comfort+ Tyumen high-key on-theme. TOP-RIGHT pad 8-12% = continuous scene texture (wall/wood/sky) for factory logo paste — NEV…\nStandalone cover canvas 2048x1152 exact 16:9 full-bleed — NOT a quad quadrant.\nTYPE-LED MAGAZINE POSTER — designed inline-grid energy, NOT people-photo scene.\nHERO HEADLINE — spectacular Cyrillic display typography 2-8 words: «Вода кончилась прямо в душе» — type is the star.\nEXACTLY ONE meme sticker from meme-top100.json: «Hide the Pain Harold» (id=hide_pain_harold) — designed graphic cutout sticker, NOT invented face; prefer people-meme on cover; NOT 0, NOT 2+.\nPhone EXACT «+7 (993) 574-83-22» as ONE LARGE die-cut vinyl peel-sticker graphic — BIG, readable at Dzen thumb; white/outline peel edge, designed sticker NOT tiny number on door/intercom/paper, NOT beige/gray UI pill/button/banner, NOT bottom-left post-composite chip\nPEOPLE: default ZERO — at most tiny silhouette/hands/back-of-head if case absolutely needs; NEVER group scene.\nCase mood/on-theme: Type poster: boiler+shower icons, late August Tyumen; ZERO people; clean TR pad..\nCase emotion: Резкий бытовой облом после дороги: тёплая надежда за две минуты сменяется холодной водой, усталостью и злой иронией..\nTOP-RIGHT pad 8-12% — scene continuation only; TOP-RIGHT pad 8-12% width — continuous SCENE only (wall/wood/sky/pattern texture); NEVER white/gray/cream card/square/plate/box/tablichka; model does NOT draw logo, «Добрый дом», house-with-heart, or any brand lockup.\nBAN: 0 memes, 2+ memes, meme soup, people-heavy group photo, tiny in-scene phone on door, Wordstat sticker soup, torn-paper collage, gold-glitter type, yellow sticky notes, split white-panel+photo, phone pill, post-composite phone chip, model-drawn logo, house-with-heart, logo plate, empty stock room, WordPress UI, wow poster collage soup, dark cinematic.\nTEXT LANGUAGE LOCK: visible text RUSSIAN Cyrillic only; headline readable at Dzen thumb.\nHigh-key Comfort+ Tyumen mood — thoughtful designed poster like premium inline frame.\nATTEMPT2 LAYOUT: 2048x1152 magazine TYPE poster. TOP 35% giant heavy BLACK Cyrillic «Вода кончилась прямо в душе» terracotta accent «кончилась» sharp ink NOT gold. MIDDLE flat vector boiler+drop icons only ZERO humans ZERO photos. BOTTOM-LEFT ONLY: large Hide the Pain Harold meme sticker thick white peel border high contrast. BOTTOM-RIGHT: huge saturated BLUE vinyl phone sticker «+7 (993) 574-83-22» white text 28% width. TOP-RIGHT 12%: smooth empty warm cream gradient continuation — absolutely NO text NO logo NO icons NO boxes NO curtains. BAN yellow sticky torn paper WordPress brand lockup second meme.",
+        "aspect_ratio": "16:9",
+        "resolution": "2K"
+      }
     }
-  }]
+  ]
 }

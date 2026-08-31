@@ -49,11 +49,11 @@
     "cover": {
       "quadrant": "top_left",
       "role": "cover_editorial_hero",
-      "alt": "Уставший гость в ванной посуточной квартиры: душ стал холодным через две минуты, рядом виден бойлер и номер телефона на приклеенной записке.",
-      "scene_hint": "Aug bathroom: wet guest, cold shower, boiler, huge hook, taped +7 note, TOP-RIGHT pad.",
+      "alt": "Типографический постер: горячая вода кончилась в душе — крупный заголовок, один мем-стикер и большой телефон-стикер.",
+      "scene_hint": "Type poster: boiler+shower icons, late August Tyumen; ZERO people; clean TR pad.",
       "meme_caption_ru": "",
       "sticky": "А бойлер просто висит",
-      "meme_id": "roll_safe"
+      "meme_id": "hide_pain_harold"
     },
     "inline_1": {
       "quadrant": "top_left",
@@ -70,7 +70,7 @@
       "quadrant": "top_right",
       "h2_anchor": "Что на самом деле происходит с баком",
       "visual_type": "structure_diagram",
-      "scene_hint": "Boiler cutaway; labels вода есть, до заезда.",
+      "scene_hint": "Boiler cutaway diagram only; labels вода есть, до заезда; NO logo NO brand.",
       "alt": "Схема накопительного бойлера: запас горячей воды заканчивается, повторный нагрев требует времени.",
       "labels": [
         "вода есть",
@@ -92,13 +92,12 @@
       "quadrant": "bottom_right",
       "h2_anchor": "Две отмычки перед переводом",
       "visual_type": "comparison_table",
-      "scene_hint": "Roll Safe ≤12%; labels бойлер, 50 л.",
-      "alt": "Мем Roll Safe и три вопроса о бойлере перед оплатой: объём, нагрев, хватит ли воды.",
+      "scene_hint": "Comparison table 3 Q-cards; labels бойлер, 50 л; NO meme NO logo.",
+      "alt": "Три вопроса о бойлере перед оплатой: объём, нагрев, хватит ли воды.",
       "labels": [
         "бойлер",
         "50 л"
-      ],
-      "meme_id": "roll_safe"
+      ]
     },
     "inline_5": {
       "quadrant": "top_left",
@@ -116,7 +115,7 @@
       "quadrant": "top_right",
       "h2_anchor": "Что на самом деле происходит с баком",
       "visual_type": "labeled_checklist",
-      "scene_hint": "Checklist объём, нагрев 1ч; labels греть час, гости до вас, не проверили.",
+      "scene_hint": "Checklist объём, нагрев 1ч; labels греть час, не проверили; NO logo.",
       "alt": "Чек-лист проверки бойлера после уборки и перед поздним заездом.",
       "labels": [
         "греть около часа",
@@ -155,9 +154,9 @@
     "inline_7"
   ],
   "cover_motifs": {
-    "composition": "Magazine poster wet guest in shower huge Cyrillic hook taped phone note boiler visible",
-    "location": "Tyumen rental bathroom late August warm evening no winter",
-    "meme": "Roll Safe people-meme inline_4 sticker only",
+    "composition": "Type-led poster Cyrillic headline one Harold meme large phone sticker boiler icons zero people",
+    "location": "Late August Tyumen high-key comfort no winter",
+    "meme": "Hide the Pain Harold sticker cover only",
     "prop_set": "shower towel boiler chat receipt keybox",
     "sticker_set": "wordstat посуточно тюмень бойлер нет горячей воды",
     "joke": "two-minute hot water trial then ice"
