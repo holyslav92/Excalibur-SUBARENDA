@@ -16,6 +16,29 @@ def np_array_rgb(image_path: Path) -> np.ndarray:
         return np.asarray(img.convert("RGB"))
 
 
+def _rgb_to_hsv_numpy(arr: np.ndarray) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+    rgb = arr.astype("float32") / 255.0
+    r, g, b = rgb[..., 0], rgb[..., 1], rgb[..., 2]
+    cmax = np.max(rgb, axis=2)
+    cmin = np.min(rgb, axis=2)
+    delta = cmax - cmin
+
+    hue = np.zeros_like(cmax)
+    mask = delta > 1e-6
+    rmask = mask & (cmax == r)
+    gmask = mask & (cmax == g)
+    bmask = mask & (cmax == b)
+    hue[rmask] = ((g[rmask] - b[rmask]) / delta[rmask]) % 6.0
+    hue[gmask] = ((b[gmask] - r[gmask]) / delta[gmask]) + 2.0
+    hue[bmask] = ((r[bmask] - g[bmask]) / delta[bmask]) + 4.0
+    hue = (hue / 6.0) * 360.0
+
+    sat = np.zeros_like(cmax)
+    sat[cmax > 1e-6] = delta[cmax > 1e-6] / cmax[cmax > 1e-6]
+    val = cmax
+    return hue, sat, val
+
+
 def detect_split_white_collage(image_path: Path) -> dict[str, Any]:
     """FAIL: hard vertical split — bright white left panel + photo right (legacy wow_poster)."""
     arr = np_array_rgb(image_path)
@@ -75,6 +98,69 @@ def detect_cover_meme_sticker_zone(image_path: Path) -> dict[str, Any]:
     }
 
 
+def detect_empty_stock_room(image_path: Path) -> dict[str, Any]:
+    """FAIL: timid empty stock — uniform mid-gray/white, almost no scene detail."""
+    arr = np_array_rgb(image_path)
+    luma = arr.mean(axis=2)
+    hue, sat, _val = _rgb_to_hsv_numpy(arr)
+    global_std = float(luma.std())
+    low_sat_frac = float((sat < 0.12).mean())
+    mid_band_frac = float(((luma > 165) & (luma < 235)).mean())
+    edge_energy = float(np.abs(np.diff(luma, axis=1)).mean() + np.abs(np.diff(luma, axis=0)).mean())
+    detected = global_std < 28 and low_sat_frac > 0.72 and mid_band_frac > 0.55 and edge_energy < 12
+    return {
+        "detected": detected,
+        "global_std": round(global_std, 2),
+        "low_sat_frac": round(low_sat_frac, 3),
+        "mid_band_frac": round(mid_band_frac, 3),
+        "edge_energy": round(edge_energy, 2),
+    }
+
+
+def detect_yellow_sticky_soup(image_path: Path) -> dict[str, Any]:
+    """FAIL: multiple yellow sticky-note clusters (torn-paper/sticky collage soup)."""
+    arr = np_array_rgb(image_path)
+    hue, sat, val = _rgb_to_hsv_numpy(arr)
+    yellow = (hue >= 38) & (hue <= 62) & (sat >= 0.28) & (val >= 0.45)
+    yellow_frac = float(yellow.mean())
+    h, w = arr.shape[:2]
+    quadrants = [
+        arr[: h // 2, : w // 2],
+        arr[: h // 2, w // 2 :],
+        arr[h // 2 :, : w // 2],
+        arr[h // 2 :, w // 2 :],
+    ]
+    quad_hits = 0
+    for quad in quadrants:
+        qh, qs, qv = _rgb_to_hsv_numpy(quad)
+        qy = (qh >= 38) & (qh <= 62) & (qs >= 0.28) & (qv >= 0.45)
+        if float(qy.mean()) > 0.018:
+            quad_hits += 1
+    detected = yellow_frac > 0.035 and quad_hits >= 2
+    return {
+        "detected": detected,
+        "yellow_frac": round(yellow_frac, 4),
+        "quad_hits": quad_hits,
+    }
+
+
+def detect_torn_paper_edge_soup(image_path: Path) -> dict[str, Any]:
+    """FAIL: high edge density on white field — torn-paper / tape collage energy."""
+    arr = np_array_rgb(image_path)
+    luma = arr.mean(axis=2)
+    white_mask = luma > 235
+    white_frac = float(white_mask.mean())
+    if white_frac < 0.25:
+        return {"detected": False, "reason": "not_white_heavy"}
+    edges = np.abs(np.diff(luma, axis=1)).mean() + np.abs(np.diff(luma, axis=0)).mean()
+    detected = white_frac > 0.38 and float(edges) > 22
+    return {
+        "detected": detected,
+        "white_frac": round(white_frac, 3),
+        "edge_energy": round(float(edges), 2),
+    }
+
+
 def detect_scene_poster_pass(image_path: Path) -> dict[str, Any]:
     """PASS heuristic: full-bleed scene — not split collage, no meme zone."""
     split = detect_split_white_collage(image_path)
@@ -88,6 +174,7 @@ def detect_scene_poster_pass(image_path: Path) -> dict[str, Any]:
 
 
 def validate_cover_scene_poster_gates(cover_path: Path) -> list[str]:
+    """COVER-only gates — inlines are not checked here."""
     errors: list[str] = []
     if not cover_path.is_file():
         return errors
@@ -105,5 +192,49 @@ def validate_cover_scene_poster_gates(cover_path: Path) -> list[str]:
             "cover.png: meme/sticker cutout zone detected bottom-left "
             f"(edge={meme.get('edge_energy')}) — memes forbidden on cover"
         )
+
+    empty = detect_empty_stock_room(cover_path)
+    if empty.get("detected"):
+        errors.append(
+            "cover.png: empty stock room detected "
+            f"(std={empty.get('global_std')}) — cover must be lived-in scene poster"
+        )
+
+    sticky = detect_yellow_sticky_soup(cover_path)
+    if sticky.get("detected"):
+        errors.append(
+            "cover.png: yellow sticky-note soup detected "
+            f"(yellow_frac={sticky.get('yellow_frac')}) — no torn-paper/sticky collage on cover"
+        )
+
+    torn = detect_torn_paper_edge_soup(cover_path)
+    if torn.get("detected"):
+        errors.append(
+            "cover.png: torn-paper collage energy detected "
+            f"(edge={torn.get('edge_energy')}) — cover must be cinematic scene, not sticker soup"
+        )
+
+    try:
+        from excalibur_blog_drawn_logo_gate import (
+            detect_drawn_lockup_in_image,
+            detect_phone_pill_post_composite,
+            detect_white_plate_in_pad,
+        )
+
+        pill = detect_phone_pill_post_composite(cover_path)
+        if pill.get("detected"):
+            errors.append(
+                "cover.png: opaque phone pill detected "
+                f"(area={pill.get('area_ratio')}) — phone must be in-scene, not post-composite pill"
+            )
+
+        plate = detect_white_plate_in_pad(cover_path)
+        if plate.get("detected"):
+            errors.append(
+                "cover.png: logo plaque/plate detected in top-right pad "
+                f"(kind={plate.get('plate_kind')}) — leave clean pad for factory logo paste"
+            )
+    except ImportError:
+        errors.append("excalibur_blog_drawn_logo_gate.py missing — cover phone/plaque QA unavailable")
 
     return errors

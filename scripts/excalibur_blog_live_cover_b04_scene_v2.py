@@ -68,6 +68,9 @@ def generate_cover_canvas(adir: Path) -> Path:
         "pipeline": "scene_poster_v2_live_b04",
         "canvas_index": 0,
         "standalone_cover": True,
+        "model_policy": "primary_non_vip_only",
+        "vip_disabled": True,
+        "max_generation_attempts": 2,
         "output_canvas": "cover/cover-canvas.png",
         "result_path": "cover/cover-mcp-result.json",
         "jobs": [
@@ -94,11 +97,14 @@ def generate_cover_canvas(adir: Path) -> Path:
             "cover/cover-mcp-batch.json",
             "--result",
             "cover/cover-mcp-result.json",
+            "--model-tier",
+            "primary",
         ],
         cwd=ROOT,
         capture_output=True,
         text=True,
         check=False,
+        env={**os.environ, "GRSAI_FORBID_VIP": "1", "GRSAI_VIP_ECONOMY": "0"},
     )
     if proc.returncode != 0:
         raise RuntimeError(f"Grsai generation failed: {proc.stderr or proc.stdout}")

@@ -15,11 +15,12 @@ Primary Cloud path for Excalibur BLOG cover/inline quad canvas when `IMAGE_PROVI
 ## 2K quality policy (mandatory — owner)
 
 1. **Ship only ≥2K:** factory canvas / output long side **≥2048** (quad contract **2048×1152** for 16:9).
-2. **VIP economy (default `GRSAI_VIP_ECONOMY=1`):** для **16:9** quad canvas сразу **один** vip-вызов (`vip_trigger=economy_skip_primary_16_9`) — primary non-vip всё равно отдаёт ~1672×941; лишний primary = двойная оплата.
-3. **Иначе prefer non-vip** primary tier когда он отдаёт ≥2K нативно.
-4. **VIP trigger (fallback):** non-vip не достигает ≥2K на не-16:9 аспектах, hard API fail → **один** vip-tier attempt.
-5. **Do not default to VIP** когда non-vip успешно вернул long side ≥2048.
-6. **Никогда не апскейлить** soft ~1672×941 до 2048 — только native vip 2K или ship native 1024×576 panel без Lanczos.
+2. **VIP economy (opt-in `GRSAI_VIP_ECONOMY=1`):** для **16:9** quad canvas можно сразу **один** vip-вызов (`vip_trigger=economy_skip_primary_16_9`) — primary non-vip иногда отдаёт ~1672×941. **По умолчанию OFF.**
+3. **Standalone cover (`scene_poster_v2`):** batch `standalone_cover=true` / `vip_disabled=true` → **primary only**, max 2 attempts, `GRSAI_FORBID_VIP=1`; затем pad-clear + factory logo paste.
+4. **Иначе prefer non-vip** primary tier когда он отдаёт ≥2K нативно.
+5. **VIP trigger (fallback):** non-vip не достигает ≥2K на не-16:9 аспектах, hard API fail → **один** vip-tier attempt.
+6. **Do not default to VIP** когда non-vip успешно вернул long side ≥2048.
+7. **Никогда не апскейлить** soft ~1672×941 до 2048 — только native vip 2K или ship native 1024×576 panel без Lanczos.
 
 Logged in `quad-mcp-result-*.json`: `model_succeeded`, `used_vip_fallback`, `vip_trigger` (`2k_not_possible_on_primary` | `api_failure` | null), `native_long_side`, `delivery`.
 
