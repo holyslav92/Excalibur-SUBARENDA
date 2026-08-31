@@ -32,14 +32,14 @@ python3 scripts/excalibur_blog_derouter_opus_chat.py \
 - Плохо: «Экран жрёт меньше токенов»
 - Хорошо: «Код есть — вода холодная», «Залог не вернули», «40 минут до вуза»
 
-## Cover canon (Добрый дом)
+## Cover canon (Добрый дом type_meme_sticker_v3)
 
-- **Крупный кириллический hook** — cable case, как сильные Dzen-обложки, но guest pain
-- **Телефон +7 (993) 574-83-22 in-scene** (лента/магнит/экран телефона в кадре) — **без pill**, без post-composite таблички
+- **Spectacular headline 2–8 слов** — hero display typography (крупный кириллический cable hook)
+- **Телефон +7 (993) 574-83-22 LARGE die-cut sticker** — BIG readable graphic, **без pill**, не tiny in-scene door number
+- **Ровно 1 meme** из meme-top100.json на обложке (named entry в manifest/cover_motifs)
 - **Логотип:** factory paste alpha PNG top-right empty pad — **не** рисовать в генерации
-- **NO host face** на обложке (в отличие от риэлтор-канала)
+- **NO people-heavy scene** на обложке; **NO host face**
 - **NO +7 922 001 65 05** — только tenant phone
-- Телефон **в сцене**, не в logo pad
 
 ## Вход
 

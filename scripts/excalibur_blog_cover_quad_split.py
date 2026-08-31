@@ -457,7 +457,7 @@ def build_registry(
     return {
         "topic_id": manifest.get("topic_id") or meta.get("topic_id"),
         "slug": meta.get("slug"),
-        "cover_family": meta.get("cover_family") or ("scene_poster_v2" if uses_scene_poster_v2() else "brand_collage"),
+        "cover_family": meta.get("cover_family") or ("type_meme_sticker_v3" if uses_scene_poster_v2() else "brand_collage"),
         "style_preset": style,
         "pipeline": manifest.get("pipeline") or "quad_canvas_1x_mcp",
         "file": "cover/cover.png",

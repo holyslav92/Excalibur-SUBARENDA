@@ -1,8 +1,8 @@
 {
-  "canon_id": "dobry_dom_scene_poster_v2",
+  "canon_id": "dobry_dom_type_meme_sticker_v3",
   "status": "locked",
   "tenant": "dobry-dom",
-  "label_ru": "Добрый дом — editorial scene poster v2, factory logo paste, inlines unchanged",
+  "label_ru": "Добрый дом — type+meme+phone-sticker poster v3, factory logo paste, inlines unchanged",
   "tenant_scope": "holyslav92/Excalibur-SUBARENDA ONLY. Never tymenrieltor.ru / Excalibur-2-Cloud rieltor identity.",
   "cover_generation": {
     "mode": "standalone_16_9",
@@ -20,32 +20,37 @@
     "max_generation_attempts": 2,
     "on_exhaust": "pad_clear_top_right + factory_logo_paste + ship"
   },
-  "scene_poster_rules": {
-    "cover_qa_check": "scene_poster_editorial",
-    "philosophy": "Designed editorial SCENE of THIS article guest-night wound — magazine-clean cinematic still, inline-quality design energy. One glance = the case.",
+  "type_meme_sticker_rules": {
+    "cover_qa_check": "type_meme_sticker_editorial",
+    "philosophy": "Designed magazine TYPE poster — spectacular Cyrillic headline hero + exactly ONE catalog meme sticker + LARGE phone die-cut sticker. Steal inline designed-text/grid energy, NOT people-photo scene energy.",
     "must": [
-      "full-bleed 16:9 editorial scene poster",
-      "comfort+ Tyumen apartment, natural light, people in scene",
-      "one short readable Cyrillic hook 2-6 words IN artwork if it helps",
-      "phone +7 (993) 574-83-22 painted IN SCENE (door intercom, paper on door, host card, fridge magnet)",
+      "full-bleed 16:9 designed magazine poster",
+      "spectacular Cyrillic display headline 2-8 words as visual hero — type is the star",
+      "exactly ONE named meme from memory/cover/meme-top100.json as designed graphic sticker (not invented face)",
+      "LARGE die-cut vinyl phone sticker +7 (993) 574-83-22 — BIG, readable at Dzen thumb",
+      "default ZERO people — at most tiny silhouette/hands/back-of-head if case absolutely needs",
       "empty clear TOP-RIGHT pad 8-12% for factory logo paste",
-      "high-key bright lived-in mood"
+      "high-key bright Comfort+ Tyumen mood, on-theme of THIS case"
     ],
     "forbidden_on_cover": [
-      "meme cutouts (Roll Safe, Harold, Pepe, cat stickers)",
+      "0 memes",
+      "2+ memes / meme soup",
+      "people-heavy group photo / host+guests scene",
+      "tiny in-scene phone on door/intercom only",
       "wordstat sticker soup",
       "torn-paper collage",
       "gold-glitter typography",
       "yellow sticky notes",
       "split white-panel + photo layout",
       "beige gray white phone pill",
-      "post-composite phone overlay",
+      "post-composite phone overlay chip",
       "model-drawn logo",
       "house-with-heart lockup",
       "white gray plaque under logo",
       "empty stock room",
       "wordpress UI",
-      "wow_poster magazine collage"
+      "wow_poster magazine collage soup",
+      "missing display headline typography"
     ]
   },
   "wow_cover_rules": {
@@ -68,8 +73,8 @@
       "cover_qa_check": "no_element_overlap",
       "elements_never_overlap": [
         "headline",
-        "phone_cta",
-        "people",
+        "phone_sticker",
+        "meme_sticker",
         "logo_pad"
       ],
       "logo_pad": {
@@ -81,10 +86,12 @@
       },
       "cover_phone": {
         "display": "+7 (993) 574-83-22",
-        "in_scene_only": true,
+        "mode": "large_die_cut_sticker",
+        "in_scene_only": false,
         "post_composite_bottom_left": false,
         "never_in_logo_pad": true,
-        "cover_only": true
+        "cover_only": true,
+        "min_thumb_readable": true
       }
     },
     "inline_logo": {
@@ -104,7 +111,7 @@
     "never_use": true,
     "note": "Расписание публикаций 09/12/15/17 YEKT (будни) ≠ формула обложки."
   },
-  "invention_rule": "Cover agent INVENTS every cover scene from scratch for THIS article wound. No inventory lock. No recurring default props. Variety is the product.",
+  "invention_rule": "Cover agent INVENTS every cover poster layout from scratch for THIS article wound. No inventory lock. No recurring default props. Variety is the product.",
   "anti_repeat": {
     "window_days": 14,
     "log_file": "memory/cover/used-motifs.json",
@@ -112,7 +119,8 @@
       "composition",
       "location",
       "prop_set",
-      "joke"
+      "joke",
+      "meme_id"
     ],
     "preflight_script": "scripts/excalibur_blog_cover_motif_gate.py",
     "after_14_days_motif_may_return": true
@@ -134,24 +142,25 @@
     "cover_always_one_logo": true,
     "inline_logo_count": "2-3 of 7",
     "inline_logo_slots_default": ["inline_1", "inline_3", "inline_7"],
-    "cover_phone_in_scene": "+7 (993) 574-83-22",
+    "cover_phone_large_sticker": "+7 (993) 574-83-22",
     "cover_phone_post_composite": false,
     "forbid_cover_phone_post_composite_pill": true,
     "forbidden_phone": "+7 922 001 65 05",
     "composite_script": "scripts/excalibur_blog_brand_logo_composite.py"
   },
   "meme_system": {
-    "cover": "FORBIDDEN — no meme cutouts on cover (scene poster only)",
+    "cover": "REQUIRED — exactly ONE named entry from memory/cover/meme-top100.json as designed sticker graphic on every cover",
     "inline": {
       "allowed": true,
+      "optional": true,
       "catalog": "memory/cover/meme-top100.json",
       "max_cat_slots_per_article": 1,
       "people_meme_max_frame_share": 0.15,
-      "note": "Meme energy stays on inlines only — designed grid/collage OK there"
+      "note": "Cover always has 1 catalog meme; inlines may add more (cat max 1 across cover+7 inlines total)"
     }
   },
   "wordstat_stickers": {
-    "cover": "FORBIDDEN on cover — scene poster has no sticker soup",
+    "cover": "FORBIDDEN on cover — type poster has no Wordstat sticker soup",
     "inline": {
       "allowed": true,
       "count": "0-3 per inline panel as designed labels",
@@ -170,7 +179,7 @@
   "inline_utility": {
     "catalog": "memory/cover/inline-visual-types-dobry-dom.json",
     "utility_test": "Reader without paragraph extracts fact/order/number/comparison for H2; icon row + 3-word captions = FAIL",
-    "style_match_cover": "B02-approved designed grid: #FFFFFF high-key, gold/black, clean labels — NOT cover collage style",
+    "style_match_cover": "B02-approved designed grid: #FFFFFF high-key, gold/black, clean labels — cover steals THIS type energy",
     "no_host_face": true,
     "no_co_host_human": true,
     "no_stock_model": true,
@@ -206,8 +215,11 @@
       "meme_people_real_catalog",
       "forbid_wordpress_ui_in_art",
       "no_element_overlap",
-      "scene_poster_editorial",
-      "forbid_cover_meme_collage",
+      "type_meme_sticker_editorial",
+      "require_cover_meme_sticker",
+      "require_display_headline",
+      "require_large_phone_sticker",
+      "forbid_people_heavy_cover",
       "forbid_split_white_collage",
       "inline_logo_count_2_3",
       "forbid_multiple_logos_per_image",
@@ -218,8 +230,8 @@
   "owner_visual_polish": {
     "cover_phone_required": "+7 (993) 574-83-22",
     "cover_phone_forbidden": "+7 922 001 65 05",
-    "cover_style": "editorial scene poster — designed inline energy as cinematic still, NOT accidental collage",
-    "typography": "Short Cyrillic hook 2-6 words if needed; readable; no wall of type; no gold glitter",
-    "inline_density": "informational labels per panel; utility test still required; meme allowed on inlines max 1 cat/article"
+    "cover_style": "type-led magazine poster — spectacular headline + 1 catalog meme + large phone sticker; NOT people scene photo",
+    "typography": "Spectacular Cyrillic display headline 2-8 words as hero; readable at Dzen thumb; no gold glitter; no Wordstat soup",
+    "inline_density": "informational labels per panel; utility test still required; meme optional on inlines; max 1 cat/article across cover+inlines"
   }
 }

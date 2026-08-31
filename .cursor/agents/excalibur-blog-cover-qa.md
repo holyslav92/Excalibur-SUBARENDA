@@ -1,6 +1,6 @@
 ---
 name: excalibur-blog-cover-qa
-description: "Cover-QA: scene poster v2 — no meme/collage on cover, logo+phone in-scene, stamp cover_qa.json."
+description: "Cover-QA: type+meme+phone-sticker v3 — require meme+headline+large phone on cover, stamp cover_qa.json."
 model: inherit
 readonly: false
 is_background: false
@@ -12,15 +12,18 @@ is_background: false
 
 **Slim gate после Cover**, до Indexer/Publish.
 
-## FAIL только если (brand lock + scene_poster_v2)
+## FAIL только если (brand lock + type_meme_sticker_v3)
 
-- meme/collage on cover (`forbid_cover_meme_collage`, `forbid_split_white_collage`)
+- нет spectacular display headline на cover (`require_display_headline`)
+- нет ровно 1 catalog meme на cover (`require_cover_meme_sticker`) или meme soup (2+)
+- нет LARGE phone die-cut sticker (`require_large_phone_sticker`) или phone pill
+- people-heavy group scene photo (`forbid_people_heavy_cover`)
+- split white-panel collage (`forbid_split_white_collage`)
 - нет factory logo на cover или inline count не 2–3
 - AI-drawn lockup / house-with-heart / plate под logo
-- phone pill / post-composite phone (must be IN SCENE)
 - WordPress UI в арте
 - номер 922
-- 2+ cat-meme frames (max 1 on inlines only — NOT on cover)
+- 2+ cat-meme frames (max 1 across cover+inlines)
 
 ## PASS → ship
 
