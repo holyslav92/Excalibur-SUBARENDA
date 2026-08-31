@@ -20,6 +20,7 @@ from excalibur_blog_grsai_gpt_image2_api import (  # noqa: E402
     NATIVE_2K_CLASS_MIN_LONG_SIDE,
     PRIMARY_MODEL_ID,
     VIP_FALLBACK_MODEL_ID,
+    batch_force_primary_only,
     create_draw_payload,
     economy_skip_primary,
     ensure_2k_canvas,
@@ -27,6 +28,7 @@ from excalibur_blog_grsai_gpt_image2_api import (  # noqa: E402
     generate_image_with_model_fallback,
     is_2k_request_rejected,
     primary_model,
+    vip_economy_enabled,
     vip_fallback_model,
 )
 
@@ -202,6 +204,11 @@ class GrsaiModelFallbackTests(unittest.TestCase):
         self.assertLess(1672, MIN_LONG_SIDE_2K)
 
     def test_economy_skip_primary_16_9(self) -> None:
+        with patch.dict(os.environ, {}, clear=False):
+            os.environ.pop("GRSAI_VIP_ECONOMY", None)
+            os.environ.pop("GRSAI_FORBID_VIP", None)
+            self.assertFalse(vip_economy_enabled())
+            self.assertFalse(economy_skip_primary({"aspect_ratio": "16:9"}))
         with patch.dict(
             os.environ,
             {"GRSAI_VIP_ECONOMY": "1", "GRSAI_FORBID_VIP": ""},
@@ -210,6 +217,12 @@ class GrsaiModelFallbackTests(unittest.TestCase):
             os.environ.pop("GRSAI_FORBID_VIP", None)
             self.assertTrue(economy_skip_primary({"aspect_ratio": "16:9"}))
             self.assertFalse(economy_skip_primary({"aspect_ratio": "1:1"}))
+
+    def test_batch_force_primary_only(self) -> None:
+        self.assertTrue(batch_force_primary_only({"standalone_cover": True}))
+        self.assertTrue(batch_force_primary_only({"vip_disabled": True}))
+        self.assertTrue(batch_force_primary_only({"model_policy": "primary_non_vip_only"}))
+        self.assertFalse(batch_force_primary_only({}))
 
     def test_vip_economy_single_call(self) -> None:
         calls: list[str] = []

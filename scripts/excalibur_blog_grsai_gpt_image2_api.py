@@ -128,17 +128,27 @@ def forbid_vip() -> bool:
 
 
 def vip_economy_enabled() -> bool:
-    """Экономия: для 16:9 quad сразу один vip (primary ~1672 не даёт native 2K)."""
-    raw = str(os.environ.get("GRSAI_VIP_ECONOMY", "1")).strip().casefold()
+    """Экономия vip для 16:9 quad — по умолчанию OFF (scene_poster_v2 = primary only)."""
+    raw = str(os.environ.get("GRSAI_VIP_ECONOMY", "0")).strip().casefold()
     return raw not in {"0", "false", "no", "off"}
 
 
 def economy_skip_primary(image_input: dict[str, Any]) -> bool:
-    """16:9 non-vip не отдаёт native 2048×1152 — пропускаем бесполезный primary."""
+    """16:9 non-vip не отдаёт native 2048×1152 — пропускаем primary только если economy ON."""
     if not vip_economy_enabled() or forbid_vip():
         return False
     aspect = str(image_input.get("aspect_ratio") or DEFAULT_ASPECT_RATIO).strip()
     return aspect == DEFAULT_ASPECT_RATIO
+
+
+def batch_force_primary_only(batch_meta: dict[str, Any]) -> bool:
+    """Standalone cover / canon policy — non-vip primary only, no vip economy."""  # pragma: allowlist secret
+    if batch_meta.get("standalone_cover"):
+        return True
+    if batch_meta.get("vip_disabled"):
+        return True
+    policy = str(batch_meta.get("model_policy") or "").strip().casefold()
+    return "primary" in policy and "vip" in policy and "only" in policy
 
 
 def primary_model() -> str:
@@ -974,7 +984,7 @@ def main() -> int:
             meta["model_succeeded"] = model
             meta["used_vip_fallback"] = False
             print(f"OK Grsai model={model} host={meta.get('host')} (tier=primary)", flush=True)
-        elif forbid_vip():
+        elif forbid_vip() or batch_force_primary_only(batch_meta):
             image_bytes, meta = generate_image_primary_no_vip(**gen_kwargs)
         elif economy_skip_primary(image_input):
             image_bytes, meta = generate_image_vip_economy(**gen_kwargs)

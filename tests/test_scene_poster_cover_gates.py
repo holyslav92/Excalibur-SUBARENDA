@@ -55,11 +55,17 @@ class ScenePosterCoverGateTest(unittest.TestCase):
 
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "scene.png"
-            img = Image.new("RGB", (1200, 675), (210, 200, 185))
+            img = Image.new("RGB", (1200, 675), (185, 175, 160))
             draw = ImageDraw.Draw(img)
-            draw.rectangle((80, 120, 520, 580), fill=(195, 185, 175))
-            draw.rectangle((900, 30, 1180, 180), fill=(230, 225, 220))
-            draw.text((920, 60), "+7 993 574-83-22", fill=(30, 30, 30))
+            draw.rectangle((60, 90, 540, 620), fill=(95, 82, 72))
+            draw.rectangle((620, 140, 860, 640), fill=(205, 198, 188))
+            for x in range(700, 1100, 12):
+                for y in range(180, 600, 12):
+                    img.putpixel((x, y), (160 + (x % 35), 140 + (y % 28), 120 + ((x + y) % 22)))
+            for x in range(980, 1180, 6):
+                for y in range(20, 200, 6):
+                    img.putpixel((x, y), (228 + (x % 5), 222 + (y % 4), 215 + ((x + y) % 3)))
+            draw.text((720, 520), "+7 993 574-83-22", fill=(30, 30, 30))
             img.save(path)
             errors = validate_cover_scene_poster_gates(path)
             self.assertEqual(errors, [], errors)
@@ -85,6 +91,38 @@ class ScenePosterCoverGateTest(unittest.TestCase):
             "validate_cover_scene_poster_gates",
         ):
             self.assertIn(key, gate_src)
+
+    def test_style_fallback_never_pink_cat_for_scene_v2(self) -> None:
+        from excalibur_blog_cover_quad_prompt import (
+            DEFAULT_STYLE_DOBRY_DOM,
+            resolve_style_file,
+        )
+
+        self.assertEqual(resolve_style_file({}, ROOT), DEFAULT_STYLE_DOBRY_DOM)
+        self.assertNotIn("pink-cat", resolve_style_file({}, ROOT))
+
+    def test_collage_gate_fails_empty_stock(self) -> None:
+        from excalibur_blog_cover_collage_gate import detect_empty_stock_room
+
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "empty.png"
+            img = Image.new("RGB", (1200, 675), (210, 210, 208))
+            img.save(path)
+            result = detect_empty_stock_room(path)
+            self.assertTrue(result.get("detected"), result)
+
+    def test_collage_gate_fails_yellow_sticky_soup(self) -> None:
+        from excalibur_blog_cover_collage_gate import detect_yellow_sticky_soup
+
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "sticky.png"
+            img = Image.new("RGB", (1200, 675), (245, 245, 240))
+            draw = ImageDraw.Draw(img)
+            for box in ((40, 40, 220, 140), (900, 80, 1100, 200), (200, 500, 420, 620)):
+                draw.rectangle(box, fill=(255, 235, 80))
+            img.save(path)
+            result = detect_yellow_sticky_soup(path)
+            self.assertTrue(result.get("detected"), result)
 
     def test_contract_scene_poster_v2(self) -> None:
         contract = (ROOT / "shared/blog-cover-quad-canvas-contract.md").read_text(encoding="utf-8")

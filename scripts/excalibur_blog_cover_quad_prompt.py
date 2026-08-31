@@ -115,6 +115,8 @@ PHONE_IN_SCENE_RULE = (
 MEME_CATALOG_REL = "memory/cover/meme-top100.json"
 MEME_STICKER_INLINE_MAX_SHARE = 0.15
 MAX_CAT_MEME_SLOTS_PER_ARTICLE = 1
+DEFAULT_STYLE_DOBRY_DOM = "memory/cover/quad-style-dobry-dom.json"
+DEFAULT_STYLE_LEGACY = "memory/cover/quad-style-pink-cat-digital-collage-ru.json"
 CAT_MEME_QUOTA_RULE = (
     "CAT-MEME QUOTA: max ONE cat-meme sticker across entire 8-panel set (cover + 7 inlines). "
     "Prefer cover OR one inline — never both. All other meme slots = people-memes/reaction templates "
@@ -484,6 +486,16 @@ def style_is_situational_cat_hero(style: dict) -> bool:
     return motif in {"situational_cat_hero", "cat_hero"}
 
 
+def resolve_style_file(manifest: dict, root: Path) -> str:
+    """Style JSON for quad prompts — never pink-cat when scene_poster_v2 is active."""
+    explicit = str(manifest.get("style_file") or "").strip()
+    if explicit:
+        return explicit
+    if uses_scene_poster_v2(root):
+        return DEFAULT_STYLE_DOBRY_DOM
+    return DEFAULT_STYLE_LEGACY
+
+
 def resolve_manifest_inline_logo_keys(manifest: dict, root: Path) -> set[str]:
     cfg = load_tenant_cover_config(root)
     tenant = load_json(root / "shared" / "tenant-config.json") if (root / "shared" / "tenant-config.json").is_file() else {}
@@ -493,6 +505,60 @@ def resolve_manifest_inline_logo_keys(manifest: dict, root: Path) -> set[str]:
         return {str(x).strip() for x in raw if str(x).strip()}
     defaults = composite.get("inline_logo_slots_default") or ["inline_1", "inline_3", "inline_7"]
     return {str(x).strip() for x in defaults}
+
+
+def _legacy_quad_cover_panel_line(
+    *,
+    cover: dict,
+    manifest: dict,
+    cover_hook_text: str,
+    highlight_rule: str,
+    cover_emotion: str,
+    cover_scene: str,
+    cover_sticky: str,
+    sticky_lock: str,
+    cover_meme_clause: str,
+    cover_phone_cta: str,
+    brand_logo_paste: bool,
+    logo_reference_in_generation: bool,
+) -> str:
+    """Legacy wow_poster TL quadrant cover — 3-inline / pre-scene_poster_v2 only."""
+    if logo_reference_in_generation:
+        emotion_clause = f"Expr: {cover_emotion}." if cover_emotion else ""
+        return (
+            f"TL COVER WOW POSTER (magazine, not stock): «{cover_hook_text}» bold DISPLAY Cyrillic readable, {highlight_rule}; "
+            f"sticky «{cover_sticky or 'Залог вернут?'}»; scene props; natural daylight clean white balance, "
+            f"NO yellow/amber cast, NO muddy skin, NO winter/snow. "
+            f"NO phone in gen. {LOGO_REFERENCE_INTEGRATION}. "
+            f"{emotion_clause} soft daylight crisp sharp; gold tape; 1-3 Wordstat; "
+            f"{compact(cover_scene, COVER_SCENE_HINT_COMPACT)}; {cover_meme_clause}; "
+            f"{BOARD_STATIONERY}; #FFF"
+        )
+    if brand_logo_paste:
+        emotion_clause = f"Expr: {cover_emotion}." if cover_emotion else ""
+        phone_clause = PHONE_IN_SCENE_RULE.format(phone=cover_phone_cta)
+        return (
+            f"TL COVER WOW POSTER (magazine, not stock): «{cover_hook_text}» bold DISPLAY Cyrillic readable, {highlight_rule}; "
+            f"sticky «{cover_sticky or 'Залог вернут?'}»; scene props; natural daylight clean white balance, "
+            f"NO yellow/amber cast, NO muddy skin, NO winter/snow. "
+            f"NO logo in gen. {phone_clause}. "
+            f"{emotion_clause} soft daylight crisp sharp; gold tape; 1-3 Wordstat; "
+            f"{compact(cover_scene, COVER_SCENE_HINT_COMPACT)}; {cover_meme_clause}; "
+            f"TOP-RIGHT empty clear pad — no logo, no house icon, no «Добрый дом» lettering, no plate, no sticker; "
+            f"{BOARD_STATIONERY}; #FFF"
+        )
+    emotion_clause = (
+        f"Expression: {cover_emotion}. {I2I_EXPRESSION_LOCK}."
+        if cover_emotion
+        else f"{I2I_EXPRESSION_LOCK}."
+    )
+    return (
+        f"TL COVER TXT «{cover_hook_text}» bold Cyrillic black, {highlight_rule}.{sticky_lock} "
+        f"Phone EXACT «{cover_phone_cta}» readable CTA sticker. "
+        f"Host i2i left ({BODY_LOCK}); {emotion_clause} natural daylight, no yellow cast; "
+        f"{compact(cover_scene, COVER_SCENE_HINT_COMPACT)}; "
+        f"1-2 meme stickers; {BOARD_STATIONERY}; Wordstat/Tyumen; #FFF; perfect Cyrillic"
+    )
 
 
 def build_prompt(
@@ -554,6 +620,7 @@ def build_prompt(
         )
 
     if has_cover and "cover" in canvas_slots:
+        # Legacy quad TL cover only — scene_poster_v2 uses build_standalone_cover_prompt().
         cover = slot("cover")
         highlight = compact(manifest.get("cover_hook_highlight", ""), 24)
         highlight_rule = (
@@ -577,43 +644,22 @@ def build_prompt(
             if cover_cat_allowed
             else f"people-meme sticker bottom-left ≤12% ({people_meme_hint or 'Roll Safe / Harold / Pepe'}; NO cat)"
         )
-        if logo_reference_in_generation:
-            emotion_clause = f"Expr: {cover_emotion}." if cover_emotion else ""
-            panel_lines.append(
-                f"TL COVER WOW POSTER (magazine, not stock): «{cover_hook_text}» bold DISPLAY Cyrillic readable, {highlight_rule}; "
-                f"sticky «{cover_sticky or 'Залог вернут?'}»; scene props; natural daylight clean white balance, "
-                f"NO yellow/amber cast, NO muddy skin, NO winter/snow. "
-                f"NO phone in gen. {LOGO_REFERENCE_INTEGRATION}. "
-                f"{emotion_clause} soft daylight crisp sharp; gold tape; 1-3 Wordstat; "
-                f"{compact(cover_scene, COVER_SCENE_HINT_COMPACT)}; {cover_meme_clause}; "
-                f"{BOARD_STATIONERY}; #FFF"
+        panel_lines.append(
+            _legacy_quad_cover_panel_line(
+                cover=cover,
+                manifest=manifest,
+                cover_hook_text=cover_hook_text,
+                highlight_rule=highlight_rule,
+                cover_emotion=cover_emotion,
+                cover_scene=cover_scene,
+                cover_sticky=cover_sticky,
+                sticky_lock=sticky_lock,
+                cover_meme_clause=cover_meme_clause,
+                cover_phone_cta=cover_phone_cta,
+                brand_logo_paste=brand_logo_paste,
+                logo_reference_in_generation=logo_reference_in_generation,
             )
-        elif brand_logo_paste:
-            emotion_clause = f"Expr: {cover_emotion}." if cover_emotion else ""
-            phone_clause = PHONE_IN_SCENE_RULE.format(phone=cover_phone_cta)
-            panel_lines.append(
-                f"TL COVER WOW POSTER (magazine, not stock): «{cover_hook_text}» bold DISPLAY Cyrillic readable, {highlight_rule}; "
-                f"sticky «{cover_sticky or 'Залог вернут?'}»; scene props; natural daylight clean white balance, "
-                f"NO yellow/amber cast, NO muddy skin, NO winter/snow. "
-                f"NO logo in gen. {phone_clause}. "
-                f"{emotion_clause} soft daylight crisp sharp; gold tape; 1-3 Wordstat; "
-                f"{compact(cover_scene, COVER_SCENE_HINT_COMPACT)}; {cover_meme_clause}; "
-                f"TOP-RIGHT empty clear pad — no logo, no house icon, no «Добрый дом» lettering, no plate, no sticker; "
-                f"{BOARD_STATIONERY}; #FFF"
-            )
-        else:
-            emotion_clause = (
-                f"Expression: {cover_emotion}. {I2I_EXPRESSION_LOCK}."
-                if cover_emotion
-                else f"{I2I_EXPRESSION_LOCK}."
-            )
-            panel_lines.append(
-                f"TL COVER TXT «{cover_hook_text}» bold Cyrillic black, {highlight_rule}.{sticky_lock} "
-                f"Phone EXACT «{cover_phone_cta}» readable CTA sticker. "
-                f"Host i2i left ({BODY_LOCK}); {emotion_clause} natural daylight, no yellow cast; "
-                f"{compact(cover_scene, COVER_SCENE_HINT_COMPACT)}; "
-                f"1-2 meme stickers; {BOARD_STATIONERY}; Wordstat/Tyumen; #FFF; perfect Cyrillic"
-            )
+        )
         inline_keys = [k for k in canvas_slots if k != "cover"]
         for label, key in zip(quadrant_labels[1:], inline_keys[:3]):
             panel_lines.append(f"{label} inline: {inline_prompt_for(key)}")
@@ -761,13 +807,7 @@ def main() -> int:
 
     manifest = load_json(manifest_path)
     hero = load_json(root / manifest.get("blog_hero", "memory/cover/blog-hero.json"))
-    style = load_json(
-        root
-        / manifest.get(
-            "style_file",
-            "memory/cover/quad-style-pink-cat-digital-collage-ru.json",
-        )
-    )
+    style = load_json(root / resolve_style_file(manifest, root))
     types_path = root / manifest.get("inline_types_catalog", "memory/cover/inline-visual-types.json")
     types_catalog = load_json(types_path) if types_path.is_file() else {"types": {}}
     design_code_path = root / style.get("design_code", "memory/cover/cover-design-code.json")
@@ -919,6 +959,9 @@ def main() -> int:
             ),
             "canvas_index": spec["index"],
             "standalone_cover": standalone_cover,
+            "model_policy": "primary_non_vip_only" if standalone_cover else "",
+            "vip_disabled": bool(standalone_cover),
+            "max_generation_attempts": 2 if standalone_cover else 1,
             "identity_reference_local": identity_rel if has_cover and not brand_logo_paste and not logo_reference_in_generation else "",
             "identity_reference_id": identity_spec.get("id", "") if has_cover and not brand_logo_paste and not logo_reference_in_generation else "",
             "logo_reference_local": str(logo_ref_spec.get("local") or "") if logo_reference_in_generation else "",
