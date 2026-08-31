@@ -43,11 +43,11 @@
   },
   "visual_lock": {
     "person": "NO Shakin/rieltor identity — default ZERO people on cover; max tiny silhouette if case needs",
-    "type_poster": "Designed magazine TYPE poster: spectacular Cyrillic headline hero + exactly 1 catalog meme sticker + large phone die-cut sticker; inline designed-text energy",
+    "type_poster": "Designed magazine TYPE poster: spectacular Cyrillic headline hero + exactly 1 catalog meme sticker + large hotel-lobby info-board phone; per-case prompt not template",
     "forbid_wordpress_ui": "NEVER WordPress, Gutenberg, wp-admin, block editor, theme chrome, cookie bars in generated art",
     "no_overlap": "Headline, phone sticker, meme sticker, logo pad NEVER overlap",
     "logo_lockup": "TOP-RIGHT empty pad in generation; AFTER apply factory pastes cropped-img_7143.png alpha PNG only — NO white/gray plate; cover always + 2–3 inline; NEVER send logo as Grsai reference",
-    "cover_phone": "+7 (993) 574-83-22 as LARGE die-cut vinyl peel-sticker graphic — BIG, Dzen-thumb readable; NEVER tiny in-scene door number; NEVER post-composite pill/button/chip"
+    "cover_phone": "+7 (993) 574-83-22 as LARGE hotel-lobby information-board tablo — BIG, Dzen-thumb readable; NEVER peel-pill, magnet, realtor scrap; NEVER tiny in-scene door number; NEVER post-composite pill/button/chip"
   },
   "cover_canon": "memory/cover/cover-canon.json",
   "host_face_todo": "skip_human_host — brand_logo_paste mode"

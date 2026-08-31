@@ -53,10 +53,15 @@ Write **original** copy. Never paste @klyshin_A sentences, his name, or his phon
 
 ---
 
-## Wordstat
+## Wordstat + GEO-AI (HARD — 2026-08-31)
 
-- Scout handoff: `dzen_pattern` (prefer 2–5) + RF-wide **225**, regions 55+11176
-- P0 = demand spine **под** H1
+- Scout handoff: RF-wide **225**, regions 55+11176
+- P0 = demand spine **под** H1 — live shapes from `memory/cover/wordstat-geo.json`
+- HEAD RF seeds: квартира посуточно · снять квартиру посуточно · недорого · авито · без посредников
+- TYUMEN GEO: квартиры посуточно тюмень · снять квартиру посуточно в тюмени · от хозяев · центр
+- PAIN: посуточно с животными · с собакой · залог посуточно · без залога
+- **BAN** weak seed «посуточная аренда тюмень»
+- Title/meta: brand «Добрый дом», city Тюмень when honest for local intent; NAP +7 (993) 574-83-22 in schema path (Schema agent)
 
 ## Выход
 

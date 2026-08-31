@@ -21,19 +21,19 @@ Canon: `memory/cover/cover-canon.json` (`dobry_dom_type_meme_sticker_v3`), `shar
 - Cover: logo always. Inlines: **2–3 of 7** (default inline_1/3/7).
 - **GATE fail:** white/gray/beige plate under logo; logo over headline/phone.
 
-### Phone — LARGE die-cut sticker
+### Phone — LARGE hotel-lobby information board
 
 - Number **+7 (993) 574-83-22** only (never +7 922).
 - **Do NOT** post-paste pill/button/banner/chip.
-- Phone MUST be **generated as ONE LARGE die-cut vinyl peel-sticker graphic** — BIG, Dzen-thumb readable.
-- **NOT** tiny in-scene door/intercom number. **NOT** beige/gray UI pill.
+- Phone MUST be **generated as ONE LARGE hotel-lobby information-board tablo** — BIG Cyrillic signage, Dzen-thumb readable.
+- **NOT** fridge magnet, **NOT** peel-pill, **NOT** realtor scrap, **NOT** tiny in-scene door/intercom number. **NOT** beige/gray UI pill.
 - **GATE fail:** phone pill; tiny in-scene-only phone; post-composite overlay.
 
 ### COVER MUST (type_meme_sticker_v3)
 
-1. Spectacular Cyrillic display headline 2–8 words as hero typography.
-2. Exactly ONE named meme from `meme-top100.json` as designed sticker graphic.
-3. LARGE phone die-cut sticker +7 (993) 574-83-22.
+1. Spectacular Cyrillic display headline 2–8 words as hero typography — **unique per article case**, not a recycled template.
+2. Exactly ONE named meme from `meme-top100.json` — pick by **topic-tag overlap**, skip ids used in last 8 covers (`meme-used.json`).
+3. LARGE hotel-lobby info-board phone +7 (993) 574-83-22.
 4. Default ZERO people — max tiny silhouette if case needs.
 
 ### COVER BAN (keep legacy fails)
@@ -58,8 +58,9 @@ PRIMARY: **Grsai** (`GRSAI_API_KEY`), `resolution: 2K`, 16:9, **vip disabled**, 
 
 1. **Type-led magazine poster** — spectacular headline hero + 1 catalog meme + large phone sticker.
 2. **Brand logo paste** — NO logo in generation; factory pastes PNG TOP-RIGHT 8–12%.
-3. **Phone large sticker** — +7 (993) 574-83-22 as die-cut vinyl graphic, NOT tiny in-scene.
+3. **Phone info-board tablo** — +7 (993) 574-83-22 as hotel-lobby information-board graphic, NOT peel-pill/magnet.
 4. **Anti-repeat 14д** — `memory/cover/used-motifs.json`.
+5. **Meme rotation 8** — `memory/cover/meme-used.json` + `scripts/excalibur_blog_meme_rotate.py`.
 5. **Light & bright** — natural daylight; dark cinematic запрещён.
 6. **REQUIRED meme on cover** — exactly ONE from meme-top100.json; inlines may add more (max 1 cat/article total).
 7. **NO people-heavy scene** — default zero people on cover.

@@ -199,6 +199,16 @@ def cmd_doctor(root: Path) -> int:
     if not geo.get("p0_buyer_seed_phrases"):
         print("FAIL wordstat-geo missing p0_buyer_seed_phrases", file=sys.stderr)
         return 1
+    if not geo.get("head_rf_seeds", {}).get("phrases"):
+        print("FAIL wordstat-geo missing head_rf_seeds.phrases", file=sys.stderr)
+        return 1
+    if not geo.get("tyumen_geo_seeds", {}).get("phrases"):
+        print("FAIL wordstat-geo missing tyumen_geo_seeds.phrases", file=sys.stderr)
+        return 1
+    banned = [str(x.get("phrase") or "") for x in (geo.get("banned_weak_clusters") or [])]
+    if "посуточная аренда тюмень" not in [b.casefold() for b in banned]:
+        print("FAIL wordstat-geo must ban weak cluster «посуточная аренда тюмень»", file=sys.stderr)
+        return 1
     if geo.get("russia_region_id") != 225:
         print("FAIL wordstat-geo russia_region_id must be 225", file=sys.stderr)
         return 1

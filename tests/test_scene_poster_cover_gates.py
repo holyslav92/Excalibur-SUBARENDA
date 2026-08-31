@@ -67,7 +67,7 @@ class TypeMemeStickerCoverGateTest(unittest.TestCase):
         canon = json.loads((ROOT / "memory/cover/cover-canon.json").read_text(encoding="utf-8"))
         self.assertEqual(canon["canon_id"], "dobry_dom_type_meme_sticker_v3")
         phone = canon["wow_cover_rules"]["no_element_overlap"]["cover_phone"]
-        self.assertEqual(phone.get("mode"), "large_die_cut_sticker")
+        self.assertEqual(phone.get("mode"), "large_hotel_lobby_info_board")
         self.assertFalse(phone["post_composite_bottom_left"])
         self.assertEqual(canon["cover_generation"]["mode"], "standalone_16_9")
         meme = canon.get("meme_system") or {}
@@ -140,11 +140,12 @@ class TypeMemeStickerCoverGateTest(unittest.TestCase):
         style = json.loads((ROOT / "memory/cover/quad-style-dobry-dom.json").read_text(encoding="utf-8"))
         design = json.loads((ROOT / "memory/cover/cover-design-code.json").read_text(encoding="utf-8"))
         manifest = {"cover_hook": "У двери — доплата за третьего", "cover_scene": "доплата за третьего гостя"}
-        prompt = build_standalone_cover_prompt(manifest, style, design, meme_catalog=catalog)
+        prompt = build_standalone_cover_prompt(manifest, style, design, meme_catalog=catalog, root=ROOT)
         lowered = prompt.casefold()
-        self.assertIn("hero headline", lowered)
-        self.assertIn("exactly one meme", lowered)
-        self.assertIn("large die-cut", lowered)
+        self.assertIn("not a template", lowered)
+        self.assertIn("hero h1", lowered)
+        self.assertIn("exactly one catalog meme", lowered)
+        self.assertIn("hotel-lobby information-board", lowered)
         self.assertIn("default zero", lowered)
         self.assertNotIn("optional short cyrillic hook in scene", lowered)
         self.assertNotIn("people in scene", lowered)

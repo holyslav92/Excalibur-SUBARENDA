@@ -69,6 +69,20 @@ Scout handoff `dzen_pattern` (prefer 2–5, NOT default 1).
 
 **Не читай:** live-сайт, чужие `article.html`, уже опубликованные статьи сайта как образец.
 
+## Wordstat + GEO-AI (HARD — 2026-08-31 snapshot)
+
+Factory MUST query/use live shapes from `memory/cover/wordstat-geo.json` (MCP-KV, RF=225, Tyumen 55+11176):
+
+**HEAD RF:** «квартира посуточно» 1_212_722 · «снять квартиру посуточно» 775_383 · «недорого» 98_950 · «авито» 91_577 · «без посредников» 59_322.
+
+**TYUMEN GEO:** «квартиры посуточно тюмень» 12_242 · «снять квартиру посуточно в тюмени» 4_464 · недорого 1102 · авито 884 · без посредников 748 · от хозяев 315 · центр 290.
+
+**PAIN:** «посуточно с животными» 2419 (Тюмень 34) · «с собакой» 618 · «залог посуточно» 3410 · «без залога» 1286.
+
+**BAN seed:** weak cluster «посуточная аренда тюмень» (1309) — never stuff this phrasing.
+
+Weave query shapes **inside case voice** (holyslav dense + Klyshin cuts) — no keyword stuffing. City «Тюмень» in copy only when it earns the line.
+
 ## Handoff
 
 ```text

@@ -11,6 +11,8 @@
   "tenant_geo": "Тюмень / Тюменская область",
   "primary_city_ru": "Тюмень",
   "primary_oblast_ru": "Тюменская область",
+  "brand_name_ru": "Добрый дом",
+  "nap_phone_display": "+7 (993) 574-83-22",
   "russia_region_id": 225,
   "region_ids": {
     "tyumen_city": 55,
@@ -19,24 +21,91 @@
   "scout_required_region_ids": [55, 11176],
   "compare_region_ids": [225],
   "region_ids_verified_via": "MCP-KV wordstat_get_regions_tree",
-  "region_ids_verified_at": "2026-08-20",
+  "region_ids_verified_at": "2026-08-31",
+  "wordstat_snapshot_date": "2026-08-31",
   "region_lookup_names": {
     "55": "Тюмень",
     "11176": "Тюменская область",
     "225": "Россия"
   },
+  "head_rf_seeds": {
+    "region_id": 225,
+    "verified_at": "2026-08-31",
+    "phrases": [
+      {"phrase": "квартира посуточно", "volume": 1212722},
+      {"phrase": "снять квартиру посуточно", "volume": 775383},
+      {"phrase": "недорого", "volume": 98950, "note": "modifier — pair with посуточно queries"},
+      {"phrase": "авито", "volume": 91577, "note": "channel intent — pair with посуточно"},
+      {"phrase": "без посредников", "volume": 59322}
+    ]
+  },
+  "tyumen_geo_seeds": {
+    "region_ids": [55, 11176],
+    "verified_at": "2026-08-31",
+    "phrases": [
+      {"phrase": "квартиры посуточно тюмень", "volume": 12242},
+      {"phrase": "снять квартиру посуточно в тюмени", "volume": 4464},
+      {"phrase": "недорого", "volume": 1102, "note": "Tyumen modifier"},
+      {"phrase": "авито", "volume": 884, "note": "Tyumen modifier"},
+      {"phrase": "без посредников", "volume": 748},
+      {"phrase": "от хозяев", "volume": 315},
+      {"phrase": "центр", "volume": 290}
+    ]
+  },
+  "pain_seeds": {
+    "verified_at": "2026-08-31",
+    "phrases": [
+      {"phrase": "посуточно с животными", "volume_rf": 2419, "volume_tyumen": 34},
+      {"phrase": "с собакой", "volume_rf": 618},
+      {"phrase": "залог посуточно", "volume_rf": 3410},
+      {"phrase": "без залога", "volume_rf": 1286}
+    ]
+  },
+  "banned_weak_clusters": [
+    {
+      "phrase": "посуточная аренда тюмень",
+      "volume_tyumen": 1309,
+      "reason": "weak cluster — do not seed writer/title/schema/FAQ; use live query shapes from tyumen_geo_seeds instead"
+    }
+  ],
+  "writer_title_schema_rules": {
+    "must_query_live_shapes": true,
+    "natural_case_voice": "holyslav dense + Klyshin cuts — no keyword stuffing",
+    "geo_ai": {
+      "brand": "Добрый дом",
+      "city": "Тюмень",
+      "phone": "+7 (993) 574-83-22",
+      "schema_types": ["BlogPosting", "LocalBusiness", "FAQPage"],
+      "city_in_copy": "only when it earns the line — not every paragraph",
+      "title_meta_schema_city": "Тюмень in title/meta/schema when honest for local intent"
+    },
+    "forbidden": [
+      "посуточная аренда тюмень as seed phrase",
+      "brand-vanity-only P0",
+      "invented Wordstat frequencies",
+      "SEO tail appended to H1"
+    ],
+    "roles": ["writer", "title", "schema", "faq"]
+  },
   "p0_buyer_seed_phrases": [
-    "квартиры посуточно",
-    "аренда квартиры посуточно",
-    "аренда квартиры тюмень",
-    "субаренда квартиры",
-    "залог аренда",
-    "договор аренды квартиры",
+    "квартира посуточно",
+    "снять квартиру посуточно",
+    "квартиры посуточно тюмень",
+    "снять квартиру посуточно в тюмени",
+    "недорого",
+    "авито",
+    "без посредников",
+    "от хозяев",
+    "центр",
+    "посуточно с животными",
+    "с собакой",
+    "залог посуточно",
+    "без залога",
+    "заселение квартира",
     "скрытые доплаты",
     "уборка квартиры",
     "жкх аренда",
     "правила проживания",
-    "заселение квартира",
     "квартира на сутки"
   ],
   "brand_vanity_queries_not_p0": [
@@ -49,7 +118,7 @@
     "CallMcpTool MCP-KV wordstat_get_user_info (preflight)",
     "wordstat_get_regions_tree once if ids stale",
     "Pick Klyshin hook from memory/scout/klyshin-topic-bank.*",
-    "wordstat_get_top_requests(phrase, regions=[55,11176], numPhrases) on hook + probes",
+    "wordstat_get_top_requests(phrase, regions=[55,11176], numPhrases) on hook + probes from head_rf_seeds/tyumen_geo_seeds/pain_seeds",
     "weak volume → REWORK: localize Tyumen, buyer jargon (посуточно, залог, заселение, субаренда…)",
     "skip ONLY after rework exhausted",
     "handoff log: klyshin_hook + wordstat_rework + wordstat (final P0 phrase+frequency)"
@@ -65,8 +134,11 @@
     "доплаты",
     "договор аренды",
     "командировка",
-    "тюмень"
+    "тюмень",
+    "с собакой",
+    "без посредников",
+    "от хозяев"
   ],
   "affinity_rule": "Klyshin hook → Wordstat evaluate+rework until Tyumen buyer P0 for short-term rental.",
-  "seo_geo_dual": "Final P0 Wordstat-фразы → demand spine; Title stays Klyshin hook; stickers/H2 from live queries."
+  "seo_geo_dual": "Final P0 Wordstat-фразы → demand spine; Title stays Klyshin hook; Writer/Schema weave live query shapes naturally in case voice."
 }
