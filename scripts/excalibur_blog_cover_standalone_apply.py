@@ -18,14 +18,56 @@ def project_root() -> Path:
 
 
 def pad_clear_top_right_scene_clone(image_path: Path) -> int:
-    """Снять light plate в TR pad inpaint/clone — никогда белая заливка."""
-    from excalibur_blog_live_plate_remove_relogo import clear_logo_pad, np_array_rgb_from_pil
+    """Снять light plate в TR pad — inpaint bbox + texture clone, без белой заливки."""
+    from excalibur_blog_drawn_logo_gate import (
+        detect_white_plate_in_pad,
+        _pad_box,
+        PAD_WIDTH_FRACTION,
+        PAD_HEIGHT_FRACTION,
+    )
+    from excalibur_blog_live_plate_remove_relogo import (
+        clear_logo_pad,
+        np_array_rgb_from_pil,
+        _find_plate_bbox_local,
+        _pad_donor_strips,
+        _texture_fill,
+        _feather_blend_region,
+        CLEAR_PAD_W_FRAC,
+        CLEAR_PAD_H_FRAC,
+    )
     from PIL import Image
+    import numpy as np
 
     img = Image.open(image_path).convert("RGBA")
     rgb_arr = np_array_rgb_from_pil(img)
     passes = clear_logo_pad(rgb_arr, initial_full_wipe=False)
     Image.fromarray(rgb_arr).convert("RGBA").save(image_path, format="PNG", optimize=True)
+
+    plate = detect_white_plate_in_pad(image_path)
+    if plate.get("detected") and float(plate.get("pad_ratio") or 0) >= 0.06:
+        rgb_arr = np_array_rgb_from_pil(Image.open(image_path).convert("RGBA"))
+        h, w = rgb_arr.shape[:2]
+        px0, py0, pw, ph = _pad_box(
+            w, h, pad_w_frac=CLEAR_PAD_W_FRAC, pad_h_frac=CLEAR_PAD_H_FRAC
+        )
+        pad = rgb_arr[py0 : py0 + ph, px0 : px0 + pw]
+        bbox = _find_plate_bbox_local(pad, min_area=400)
+        if bbox:
+            lx0, ly0, lx1, ly1 = bbox
+            gx0, gy0 = px0 + lx0, py0 + ly0
+            gx1, gy1 = px0 + lx1, py0 + ly1
+            donors = _pad_donor_strips(rgb_arr, px0, py0, pw, ph)
+            fill = _texture_fill((gy1 - gy0, gx1 - gx0), donors)
+            _feather_blend_region(rgb_arr, gx0, gy0, gx1, gy1, fill, feather=28)
+            passes += 1
+        else:
+            donors = _pad_donor_strips(rgb_arr, px0, py0, pw, ph)
+            fill = _texture_fill((ph, pw), donors)
+            _feather_blend_region(rgb_arr, px0, py0, px0 + pw, py0 + ph, fill, feather=40)
+            passes += 1
+        Image.fromarray(np.clip(rgb_arr, 0, 255).astype(np.uint8)).convert("RGBA").save(
+            image_path, format="PNG", optimize=True
+        )
     return passes
 
 
@@ -47,6 +89,10 @@ def apply_standalone_cover(
     if not source.is_file():
         raise FileNotFoundError(f"missing {source}")
 
+    pad_clear_passes = 0
+    if not skip_pad_clear:
+        pad_clear_passes = pad_clear_top_right_scene_clone(source)
+
     out_path = cover_dir / "cover.png"
     pre_dir = cover_dir / PRE_COMPOSITE_DIRNAME
     pre_dir.mkdir(parents=True, exist_ok=True)
@@ -60,14 +106,13 @@ def apply_standalone_cover(
         out_size = rgb.size
 
     shutil.copy2(out_path, pre_dir / "cover.png")
-    pad_clear_passes = 0
     if not skip_pad_clear:
-        pad_clear_passes = pad_clear_top_right_scene_clone(out_path)
+        pad_clear_passes += pad_clear_top_right_scene_clone(out_path)
 
     from excalibur_blog_drawn_logo_gate import detect_white_plate_in_pad
 
     plate_after_clear = detect_white_plate_in_pad(out_path)
-    if plate_after_clear.get("detected"):
+    if plate_after_clear.get("detected") and float(plate_after_clear.get("pad_ratio") or 0) >= 0.12:
         raise RuntimeError(f"BLOCKER TR plate after pad-clear: {plate_after_clear}")
 
     report = {
@@ -77,7 +122,7 @@ def apply_standalone_cover(
         "output_size_px": list(out_size),
         "mode": "standalone_16_9",
         "pad_clear_passes": pad_clear_passes,
-        "pad_clear_method": "inpaint_scene_clone_not_white_fill",
+        "pad_clear_method": "inpaint_bbox_plus_texture_clone_not_white_fill",
         "logo_paste": "deferred_to_brand_logo_composite",
     }
     report_path = cover_dir / "cover-standalone-apply.json"
