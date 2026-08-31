@@ -14,6 +14,7 @@ MEME_CATALOG_REL = "memory/cover/meme-top100.json"
 MEME_USED_REL = "memory/cover/meme-used.json"
 MEME_ASSETS_DIR = "memory/cover/memes"
 DEFAULT_ROTATION_WINDOW = 8
+GLOBALLY_EXCLUDED_MEME_IDS = frozenset({"hide_the_pain_harold", "roll_safe"})
 
 TOPIC_TAG_KEYWORDS: dict[str, tuple[str, ...]] = {
     "pets": ("лап", "собак", "животн", "pet", "кот", "кошк", "paw", "dog", "cat"),
@@ -128,7 +129,10 @@ def burned_for_topic(used_log: dict, manifest: dict) -> set[str]:
 
 
 def skip_ids(manifest: dict, used_log: dict) -> set[str]:
-    return recent_used_ids(used_log) | burned_for_topic(used_log, manifest)
+    excluded = {x.casefold() for x in GLOBALLY_EXCLUDED_MEME_IDS}
+    for meme_id in (used_log.get("globally_excluded_ids") or []):
+        excluded.add(str(meme_id).casefold())
+    return recent_used_ids(used_log) | burned_for_topic(used_log, manifest) | excluded
 
 
 def entry_tags(entry: dict) -> set[str]:

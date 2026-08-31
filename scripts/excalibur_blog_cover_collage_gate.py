@@ -38,6 +38,47 @@ def _rgb_to_hsv_numpy(arr: np.ndarray) -> tuple[np.ndarray, np.ndarray, np.ndarr
     val = cmax
     return hue, sat, val
 
+def detect_metallic_gold_dominance(image_path: Path) -> dict[str, Any]:
+    """FAIL: metallic gold / brass / 3D gold type energy in upper frame."""
+    arr = np_array_rgb(image_path)
+    h, w = arr.shape[:2]
+    zone = arr[: int(h * 0.55), :]
+    hue, sat, val = _rgb_to_hsv_numpy(zone)
+    # Gold/brass band: yellow-orange hue, high saturation, mid-high value
+    gold_mask = (hue >= 28) & (hue <= 58) & (sat > 0.35) & (val > 0.45)
+    gold_frac = float(gold_mask.mean())
+    detected = gold_frac > 0.045
+    return {"detected": detected, "gold_frac": round(gold_frac, 4)}
+
+
+def detect_dark_leather_dominance(image_path: Path) -> dict[str, Any]:
+    """FAIL: dark leather / noir brown dominance (tender-light uses cream/oatmeal)."""
+    arr = np_array_rgb(image_path)
+    luma = arr.mean(axis=2)
+    r, g, b = arr[..., 0], arr[..., 1], arr[..., 2]
+    brown = (r > g) & (g > b) & (luma < 95)
+    dark_frac = float((luma < 80).mean())
+    leather_frac = float(brown.mean())
+    detected = dark_frac > 0.22 or leather_frac > 0.18
+    return {
+        "detected": detected,
+        "dark_frac": round(dark_frac, 4),
+        "leather_frac": round(leather_frac, 4),
+    }
+
+
+def detect_gold_brass_phone_plaque(image_path: Path) -> dict[str, Any]:
+    """FAIL: gold/brass realtor plaque instead of cream/sage info board."""
+    arr = np_array_rgb(image_path)
+    h, w = arr.shape[:2]
+    # Phone/taboo zones: center-right and bottom-right lower half
+    zone = arr[int(h * 0.35) :, int(w * 0.45) :]
+    hue, sat, val = _rgb_to_hsv_numpy(zone)
+    brass = (hue >= 25) & (hue <= 55) & (sat > 0.4) & (val > 0.35)
+    brass_frac = float(brass.mean())
+    detected = brass_frac > 0.06
+    return {"detected": detected, "brass_frac": round(brass_frac, 4)}
+
 
 def detect_split_white_collage(image_path: Path) -> dict[str, Any]:
     """FAIL: hard vertical split — bright white left panel + photo right (legacy wow_poster)."""
@@ -365,8 +406,29 @@ def validate_cover_type_meme_sticker_gates(cover_path: Path) -> list[str]:
     phone = detect_large_phone_sticker(cover_path)
     if not phone.get("detected"):
         errors.append(
-            "cover.png: missing LARGE die-cut phone sticker "
-            f"(area_ratio={phone.get('area_ratio')}) — phone must be big designed graphic, not tiny in-scene number"
+            "cover.png: missing LARGE information-board phone tablo "
+            f"(area_ratio={phone.get('area_ratio')}) — phone must be big cream/sage board graphic, not tiny in-scene number"
+        )
+
+    gold = detect_metallic_gold_dominance(cover_path)
+    if gold.get("detected"):
+        errors.append(
+            "cover.png: metallic gold/brass/3D gold type detected "
+            f"(gold_frac={gold.get('gold_frac')}) — tender-light canon uses matte terracotta only, no gold"
+        )
+
+    leather = detect_dark_leather_dominance(cover_path)
+    if leather.get("detected"):
+        errors.append(
+            "cover.png: dark leather/noir dominance detected "
+            f"(dark_frac={leather.get('dark_frac')}, leather_frac={leather.get('leather_frac')}) — use cream/oatmeal hallway"
+        )
+
+    brass_plaque = detect_gold_brass_phone_plaque(cover_path)
+    if brass_plaque.get("detected") and phone.get("detected"):
+        errors.append(
+            "cover.png: gold/brass phone plaque detected "
+            f"(brass_frac={brass_plaque.get('brass_frac')}) — phone must be cream/sage info board, not gold plaque"
         )
 
     people = detect_people_heavy_scene(cover_path)
@@ -393,7 +455,7 @@ def validate_cover_type_meme_sticker_gates(cover_path: Path) -> list[str]:
         if pill.get("detected") and not phone.get("detected"):
             errors.append(
                 "cover.png: opaque phone pill detected "
-                f"(area={pill.get('area_ratio')}) — phone must be LARGE die-cut sticker, not beige/gray UI pill"
+                f"(area={pill.get('area_ratio')}) — phone must be LARGE cream/sage info-board tablo, not beige/gray UI pill"
             )
 
         plate = detect_white_plate_in_pad(cover_path)

@@ -42,7 +42,14 @@ standalone cover canvas 2048×1152 (Grsai, max 2 attempts)
 - **NEVER** logo as Grsai reference
 - Empty **top-right pad 8–12%** in generation
 - **AFTER apply:** factory pastes official alpha PNG
-- Phone **+7 (993) 574-83-22** as **LARGE hotel-lobby information-board tablo** — never pill, never peel-pill, never magnet, never tiny in-scene
+- Phone **+7 (993) 574-83-22** as **LARGE cream/sage information-board tablo** + caption «добрый дом • тюмень» — never pill/peel-pill/magnet/gold plaque
+
+## Tender light visual canon (HARD — lapoy-cover-v12 approved)
+
+- **Palette:** warm milk, oatmeal, blush **matte terracotta** rgb(158,74,54), charcoal rgb(33,29,26). **BAN** metallic gold, brass, 3D gold, dark leather, wood+Harold lobby.
+- **Scene:** bright cream/linen hallway, pale oak, houseplant, soft daylight. People default ZERO.
+- **Headline:** two-beat case-unique Cyrillic — L1 Cormorant Garamond SemiBold Italic terracotta; L2 Onest 860 charcoal lowercase. NOT Arial/Impact/Unbounded. NOT 3D gold.
+- Proof: `memory/cover/canonical-proof/lapoy-cover-v12.meta.json`
 
 ## Meme rotation (HARD)
 

@@ -3,6 +3,12 @@
   "rotation_window": 8,
   "updated_at": "2026-08-31",
   "notes": "Skip meme ids from last 8 live covers; burned_for_article blocks reuse on regen of same article.",
+  "globally_excluded_ids": ["hide_the_pain_harold", "roll_safe"],
+  "canon_proof": {
+    "image": "memory/cover/canonical-proof/lapoy-cover-v12.png",
+    "meta": "memory/cover/canonical-proof/lapoy-cover-v12.meta.json",
+    "meme_id": "woman_yelling_cat"
+  },
   "burned_for_article": {
     "LIVE-lapoy": ["hide_the_pain_harold", "roll_safe"],
     "razreshili-s-lapoy-doplatu-nazvali-posle-zaseleniya": ["hide_the_pain_harold", "roll_safe"]

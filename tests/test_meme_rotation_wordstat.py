@@ -74,6 +74,31 @@ class MemeRotationTest(unittest.TestCase):
         picked = pick_cover_meme(manifest, catalog, ROOT)
         self.assertNotIn(str(picked.get("id") or "").casefold(), recent)
 
+    def test_globally_excluded_never_picked(self) -> None:
+        sys.path.insert(0, str(ROOT / "scripts"))
+        from excalibur_blog_meme_cat_gate import load_meme_catalog  # noqa: PLC0415
+        from excalibur_blog_meme_rotate import pick_cover_meme  # noqa: PLC0415
+
+        catalog = load_meme_catalog(ROOT)
+        manifest = {"topic_id": "B99", "cover_hook": "тест"}
+        picked = pick_cover_meme(manifest, catalog, ROOT)
+        self.assertNotIn(
+            picked.get("id"),
+            {"hide_the_pain_harold", "roll_safe"},
+            picked,
+        )
+
+    def test_design_code_tender_light_locked(self) -> None:
+        design = json.loads((ROOT / "memory/cover/cover-design-code.json").read_text(encoding="utf-8"))
+        canon = design.get("tender_light_canon") or {}
+        self.assertEqual(design.get("design_code_id"), "dobry_dom_tender_light_v1")
+        self.assertIn("terracotta_matte_rgb", canon.get("palette") or {})
+        forbidden = canon.get("forbidden_palette") or []
+        self.assertIn("metallic gold", forbidden)
+        self.assertIn("dark leather", forbidden)
+        excluded = (canon.get("meme") or {}).get("globally_excluded_ids") or []
+        self.assertIn("hide_the_pain_harold", excluded)
+
 
 class WordstatSeedCanonTest(unittest.TestCase):
     def test_wordstat_geo_seeds_locked(self) -> None:
