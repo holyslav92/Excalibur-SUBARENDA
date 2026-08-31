@@ -9,7 +9,7 @@
     "Russian meme canon: sacrednik/priest, Жириновский, etc."
   ],
   "usage_rules": {
-    "cover": "NO locked host face. Logo lockup required. Topic-fit people OK. Meme stickers = people-memes/reaction templates preferred; cat-meme at most ONE slot per article (cover OR one inline).",
+    "cover": "REQUIRED exactly ONE named catalog entry on every cover as designed sticker graphic. Prefer non-cat people-memes on cover (Roll Safe, Harold, Pepe, etc.) so inlines keep the cat slot free. Cat-meme on cover counts toward max 1 cat/article across cover+7 inlines. No invented faces. No 0 memes. No 2+ memes.",
     "inline": "NO large human ever. Meme stickers only: max 15% frame area, corner/edge accent, never co-host/presenter slot. Prefer people-memes; cat-meme only if article's single cat slot.",
     "cat_meme_quota": {
       "max_slots_per_article": 1,

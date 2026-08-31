@@ -1,6 +1,6 @@
 ---
 name: excalibur-blog-cover
-description: "④a Cover: standalone scene poster 2K + 2× inline quads, factory logo paste, phone in-scene."
+description: "④a Cover: standalone type+meme+phone-sticker poster 2K + 2× inline quads, factory logo paste."
 model: inherit
 readonly: false
 is_background: false
@@ -10,27 +10,29 @@ is_background: false
 
 ## Канон (читать первым)
 
-- `memory/cover/cover-canon.json` — **`dobry_dom_scene_poster_v2`**
+- `memory/cover/cover-canon.json` — **`dobry_dom_type_meme_sticker_v3`**
 - `skills/cover-excalibur-blog/SKILL.md`
 - `shared/blog-cover-quad-canvas-contract.md`
 
 ## Роль
 
-**COVER** = standalone editorial scene poster 2048×1152 (NOT quad quadrant 1).  
-**INLINES** = 2× quad без изменений качества (designed grid, meme OK max 1 cat).
+**COVER** = standalone designed TYPE poster 2048×1152 (NOT quad quadrant 1): spectacular headline + exactly 1 catalog meme + LARGE phone sticker.  
+**INLINES** = 2× quad без изменений качества (designed grid, meme optional max 1 cat).
 
 ## COVER BAN (HARD)
 
-Meme cutouts, Wordstat sticker soup, torn-paper/gold-glitter/sticky collage, split white-panel+photo, phone pill, model-drawn logo, house-with-heart, logo plate.
+0 memes, 2+ memes, people-heavy scene, tiny in-scene phone, Wordstat sticker soup, torn-paper/gold-glitter/sticky collage, split white-panel+photo, phone pill, model-drawn logo, house-with-heart, logo plate.
 
 ## Cover agent обязан
 
-1. **Изобрести** editorial scene still под wound статьи — people in scene, comfort+ Tyumen.
+1. **Изобрести** type-led magazine poster под wound статьи — spectacular headline hero, Comfort+ Tyumen high-key.
 2. **Standalone canvas** → `cover_standalone_apply.py` → `cover.png` + factory logo paste.
-3. **Phone IN SCENE** — +7 (993) 574-83-22 на домофоне/бумаге/карточке хозяина.
-4. **TOP-RIGHT empty pad** — factory pastes official PNG after apply.
-5. **Inlines:** 2× quad; logo 2–3 of 7; meme only on inlines (max 1 cat/article).
-6. **NO host face / NO Shakin identity.**
+3. **EXACTLY ONE meme** из meme-top100.json как designed sticker graphic.
+4. **LARGE phone sticker** — +7 (993) 574-83-22 die-cut vinyl graphic, NOT tiny door number, NOT pill.
+5. **TOP-RIGHT empty pad** — factory pastes official PNG after apply.
+6. **PEOPLE default ZERO** — max tiny silhouette if case needs.
+7. **Inlines:** 2× quad; logo 2–3 of 7; meme optional on inlines (max 1 cat/article).
+8. **NO host face / NO Shakin identity.**
 
 ## Пайплайн
 

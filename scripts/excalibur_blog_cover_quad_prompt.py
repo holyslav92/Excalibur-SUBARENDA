@@ -740,11 +740,35 @@ def build_prompt(
 
 
 SCENE_POSTER_COVER_BAN = (
-    "BAN: meme cutouts, cat stickers, Roll Safe, Harold, Pepe, Wordstat sticker soup, "
-    "torn-paper collage, gold-glitter type, yellow sticky notes, split white-panel+photo, "
-    "phone pill, post-composite phone, model-drawn logo, house-with-heart, logo plate, "
-    "empty stock room, WordPress UI, wow poster collage, dark cinematic"
+    "BAN: 0 memes, 2+ memes, meme soup, people-heavy group photo, tiny in-scene phone on door, "
+    "Wordstat sticker soup, torn-paper collage, gold-glitter type, yellow sticky notes, "
+    "split white-panel+photo, phone pill, post-composite phone chip, model-drawn logo, "
+    "house-with-heart, logo plate, empty stock room, WordPress UI, wow poster collage soup, dark cinematic"
 )
+
+PHONE_STICKER_RULE = (
+    "Phone EXACT «{phone}» as ONE LARGE die-cut vinyl peel-sticker graphic — BIG, readable at Dzen thumb; "
+    "white/outline peel edge, designed sticker NOT tiny number on door/intercom/paper, "
+    "NOT beige/gray UI pill/button/banner, NOT bottom-left post-composite chip"
+)
+
+
+def resolve_cover_meme_entry(manifest: dict, catalog: dict) -> tuple[str, str]:
+    """Имя и id мема для обложки — из manifest или people-meme из каталога."""
+    cover_slot = (manifest.get("slots") or {}).get("cover") or {}
+    motifs = manifest.get("cover_motifs") or {}
+    meme_id = str(cover_slot.get("meme_id") or motifs.get("meme_id") or "").strip()
+    entries = {str(e.get("id") or ""): e for e in (catalog.get("entries") or [])}
+    if meme_id and meme_id in entries:
+        entry = entries[meme_id]
+        name = str(entry.get("name_ru") or meme_id)
+        return name, meme_id
+    for entry in catalog.get("entries") or []:
+        category = str(entry.get("category") or "").casefold()
+        entry_id = str(entry.get("id") or "").strip()
+        if category == "people" and entry_id and "cover" in (entry.get("allowed_on") or []):
+            return str(entry.get("name_ru") or entry_id), entry_id
+    return "Roll Safe / Hide the Pain Harold", "roll_safe"
 
 
 def build_standalone_cover_prompt(
@@ -753,34 +777,48 @@ def build_standalone_cover_prompt(
     design_code: dict,
     *,
     cover_phone_cta: str = DEFAULT_COVER_PHONE_CTA,
+    meme_catalog: dict | None = None,
 ) -> str:
-    cover = (manifest.get("slots") or {}).get("cover") or {}
     style_prefix = compact(
         style.get("cover_standalone_prompt_prefix")
         or design_code.get("cover_panel_prompt_block")
         or "",
         520,
     )
+    cover = (manifest.get("slots") or {}).get("cover") or {}
     cover_hook = compact(manifest.get("cover_hook", ""), 80)
     cover_scene = sanitize_cover_scene_hint(
         str(cover.get("scene_hint") or manifest.get("cover_scene") or ""),
         str(manifest.get("cover_hook_highlight") or ""),
     )
     cover_emotion = compact(str(cover.get("cover_emotion") or manifest.get("cover_emotion") or ""), 120)
-    phone_clause = PHONE_IN_SCENE_RULE.format(phone=cover_phone_cta)
-    hook_clause = f'Optional short Cyrillic hook in scene: «{cover_hook}».' if cover_hook else ""
-    emotion_clause = f"Emotion: {cover_emotion}." if cover_emotion else ""
+    phone_clause = PHONE_STICKER_RULE.format(phone=cover_phone_cta)
+    catalog = meme_catalog or {}
+    meme_name, meme_id = resolve_cover_meme_entry(manifest, catalog)
+    headline_clause = (
+        f"HERO HEADLINE — spectacular Cyrillic display typography 2-8 words: «{cover_hook}» — type is the star."
+        if cover_hook
+        else "HERO HEADLINE — spectacular Cyrillic display typography 2-8 words of THIS article hook — type is the star."
+    )
+    meme_clause = (
+        f"EXACTLY ONE meme sticker from meme-top100.json: «{meme_name}» (id={meme_id}) — "
+        "designed graphic cutout sticker, NOT invented face; prefer people-meme on cover; NOT 0, NOT 2+."
+    )
+    emotion_clause = f"Case emotion: {cover_emotion}." if cover_emotion else ""
     lines = [
         style_prefix,
         "Standalone cover canvas 2048x1152 exact 16:9 full-bleed — NOT a quad quadrant.",
-        hook_clause,
-        emotion_clause,
+        "TYPE-LED MAGAZINE POSTER — designed inline-grid energy, NOT people-photo scene.",
+        headline_clause,
+        meme_clause,
         phone_clause,
-        f"Scene: {compact(cover_scene, COVER_SCENE_HINT_COMPACT)}.",
+        "PEOPLE: default ZERO — at most tiny silhouette/hands/back-of-head if case absolutely needs; NEVER group scene.",
+        f"Case mood/on-theme: {compact(cover_scene, COVER_SCENE_HINT_COMPACT)}." if cover_scene else "",
+        emotion_clause,
         "TOP-RIGHT empty clear pad 8-12% — no logo, no house icon, no «Добрый дом», no plate.",
         SCENE_POSTER_COVER_BAN + ".",
-        "TEXT LANGUAGE LOCK: visible text RUSSIAN Cyrillic only; short readable labels.",
-        "Magazine-clean editorial still — designed inline energy as cinematic scene poster.",
+        "TEXT LANGUAGE LOCK: visible text RUSSIAN Cyrillic only; headline readable at Dzen thumb.",
+        "High-key Comfort+ Tyumen mood — thoughtful designed poster like premium inline frame.",
     ]
     return "\n".join(line for line in lines if line)
 
@@ -866,6 +904,7 @@ def main() -> int:
                 style,
                 design_code,
                 cover_phone_cta=cover_phone_cta,
+                meme_catalog=meme_catalog,
             )
         else:
             prompt = build_prompt(
@@ -955,7 +994,7 @@ def main() -> int:
         )
         batch = {
             "pipeline": manifest.get("pipeline") or (
-                "scene_poster_v2_standalone_cover" if standalone_cover else "quad_canvas_2x_image_api_longform"
+                "type_meme_sticker_v3_standalone_cover" if standalone_cover else "quad_canvas_2x_image_api_longform"
             ),
             "canvas_index": spec["index"],
             "standalone_cover": standalone_cover,

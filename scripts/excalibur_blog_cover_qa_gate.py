@@ -14,15 +14,18 @@ BRAND_LOGO_PASTE_CHECKS = (
     "logo_composite_stamp_pass",
     "cover_logo_pasted",
     "inline_logo_count_2_3",
-    "cover_phone_993_in_scene",
+    "cover_phone_993_large_sticker",
     "forbid_phone_pill_post_composite",
     "forbid_922_phone",
     "forbid_ai_drawn_logo_cover",
     "forbid_wordpress_ui_in_art",
     "no_logo_plate_cover",
     "forbid_logo_overlaps_headline_phone",
-    "scene_poster_editorial",
-    "forbid_cover_meme_collage",
+    "type_meme_sticker_editorial",
+    "require_cover_meme_sticker",
+    "require_display_headline",
+    "require_large_phone_sticker",
+    "forbid_people_heavy_cover",
     "forbid_split_white_collage",
 )
 
@@ -212,9 +215,9 @@ def validate_cover_qa(article_dir: Path, root: Path) -> dict:
             errors.extend(validate_article_logo_gates_slim(article_dir, root))
             errors.extend(validate_cover_phone_and_overlap_gates(article_dir, root))
             try:
-                from excalibur_blog_cover_collage_gate import validate_cover_scene_poster_gates
+                from excalibur_blog_cover_collage_gate import validate_cover_type_meme_sticker_gates
 
-                errors.extend(validate_cover_scene_poster_gates(article_dir / "cover" / "cover.png"))
+                errors.extend(validate_cover_type_meme_sticker_gates(article_dir / "cover" / "cover.png"))
             except ImportError:
                 errors.append("excalibur_blog_cover_collage_gate.py missing — scene poster QA unavailable")
         except ImportError:

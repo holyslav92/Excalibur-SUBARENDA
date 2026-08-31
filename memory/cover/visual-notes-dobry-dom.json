@@ -1,19 +1,23 @@
 {
   "tenant": "dobry-dom",
-  "status": "scene_poster_v2",
-  "label_ru": "Добрый дом — cover scene poster v2 + inline designed grid",
-  "philosophy": "COVER = editorial scene poster (inline-quality design energy as cinematic still). INLINES = designed grid, meme allowed (max 1 cat/article). Logo NEVER in Grsai reference — factory alpha PNG overlay AFTER gen only. Phone IN scene on cover — NEVER post-composite pill. Hard gates: no meme/collage on cover, no plate under logo, no WP UI, max-2 gen; vip disabled.",
-  "cover_scene_poster": {
+  "status": "type_meme_sticker_v3",
+  "label_ru": "Добрый дом — cover type+meme+phone-sticker v3 + inline designed grid",
+  "philosophy": "COVER = designed magazine TYPE poster (spectacular headline + exactly 1 catalog meme + large phone sticker). Steal inline designed-text/grid energy — NOT people-photo scene energy. INLINES = designed grid unchanged; meme optional (max 1 cat/article). Logo NEVER in Grsai reference — factory alpha PNG overlay AFTER gen only. Hard gates: require meme+headline+large phone on cover, ban people-heavy scene; max-2 gen; vip disabled.",
+  "cover_type_meme_sticker": {
     "mode": "standalone_16_9",
-    "quality_bar": "Same design thoughtfulness as inline frames — but full-bleed cinematic still of the case",
+    "quality_bar": "Same designed-text/grid thoughtfulness as inline frames — but as full-bleed magazine poster with spectacular headline hero",
     "must": [
-      "people in scene",
-      "guest-night wound visible",
-      "phone in-scene",
+      "spectacular Cyrillic display headline 2-8 words as hero",
+      "exactly one named meme from meme-top100.json",
+      "large die-cut phone sticker +7 (993) 574-83-22",
+      "default zero people",
       "top-right logo pad empty in generation"
     ],
     "forbidden": [
-      "meme cutouts on cover",
+      "0 memes on cover",
+      "2+ memes / meme soup",
+      "people-heavy group scene photo",
+      "tiny in-scene phone only",
       "sticker soup",
       "torn-paper collage",
       "split white-panel layout",
@@ -23,18 +27,19 @@
     ]
   },
   "meme_energy": {
-    "cover": "FORBIDDEN — scene poster only, no meme cutouts",
-    "inline_slots": "2–4 of 7 may use meme_panel / reaction_card (see inline-visual-types-dobry-dom.json)",
+    "cover": "REQUIRED — exactly ONE catalog meme sticker on every cover (named entry from meme-top100.json)",
+    "inline_slots": "2–4 of 7 may use meme_panel / reaction_card (see inline-visual-types-dobry-dom.json); meme NOT required on every inline",
     "cat_meme_quota": {
       "max_slots": 1,
-      "scope": "inline_1..inline_7 only (NOT cover)",
-      "prefer": "one inline — never cover",
-      "qa_fail_if": "cover has meme OR 2+ inline frames contain cat-meme"
+      "scope": "cover + inline_1..inline_7",
+      "prefer": "non-cat people-meme on cover; cat on one inline if needed",
+      "qa_fail_if": "2+ frames contain cat-meme OR cover has cat + inline has cat"
     },
     "formats": ["reaction_face", "before_after", "caption_panel", "comic_beat", "meme_sticker"],
     "catalog": "memory/cover/meme-top100.json",
     "forbidden": [
-      "meme on cover",
+      "0 memes on cover",
+      "2+ memes on cover",
       "logo under stickers or meme overlays",
       "phone pill covering headline",
       "snow/winter off-season",
@@ -56,7 +61,7 @@
     "forbid_logo_plate": true,
     "forbid_logo_as_generation_reference": true,
     "cover_phone": "+7 (993) 574-83-22",
-    "cover_phone_placement": "in_scene_door_card_paper_magnet_intercom"
+    "cover_phone_placement": "large_die_cut_vinyl_sticker_graphic"
   },
   "generation_policy": {
     "provider": "grsai",
@@ -71,15 +76,18 @@
     "logo_composite_stamp_pass",
     "cover_logo_pasted",
     "inline_logo_count_2_3",
-    "cover_phone_993_in_scene",
+    "cover_phone_993_large_sticker",
     "forbid_phone_pill_post_composite",
     "forbid_922_phone",
     "forbid_ai_drawn_logo_cover",
     "forbid_wordpress_ui_in_art",
     "no_logo_plate_cover",
     "forbid_logo_overlaps_headline_phone",
-    "scene_poster_editorial",
-    "forbid_cover_meme_collage",
+    "type_meme_sticker_editorial",
+    "require_cover_meme_sticker",
+    "require_display_headline",
+    "require_large_phone_sticker",
+    "forbid_people_heavy_cover",
     "forbid_split_white_collage",
     "quad_manifest_valid",
     "motif_no_collision_14d",

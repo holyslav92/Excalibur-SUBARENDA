@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Cover collage/meme gates for scene_poster_v2 — FAIL accidental collage covers."""
+"""Cover gates for dobry_dom_type_meme_sticker_v3 — type+meme+phone-sticker poster."""
 
 from __future__ import annotations
 
@@ -74,27 +74,157 @@ def detect_split_white_collage(image_path: Path) -> dict[str, Any]:
     }
 
 
-def detect_cover_meme_sticker_zone(image_path: Path) -> dict[str, Any]:
-    """FAIL: high-contrast cutout sticker in bottom-left meme zone."""
-    arr = np_array_rgb(image_path)
-    h, w = arr.shape[:2]
-    zone = arr[int(h * 0.62) :, : int(w * 0.28)]
+def _meme_zone_energy(zone: np.ndarray) -> dict[str, Any]:
     if zone.size == 0:
         return {"detected": False, "reason": "empty_zone"}
 
     luma = zone.mean(axis=2)
-    color_std = zone.std(axis=(0, 1)).mean()
+    color_std = float(zone.std(axis=(0, 1)).mean())
     edge_energy = float(np.abs(np.diff(luma, axis=1)).mean()) if luma.shape[1] > 2 else 0.0
+    edge_energy += float(np.abs(np.diff(luma, axis=0)).mean()) if luma.shape[0] > 2 else 0.0
     dark_frac = float((luma < 80).mean())
     bright_frac = float((luma > 220).mean())
 
-    detected = edge_energy > 18 and color_std > 35 and (dark_frac > 0.08 or bright_frac > 0.12)
+    detected = edge_energy > 16 and color_std > 32 and (dark_frac > 0.06 or bright_frac > 0.10)
     return {
         "detected": detected,
         "edge_energy": round(edge_energy, 2),
-        "color_std": round(float(color_std), 2),
+        "color_std": round(color_std, 2),
         "dark_frac": round(dark_frac, 3),
         "bright_frac": round(bright_frac, 3),
+    }
+
+
+def detect_meme_sticker_zones(image_path: Path) -> dict[str, Any]:
+    """Detect high-contrast cutout sticker energy in corner zones (cover v3 requires ≥1)."""
+    arr = np_array_rgb(image_path)
+    h, w = arr.shape[:2]
+    zones = {
+        "bottom_left": arr[int(h * 0.55) :, : int(w * 0.32)],
+        "bottom_right": arr[int(h * 0.55) :, int(w * 0.68) :],
+        "top_left": arr[: int(h * 0.42), : int(w * 0.32)],
+        "top_right_pad_adjacent": arr[: int(h * 0.42), int(w * 0.58) : int(w * 0.82)],
+    }
+    hits: list[str] = []
+    details: dict[str, Any] = {}
+    for name, zone in zones.items():
+        result = _meme_zone_energy(zone)
+        details[name] = result
+        if result.get("detected"):
+            hits.append(name)
+    return {"count": len(hits), "hits": hits, "zones": details}
+
+
+def detect_cover_meme_sticker_zone(image_path: Path) -> dict[str, Any]:
+    """Backward-compat alias — bottom-left zone only."""
+    arr = np_array_rgb(image_path)
+    h, w = arr.shape[:2]
+    zone = arr[int(h * 0.62) :, : int(w * 0.28)]
+    result = _meme_zone_energy(zone)
+    result["detected"] = bool(result.get("detected"))
+    return result
+
+
+def detect_display_headline(image_path: Path) -> dict[str, Any]:
+    """PASS heuristic: spectacular display headline — dark typography energy in top band."""
+    arr = np_array_rgb(image_path)
+    h, w = arr.shape[:2]
+    top = arr[: int(h * 0.40), : int(w * 0.92)]
+    if top.size == 0:
+        return {"detected": False, "reason": "empty_top"}
+
+    luma = top.mean(axis=2)
+    dark_frac = float((luma < 95).mean())
+    edge_h = float(np.abs(np.diff(luma, axis=1)).mean()) if luma.shape[1] > 2 else 0.0
+    edge_v = float(np.abs(np.diff(luma, axis=0)).mean()) if luma.shape[0] > 2 else 0.0
+    edge_energy = edge_h + edge_v
+    luma_std = float(luma.std())
+
+    detected = dark_frac >= 0.035 and edge_energy >= 12 and luma_std >= 22
+    return {
+        "detected": detected,
+        "dark_frac": round(dark_frac, 4),
+        "edge_energy": round(edge_energy, 2),
+        "luma_std": round(luma_std, 2),
+    }
+
+
+def detect_large_phone_sticker(image_path: Path) -> dict[str, Any]:
+    """PASS heuristic: LARGE die-cut phone sticker — bright/colorful block, not tiny in-scene text."""
+    arr = np_array_rgb(image_path)
+    h, w = arr.shape[:2]
+    # Search lower 55% and side margins — sticker is a designed graphic, not headline band.
+    band = arr[int(h * 0.38) :, :]
+    if band.size == 0:
+        return {"detected": False, "reason": "empty_band"}
+
+    gray = band.mean(axis=2)
+    hue, sat, val = _rgb_to_hsv_numpy(band)
+    # Sticker: saturated OR high-contrast rectangular patch with sufficient area.
+    colorful = (sat > 0.22) & (val > 0.35)
+    high_contrast = gray > 200
+    candidate = colorful | high_contrast
+
+    min_area = int(w * h * 0.012)
+    visited = np.zeros(candidate.shape, dtype=bool)
+    best_area = 0
+    best_bbox = (0, 0, 0, 0)
+
+    rows, cols = candidate.shape
+    for y in range(0, rows, 4):
+        for x in range(0, cols, 4):
+            if not candidate[y, x] or visited[y, x]:
+                continue
+            stack = [(y, x)]
+            area = 0
+            x0 = x1 = x
+            y0 = y1 = y
+            while stack:
+                cy, cx = stack.pop()
+                if cy < 0 or cy >= rows or cx < 0 or cx >= cols:
+                    continue
+                if visited[cy, cx] or not candidate[cy, cx]:
+                    continue
+                visited[cy, cx] = True
+                area += 1
+                x0, x1 = min(x0, cx), max(x1, cx)
+                y0, y1 = min(y0, cy), max(y1, cy)
+                stack.extend([(cy - 1, cx), (cy + 1, cx), (cy, cx - 1), (cy, cx + 1)])
+            if area > best_area:
+                best_area = area
+                best_bbox = (x0, y0, x1, y1)
+
+    bbox_w = max(1, best_bbox[2] - best_bbox[0])
+    bbox_h = max(1, best_bbox[3] - best_bbox[1])
+    area_ratio = best_area / max(w * h, 1)
+    aspect = bbox_w / bbox_h
+    detected = best_area >= min_area and area_ratio >= 0.012 and 1.8 <= aspect <= 9.0
+    return {
+        "detected": detected,
+        "area_ratio": round(area_ratio, 4),
+        "aspect": round(aspect, 2),
+        "best_area": best_area,
+        "bbox": best_bbox,
+    }
+
+
+def detect_people_heavy_scene(image_path: Path) -> dict[str, Any]:
+    """FAIL: flesh/skin-tone clusters occupying large center — people-heavy scene photo."""
+    arr = np_array_rgb(image_path)
+    h, w = arr.shape[:2]
+    center = arr[int(h * 0.12) : int(h * 0.88), int(w * 0.10) : int(w * 0.90)]
+    hue, sat, val = _rgb_to_hsv_numpy(center)
+    # Skin-ish hues with moderate saturation.
+    skin = ((hue < 45) | (hue > 330)) & (sat > 0.12) & (sat < 0.65) & (val > 0.25) & (val < 0.92)
+    skin_frac = float(skin.mean())
+    # Secondary: high local variance blobs (crowd/photo texture).
+    luma = center.mean(axis=2)
+    texture = float(luma.std())
+    detected = skin_frac > 0.11 and texture > 28
+    return {
+        "detected": detected,
+        "skin_frac": round(skin_frac, 4),
+        "texture_std": round(texture, 2),
     }
 
 
@@ -161,20 +291,33 @@ def detect_torn_paper_edge_soup(image_path: Path) -> dict[str, Any]:
     }
 
 
-def detect_scene_poster_pass(image_path: Path) -> dict[str, Any]:
-    """PASS heuristic: full-bleed scene — not split collage, no meme zone."""
+def detect_type_meme_sticker_pass(image_path: Path) -> dict[str, Any]:
+    """PASS heuristic: type-led poster with headline + meme + large phone sticker."""
+    headline = detect_display_headline(image_path)
+    meme = detect_meme_sticker_zones(image_path)
+    phone = detect_large_phone_sticker(image_path)
+    people = detect_people_heavy_scene(image_path)
     split = detect_split_white_collage(image_path)
-    meme = detect_cover_meme_sticker_zone(image_path)
-    pass_scene = not split.get("detected") and not meme.get("detected")
+    pass_v3 = (
+        headline.get("detected")
+        and meme.get("count", 0) >= 1
+        and meme.get("count", 0) <= 1
+        and phone.get("detected")
+        and not people.get("detected")
+        and not split.get("detected")
+    )
     return {
-        "pass": pass_scene,
+        "pass": pass_v3,
+        "headline": headline,
+        "meme_zones": meme,
+        "phone_sticker": phone,
+        "people_heavy": people,
         "split_white_collage": split,
-        "meme_sticker_zone": meme,
     }
 
 
-def validate_cover_scene_poster_gates(cover_path: Path) -> list[str]:
-    """COVER-only gates — inlines are not checked here."""
+def validate_cover_type_meme_sticker_gates(cover_path: Path) -> list[str]:
+    """COVER-only gates for dobry_dom_type_meme_sticker_v3."""
     errors: list[str] = []
     if not cover_path.is_file():
         return errors
@@ -183,21 +326,7 @@ def validate_cover_scene_poster_gates(cover_path: Path) -> list[str]:
     if split.get("detected"):
         errors.append(
             "cover.png: split white-panel collage detected "
-            f"(left_white={split.get('left_white_frac')}) — regenerate as full-bleed scene poster"
-        )
-
-    meme = detect_cover_meme_sticker_zone(cover_path)
-    if meme.get("detected"):
-        errors.append(
-            "cover.png: meme/sticker cutout zone detected bottom-left "
-            f"(edge={meme.get('edge_energy')}) — memes forbidden on cover"
-        )
-
-    empty = detect_empty_stock_room(cover_path)
-    if empty.get("detected"):
-        errors.append(
-            "cover.png: empty stock room detected "
-            f"(std={empty.get('global_std')}) — cover must be lived-in scene poster"
+            f"(left_white={split.get('left_white_frac')}) — regenerate as type-led poster, not split collage"
         )
 
     sticky = detect_yellow_sticky_soup(cover_path)
@@ -211,21 +340,60 @@ def validate_cover_scene_poster_gates(cover_path: Path) -> list[str]:
     if torn.get("detected"):
         errors.append(
             "cover.png: torn-paper collage energy detected "
-            f"(edge={torn.get('edge_energy')}) — cover must be cinematic scene, not sticker soup"
+            f"(edge={torn.get('edge_energy')}) — cover must be designed type poster, not sticker soup"
+        )
+
+    headline = detect_display_headline(cover_path)
+    if not headline.get("detected"):
+        errors.append(
+            "cover.png: missing spectacular display headline typography "
+            f"(dark_frac={headline.get('dark_frac')}, edge={headline.get('edge_energy')})"
+        )
+
+    meme = detect_meme_sticker_zones(cover_path)
+    if meme.get("count", 0) < 1:
+        errors.append(
+            "cover.png: missing required catalog meme sticker on cover "
+            f"(zones={meme.get('hits')}) — exactly ONE meme from meme-top100.json required"
+        )
+    elif meme.get("count", 0) > 1:
+        errors.append(
+            "cover.png: meme soup — more than one meme sticker zone detected "
+            f"(hits={meme.get('hits')}) — exactly ONE meme allowed on cover"
+        )
+
+    phone = detect_large_phone_sticker(cover_path)
+    if not phone.get("detected"):
+        errors.append(
+            "cover.png: missing LARGE die-cut phone sticker "
+            f"(area_ratio={phone.get('area_ratio')}) — phone must be big designed graphic, not tiny in-scene number"
+        )
+
+    people = detect_people_heavy_scene(cover_path)
+    if people.get("detected"):
+        errors.append(
+            "cover.png: people-heavy scene photo detected "
+            f"(skin_frac={people.get('skin_frac')}) — cover must be type-led poster, default zero people"
+        )
+
+    empty = detect_empty_stock_room(cover_path)
+    if empty.get("detected") and not headline.get("detected"):
+        errors.append(
+            "cover.png: empty stock room detected "
+            f"(std={empty.get('global_std')}) — cover must be designed type poster with headline"
         )
 
     try:
         from excalibur_blog_drawn_logo_gate import (
-            detect_drawn_lockup_in_image,
             detect_phone_pill_post_composite,
             detect_white_plate_in_pad,
         )
 
         pill = detect_phone_pill_post_composite(cover_path)
-        if pill.get("detected"):
+        if pill.get("detected") and not phone.get("detected"):
             errors.append(
                 "cover.png: opaque phone pill detected "
-                f"(area={pill.get('area_ratio')}) — phone must be in-scene, not post-composite pill"
+                f"(area={pill.get('area_ratio')}) — phone must be LARGE die-cut sticker, not beige/gray UI pill"
             )
 
         plate = detect_white_plate_in_pad(cover_path)
@@ -238,3 +406,8 @@ def validate_cover_scene_poster_gates(cover_path: Path) -> list[str]:
         errors.append("excalibur_blog_drawn_logo_gate.py missing — cover phone/plaque QA unavailable")
 
     return errors
+
+
+# Backward-compatible aliases (scene_poster_v2 gates inverted → v3)
+validate_cover_scene_poster_gates = validate_cover_type_meme_sticker_gates
+detect_scene_poster_pass = detect_type_meme_sticker_pass

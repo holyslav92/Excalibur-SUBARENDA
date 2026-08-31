@@ -1,4 +1,4 @@
-"""Tests for scene_poster_v2 cover gates — collage FAIL, scene PASS."""
+"""Tests for type_meme_sticker_v3 cover gates — scene no-meme FAIL, type+meme+phone PASS."""
 from __future__ import annotations
 
 import json
@@ -13,27 +13,81 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 
-class ScenePosterCoverGateTest(unittest.TestCase):
-    def test_canon_scene_poster_v2_locked(self) -> None:
-        canon = json.loads((ROOT / "memory/cover/cover-canon.json").read_text(encoding="utf-8"))
-        self.assertEqual(canon["canon_id"], "dobry_dom_scene_poster_v2")
-        phone = canon["wow_cover_rules"]["no_element_overlap"]["cover_phone"]
-        self.assertFalse(phone["post_composite_bottom_left"])
-        self.assertTrue(phone["in_scene_only"])
-        self.assertEqual(canon["cover_generation"]["mode"], "standalone_16_9")
+def _draw_type_poster_v3(path: Path) -> None:
+    """Synthetic v3 PASS poster: headline band + meme zone + large phone sticker."""
+    img = Image.new("RGB", (1200, 675), (248, 245, 238))
+    draw = ImageDraw.Draw(img)
+    # Global subtle paper texture (incl. top-right logo pad)
+    for x in range(0, 1200, 5):
+        for y in range(0, 675, 5):
+            base = img.getpixel((x, y))
+            img.putpixel((x, y), tuple(max(0, min(255, c + ((x * 13 + y * 7) % 11) - 5)) for c in base))
+    # Headline typography band (dark blocks with edge texture)
+    draw.rectangle((48, 36, 900, 210), fill=(20, 24, 32))
+    for x in range(70, 880, 14):
+        draw.rectangle((x, 60, x + 8, 95), fill=(235, 228, 215))
+        draw.rectangle((x, 110, x + 10, 145), fill=(200, 175, 140))
+    for y in range(50, 200, 11):
+        draw.line((60, y, 880, y), fill=(35, 40, 50), width=1)
+    # Meme sticker zone bottom-left (high contrast cutout)
+    for x in range(40, 280, 3):
+        for y in range(480, 640, 3):
+            img.putpixel((x, y), (30 + (x % 40), 25 + (y % 35), 20 + ((x + y) % 30)))
+    draw.ellipse((60, 500, 250, 620), fill=(90, 70, 55), outline=(10, 10, 10), width=4)
+    # Large phone sticker mid-right (saturated blue — not pill/beige)
+    draw.rounded_rectangle((780, 420, 1120, 540), radius=18, fill=(30, 110, 210), outline=(255, 255, 255), width=5)
+    draw.rectangle((820, 460, 1080, 505), fill=(255, 255, 255))
+    # Logo pad zone: decorative hatch (high local variance — not a blank plate)
+    for x in range(1040, 1195):
+        for y in range(8, 178):
+            tone = 205 + ((x * 17 + y * 23) % 35)
+            img.putpixel((x, y), (tone, tone - 18, tone - 32))
+    img.save(path)
 
-    def test_tenant_cover_wow_rules_scene_poster_v2(self) -> None:
+
+def _draw_people_scene_no_meme(path: Path) -> None:
+    """Synthetic scene_poster_v2-style FAIL: people tones, no meme, no headline, no phone sticker."""
+    img = Image.new("RGB", (1200, 675), (185, 175, 160))
+    draw = ImageDraw.Draw(img)
+    # Doorway / people flesh tones in center
+    draw.rectangle((200, 120, 1000, 620), fill=(205, 175, 145))
+    for x in range(280, 520, 8):
+        for y in range(180, 580, 8):
+            img.putpixel((x, y), (210 + (x % 25), 150 + (y % 20), 120 + ((x + y) % 18)))
+    for x in range(620, 920, 8):
+        for y in range(200, 600, 8):
+            img.putpixel((x, y), (200 + (x % 22), 160 + (y % 18), 130 + ((x + y) % 16)))
+    # Tiny in-scene phone text only
+    draw.text((720, 520), "+7 993 574-83-22", fill=(30, 30, 30))
+    img.save(path)
+
+
+class TypeMemeStickerCoverGateTest(unittest.TestCase):
+    def test_canon_type_meme_sticker_v3_locked(self) -> None:
+        canon = json.loads((ROOT / "memory/cover/cover-canon.json").read_text(encoding="utf-8"))
+        self.assertEqual(canon["canon_id"], "dobry_dom_type_meme_sticker_v3")
+        phone = canon["wow_cover_rules"]["no_element_overlap"]["cover_phone"]
+        self.assertEqual(phone.get("mode"), "large_die_cut_sticker")
+        self.assertFalse(phone["post_composite_bottom_left"])
+        self.assertEqual(canon["cover_generation"]["mode"], "standalone_16_9")
+        meme = canon.get("meme_system") or {}
+        self.assertIn("REQUIRED", str(meme.get("cover", "")))
+
+    def test_tenant_cover_wow_rules_type_meme_sticker_v3(self) -> None:
         tenant = json.loads((ROOT / "shared/tenant-config.json").read_text(encoding="utf-8"))
         wow = tenant.get("cover_wow_rules") or {}
-        self.assertEqual(wow.get("canon_id"), "dobry_dom_scene_poster_v2")
+        self.assertEqual(wow.get("canon_id"), "dobry_dom_type_meme_sticker_v3")
         self.assertEqual(wow.get("cover_generation_mode"), "standalone_16_9")
-        self.assertTrue(wow.get("forbid_cover_meme_collage"))
+        self.assertTrue(wow.get("require_cover_meme_sticker"))
+        self.assertTrue(wow.get("require_display_headline"))
+        self.assertTrue(wow.get("require_large_phone_sticker"))
+        self.assertTrue(wow.get("forbid_people_heavy_cover"))
         self.assertTrue(wow.get("vip_disabled"))
 
     def test_collage_gate_fails_split_white_panel(self) -> None:
         from excalibur_blog_cover_collage_gate import (
             detect_split_white_collage,
-            validate_cover_scene_poster_gates,
+            validate_cover_type_meme_sticker_gates,
         )
 
         with tempfile.TemporaryDirectory() as tmp:
@@ -47,52 +101,80 @@ class ScenePosterCoverGateTest(unittest.TestCase):
             img.save(path)
             split = detect_split_white_collage(path)
             self.assertTrue(split.get("detected"), split)
-            errors = validate_cover_scene_poster_gates(path)
+            errors = validate_cover_type_meme_sticker_gates(path)
             self.assertTrue(errors)
 
-    def test_collage_gate_passes_full_bleed_scene(self) -> None:
-        from excalibur_blog_cover_collage_gate import validate_cover_scene_poster_gates
+    def test_collage_gate_fails_people_scene_no_meme(self) -> None:
+        from excalibur_blog_cover_collage_gate import validate_cover_type_meme_sticker_gates
 
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "scene.png"
-            img = Image.new("RGB", (1200, 675), (185, 175, 160))
-            draw = ImageDraw.Draw(img)
-            draw.rectangle((60, 90, 540, 620), fill=(95, 82, 72))
-            draw.rectangle((620, 140, 860, 640), fill=(205, 198, 188))
-            for x in range(700, 1100, 12):
-                for y in range(180, 600, 12):
-                    img.putpixel((x, y), (160 + (x % 35), 140 + (y % 28), 120 + ((x + y) % 22)))
-            for x in range(980, 1180, 6):
-                for y in range(20, 200, 6):
-                    img.putpixel((x, y), (228 + (x % 5), 222 + (y % 4), 215 + ((x + y) % 3)))
-            draw.text((720, 520), "+7 993 574-83-22", fill=(30, 30, 30))
-            img.save(path)
-            errors = validate_cover_scene_poster_gates(path)
-            self.assertEqual(errors, [], errors)
+            _draw_people_scene_no_meme(path)
+            errors = validate_cover_type_meme_sticker_gates(path)
+            self.assertTrue(errors)
+            joined = " ".join(errors)
+            self.assertIn("meme", joined.lower())
+            self.assertTrue(
+                "people-heavy" in joined or "headline" in joined or "phone sticker" in joined,
+                joined,
+            )
+
+    def test_collage_gate_passes_type_meme_phone_sticker(self) -> None:
+        from excalibur_blog_cover_collage_gate import detect_type_meme_sticker_pass
+
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "poster.png"
+            _draw_type_poster_v3(path)
+            heuristic = detect_type_meme_sticker_pass(path)
+            self.assertTrue(heuristic.get("pass"), heuristic)
+            self.assertTrue(heuristic["headline"].get("detected"), heuristic)
+            self.assertGreaterEqual(heuristic["meme_zones"].get("count", 0), 1, heuristic)
+            self.assertTrue(heuristic["phone_sticker"].get("detected"), heuristic)
+            self.assertFalse(heuristic["people_heavy"].get("detected"), heuristic)
+
+    def test_standalone_cover_prompt_requires_headline_meme_phone(self) -> None:
+        from excalibur_blog_cover_quad_prompt import build_standalone_cover_prompt
+        from excalibur_blog_meme_cat_gate import load_meme_catalog
+
+        catalog = load_meme_catalog(ROOT)
+        style = json.loads((ROOT / "memory/cover/quad-style-dobry-dom.json").read_text(encoding="utf-8"))
+        design = json.loads((ROOT / "memory/cover/cover-design-code.json").read_text(encoding="utf-8"))
+        manifest = {"cover_hook": "У двери — доплата за третьего", "cover_scene": "доплата за третьего гостя"}
+        prompt = build_standalone_cover_prompt(manifest, style, design, meme_catalog=catalog)
+        lowered = prompt.casefold()
+        self.assertIn("hero headline", lowered)
+        self.assertIn("exactly one meme", lowered)
+        self.assertIn("large die-cut", lowered)
+        self.assertIn("default zero", lowered)
+        self.assertNotIn("optional short cyrillic hook in scene", lowered)
+        self.assertNotIn("people in scene", lowered)
 
     def test_quad_slots_standalone_cover_spec(self) -> None:
         from excalibur_blog_quad_slots import (
             STANDALONE_COVER_SPEC,
             all_canvas_specs,
-            uses_scene_poster_v2,
+            uses_type_meme_sticker_v3,
         )
 
-        self.assertTrue(uses_scene_poster_v2(ROOT))
+        self.assertTrue(uses_type_meme_sticker_v3(ROOT))
         specs = all_canvas_specs(7)
         self.assertEqual(specs[0]["standalone_cover"], True)
         self.assertEqual(STANDALONE_COVER_SPEC["canvas_file"], "cover/cover-canvas.png")
 
-    def test_cover_qa_gate_includes_scene_poster_checks(self) -> None:
+    def test_cover_qa_gate_includes_type_meme_sticker_checks(self) -> None:
         gate_src = (ROOT / "scripts/excalibur_blog_cover_qa_gate.py").read_text(encoding="utf-8")
         for key in (
-            "scene_poster_editorial",
-            "forbid_cover_meme_collage",
+            "type_meme_sticker_editorial",
+            "require_cover_meme_sticker",
+            "require_display_headline",
+            "require_large_phone_sticker",
+            "forbid_people_heavy_cover",
             "forbid_split_white_collage",
-            "validate_cover_scene_poster_gates",
+            "validate_cover_type_meme_sticker_gates",
         ):
             self.assertIn(key, gate_src)
 
-    def test_style_fallback_never_pink_cat_for_scene_v2(self) -> None:
+    def test_style_fallback_never_pink_cat_for_v3(self) -> None:
         from excalibur_blog_cover_quad_prompt import (
             DEFAULT_STYLE_DOBRY_DOM,
             resolve_style_file,
@@ -124,9 +206,9 @@ class ScenePosterCoverGateTest(unittest.TestCase):
             result = detect_yellow_sticky_soup(path)
             self.assertTrue(result.get("detected"), result)
 
-    def test_contract_scene_poster_v2(self) -> None:
+    def test_contract_type_meme_sticker_v3(self) -> None:
         contract = (ROOT / "shared/blog-cover-quad-canvas-contract.md").read_text(encoding="utf-8")
-        self.assertIn("scene_poster_v2", contract)
+        self.assertIn("type_meme_sticker_v3", contract)
         self.assertIn("standalone", contract.lower())
         self.assertIn("cover-canvas.png", contract)
 

@@ -1,8 +1,8 @@
 {
-  "design_code_id": "dobry_dom_scene_poster_v2",
+  "design_code_id": "dobry_dom_type_meme_sticker_v3",
   "status": "locked",
   "tenant": "dobry-dom",
-  "label_ru": "Добрый дом — editorial scene poster v2 + factory logo paste",
+  "label_ru": "Добрый дом — type+meme+phone-sticker poster v3 + factory logo paste",
   "canon_file": "memory/cover/cover-canon.json",
   "visual_notes": "memory/cover/visual-notes-dobry-dom.json",
   "tenant_scope": "Excalibur-SUBARENDA / добрыйдом-72.рф ONLY — never tymenrieltor.ru / Excalibur-2-Cloud",
@@ -20,23 +20,24 @@
     "forbid_ai_drawn_logo": true,
     "forbid_multiple_logos_per_image": true
   },
-  "scene_poster_rules": [
-    "COVER = standalone 2048×1152 editorial scene poster — NOT quad quadrant 1",
-    "Full-bleed designed still of THIS article guest-night wound; comfort+ Tyumen apartment; people in scene",
-    "Short Cyrillic hook 2-6 words IN artwork if it helps — not a wall of type",
-    "Phone +7 (993) 574-83-22 painted IN SCENE (door intercom, paper on door, host card, fridge magnet) — NEVER post-composite pill",
+  "type_meme_sticker_rules": [
+    "COVER = standalone 2048×1152 designed magazine TYPE poster — NOT quad quadrant 1",
+    "HERO = spectacular Cyrillic display headline 2-8 words of THIS article hook — type is the star",
+    "EXACTLY ONE named meme from meme-top100.json as designed sticker graphic (prefer non-cat people-meme on cover)",
+    "Phone +7 (993) 574-83-22 as ONE LARGE die-cut vinyl peel-sticker — BIG, Dzen-thumb readable — NEVER tiny in-scene door number, NEVER beige pill",
+    "PEOPLE default ZERO — max tiny silhouette/hands if case needs; NEVER group scene / host+guests photo",
     "TOP-RIGHT empty clear pad 8-12% — factory pastes official alpha PNG after generation",
-    "BAN on cover: meme cutouts, Wordstat sticker soup, torn-paper/gold-glitter/sticky collage, split white-panel+photo, phone pill, model-drawn logo, house-with-heart, logo plate",
-    "Inlines: unchanged 2× quad — designed grid, meme allowed (max 1 cat/article), logo on 2-3 of 7"
+    "BAN on cover: 0 memes, 2+ memes, meme soup, people-heavy photo, Wordstat sticker soup, torn-paper/gold-glitter/sticky collage, split white-panel+photo, phone pill, model-drawn logo, house-with-heart, logo plate",
+    "Inlines: unchanged 2× quad — designed grid, meme optional (max 1 cat/article), logo on 2-3 of 7"
   ],
-  "invention_rule": "Каждая обложка — новая выдуманная editorial scene под wound статьи. Без inventory lock и без дефолтных props.",
+  "invention_rule": "Каждая обложка — новый выдуманный type-led poster под wound статьи. Без inventory lock и без дефолтных props.",
   "anti_repeat": {
     "window_days": 14,
     "log": "memory/cover/used-motifs.json",
     "gate": "scripts/excalibur_blog_cover_motif_gate.py"
   },
   "forbidden_daypart_formula": "REJECTED: morning desk+document / day street / evening close talk / night split — never use",
-  "composition_rule": "Cover = cinematic editorial scene still: guests + wound moment + in-scene phone + optional short hook. TOP-RIGHT empty pad for factory logo paste. NO collage/meme/sticker soup.",
+  "composition_rule": "Cover = designed magazine poster: spectacular headline typography + exactly 1 catalog meme sticker + large phone sticker + Comfort+ Tyumen mood. TOP-RIGHT empty pad for factory logo paste. NO people scene photo. NO collage soup.",
   "emotion_bank": [
     "спокойная уверенность",
     "настороженность",
@@ -46,45 +47,46 @@
     "тёплый финал заселения"
   ],
   "cover_rules": [
-    "Editorial scene poster — designed still, magazine-clean, inline-quality design energy",
-    "NO meme / cat / Roll Safe / sticker soup on cover",
+    "Type-led magazine poster — spectacular Cyrillic headline hero, designed inline-grid energy",
+    "REQUIRED exactly ONE catalog meme sticker on cover (named entry from meme-top100.json)",
+    "REQUIRED LARGE die-cut phone sticker +7 (993) 574-83-22",
+    "NO people-heavy group scene / host+guests doorway photo",
     "NO torn-paper / gold-glitter / yellow sticky / split white-panel collage",
     "NO WordPress / CMS UI chrome in art — Cover-QA FAIL",
-    "NO overlapping: headline, phone, people, logo pad",
-    "NO host Shakin/rieltor identity — Russian guests by topic only",
+    "NO overlapping: headline, phone sticker, meme sticker, logo pad",
+    "NO host Shakin/rieltor identity",
     "Factory pastes canonical PNG logo TOP-RIGHT 8–12%; NEVER AI-drawn logo",
     "LIGHT BRIGHT high-key: natural daylight, clean whites — no dark cinematic",
-    "Phone IN SCENE only — +7 (993) 574-83-22 on door plate / host card / paper / magnet",
-    "cover_hook 2-6 words Cyrillic optional in scene; NOT wall of labels",
-    "Палитра: lived-in comfort+; ink #141821; gold #dcc5a1 accent sparingly in-scene only",
+    "Палитра: lived-in comfort+; ink #141821; gold #dcc5a1 accent sparingly in type/design",
     "Запрещены: empty stock, WP screenshot, tymenrieltor branding, marble palace, hotel-luxe"
   ],
   "inline_rules": [
     "Longform: 7 inline (inline_1…inline_7) — UTILITY-FIRST per H2",
     "Стиль = B02-approved designed grid: #FFFFFF high-key, gold #dcc5a1 / black #141821, clean labels",
-    "Meme allowed on inlines: people-meme or max 1 cat/article ≤15% frame",
+    "Meme optional on inlines: people-meme or max 1 cat/article ≤15% frame",
     "Logo factory paste on 2–3 inlines only (default inline_1, inline_3, inline_7) — same TOP-RIGHT pad",
     "NO host face / Shakin / identity-real on inline",
     "UTILITY TEST (FAIL): без абзаца читатель не выносит факт/порядок/число/сравнение",
     "Запрещено: WordPress UI, logo on all 7 inlines, overlapping headline+labels, icon soup, empty UI"
   ],
   "visual_motifs": [
-    "natural daylight in Tyumen comfort+ apartment",
-    "guests at door / check-in wound moment",
-    "host card or paper with fee visible in-scene",
+    "spectacular Cyrillic display headline as hero",
+    "one catalog meme as designed sticker graphic",
+    "large die-cut vinyl phone sticker",
+    "Comfort+ Tyumen high-key designed poster mood",
     "TOP-RIGHT reserved empty pad for factory logo"
   ],
   "color_palette": {
-    "background": "lived-in warm neutrals",
+    "background": "high-key warm neutrals / #FFFFFF panels",
     "panel_background": "#FFFFFF",
     "ink": "#141821",
     "accent_primary": "#dcc5a1",
     "accent_gold_mid": "#ecd9b6",
     "light_glow": "#fff8ee",
-    "usage": "Cover = full-bleed scene; inlines = #FFFFFF designed panels. No twilight/dark cinematic."
+    "usage": "Cover = type-led poster; inlines = #FFFFFF designed panels. No twilight/dark cinematic."
   },
-  "typography_reference": "Short readable Cyrillic in-scene if needed (2-6 words). Clean sans/serif — NOT display collage, NOT gold glitter.",
-  "cover_panel_prompt_block": "EDITORIAL SCENE POSTER 16:9 RU, full-bleed cinematic still, comfort+ Tyumen apartment natural daylight. THIS article guest-night wound visible in one glance: people in scene, lived-in interior or doorway. Optional short Cyrillic hook 2-6 words readable in artwork. Phone EXACT +7 (993) 574-83-22 painted IN SCENE on door intercom, paper on door, host card, fridge magnet — readable, NOT opaque pill/button/banner. TOP-RIGHT EMPTY CLEAR PAD 8-12% — no logo, no house icon, no «Добрый дом» lettering, no plate. NO meme cutouts, NO cat stickers, NO Roll Safe/Harold/Pepe, NO Wordstat sticker soup, NO torn-paper collage, NO gold-glitter type, NO yellow sticky notes, NO split white-panel+photo layout, NO beige phone pill. Magazine-clean designed still like premium inline frame — NOT accidental collage. NO WordPress/Gutenberg/wp-admin. NO empty stock room.",
+  "typography_reference": "Spectacular Cyrillic display headline 2-8 words — hero typography, readable at Dzen thumb. Clean designed sans/serif display — NOT gold glitter, NOT Wordstat soup.",
+  "cover_panel_prompt_block": "TYPE-LED MAGAZINE POSTER 16:9 RU, standalone 2048x1152 full-bleed designed cover. HERO: spectacular Cyrillic display headline 2-8 words of THIS article hook — big beautiful type, readable at Dzen thumb. EXACTLY ONE named meme sticker from meme-top100.json as designed graphic cutout (prefer people-meme, not cat). Phone EXACT +7 (993) 574-83-22 as ONE LARGE die-cut vinyl peel-sticker — BIG readable graphic, NOT tiny door/intercom number, NOT beige/gray pill. PEOPLE default ZERO — max tiny silhouette if needed; NEVER group scene. Comfort+ Tyumen high-key mood on-theme. TOP-RIGHT EMPTY CLEAR PAD 8-12% — no logo, no house icon, no «Добрый дом» lettering, no plate. BAN: 0 memes, 2+ memes, meme soup, people-heavy photo, Wordstat sticker soup, torn-paper collage, gold-glitter type, yellow sticky notes, split white-panel+photo, phone pill, model-drawn logo, empty stock, WordPress UI, wow poster collage soup.",
   "inline_information_block": "INLINE UTILITY LOCK: designed grid (#FFF, gold/black labels, clean layout). Teach fact/order/number/comparison for THIS H2. TOP-RIGHT empty pad ONLY on 2-3 designated inline slots (factory logo paste). Optional tiny people-meme sticker (≤15% frame); cat-meme only if article's ONE cat slot. Labels = facts from article. NO WordPress UI.",
-  "global_negative": "WordPress, Gutenberg, wp-admin, meme cutout, Roll Safe, Harold, Pepe, cat sticker, shocked cat, wordstat sticker soup, torn paper collage, gold glitter typography, yellow sticky note, split white panel photo, phone pill, post-composite phone, beige gray white phone banner, drawn logo, house-with-heart, logo plate, tablichka, empty stock, dark cinematic, overlapping headline phone logo, multiple logos per image, AI-drawn Добрый дом, tymenrieltor, Shakin host, marble palace, hotel-luxe, wow poster collage"
+  "global_negative": "WordPress, Gutenberg, wp-admin, 0 memes on cover, 2+ memes, meme soup, people-heavy group photo, host guests doorway scene, tiny in-scene phone only, wordstat sticker soup, torn paper collage, gold glitter typography, yellow sticky note, split white panel photo, phone pill, post-composite phone chip, drawn logo, house-with-heart, logo plate, tablichka, empty stock, dark cinematic, overlapping headline phone meme logo, multiple logos per image, AI-drawn Добрый дом, tymenrieltor, Shakin host, marble palace, hotel-luxe, wow poster collage"
 }

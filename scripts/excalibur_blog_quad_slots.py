@@ -7,7 +7,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-# Longform canon: standalone cover + 7 inline from 2 quad canvases (scene_poster_v2).
+# Longform canon: standalone cover + 7 inline from 2 quad canvases (type_meme_sticker_v3).
 INLINE_SLOT_KEYS: tuple[str, ...] = tuple(f"inline_{i}" for i in range(1, 8))
 INLINE_FILES: dict[str, str] = {key: f"inline-{i:02d}.png" for i, key in enumerate(INLINE_SLOT_KEYS, start=1)}
 
@@ -15,7 +15,7 @@ INLINE_FILES: dict[str, str] = {key: f"inline-{i:02d}.png" for i, key in enumera
 CANVAS_1_SLOTS: tuple[str, ...] = ("cover", "inline_1", "inline_2", "inline_3")
 CANVAS_2_SLOTS: tuple[str, ...] = ("inline_4", "inline_5", "inline_6", "inline_7")
 
-# scene_poster_v2: cover standalone; inlines only on quads.
+# type_meme_sticker_v3: cover standalone; inlines only on quads.
 SCENE_POSTER_CANVAS_1_SLOTS: tuple[str, ...] = ("inline_1", "inline_2", "inline_3", "inline_4")
 SCENE_POSTER_CANVAS_2_SLOTS: tuple[str, ...] = ("inline_5", "inline_6", "inline_7", "panel_quiet_pad")
 NON_EXPORT_SLOTS: frozenset[str] = frozenset({"panel_quiet_pad"})
@@ -101,7 +101,8 @@ LEGACY_CANVAS_FILE = "cover/canvas-quad.png"
 LEGACY_BATCH_FILE = "cover/quad-mcp-batch.json"
 LEGACY_RESULT_FILE = "cover/quad-mcp-result.json"
 
-SCENE_POSTER_CANON_ID = "dobry_dom_scene_poster_v2"
+TYPE_MEME_STICKER_CANON_ID = "dobry_dom_type_meme_sticker_v3"
+SCENE_POSTER_CANON_ID = TYPE_MEME_STICKER_CANON_ID  # backward-compat alias
 
 
 def project_root() -> Path:
@@ -120,8 +121,13 @@ def load_cover_canon_id(root: Path | None = None) -> str:
     return str(data.get("canon_id") or "").strip()
 
 
+def uses_type_meme_sticker_v3(root: Path | None = None) -> bool:
+    return load_cover_canon_id(root) == TYPE_MEME_STICKER_CANON_ID
+
+
 def uses_scene_poster_v2(root: Path | None = None) -> bool:
-    return load_cover_canon_id(root) == SCENE_POSTER_CANON_ID
+    """Backward-compat: standalone cover canon (now type_meme_sticker_v3)."""
+    return uses_type_meme_sticker_v3(root)
 
 
 def slot_map_for_mode(*, scene_poster_v2: bool) -> dict[str, str]:

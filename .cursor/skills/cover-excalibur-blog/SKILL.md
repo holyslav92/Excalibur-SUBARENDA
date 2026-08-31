@@ -1,17 +1,17 @@
 ---
 name: cover-excalibur-blog
-description: "④a Cover: standalone scene poster 2K + 2× inline quads, factory logo overlay, phone in-scene."
+description: "④a Cover: standalone type+meme+phone-sticker poster 2K + 2× inline quads, factory logo overlay."
 ---
 
-# Cover Agent — longform 8 images (scene_poster_v2)
+# Cover Agent — longform 8 images (type_meme_sticker_v3)
 
 ## Philosophy
 
-**COVER = editorial scene poster** — designed inline energy as a full-bleed cinematic still. One glance = the guest-night wound. **NO meme/collage on cover.**
+**COVER = designed magazine TYPE poster** — spectacular Cyrillic headline hero + exactly ONE catalog meme sticker + LARGE phone die-cut sticker. Steal inline designed-text/grid energy — NOT people-photo scene.
 
-**INLINES unchanged** — 2× quad designed grid; meme allowed (max 1 cat/article); logo on 2–3 of 7.
+**INLINES unchanged** — 2× quad designed grid; meme optional (max 1 cat/article); logo on 2–3 of 7.
 
-**Ban on COVER:** meme cutouts, Wordstat sticker soup, torn-paper/gold-glitter/sticky collage, split white-panel+photo, phone pill, model-drawn logo, house-with-heart, logo plate.
+**Ban on COVER:** 0 memes, 2+ memes, people-heavy scene, tiny in-scene phone, Wordstat sticker soup, torn-paper/gold-glitter/sticky collage, split white-panel+photo, phone pill, model-drawn logo, house-with-heart, logo plate.
 
 ## Generation policy (HARD)
 
@@ -42,7 +42,7 @@ standalone cover canvas 2048×1152 (Grsai, max 2 attempts)
 - **NEVER** logo as Grsai reference
 - Empty **top-right pad 8–12%** in generation
 - **AFTER apply:** factory pastes official alpha PNG
-- Phone **+7 (993) 574-83-22** **IN SCENE** — never pill
+- Phone **+7 (993) 574-83-22** as **LARGE die-cut sticker** — never pill, never tiny in-scene
 
 ## Runbook
 
@@ -67,4 +67,4 @@ python3 scripts/excalibur_blog_brand_logo_composite.py --article-dir "$ARTICLE"
 python3 scripts/excalibur_blog_cover_qa_gate.py --article-dir "$ARTICLE"
 ```
 
-Contract: `shared/blog-cover-quad-canvas-contract.md` · Canon: `dobry_dom_scene_poster_v2`
+Contract: `shared/blog-cover-quad-canvas-contract.md` · Canon: `dobry_dom_type_meme_sticker_v3`

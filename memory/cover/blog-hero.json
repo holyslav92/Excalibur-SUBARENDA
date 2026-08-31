@@ -30,21 +30,24 @@
       "inline_7"
     ]
   },
-  "scene_poster_rules": {
-    "canon_id": "dobry_dom_scene_poster_v2",
+  "type_meme_sticker_rules": {
+    "canon_id": "dobry_dom_type_meme_sticker_v3",
     "forbid_wordpress_ui_in_art": true,
     "no_element_overlap": true,
-    "scene_poster_editorial": true,
-    "forbid_cover_meme_collage": true,
+    "type_meme_sticker_editorial": true,
+    "require_cover_meme_sticker": true,
+    "require_display_headline": true,
+    "require_large_phone_sticker": true,
+    "forbid_people_heavy_cover": true,
     "cover_qa_fail_if_broken": true
   },
   "visual_lock": {
-    "person": "NO Shakin/rieltor identity — Russian guests fitting check-in topic only",
-    "scene_poster": "Editorial scene poster: full-bleed cinematic still of guest-night wound; designed inline energy; optional 2-6 word Cyrillic hook",
+    "person": "NO Shakin/rieltor identity — default ZERO people on cover; max tiny silhouette if case needs",
+    "type_poster": "Designed magazine TYPE poster: spectacular Cyrillic headline hero + exactly 1 catalog meme sticker + large phone die-cut sticker; inline designed-text energy",
     "forbid_wordpress_ui": "NEVER WordPress, Gutenberg, wp-admin, block editor, theme chrome, cookie bars in generated art",
-    "no_overlap": "Headline, phone in-scene, people, logo pad NEVER overlap",
+    "no_overlap": "Headline, phone sticker, meme sticker, logo pad NEVER overlap",
     "logo_lockup": "TOP-RIGHT empty pad in generation; AFTER apply factory pastes cropped-img_7143.png alpha PNG only — NO white/gray plate; cover always + 2–3 inline; NEVER send logo as Grsai reference",
-    "cover_phone": "+7 (993) 574-83-22 painted IN scene (door intercom, paper on door, host card, fridge magnet) — readable, pretty; NEVER post-composite pill/button/banner; NEVER meme/sticky over phone"
+    "cover_phone": "+7 (993) 574-83-22 as LARGE die-cut vinyl peel-sticker graphic — BIG, Dzen-thumb readable; NEVER tiny in-scene door number; NEVER post-composite pill/button/chip"
   },
   "cover_canon": "memory/cover/cover-canon.json",
   "host_face_todo": "skip_human_host — brand_logo_paste mode"
