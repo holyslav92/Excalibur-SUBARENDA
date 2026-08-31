@@ -13,7 +13,7 @@ from pathlib import Path
 BRAND_LOGO_PASTE_CHECKS = (
     "logo_composite_stamp_pass",
     "cover_logo_pasted",
-    "inline_logo_count_2_3",
+    "inline_no_logo_on_inlines",
     "cover_phone_993_large_sticker",
     "forbid_phone_pill_post_composite",
     "forbid_922_phone",
@@ -36,7 +36,7 @@ LOGO_REFERENCE_CHECKS = (
     "forbid_ai_drawn_logo_cover",
     "forbid_wordpress_ui_in_art",
     "no_logo_plate_cover",
-    "inline_logo_count_2_3",
+    "inline_no_logo_on_inlines",
 )
 
 HOST_IDENTITY_CHECKS = (

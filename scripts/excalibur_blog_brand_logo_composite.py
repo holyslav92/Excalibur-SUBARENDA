@@ -26,9 +26,9 @@ LOGO_WIDTH_FRACTION_MIN = 0.08
 LOGO_WIDTH_FRACTION_MAX = 0.12
 LOGO_WIDTH_FRACTION_DEFAULT = 0.10
 FIXED_LOGO_CORNER = "top_right"
-INLINE_LOGO_COUNT_MIN = 2
-INLINE_LOGO_COUNT_MAX = 3
-DEFAULT_INLINE_LOGO_SLOTS = ("inline_1", "inline_3", "inline_7")
+INLINE_LOGO_COUNT_MIN = 0
+INLINE_LOGO_COUNT_MAX = 0
+DEFAULT_INLINE_LOGO_SLOTS: tuple[str, ...] = ()
 DEFAULT_PHONE_DISPLAY = "+7 (993) 574-83-22"
 DEFAULT_PHONE_TEL = "tel:+79935748322"
 FORBIDDEN_PHONE_DIGITS = (
@@ -213,8 +213,20 @@ def slot_key_for_inline_file(name: str) -> str:
     return name
 
 
+def _inline_logo_bounds(cfg: dict[str, Any]) -> tuple[int, int]:
+    lo_raw = cfg.get("inline_logo_count_min")
+    hi_raw = cfg.get("inline_logo_count_max")
+    lo = INLINE_LOGO_COUNT_MIN if lo_raw is None else int(lo_raw)
+    hi = INLINE_LOGO_COUNT_MAX if hi_raw is None else int(hi_raw)
+    return lo, hi
+
+
 def resolve_inline_logo_slots(article_dir: Path, cfg: dict[str, Any]) -> list[str]:
-    """Какие inline-файлы получают factory logo paste (2–3 шт.)."""
+    """Какие inline-файлы получают factory logo paste (factory lock: 0 — только cover)."""
+    lo, hi = _inline_logo_bounds(cfg)
+    if lo == 0 and hi == 0:
+        return []
+
     manifest_path = article_dir / "cover" / "quad-manifest.json"
     manifest_slots: list[str] = []
     if manifest_path.is_file():
@@ -233,8 +245,6 @@ def resolve_inline_logo_slots(article_dir: Path, cfg: dict[str, Any]) -> list[st
         files = [inline_file_for_slot(str(k)) for k in defaults]
 
     files = [f for f in files if f.startswith("inline-") and f.endswith(".png")]
-    lo = int(cfg.get("inline_logo_count_min") or INLINE_LOGO_COUNT_MIN)
-    hi = int(cfg.get("inline_logo_count_max") or INLINE_LOGO_COUNT_MAX)
     if len(files) < lo:
         raise ValueError(
             f"inline logo slots {len(files)} < factory min {lo} — set logo_paste_inline_slots in quad-manifest"
@@ -549,8 +559,7 @@ def validate_logo_stamp(article_dir: Path, root: Path) -> list[str]:
         errors.append(f"logo corner must be fixed {expected_corner!r}, stamp has {stamp_corner!r}")
 
     inline_files = list(stamp.get("inline_logo_files") or [])
-    inline_lo = int(cfg.get("inline_logo_count_min") or INLINE_LOGO_COUNT_MIN)
-    inline_hi = int(cfg.get("inline_logo_count_max") or INLINE_LOGO_COUNT_MAX)
+    inline_lo, inline_hi = _inline_logo_bounds(cfg)
     if not (inline_lo <= len(inline_files) <= inline_hi):
         errors.append(
             f"inline logo count {len(inline_files)} outside factory {inline_lo}–{inline_hi}"

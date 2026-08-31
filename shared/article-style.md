@@ -95,14 +95,15 @@ Scout: prefer **2–5**. Title rides **Wordstat P0 demand**, not legal essay.
 
 ---
 
-## Заголовок (H1)
+## Заголовок (H1) — Dzen shape (HARD)
 
-- **Cable case + consequence** — как сильные Dzen-H1, но mapped to **guest daily-rental**:
-  parents 1 Sept, deposit, parking, reviews, hot water, neighbors, dog.
-- Примеры shape (свой текст): ««Рядом с вузом» — оказалось 40 минут пешком» ·
-  «Залог 5 000 ₽: на выезде сказали — не вернём» · «Почти внесли предоплату — в объявлении не было парковки».
-- Wordstat P0 — demand spine **под** H1, не сырая SEO-фраза.
-- **Ban H1:** «5 вопросов», «7 шагов», «что проверить первым», «лучшие», «ТОП-10», юридические хвосты.
+**Только эта форма:** крик (shout / уже случившийся вердикт) + казус (incident) + цифра (₽ / ночи / люди) + правда из текста (факт, который тело реально отдаёт).
+
+- Two-beat stop-factor — cable pain-scene + consequence; **«Тюмень» в H1 не обязательна**.
+- **Ban how-to:** «как снять посуточно», «N советов», «пошаговая инструкция», «что нужно знать», chopped three-word SEO leads, duty-log «дата+часы+двор».
+- **Ban H1 skeleton:** «5 вопросов», «7 шагов», «что проверить первым», «лучшие», «ТОП-10», юридические хвосты.
+- Кликбейт **on-topic** (залог, код, ключи, паспорт, родители, питомец) — не random scream.
+- Quality: easy spoken Russian; engage without smearing «Добрый дом» — мы хост «у нас так», казус = другой листинг / ошибка гостя / рынок.
 
 ---
 
