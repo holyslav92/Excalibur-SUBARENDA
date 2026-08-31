@@ -271,3 +271,41 @@ files_changed:
 checks_run:
 - interlink retry → OK interlink_done (2 targets)
 commit: pending
+
+## INC-20260831-1654 — Metrika credentials missing (content-learner B05)
+
+status: open
+run_date: 2026-08-31
+role: excalibur-blog-content-learner
+topic_id: B05
+article_dir: memory/blog/articles/B05-goryachaya-voda-konchilas-na-vtoroj-minute-dusha-v-kvartire-posutochno
+severity: low
+category: env
+
+### What went wrong
+
+- `excalibur_blog_metrika_fetch.py --days 30 --ingest` exit 2: `METRIKA CREDENTIALS BLOCKER` — `YANDEX_METRIKA_OAUTH_TOKEN` and `YANDEX_METRIKA_COUNTER_ID` not set in Cloud Secrets/env.
+- Content-learner recorded Metrika-only lessons as low/medium confidence; no behavioral cohort for B05 slot.
+
+### How the agent recovered this run
+
+- Evidence gate SKIP (no content-evidence-report.json under human-first-v2); lessons recorded from publish artifacts + research-notes.
+- Metrika ingest skipped after explicit BLOCKER; no silent fallback.
+
+### Durable fix needed before next run
+
+- Set `YANDEX_METRIKA_OAUTH_TOKEN` (OAuth metrika:read) and `YANDEX_METRIKA_COUNTER_ID` in Cloud Secrets so content-learner can ingest `memory/analytics/metrika-latest.json`.
+
+### Suggested files to inspect/change
+
+- Cloud Secrets / tenant env
+- `scripts/excalibur_blog_metrika_fetch.py`
+
+### Secrets
+
+- YANDEX_METRIKA_OAUTH_TOKEN
+- YANDEX_METRIKA_COUNTER_ID
+
+### Fixer resolution
+
+pending
