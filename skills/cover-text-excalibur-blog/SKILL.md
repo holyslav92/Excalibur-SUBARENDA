@@ -73,8 +73,8 @@ python3 scripts/excalibur_blog_derouter_opus_chat.py \
 6. `inline_labels.*` — **3–6 фактов на панель** (цифры, порядок, инструменты из `article.html`).
 7. Labels — короткие (1–4 слова), но несут **пользу**: срок, %, шаг, сравнение.
 8. **Телефон на обложке:** в `cover-text.json` не добавляй отдельное поле pill — номер **+7 (993) 574-83-22**
-   попадает в промпт Cover как **in-scene** надпись (лента/бумага/магнит/экран) в тихой зоне;
-   никогда поверх hook/sticky/мема.
+   попадает в промпт Cover как **LARGE die-cut vinyl sticker**; никогда tiny in-scene door number;
+   никогда поверх hook/meme/headline.
 
 ## Gate (обязательно до Kie)
 
