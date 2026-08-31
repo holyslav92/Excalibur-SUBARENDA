@@ -68,7 +68,7 @@ Scout? → research_start → Research → Title → Writer → Sol
 
 **Thin conductor:** Cursor не пишет прозу и не рисует кадры. **Writer** = `claude-opus-5` (полный CASE в `drafts/writer.html`, не тезисы). **Sol** = `gpt-5.6-terra` (слог `shared/SOUL.md` + `shared/soul-examples/`).
 
-**CASE delivery gate:** после Title и после Writer/Sol — `scripts/excalibur_blog_case_delivery_gate.py`. BLOCK → переписать роль, не публиковать.
+**CASE delivery gate:** после Title и после Writer/Sol — `scripts/excalibur_blog_case_delivery_gate.py`. BLOCK → переписать роль, не публиковать. **BAN duty-log lead** (дата/часы/`HH:MM` в §1) и **BAN `HH:MM` в H1** — holyslav smooth quote-first opening.
 
 **Воронка:** один блок CTA **только в конце** статьи (не после чеклиста, не после «у нас так»).
 

@@ -1,4 +1,4 @@
-"""HARD gate: CASE delivery blocks how-to H1 and thin openings."""
+"""HARD gate: CASE delivery blocks how-to H1, duty-log openings, thin leads."""
 from __future__ import annotations
 
 import json
@@ -14,12 +14,9 @@ from scripts.excalibur_blog_case_delivery_gate import (
 
 ROOT = Path(__file__).resolve().parents[1]
 
-DENSE_OPENING = (
-    "<p>26 августа, Тюмень, 23:40. Код из приложения сработал, дверь открылась — "
-    "но из крана льётся ледяная вода. В чате хост отвечает в 00:12: «Утром будет, "
-    "бойлер выключили ночью». Вы стоите с мокрыми руками, завтра встреча в 9:00 — "
-    "а «утром» в их голове наступает после вашего выезда. Обещание было. "
-    "И оно не соврало — просто про их утро, не про ваше — доплата 800 ₽ в переписке не светилась.</p>"
+SMOOTH_OPENING = (
+    "<p>«Оплатили за двоих» — в чате бронь закрыта. У двери просят ещё 2 400 ₽ "
+    "за третьего. Нет. Так не заселяем.</p>"
     "<p>Я хост посуточной в Тюмени. Это «Добрый дом».</p>"
 )
 
@@ -44,6 +41,18 @@ class CaseDeliveryGateTest(unittest.TestCase):
         )
         self.assertEqual(errors, [], errors)
 
+    def test_passes_h1_without_clock_oplatili(self) -> None:
+        errors = check_h1("Оплатили за двоих. У двери попросили доплату за третьего")
+        self.assertEqual(errors, [], errors)
+
+    def test_passes_h1_without_clock_utrom(self) -> None:
+        errors = check_h1("Перевёл предоплату. Утром квартиру уже сдали")
+        self.assertEqual(errors, [], errors)
+
+    def test_blocks_h1_with_clock(self) -> None:
+        errors = check_h1("Звонок в 10:00. Заселился в 22:00 — у стола нет розетки")
+        self.assertTrue(any("clock" in e.lower() for e in errors))
+
     def test_blocks_h1_without_two_beats(self) -> None:
         errors = check_h1("Залог при посуточной аренде")
         self.assertTrue(any("two-beat" in e for e in errors))
@@ -57,8 +66,23 @@ class CaseDeliveryGateTest(unittest.TestCase):
         errors = check_opening_body(chopped, label="test")
         self.assertTrue(any("chopped" in e for e in errors))
 
-    def test_passes_dense_case_opening(self) -> None:
-        errors = check_opening_body(DENSE_OPENING, label="test")
+    def test_blocks_duty_log_saturday_stamp(self) -> None:
+        opening = (
+            "<p>Суббота, 23 августа 2026 года, 21:40. Тюмень, двор у подъезда. "
+            "Гость с чемоданом.</p>"
+        )
+        errors = check_opening_body(opening, label="test")
+        self.assertTrue(any("duty-log" in e for e in errors))
+
+    def test_blocks_duty_log_august_clock(self) -> None:
+        opening = (
+            "<p>28 августа в 22:15 Марина искала квартиру в Тюмени.</p>"
+        )
+        errors = check_opening_body(opening, label="test")
+        self.assertTrue(any("duty-log" in e for e in errors))
+
+    def test_passes_smooth_holyslav_opening(self) -> None:
+        errors = check_opening_body(SMOOTH_OPENING, label="test")
         self.assertEqual(errors, [], errors)
 
     def test_title_stage_blocks_skeleton(self) -> None:

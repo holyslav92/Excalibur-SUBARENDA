@@ -54,9 +54,60 @@ def _hits(text: str) -> list[str]:
 
 # Telegram-cosplay / chopped 3-word line spam instead of dense CASE lead.
 CHOPPED_TIME_CITY_RE = re.compile(
-    r"^\s*\d{1,2}:\d{2}\.\s+\S+[.!]\s+\S+[.!]",
-    re.M,
+    r"^\s*\d{1,2}:\d{2}\.\s+\S+[.!]\s+\S+[.!]"
+    r"|^\s*(?:Понедельник|Вторник|Среда|Четверг|Пятница|Суббота|Воскресенье)\b"
+    r"|^\s*\d{1,2}\s+(?:января|февраля|марта|апреля|мая|июня|июля|августа|"
+    r"сентября|октября|ноября|декабря)\b",
+    re.M | re.I,
 )
+
+WEEKDAY_START_RE = re.compile(
+    r"^\s*(?:Понедельник|Вторник|Среда|Четверг|Пятница|Суббота|Воскресенье)\b",
+    re.I,
+)
+
+CALENDAR_DATE_RE = re.compile(
+    r"\b\d{1,2}\s+(?:января|февраля|марта|апреля|мая|июня|июля|августа|"
+    r"сентября|октября|ноября|декабря)(?:\s+\d{4})?\b",
+    re.I,
+)
+
+CLOCK_RE = re.compile(r"\b\d{1,2}:\d{2}\b")
+
+DUTY_LOG_STAMP_RES = (
+    re.compile(r"тюмень,\s*двор", re.I),
+    re.compile(r"выходит из такси у подъезда", re.I),
+)
+
+
+def _opening_duty_slice(text: str, *, max_chars: int = 500) -> str:
+    """First ~500 chars / first two beats for duty-log stamp detection."""
+    head = (text or "").strip()
+    if not head:
+        return ""
+    paras = re.findall(r"<p[^>]*>(.*?)</p>", head, flags=re.I | re.S)
+    if paras:
+        joined = " ".join(_plain(p).strip() for p in paras[:2] if _plain(p).strip())
+        return joined[:max_chars]
+    return _plain(head)[:max_chars]
+
+
+def _is_duty_log_lead(text: str) -> bool:
+    """True when opening starts as dispatch log (date/clock/yard stamp), not holyslav smooth lead."""
+    duty = _opening_duty_slice(text)
+    if not duty:
+        return False
+    if WEEKDAY_START_RE.match(duty):
+        return True
+    if CALENDAR_DATE_RE.search(duty):
+        return True
+    if CLOCK_RE.search(duty):
+        return True
+    first_beat = re.split(r"[.!?]\s+", duty, maxsplit=1)[0]
+    for rx in DUTY_LOG_STAMP_RES:
+        if rx.search(first_beat):
+            return True
+    return False
 
 
 def _is_chopped_lead(text: str) -> bool:
@@ -124,6 +175,11 @@ def check_article(article_dir: Path) -> dict[str, Any]:
             errors.append(f"article.html-head: {h}")
         if _is_chopped_lead(head) or _is_chopped_lead(raw_head):
             errors.append("article.html-head: chopped-lead (dense CASE paragraph required)")
+        if _is_duty_log_lead(head) or _is_duty_log_lead(raw_head):
+            errors.append(
+                "article.html-head: duty-log / clock-stamp lead "
+                "(smooth holyslav quote-first opening required)"
+            )
         if STYK_API_RE.search(html):
             errors.append("article.html: api-calque-styk")
     else:

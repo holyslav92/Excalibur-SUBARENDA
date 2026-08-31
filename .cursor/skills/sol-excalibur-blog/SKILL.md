@@ -64,7 +64,7 @@ python3 scripts/excalibur_blog_derouter_opus_chat.py \
 3. Перепиши **целиком** в слог Добрый дом:
    - **1–2 плотных абзаца §1** — NO chopped lead; NO TL;DR
    - identity one-liner + Telegram · MAX
-   - кейс с цифрами по таймлайну
+   - кейс с цифрами по одной красной линии (без duty-log `HH:MM` в §1)
    - **~1100–1800 слов**, not checklist landing
    - один mid fight-question → **TG** or MAX
    - checklist **после** moral if present — never 8 H2 spine

@@ -3,7 +3,7 @@
 Пайплайн: **Writer** пишет смысл → **Sol** накладывает слог тенанта.
 
 Ты — Writer. Задача: **полный CASE-черновик** в `drafts/writer.html` —
-плотный §1, identity, таймлайн с цифрами, диалог, moral, mid fight-question,
+плотный §1, identity, одна красная линия с цифрами, диалог, moral, mid fight-question,
 (optional) чеклист после moral, один CTA в конце. **Не** «тезисы для Sol».
 
 Sol накладывает слог (SOUL, good/bad examples), **не** превращает outline в статью.
@@ -22,7 +22,7 @@ Sol накладывает слог (SOUL, good/bad examples), **не** прев
 
 - Чистый HTML-фрагмент без `<h1>` → `drafts/writer.html`
 - **~1100–1800 слов**, один guest-night CASE (аудитория — **гость**, бронирующий ночь в Тюмени)
-- **Плотный §1** (1–2 абзаца) + identity + таймлайн + диалог + moral + mid fight-question + (optional) checklist **после** moral + **один** CTA
+- **Плотный §1** (1–2 абзаца) + identity + развитие кейса + диалог + moral + mid fight-question + (optional) checklist **после** moral + **один** CTA
 - После посаженного кейса допустимы Klyshin-ходы: «Не X. Не Y. А Z.»; «Сначала… потом…»; refusal «Так не заселяем.»; close «Наш вывод простой.»
 - Факты только из research
 - Ссылки CTA: **только** из `tenant-config.cta_links` + MAX по `cta_channels.max`
@@ -33,15 +33,17 @@ Sol накладывает слог (SOUL, good/bad examples), **не** прев
 
 ### Обязательные элементы в writer.html (HARD)
 
-1. **Дата или время** в opening
-2. **Цитата** хоста/гостя
-3. **₽ или число ночей**
-4. **Один illusion break**
-5. **Один mid comment fight-question** (ответ в TG `https://t.me/Dobriy_dom_72` или MAX)
+1. **Цитата** хоста/гостя
+2. **₽ или число ночей**
+3. **Один illusion break**
+4. **Один mid comment fight-question** (ответ в TG `https://t.me/Dobriy_dom_72` или MAX)
+
+**BAN в §1:** день недели, календарная дата, часы `HH:MM`, duty-log («Тюмень, двор у подъезда»).
 
 ### Открытие (HARD)
 
-- **1–2 плотных абзаца** — весь кейс на первом экране: дата, город, цитата, сумма, что сломалось
+- **1–2 плотных абзаца** — весь кейс на первом экране: **цитата → удар**, ₽/ночи, что сломалось (holyslav mechanic)
+- **BAN duty-log:** день недели, календарная дата, `HH:MM`, «Тюмень, двор» в первом ударе
 - **BAN chopped lead:** 8+ строк по 1–4 слова; telegram-cosplay («02:14. Тюмень. Сын рядом.»)
 - Короткие удары допустимы **после** посаженного кейса, не вместо него
 

@@ -4,8 +4,8 @@
 Checks title-brief.json (after Title), drafts/writer.html (after Writer),
 article.html (after Sol). Cron/slots cannot ship encyclopedia guides.
 
-Klyshin TG (30.08.2026): two-beat stop-factor H1; §1 = dense holyslav paragraphs;
-short vertical ladder lines are BAN in opening only.
+Klyshin TG (30.08.2026): two-beat stop-factor H1; §1 = smooth holyslav paragraphs
+(quote-first, no duty-log date/clock stamp); short vertical ladder lines are BAN in opening only.
 """
 from __future__ import annotations
 
@@ -20,7 +20,12 @@ _SCRIPTS = Path(__file__).resolve().parent
 if str(_SCRIPTS) not in sys.path:
     sys.path.insert(0, str(_SCRIPTS))
 
-from excalibur_blog_opening_meta_gate import _is_chopped_lead
+from excalibur_blog_opening_meta_gate import (
+    CLOCK_RE,
+    _is_chopped_lead,
+    _is_duty_log_lead,
+    _opening_duty_slice,
+)
 
 
 def _plain(html: str) -> str:
@@ -96,6 +101,8 @@ DATE_TIME_RE = re.compile(
     re.I,
 )
 
+# Legacy anchor kept for body-timeline detection only — NOT required in opening.
+
 QUOTE_RE = re.compile(r"[«\"][^»\"]{4,}[»\"]")
 
 MONEY_NIGHTS_RE = re.compile(
@@ -169,6 +176,10 @@ def check_h1(h1: str) -> list[str]:
             break
     if re.search(r"\bкак\s+", low) and re.search(r"\bснять\b", low):
         errors.append("h1: how-to «как снять»")
+    if CLOCK_RE.search(title):
+        errors.append(
+            "h1: clock time (HH:MM) — use story words («Утром её уже сдали»), not dispatch log"
+        )
     if not any(rx.search(title) for rx in TWO_BEAT_MARKERS):
         errors.append(
             "h1: missing two-beat stop-factor "
@@ -209,8 +220,12 @@ def check_opening_body(html: str, *, label: str) -> list[str]:
         errors.append(
             f"{label}: chopped TG-cosplay lead — need 1–2 dense paragraphs, not 8+ short lines"
         )
-    if not DATE_TIME_RE.search(opening):
-        errors.append(f"{label}: opening missing date/time anchor")
+    duty_slice = _opening_duty_slice(opening) or _opening_duty_slice(raw_head)
+    if _is_duty_log_lead(opening) or _is_duty_log_lead(raw_head) or _is_duty_log_lead(duty_slice):
+        errors.append(
+            f"{label}: duty-log / clock-stamp lead "
+            "(smooth holyslav quote-first opening; no weekday/date/clock in §1)"
+        )
     if not QUOTE_RE.search(opening):
         errors.append(f"{label}: opening missing host/guest quote")
     if not MONEY_NIGHTS_RE.search(opening):
@@ -220,6 +235,18 @@ def check_opening_body(html: str, *, label: str) -> list[str]:
     if COMMENT_BAIT_RE.search(low):
         errors.append(f"{label}: WP comment bait — send readers to TG/MAX")
     return errors
+
+
+def check_body_timeline(html: str, *, label: str) -> list[str]:
+    """Ban body-as-timeline spine (multiple HH:MM stamps through the piece)."""
+    plain = _plain(html)
+    clocks = CLOCK_RE.findall(plain)
+    if len(clocks) >= 3:
+        return [
+            f"{label}: body-as-timeline spine ({len(clocks)} clock stamps) "
+            "— one red line through the case, not dispatch log"
+        ]
+    return []
 
 
 def check_audience_and_bans(html: str, *, label: str) -> list[str]:
@@ -285,6 +312,7 @@ def check_article_dir(article_dir: Path, *, stage: str = "all") -> dict[str, Any
         checks_run.append("writer.html")
         writer_html = writer_path.read_text(encoding="utf-8")
         errors.extend(check_opening_body(writer_html, label="writer.html"))
+        errors.extend(check_body_timeline(writer_html, label="writer.html"))
         errors.extend(check_audience_and_bans(writer_html, label="writer.html"))
         if stage in {"all", "writer"}:
             errors.extend(check_identity(writer_html, label="writer.html"))
@@ -296,6 +324,7 @@ def check_article_dir(article_dir: Path, *, stage: str = "all") -> dict[str, Any
         checks_run.append("article.html")
         article_html = html_path.read_text(encoding="utf-8")
         errors.extend(check_opening_body(article_html, label="article.html"))
+        errors.extend(check_body_timeline(article_html, label="article.html"))
         errors.extend(check_audience_and_bans(article_html, label="article.html"))
         errors.extend(check_identity(article_html, label="article.html"))
         errors.extend(check_word_count(article_html, label="article.html"))
