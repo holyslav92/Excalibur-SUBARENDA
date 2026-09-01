@@ -1,0 +1,190 @@
+{
+  "topic_id": "B06",
+  "slug": "vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu",
+  "layout": "2x2",
+  "pipeline": "dzen_story_collage_v2_standalone_cover",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 0,
+      "canvas_file": "cover/cover-canvas.png",
+      "batch_file": "cover/cover-mcp-batch.json",
+      "prompt_file": "cover/cover-mcp-prompt.txt",
+      "result_file": "cover/cover-mcp-result.json",
+      "slots": [
+        "cover"
+      ],
+      "has_cover": true,
+      "standalone_cover": true,
+      "export_size": "1200x675"
+    },
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": [
+        "inline_1",
+        "inline_2",
+        "inline_3",
+        "inline_4"
+      ],
+      "has_cover": false
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": [
+        "inline_5",
+        "inline_6",
+        "inline_7",
+        "panel_quiet_pad"
+      ],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "Чемоданы у двери — поезд уходит",
+  "cover_hook_highlight": "уходит",
+  "cover_headline_line1": "чемоданы у двери",
+  "cover_headline_line2": "поезд уходит",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_meme_id": "trade_offer",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень"
+  ],
+  "logo_paste_inline_slots": [
+    "inline_1",
+    "inline_3",
+    "inline_7"
+  ],
+  "cover_motifs": {
+    "composition": "Couple+suitcases at door, headline, tablo, TR pad",
+    "location": "Sep 2026 sunny Tyumen apt entryway, NOT winter",
+    "meme": "trade_offer sticker small",
+    "prop_set": "",
+    "sticker_set": "багаж после выезда, вокзал тюмень",
+    "joke": "",
+    "headline_line1": "чемоданы у двери",
+    "headline_line2": "поезд уходит",
+    "hero_type": "guest_couple_suitcases_door"
+  },
+  "cover_emotion": "",
+  "cover_scene": "Couple+suitcases at door",
+  "slots": {
+    "cover": {
+      "quadrant": "standalone",
+      "role": "cover_editorial_hero",
+      "alt": "Пара с чемоданами у двери; заголовок; табло +7 (993) 574-83-22.",
+      "scene_hint": "Couple+suitcases; tablo phone; TR pad.",
+      "meme_caption_ru": "",
+      "sticky": "Сначала камера хранения",
+      "meme_id": "trade_offer"
+    },
+    "inline_1": {
+      "quadrant": "top_left",
+      "h2_anchor": "Окно выезд–поезд",
+      "visual_type": "process_flow",
+      "scene_hint": "Timeline 12:00→16:30.",
+      "alt": "Схема: 15 мин, 12:00, 16:30, 4,5 ч.",
+      "labels": [
+        "15 мин до выезда",
+        "выезд 12:00",
+        "поезд 16:30",
+        "4,5 ч"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "top_right",
+      "h2_anchor": "Что в чемоданах",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "2 suitcases sketch.",
+      "alt": "2 чемодана: документы, ноутбук, билеты.",
+      "labels": [
+        "2 чемодана",
+        "документы",
+        "ноутбук",
+        "билеты"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Нет камеры хранения",
+      "visual_type": "comparison_table",
+      "scene_hint": "Hotel vs apt table.",
+      "alt": "Отель vs квартира: нет хранения.",
+      "labels": [
+        "нет ресепшена",
+        "хранения нет",
+        "у двери — риск",
+        "на 30 мин — нет"
+      ]
+    },
+    "inline_4": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Вопросы до брони",
+      "visual_type": "fact_card",
+      "scene_hint": "FAQ 4 questions.",
+      "alt": "4 вопроса про багаж до брони.",
+      "labels": [
+        "до брони",
+        "до какого часа",
+        "где оставить",
+        "кто откроет"
+      ]
+    },
+    "inline_5": {
+      "quadrant": "top_left",
+      "h2_anchor": "Выезд и багаж",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Flow: late checkout vs luggage — separate.",
+      "alt": "Поздний выезд и хранение багажа — отдельные договорённости.",
+      "labels": [
+        "выезд позже",
+        "багаж отдельно",
+        "письменно"
+      ]
+    },
+    "inline_6": {
+      "quadrant": "top_right",
+      "h2_anchor": "Камера на вокзале",
+      "visual_type": "infographic_card",
+      "scene_hint": "Locker grid: 1st floor, 24/7, 3 sizes, 1h+.",
+      "alt": "Автоматические камеры хранения на вокзале: 1-й этаж, 24/7, три размера.",
+      "labels": [
+        "1-й этаж",
+        "24/7",
+        "от 1 ч",
+        "3 размера"
+      ]
+    },
+    "inline_7": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Маршрут без багажа",
+      "visual_type": "process_flow",
+      "scene_hint": "Route: apt → taxi → lockers → center, 3-3.5h free.",
+      "alt": "Маршрут: такси до вокзала, сдать багаж, 3–3,5 часа свободны в центре.",
+      "labels": [
+        "такси 300–500",
+        "центр 15 мин",
+        "3–3,5 ч",
+        "сначала вокзал"
+      ]
+    },
+    "panel_quiet_pad": {
+      "quadrant": "bottom_right",
+      "role": "quiet_pad",
+      "alt": "Quiet pad",
+      "scene_hint": "Soft cream blur pad, no text.",
+      "labels": []
+    }
+  },
+  "cover_keys_ru": []
+}
