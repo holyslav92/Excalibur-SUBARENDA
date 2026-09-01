@@ -274,7 +274,7 @@ commit: pending
 
 ## INC-20260901-0830 — Cloud Agent FTP PASV data channel timeout (B05 publish)
 
-status: workaround
+status: fixed
 run_date: 2026-09-01
 role: excalibur-blog-publish
 topic_id: B05
@@ -300,3 +300,30 @@ category: transport
 ### Secrets
 
 - none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-09-01
+fix_summary:
+- `publish_via_ftp` auto-fallback to SFTP:22 on PASV data `TimeoutError`/`OSError` (same creds).
+- `resolve_publish_transport`, `remote_path`, `upload_text_file` restored in `excalibur_blog_remote_transport.py`.
+- `excalibur_blog_dzen_cover_cache_bust.py` — `--slug` auto-detects upload path from `/feed/zen/` enclosure; optional `--upload-subdir` / `--old-cover-remote`.
+- Theme deploy documents SFTP port 22 (ignores `FTP_PORT=21`).
+- Publish runbooks updated (skill, agent, `CLOUD-FIRST-RUN.md`, `excalibur-wp-publish-contract.md`).
+files_changed:
+- `scripts/excalibur_blog_remote_transport.py`
+- `scripts/excalibur_blog_wp_publish.py`
+- `scripts/excalibur_blog_theme_contract_deploy.py`
+- `scripts/excalibur_blog_dzen_cover_cache_bust.py`
+- `skills/publish-excalibur-blog/SKILL.md`
+- `.cursor/skills/publish-excalibur-blog/SKILL.md`
+- `agents/excalibur-blog-publish.md`
+- `.cursor/agents/excalibur-blog-publish.md`
+- `shared/excalibur-wp-publish-contract.md`
+- `shared/dzen-cover-cache-bust.md`
+- `CLOUD-FIRST-RUN.md`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_remote_transport.py scripts/excalibur_blog_wp_publish.py scripts/excalibur_blog_theme_contract_deploy.py scripts/excalibur_blog_dzen_cover_cache_bust.py`
+- `python3 -m unittest tests.test_publish_transport -v`
+commit: pending

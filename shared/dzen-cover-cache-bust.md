@@ -21,6 +21,7 @@
 ```bash
 PYTHONPATH=scripts python3 scripts/excalibur_blog_dzen_cover_cache_bust.py
 PYTHONPATH=scripts python3 scripts/excalibur_blog_dzen_cover_cache_bust.py --slug <slug> --version-suffix dzen-v4
+PYTHONPATH=scripts python3 scripts/excalibur_blog_dzen_cover_cache_bust.py --slug <slug> --upload-subdir 2026/09 --old-cover-remote <slug>-cover.png
 PYTHONPATH=scripts python3 scripts/excalibur_blog_dzen_cover_cache_bust.py --verify-only
 ```
 

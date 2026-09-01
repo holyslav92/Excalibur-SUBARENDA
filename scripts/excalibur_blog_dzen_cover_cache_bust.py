@@ -111,6 +111,7 @@ def upload_sftp_files(
     files: list[tuple[str, bytes]],
     *,
     public_base: str,
+    upload_subdir: str,
 ) -> dict[str, str]:
     import paramiko
 
@@ -119,7 +120,7 @@ def upload_sftp_files(
     transport.connect(username=user, password=password)
     sftp = paramiko.SFTPClient.from_transport(transport)
     urls: dict[str, str] = {}
-    remote_dir = f"wp-content/uploads/{UPLOAD_SUBDIR}"
+    remote_dir = f"wp-content/uploads/{upload_subdir}"
     try:
         for remote_name, data in files:
             remote_path = f"{remote_dir}/{remote_name}"
@@ -281,6 +282,55 @@ echo 'OK post_modified_gmt=' . get_post_field('post_modified_gmt', $post_id) . P
 """
 
 
+def parse_cover_from_enclosure_url(url: str) -> tuple[str, str]:
+    """Return (upload_subdir, full_cover_filename) from a /feed/zen/ enclosure URL."""
+    if not url:
+        raise ValueError("empty enclosure url")
+    m = re.search(
+        r"/wp-content/uploads/(\d{4}/\d{2})/([^/\"?]+?)(?:-\d+x\d+)?\.png",
+        url,
+        re.IGNORECASE,
+    )
+    if not m:
+        raise ValueError(f"cannot parse upload path from enclosure url: {url}")
+    subdir, filename = m.group(1), m.group(2)
+    # Enclosure is usually the -1024x576 intermediate; strip size suffix for full cover name.
+    filename = re.sub(r"-\d+x\d+$", "", filename, flags=re.IGNORECASE)
+    if not filename.lower().endswith(".png"):
+        filename = f"{filename}.png"
+    return subdir, filename
+
+
+def resolve_article_spec(
+    slug: str,
+    *,
+    public_base: str,
+    upload_subdir: str = "",
+    old_cover_remote: str = "",
+) -> dict[str, str]:
+    """Build cache-bust spec from ARTICLES table or live enclosure / CLI overrides."""
+    for entry in ARTICLES:
+        if entry["slug"] == slug:
+            spec = dict(entry)
+            spec.setdefault("upload_subdir", UPLOAD_SUBDIR)
+            if upload_subdir:
+                spec["upload_subdir"] = upload_subdir
+            if old_cover_remote:
+                spec["old_cover_remote"] = old_cover_remote
+            return spec
+
+    subdir = upload_subdir.strip()
+    remote = old_cover_remote.strip()
+    if not remote:
+        enclosure = fetch_zen_enclosure(public_base, slug)
+        if not enclosure:
+            raise RuntimeError(f"no zen enclosure for slug={slug}; pass --old-cover-remote")
+        subdir, remote = parse_cover_from_enclosure_url(enclosure)
+    elif not subdir:
+        raise RuntimeError("--upload-subdir required when --old-cover-remote is set without ARTICLES entry")
+    return {"slug": slug, "upload_subdir": subdir, "old_cover_remote": remote}
+
+
 def fetch_zen_enclosure(public_base: str, slug: str) -> str:
     feed = download_bytes(f"{public_base.rstrip('/')}/feed/zen/").decode("utf-8", "replace")
     for item in re.split(r"<item>", feed)[1:]:
@@ -302,9 +352,10 @@ def process_article(
     dry_run: bool,
 ) -> dict[str, Any]:
     slug = spec["slug"]
+    upload_subdir = spec.get("upload_subdir") or UPLOAD_SUBDIR
     old_remote = spec["old_cover_remote"]
     full_fn, dzen_fn = new_filenames(slug, version_suffix)
-    old_url = f"{public_base.rstrip('/')}/wp-content/uploads/{UPLOAD_SUBDIR}/{old_remote}"
+    old_url = f"{public_base.rstrip('/')}/wp-content/uploads/{upload_subdir}/{old_remote}"
     old_enclosure = fetch_zen_enclosure(public_base, slug)
 
     print(f"\n=== {slug} ===", flush=True)
@@ -339,6 +390,7 @@ def process_article(
         env,
         [(full_fn, full_bytes), (dzen_fn, dzen_bytes)],
         public_base=public_base,
+        upload_subdir=upload_subdir,
     )
     result["uploaded_urls"] = urls
 
@@ -351,7 +403,7 @@ def process_article(
     ]
     payload = {
         "slug": slug,
-        "upload_subdir": UPLOAD_SUBDIR,
+        "upload_subdir": upload_subdir,
         "full_filename": full_fn,
         "dzen_filename": dzen_fn,
         "old_url_fragments": sorted(set(old_fragments)),
@@ -383,7 +435,9 @@ def process_article(
 
 def main() -> int:
     ap = argparse.ArgumentParser(description="Hard Dzen cover cache-bust (new filenames)")
-    ap.add_argument("--slug", help="single slug")
+    ap.add_argument("--slug", help="single slug (auto-detect cover path from /feed/zen/ if not in ARTICLES)")
+    ap.add_argument("--upload-subdir", default="", help="YYYY/MM under wp-content/uploads (optional with --slug)")
+    ap.add_argument("--old-cover-remote", default="", help="existing full cover filename on host (optional)")
     ap.add_argument("--version-suffix", default=DEFAULT_VERSION_SUFFIX)
     ap.add_argument("--skip-fix", action="store_true", help="skip pad-clear + logo composite")
     ap.add_argument("--dry-run", action="store_true", help="prepare files only, no upload/WP")
@@ -396,7 +450,21 @@ def main() -> int:
         print("PUBLIC_SITE_URL missing", file=sys.stderr)
         return 1
 
-    specs = [s for s in ARTICLES if not args.slug or s["slug"] == args.slug]
+    if args.slug:
+        try:
+            specs = [
+                resolve_article_spec(
+                    args.slug,
+                    public_base=public_base,
+                    upload_subdir=args.upload_subdir,
+                    old_cover_remote=args.old_cover_remote,
+                )
+            ]
+        except (RuntimeError, ValueError) as exc:
+            print(str(exc), file=sys.stderr)
+            return 1
+    else:
+        specs = list(ARTICLES)
     if not specs:
         print("no matching articles", file=sys.stderr)
         return 1

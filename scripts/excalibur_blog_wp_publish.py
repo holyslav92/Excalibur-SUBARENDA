@@ -982,7 +982,19 @@ def publish_via_ftp(
     env["SSH_ROOT"] = selected_root
     print(f"FTP wp root: {selected_root}")
 
-    upload_bytes(env, remote, data, root=selected_root)
+    try:
+        upload_bytes(env, remote, data, root=selected_root)
+    except (TimeoutError, OSError) as exc:
+        # Cloud Agent egress often blocks Timeweb PASV data ports; SFTP:22 works with same creds (INC-20260901-0830).
+        print(
+            f"WARN FTP PASV data channel failed ({type(exc).__name__}: {exc}); "
+            "retrying bootstrap upload via SFTP:22",
+            file=sys.stderr,
+        )
+        env_sftp = dict(env)
+        env_sftp["FTP_TRANSPORT"] = "sftp"
+        env_sftp["FTP_PORT"] = "22"
+        return publish_via_sftp(env_sftp, php, public_base, bootstrap_name=bootstrap_name)
 
     try:
         out = trigger_bootstrap_http(url, root)

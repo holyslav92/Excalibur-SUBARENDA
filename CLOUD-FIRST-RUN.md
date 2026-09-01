@@ -28,7 +28,7 @@
 | `FTP_USER` | `ca21576_svyat` | Extra FTP user (SFTP:22 = Permission denied) |
 | `FTP_PASS` | *(только в Secrets, никогда в git)* | Пароль из панели Timeweb |
 | `FTP_PORT` | `21` | Passive FTP |
-| `FTP_TRANSPORT` | `ftp` | Явный выбор transport (альтернатива: только `FTP_PORT=21`) |
+| `FTP_TRANSPORT` | `ftp` | Локально: passive FTP. **Cloud Agent:** при PASV data timeout publish скрипт сам переключится на `sftp` port 22 (INC-20260901-0830). |
 | `FTP_ROOT` | `sublease/public_html` | Каталог с `wp-load.php` (web root сайта) |
 | `EXCALIBUR_BLOG_ALLOW_PUBLISH` | `yes` | **Только runtime в Secrets** — в git всегда `no` |
 
