@@ -1,0 +1,11 @@
+{
+  "local_path": "cover/canvas-quad-01.png",
+  "source": "grsai-draw-api",
+  "model": "redacted",
+  "model_succeeded": "redacted",
+  "model_primary": "redacted",
+  "used_vip_fallback": true,
+  "delivery": "native_2k",
+  "native_width": 2048,
+  "native_height": 1152
+}

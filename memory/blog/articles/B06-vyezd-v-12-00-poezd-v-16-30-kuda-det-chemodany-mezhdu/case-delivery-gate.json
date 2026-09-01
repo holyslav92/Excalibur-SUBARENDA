@@ -1,0 +1,11 @@
+{
+  "gate": "case-delivery",
+  "status": "PASS",
+  "stage": "article",
+  "checks_run": [
+    "writer.html",
+    "article.html"
+  ],
+  "errors": [],
+  "article_dir": "/workspace/memory/blog/articles/B06-vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu"
+}

@@ -327,3 +327,52 @@ checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_remote_transport.py scripts/excalibur_blog_wp_publish.py scripts/excalibur_blog_theme_contract_deploy.py scripts/excalibur_blog_dzen_cover_cache_bust.py`
 - `python3 -m unittest tests.test_publish_transport -v`
 commit: pending
+
+## INC-20260901-1216 — llms deploy FTP-only upload on Cloud SFTP publish (B06)
+
+status: fixed
+run_date: 2026-09-01
+role: excalibur-blog-publish
+topic_id: B06
+article_dir: memory/blog/articles/B06-vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu
+severity: medium
+category: script
+
+### What went wrong
+
+- After B06 publish via SFTP:22 (`publish_method: sftp`), `--deploy-llms` failed with empty SFTP/FTP error. `excalibur_blog_llms_deploy.py` called `upload_bytes()` which always uses passive FTP, ignoring `FTP_TRANSPORT=sftp`.
+
+### How the agent recovered this run
+
+- Post live OK; llms.txt local updated by Indexer but not deployed to WP root.
+
+### Durable fix needed before next run
+
+- llms deploy must route through `upload_text_file()` (SFTP when configured), same as bootstrap uploads.
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_llms_deploy.py`
+- `tests/test_llms_deploy_transport.py`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-09-01
+fix_summary:
+- `deploy_llms_files()` uses `upload_text_file()` instead of FTP-only `upload_bytes()`; respects `FTP_TRANSPORT=sftp` on Cloud Agent.
+- Regenerated `shared/published-titles.md` with B06 entry from ledger.
+files_changed:
+- `scripts/excalibur_blog_llms_deploy.py`
+- `tests/test_llms_deploy_transport.py`
+- `shared/published-titles.md`
+- `memory/blog/articles/B06-vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu/published-titles-only.md`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_llms_deploy.py`
+- `python3 -m unittest tests.test_llms_deploy_transport tests.test_publish_transport -v`
+- `python3 scripts/excalibur_blog_published_titles.py` → titles=6
+commit: pending

@@ -1,0 +1,29 @@
+{
+  "agent": "excalibur-blog-cover-qa",
+  "status": "BLOCK",
+  "checked_at": "2026-09-01",
+  "topic_id": "B06",
+  "checks": {
+    "eight_png_exist": true,
+    "quad_manifest_valid": true,
+    "wordstat_stickers_1_3": true,
+    "motif_no_collision_14d": true,
+    "max_one_cat_meme_slot": true,
+    "light_high_key": false,
+    "logo_composite_stamp_pass": true,
+    "cover_logo_pasted": true,
+    "inline_no_logo_on_inlines": false,
+    "cover_phone_993_large_sticker": false,
+    "forbid_phone_pill_post_composite": false,
+    "forbid_922_phone": true,
+    "forbid_ai_drawn_logo_cover": true,
+    "forbid_wordpress_ui_in_art": true,
+    "no_logo_plate_cover": true,
+    "require_display_headline": true,
+    "require_large_phone_sticker": false,
+    "forbid_overlapping_text_blocks": false,
+    "forbid_giant_cropped_glyph": false,
+    "forbid_model_drawn_meme_template": false
+  },
+  "notes": "8 PNG present; factory logo cover+inline_1/3/7; headline OK (+7 993). FAIL: cover people-heavy couple photo (skin_frac 0.32) — not type-led poster; missing pasted catalog trade_offer meme (only yellow sticky + model-drawn template detected); phone as black pill bar not large die-cut sticker; overlapping headline bands + giant glyph crop; gold/metallic type + dark leather dominance; inline logos violate full_grsai inline_no_logo_on_inlines. paste_and_ship_on_exhaust — no regen loop."
+}

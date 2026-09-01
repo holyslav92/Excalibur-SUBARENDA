@@ -8,7 +8,7 @@ import sys
 from pathlib import Path
 from typing import Any
 
-from excalibur_blog_remote_transport import transport_mode, upload_bytes
+from excalibur_blog_remote_transport import transport_mode, upload_text_file
 from excalibur_blog_site_base import SITE_BASE_PLACEHOLDER, expand_site_base
 from excalibur_blog_wp_publish import load_env, project_root, validate_publish_env
 
@@ -38,7 +38,7 @@ def deploy_llms_files(root: Path, env: dict[str, str], public_base: str) -> dict
             continue
         data = body.encode("utf-8")
         try:
-            upload_bytes(env, name, data)
+            upload_text_file(env, name, data)
             uploaded.append(name)
         except Exception as exc:  # noqa: BLE001
             errors.append(f"{name}: {exc}")

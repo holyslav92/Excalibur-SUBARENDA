@@ -1,5 +1,23 @@
 # WP publish log
 
+## B06 — 2026-09-01
+
+- **topic_id:** B06
+- **slug:** vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu
+- **title:** Выезд в полдень. Поезд через 4 часа — чемоданы у подъезда
+- **post_id:** 4283
+- **permalink:** /blog/vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu/
+- **categories:** posutochnaya-arenda (101), sovety-gostyam (106)
+- **featured_image:** 4284
+- **inline_images:** 4285–4292 (8× wp-content/uploads/2026/09/…)
+- **schema_meta:** ok
+- **live-page gate:** PASS (9/9 img src → wp-content)
+- **cover_qa:** BLOCK (paste_and_ship_on_exhaust — shipped like B05)
+- **dzen cache bust:** cover-dzen-v3 + cover-dzen-v3-1024x576 uploaded; feed enclosure → …-cover-dzen-v3.png
+- **interlink inbound:** B01 (3745)
+- **publish_method:** sftp (FTP PASV data timeout on cloud; SFTP:22 OK)
+- **llms_deploy:** FAIL (SFTP upload empty error — post live OK)
+
 ## B05 — 2026-09-01
 
 - **topic_id:** B05

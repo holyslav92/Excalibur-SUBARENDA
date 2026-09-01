@@ -991,7 +991,6 @@ def build_dzen_story_collage_cover_prompt(
         phone_clause,
         logo_clause,
         "PEOPLE: only when THIS case needs — guest stress face, hands with keys, silhouette; NOT group photo; NOT default zero-people hallway.",
-        SCENE_POSTER_COVER_BAN + ".",
         DZEN_STORY_GENERATION_BAN + ".",
         "TEXT LANGUAGE LOCK: visible text RUSSIAN Cyrillic only; headline readable at Dzen thumb.",
         "Grsai primary image API, non-VIP, max 2 gens; images[] MUST include official logo reference for TR pad; "

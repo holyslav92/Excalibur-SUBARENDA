@@ -1,0 +1,78 @@
+{
+  "status": "PASS",
+  "topic_id": "B06",
+  "slug": "vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu",
+  "research_date": "2026-09-01",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Свердловская ж/д — 26,1 тыс. аренд ячеек на вокзале Тюмени (янв–июль 2026)",
+    "source_type": "news",
+    "urls": [
+      "https://tyumen-news.net/economy/2026/08/21/634207.html",
+      "https://t-l.ru/406497.html"
+    ],
+    "accessed_at": "2026-09-01",
+    "note": "Новость 21.08.2026; сценарий пересадки/прогулки без багажа; онлайн-продление хранения с 2026. Дополнен Klyshin Aug 2026 — порядок действий до ключей."
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "Нет банковских/гос тарифов; тарифы камер хранения РЖД не верифицированы с rzd.ru — только справочные ориентиры 2023",
+    "verified_claims": 0,
+    "entities_checked": [],
+    "errors": []
+  },
+  "wordstat": {
+    "status": "PASS",
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 5446,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "снять квартиру посуточно в тюмени",
+        "volume": 1742,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "хранение багажа",
+        "volume": 133,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "хранение багажа тюмень",
+        "volume": 28,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "камера хранения багажа тюмень",
+        "volume": 18,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "поздний выезд",
+        "volume": 142,
+        "region": "55+11176",
+        "note": "hotel-skew in top related"
+      }
+    ]
+  },
+  "source_count": 13,
+  "limitations": [
+    "Тарифы камер хранения на вокзале — только справочник perrony.ru (конец 2023); актуальную цену проверять на терминале.",
+    "Условия хранения багажа у «Добрый дом» не подтверждены как постоянная услуга — только заезд 15:00 / выезд 12:00 из агрегаторов.",
+    "Klyshin-сигнал — метафора порядка действий, не факт о посуточной аренде.",
+    "tjm.aero недоступен при live-fetch; данные по аэропорту — из вторичных обзоров.",
+    "26,1 тыс. аренд — статистика спроса, не гарантия свободной ячейки в конкретный день."
+  ],
+  "writer_safe_urls": [
+    "https://t.me/Dobriy_dom_72",
+    "https://t.me/Dobriy_dom_Tyumen",
+    "https://max.ru/id660300569233_biz",
+    "https://добрыйдом-72.рф/booking/",
+    "https://t-l.ru/406497.html",
+    "https://tyumen.perrony.ru/22-uslugi",
+    "https://www.tutu.ru/geo/journal/polezno-passazhiru/article/rannij-zaezd-i-pozdnij-vyezd/"
+  ]
+}
