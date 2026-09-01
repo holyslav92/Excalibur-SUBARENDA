@@ -172,6 +172,8 @@ ILLUSION_BREAK_RE = re.compile(
     re.I,
 )
 
+COMMENT_BAIT_RE = re.compile(r"напиш\w*\s+в\s+комментар", re.I)
+
 RIDDLE_H1_RES = (
     re.compile(r"под\s+вопросом", re.I),
     re.compile(r"чё\s+за\s+ересь", re.I),
