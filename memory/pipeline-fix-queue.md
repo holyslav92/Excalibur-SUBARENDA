@@ -271,3 +271,32 @@ files_changed:
 checks_run:
 - interlink retry → OK interlink_done (2 targets)
 commit: pending
+
+## INC-20260901-0830 — Cloud Agent FTP PASV data channel timeout (B05 publish)
+
+status: workaround
+run_date: 2026-09-01
+role: excalibur-blog-publish
+topic_id: B05
+article_dir: memory/blog/articles/B05-rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super
+severity: medium
+category: transport
+
+### What went wrong
+
+- `FTP_TRANSPORT=ftp` (Timeweb PASV port 21): `STOR` for 14MB bootstrap timed out on passive data connection after 8 retries (`TimeoutError: [Errno 110] Connection timed out`). Control channel (21) OK; even 5-byte STOR hung.
+- `excalibur_blog_theme_contract_deploy.py` uses SFTP port 22 only — theme path probe failed when only FTP env set.
+
+### How the agent recovered this run
+
+- Re-ran `excalibur_blog_wp_publish.py` with `FTP_TRANSPORT=sftp FTP_PORT=22` (same `FTP_*` creds). SFTP upload + HTTP bootstrap → PASS (post_id 4262).
+- Fixed interlinks: punycode absolute URLs → `{{SITE_BASE}}/blog/…` for crosslink-qa/link-verify on cloud.
+
+### Durable fix needed before next run
+
+- Cloud Agent publish runbook: default to SFTP:22 for Добрый дом when PASV data fails; or document egress allowlist for Timeweb PASV ports.
+- Add B05+ slugs to `excalibur_blog_dzen_cover_cache_bust.py` ARTICLES or accept dynamic `--slug` with auto `old_cover_remote` + `upload_subdir` from live attachment path.
+
+### Secrets
+
+- none recorded
