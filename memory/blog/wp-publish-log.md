@@ -1,5 +1,21 @@
 # WP publish log
 
+## B05 — 2026-09-01
+
+- **topic_id:** B05
+- **slug:** rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super
+- **title:** Рейтинг 4,8. Два «всё супер» — и 3 900 ₽ под вопросом
+- **post_id:** 4262
+- **permalink:** /blog/rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super/
+- **categories:** posutochnaya-arenda (101), sovety-gostyam (106)
+- **featured_image:** 4263
+- **inline_images:** 4264–4270 (7× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS
+- **dzen cache bust:** cover-dzen-v3 + cover-dzen-v3-1024x576 uploaded; feed enclosure → …-cover-dzen-v3.png
+- **interlink inbound:** B01 (3745)
+- **publish_method:** sftp (FTP PASV data channel timeout on cloud; SFTP:22 OK)
+
 ## B03 — 2026-08-28
 
 - **topic_id:** B03
