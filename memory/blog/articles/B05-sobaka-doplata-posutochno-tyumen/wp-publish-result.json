@@ -1,0 +1,27 @@
+{
+  "slug": "razreshili-s-lapoy-doplatu-nazvali-posle-zaseleniya",
+  "topic_id": "B05",
+  "permalink": "{{SITE_BASE}}/blog/razreshili-s-lapoy-doplatu-nazvali-posle-zaseleniya/",
+  "publish_method": "ftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B05-sobaka-doplata-posutochno-tyumen/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1177419,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4210 slug=razreshili-s-lapoy-doplatu-nazvali-posle-zaseleniya\nOK categories=101\nOK dzen_yzen_meta=1\nOK featured_image=4220\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4221 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/08/razreshili-s-lapoy-doplatu-nazvali-posle-zaseleniya-inline-01-1.png\nOK inline_alt=4221\nOK inline_caption=4221\nOK inline_description=4221\nOK inline_image_upload=4222 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/08/razreshili-s-lapoy-doplatu-nazvali-posle-zaseleniya-inline-02-1.png\nOK inline_alt=4222\nOK inline_caption=4222\nOK inline_description=4222\nOK inline_image_upload=4223 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/08/razreshili-s-lapoy-doplatu-nazvali-posle-zaseleniya-inline-03-1.png\nOK inline_alt=4223\nOK inline_caption=4223\nOK inline_description=4223\nOK inline_image_upload=4224 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/08/razreshili-s-lapoy-doplatu-nazvali-posle-zaseleniya-inline-04-1.png\nOK inline_alt=4224\nOK inline_caption=4224\nOK inline_description=4224\nOK inline_image_upload=4225 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/08/razreshili-s-lapoy-doplatu-nazvali-posle-zaseleniya-inline-05-1.png\nOK inline_alt=4225\nOK inline_caption=4225\nOK inline_description=4225\nOK inline_image_upload=4226 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/08/razreshili-s-lapoy-doplatu-nazvali-posle-zaseleniya-inline-06-1.png\nOK inline_alt=4226\nOK inline_caption=4226\nOK inline_description=4226\nOK inline_image_upload=4227 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/08/razreshili-s-lapoy-doplatu-nazvali-posle-zaseleniya-inline-07-1.png\nOK inline_alt=4227\nOK inline_caption=4227\nOK inline_description=4227\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/razreshili-s-lapoy-doplatu-nazvali-posle-zaseleniya/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/razreshili-s-lapoy-doplatu-nazvali-posle-zaseleniya/",
+    "errors": []
+  }
+}

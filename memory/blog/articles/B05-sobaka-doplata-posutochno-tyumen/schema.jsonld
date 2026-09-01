@@ -1,0 +1,23 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/razreshili-s-lapoy-doplatu-nazvali-posle-zaseleniya/",
+  "url": "{{SITE_BASE}}/blog/razreshili-s-lapoy-doplatu-nazvali-posle-zaseleniya/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/razreshili-s-lapoy-doplatu-nazvali-posle-zaseleniya/"
+  },
+  "headline": "«Можно с лапой» — после заселения назвали доплату 3 000 ₽",
+  "datePublished": "2026-08-31",
+  "dateModified": "2026-08-31",
+  "author": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "sameAs": "{{SITE_BASE}}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}"
+  }
+}

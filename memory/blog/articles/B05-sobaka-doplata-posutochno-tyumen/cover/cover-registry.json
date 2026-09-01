@@ -1,0 +1,86 @@
+{
+  "topic_id": "B05",
+  "slug": "sobaka-doplata-posutochno-tyumen",
+  "cover_family": "brand_collage",
+  "style_preset": "the_rieltor_twilight_gold",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "file": "cover/cover.png",
+  "alt": "Гость с корги у двери квартиры получает сообщение о доплате 3000 рублей за питомца; на двери магнит с телефоном.",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-quad-01.png",
+  "generated_at": "2026-08-31T06:45:59+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Гость с корги у двери квартиры получает сообщение о доплате 3000 рублей за питомца; на двери магнит с телефоном.",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Сравнение фильтра «можно с животными» и реальной доплаты за питомца.",
+      "h2_anchor": "Фильтр «можно с животными» — это не договор",
+      "visual_type": "comparison_table",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Переписка из четырёх сообщений: хозяин разрешил собаку без суммы.",
+      "h2_anchor": "Что было в переписке",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Гость с собакой и чемоданом выбирает: заплатить или уйти.",
+      "h2_anchor": "А вы бы заплатили?",
+      "visual_type": "comparison_table",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_4",
+      "file": "cover/inline-04.png",
+      "alt": "Чек-лист: спросить породу и вес до оплаты.",
+      "h2_anchor": "Как это выглядит у нас",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_5",
+      "file": "cover/inline-05.png",
+      "alt": "Иконка фильтра «с питомцами» напротив скрытой цены.",
+      "h2_anchor": "Вопрос до оплаты",
+      "visual_type": "schema_faq_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_6",
+      "file": "cover/inline-06.png",
+      "alt": "Расчёт: 4200 рублей бронь плюс 3000 после заселения.",
+      "h2_anchor": "Мораль",
+      "visual_type": "tool_screenshot",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_7",
+      "file": "cover/inline-07.png",
+      "alt": "Скриншот чата: сохранить условия до перевода.",
+      "h2_anchor": "Короткий чек-лист перед предоплатой с питомцем",
+      "visual_type": "labeled_checklist",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}
