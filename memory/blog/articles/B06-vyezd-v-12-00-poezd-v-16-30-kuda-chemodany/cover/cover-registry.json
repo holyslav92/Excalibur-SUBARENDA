@@ -1,0 +1,50 @@
+{
+  "topic_id": "B06",
+  "slug": "vyezd-v-12-00-poezd-v-16-30-kuda-chemodany",
+  "cover_family": "brand_collage",
+  "style_preset": "the_rieltor_twilight_gold",
+  "pipeline": "slice4_grid_1x_image_api",
+  "file": "cover/cover.png",
+  "alt": "Два чемодана в прихожей, на столике записка про поезд в 16:30 и чемоданы в коридоре.",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-slice4.png",
+  "generated_at": "2026-09-01T10:25:29+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Два чемодана в прихожей, на столике записка про поезд в 16:30 и чемоданы в коридоре.",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Между выездом и заездом хозяин готовит квартиру: стирка, уборка и окно до следующего гостя.",
+      "h2_anchor": "Полдень — это про уборку, а не про ваш поезд",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Гость узнаёт у двери о доплате 2100 рублей за поздний выезд.",
+      "h2_anchor": "Когда 2 100 ₽ — честная цена, а когда уже поздно",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Чемоданы оставили в коридоре подъезда — без охраны и без камеры.",
+      "h2_anchor": "Подъезд — не камера хранения",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}

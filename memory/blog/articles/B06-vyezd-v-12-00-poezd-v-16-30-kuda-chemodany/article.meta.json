@@ -1,0 +1,15 @@
+{
+  "title": "Выезд в 12:00, поезд в 16:30 — +2 100 ₽, а чемоданы в коридоре",
+  "h1": "Выезд в 12:00, поезд в 16:30 — +2 100 ₽, а чемоданы в коридоре",
+  "slug": "vyezd-v-12-00-poezd-v-16-30-kuda-chemodany",
+  "topic_id": "B06",
+  "author_id": "dobry-dom",
+  "pipeline_canon": "human-first-v3",
+  "editorial_manner_canon": "dobry_dom_gen_only_human_v1",
+  "cover_pipeline_canon": "dobry_dom_gen_only_human_v1",
+  "wp_category_slugs": [
+    "posutochnaya-arenda",
+    "sovety-gostyam"
+  ],
+  "date": "2026-09-01"
+}
