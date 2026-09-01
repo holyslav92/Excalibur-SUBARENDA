@@ -612,7 +612,7 @@ def is_bright_window_pad_false_positive(
 
 
 def validate_full_grsai_cover_gates(article_dir: Path, root: Path) -> list[str]:
-    """Full Grsai cover QA: type/phone/sticky in gen; official logo via factory paste 1:1 (covers model redraw)."""
+    """Full Grsai cover QA: type/phone/sticky in gen; official logo via factory paste pixel-faithful (covers model redraw)."""
     errors: list[str] = []
     from excalibur_blog_brand_logo_composite import IMAGE_NAMES
 

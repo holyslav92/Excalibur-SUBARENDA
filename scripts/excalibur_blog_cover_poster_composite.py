@@ -345,7 +345,7 @@ def main() -> int:
     print(
         "BLOCKER: excalibur_blog_cover_poster_composite.py disabled — "
         "dobry_dom_dzen_story_collage_v2 draws Cyrillic headline/sticky/phone IN Grsai generation; "
-        "only brand_logo_composite may post-process (official logo paste 1:1 on cover).",
+        "only brand_logo_composite may post-process (official logo paste pixel-faithful on cover).",
         file=sys.stderr,
     )
     return 1

@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Paste canonical Dobry Dom brand PNG onto cover/inline panels (alpha composite).
 
-NEVER ask image models to draw/restyle the logo — factory pastes cropped-img_7143.png 1:1.
-Crop to non-transparent getbbox() before resize — never paste the full empty square.
+NEVER ask image models to draw/restyle the logo — factory pastes official cropped-img_7143.png
+(pixel-faithful: native aspect ratio after getbbox crop, NOT a square stamp).
+Crop to non-transparent getbbox() before resize — never paste the full empty square canvas.
 Never draw white/card/plate backing under the lockup — alpha overlay only.
 Cover phone is painted IN the scene during generation — NEVER post-composite pill overlay.
 """
@@ -114,7 +115,7 @@ def load_tenant_logo_config(root: Path) -> dict[str, Any]:
 def uses_brand_logo_paste(cfg: dict[str, Any]) -> bool:
     mode = str(cfg.get("cover_mode") or "").strip().casefold()
     logo_mode = str(cfg.get("logo_mode") or mode).strip().casefold()
-    if mode in {"full_grsai_cover", "grsai_full_cover"}:
+    if mode in {"full_grsai_cover", "grsai_full_cover", "one_2k_slice4"}:
         return True
     if logo_mode in {"drawn_in_generation"}:
         return False
@@ -127,7 +128,7 @@ def uses_logo_reference_in_generation(cfg: dict[str, Any]) -> bool:
     mode = str(cfg.get("logo_mode") or cfg.get("cover_mode") or "").strip().casefold()
     if mode in {"reference_in_generation", "logo_reference_in_generation", "reference_in_gen"}:
         return True
-    return mode in {"full_grsai_cover", "grsai_full_cover"}
+    return mode in {"full_grsai_cover", "grsai_full_cover", "one_2k_slice4"}
 
 
 def _load_font(size: int):
