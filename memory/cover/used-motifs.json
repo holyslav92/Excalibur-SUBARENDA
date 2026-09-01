@@ -52,6 +52,17 @@
         "sticker_set": "посуточно тюмень",
         "joke": "copy-paste reviews"
       }
+    },
+    {
+      "date": "2026-09-01",
+      "topic_id": "B06",
+      "slug": "",
+      "motifs": {
+        "composition": "couple+suitcases at door, headline, tablo, tr pad",
+        "location": "sep 2026 sunny tyumen apt entryway, not winter",
+        "meme": "trade_offer sticker small",
+        "sticker_set": "багаж после выезда, вокзал тюмень"
+      }
     }
   ]
 }

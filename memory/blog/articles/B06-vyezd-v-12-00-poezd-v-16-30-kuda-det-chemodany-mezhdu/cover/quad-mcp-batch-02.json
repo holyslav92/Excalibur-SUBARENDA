@@ -1,0 +1,52 @@
+{
+  "pipeline": "dzen_story_collage_v2_standalone_cover",
+  "canvas_index": 2,
+  "standalone_cover": false,
+  "model_policy": "",
+  "vip_disabled": false,
+  "max_generation_attempts": 1,
+  "identity_reference_local": "",
+  "identity_reference_id": "",
+  "logo_reference_local": "memory/cover/assets/brand/logo-dobry-dom.png",
+  "logo_reference_url": "{{SITE_BASE}}/wp-content/uploads/2026/03/cropped-img_7143.png",
+  "logo_reference_in_generation": true,
+  "reference_url_hosted": "",
+  "output_canvas": "cover/canvas-quad-02.png",
+  "result_path": "cover/quad-mcp-result-02.json",
+  "slots": [
+    "inline_5",
+    "inline_6",
+    "inline_7",
+    "panel_quiet_pad"
+  ],
+  "preferred_image_flow": {
+    "provider": "grsai",
+    "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
+    "resolution": "2K",
+    "note": "PRIMARY: Grsai draw API (PRIMARY_MODEL_ID only; vip permanently disabled; aspectRatio+resolution=2K first, one explicit-size retry, ship native undersized). Fallback: excalibur_blog_kie_gpt_image2_api.py when Grsai fail. FORBIDDEN: *-vip, flux2-pro-*, Seedream, nano_banana*, z-image, mcp-derouter/start-mcp.sh.",
+    "apply_script": "python3 scripts/excalibur_blog_quad_apply.py --article-dir <article_dir> --canvas-index 2 --inject-html"
+  },
+  "jobs": [
+    {
+      "slot": "canvas_quad",
+      "tool": "grsai",
+      "mcp_args": {
+        "prompt": "Designed RU editorial frames, airy #FFFFFF high-key on inlines, warm comfort+ Tyumen (посуточно). Clean readable Cyrillic labels on inline panels. NO host Shakin/identity-real. NO brand logo on inlines (ZERO logos on inline_1..inline_7). NO WordPress/Gutenberg/Dashboard/wp-admin. NO empty stock; NO WP screenshot. No dark cinematic.\nCAT-MEME QUOTA: max ONE cat-meme sticker across entire 8-panel set (cover + 7 inlines). Prefer cover OR one inline — never both. All other meme slots = people-memes/reaction templates from memory/cover/meme-top100.json (Roll Safe, Harold, Pepe, Wojak, Gigachad, etc.) — NOT grumpy/ginger/tardar/smudge cat repeats.\nCanvas 2048x1152 exact 2x2; four 16:9 panels (1024x576); thin white gutters; no bleed.\nBan: dark/low-key; inventory props; celebrity memes; EXCALIBUR stamp; chubby host; stock/generated man co-host on inline; large meme person on inline; icon slogans; empty cells; desk scene; cover copy; celebrity memes; stock model man; handsome realtor co-host; generated stranger presenter; large human on inline; meme person >15% frame; invented meme face; WordPress; Gutenberg; wp-admin; block editor; theme chrome; cookie bar; overlapping headline stickers meme cat phone logo; timid system font; wall of tiny labels; empty stock; wordpress screenshot; NO second logo copy; NO logo comparison table; NO dashed logo frame; NO gold house-with-heart logo; NO УЮТНЫЕ КВАРТИРЫ В АРЕНДУ subtitle in art; NO white/gray plate under logo.\nTEXT LANGUAGE LOCK: all visible text is RUSSIAN Cyrillic only; exact LABELS per panel only.\nInlines: logo from reference on 2–3 panels only (inline_1/3/7 default); Reference logo: exact brand mark small top-right, transparent alpha, NO white/gray plate/card; other panels NO visible logo; NO second logo copy; NO logo comparison table; NO dashed logo frame; NO gold house-with-heart logo; NO УЮТНЫЕ КВАРТИРЫ В АРЕНДУ subtitle in art; people-memes only as tiny stickers (≤15% frame, never top-right pad) from real templates in memory/cover/meme-top100.json; mix sketch/table/chart/scheme collage — not text walls.\nTop-left inline: workflow_diagram; «Выезд и багаж»; Flow: late checkout vs luggage — separate.. TXT:выезд позже | багаж отдельно | письменно. TOP-RIGHT clean; NO visible brand logo on this panel; no white/gray plate.\nTop-right inline: infographic_card; «Камера на вокзале»; Locker grid: 1st floor, 24/7, 3 sizes, 1h+.. TXT:1-й этаж | 24/7 | от 1 ч | 3 размера. TOP-RIGHT clean; NO visible brand logo on this panel; no white/gray plate.\nBottom-left inline: шаги заселения / доступа; «Маршрут без багажа»; Route: apt → taxi → lockers → center, 3-3.5h free.. TXT:такси 300–500 | центр 15 мин | 3–3,5 ч | сначала вокзал. Logo ref top-right, no plate.\nBottom-right inline: fact_card; «»; Soft cream blur pad, no text.. TOP-RIGHT clean; NO visible brand logo on this panel; no white/gray plate.\nInline all: #FFF collage, gold/black Cyrillic labels, tape/pins/strings/paper scraps; high-key #FFF/gold; not noir; dense facts/numbers; exact TXT per panel; meme only if +meme AND sticker-scale; CAT-MEME QUOTA: max ONE cat-meme sticker across entire 8-panel set (cover + 7 inlines). Prefer cover OR one inline — never both. All other meme slots = people-memes/reaction templates from memory/cover/meme-top100.json (Roll Safe, Harold, Pepe, Wojak, Gigachad, etc.) — NOT grumpy/ginger/tardar/smudge cat repeats.; no human hero on inline; no icon soup; zero typos.",
+        "aspect_ratio": "16:9",
+        "resolution": "2K",
+        "logo_reference_local": "memory/cover/assets/brand/logo-dobry-dom.png",
+        "logo_reference_url": "{{SITE_BASE}}/wp-content/uploads/2026/03/cropped-img_7143.png",
+        "logo_reference_in_generation": true,
+        "input_urls": [
+          "{{SITE_BASE}}/wp-content/uploads/2026/03/cropped-img_7143.png"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "prompt_chars": 3434,
+    "max_prompt_chars": 3500,
+    "required_reference_host": "",
+    "resolution": "2K"
+  }
+}

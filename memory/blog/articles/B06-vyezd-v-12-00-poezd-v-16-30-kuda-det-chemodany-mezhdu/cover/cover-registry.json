@@ -1,0 +1,77 @@
+{
+  "topic_id": "B06",
+  "slug": "vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu",
+  "cover_family": "type_meme_sticker_v3",
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "pipeline": "dzen_story_collage_v2_standalone_cover",
+  "file": "cover/cover.png",
+  "alt": "Выезд в полдень. Поезд через 4 часа — чемоданы у подъезда",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-quad.png",
+  "generated_at": "2026-09-01T11:31:48+00:00",
+  "assets": [
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Схема: 15 мин, 12:00, 16:30, 4,5 ч.",
+      "h2_anchor": "Окно выезд–поезд",
+      "visual_type": "process_flow",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "2 чемодана: документы, ноутбук, билеты.",
+      "h2_anchor": "Что в чемоданах",
+      "visual_type": "labeled_checklist",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Отель vs квартира: нет хранения.",
+      "h2_anchor": "Нет камеры хранения",
+      "visual_type": "comparison_table",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_4",
+      "file": "cover/inline-04.png",
+      "alt": "4 вопроса про багаж до брони.",
+      "h2_anchor": "Вопросы до брони",
+      "visual_type": "fact_card",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_5",
+      "file": "cover/inline-05.png",
+      "alt": "Поздний выезд и хранение багажа — отдельные договорённости.",
+      "h2_anchor": "Выезд и багаж",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_6",
+      "file": "cover/inline-06.png",
+      "alt": "Автоматические камеры хранения на вокзале: 1-й этаж, 24/7, три размера.",
+      "h2_anchor": "Камера на вокзале",
+      "visual_type": "infographic_card",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_7",
+      "file": "cover/inline-07.png",
+      "alt": "Маршрут: такси до вокзала, сдать багаж, 3–3,5 часа свободны в центре.",
+      "h2_anchor": "Маршрут без багажа",
+      "visual_type": "process_flow",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}

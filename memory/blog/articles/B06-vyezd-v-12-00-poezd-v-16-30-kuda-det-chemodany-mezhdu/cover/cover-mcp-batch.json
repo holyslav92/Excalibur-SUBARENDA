@@ -1,0 +1,49 @@
+{
+  "pipeline": "dzen_story_collage_v2_standalone_cover",
+  "canvas_index": 0,
+  "standalone_cover": true,
+  "model_policy": "vip_economy_16_9_one_call_else_primary_then_vip",
+  "vip_disabled": false,
+  "max_generation_attempts": 2,
+  "identity_reference_local": "",
+  "identity_reference_id": "",
+  "logo_reference_local": "memory/cover/assets/brand/logo-dobry-dom.png",
+  "logo_reference_url": "{{SITE_BASE}}/wp-content/uploads/2026/03/cropped-img_7143.png",
+  "logo_reference_in_generation": true,
+  "reference_url_hosted": "",
+  "output_canvas": "cover/cover-canvas.png",
+  "result_path": "cover/cover-mcp-result.json",
+  "slots": [
+    "cover"
+  ],
+  "preferred_image_flow": {
+    "provider": "grsai",
+    "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
+    "resolution": "2K",
+    "note": "PRIMARY: Grsai draw API (PRIMARY_MODEL_ID only; vip permanently disabled; aspectRatio+resolution=2K first, one explicit-size retry, ship native undersized). Fallback: excalibur_blog_kie_gpt_image2_api.py when Grsai fail. FORBIDDEN: *-vip, flux2-pro-*, Seedream, nano_banana*, z-image, mcp-derouter/start-mcp.sh.",
+    "apply_script": "python3 scripts/excalibur_blog_cover_standalone_apply.py --article-dir <article_dir> && python3 scripts/excalibur_blog_brand_logo_composite.py --article-dir <article_dir>"
+  },
+  "jobs": [
+    {
+      "slot": "canvas_quad",
+      "tool": "grsai",
+      "mcp_args": {
+        "prompt": "DZEN STORY COLLAGE 16:9 standalone 2048x1152. ONE Grsai generation = scene + Cyrillic type + sticky + phone IN gen; images[] reserves TR pad — factory pastes logo-dobry-dom.png 1:1 after (never ship model redraw as brand).\nStandalone cover canvas 2048x1152 exact 16:9 full-bleed — COMPLETE Dzen editorial thumbnail IN one generation.\nFULL GRSAI EDITORIAL: Cyrillic display type MUST be drawn IN this generation — Onest ExtraBold ~860 black sans two-beat headline; yellow/peach brush highlight behind ONE keyword; one yellow sticky-note punch; phone +7 (993) 574-83-22 (or +7 (993) 574-83-22) BIG and thumb-readable. LOGO PAD top-right 8-12%: images[] includes official PNG (logo-dobry-dom.png) to reserve space — do NOT redraw curtains/flower/terracotta «Добрый дом» lockup; factory pastes that PNG 1:1 after gen (covers any model attempt; that paste IS the brand). NEVER house-with-heart, subtitle, second logo; NO white/gray plaque. NEVER +7 922 001 65 05. NO poster composite for type/phone/sticky.\nDZEN STORY COLLAGE: photoreal bright Comfort+ Tyumen daily-rental; slightly blurred apartment background; split layout photo + type; palette warm milk/oatmeal + charcoal rgb(33,29,26) + mustard brush rgb(255,210,80); BAN metallic gold/brass/3D gold/dark leather/empty hallway default\nHERO for THIS case — invent from article wound: person with emotion OR key objects (barrier, keys, router, ticket, bowl, door, laptop) — NEVER default empty hallway, NEVER always same catalog meme.\nScene context: Couple+suitcases; tablo phone; TR pad..\nHEADLINE two beats EXACT Cyrillic — L1 «чемоданы у двери» + L2 «поезд уходит»; Two-beat CASE Cyrillic IN generation — Onest ExtraBold ~860 black sans; yellow/peach brush highlight behind ONE keyword; one yellow sticky-note punch.\nBrush highlight keyword EXACT «уходит» behind ONE word in headline.\nYellow sticky-note punch EXACT Cyrillic «Сначала камера хранения».\nPHONE EXACT «+7 (993) 574-83-22» readable at Dzen thumb — in-scene tablo or bar, NOT peel-pill, NOT +7 922.\nLOGO PAD top-right 8-12%: leave clean space — images[] includes official PNG (memory/cover/assets/brand/logo-dobry-dom.png) as layout reference ONLY; do NOT redraw curtains/flower/terracotta «Добрый дом» lockup — factory pastes that file 1:1 after gen and covers any model attempt; NO house-with-heart, subtitle, or second logo; NO white/gray plaque.\nPEOPLE: only when THIS case needs — guest stress face, hands with keys, silhouette; NOT group photo; NOT default zero-people hallway.\nBAN: overlapping type layers, magnified letter crops, Trade Offer/Drake/Wojak template drawn by model, white/gray/beige plaque or card under logo, empty hallway as default layout, phone pill/peel-pill, WordPress UI, 2+ memes / meme soup, realtor phone +7 922, factory poster composite, model-invented logo, house-with-heart lockup, extra logo subtitle, second logo copy.\nTEXT LANGUAGE LOCK: visible text RUSSIAN Cyrillic only; headline readable at Dzen thumb.\nGrsai primary image API, non-VIP, max 2 gens; images[] MUST include official logo reference for TR pad; on exhaust pad-clear TR + resize + factory logo paste 1:1.",
+        "aspect_ratio": "16:9",
+        "resolution": "2K",
+        "logo_reference_local": "memory/cover/assets/brand/logo-dobry-dom.png",
+        "logo_reference_url": "{{SITE_BASE}}/wp-content/uploads/2026/03/cropped-img_7143.png",
+        "logo_reference_in_generation": true,
+        "input_urls": [
+          "{{SITE_BASE}}/wp-content/uploads/2026/03/cropped-img_7143.png"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "prompt_chars": 3119,
+    "max_prompt_chars": 3500,
+    "required_reference_host": "{{SITE_HOST}}",
+    "resolution": "2K"
+  }
+}
