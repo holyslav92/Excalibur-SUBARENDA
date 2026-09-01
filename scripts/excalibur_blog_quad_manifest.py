@@ -21,8 +21,11 @@ from typing import Any
 from excalibur_blog_quad_slots import (
     CANVAS_1_SLOTS,
     active_inline_keys,
+    all_canvas_specs,
     canvas_specs_for_inline_count,
     inline_count_from_tenant,
+    uses_one_2k_slice4,
+    uses_scene_poster_v2,
 )
 
 TYPE_PRIORITY = [
@@ -157,11 +160,15 @@ def build_manifest(article_dir: Path, root: Path, preserve: dict | None) -> dict
         or str((preserve or {}).get("cover_hook_highlight") or "").strip()
     )
 
-    canvas_specs = canvas_specs_for_inline_count(inline_count)
+    scene_v2 = uses_scene_poster_v2(root)
+    if uses_one_2k_slice4(root) or scene_v2:
+        canvas_specs = all_canvas_specs(inline_count)
+    else:
+        canvas_specs = canvas_specs_for_inline_count(inline_count)
     pipeline = (
         "quad_canvas_2x_image_api_longform"
         if inline_count == 7
-        else "quad_canvas_1x_image_api"
+        else ("slice4_grid_1x_image_api" if uses_one_2k_slice4(root) else "quad_canvas_1x_image_api")
     )
     style_file = str(
         (preserve or {}).get("style_file")

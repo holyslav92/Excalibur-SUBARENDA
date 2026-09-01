@@ -452,7 +452,20 @@ def composite_article_images(
     cover_placement: dict[str, Any] = {}
     panel_placements: dict[str, Any] = {}
     panel_skipped: dict[str, str] = {}
-    targets = ("cover.png",) if cover_only else IMAGE_NAMES
+    manifest_path = article_dir / "cover" / "quad-manifest.json"
+    inline_count = 3
+    if manifest_path.is_file():
+        try:
+            from excalibur_blog_quad_slots import inline_count_from_manifest
+
+            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+            inline_count = inline_count_from_manifest(manifest)
+        except (json.JSONDecodeError, ImportError):
+            inline_count = 3
+    if cover_only:
+        targets = ("cover.png",)
+    else:
+        targets = ("cover.png",) + tuple(f"inline-{i:02d}.png" for i in range(1, inline_count + 1))
     for name in targets:
         img_path = cover_dir / name
         if not img_path.is_file():
@@ -555,9 +568,12 @@ def validate_logo_stamp(article_dir: Path, root: Path) -> list[str]:
         except json.JSONDecodeError:
             errors.append("quad-manifest.json invalid JSON")
 
-    for name in IMAGE_NAMES:
-        if not (article_dir / "cover" / name).is_file():
-            errors.append(f"missing composed image cover/{name}")
+    for name in ("cover.png",) + tuple(f"inline-{i:02d}.png" for i in range(1, 8)):
+        path = article_dir / "cover" / name
+        if not path.is_file():
+            if name == "cover.png":
+                errors.append(f"missing composed image cover/{name}")
+            continue
 
     lo = float(cfg.get("min_width_fraction") or LOGO_WIDTH_FRACTION_MIN)
     hi = float(cfg.get("max_width_fraction_cap") or LOGO_WIDTH_FRACTION_MAX)
@@ -581,9 +597,19 @@ def validate_logo_stamp(article_dir: Path, root: Path) -> list[str]:
 
     panel_placements = stamp.get("panel_logo_placements") or {}
     panel_skipped = stamp.get("panel_logo_skipped") or {}
+    manifest_path = article_dir / "cover" / "quad-manifest.json"
+    inline_count = 3
+    if manifest_path.is_file():
+        try:
+            from excalibur_blog_quad_slots import inline_count_from_manifest
+
+            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+            inline_count = inline_count_from_manifest(manifest)
+        except (json.JSONDecodeError, ImportError):
+            inline_count = 3
     expected_skipped = {
         f"inline-{i:02d}.png"
-        for i in range(1, 8)
+        for i in range(1, inline_count + 1)
         if f"inline-{i:02d}.png" not in inline_files
     }
     if set(panel_skipped.keys()) != expected_skipped:

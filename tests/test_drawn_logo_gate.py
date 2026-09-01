@@ -353,8 +353,9 @@ class DrawnLogoGateTest(unittest.TestCase):
         self.assertIn("gray box", forbids)
         self.assertIn("white box", forbids)
         self.assertIn("phone pill", forbids)
-        self.assertFalse(img.get("logo_never_as_generation_reference"))
-        self.assertTrue(img.get("logo_required_as_generation_reference"))
+        # gen_only_human_v1: logo NEVER in Grsai images[]; factory paste cover tile only
+        self.assertTrue(img.get("logo_never_as_generation_reference"))
+        self.assertFalse(img.get("logo_required_as_generation_reference"))
         self.assertIn("logo-dobry-dom.png", img.get("logo_factory_paste_only", ""))
 
     def test_bright_window_pad_exempt_when_no_lockup_colors(self) -> None:

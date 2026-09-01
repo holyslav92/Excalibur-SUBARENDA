@@ -18,11 +18,13 @@ from excalibur_blog_quad_slots import (
     INLINE_FILES,
     NON_EXPORT_SLOTS,
     active_inline_keys,
+    all_canvas_specs,
     all_split_slot_keys,
     canvas_specs_for_inline_count,
     exportable_slots,
     inline_count_from_manifest,
     slot_map_for_mode,
+    uses_one_2k_slice4,
     uses_scene_poster_v2,
 )
 PANEL_ASPECT = 16 / 9
@@ -673,7 +675,11 @@ def main() -> int:
     manifest = load_json(manifest_path)
     inline_count = inline_count_from_manifest(manifest)
     inline_keys = active_inline_keys(inline_count)
-    canvas_specs = canvas_specs_for_inline_count(inline_count)
+    scene_v2 = uses_scene_poster_v2(root)
+    if uses_one_2k_slice4(root) or scene_v2:
+        canvas_specs = all_canvas_specs(inline_count)
+    else:
+        canvas_specs = canvas_specs_for_inline_count(inline_count)
 
     canvas_index = args.canvas_index
     if canvas_index <= 0 and len(canvas_specs) == 1:

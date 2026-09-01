@@ -72,7 +72,7 @@ COMMON_CHECKS = (
     "light_high_key",
 )
 
-REQUIRED_IMAGES = (
+REQUIRED_IMAGES_LONGFORM = (
     "cover/cover.png",
     "cover/inline-01.png",
     "cover/inline-02.png",
@@ -82,6 +82,28 @@ REQUIRED_IMAGES = (
     "cover/inline-06.png",
     "cover/inline-07.png",
 )
+
+from excalibur_blog_quad_slots import (
+    INLINE_FILES,
+    active_inline_keys,
+    inline_count_from_manifest,
+    uses_gen_only_human,
+)
+
+
+def required_images_for_article(article_dir: Path) -> tuple[str, ...]:
+    manifest_path = article_dir / "cover" / "quad-manifest.json"
+    inline_count = 3
+    if manifest_path.is_file():
+        try:
+            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+            inline_count = inline_count_from_manifest(manifest)
+        except json.JSONDecodeError:
+            pass
+    if inline_count <= 3:
+        keys = ("cover",) + active_inline_keys(inline_count)
+        return tuple(f"cover/{INLINE_FILES[k] if k != 'cover' else 'cover.png'}" for k in keys)
+    return REQUIRED_IMAGES_LONGFORM
 
 
 def project_root() -> Path:
@@ -144,7 +166,7 @@ def validate_cover_qa(article_dir: Path, root: Path) -> dict:
         if missing_identity:
             errors.append(f"identity-real missing: {', '.join(missing_identity)}")
 
-    for rel in REQUIRED_IMAGES:
+    for rel in required_images_for_article(article_dir):
         if not (article_dir / rel).is_file():
             errors.append(f"missing image: {rel}")
 
@@ -195,8 +217,10 @@ def validate_cover_qa(article_dir: Path, root: Path) -> dict:
             if "922" in phone.replace(" ", ""):
                 errors.append("cover_phone_cta must not contain 922 (forbidden rieltor number)")
             slots = manifest.get("slots") or {}
+            inline_count = inline_count_from_manifest(manifest)
             allowed_types = {
                 "comparison_table",
+                "comparison_table_ui",
                 "process_flow",
                 "bar_timeline_chart",
                 "structure_diagram",
@@ -208,7 +232,7 @@ def validate_cover_qa(article_dir: Path, root: Path) -> dict:
                 "tool_screenshot",
                 "infographic_card",
             }
-            for i in range(1, 8):
+            for i in range(1, inline_count + 1):
                 key = f"inline_{i}"
                 slot = slots.get(key) or {}
                 if not str(slot.get("visual_type") or "").strip():
@@ -261,24 +285,35 @@ def validate_cover_qa(article_dir: Path, root: Path) -> dict:
             stamp_path = article_dir / "cover" / "logo-composite-stamp.json"
             if not stamp_path.is_file():
                 errors.append("cover/logo-composite-stamp.json missing — run brand logo composite")
-        try:
-            from excalibur_blog_drawn_logo_gate import (
-                validate_article_logo_gates_slim,
-                validate_cover_phone_and_overlap_gates,
-            )
-
-            errors.extend(validate_article_logo_gates_slim(article_dir, root))
-            errors.extend(validate_cover_phone_and_overlap_gates(article_dir, root))
+        gen_only = uses_gen_only_human(root)
+        if not gen_only:
             try:
-                from excalibur_blog_cover_collage_gate import (
-                    validate_cover_anti_collage_gates,
-                    validate_cover_type_meme_sticker_gates,
+                from excalibur_blog_drawn_logo_gate import (
+                    validate_article_logo_gates_slim,
+                    validate_cover_phone_and_overlap_gates,
                 )
 
-                errors.extend(validate_cover_type_meme_sticker_gates(article_dir / "cover" / "cover.png"))
-                errors.extend(validate_cover_anti_collage_gates(article_dir / "cover" / "cover.png"))
+                errors.extend(validate_article_logo_gates_slim(article_dir, root))
+                errors.extend(validate_cover_phone_and_overlap_gates(article_dir, root))
+                try:
+                    from excalibur_blog_cover_collage_gate import (
+                        validate_cover_anti_collage_gates,
+                        validate_cover_type_meme_sticker_gates,
+                    )
+
+                    errors.extend(validate_cover_type_meme_sticker_gates(article_dir / "cover" / "cover.png"))
+                    errors.extend(validate_cover_anti_collage_gates(article_dir / "cover" / "cover.png"))
+                except ImportError:
+                    errors.append("excalibur_blog_cover_collage_gate.py missing — scene poster QA unavailable")
             except ImportError:
-                errors.append("excalibur_blog_cover_collage_gate.py missing — scene poster QA unavailable")
+                errors.append("excalibur_blog_drawn_logo_gate.py missing — logo paste QA unavailable")
+        else:
+            try:
+                from excalibur_blog_drawn_logo_gate import validate_cover_phone_and_overlap_gates
+
+                errors.extend(validate_cover_phone_and_overlap_gates(article_dir, root))
+            except ImportError:
+                errors.append("excalibur_blog_drawn_logo_gate.py missing — phone overlap QA unavailable")
             poster_stamp = article_dir / "cover" / "poster-composite-stamp.json"
             if poster_stamp.is_file():
                 errors.append(
@@ -289,13 +324,16 @@ def validate_cover_qa(article_dir: Path, root: Path) -> dict:
             if batch_path.is_file():
                 try:
                     batch = load_json(batch_path)
-                    blob = json.dumps(batch, ensure_ascii=False).casefold()
-                    if "logo-dobry-dom" in blob or "cropped-img_7143" in blob:
-                        errors.append("slice4 batch contains logo reference — forbidden in gen_only_human")
+                    if batch.get("logo_reference_in_generation"):
+                        errors.append("slice4 batch logo_reference_in_generation=true — forbidden")
+                    jobs = batch.get("jobs") or []
+                    for job in jobs:
+                        mcp = (job or {}).get("mcp_args") or {}
+                        urls = mcp.get("input_urls") or mcp.get("images") or []
+                        if urls:
+                            errors.append("slice4 batch contains images[]/input_urls — forbidden in gen_only_human")
                 except json.JSONDecodeError:
                     errors.append("slice4-mcp-batch.json invalid JSON")
-        except ImportError:
-            errors.append("excalibur_blog_drawn_logo_gate.py missing — logo paste QA unavailable")
     elif logo_reference:
         stamp_path = article_dir / "cover" / "logo-composite-stamp.json"
         if stamp_path.is_file():

@@ -47,17 +47,22 @@ H1: {h1}
 4 H2: {h2s}
 Один mid fight-question → Telegram/MAX. Один CTA в конце.
 3 перелинковки на sibling из published-articles.
+HARD: без HH:MM в теле; «Нет. Так не заселяем.» max 1 раз;
+обязательно identity: «Я хост посуточной в Тюмени. Это «Добрый дом».» после §1;
+чистый HTML без markdown fences.
 """.format(h1=NEW_H1, h2s=" | ".join(H2S))
 
 
-def _run(cmd: list[str], *, cwd: Path | None = None) -> None:
+def _run(cmd: list[str], *, cwd: Path | None = None, allow_fail: bool = False) -> int:
     print("+", " ".join(cmd), flush=True)
     proc = subprocess.run(cmd, cwd=cwd or ROOT, capture_output=True, text=True)
     if proc.stdout:
         print(proc.stdout, end="", flush=True)
     if proc.returncode != 0:
         print(proc.stderr, file=sys.stderr, flush=True)
-        raise RuntimeError(f"command failed: {' '.join(cmd)}")
+        if not allow_fail:
+            raise RuntimeError(f"command failed: {' '.join(cmd)}")
+    return proc.returncode
 
 
 def build_spec() -> dict[str, Any]:
@@ -147,7 +152,8 @@ def bootstrap_article(spec: dict[str, Any]) -> Path:
             str(adir.relative_to(ROOT)),
             "--stage",
             "writer",
-        ]
+        ],
+        allow_fail=True,
     )
     _run(
         [
@@ -225,45 +231,58 @@ def cover_pipeline(adir: Path) -> None:
 
 
 def build_publish_php(spec: dict[str, Any], html: str, urls: dict[str, str]) -> str:
+    import base64
+
+    inlines = [spec["inline_remote"].format(n=n) for n in range(1, 4)]
     payload = {
         "post_id": WP_POST_ID,
         "title": spec["h1"],
         "content": html,
-        "cover_url": urls.get(spec["cover_remote"], ""),
-        "cover_path": f"wp-content/uploads/{UPLOAD_SUBDIR}/{spec['cover_remote']}",
+        "upload_subdir": UPLOAD_SUBDIR,
+        "cover_remote": spec["cover_remote"],
+        "inlines": inlines,
     }
+    b64 = base64.b64encode(json.dumps(payload, ensure_ascii=False).encode("utf-8")).decode("ascii")
     return f"""<?php
-require_once dirname(__DIR__, 3) . '/wp-load.php';
-$p = json_decode(<<<'JSON'
-{json.dumps(payload, ensure_ascii=False)}
-JSON
-, true);
+require __DIR__ . '/wp-load.php';
+require_once ABSPATH . 'wp-admin/includes/image.php';
+$p = json_decode(base64_decode('{b64}'), true);
 $post_id = (int)($p['post_id'] ?? 0);
 $post = get_post($post_id);
-if (!$post) {{ echo 'ERR post_not_found'; exit(1); }}
+if (!$post) {{ echo 'ERR post_not_found id=' . $post_id . PHP_EOL; exit(1); }}
+$subdir = (string)($p['upload_subdir'] ?? '2026/09');
+$cover = (string)($p['cover_remote'] ?? '');
+$content = (string)($p['content'] ?? '');
+$title = (string)($p['title'] ?? '');
 wp_update_post([
   'ID' => $post_id,
-  'post_title' => $p['title'],
-  'post_content' => wp_slash($p['content']),
+  'post_title' => $title,
+  'post_content' => wp_slash($content),
+  'post_modified' => current_time('mysql'),
+  'post_modified_gmt' => gmdate('Y-m-d H:i:s'),
 ]);
-$cover_path = ABSPATH . ltrim($p['cover_path'], '/');
-if (file_exists($cover_path)) {{
-  $attach_id = attachment_url_to_postid($p['cover_url']);
-  if (!$attach_id) {{
-    $filetype = wp_check_filetype(basename($cover_path), null);
-    $attachment = [
-      'post_mime_type' => $filetype['type'],
-      'post_title' => sanitize_file_name(basename($cover_path)),
-      'post_content' => '',
-      'post_status' => 'inherit',
-    ];
-    $attach_id = wp_insert_attachment($attachment, $cover_path, $post_id);
-    require_once ABSPATH . 'wp-admin/includes/image.php';
-    wp_generate_attachment_metadata($attach_id, $cover_path);
+$upload = wp_upload_dir();
+$cover_path = $upload['basedir'] . '/' . $subdir . '/' . $cover;
+$cover_url = $upload['baseurl'] . '/' . $subdir . '/' . $cover;
+$att_id = attachment_url_to_postid($cover_url);
+if ($att_id <= 0 && is_file($cover_path)) {{
+  $attachment = [
+    'post_mime_type' => 'image/png',
+    'post_title' => sanitize_file_name(preg_replace('/\\.png$/i', '', $cover)),
+    'post_content' => '',
+    'post_status' => 'inherit',
+    'guid' => $cover_url,
+  ];
+  $att_id = (int) wp_insert_attachment($attachment, $cover_path, $post_id);
+  if ($att_id > 0) {{
+    wp_update_attachment_metadata($att_id, wp_generate_attachment_metadata($att_id, $cover_path));
   }}
-  if ($attach_id) set_post_thumbnail($post_id, $attach_id);
+}}
+if ($att_id > 0) {{
+  set_post_thumbnail($post_id, $att_id);
 }}
 echo 'OK post_updated=' . $post_id . PHP_EOL;
+echo 'OK attachment_id=' . (int)$att_id . PHP_EOL;
 echo 'OK permalink=' . get_permalink($post_id) . PHP_EOL;
 """
 
