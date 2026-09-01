@@ -193,7 +193,7 @@ class WordstatGateTest(unittest.TestCase):
         self.assertEqual(wow.get("cover_qa_mode"), "slim")
         self.assertEqual(wow.get("canon_id"), "dobry_dom_dzen_story_collage_v2")
         self.assertEqual(wow.get("cover_generation_mode"), "story_collage_16_9")
-        self.assertEqual(wow.get("logo_mode"), "drawn_in_generation")
+        self.assertEqual(wow.get("logo_mode"), "reference_in_generation")
         self.assertFalse(wow.get("forbid_logo_reference_in_generation"))
         self.assertFalse(wow.get("cover_phone_factory_post_composite"))
         self.assertTrue(wow.get("cover_phone_large_sticker_generation"))
@@ -202,13 +202,15 @@ class WordstatGateTest(unittest.TestCase):
         self.assertEqual(wow.get("max_generation_attempts_per_canvas"), 2)
         self.assertTrue(wow.get("paste_and_ship_on_exhaust"))
         self.assertTrue(wow.get("forbid_wordpress_ui_in_art"))
+        self.assertTrue(wow.get("forbid_ai_drawn_logo"))
+        self.assertFalse(wow.get("forbid_factory_logo_paste_on_cover"))
         self.assertEqual(wow.get("inline_logo_count_min"), 0)
         self.assertEqual(wow.get("inline_logo_count_max"), 0)
         self.assertIn("Excalibur-SUBARENDA", wow.get("tenant_scope", ""))
         self.assertEqual(tenant.get("cover_mode"), "full_grsai_cover")
         img = tenant.get("image_generation") or {}
-        self.assertTrue(img.get("cover_factory_logo_paste_disabled"))
-        self.assertFalse(wow.get("cover_phone_factory_post_composite"))
+        self.assertFalse(img.get("cover_factory_logo_paste_disabled"))
+        self.assertTrue(img.get("logo_required_as_generation_reference"))
 
     def test_visual_notes_dobry_dom(self) -> None:
         notes = json.loads(
@@ -229,6 +231,8 @@ class WordstatGateTest(unittest.TestCase):
             "forbid_overlapping_text_blocks",
             "FULL_GRSAI_COVER_CHECKS",
             "validate_full_grsai_cover_gates",
+            "logo_composite_stamp_pass",
+            "validate_logo_stamp",
         ):
             self.assertIn(key, gate_src)
         for removed in (

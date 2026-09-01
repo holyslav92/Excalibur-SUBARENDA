@@ -342,6 +342,16 @@ def composite_poster_cover(
 
 
 def main() -> int:
+    print(
+        "BLOCKER: excalibur_blog_cover_poster_composite.py disabled — "
+        "dobry_dom_dzen_story_collage_v2 draws Cyrillic headline/sticky/phone IN Grsai generation; "
+        "only brand_logo_composite may post-process (official logo paste 1:1 on cover).",
+        file=sys.stderr,
+    )
+    return 1
+
+
+def _legacy_main_disabled() -> int:
     ap = argparse.ArgumentParser(description="Factory poster composite for Dzen story collage cover canvas")
     ap.add_argument("--article-dir", required=True)
     ap.add_argument("--source", default="cover-canvas.png")

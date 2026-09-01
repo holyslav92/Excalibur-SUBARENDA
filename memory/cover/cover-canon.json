@@ -2,7 +2,7 @@
   "canon_id": "dobry_dom_dzen_story_collage_v2",
   "status": "locked",
   "tenant": "dobry-dom",
-  "label_ru": "Добрый дом — полная Grsai-обложка (тип + sticky + телефон + логотип в генерации), zero inline logos",
+  "label_ru": "Добрый дом — Grsai editorial (тип + sticky + телефон в генерации) + factory logo paste 1:1, zero inline logos",
   "tenant_scope": "holyslav92/Excalibur-SUBARENDA ONLY. Never tymenrieltor.ru / Excalibur-2-Cloud rieltor identity.",
   "replaces": "dobry_dom_dzen_story_collage_v1",
   "cover_generation": {
@@ -19,19 +19,20 @@
     "model_policy": "primary_non_vip_only",
     "vip_disabled": true,
     "max_generation_attempts": 2,
-    "on_exhaust": "pad_clear_top_right + resize + ship"
+    "on_exhaust": "pad_clear_top_right + resize + official logo paste 1:1 + ship"
   },
   "dzen_story_collage_rules": {
     "cover_qa_check": "dzen_story_collage_editorial",
-    "philosophy": "ONE Grsai primary image API generation (16:9, ≥2048×1152, non-VIP, max 2 gens) produces the COMPLETE cover: photoreal Dzen story-collage scene + Cyrillic two-beat H1 with yellow/peach brush on ONE keyword + one yellow sticky punch + phone +7 (993) 574-83-22 + official «Добрый дом» lockup small top-right (curtains + flower + terracotta name, transparent look, NO white/gray plaque). Factory ships PNG as-is (resize/thumb only) — NO poster composite, NO logo PNG paste.",
+    "philosophy": "ONE Grsai primary image API generation produces editorial cover: photoreal Dzen story scene + Cyrillic two-beat H1 + brush + sticky + phone IN generation. Official logo NEVER invented — images[] MUST include memory/cover/assets/brand/logo-dobry-dom.png; factory pastes same alpha PNG 1:1 top-right after gen (only allowed post-step). NO poster composite.",
     "generation_must": [
       "photoreal bright Comfort+ Tyumen daily-rental apartment/context matching THIS case",
       "HERO VARIES BY THEME — person with emotion OR story objects OR key detail (barrier, keys, router, ticket, bowl, door, laptop); NEVER default empty hallway; NEVER always same meme",
       "Cyrillic two-beat display headline IN generation — Onest ExtraBold ~860 black sans; yellow/peach brush highlight behind ONE keyword",
       "one yellow sticky-note punch line IN generation (short Cyrillic)",
       "phone +7 (993) 574-83-22 (or +7 (993) 574-83-22) readable IN generation — NEVER +7 922 001 65 05",
-      "official «Добрый дом» lockup IN generation small top-right — green curtains + flower + terracotta name, transparent integrated look, NO white/gray plaque/square under it",
-      "high-key bright Comfort+ Tyumen mood — not gold luxury"
+      "high-key bright Comfort+ Tyumen mood — not gold luxury",
+      "images[] reference on EVERY cover gen: memory/cover/assets/brand/logo-dobry-dom.png (reserve top-right 8–12%, do NOT ship model redraw as brand)",
+      "factory brand_logo_composite after gen — paste same official PNG 1:1 top-right over any model lockup, no plaque"
     ],
     "generation_must_not": [
       "empty cream hallway as default layout",
@@ -39,10 +40,13 @@
       "always blinking_white_guy or roll_safe as default",
       "magazine empty interior poster with type on top",
       "white/gray/beige plaque or card under logo lockup",
-      "factory poster composite or logo PNG paste after generation"
+      "model-invented logo lockup",
+      "house-with-heart substitute logo",
+      "extra logo subtitle or second logo copy"
     ],
     "factory_post_process": [
-      "scripts/excalibur_blog_cover_standalone_apply.py — resize 2048×1152 → cover.png 1200×675 only"
+      "scripts/excalibur_blog_cover_standalone_apply.py — resize 2048×1152 → cover.png 1200×675",
+      "scripts/excalibur_blog_brand_logo_composite.py — official alpha PNG 1:1 top-right ONLY"
     ],
     "type_overlay_recipe": {
       "headline_font": "Onest ExtraBold ~860 black sans — drawn IN generation",
@@ -51,7 +55,7 @@
       "sticky_note": "one yellow square with short punch — IN generation",
       "phone": "+7 (993) 574-83-22",
       "forbidden_phone": "+7 922 001 65 05",
-      "logo": "model-drawn integrated lockup top-right — NO factory alpha paste"
+      "logo": "factory alpha PNG paste 1:1 top-right ONLY — images[] reserves pad; model redraw is covered, never shipped as brand"
     },
     "forbidden_on_cover": [
       "overlapping type layers",
@@ -66,7 +70,7 @@
       "wordpress UI",
       "empty hallway + pasted meme as required layout",
       "factory poster composite overlay",
-      "factory logo PNG paste after generation"
+      "shipping model-invented «Добрый дом» lockup without factory PNG paste"
     ],
     "anti_collage_gates": [
       "forbid_overlapping_text_blocks",
@@ -136,11 +140,13 @@
       ],
       "logo_lockup": {
         "corner": "top_right",
-        "drawn_in_generation": true,
-        "factory_paste_png": false,
+        "drawn_in_generation": false,
+        "factory_paste_png": true,
         "width_fraction": "8-12%",
         "one_logo_per_image": true,
-        "no_plate_under_logo": true
+        "no_plate_under_logo": true,
+        "reference_in_generation": true,
+        "factory_paste_required": true
       },
       "cover_phone": {
         "display": "+7 (993) 574-83-22",
@@ -150,7 +156,12 @@
         "never_in_logo_pad": true,
         "cover_only": true,
         "min_thumb_readable": true,
-        "forbidden_modes": ["fridge_magnet", "peel_pill", "realtor_scrap", "beige_ui_pill"],
+        "forbidden_modes": [
+          "fridge_magnet",
+          "peel_pill",
+          "realtor_scrap",
+          "beige_ui_pill"
+        ],
         "forbidden_phone": "+7 922 001 65 05"
       }
     },
@@ -188,16 +199,27 @@
   "light_bright": {
     "required": true,
     "style": "high-key, светлые картинки, airy",
-    "effects": ["soft natural daylight", "clean white balance", "slightly blurred apartment background"],
-    "forbidden": ["dark cinematic", "twilight mood panel", "low-key noir", "moody black background", "gold luxury lobby"]
+    "effects": [
+      "soft natural daylight",
+      "clean white balance",
+      "slightly blurred apartment background"
+    ],
+    "forbidden": [
+      "dark cinematic",
+      "twilight mood panel",
+      "low-key noir",
+      "moody black background",
+      "gold luxury lobby"
+    ]
   },
   "brand_logo": {
-    "mode": "drawn_in_generation",
+    "mode": "reference_in_generation_plus_factory_paste",
     "cover_mode": "full_grsai_cover",
     "skip_human_host": true,
     "logo_reference_asset": "memory/cover/assets/brand/logo-dobry-dom.png",
-    "logo_reference_required": false,
-    "forbid_factory_logo_paste": true,
+    "logo_reference_required": true,
+    "forbid_factory_logo_paste": false,
+    "forbid_model_drawn_logo_as_brand": true,
     "logo_corner": "top_right",
     "logo_width_fraction": "8-12%",
     "cover_always_one_logo": true,
@@ -206,7 +228,10 @@
     "cover_phone_large_in_generation": "+7 (993) 574-83-22",
     "cover_phone_post_composite": false,
     "forbidden_phone": "+7 922 001 65 05",
-    "forbid_poster_composite": true
+    "forbid_poster_composite": true,
+    "forbid_model_invented_logo": true,
+    "forbid_ai_drawn_logo": true,
+    "composite_script": "scripts/excalibur_blog_brand_logo_composite.py"
   },
   "meme_system": {
     "cover": "OPTIONAL — at most ONE meme when manifest picks id; hero is theme-derived scene, NOT meme-by-default; drawn IN generation when used",

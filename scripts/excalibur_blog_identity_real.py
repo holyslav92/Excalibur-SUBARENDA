@@ -66,9 +66,13 @@ LOGO_REFERENCE_MODES = frozenset(
 
 
 def tenant_uses_logo_reference_in_generation(root: Path | None = None) -> bool:
-    """Logo baked into Grsai draw via urls/aroma reference — not alpha-pasted after."""
+    """Official logo PNG in Grsai images[] on cover — never model-invented lockup."""
     mode = logo_mode(root).casefold()
-    return mode in LOGO_REFERENCE_MODES
+    if mode in LOGO_REFERENCE_MODES:
+        return True
+    if cover_mode(root).casefold() in {"full_grsai_cover", "grsai_full_cover"}:
+        return True
+    return False
 
 
 def is_logo_lockup_mode(root: Path | None = None) -> bool:

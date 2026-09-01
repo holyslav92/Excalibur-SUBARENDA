@@ -345,7 +345,7 @@ class DrawnLogoGateTest(unittest.TestCase):
         slots = resolve_inline_logo_slots(ROOT / "memory/blog/articles/B04-oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego", cfg)
         self.assertEqual(slots, [])
 
-    def test_tenant_image_generation_forbids_drawn_logo(self) -> None:
+    def test_tenant_image_generation_logo_reference_and_factory_paste(self) -> None:
         tenant = json.loads((ROOT / "shared/tenant-config.json").read_text(encoding="utf-8"))
         img = tenant.get("image_generation") or {}
         forbids = " ".join(img.get("forbid_in_generation") or []).lower()
@@ -353,7 +353,8 @@ class DrawnLogoGateTest(unittest.TestCase):
         self.assertIn("gray box", forbids)
         self.assertIn("white box", forbids)
         self.assertIn("phone pill", forbids)
-        self.assertTrue(img.get("logo_never_as_generation_reference"))
+        self.assertFalse(img.get("logo_never_as_generation_reference"))
+        self.assertTrue(img.get("logo_required_as_generation_reference"))
         self.assertIn("logo-dobry-dom.png", img.get("logo_factory_paste_only", ""))
 
     def test_bright_window_pad_exempt_when_no_lockup_colors(self) -> None:

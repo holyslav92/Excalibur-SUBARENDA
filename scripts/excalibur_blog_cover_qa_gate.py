@@ -34,10 +34,13 @@ BRAND_LOGO_PASTE_CHECKS = (
 )
 
 FULL_GRSAI_COVER_CHECKS = (
+    "logo_composite_stamp_pass",
+    "cover_logo_pasted",
     "inline_no_logo_on_inlines",
     "cover_phone_993_large_sticker",
     "forbid_phone_pill_post_composite",
     "forbid_922_phone",
+    "forbid_ai_drawn_logo_cover",
     "forbid_wordpress_ui_in_art",
     "no_logo_plate_cover",
     "require_display_headline",
@@ -111,8 +114,9 @@ def load_tenant_cover_mode(root: Path) -> dict:
         "reference_in_gen",
     }
     full_grsai_cover = mode in {"full_grsai_cover", "grsai_full_cover"} or logo_mode in {
-        "drawn_in_generation",
-        "full_grsai_cover",
+        "reference_in_generation",
+        "logo_reference_in_generation",
+        "reference_in_gen",
     }
     return {
         "full_grsai_cover": full_grsai_cover,
@@ -226,12 +230,20 @@ def validate_cover_qa(article_dir: Path, root: Path) -> dict:
 
     if full_grsai_cover:
         try:
-            from excalibur_blog_drawn_logo_gate import validate_full_grsai_cover_gates
+            from excalibur_blog_brand_logo_composite import validate_logo_stamp
+            from excalibur_blog_drawn_logo_gate import (
+                validate_article_logo_gates_slim,
+                validate_cover_phone_and_overlap_gates,
+                validate_full_grsai_cover_gates,
+            )
             from excalibur_blog_cover_collage_gate import (
                 validate_cover_anti_collage_gates,
                 validate_cover_type_meme_sticker_gates,
             )
 
+            errors.extend(validate_logo_stamp(article_dir, root))
+            errors.extend(validate_article_logo_gates_slim(article_dir, root))
+            errors.extend(validate_cover_phone_and_overlap_gates(article_dir, root))
             errors.extend(validate_full_grsai_cover_gates(article_dir, root))
             cover_path = article_dir / "cover" / "cover.png"
             if cover_path.is_file():

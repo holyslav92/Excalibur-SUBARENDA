@@ -3,7 +3,7 @@
   "status": "full_grsai_cover",
   "name_ru": "Добрый дом",
   "cover_mode": "full_grsai_cover",
-  "logo_mode": "drawn_in_generation",
+  "logo_mode": "reference_in_generation",
   "cover_generation_mode": "standalone_16_9",
   "reference_images": [],
   "reference_image": "",
@@ -11,11 +11,11 @@
   "reference_url_source": "Logo PNG optional style reference only — NEVER required; NEVER factory paste on cover",
   "visual_notes": "memory/cover/visual-notes-dobry-dom.json",
   "logo_composite": {
-    "mode": "disabled_on_cover",
+    "mode": "reference_and_paste_png_alpha",
     "logo_asset": "memory/cover/assets/brand/logo-dobry-dom.png",
     "canonical_sha256": "72e53ba966f0626cc6eaad0792e68b57c8da0ccd9265d6822fbc173fdb48b941",
-    "forbid_ai_drawn_logo": false,
-    "forbid_factory_logo_paste_on_cover": true,
+    "forbid_ai_drawn_logo": true,
+    "forbid_factory_logo_paste_on_cover": false,
     "cover_phone_in_scene_generation": true,
     "cover_phone_post_composite": false,
     "max_width_fraction": 0.1,
@@ -25,7 +25,8 @@
     "logo_corner": "top_right",
     "inline_logo_count_min": 0,
     "inline_logo_count_max": 0,
-    "inline_logo_slots_default": []
+    "inline_logo_slots_default": [],
+    "logo_reference_required_in_generation": true
   },
   "type_meme_sticker_rules": {
     "canon_id": "dobry_dom_type_meme_sticker_v3",
@@ -43,7 +44,7 @@
     "type_poster": "Designed magazine TYPE poster: spectacular Cyrillic headline hero + exactly 1 catalog meme sticker + large hotel-lobby info-board phone; per-case prompt not template",
     "forbid_wordpress_ui": "NEVER WordPress, Gutenberg, wp-admin, block editor, theme chrome, cookie bars in generated art",
     "no_overlap": "Headline, phone sticker, meme sticker, logo pad NEVER overlap",
-    "logo_lockup": "«Добрый дом» lockup drawn IN Grsai generation top-right — curtains + flower + terracotta name, transparent integrated look, NO white/gray plaque; ZERO logos on inlines; NEVER factory PNG paste on cover",
+    "logo_lockup": "Official logo via Grsai images[] reference (logo-dobry-dom.png) 1:1 top-right + factory alpha PNG paste after gen — NEVER model-invented lockup; NO white/gray plaque; ZERO logos on inlines",
     "cover_phone": "+7 (993) 574-83-22 drawn IN Grsai generation — BIG, Dzen-thumb readable; NEVER peel-pill, magnet, realtor scrap; NEVER +7 922; NEVER factory post-composite phone bar"
   },
   "cover_canon": "memory/cover/cover-canon.json",

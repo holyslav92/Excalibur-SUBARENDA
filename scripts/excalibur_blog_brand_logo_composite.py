@@ -115,8 +115,8 @@ def uses_brand_logo_paste(cfg: dict[str, Any]) -> bool:
     mode = str(cfg.get("cover_mode") or "").strip().casefold()
     logo_mode = str(cfg.get("logo_mode") or mode).strip().casefold()
     if mode in {"full_grsai_cover", "grsai_full_cover"}:
-        return False
-    if logo_mode in {"drawn_in_generation", "full_grsai_cover"}:
+        return True
+    if logo_mode in {"drawn_in_generation"}:
         return False
     if logo_mode in {"reference_in_generation", "logo_reference_in_generation", "reference_in_gen"}:
         return False
@@ -125,7 +125,9 @@ def uses_brand_logo_paste(cfg: dict[str, Any]) -> bool:
 
 def uses_logo_reference_in_generation(cfg: dict[str, Any]) -> bool:
     mode = str(cfg.get("logo_mode") or cfg.get("cover_mode") or "").strip().casefold()
-    return mode in {"reference_in_generation", "logo_reference_in_generation", "reference_in_gen"}
+    if mode in {"reference_in_generation", "logo_reference_in_generation", "reference_in_gen"}:
+        return True
+    return mode in {"full_grsai_cover", "grsai_full_cover"}
 
 
 def _load_font(size: int):
@@ -367,6 +369,7 @@ def composite_logo_onto_image(
 
     if pre_snapshot_dir is not None:
         pre_path, created = restore_or_snapshot_pre_composite(image_path, pre_snapshot_dir)
+        # Owner lock: factory paste COVERS any model-drawn lockup — do not block regen.
         if paste_logo and block_drawn_lockup and created:
             assert_no_drawn_lockup_before_paste(pre_path)
 
@@ -465,7 +468,7 @@ def composite_article_images(
             fixed_corner=logo_corner,
             paste_logo=paste_logo,
             pre_snapshot_dir=pre_composite_dir,
-            block_drawn_lockup=not after_pad_clear,
+            block_drawn_lockup=False,
         )
         if name == "cover.png":
             cover_placement = placement

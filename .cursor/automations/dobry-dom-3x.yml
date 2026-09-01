@@ -61,12 +61,16 @@ tenant:
   # FTP_PASS — ONLY Cloud Secrets (never commit)
 
 cover:
-  mode: brand_logo_paste
+  mode: full_grsai_cover
+  logo_mode: reference_in_generation
   logo: memory/cover/assets/brand/logo-dobry-dom.png
   images_per_article: 8
   max_attempts_per_canvas: 2
   paste_and_ship_on_exhaust: true
-  rule: official logo on cover ONLY (ZERO on inlines); NO host face / NO Shakin; beauty=agent judgment
+  rule: >-
+    Grsai draws type/sticky/phone IN generation; images[] reserves TR pad;
+    factory brand_logo_composite pastes official PNG 1:1 on cover ONLY (ZERO on inlines);
+    NO poster_composite; NO host face / NO Shakin
 
 brain_and_images:
   prose: scripts/excalibur_blog_derouter_opus_chat.py

@@ -31,6 +31,7 @@ from excalibur_blog_quad_slots import (
     canvas_specs_for_inline_count,
     inline_count_from_manifest,
     uses_dzen_story_collage_v1,
+    uses_full_grsai_cover,
     uses_scene_composite_v1,
     uses_scene_poster_v2,
 )
@@ -762,16 +763,18 @@ SCENE_POSTER_COVER_BAN = (
 DZEN_STORY_FULL_GENERATION_RULE = (
     "FULL GRSAI EDITORIAL: Cyrillic display type MUST be drawn IN this generation — "
     "Onest ExtraBold ~860 black sans two-beat headline; yellow/peach brush highlight behind ONE keyword; "
-    "one yellow sticky-note punch; phone +7 (993) 574-83-22 (or +7 (993) 574-83-22) BIG and thumb-readable; "
-    "official «Добрый дом» lockup small top-right — green curtains + flower + terracotta name, "
-    "transparent integrated look, NO white/gray/beige plaque/square under logo. "
-    "NEVER +7 922 001 65 05. Factory ships PNG as-is — NO poster composite, NO logo PNG paste."
+    "one yellow sticky-note punch; phone +7 (993) 574-83-22 (or +7 (993) 574-83-22) BIG and thumb-readable. "
+    "LOGO PAD top-right 8-12%: images[] includes official PNG (logo-dobry-dom.png) to reserve space — "
+    "do NOT redraw curtains/flower/terracotta «Добрый дом» lockup; factory pastes that PNG 1:1 after gen "
+    "(covers any model attempt; that paste IS the brand). NEVER house-with-heart, subtitle, second logo; "
+    "NO white/gray plaque. NEVER +7 922 001 65 05. NO poster composite for type/phone/sticky."
 )
 
 DZEN_STORY_GENERATION_BAN = (
     "BAN: overlapping type layers, magnified letter crops, Trade Offer/Drake/Wojak template drawn by model, "
     "white/gray/beige plaque or card under logo, empty hallway as default layout, phone pill/peel-pill, "
-    "WordPress UI, 2+ memes / meme soup, realtor phone +7 922, factory poster composite, factory logo PNG paste"
+    "WordPress UI, 2+ memes / meme soup, realtor phone +7 922, factory poster composite, "
+    "model-invented logo, house-with-heart lockup, extra logo subtitle, second logo copy"
 )
 
 DZEN_STORY_COLLAGE_CANON = (
@@ -967,8 +970,9 @@ def build_dzen_story_collage_cover_prompt(
         f"PHONE EXACT «{phone}» readable at Dzen thumb — in-scene tablo or bar, NOT peel-pill, NOT +7 922."
     )
     logo_clause = (
-        "LOGO lockup top-right 8-12%: official «Добрый дом» — green curtains + flower + terracotta serif name, "
-        "transparent integrated look, NO white/gray plaque; model MUST draw/integrate — NEVER send logo PNG as reference."
+        "LOGO PAD top-right 8-12%: leave clean space — images[] includes official PNG (memory/cover/assets/brand/logo-dobry-dom.png) "
+        "as layout reference ONLY; do NOT redraw curtains/flower/terracotta «Добрый дом» lockup — factory pastes that file 1:1 "
+        "after gen and covers any model attempt; NO house-with-heart, subtitle, or second logo; NO white/gray plaque."
     )
     lines = [
         style_prefix,
@@ -986,7 +990,8 @@ def build_dzen_story_collage_cover_prompt(
         SCENE_POSTER_COVER_BAN + ".",
         DZEN_STORY_GENERATION_BAN + ".",
         "TEXT LANGUAGE LOCK: visible text RUSSIAN Cyrillic only; headline readable at Dzen thumb.",
-        "Grsai primary image API, non-VIP, max 2 gens; on exhaust pad-clear TR plaque + resize + ship.",
+        "Grsai primary image API, non-VIP, max 2 gens; images[] MUST include official logo reference for TR pad; "
+        "on exhaust pad-clear TR + resize + factory logo paste 1:1.",
     ]
     return "\n".join(line for line in lines if line)
 
@@ -1145,7 +1150,9 @@ def main() -> int:
     cat_hero = style_is_situational_cat_hero(style)
     local_reference = str(style.get("local_reference") or "").strip()
     brand_logo_paste = tenant_uses_brand_logo_paste(root, style)
-    logo_reference_in_generation = tenant_uses_logo_reference_in_generation(root)
+    logo_reference_in_generation = tenant_uses_logo_reference_in_generation(root) or (
+        bool(standalone_cover) and uses_full_grsai_cover(root)
+    )
     cover_phone_cta = cover_phone_cta_for_manifest(manifest, root)
 
     inline_count = inline_count_from_manifest(manifest)
@@ -1252,6 +1259,14 @@ def main() -> int:
         logo_ref_spec = resolve_logo_reference_for_api(root) if logo_reference_in_generation else {}
         logo_ref_url = ""
         if logo_reference_in_generation:
+            logo_local_path = root / str(logo_ref_spec.get("local") or "")
+            if not logo_local_path.is_file():
+                print(
+                    f"❌ LOGO REFERENCE BLOCKER: missing {logo_ref_spec.get('local')} "
+                    "(official alpha PNG required for cover images[])",
+                    file=sys.stderr,
+                )
+                return 1
             raw_logo_url = str(logo_ref_spec.get("url") or "").strip()
             if raw_logo_url:
                 if validate_reference_url(raw_logo_url):
@@ -1275,8 +1290,16 @@ def main() -> int:
 
         image_flow = resolve_image_flow(root)
         apply_script = (
-            "python3 scripts/excalibur_blog_cover_standalone_apply.py "
-            f"--article-dir <article_dir>"
+            (
+                "python3 scripts/excalibur_blog_cover_standalone_apply.py "
+                f"--article-dir <article_dir>"
+                + (
+                    " && python3 scripts/excalibur_blog_brand_logo_composite.py "
+                    f"--article-dir <article_dir>"
+                    if uses_full_grsai_cover(root)
+                    else ""
+                )
+            )
             if standalone_cover
             else (
                 "python3 scripts/excalibur_blog_quad_apply.py "

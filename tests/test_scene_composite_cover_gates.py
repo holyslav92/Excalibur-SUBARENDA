@@ -65,7 +65,7 @@ class SceneCompositeCanonTest(unittest.TestCase):
         self.assertTrue(wow.get("forbid_giant_cropped_glyph"))
         self.assertTrue(wow.get("forbid_model_drawn_meme_template"))
 
-    def test_full_grsai_prompt_requires_type_phone_logo(self) -> None:
+    def test_full_grsai_prompt_requires_type_and_logo_reference(self) -> None:
         from excalibur_blog_cover_quad_prompt import build_standalone_cover_prompt
         from excalibur_blog_meme_cat_gate import load_meme_catalog
 
@@ -75,13 +75,13 @@ class SceneCompositeCanonTest(unittest.TestCase):
         manifest = {"cover_hook": "Парковка бесплатно — у шлагбаума попросили 800 ₽"}
         prompt = build_standalone_cover_prompt(manifest, style, design, meme_catalog=catalog, root=ROOT)
         lowered = prompt.casefold()
-        self.assertIn("story collage", lowered)
         self.assertIn("cyrillic", lowered)
         self.assertIn("993", prompt)
-        self.assertIn("добрый дом", lowered)
+        self.assertIn("logo-dobry-dom.png", lowered)
+        self.assertIn("images[]", lowered)
+        self.assertIn("factory pastes", lowered)
+        self.assertIn("do not redraw", lowered)
         self.assertNotIn("zero cyrillic", lowered)
-        self.assertIn("no poster composite", lowered)
-        self.assertIn("no logo png paste", lowered)
 
     def test_quad_slots_scene_composite(self) -> None:
         from excalibur_blog_quad_slots import uses_dzen_story_collage_v1, uses_full_grsai_cover
@@ -111,14 +111,17 @@ class SceneCompositeAntiCollageGateTest(unittest.TestCase):
             "validate_cover_anti_collage_gates",
             "FULL_GRSAI_COVER_CHECKS",
             "validate_full_grsai_cover_gates",
+            "logo_composite_stamp_pass",
+            "validate_logo_stamp",
         ):
             self.assertIn(key, gate_src)
         full_grsai_block = gate_src.split("FULL_GRSAI_COVER_CHECKS", 1)[1].split("LOGO_REFERENCE_CHECKS", 1)[0]
+        self.assertIn("logo_composite_stamp_pass", full_grsai_block)
         self.assertNotIn("poster_composite_stamp_pass", full_grsai_block)
 
 
 class StandaloneApplyTest(unittest.TestCase):
-    def test_standalone_apply_resize_only_report(self) -> None:
+    def test_standalone_apply_defers_logo_composite(self) -> None:
         from excalibur_blog_cover_standalone_apply import apply_standalone_cover
 
         with tempfile.TemporaryDirectory() as tmp:
@@ -129,7 +132,7 @@ class StandaloneApplyTest(unittest.TestCase):
             img = Image.new("RGB", (2048, 1152), (240, 235, 228))
             img.save(cover / "cover-canvas.png")
             report = apply_standalone_cover(article, root, skip_pad_clear=True)
-            self.assertEqual(report.get("logo_paste"), "in_generation_not_factory_paste")
+            self.assertEqual(report.get("logo_paste"), "deferred_to_brand_logo_composite")
             self.assertTrue((cover / "cover.png").is_file())
 
 

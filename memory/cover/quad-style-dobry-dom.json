@@ -21,8 +21,8 @@
   "anti_repeat_log": "memory/cover/used-motifs.json",
   "wordstat_geo": "memory/cover/wordstat-geo.json",
   "global_prompt_prefix": "Designed RU editorial frames, airy #FFFFFF high-key on inlines, warm comfort+ Tyumen (посуточно). Clean readable Cyrillic labels on inline panels. NO host Shakin/identity-real. NO brand logo on inlines (ZERO logos on inline_1..inline_7). NO WordPress/Gutenberg/Dashboard/wp-admin. NO empty stock; NO WP screenshot. No dark cinematic.",
-  "cover_scene_only_prompt_prefix": "DZEN STORY COLLAGE 16:9 standalone 2048x1152. Photoreal bright Comfort+ Tyumen daily-rental for THIS case. HERO varies: person with emotion OR story objects OR key detail — NEVER default empty hallway. COMPLETE editorial cover IN generation: Onest ~860 black two-beat Cyrillic headline + yellow/peach brush on ONE keyword + one yellow sticky punch + phone +7 (993) 574-83-22 + «Добрый дом» lockup top-right (curtains + flower + terracotta name, transparent, NO plaque).",
-  "cover_standalone_prompt_prefix": "DZEN STORY COLLAGE 16:9 standalone 2048x1152. ONE Grsai generation = COMPLETE Dzen thumbnail: photoreal story scene + full Cyrillic type + sticky + phone + integrated logo lockup. NO factory poster composite. NO logo PNG paste.",
+  "cover_scene_only_prompt_prefix": "DZEN STORY COLLAGE 16:9 standalone 2048x1152. ONE Grsai generation = scene + Cyrillic type + sticky + phone IN gen; images[] reserves TR pad — factory pastes logo-dobry-dom.png 1:1 after (never ship model redraw as brand).",
+  "cover_standalone_prompt_prefix": "DZEN STORY COLLAGE 16:9 standalone 2048x1152. ONE Grsai generation = scene + Cyrillic type + sticky + phone IN gen; images[] reserves TR pad — factory pastes logo-dobry-dom.png 1:1 after (never ship model redraw as brand).",
   "hook_ink": "rgb(33,29,26)",
   "hook_accent": "rgb(255,210,80)",
   "panel_background": "#FFFFFF",
@@ -41,9 +41,10 @@
     "post-composite phone chip",
     "white gray plaque under logo",
     "factory poster composite overlay",
-    "factory logo PNG paste after generation",
     "wow poster collage soup",
-    "missing display headline typography"
+    "missing display headline typography",
+    "model-invented logo lockup",
+    "house-with-heart logo substitute"
   ],
   "forbidden": [
     "WordPress UI in art",

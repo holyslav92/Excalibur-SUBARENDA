@@ -133,7 +133,7 @@ class TypeMemeStickerCoverGateTest(unittest.TestCase):
             self.assertTrue(heuristic["phone_sticker"].get("detected"), heuristic)
             self.assertFalse(heuristic["people_heavy"].get("detected"), heuristic)
 
-    def test_standalone_cover_prompt_requires_headline_phone_logo_in_generation(self) -> None:
+    def test_standalone_cover_prompt_requires_type_and_logo_reference(self) -> None:
         from excalibur_blog_cover_quad_prompt import build_standalone_cover_prompt
         from excalibur_blog_meme_cat_gate import load_meme_catalog
 
@@ -145,7 +145,8 @@ class TypeMemeStickerCoverGateTest(unittest.TestCase):
         lowered = prompt.casefold()
         self.assertIn("cyrillic", lowered)
         self.assertIn("993", prompt)
-        self.assertIn("добрый дом", lowered)
+        self.assertIn("logo-dobry-dom.png", lowered)
+        self.assertIn("images[]", lowered)
         self.assertNotIn("zero cyrillic", lowered)
         self.assertIn("no poster composite", lowered)
 
@@ -254,8 +255,7 @@ class TypeMemeStickerCoverGateTest(unittest.TestCase):
 
         contract = (ROOT / "shared/blog-cover-quad-canvas-contract.md").read_text(encoding="utf-8")
         self.assertIn("dzen_story_collage_v2", contract)
-        self.assertIn("standalone", contract.lower())
-        self.assertIn("cover-canvas.png", contract)
+        self.assertIn("brand_logo_composite", contract)
 
     def test_live_lapoy_fixture_fails_type_meme_gates(self) -> None:
         """Regression: shipped people-scene lapoy cover must FAIL all v3 gates."""

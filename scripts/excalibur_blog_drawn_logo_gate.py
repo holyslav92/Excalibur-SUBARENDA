@@ -612,7 +612,7 @@ def is_bright_window_pad_false_positive(
 
 
 def validate_full_grsai_cover_gates(article_dir: Path, root: Path) -> list[str]:
-    """Full Grsai cover QA: logo/phone/type IN generation — no factory paste stamps."""
+    """Full Grsai cover QA: type/phone/sticky in gen; official logo via factory paste 1:1 (covers model redraw)."""
     errors: list[str] = []
     from excalibur_blog_brand_logo_composite import IMAGE_NAMES
 
@@ -633,7 +633,7 @@ def validate_full_grsai_cover_gates(article_dir: Path, root: Path) -> list[str]:
     pill = detect_phone_pill_post_composite(cover_path)
     if pill.get("detected"):
         errors.append(
-            "cover.png: factory post-composite phone pill detected — full Grsai mode forbids overlay"
+            "cover.png: factory post-composite phone pill detected — type/phone must stay in Grsai gen"
         )
 
     for name in IMAGE_NAMES:
@@ -664,12 +664,15 @@ def validate_article_logo_gates_slim(article_dir: Path, root: Path) -> list[str]
     if not uses_brand_logo_paste(cfg):
         return errors
 
+    cover_mode = str(cfg.get("cover_mode") or "").strip().casefold()
+    full_grsai = cover_mode in {"full_grsai_cover", "grsai_full_cover"}
+
     cover_dir = article_dir / "cover"
     pre_dir = cover_dir / "pre-composite"
     pre_cover = pre_dir / "cover.png"
     if pre_cover.is_file():
         result = detect_drawn_lockup_in_image(pre_cover)
-        if result["detected"]:
+        if result["detected"] and not full_grsai:
             reasons = ", ".join(result.get("reasons") or [])
             errors.append(
                 f"pre-composite cover.png: AI-drawn lockup detected (score={result['score']}, {reasons})"
