@@ -1,11 +1,6 @@
 {
-  "gate": "case-delivery",
+  "gate": "opening-meta",
   "status": "PASS",
-  "stage": "article",
-  "checks_run": [
-    "writer.html",
-    "article.html"
-  ],
   "errors": [],
   "article_dir": "/workspace/memory/blog/articles/B05-rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super"
 }
