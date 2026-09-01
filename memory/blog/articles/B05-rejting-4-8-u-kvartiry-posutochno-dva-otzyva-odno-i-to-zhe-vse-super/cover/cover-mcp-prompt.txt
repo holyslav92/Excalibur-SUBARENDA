@@ -1,0 +1,14 @@
+DZEN STORY COLLAGE SCENE 16:9 standalone 2048x1152. Photoreal bright Comfort+ Tyumen daily-rental apartment/context for THIS case. HERO varies: person with emotion OR story objects OR key detail (barrier, keys, router, ticket, bowl, door, laptop) — NEVER default empty hallway, N…
+Standalone cover canvas 2048x1152 exact 16:9 full-bleed — STORY COLLAGE SCENE, NOT a type poster.
+HARD STORY SCENE: ZERO Cyrillic, ZERO digits, ZERO phone number, ZERO meme, ZERO logo, ZERO stickers, ZERO typography, ZERO headline, ZERO captions, ZERO UI text, ZERO peel-pill, ZERO information board. Factory post-process adds Onest ~860 headline + brush highlight + yellow sticky punch + phone bar, optional catalog meme PNG paste, then official alpha logo overlay AFTER generation.
+DZEN STORY COLLAGE: photoreal bright Comfort+ Tyumen daily-rental; slightly blurred apartment background; split layout with light zone for factory type; palette warm milk/oatmeal + charcoal rgb(33,29,26) + mustard brush rgb(255,210,80); BAN metallic gold/brass/3D gold/dark leather/empty hallway default
+HERO for THIS case — story objects/props: phone screen duplicate reviews, star rating 4.8, magnifying glass, booking app UI props, sage tape phone tablo +7 993 574-83-22; emotion cue: гость над двумя «всё супер»; bait/switch visual: stonks face when two reviews are copy-paste but rating still 4,8.
+Scene context (no text in image): Sep sunny apt still-life: phone on table shows 4.8 stars, NO faces; sage tablo +7 993 574-83-22; TR empty pad; ZERO meme ZERO logo..
+Factory will highlight keyword «деталей» with brush stroke — do not draw text.
+Factory sticky punch will read «Пять минут проверки» — do not draw sticky or Cyrillic.
+PEOPLE: only when THIS case needs — guest stress face, hands with keys, silhouette; NOT group photo; NOT default zero-people hallway.
+LIGHT ZONE: leave clean/blur area (left or right third) for factory Onest headline overlay.
+TOP-RIGHT pad 8-12% — continuous scene texture only; TOP-RIGHT pad 8-12% width — continuous SCENE only (wall/wood/sky/pattern texture).
+NEVER send logo as Grsai reference — factory alpha PNG overlay AFTER poster composite.
+BAN: 0 memes, 2+ memes, meme soup, people-heavy group photo, tiny in-scene phone on door, Wordstat sticker soup, torn-paper collage, metallic gold, brass, 3D gold type, gold-glitter type, dark leather, wood+Harold lobby stamp, yellow sticky notes, split white-panel+photo, phone pill, peel-pill phone, fridge magnet phone, gold brass plaque, post-composite phone chip, model-drawn logo, house-with-heart, logo plate, empty stock room, WordPress UI, wow poster collage soup, dark cinematic, overlapping type layers, magnified letter crops, Trade Offer/Drake/Wojak drawn by model, collage of stickers covering headline, white/gray plaque under logo, model-drawn lockup.
+Grsai primary image API, non-VIP, max 2 gens; on exhaust neighbor-clone pad-clear TR + poster composite + logo paste.

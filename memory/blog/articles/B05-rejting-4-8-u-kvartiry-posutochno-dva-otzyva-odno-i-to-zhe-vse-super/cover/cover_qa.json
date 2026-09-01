@@ -1,0 +1,24 @@
+{
+  "agent": "excalibur-blog-cover-qa",
+  "status": "BLOCK",
+  "checked_at": "2026-09-01",
+  "topic_id": "B05",
+  "checks": {
+    "eight_png_exist": true,
+    "quad_manifest_valid": true,
+    "wordstat_stickers_1_3": true,
+    "motif_no_collision_14d": true,
+    "max_one_cat_meme_slot": true,
+    "light_high_key": true,
+    "logo_composite_stamp_pass": true,
+    "cover_logo_pasted": true,
+    "inline_logo_count_2_3": true,
+    "poster_composite_stamp_pass": true,
+    "inline_no_logo_on_inlines": false,
+    "require_cover_meme_sticker": false,
+    "require_display_headline": false,
+    "forbid_model_drawn_meme_template": false,
+    "forbid_people_heavy_cover": false
+  },
+  "notes": "8 PNG shipped; Grsai VIP on quad canvases; cover primary 1672×941 (standalone vip_disabled); factory logo cover+inline_1/3/7; poster composite headline+phone bar; python collage gates FAIL on drake template, people-heavy, missing pasted meme asset"
+}

@@ -1,0 +1,198 @@
+{
+  "topic_id": "B05",
+  "slug": "rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super",
+  "layout": "2x2",
+  "pipeline": "type_meme_sticker_v3_standalone_cover",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 0,
+      "canvas_file": "cover/cover-canvas.png",
+      "batch_file": "cover/cover-mcp-batch.json",
+      "prompt_file": "cover/cover-mcp-prompt.txt",
+      "result_file": "cover/cover-mcp-result.json",
+      "slots": [
+        "cover"
+      ],
+      "has_cover": true,
+      "standalone_cover": true,
+      "export_size": "1200x675"
+    },
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": [
+        "inline_1",
+        "inline_2",
+        "inline_3",
+        "inline_4"
+      ],
+      "has_cover": false
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": [
+        "inline_5",
+        "inline_6",
+        "inline_7",
+        "panel_quiet_pad"
+      ],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "Звёзды есть — деталей нет",
+  "cover_hook_highlight": "деталей",
+  "cover_headline_line1": "звёзды есть —",
+  "cover_headline_line2": "деталей нет",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_meme_id": "stonks",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "снять квартиру посуточно в тюмени",
+    "авито квартиры посуточно тюмень"
+  ],
+  "logo_paste_inline_slots": [
+    "inline_1",
+    "inline_3",
+    "inline_7"
+  ],
+  "cover_motifs": {
+    "composition": "TYPE poster phone twin reviews + 4.8★ + in-scene phone tablo + stonks meme TR empty pad",
+    "location": "September sunny Tyumen Comfort+ apartment living room, warm daylight through window, green trees outside, NOT winter snow",
+    "meme": "factory stonks PNG paste only after gen",
+    "prop_set": "phone screen duplicate reviews, star rating 4.8, magnifying glass, booking app UI props, sage tape phone tablo +7 993 574-83-22",
+    "sticker_set": "квартиры посуточно тюмень, авито квартиры посуточно тюмень",
+    "joke": "stonks face when two reviews are copy-paste but rating still 4,8",
+    "headline_line1": "звёзды есть —",
+    "headline_line2": "деталей нет",
+    "hero_type": "review_duplicate_skeptic"
+  },
+  "cover_emotion": "гость над двумя «всё супер»",
+  "cover_scene": "Sep apt: phone 4,8★ duplicate reviews; sage tablo +7 993 574-83-22",
+  "slots": {
+    "cover": {
+      "quadrant": "standalone",
+      "role": "cover_editorial_hero",
+      "alt": "Сентябрь, Тюмень: на экране телефона рейтинг 4,8 и два одинаковых отзыва «всё супер»; крупное табло с номером +7 (993) 574-83-22.",
+      "scene_hint": "Sep sunny apt still-life: phone on table shows 4.8 stars, NO faces; sage tablo +7 993 574-83-22; TR empty pad; ZERO meme ZERO logo.",
+      "meme_caption_ru": "",
+      "sticky": "Пять минут проверки"
+    },
+    "inline_1": {
+      "quadrant": "top_left",
+      "h2_anchor": "Что скрывается за цифрой 4,8",
+      "visual_type": "comparison_table",
+      "scene_hint": "Grid: twin reviews vs 4,8.",
+      "alt": "4,8 и два отзыва",
+      "labels": [
+        "два «всё супер»",
+        "рейтинг 4,8",
+        "двушка у аквапарка",
+        "3 900 ₽/ночь"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "top_right",
+      "h2_anchor": "Площадка проверяет, но не проживает ночь за вас",
+      "visual_type": "process_flow",
+      "scene_hint": "Flow: rating math + review types.",
+      "alt": "Типы отзывов",
+      "labels": [
+        "среднее арифметическое",
+        "заселение состоялось",
+        "не удалось заселиться",
+        "не договорились"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Пять минут переписки до 3 900 ₽",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Checklist: online booking rules.",
+      "alt": "Онлайн-бронь",
+      "labels": [
+        "с 15.06.2023",
+        "онлайн-бронь обязательна",
+        "отзыв после брони",
+        "короткие фразы"
+      ]
+    },
+    "inline_4": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Вопрос, который лучше задать до брони",
+      "visual_type": "fact_card",
+      "scene_hint": "FAQ: duplicate reviews check.",
+      "alt": "Проверка отзывов",
+      "labels": [
+        "два одинаковых отзыва",
+        "проверьте накрутку",
+        "район и заселение",
+        "фото и чистота",
+        "ответ хозяина"
+      ]
+    },
+    "inline_5": {
+      "quadrant": "top_left",
+      "h2_anchor": "Почему хосту выгодно разрешать себя проверять",
+      "visual_type": "infographic_card",
+      "scene_hint": "Fact card: ask what was super.",
+      "alt": "Уточняющие вопросы хозяину до оплаты.",
+      "labels": [
+        "что было «супер»?",
+        "заселение или чистота",
+        "свежее фото кухни",
+        "свежее фото окна"
+      ]
+    },
+    "inline_6": {
+      "quadrant": "top_right",
+      "h2_anchor": "Мораль",
+      "visual_type": "comparison_table",
+      "scene_hint": "Table: prepay, deposit.",
+      "alt": "Предоплата, залог и доплаты перед бронированием.",
+      "labels": [
+        "предоплата",
+        "залог",
+        "3900 ₽ включено",
+        "доплаты за гостей",
+        "сохранить переписку"
+      ]
+    },
+    "inline_7": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Сначала проверка — потом деньги",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Flow: check→pay→key.",
+      "alt": "Пять минут переписки до оплаты и заселения.",
+      "labels": [
+        "сначала проверка",
+        "потом деньги и ключ",
+        "пять минут переписки",
+        "дешевле 3 900 ₽",
+        "напишите до оплаты"
+      ]
+    },
+    "panel_quiet_pad": {
+      "quadrant": "bottom_right",
+      "role": "quiet_pad",
+      "alt": "Quiet pad",
+      "scene_hint": "Soft cream blur pad, no text.",
+      "labels": []
+    }
+  },
+  "cover_keys_ru": [
+    "рейтинг 4,8",
+    "Тюмень"
+  ]
+}
