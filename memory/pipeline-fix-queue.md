@@ -1,5 +1,49 @@
 # Pipeline fix queue
 
+## INC-20260901-1220 — Metrika credentials missing (B06 content-learner)
+
+status: open
+run_date: 2026-09-01
+role: excalibur-blog-content-learner
+topic_id: B06
+article_dir: memory/blog/articles/B06-vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu
+severity: medium
+category: secrets
+
+### What went wrong
+
+- `python3 scripts/excalibur_blog_metrika_fetch.py --days 30 --ingest` exited 2:
+  `METRIKA CREDENTIALS BLOCKER` — `YANDEX_METRIKA_OAUTH_TOKEN` and
+  `YANDEX_METRIKA_COUNTER_ID` not set in Cloud Secrets/env.
+- Content-learner could not ingest cohort signals for B06 or match evidence to
+  Metrika behavior.
+
+### How the agent recovered this run
+
+- Recorded Metrika-only low-confidence lessons in `memory/content-lessons.md`
+  with blockers `METRIKA_UNAVAILABLE` / `LOW_SAMPLE`.
+- Did not invent `content-evidence-report.json` or causal CTR/retention claims.
+
+### Durable fix needed before next run
+
+- Add Yandex Metrika OAuth token (`metrika:read`) and counter id to Cloud
+  Secrets; re-run ingest before next content-learner cohort analysis.
+
+### Suggested files to inspect/change
+
+- Cloud Secrets: `YANDEX_METRIKA_OAUTH_TOKEN`, `YANDEX_METRIKA_COUNTER_ID`
+- `scripts/excalibur_blog_metrika_fetch.py`
+- `shared/content-learning-contract.md`
+
+### Secrets
+
+- YANDEX_METRIKA_OAUTH_TOKEN — missing
+- YANDEX_METRIKA_COUNTER_ID — missing
+
+### Fixer resolution
+
+pending
+
 ## INC-20260824-1038 — live-page gate /blog permalink vs schema URL
 
 status: fixed
@@ -375,4 +419,4 @@ checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_llms_deploy.py`
 - `python3 -m unittest tests.test_llms_deploy_transport tests.test_publish_transport -v`
 - `python3 scripts/excalibur_blog_published_titles.py` → titles=6
-commit: pending
+commit: 4870189

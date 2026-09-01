@@ -4,6 +4,132 @@
 
 ---
 
+## LESSON-20260901-1220-B06-baggage-before-keys
+status: proposed
+topic_id: B06
+category: utility
+confidence: medium
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP. Publish-артефакты: title-brief.json, description-brief.json, scout handoff checkout_train_bags, case-delivery-gate PASS, interlink-gate PASS (4 outbound).
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest BLOCKER по credentials.
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Klyshin moral «сначала порядок действий, потом ключ» → кейс: **сначала договориться о багаже, потом сдавать ключи** (scout handoff + финальный вердикт в article.html).
+- Two-beat H1 «Выезд в полдень. Поезд через 4 часа — чемоданы у подъезда» — полдень → поезд → багаж у двери, без how-to.
+- Lockpick до брони: «где будут вещи между выездом и поездом — и кто отвечает за доступ?» + 4 вопроса (до брони / до часа / где / кто выдаст).
+- Разведение **поздний выезд** и **хранение багажа** как отдельных договорённостей (inline-стикеры inline_5).
+- Иллюзия отеля (ресепшен, камера хранения) vs квартира после выезда — отдельный H2 «Нет камеры хранения».
+- Wordstat P0 «квартиры посуточно тюмень» 5446 + secondary «хранение багажа» 133 / «хранение багажа тюмень» 28.
+
+### Change
+- В checkout-gap темах (выезд 12:00 + транспорт днём) в §1 называть **длину окна в часах** (4,5 ч), не только «до вечера».
+- Scout handoff: при hook checkout_train_bags логировать final P0 + secondary bag cluster + explicit NOT early_checkin.
+
+### Never again
+- Сдавать ключи и «разбираться с чемоданами у двери» в коридоре за 15 минут до выезда.
+- Считать поздний выезд автоматическим разрешением оставить багаж.
+- Оставлять чемоданы у подъезда / в тамбуре «на полчасика» как рабочий план.
+
+### Proposed apply
+- Scout: checkout_train_bags → handoff с rework-логом bag clusters + spine Tyumen P0.
+- Description (Дзен): вопрос «на полчаса у подъезда?» до чемоданов в руках — как description-brief B06.
+- Review only; Writer prompt не трогать автоматически.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260901-1220-B06-vokzal-locker-route-math
+status: proposed
+topic_id: B06
+category: utility
+confidence: medium
+
+### Evidence
+- artifact: article.html#«Камера на вокзале» + research-notes.md (Свердловская ж.д., ячейки 1-й этаж 24/7)
+  finding: fallback-маршрут: такси 300–500 ₽ → вокзальные ячейки → 3–3,5 ч без багажа; не брать «100 ₽/час» из старых справочников.
+- metrika_signal: none (credentials unavailable; causal retention не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Арифметика окна: 4,5 ч − дорога − сдача − 30–60 мин запас = ~3–3,5 ч «город без чемоданов».
+- Конкретика вокзала Тюмени: 1-й этаж, 24/7, три размера, от 1 ч до суток; ~26 100 использований янв–июль 2026 (не гарантия свободной ячейки).
+- Перекрёстная ссылка на B03: пешком с чемоданами ≠ пешком налегке.
+- Inline-стикеры inline_6 / inline_7 дублируют маршрут и ₽.
+
+### Change
+- Для train-day checkout тем всегда включать **fallback на вокзальную ячейку** с запасом по размеру и времени, не только «спросите хоста».
+- Упоминать продление по QR/SMS 2026 как ориентир, но не как замену запаса до поезда.
+
+### Never again
+- План «успеем ровно за четыре часа» без проверки занятости ячейки и размера багажа.
+- Цитировать устаревший тариф «100 ₽/час» без «смотрите на терминале».
+
+### Proposed apply
+- Research checklist: checkout+train Tyumen → verify locker location/tariff on terminal + Sverdlovskaya press stat as demand signal only.
+- Review only.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260901-1220-B06-checkout-day-interlink-cluster
+status: proposed
+topic_id: B06
+category: structure
+confidence: low
+
+### Evidence
+- artifact: interlink-gate.json#outbound_found
+  finding: 4 sibling: бесконтактное заселение (логика «сначала договорённость»), доплата за третьего у двери, залог на выезде, «три остановки» с чемоданом — кластер «день отъезда / условия заметили поздно».
+- metrika_signal: none (credentials unavailable)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Interlink как narrative cluster: поздно замеченные условия в день выезда (B04 доплата, B02 залог) + procedural siblings (B01 keys, B03 distance с багажом).
+- CTA «напишите заранее — посмотрим окно до выезда» — не обещание сервиса на сайте.
+
+### Change
+- При publish checkout-gap тем — inbound из sibling «день у двери» (B02/B04) и outbound на procedural + geo-with-luggage (B03).
+
+### Never again
+- Checkout-gap материал без sibling на «условие существовало заранее, заметили у двери».
+
+### Proposed apply
+- Publish/interlink review: checkout_train_bags ↔ burn-at-door + luggage-distance siblings.
+- Review only.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
 ## LESSON-20260830-1745-B04-extra-guest-fee-at-door
 status: proposed
 topic_id: B04
