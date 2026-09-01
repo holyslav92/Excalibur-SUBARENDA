@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Factory poster composite — scene-only canvas + typography + meme paste + phone tablo.
+"""Factory poster composite — story collage canvas + typography + optional meme + phone bar.
 
-HARD RULE (dobry_dom_scene_composite_v1):
-- Grsai generates ONLY empty tender-light hallway (no Cyrillic, digits, meme, logo, phone).
-- This script draws headline (Cormorant SemiBold Italic + Onest ~860), pastes ONE catalog meme PNG,
-  draws kitchen-tablo phone +7 (993) 574-83-22.
+HARD RULE (dobry_dom_dzen_story_collage_v1):
+- Grsai generates photoreal story collage scene (theme-derived hero; no Cyrillic/digits/meme/logo/phone).
+- This script draws Onest ~860 black headline + yellow/peach brush highlight on ONE keyword,
+  ONE yellow sticky-note punch, phone bar +7 (993) 574-83-22, optional ONE catalog meme PNG paste.
 - Official alpha logo is applied AFTER by excalibur_blog_brand_logo_composite.py.
 """
 
@@ -18,17 +18,20 @@ from pathlib import Path
 from typing import Any
 
 DEFAULT_OUTPUT_SIZE = (1200, 675)
-TERRACOTTA_RGB = (158, 74, 54)
 CHARCOAL_RGB = (33, 29, 26)
-PHONE_BOARD_RGB = (232, 226, 214)
-PHONE_BOARD_BORDER = (180, 168, 150)
+BRUSH_RGB = (255, 210, 80)
+STICKY_RGB = (255, 235, 80)
+STICKY_BORDER = (220, 200, 60)
+PHONE_BAR_RGB = (245, 240, 230)
+PHONE_BAR_BORDER = (200, 190, 175)
 PHONE_CAPTION_RGB = (90, 82, 74)
 FONT_DIR_REL = "memory/cover/assets/fonts"
-CORMORANT_REL = f"{FONT_DIR_REL}/Cormorant-SemiBoldItalic.ttf"
 ONEST_REL = f"{FONT_DIR_REL}/Onest-ExtraBold.ttf"
 MEME_ASSETS_DIR = "memory/cover/memes"
 DEFAULT_PHONE = "+7 (993) 574-83-22"
+FORBIDDEN_PHONE = "+7 922 001 65 05"
 PHONE_CAPTION = "добрый дом • тюмень"
+POSTER_MODE = "dzen_story_collage_v1"
 
 
 def project_root() -> Path:
@@ -49,9 +52,7 @@ def load_font(root: Path, rel: str, size: int, *, fallback: str):
         except OSError:
             pass
     fallback_paths = [
-        "/usr/share/fonts/truetype/dejavu/DejaVuSerif-BoldItalic.ttf",
         "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
-        "/usr/share/fonts/truetype/liberation/LiberationSerif-Italic.ttf",
         "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf",
     ]
     for fb in fallback_paths:
@@ -99,12 +100,42 @@ def resolve_headline_lines(manifest: dict) -> tuple[str, str]:
     return line1, line2
 
 
+def resolve_highlight_keyword(manifest: dict, line1: str, line2: str) -> str:
+    kw = str(manifest.get("cover_hook_highlight") or "").strip()
+    if kw:
+        return kw
+    for line in (line2, line1):
+        for token in line.replace("—", " ").replace(":", " ").split():
+            cleaned = token.strip("«»\"'.,!?")
+            if len(cleaned) >= 3 and any(ch.isdigit() for ch in cleaned):
+                return cleaned
+            if len(cleaned) >= 4:
+                return cleaned
+    return ""
+
+
+def resolve_sticky_text(manifest: dict) -> str:
+    cover_slot = (manifest.get("slots") or {}).get("cover") or {}
+    for key in ("sticky", "cover_quote", "meme_caption_ru"):
+        val = str(cover_slot.get(key) or manifest.get(f"cover_{key}" if key != "sticky" else "cover_quote") or "").strip()
+        if val:
+            return val[:48]
+    return ""
+
+
 def resolve_meme_asset(root: Path, manifest: dict) -> tuple[str, str, Path | None]:
     from excalibur_blog_meme_rotate import pick_cover_meme, load_meme_catalog
 
+    cover_slot = (manifest.get("slots") or {}).get("cover") or {}
+    forced_id = str(cover_slot.get("meme_id") or manifest.get("cover_meme_id") or "").strip()
+    if not forced_id and not manifest.get("cover_meme_required"):
+        return "", "", None
+
     catalog = load_meme_catalog(root)
     picked = pick_cover_meme(manifest, catalog, root)
-    meme_id = str(picked.get("id") or "").strip()
+    meme_id = str(picked.get("id") or forced_id or "").strip()
+    if not meme_id:
+        return "", "", None
     asset_rel = str(picked.get("asset") or "").strip()
     if asset_rel:
         asset_path = root / asset_rel
@@ -116,56 +147,113 @@ def resolve_meme_asset(root: Path, manifest: dict) -> tuple[str, str, Path | Non
     return meme_id, str(picked.get("name_ru") or meme_id), None
 
 
-def draw_headline_block(draw, line1: str, line2: str, *, width: int, root: Path) -> tuple[int, int, int, int]:
-    margin_x = int(width * 0.06)
-    max_w = int(width * 0.72)
-    y = int(675 * 0.05)
-    font_l1 = load_font(root, CORMORANT_REL, 54, fallback="serif")
-    font_l2 = load_font(root, ONEST_REL, 42, fallback="sans")
+def draw_brush_highlight(draw, x: int, y: int, width: int, height: int) -> None:
+    pad = 4
+    draw.rounded_rectangle(
+        (x - pad, y + int(height * 0.55), x + width + pad, y + height + pad),
+        radius=8,
+        fill=BRUSH_RGB,
+    )
+
+
+def draw_headline_block(
+    draw,
+    line1: str,
+    line2: str,
+    *,
+    width: int,
+    root: Path,
+    highlight_kw: str,
+) -> tuple[int, int, int, int]:
+    margin_x = int(width * 0.05)
+    max_w = int(width * 0.55)
+    y = int(675 * 0.06)
+    font_l1 = load_font(root, ONEST_REL, 46, fallback="sans")
+    font_l2 = load_font(root, ONEST_REL, 40, fallback="sans")
+    font_kw = load_font(root, ONEST_REL, 40, fallback="sans")
 
     bbox_top = y
-    # Dark backing band so headline reads as display type (QA heuristic + Dzen thumb)
-    band_bottom = y + int(font_l1.size * 2.6)
-    draw.rectangle((margin_x - 8, bbox_top - 6, margin_x + max_w + 8, band_bottom), fill=(18, 20, 24, 180))
-    for line, font, color in ((line1, font_l1, TERRACOTTA_RGB), (line2.lower(), font_l2, (235, 228, 215))):
+    for line, font in ((line1, font_l1), (line2, font_l2)):
         if not line:
             continue
         for wrapped in wrap_text(draw, line, font, max_w):
-            draw.text((margin_x, y), wrapped, fill=color, font=font)
-            y += int(font.size * 1.15)
-    bbox_bottom = y
-    return margin_x, bbox_top, margin_x + max_w, bbox_bottom
+            if highlight_kw and highlight_kw.casefold() in wrapped.casefold():
+                parts = wrapped.split(highlight_kw, 1)
+                if len(parts) == 2:
+                    before, after = parts
+                    x_cursor = margin_x
+                    if before:
+                        draw.text((x_cursor, y), before, fill=CHARCOAL_RGB, font=font)
+                        x_cursor += int(draw.textlength(before, font=font))
+                    kw_w = int(draw.textlength(highlight_kw, font=font_kw))
+                    bbox = draw.textbbox((x_cursor, y), highlight_kw, font=font_kw)
+                    draw_brush_highlight(draw, x_cursor, bbox[1], kw_w, bbox[3] - bbox[1])
+                    draw.text((x_cursor, y), highlight_kw, fill=CHARCOAL_RGB, font=font_kw)
+                    if after:
+                        draw.text((x_cursor + kw_w, y), after, fill=CHARCOAL_RGB, font=font)
+                else:
+                    draw.text((margin_x, y), wrapped, fill=CHARCOAL_RGB, font=font)
+            else:
+                draw.text((margin_x, y), wrapped, fill=CHARCOAL_RGB, font=font)
+            y += int(font.size * 1.12)
+    return margin_x, bbox_top, margin_x + max_w, y
+
+
+def draw_sticky_note(draw, text: str, *, width: int, root: Path) -> tuple[int, int, int, int] | None:
+    if not text:
+        return None
+    note_w = int(width * 0.28)
+    note_h = int(width * 0.14)
+    x0 = int(width * 0.04)
+    y0 = int(675 * 0.02)
+    x1 = x0 + note_w
+    y1 = y0 + note_h
+    draw.polygon(
+        [(x0, y0), (x1, y0), (x1, y1 - 12), (x1 - 12, y1), (x0, y1)],
+        fill=STICKY_RGB,
+        outline=STICKY_BORDER,
+    )
+    font = load_font(root, ONEST_REL, 18, fallback="sans")
+    inner_w = note_w - 16
+    lines = wrap_text(draw, text, font, inner_w)[:3]
+    ty = y0 + 10
+    for ln in lines:
+        draw.text((x0 + 8, ty), ln, fill=CHARCOAL_RGB, font=font)
+        ty += int(font.size * 1.1)
+    return (x0, y0, x1, y1)
 
 
 def paste_meme_sticker(base, meme_path: Path, *, width: int, height: int):
     from PIL import Image, ImageOps
 
-    max_w = int(width * 0.22)
-    max_h = int(height * 0.28)
+    max_w = int(width * 0.18)
+    max_h = int(height * 0.22)
     with Image.open(meme_path) as meme_img:
         meme = meme_img.convert("RGBA")
     meme = ImageOps.contain(meme, (max_w, max_h), Image.Resampling.LANCZOS)
     x = int(width * 0.04)
-    y = height - meme.height - int(height * 0.06)
+    y = height - meme.height - int(height * 0.14)
     base.alpha_composite(meme, (x, y))
     return (x, y, x + meme.width, y + meme.height)
 
 
-def draw_phone_tablo(draw, phone: str, *, width: int, height: int, root: Path) -> tuple[int, int, int, int]:
-    board_w = int(width * 0.34)
-    board_h = int(height * 0.16)
-    x0 = width - board_w - int(width * 0.06)
-    y0 = int(height * 0.58)
-    x1 = x0 + board_w
-    y1 = y0 + board_h
-    draw.rounded_rectangle((x0, y0, x1, y1), radius=14, fill=PHONE_BOARD_RGB, outline=PHONE_BOARD_BORDER, width=3)
-    phone_font = load_font(root, ONEST_REL, 30, fallback="sans")
-    caption_font = load_font(root, CORMORANT_REL, 16, fallback="serif")
+def draw_phone_bar(draw, phone: str, *, width: int, height: int, root: Path) -> tuple[int, int, int, int]:
+    if FORBIDDEN_PHONE.replace(" ", "") in phone.replace(" ", ""):
+        raise ValueError(f"forbidden realtor phone {phone!r} — use {DEFAULT_PHONE}")
+    bar_h = int(height * 0.11)
+    bar_w = int(width * 0.36)
+    x0 = width - bar_w - int(width * 0.04)
+    y0 = height - bar_h - int(height * 0.04)
+    x1 = x0 + bar_w
+    y1 = y0 + bar_h
+    draw.rounded_rectangle((x0, y0, x1, y1), radius=10, fill=PHONE_BAR_RGB, outline=PHONE_BAR_BORDER, width=2)
+    phone_font = load_font(root, ONEST_REL, 26, fallback="sans")
+    caption_font = load_font(root, ONEST_REL, 13, fallback="sans")
     phone_w = draw.textlength(phone, font=phone_font)
-    draw.text((x0 + (board_w - phone_w) / 2, y0 + board_h * 0.22), phone, fill=CHARCOAL_RGB, font=phone_font)
+    draw.text((x0 + (bar_w - phone_w) / 2, y0 + bar_h * 0.18), phone, fill=CHARCOAL_RGB, font=phone_font)
     cap_w = draw.textlength(PHONE_CAPTION, font=caption_font)
     draw.text(
-        (x0 + (board_w - cap_w) / 2, y0 + board_h * 0.62),
+        (x0 + (bar_w - cap_w) / 2, y0 + bar_h * 0.58),
         PHONE_CAPTION,
         fill=PHONE_CAPTION_RGB,
         font=caption_font,
@@ -194,18 +282,16 @@ def composite_poster_cover(
         raise ValueError("cover headline line1 missing in quad-manifest — set cover_headline_line1/cover_hook")
 
     phone = str(manifest.get("cover_phone_cta") or DEFAULT_PHONE).strip()
+    highlight_kw = resolve_highlight_keyword(manifest, line1, line2)
+    sticky_text = resolve_sticky_text(manifest)
     meme_id, meme_name, meme_path = resolve_meme_asset(root, manifest)
-    if meme_path is None:
-        raise FileNotFoundError(
-            f"catalog meme asset missing for id={meme_id!r} — add memory/cover/memes/{meme_id}.png"
-        )
 
     try:
-        from excalibur_blog_cover_collage_gate import validate_scene_only_canvas
+        from excalibur_blog_cover_collage_gate import validate_story_scene_canvas
 
-        scene_errors = validate_scene_only_canvas(source)
+        scene_errors = validate_story_scene_canvas(source)
         if scene_errors:
-            raise RuntimeError(f"scene-only canvas BLOCKER: {'; '.join(scene_errors)}")
+            raise RuntimeError(f"story scene canvas BLOCKER: {'; '.join(scene_errors)}")
     except ImportError:
         pass
 
@@ -214,34 +300,49 @@ def composite_poster_cover(
 
     draw = ImageDraw.Draw(base)
     w, h = base.size
-    headline_bbox = draw_headline_block(draw, line1, line2, width=w, root=root)
-    meme_bbox = paste_meme_sticker(base, meme_path, width=w, height=h)
+    sticky_bbox = draw_sticky_note(draw, sticky_text, width=w, root=root)
+    headline_bbox = draw_headline_block(draw, line1, line2, width=w, root=root, highlight_kw=highlight_kw)
+    meme_bbox: tuple[int, int, int, int] | None = None
+    if meme_path is not None:
+        meme_bbox = paste_meme_sticker(base, meme_path, width=w, height=h)
     draw = ImageDraw.Draw(base)
-    phone_bbox = draw_phone_tablo(draw, phone, width=w, height=h, root=root)
+    phone_bbox = draw_phone_bar(draw, phone, width=w, height=h, root=root)
 
     out_path = cover_dir / "cover.png"
     base.convert("RGB").save(out_path, format="PNG", optimize=True)
 
-    stamp = {
+    stamp: dict[str, Any] = {
         "status": "PASS",
-        "mode": "scene_composite_v1",
+        "mode": POSTER_MODE,
         "agent": "excalibur-blog-cover",
         "updated_at": datetime.now(timezone.utc).isoformat(),
         "source_scene": str(source.relative_to(article_dir)),
         "output": "cover/cover.png",
-        "headline": {"line1": line1, "line2": line2, "bbox": list(headline_bbox)},
-        "meme": {"id": meme_id, "name_ru": meme_name, "asset": str(meme_path.relative_to(root)), "bbox": list(meme_bbox)},
+        "headline": {
+            "line1": line1,
+            "line2": line2,
+            "highlight_keyword": highlight_kw,
+            "bbox": list(headline_bbox),
+        },
+        "sticky_note": {"text": sticky_text, "bbox": list(sticky_bbox) if sticky_bbox else None},
         "phone": {"display": phone, "bbox": list(phone_bbox)},
-        "fonts": {"line1": CORMORANT_REL, "line2": ONEST_REL},
+        "fonts": {"headline": ONEST_REL},
         "logo_paste": "deferred_to_brand_logo_composite",
     }
+    if meme_id:
+        stamp["meme"] = {
+            "id": meme_id,
+            "name_ru": meme_name,
+            "asset": str(meme_path.relative_to(root)) if meme_path else None,
+            "bbox": list(meme_bbox) if meme_bbox else None,
+        }
     stamp_path = cover_dir / "poster-composite-stamp.json"
     stamp_path.write_text(json.dumps(stamp, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return stamp
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="Factory poster composite for scene-only cover canvas")
+    ap = argparse.ArgumentParser(description="Factory poster composite for Dzen story collage cover canvas")
     ap.add_argument("--article-dir", required=True)
     ap.add_argument("--source", default="cover-canvas.png")
     ap.add_argument("--output-size", default="1200x675")
@@ -261,7 +362,8 @@ def main() -> int:
     except Exception as exc:  # noqa: BLE001
         print(f"FAIL poster composite: {exc}", file=sys.stderr)
         return 1
-    print(f"OK poster composite meme={stamp['meme']['id']} → cover.png")
+    meme_note = f" meme={stamp['meme']['id']}" if stamp.get("meme") else ""
+    print(f"OK poster composite{meme_note} → cover.png")
     return 0
 
 
