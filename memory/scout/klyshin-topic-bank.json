@@ -3,7 +3,7 @@
   "source_channel": "https://t.me/klyshin_A",
   "source_label": "Алексей Клышин — angle only (ритм delivery, не копировать сделки)",
   "tenant": "Добрый дом — посуточная аренда / субаренда Тюмень",
-  "updated_at": "2026-08-28",
+  "updated_at": "2026-09-01",
   "timezone": "Asia/Yekaterinburg",
   "algorithm": "klyshin_hook → wordstat_probe → rework_for_demand → final_P0_or_skip_after_rework",
   "angle_rotation": {
@@ -125,7 +125,10 @@
       "wordstat_probes": ["отзывы аренда квартиры", "суточно отзывы", "аренда квартиры посуточно отзывы"],
       "dzen_pattern_prefer": [2, 3],
       "tyumen_localize": true,
-      "status": "queue_active"
+      "status": "used",
+      "last_seen": "2026-09-01",
+      "queue_slot": "2026-09-01 — 2026-09-03",
+      "used_in_articles": ["B05"]
     },
     {
       "id": "pack_vs_flat",
@@ -159,7 +162,12 @@
       "dzen_pattern_prefer": [2, 3],
       "anti_dup": ["early_checkin", "ранний заезд"],
       "tyumen_localize": true,
-      "status": "queue_active"
+      "status": "used",
+      "last_seen": "2026-09-01",
+      "queue_slot": "2026-09-08 — 2026-09-10",
+      "final_p0": {"phrase": "квартиры посуточно тюмень", "volume_tyumen": 5446, "volume_ru": 12048},
+      "wordstat_rework_log": "probe «поздний выезд аренда» API empty → «выезд посуточно» API empty → «поздний выезд» 142 (55+11176) → «хранение багажа» 133/12186 → «хранение багажа тюмень» 28 → «камера хранения багажа тюмень» 18 → «аренда квартиры посуточно» 756 → final P0 «квартиры посуточно тюмень» 5446/12048",
+      "used_in_articles": ["B06"]
     }
   ],
   "parked_hooks": {
