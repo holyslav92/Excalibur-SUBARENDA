@@ -1,17 +1,26 @@
 {
   "schema_version": 1,
   "rotation_window": 8,
-  "updated_at": "2026-08-31",
+  "updated_at": "2026-09-01",
   "notes": "Skip meme ids from last 8 live covers; burned_for_article blocks reuse on regen of same article.",
-  "globally_excluded_ids": ["hide_the_pain_harold", "roll_safe"],
+  "globally_excluded_ids": [
+    "hide_the_pain_harold",
+    "roll_safe"
+  ],
   "canon_proof": {
     "image": "memory/cover/canonical-proof/lapoy-cover-v12.png",
     "meta": "memory/cover/canonical-proof/lapoy-cover-v12.meta.json",
     "meme_id": "woman_yelling_cat"
   },
   "burned_for_article": {
-    "LIVE-lapoy": ["hide_the_pain_harold", "roll_safe"],
-    "razreshili-s-lapoy-doplatu-nazvali-posle-zaseleniya": ["hide_the_pain_harold", "roll_safe"]
+    "LIVE-lapoy": [
+      "hide_the_pain_harold",
+      "roll_safe"
+    ],
+    "razreshili-s-lapoy-doplatu-nazvali-posle-zaseleniya": [
+      "hide_the_pain_harold",
+      "roll_safe"
+    ]
   },
   "recent_covers": [
     {
@@ -37,6 +46,12 @@
       "topic_id": "LIVE-lapoy",
       "slug": "razreshili-s-lapoy-doplatu-nazvali-posle-zaseleniya",
       "meme_id": "hide_the_pain_harold"
+    },
+    {
+      "date": "2026-09-01",
+      "topic_id": "B05",
+      "slug": "rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super",
+      "meme_id": "bernie_mittens"
     }
   ]
 }

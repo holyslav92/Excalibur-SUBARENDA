@@ -1,0 +1,27 @@
+{
+  "slug": "rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super",
+  "topic_id": "B05",
+  "permalink": "{{SITE_BASE}}/blog/rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B05-rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1039474,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4262 slug=rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super\nOK categories=101,106\nOK dzen_yzen_meta=1\nOK featured_image=4263\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4264 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super-inline-01.png\nOK inline_alt=4264\nOK inline_caption=4264\nOK inline_description=4264\nOK inline_image_upload=4265 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super-inline-02.png\nOK inline_alt=4265\nOK inline_caption=4265\nOK inline_description=4265\nOK inline_image_upload=4266 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super-inline-03.png\nOK inline_alt=4266\nOK inline_caption=4266\nOK inline_description=4266\nOK inline_image_upload=4267 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/09/rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super-inline-04.png\nOK inline_alt=4267\nOK inline_caption=4267\nOK inline_description=4267\nOK inline_image_upload=4268 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/09/rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super-inline-05.png\nOK inline_alt=4268\nOK inline_caption=4268\nOK inline_description=4268\nOK inline_image_upload=4269 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/09/rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super-inline-06.png\nOK inline_alt=4269\nOK inline_caption=4269\nOK inline_description=4269\nOK inline_image_upload=4270 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/09/rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super-inline-07.png\nOK inline_alt=4270\nOK inline_caption=4270\nOK inline_description=4270\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super/",
+    "errors": []
+  }
+}

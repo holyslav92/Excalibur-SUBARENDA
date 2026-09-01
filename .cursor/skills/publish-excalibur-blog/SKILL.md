@@ -70,7 +70,7 @@ openers). Канон в article — `<h2>Частые вопросы</h2>`; bare
 | Credentials | `FTP_HOST`/`FTP_USER`/`FTP_PASS`/`FTP_ROOT` + `FTP_PORT`/`FTP_TRANSPORT` + `PUBLIC_SITE_URL` |
 | Allow flag | `EXCALIBUR_BLOG_ALLOW_PUBLISH=yes` |
 
-**Агент знает:** для Добрый дом / Timeweb — **FTP passive port 21** (`FTP_TRANSPORT=ftp`, `FTP_ROOT=sublease/public_html`). SFTP:22 у extra FTP user = Permission denied. Для других тенантов — SFTP (port 22, default). Пароль только в Cloud Secrets, не в git.
+**Агент знает:** для Добрый дом / Timeweb — **FTP passive port 21** (`FTP_TRANSPORT=ftp`, `FTP_ROOT=[REDACTED]`) локально. **Cloud Agent:** PASV data-порты часто блокируются egress → при `TimeoutError` на STOR скрипт **авто-fallback на SFTP:22** (те же `FTP_*` creds; INC-20260901-0830). Ручной override: `FTP_TRANSPORT=sftp FTP_PORT=22`. Пароль только в Cloud Secrets, не в git.
 
 Если allow flag ≠ yes → **`❌ PUBLISH BLOCKER`** (не silent skip).
 

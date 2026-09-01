@@ -19,7 +19,8 @@ Excalibur BLOG готовит артефакты локально; публик�
 - Cloud Secrets / env vars или `memory/site.env.local` — FTP или SFTP доступ + `PUBLIC_SITE_URL` + `EXCALIBUR_BLOG_ALLOW_PUBLISH=yes`
 - **Секреты:** `FTP_HOST` / `FTP_USER` / `FTP_PASS` / `FTP_ROOT` / `FTP_PORT` / `FTP_TRANSPORT`
   - **SFTP (default):** port 22 — `FTP_*` = те же SFTP-учётные данные; `SSH_*` = алиасы
-  - **FTP passive (Добрый дом / Timeweb):** `FTP_PORT=21` или `FTP_TRANSPORT=ftp`; `FTP_ROOT=sublease/public_html`
+  - **FTP passive (Добрый дом / Timeweb, локально):** `FTP_PORT=21` или `FTP_TRANSPORT=ftp`; `FTP_ROOT=[REDACTED]`
+  - **Cloud Agent PASV data timeout:** `publish_via_ftp` автоматически повторяет bootstrap через **SFTP:22** (те же `FTP_*` creds). Ручной override: `FTP_TRANSPORT=sftp FTP_PORT=22`.
 - Env precedence: переменные окружения перекрывают `memory/site.env.local`.
 - Root: `FTP_ROOT` относительно FTP login cwd (Timeweb: `sublease/public_html`). Пустой или `/` → `.`
 

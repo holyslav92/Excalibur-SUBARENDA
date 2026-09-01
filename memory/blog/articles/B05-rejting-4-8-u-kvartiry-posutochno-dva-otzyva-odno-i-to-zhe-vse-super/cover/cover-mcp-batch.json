@@ -1,0 +1,43 @@
+{
+  "pipeline": "type_meme_sticker_v3_standalone_cover",
+  "canvas_index": 0,
+  "standalone_cover": true,
+  "model_policy": "primary_non_vip_only",
+  "vip_disabled": true,
+  "max_generation_attempts": 2,
+  "identity_reference_local": "",
+  "identity_reference_id": "",
+  "logo_reference_local": "",
+  "logo_reference_url": "",
+  "logo_reference_in_generation": false,
+  "reference_url_hosted": "",
+  "output_canvas": "cover/cover-canvas.png",
+  "result_path": "cover/cover-mcp-result.json",
+  "slots": [
+    "cover"
+  ],
+  "preferred_image_flow": {
+    "provider": "grsai",
+    "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
+    "resolution": "2K",
+    "note": "PRIMARY: Grsai draw API (PRIMARY_MODEL_ID only; vip permanently disabled; aspectRatio+resolution=2K first, one explicit-size retry, ship native undersized). Fallback: excalibur_blog_kie_gpt_image2_api.py when Grsai fail. FORBIDDEN: *-vip, flux2-pro-*, Seedream, nano_banana*, z-image, mcp-derouter/start-mcp.sh.",
+    "apply_script": "python3 scripts/excalibur_blog_cover_standalone_apply.py --article-dir <article_dir> && python3 scripts/excalibur_blog_cover_poster_composite.py --article-dir <article_dir>"
+  },
+  "jobs": [
+    {
+      "slot": "canvas_quad",
+      "tool": "grsai",
+      "mcp_args": {
+        "prompt": "DZEN STORY COLLAGE SCENE 16:9 standalone 2048x1152. Photoreal bright Comfort+ Tyumen daily-rental apartment/context for THIS case. HERO varies: person with emotion OR story objects OR key detail (barrier, keys, router, ticket, bowl, door, laptop) — NEVER default empty hallway, N…\nStandalone cover canvas 2048x1152 exact 16:9 full-bleed — STORY COLLAGE SCENE, NOT a type poster.\nHARD STORY SCENE: ZERO Cyrillic, ZERO digits, ZERO phone number, ZERO meme, ZERO logo, ZERO stickers, ZERO typography, ZERO headline, ZERO captions, ZERO UI text, ZERO peel-pill, ZERO information board. Factory post-process adds Onest ~860 headline + brush highlight + yellow sticky punch + phone bar, optional catalog meme PNG paste, then official alpha logo overlay AFTER generation.\nDZEN STORY COLLAGE: photoreal bright Comfort+ Tyumen daily-rental; slightly blurred apartment background; split layout with light zone for factory type; palette warm milk/oatmeal + charcoal rgb(33,29,26) + mustard brush rgb(255,210,80); BAN metallic gold/brass/3D gold/dark leather/empty hallway default\nHERO for THIS case — story objects/props: phone screen duplicate reviews, star rating 4.8, magnifying glass, booking app UI props, sage tape phone tablo +7 993 574-83-22; emotion cue: гость над двумя «всё супер»; bait/switch visual: stonks face when two reviews are copy-paste but rating still 4,8.\nScene context (no text in image): Sep sunny apt still-life: phone on table shows 4.8 stars, NO faces; sage tablo +7 993 574-83-22; TR empty pad; ZERO meme ZERO logo..\nFactory will highlight keyword «деталей» with brush stroke — do not draw text.\nFactory sticky punch will read «Пять минут проверки» — do not draw sticky or Cyrillic.\nPEOPLE: only when THIS case needs — guest stress face, hands with keys, silhouette; NOT group photo; NOT default zero-people hallway.\nLIGHT ZONE: leave clean/blur area (left or right third) for factory Onest headline overlay.\nTOP-RIGHT pad 8-12% — continuous scene texture only; TOP-RIGHT pad 8-12% width — continuous SCENE only (wall/wood/sky/pattern texture).\nNEVER send logo as Grsai reference — factory alpha PNG overlay AFTER poster composite.\nBAN: 0 memes, 2+ memes, meme soup, people-heavy group photo, tiny in-scene phone on door, Wordstat sticker soup, torn-paper collage, metallic gold, brass, 3D gold type, gold-glitter type, dark leather, wood+Harold lobby stamp, yellow sticky notes, split white-panel+photo, phone pill, peel-pill phone, fridge magnet phone, gold brass plaque, post-composite phone chip, model-drawn logo, house-with-heart, logo plate, empty stock room, WordPress UI, wow poster collage soup, dark cinematic, overlapping type layers, magnified letter crops, Trade Offer/Drake/Wojak drawn by model, collage of stickers covering headline, white/gray plaque under logo, model-drawn lockup.\nGrsai primary image API, non-VIP, max 2 gens; on exhaust neighbor-clone pad-clear TR + poster composite + logo paste.",
+        "aspect_ratio": "16:9",
+        "resolution": "2K"
+      }
+    }
+  ],
+  "validation": {
+    "prompt_chars": 2935,
+    "max_prompt_chars": 3500,
+    "required_reference_host": "{{SITE_HOST}}",
+    "resolution": "2K"
+  }
+}

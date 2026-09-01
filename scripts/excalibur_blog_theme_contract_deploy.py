@@ -123,7 +123,8 @@ def _settings() -> tuple[str, str, str, int, list[str]]:
     )
     if not all((host, user, password)):
         raise RuntimeError("SFTP credentials missing")
-    port = int(values.get("SSH_PORT") or 22)
+    # Theme deploy is always SFTP on port 22 — ignore FTP_PORT=21 (passive FTP publish transport).
+    port = int(values.get("SSH_PORT") or values.get("SFTP_PORT") or "22")
     configured_root = (values.get("SSH_ROOT") or values.get("FTP_ROOT") or ".").strip()
     if configured_root in {"", "/"}:
         configured_root = "."

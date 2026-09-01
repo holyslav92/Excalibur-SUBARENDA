@@ -43,7 +43,7 @@ incident_report: none | memory/pipeline-fix-queue.md#INC-...
 - `article.html`, `article.meta.json`, `article-qa.md` (plain `verdict: PASS`, не `**verdict:**`)
 - `schema.jsonld`, `cover/cover.png`, `cover-registry.json`
 - Cloud Secrets / env vars или `memory/site.env.local`
-- Upload transport: **FTP passive port 21** (Timeweb). `FTP_HOST`/`FTP_USER`/`FTP_PASS`/`FTP_ROOT`/`FTP_PORT`/`FTP_TRANSPORT=ftp`. SFTP:22 у этого user = Permission denied.
+- Upload transport: **FTP passive port 21** (Timeweb) локально; **Cloud Agent** — при PASV data timeout авто-fallback SFTP:22 (`excalibur_blog_wp_publish.publish_via_ftp`). Ручной override: `FTP_TRANSPORT=sftp FTP_PORT=22`.
 - `article.meta.json.theme_blocks`: faq/quiz/side_stickers = `skip`; в body
   ровно один тематический FAQ.
 

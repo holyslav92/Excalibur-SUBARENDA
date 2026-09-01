@@ -65,8 +65,41 @@ class TimewebPasvFTP(FTP):
 
 
 def transport_mode(env: dict[str, str]) -> str:
-    mode = (env.get("FTP_TRANSPORT") or "sftp").strip().lower()
-    return "ftp" if mode == "ftp" else "sftp"
+    return resolve_publish_transport(env)
+
+
+def resolve_publish_transport(env: dict[str, str]) -> str:
+    """Resolve ftp vs sftp from explicit FTP_TRANSPORT or FTP_PORT (21 → ftp)."""
+    explicit = (env.get("FTP_TRANSPORT") or "").strip().lower()
+    if explicit == "ftp":
+        return "ftp"
+    if explicit == "sftp":
+        return "sftp"
+    port = (env.get("FTP_PORT") or "22").strip()
+    return "ftp" if port == "21" else "sftp"
+
+
+def remote_path(env: dict[str, str], remote_name: str) -> str:
+    """Join FTP_ROOT with a bootstrap filename (Timeweb web root relative path)."""
+    root = (env.get("FTP_ROOT") or env.get("SSH_ROOT") or ".").strip() or "."
+    if root in {".", "./"}:
+        return remote_name
+    return f"{root.rstrip('/')}/{remote_name}"
+
+
+def _upload_text_ftp(env: dict[str, str], remote_name: str, data: bytes) -> str:
+    root = (env.get("FTP_ROOT") or env.get("SSH_ROOT") or ".").strip() or "."
+    upload_bytes(env, remote_name, data, root=root)
+    return remote_path(env, remote_name)
+
+
+def upload_text_file(env: dict[str, str], remote_name: str, data: bytes) -> str:
+    """Upload a small text/bootstrap file via configured transport."""
+    if resolve_publish_transport(env) == "ftp":
+        return _upload_text_ftp(env, remote_name, data)
+    from excalibur_blog_wp_publish import upload_bootstrap_sftp
+
+    return upload_bootstrap_sftp(env, remote_name, data)
 
 
 def ftp_creds(env: dict[str, str]) -> tuple[str, int, str, str]:

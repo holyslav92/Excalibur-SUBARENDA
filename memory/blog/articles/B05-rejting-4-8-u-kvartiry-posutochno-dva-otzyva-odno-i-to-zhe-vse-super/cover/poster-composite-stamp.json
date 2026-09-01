@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "mode": "dzen_story_collage_v1",
+  "agent": "excalibur-blog-cover",
+  "updated_at": "2026-09-01T07:24:42.966018+00:00",
+  "source_scene": "cover/cover-canvas.png",
+  "output": "cover/cover.png",
+  "headline": {
+    "line1": "звёзды есть —",
+    "line2": "деталей нет",
+    "highlight_keyword": "деталей",
+    "bbox": [
+      60,
+      40,
+      720,
+      135
+    ]
+  },
+  "sticky_note": {
+    "text": "Пять минут проверки",
+    "bbox": [
+      48,
+      13,
+      384,
+      181
+    ]
+  },
+  "phone": {
+    "display": "+7 (993) 574-83-22",
+    "bbox": [
+      720,
+      574,
+      1152,
+      648
+    ]
+  },
+  "fonts": {
+    "headline": "memory/cover/assets/fonts/Onest-ExtraBold.ttf"
+  },
+  "logo_paste": "deferred_to_brand_logo_composite",
+  "meme": {
+    "id": "bernie_mittens",
+    "name_ru": "Bernie Mittens",
+    "asset": null,
+    "bbox": null
+  }
+}

@@ -271,3 +271,59 @@ files_changed:
 checks_run:
 - interlink retry → OK interlink_done (2 targets)
 commit: pending
+
+## INC-20260901-0830 — Cloud Agent FTP PASV data channel timeout (B05 publish)
+
+status: fixed
+run_date: 2026-09-01
+role: excalibur-blog-publish
+topic_id: B05
+article_dir: memory/blog/articles/B05-rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super
+severity: medium
+category: transport
+
+### What went wrong
+
+- `FTP_TRANSPORT=ftp` (Timeweb PASV port 21): `STOR` for 14MB bootstrap timed out on passive data connection after 8 retries (`TimeoutError: [Errno 110] Connection timed out`). Control channel (21) OK; even 5-byte STOR hung.
+- `excalibur_blog_theme_contract_deploy.py` uses SFTP port 22 only — theme path probe failed when only FTP env set.
+
+### How the agent recovered this run
+
+- Re-ran `excalibur_blog_wp_publish.py` with `FTP_TRANSPORT=sftp FTP_PORT=22` (same `FTP_*` creds). SFTP upload + HTTP bootstrap → PASS (post_id 4262).
+- Fixed interlinks: punycode absolute URLs → `{{SITE_BASE}}/blog/…` for crosslink-qa/link-verify on cloud.
+
+### Durable fix needed before next run
+
+- Cloud Agent publish runbook: default to SFTP:22 for Добрый дом when PASV data fails; or document egress allowlist for Timeweb PASV ports.
+- Add B05+ slugs to `excalibur_blog_dzen_cover_cache_bust.py` ARTICLES or accept dynamic `--slug` with auto `old_cover_remote` + `upload_subdir` from live attachment path.
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-09-01
+fix_summary:
+- `publish_via_ftp` auto-fallback to SFTP:22 on PASV data `TimeoutError`/`OSError` (same creds).
+- `resolve_publish_transport`, `remote_path`, `upload_text_file` restored in `excalibur_blog_remote_transport.py`.
+- `excalibur_blog_dzen_cover_cache_bust.py` — `--slug` auto-detects upload path from `/feed/zen/` enclosure; optional `--upload-subdir` / `--old-cover-remote`.
+- Theme deploy documents SFTP port 22 (ignores `FTP_PORT=21`).
+- Publish runbooks updated (skill, agent, `CLOUD-FIRST-RUN.md`, `excalibur-wp-publish-contract.md`).
+files_changed:
+- `scripts/excalibur_blog_remote_transport.py`
+- `scripts/excalibur_blog_wp_publish.py`
+- `scripts/excalibur_blog_theme_contract_deploy.py`
+- `scripts/excalibur_blog_dzen_cover_cache_bust.py`
+- `skills/publish-excalibur-blog/SKILL.md`
+- `.cursor/skills/publish-excalibur-blog/SKILL.md`
+- `agents/excalibur-blog-publish.md`
+- `.cursor/agents/excalibur-blog-publish.md`
+- `shared/excalibur-wp-publish-contract.md`
+- `shared/dzen-cover-cache-bust.md`
+- `CLOUD-FIRST-RUN.md`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_remote_transport.py scripts/excalibur_blog_wp_publish.py scripts/excalibur_blog_theme_contract_deploy.py scripts/excalibur_blog_dzen_cover_cache_bust.py`
+- `python3 -m unittest tests.test_publish_transport -v`
+commit: pending
