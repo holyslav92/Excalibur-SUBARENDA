@@ -1,67 +1,63 @@
 ---
 name: cover-excalibur-blog
-description: "④a Cover: standalone type+meme+phone-sticker poster 2K + 2× inline quads, factory logo overlay."
+description: "④a Cover: scene-only hallway 2K + factory poster composite (type/meme/phone) + 2× inline quads."
 ---
 
-# Cover Agent — longform 8 images (type_meme_sticker_v3)
+# Cover Agent — longform 8 images (scene_composite_v1)
 
 ## Philosophy
 
-**COVER = designed magazine TYPE poster** — spectacular Cyrillic headline hero + exactly ONE catalog meme sticker + LARGE hotel-lobby information-board phone. Steal inline designed-text/grid energy — NOT people-photo scene.
+**COVER = empty tender-light hallway (Grsai scene-only)** + factory poster composite: Cormorant SemiBold Italic + Onest ~860 headline, exactly ONE catalog meme PNG paste, kitchen-tablo phone +7 (993) 574-83-22, official alpha logo overlay AFTER.
 
-**INLINES unchanged** — 2× quad designed grid; meme optional (max 1 cat/article); logo on 2–3 of 7.
+**INLINES unchanged** — 2× quad designed grid; meme optional (max 1 cat/article); ZERO company logos on inlines.
 
-**Ban on COVER:** 0 memes, 2+ memes, people-heavy scene, tiny in-scene phone, Wordstat sticker soup, torn-paper/gold-glitter/sticky collage, split white-panel+photo, phone pill, model-drawn logo, house-with-heart, logo plate.
+**HARD BAN on COVER:** overlapping type layers, magnified letter crops, Trade Offer/Drake/Wojak drawn by model, collage stickers on headline, white/gray plaque under logo, model-drawn lockup, 0/2+ memes, people-heavy scene, phone pill, model-drawn logo.
 
 ## Generation policy (HARD)
 
 | Rule | Value |
 |------|-------|
-| Cover canvas | **Standalone** 2048×1152 → `cover.png` 1200×675 |
+| Cover canvas | **Scene-only** 2048×1152 → poster composite → `cover.png` 1200×675 |
 | Inline canvases | 2× quad 2048×1152 (inline_1..4, inline_5..7) |
 | Provider | **Grsai** — PRIMARY_MODEL_ID only |
 | VIP retry | **disabled** |
-| Max attempts | **2** per canvas → pad-clear + logo paste if needed |
+| Max attempts | **2** per canvas → pad-clear + poster composite + logo paste if needed |
 | Prose/scene | Derouter Terra `--role cover-scene` only |
 
 ## Архитектура
 
 ```text
-standalone cover canvas 2048×1152 (Grsai, max 2 attempts)
-  → cover_standalone_apply.py → cover.png 1200×675
+scene-only cover canvas 2048×1152 (Grsai, max 2 attempts — ZERO text/meme/phone/logo)
+  → cover_standalone_apply.py → resize + pad-clear
+  → cover_poster_composite.py → Cormorant+Onest type + 1 meme PNG + kitchen-tablo phone
 2× quad canvas 2048×1152
   canvas 1: inline_1..4
   canvas 2: inline_5..7
 → split 2×2 → inline-01..07.png
 → brand_logo_composite.py (logo overlay ONLY — no phone pill)
-→ Cover-QA slim → Indexer
+→ Cover-QA slim (anti-collage gates) → Indexer
 ```
 
 ## Brand lock
 
 - **NEVER** logo as Grsai reference
 - Empty **top-right pad 8–12%** in generation
-- **AFTER apply:** factory pastes official alpha PNG
-- Phone **+7 (993) 574-83-22** as **LARGE cream/sage information-board tablo** + caption «добрый дом • тюмень» — never pill/peel-pill/magnet/gold plaque
+- **AFTER poster composite:** factory pastes official alpha PNG
+- Phone **+7 (993) 574-83-22** drawn by `cover_poster_composite.py` on cream/sage kitchen-tablo — never in Grsai generation, never pill from brand_logo_composite
 
-## Tender light visual canon (HARD — lapoy-cover-v12 approved)
+## Anti-collage gates (HARD — FAIL if broken)
 
-- **Palette:** warm milk, oatmeal, blush **matte terracotta** rgb(158,74,54), charcoal rgb(33,29,26). **BAN** metallic gold, brass, 3D gold, dark leather, wood+Harold lobby.
-- **Scene:** bright cream/linen hallway, pale oak, houseplant, soft daylight. People default ZERO.
-- **Headline:** two-beat case-unique Cyrillic — L1 Cormorant Garamond SemiBold Italic terracotta; L2 Onest 860 charcoal lowercase. NOT Arial/Impact/Unbounded. NOT 3D gold.
-- Proof: `memory/cover/canonical-proof/lapoy-cover-v12.meta.json`
+- 2+ large overlapping text blocks
+- Giant cropped glyph >12% canvas
+- TRADE OFFER / Drake / Wojak template drawn by model
+- Scene canvas with model typography/meme/phone before poster composite
 
 ## Meme rotation (HARD)
 
 - Catalog: `memory/cover/meme-top100.json` (≥60 ids, topic tags)
 - Used log: `memory/cover/meme-used.json` — skip last **8** cover meme ids
 - Picker: `python3 scripts/excalibur_blog_meme_rotate.py pick --manifest <article>/cover/quad-manifest.json`
-- Pick by **topic-tag overlap** with article; prefer `memory/cover/memes/<id>.png` when present
-- Cat memes still max **1** of 8 frames (cover+7 inlines)
-
-## Cover prompt (NOT a template)
-
-Each cover prompt is rebuilt from **THIS** article case: H1, bait/switch, figure, quote — unique Cyrillic punchlines, no recycled wood+Harold+peel-pill stamps.
+- **Paste** `memory/cover/memes/<id>.png` — never draw meme in Grsai
 
 ```bash
 ARTICLE="memory/blog/articles/<topic_id>-<slug>"
@@ -74,6 +70,7 @@ python3 scripts/excalibur_blog_cover_quad_prompt.py --article-dir "$ARTICLE" --w
 python3 scripts/excalibur_blog_grsai_gpt_image2_api.py --article-dir "$ARTICLE" \
   --batch cover/cover-mcp-batch.json --result cover/cover-mcp-result.json
 python3 scripts/excalibur_blog_cover_standalone_apply.py --article-dir "$ARTICLE"
+python3 scripts/excalibur_blog_cover_poster_composite.py --article-dir "$ARTICLE"
 python3 scripts/excalibur_blog_grsai_gpt_image2_api.py --article-dir "$ARTICLE" \
   --batch cover/quad-mcp-batch-01.json --result cover/quad-mcp-result-01.json
 python3 scripts/excalibur_blog_grsai_gpt_image2_api.py --article-dir "$ARTICLE" \
@@ -84,4 +81,4 @@ python3 scripts/excalibur_blog_brand_logo_composite.py --article-dir "$ARTICLE"
 python3 scripts/excalibur_blog_cover_qa_gate.py --article-dir "$ARTICLE"
 ```
 
-Contract: `shared/blog-cover-quad-canvas-contract.md` · Canon: `dobry_dom_type_meme_sticker_v3`
+Contract: `shared/blog-cover-quad-canvas-contract.md` · Canon: `dobry_dom_scene_composite_v1`

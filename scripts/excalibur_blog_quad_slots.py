@@ -102,7 +102,16 @@ LEGACY_BATCH_FILE = "cover/quad-mcp-batch.json"
 LEGACY_RESULT_FILE = "cover/quad-mcp-result.json"
 
 TYPE_MEME_STICKER_CANON_ID = "dobry_dom_type_meme_sticker_v3"
-SCENE_POSTER_CANON_ID = TYPE_MEME_STICKER_CANON_ID  # backward-compat alias
+SCENE_COMPOSITE_CANON_ID = "dobry_dom_scene_composite_v1"
+TENDER_LIGHT_CANON_ID = "dobry_dom_tender_light_v1"
+SCENE_POSTER_CANON_ID = SCENE_COMPOSITE_CANON_ID  # current locked canon
+STANDALONE_COVER_CANON_IDS = frozenset(
+    {
+        TYPE_MEME_STICKER_CANON_ID,
+        TENDER_LIGHT_CANON_ID,
+        SCENE_COMPOSITE_CANON_ID,
+    }
+)
 
 
 def project_root() -> Path:
@@ -121,12 +130,16 @@ def load_cover_canon_id(root: Path | None = None) -> str:
     return str(data.get("canon_id") or "").strip()
 
 
+def uses_scene_composite_v1(root: Path | None = None) -> bool:
+    return load_cover_canon_id(root) == SCENE_COMPOSITE_CANON_ID
+
+
 def uses_type_meme_sticker_v3(root: Path | None = None) -> bool:
-    return load_cover_canon_id(root) == TYPE_MEME_STICKER_CANON_ID
+    return load_cover_canon_id(root) in STANDALONE_COVER_CANON_IDS
 
 
 def uses_scene_poster_v2(root: Path | None = None) -> bool:
-    """Backward-compat: standalone cover canon (now type_meme_sticker_v3)."""
+    """Backward-compat: standalone cover canon (scene_composite_v1 / tender_light / type_meme_v3)."""
     return uses_type_meme_sticker_v3(root)
 
 

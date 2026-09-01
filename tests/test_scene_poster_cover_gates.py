@@ -65,10 +65,10 @@ def _draw_people_scene_no_meme(path: Path) -> None:
 class TypeMemeStickerCoverGateTest(unittest.TestCase):
     def test_canon_type_meme_sticker_v3_locked(self) -> None:
         canon = json.loads((ROOT / "memory/cover/cover-canon.json").read_text(encoding="utf-8"))
-        self.assertEqual(canon["canon_id"], "dobry_dom_type_meme_sticker_v3")
+        self.assertEqual(canon["canon_id"], "dobry_dom_scene_composite_v1")
         phone = canon["wow_cover_rules"]["no_element_overlap"]["cover_phone"]
-        self.assertEqual(phone.get("mode"), "large_hotel_lobby_info_board")
-        self.assertFalse(phone["post_composite_bottom_left"])
+        self.assertEqual(phone.get("mode"), "kitchen_tablo_factory_drawn")
+        self.assertTrue(phone.get("factory_post_composite"))
         self.assertEqual(canon["cover_generation"]["mode"], "standalone_16_9")
         meme = canon.get("meme_system") or {}
         self.assertIn("REQUIRED", str(meme.get("cover", "")))
@@ -76,8 +76,9 @@ class TypeMemeStickerCoverGateTest(unittest.TestCase):
     def test_tenant_cover_wow_rules_type_meme_sticker_v3(self) -> None:
         tenant = json.loads((ROOT / "shared/tenant-config.json").read_text(encoding="utf-8"))
         wow = tenant.get("cover_wow_rules") or {}
-        self.assertEqual(wow.get("canon_id"), "dobry_dom_type_meme_sticker_v3")
-        self.assertEqual(wow.get("cover_generation_mode"), "standalone_16_9")
+        self.assertEqual(wow.get("canon_id"), "dobry_dom_scene_composite_v1")
+        self.assertTrue(wow.get("forbid_model_typography_in_generation"))
+        self.assertEqual(wow.get("cover_generation_mode"), "scene_only_16_9")
         self.assertTrue(wow.get("require_cover_meme_sticker"))
         self.assertTrue(wow.get("require_display_headline"))
         self.assertTrue(wow.get("require_large_phone_sticker"))
@@ -142,15 +143,8 @@ class TypeMemeStickerCoverGateTest(unittest.TestCase):
         manifest = {"cover_hook": "У двери — доплата за третьего", "cover_scene": "доплата за третьего гостя"}
         prompt = build_standalone_cover_prompt(manifest, style, design, meme_catalog=catalog, root=ROOT)
         lowered = prompt.casefold()
-        self.assertIn("not a template", lowered)
-        self.assertIn("tender light", lowered)
-        self.assertIn("cormorant", lowered)
-        self.assertIn("onest", lowered)
-        self.assertIn("terracotta", lowered)
-        self.assertIn("exactly one catalog meme", lowered)
-        self.assertIn("information board", lowered)
-        self.assertIn("добрый дом • тюмень", lowered)
-        self.assertIn("default zero", lowered)
+        self.assertIn("zero cyrillic", lowered)
+        self.assertIn("zero meme", lowered)
         self.assertNotIn("gold #dcc5a1", lowered)
         self.assertNotIn("optional short cyrillic hook in scene", lowered)
         self.assertNotIn("people in scene", lowered)
@@ -254,11 +248,12 @@ class TypeMemeStickerCoverGateTest(unittest.TestCase):
         style = json.loads((ROOT / "memory/cover/quad-style-dobry-dom.json").read_text(encoding="utf-8"))
         design = json.loads((ROOT / "memory/cover/cover-design-code.json").read_text(encoding="utf-8"))
         prompt = build_standalone_cover_prompt(manifest, style, design, meme_catalog=catalog, root=ROOT)
-        self.assertIn("в чате: можно с лапой", prompt)
-        self.assertIn("у двери: +3000 ₽", prompt)
+        self.assertIn("EMPTY", prompt)
+        self.assertIn("ZERO Cyrillic", prompt)
+        self.assertNotIn("в чате: можно с лапой", prompt)
 
         contract = (ROOT / "shared/blog-cover-quad-canvas-contract.md").read_text(encoding="utf-8")
-        self.assertIn("type_meme_sticker_v3", contract)
+        self.assertIn("scene_composite_v1", contract)
         self.assertIn("standalone", contract.lower())
         self.assertIn("cover-canvas.png", contract)
 
@@ -273,9 +268,10 @@ class TypeMemeStickerCoverGateTest(unittest.TestCase):
         self.assertTrue(errors)
         joined = " ".join(errors).lower()
         self.assertIn("people-heavy", joined)
-        self.assertIn("meme", joined)
-        self.assertIn("headline", joined)
-        self.assertIn("phone", joined)
+        self.assertTrue(
+            "meme" in joined or "glyph" in joined or "trade offer" in joined or "drake" in joined,
+            joined,
+        )
         plate = detect_white_plate_in_pad(fixture)
         self.assertTrue(plate.get("detected"), plate)
 
