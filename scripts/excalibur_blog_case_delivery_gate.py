@@ -4,8 +4,9 @@
 Checks title-brief.json (after Title), drafts/writer.html (after Writer),
 article.html (after Sol). Cron/slots cannot ship encyclopedia guides.
 
-Klyshin TG (30.08.2026): two-beat stop-factor H1; §1 = smooth holyslav paragraphs
-(quote-first, no duty-log date/clock stamp); short vertical ladder lines are BAN in opening only.
+Editorial manner canon: klyshin_manner_dobry_dom_v1 (structure from Klyshin 2026,
+domain = Добрый дом guest-night). Length 700–1100 words; hard fail >1300.
+Repeat-gate: same sentence-idea across lead / вывод / checklist = FAIL.
 """
 from __future__ import annotations
 
@@ -128,6 +129,37 @@ MONEY_NIGHTS_RE = re.compile(
     re.I,
 )
 
+MANNER_CANON_ID = "klyshin_manner_dobry_dom_v1"
+WORD_COUNT_MIN = 650
+WORD_COUNT_TARGET = "700–1100"
+WORD_COUNT_HARD_MAX = 1300
+
+RUSSIAN_STOPWORDS = frozenset(
+    """
+    и в во не что он на я с со как а то все она так его но да ты
+    к у же вы за бы по только ее мне было вот от меня еще
+    или ни до вас нет ли уж мы про это при без уже если когда
+    после перед там тут тоже очень просто сам сама сами себя
+    """.split()
+)
+
+BANNED_STAMP_RES = (
+    re.compile(r"наш\s+вывод\s+простой", re.I),
+)
+
+LIMITED_STAMP_RES: tuple[tuple[re.Pattern[str], int], ...] = (
+    (re.compile(r"нет\.\s*так\s+не\s+заселяем", re.I), 1),
+    (re.compile(r"так\s+не\s+заселяем", re.I), 1),
+)
+
+VERDICT_HEADING_RE = re.compile(
+    r"мой\s+вывод\s+как\s+практик",
+    re.I,
+)
+
+SECTION_OVERLAP_THRESHOLD = 0.38
+SECTION_OVERLAP_MIN_SHARED = 6
+
 ILLUSION_BREAK_RE = re.compile(
     r"(?:"
     r"нет\.\s+так\s+не"
@@ -217,6 +249,81 @@ def _raw_opening_head(html: str, *, max_chars: int = 2000) -> str:
     return (html or "")[:max_chars]
 
 
+def _content_tokens(text: str) -> set[str]:
+    words = re.findall(r"[а-яё]{4,}", (text or "").casefold())
+    return {w for w in words if w not in RUSSIAN_STOPWORDS}
+
+
+def _section_overlap(a: str, b: str) -> tuple[float, int]:
+    ta, tb = _content_tokens(a), _content_tokens(b)
+    if not ta or not tb:
+        return 0.0, 0
+    shared = len(ta & tb)
+    union = len(ta | tb)
+    return (shared / union if union else 0.0), shared
+
+
+def _extract_lead_text(html: str) -> str:
+    paras = re.findall(r"<p[^>]*>(.*?)</p>", html or "", flags=re.I | re.S)
+    if paras:
+        return _plain(" ".join(paras[:2]))
+    return _opening_slice(html)
+
+
+def _extract_h2_section(html: str, heading_rx: re.Pattern[str]) -> str:
+    for match in re.finditer(r"<h2[^>]*>(.*?)</h2>([\s\S]*?)(?=<h2|$)", html or "", flags=re.I):
+        heading = _plain(match.group(1))
+        if heading_rx.search(heading):
+            return _plain(match.group(2))
+    return ""
+
+
+def check_manner_stamps(html: str, *, label: str) -> list[str]:
+    errors: list[str] = []
+    plain = _plain(html)
+    for rx in BANNED_STAMP_RES:
+        if rx.search(plain):
+            errors.append(
+                f"{label}: banned stamp «Наш вывод простой.» — use ONE «Мой вывод как практика»"
+            )
+            break
+    for rx, limit in LIMITED_STAMP_RES:
+        hits = len(rx.findall(plain))
+        if hits > limit:
+            errors.append(
+                f"{label}: stamp «Нет. Так не заселяем.» repeated {hits}× (max {limit} total)"
+            )
+    return errors
+
+
+def check_manner_sections(html: str, *, label: str) -> list[str]:
+    errors: list[str] = []
+    lead = _extract_lead_text(html)
+    verdict = _extract_h2_section(html, VERDICT_HEADING_RE) or _extract_h2_section(
+        html, re.compile(r"вывод", re.I)
+    )
+    checklist = _extract_h2_section(html, re.compile(r"чеклист|провер", re.I))
+    if not verdict and "article" in label:
+        errors.append(
+            f"{label}: missing ONE «Мой вывод как практика» section (H2)"
+        )
+    pairs = (
+        ("lead", lead, "verdict", verdict),
+        ("lead", lead, "checklist", checklist),
+        ("verdict", verdict, "checklist", checklist),
+    )
+    for name_a, text_a, name_b, text_b in pairs:
+        if not text_a or not text_b:
+            continue
+        ratio, shared = _section_overlap(text_a, text_b)
+        if shared >= SECTION_OVERLAP_MIN_SHARED and ratio >= SECTION_OVERLAP_THRESHOLD:
+            errors.append(
+                f"{label}: repeat-gate — {name_a}/{name_b} share {shared} lemmas "
+                f"(jaccard {ratio:.2f}); checklist must add NEW checks, not paraphrase"
+            )
+    return errors
+
+
 def check_opening_body(html: str, *, label: str) -> list[str]:
     errors: list[str] = []
     opening = _opening_slice(html)
@@ -246,8 +353,6 @@ def check_opening_body(html: str, *, label: str) -> list[str]:
         errors.append(f"{label}: opening missing host/guest quote")
     if not MONEY_NIGHTS_RE.search(opening):
         errors.append(f"{label}: opening missing ₽/nights/minutes figure")
-    if not ILLUSION_BREAK_RE.search(opening):
-        errors.append(f"{label}: opening missing illusion-break beat")
     if COMMENT_BAIT_RE.search(low):
         errors.append(f"{label}: WP comment bait — send readers to TG/MAX")
     return errors
@@ -284,15 +389,18 @@ def count_words(html: str) -> int:
 
 
 def check_word_count(
-    html: str, *, label: str, min_words: int = 1000, max_words: int = 1950
+    html: str, *, label: str, min_words: int = WORD_COUNT_MIN, max_words: int = WORD_COUNT_HARD_MAX
 ) -> list[str]:
     wc = count_words(html)
     errors: list[str] = []
     if wc < min_words:
-        errors.append(f"{label}: too short ({wc} words; CASE target 1100–1800)")
+        errors.append(
+            f"{label}: too short ({wc} words; {MANNER_CANON_ID} target {WORD_COUNT_TARGET})"
+        )
     if wc > max_words:
         errors.append(
-            f"{label}: too long ({wc} words; CASE target 1100–1800, not encyclopedia)"
+            f"{label}: too long ({wc} words; hard fail >{WORD_COUNT_HARD_MAX}, "
+            f"target {WORD_COUNT_TARGET})"
         )
     return errors
 
@@ -330,6 +438,7 @@ def check_article_dir(article_dir: Path, *, stage: str = "all") -> dict[str, Any
         errors.extend(check_opening_body(writer_html, label="writer.html"))
         errors.extend(check_body_timeline(writer_html, label="writer.html"))
         errors.extend(check_audience_and_bans(writer_html, label="writer.html"))
+        errors.extend(check_manner_stamps(writer_html, label="writer.html"))
         if stage in {"all", "writer"}:
             errors.extend(check_identity(writer_html, label="writer.html"))
         if COMMENT_BAIT_RE.search(writer_html):
@@ -342,6 +451,8 @@ def check_article_dir(article_dir: Path, *, stage: str = "all") -> dict[str, Any
         errors.extend(check_opening_body(article_html, label="article.html"))
         errors.extend(check_body_timeline(article_html, label="article.html"))
         errors.extend(check_audience_and_bans(article_html, label="article.html"))
+        errors.extend(check_manner_stamps(article_html, label="article.html"))
+        errors.extend(check_manner_sections(article_html, label="article.html"))
         errors.extend(check_identity(article_html, label="article.html"))
         errors.extend(check_word_count(article_html, label="article.html"))
         if COMMENT_BAIT_RE.search(article_html):
@@ -361,6 +472,7 @@ def check_article_dir(article_dir: Path, *, stage: str = "all") -> dict[str, Any
         "gate": "case-delivery",
         "status": status,
         "stage": stage,
+        "manner_canon": MANNER_CANON_ID,
         "checks_run": checks_run,
         "errors": errors,
         "article_dir": str(article_dir),

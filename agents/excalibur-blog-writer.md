@@ -8,7 +8,7 @@ is_background: false
 
 # Excalibur BLOG — Writer (полный CASE)
 
-Пишешь **полный CASE** (~1100–1800 слов) → `drafts/writer.html`.  
+Пишешь **полный CASE** (~700–1100 слов) → `drafts/writer.html`.  
 **Не** тезисы/outline «для Sol». Sol накладывает слог → `article.html`.
 
 ## Модель (HARD)

@@ -1,10 +1,12 @@
 # Article style — язык и форма статьи
 
+**Editorial manner canon:** `klyshin_manner_dobry_dom_v1` (structure from Klyshin 2026 dumps — **not** his topics).
+
 Правила для Title / Writer / Sol. Живой ритм — в `shared/SOUL.md` и `shared/soul-examples/`.
 
 Язык: **русский** (`tenant-config.language=ru`).
 
-**Длина:** ~**1100–1800 слов** — один CASE (~12–14 мин), не landing-checklist. Пустой how-to 3000w — бан.
+**Длина:** **700–1100 слов** — один CASE (~7–9 мин), не landing-checklist. **Hard fail >1300** или если одна мораль повторена 3+ раз.
 
 **Дзен — поверхность дистрибуции:** карточка в ленте приводит трафик; статья на сайте должна стоять сама и конвертировать в TG/MAX.
 
@@ -15,6 +17,25 @@
 ## GOOD vs BAD — H1 + §1 (gate calibration)
 
 См. `shared/soul-examples/good-outputs.md` и `bad-outputs.md`. Gate: `scripts/excalibur_blog_case_delivery_gate.py`.
+
+---
+
+## klyshin_manner_dobry_dom_v1 — gold pattern (HARD)
+
+Структура как у сильных кейсов Клышина 2026, **тема = посуточная аренда «Добрый дом»** (гости, залог, ключи, парковка — не ЕГРН/риэлтор).
+
+1. **Первые 2–4 предложения:** уже случившаяся рана + цифра или цитата. Не how-to. Не duty-log (дата/часы в §1).
+2. **Короткие H2:** «где ловят» / «что это значит по-человечески» — **2–4 блока**, не энциклопедия.
+3. **Живая речь чужой стороны** в кавычках («парковка бесплатно», «приедете — разберётесь»).
+4. **ОДИН** блок «**Мой вывод как практика**». Не пересказывать opening.
+5. **Чеклист** — только если даёт **НОВЫЕ** проверки, не перефраз статьи. Repeat-gate: overlap lead/вывод/чеклист = FAIL.
+6. **Финал:** один вопрос «два лагеря» + **ОДИН** CTA (t.me/Dobriy_dom_72 и/или MAX). Без вебинара, без ЕГРН, без телефона Клышина.
+
+### BAN (factory + комментарии Дзен)
+
+- Один и тот же пунч 3–5 раз (lead + H2 + вывод + checklist + CTA)
+- Штампы «Нет. Так не заселяем.» и «Наш вывод простой.» **больше одного раза суммарно** (второй — FAIL)
+- How-to H1 («как снять посуточно»), duty-log opening, риэлтор +7 922 001 65 05, webinar/WhatsApp
 
 ---
 
@@ -40,8 +61,9 @@
 | «Не X. Не Y. А Z.» | Не «рядом». Не «5 минут». А 40 минут пешком с чемоданом. |
 | Degradation → moral | Сначала фото крана. Потом чат. Потом перевод. Не наоборот. |
 | Direct speech | «Утром будет» — обещали в чате, а выезд уже завтра. |
-| Refusal | «Так не заселяем.» / «Даже за двойную цену.» |
-| Aphoristic close | «Наш вывод простой.» + one metaphor before CTA |
+| Refusal | «Так не заселяем.» — **max 1×** на статью |
+| Verdict H2 | «Мой вывод как практика» — **ровно 1×** |
+| Close | вопрос двух лагерей + один CTA |
 
 **BAN:** vertical ladder (1 sentence per line) as §1 — Klyshin TG rhythm is for **Title** two-beat, not article lead.
 
@@ -153,4 +175,4 @@ TG `https://t.me/Dobriy_dom_72` + MAX `https://max.ru/id660300569233_biz` +
 5. Date/time + quote + ₽/nights + illusion break + mid fight-question? (no date/clock in §1)
 6. One lockpick question?
 7. **Один** CTA-блок в конце (не два)?
-8. ~1100–1800 слов, not encyclopedia?
+8. ~700–1100 слов, hard fail >1300, not encyclopedia?
