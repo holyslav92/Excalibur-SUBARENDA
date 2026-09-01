@@ -63,21 +63,15 @@ def _draw_people_scene_no_meme(path: Path) -> None:
 
 
 class TypeMemeStickerCoverGateTest(unittest.TestCase):
-    def test_canon_type_meme_sticker_v3_locked(self) -> None:
+    def test_canon_slice4_locked(self) -> None:
         canon = json.loads((ROOT / "memory/cover/cover-canon.json").read_text(encoding="utf-8"))
-        self.assertEqual(canon["canon_id"], "dobry_dom_dzen_story_collage_v2")
-        phone = canon["wow_cover_rules"]["no_element_overlap"]["cover_phone"]
-        self.assertEqual(phone.get("mode"), "in_scene_generation")
-        self.assertFalse(phone.get("factory_post_composite"))
-        self.assertEqual(canon["cover_generation"]["mode"], "standalone_16_9")
-        meme = canon.get("meme_system") or {}
-        self.assertIn("OPTIONAL", str(meme.get("cover", "")))
+        self.assertEqual(canon["canon_id"], "dobry_dom_one_2k_slice4_v1")
+        self.assertEqual((canon.get("pipeline") or {}).get("total_images"), 4)
 
-    def test_tenant_cover_wow_rules_type_meme_sticker_v3(self) -> None:
+    def test_tenant_cover_wow_rules_slice4(self) -> None:
         tenant = json.loads((ROOT / "shared/tenant-config.json").read_text(encoding="utf-8"))
         wow = tenant.get("cover_wow_rules") or {}
-        self.assertEqual(wow.get("canon_id"), "dobry_dom_dzen_story_collage_v2")
-        self.assertFalse(wow.get("forbid_model_typography_in_generation"))
+        self.assertEqual(wow.get("canon_id"), "dobry_dom_one_2k_slice4_v1")
         self.assertEqual(wow.get("cover_generation_mode"), "story_collage_16_9")
         self.assertFalse(wow.get("require_cover_meme_sticker"))
         self.assertTrue(wow.get("require_display_headline"))
@@ -133,34 +127,32 @@ class TypeMemeStickerCoverGateTest(unittest.TestCase):
             self.assertTrue(heuristic["phone_sticker"].get("detected"), heuristic)
             self.assertFalse(heuristic["people_heavy"].get("detected"), heuristic)
 
-    def test_standalone_cover_prompt_requires_type_and_logo_reference(self) -> None:
-        from excalibur_blog_cover_quad_prompt import build_standalone_cover_prompt
+    def test_slice4_prompt_requires_grid(self) -> None:
+        from excalibur_blog_cover_quad_prompt import build_one_2k_slice4_grid_prompt
         from excalibur_blog_meme_cat_gate import load_meme_catalog
 
         catalog = load_meme_catalog(ROOT)
         style = json.loads((ROOT / "memory/cover/quad-style-dobry-dom.json").read_text(encoding="utf-8"))
         design = json.loads((ROOT / "memory/cover/cover-design-code.json").read_text(encoding="utf-8"))
         manifest = {"cover_hook": "У двери — доплата за третьего", "cover_scene": "доплата за третьего гостя"}
-        prompt = build_standalone_cover_prompt(manifest, style, design, meme_catalog=catalog, root=ROOT)
+        prompt = build_one_2k_slice4_grid_prompt(manifest, style, design, root=ROOT)
         lowered = prompt.casefold()
-        self.assertIn("cyrillic", lowered)
+        self.assertIn("2×2", prompt)
         self.assertIn("993", prompt)
-        self.assertIn("logo-dobry-dom.png", lowered)
-        self.assertIn("images[]", lowered)
-        self.assertNotIn("zero cyrillic", lowered)
-        self.assertIn("no poster composite", lowered)
+        self.assertIn("native aspect", lowered)
 
-    def test_quad_slots_standalone_cover_spec(self) -> None:
+    def test_quad_slots_slice4_spec(self) -> None:
         from excalibur_blog_quad_slots import (
-            STANDALONE_COVER_SPEC,
+            SLICE4_CANVAS_SPEC,
             all_canvas_specs,
-            uses_type_meme_sticker_v3,
+            uses_one_2k_slice4,
         )
 
-        self.assertTrue(uses_type_meme_sticker_v3(ROOT))
-        specs = all_canvas_specs(7)
-        self.assertEqual(specs[0]["standalone_cover"], True)
-        self.assertEqual(STANDALONE_COVER_SPEC["canvas_file"], "cover/cover-canvas.png")
+        self.assertTrue(uses_one_2k_slice4(ROOT))
+        specs = all_canvas_specs(3)
+        self.assertEqual(len(specs), 1)
+        self.assertTrue(specs[0].get("slice4_grid"))
+        self.assertEqual(SLICE4_CANVAS_SPEC["canvas_file"], "cover/canvas-slice4.png")
 
     def test_cover_qa_gate_includes_type_meme_sticker_checks(self) -> None:
         gate_src = (ROOT / "scripts/excalibur_blog_cover_qa_gate.py").read_text(encoding="utf-8")
@@ -234,7 +226,7 @@ class TypeMemeStickerCoverGateTest(unittest.TestCase):
             self.assertTrue(result.get("detected"), result)
 
     def test_two_beat_headline_in_prompt(self) -> None:
-        from excalibur_blog_cover_quad_prompt import build_standalone_cover_prompt, build_case_cover_context
+        from excalibur_blog_cover_quad_prompt import build_one_2k_slice4_grid_prompt, build_case_cover_context
         from excalibur_blog_meme_cat_gate import load_meme_catalog
 
         manifest = {
@@ -248,13 +240,12 @@ class TypeMemeStickerCoverGateTest(unittest.TestCase):
         catalog = load_meme_catalog(ROOT)
         style = json.loads((ROOT / "memory/cover/quad-style-dobry-dom.json").read_text(encoding="utf-8"))
         design = json.loads((ROOT / "memory/cover/cover-design-code.json").read_text(encoding="utf-8"))
-        prompt = build_standalone_cover_prompt(manifest, style, design, meme_catalog=catalog, root=ROOT)
-        self.assertIn("STORY COLLAGE", prompt)
+        prompt = build_one_2k_slice4_grid_prompt(manifest, style, design, root=ROOT)
+        self.assertIn("2×2", prompt)
         self.assertIn("в чате: можно с лапой", prompt)
-        self.assertIn("у двери: +3000 ₽", prompt)
 
         contract = (ROOT / "shared/blog-cover-quad-canvas-contract.md").read_text(encoding="utf-8")
-        self.assertIn("dzen_story_collage_v2", contract)
+        self.assertIn("dobry_dom_one_2k_slice4_v1", contract)
         self.assertIn("brand_logo_composite", contract)
 
     def test_live_lapoy_fixture_fails_type_meme_gates(self) -> None:

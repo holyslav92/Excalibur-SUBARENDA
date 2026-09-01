@@ -45,7 +45,7 @@ class DzenContentRulesTest(unittest.TestCase):
             self.assertIn("посуточно или отель", blob)
 
         for blob in (scout, title, writer):
-            self.assertIn("dzen_pattern", blob)
+            self.assertTrue("dzen_pattern" in blob or "dzen pattern" in blob)
 
         self.assertIn("поверхность дистрибуции", style)
         self.assertIn("tg/max", style)

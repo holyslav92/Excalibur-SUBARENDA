@@ -5,7 +5,7 @@
 
 **Только после** `memory/setup/status.json` → `complete: true`.
 
-Тенант: **«Добрый дом»** / добрыйдом-72.рф — один guest-night **CASE** ~1100–1800 слов, cover + 7 inline-quad.
+Тенант: **«Добрый дом»** / добрыйдом-72.рф — один guest-night **CASE** **700–1100 слов** (`klyshin_manner_dobry_dom_v1`), **1 cover + 3 inline** (`dobry_dom_one_2k_slice4_v1`).
 Темы: посуточная аренда, субаренда, заселение, залог, соседи, ЖКХ, Тюмень.
 
 ## Расписание (owner: 10–17 YEKT)
@@ -55,15 +55,20 @@ Scout? → research_start → Research → Title → Writer → Sol
 - **Never** tymenrieltor.ru, Excalibur-2-Cloud, MCP-KV `wordpress_*`.
 - Если allow flag или FTP **нет** — run завершается после Indexer + артефактов в репо.
 
-### Cover + images (HARD — dobry_dom_tender_light_v1)
+### Cover + images (HARD — `dobry_dom_one_2k_slice4_v1`)
 
-- **COVER** = tender-light case poster 2048×1152 (`dobry_dom_tender_light_v1`, etalon `lapoy-cover-v12`) — Cormorant italic + Onest extra-bold two-beat Cyrillic, exactly 1 catalog meme, cream kitchen-tablo phone **+7 (993) 574-83-22**. Official alpha logo PNG paste **after** generation top-right — **NO** white/gray plaque; model MUST NOT draw logo.
-- **INLINES** = 2× quad designed grid; **ZERO** company logos on all 7 frames. Phone tablo on **1–2** inlines optional (kitchen sticker, not pill).
-- **H1 / Dzen title** = крик + казус + цифра (₽/ночи/люди) + правда из текста. **BAN** how-to: «как снять посуточно», «N советов», «пошаговая инструкция», «что нужно знать», duty-log «дата+часы+двор». Gate: `scripts/excalibur_blog_case_delivery_gate.py`.
-- Images: **Grsai** PRIMARY image API PRIMARY, **vip disabled**, 2×4=8, ≥2K. Max 2 attempts/canvas. On exhaust: pad-clear + factory logo overlay → ship.
-- **Cover-QA slim:** tender-light poster, meme+headline+tablo phone, ban people-heavy scene, cover logo official, **inline_no_logo_on_inlines**, no WP UI.
-- After full upload: refresh WP intermediates (`*-1024x576`) for `/feed/zen/`.
-- **Prose** — Derouter REST (`excalibur_blog_derouter_opus_chat.py`). Not Composer, not Flux/Seedream/nano_banana/mcp-derouter.
+- **ONE Grsai primary image model** draw per article: canvas **2048×1152** as **2×2 GRID** of four complete 16:9 panels → deterministic PIL slice → **[0] cover + [1..3] inlines**. **ZERO** second draw; **BAN** 2×4=8 / quad-mcp-batch-01|02 / standalone cover-mcp.
+- **Cover tile (top-left):** Cyrillic H1/punch + phone **+7 (993) 574-83-22** infoboard in generation.
+- **After slice, cover tile ONLY:** factory paste official `cropped-img_7143.png` (`logo-dobry-dom.png`) top-right ~8–12% tile width — **pixel-faithful, native aspect (NOT square crop)**, RGBA alpha, **no white plaque** — covers any model-drawn fake lockup. **Inlines: ZERO logo.**
+- **BAN:** model-drawn logo; square logo stamp; `excalibur_blog_cover_poster_composite.py`.
+- Gate: `scripts/excalibur_blog_slice4_gate.py` + `scripts/excalibur_blog_cover_qa_gate.py`.
+- RSS/WP: **1 featured + 3 in-body** (not 8).
+
+### Prose manner (HARD — `klyshin_manner_dobry_dom_v1`)
+
+- **700–1100 слов**, hard fail **>1300**. Structure Klyshin 2026, domain Добрый дом (гости/залог/ключи — не ЕГРН).
+- ONE «Мой вывод как практика»; **BAN** «Наш вывод простой.»; stamps max 1×; repeat-gate lead/вывод/чеклист.
+- Gate: `scripts/excalibur_blog_case_delivery_gate.py`.
 
 **Thin conductor:** Cursor не пишет прозу и не рисует кадры. **Writer** = `claude-opus-5` (полный CASE в `drafts/writer.html`, не тезисы). **Sol** = `gpt-5.6-terra` (слог `shared/SOUL.md` + `shared/soul-examples/`).
 

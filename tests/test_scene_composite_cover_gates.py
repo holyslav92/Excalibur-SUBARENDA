@@ -48,45 +48,37 @@ class SceneCompositeCanonTest(unittest.TestCase):
     def setUpClass(cls) -> None:
         _ensure_fixtures()
 
-    def test_canon_v2_locked(self) -> None:
+    def test_canon_slice4_locked(self) -> None:
         canon = json.loads((ROOT / "memory/cover/cover-canon.json").read_text(encoding="utf-8"))
-        self.assertEqual(canon["canon_id"], "dobry_dom_dzen_story_collage_v2")
-        rules = canon.get("dzen_story_collage_rules") or {}
-        anti = rules.get("anti_collage_gates") or []
-        self.assertIn("forbid_overlapping_text_blocks", anti)
-        self.assertNotIn("poster_composite_stamp_pass", anti)
+        self.assertEqual(canon["canon_id"], "dobry_dom_one_2k_slice4_v1")
+        rules = canon.get("slice4_rules") or {}
+        self.assertIn("grsai", str(rules.get("philosophy", "")).casefold())
 
-    def test_tenant_cover_wow_rules_full_grsai(self) -> None:
+    def test_tenant_cover_wow_rules_slice4(self) -> None:
         tenant = json.loads((ROOT / "shared/tenant-config.json").read_text(encoding="utf-8"))
         wow = tenant.get("cover_wow_rules") or {}
-        self.assertEqual(wow.get("canon_id"), "dobry_dom_dzen_story_collage_v2")
-        self.assertFalse(wow.get("forbid_model_typography_in_generation"))
-        self.assertTrue(wow.get("forbid_overlapping_text_blocks"))
-        self.assertTrue(wow.get("forbid_giant_cropped_glyph"))
-        self.assertTrue(wow.get("forbid_model_drawn_meme_template"))
+        self.assertEqual(wow.get("canon_id"), "dobry_dom_one_2k_slice4_v1")
+        self.assertIn("native aspect", str(wow.get("philosophy", "")).casefold())
 
-    def test_full_grsai_prompt_requires_type_and_logo_reference(self) -> None:
-        from excalibur_blog_cover_quad_prompt import build_standalone_cover_prompt
+    def test_slice4_prompt_requires_grid_and_native_logo_paste(self) -> None:
+        from excalibur_blog_cover_quad_prompt import build_one_2k_slice4_grid_prompt
         from excalibur_blog_meme_cat_gate import load_meme_catalog
 
         catalog = load_meme_catalog(ROOT)
         style = json.loads((ROOT / "memory/cover/quad-style-dobry-dom.json").read_text(encoding="utf-8"))
         design = json.loads((ROOT / "memory/cover/cover-design-code.json").read_text(encoding="utf-8"))
         manifest = {"cover_hook": "Парковка бесплатно — у шлагбаума попросили 800 ₽"}
-        prompt = build_standalone_cover_prompt(manifest, style, design, meme_catalog=catalog, root=ROOT)
+        prompt = build_one_2k_slice4_grid_prompt(manifest, style, design, root=ROOT)
         lowered = prompt.casefold()
-        self.assertIn("cyrillic", lowered)
+        self.assertIn("2×2", prompt)
         self.assertIn("993", prompt)
-        self.assertIn("logo-dobry-dom.png", lowered)
-        self.assertIn("images[]", lowered)
-        self.assertIn("factory pastes", lowered)
-        self.assertIn("do not redraw", lowered)
-        self.assertNotIn("zero cyrillic", lowered)
+        self.assertIn("native aspect", lowered)
+        self.assertIn("not square", lowered)
 
-    def test_quad_slots_scene_composite(self) -> None:
-        from excalibur_blog_quad_slots import uses_dzen_story_collage_v1, uses_full_grsai_cover
+    def test_quad_slots_one_2k_slice4(self) -> None:
+        from excalibur_blog_quad_slots import uses_one_2k_slice4, uses_full_grsai_cover
 
-        self.assertTrue(uses_dzen_story_collage_v1(ROOT))
+        self.assertTrue(uses_one_2k_slice4(ROOT))
         self.assertTrue(uses_full_grsai_cover(ROOT))
 
 

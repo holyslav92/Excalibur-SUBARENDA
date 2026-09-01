@@ -61,16 +61,18 @@ tenant:
   # FTP_PASS — ONLY Cloud Secrets (never commit)
 
 cover:
-  mode: full_grsai_cover
-  logo_mode: reference_in_generation
+  mode: one_2k_slice4
+  canon_id: dobry_dom_one_2k_slice4_v1
+  logo_mode: factory_paste_native_aspect
   logo: memory/cover/assets/brand/logo-dobry-dom.png
-  images_per_article: 8
+  images_per_article: 4
+  grsai_draws_per_article: 1
   max_attempts_per_canvas: 2
   paste_and_ship_on_exhaust: true
   rule: >-
-    Grsai draws type/sticky/phone IN generation; images[] reserves TR pad;
-    factory brand_logo_composite pastes official PNG 1:1 on cover ONLY (ZERO on inlines);
-    NO poster_composite; NO host face / NO Shakin
+    ONE Grsai primary image model 2048×1152 as 2×2 grid → PIL slice 4 (cover+3 inline).
+    Cover tile ONLY: paste official cropped-img_7143.png pixel-faithful (native aspect, NOT square).
+    ZERO logo on inlines. NO 8-frame. NO poster_composite.
 
 brain_and_images:
   prose: scripts/excalibur_blog_derouter_opus_chat.py
@@ -107,14 +109,8 @@ instructions: |
 
   Wordstat: вся Россия (регион 225). Боли БЕЗ города и те же С Тюменью. Заголовок может быть без слова «Тюмень». Пишем и сдаём только Тюмень. Гостевая боль: залог, код, ключница, заселение, предоплата, бойлер, собака, соседи, «рядом с вузом», скрытая доплата. Не юр-крючок Клышина (ЕГРН, суд, наследники, Москва). Не дублировать уже вышедшие (published-titles / коды-заселение, залог-скол на плите и любой близкий H1).
 
-  ГОЛОС И ФОРМА (HARD, factory lock — слот не имеет права свернуть на гайд):
-  H1 = крик + казус + цифра (₽/ночи/люди) + правда из текста: двухтактный стоп-фактор уже случившейся гостевой ночи. BAN how-to: «как снять посуточно», «N советов», «пошаговая инструкция», «что нужно знать», duty-log «дата+часы+двор», chopped SEO leads.
-  §1 = 1–2 плотных абзаца holyslav: цитата → удар, ₽ или число ночей, что сломалось. **BAN duty-log** (день недели, календарная дата, часы HH:MM, «Тюмень, двор» в первом ударе). Бан рубленый TG-лид, TL;DR, «Разберём». H1 без часов HH:MM (слова «утром» OK). После лида: «Я хост посуточной в Тюмени. Это «Добрый дом».» Дальше удары Клышина: «Нет. Так не заселяем.» · «Не X. Не Y. А Z.» · вопрос-отмычка · «Сначала проверка. Потом перевод. Не наоборот.» 1100–1800 слов, один кейс, одна красная линия. Чеклист только после морали. Один вопрос в середине → ответ в t.me/Dobriy_dom_72 или MAX, никогда «напишите в комментариях». Конец: «Наш вывод простой.» + один блок воронки. Цель 9–10.
+  ГОЛОС И ФОРМА (HARD — klyshin_manner_dobry_dom_v1): 700–1100 слов, hard fail >1300. §1 = 2–4 предложения раны + цитата/₽. 2–4 коротких H2. ONE «Мой вывод как практика». BAN «Наш вывод простой.» и повтор штампов. Чеклист только NEW checks. Один вопрос в середине → TG/MAX. Финал: вопрос двух лагерей + один CTA. Gate: excalibur_blog_case_delivery_gate.py.
 
-  Воронка ОДИН раз в конце: TG https://t.me/Dobriy_dom_72 · MAX https://max.ru/id660300569233_biz · бронь https://добрыйдом-72.рф/ и /booking/ · тел. +7 993 574-83-22 · менеджер https://t.me/Dobriy_dom_Tyumen. 3–4 живые /blog/ HTTP 200. Бан +7 922 001 65 05.
+  Картинки (HARD — dobry_dom_one_2k_slice4_v1): ONE Grsai primary image model 2048×1152 как 2×2 grid → slice 4 (cover+3 inline). ZERO второго draw. Cover tile: paste official cropped-img_7143.png pixel-faithful (native aspect, NOT square), top-right ~8–12%, no plaque. Inlines ZERO logo. Gate: excalibur_blog_slice4_gate.py. RSS: 1 featured + 3 in-body.
 
-  Картинки: COVER = tender_light_v1 poster (Cormorant+Onest, 1 meme, cream kitchen-tablo phone +7 (993) 574-83-22). ZERO people on cover. INLINES = 2× quad; ZERO company logos on all 7; phone tablo on 1–2 optional. Grsai PRIMARY image API PRIMARY only, VIP off, 2×4=8 ≥2K, max 2 попытки/canvas, потом pad-clear + factory alpha logo overlay on cover only. Кот максимум 1/8. Логотип только memory/cover/assets/brand/logo-dobry-dom.png POST-gen top-right on cover — NO plate/card/box, never generation reference. NEVER +7 922 001 65 05.
-
-  Publish only добрыйдом-72.рф FTP ([REDACTED]:21 PASV root [REDACTED] user ca21576_svyat, password Cloud Secrets, EXCALIBUR_BLOG_ALLOW_PUBLISH=yes not in git. No flag → stop after Indexer. Never print secrets.
-
-  Report: two-beat H1 with figure?, Wordstat angle, live URL or BLOCKER, word count, TG/MAX in body, 3–4 xlinks 200, cover logo only (zero inline logos), 8 HTML images 200, case-delivery-gate PASS/BLOCK.
+  Report: manner_canon PASS?, slice4 gate PASS?, word count 700–1100, 4 images, case-delivery-gate PASS/BLOCK.
