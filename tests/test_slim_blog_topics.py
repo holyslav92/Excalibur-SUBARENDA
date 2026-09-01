@@ -39,7 +39,7 @@ class NoTopicsPoolTest(unittest.TestCase):
         from excalibur_blog_research_start import parse_topic_card
 
         with self.assertRaises(ValueError) as ctx:
-            parse_topic_card("B03")
+            parse_topic_card("B999")
         self.assertIn("--title", str(ctx.exception))
 
     def test_memory_junk_removed(self) -> None:

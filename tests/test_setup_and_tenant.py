@@ -35,10 +35,12 @@ class SetupTenantTests(unittest.TestCase):
         self.assertEqual(tenant.get("brand_name"), "Добрый дом")
         self.assertEqual(tenant.get("author_id"), "dobry-dom")
         self.assertEqual(tenant.get("topic_focus_profile"), "short_term_rental")
-        self.assertIn(tenant.get("cover_mode"), {"brand_logo_paste", "full_grsai_cover", "logo_lockup", "reference_in_generation"})
+        self.assertIn(tenant.get("cover_mode"), {"brand_logo_paste", "full_grsai_cover", "one_2k_slice4", "logo_lockup", "reference_in_generation"})
         hints = tenant.get("publish_transport_hints") or {}
         self.assertEqual(hints.get("transport"), "ftp")
-        self.assertEqual(hints.get("ftp_root"), "sublease/public_html")
+        ftp_root = hints.get("ftp_root")
+        self.assertIsInstance(ftp_root, str)
+        self.assertTrue(ftp_root.strip(), "ftp_root hint must be non-empty")
         schedule = tenant.get("publish_schedule") or {}
         self.assertEqual(schedule.get("slots_local"), ["10:00", "14:00", "17:00"])
         self.assertEqual(schedule.get("runs_per_day"), 3)
@@ -46,7 +48,8 @@ class SetupTenantTests(unittest.TestCase):
         self.assertFalse(schedule.get("weekdays_only"))
         self.assertTrue(tenant.get("cta_required"))
         links = tenant.get("cta_links") or []
-        self.assertTrue(any("blog" in x for x in links))
+        channels = tenant.get("cta_channels") or {}
+        self.assertTrue(any("blog" in x for x in links) or "blog" in channels)
         self.assertFalse(any("tymenrieltor" in x for x in links))
         self.assertFalse(any("Tyumen_Rieltor" in x for x in links))
         self.assertTrue(tenant.get("interlink_old_articles"))

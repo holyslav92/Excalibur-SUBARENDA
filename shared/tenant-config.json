@@ -6,7 +6,7 @@
   "niche": "Посуточная аренда и субаренда квартир в Тюмени: заселение, договор, залог, соседи, ЖКХ, скрытые доплаты, правила проживания",
   "topic_focus_profile": "short_term_rental",
   "content_goals": [
-    "Один guest-night CASE ~1100–1800 слов: двухтактный стоп-фактор, не гайд и не «N советов»",
+    "Один guest-night CASE 700–1100 слов (klyshin_manner_dobry_dom_v1): двухтактный стоп-фактор, не гайд",
     "Живая сцена в §1: дата, цитата, ₽ или ночи — что сломалось у гостя посуточно",
     "Лиды на бронирование «Добрый дом» в Тюмени через воронку один раз в конце",
     "Публикации в /blog — Дзен-кликабельные кейсы с TG/MAX конверсией"
@@ -16,7 +16,7 @@
   "host_face_todo": "TODO: заменить memory/cover/assets/identity-real/ на фото ведущего/бренда; blog-hero.json → status NEED_REPLACE",
   "publish_format": "longform",
   "IMAGE_PROVIDER": "grsai",
-  "inline_image_count": 7,
+  "inline_image_count": 3,
   "publish_schedule": {
     "timezone": "Asia/Yekaterinburg",
     "weekdays_only": false,
@@ -38,9 +38,10 @@
     "min_long_side_px": 2048,
     "target_canvas": "2048x1152",
     "resolution": "2K",
-    "canvases_per_article": 2,
+    "canvases_per_article": 1,
     "panels_per_canvas": 4,
-    "total_images": 8,
+    "total_images": 4,
+    "slice_mode": "one_2k_grid_quarter",
     "forbid_in_generation": [
       "white box under logo lockup",
       "gray box under logo lockup",
@@ -186,13 +187,13 @@
     "derouter_image_quality": "high",
     "auto_interlink_after_publish": true
   },
-  "cover_mode": "full_grsai_cover",
+  "cover_mode": "one_2k_slice4",
   "logo_mode": "reference_in_generation",
   "logo_composite": {
     "mode": "reference_and_paste_png_alpha",
     "logo_asset": "memory/cover/assets/brand/logo-dobry-dom.png",
     "canonical_url": "wp-content/uploads/2026/03/cropped-img_7143.png",
-    "canonical_source": "cropped-img_7143.png — curtains + flower + terracotta «Добрый дом» + УЮТНЫЕ КВАРТИРЫ В АРЕНДУ; images[] reserves TR pad; factory paste 1:1 is the brand",
+    "canonical_source": "cropped-img_7143.png — curtains + red flower + terracotta «Добрый дом» + УЮТНЫЕ КВАРТИРЫ В АРЕНДУ; RGBA alpha; factory paste pixel-faithful (native aspect, NOT square crop); never model-drawn",
     "canonical_sha256": "72e53ba966f0626cc6eaad0792e68b57c8da0ccd9265d6822fbc173fdb48b941",
     "forbid_ai_drawn_logo": true,
     "forbid_factory_logo_paste_on_cover": false,
@@ -326,9 +327,9 @@
     "soul_examples": "shared/soul-examples/"
   },
   "cover_wow_rules": {
-    "status": "dzen_story_collage_v2",
-    "canon_id": "dobry_dom_dzen_story_collage_v2",
-    "philosophy": "COVER = ONE Grsai generation: photoreal story scene + Cyrillic two-beat H1 + brush + yellow sticky + phone +7 (993) 574-83-22 IN generation. images[] MUST include official logo PNG to reserve top-right pad. AFTER gen factory pastes logo-dobry-dom.png 1:1 top-right (covers any model redraw) — that paste IS the brand. NO poster composite. INLINES = 2× quad, ZERO company logos.",
+    "status": "one_2k_slice4_v1",
+    "canon_id": "dobry_dom_one_2k_slice4_v1",
+    "philosophy": "ONE Grsai primary image model draw 2048×1152 as 2×2 GRID of four complete 16:9 panels → deterministic PIL slice: [0] cover + [1..3] inlines. ZERO extra draws. Cover tile: Cyrillic H1/punch + phone +7 (993) 574-83-22 in-scene. AFTER slice ONLY on cover tile: factory paste official cropped-img_7143.png (logo-dobry-dom.png) top-right ~8–12% tile width, native aspect (NOT square), pixel-faithful — covers any model-drawn fake lockup. Inlines: ZERO logo. NO poster composite.",
     "cover_generation_mode": "story_collage_16_9",
     "factory_post_process": "resize + brand_logo_composite cover only",
     "forbid_factory_poster_composite": true,
@@ -384,6 +385,11 @@
     "public_unicode": "https://добрыйдом-72.рф",
     "blog_punycode": "https://xn---72-9cdob8azaodt6k.xn--p1ai/blog",
     "blog_unicode": "https://добрыйдом-72.рф/blog"
+  },
+  "publish_transport_hints": {
+    "transport": "ftp",
+    "ftp_root": "[REDACTED]",
+    "note": "Timeweb PASV; EXCALIBUR_BLOG_ALLOW_PUBLISH=yes only on process, never git"
   },
   "comment": "Добрый дом / добрыйдом-72.рф. Secrets: PUBLIC_SITE_URL, WP_SITE_URL, SFTP, EXCALIBUR_BLOG_ALLOW_PUBLISH. Не копировать credentials tymenrieltor.ru."
 }

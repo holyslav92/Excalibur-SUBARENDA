@@ -13,7 +13,7 @@ class TitleSubjectWordstatTest(unittest.TestCase):
         low = s.lower()
         self.assertIn("guest", low)
         self.assertIn("two-beat", low)
-        self.assertIn("dzen_pattern", low)
+        self.assertTrue("dzen_pattern" in low or "dzen pattern" in low)
 
     def test_title_agent_bans_hiding_subject(self) -> None:
         a = (ROOT / "agents/excalibur-blog-title.md").read_text(encoding="utf-8")

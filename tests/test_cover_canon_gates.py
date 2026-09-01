@@ -191,7 +191,7 @@ class WordstatGateTest(unittest.TestCase):
         tenant = json.loads((ROOT / "shared/tenant-config.json").read_text(encoding="utf-8"))
         wow = tenant.get("cover_wow_rules") or {}
         self.assertEqual(wow.get("cover_qa_mode"), "slim")
-        self.assertEqual(wow.get("canon_id"), "dobry_dom_dzen_story_collage_v2")
+        self.assertEqual(wow.get("canon_id"), "dobry_dom_one_2k_slice4_v1")
         self.assertEqual(wow.get("cover_generation_mode"), "story_collage_16_9")
         self.assertEqual(wow.get("logo_mode"), "reference_in_generation")
         self.assertFalse(wow.get("forbid_logo_reference_in_generation"))
@@ -207,7 +207,7 @@ class WordstatGateTest(unittest.TestCase):
         self.assertEqual(wow.get("inline_logo_count_min"), 0)
         self.assertEqual(wow.get("inline_logo_count_max"), 0)
         self.assertIn("Excalibur-SUBARENDA", wow.get("tenant_scope", ""))
-        self.assertEqual(tenant.get("cover_mode"), "full_grsai_cover")
+        self.assertEqual(tenant.get("cover_mode"), "one_2k_slice4")
         img = tenant.get("image_generation") or {}
         self.assertFalse(img.get("cover_factory_logo_paste_disabled"))
         self.assertTrue(img.get("logo_required_as_generation_reference"))
@@ -249,14 +249,13 @@ class WordstatGateTest(unittest.TestCase):
         self.assertIn("WordPress", prompt_src)
         self.assertIn("CAT_MEME_QUOTA_RULE", prompt_src)
 
-    def test_cover_canon_tender_light_v1(self) -> None:
+    def test_cover_canon_slice4_v1(self) -> None:
         canon = json.loads((ROOT / "memory/cover/cover-canon.json").read_text(encoding="utf-8"))
-        self.assertEqual(canon["canon_id"], "dobry_dom_dzen_story_collage_v2")
-        phone = canon["wow_cover_rules"]["no_element_overlap"]["cover_phone"]
-        self.assertEqual(phone.get("mode"), "in_scene_generation")
-        self.assertFalse(phone.get("factory_post_composite"))
-        meme = canon.get("meme_system") or {}
-        self.assertIn("OPTIONAL", str(meme.get("cover", "")))
+        self.assertEqual(canon["canon_id"], "dobry_dom_one_2k_slice4_v1")
+        pipe = canon.get("pipeline") or {}
+        self.assertEqual(pipe.get("total_images"), 4)
+        rules = canon.get("slice4_rules") or {}
+        self.assertIn("native aspect", str(rules.get("philosophy", "")).casefold())
 
     def test_meme_top100_cat_quota(self) -> None:
         catalog = json.loads((ROOT / "memory/cover/meme-top100.json").read_text(encoding="utf-8"))
@@ -351,7 +350,7 @@ class WordstatGateTest(unittest.TestCase):
     def test_canvas_contract_dobry_dom_not_rieltor(self) -> None:
         contract = (ROOT / "shared/blog-cover-quad-canvas-contract.md").read_text(encoding="utf-8")
         self.assertIn("Добрый дом", contract)
-        self.assertIn("Brand lock", contract)
+        self.assertIn("pixel-faithful", contract.casefold())
         self.assertNotIn("The Риэлтор / tymenrieltor.ru", contract.split("NEVER")[0])
 
 

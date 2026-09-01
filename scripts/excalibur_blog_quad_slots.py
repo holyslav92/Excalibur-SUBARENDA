@@ -104,6 +104,7 @@ LEGACY_RESULT_FILE = "cover/quad-mcp-result.json"
 TYPE_MEME_STICKER_CANON_ID = "dobry_dom_type_meme_sticker_v3"
 SCENE_COMPOSITE_CANON_ID = "dobry_dom_scene_composite_v1"  # deprecated — replaced by dzen_story_collage_v1
 DZEN_STORY_COLLAGE_CANON_ID = "dobry_dom_dzen_story_collage_v2"
+ONE_2K_SLICE4_CANON_ID = "dobry_dom_one_2k_slice4_v1"
 DZEN_STORY_COLLAGE_CANON_IDS = frozenset(
     {
         "dobry_dom_dzen_story_collage_v1",
@@ -120,6 +121,18 @@ STANDALONE_COVER_CANON_IDS = frozenset(
         *DZEN_STORY_COLLAGE_CANON_IDS,
     }
 )
+
+SLICE4_CANVAS_SPEC: dict[str, Any] = {
+    "index": 1,
+    "canvas_file": "cover/canvas-slice4.png",
+    "batch_file": "cover/slice4-mcp-batch.json",
+    "prompt_file": "cover/slice4-mcp-prompt.txt",
+    "result_file": "cover/slice4-mcp-result.json",
+    "slots": CANVAS_1_SLOTS,
+    "has_cover": True,
+    "slice4_grid": True,
+    "export_size": "1200x675",
+}
 
 
 def project_root() -> Path:
@@ -148,7 +161,25 @@ def uses_dzen_story_collage_v1(root: Path | None = None) -> bool:
 
 def uses_full_grsai_cover(root: Path | None = None) -> bool:
     """Owner lock: cover typography/phone/logo drawn IN Grsai — no factory overlay."""
+    if uses_one_2k_slice4(root):
+        return True
     return load_cover_canon_id(root) == DZEN_STORY_COLLAGE_CANON_ID
+
+
+def uses_one_2k_slice4(root: Path | None = None) -> bool:
+    """Owner lock: ONE Grsai 2K 2×2 grid → slice 4 (cover + 3 inlines)."""
+    root = root or project_root()
+    if load_cover_canon_id(root) == ONE_2K_SLICE4_CANON_ID:
+        return True
+    tenant_path = root / "shared/tenant-config.json"
+    if tenant_path.is_file():
+        try:
+            tenant = json.loads(tenant_path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            return False
+        if str(tenant.get("cover_mode") or "").casefold() == "one_2k_slice4":
+            return True
+    return False
 
 
 def uses_type_meme_sticker_v3(root: Path | None = None) -> bool:
@@ -157,6 +188,8 @@ def uses_type_meme_sticker_v3(root: Path | None = None) -> bool:
 
 def uses_scene_poster_v2(root: Path | None = None) -> bool:
     """Backward-compat: standalone cover canon (scene_composite_v1 / tender_light / type_meme_v3)."""
+    if uses_one_2k_slice4(root):
+        return False
     return uses_type_meme_sticker_v3(root)
 
 
@@ -184,11 +217,13 @@ def inline_count_from_manifest(manifest: dict[str, Any] | None) -> int:
 
 def inline_count_from_tenant(tenant: dict[str, Any] | None) -> int:
     if not tenant:
-        return 7
+        return 3
+    if str(tenant.get("cover_mode") or "").casefold() == "one_2k_slice4":
+        return 3
     if tenant.get("inline_image_count") in (3, 7):
         return int(tenant["inline_image_count"])
     if str(tenant.get("publish_format") or "").casefold() == "longform":
-        return 7
+        return int(tenant.get("inline_image_count") or 3)
     if str(tenant.get("publish_format") or "").casefold() == "daily":
         return 0
     return 7
@@ -226,6 +261,8 @@ def canvas_specs_for_inline_count(
 
 
 def all_canvas_specs(inline_count: int, *, scene_poster_v2: bool | None = None) -> tuple[dict[str, Any], ...]:
+    if uses_one_2k_slice4():
+        return (SLICE4_CANVAS_SPEC,)
     v2 = uses_scene_poster_v2() if scene_poster_v2 is None else scene_poster_v2
     if inline_count == 7 and v2:
         return (STANDALONE_COVER_SPEC,) + SCENE_POSTER_CANVAS_SPECS

@@ -44,7 +44,7 @@
     "type_poster": "Designed magazine TYPE poster: spectacular Cyrillic headline hero + exactly 1 catalog meme sticker + large hotel-lobby info-board phone; per-case prompt not template",
     "forbid_wordpress_ui": "NEVER WordPress, Gutenberg, wp-admin, block editor, theme chrome, cookie bars in generated art",
     "no_overlap": "Headline, phone sticker, meme sticker, logo pad NEVER overlap",
-    "logo_lockup": "Official logo via Grsai images[] reference (logo-dobry-dom.png) 1:1 top-right + factory alpha PNG paste after gen — NEVER model-invented lockup; NO white/gray plaque; ZERO logos on inlines",
+    "logo_lockup": "Official logo via Grsai images[] reference (logo-dobry-dom.png) top-right pad + factory alpha PNG paste after gen — pixel-faithful, native aspect (NOT square crop); NEVER model-invented lockup; NO white/gray plaque; ZERO logos on inlines",
     "cover_phone": "+7 (993) 574-83-22 drawn IN Grsai generation — BIG, Dzen-thumb readable; NEVER peel-pill, magnet, realtor scrap; NEVER +7 922; NEVER factory post-composite phone bar"
   },
   "cover_canon": "memory/cover/cover-canon.json",

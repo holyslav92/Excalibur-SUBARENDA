@@ -34,23 +34,20 @@ class DzenStoryCollageCanonTest(unittest.TestCase):
     def setUpClass(cls) -> None:
         _ensure_fixtures()
 
-    def test_canon_dzen_story_collage_v2_locked(self) -> None:
+    def test_canon_slice4_v1_locked(self) -> None:
         canon = json.loads((ROOT / "memory/cover/cover-canon.json").read_text(encoding="utf-8"))
-        self.assertEqual(canon["canon_id"], "dobry_dom_dzen_story_collage_v2")
-        rules = canon.get("dzen_story_collage_rules") or {}
-        must = " ".join(rules.get("generation_must") or []).casefold()
-        self.assertIn("images[]", must)
-        self.assertIn("logo-dobry-dom.png", must)
-        factory = rules.get("factory_post_process") or []
-        joined_factory = " ".join(factory).casefold()
-        self.assertNotIn("poster_composite", joined_factory)
-        self.assertIn("brand_logo_composite", joined_factory)
+        self.assertEqual(canon["canon_id"], "dobry_dom_one_2k_slice4_v1")
+        rules = canon.get("slice4_rules") or {}
+        phil = str(rules.get("philosophy") or "").casefold()
+        self.assertIn("one", phil)
+        self.assertIn("native aspect", phil)
+        self.assertIn("not square", phil)
 
     def test_tenant_cover_wow_rules_full_grsai(self) -> None:
         tenant = json.loads((ROOT / "shared/tenant-config.json").read_text(encoding="utf-8"))
         wow = tenant.get("cover_wow_rules") or {}
         img = tenant.get("image_generation") or {}
-        self.assertEqual(wow.get("canon_id"), "dobry_dom_dzen_story_collage_v2")
+        self.assertEqual(wow.get("canon_id"), "dobry_dom_one_2k_slice4_v1")
         self.assertEqual(wow.get("logo_mode"), "reference_in_generation")
         self.assertFalse(wow.get("forbid_logo_reference_in_generation"))
         self.assertFalse(img.get("logo_never_as_generation_reference"))
@@ -58,26 +55,20 @@ class DzenStoryCollageCanonTest(unittest.TestCase):
         self.assertFalse(wow.get("forbid_factory_logo_paste_on_cover"))
         self.assertTrue(wow.get("forbid_ai_drawn_logo"))
 
-    def test_type_in_generation_logo_reference_not_invented(self) -> None:
-        from excalibur_blog_cover_quad_prompt import build_standalone_cover_prompt
-        from excalibur_blog_meme_cat_gate import load_meme_catalog
+    def test_type_in_generation_logo_native_aspect_not_square(self) -> None:
+        from excalibur_blog_cover_quad_prompt import build_one_2k_slice4_grid_prompt
 
-        catalog = load_meme_catalog(ROOT)
         style = json.loads((ROOT / "memory/cover/quad-style-dobry-dom.json").read_text(encoding="utf-8"))
         design = json.loads((ROOT / "memory/cover/cover-design-code.json").read_text(encoding="utf-8"))
         manifest = {
             "cover_headline_line1": "в чате: парковка бесплатно",
             "cover_headline_line2": "у шлагбаума: +800 ₽",
-            "cover_hook_highlight": "800",
         }
-        prompt = build_standalone_cover_prompt(manifest, style, design, meme_catalog=catalog, root=ROOT)
+        prompt = build_one_2k_slice4_grid_prompt(manifest, style, design, root=ROOT)
         lowered = prompt.casefold()
-        self.assertIn("в чате: парковка бесплатно", prompt)
-        self.assertIn("logo-dobry-dom.png", lowered)
-        self.assertIn("images[]", lowered)
-        self.assertIn("do not redraw", lowered)
-        self.assertIn("factory pastes", lowered)
-        self.assertNotIn("model must draw/integrate", lowered)
+        self.assertIn("native aspect", lowered)
+        self.assertIn("not square", lowered)
+        self.assertIn("cropped-img_7143", lowered)
 
     def test_poster_composite_script_blocked(self) -> None:
         import subprocess
@@ -99,10 +90,10 @@ class DzenStoryCollageCanonTest(unittest.TestCase):
         self.assertTrue(uses_brand_logo_paste(cfg))
         self.assertTrue(tenant_uses_logo_reference_in_generation(ROOT))
 
-    def test_quad_slots_dzen_story_collage(self) -> None:
-        from excalibur_blog_quad_slots import uses_dzen_story_collage_v1, uses_full_grsai_cover
+    def test_quad_slots_one_2k_slice4(self) -> None:
+        from excalibur_blog_quad_slots import uses_one_2k_slice4, uses_full_grsai_cover
 
-        self.assertTrue(uses_dzen_story_collage_v1(ROOT))
+        self.assertTrue(uses_one_2k_slice4(ROOT))
         self.assertTrue(uses_full_grsai_cover(ROOT))
 
 

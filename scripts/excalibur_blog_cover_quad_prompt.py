@@ -32,6 +32,7 @@ from excalibur_blog_quad_slots import (
     inline_count_from_manifest,
     uses_dzen_story_collage_v1,
     uses_full_grsai_cover,
+    uses_one_2k_slice4,
     uses_scene_composite_v1,
     uses_scene_poster_v2,
 )
@@ -497,11 +498,11 @@ def style_is_situational_cat_hero(style: dict) -> bool:
 
 
 def resolve_style_file(manifest: dict, root: Path) -> str:
-    """Style JSON for quad prompts — never pink-cat when scene_poster_v2 is active."""
+    """Style JSON for quad prompts — never pink-cat when scene_poster_v2 or slice4 is active."""
     explicit = str(manifest.get("style_file") or "").strip()
     if explicit:
         return explicit
-    if uses_scene_poster_v2(root):
+    if uses_one_2k_slice4(root) or uses_scene_poster_v2(root):
         return DEFAULT_STYLE_DOBRY_DOM
     return DEFAULT_STYLE_LEGACY
 
@@ -765,7 +766,7 @@ DZEN_STORY_FULL_GENERATION_RULE = (
     "Onest ExtraBold ~860 black sans two-beat headline; yellow/peach brush highlight behind ONE keyword; "
     "one yellow sticky-note punch; phone +7 (993) 574-83-22 (or +7 (993) 574-83-22) BIG and thumb-readable. "
     "LOGO PAD top-right 8-12%: images[] includes official PNG (logo-dobry-dom.png) to reserve space — "
-    "do NOT redraw curtains/flower/terracotta «Добрый дом» lockup; factory pastes that PNG 1:1 after gen "
+    "do NOT redraw curtains/flower/terracotta «Добрый дом» lockup; factory pastes that PNG pixel-faithful after gen "
     "(covers any model attempt; that paste IS the brand). NEVER house-with-heart, subtitle, second logo; "
     "NO white/gray plaque. NEVER +7 922 001 65 05. NO poster composite for type/phone/sticky."
 )
@@ -971,7 +972,7 @@ def build_dzen_story_collage_cover_prompt(
     )
     logo_clause = (
         "LOGO PAD top-right 8-12%: leave clean space — images[] includes official PNG (memory/cover/assets/brand/logo-dobry-dom.png) "
-        "as layout reference ONLY; do NOT redraw curtains/flower/terracotta «Добрый дом» lockup — factory pastes that file 1:1 "
+        "as layout reference ONLY; do NOT redraw curtains/flower/terracotta «Добрый дом» lockup — factory pastes that file pixel-faithful (native aspect, NOT square) "
         "after gen and covers any model attempt; NO house-with-heart, subtitle, or second logo; NO white/gray plaque."
     )
     lines = [
@@ -991,7 +992,7 @@ def build_dzen_story_collage_cover_prompt(
         DZEN_STORY_GENERATION_BAN + ".",
         "TEXT LANGUAGE LOCK: visible text RUSSIAN Cyrillic only; headline readable at Dzen thumb.",
         "Grsai primary image API, non-VIP, max 2 gens; images[] MUST include official logo reference for TR pad; "
-        "on exhaust pad-clear TR + resize + factory logo paste 1:1.",
+        "on exhaust pad-clear TR + resize + factory logo paste (pixel-faithful, native aspect).",
     ]
     return "\n".join(line for line in lines if line)
 
@@ -1027,6 +1028,57 @@ def build_scene_only_cover_prompt(
         "NEVER send logo as Grsai reference — factory alpha PNG overlay AFTER poster composite.",
         SCENE_POSTER_COVER_BAN + ".",
         "Grsai primary image API, non-VIP, max 2 gens; on exhaust neighbor-clone pad-clear TR + poster composite + logo paste.",
+    ]
+    return "\n".join(line for line in lines if line)
+
+
+def build_one_2k_slice4_grid_prompt(
+    manifest: dict,
+    style: dict,
+    design_code: dict,
+    *,
+    cover_phone_cta: str = DEFAULT_COVER_PHONE_CTA,
+    root: Path | None = None,
+) -> str:
+    """ONE Grsai 2K canvas as 2×2 grid — four complete 16:9 panels, then mechanical slice."""
+    case = build_case_cover_context(manifest)
+    phone = compact(str(manifest.get("cover_phone_cta") or cover_phone_cta), 32) or DEFAULT_COVER_PHONE_CTA
+    slots = manifest.get("slots") or {}
+    inline_hints: list[str] = []
+    for key in ("inline_1", "inline_2", "inline_3"):
+        slot = slots.get(key) or {}
+        h2 = compact(str(slot.get("h2_anchor") or ""), 80)
+        scene = compact(str(slot.get("scene_hint") or ""), 120)
+        if h2 or scene:
+            inline_hints.append(f"{key}: «{h2}» — {scene}" if scene else f"{key}: «{h2}»")
+    inline_clause = (
+        "INLINE PANELS (top-right, bottom-left, bottom-right) — each a FULL standalone 16:9 scene for: "
+        + "; ".join(inline_hints)
+        if inline_hints
+        else "INLINE PANELS — three distinct article scenes (keys, chat, door…) — ZERO brand lockup on panels 2–4."
+    )
+    if case["headline_line1"] and case["headline_line2"]:
+        headline_clause = (
+            f"COVER PANEL top-left HEADLINE L1 «{case['headline_line1']}» + L2 «{case['headline_line2']}»; "
+            f"{DZEN_HEADLINE_TYPO_RULE}."
+        )
+    elif case["h1"]:
+        headline_clause = f"COVER PANEL headline from «{case['h1']}» two beats; {DZEN_HEADLINE_TYPO_RULE}."
+    else:
+        headline_clause = f"COVER PANEL two-beat Cyrillic headline; {DZEN_HEADLINE_TYPO_RULE}."
+    lines = [
+        "ONE canvas 2048×1152 — draw as 2×2 GRID of FOUR complete 16:9 panels (thin white gutters OK). "
+        "Each quadrant is its own readable scene — NOT one photo sliced at random.",
+        "dobry_dom_one_2k_slice4_v1 — exactly ONE Grsai draw; factory slices quarters after download.",
+        headline_clause,
+        f"COVER PANEL phone infoboard EXACT «{phone}» — NEVER +7 922.",
+        inline_clause,
+        "PANEL 2–4: NO «Добрый дом» logo, NO curtains/flower lockup — scenes only.",
+        "TOP-RIGHT of COVER PANEL ONLY: leave clean pad 8–12% — model may sketch layout; "
+        "factory pastes official cropped-img_7143.png after slice (pixel-faithful, native aspect, NOT square crop).",
+        "FORBIDDEN: four separate images; second API call; square logo stamp; white plaque under logo.",
+        SCENE_POSTER_COVER_BAN + ".",
+        "TEXT: Russian Cyrillic only; Comfort+ Tyumen daily-rental mood.",
     ]
     return "\n".join(line for line in lines if line)
 
@@ -1202,6 +1254,14 @@ def main() -> int:
                 design_code,
                 cover_phone_cta=cover_phone_cta,
                 meme_catalog=meme_catalog,
+                root=root,
+            )
+        elif spec.get("slice4_grid") or uses_one_2k_slice4(root):
+            prompt = build_one_2k_slice4_grid_prompt(
+                manifest,
+                style,
+                design_code,
+                cover_phone_cta=cover_phone_cta,
                 root=root,
             )
         else:
