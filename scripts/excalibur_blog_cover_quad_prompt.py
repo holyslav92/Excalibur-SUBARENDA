@@ -467,7 +467,7 @@ def tenant_uses_brand_logo_paste(root: Path, style: dict | None = None) -> bool:
         return False
     tenant = load_tenant_cover_config(root)
     mode = str(tenant.get("cover_mode") or "").strip().casefold()
-    if mode in {"brand_logo_paste", "brand_logo_composite", "paste_png"}:
+    if mode in {"brand_logo_paste", "brand_logo_composite", "paste_png", "one_2k_slice4", "gen_only_slice4"}:
         return True
     if style:
         hero_mode = str(style.get("cover_hero_mode") or "").strip().casefold()
@@ -1207,9 +1207,7 @@ def main() -> int:
     cat_hero = style_is_situational_cat_hero(style)
     local_reference = str(style.get("local_reference") or "").strip()
     brand_logo_paste = tenant_uses_brand_logo_paste(root, style)
-    logo_reference_in_generation = tenant_uses_logo_reference_in_generation(root) or (
-        bool(standalone_cover) and uses_full_grsai_cover(root)
-    )
+    logo_reference_in_generation = tenant_uses_logo_reference_in_generation(root)
     cover_phone_cta = cover_phone_cta_for_manifest(manifest, root)
 
     inline_count = inline_count_from_manifest(manifest)
