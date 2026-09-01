@@ -1,0 +1,69 @@
+{
+  "topic_id": "B06",
+  "slug": "vyezd-v-12-00-poezd-v-16-30-kuda-chemodany",
+  "title": "+2 100 ₽ за поздний выезд. Или подъезд без камеры",
+  "outbound_required_min": 1,
+  "outbound_found": [
+    {
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "title": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "permalink": "/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/",
+      "topic_id": "B02",
+      "post_id": 3777,
+      "source": "ledger"
+    },
+    {
+      "slug": "kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki",
+      "title": "kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki",
+      "permalink": "/blog/kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki/",
+      "topic_id": "B03",
+      "post_id": null,
+      "source": "ledger"
+    },
+    {
+      "slug": "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+      "title": "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+      "permalink": "/blog/oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego/",
+      "topic_id": "B04",
+      "post_id": null,
+      "source": "ledger"
+    },
+    {
+      "slug": "rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super",
+      "title": "rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super",
+      "permalink": "/blog/rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super/",
+      "topic_id": "B05",
+      "post_id": null,
+      "source": "ledger"
+    }
+  ],
+  "outbound_missing_suggestions": [
+    {
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "title": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "permalink": "/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+      "topic_id": "B01",
+      "post_id": 3745,
+      "source": "ledger"
+    }
+  ],
+  "inbound_targets": [
+    {
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "title": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "permalink": "/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+      "topic_id": "B01",
+      "post_id": 3745,
+      "source": "ledger"
+    }
+  ],
+  "inbound_updates": [
+    {
+      "post_id": 3745,
+      "marker": "data-excalibur-interlink-from=\"vyezd-v-12-00-poezd-v-16-30-kuda-chemodany\"",
+      "html": "<p class=\"excalibur-interlink-readalso\" data-excalibur-interlink-from=\"vyezd-v-12-00-poezd-v-16-30-kuda-chemodany\"><b>Читайте также:</b> <a href=\"{{SITE_BASE}}/blog/vyezd-v-12-00-poezd-v-16-30-kuda-chemodany/\">+2 100 ₽ за поздний выезд. Или подъезд без камеры</a></p>"
+    }
+  ],
+  "new_url": "/blog/vyezd-v-12-00-poezd-v-16-30-kuda-chemodany/",
+  "dry_run": false
+}

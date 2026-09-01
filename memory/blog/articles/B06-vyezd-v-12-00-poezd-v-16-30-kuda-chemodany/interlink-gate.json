@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "topic_id": "B06",
+  "slug": "vyezd-v-12-00-poezd-v-16-30-kuda-chemodany",
+  "candidates_count": 9,
+  "outbound_found": [
+    {
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "title": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem"
+    },
+    {
+      "slug": "kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki",
+      "title": "kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki"
+    },
+    {
+      "slug": "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+      "title": "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego"
+    },
+    {
+      "slug": "rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super",
+      "title": "rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super"
+    }
+  ],
+  "outbound_unique_slugs": [
+    "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+    "rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super",
+    "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+    "kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "warnings": [],
+  "errors": []
+}

@@ -1,0 +1,31 @@
+{
+  "title": "+2 100 ₽ за поздний выезд. Или подъезд без камеры",
+  "h1": "+2 100 ₽ за поздний выезд. Или подъезд без камеры",
+  "slug": "vyezd-v-12-00-poezd-v-16-30-kuda-chemodany",
+  "topic_id": "B06",
+  "author_id": "dobry-dom",
+  "article_mode": "B",
+  "description": "Поезд вечером, ключи уже сданы — и вдруг предлагают оставить вещи в подъезде.",
+  "meta_ab": {
+    "title_seo": "+2 100 ₽ за поздний выезд. Или подъезд без камеры",
+    "title_ctr": "+2 100 ₽ за поздний выезд. Или подъезд без камеры",
+    "title_aeo": "Квартиры посуточно в Тюмени: багаж после выезда",
+    "description_seo": "Поезд вечером, ключи уже сданы — и вдруг предлагают оставить вещи в подъезде.",
+    "description_ctr": "12:00 выезд, 16:30 поезд — куда деть два чемодана без камеры?",
+    "description_aeo": "Поздний выезд и хранение багажа при посуточной аренде в Тюмени."
+  },
+  "theme_blocks": {
+    "faq": "skip",
+    "quiz": "skip",
+    "side_stickers": "skip"
+  },
+  "date": "2026-09-01",
+  "pipeline_canon": "human-first-v3",
+  "editorial_swarm": false,
+  "editorial_manner_canon": "klyshin_manner_dobry_dom_v1",
+  "cover_pipeline_canon": "dobry_dom_one_2k_slice4_v1",
+  "wp_category_slugs": [
+    "posutochnaya-arenda",
+    "sovety-gostyam"
+  ]
+}

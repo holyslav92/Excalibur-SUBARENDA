@@ -1,0 +1,38 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "{{SITE_BASE}}/blog/vyezd-v-12-00-poezd-v-16-30-kuda-chemodany/#article",
+      "headline": "+2 100 ₽ за поздний выезд. Или подъезд без камеры",
+      "description": "Поезд вечером, ключи уже сданы — и вдруг предлагают оставить вещи в подъезде. Два чемодана, +2 100 ₽ за поздний выезд или камера на вокзале.",
+      "datePublished": "2026-09-01",
+      "dateModified": "2026-09-01",
+      "author": {
+        "@type": "Organization",
+        "@id": "{{SITE_BASE}}/#organization",
+        "name": "Добрый дом"
+      },
+      "publisher": {
+        "@id": "{{SITE_BASE}}/#organization"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{SITE_BASE}}/blog/vyezd-v-12-00-poezd-v-16-30-kuda-chemodany/"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "url": "{{SITE_BASE}}/blog/vyezd-v-12-00-poezd-v-16-30-kuda-chemodany/cover.png"
+      },
+      "inLanguage": "ru-RU",
+      "articleSection": "Посуточная аренда"
+    },
+    {
+      "@type": "Organization",
+      "@id": "{{SITE_BASE}}/#organization",
+      "name": "Добрый дом",
+      "url": "{{SITE_BASE}}/",
+      "telephone": "+7-993-574-83-22"
+    }
+  ]
+}

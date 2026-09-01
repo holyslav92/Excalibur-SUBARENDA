@@ -1,0 +1,64 @@
+{
+  "gate": "structure",
+  "status": "PASS",
+  "article_dir": "memory/blog/articles/B06-vyezd-v-12-00-poezd-v-16-30-kuda-chemodany",
+  "checks": [
+    {
+      "name": "pipeline_canon",
+      "ok": true,
+      "detail": "exit=0"
+    },
+    {
+      "name": "research_agent_report",
+      "ok": true,
+      "detail": "status=PASS"
+    },
+    {
+      "name": "link_verify",
+      "ok": true,
+      "detail": "exit=0"
+    },
+    {
+      "name": "html_linter",
+      "ok": true,
+      "detail": "exit=0"
+    },
+    {
+      "name": "community_cta",
+      "ok": true,
+      "detail": "exit=0"
+    },
+    {
+      "name": "wp_categories",
+      "ok": true,
+      "detail": "exit=0"
+    },
+    {
+      "name": "interlink",
+      "ok": true,
+      "detail": "exit=0"
+    },
+    {
+      "name": "crosslink_qa",
+      "ok": true,
+      "detail": "exit=0"
+    },
+    {
+      "name": "research_official",
+      "ok": true,
+      "detail": "exit=0"
+    },
+    {
+      "name": "opening_meta",
+      "ok": true,
+      "detail": "exit=0"
+    },
+    {
+      "name": "case_delivery",
+      "ok": true,
+      "detail": "exit=0"
+    }
+  ],
+  "failed": [],
+  "note": "Structural/links/HTML only — does not rewrite prose."
+}

@@ -1,0 +1,9 @@
+{
+  "local_path": "cover/canvas-slice4.png",
+  "source": "grsai-draw-api",
+  "target_canvas": "2048x1152",
+  "native_width": 2048,
+  "native_height": 1152,
+  "delivery": "native_2k",
+  "used_vip_fallback": true
+}

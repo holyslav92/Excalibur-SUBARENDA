@@ -1,0 +1,50 @@
+{
+  "topic_id": "B06",
+  "slug": "vyezd-v-12-00-poezd-v-16-30-kuda-chemodany",
+  "cover_family": "brand_collage",
+  "style_preset": "dobry_dom_one_2k_slice4",
+  "pipeline": "one_2k_slice4_v1",
+  "file": "cover/cover.png",
+  "alt": "Гость с двумя чемоданами у двери квартиры посуточно в Тюмени, на табло телефон +7 993 574-83-22",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-quad.png",
+  "generated_at": "2026-09-01T09:24:08+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Гость с двумя чемоданами у двери квартиры посуточно в Тюмени, на табло телефон +7 993 574-83-22",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Сравнение времени выезда в полдень и поезда вечером при посуточной аренде",
+      "h2_anchor": "Полдень — это про уборку, а не про ваш поезд",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Доплата две тысячи сто рублей за поздний выезд при посуточной аренде",
+      "h2_anchor": "2 100 ₽ — не штраф. Вопрос в том, когда появляется цена",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Подъезд без камеры хранения — ненадёжное место для чемоданов",
+      "h2_anchor": "Подъезд — не камера хранения",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}
