@@ -27,6 +27,10 @@ BRAND_LOGO_PASTE_CHECKS = (
     "require_large_phone_sticker",
     "forbid_people_heavy_cover",
     "forbid_split_white_collage",
+    "forbid_overlapping_text_blocks",
+    "forbid_giant_cropped_glyph",
+    "forbid_model_drawn_meme_template",
+    "poster_composite_stamp_pass",
 )
 
 LOGO_REFERENCE_CHECKS = (
@@ -215,11 +219,25 @@ def validate_cover_qa(article_dir: Path, root: Path) -> dict:
             errors.extend(validate_article_logo_gates_slim(article_dir, root))
             errors.extend(validate_cover_phone_and_overlap_gates(article_dir, root))
             try:
-                from excalibur_blog_cover_collage_gate import validate_cover_type_meme_sticker_gates
+                from excalibur_blog_cover_collage_gate import (
+                    validate_cover_anti_collage_gates,
+                    validate_cover_type_meme_sticker_gates,
+                )
 
                 errors.extend(validate_cover_type_meme_sticker_gates(article_dir / "cover" / "cover.png"))
+                errors.extend(validate_cover_anti_collage_gates(article_dir / "cover" / "cover.png"))
             except ImportError:
                 errors.append("excalibur_blog_cover_collage_gate.py missing — scene poster QA unavailable")
+            poster_stamp = article_dir / "cover" / "poster-composite-stamp.json"
+            if poster_stamp.is_file():
+                try:
+                    pst = load_json(poster_stamp)
+                    if str(pst.get("status") or "").upper() != "PASS":
+                        errors.append("poster-composite-stamp.json status != PASS")
+                except json.JSONDecodeError:
+                    errors.append("poster-composite-stamp.json invalid JSON")
+            else:
+                errors.append("cover/poster-composite-stamp.json missing — run excalibur_blog_cover_poster_composite.py")
         except ImportError:
             errors.append("excalibur_blog_drawn_logo_gate.py missing — logo paste QA unavailable")
     elif logo_reference:

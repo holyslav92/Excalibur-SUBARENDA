@@ -1,8 +1,8 @@
 {
-  "canon_id": "dobry_dom_tender_light_v1",
+  "canon_id": "dobry_dom_scene_composite_v1",
   "status": "locked",
   "tenant": "dobry-dom",
-  "label_ru": "Добрый дом — tender light type+meme+info-board cover v1 (lapoy-cover-v12 approved), zero inline logos",
+  "label_ru": "Добрый дом — scene-only hallway + factory poster composite (type/meme/phone/logo), zero inline logos",
   "tenant_scope": "holyslav92/Excalibur-SUBARENDA ONLY. Never tymenrieltor.ru / Excalibur-2-Cloud rieltor identity.",
   "cover_generation": {
     "mode": "standalone_16_9",
@@ -18,7 +18,44 @@
     "model_policy": "primary_non_vip_only",
     "vip_disabled": true,
     "max_generation_attempts": 2,
-    "on_exhaust": "pad_clear_top_right + factory_logo_paste + ship"
+    "on_exhaust": "pad_clear_top_right + poster_composite + factory_logo_paste + ship"
+  },
+  "scene_composite_rules": {
+    "cover_qa_check": "scene_composite_editorial",
+    "philosophy": "Grsai generates ONLY empty tender-light hallway. Factory post-process: Cormorant SemiBold Italic + Onest ~860 typography, exactly ONE catalog meme PNG paste, kitchen-tablo phone +7 (993) 574-83-22, official alpha logo overlay AFTER — never as model reference.",
+    "generation_must": [
+      "empty tender-light hallway scene ONLY",
+      "ZERO Cyrillic, digits, meme, logo, phone, stickers, typography in generation",
+      "empty clear TOP-RIGHT pad 8-12% for factory logo paste",
+      "default ZERO people",
+      "high-key bright Comfort+ Tyumen mood"
+    ],
+    "factory_post_process": [
+      "scripts/excalibur_blog_cover_poster_composite.py — headline + meme paste + phone tablo",
+      "scripts/excalibur_blog_brand_logo_composite.py — official alpha PNG top-right AFTER poster composite"
+    ],
+    "forbidden_on_cover": [
+      "overlapping type layers",
+      "magnified letter crops",
+      "Trade Offer / Drake / Wojak drawn by model",
+      "collage of stickers covering headline",
+      "white/gray plaque under logo",
+      "model-drawn lockup",
+      "2+ large overlapping text blocks",
+      "giant cropped glyph >12% canvas",
+      "TRADE OFFER template in generation",
+      "0 memes",
+      "2+ memes / meme soup",
+      "people-heavy group photo",
+      "model-drawn logo",
+      "wordpress UI"
+    ],
+    "anti_collage_gates": [
+      "forbid_overlapping_text_blocks",
+      "forbid_giant_cropped_glyph",
+      "forbid_model_drawn_meme_template",
+      "poster_composite_stamp_pass"
+    ]
   },
   "type_meme_sticker_rules": {
     "cover_qa_check": "type_meme_sticker_editorial",
@@ -91,8 +128,9 @@
       },
       "cover_phone": {
         "display": "+7 (993) 574-83-22",
-        "mode": "large_hotel_lobby_info_board",
-        "in_scene_only": true,
+        "mode": "kitchen_tablo_factory_drawn",
+        "in_scene_only": false,
+        "factory_post_composite": true,
         "post_composite_bottom_left": false,
         "never_in_logo_pad": true,
         "cover_only": true,
@@ -148,13 +186,14 @@
     "inline_logo_count": "0 of 7 — cover only",
     "inline_logo_slots_default": [],
     "cover_phone_large_sticker": "+7 (993) 574-83-22",
-    "cover_phone_post_composite": false,
+    "cover_phone_post_composite": true,
+    "poster_composite_script": "scripts/excalibur_blog_cover_poster_composite.py",
     "forbid_cover_phone_post_composite_pill": true,
     "forbidden_phone": "+7 922 001 65 05",
     "composite_script": "scripts/excalibur_blog_brand_logo_composite.py"
   },
   "meme_system": {
-    "cover": "REQUIRED — exactly ONE named entry from memory/cover/meme-top100.json; pick by topic-tag overlap; skip ids in last 8 covers (memory/cover/meme-used.json); prefer memory/cover/memes/<id>.png when present",
+    "cover": "REQUIRED — exactly ONE catalog meme PNG pasted by poster composite (never model-drawn); pick by topic-tag overlap; skip last 8 ids",
     "rotation": {
       "window": 8,
       "log": "memory/cover/meme-used.json",
@@ -180,7 +219,7 @@
   },
   "pipeline": {
     "primary": "grsai",
-    "cover": "standalone 2048x1152 → cover.png 1200x675",
+    "cover": "standalone empty scene 2048x1152 → poster composite → cover.png 1200x675",
     "inlines": "2x quad canvas 2048x1152 (canvas1: inline_1..4, canvas2: inline_5..7 + quiet pad)",
     "resolution": "2K",
     "canvases": 3,
@@ -231,6 +270,10 @@
       "require_large_phone_sticker",
       "forbid_people_heavy_cover",
       "forbid_split_white_collage",
+      "forbid_overlapping_text_blocks",
+      "forbid_giant_cropped_glyph",
+      "forbid_model_drawn_meme_template",
+      "poster_composite_stamp_pass",
       "inline_no_logo_on_inlines",
       "forbid_multiple_logos_per_image",
       "logo_top_right_fixed",
@@ -240,8 +283,8 @@
   "owner_visual_polish": {
     "cover_phone_required": "+7 (993) 574-83-22",
     "cover_phone_forbidden": "+7 922 001 65 05",
-    "cover_style": "type-led magazine poster — spectacular headline + 1 catalog meme + large phone sticker; NOT people scene photo",
-    "typography": "Spectacular Cyrillic display headline 2-8 words as hero; readable at Dzen thumb; no gold glitter; no Wordstat soup",
+    "cover_style": "scene-only hallway + factory poster composite — Cormorant+Onest headline, 1 catalog meme PNG paste, kitchen-tablo phone; NOT model collage",
+    "typography": "Factory post-process only: L1 Cormorant SemiBold Italic terracotta; L2 Onest ~860 charcoal; never model-drawn overlapping type",
     "inline_density": "informational labels per panel; utility test still required; meme optional on inlines; max 1 cat/article across cover+inlines"
   }
 }

@@ -30,6 +30,7 @@ from excalibur_blog_quad_slots import (
     all_canvas_specs,
     canvas_specs_for_inline_count,
     inline_count_from_manifest,
+    uses_scene_composite_v1,
     uses_scene_poster_v2,
 )
 from excalibur_blog_site_base import (
@@ -752,7 +753,16 @@ SCENE_POSTER_COVER_BAN = (
     "dark leather, wood+Harold lobby stamp, yellow sticky notes, "
     "split white-panel+photo, phone pill, peel-pill phone, fridge magnet phone, gold brass plaque, "
     "post-composite phone chip, model-drawn logo, "
-    "house-with-heart, logo plate, empty stock room, WordPress UI, wow poster collage soup, dark cinematic"
+    "house-with-heart, logo plate, empty stock room, WordPress UI, wow poster collage soup, dark cinematic, "
+    "overlapping type layers, magnified letter crops, Trade Offer/Drake/Wojak drawn by model, "
+    "collage of stickers covering headline, white/gray plaque under logo, model-drawn lockup"
+)
+
+SCENE_ONLY_GENERATION_BAN = (
+    "HARD SCENE-ONLY: ZERO Cyrillic, ZERO digits, ZERO phone number, ZERO meme, ZERO logo, ZERO stickers, "
+    "ZERO typography, ZERO headline, ZERO captions, ZERO UI text, ZERO peel-pill, ZERO information board. "
+    "Factory post-process adds Cormorant+Onest headline, ONE catalog meme PNG paste, kitchen-tablo phone, "
+    "then official alpha logo overlay AFTER generation."
 )
 
 PHONE_INFO_BOARD_RULE = (
@@ -857,6 +867,41 @@ def resolve_cover_meme_entry(
     return "Wojak / Feels Guy", "wojak", "", "catalog_fallback"
 
 
+def build_scene_only_cover_prompt(
+    manifest: dict,
+    style: dict,
+    design_code: dict,
+    *,
+    root: Path | None = None,
+) -> str:
+    """Scene-only Grsai prompt — empty tender-light hallway; factory composites type/meme/phone."""
+    style_prefix = compact(
+        style.get("cover_scene_only_prompt_prefix")
+        or design_code.get("cover_scene_only_prompt_block")
+        or TENDER_LIGHT_CANON,
+        220,
+    )
+    case = build_case_cover_context(manifest)
+    scene_clause = (
+        f"Mood hint only (no text in image): {case['scene']}."
+        if case["scene"]
+        else "Scene: bright cream/linen hallway, pale oak floor, houseplant, soft daylight."
+    )
+    lines = [
+        style_prefix,
+        "Standalone cover canvas 2048x1152 exact 16:9 full-bleed — EMPTY SCENE ONLY, NOT a poster.",
+        SCENE_ONLY_GENERATION_BAN,
+        TENDER_LIGHT_CANON,
+        scene_clause,
+        "PEOPLE: ZERO — no guests, no host, no hands, no faces.",
+        "TOP-RIGHT pad 8-12% — continuous wall/wood texture only; " + TOP_RIGHT_PAD_SCENE_RULE.split(";")[0] + ".",
+        "NEVER send logo as Grsai reference — factory alpha PNG overlay AFTER poster composite.",
+        SCENE_POSTER_COVER_BAN + ".",
+        "Grsai primary image API, non-VIP, max 2 gens; on exhaust neighbor-clone pad-clear TR + poster composite + logo paste.",
+    ]
+    return "\n".join(line for line in lines if line)
+
+
 def build_standalone_cover_prompt(
     manifest: dict,
     style: dict,
@@ -866,6 +911,8 @@ def build_standalone_cover_prompt(
     meme_catalog: dict | None = None,
     root: Path | None = None,
 ) -> str:
+    if root is not None and uses_scene_composite_v1(root):
+        return build_scene_only_cover_prompt(manifest, style, design_code, root=root)
     style_prefix = compact(
         style.get("cover_standalone_prompt_prefix")
         or design_code.get("cover_panel_prompt_block")
@@ -1097,6 +1144,8 @@ def main() -> int:
         image_flow = resolve_image_flow(root)
         apply_script = (
             "python3 scripts/excalibur_blog_cover_standalone_apply.py "
+            f"--article-dir <article_dir> && "
+            "python3 scripts/excalibur_blog_cover_poster_composite.py "
             f"--article-dir <article_dir>"
             if standalone_cover
             else (
