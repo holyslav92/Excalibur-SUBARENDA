@@ -102,14 +102,16 @@ LEGACY_BATCH_FILE = "cover/quad-mcp-batch.json"
 LEGACY_RESULT_FILE = "cover/quad-mcp-result.json"
 
 TYPE_MEME_STICKER_CANON_ID = "dobry_dom_type_meme_sticker_v3"
-SCENE_COMPOSITE_CANON_ID = "dobry_dom_scene_composite_v1"
+SCENE_COMPOSITE_CANON_ID = "dobry_dom_scene_composite_v1"  # deprecated — replaced by dzen_story_collage_v1
+DZEN_STORY_COLLAGE_CANON_ID = "dobry_dom_dzen_story_collage_v1"
 TENDER_LIGHT_CANON_ID = "dobry_dom_tender_light_v1"
-SCENE_POSTER_CANON_ID = SCENE_COMPOSITE_CANON_ID  # current locked canon
+SCENE_POSTER_CANON_ID = DZEN_STORY_COLLAGE_CANON_ID  # current locked canon
 STANDALONE_COVER_CANON_IDS = frozenset(
     {
         TYPE_MEME_STICKER_CANON_ID,
         TENDER_LIGHT_CANON_ID,
         SCENE_COMPOSITE_CANON_ID,
+        DZEN_STORY_COLLAGE_CANON_ID,
     }
 )
 
@@ -132,6 +134,10 @@ def load_cover_canon_id(root: Path | None = None) -> str:
 
 def uses_scene_composite_v1(root: Path | None = None) -> bool:
     return load_cover_canon_id(root) == SCENE_COMPOSITE_CANON_ID
+
+
+def uses_dzen_story_collage_v1(root: Path | None = None) -> bool:
+    return load_cover_canon_id(root) == DZEN_STORY_COLLAGE_CANON_ID
 
 
 def uses_type_meme_sticker_v3(root: Path | None = None) -> bool:

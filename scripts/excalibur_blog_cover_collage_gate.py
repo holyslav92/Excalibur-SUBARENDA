@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Cover gates — scene_composite_v1 anti-collage + type+meme+phone-sticker poster."""
+"""Cover gates — dzen_story_collage_v1 anti-collage + factory type overlay poster."""
 
 from __future__ import annotations
 
@@ -8,7 +8,7 @@ from typing import Any
 
 import numpy as np
 
-# HARD factory thresholds (dobry_dom_scene_composite_v1)
+# HARD factory thresholds (dobry_dom_dzen_story_collage_v1)
 GIANT_GLYPH_CANVAS_FRAC = 0.12
 TEXT_BLOCK_MIN_CANVAS_FRAC = 0.04
 TEXT_BLOCK_OVERLAP_IOU = 0.18
@@ -190,7 +190,13 @@ def detect_display_headline(image_path: Path) -> dict[str, Any]:
     edge_energy = edge_h + edge_v
     luma_std = float(luma.std())
 
-    detected = dark_frac >= 0.035 and luma_std >= 22 and (edge_energy >= 12 or dark_frac >= 0.08)
+    detected = (
+        dark_frac >= 0.035 and luma_std >= 22 and (edge_energy >= 12 or dark_frac >= 0.08)
+    ) or (
+        edge_energy >= 16 and luma_std >= 24 and dark_frac >= 0.006
+    ) or (
+        dark_frac >= 0.045 and luma_std >= 30 and edge_energy >= 3.5
+    )
     return {
         "detected": detected,
         "dark_frac": round(dark_frac, 4),
@@ -625,6 +631,11 @@ def detect_phone_tablo_in_scene(image_path: Path) -> dict[str, Any]:
     }
 
 
+def validate_story_scene_canvas(scene_path: Path) -> list[str]:
+    """Pre-composite gate: story scene canvas must have NO model typography/meme/phone."""
+    return validate_scene_only_canvas(scene_path)
+
+
 def validate_scene_only_canvas(scene_path: Path) -> list[str]:
     """Pre-composite gate: scene canvas must have NO model typography/meme/phone."""
     errors: list[str] = []
@@ -639,7 +650,7 @@ def validate_scene_only_canvas(scene_path: Path) -> list[str]:
     if dark_frac > SCENE_ONLY_MAX_DARK_UPPER and edge > SCENE_ONLY_MAX_TEXT_EDGE:
         errors.append(
             f"scene canvas has model typography energy (dark_frac={dark_frac:.3f}, edge={edge:.1f}) "
-            "— regenerate empty hallway only"
+            "— regenerate story scene without Cyrillic/type in generation"
         )
     meme = detect_model_drawn_meme_templates(scene_path)
     if meme.get("detected"):

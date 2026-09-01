@@ -65,21 +65,21 @@ def _draw_people_scene_no_meme(path: Path) -> None:
 class TypeMemeStickerCoverGateTest(unittest.TestCase):
     def test_canon_type_meme_sticker_v3_locked(self) -> None:
         canon = json.loads((ROOT / "memory/cover/cover-canon.json").read_text(encoding="utf-8"))
-        self.assertEqual(canon["canon_id"], "dobry_dom_scene_composite_v1")
+        self.assertEqual(canon["canon_id"], "dobry_dom_dzen_story_collage_v1")
         phone = canon["wow_cover_rules"]["no_element_overlap"]["cover_phone"]
-        self.assertEqual(phone.get("mode"), "kitchen_tablo_factory_drawn")
+        self.assertEqual(phone.get("mode"), "phone_bar_factory_drawn")
         self.assertTrue(phone.get("factory_post_composite"))
         self.assertEqual(canon["cover_generation"]["mode"], "standalone_16_9")
         meme = canon.get("meme_system") or {}
-        self.assertIn("REQUIRED", str(meme.get("cover", "")))
+        self.assertIn("OPTIONAL", str(meme.get("cover", "")))
 
     def test_tenant_cover_wow_rules_type_meme_sticker_v3(self) -> None:
         tenant = json.loads((ROOT / "shared/tenant-config.json").read_text(encoding="utf-8"))
         wow = tenant.get("cover_wow_rules") or {}
-        self.assertEqual(wow.get("canon_id"), "dobry_dom_scene_composite_v1")
+        self.assertEqual(wow.get("canon_id"), "dobry_dom_dzen_story_collage_v1")
         self.assertTrue(wow.get("forbid_model_typography_in_generation"))
-        self.assertEqual(wow.get("cover_generation_mode"), "scene_only_16_9")
-        self.assertTrue(wow.get("require_cover_meme_sticker"))
+        self.assertEqual(wow.get("cover_generation_mode"), "story_collage_16_9")
+        self.assertFalse(wow.get("require_cover_meme_sticker"))
         self.assertTrue(wow.get("require_display_headline"))
         self.assertTrue(wow.get("require_large_phone_sticker"))
         self.assertTrue(wow.get("forbid_people_heavy_cover"))
@@ -248,12 +248,12 @@ class TypeMemeStickerCoverGateTest(unittest.TestCase):
         style = json.loads((ROOT / "memory/cover/quad-style-dobry-dom.json").read_text(encoding="utf-8"))
         design = json.loads((ROOT / "memory/cover/cover-design-code.json").read_text(encoding="utf-8"))
         prompt = build_standalone_cover_prompt(manifest, style, design, meme_catalog=catalog, root=ROOT)
-        self.assertIn("EMPTY", prompt)
+        self.assertIn("STORY COLLAGE", prompt)
         self.assertIn("ZERO Cyrillic", prompt)
         self.assertNotIn("в чате: можно с лапой", prompt)
 
         contract = (ROOT / "shared/blog-cover-quad-canvas-contract.md").read_text(encoding="utf-8")
-        self.assertIn("scene_composite_v1", contract)
+        self.assertIn("dzen_story_collage_v1", contract)
         self.assertIn("standalone", contract.lower())
         self.assertIn("cover-canvas.png", contract)
 

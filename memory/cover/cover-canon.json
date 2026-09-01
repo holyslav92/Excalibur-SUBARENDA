@@ -1,9 +1,10 @@
 {
-  "canon_id": "dobry_dom_scene_composite_v1",
+  "canon_id": "dobry_dom_dzen_story_collage_v1",
   "status": "locked",
   "tenant": "dobry-dom",
-  "label_ru": "Добрый дом — scene-only hallway + factory poster composite (type/meme/phone/logo), zero inline logos",
+  "label_ru": "Добрый дом — Dzen story collage + factory type overlay (Onest brush + sticky + phone), zero inline logos",
   "tenant_scope": "holyslav92/Excalibur-SUBARENDA ONLY. Never tymenrieltor.ru / Excalibur-2-Cloud rieltor identity.",
+  "replaces": "dobry_dom_scene_composite_v1",
   "cover_generation": {
     "mode": "standalone_16_9",
     "canvas_size": "2048x1152",
@@ -20,20 +21,36 @@
     "max_generation_attempts": 2,
     "on_exhaust": "pad_clear_top_right + poster_composite + factory_logo_paste + ship"
   },
-  "scene_composite_rules": {
-    "cover_qa_check": "scene_composite_editorial",
-    "philosophy": "Grsai generates ONLY empty tender-light hallway. Factory post-process: Cormorant SemiBold Italic + Onest ~860 typography, exactly ONE catalog meme PNG paste, kitchen-tablo phone +7 (993) 574-83-22, official alpha logo overlay AFTER — never as model reference.",
+  "dzen_story_collage_rules": {
+    "cover_qa_check": "dzen_story_collage_editorial",
+    "philosophy": "Grsai generates photoreal Dzen click-thumbnail STORY scene (hero varies by article theme). Factory post-process: Onest ~860 black two-beat headline + yellow/peach brush highlight on ONE keyword, ONE yellow sticky-note punch, phone bar +7 (993) 574-83-22, optional catalog meme PNG paste, official alpha logo overlay AFTER — never as model reference.",
     "generation_must": [
-      "empty tender-light hallway scene ONLY",
+      "photoreal bright Comfort+ Tyumen daily-rental apartment/context matching THIS case",
+      "HERO VARIES BY THEME — person with emotion OR story objects OR key detail (barrier, keys, router, ticket, bowl, door, laptop); NEVER default empty hallway; NEVER always same meme",
+      "leave light/blur zone for factory type overlay (split text-left / photo-right OR hero-left / type-right)",
       "ZERO Cyrillic, digits, meme, logo, phone, stickers, typography in generation",
       "empty clear TOP-RIGHT pad 8-12% for factory logo paste",
-      "default ZERO people",
-      "high-key bright Comfort+ Tyumen mood"
+      "high-key bright Comfort+ Tyumen mood — not gold luxury"
+    ],
+    "generation_must_not": [
+      "empty cream hallway as default layout",
+      "always catalog meme paste as sole hero",
+      "always blinking_white_guy or roll_safe as default",
+      "magazine empty interior poster with type on top"
     ],
     "factory_post_process": [
-      "scripts/excalibur_blog_cover_poster_composite.py — headline + meme paste + phone tablo",
+      "scripts/excalibur_blog_cover_poster_composite.py — Onest headline + brush highlight + sticky note + phone bar + optional meme paste",
       "scripts/excalibur_blog_brand_logo_composite.py — official alpha PNG top-right AFTER poster composite"
     ],
+    "type_overlay_recipe": {
+      "headline_font": "Onest ExtraBold ~860 black sans",
+      "beats": 2,
+      "brush_highlight": "yellow/peach behind ONE keyword or figure",
+      "sticky_note": "one yellow square with short punch (factory only)",
+      "phone": "+7 (993) 574-83-22",
+      "forbidden_phone": "+7 922 001 65 05",
+      "logo": "alpha overlay top-right AFTER gen, no white plaque"
+    },
     "forbidden_on_cover": [
       "overlapping type layers",
       "magnified letter crops",
@@ -44,11 +61,10 @@
       "2+ large overlapping text blocks",
       "giant cropped glyph >12% canvas",
       "TRADE OFFER template in generation",
-      "0 memes",
       "2+ memes / meme soup",
-      "people-heavy group photo",
       "model-drawn logo",
-      "wordpress UI"
+      "wordpress UI",
+      "empty hallway + pasted meme as required layout"
     ],
     "anti_collage_gates": [
       "forbid_overlapping_text_blocks",
@@ -59,7 +75,7 @@
   },
   "type_meme_sticker_rules": {
     "cover_qa_check": "type_meme_sticker_editorial",
-    "philosophy": "Designed magazine TYPE poster — spectacular Cyrillic headline hero + exactly ONE catalog meme sticker + LARGE hotel-lobby information-board phone. Steal inline designed-text/grid energy, NOT people-photo scene energy.",
+    "philosophy": "Legacy v3 type poster rules — superseded on COVER by dzen_story_collage_v1; kept for inline reference.",
     "must": [
       "full-bleed 16:9 designed magazine poster",
       "spectacular Cyrillic display headline 2-8 words as visual hero — type is the star",
@@ -82,7 +98,6 @@
       "3D gold typography",
       "dark leather dominance",
       "wood+Harold lobby stamp",
-      "yellow sticky notes",
       "split white-panel + photo layout",
       "beige gray white phone pill",
       "post-composite phone overlay chip",
@@ -117,7 +132,8 @@
         "headline",
         "phone_sticker",
         "meme_sticker",
-        "logo_pad"
+        "logo_pad",
+        "sticky_note"
       ],
       "logo_pad": {
         "corner": "top_right",
@@ -128,14 +144,15 @@
       },
       "cover_phone": {
         "display": "+7 (993) 574-83-22",
-        "mode": "kitchen_tablo_factory_drawn",
+        "mode": "phone_bar_factory_drawn",
         "in_scene_only": false,
         "factory_post_composite": true,
         "post_composite_bottom_left": false,
         "never_in_logo_pad": true,
         "cover_only": true,
         "min_thumb_readable": true,
-        "forbidden_modes": ["fridge_magnet", "peel_pill", "realtor_scrap", "beige_ui_pill"]
+        "forbidden_modes": ["fridge_magnet", "peel_pill", "realtor_scrap", "beige_ui_pill"],
+        "forbidden_phone": "+7 922 001 65 05"
       }
     },
     "inline_logo": {
@@ -154,7 +171,7 @@
     "never_use": true,
     "note": "Расписание публикаций 09/12/15/17 YEKT (будни) ≠ формула обложки."
   },
-  "invention_rule": "Cover agent INVENTS every cover poster layout from scratch for THIS article wound. No inventory lock. No recurring default props. Variety is the product.",
+  "invention_rule": "Cover agent INVENTS every cover scene from THIS article wound. Hero, props, and composition vary per theme. No inventory lock. No recurring empty hallway + catalog meme default. Variety is the product.",
   "anti_repeat": {
     "window_days": 14,
     "log_file": "memory/cover/used-motifs.json",
@@ -163,7 +180,8 @@
       "location",
       "prop_set",
       "joke",
-      "meme_id"
+      "meme_id",
+      "hero_type"
     ],
     "preflight_script": "scripts/excalibur_blog_cover_motif_gate.py",
     "after_14_days_motif_may_return": true
@@ -171,8 +189,8 @@
   "light_bright": {
     "required": true,
     "style": "high-key, светлые картинки, airy",
-    "effects": ["soft natural daylight", "clean white balance"],
-    "forbidden": ["dark cinematic", "twilight mood panel", "low-key noir", "moody black background"]
+    "effects": ["soft natural daylight", "clean white balance", "slightly blurred apartment background"],
+    "forbidden": ["dark cinematic", "twilight mood panel", "low-key noir", "moody black background", "gold luxury lobby"]
   },
   "brand_logo_paste": {
     "mode": "paste_png_alpha",
@@ -193,7 +211,7 @@
     "composite_script": "scripts/excalibur_blog_brand_logo_composite.py"
   },
   "meme_system": {
-    "cover": "REQUIRED — exactly ONE catalog meme PNG pasted by poster composite (never model-drawn); pick by topic-tag overlap; skip last 8 ids",
+    "cover": "OPTIONAL — at most ONE catalog meme PNG pasted by poster composite when manifest picks id; hero is theme-derived scene, NOT meme-by-default",
     "rotation": {
       "window": 8,
       "log": "memory/cover/meme-used.json",
@@ -205,11 +223,11 @@
       "catalog": "memory/cover/meme-top100.json",
       "max_cat_slots_per_article": 1,
       "people_meme_max_frame_share": 0.15,
-      "note": "Cover always has 1 catalog meme; inlines may add more (cat max 1 across cover+7 inlines total)"
+      "note": "Cat optional at most 1 across cover+7 inlines; cover hero is story scene not meme stamp"
     }
   },
   "wordstat_stickers": {
-    "cover": "FORBIDDEN on cover — type poster has no Wordstat sticker soup",
+    "cover": "FORBIDDEN on cover",
     "inline": {
       "allowed": true,
       "count": "0-3 per inline panel as designed labels",
@@ -219,7 +237,7 @@
   },
   "pipeline": {
     "primary": "grsai",
-    "cover": "standalone empty scene 2048x1152 → poster composite → cover.png 1200x675",
+    "cover": "standalone story collage scene 2048x1152 → poster composite → cover.png 1200x675",
     "inlines": "2x quad canvas 2048x1152 (canvas1: inline_1..4, canvas2: inline_5..7 + quiet pad)",
     "resolution": "2K",
     "canvases": 3,
@@ -228,7 +246,7 @@
   "inline_utility": {
     "catalog": "memory/cover/inline-visual-types-dobry-dom.json",
     "utility_test": "Reader without paragraph extracts fact/order/number/comparison for H2; icon row + 3-word captions = FAIL",
-    "style_match_cover": "B02-approved designed grid: #FFFFFF high-key, gold/black, clean labels — cover steals THIS type energy",
+    "style_match_cover": "B02-approved designed grid: #FFFFFF high-key, gold/black, clean labels",
     "no_host_face": true,
     "no_co_host_human": true,
     "no_stock_model": true,
@@ -264,12 +282,9 @@
       "meme_people_real_catalog",
       "forbid_wordpress_ui_in_art",
       "no_element_overlap",
-      "type_meme_sticker_editorial",
-      "require_cover_meme_sticker",
+      "dzen_story_collage_editorial",
       "require_display_headline",
       "require_large_phone_sticker",
-      "forbid_people_heavy_cover",
-      "forbid_split_white_collage",
       "forbid_overlapping_text_blocks",
       "forbid_giant_cropped_glyph",
       "forbid_model_drawn_meme_template",
@@ -283,8 +298,8 @@
   "owner_visual_polish": {
     "cover_phone_required": "+7 (993) 574-83-22",
     "cover_phone_forbidden": "+7 922 001 65 05",
-    "cover_style": "scene-only hallway + factory poster composite — Cormorant+Onest headline, 1 catalog meme PNG paste, kitchen-tablo phone; NOT model collage",
-    "typography": "Factory post-process only: L1 Cormorant SemiBold Italic terracotta; L2 Onest ~860 charcoal; never model-drawn overlapping type",
+    "cover_style": "Dzen story collage scene + factory Onest type overlay with brush highlight + sticky note + phone bar; NOT empty hallway poster",
+    "typography": "Factory post-process only: Onest ~860 black two-beat headline + yellow/peach brush on ONE keyword + yellow sticky punch; never model-drawn overlapping type",
     "inline_density": "informational labels per panel; utility test still required; meme optional on inlines; max 1 cat/article across cover+inlines"
   }
 }

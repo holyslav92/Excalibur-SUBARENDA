@@ -78,15 +78,15 @@ class SceneCompositeCanonTest(unittest.TestCase):
 
     def test_canon_scene_composite_v1_locked(self) -> None:
         canon = json.loads((ROOT / "memory/cover/cover-canon.json").read_text(encoding="utf-8"))
-        self.assertEqual(canon["canon_id"], "dobry_dom_scene_composite_v1")
-        rules = canon.get("scene_composite_rules") or {}
+        self.assertEqual(canon["canon_id"], "dobry_dom_dzen_story_collage_v1")
+        rules = canon.get("dzen_story_collage_rules") or canon.get("scene_composite_rules") or {}
         self.assertIn("factory_post_process", rules)
         self.assertIn("forbid_overlapping_text_blocks", rules.get("anti_collage_gates", []))
 
     def test_tenant_cover_wow_rules_scene_composite(self) -> None:
         tenant = json.loads((ROOT / "shared/tenant-config.json").read_text(encoding="utf-8"))
         wow = tenant.get("cover_wow_rules") or {}
-        self.assertEqual(wow.get("canon_id"), "dobry_dom_scene_composite_v1")
+        self.assertEqual(wow.get("canon_id"), "dobry_dom_dzen_story_collage_v1")
         self.assertTrue(wow.get("forbid_model_typography_in_generation"))
         self.assertTrue(wow.get("forbid_overlapping_text_blocks"))
         self.assertTrue(wow.get("forbid_giant_cropped_glyph"))
@@ -102,7 +102,7 @@ class SceneCompositeCanonTest(unittest.TestCase):
         manifest = {"cover_hook": "Парковка бесплатно — у шлагбаума попросили 800 ₽"}
         prompt = build_standalone_cover_prompt(manifest, style, design, meme_catalog=catalog, root=ROOT)
         lowered = prompt.casefold()
-        self.assertIn("empty", lowered)
+        self.assertIn("story collage", lowered)
         self.assertIn("zero cyrillic", lowered)
         self.assertIn("zero digits", lowered)
         self.assertIn("zero meme", lowered)
@@ -112,9 +112,9 @@ class SceneCompositeCanonTest(unittest.TestCase):
         self.assertNotIn("exactly one catalog meme die-cut", lowered)
 
     def test_quad_slots_scene_composite(self) -> None:
-        from excalibur_blog_quad_slots import uses_scene_composite_v1, uses_type_meme_sticker_v3
+        from excalibur_blog_quad_slots import uses_dzen_story_collage_v1, uses_type_meme_sticker_v3
 
-        self.assertTrue(uses_scene_composite_v1(ROOT))
+        self.assertTrue(uses_dzen_story_collage_v1(ROOT))
         self.assertTrue(uses_type_meme_sticker_v3(ROOT))
 
 

@@ -30,6 +30,7 @@ from excalibur_blog_quad_slots import (
     all_canvas_specs,
     canvas_specs_for_inline_count,
     inline_count_from_manifest,
+    uses_dzen_story_collage_v1,
     uses_scene_composite_v1,
     uses_scene_poster_v2,
 )
@@ -758,6 +759,24 @@ SCENE_POSTER_COVER_BAN = (
     "collage of stickers covering headline, white/gray plaque under logo, model-drawn lockup"
 )
 
+DZEN_STORY_SCENE_BAN = (
+    "HARD STORY SCENE: ZERO Cyrillic, ZERO digits, ZERO phone number, ZERO meme, ZERO logo, ZERO stickers, "
+    "ZERO typography, ZERO headline, ZERO captions, ZERO UI text, ZERO peel-pill, ZERO information board. "
+    "Factory post-process adds Onest ~860 headline + brush highlight + yellow sticky punch + phone bar, "
+    "optional catalog meme PNG paste, then official alpha logo overlay AFTER generation."
+)
+
+DZEN_STORY_COLLAGE_CANON = (
+    "DZEN STORY COLLAGE: photoreal bright Comfort+ Tyumen daily-rental; slightly blurred apartment background; "
+    "split layout with light zone for factory type; palette warm milk/oatmeal + charcoal rgb(33,29,26) + "
+    "mustard brush rgb(255,210,80); BAN metallic gold/brass/3D gold/dark leather/empty hallway default"
+)
+
+DZEN_HEADLINE_TYPO_RULE = (
+    "Factory ONLY (not in generation): two-beat CASE Cyrillic — Onest ExtraBold ~860 black sans; "
+    "yellow/peach brush highlight behind ONE keyword; one yellow sticky-note punch — NOT Cormorant terracotta"
+)
+
 SCENE_ONLY_GENERATION_BAN = (
     "HARD SCENE-ONLY: ZERO Cyrillic, ZERO digits, ZERO phone number, ZERO meme, ZERO logo, ZERO stickers, "
     "ZERO typography, ZERO headline, ZERO captions, ZERO UI text, ZERO peel-pill, ZERO information board. "
@@ -867,6 +886,74 @@ def resolve_cover_meme_entry(
     return "Wojak / Feels Guy", "wojak", "", "catalog_fallback"
 
 
+def build_dzen_story_collage_cover_prompt(
+    manifest: dict,
+    style: dict,
+    design_code: dict,
+    *,
+    root: Path | None = None,
+) -> str:
+    """Dzen story collage Grsai prompt — theme-derived hero scene; factory composites type overlay."""
+    style_prefix = compact(
+        style.get("cover_scene_only_prompt_prefix")
+        or design_code.get("cover_scene_only_prompt_block")
+        or DZEN_STORY_COLLAGE_CANON,
+        280,
+    )
+    case = build_case_cover_context(manifest)
+    hero_parts: list[str] = []
+    if case["figure"]:
+        hero_parts.append(f"story objects/props: {case['figure']}")
+    if case["emotion"]:
+        hero_parts.append(f"emotion cue: {case['emotion']}")
+    if case["bait_switch"]:
+        hero_parts.append(f"bait/switch visual: {case['bait_switch']}")
+    hero_clause = (
+        "HERO for THIS case — " + "; ".join(hero_parts) + "."
+        if hero_parts
+        else (
+            "HERO for THIS case — invent from article wound: person with emotion OR key objects "
+            "(barrier, keys, router, ticket, bowl, door, laptop) — NEVER default empty hallway, "
+            "NEVER always same catalog meme."
+        )
+    )
+    scene_clause = (
+        f"Scene context (no text in image): {case['scene']}."
+        if case["scene"]
+        else (
+            "Scene: bright photoreal Comfort+ Tyumen daily-rental apartment interior, "
+            "slightly blurred background, story props in sharp focus — NOT empty cream hallway."
+        )
+    )
+    highlight_clause = (
+        f"Factory will highlight keyword «{case['highlight']}» with brush stroke — do not draw text."
+        if case["highlight"]
+        else "Leave contrast zone for factory brush highlight on ONE keyword."
+    )
+    sticky_clause = (
+        f"Factory sticky punch will read «{case['quote']}» — do not draw sticky or Cyrillic."
+        if case["quote"]
+        else "Leave top-left corner clear for factory yellow sticky-note punch."
+    )
+    lines = [
+        style_prefix,
+        "Standalone cover canvas 2048x1152 exact 16:9 full-bleed — STORY COLLAGE SCENE, NOT a type poster.",
+        DZEN_STORY_SCENE_BAN,
+        DZEN_STORY_COLLAGE_CANON,
+        hero_clause,
+        scene_clause,
+        highlight_clause,
+        sticky_clause,
+        "PEOPLE: only when THIS case needs — guest stress face, hands with keys, silhouette; NOT group photo; NOT default zero-people hallway.",
+        "LIGHT ZONE: leave clean/blur area (left or right third) for factory Onest headline overlay.",
+        "TOP-RIGHT pad 8-12% — continuous scene texture only; " + TOP_RIGHT_PAD_SCENE_RULE.split(";")[0] + ".",
+        "NEVER send logo as Grsai reference — factory alpha PNG overlay AFTER poster composite.",
+        SCENE_POSTER_COVER_BAN + ".",
+        "Grsai primary image API, non-VIP, max 2 gens; on exhaust neighbor-clone pad-clear TR + poster composite + logo paste.",
+    ]
+    return "\n".join(line for line in lines if line)
+
+
 def build_scene_only_cover_prompt(
     manifest: dict,
     style: dict,
@@ -911,6 +998,8 @@ def build_standalone_cover_prompt(
     meme_catalog: dict | None = None,
     root: Path | None = None,
 ) -> str:
+    if root is not None and uses_dzen_story_collage_v1(root):
+        return build_dzen_story_collage_cover_prompt(manifest, style, design_code, root=root)
     if root is not None and uses_scene_composite_v1(root):
         return build_scene_only_cover_prompt(manifest, style, design_code, root=root)
     style_prefix = compact(
