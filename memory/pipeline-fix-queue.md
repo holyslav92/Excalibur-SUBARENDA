@@ -326,4 +326,4 @@ files_changed:
 checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_remote_transport.py scripts/excalibur_blog_wp_publish.py scripts/excalibur_blog_theme_contract_deploy.py scripts/excalibur_blog_dzen_cover_cache_bust.py`
 - `python3 -m unittest tests.test_publish_transport -v`
-commit: pending
+commit: 87b00e7

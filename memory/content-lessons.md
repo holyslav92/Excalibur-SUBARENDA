@@ -152,3 +152,45 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+---
+
+## LESSON-20260901-0846-B05-identical-reviews-not-proof
+status: proposed
+topic_id: B05
+category: utility
+confidence: medium
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP. Урок из publish-артефактов: title-brief.json (pain_scene 4,8 + 3 900 ₽), description-brief.json (контраст «всё супер» × фото), lead article.html с дословным повтором отзывов.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest BLOCKER по credentials.
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+
+### Keep
+- Two-beat H1 «Рейтинг 4,8. Два «всё супер» — и 3 900 ₽ под вопросом» — звёзды ≠ проверка, ₽ в заголовке задаёт ставку.
+- Lead: дословное повторение двух отзывов + явная формула «не обман — пустота под 4,8».
+- Вопрос-отмычка mid-body: «Что именно было „супер“ — заселение, чистота или только цифра 4,8?»
+- Нейтральная подача: два одинаковых отзыва = сигнал к проверке, не обвинение в накрутке.
+- Interlink на B01/B02/B03/B04 по залогу, доплате за гостя, «рядом с вузом» — sibling-контекст до предоплаты.
+
+### Change
+- В review-trust материалах сразу в §1 называть **площадку** (Avito/Суточно) и механику рейтинга, не только «4,8 на карточке».
+- Description (Дзен): держать контраст «повторяющийся текст отзыва × фото обещают больше» — как в description-brief B05.
+
+### Never again
+- Строить trust-хук только на «подозрительно одинаковых отзывах» без объяснения, что короткий позитив — нормальная механика площадки.
+- How-to «как проверить отзывы» чеклистом до морали «сначала вопросы, потом деньги».
+
+### Proposed apply
+- Scout: при hook fake_reviews / rating_trust требовать в handoff final P0 «отзывы квартира посуточно» + buyer-жаргон (заселение, предоплата).
+- Review only; Writer prompt не трогать автоматически.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
