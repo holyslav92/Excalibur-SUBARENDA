@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Ensure blog hero reference has a public URL for MCP gpt-image-2 input_urls."""
+"""Ensure blog hero reference has a public URL for MCP GRSAI_PRIMARY_IMAGE_MODEL input_urls."""
 
 from __future__ import annotations
 

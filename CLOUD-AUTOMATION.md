@@ -5,7 +5,7 @@
 
 **Только после** `memory/setup/status.json` → `complete: true`.
 
-Тенант: **«Добрый дом»** / добрыйдом-72.рф — один guest-night **CASE** **700–1100 слов** (`klyshin_manner_dobry_dom_v1`), **1 cover + 3 inline** (`dobry_dom_one_2k_slice4_v1`).
+Тенант: **«Добрый дом»** / добрыйдом-72.рф — один guest-night **CASE** **700–1100 слов** (`dobry_dom_gen_only_human_v1`), **1 cover + 3 inline** (`dobry_dom_gen_only_human_v1`).
 Темы: посуточная аренда, субаренда, заселение, залог, соседи, ЖКХ, Тюмень.
 
 ## Расписание (owner: 10–17 YEKT)
@@ -55,20 +55,18 @@ Scout? → research_start → Research → Title → Writer → Sol
 - **Never** tymenrieltor.ru, Excalibur-2-Cloud, MCP-KV `wordpress_*`.
 - Если allow flag или FTP **нет** — run завершается после Indexer + артефактов в репо.
 
-### Cover + images (HARD — `dobry_dom_one_2k_slice4_v1`)
+### Cover + images (HARD — `dobry_dom_gen_only_human_v1`)
 
-- **ONE Grsai primary image model** draw per article: canvas **2048×1152** as **2×2 GRID** of four complete 16:9 panels → deterministic PIL slice → **[0] cover + [1..3] inlines**. **ZERO** second draw; **BAN** 2×4=8 / quad-mcp-batch-01|02 / standalone cover-mcp.
-- **Cover tile (top-left):** Cyrillic H1/punch + phone **+7 (993) 574-83-22** infoboard in generation.
-- **After slice, cover tile ONLY:** factory paste official `cropped-img_7143.png` (`logo-dobry-dom.png`) top-right ~8–12% tile width — **pixel-faithful, native aspect (NOT square crop)**, RGBA alpha, **no white plaque** — covers any model-drawn fake lockup. **Inlines: ZERO logo.**
-- **BAN:** model-drawn logo; square logo stamp; `excalibur_blog_cover_poster_composite.py`.
-- Gate: `scripts/excalibur_blog_slice4_gate.py` + `scripts/excalibur_blog_cover_qa_gate.py`.
-- RSS/WP: **1 featured + 3 in-body** (not 8).
+- **ONE Grsai primary image** draw per article: canvas **2048×1152** as **2×2 photoreal GRID** → PIL slice → **[0] cover + [1..3] inlines**. **ZERO** second draw; **BAN** overlay scripts (poster_composite, phone pill, sticky, marker).
+- **Cover panel:** Cyrillic H1 on physical object IN photograph — NOT graphic overlay.
+- **Phone +7 (993) 574-83-22** in article TEXT only — never on cover image.
+- **After slice, cover tile ONLY:** factory paste `cropped-img_7143.png` — native aspect, no plaque. **Inlines: ZERO logo. NEVER logo in Grsai images[].**
+- Allowed scripts: `excalibur_blog_cover_quad_split.py` + `excalibur_blog_brand_logo_composite.py` only.
 
-### Prose manner (HARD — `klyshin_manner_dobry_dom_v1`)
+### Prose manner (HARD — `dobry_dom_gen_only_human_v1`)
 
-- **700–1100 слов**, hard fail **>1300**. Structure Klyshin 2026, domain Добрый дом (гости/залог/ключи — не ЕГРН).
-- ONE «Мой вывод как практика»; **BAN** «Наш вывод простой.»; stamps max 1×; repeat-gate lead/вывод/чеклист.
-- Gate: `scripts/excalibur_blog_case_delivery_gate.py`.
+- **700–1100 слов**, spoken Russian at the door. First 2–3 sentences: what happened + quote or ₽.
+- BAN riddle H1, «под вопросом», clever structure. ONE «Мой вывод как практика».
 
 **Thin conductor:** Cursor не пишет прозу и не рисует кадры. **Writer** = `claude-opus-5` (полный CASE в `drafts/writer.html`, не тезисы). **Sol** = `gpt-5.6-terra` (слог `shared/SOUL.md` + `shared/soul-examples/`).
 

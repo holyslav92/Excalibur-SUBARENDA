@@ -1,4 +1,4 @@
-"""Tests for dobry_dom_dzen_story_collage_v2 — full Grsai editorial + official logo ref/paste."""
+"""Tests for dobry_dom_gen_only_human_v1 — photoreal generate-only + logo paste cover only."""
 from __future__ import annotations
 
 import json
@@ -36,22 +36,21 @@ class DzenStoryCollageCanonTest(unittest.TestCase):
 
     def test_canon_slice4_v1_locked(self) -> None:
         canon = json.loads((ROOT / "memory/cover/cover-canon.json").read_text(encoding="utf-8"))
-        self.assertEqual(canon["canon_id"], "dobry_dom_one_2k_slice4_v1")
-        rules = canon.get("slice4_rules") or {}
+        self.assertEqual(canon["canon_id"], "dobry_dom_gen_only_human_v1")
+        rules = canon.get("gen_only_rules") or {}
         phil = str(rules.get("philosophy") or "").casefold()
-        self.assertIn("one", phil)
+        self.assertIn("photoreal", phil)
         self.assertIn("native aspect", phil)
-        self.assertIn("not square", phil)
 
-    def test_tenant_cover_wow_rules_full_grsai(self) -> None:
+    def test_tenant_cover_wow_rules_gen_only(self) -> None:
         tenant = json.loads((ROOT / "shared/tenant-config.json").read_text(encoding="utf-8"))
         wow = tenant.get("cover_wow_rules") or {}
         img = tenant.get("image_generation") or {}
-        self.assertEqual(wow.get("canon_id"), "dobry_dom_one_2k_slice4_v1")
-        self.assertEqual(wow.get("logo_mode"), "reference_in_generation")
-        self.assertFalse(wow.get("forbid_logo_reference_in_generation"))
-        self.assertFalse(img.get("logo_never_as_generation_reference"))
-        self.assertTrue(img.get("logo_required_as_generation_reference"))
+        self.assertEqual(wow.get("canon_id"), "dobry_dom_gen_only_human_v1")
+        self.assertEqual(wow.get("logo_mode"), "factory_paste_cover_only")
+        self.assertTrue(wow.get("forbid_logo_reference_in_generation"))
+        self.assertTrue(img.get("logo_never_as_generation_reference"))
+        self.assertFalse(img.get("logo_required_as_generation_reference"))
         self.assertFalse(wow.get("forbid_factory_logo_paste_on_cover"))
         self.assertTrue(wow.get("forbid_ai_drawn_logo"))
 
@@ -88,7 +87,7 @@ class DzenStoryCollageCanonTest(unittest.TestCase):
 
         cfg = load_tenant_logo_config(ROOT)
         self.assertTrue(uses_brand_logo_paste(cfg))
-        self.assertTrue(tenant_uses_logo_reference_in_generation(ROOT))
+        self.assertFalse(tenant_uses_logo_reference_in_generation(ROOT))
 
     def test_quad_slots_one_2k_slice4(self) -> None:
         from excalibur_blog_quad_slots import uses_one_2k_slice4, uses_full_grsai_cover

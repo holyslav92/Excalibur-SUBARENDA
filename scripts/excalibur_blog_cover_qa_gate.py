@@ -9,29 +9,24 @@ import sys
 from pathlib import Path
 
 
-# Slim gate (2026-09): beauty = agent judgment; brand lock = phone + no plate + no WP UI.
-BRAND_LOGO_PASTE_CHECKS = (
+# Slim gate (2026-09): gen_only_human — slice + logo paste only; no overlay scripts.
+GEN_ONLY_COVER_CHECKS = (
     "logo_composite_stamp_pass",
     "cover_logo_pasted",
     "inline_no_logo_on_inlines",
-    "cover_phone_993_large_sticker",
-    "forbid_phone_pill_post_composite",
+    "forbid_phone_on_cover_image",
     "forbid_922_phone",
     "forbid_ai_drawn_logo_cover",
     "forbid_wordpress_ui_in_art",
     "no_logo_plate_cover",
-    "forbid_logo_overlaps_headline_phone",
-    "type_meme_sticker_editorial",
-    "require_cover_meme_sticker",
-    "require_display_headline",
-    "require_large_phone_sticker",
-    "forbid_people_heavy_cover",
-    "forbid_split_white_collage",
+    "forbid_graphic_collage_overlay",
+    "forbid_poster_composite_stamp",
+    "forbid_logo_reference_in_batch",
     "forbid_overlapping_text_blocks",
     "forbid_giant_cropped_glyph",
-    "forbid_model_drawn_meme_template",
-    "poster_composite_stamp_pass",
 )
+
+BRAND_LOGO_PASTE_CHECKS = GEN_ONLY_COVER_CHECKS
 
 FULL_GRSAI_COVER_CHECKS = (
     "logo_composite_stamp_pass",
@@ -120,7 +115,13 @@ def load_tenant_cover_mode(root: Path) -> dict:
     }
     return {
         "full_grsai_cover": full_grsai_cover,
-        "brand_logo_paste": mode in {"brand_logo_paste", "brand_logo_composite", "paste_png"}
+        "brand_logo_paste": mode in {
+            "brand_logo_paste",
+            "brand_logo_composite",
+            "paste_png",
+            "one_2k_slice4",
+            "gen_only_slice4",
+        }
         and not logo_reference
         and not full_grsai_cover,
         "logo_reference_in_generation": logo_reference,
@@ -280,14 +281,19 @@ def validate_cover_qa(article_dir: Path, root: Path) -> dict:
                 errors.append("excalibur_blog_cover_collage_gate.py missing — scene poster QA unavailable")
             poster_stamp = article_dir / "cover" / "poster-composite-stamp.json"
             if poster_stamp.is_file():
+                errors.append(
+                    "cover/poster-composite-stamp.json present — "
+                    "gen_only_human forbids poster_composite overlay scripts"
+                )
+            batch_path = article_dir / "cover" / "slice4-mcp-batch.json"
+            if batch_path.is_file():
                 try:
-                    pst = load_json(poster_stamp)
-                    if str(pst.get("status") or "").upper() != "PASS":
-                        errors.append("poster-composite-stamp.json status != PASS")
+                    batch = load_json(batch_path)
+                    blob = json.dumps(batch, ensure_ascii=False).casefold()
+                    if "logo-dobry-dom" in blob or "cropped-img_7143" in blob:
+                        errors.append("slice4 batch contains logo reference — forbidden in gen_only_human")
                 except json.JSONDecodeError:
-                    errors.append("poster-composite-stamp.json invalid JSON")
-            else:
-                errors.append("cover/poster-composite-stamp.json missing — run excalibur_blog_cover_poster_composite.py")
+                    errors.append("slice4-mcp-batch.json invalid JSON")
         except ImportError:
             errors.append("excalibur_blog_drawn_logo_gate.py missing — logo paste QA unavailable")
     elif logo_reference:

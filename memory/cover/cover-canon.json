@@ -1,12 +1,13 @@
 {
-  "canon_id": "dobry_dom_one_2k_slice4_v1",
+  "canon_id": "dobry_dom_gen_only_human_v1",
   "status": "locked",
+  "owner_lock": "2026-09-01 YEKT",
   "tenant": "dobry-dom",
-  "label_ru": "Добрый дом — ONE Grsai 2K 2×2 grid → slice 4 (cover+3 inline) + pixel-faithful logo paste on cover tile only",
+  "label_ru": "Добрый дом — GENERATE ONLY: ONE Grsai 2K 2×2 photoreal grid → slice 4 + logo paste cover tile ONLY",
   "tenant_scope": "holyslav92/Excalibur-SUBARENDA ONLY. Never tymenrieltor.ru / Excalibur-2-Cloud rieltor identity.",
-  "replaces": "dobry_dom_dzen_story_collage_v2",
+  "replaces": "dobry_dom_one_2k_slice4_v1",
   "cover_generation": {
-    "mode": "one_2k_slice4_grid",
+    "mode": "gen_only_slice4",
     "canvas_size": "2048x1152",
     "export_size": "1200x675",
     "dzen_thumb": "1024x576",
@@ -20,32 +21,40 @@
     "model_policy": "primary_or_vip_for_2k",
     "vip_allowed_for_2k": true,
     "max_generation_attempts": 2,
-    "on_exhaust": "pad_clear_top_right + mechanical_quarter_slice + official logo paste on cover tile + ship"
+    "on_exhaust": "mechanical_quarter_slice + official logo paste on cover tile + ship"
   },
-  "slice4_rules": {
-    "cover_qa_check": "one_2k_slice4_grid",
-    "philosophy": "Exactly ONE Grsai primary image model call 2048×1152: prompt as 2×2 GRID of four complete 16:9 panels (thin gutters OK). Deterministic PIL crop → [0] cover, [1..3] inlines. ZERO second draw. Cover panel (top-left): scene + Cyrillic H1/punch + phone +7 (993) 574-83-22 as infoboard. Panels 2–4: article scenes, NO company lockup. AFTER slice: factory paste official cropped-img_7143.png on COVER TILE ONLY — top-right ~8–12% width, native aspect (NOT square crop), pixel-faithful, no white plaque — covers model-drawn fake lockup. Inlines: ZERO logo paste.",
+  "gen_only_rules": {
+    "philosophy": "Exactly ONE Grsai GRSAI_PRIMARY_IMAGE_MODEL call 2048×1152: model paints whole 2×2 GRID of four complete photoreal 16:9 apartment scenes. Deterministic PIL crop → [0] cover, [1..3] inlines. ZERO factory typography/overlay scripts. Cover panel: Cyrillic H1 must appear IN the photograph on a real object (paper on table, TV screen, door sign, barrier sticker) — NOT graphic-design layer, NOT yellow marker, NOT sticky-note collage, NOT phone pill. Phone +7 (993) 574-83-22 belongs in article TEXT only. AFTER slice: factory paste official cropped-img_7143.png on COVER TILE ONLY — native aspect, alpha, no dashed box/plaque. Inlines: ZERO logo.",
     "generation_must": [
-      "single 2048×1152 canvas drawn as four distinct 16:9 quadrants — each quadrant a full readable scene, NOT one photo sliced randomly",
-      "panel 1 top-left = cover: Cyrillic two-beat H1 + phone +7 (993) 574-83-22 infoboard",
-      "panels 2–4 = inline article scenes matching H2 anchors — ZERO «Добрый дом» lockup",
-      "bright Comfort+ Tyumen daily-rental mood per THIS case",
-      "FORBIDDEN: 4 separate API calls; 2-canvas 8-frame; per-inline generation"
+      "single 2048×1152 canvas as four distinct photoreal 16:9 quadrants",
+      "panel 1 top-left = cover: headline Cyrillic painted/printed on physical object in scene",
+      "panels 2–4 = inline article scenes — ZERO brand lockup, ZERO meme stickers",
+      "bright Comfort+ Tyumen daily-rental apartment mood",
+      "FORBIDDEN: 4 separate API calls; 2-canvas 8-frame; per-inline generation; logo in images[]"
     ],
-    "factory_post_process": [
-      "scripts/excalibur_blog_cover_quad_split.py — mechanical 2×2 quarter crop",
-      "scripts/excalibur_blog_brand_logo_composite.py — official PNG paste cover tile ONLY (native aspect)"
+    "factory_post_process_allowed": [
+      "scripts/excalibur_blog_cover_quad_split.py — mechanical 2×2 quarter crop ONLY",
+      "scripts/excalibur_blog_brand_logo_composite.py — official PNG paste cover tile ONLY"
     ],
-    "forbidden": [
+    "factory_post_process_forbidden": [
+      "excalibur_blog_cover_poster_composite.py",
+      "type overlay",
+      "phone overlay",
+      "meme paste",
+      "collage composite",
+      "drawn lockup",
+      "yellow marker highlight",
+      "sticky note",
+      "phone pill button",
+      "dashed logo frame",
+      "logo in Grsai images[] or reference urls",
       "second grsai draw",
       "quad-mcp-batch-01/02",
       "cover-mcp-batch standalone",
       "8 images / 7 inlines",
       "logo paste on inline tiles",
       "square logo crop",
-      "white gray plaque under logo",
-      "model-drawn brand lockup shipped as final",
-      "excalibur_blog_cover_poster_composite.py"
+      "white gray plaque under logo"
     ]
   },
   "wow_cover_rules": {
@@ -64,59 +73,47 @@
         "cookie banner"
       ]
     },
-    "no_element_overlap": {
-      "cover_qa_check": "no_element_overlap",
-      "elements_never_overlap": [
-        "headline",
-        "phone_sticker",
-        "meme_sticker",
-        "logo_lockup",
-        "sticky_note"
-      ],
-      "logo_lockup": {
-        "corner": "top_right",
-        "drawn_in_generation": false,
-        "factory_paste_png": true,
-        "width_fraction": "8-12%",
-        "one_logo_per_image": true,
-        "no_plate_under_logo": true,
-        "reference_in_generation": true,
-        "factory_paste_required": true
-      },
-      "cover_phone": {
-        "display": "+7 (993) 574-83-22",
-        "mode": "in_scene_generation",
-        "in_scene_only": true,
-        "factory_post_composite": false,
-        "never_in_logo_pad": true,
-        "cover_only": true,
-        "min_thumb_readable": true,
-        "forbidden_modes": [
-          "fridge_magnet",
-          "peel_pill",
-          "realtor_scrap",
-          "beige_ui_pill"
-        ],
-        "forbidden_phone": "+7 922 001 65 05"
-      }
+    "forbid_graphic_collage_overlay": {
+      "cover_qa_check": "forbid_graphic_collage_overlay",
+      "forbidden": [
+        "yellow marker highlight",
+        "sticky note collage",
+        "phone pill button",
+        "dashed logo square",
+        "Canva overlay look",
+        "peel-pill",
+        "fridge magnet phone",
+        "factory typography overlay"
+      ]
+    },
+    "logo_lockup": {
+      "corner": "top_right",
+      "drawn_in_generation": false,
+      "reference_in_generation": false,
+      "factory_paste_png": true,
+      "width_fraction": "8-12%",
+      "one_logo_per_image": true,
+      "no_plate_under_logo": true,
+      "cover_tile_only": true
+    },
+    "cover_phone": {
+      "display": "+7 (993) 574-83-22",
+      "mode": "article_text_only",
+      "in_scene_generation": false,
+      "factory_post_composite": false,
+      "forbidden_on_cover_image": true,
+      "forbidden_phone": "+7 922 001 65 05"
     },
     "inline_logo": {
-      "cover_qa_checks": [
-        "inline_no_logo_on_inlines",
-        "forbid_multiple_logos_per_image"
-      ],
-      "count": "0 of 7 — cover only",
-      "default_slots": [],
-      "never_on_inline": true,
-      "never_two_plus_logos_per_frame": true
+      "count": "0 of 3 — cover only",
+      "never_on_inline": true
     }
   },
   "forbidden_daypart_formula": {
     "status": "REJECTED_BY_OWNER",
-    "never_use": true,
-    "note": "Расписание публикаций 09/12/15/17 YEKT (будни) ≠ формула обложки."
+    "never_use": true
   },
-  "invention_rule": "Cover agent INVENTS every cover scene from THIS article wound. Hero, props, and composition vary per theme. No inventory lock. No recurring empty hallway + catalog meme default. Variety is the product.",
+  "invention_rule": "Cover agent INVENTS every cover scene from THIS article wound. Photoreal apartment, not infographic. No recurring empty hallway + catalog meme default.",
   "anti_repeat": {
     "window_days": 14,
     "log_file": "memory/cover/used-motifs.json",
@@ -128,17 +125,11 @@
       "meme_id",
       "hero_type"
     ],
-    "preflight_script": "scripts/excalibur_blog_cover_motif_gate.py",
-    "after_14_days_motif_may_return": true
+    "preflight_script": "scripts/excalibur_blog_cover_motif_gate.py"
   },
   "light_bright": {
     "required": true,
     "style": "high-key, светлые картинки, airy",
-    "effects": [
-      "soft natural daylight",
-      "clean white balance",
-      "slightly blurred apartment background"
-    ],
     "forbidden": [
       "dark cinematic",
       "twilight mood panel",
@@ -148,116 +139,44 @@
     ]
   },
   "brand_logo": {
-    "mode": "reference_in_generation_plus_factory_paste",
-    "cover_mode": "one_2k_slice4",
+    "mode": "factory_paste_cover_only",
     "skip_human_host": true,
-    "logo_reference_asset": "memory/cover/assets/brand/logo-dobry-dom.png",
-    "logo_reference_required": true,
-    "forbid_factory_logo_paste": false,
-    "forbid_model_drawn_logo_as_brand": true,
+    "logo_asset": "memory/cover/assets/brand/logo-dobry-dom.png",
+    "logo_reference_required": false,
+    "forbid_logo_in_grsai_images": true,
+    "forbid_factory_logo_paste_on_inline": true,
     "logo_corner": "top_right",
     "logo_width_fraction": "8-12%",
     "cover_always_one_logo": true,
-    "inline_logo_count": "0 of 3 — cover tile only",
-    "inline_logo_slots_default": [],
-    "cover_phone_large_in_generation": "+7 (993) 574-83-22",
-    "cover_phone_post_composite": false,
-    "forbidden_phone": "+7 922 001 65 05",
+    "inline_logo_count": "0 of 3",
     "forbid_poster_composite": true,
     "forbid_model_invented_logo": true,
-    "forbid_ai_drawn_logo": true,
     "composite_script": "scripts/excalibur_blog_brand_logo_composite.py"
   },
   "meme_system": {
-    "cover": "OPTIONAL — at most ONE meme when manifest picks id; hero is theme-derived scene, NOT meme-by-default; drawn IN generation when used",
-    "rotation": {
-      "window": 8,
-      "log": "memory/cover/meme-used.json",
-      "picker": "scripts/excalibur_blog_meme_rotate.py"
-    },
+    "cover": "FORBIDDEN — photoreal scenes only",
     "inline": {
-      "allowed": true,
-      "optional": true,
-      "catalog": "memory/cover/meme-top100.json",
-      "max_cat_slots_per_article": 1,
-      "people_meme_max_frame_share": 0.15,
-      "note": "Cat optional at most 1 across cover+7 inlines; cover hero is story scene not meme stamp"
+      "allowed": false
     }
   },
   "wordstat_stickers": {
     "cover": "FORBIDDEN on cover",
     "inline": {
-      "allowed": true,
-      "count": "0-3 per inline panel as designed labels",
-      "source": "live Wordstat + article facts",
-      "geo": "memory/cover/wordstat-geo.json"
+      "allowed": false
     }
   },
   "pipeline": {
     "primary": "grsai",
-    "cover": "ONE 2048×1152 2×2 grid → slice [0] cover.png + [1..3] inline-01..03.png",
+    "cover": "ONE 2048×1152 2×2 photoreal grid → slice [0] cover.png + [1..3] inline-01..03.png",
     "inlines": "from same single draw — NO separate inline generation",
     "resolution": "2K",
     "canvases": 1,
     "grsai_draws": 1,
     "total_images": 4
   },
-  "inline_utility": {
-    "catalog": "memory/cover/inline-visual-types-dobry-dom.json",
-    "utility_test": "Reader without paragraph extracts fact/order/number/comparison for H2; icon row + 3-word captions = FAIL",
-    "style_match_cover": "B02-approved designed grid: #FFFFFF high-key, gold/black, clean labels",
-    "no_host_face": true,
-    "no_co_host_human": true,
-    "no_stock_model": true,
-    "meme_sticker_max_frame_share": 0.15,
-    "meme_people_catalog": "memory/cover/meme-top100.json",
-    "logo_on_inline": "NEVER — zero company logos on all 7 inline frames; phone tablo on 1–2 optional",
-    "preferred_types": [
-      "lived_in_room",
-      "guest_checkin_scene",
-      "comfort_plus_interior",
-      "comparison_table",
-      "process_flow",
-      "labeled_checklist",
-      "fact_card"
-    ],
-    "forbidden": [
-      "host face on inline",
-      "stock model / handsome realtor / generated man as co-host",
-      "large human (non-guest) occupying hero slot on inline",
-      "meme person >15% frame or in presenter/portrait slot",
-      "wordpress UI screenshot",
-      "logo on every inline panel",
-      "two logos on one frame",
-      "icon row with mood captions",
-      "empty UI",
-      "cover copy-paste"
-    ],
-    "cover_qa_checks": [
-      "inline_utility_all_7",
-      "inline_no_host_face",
-      "inline_no_co_host_human",
-      "inline_meme_sticker_scale",
-      "meme_people_real_catalog",
-      "forbid_wordpress_ui_in_art",
-      "no_element_overlap",
-      "dzen_story_collage_editorial",
-      "require_display_headline",
-      "require_large_phone_sticker",
-      "forbid_overlapping_text_blocks",
-      "forbid_giant_cropped_glyph",
-      "forbid_model_drawn_meme_template",
-      "inline_no_logo_on_inlines",
-      "forbid_multiple_logos_per_image",
-      "logo_top_right_integrated",
-      "max_one_cat_meme_slot"
-    ]
-  },
   "owner_visual_polish": {
-    "cover_phone_required": "+7 (993) 574-83-22",
-    "cover_phone_forbidden": "+7 922 001 65 05",
-    "cover_style": "Dzen story collage — full Grsai editorial thumbnail with type, sticky, phone, logo IN generation; NOT empty hallway poster; NOT factory overlay",
-    "typography": "Onest ~860 black two-beat headline + yellow/peach brush on ONE keyword + yellow sticky punch — all IN Grsai generation",
-    "inline_density": "informational labels per panel; utility test still required; meme optional on inlines; max 1 cat/article across cover+inlines"
+    "cover_style": "photoreal apartment scene — headline on physical object IN photograph; NOT Canva overlay",
+    "typography": "Cyrillic headline must be part of the scene (printed paper, TV, door sign) — never factory-drawn overlay",
+    "phone_in_text_not_image": "+7 (993) 574-83-22 in article body/CTA only"
   }
 }

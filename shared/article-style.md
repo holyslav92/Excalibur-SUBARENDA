@@ -1,6 +1,6 @@
 # Article style — язык и форма статьи
 
-**Editorial manner canon:** `klyshin_manner_dobry_dom_v1` (structure from Klyshin 2026 dumps — **not** his topics).
+**Editorial manner canon:** `dobry_dom_gen_only_human_v1` (structure from Klyshin 2026 dumps — **not** his topics).
 
 Правила для Title / Writer / Sol. Живой ритм — в `shared/SOUL.md` и `shared/soul-examples/`.
 
@@ -20,7 +20,7 @@
 
 ---
 
-## klyshin_manner_dobry_dom_v1 — gold pattern (HARD)
+## dobry_dom_gen_only_human_v1 — gold pattern (HARD)
 
 Структура как у сильных кейсов Клышина 2026, **тема = посуточная аренда «Добрый дом»** (гости, залог, ключи, парковка — не ЕГРН/риэлтор).
 

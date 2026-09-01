@@ -1,8 +1,8 @@
 {
   "version": "human-first-v3",
   "description": "Research → Title → Writer(meaning) → Sol(style) → Description → Cover||Schema → Cover-QA → Indexer → Publish",
-  "editorial_manner_canon": "klyshin_manner_dobry_dom_v1",
-  "cover_pipeline_canon": "dobry_dom_one_2k_slice4_v1",
+  "editorial_manner_canon": "dobry_dom_gen_only_human_v1",
+  "cover_pipeline_canon": "dobry_dom_gen_only_human_v1",
   "pipeline_agents_count": 18,
   "pipeline_agents": [
     "excalibur-blog-setup",
@@ -134,7 +134,8 @@
     "gate": "scripts/excalibur_blog_opening_meta_gate.py",
     "case_delivery_gate": "scripts/excalibur_blog_case_delivery_gate.py",
     "slice4_gate": "scripts/excalibur_blog_slice4_gate.py",
-    "manner_canon": "klyshin_manner_dobry_dom_v1",
+    "manner_canon": "dobry_dom_gen_only_human_v1",
+    "human_readability_gate": "scripts/excalibur_blog_case_delivery_gate.py",
     "word_count_target": "700-1100",
     "word_count_hard_max": 1300
   },

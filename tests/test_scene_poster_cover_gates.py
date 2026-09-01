@@ -65,19 +65,19 @@ def _draw_people_scene_no_meme(path: Path) -> None:
 class TypeMemeStickerCoverGateTest(unittest.TestCase):
     def test_canon_slice4_locked(self) -> None:
         canon = json.loads((ROOT / "memory/cover/cover-canon.json").read_text(encoding="utf-8"))
-        self.assertEqual(canon["canon_id"], "dobry_dom_one_2k_slice4_v1")
+        self.assertEqual(canon["canon_id"], "dobry_dom_gen_only_human_v1")
         self.assertEqual((canon.get("pipeline") or {}).get("total_images"), 4)
 
     def test_tenant_cover_wow_rules_slice4(self) -> None:
         tenant = json.loads((ROOT / "shared/tenant-config.json").read_text(encoding="utf-8"))
         wow = tenant.get("cover_wow_rules") or {}
-        self.assertEqual(wow.get("canon_id"), "dobry_dom_one_2k_slice4_v1")
-        self.assertEqual(wow.get("cover_generation_mode"), "story_collage_16_9")
+        self.assertEqual(wow.get("canon_id"), "dobry_dom_gen_only_human_v1")
+        self.assertEqual(wow.get("cover_generation_mode"), "gen_only_photoreal_slice4")
         self.assertFalse(wow.get("require_cover_meme_sticker"))
         self.assertTrue(wow.get("require_display_headline"))
-        self.assertTrue(wow.get("require_large_phone_sticker"))
+        self.assertFalse(wow.get("require_large_phone_sticker"))
         self.assertTrue(wow.get("forbid_people_heavy_cover"))
-        self.assertTrue(wow.get("vip_disabled"))
+        self.assertFalse(wow.get("vip_disabled"))
 
     def test_collage_gate_fails_split_white_panel(self) -> None:
         from excalibur_blog_cover_collage_gate import (
@@ -138,8 +138,8 @@ class TypeMemeStickerCoverGateTest(unittest.TestCase):
         prompt = build_one_2k_slice4_grid_prompt(manifest, style, design, root=ROOT)
         lowered = prompt.casefold()
         self.assertIn("2×2", prompt)
-        self.assertIn("993", prompt)
-        self.assertIn("native aspect", lowered)
+        self.assertNotIn("993", prompt)
+        self.assertIn("physical object", lowered)
 
     def test_quad_slots_slice4_spec(self) -> None:
         from excalibur_blog_quad_slots import (
@@ -154,16 +154,14 @@ class TypeMemeStickerCoverGateTest(unittest.TestCase):
         self.assertTrue(specs[0].get("slice4_grid"))
         self.assertEqual(SLICE4_CANVAS_SPEC["canvas_file"], "cover/canvas-slice4.png")
 
-    def test_cover_qa_gate_includes_type_meme_sticker_checks(self) -> None:
+    def test_cover_qa_gate_includes_gen_only_checks(self) -> None:
         gate_src = (ROOT / "scripts/excalibur_blog_cover_qa_gate.py").read_text(encoding="utf-8")
         for key in (
-            "type_meme_sticker_editorial",
-            "require_cover_meme_sticker",
-            "require_display_headline",
-            "require_large_phone_sticker",
-            "forbid_people_heavy_cover",
-            "forbid_split_white_collage",
-            "validate_cover_type_meme_sticker_gates",
+            "GEN_ONLY_COVER_CHECKS",
+            "forbid_graphic_collage_overlay",
+            "forbid_poster_composite_stamp",
+            "forbid_logo_reference_in_batch",
+            "forbid_phone_on_cover_image",
         ):
             self.assertIn(key, gate_src)
 
@@ -245,7 +243,7 @@ class TypeMemeStickerCoverGateTest(unittest.TestCase):
         self.assertIn("в чате: можно с лапой", prompt)
 
         contract = (ROOT / "shared/blog-cover-quad-canvas-contract.md").read_text(encoding="utf-8")
-        self.assertIn("dobry_dom_one_2k_slice4_v1", contract)
+        self.assertIn("dobry_dom_gen_only_human_v1", contract)
         self.assertIn("brand_logo_composite", contract)
 
     def test_live_lapoy_fixture_fails_type_meme_gates(self) -> None:

@@ -62,7 +62,7 @@ tenant:
 
 cover:
   mode: one_2k_slice4
-  canon_id: dobry_dom_one_2k_slice4_v1
+  canon_id: dobry_dom_gen_only_human_v1
   logo_mode: factory_paste_native_aspect
   logo: memory/cover/assets/brand/logo-dobry-dom.png
   images_per_article: 4
@@ -77,7 +77,7 @@ cover:
 brain_and_images:
   prose: scripts/excalibur_blog_derouter_opus_chat.py
   images: scripts/excalibur_blog_grsai_gpt_image2_api.py
-  image_models: "Grsai PRIMARY_MODEL_ID only, vip disabled"
+  image_models: "Grsai primary image model; VIP-on for 2K when primary fails"
   forbid:
     - flux2-pro-*
     - seedream
@@ -97,20 +97,16 @@ publish_gate:
     - FTP_TRANSPORT
     - FTP_ROOT
 
-instructions: |
-  Один слот = ОДНА статья-кейс «Добрый дом» на Дзен-клик (лайк, коммент, подписка), не гайд. Реп только holyslav92/Excalibur-SUBARENDA, ветка main. Никогда Excalibur-2-Cloud и tymenrieltor.ru. MCP-KV только wordstat_get_*. Проза — Derouter REST скриптом репа (не Composer, не mcp-derouter). Картинки — Grsai PRIMARY_MODEL_ID, VIP выключен, 2 холста × 4 = 8. Нет ключа Derouter или Grsai → BLOCKER, не писать и не рисовать самому.
+  instructions: |
+  Один слот = ОДНА статья-кейс «Добрый дом», разговор у двери (dobry_dom_gen_only_human_v1). Реп только holyslav92/Excalibur-SUBARENDA, ветка main. Никогда Excalibur-2-Cloud и tymenrieltor.ru. MCP-KV только wordstat_get_*. Проза — Derouter REST скриптом репа (не Composer, не mcp-derouter). Картинки — ONE Grsai primary image 2048×1152 (VIP-on для 2K если primary не тянет), 1 draw → slice 4. ЗАПРЕЩЕНО: 2 холста × 4 = 8, poster_composite, phone overlay, logo в images[]. Нет ключа Derouter или Grsai → BLOCKER.
 
   Канон ролей, без пропусков:
   Scout? → research_start → Research → Title → Writer → Sol → Description → Cover-text || Schema → Cover → Cover-QA → Indexer → Publish? → Fixer → merge → Content-learner
 
-  Дирижёр Cursor не пишет абзацы и не рисует кадры. Writer = claude-opus-5 (полный CASE в drafts/writer.html, не тезисы). Scout / Research / Title / Sol / Description / Cover-text / Schema / Cover-scene = gpt-5.6-terra. Слог Sol — shared/SOUL.md + shared/soul-examples/. После Title и после Writer/Sol гонять scripts/excalibur_blog_case_delivery_gate.py. BLOCK → переписать роль, не публиковать.
+  Дирижёр Cursor не пишет абзацы и не рисует кадры. Writer = claude-opus-5. Scout / Research / Title / Sol / Description / Cover-text / Schema / Cover-scene = gpt-5.6-terra. Слог Sol — shared/SOUL.md + shared/soul-examples/. После Title и после Writer/Sol гонять scripts/excalibur_blog_case_delivery_gate.py. BLOCK → переписать роль, не публиковать.
 
-  Дата: сегодня Asia/Yekaterinburg. Обложка = текущий сезон. Зима героем летом — запрет, пока Wordstat сам не орёт.
+  ГОЛОС (HARD — dobry_dom_gen_only_human_v1): 700–1100 слов. §1 = что случилось + цитата или ₽ — гость понимает без второго чтения. Короткие предложения, как у двери. BAN загадочный H1, «под вопросом», clever structure. Телефон +7 (993) 574-83-22 только в ТЕКСТЕ, не на картинке.
 
-  Wordstat: вся Россия (регион 225). Боли БЕЗ города и те же С Тюменью. Заголовок может быть без слова «Тюмень». Пишем и сдаём только Тюмень. Гостевая боль: залог, код, ключница, заселение, предоплата, бойлер, собака, соседи, «рядом с вузом», скрытая доплата. Не юр-крючок Клышина (ЕГРН, суд, наследники, Москва). Не дублировать уже вышедшие (published-titles / коды-заселение, залог-скол на плите и любой близкий H1).
+  Картинки (HARD — dobry_dom_gen_only_human_v1): ONE Grsai primary image 2048×1152 как 2×2 photoreal grid → slice 4 (cover+3 inline). Headline кириллицей НА предмете в кадре (бумага, табличка, ТВ) — НЕ Canva overlay, НЕ жёлтый маркер, НЕ стикер, НЕ phone pill. После slice: paste cropped-img_7143.png ТОЛЬКО на cover tile. Единственные скрипты: quad_split + brand_logo_composite. Gate: excalibur_blog_slice4_gate.py + case_delivery_gate.py.
 
-  ГОЛОС И ФОРМА (HARD — klyshin_manner_dobry_dom_v1): 700–1100 слов, hard fail >1300. §1 = 2–4 предложения раны + цитата/₽. 2–4 коротких H2. ONE «Мой вывод как практика». BAN «Наш вывод простой.» и повтор штампов. Чеклист только NEW checks. Один вопрос в середине → TG/MAX. Финал: вопрос двух лагерей + один CTA. Gate: excalibur_blog_case_delivery_gate.py.
-
-  Картинки (HARD — dobry_dom_one_2k_slice4_v1): ONE Grsai primary image model 2048×1152 как 2×2 grid → slice 4 (cover+3 inline). ZERO второго draw. Cover tile: paste official cropped-img_7143.png pixel-faithful (native aspect, NOT square), top-right ~8–12%, no plaque. Inlines ZERO logo. Gate: excalibur_blog_slice4_gate.py. RSS: 1 featured + 3 in-body.
-
-  Report: manner_canon PASS?, slice4 gate PASS?, word count 700–1100, 4 images, case-delivery-gate PASS/BLOCK.
+  Report: manner_canon PASS?, slice4 gate PASS?, word count 700–1100, 4 images, 1 grsai draw, case-delivery-gate PASS/BLOCK.

@@ -4,8 +4,8 @@
 Checks title-brief.json (after Title), drafts/writer.html (after Writer),
 article.html (after Sol). Cron/slots cannot ship encyclopedia guides.
 
-Editorial manner canon: klyshin_manner_dobry_dom_v1 (structure from Klyshin 2026,
-domain = Добрый дом guest-night). Length 700–1100 words; hard fail >1300.
+Editorial manner canon: dobry_dom_gen_only_human_v1 — spoken Russian at the door,
+plain H1 naming the wound, guest understands §1 without rereading.
 Repeat-gate: same sentence-idea across lead / вывод / checklist = FAIL.
 """
 from __future__ import annotations
@@ -129,7 +129,7 @@ MONEY_NIGHTS_RE = re.compile(
     re.I,
 )
 
-MANNER_CANON_ID = "klyshin_manner_dobry_dom_v1"
+MANNER_CANON_ID = "dobry_dom_gen_only_human_v1"
 WORD_COUNT_MIN = 650
 WORD_COUNT_TARGET = "700–1100"
 WORD_COUNT_HARD_MAX = 1300
@@ -172,7 +172,16 @@ ILLUSION_BREAK_RE = re.compile(
     re.I,
 )
 
-COMMENT_BAIT_RE = re.compile(r"напиш\w*\s+в\s+комментар", re.I)
+RIDDLE_H1_RES = (
+    re.compile(r"под\s+вопросом", re.I),
+    re.compile(r"чё\s+за\s+ересь", re.I),
+    re.compile(r"что\s+это\s+вообще", re.I),
+    re.compile(r"загадк", re.I),
+)
+
+LONG_WORD_RE = re.compile(r"[а-яё]{14,}", re.I)
+
+HUMAN_LEAD_MAX_WORD_LEN = 13
 
 # Host-operator / realtor plots — audience is GUEST booking a night.
 HOST_OPERATOR_RE = (
@@ -233,6 +242,41 @@ def check_h1(h1: str) -> list[str]:
         errors.append(
             "h1: missing figure (цифра ₽/ночи/люди) — Dzen CASE needs крик+казус+цифра"
         )
+    for rx in RIDDLE_H1_RES:
+        if rx.search(low):
+            errors.append(f"h1: riddle/clever structure — name the wound plainly (ban «под вопросом»)")
+            break
+    return errors
+
+
+def check_human_lead(html: str, *, label: str) -> list[str]:
+    """Guest-from-street test: first 2–3 sentences plain, money/quote upfront."""
+    errors: list[str] = []
+    opening = _opening_slice(html)
+    if not opening:
+        return errors
+    sentences = re.split(r"(?<=[.!?…])\s+", opening.strip())
+    lead_sentences = [s.strip() for s in sentences[:3] if s.strip()]
+    if not lead_sentences:
+        return errors
+    first_block = " ".join(lead_sentences)
+    if not QUOTE_RE.search(first_block) and not MONEY_NIGHTS_RE.search(first_block):
+        errors.append(
+            f"{label}: human-lead FAIL — first 2–3 sentences need quote or ₽/money so tired guest gets it"
+        )
+    long_words = LONG_WORD_RE.findall(first_block)
+    if long_words:
+        errors.append(
+            f"{label}: human-lead FAIL — long words in opening ({', '.join(long_words[:3])}); "
+            "speak like at the door"
+        )
+    for sent in lead_sentences[:2]:
+        words = re.findall(r"[а-яёА-ЯЁ]+", sent)
+        if words and max(len(w) for w in words) > HUMAN_LEAD_MAX_WORD_LEN:
+            errors.append(
+                f"{label}: human-lead FAIL — sentence too heavy ({sent[:60]}…); shorten words"
+            )
+            break
     return errors
 
 
@@ -436,6 +480,7 @@ def check_article_dir(article_dir: Path, *, stage: str = "all") -> dict[str, Any
         checks_run.append("writer.html")
         writer_html = writer_path.read_text(encoding="utf-8")
         errors.extend(check_opening_body(writer_html, label="writer.html"))
+        errors.extend(check_human_lead(writer_html, label="writer.html"))
         errors.extend(check_body_timeline(writer_html, label="writer.html"))
         errors.extend(check_audience_and_bans(writer_html, label="writer.html"))
         errors.extend(check_manner_stamps(writer_html, label="writer.html"))
@@ -449,6 +494,7 @@ def check_article_dir(article_dir: Path, *, stage: str = "all") -> dict[str, Any
         checks_run.append("article.html")
         article_html = html_path.read_text(encoding="utf-8")
         errors.extend(check_opening_body(article_html, label="article.html"))
+        errors.extend(check_human_lead(article_html, label="article.html"))
         errors.extend(check_body_timeline(article_html, label="article.html"))
         errors.extend(check_audience_and_bans(article_html, label="article.html"))
         errors.extend(check_manner_stamps(article_html, label="article.html"))

@@ -3,13 +3,13 @@
 > **TENANT:** Добрый дом / добрыйдом-72.рф — `holyslav92/Excalibur-SUBARENDA`.  
 > **NEVER** tymenrieltor.ru / Excalibur-2-Cloud rieltor identity or phone +7 922.
 
-# Excalibur BLOG — `dobry_dom_one_2k_slice4_v1`
+# Excalibur BLOG — `dobry_dom_gen_only_human_v1`
 
 Cover после `article.html` + Sol PASS.
 
 ## Canon (HARD)
 
-`memory/cover/cover-canon.json` → `dobry_dom_one_2k_slice4_v1`
+`memory/cover/cover-canon.json` → `dobry_dom_gen_only_human_v1`
 
 **ONE Grsai primary image model draw** per article: canvas **2048×1152** prompted as **2×2 GRID** of four complete 16:9 panels → deterministic PIL quarter slice → **[0] cover + [1..3] inlines**. **ZERO** second draw. **BAN** 8-frame / quad-mcp-batch-01|02 / standalone cover-mcp.
 

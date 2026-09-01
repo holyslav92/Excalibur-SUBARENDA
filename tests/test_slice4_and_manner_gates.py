@@ -1,4 +1,4 @@
-"""Tests for klyshin_manner_dobry_dom_v1 + dobry_dom_one_2k_slice4_v1 locks."""
+"""Tests for dobry_dom_gen_only_human_v1 + dobry_dom_gen_only_human_v1 locks."""
 from __future__ import annotations
 
 import json
@@ -18,7 +18,7 @@ from excalibur_blog_case_delivery_gate import (  # noqa: E402
     check_word_count,
     check_article_dir,
 )
-from excalibur_blog_quad_slots import ONE_2K_SLICE4_CANON_ID, uses_one_2k_slice4  # noqa: E402
+from excalibur_blog_quad_slots import GEN_ONLY_HUMAN_CANON_ID, uses_one_2k_slice4  # noqa: E402
 from excalibur_blog_brand_logo_composite import prepare_logo_rgba  # noqa: E402
 
 LOGO = ROOT / "memory/cover/assets/brand/logo-dobry-dom.png"
@@ -38,7 +38,7 @@ class KlyshinMannerGateTest(unittest.TestCase):
     def test_manner_canon_in_pipeline(self) -> None:
         canon = json.loads((ROOT / "shared/pipeline-canon.json").read_text(encoding="utf-8"))
         self.assertEqual(canon.get("editorial_manner_canon"), MANNER_CANON_ID)
-        self.assertEqual(canon.get("cover_pipeline_canon"), ONE_2K_SLICE4_CANON_ID)
+        self.assertEqual(canon.get("cover_pipeline_canon"), GEN_ONLY_HUMAN_CANON_ID)
         self.assertEqual(canon["opening_rules"].get("word_count_target"), "700-1100")
 
     def test_article_style_names_manner_canon(self) -> None:
@@ -75,18 +75,18 @@ class Slice4CanonTest(unittest.TestCase):
     def test_slice4_canon_active(self) -> None:
         self.assertTrue(uses_one_2k_slice4(ROOT))
         canon = json.loads((ROOT / "memory/cover/cover-canon.json").read_text(encoding="utf-8"))
-        self.assertEqual(canon["canon_id"], ONE_2K_SLICE4_CANON_ID)
+        self.assertEqual(canon["canon_id"], GEN_ONLY_HUMAN_CANON_ID)
 
     def test_tenant_slice4_config(self) -> None:
         tenant = json.loads((ROOT / "shared/tenant-config.json").read_text(encoding="utf-8"))
-        self.assertEqual(tenant.get("cover_mode"), "one_2k_slice4")
+        self.assertEqual(tenant.get("cover_mode"), "gen_only_slice4")
         self.assertEqual(tenant.get("inline_image_count"), 3)
         img = tenant.get("image_generation") or {}
         self.assertEqual(img.get("total_images"), 4)
         self.assertEqual(img.get("canvases_per_article"), 1)
         wow = tenant.get("cover_wow_rules") or {}
-        self.assertEqual(wow.get("canon_id"), ONE_2K_SLICE4_CANON_ID)
-        self.assertIn("native aspect", wow.get("philosophy", "").casefold())
+        self.assertEqual(wow.get("canon_id"), GEN_ONLY_HUMAN_CANON_ID)
+        self.assertIn("photoreal", wow.get("philosophy", "").casefold())
 
     def test_slice4_doctor(self) -> None:
         proc = subprocess.run(
@@ -137,8 +137,9 @@ class Slice4CanonTest(unittest.TestCase):
         prompt = build_one_2k_slice4_grid_prompt(manifest, style, design, root=ROOT)
         low = prompt.casefold()
         self.assertIn("2×2", prompt)
+        self.assertIn("physical object", low)
         self.assertIn("native aspect", low)
-        self.assertIn("not square", low)
+        self.assertNotIn("993", prompt)
 
 
 if __name__ == "__main__":

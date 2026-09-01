@@ -3,7 +3,7 @@ name: cover-excalibur-blog
 description: "④a Cover: ONE Grsai 2K 2×2 grid → slice 4 (cover+3 inline) + pixel-faithful logo paste on cover tile only."
 ---
 
-# Cover Agent — `dobry_dom_one_2k_slice4_v1`
+# Cover Agent — `dobry_dom_gen_only_human_v1`
 
 ## Philosophy
 

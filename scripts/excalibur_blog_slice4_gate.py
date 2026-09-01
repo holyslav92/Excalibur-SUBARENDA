@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""HARD gate: dobry_dom_one_2k_slice4_v1 — ONE Grsai 2K draw, PIL slice into 4 tiles.
+"""HARD gate: dobry_dom_gen_only_human_v1 — ONE Grsai 2K draw, PIL slice into 4 tiles.
 
 Cover = tile[0] + factory logo paste only. Inlines = tiles[1..3]. No second canvas,
-no standalone cover batch, no 8-frame pipeline.
+no standalone cover batch, no 8-frame pipeline, no overlay scripts.
 """
 from __future__ import annotations
 
@@ -17,7 +17,7 @@ _SCRIPTS = Path(__file__).resolve().parent
 if str(_SCRIPTS) not in sys.path:
     sys.path.insert(0, str(_SCRIPTS))
 
-from excalibur_blog_quad_slots import ONE_2K_SLICE4_CANON_ID, uses_one_2k_slice4
+from excalibur_blog_quad_slots import GEN_ONLY_HUMAN_CANON_ID, ONE_2K_SLICE4_CANON_ID, uses_gen_only_human, uses_one_2k_slice4
 
 SLICE4_BATCH_NAMES = frozenset(
     {
@@ -32,6 +32,10 @@ FORBIDDEN_EXTRA_BATCHES = frozenset(
         "quad-mcp-batch-01.json",
         "quad-mcp-batch-02.json",
     }
+)
+
+FORBIDDEN_OVERLAY_STAMPS = (
+    "poster-composite-stamp.json",
 )
 
 FORBIDDEN_RESULT_SUFFIXES = (
@@ -76,7 +80,7 @@ def check_article_dir(article_dir: Path, *, root: Path | None = None) -> dict[st
         return {
             "gate": "slice4",
             "status": "SKIP",
-            "canon": ONE_2K_SLICE4_CANON_ID,
+            "canon": GEN_ONLY_HUMAN_CANON_ID,
             "errors": [],
             "checks_run": ["canon_not_active"],
             "article_dir": str(article_dir),
@@ -106,6 +110,13 @@ def check_article_dir(article_dir: Path, *, root: Path | None = None) -> dict[st
         for name in FORBIDDEN_RESULT_SUFFIXES:
             if (cover_dir / name).is_file():
                 errors.append(f"slice4: forbidden legacy result {name} (8-frame / standalone cover)")
+        if uses_gen_only_human(root):
+            checks.append("gen_only_no_overlay")
+            for stamp in FORBIDDEN_OVERLAY_STAMPS:
+                if (cover_dir / stamp).is_file():
+                    errors.append(
+                        f"slice4: forbidden overlay stamp {stamp} — gen_only_human allows slice + logo paste only"
+                    )
         draw_count = _grsai_draw_count(cover_dir)
         checks.append("grsai_draw_count")
         if draw_count > 1:
@@ -159,10 +170,11 @@ def check_article_dir(article_dir: Path, *, root: Path | None = None) -> dict[st
             )
 
     status = "PASS" if not errors else "BLOCK"
+    canon = GEN_ONLY_HUMAN_CANON_ID if uses_gen_only_human(root) else ONE_2K_SLICE4_CANON_ID
     return {
         "gate": "slice4",
         "status": status,
-        "canon": ONE_2K_SLICE4_CANON_ID,
+        "canon": canon,
         "checks_run": checks,
         "errors": errors,
         "article_dir": str(article_dir),
@@ -184,16 +196,16 @@ def main() -> int:
         canon_path = root / "memory/cover/cover-canon.json"
         if canon_path.is_file():
             canon = _load_json(canon_path)
-            if canon.get("canon_id") != ONE_2K_SLICE4_CANON_ID:
-                errors.append(f"cover-canon.json canon_id != {ONE_2K_SLICE4_CANON_ID}")
+            if canon.get("canon_id") != GEN_ONLY_HUMAN_CANON_ID:
+                errors.append(f"cover-canon.json canon_id != {GEN_ONLY_HUMAN_CANON_ID}")
         tenant = _load_json(root / "shared/tenant-config.json")
-        if tenant.get("cover_mode") != "one_2k_slice4":
-            errors.append("tenant cover_mode must be one_2k_slice4")
+        if tenant.get("cover_mode") not in {"one_2k_slice4", "gen_only_slice4"}:
+            errors.append("tenant cover_mode must be gen_only_slice4")
         if errors:
             for err in errors:
                 print(f"BLOCK: {err}", file=sys.stderr)
             return 1
-        print(f"OK slice4 doctor — {ONE_2K_SLICE4_CANON_ID}")
+        print(f"OK slice4 doctor — {GEN_ONLY_HUMAN_CANON_ID}")
         return 0
 
     article_dir = args.article_dir

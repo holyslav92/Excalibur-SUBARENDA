@@ -126,7 +126,7 @@ FAIL: агрегаторный how-to без сцены; checklist/FAQ как п
 
 ---
 
-## Article shape (700–1100 слов, `klyshin_manner_dobry_dom_v1`)
+## Article shape (700–1100 слов, `dobry_dom_gen_only_human_v1`)
 
 1. **§1 рана** — 2–4 предложения: цитата/₽, что сломалось (без duty-log)
 2. **Identity** — «Я хост посуточной в Тюмени. Это «Добрый дом».» + Telegram · MAX

@@ -161,7 +161,7 @@ _COVER_FACE_ESSAY = re.compile(
 # Prefer PUBLIC_SITE_URL hostname; fallback for offline validate when env empty.
 _LEGACY_REFERENCE_HOST_FALLBACK = ""  # no personal default host
 MCP_RESOLUTION = "2K"
-KIE_IMAGE_MODEL = "gpt-image-2-image-to-image"
+KIE_IMAGE_MODEL = "GRSAI_PRIMARY_IMAGE_MODEL-image-to-image"
 
 
 def required_reference_host_runtime() -> str:
@@ -784,10 +784,13 @@ DZEN_STORY_COLLAGE_CANON = (
     "mustard brush rgb(255,210,80); BAN metallic gold/brass/3D gold/dark leather/empty hallway default"
 )
 
-DZEN_HEADLINE_TYPO_RULE = (
-    "Two-beat CASE Cyrillic IN generation — Onest ExtraBold ~860 black sans; "
-    "yellow/peach brush highlight behind ONE keyword; one yellow sticky-note punch"
+GEN_ONLY_HEADLINE_RULE = (
+    "Cyrillic headline must appear IN the photograph on a real physical object "
+    "(printed paper on coffee table, TV screen, door sign, barrier sticker, luggage tag) — "
+    "NOT a graphic-design layer, NOT yellow marker highlight, NOT sticky-note collage, "
+    "NOT phone pill button, NOT Canva overlay typography"
 )
+DZEN_HEADLINE_TYPO_RULE = GEN_ONLY_HEADLINE_RULE  # legacy alias — gen_only_human_v1
 
 SCENE_ONLY_GENERATION_BAN = (
     "HARD SCENE-ONLY: ZERO Cyrillic, ZERO digits, ZERO phone number, ZERO meme, ZERO logo, ZERO stickers, "
@@ -1059,26 +1062,28 @@ def build_one_2k_slice4_grid_prompt(
     )
     if case["headline_line1"] and case["headline_line2"]:
         headline_clause = (
-            f"COVER PANEL top-left HEADLINE L1 «{case['headline_line1']}» + L2 «{case['headline_line2']}»; "
-            f"{DZEN_HEADLINE_TYPO_RULE}."
+            f"COVER PANEL top-left HEADLINE L1 «{case['headline_line1']}» + L2 «{case['headline_line2']}» "
+            f"printed/painted on a physical object in the scene; {GEN_ONLY_HEADLINE_RULE}."
         )
     elif case["h1"]:
-        headline_clause = f"COVER PANEL headline from «{case['h1']}» two beats; {DZEN_HEADLINE_TYPO_RULE}."
+        headline_clause = (
+            f"COVER PANEL headline from «{case['h1']}» on physical object in scene; {GEN_ONLY_HEADLINE_RULE}."
+        )
     else:
-        headline_clause = f"COVER PANEL two-beat Cyrillic headline; {DZEN_HEADLINE_TYPO_RULE}."
+        headline_clause = f"COVER PANEL two-beat Cyrillic headline on physical object; {GEN_ONLY_HEADLINE_RULE}."
     lines = [
-        "ONE canvas 2048×1152 — draw as 2×2 GRID of FOUR complete 16:9 panels (thin white gutters OK). "
-        "Each quadrant is its own readable scene — NOT one photo sliced at random.",
-        "dobry_dom_one_2k_slice4_v1 — exactly ONE Grsai draw; factory slices quarters after download.",
+        "ONE canvas 2048×1152 — draw as 2×2 GRID of FOUR complete photoreal 16:9 apartment panels (thin white gutters OK). "
+        "Each quadrant is its own readable scene — NOT one photo sliced at random. NOT infographic.",
+        "dobry_dom_gen_only_human_v1 — exactly ONE Grsai primary image draw; factory slices quarters after download.",
         headline_clause,
-        f"COVER PANEL phone infoboard EXACT «{phone}» — NEVER +7 922.",
+        "FORBIDDEN on cover panel: phone number, logo, meme sticker, yellow marker, sticky note, pill button, dashed frame.",
         inline_clause,
-        "PANEL 2–4: NO «Добрый дом» logo, NO curtains/flower lockup — scenes only.",
-        "TOP-RIGHT of COVER PANEL ONLY: leave clean pad 8–12% — model may sketch layout; "
+        "PANEL 2–4: NO «Добрый дом» logo, NO curtains/flower lockup — photoreal scenes only.",
+        "TOP-RIGHT of COVER PANEL ONLY: leave clean wall/wood pad 8–12% — model does NOT draw logo; "
         "factory pastes official cropped-img_7143.png after slice (pixel-faithful, native aspect, NOT square crop).",
-        "FORBIDDEN: four separate images; second API call; square logo stamp; white plaque under logo.",
+        "FORBIDDEN: four separate images; second API call; logo in images[]; poster_composite; factory typography overlay.",
         SCENE_POSTER_COVER_BAN + ".",
-        "TEXT: Russian Cyrillic only; Comfort+ Tyumen daily-rental mood.",
+        "TEXT: Russian Cyrillic only; Comfort+ Tyumen daily-rental mood; photoreal apartment interior.",
     ]
     return "\n".join(line for line in lines if line)
 

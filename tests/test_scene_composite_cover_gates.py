@@ -50,15 +50,15 @@ class SceneCompositeCanonTest(unittest.TestCase):
 
     def test_canon_slice4_locked(self) -> None:
         canon = json.loads((ROOT / "memory/cover/cover-canon.json").read_text(encoding="utf-8"))
-        self.assertEqual(canon["canon_id"], "dobry_dom_one_2k_slice4_v1")
-        rules = canon.get("slice4_rules") or {}
-        self.assertIn("grsai", str(rules.get("philosophy", "")).casefold())
+        self.assertEqual(canon["canon_id"], "dobry_dom_gen_only_human_v1")
+        rules = canon.get("gen_only_rules") or {}
+        self.assertIn("photoreal", str(rules.get("philosophy", "")).casefold())
 
     def test_tenant_cover_wow_rules_slice4(self) -> None:
         tenant = json.loads((ROOT / "shared/tenant-config.json").read_text(encoding="utf-8"))
         wow = tenant.get("cover_wow_rules") or {}
-        self.assertEqual(wow.get("canon_id"), "dobry_dom_one_2k_slice4_v1")
-        self.assertIn("native aspect", str(wow.get("philosophy", "")).casefold())
+        self.assertEqual(wow.get("canon_id"), "dobry_dom_gen_only_human_v1")
+        self.assertIn("photoreal", str(wow.get("philosophy", "")).casefold())
 
     def test_slice4_prompt_requires_grid_and_native_logo_paste(self) -> None:
         from excalibur_blog_cover_quad_prompt import build_one_2k_slice4_grid_prompt
@@ -71,9 +71,9 @@ class SceneCompositeCanonTest(unittest.TestCase):
         prompt = build_one_2k_slice4_grid_prompt(manifest, style, design, root=ROOT)
         lowered = prompt.casefold()
         self.assertIn("2×2", prompt)
-        self.assertIn("993", prompt)
+        self.assertIn("physical object", lowered)
         self.assertIn("native aspect", lowered)
-        self.assertIn("not square", lowered)
+        self.assertNotIn("993", prompt)
 
     def test_quad_slots_one_2k_slice4(self) -> None:
         from excalibur_blog_quad_slots import uses_one_2k_slice4, uses_full_grsai_cover

@@ -20,8 +20,8 @@ On timeout: retry `excalibur_blog_kie_gpt_image2_api.py` (`createTask` + poll). 
 
 Canvas 2 (inline-only): batch without `input_urls` → Kie t2i. Canvas 1: i2i + `identity-real`.
 
-If `KIE_API_KEY` is present in Cloud Secrets/env, **do not** call sync MCP `gpt-image-2` first.
-Director/Task prompts must not force «ONE MCP gpt-image-2» as the primary path.
+If `KIE_API_KEY` is present in Cloud Secrets/env, **do not** call sync MCP `GRSAI_PRIMARY_IMAGE_MODEL` first.
+Director/Task prompts must not force «ONE MCP GRSAI_PRIMARY_IMAGE_MODEL» as the primary path.
 
 ## Why
 
@@ -70,7 +70,7 @@ Create:
 
 ```json
 {
-  "model": "gpt-image-2-image-to-image",
+  "model": "GRSAI_PRIMARY_IMAGE_MODEL-image-to-image",
   "input": {
     "prompt": "...",
     "input_urls": ["https://.../ava.jpg"],
@@ -172,7 +172,7 @@ Rules:
 
 - Script auto-retries this once (`retry_kind=pre_task_connection_reset`). Agent may also re-run the same CLI once if an older script build exits immediately.
 - This is **not** a quality-redo and does **not** count as host/sticky/style multi-gen.
-- Do **not** switch to sync MCP `gpt-image-2` while `KIE_API_KEY` is set.
+- Do **not** switch to sync MCP `GRSAI_PRIMARY_IMAGE_MODEL` while `KIE_API_KEY` is set.
 - If a `taskId` is already known (task record written or create response had `taskId`) — **poll** that task; do not blind-create a second billed job on network ambiguity.
 - Second pre-taskId connection reset after the one controlled retry → `KIE API BLOCKER`.
 
@@ -196,7 +196,7 @@ Rules:
 
 - Keep `cover/quad-mcp-batch.json` git-safe (`{{SITE_BASE}}` / `{{SITE_HOST}}`); only runtime payload uses the temp `downloadUrl`.
 - Local HTTP 200 on `ava.jpg` ≠ proof that Kie can fetch it.
-- Do **not** fall back to sync MCP `gpt-image-2` when `KIE_API_KEY` is set.
+- Do **not** fall back to sync MCP `GRSAI_PRIMARY_IMAGE_MODEL` when `KIE_API_KEY` is set.
 - File Upload recreate is **once** per run (separate from `--max-create-retries` for 500).
 - File Upload HTTP request **must** include `User-Agent`. Cloudflare on `kieai.redpandaai.co` may return **CF1010** / HTML challenge without it — do not strip UA or invent a manual curl workaround (INC-20260719-2030).
 
@@ -246,7 +246,7 @@ createTask → poll recordInfo
 
 Rules:
 
-- Do **not** fall back to sync MCP `gpt-image-2` when `KIE_API_KEY` is set (even after 422).
+- Do **not** fall back to sync MCP `GRSAI_PRIMARY_IMAGE_MODEL` when `KIE_API_KEY` is set (even after 422).
 - First 422 ≠ permanent `KIE API BLOCKER` if a controlled rewrite + one recreate is still available.
 - Soften is **once**; do not loop prompt variants / billed jobs.
 - Proactive soft stake on marketplace+Cursor, AI-video, and payment/BIN/card avoids burning the one soften slot on an avoidable first 422 (INC-20260718-2035, INC-20260720-1241, INC-20260726-0814).

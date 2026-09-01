@@ -104,7 +104,9 @@ LEGACY_RESULT_FILE = "cover/quad-mcp-result.json"
 TYPE_MEME_STICKER_CANON_ID = "dobry_dom_type_meme_sticker_v3"
 SCENE_COMPOSITE_CANON_ID = "dobry_dom_scene_composite_v1"  # deprecated — replaced by dzen_story_collage_v1
 DZEN_STORY_COLLAGE_CANON_ID = "dobry_dom_dzen_story_collage_v2"
-ONE_2K_SLICE4_CANON_ID = "dobry_dom_one_2k_slice4_v1"
+ONE_2K_SLICE4_CANON_ID = "dobry_dom_one_2k_slice4_v1"  # deprecated alias
+GEN_ONLY_HUMAN_CANON_ID = "dobry_dom_gen_only_human_v1"
+ACTIVE_SLICE4_CANON_IDS = frozenset({ONE_2K_SLICE4_CANON_ID, GEN_ONLY_HUMAN_CANON_ID})
 DZEN_STORY_COLLAGE_CANON_IDS = frozenset(
     {
         "dobry_dom_dzen_story_collage_v1",
@@ -160,7 +162,9 @@ def uses_dzen_story_collage_v1(root: Path | None = None) -> bool:
 
 
 def uses_full_grsai_cover(root: Path | None = None) -> bool:
-    """Owner lock: cover typography/phone/logo drawn IN Grsai — no factory overlay."""
+    """Owner lock: cover drawn IN Grsai — no factory typography overlay."""
+    if uses_gen_only_human(root):
+        return True
     if uses_one_2k_slice4(root):
         return True
     return load_cover_canon_id(root) == DZEN_STORY_COLLAGE_CANON_ID
@@ -169,7 +173,8 @@ def uses_full_grsai_cover(root: Path | None = None) -> bool:
 def uses_one_2k_slice4(root: Path | None = None) -> bool:
     """Owner lock: ONE Grsai 2K 2×2 grid → slice 4 (cover + 3 inlines)."""
     root = root or project_root()
-    if load_cover_canon_id(root) == ONE_2K_SLICE4_CANON_ID:
+    canon_id = load_cover_canon_id(root)
+    if canon_id in ACTIVE_SLICE4_CANON_IDS:
         return True
     tenant_path = root / "shared/tenant-config.json"
     if tenant_path.is_file():
@@ -177,8 +182,27 @@ def uses_one_2k_slice4(root: Path | None = None) -> bool:
             tenant = json.loads(tenant_path.read_text(encoding="utf-8"))
         except json.JSONDecodeError:
             return False
-        if str(tenant.get("cover_mode") or "").casefold() == "one_2k_slice4":
+        mode = str(tenant.get("cover_mode") or "").casefold()
+        if mode in {"one_2k_slice4", "gen_only_slice4"}:
             return True
+    return False
+
+
+def uses_gen_only_human(root: Path | None = None) -> bool:
+    """Owner lock 2026-09-01: photoreal generate-only, no overlay scripts."""
+    root = root or project_root()
+    if load_cover_canon_id(root) == GEN_ONLY_HUMAN_CANON_ID:
+        return True
+    tenant_path = root / "shared/tenant-config.json"
+    if tenant_path.is_file():
+        try:
+            tenant = json.loads(tenant_path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            return False
+        wow = tenant.get("cover_wow_rules") or {}
+        if str(wow.get("canon_id") or "") == GEN_ONLY_HUMAN_CANON_ID:
+            return True
+        return str(tenant.get("cover_mode") or "").casefold() == "gen_only_slice4"
     return False
 
 
