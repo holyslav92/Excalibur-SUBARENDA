@@ -89,8 +89,31 @@ REQUIRED_IMAGES = (
 )
 
 
+from excalibur_blog_quad_slots import (
+    inline_count_from_manifest,
+    inline_count_from_tenant,
+    uses_one_2k_slice4,
+)
+
+
 def project_root() -> Path:
     return Path(__file__).resolve().parents[1]
+
+
+def required_images_for_article(root: Path) -> tuple[str, ...]:
+    if uses_one_2k_slice4(root):
+        inline_count = 3
+        tenant_path = root / "shared" / "tenant-config.json"
+        if tenant_path.is_file():
+            try:
+                inline_count = inline_count_from_tenant(json.loads(tenant_path.read_text(encoding="utf-8")))
+            except json.JSONDecodeError:
+                pass
+        files = ["cover/cover.png"]
+        for i in range(1, inline_count + 1):
+            files.append(f"cover/inline-{i:02d}.png")
+        return tuple(files)
+    return REQUIRED_IMAGES
 
 
 def load_json(path: Path) -> dict:
@@ -113,7 +136,7 @@ def load_tenant_cover_mode(root: Path) -> dict:
         "logo_reference_in_generation",
         "reference_in_gen",
     }
-    full_grsai_cover = mode in {"full_grsai_cover", "grsai_full_cover"} or logo_mode in {
+    full_grsai_cover = mode in {"full_grsai_cover", "grsai_full_cover", "one_2k_slice4"} or logo_mode in {
         "reference_in_generation",
         "logo_reference_in_generation",
         "reference_in_gen",
@@ -143,7 +166,7 @@ def validate_cover_qa(article_dir: Path, root: Path) -> dict:
         if missing_identity:
             errors.append(f"identity-real missing: {', '.join(missing_identity)}")
 
-    for rel in REQUIRED_IMAGES:
+    for rel in required_images_for_article(root):
         if not (article_dir / rel).is_file():
             errors.append(f"missing image: {rel}")
 
@@ -195,7 +218,7 @@ def validate_cover_qa(article_dir: Path, root: Path) -> dict:
                 errors.append("cover_phone_cta must not contain 922 (forbidden rieltor number)")
             slots = manifest.get("slots") or {}
             allowed_types = {
-                "comparison_table",
+                "comparison_table_ui",
                 "process_flow",
                 "bar_timeline_chart",
                 "structure_diagram",
@@ -207,7 +230,10 @@ def validate_cover_qa(article_dir: Path, root: Path) -> dict:
                 "tool_screenshot",
                 "infographic_card",
             }
-            for i in range(1, 8):
+            inline_count = inline_count_from_manifest(manifest) if manifest.get("inline_count") else 3
+            if uses_one_2k_slice4(root):
+                inline_count = min(inline_count, 3)
+            for i in range(1, inline_count + 1):
                 key = f"inline_{i}"
                 slot = slots.get(key) or {}
                 if not str(slot.get("visual_type") or "").strip():
@@ -236,17 +262,19 @@ def validate_cover_qa(article_dir: Path, root: Path) -> dict:
                 validate_cover_phone_and_overlap_gates,
                 validate_full_grsai_cover_gates,
             )
-            from excalibur_blog_cover_collage_gate import (
-                validate_cover_anti_collage_gates,
-                validate_cover_type_meme_sticker_gates,
-            )
 
             errors.extend(validate_logo_stamp(article_dir, root))
             errors.extend(validate_article_logo_gates_slim(article_dir, root))
-            errors.extend(validate_cover_phone_and_overlap_gates(article_dir, root))
             errors.extend(validate_full_grsai_cover_gates(article_dir, root))
+            if not uses_one_2k_slice4(root):
+                errors.extend(validate_cover_phone_and_overlap_gates(article_dir, root))
             cover_path = article_dir / "cover" / "cover.png"
-            if cover_path.is_file():
+            if cover_path.is_file() and not uses_one_2k_slice4(root):
+                from excalibur_blog_cover_collage_gate import (
+                    validate_cover_anti_collage_gates,
+                    validate_cover_type_meme_sticker_gates,
+                )
+
                 errors.extend(validate_cover_type_meme_sticker_gates(cover_path))
                 errors.extend(validate_cover_anti_collage_gates(cover_path))
         except ImportError:

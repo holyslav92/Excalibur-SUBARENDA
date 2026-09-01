@@ -154,6 +154,7 @@ class DrawnLogoGateTest(unittest.TestCase):
             for name in (
                 "excalibur_blog_brand_logo_composite.py",
                 "excalibur_blog_drawn_logo_gate.py",
+                "excalibur_blog_quad_slots.py",
             ):
                 shutil.copy2(ROOT / "scripts" / name, tenant_root / "scripts" / name)
             manifest = {

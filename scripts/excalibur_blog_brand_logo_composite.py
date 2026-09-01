@@ -48,6 +48,25 @@ IMAGE_NAMES = (
 )
 
 
+def _image_names_for_article(article_dir: Path, root: Path) -> tuple[str, ...]:
+    from excalibur_blog_quad_slots import active_inline_keys, inline_count_from_manifest, uses_one_2k_slice4
+
+    if not uses_one_2k_slice4(root):
+        return IMAGE_NAMES
+    manifest_path = article_dir / "cover" / "quad-manifest.json"
+    inline_count = 3
+    if manifest_path.is_file():
+        try:
+            inline_count = inline_count_from_manifest(json.loads(manifest_path.read_text(encoding="utf-8")))
+        except json.JSONDecodeError:
+            pass
+    names = ["cover.png"]
+    for key in active_inline_keys(inline_count):
+        idx = int(key.split("_")[1])
+        names.append(f"inline-{idx:02d}.png")
+    return tuple(names)
+
+
 def project_root() -> Path:
     return Path(__file__).resolve().parents[1]
 
@@ -452,7 +471,7 @@ def composite_article_images(
     cover_placement: dict[str, Any] = {}
     panel_placements: dict[str, Any] = {}
     panel_skipped: dict[str, str] = {}
-    targets = ("cover.png",) if cover_only else IMAGE_NAMES
+    targets = ("cover.png",) if cover_only else _image_names_for_article(article_dir, root)
     for name in targets:
         img_path = cover_dir / name
         if not img_path.is_file():
@@ -555,7 +574,7 @@ def validate_logo_stamp(article_dir: Path, root: Path) -> list[str]:
         except json.JSONDecodeError:
             errors.append("quad-manifest.json invalid JSON")
 
-    for name in IMAGE_NAMES:
+    for name in _image_names_for_article(article_dir, root):
         if not (article_dir / "cover" / name).is_file():
             errors.append(f"missing composed image cover/{name}")
 
@@ -581,9 +600,21 @@ def validate_logo_stamp(article_dir: Path, root: Path) -> list[str]:
 
     panel_placements = stamp.get("panel_logo_placements") or {}
     panel_skipped = stamp.get("panel_logo_skipped") or {}
+    from excalibur_blog_quad_slots import active_inline_keys, inline_count_from_manifest, uses_one_2k_slice4
+
+    if manifest_path.is_file():
+        try:
+            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+            inline_count = inline_count_from_manifest(manifest)
+        except json.JSONDecodeError:
+            inline_count = 7
+    else:
+        inline_count = 7
+    if uses_one_2k_slice4(root):
+        inline_count = min(inline_count, 3)
     expected_skipped = {
         f"inline-{i:02d}.png"
-        for i in range(1, 8)
+        for i in range(1, inline_count + 1)
         if f"inline-{i:02d}.png" not in inline_files
     }
     if set(panel_skipped.keys()) != expected_skipped:
