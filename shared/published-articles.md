@@ -10,3 +10,4 @@ Excalibur-2-Cloud — не копировать URL tymenrieltor.ru.
 | 2026-08-28 | B03 | kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki | /blog/kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki/ | published |
 | 2026-08-30 | B04 | oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego | /blog/oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego/ | published |
 | 2026-09-01 | B05 | rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super | /blog/rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super/ | published |
+| 2026-09-01 | B06 | vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu | /blog/vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu/ | published |

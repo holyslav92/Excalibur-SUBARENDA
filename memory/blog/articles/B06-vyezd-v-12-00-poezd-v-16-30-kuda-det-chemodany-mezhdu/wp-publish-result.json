@@ -1,0 +1,27 @@
+{
+  "slug": "vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu",
+  "topic_id": "B06",
+  "permalink": "{{SITE_BASE}}/blog/vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B06-vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1205035,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4283 slug=vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu\nOK categories=101,106\nOK dzen_yzen_meta=1\nOK featured_image=4284\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4285 src=cover/cover.png url={{SITE_BASE}}/wp-content/uploads/2026/09/vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu-cover-1.png\nOK inline_alt=4285\nOK inline_caption=4285\nOK inline_description=4285\nOK inline_image_upload=4286 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu-inline-01.png\nOK inline_alt=4286\nOK inline_caption=4286\nOK inline_description=4286\nOK inline_image_upload=4287 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu-inline-02.png\nOK inline_alt=4287\nOK inline_caption=4287\nOK inline_description=4287\nOK inline_image_upload=4288 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu-inline-03.png\nOK inline_alt=4288\nOK inline_caption=4288\nOK inline_description=4288\nOK inline_image_upload=4289 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/09/vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu-inline-04.png\nOK inline_alt=4289\nOK inline_caption=4289\nOK inline_description=4289\nOK inline_image_upload=4290 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/09/vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu-inline-05.png\nOK inline_alt=4290\nOK inline_caption=4290\nOK inline_description=4290\nOK inline_image_upload=4291 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/09/vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu-inline-06.png\nOK inline_alt=4291\nOK inline_caption=4291\nOK inline_description=4291\nOK inline_image_upload=4292 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/09/vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu-inline-07.png\nOK inline_alt=4292\nOK inline_caption=4292\nOK inline_description=4292\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 8,
+    "expected_inline": 8,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu/",
+    "errors": []
+  }
+}

@@ -13,3 +13,4 @@ lessons, benchmarks, QA reports или соседние research-notes как о
 | B02 | perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem | Снял квартиру посуточно. Залог не вернули — нашли скол на плите | published |
 | B03 | kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki | Привезли сына к вузу — «рядом» оказалось 40 минут пешком | published |
 | B04 | oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego | Оплатили за двоих. У двери попросили доплату за третьего | published |
+| B05 | rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super | Рейтинг 4,8. Два «всё супер» — и 3 900 ₽ под вопросом | published |
