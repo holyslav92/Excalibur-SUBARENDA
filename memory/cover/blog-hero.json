@@ -1,20 +1,21 @@
 {
   "hero_id": "dobry-dom-brand",
-  "status": "brand_logo_paste",
+  "status": "full_grsai_cover",
   "name_ru": "Добрый дом",
-  "cover_mode": "brand_logo_paste",
-  "logo_mode": "brand_logo_paste",
+  "cover_mode": "full_grsai_cover",
+  "logo_mode": "drawn_in_generation",
   "cover_generation_mode": "standalone_16_9",
   "reference_images": [],
   "reference_image": "",
   "reference_url_hosted": "",
-  "reference_url_source": "NEVER send cropped-img_7143.png as generation reference — factory alpha overlay only",
+  "reference_url_source": "Logo PNG optional style reference only — NEVER required; NEVER factory paste on cover",
   "visual_notes": "memory/cover/visual-notes-dobry-dom.json",
   "logo_composite": {
-    "mode": "paste_png_alpha",
+    "mode": "disabled_on_cover",
     "logo_asset": "memory/cover/assets/brand/logo-dobry-dom.png",
     "canonical_sha256": "72e53ba966f0626cc6eaad0792e68b57c8da0ccd9265d6822fbc173fdb48b941",
-    "forbid_ai_drawn_logo": true,
+    "forbid_ai_drawn_logo": false,
+    "forbid_factory_logo_paste_on_cover": true,
     "cover_phone_in_scene_generation": true,
     "cover_phone_post_composite": false,
     "max_width_fraction": 0.1,
@@ -42,8 +43,8 @@
     "type_poster": "Designed magazine TYPE poster: spectacular Cyrillic headline hero + exactly 1 catalog meme sticker + large hotel-lobby info-board phone; per-case prompt not template",
     "forbid_wordpress_ui": "NEVER WordPress, Gutenberg, wp-admin, block editor, theme chrome, cookie bars in generated art",
     "no_overlap": "Headline, phone sticker, meme sticker, logo pad NEVER overlap",
-    "logo_lockup": "TOP-RIGHT empty pad in generation; AFTER apply factory pastes cropped-img_7143.png alpha PNG on COVER ONLY — NO white/gray plate; ZERO logos on inlines; NEVER send logo as Grsai reference",
-    "cover_phone": "+7 (993) 574-83-22 as LARGE hotel-lobby information-board tablo — BIG, Dzen-thumb readable; NEVER peel-pill, magnet, realtor scrap; NEVER tiny in-scene door number; NEVER post-composite pill/button/chip"
+    "logo_lockup": "«Добрый дом» lockup drawn IN Grsai generation top-right — curtains + flower + terracotta name, transparent integrated look, NO white/gray plaque; ZERO logos on inlines; NEVER factory PNG paste on cover",
+    "cover_phone": "+7 (993) 574-83-22 drawn IN Grsai generation — BIG, Dzen-thumb readable; NEVER peel-pill, magnet, realtor scrap; NEVER +7 922; NEVER factory post-composite phone bar"
   },
   "cover_canon": "memory/cover/cover-canon.json",
   "host_face_todo": "skip_human_host — brand_logo_paste mode"

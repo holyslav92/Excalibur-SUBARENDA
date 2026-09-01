@@ -3,52 +3,51 @@
 > **TENANT:** Добрый дом / добрыйдом-72.рф — `holyslav92/Excalibur-SUBARENDA`.  
 > **NEVER** tymenrieltor.ru / Excalibur-2-Cloud rieltor identity or phone +7 922.
 
-# Excalibur BLOG — Cover dobry_dom_dzen_story_collage_v1 + inline quads (Grsai 2K)
+# Excalibur BLOG — Cover dobry_dom_dzen_story_collage_v2 + inline quads (Grsai 2K)
 
 Cover после `article.html` + Sol PASS.
 
 ## Brand lock FOREVER (Cover-QA slim — FAIL if broken)
 
-Canon: `memory/cover/cover-canon.json` (`dobry_dom_dzen_story_collage_v1`), `shared/tenant-config.json` → `cover_wow_rules`.
+Canon: `memory/cover/cover-canon.json` (`dobry_dom_dzen_story_collage_v2`), `shared/tenant-config.json` → `cover_wow_rules`.
 
-**Philosophy:** Grsai generates photoreal Dzen click-thumbnail **story collage** (hero varies by article theme — person, objects, or key detail). Factory post-process: Onest ~860 black two-beat headline + yellow/peach brush highlight on ONE keyword, ONE yellow sticky-note punch, phone bar +7 (993) 574-83-22, optional catalog meme PNG paste, official alpha logo overlay AFTER — never as model reference. INLINES = designed grid unchanged.
+**Philosophy:** ONE Grsai primary image API generation (16:9, ≥2048×1152, non-VIP, max 2 gens) produces the **COMPLETE** cover — photoreal Dzen story-collage scene + Cyrillic two-beat H1 + yellow/peach brush on ONE keyword + one yellow sticky punch + phone +7 (993) 574-83-22 + official «Добрый дом» lockup top-right (curtains + flower + terracotta name, transparent, NO plaque). Factory ships PNG as-is (resize/thumb only). **NO** `excalibur_blog_cover_poster_composite.py`. **NO** `excalibur_blog_brand_logo_composite.py` on cover.
 
-**REPLACES** `dobry_dom_scene_composite_v1` empty-hallway-only default. Do NOT require empty cream hallway + catalog meme as the layout.
+**REPLACES** `dobry_dom_dzen_story_collage_v1` scene-only + factory overlay. Do NOT require empty cream hallway + catalog meme as the layout.
 
-### HARD anti-collage gates (FAIL if broken — kept from scene_composite)
+### HARD anti-collage gates (FAIL if broken — kept)
 
 - 2+ large overlapping text blocks
 - Giant cropped glyph >12% canvas (magnified letter crops like «тно» / «баума»)
-- TRADE OFFER / Drake / Wojak template drawn by model (meme must be pasted PNG only when used)
-- Overlapping type layers, collage stickers covering headline, white/gray plaque under logo, model-drawn lockup
+- TRADE OFFER / Drake / Wojak template drawn by model
+- Overlapping type layers, collage stickers covering headline, white/gray plaque under logo
+- WordPress UI, empty hallway default, realtor phone +7 922
 
-### Logo — NEVER draw in generation
+### Logo — drawn IN generation (NEVER factory paste on cover)
 
-- Prompt MUST reserve **empty clear top-right corner 8–12%**: no logo, no house icon, no «Добрый дом» lettering, no plate.
-- **NEVER** send `cropped-img_7143.png` / `logo-dobry-dom.png` as Grsai reference.
-- **AFTER** standalone cover apply: factory pastes official alpha PNG — `scripts/excalibur_blog_brand_logo_composite.py`.
-- Cover: logo always. Inlines: **0 of 7** (default).
-- **GATE fail:** white/gray/beige plate under logo; logo over headline/phone.
+- Model MUST draw/integrate official «Добрый дом» lockup small top-right: curtains + flower + terracotta name.
+- Transparent integrated look — **NO** white/gray/beige plaque/square under logo.
+- Logo PNG reference is **optional** and **never required**; if used, must not cause plaque paste.
+- **NEVER** run `excalibur_blog_brand_logo_composite.py` after cover generation.
+- Cover: one integrated logo. Inlines: **0 of 7** (default).
 
-### Phone — factory post-composite phone bar
+### Phone — IN generation
 
 - Number **+7 (993) 574-83-22** only (never +7 922).
-- Phone is drawn by `excalibur_blog_cover_poster_composite.py` as bottom phone bar — NOT in Grsai generation.
-- **Do NOT** post-paste pill/button/banner/chip from brand_logo_composite.
-- **GATE fail:** phone pill; model-drawn phone in scene canvas; missing phone bar after poster composite.
+- Phone drawn IN Grsai generation — readable at Dzen thumb.
+- **NEVER** factory post-composite phone bar/pill from `excalibur_blog_cover_poster_composite.py`.
 
-### COVER MUST (dobry_dom_dzen_story_collage_v1)
+### COVER MUST (dobry_dom_dzen_story_collage_v2)
 
-1. **Story collage scene** from Grsai — photoreal bright apartment/context; hero varies by THIS case (person OR objects OR story detail); NOT default empty hallway; no Cyrillic/digits/meme/logo/phone in generation.
-2. Factory headline — Onest ~860 black two beats; yellow/peach brush highlight behind ONE keyword.
-3. Factory yellow sticky note — one short punch line (Cyrillic).
-4. Phone bar +7 (993) 574-83-22 drawn by poster composite.
-5. Optional: ONE catalog meme PNG pasted when manifest picks id.
-6. Official alpha logo PNG overlay top-right AFTER poster composite.
+1. **Story collage scene** from Grsai — photoreal bright apartment/context; hero varies by THIS case.
+2. **Two-beat Cyrillic headline** — Onest ~860 black; yellow/peach brush on ONE keyword — IN generation.
+3. **Yellow sticky note** — one short punch — IN generation.
+4. **Phone** +7 (993) 574-83-22 — IN generation.
+5. **«Добрый дом» lockup** top-right — IN generation, no plaque.
 
 ### COVER BAN
 
-Empty hallway as required layout, always blinking_white_guy/roll_safe meme, magazine empty interior poster, 2+ memes / meme soup, people-heavy group photo, Wordstat sticker soup, gold-glitter/sticky soup in generation, phone pill, model-drawn logo, house-with-heart, logo plate, empty stock, WP UI, overlapping text blocks, magnified letter crops, Trade Offer/Drake/Wojak drawn, collage stickers on headline.
+Empty hallway as required layout, factory poster composite, factory logo PNG paste, overlapping text blocks, magnified letter crops, Trade Offer/Drake/Wojak templates, logo plate, phone pill, WordPress UI, 2+ memes, realtor +7 922.
 
 ## Longform: 8 изображений
 
@@ -58,21 +57,11 @@ Empty hallway as required layout, always blinking_white_guy/roll_safe meme, maga
 
 | Canvas | Файл | Слоты |
 |--------|------|-------|
-| 0 (cover) | `cover/cover-canvas.png` | story collage scene 16:9 |
-| 1 | `canvas-quad-01.png` | inline_1…inline_4 |
-| 2 | `canvas-quad-02.png` | inline_5…inline_7 + quiet pad (not exported) |
+| 0 (cover) | `cover/cover-canvas.png` | full Grsai editorial 16:9 |
+| 1 | `cover/canvas-quad-01.png` | inline_1…inline_4 |
+| 2 | `cover/canvas-quad-02.png` | inline_5…inline_7 + quiet pad (not exported) |
 
 PRIMARY: **Grsai** (`GRSAI_API_KEY`), `resolution: 2K`, 16:9, **vip disabled**, max **2** attempts.
-
-## Cover canon (Добрый дом dzen_story_collage_v1)
-
-1. **Story collage scene** — Grsai photoreal case scene; hero theme-derived; no Cyrillic/digits/meme/logo/phone in generation.
-2. **Factory poster composite** — Onest headline + brush highlight + sticky note + phone bar (+ optional meme paste).
-3. **Brand logo paste** — NO logo in generation; factory pastes PNG TOP-RIGHT 8–12% AFTER poster composite.
-4. **Anti-repeat 14д** — `memory/cover/used-motifs.json`.
-5. **Meme rotation 8** — `memory/cover/meme-used.json` + `scripts/excalibur_blog_meme_rotate.py` (optional on cover).
-6. **Light & bright** — natural daylight; dark cinematic запрещён.
-7. **Cat optional** — max 1 across cover+7 inlines.
 
 ## Workflow
 
@@ -83,17 +72,16 @@ python3 scripts/excalibur_blog_cover_motif_gate.py check --topic-id <id> --compo
 python3 scripts/excalibur_blog_cover_quad_prompt.py --article-dir <dir> --write-batch
 python3 scripts/excalibur_blog_grsai_gpt_image2_api.py --article-dir <dir> --batch cover/cover-mcp-batch.json --result cover/cover-mcp-result.json
 python3 scripts/excalibur_blog_cover_standalone_apply.py --article-dir <dir>
-python3 scripts/excalibur_blog_cover_poster_composite.py --article-dir <dir>
 python3 scripts/excalibur_blog_grsai_gpt_image2_api.py --article-dir <dir> --batch cover/quad-mcp-batch-01.json --result cover/quad-mcp-result-01.json
 python3 scripts/excalibur_blog_grsai_gpt_image2_api.py --article-dir <dir> --batch cover/quad-mcp-batch-02.json --result cover/quad-mcp-result-02.json
 python3 scripts/excalibur_blog_quad_apply.py --article-dir <dir> --canvas-index 1 --inject-html
 python3 scripts/excalibur_blog_quad_apply.py --article-dir <dir> --canvas-index 2 --inject-html
-python3 scripts/excalibur_blog_brand_logo_composite.py --article-dir <dir>
 python3 scripts/excalibur_blog_cover_qa_gate.py --article-dir <dir>
 ```
 
 ## Blockers
 
-- `COVER QA BLOCKER` — missing headline/phone after poster composite, overlapping text blocks, giant glyph crop, model-drawn Trade Offer, phone pill, logo plate, missing poster-composite-stamp.json
+- `COVER QA BLOCKER` — missing headline/phone in generation, overlapping text blocks, giant glyph crop, model-drawn Trade Offer, phone pill, logo plate, WordPress UI
 - `forbid_overlapping_text_blocks` / `forbid_giant_cropped_glyph` / `forbid_model_drawn_meme_template` on cover.png
 - Empty hallway + blinking_white_guy as **required** layout — REJECTED; hero must be theme-derived
+- `poster-composite-stamp.json` / `logo-composite-stamp.json` — **NOT required** on cover (factory overlay disabled)

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Apply standalone cover canvas (2048×1152) → cover.png + pad-clear + logo composite."""
+"""Apply standalone cover canvas (2048×1152) → cover.png (resize only; no factory overlay)."""
 
 from __future__ import annotations
 
@@ -123,7 +123,7 @@ def apply_standalone_cover(
         "mode": "standalone_16_9",
         "pad_clear_passes": pad_clear_passes,
         "pad_clear_method": "inpaint_bbox_plus_texture_clone_not_white_fill",
-        "logo_paste": "deferred_to_brand_logo_composite",
+        "logo_paste": "in_generation_not_factory_paste",
     }
     report_path = cover_dir / "cover-standalone-apply.json"
     report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

@@ -65,10 +65,10 @@ def _draw_people_scene_no_meme(path: Path) -> None:
 class TypeMemeStickerCoverGateTest(unittest.TestCase):
     def test_canon_type_meme_sticker_v3_locked(self) -> None:
         canon = json.loads((ROOT / "memory/cover/cover-canon.json").read_text(encoding="utf-8"))
-        self.assertEqual(canon["canon_id"], "dobry_dom_dzen_story_collage_v1")
+        self.assertEqual(canon["canon_id"], "dobry_dom_dzen_story_collage_v2")
         phone = canon["wow_cover_rules"]["no_element_overlap"]["cover_phone"]
-        self.assertEqual(phone.get("mode"), "phone_bar_factory_drawn")
-        self.assertTrue(phone.get("factory_post_composite"))
+        self.assertEqual(phone.get("mode"), "in_scene_generation")
+        self.assertFalse(phone.get("factory_post_composite"))
         self.assertEqual(canon["cover_generation"]["mode"], "standalone_16_9")
         meme = canon.get("meme_system") or {}
         self.assertIn("OPTIONAL", str(meme.get("cover", "")))
@@ -76,8 +76,8 @@ class TypeMemeStickerCoverGateTest(unittest.TestCase):
     def test_tenant_cover_wow_rules_type_meme_sticker_v3(self) -> None:
         tenant = json.loads((ROOT / "shared/tenant-config.json").read_text(encoding="utf-8"))
         wow = tenant.get("cover_wow_rules") or {}
-        self.assertEqual(wow.get("canon_id"), "dobry_dom_dzen_story_collage_v1")
-        self.assertTrue(wow.get("forbid_model_typography_in_generation"))
+        self.assertEqual(wow.get("canon_id"), "dobry_dom_dzen_story_collage_v2")
+        self.assertFalse(wow.get("forbid_model_typography_in_generation"))
         self.assertEqual(wow.get("cover_generation_mode"), "story_collage_16_9")
         self.assertFalse(wow.get("require_cover_meme_sticker"))
         self.assertTrue(wow.get("require_display_headline"))
@@ -133,7 +133,7 @@ class TypeMemeStickerCoverGateTest(unittest.TestCase):
             self.assertTrue(heuristic["phone_sticker"].get("detected"), heuristic)
             self.assertFalse(heuristic["people_heavy"].get("detected"), heuristic)
 
-    def test_standalone_cover_prompt_requires_headline_meme_phone(self) -> None:
+    def test_standalone_cover_prompt_requires_headline_phone_logo_in_generation(self) -> None:
         from excalibur_blog_cover_quad_prompt import build_standalone_cover_prompt
         from excalibur_blog_meme_cat_gate import load_meme_catalog
 
@@ -143,11 +143,11 @@ class TypeMemeStickerCoverGateTest(unittest.TestCase):
         manifest = {"cover_hook": "У двери — доплата за третьего", "cover_scene": "доплата за третьего гостя"}
         prompt = build_standalone_cover_prompt(manifest, style, design, meme_catalog=catalog, root=ROOT)
         lowered = prompt.casefold()
-        self.assertIn("zero cyrillic", lowered)
-        self.assertIn("zero meme", lowered)
-        self.assertNotIn("gold #dcc5a1", lowered)
-        self.assertNotIn("optional short cyrillic hook in scene", lowered)
-        self.assertNotIn("people in scene", lowered)
+        self.assertIn("cyrillic", lowered)
+        self.assertIn("993", prompt)
+        self.assertIn("добрый дом", lowered)
+        self.assertNotIn("zero cyrillic", lowered)
+        self.assertIn("no poster composite", lowered)
 
     def test_quad_slots_standalone_cover_spec(self) -> None:
         from excalibur_blog_quad_slots import (
@@ -249,11 +249,11 @@ class TypeMemeStickerCoverGateTest(unittest.TestCase):
         design = json.loads((ROOT / "memory/cover/cover-design-code.json").read_text(encoding="utf-8"))
         prompt = build_standalone_cover_prompt(manifest, style, design, meme_catalog=catalog, root=ROOT)
         self.assertIn("STORY COLLAGE", prompt)
-        self.assertIn("ZERO Cyrillic", prompt)
-        self.assertNotIn("в чате: можно с лапой", prompt)
+        self.assertIn("в чате: можно с лапой", prompt)
+        self.assertIn("у двери: +3000 ₽", prompt)
 
         contract = (ROOT / "shared/blog-cover-quad-canvas-contract.md").read_text(encoding="utf-8")
-        self.assertIn("dzen_story_collage_v1", contract)
+        self.assertIn("dzen_story_collage_v2", contract)
         self.assertIn("standalone", contract.lower())
         self.assertIn("cover-canvas.png", contract)
 

@@ -114,6 +114,10 @@ def load_tenant_logo_config(root: Path) -> dict[str, Any]:
 def uses_brand_logo_paste(cfg: dict[str, Any]) -> bool:
     mode = str(cfg.get("cover_mode") or "").strip().casefold()
     logo_mode = str(cfg.get("logo_mode") or mode).strip().casefold()
+    if mode in {"full_grsai_cover", "grsai_full_cover"}:
+        return False
+    if logo_mode in {"drawn_in_generation", "full_grsai_cover"}:
+        return False
     if logo_mode in {"reference_in_generation", "logo_reference_in_generation", "reference_in_gen"}:
         return False
     return mode in {"brand_logo_paste", "brand_logo_composite", "paste_png"}

@@ -759,22 +759,30 @@ SCENE_POSTER_COVER_BAN = (
     "collage of stickers covering headline, white/gray plaque under logo, model-drawn lockup"
 )
 
-DZEN_STORY_SCENE_BAN = (
-    "HARD STORY SCENE: ZERO Cyrillic, ZERO digits, ZERO phone number, ZERO meme, ZERO logo, ZERO stickers, "
-    "ZERO typography, ZERO headline, ZERO captions, ZERO UI text, ZERO peel-pill, ZERO information board. "
-    "Factory post-process adds Onest ~860 headline + brush highlight + yellow sticky punch + phone bar, "
-    "optional catalog meme PNG paste, then official alpha logo overlay AFTER generation."
+DZEN_STORY_FULL_GENERATION_RULE = (
+    "FULL GRSAI EDITORIAL: Cyrillic display type MUST be drawn IN this generation — "
+    "Onest ExtraBold ~860 black sans two-beat headline; yellow/peach brush highlight behind ONE keyword; "
+    "one yellow sticky-note punch; phone +7 (993) 574-83-22 (or +7 (993) 574-83-22) BIG and thumb-readable; "
+    "official «Добрый дом» lockup small top-right — green curtains + flower + terracotta name, "
+    "transparent integrated look, NO white/gray/beige plaque/square under logo. "
+    "NEVER +7 922 001 65 05. Factory ships PNG as-is — NO poster composite, NO logo PNG paste."
+)
+
+DZEN_STORY_GENERATION_BAN = (
+    "BAN: overlapping type layers, magnified letter crops, Trade Offer/Drake/Wojak template drawn by model, "
+    "white/gray/beige plaque or card under logo, empty hallway as default layout, phone pill/peel-pill, "
+    "WordPress UI, 2+ memes / meme soup, realtor phone +7 922, factory poster composite, factory logo PNG paste"
 )
 
 DZEN_STORY_COLLAGE_CANON = (
     "DZEN STORY COLLAGE: photoreal bright Comfort+ Tyumen daily-rental; slightly blurred apartment background; "
-    "split layout with light zone for factory type; palette warm milk/oatmeal + charcoal rgb(33,29,26) + "
+    "split layout photo + type; palette warm milk/oatmeal + charcoal rgb(33,29,26) + "
     "mustard brush rgb(255,210,80); BAN metallic gold/brass/3D gold/dark leather/empty hallway default"
 )
 
 DZEN_HEADLINE_TYPO_RULE = (
-    "Factory ONLY (not in generation): two-beat CASE Cyrillic — Onest ExtraBold ~860 black sans; "
-    "yellow/peach brush highlight behind ONE keyword; one yellow sticky-note punch — NOT Cormorant terracotta"
+    "Two-beat CASE Cyrillic IN generation — Onest ExtraBold ~860 black sans; "
+    "yellow/peach brush highlight behind ONE keyword; one yellow sticky-note punch"
 )
 
 SCENE_ONLY_GENERATION_BAN = (
@@ -891,9 +899,10 @@ def build_dzen_story_collage_cover_prompt(
     style: dict,
     design_code: dict,
     *,
+    cover_phone_cta: str = DEFAULT_COVER_PHONE_CTA,
     root: Path | None = None,
 ) -> str:
-    """Dzen story collage Grsai prompt — theme-derived hero scene; factory composites type overlay."""
+    """Dzen story collage Grsai prompt — full editorial cover IN one generation."""
     style_prefix = compact(
         style.get("cover_scene_only_prompt_prefix")
         or design_code.get("cover_scene_only_prompt_block")
@@ -901,6 +910,7 @@ def build_dzen_story_collage_cover_prompt(
         280,
     )
     case = build_case_cover_context(manifest)
+    phone = compact(str(manifest.get("cover_phone_cta") or cover_phone_cta), 32) or DEFAULT_COVER_PHONE_CTA
     hero_parts: list[str] = []
     if case["figure"]:
         hero_parts.append(f"story objects/props: {case['figure']}")
@@ -918,38 +928,65 @@ def build_dzen_story_collage_cover_prompt(
         )
     )
     scene_clause = (
-        f"Scene context (no text in image): {case['scene']}."
+        f"Scene context: {case['scene']}."
         if case["scene"]
         else (
             "Scene: bright photoreal Comfort+ Tyumen daily-rental apartment interior, "
             "slightly blurred background, story props in sharp focus — NOT empty cream hallway."
         )
     )
+    if case["headline_line1"] and case["headline_line2"]:
+        headline_clause = (
+            f"HEADLINE two beats EXACT Cyrillic — L1 «{case['headline_line1']}» + L2 «{case['headline_line2']}»; "
+            f"{DZEN_HEADLINE_TYPO_RULE}."
+        )
+    elif case["headline_line1"]:
+        headline_clause = (
+            f"HEADLINE L1 EXACT «{case['headline_line1']}»; invent matching L2 for THIS wound; "
+            f"{DZEN_HEADLINE_TYPO_RULE}."
+        )
+    elif case["h1"]:
+        headline_clause = (
+            f"HEADLINE from hook «{case['h1']}» — split into two beats; {DZEN_HEADLINE_TYPO_RULE}."
+        )
+    else:
+        headline_clause = (
+            f"HEADLINE two beats invented for THIS article wound; {DZEN_HEADLINE_TYPO_RULE}."
+        )
     highlight_clause = (
-        f"Factory will highlight keyword «{case['highlight']}» with brush stroke — do not draw text."
+        f"Brush highlight keyword EXACT «{case['highlight']}» behind ONE word in headline."
         if case["highlight"]
-        else "Leave contrast zone for factory brush highlight on ONE keyword."
+        else "Brush highlight behind ONE keyword in headline."
     )
     sticky_clause = (
-        f"Factory sticky punch will read «{case['quote']}» — do not draw sticky or Cyrillic."
+        f"Yellow sticky-note punch EXACT Cyrillic «{case['quote']}»."
         if case["quote"]
-        else "Leave top-left corner clear for factory yellow sticky-note punch."
+        else "One yellow sticky-note punch with short Cyrillic line unique to THIS case."
+    )
+    phone_clause = (
+        f"PHONE EXACT «{phone}» readable at Dzen thumb — in-scene tablo or bar, NOT peel-pill, NOT +7 922."
+    )
+    logo_clause = (
+        "LOGO lockup top-right 8-12%: official «Добрый дом» — green curtains + flower + terracotta serif name, "
+        "transparent integrated look, NO white/gray plaque; model MUST draw/integrate — NEVER send logo PNG as reference."
     )
     lines = [
         style_prefix,
-        "Standalone cover canvas 2048x1152 exact 16:9 full-bleed — STORY COLLAGE SCENE, NOT a type poster.",
-        DZEN_STORY_SCENE_BAN,
+        "Standalone cover canvas 2048x1152 exact 16:9 full-bleed — COMPLETE Dzen editorial thumbnail IN one generation.",
+        DZEN_STORY_FULL_GENERATION_RULE,
         DZEN_STORY_COLLAGE_CANON,
         hero_clause,
         scene_clause,
+        headline_clause,
         highlight_clause,
         sticky_clause,
+        phone_clause,
+        logo_clause,
         "PEOPLE: only when THIS case needs — guest stress face, hands with keys, silhouette; NOT group photo; NOT default zero-people hallway.",
-        "LIGHT ZONE: leave clean/blur area (left or right third) for factory Onest headline overlay.",
-        "TOP-RIGHT pad 8-12% — continuous scene texture only; " + TOP_RIGHT_PAD_SCENE_RULE.split(";")[0] + ".",
-        "NEVER send logo as Grsai reference — factory alpha PNG overlay AFTER poster composite.",
         SCENE_POSTER_COVER_BAN + ".",
-        "Grsai primary image API, non-VIP, max 2 gens; on exhaust neighbor-clone pad-clear TR + poster composite + logo paste.",
+        DZEN_STORY_GENERATION_BAN + ".",
+        "TEXT LANGUAGE LOCK: visible text RUSSIAN Cyrillic only; headline readable at Dzen thumb.",
+        "Grsai primary image API, non-VIP, max 2 gens; on exhaust pad-clear TR plaque + resize + ship.",
     ]
     return "\n".join(line for line in lines if line)
 
@@ -999,7 +1036,13 @@ def build_standalone_cover_prompt(
     root: Path | None = None,
 ) -> str:
     if root is not None and uses_dzen_story_collage_v1(root):
-        return build_dzen_story_collage_cover_prompt(manifest, style, design_code, root=root)
+        return build_dzen_story_collage_cover_prompt(
+            manifest,
+            style,
+            design_code,
+            cover_phone_cta=cover_phone_cta,
+            root=root,
+        )
     if root is not None and uses_scene_composite_v1(root):
         return build_scene_only_cover_prompt(manifest, style, design_code, root=root)
     style_prefix = compact(
@@ -1233,8 +1276,6 @@ def main() -> int:
         image_flow = resolve_image_flow(root)
         apply_script = (
             "python3 scripts/excalibur_blog_cover_standalone_apply.py "
-            f"--article-dir <article_dir> && "
-            "python3 scripts/excalibur_blog_cover_poster_composite.py "
             f"--article-dir <article_dir>"
             if standalone_cover
             else (

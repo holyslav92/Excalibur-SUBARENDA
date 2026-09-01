@@ -191,12 +191,12 @@ class WordstatGateTest(unittest.TestCase):
         tenant = json.loads((ROOT / "shared/tenant-config.json").read_text(encoding="utf-8"))
         wow = tenant.get("cover_wow_rules") or {}
         self.assertEqual(wow.get("cover_qa_mode"), "slim")
-        self.assertEqual(wow.get("canon_id"), "dobry_dom_dzen_story_collage_v1")
+        self.assertEqual(wow.get("canon_id"), "dobry_dom_dzen_story_collage_v2")
         self.assertEqual(wow.get("cover_generation_mode"), "story_collage_16_9")
-        self.assertEqual(wow.get("logo_mode"), "brand_logo_paste")
-        self.assertTrue(wow.get("forbid_logo_reference_in_generation"))
-        self.assertTrue(wow.get("cover_phone_factory_post_composite"))
-        self.assertFalse(wow.get("cover_phone_large_sticker_generation"))
+        self.assertEqual(wow.get("logo_mode"), "drawn_in_generation")
+        self.assertFalse(wow.get("forbid_logo_reference_in_generation"))
+        self.assertFalse(wow.get("cover_phone_factory_post_composite"))
+        self.assertTrue(wow.get("cover_phone_large_sticker_generation"))
         self.assertFalse(wow.get("require_cover_meme_sticker"))
         self.assertTrue(wow.get("vip_disabled"))
         self.assertEqual(wow.get("max_generation_attempts_per_canvas"), 2)
@@ -205,10 +205,10 @@ class WordstatGateTest(unittest.TestCase):
         self.assertEqual(wow.get("inline_logo_count_min"), 0)
         self.assertEqual(wow.get("inline_logo_count_max"), 0)
         self.assertIn("Excalibur-SUBARENDA", wow.get("tenant_scope", ""))
-        self.assertEqual(tenant.get("cover_mode"), "brand_logo_paste")
+        self.assertEqual(tenant.get("cover_mode"), "full_grsai_cover")
         img = tenant.get("image_generation") or {}
-        self.assertTrue(img.get("logo_never_as_generation_reference"))
-        self.assertTrue(wow.get("cover_phone_factory_post_composite"))
+        self.assertTrue(img.get("cover_factory_logo_paste_disabled"))
+        self.assertFalse(wow.get("cover_phone_factory_post_composite"))
 
     def test_visual_notes_dobry_dom(self) -> None:
         notes = json.loads(
@@ -223,18 +223,12 @@ class WordstatGateTest(unittest.TestCase):
         gate_src = (ROOT / "scripts/excalibur_blog_cover_qa_gate.py").read_text(encoding="utf-8")
         for key in (
             "forbid_wordpress_ui_in_art",
-            "forbid_ai_drawn_logo_cover",
-            "logo_composite_stamp_pass",
             "no_logo_plate_cover",
             "inline_no_logo_on_inlines",
             "cover_phone_993_large_sticker",
-            "forbid_phone_pill_post_composite",
-            "forbid_logo_overlaps_headline_phone",
-            "validate_cover_phone_and_overlap_gates",
-            "validate_cover_type_meme_sticker_gates",
-            "forbid_split_white_collage",
             "forbid_overlapping_text_blocks",
-            "poster_composite_stamp_pass",
+            "FULL_GRSAI_COVER_CHECKS",
+            "validate_full_grsai_cover_gates",
         ):
             self.assertIn(key, gate_src)
         for removed in (
@@ -253,10 +247,10 @@ class WordstatGateTest(unittest.TestCase):
 
     def test_cover_canon_tender_light_v1(self) -> None:
         canon = json.loads((ROOT / "memory/cover/cover-canon.json").read_text(encoding="utf-8"))
-        self.assertEqual(canon["canon_id"], "dobry_dom_dzen_story_collage_v1")
+        self.assertEqual(canon["canon_id"], "dobry_dom_dzen_story_collage_v2")
         phone = canon["wow_cover_rules"]["no_element_overlap"]["cover_phone"]
-        self.assertEqual(phone.get("mode"), "phone_bar_factory_drawn")
-        self.assertTrue(phone.get("factory_post_composite"))
+        self.assertEqual(phone.get("mode"), "in_scene_generation")
+        self.assertFalse(phone.get("factory_post_composite"))
         meme = canon.get("meme_system") or {}
         self.assertIn("OPTIONAL", str(meme.get("cover", "")))
 

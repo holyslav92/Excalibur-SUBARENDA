@@ -611,6 +611,45 @@ def is_bright_window_pad_false_positive(
     return 12.0 <= plate_std <= WHITE_PLATE_STD_MAX + 1.5
 
 
+def validate_full_grsai_cover_gates(article_dir: Path, root: Path) -> list[str]:
+    """Full Grsai cover QA: logo/phone/type IN generation — no factory paste stamps."""
+    errors: list[str] = []
+    from excalibur_blog_brand_logo_composite import IMAGE_NAMES
+
+    cover_dir = article_dir / "cover"
+    cover_path = cover_dir / "cover.png"
+    if not cover_path.is_file():
+        errors.append("cover/cover.png missing for full Grsai QA")
+        return errors
+
+    plate = detect_white_plate_in_pad(cover_path)
+    if plate.get("detected") and plate.get("plate_kind") in {"white", "gray", "beige"}:
+        if not is_bright_window_pad_false_positive(cover_path, lockup={"detected": True}, plate=plate):
+            errors.append(
+                "cover.png: logo plate/card under top-right pad "
+                f"(kind={plate.get('plate_kind')}, area={plate.get('plate_area')})"
+            )
+
+    pill = detect_phone_pill_post_composite(cover_path)
+    if pill.get("detected"):
+        errors.append(
+            "cover.png: factory post-composite phone pill detected — full Grsai mode forbids overlay"
+        )
+
+    for name in IMAGE_NAMES:
+        if name == "cover.png":
+            continue
+        live = cover_dir / name
+        if not live.is_file():
+            continue
+        result = detect_drawn_lockup_in_image(live)
+        if result["detected"]:
+            errors.append(
+                f"{name}: forbidden company logo on inline panel (score={result['score']})"
+            )
+    return errors
+
+
 def validate_article_logo_gates_slim(article_dir: Path, root: Path) -> list[str]:
     """Slim logo QA: cover pre-composite drawn-lockup + no-logo panels only; skip pixel/plate heuristics."""
     errors: list[str] = []

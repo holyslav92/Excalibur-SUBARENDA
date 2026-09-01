@@ -9,7 +9,7 @@ import sys
 from pathlib import Path
 
 
-# Slim gate (2026-08): beauty = agent judgment; brand lock = logo + phone + no plate + no WP UI.
+# Slim gate (2026-09): beauty = agent judgment; brand lock = phone + no plate + no WP UI.
 BRAND_LOGO_PASTE_CHECKS = (
     "logo_composite_stamp_pass",
     "cover_logo_pasted",
@@ -31,6 +31,20 @@ BRAND_LOGO_PASTE_CHECKS = (
     "forbid_giant_cropped_glyph",
     "forbid_model_drawn_meme_template",
     "poster_composite_stamp_pass",
+)
+
+FULL_GRSAI_COVER_CHECKS = (
+    "inline_no_logo_on_inlines",
+    "cover_phone_993_large_sticker",
+    "forbid_phone_pill_post_composite",
+    "forbid_922_phone",
+    "forbid_wordpress_ui_in_art",
+    "no_logo_plate_cover",
+    "require_display_headline",
+    "require_large_phone_sticker",
+    "forbid_overlapping_text_blocks",
+    "forbid_giant_cropped_glyph",
+    "forbid_model_drawn_meme_template",
 )
 
 LOGO_REFERENCE_CHECKS = (
@@ -96,9 +110,15 @@ def load_tenant_cover_mode(root: Path) -> dict:
         "logo_reference_in_generation",
         "reference_in_gen",
     }
+    full_grsai_cover = mode in {"full_grsai_cover", "grsai_full_cover"} or logo_mode in {
+        "drawn_in_generation",
+        "full_grsai_cover",
+    }
     return {
+        "full_grsai_cover": full_grsai_cover,
         "brand_logo_paste": mode in {"brand_logo_paste", "brand_logo_composite", "paste_png"}
-        and not logo_reference,
+        and not logo_reference
+        and not full_grsai_cover,
         "logo_reference_in_generation": logo_reference,
         "phone_display": str(channels.get("phone_display") or "+7 (993) 574-83-22").strip(),
     }
@@ -109,11 +129,12 @@ def validate_cover_qa(article_dir: Path, root: Path) -> dict:
     qa_path = article_dir / "cover" / "cover_qa.json"
     tenant_cover = load_tenant_cover_mode(root)
     brand_logo_paste = bool(tenant_cover.get("brand_logo_paste"))
+    full_grsai_cover = bool(tenant_cover.get("full_grsai_cover"))
     logo_reference = bool(tenant_cover.get("logo_reference_in_generation"))
 
     from excalibur_blog_identity_real import missing_identity_files
 
-    if not brand_logo_paste:
+    if not brand_logo_paste and not full_grsai_cover:
         missing_identity = missing_identity_files(root)
         if missing_identity:
             errors.append(f"identity-real missing: {', '.join(missing_identity)}")
@@ -138,7 +159,9 @@ def validate_cover_qa(article_dir: Path, root: Path) -> dict:
 
     checks = qa.get("checks") or {}
     required = list(COMMON_CHECKS)
-    if brand_logo_paste:
+    if full_grsai_cover:
+        required.extend(FULL_GRSAI_COVER_CHECKS)
+    elif brand_logo_paste:
         required.extend(BRAND_LOGO_PASTE_CHECKS)
     elif logo_reference:
         required.extend(LOGO_REFERENCE_CHECKS)
@@ -201,7 +224,22 @@ def validate_cover_qa(article_dir: Path, root: Path) -> dict:
             except ImportError:
                 errors.append("excalibur_blog_meme_cat_gate.py missing — cat-meme quota QA unavailable")
 
-    if brand_logo_paste:
+    if full_grsai_cover:
+        try:
+            from excalibur_blog_drawn_logo_gate import validate_full_grsai_cover_gates
+            from excalibur_blog_cover_collage_gate import (
+                validate_cover_anti_collage_gates,
+                validate_cover_type_meme_sticker_gates,
+            )
+
+            errors.extend(validate_full_grsai_cover_gates(article_dir, root))
+            cover_path = article_dir / "cover" / "cover.png"
+            if cover_path.is_file():
+                errors.extend(validate_cover_type_meme_sticker_gates(cover_path))
+                errors.extend(validate_cover_anti_collage_gates(cover_path))
+        except ImportError:
+            errors.append("excalibur_blog_drawn_logo_gate.py missing — full Grsai cover QA unavailable")
+    elif brand_logo_paste:
         try:
             from excalibur_blog_brand_logo_composite import validate_logo_stamp
 

@@ -1,10 +1,10 @@
 {
-  "canon_id": "dobry_dom_dzen_story_collage_v1",
+  "canon_id": "dobry_dom_dzen_story_collage_v2",
   "status": "locked",
   "tenant": "dobry-dom",
-  "label_ru": "Добрый дом — Dzen story collage + factory type overlay (Onest brush + sticky + phone), zero inline logos",
+  "label_ru": "Добрый дом — полная Grsai-обложка (тип + sticky + телефон + логотип в генерации), zero inline logos",
   "tenant_scope": "holyslav92/Excalibur-SUBARENDA ONLY. Never tymenrieltor.ru / Excalibur-2-Cloud rieltor identity.",
-  "replaces": "dobry_dom_scene_composite_v1",
+  "replaces": "dobry_dom_dzen_story_collage_v1",
   "cover_generation": {
     "mode": "standalone_16_9",
     "canvas_size": "2048x1152",
@@ -19,37 +19,39 @@
     "model_policy": "primary_non_vip_only",
     "vip_disabled": true,
     "max_generation_attempts": 2,
-    "on_exhaust": "pad_clear_top_right + poster_composite + factory_logo_paste + ship"
+    "on_exhaust": "pad_clear_top_right + resize + ship"
   },
   "dzen_story_collage_rules": {
     "cover_qa_check": "dzen_story_collage_editorial",
-    "philosophy": "Grsai generates photoreal Dzen click-thumbnail STORY scene (hero varies by article theme). Factory post-process: Onest ~860 black two-beat headline + yellow/peach brush highlight on ONE keyword, ONE yellow sticky-note punch, phone bar +7 (993) 574-83-22, optional catalog meme PNG paste, official alpha logo overlay AFTER — never as model reference.",
+    "philosophy": "ONE Grsai primary image API generation (16:9, ≥2048×1152, non-VIP, max 2 gens) produces the COMPLETE cover: photoreal Dzen story-collage scene + Cyrillic two-beat H1 with yellow/peach brush on ONE keyword + one yellow sticky punch + phone +7 (993) 574-83-22 + official «Добрый дом» lockup small top-right (curtains + flower + terracotta name, transparent look, NO white/gray plaque). Factory ships PNG as-is (resize/thumb only) — NO poster composite, NO logo PNG paste.",
     "generation_must": [
       "photoreal bright Comfort+ Tyumen daily-rental apartment/context matching THIS case",
       "HERO VARIES BY THEME — person with emotion OR story objects OR key detail (barrier, keys, router, ticket, bowl, door, laptop); NEVER default empty hallway; NEVER always same meme",
-      "leave light/blur zone for factory type overlay (split text-left / photo-right OR hero-left / type-right)",
-      "ZERO Cyrillic, digits, meme, logo, phone, stickers, typography in generation",
-      "empty clear TOP-RIGHT pad 8-12% for factory logo paste",
+      "Cyrillic two-beat display headline IN generation — Onest ExtraBold ~860 black sans; yellow/peach brush highlight behind ONE keyword",
+      "one yellow sticky-note punch line IN generation (short Cyrillic)",
+      "phone +7 (993) 574-83-22 (or +7 (993) 574-83-22) readable IN generation — NEVER +7 922 001 65 05",
+      "official «Добрый дом» lockup IN generation small top-right — green curtains + flower + terracotta name, transparent integrated look, NO white/gray plaque/square under it",
       "high-key bright Comfort+ Tyumen mood — not gold luxury"
     ],
     "generation_must_not": [
       "empty cream hallway as default layout",
       "always catalog meme paste as sole hero",
       "always blinking_white_guy or roll_safe as default",
-      "magazine empty interior poster with type on top"
+      "magazine empty interior poster with type on top",
+      "white/gray/beige plaque or card under logo lockup",
+      "factory poster composite or logo PNG paste after generation"
     ],
     "factory_post_process": [
-      "scripts/excalibur_blog_cover_poster_composite.py — Onest headline + brush highlight + sticky note + phone bar + optional meme paste",
-      "scripts/excalibur_blog_brand_logo_composite.py — official alpha PNG top-right AFTER poster composite"
+      "scripts/excalibur_blog_cover_standalone_apply.py — resize 2048×1152 → cover.png 1200×675 only"
     ],
     "type_overlay_recipe": {
-      "headline_font": "Onest ExtraBold ~860 black sans",
+      "headline_font": "Onest ExtraBold ~860 black sans — drawn IN generation",
       "beats": 2,
-      "brush_highlight": "yellow/peach behind ONE keyword or figure",
-      "sticky_note": "one yellow square with short punch (factory only)",
+      "brush_highlight": "yellow/peach behind ONE keyword or figure — IN generation",
+      "sticky_note": "one yellow square with short punch — IN generation",
       "phone": "+7 (993) 574-83-22",
       "forbidden_phone": "+7 922 001 65 05",
-      "logo": "alpha overlay top-right AFTER gen, no white plaque"
+      "logo": "model-drawn integrated lockup top-right — NO factory alpha paste"
     },
     "forbidden_on_cover": [
       "overlapping type layers",
@@ -57,25 +59,24 @@
       "Trade Offer / Drake / Wojak drawn by model",
       "collage of stickers covering headline",
       "white/gray plaque under logo",
-      "model-drawn lockup",
       "2+ large overlapping text blocks",
       "giant cropped glyph >12% canvas",
       "TRADE OFFER template in generation",
       "2+ memes / meme soup",
-      "model-drawn logo",
       "wordpress UI",
-      "empty hallway + pasted meme as required layout"
+      "empty hallway + pasted meme as required layout",
+      "factory poster composite overlay",
+      "factory logo PNG paste after generation"
     ],
     "anti_collage_gates": [
       "forbid_overlapping_text_blocks",
       "forbid_giant_cropped_glyph",
-      "forbid_model_drawn_meme_template",
-      "poster_composite_stamp_pass"
+      "forbid_model_drawn_meme_template"
     ]
   },
   "type_meme_sticker_rules": {
     "cover_qa_check": "type_meme_sticker_editorial",
-    "philosophy": "Legacy v3 type poster rules — superseded on COVER by dzen_story_collage_v1; kept for inline reference.",
+    "philosophy": "Legacy v3 type poster rules — superseded on COVER by dzen_story_collage_v2; kept for inline reference.",
     "must": [
       "full-bleed 16:9 designed magazine poster",
       "spectacular Cyrillic display headline 2-8 words as visual hero — type is the star",
@@ -83,7 +84,6 @@
       "exactly ONE named meme from memory/cover/meme-top100.json picked by topic-tag overlap; skip last 8 used ids (memory/cover/meme-used.json)",
       "LARGE hotel-lobby information-board phone +7 (993) 574-83-22 — BIG, Dzen-thumb readable",
       "default ZERO people — at most tiny silhouette/hands/back-of-head if case absolutely needs",
-      "empty clear TOP-RIGHT pad 8-12% for factory logo paste",
       "high-key bright Comfort+ Tyumen mood, on-theme of THIS case"
     ],
     "forbidden_on_cover": [
@@ -101,7 +101,6 @@
       "split white-panel + photo layout",
       "beige gray white phone pill",
       "post-composite phone overlay chip",
-      "model-drawn logo",
       "house-with-heart lockup",
       "white gray plaque under logo",
       "empty stock room",
@@ -132,22 +131,22 @@
         "headline",
         "phone_sticker",
         "meme_sticker",
-        "logo_pad",
+        "logo_lockup",
         "sticky_note"
       ],
-      "logo_pad": {
+      "logo_lockup": {
         "corner": "top_right",
-        "reserved_empty_in_generation": true,
-        "factory_paste_png": "memory/cover/assets/brand/logo-dobry-dom.png",
+        "drawn_in_generation": true,
+        "factory_paste_png": false,
         "width_fraction": "8-12%",
-        "one_logo_per_image": true
+        "one_logo_per_image": true,
+        "no_plate_under_logo": true
       },
       "cover_phone": {
         "display": "+7 (993) 574-83-22",
-        "mode": "phone_bar_factory_drawn",
-        "in_scene_only": false,
-        "factory_post_composite": true,
-        "post_composite_bottom_left": false,
+        "mode": "in_scene_generation",
+        "in_scene_only": true,
+        "factory_post_composite": false,
         "never_in_logo_pad": true,
         "cover_only": true,
         "min_thumb_readable": true,
@@ -192,26 +191,25 @@
     "effects": ["soft natural daylight", "clean white balance", "slightly blurred apartment background"],
     "forbidden": ["dark cinematic", "twilight mood panel", "low-key noir", "moody black background", "gold luxury lobby"]
   },
-  "brand_logo_paste": {
-    "mode": "paste_png_alpha",
-    "cover_mode": "brand_logo_paste",
+  "brand_logo": {
+    "mode": "drawn_in_generation",
+    "cover_mode": "full_grsai_cover",
     "skip_human_host": true,
-    "logo_asset": "memory/cover/assets/brand/logo-dobry-dom.png",
-    "forbid_ai_drawn_logo": true,
+    "logo_reference_asset": "memory/cover/assets/brand/logo-dobry-dom.png",
+    "logo_reference_required": false,
+    "forbid_factory_logo_paste": true,
     "logo_corner": "top_right",
     "logo_width_fraction": "8-12%",
     "cover_always_one_logo": true,
     "inline_logo_count": "0 of 7 — cover only",
     "inline_logo_slots_default": [],
-    "cover_phone_large_sticker": "+7 (993) 574-83-22",
-    "cover_phone_post_composite": true,
-    "poster_composite_script": "scripts/excalibur_blog_cover_poster_composite.py",
-    "forbid_cover_phone_post_composite_pill": true,
+    "cover_phone_large_in_generation": "+7 (993) 574-83-22",
+    "cover_phone_post_composite": false,
     "forbidden_phone": "+7 922 001 65 05",
-    "composite_script": "scripts/excalibur_blog_brand_logo_composite.py"
+    "forbid_poster_composite": true
   },
   "meme_system": {
-    "cover": "OPTIONAL — at most ONE catalog meme PNG pasted by poster composite when manifest picks id; hero is theme-derived scene, NOT meme-by-default",
+    "cover": "OPTIONAL — at most ONE meme when manifest picks id; hero is theme-derived scene, NOT meme-by-default; drawn IN generation when used",
     "rotation": {
       "window": 8,
       "log": "memory/cover/meme-used.json",
@@ -237,7 +235,7 @@
   },
   "pipeline": {
     "primary": "grsai",
-    "cover": "standalone story collage scene 2048x1152 → poster composite → cover.png 1200x675",
+    "cover": "standalone full Grsai editorial 2048x1152 → cover.png 1200x675 (resize only)",
     "inlines": "2x quad canvas 2048x1152 (canvas1: inline_1..4, canvas2: inline_5..7 + quiet pad)",
     "resolution": "2K",
     "canvases": 3,
@@ -288,18 +286,17 @@
       "forbid_overlapping_text_blocks",
       "forbid_giant_cropped_glyph",
       "forbid_model_drawn_meme_template",
-      "poster_composite_stamp_pass",
       "inline_no_logo_on_inlines",
       "forbid_multiple_logos_per_image",
-      "logo_top_right_fixed",
+      "logo_top_right_integrated",
       "max_one_cat_meme_slot"
     ]
   },
   "owner_visual_polish": {
     "cover_phone_required": "+7 (993) 574-83-22",
     "cover_phone_forbidden": "+7 922 001 65 05",
-    "cover_style": "Dzen story collage scene + factory Onest type overlay with brush highlight + sticky note + phone bar; NOT empty hallway poster",
-    "typography": "Factory post-process only: Onest ~860 black two-beat headline + yellow/peach brush on ONE keyword + yellow sticky punch; never model-drawn overlapping type",
+    "cover_style": "Dzen story collage — full Grsai editorial thumbnail with type, sticky, phone, logo IN generation; NOT empty hallway poster; NOT factory overlay",
+    "typography": "Onest ~860 black two-beat headline + yellow/peach brush on ONE keyword + yellow sticky punch — all IN Grsai generation",
     "inline_density": "informational labels per panel; utility test still required; meme optional on inlines; max 1 cat/article across cover+inlines"
   }
 }
