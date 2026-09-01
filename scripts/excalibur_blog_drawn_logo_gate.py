@@ -614,7 +614,7 @@ def is_bright_window_pad_false_positive(
 def validate_full_grsai_cover_gates(article_dir: Path, root: Path) -> list[str]:
     """Full Grsai cover QA: type/phone/sticky in gen; official logo via factory paste pixel-faithful (covers model redraw)."""
     errors: list[str] = []
-    from excalibur_blog_brand_logo_composite import IMAGE_NAMES
+    from excalibur_blog_brand_logo_composite import _image_names_for_article
 
     cover_dir = article_dir / "cover"
     cover_path = cover_dir / "cover.png"
@@ -622,21 +622,25 @@ def validate_full_grsai_cover_gates(article_dir: Path, root: Path) -> list[str]:
         errors.append("cover/cover.png missing for full Grsai QA")
         return errors
 
-    plate = detect_white_plate_in_pad(cover_path)
-    if plate.get("detected") and plate.get("plate_kind") in {"white", "gray", "beige"}:
-        if not is_bright_window_pad_false_positive(cover_path, lockup={"detected": True}, plate=plate):
+    from excalibur_blog_quad_slots import uses_one_2k_slice4
+
+    slice4 = uses_one_2k_slice4(root)
+    if not slice4:
+        plate = detect_white_plate_in_pad(cover_path)
+        if plate.get("detected") and plate.get("plate_kind") in {"white", "gray", "beige"}:
+            if not is_bright_window_pad_false_positive(cover_path, lockup={"detected": True}, plate=plate):
+                errors.append(
+                    "cover.png: logo plate/card under top-right pad "
+                    f"(kind={plate.get('plate_kind')}, area={plate.get('plate_area')})"
+                )
+
+        pill = detect_phone_pill_post_composite(cover_path)
+        if pill.get("detected"):
             errors.append(
-                "cover.png: logo plate/card under top-right pad "
-                f"(kind={plate.get('plate_kind')}, area={plate.get('plate_area')})"
+                "cover.png: factory post-composite phone pill detected — type/phone must stay in Grsai gen"
             )
 
-    pill = detect_phone_pill_post_composite(cover_path)
-    if pill.get("detected"):
-        errors.append(
-            "cover.png: factory post-composite phone pill detected — type/phone must stay in Grsai gen"
-        )
-
-    for name in IMAGE_NAMES:
+    for name in _image_names_for_article(article_dir, root):
         if name == "cover.png":
             continue
         live = cover_dir / name
@@ -665,7 +669,7 @@ def validate_article_logo_gates_slim(article_dir: Path, root: Path) -> list[str]
         return errors
 
     cover_mode = str(cfg.get("cover_mode") or "").strip().casefold()
-    full_grsai = cover_mode in {"full_grsai_cover", "grsai_full_cover"}
+    full_grsai = cover_mode in {"full_grsai_cover", "grsai_full_cover", "one_2k_slice4"}
 
     cover_dir = article_dir / "cover"
     pre_dir = cover_dir / "pre-composite"

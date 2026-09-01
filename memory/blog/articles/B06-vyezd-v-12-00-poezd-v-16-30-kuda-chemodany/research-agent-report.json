@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "topic_id": "B06",
+  "slug": "vyezd-v-12-00-poezd-v-16-30-kuda-chemodany",
+  "research_date": "2026-09-01",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "sutochno.ru — ранний заезд и поздний выезд",
+    "source_type": "platform_guide",
+    "url": "https://sutochno.ru/sj/ranniy-zaezd-i-pozdniy-vyezd",
+    "accessed_at": "2026-09-01",
+    "note": "Стандарт 14:00/12:00; гибкость по согласованию; фильтры ранний заезд/поздний отъезд."
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "Отраслевой стандарт времени заезда/выезда",
+    "verified_claims": 2,
+    "entities_checked": ["sutochno"],
+    "official_sources": [
+      {
+        "url": "https://sutochno.ru/sj/ranniy-zaezd-i-pozdniy-vyezd",
+        "accessed_at": "2026-09-01",
+        "verified": [
+          "стандарт заезд ~14:00 выезд до 12:00",
+          "рекомендация указывать точное время в брони"
+        ]
+      }
+    ]
+  },
+  "wordstat": {
+    "p0_phrase": "квартиры посуточно тюмень",
+    "p0_volume_tyumen": 5446,
+    "p0_volume_ru": 44927
+  },
+  "klyshin_hook": "checkout_train_bags"
+}

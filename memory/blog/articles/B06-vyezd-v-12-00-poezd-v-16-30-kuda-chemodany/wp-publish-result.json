@@ -1,0 +1,27 @@
+{
+  "slug": "vyezd-v-12-00-poezd-v-16-30-kuda-chemodany",
+  "topic_id": "B06",
+  "permalink": "{{SITE_BASE}}/blog/vyezd-v-12-00-poezd-v-16-30-kuda-chemodany/",
+  "publish_method": "ftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B06-vyezd-v-12-00-poezd-v-16-30-kuda-chemodany/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 843964,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4274 slug=vyezd-v-12-00-poezd-v-16-30-kuda-chemodany\nOK categories=101,106\nOK dzen_yzen_meta=1\nOK featured_image=4275\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4276 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/vyezd-v-12-00-poezd-v-16-30-kuda-chemodany-inline-01.png\nOK inline_alt=4276\nOK inline_caption=4276\nOK inline_description=4276\nOK inline_image_upload=4277 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/vyezd-v-12-00-poezd-v-16-30-kuda-chemodany-inline-02.png\nOK inline_alt=4277\nOK inline_caption=4277\nOK inline_description=4277\nOK inline_image_upload=4278 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/vyezd-v-12-00-poezd-v-16-30-kuda-chemodany-inline-03.png\nOK inline_alt=4278\nOK inline_caption=4278\nOK inline_description=4278\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/vyezd-v-12-00-poezd-v-16-30-kuda-chemodany/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 3,
+    "expected_inline": 3,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/vyezd-v-12-00-poezd-v-16-30-kuda-chemodany/",
+    "errors": []
+  }
+}

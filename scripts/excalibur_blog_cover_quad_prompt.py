@@ -1208,8 +1208,12 @@ def main() -> int:
     cover_phone_cta = cover_phone_cta_for_manifest(manifest, root)
 
     inline_count = inline_count_from_manifest(manifest)
-    scene_v2 = uses_scene_poster_v2(root)
-    canvas_specs = all_canvas_specs(inline_count) if scene_v2 else canvas_specs_for_inline_count(inline_count)
+    if uses_one_2k_slice4(root):
+        canvas_specs = all_canvas_specs(inline_count)
+    elif uses_scene_poster_v2(root):
+        canvas_specs = all_canvas_specs(inline_count)
+    else:
+        canvas_specs = canvas_specs_for_inline_count(inline_count)
     if args.canvas_index:
         canvas_specs = [s for s in canvas_specs if s["index"] == args.canvas_index]
         if not canvas_specs:

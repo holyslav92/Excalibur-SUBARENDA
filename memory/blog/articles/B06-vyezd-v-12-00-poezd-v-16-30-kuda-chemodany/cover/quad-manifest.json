@@ -1,0 +1,95 @@
+{
+  "topic_id": "B06",
+  "slug": "vyezd-v-12-00-poezd-v-16-30-kuda-chemodany",
+  "layout": "2x2",
+  "pipeline": "one_2k_slice4_v1",
+  "inline_count": 3,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-slice4.png",
+      "batch_file": "cover/slice4-mcp-batch.json",
+      "prompt_file": "cover/slice4-mcp-prompt.txt",
+      "result_file": "cover/slice4-mcp-result.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true,
+      "slice4_grid": true
+    }
+  ],
+  "style_preset": "dobry_dom_one_2k_slice4",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "Поезд вечером — куда чемоданы",
+  "cover_hook_highlight": "чемоданы",
+  "cover_headline_line1": "поезд вечером —",
+  "cover_headline_line2": "куда чемоданы",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "снять квартиру посуточно в тюмени"
+  ],
+  "logo_paste_inline_slots": [],
+  "cover_motifs": {
+    "composition": "2x2 grid: cover TL suitcases+phone tablo, TR checkout clock, BL late fee card, BR hallway no camera",
+    "location": "bright Comfort+ Tyumen apartment summer daylight, warm milk palette",
+    "meme": "none",
+    "prop_set": "two suitcases, train ticket 16:30, phone message 12:00 checkout, +2100 rub note",
+    "sticker_set": "квартиры посуточно тюмень",
+    "joke": "guest between key handoff and train with nowhere for bags",
+    "headline_line1": "поезд вечером —",
+    "headline_line2": "куда чемоданы",
+    "hero_type": "checkout_luggage_gap"
+  },
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Гость с двумя чемоданами у двери квартиры посуточно в Тюмени, на табло телефон +7 993 574-83-22",
+      "scene_hint": "Bright Tyumen Comfort+ entryway, two suitcases, Cyrillic headline about evening train and luggage, phone infoboard +7 993 574-83-22, top-right pad empty for logo paste",
+      "sticky": "Спросите до брони"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Полдень — это про уборку, а не про ваш поезд",
+      "visual_type": "comparison_table_ui",
+      "scene_hint": "Split panel: 12:00 checkout vs 16:30 train ticket, cleaning cart arriving",
+      "alt": "Сравнение времени выезда в полдень и поезда вечером при посуточной аренде",
+      "labels": [
+        "выезд в полдень",
+        "уборка уже едет",
+        "четыре часа до поезда"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "2 100 ₽ — не штраф. Вопрос в том, когда появляется цена",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Price card +2100 rub for late checkout shown on phone screen before key return",
+      "alt": "Доплата две тысячи сто рублей за поздний выезд при посуточной аренде",
+      "labels": [
+        "доплата за выезд",
+        "две тысячи сто",
+        "называют перед ключом"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Подъезд — не камера хранения",
+      "visual_type": "checklist_board",
+      "scene_hint": "Apartment stairwell without locker, suitcases on floor — unsafe storage",
+      "alt": "Подъезд без камеры хранения — ненадёжное место для чемоданов",
+      "labels": [
+        "подъезд без камеры",
+        "вокзал триста пятьдесят",
+        "вещи не на улице"
+      ]
+    }
+  },
+  "cover_keys_ru": []
+}
