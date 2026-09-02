@@ -1,0 +1,27 @@
+{
+  "slug": "kvartira-posutochno-tihij-dvor-v-obyavlenii-za-oknom-strojka-v-sem-utra",
+  "topic_id": "B08",
+  "permalink": "{{SITE_BASE}}/blog/kvartira-posutochno-tihij-dvor-v-obyavlenii-za-oknom-strojka-v-sem-utra/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B08-kvartira-posutochno-tihij-dvor-v-obyavlenii-za-oknom-strojka-v-sem-utra/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1055456,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4322 slug=kvartira-posutochno-tihij-dvor-v-obyavlenii-za-oknom-strojka-v-sem-utra\nOK categories=101,106\nOK dzen_yzen_meta=1\nOK featured_image=4323\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4324 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kvartira-posutochno-tihij-dvor-v-obyavlenii-za-oknom-strojka-v-sem-utra-inline-01.png\nOK inline_alt=4324\nOK inline_caption=4324\nOK inline_description=4324\nOK inline_image_upload=4325 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kvartira-posutochno-tihij-dvor-v-obyavlenii-za-oknom-strojka-v-sem-utra-inline-02.png\nOK inline_alt=4325\nOK inline_caption=4325\nOK inline_description=4325\nOK inline_image_upload=4326 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kvartira-posutochno-tihij-dvor-v-obyavlenii-za-oknom-strojka-v-sem-utra-inline-03.png\nOK inline_alt=4326\nOK inline_caption=4326\nOK inline_description=4326\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/kvartira-posutochno-tihij-dvor-v-obyavlenii-za-oknom-strojka-v-sem-utra/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 3,
+    "expected_inline": 3,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/kvartira-posutochno-tihij-dvor-v-obyavlenii-za-oknom-strojka-v-sem-utra/",
+    "errors": []
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/kvartira-posutochno-tihij-dvor-v-obyavlenii-za-oknom-strojka-v-sem-utra/#article",
+  "url": "{{SITE_BASE}}/blog/kvartira-posutochno-tihij-dvor-v-obyavlenii-za-oknom-strojka-v-sem-utra/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/kvartira-posutochno-tihij-dvor-v-obyavlenii-za-oknom-strojka-v-sem-utra/"
+  },
+  "headline": "Написали «тихий двор». Утром перфоратор — 3 часа сна",
+  "description": "Забронировали на две ночи квартиру с «тихим двором», а на рассвете во дворе заговорил перфоратор. Хозяин развёл руками: стройка временная. Что проверить в панорамах Maps до оплаты, чтобы не слушать ремонт вместо сна.",
+  "datePublished": "2026-09-02",
+  "dateModified": "2026-09-02",
+  "inLanguage": "ru-RU",
+  "author": {
+    "@type": "Organization",
+    "@id": "{{SITE_BASE}}/#organization",
+    "name": "Добрый дом",
+    "jobTitle": "Апартаменты и квартиры посуточно в Тюмени",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ],
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "{{SITE_BASE}}/#organization",
+    "name": "Добрый дом",
+    "jobTitle": "Апартаменты и квартиры посуточно в Тюмени",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ],
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    }
+  }
+}

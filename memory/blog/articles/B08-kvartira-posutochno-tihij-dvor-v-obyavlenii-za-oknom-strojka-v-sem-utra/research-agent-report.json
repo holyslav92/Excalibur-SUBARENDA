@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "topic_id": "B08",
+  "slug": "kvartira-posutochno-tihij-dvor-v-obyavlenii-za-oknom-strojka-v-sem-utra",
+  "research_date": "2026-09-02",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Klyshin Telegram Aug 2026 (сначала проверка, потом аванс) + Finuslugi/urprofy о шуме стройки + SERP паттерн «тихий двор»",
+    "source_type": "community",
+    "urls": [
+      "https://t.me/s/klyshin_A",
+      "https://finuslugi.ru/navigator/news/novosti_bankovskoj_otrasli/yurist_rasskazala_kuda_pozhalovatsya_na_shum_za_oknom",
+      "https://www.urprofy.ru/vopros-yuristu/kuda-zhalovatsya-pri-shume-ot-remonta"
+    ],
+    "accessed_at": "2026-09-02",
+    "note": "Klyshin — мораль проверки до оплаты; шум/стройка — справочные нормы, не юр-гайд."
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "Нет банковских/гос тарифов; СанПиН — справочно",
+    "verified_claims": 0,
+    "entities_checked": [],
+    "errors": []
+  },
+  "wordstat": {
+    "status": "PASS",
+    "observations": [
+      {"phrase": "квартиры посуточно тюмень", "volume": 5363, "region": "55+11176"},
+      {"phrase": "квартиры посуточно тюмень", "volume": 11916, "region": "225"},
+      {"phrase": "снять квартиру посуточно в тюмени", "volume": 1696, "region": "55+11176"},
+      {"phrase": "аренда квартиры тюмень центр", "volume": 13, "region": "55+11176"},
+      {"phrase": "шум соседи", "volume": 183, "region": "55"}
+    ]
+  },
+  "practical_facts_count": 12,
+  "source_count": 8,
+  "limitations": [
+    "Составной кейс — не реальный адрес/объект.",
+    "СанПиН — справка, не юридическая инструкция гостю.",
+    "Klyshin-сигнал — аналогия порядка проверки, не факт о тюменских дворах."
+  ],
+  "writer_safe_urls": [
+    "https://t.me/Dobriy_dom_72",
+    "https://t.me/Dobriy_dom_Tyumen",
+    "https://max.ru/id660300569233_biz",
+    "https://добрыйдом-72.рф/booking/",
+    "https://добрыйдом-72.рф/",
+    "https://finuslugi.ru/navigator/news/novosti_bankovskoj_otrasli/yurist_rasskazala_kuda_pozhalovatsya_na_shum_za_oknom",
+    "https://www.urprofy.ru/vopros-yuristu/kuda-zhalovatsya-pri-shume-ot-remonta"
+  ]
+}

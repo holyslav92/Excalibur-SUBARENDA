@@ -75,6 +75,17 @@
         "prop_set": "empty drawers, one glass, two forks, worn frying pan, printed listing",
         "joke": "checkbox says kitchen exists but drawer holds one fork"
       }
+    },
+    {
+      "date": "2026-09-02",
+      "topic_id": "B08",
+      "slug": "kvartira-posutochno-tihij-dvor-v-obyavlenii-za-oknom-strojka-v-sem-utra",
+      "motifs": {
+        "composition": "guest at bedroom window + construction courtyard visible",
+        "location": "early september sunny tyumen apartment, no winter",
+        "meme": "cat_skeptic_maps_one_frame",
+        "prop_set": "perforator noise implied, scaffolding outside, printed listing тихий двор"
+      }
     }
   ]
 }
