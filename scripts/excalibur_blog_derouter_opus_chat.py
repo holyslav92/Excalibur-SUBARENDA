@@ -170,11 +170,27 @@ def is_model_not_found_error(exc: Exception) -> bool:
     return False
 
 
-def resolve_model(role: str, override: str | None, root: Path) -> tuple[str, str]:
-    """Возвращает (model_id, tier). Источник истины — tenant-config role map."""
+def resolve_model(
+    role: str,
+    override: str | None,
+    root: Path,
+    *,
+    one_shot: bool = False,
+) -> tuple[str, str]:
+    """Возвращает (model_id, tier). Источник истины — tenant-config role map.
+
+    ``one_shot=True`` (флаг ``--one-shot-model``) — явный разовый override владельца
+    для одной статьи: точный id без проверки семейства tier и без alias-fallback.
+    Дефолты tenant-config / env не трогаются.
+    """
     writing = load_writing_model_config(root)
     validate_writing_model_opus_writer_only(writing)
     tier = tier_for_role(role, writing)
+    if one_shot:
+        model = (override or "").strip()
+        if not model:
+            raise DerouterChatError("--one-shot-model requires a non-empty model id")
+        return model, tier
     tier_block = tier_config(writing, tier)
     config_model = str(tier_block.get("model") or "").strip()
     model_env = str(tier_block.get("model_env") or "").strip()
@@ -340,8 +356,10 @@ def call_derouter_with_aliases(
     model: str,
     timeout: int,
     max_retries: int,
+    exact_model_only: bool = False,
 ) -> tuple[str, dict[str, Any], str, str]:
-    aliases = model_aliases_for_tier(tier, model)
+    # one-shot override: только указанный id, без тихого отката на Opus/Terra
+    aliases = [model] if exact_model_only else model_aliases_for_tier(tier, model)
     last_error: Exception | None = None
     for candidate in aliases:
         try:
@@ -397,6 +415,7 @@ def write_stamp(
     endpoint: str,
     response: dict[str, Any],
     user_prompt_preview: str,
+    one_shot_override: bool = False,
 ) -> None:
     usage = response.get("usage") if isinstance(response.get("usage"), dict) else {}
     stamp: dict[str, Any] = {
@@ -412,6 +431,9 @@ def write_stamp(
         "user_prompt_chars": len(user_prompt_preview),
         "contract": "shared/derouter-opus-brain-contract.md",
     }
+    if one_shot_override:
+        stamp["model_override"] = "one_shot_owner_override"
+        stamp["tier_default_model_unchanged"] = True
     stamp_path.parent.mkdir(parents=True, exist_ok=True)
     stamp_path.write_text(json.dumps(stamp, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
@@ -547,7 +569,17 @@ def run_chat(args: argparse.Namespace) -> int:
         print("SMOKE FAIL")
         return 1
 
-    model, tier = resolve_model(role, args.model, root)
+    one_shot_model = (getattr(args, "one_shot_model", None) or "").strip()
+    if one_shot_model and args.model:
+        raise DerouterChatError("use either --model or --one-shot-model, not both")
+    model, tier = resolve_model(
+        role,
+        one_shot_model or args.model,
+        root,
+        one_shot=bool(one_shot_model),
+    )
+    if one_shot_model:
+        print(f"NOTE one-shot owner override: role={role} model={model} (tier {tier} default untouched)")
 
     system_prompt = load_text_arg(
         inline=args.system_prompt, path=args.system_file, label="system-prompt"
@@ -564,6 +596,7 @@ def run_chat(args: argparse.Namespace) -> int:
             model=model,
             timeout=timeout,
             max_retries=DEFAULT_MAX_RETRIES,
+            exact_model_only=bool(one_shot_model),
         )
     except DerouterChatError as exc:
         print_blocker(role, str(exc))
@@ -588,6 +621,7 @@ def run_chat(args: argparse.Namespace) -> int:
         endpoint=endpoint,
         response=response,
         user_prompt_preview=user_prompt[:200],
+        one_shot_override=bool(one_shot_model),
     )
     print(f"STAMP {stamp_path.relative_to(root) if stamp_path.is_relative_to(root) else stamp_path}")
 
@@ -625,6 +659,13 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--model",
         help="Override model id (must match role tier from tenant-config)",
+    )
+    parser.add_argument(
+        "--one-shot-model",
+        help=(
+            "Разовый override владельца для одной статьи: точный id из каталога Derouter "
+            "без проверки семейства tier и без alias-fallback; дефолты tenant-config не меняются"
+        ),
     )
     return parser
 

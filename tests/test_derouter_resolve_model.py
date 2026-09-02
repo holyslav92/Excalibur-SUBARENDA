@@ -124,6 +124,48 @@ class DerouterResolveModelTests(unittest.TestCase):
                 self.assertIn("opus", model.lower())
 
 
+class OneShotOwnerOverrideTests(unittest.TestCase):
+    def test_one_shot_bypasses_family_check_but_not_defaults(self) -> None:
+        from scripts.excalibur_blog_derouter_opus_chat import (
+            DerouterChatError,
+            resolve_model,
+        )
+
+        # Разовый override: точный id без проверки семейства tier
+        model, tier = resolve_model("writer", "claude-fable-5-1", ROOT, one_shot=True)
+        self.assertEqual((model, tier), ("claude-fable-5-1", "powerful"))
+        model, tier = resolve_model("sol", "claude-fable-5-1", ROOT, one_shot=True)
+        self.assertEqual((model, tier), ("claude-fable-5-1", "utility"))
+
+        # Без флага тот же id по-прежнему блокируется — дефолт не изменился
+        with self.assertRaises(DerouterChatError):
+            resolve_model("writer", "claude-fable-5-1", ROOT)
+        with self.assertRaises(DerouterChatError):
+            resolve_model("writer", "", ROOT, one_shot=True)
+
+    def test_one_shot_disables_alias_fallback(self) -> None:
+        from scripts import excalibur_blog_derouter_opus_chat as mod
+
+        seen: list[str] = []
+
+        def fake_chat(*, system_prompt, user_prompt, model, timeout, max_retries):
+            seen.append(model)
+            raise mod.DerouterChatError("model not found", status=404)
+
+        with mock.patch.object(mod, "call_derouter_chat", fake_chat):
+            with self.assertRaises(mod.DerouterChatError):
+                mod.call_derouter_with_aliases(
+                    system_prompt="s",
+                    user_prompt="u",
+                    tier="powerful",
+                    model="claude-fable-5-1",
+                    timeout=10,
+                    max_retries=0,
+                    exact_model_only=True,
+                )
+        self.assertEqual(seen, ["claude-fable-5-1"])
+
+
 class TenantWritingModelRoutingTests(unittest.TestCase):
     def test_tenant_config_opus_writer_only(self) -> None:
         tenant = json.loads((ROOT / "shared/tenant-config.json").read_text(encoding="utf-8"))
