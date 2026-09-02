@@ -1,0 +1,94 @@
+{
+  "topic_id": "B08",
+  "canvas_file": "cover/canvas-slice4.png",
+  "layout": "2x2",
+  "pipeline": "slice4_grid_1x_image_api",
+  "inline_count": 3,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-slice4.png",
+      "batch_file": "cover/slice4-mcp-batch.json",
+      "prompt_file": "cover/slice4-mcp-prompt.txt",
+      "result_file": "cover/slice4-mcp-result.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    }
+  ],
+  "style_preset": "the_rieltor_twilight_gold",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "cover_hook": "Тихий двор — три часа сна",
+  "cover_hook_highlight": "сна",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Derouter REST (DEROUTER_API_KEY) — 2K 16:9, one job per canvas (1×). Cover agent invents cover_hook + scene_hint/alt before --write-batch. Host lock = blog-hero.json (navy blazer, not hoodie).",
+  "cover_emotion": "разочарование: обещали тихий двор, утром перфоратор",
+  "cover_scene": "Ранний сентябрь, Тюмень: гость у окна спальни держится за голову, за окном стройка во дворе",
+  "cover_motifs": {
+    "composition": "guest at bedroom window + construction courtyard visible",
+    "location": "early September sunny Tyumen apartment, NO winter",
+    "meme": "cat_skeptic_maps_one_frame",
+    "prop_set": "perforator noise implied, scaffolding outside, printed listing «тихий двор»",
+    "sticker_set": "none on gen_only",
+    "joke": "quiet courtyard promise vs jackhammer dawn"
+  },
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "тихий двор"
+  ],
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Гость у окна спальни; за стеклом стройка во дворе; на подоконнике лист «тихий двор — три часа сна».",
+      "scene_hint": "Утро, гость у окна спальни, за стеклом стройка; лист «тихий двор»; телефон на магните +7 993 574-83-22; чистый угол справа сверху.",
+      "meme_caption_ru": "",
+      "sticky": "Сначала проверьте"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Сломался не двор. Сломалась формулировка",
+      "visual_type": "comparison_table_ui",
+      "scene_hint": "Сравнительная таблица на листе бумаги на столе: слева «тихий двор в объявлении», справа «перфоратор в 7 утра»; ручка, чашка кофе; фотореал схема, без логотипа.",
+      "alt": "Таблица-контраст: обещали тихий двор — утром перфоратор у окна.",
+      "labels": [
+        "«тихий двор»",
+        "«центр, тишина»",
+        "обещали покой"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Четыре реплики, которые должны были случиться раньше",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Схема-стрелки на доске: «вопрос про окно» → «панорама двора» → «бронь» vs «предоплата» → «перфоратор»; фотореал офисный стиль, без логотипа.",
+      "alt": "Диаграмма: сначала вопрос про окно и карты, потом оплата — не наоборот.",
+      "labels": [
+        "7 утра",
+        "окно спальни",
+        "перфоратор"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Семь минут до брони",
+      "visual_type": "checklist_board",
+      "scene_hint": "Чеклист на магнитной доске: панорама двора, окно спальни, отзывы со словом «шум»; рядом ноутбук с картами; фотореал, без логотипа.",
+      "alt": "Чеклист проверки двора в картах за семь минут до брони.",
+      "labels": [
+        "2 ночи",
+        "3 часа сна",
+        "шум во дворе"
+      ]
+    }
+  },
+  "cover_keys_ru": [],
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "inline_logo_slots": ["inline_1", "inline_3"]
+}

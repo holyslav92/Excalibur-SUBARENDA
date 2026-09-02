@@ -1,0 +1,50 @@
+{
+  "topic_id": "B08",
+  "slug": "kvartira-posutochno-tihij-dvor-v-obyavlenii-za-oknom-strojka-v-sem-utra",
+  "cover_family": "brand_collage",
+  "style_preset": "the_rieltor_twilight_gold",
+  "pipeline": "slice4_grid_1x_image_api",
+  "file": "cover/cover.png",
+  "alt": "Гость у окна спальни; за стеклом стройка во дворе; на подоконнике лист «тихий двор — три часа сна».",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-slice4.png",
+  "generated_at": "2026-09-02T12:19:55+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Гость у окна спальни; за стеклом стройка во дворе; на подоконнике лист «тихий двор — три часа сна».",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Таблица-контраст: обещали тихий двор — утром перфоратор у окна.",
+      "h2_anchor": "Сломался не двор. Сломалась формулировка",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Диаграмма: сначала вопрос про окно и карты, потом оплата — не наоборот.",
+      "h2_anchor": "Четыре реплики, которые должны были случиться раньше",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Чеклист проверки двора в картах за семь минут до брони.",
+      "h2_anchor": "Семь минут до брони",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}
