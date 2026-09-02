@@ -38,7 +38,10 @@
     "sticker_set": "none on gen_only",
     "joke": "checkbox says kitchen exists but drawer holds one fork"
   },
-  "wordstat_stickers": [],
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "кухня в квартире посуточно"
+  ],
   "slots": {
     "cover": {
       "quadrant": "top_left",
