@@ -103,7 +103,12 @@
       "dzen_pattern_prefer": [4, 2],
       "anti_dup": ["hidden_fees", "скрытые доплаты", "доплата на месте"],
       "tyumen_localize": true,
-      "status": "queue_active"
+      "status": "used",
+      "last_seen": "2026-09-02",
+      "queue_slot": "2026-09-08 — 2026-09-10",
+      "final_p0": {"phrase": "квартиры посуточно тюмень", "volume_tyumen": 5446, "volume_ru": 12048},
+      "wordstat_rework_log": "probe «посуточно или отель» 433 (225) / «отель или посуточная квартира» 312 → «квартира с кухней посуточно» 89 (225) → «аренда квартиры посуточно» 756 (55+11176) → final P0 «квартиры посуточно тюмень» 5446/12048",
+      "used_in_articles": ["B07"]
     },
     {
       "id": "parking_before_booking",
