@@ -1,0 +1,20 @@
+{
+  "topic_id": "B08",
+  "slug": "snyali-kvartiru-posutochno-v-vannoj-odin-polotenec-na-chetveryh",
+  "status": "PASS",
+  "inbound_updates": [
+    {
+      "post_id": 3745,
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "topic_id": "B01",
+      "marker": "data-excalibur-interlink-from=\"snyali-kvartiru-posutochno-v-vannoj-odin-polotenec-na-chetveryh\""
+    }
+  ],
+  "inbound_count": 1,
+  "outbound_slugs": [
+    "kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den",
+    "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+    "rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super",
+    "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem"
+  ]
+}
