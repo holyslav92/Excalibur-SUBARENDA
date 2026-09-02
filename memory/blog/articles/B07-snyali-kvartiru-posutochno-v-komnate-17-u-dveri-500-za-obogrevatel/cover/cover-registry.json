@@ -1,0 +1,50 @@
+{
+  "topic_id": "B07",
+  "slug": "snyali-kvartiru-posutochno-v-komnate-17-u-dveri-500-za-obogrevatel",
+  "cover_family": "brand_collage",
+  "style_preset": "the_rieltor_twilight_gold",
+  "pipeline": "slice4_grid_1x_image_api",
+  "file": "cover/cover.png",
+  "alt": "Лестничная площадка панельного дома с масляным обогревателем у двери квартиры.",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-slice4.png",
+  "generated_at": "2026-09-02T08:10:51+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Лестничная площадка панельного дома с масляным обогревателем у двери квартиры.",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Холодная батарея под окном, за которым туманное сентябрьское утро, на подоконнике термометр.",
+      "h2_anchor": "Почему батареи холодные, когда ночью +7",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Кухонный стол с листком расчётов, деньгами и чашкой чая, рядом масляный обогреватель.",
+      "h2_anchor": "500 ₽ «за электричество» — считаем",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Гость в куртке сидит на краю кровати со смартфоном, рядом сложенное одеяло, горит лампа.",
+      "h2_anchor": "Где гость отдал ключ от ситуации",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "topic_id": "B07",
+  "cover_headline_line1": "Сняли квартиру посуточно.",
+  "cover_headline_line2": "Хотели тепла.",
+  "cover_headline_line3": "У двери: +500 ₽ или спать в куртке",
+  "cover_headline_medium": "Spray-paint graffiti street-art lettering painted directly onto the real painted stairwell wall of a Soviet-style panel-house landing next to an apartment door (two-tone wall: pale top, green-blue bottom), bold black letters with a single red accent on «+500 ₽», slight paint drips, huge and readable at thumbnail size, no tent card, no paper, no Canva pill, no stickers.",
+  "canvas_file": "cover/canvas-slice4.png",
+  "layout": "2x2",
+  "pipeline": "slice4_grid_1x_image_api",
+  "inline_count": 3,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-slice4.png",
+      "batch_file": "cover/slice4-mcp-batch.json",
+      "prompt_file": "cover/slice4-mcp-prompt.txt",
+      "result_file": "cover/slice4-mcp-result.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    }
+  ],
+  "style_preset": "the_rieltor_twilight_gold",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "cover_hook": "Тепло у двери за доплату",
+  "cover_hook_highlight": "доплату",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Derouter REST (DEROUTER_API_KEY) — 2K 16:9, one job per canvas (1×). Cover agent invents cover_hook + scene_hint/alt before --write-batch. Host lock = blog-hero.json (navy blazer, not hoodie).",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Лестничная площадка панельного дома с масляным обогревателем у двери квартиры.",
+      "scene_hint": "Лестничная площадка панельного дома: двухцветная стена, дверь квартиры, масляный обогреватель у двери, мягкий свет из окна подъезда, правый верх кадра пустой.",
+      "meme_caption_ru": "",
+      "sticky": ""
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Почему батареи холодные, когда ночью +7",
+      "visual_type": "comparison_table_ui",
+      "scene_hint": "Холодная батарея под окном квартиры, за стеклом сентябрьское туманное утро, на подоконнике термометр показывает +17, тёплые тона интерьера, но прохладно.",
+      "alt": "Холодная батарея под окном, за которым туманное сентябрьское утро, на подоконнике термометр.",
+      "labels": [
+        "Батареи холодные",
+        "Норматив +8 градусов",
+        "Отопление с 23 сентября",
+        "Ночью +7"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "500 ₽ «за электричество» — считаем",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Кухонный стол в съёмной квартире: рядом масляный обогреватель, на столе листок с расчётом от руки, купюра и монеты, смартфон, чашка чая, мягкий свет.",
+      "alt": "Кухонный стол с листком расчётов, деньгами и чашкой чая, рядом масляный обогреватель.",
+      "labels": [
+        "Хост просит 500 ₽",
+        "Реально 64 ₽",
+        "Тариф 4,29 ₽",
+        "Разница 436 ₽"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Где гость отдал ключ от ситуации",
+      "visual_type": "checklist_board",
+      "scene_hint": "Гость в куртке сидит на краю кровати в квартире посуточно, в руках смартфон, рядом сложенное второе одеяло, тёплый вечерний свет лампы, спокойная атмосфера.",
+      "alt": "Гость в куртке сидит на краю кровати со смартфоном, рядом сложенное одеяло, горит лампа.",
+      "labels": [
+        "Спросить до перевода",
+        "Есть ли отопление",
+        "Обогреватель включён в цену",
+        "Чат вместо двери"
+      ]
+    }
+  },
+  "cover_keys_ru": [],
+  "wordstat_stickers": [
+    "когда в тюмени включат отопление",
+    "снять квартиру посуточно в тюмени"
+  ],
+  "cover_phone_cta": "+7 (993) 574-83-22"
+}

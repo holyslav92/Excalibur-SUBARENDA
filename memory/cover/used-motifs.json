@@ -63,6 +63,16 @@
         "meme": "trade_offer sticker small",
         "sticker_set": "багаж после выезда, вокзал тюмень"
       }
+    },
+    {
+      "date": "2026-09-02",
+      "topic_id": "B07",
+      "slug": "snyali-kvartiru-posutochno-v-komnate-17-u-dveri-500-za-obogrevatel",
+      "motifs": {
+        "composition": "graffiti headline on stairwell wall, oil heater by apartment door",
+        "location": "tyumen panel house landing september daylight",
+        "prop_set": "oil heater, apartment door, two-tone wall"
+      }
     }
   ]
 }

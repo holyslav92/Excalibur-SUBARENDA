@@ -1,0 +1,48 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/snyali-kvartiru-posutochno-v-komnate-17-u-dveri-500-za-obogrevatel/#article",
+  "url": "{{SITE_BASE}}/blog/snyali-kvartiru-posutochno-v-komnate-17-u-dveri-500-za-obogrevatel/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/snyali-kvartiru-posutochno-v-komnate-17-u-dveri-500-za-obogrevatel/"
+  },
+  "headline": "Сняли квартиру посуточно. Хотели тепла. У двери: +500 ₽ или спать в куртке",
+  "description": "В Тюмени отопление включают не раньше конца сентября — после пяти суток со среднесуточной температурой ниже +8 °C, поэтому в начале осени гость квартиры посуточно может получить у двери обогреватель за отдельную плату. Ночь его работы по тарифу 2026 года стоит около 45–65 ₽, и вопрос о тепле в квартире лучше задать хозяину в чате до оплаты бронирования.",
+  "datePublished": "2026-09-02",
+  "dateModified": "2026-09-02",
+  "inLanguage": "ru-RU",
+  "author": {
+    "@type": "Organization",
+    "@id": "{{SITE_BASE}}/#organization",
+    "name": "Добрый дом",
+    "jobTitle": "Апартаменты и квартиры посуточно в Тюмени",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ],
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "{{SITE_BASE}}/#organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ],
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    }
+  }
+}

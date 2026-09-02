@@ -791,6 +791,12 @@ GEN_ONLY_HEADLINE_RULE = (
     "NOT phone pill button, NOT Canva overlay typography"
 )
 DZEN_HEADLINE_TYPO_RULE = GEN_ONLY_HEADLINE_RULE  # legacy alias — gen_only_human_v1
+# Только запреты (когда носитель надписи задан явно через cover_headline_medium)
+GEN_ONLY_HEADLINE_NEGATIVE = (
+    "Cyrillic headline must be part of the photograph itself — "
+    "NOT a graphic-design layer, NOT yellow marker highlight, NOT sticky-note collage, "
+    "NOT phone pill button, NOT Canva overlay typography, NOT a printed tent card on a table"
+)
 
 SCENE_ONLY_GENERATION_BAN = (
     "HARD SCENE-ONLY: ZERO Cyrillic, ZERO digits, ZERO phone number, ZERO meme, ZERO logo, ZERO stickers, "
@@ -834,6 +840,8 @@ def build_case_cover_context(manifest: dict) -> dict[str, str]:
         str(manifest.get("cover_headline_line2") or motifs.get("headline_line2") or ""),
         72,
     )
+    line3 = compact(str(manifest.get("cover_headline_line3") or motifs.get("headline_line3") or ""), 72)
+    headline_medium = compact(str(manifest.get("cover_headline_medium") or ""), 320)
     if not line1 and h1:
         if " — " in h1:
             line1, _, line2 = [compact(x, 72) for x in h1.partition(" — ")]
@@ -864,6 +872,8 @@ def build_case_cover_context(manifest: dict) -> dict[str, str]:
         "h1": h1,
         "headline_line1": line1,
         "headline_line2": line2,
+        "headline_line3": line3,
+        "headline_medium": headline_medium,
         "highlight": highlight,
         "bait_switch": bait_switch,
         "figure": figure,
@@ -1059,10 +1069,15 @@ def build_one_2k_slice4_grid_prompt(
         if inline_hints
         else "INLINE PANELS — three distinct article scenes (keys, chat, door…) — ZERO brand lockup on panels 2–4."
     )
+    # Носитель надписи задаёт Cover-text (cover_headline_medium): граффити на стене,
+    # табличка, экран… Без него — прежний default «printed/painted on a physical object».
+    medium = case.get("headline_medium") or "printed/painted on a physical object in the scene"
+    headline_rule = GEN_ONLY_HEADLINE_NEGATIVE if case.get("headline_medium") else GEN_ONLY_HEADLINE_RULE
     if case["headline_line1"] and case["headline_line2"]:
+        line3_clause = f" + L3 «{case['headline_line3']}»" if case.get("headline_line3") else ""
         headline_clause = (
-            f"COVER PANEL top-left HEADLINE L1 «{case['headline_line1']}» + L2 «{case['headline_line2']}» "
-            f"printed/painted on a physical object in the scene; {GEN_ONLY_HEADLINE_RULE}."
+            f"COVER PANEL top-left HEADLINE L1 «{case['headline_line1']}» + L2 «{case['headline_line2']}»{line3_clause} "
+            f"{medium}; {headline_rule}."
         )
     elif case["h1"]:
         headline_clause = (
@@ -1070,11 +1085,13 @@ def build_one_2k_slice4_grid_prompt(
         )
     else:
         headline_clause = f"COVER PANEL two-beat Cyrillic headline on physical object; {GEN_ONLY_HEADLINE_RULE}."
+    cover_scene_clause = f"COVER PANEL SCENE: {case['scene']}." if case.get("scene") else ""
     lines = [
         "ONE canvas 2048×1152 — draw as 2×2 GRID of FOUR complete photoreal 16:9 apartment panels (thin white gutters OK). "
         "Each quadrant is its own readable scene — NOT one photo sliced at random. NOT infographic.",
         "dobry_dom_gen_only_human_v1 — exactly ONE Grsai primary image draw; factory slices quarters after download.",
         headline_clause,
+        cover_scene_clause,
         "FORBIDDEN on cover panel: phone number, logo, meme sticker, yellow marker, sticky note, pill button, dashed frame.",
         inline_clause,
         "PANEL 2–4: NO «Добрый дом» logo, NO curtains/flower lockup — photoreal scenes only.",

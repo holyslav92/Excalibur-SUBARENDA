@@ -1,0 +1,154 @@
+{
+  "agent": "excalibur-blog-cover-quad-split",
+  "status": "PASS",
+  "splits": [
+    {
+      "canvas_index": 1,
+      "manifest": "cover/quad-manifest.json",
+      "split": {
+        "source_canvas": "memory/blog/articles/B07-snyali-kvartiru-posutochno-v-komnate-17-u-dveri-500-za-obogrevatel/cover/canvas-slice4.png",
+        "source_size_px": [
+          2048,
+          1152
+        ],
+        "panel_size_px": [
+          1024,
+          576
+        ],
+        "split_meta": {
+          "split_mode": "mechanical_center",
+          "h_gutter_px": null,
+          "v_gutter_px": null,
+          "requested_mode": "auto",
+          "fallback_reason": "aspect_crop_loss_too_high",
+          "rejected_gutter": {
+            "h_gutter_px": {
+              "start": 592,
+              "end": 602
+            },
+            "v_gutter_px": {
+              "start": 1019,
+              "end": 1029
+            },
+            "gutter_quality": {
+              "h_center_offset_px": 21.0,
+              "v_center_offset_px": 0.0,
+              "max_aspect_crop_loss": 0.0402,
+              "per_panel_crop_loss": {
+                "top_left": 0.0321,
+                "top_right": 0.0321,
+                "bottom_left": 0.0402,
+                "bottom_right": 0.0402
+              },
+              "reject_reason": "aspect_crop_loss_too_high"
+            }
+          }
+        },
+        "output_size_px": [
+          1200,
+          675
+        ],
+        "outputs": {
+          "cover": {
+            "file": "cover/cover.png",
+            "quadrant": "top_left",
+            "box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1024,
+              "bottom": 576
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1024,
+              "bottom": 576
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Лестничная площадка панельного дома с масляным обогревателем у двери квартиры.",
+            "h2_anchor": null
+          },
+          "inline_1": {
+            "file": "cover/inline-01.png",
+            "quadrant": "top_right",
+            "box_px": {
+              "left": 1024,
+              "top": 0,
+              "right": 2048,
+              "bottom": 576
+            },
+            "raw_box_px": {
+              "left": 1024,
+              "top": 0,
+              "right": 2048,
+              "bottom": 576
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Холодная батарея под окном, за которым туманное сентябрьское утро, на подоконнике термометр.",
+            "h2_anchor": "Почему батареи холодные, когда ночью +7"
+          },
+          "inline_2": {
+            "file": "cover/inline-02.png",
+            "quadrant": "bottom_left",
+            "box_px": {
+              "left": 0,
+              "top": 576,
+              "right": 1024,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 576,
+              "right": 1024,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Кухонный стол с листком расчётов, деньгами и чашкой чая, рядом масляный обогреватель.",
+            "h2_anchor": "500 ₽ «за электричество» — считаем"
+          },
+          "inline_3": {
+            "file": "cover/inline-03.png",
+            "quadrant": "bottom_right",
+            "box_px": {
+              "left": 1024,
+              "top": 576,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 1024,
+              "top": 576,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Гость в куртке сидит на краю кровати со смартфоном, рядом сложенное одеяло, горит лампа.",
+            "h2_anchor": "Где гость отдал ключ от ситуации"
+          }
+        }
+      }
+    }
+  ],
+  "manifest": "cover/quad-manifest.json",
+  "html_inject": [
+    "injected inline_1 after H2 — Почему батареи холодные, когда ночью +7",
+    "injected inline_2 after H2 — 500 ₽ «за электричество» — считаем",
+    "injected inline_3 after H2 — Где гость отдал ключ от ситуации"
+  ]
+}

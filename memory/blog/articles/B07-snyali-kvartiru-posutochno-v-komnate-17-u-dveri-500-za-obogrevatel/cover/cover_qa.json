@@ -1,0 +1,40 @@
+{
+  "agent": "excalibur-blog-cover-qa",
+  "status": "PASS",
+  "checked_at": "2026-09-02",
+  "topic_id": "B07",
+  "canon": "dobry_dom_gen_only_human_v1",
+  "checks": {
+    "eight_png_exist": true,
+    "quad_manifest_valid": true,
+    "wordstat_stickers_1_3": true,
+    "motif_no_collision_14d": true,
+    "max_one_cat_meme_slot": true,
+    "light_high_key": true,
+    "logo_composite_stamp_pass": true,
+    "cover_logo_pasted": true,
+    "inline_no_logo_on_inlines": true,
+    "forbid_phone_on_cover_image": true,
+    "forbid_922_phone": true,
+    "forbid_ai_drawn_logo_cover": true,
+    "forbid_wordpress_ui_in_art": true,
+    "no_logo_plate_cover": true,
+    "forbid_graphic_collage_overlay": true,
+    "forbid_poster_composite_stamp": true,
+    "forbid_logo_reference_in_batch": true,
+    "forbid_overlapping_text_blocks": true,
+    "forbid_giant_cropped_glyph": true
+  },
+  "evidence": {
+    "slice4_gate": "PASS",
+    "logo_composite_stamp": "PASS",
+    "grsai_draws": 1,
+    "canvas": "2048x1152 native_2k vip",
+    "cover_headline_lines": 3,
+    "cover_text_readable": "граффити на стене: 3 строки H1 читаемы, красный акцент +500 ₽",
+    "logo": "factory paste top-right, native aspect, no plaque",
+    "inlines_logo": 0,
+    "phone_on_cover": false
+  },
+  "notes": "B07 gen_only_human_v1 — 1 Grsai VIP draw (economy 16:9) + slice4 + logo paste cover only. Inline-02: модель дорисовала собственную арифметику на листке (не совпадает с текстом статьи) — второй draw не делался по канону owner (1 draw); зафиксировано как lesson для Cover-scene (не просить читаемые цифры без точного текста)."
+}

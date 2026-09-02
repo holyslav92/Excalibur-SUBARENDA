@@ -174,8 +174,17 @@ def build_manifest(article_dir: Path, root: Path, preserve: dict | None) -> dict
         (preserve or {}).get("style_file")
         or "memory/cover/quad-style-dobry-dom.json"
     )
+    # Точные строки заголовка обложки и носитель надписи (граффити/бумага/экран) —
+    # владеет Cover-text; manifest только переносит их в prompt builder.
+    headline_fields: dict[str, str] = {}
+    for key in ("cover_headline_line1", "cover_headline_line2", "cover_headline_line3", "cover_headline_medium"):
+        value = str(cover_text.get(key) or (preserve or {}).get(key) or "").strip()
+        if value:
+            headline_fields[key] = value
+
     return {
         "topic_id": topic_id,
+        **headline_fields,
         "canvas_file": canvas_specs[0]["canvas_file"],
         "layout": "2x2",
         "pipeline": pipeline,

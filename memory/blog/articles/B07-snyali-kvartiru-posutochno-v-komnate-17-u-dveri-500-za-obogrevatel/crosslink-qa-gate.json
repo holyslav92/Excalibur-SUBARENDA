@@ -11,7 +11,7 @@
       "http_ok": true,
       "title_ok": true,
       "path_ok": true,
-      "http_skipped": true
+      "http_status": 200
     },
     {
       "href": "{{SITE_BASE}}/blog/vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu/",
@@ -21,7 +21,7 @@
       "http_ok": true,
       "title_ok": true,
       "path_ok": true,
-      "http_skipped": true
+      "http_status": 200
     },
     {
       "href": "{{SITE_BASE}}/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
@@ -31,7 +31,7 @@
       "http_ok": true,
       "title_ok": true,
       "path_ok": true,
-      "http_skipped": true
+      "http_status": 200
     },
     {
       "href": "{{SITE_BASE}}/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/",
@@ -41,7 +41,7 @@
       "http_ok": true,
       "title_ok": true,
       "path_ok": true,
-      "http_skipped": true
+      "http_status": 200
     }
   ],
   "catalog_count": 96,

@@ -1,0 +1,15 @@
+{
+  "hook": "Тепло у двери за доплату",
+  "highlight": "доплату",
+  "sticky": "",
+  "wordstat_stickers": ["когда в тюмени включат отопление", "снять квартиру посуточно в тюмени"],
+  "inline_labels": {
+    "inline_1": ["Батареи холодные", "Норматив +8 градусов", "Отопление с 23 сентября", "Ночью +7"],
+    "inline_2": ["Хост просит 500 ₽", "Реально 64 ₽", "Тариф 4,29 ₽", "Разница 436 ₽"],
+    "inline_3": ["Спросить до перевода", "Есть ли отопление", "Обогреватель включён в цену", "Чат вместо двери"]
+  },
+  "cover_headline_line1": "Сняли квартиру посуточно.",
+  "cover_headline_line2": "Хотели тепла.",
+  "cover_headline_line3": "У двери: +500 ₽ или спать в куртке",
+  "cover_headline_medium": "Spray-paint graffiti street-art lettering painted directly onto the real painted stairwell wall of a Soviet-style panel-house landing next to an apartment door (two-tone wall: pale top, green-blue bottom), bold black letters with a single red accent on «+500 ₽», slight paint drips, huge and readable at thumbnail size, no tent card, no paper, no Canva pill, no stickers."
+}
