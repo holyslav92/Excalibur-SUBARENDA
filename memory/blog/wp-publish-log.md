@@ -1,5 +1,22 @@
 # WP publish log
 
+## B08 — 2026-09-02
+
+- **topic_id:** B08
+- **slug:** snyali-kvartiru-posutochno-v-vannoj-odin-polotenec-na-chetveryh
+- **title:** Сняли квартиру посуточно. В ванной — одно полотенце на 4 гостей
+- **post_id:** 4314
+- **permalink:** /blog/snyali-kvartiru-posutochno-v-vannoj-odin-polotenec-na-chetveryh/
+- **categories:** posutochnaya-arenda (101), sovety-gostyam (106)
+- **featured_image:** 4315
+- **inline_images:** 4316–4318 (3× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS (cover + 3 inline → wp-content)
+- **dzen cache bust:** cover-dzen-v3 + cover-dzen-v3-1024x576 uploaded; feed enclosure → …-cover-dzen-v3.png
+- **interlink inbound:** B01 (3745)
+- **publish_method:** sftp (FTP PASV data timeout on cloud; SFTP:22 OK)
+- **llms_deploy:** PASS (SFTP)
+
 ## B07 — 2026-09-02
 
 - **topic_id:** B07

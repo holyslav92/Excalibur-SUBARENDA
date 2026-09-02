@@ -1,0 +1,27 @@
+{
+  "slug": "snyali-kvartiru-posutochno-v-vannoj-odin-polotenec-na-chetveryh",
+  "topic_id": "B08",
+  "permalink": "{{SITE_BASE}}/blog/snyali-kvartiru-posutochno-v-vannoj-odin-polotenec-na-chetveryh/",
+  "publish_method": "ftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B08-snyali-kvartiru-posutochno-v-vannoj-odin-polotenec-na-chetveryh/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1083011,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4314 slug=snyali-kvartiru-posutochno-v-vannoj-odin-polotenec-na-chetveryh\nOK categories=101,106\nOK dzen_yzen_meta=1\nOK featured_image=4315\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4316 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/snyali-kvartiru-posutochno-v-vannoj-odin-polotenec-na-chetveryh-inline-01.png\nOK inline_alt=4316\nOK inline_caption=4316\nOK inline_description=4316\nOK inline_image_upload=4317 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/snyali-kvartiru-posutochno-v-vannoj-odin-polotenec-na-chetveryh-inline-02.png\nOK inline_alt=4317\nOK inline_caption=4317\nOK inline_description=4317\nOK inline_image_upload=4318 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/snyali-kvartiru-posutochno-v-vannoj-odin-polotenec-na-chetveryh-inline-03.png\nOK inline_alt=4318\nOK inline_caption=4318\nOK inline_description=4318\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/snyali-kvartiru-posutochno-v-vannoj-odin-polotenec-na-chetveryh/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 3,
+    "expected_inline": 3,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/snyali-kvartiru-posutochno-v-vannoj-odin-polotenec-na-chetveryh/",
+    "errors": []
+  }
+}

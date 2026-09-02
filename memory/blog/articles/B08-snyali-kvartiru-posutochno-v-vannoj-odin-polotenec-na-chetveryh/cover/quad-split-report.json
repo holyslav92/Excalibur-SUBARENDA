@@ -1,0 +1,149 @@
+{
+  "agent": "excalibur-blog-cover-quad-split",
+  "status": "PASS",
+  "splits": [
+    {
+      "canvas_index": 1,
+      "manifest": "cover/quad-manifest.json",
+      "split": {
+        "source_canvas": "memory/blog/articles/B08-snyali-kvartiru-posutochno-v-vannoj-odin-polotenec-na-chetveryh/cover/canvas-slice4.png",
+        "source_size_px": [
+          2048,
+          1152
+        ],
+        "panel_size_px": [
+          1020,
+          573
+        ],
+        "split_meta": {
+          "split_mode": "gutter_detect",
+          "h_gutter_px": {
+            "start": 573,
+            "end": 580
+          },
+          "v_gutter_px": {
+            "start": 1020,
+            "end": 1026
+          },
+          "requested_mode": "auto",
+          "gutter_quality": {
+            "h_center_offset_px": 0.5,
+            "v_center_offset_px": 1.0,
+            "max_aspect_crop_loss": 0.0,
+            "per_panel_crop_loss": {
+              "top_left": 0.0,
+              "top_right": 0.0,
+              "bottom_left": 0.0,
+              "bottom_right": 0.0
+            },
+            "reject_reason": null
+          }
+        },
+        "output_size_px": [
+          1200,
+          675
+        ],
+        "outputs": {
+          "cover": {
+            "file": "cover/cover.png",
+            "quadrant": "top_left",
+            "box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1020,
+              "bottom": 573
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1020,
+              "bottom": 573
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Светлая ванная: на крючке одно полотенце, семья из четырёх у двери; на стиральной машине лист с кириллицей «Одно полотенце на четверых».",
+            "h2_anchor": null
+          },
+          "inline_1": {
+            "file": "cover/inline-01.png",
+            "quadrant": "top_right",
+            "box_px": {
+              "left": 1026,
+              "top": 0,
+              "right": 2048,
+              "bottom": 573
+            },
+            "raw_box_px": {
+              "left": 1026,
+              "top": 0,
+              "right": 2048,
+              "bottom": 573
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Одно полотенце на крючке при четырёх гостях; переписка не называет число.",
+            "h2_anchor": "Галочка не считает гостей"
+          },
+          "inline_2": {
+            "file": "cover/inline-02.png",
+            "quadrant": "bottom_left",
+            "box_px": {
+              "left": 0,
+              "top": 580,
+              "right": 1020,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 580,
+              "right": 1020,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Ночной поход в магазин за полотенцами после заселения — 400–900 ₽ на четверых.",
+            "h2_anchor": "Почему один набор превращается в ночной магазин"
+          },
+          "inline_3": {
+            "file": "cover/inline-03.png",
+            "quadrant": "bottom_right",
+            "box_px": {
+              "left": 1026,
+              "top": 580,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 1026,
+              "top": 580,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Проверить количество полотенец и попросить фото шкафа до перевода денег.",
+            "h2_anchor": "Мой вывод как практика"
+          }
+        }
+      }
+    }
+  ],
+  "manifest": "cover/quad-manifest.json",
+  "html_inject": [
+    "injected inline_1 after H2 — Галочка не считает гостей",
+    "injected inline_2 after H2 — Почему один набор превращается в ночной магазин",
+    "injected inline_3 after H2 — Мой вывод как практика"
+  ]
+}

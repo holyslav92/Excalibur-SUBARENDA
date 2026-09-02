@@ -1,0 +1,87 @@
+{
+  "status": "PASS",
+  "topic_id": "B08",
+  "slug": "snyali-kvartiru-posutochno-v-vannoj-odin-polotenec-na-chetveryh",
+  "research_date": "2026-09-02",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Klyshin Telegram Sep 2026 (checklist before payment) + Суточно.ру live reviews (гигиенические наборы ≠ число гостей)",
+    "source_type": "community",
+    "urls": [
+      "https://t.me/s/klyshin_A",
+      "https://sutochno.ru/votes",
+      "https://rutube.ru/video/4cb5af9f74000d55aa42121bf46ef24a/",
+      "https://добрыйдом-72.рф/blog/"
+    ],
+    "accessed_at": "2026-09-02",
+    "note": "Klyshin — угол проверки до оплаты, не факт о тюменских полотенцах; отзыв Суточно.ру подтверждает разрыв количества расходников при галочке «полотенца»."
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "Нет банковских/гос тарифов; 400–900 ₽ — Scout-вилка экстренной покупки, не official",
+    "verified_claims": 0,
+    "entities_checked": [],
+    "errors": []
+  },
+  "wordstat": {
+    "status": "PASS",
+    "final_p0": {
+      "phrase": "квартиры посуточно тюмень",
+      "volume_tyumen": 5363,
+      "volume_ru": 11916,
+      "region_tyumen": "55+11176",
+      "region_ru": "225"
+    },
+    "observations": [
+      {
+        "phrase": "посуточно",
+        "volume": 25041,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "полотенца",
+        "volume": 9690,
+        "region": "55+11176",
+        "top": "полотенце купить 661; полотенца тюмень 290"
+      },
+      {
+        "phrase": "что взять",
+        "volume": 11878,
+        "region": "55+11176",
+        "note": "generic travel intent, not rental-specific"
+      },
+      {
+        "phrase": "аренда квартиры посуточно",
+        "volume": 747,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "снять квартиру посуточно в тюмени",
+        "volume": 1696,
+        "region": "55+11176"
+      }
+    ]
+  },
+  "practical_facts_count": 18,
+  "source_count": 14,
+  "limitations": [
+    "400–900 ₽ — составной Scout-якорь экстренной покупки, не подтверждённый чек Тюмени.",
+    "Klyshin-сигнал — аналогия порядка проверки, не прямой факт о полотенцах.",
+    "tiktur «бельё не входит» vs агрегаторы — рыночный разнобой, не единая норма.",
+    "Доп. комплекты 200–500 ₽ — примеры отдельных объявлений, не городской тариф.",
+    "Rutube Aug 2026 — общий сюрприз посуточно, не кейс про полотенца."
+  ],
+  "writer_safe_urls": [
+    "https://t.me/Dobriy_dom_72",
+    "https://t.me/Dobriy_dom_Tyumen",
+    "https://max.ru/id660300569233_biz",
+    "https://добрыйдом-72.рф/booking/",
+    "https://добрыйдом-72.рф/",
+    "https://tiktur.ru/nuzhno-li-brat-s-soboj-polotentsa-i-postelnoe-v-arenduemoe-zhile/",
+    "https://new.realtycalendar.ru/blog/napolnenie-kvartiry-dlya-posutochnoj-arendy",
+    "https://t-j.ru/daily-rent-flat/",
+    "https://sutochno.ru/votes",
+    "https://mirkupit.ru/tyumen/arenda-1-komnatnih-posutochno/1-komnat_1182160"
+  ]
+}

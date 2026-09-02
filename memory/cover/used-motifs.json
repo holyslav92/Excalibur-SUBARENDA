@@ -75,6 +75,18 @@
         "prop_set": "empty drawers, one glass, two forks, worn frying pan, printed listing",
         "joke": "checkbox says kitchen exists but drawer holds one fork"
       }
+    },
+    {
+      "date": "2026-09-02",
+      "topic_id": "B08",
+      "slug": "",
+      "motifs": {
+        "composition": "family at bathroom door + single towel on hook + printed listing with towel checkbox on washer",
+        "location": "early september sunny tyumen apartment bathroom, bright daylight through frosted window, no winter",
+        "meme": "none photoreal only",
+        "prop_set": "one bath towel on hook, four pairs of shoes in corridor, printed booking listing, shampoo bottle, folded laundry",
+        "joke": "checkbox says towels exist but hook holds one for four guests"
+      }
     }
   ]
 }

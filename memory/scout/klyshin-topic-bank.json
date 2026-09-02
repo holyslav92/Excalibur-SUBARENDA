@@ -3,7 +3,7 @@
   "source_channel": "https://t.me/klyshin_A",
   "source_label": "Алексей Клышин — angle only (ритм delivery, не копировать сделки)",
   "tenant": "Добрый дом — посуточная аренда / субаренда Тюмень",
-  "updated_at": "2026-09-01",
+  "updated_at": "2026-09-02",
   "timezone": "Asia/Yekaterinburg",
   "algorithm": "klyshin_hook → wordstat_probe → rework_for_demand → final_P0_or_skip_after_rework",
   "angle_rotation": {
@@ -103,7 +103,12 @@
       "dzen_pattern_prefer": [4, 2],
       "anti_dup": ["hidden_fees", "скрытые доплаты", "доплата на месте"],
       "tyumen_localize": true,
-      "status": "queue_active"
+      "status": "used",
+      "last_seen": "2026-09-02",
+      "queue_slot": "2026-09-08 — 2026-09-10",
+      "final_p0": {"phrase": "квартиры посуточно тюмень", "volume_tyumen": 5446, "volume_ru": 11916},
+      "wordstat_rework_log": "probe «посуточно или отель» 433 (225) → «квартира с кухней посуточно» 68 → «аренда квартиры посуточно» 756 → final P0 «квартиры посуточно тюмень» 5446/11916",
+      "used_in_articles": ["B07"]
     },
     {
       "id": "parking_before_booking",
@@ -139,7 +144,12 @@
       "wordstat_probes": ["что нужно для аренды квартиры", "квартира посуточно", "аренда квартиры посуточно"],
       "dzen_pattern_prefer": [2, 5],
       "tyumen_localize": true,
-      "status": "queue_active"
+      "status": "used",
+      "last_seen": "2026-09-02",
+      "queue_slot": "2026-09-02 YEKT — pack_vs_flat (queue 6)",
+      "final_p0": {"phrase": "квартиры посуточно тюмень", "volume_tyumen": 5363, "volume_ru": 11916},
+      "wordstat_rework_log": "probe «что взять в аренду квартиры» API empty → «аренда квартиры посуточно» 747 (55+11176) → «квартиры посуточно тюмень» 5363 → final P0 «квартиры посуточно тюмень» 5363/11916",
+      "used_in_articles": ["B08"]
     },
     {
       "id": "quiet_center_maps",

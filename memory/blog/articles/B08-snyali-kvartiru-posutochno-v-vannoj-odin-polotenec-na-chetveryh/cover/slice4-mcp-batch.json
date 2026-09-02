@@ -1,0 +1,46 @@
+{
+  "pipeline": "slice4_grid_1x_image_api",
+  "canvas_index": 1,
+  "standalone_cover": false,
+  "model_policy": "",
+  "vip_disabled": false,
+  "max_generation_attempts": 1,
+  "identity_reference_local": "",
+  "identity_reference_id": "",
+  "logo_reference_local": "",
+  "logo_reference_url": "",
+  "logo_reference_in_generation": false,
+  "reference_url_hosted": "",
+  "output_canvas": "cover/canvas-slice4.png",
+  "result_path": "cover/slice4-mcp-result.json",
+  "slots": [
+    "cover",
+    "inline_1",
+    "inline_2",
+    "inline_3"
+  ],
+  "preferred_image_flow": {
+    "provider": "grsai",
+    "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
+    "resolution": "2K",
+    "note": "PRIMARY: Grsai draw API (PRIMARY_MODEL_ID only; vip permanently disabled; aspectRatio+resolution=2K first, one explicit-size retry, ship native undersized). Fallback: excalibur_blog_kie_gpt_image2_api.py when Grsai fail. FORBIDDEN: *-vip, flux2-pro-*, Seedream, nano_banana*, z-image, mcp-derouter/start-mcp.sh.",
+    "apply_script": "python3 scripts/excalibur_blog_quad_apply.py --article-dir <article_dir> --canvas-index 1 --inject-html"
+  },
+  "jobs": [
+    {
+      "slot": "canvas_quad",
+      "tool": "grsai",
+      "mcp_args": {
+        "prompt": "ONE canvas 2048×1152 — draw as 2×2 GRID of FOUR complete photoreal 16:9 apartment panels (thin white gutters OK). Each quadrant is its own readable scene — NOT one photo sliced at random. NOT infographic.\ndobry_dom_gen_only_human_v1 — exactly ONE Grsai primary image draw; factory slices quarters after download.\nCOVER PANEL headline from «Одно полотенце на четверых» on physical object in scene; Cyrillic headline must appear IN the photograph on a real physical object (printed paper on coffee table, TV screen, door sign, barrier sticker, luggage tag) — NOT a graphic-design layer, NOT yellow marker highlight, NOT sticky-note collage, NOT phone pill button, NOT Canva overlay typography.\nFORBIDDEN on cover panel: phone number, logo, meme sticker, yellow marker, sticky note, pill button, dashed frame.\nINLINE PANELS (top-right, bottom-left, bottom-right) — each a FULL standalone 16:9 scene for: inline_1: «Галочка не считает гостей» — Крупный план ванной полки и крючка: одно полотенце, четыре зубные щётки в стакане, детская обувь на полу; рядом телефон…; inline_2: «Почему один набор превращается в ночной магазин» — Вечерний коридор квартиры: открытая дверь, семья собирается в магазин; на столике чек «Пятёрочка» и пакет с полотенцами…; inline_3: «Мой вывод как практика» — Светлый стол у окна: лист с чек-листом «сколько полотенец на каждого», карандаш, фото открытого шкафа с полотенцами на…\nPANEL 2–4: NO «Добрый дом» logo, NO curtains/flower lockup — photoreal scenes only.\nTOP-RIGHT of COVER PANEL ONLY: leave clean wall/wood pad 8–12% — model does NOT draw logo; factory pastes official cropped-img_7143.png after slice (pixel-faithful, native aspect, NOT square crop).\nFORBIDDEN: four separate images; second API call; logo in images[]; poster_composite; factory typography overlay.\nBAN: 0 memes, 2+ memes, meme soup, people-heavy group photo, tiny in-scene phone on door, Wordstat sticker soup, torn-paper collage, metallic gold, brass, 3D gold type, gold-glitter type, dark leather, wood+Harold lobby stamp, yellow sticky notes, split white-panel+photo, phone pill, peel-pill phone, fridge magnet phone, gold brass plaque, post-composite phone chip, model-drawn logo, house-with-heart, logo plate, empty stock room, WordPress UI, wow poster collage soup, dark cinematic, overlapping type layers, magnified letter crops, Trade Offer/Drake/Wojak drawn by model, collage of stickers covering headline, white/gray plaque under logo, model-drawn lockup.\nTEXT: Russian Cyrillic only; Comfort+ Tyumen daily-rental mood; photoreal apartment interior.",
+        "aspect_ratio": "16:9",
+        "resolution": "2K"
+      }
+    }
+  ],
+  "validation": {
+    "prompt_chars": 2561,
+    "max_prompt_chars": 3500,
+    "required_reference_host": "{{SITE_HOST}}",
+    "resolution": "2K"
+  }
+}

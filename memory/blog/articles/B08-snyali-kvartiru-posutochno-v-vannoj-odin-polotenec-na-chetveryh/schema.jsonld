@@ -1,0 +1,47 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "{{SITE_BASE}}/blog/snyali-kvartiru-posutochno-v-vannoj-odin-polotenec-na-chetveryh/",
+      "url": "{{SITE_BASE}}/blog/snyali-kvartiru-posutochno-v-vannoj-odin-polotenec-na-chetveryh/",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{SITE_BASE}}/blog/snyali-kvartiru-posutochno-v-vannoj-odin-polotenec-na-chetveryh/"
+      },
+      "headline": "Сняли квартиру посуточно. В ванной — одно полотенце на 4 гостей",
+      "description": "Guest-night case about towel count mismatch in short-term rental — галочка «полотенца» vs комплект на каждого, 400–900 ₽ emergency shop run for family of 4 in Tyumen.",
+      "datePublished": "2026-09-02",
+      "dateModified": "2026-09-02",
+      "author": {
+        "@id": "{{SITE_BASE}}/#dobry-dom"
+      },
+      "publisher": {
+        "@id": "{{SITE_BASE}}/#dobry-dom"
+      },
+      "inLanguage": "ru-RU",
+      "about": {
+        "@type": "Place",
+        "name": "Тюмень"
+      }
+    },
+    {
+      "@type": [
+        "Organization",
+        "LocalBusiness"
+      ],
+      "@id": "{{SITE_BASE}}/#dobry-dom",
+      "name": "Добрый дом",
+      "url": "{{SITE_BASE}}/",
+      "telephone": "+7 (993) 574-83-22",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Тюмень",
+        "addressCountry": "RU"
+      },
+      "sameAs": [
+        "{{SITE_BASE}}/"
+      ]
+    }
+  ]
+}
