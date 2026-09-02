@@ -430,4 +430,4 @@ checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_wp_publish.py scripts/excalibur_blog_doctor.py`
 - `python3 scripts/excalibur_blog_published_titles.py --article-dir memory/blog/articles/B07-…` → titles=7
 - `python3 -m unittest tests.test_wp_categories_interlink.WpCategoriesInterlinkTests.test_ledger_upsert_refreshes_published_titles -v`
-commit: pending
+commit: dd99021
