@@ -1,5 +1,21 @@
 # WP publish log
 
+## B07 — 2026-09-02
+
+- **topic_id:** B07
+- **slug:** kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den
+- **title:** Хозяин написал «кухня есть». За три ночи в кафе ушло 7 200 ₽
+- **post_id:** 4299
+- **permalink:** /blog/kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den/
+- **categories:** posutochnaya-arenda (101), sovety-gostyam (106)
+- **featured_image:** 4300
+- **inline_images:** 4301–4303 (3× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS (cover + 3 inline → wp-content)
+- **dzen cache bust:** cover-dzen-v3 + cover-dzen-v3-1024x576 uploaded; feed enclosure → …-cover-dzen-v3.png
+- **interlink inbound:** B01 (3745)
+- **publish_method:** ftp
+
 ## B06 — 2026-09-01
 
 - **topic_id:** B06

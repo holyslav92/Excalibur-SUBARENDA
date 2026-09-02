@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "https://добрыйдом-72.рф/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/",
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "anchor": "как залог «на всякий случай» превращается в спор на выезде,",
+      "catalog_title": "Снял квартиру посуточно. Залог не вернули — нашли скол на плите",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego/",
+      "slug": "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+      "anchor": "как оплата «за двоих» встречается с доплатой у двери и",
+      "catalog_title": "Оплатили за двоих. У двери попросили доплату за третьего",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super/",
+      "slug": "rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super",
+      "anchor": "почему рейтинг 4,8 из двух отзывов «всё супер» не рассказывает о деталях. Даже",
+      "catalog_title": "Рейтинг 4,8. Два «всё супер» — и 3 900 ₽ под вопросом",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "anchor": "бесконтактное заселение устроено по той же логике: важное надо узнать до приезда, а не в подъезде с сумками.Формально хост может быть прав. Кухня действительно есть. Спальное место действительно рассчитано на двоих. Отзывы действительно положительные. Но формальная правота не заменяет понятную договорённость. Особенно когда эта договорённость влияет на ваши деньги каждый день проживания.Мой вывод как практика«Кухня есть» — это не обещание ужина, это чертёж помещения. Чертёж не жарится. Спросите состав до перевода — и три ночи останутся тремя ночами, а не тремя ночами плюс 7 200 ₽.Сначала проверка. Потом перевод. Не наоборот. Одно сообщение занимает пару минут. Непроверенная галочка может занять три дня кафе.Проверьте до брониСколько сковород и кастрюль, в каком они состоянии.Есть ли нож, разделочная доска, открывалка и штопор.Сколько кружек, тарелок, вилок и ложек — не «есть», а сколько штук.Есть ли на старте масло, соль, сахар, чай.Есть ли средство для мытья посуды и губка.Работают ли чайник, микроволновка и духовка, если они вам нужны.Можно ли получить фото открытых ящиков и шкафа по конкретной квартире.Проверить кухню по конкретной квартиреНапишите нам до брони: уточним состав кухни по выбранному объекту и, если нужно, пришлём список и фото. Telegram:",
+      "catalog_title": "Оплатил квартиру посуточно. Код прислали от чужой двери",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "outbound_unique_slugs": [
+    "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+    "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+    "rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super",
+    "beskontaktnoe-zaselenie-posutochno-tyumen"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B07-kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}
