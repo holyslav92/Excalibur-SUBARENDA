@@ -1,0 +1,50 @@
+{
+  "topic_id": "B07",
+  "slug": "kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den",
+  "cover_family": "brand_collage",
+  "style_preset": "the_rieltor_twilight_gold",
+  "pipeline": "slice4_grid_1x_image_api",
+  "file": "cover/cover.png",
+  "alt": "Гость на кухне открывает пустой ящик; на столе лист с галочкой «кухня есть» и крупной кириллицей «готовить нечем».",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-slice4.png",
+  "generated_at": "2026-09-02T06:40:33+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Гость на кухне открывает пустой ящик; на столе лист с галочкой «кухня есть» и крупной кириллицей «готовить нечем».",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Пустые ящики и минимальный набор посуды: один стакан, две вилки, изношенная сковорода.",
+      "h2_anchor": "Не плита. Не галочка. А завтрак на столе",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Переписка с хостом и чеки кафе на три дня — итого около 7200 рублей.",
+      "h2_anchor": "Сообщение, которое стоит дешевле трёх дней кафе",
+      "visual_type": "bar_timeline_chart",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Контраст: кухня с плитой не заменяет траты в кафе, если нет посуды — проверяйте до брони.",
+      "h2_anchor": "Почему на кухне ломается вся экономия квартиры",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}

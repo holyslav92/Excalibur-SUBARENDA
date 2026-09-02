@@ -63,6 +63,18 @@
         "meme": "trade_offer sticker small",
         "sticker_set": "багаж после выезда, вокзал тюмень"
       }
+    },
+    {
+      "date": "2026-09-02",
+      "topic_id": "B07",
+      "slug": "",
+      "motifs": {
+        "composition": "guest opens empty drawer + printed listing on counter with checked kitchen line",
+        "location": "early september sunny tyumen apartment kitchen, green trees outside, no winter",
+        "meme": "none photoreal only",
+        "prop_set": "empty drawers, one glass, two forks, worn frying pan, printed listing",
+        "joke": "checkbox says kitchen exists but drawer holds one fork"
+      }
     }
   ]
 }
