@@ -1,0 +1,95 @@
+{
+  "topic_id": "B08",
+  "canvas_file": "cover/canvas-slice4.png",
+  "layout": "2x2",
+  "pipeline": "slice4_grid_1x_image_api",
+  "inline_count": 3,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-slice4.png",
+      "batch_file": "cover/slice4-mcp-batch.json",
+      "prompt_file": "cover/slice4-mcp-prompt.txt",
+      "result_file": "cover/slice4-mcp-result.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    }
+  ],
+  "style_preset": "the_rieltor_twilight_gold",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "cover_hook": "Одно полотенце на четверых",
+  "cover_hook_highlight": "Одно",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Grsai ONE 2048x1152 2x2 grid slice4 + logo paste cover only. gen_only_human_v1.",
+  "cover_emotion": "шок: галочка «полотенца», а на крючке одно на четверых",
+  "cover_scene": "Ранний сентябрь, светлая ванная квартиры в Тюмени: семья из четырёх у двери ванной, на крючке одно полотенце, на стиральной машине распечатка объявления с галочкой «полотенца»",
+  "cover_motifs": {
+    "composition": "family at bathroom door + single towel on hook + printed listing with towel checkbox on washer",
+    "location": "early September sunny Tyumen apartment bathroom, bright daylight through frosted window, NO winter",
+    "meme": "none photoreal only",
+    "prop_set": "one bath towel on hook, four pairs of shoes in corridor, printed booking listing, shampoo bottle, folded laundry",
+    "sticker_set": "none on gen_only",
+    "joke": "checkbox says towels exist but hook holds one for four guests"
+  },
+  "wordstat_stickers": [
+    "квартира посуточно Тюмень",
+    "снять квартиру посуточно",
+    "полотенца в квартире"
+  ],
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Светлая ванная: на крючке одно полотенце, семья из четырёх у двери; на стиральной машине лист с кириллицей «Одно полотенце на четверых».",
+      "scene_hint": "Светлая ванная квартиры в Тюмени, начало сентября: мама с двумя детьми и папой у двери ванной смотрят на крючок с одним полотенцем; на крышке стиральной машины распечатка объявления с галочкой «полотенца» и крупной кириллицей на бумаге «Одно полотенце на четверых»; в коридоре видны четыре пары обуви; тёплый дневной свет из матового окна; TOP-RIGHT чистая светлая стена для factory logo paste; без телефона, без мемов, без логотипа в кадре.",
+      "meme_caption_ru": "",
+      "sticky": "Магазин после заселения"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Галочка не считает гостей",
+      "visual_type": "comparison_table_ui",
+      "scene_hint": "Крупный план ванной полки и крючка: одно полотенце, четыре зубные щётки в стакане, детская обувь на полу; рядом телефон с перепиской «полотенца есть» — «есть комплект»; фотореал, без инфографики и без логотипа.",
+      "alt": "Одно полотенце на крючке при четырёх гостях; переписка не называет число.",
+      "labels": [
+        "1 полотенце",
+        "4 гостя",
+        "400–900 руб"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Почему один набор превращается в ночной магазин",
+      "visual_type": "bar_timeline_chart",
+      "scene_hint": "Вечерний коридор квартиры: открытая дверь, семья собирается в магазин; на столике чек «Пятёрочка» и пакет с полотенцами; на стене календарь сентября; фотореал, без pill-кнопки телефона и без логотипа.",
+      "alt": "Ночной поход в магазин за полотенцами после заселения — 400–900 ₽ на четверых.",
+      "labels": [
+        "фото открытого шкафа",
+        "допкомплект 200–500 ₽",
+        "ответ текстом"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Светлый стол у окна: лист с чек-листом «сколько полотенец на каждого», карандаш, фото открытого шкафа с полотенцами на экране телефона; фотореал, без стикеров и без логотипа.",
+      "alt": "Проверить количество полотенец и попросить фото шкафа до перевода денег.",
+      "labels": [
+        "2–3 ночи",
+        "смена полотенец",
+        "банные и маленькие",
+        "спросить до перевода"
+      ]
+    }
+  },
+  "cover_keys_ru": []
+}

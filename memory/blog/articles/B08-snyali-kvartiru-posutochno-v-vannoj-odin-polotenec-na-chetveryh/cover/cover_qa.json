@@ -1,0 +1,28 @@
+{
+  "agent": "excalibur-blog-cover-qa",
+  "status": "PASS",
+  "checked_at": "2026-09-02",
+  "topic_id": "B08",
+  "checks": {
+    "eight_png_exist": true,
+    "quad_manifest_valid": true,
+    "wordstat_stickers_1_3": true,
+    "motif_no_collision_14d": true,
+    "max_one_cat_meme_slot": true,
+    "light_high_key": true,
+    "logo_composite_stamp_pass": true,
+    "cover_logo_pasted": true,
+    "inline_no_logo_on_inlines": true,
+    "forbid_phone_on_cover_image": true,
+    "forbid_922_phone": true,
+    "forbid_ai_drawn_logo_cover": true,
+    "forbid_wordpress_ui_in_art": true,
+    "no_logo_plate_cover": true,
+    "forbid_graphic_collage_overlay": true,
+    "forbid_poster_composite_stamp": true,
+    "forbid_logo_reference_in_batch": true,
+    "forbid_overlapping_text_blocks": true,
+    "forbid_giant_cropped_glyph": true
+  },
+  "notes": "gen_only_human_v1 PASS: 4 PNG (cover+3 inline); factory logo top-right cover only; headline «Одно полотенце на четверых» on newspaper in scene; no phone on cover (tenant forbid_cover_phone_on_image); no meme/stickers; sunny high-key living room/bathroom; inline utility frames with towel facts; no logo on inlines; motif registered B08; Grsai vip economy 1 attempt."
+}
