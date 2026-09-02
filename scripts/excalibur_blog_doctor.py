@@ -590,6 +590,30 @@ def main() -> int:
         )
         print("NOTE read shared/dzen-content-rules.md + rf-blocked-entities.json BEFORE Scout")
 
+    # Ledger ↔ published-titles parity (Scout/Research anti-dup reads titles, not ledger)
+    try:
+        scripts_dir = str(root / "scripts")
+        if scripts_dir not in sys.path:
+            sys.path.insert(0, scripts_dir)
+        from excalibur_blog_published_titles import build_titles, load_ledger_rows
+
+        ledger_published = sum(
+            1 for row in load_ledger_rows(root) if row.get("status") == "published"
+        )
+        titles_count = len(build_titles(root))
+        check(
+            ledger_published == titles_count,
+            (
+                "published-articles ledger matches published-titles "
+                f"(ledger={ledger_published} titles={titles_count}; "
+                "run python3 scripts/excalibur_blog_published_titles.py)"
+            ),
+            errors,
+            warnings,
+        )
+    except Exception as exc:  # noqa: BLE001
+        check(False, f"published-titles parity check failed: {exc}", errors, warnings)
+
     print(f"SUMMARY errors={len(errors)} warnings={len(warnings)} setup_complete={setup_complete}")
     if errors:
         print("ERRORS: " + "; ".join(errors))

@@ -1065,6 +1065,13 @@ def upsert_publish_ledger(root: Path, payload: dict[str, Any], permalink: str) -
     ledger_path.write_text("\n".join(kept).rstrip() + "\n", encoding="utf-8")
 
 
+def refresh_published_titles(root: Path, article_dir: Path) -> dict[str, Any]:
+    """Rebuild shared/published-titles.md (+ article copy) from ledger + meta."""
+    from excalibur_blog_published_titles import write_titles
+
+    return write_titles(root, article_dir=article_dir)
+
+
 def parse_article_qa_verdict(article_dir: Path) -> str:
     """Read verdict from article-qa.md header.
 
@@ -1630,6 +1637,19 @@ def main() -> int:
         encoding="utf-8",
     )
     upsert_publish_ledger(root, payload, permalink or safe_permalink)
+    try:
+        titles_sync = refresh_published_titles(root, article_dir)
+        print(
+            f"OK published_titles_sync count={titles_sync['count']} "
+            f"shared={titles_sync['shared_path']}"
+        )
+    except Exception as exc:  # noqa: BLE001
+        print(
+            f"BLOCKER: published-titles sync failed after ledger upsert: "
+            f"{type(exc).__name__}: {exc}",
+            file=sys.stderr,
+        )
+        return 1
     try:
         mu_out = deploy_dzen_mu_plugin(env, public)
         if "OK dzen_mu_plugin_done" not in mu_out:

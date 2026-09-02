@@ -108,6 +108,52 @@ class WpCategoriesInterlinkTests(unittest.TestCase):
         finally:
             ledger_path.write_text(backup, encoding="utf-8")
 
+    def test_ledger_upsert_refreshes_published_titles(self) -> None:
+        import sys
+
+        sys.path.insert(0, str(ROOT / "scripts"))
+        from excalibur_blog_published_titles import build_titles
+        from excalibur_blog_wp_publish import refresh_published_titles, upsert_publish_ledger
+
+        ledger_path = ROOT / "shared/published-articles.md"
+        titles_path = ROOT / "shared/published-titles.md"
+        ledger_backup = ledger_path.read_text(encoding="utf-8")
+        titles_backup = titles_path.read_text(encoding="utf-8")
+        fixture_dir = ROOT / "memory/blog/articles/_gate_fixture_titles_sync"
+        try:
+            fixture_dir.mkdir(parents=True, exist_ok=True)
+            (fixture_dir / "article.meta.json").write_text(
+                json.dumps(
+                    {
+                        "slug": "fixture-titles-sync",
+                        "topic_id": "B99",
+                        "title": "Fixture titles sync",
+                    },
+                    ensure_ascii=False,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            upsert_publish_ledger(
+                ROOT,
+                {"topic_id": "B99", "slug": "fixture-titles-sync"},
+                "/blog/fixture-titles-sync/",
+            )
+            refresh_published_titles(ROOT, fixture_dir)
+            titles = build_titles(ROOT)
+            topic_ids = {row["topic_id"] for row in titles}
+            self.assertIn("B99", topic_ids)
+            self.assertTrue((fixture_dir / "published-titles-only.md").is_file())
+        finally:
+            ledger_path.write_text(ledger_backup, encoding="utf-8")
+            titles_path.write_text(titles_backup, encoding="utf-8")
+            shutil.rmtree(fixture_dir, ignore_errors=True)
+            # Remove B99 row if backup restore missed it
+            text = ledger_path.read_text(encoding="utf-8")
+            if "B99" in text and "B99" not in ledger_backup:
+                kept = [line for line in text.splitlines() if " B99 " not in line]
+                ledger_path.write_text("\n".join(kept).rstrip() + "\n", encoding="utf-8")
+
 
 if __name__ == "__main__":
     unittest.main()

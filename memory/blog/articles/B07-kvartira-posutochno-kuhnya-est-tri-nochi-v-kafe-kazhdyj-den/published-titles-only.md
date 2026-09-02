@@ -15,3 +15,4 @@ lessons, benchmarks, QA reports или соседние research-notes как о
 | B04 | oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego | Оплатили за двоих. У двери попросили доплату за третьего | published |
 | B05 | rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super | Рейтинг 4,8. Два «всё супер» — и 3 900 ₽ под вопросом | published |
 | B06 | vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu | Выезд в полдень. Поезд через 4 часа — чемоданы у подъезда | published |
+| B07 | kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den | Хозяин написал «кухня есть». За три ночи в кафе ушло 7 200 ₽ | published |
