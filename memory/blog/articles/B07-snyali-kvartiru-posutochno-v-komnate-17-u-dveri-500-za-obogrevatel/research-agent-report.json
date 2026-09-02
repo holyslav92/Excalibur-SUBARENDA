@@ -1,0 +1,89 @@
+{
+  "status": "PASS",
+  "topic_id": "B07",
+  "slug": "snyali-kvartiru-posutochno-v-komnate-17-u-dveri-500-za-obogrevatel",
+  "research_date": "2026-09-02",
+  "research_model": {
+    "provider": "derouter-rest",
+    "model": "claude-fable-5-1",
+    "override": "one_shot_owner_override",
+    "stamp": "derouter-opus-stamp-research.json"
+  },
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "tumentoday.ru 2026-09-01 — отопление в Тюмени не раньше конца сентября; ura.news — мэрия мониторит, старт 2024/2025 — 23 сентября",
+    "source_type": "news",
+    "urls": [
+      "https://tumentoday.ru/2026/09/01/otopleniye_vklyuchat_v_tyumeni_ne_ranshe_kontsa_sentyabrya/",
+      "https://ura.news/news/1053123274",
+      "https://ura.news/news/1053123165"
+    ],
+    "accessed_at": "2026-09-02",
+    "note": "Новость 01.09.2026 + рост Wordstat «когда в тюмени включат отопление» 63→285 показов/день за 28–31.08."
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": true,
+    "scope": "Тариф электроэнергии для населения Тюменской области 01.01–30.09.2026 (4,29 / 3,00 ₽/кВт·ч) — официальный сайт гарантирующего поставщика Восток-Электра (физлица) + пресс-центр Газпром энергосбыт Тюмень; банков/застройщиков нет.",
+    "verified_claims": 2,
+    "entities_checked": [
+      "vostok-electra",
+      "gesbt"
+    ],
+    "errors": []
+  },
+  "wordstat": {
+    "status": "PASS",
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 5363,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "снять квартиру посуточно в тюмени",
+        "volume": 1696,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "когда в тюмени включат отопление",
+        "volume": 830,
+        "region": "55+11176",
+        "note": "динамика 28.08 63 → 31.08 285 показов/день"
+      },
+      {
+        "phrase": "когда в тюмени включат отопление 2026",
+        "volume": 241,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "ранний заезд",
+        "volume": 6598,
+        "region": "225",
+        "note": "справка; anti-dup (live 2026-08-21)"
+      },
+      {
+        "phrase": "посуточно кондиционер",
+        "volume": 165,
+        "region": "225",
+        "note": "исходный owner-кандидат, seasonal rework → отопление"
+      }
+    ]
+  },
+  "source_count": 14,
+  "limitations": [
+    "Точная дата включения отопления в Тюмени в 2026 неизвестна — только норматив и прогноз.",
+    "Расчёт стоимости ночи обогревателя оценочный (1,5–2 кВт, 10–24 ч).",
+    "Кейс с 500 ₽ — чужой хост, не «Добрый дом».",
+    "Санитарные нормы температуры в жилье в research не подтверждены — не использовать."
+  ],
+  "writer_safe_urls": [
+    "https://t.me/Dobriy_dom_72",
+    "https://t.me/Dobriy_dom_Tyumen",
+    "https://max.ru/id660300569233_biz",
+    "https://добрыйдом-72.рф/booking/",
+    "https://tumentoday.ru/2026/09/01/otopleniye_vklyuchat_v_tyumeni_ne_ranshe_kontsa_sentyabrya/",
+    "https://ura.news/news/1053123274",
+    "https://tyumen.vostok-electra.ru/clients/physical-persons/tariffs-for-electricity"
+  ]
+}

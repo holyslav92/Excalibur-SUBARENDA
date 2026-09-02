@@ -1,0 +1,22 @@
+{
+  "script": "scripts/excalibur_blog_derouter_opus_chat.py",
+  "role": "scout",
+  "tier": "utility",
+  "model": "claude-fable-5-1",
+  "endpoint": "https://api.derouter.ai/openai/v1/chat/completions",
+  "request_id": "chatcmpl-f38b9809fbc94453a993cda1",
+  "usage": {
+    "prompt_tokens": 6841,
+    "completion_tokens": 3721,
+    "total_tokens": 10562,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "created_at": "2026-09-02T07:25:30.010920+00:00",
+  "provider": "derouter-rest",
+  "user_prompt_chars": 200,
+  "contract": "shared/derouter-opus-brain-contract.md",
+  "model_override": "one_shot_owner_override",
+  "tier_default_model_unchanged": true
+}

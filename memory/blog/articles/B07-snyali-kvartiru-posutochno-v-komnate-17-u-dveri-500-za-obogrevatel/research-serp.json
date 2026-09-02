@@ -1,0 +1,156 @@
+{
+  "agent": "excalibur-blog",
+  "date_context": {
+    "timezone": "Europe/Moscow",
+    "today_iso": "2026-09-02",
+    "today_ru": "02.09.2026",
+    "year": 2026,
+    "month": 9,
+    "month_name_ru": "сентябрь",
+    "weekday_ru": "среда"
+  },
+  "topic": {
+    "topic_id": "B07",
+    "title": "Сняли квартиру посуточно. В комнате +17. У двери: 500 ₽ за обогреватель",
+    "h1": "Сняли квартиру посуточно. В комнате +17. У двери: 500 ₽ за обогреватель",
+    "slug": "snyali-kvartiru-posutochno-v-komnate-17-u-dveri-500-za-obogrevatel",
+    "primary_query": "Сняли квартиру посуточно. В комнате +17. У двери: 500 ₽ за обогреватель",
+    "priority": "P0"
+  },
+  "searches": [
+    {
+      "query_id": "primary_fresh",
+      "query": "Сняли квартиру посуточно. В комнате +17. У двери: 500 ₽ за обогреватель 2026",
+      "purpose": "актуальный SERP",
+      "result_count": 0,
+      "results": [],
+      "searched_at": "2026-09-02"
+    },
+    {
+      "query_id": "title_fresh",
+      "query": "Сняли квартиру посуточно. В комнате +17. У двери: 500 ₽ за обогреватель 2026",
+      "purpose": "SERP по человеческому title",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "1-комнатная квартира посуточно, Ольгинка, Горизонт микрорайон, 17 ...",
+          "url": "https://olginka.sutochno.ru/2107506",
+          "snippet": ""
+        },
+        {
+          "title": "Снять квартиру посуточно, аренда квартиры на сутки в Артеме | Авито ...",
+          "url": "https://www.avito.ru/artem/kvartiry/sdam/posutochno/-ASgBAgICAkSSA8gQ8AeSUg",
+          "snippet": "В комнате 2 двуспальных дивана, изолированная кухня, оснашенная всей необходимой техникой. В квартире есть все для комфортного проживания."
+        },
+        {
+          "title": "1-комнатная квартира посуточно, Москва, Большие Каменщики улица, 17 ...",
+          "url": "https://www.sutochno.ru/79192",
+          "snippet": "Квартира в центре Артема, Ульяновская 26/2 Сдаётся светлая и уютная двухкомнатная квартира с современным ремонтом. Расположена в центре города Артём на улице Ульяновской, дом 26/2, в теплом панельном пятиэтажном доме на пятом этаже."
+        },
+        {
+          "title": "1-комнатная квартира посуточно, Москва, Волков переулок, 17, объявление ...",
+          "url": "https://www.sutochno.ru/2202517",
+          "snippet": "Хорошая квартира в центре Москвы, 3 мин от метро Таганская, удобное дистанционное заселение и выселение. Окна выходят в тихий двор, для тех, кто любит засыпать в тишине, хорошая звукоизоляция."
+        },
+        {
+          "title": "1-комнатная квартира посуточно, Сириус, Станиславского улица, 17 ...",
+          "url": "https://adler.sutochno.ru/sirius/1520657",
+          "snippet": "От 5120 рублей за сутки — беспроводной интернет Wi-Fi, холодильник, стиральная машина, СВЧ-печь, отчётные документы, постельное бельё, 6 отзывов — объявление об аренде №2202517."
+        },
+        {
+          "title": "Снять квартиру посуточно, аренда квартиры на сутки в Каменке | Авито ...",
+          "url": "https://www.avito.ru/penzenskaya_oblast_kamenka/kvartiry/sdam/posutochno/-ASgBAgICAkSSA8gQ8AeSUg",
+          "snippet": "Новая, чистая, красивая квартира с выделенной спальней в лучшем районе Большого Сочи — федеральная территория «Сириус», в 10 минутах от пляжей «Мандарин» или «Сочифония»."
+        }
+      ],
+      "searched_at": "2026-09-02"
+    },
+    {
+      "query_id": "official_docs",
+      "query": "Сняли квартиру посуточно. В комнате +17. У двери: 500 ₽ за обогреватель official docs 2026",
+      "purpose": "официальные docs",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "1-комнатная квартира посуточно, Ольгинка, Горизонт микрорайон, 17 ...",
+          "url": "https://olginka.sutochno.ru/2107506",
+          "snippet": ""
+        },
+        {
+          "title": "1-комнатная квартира посуточно, Москва, Большие Каменщики улица, 17 ...",
+          "url": "https://www.sutochno.ru/79192",
+          "snippet": "В комнате 2 двуспальных дивана, изолированная кухня, оснашенная всей необходимой техникой. В квартире есть все для комфортного проживания."
+        },
+        {
+          "title": "1-комнатная квартира посуточно, Владивосток, Каштановая улица, 17/1 ...",
+          "url": "https://vl.sutochno.ru/2378485",
+          "snippet": "Хорошая квартира в центре Москвы, 3 мин от метро Таганская, удобное дистанционное заселение и выселение. Окна выходят в тихий двор, для тех, кто любит засыпать в тишине, хорошая звукоизоляция."
+        },
+        {
+          "title": "Как не попасться мошенникам, если снимаешь квартиру посуточно ...",
+          "url": "https://ngs.ru/text/world/2026/07/17/76536557/",
+          "snippet": "Предлагаем к аренде новую уютную квартиру евроформата площадью 35 м² в современном стиле с элементами неоклассики и видом на море. В квартире есть всё необходимое для вашего удобства:"
+        },
+        {
+          "title": "1-комнатная квартира посуточно, Москва, Волков переулок, 17, объявление ...",
+          "url": "https://www.sutochno.ru/2202517",
+          "snippet": "На картинке жилье выглядит настолько заманчиво, что хочется немедленно продать собственную квартиру и переселиться в съемную однушку навсегда."
+        },
+        {
+          "title": "1-комнатная квартира посуточно, Сириус, Станиславского улица, 17 ...",
+          "url": "https://adler.sutochno.ru/sirius/1520657",
+          "snippet": "От 5120 рублей за сутки — беспроводной интернет Wi-Fi, холодильник, стиральная машина, СВЧ-печь, отчётные документы, постельное бельё, 6 отзывов — объявление об аренде №2202517."
+        }
+      ],
+      "searched_at": "2026-09-02"
+    },
+    {
+      "query_id": "github_evidence",
+      "query": "site:github.com Сняли квартиру посуточно. В комнате +17. У двери: 500 ₽ за обогреватель 2026",
+      "purpose": "GitHub evidence",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "GitHub",
+          "url": "https://github.com/favicon.ico",
+          "snippet": ""
+        },
+        {
+          "title": "Sign in to GitHub · GitHub",
+          "url": "https://github.com/login",
+          "snippet": "Б о х я я Ї ™ я , \\ Б \" 4 я я я я Џ 0 ящ н я ц 8 @ л я я я я - њ я ь ы ; : з я я љ Щ я я O L я я Ъ ц я р с я ц ч я б б я ч Ю я щ !"
+        },
+        {
+          "title": "GitHub Docs",
+          "url": "https://docs.github.com/",
+          "snippet": "GitHub is where people build software. More than 150 million people use GitHub to discover, fork, and contribute to over 420 million projects."
+        },
+        {
+          "title": "GitHub · Change is constant. GitHub keeps you ahead. · GitHub",
+          "url": "https://github.com/",
+          "snippet": "Get started, troubleshoot, and make the most of GitHub. Documentation for new users, developers, administrators, and all of GitHub's products."
+        },
+        {
+          "title": "backengineering · GitHub",
+          "url": "https://github.com/backengineering",
+          "snippet": "Write, test, and fix code quickly with GitHub Copilot, from simple boilerplate to complex features. From your first line of code to final deployment, GitHub provides AI and automation tools to help you build and ship better software faster. A Copilot chat window with the 'Ask' mode enabled."
+        },
+        {
+          "title": "GitHub - openclaw/openclaw: Your own personal AI assistant. Any OS. Any ...",
+          "url": "https://github.com/openclaw/openclaw",
+          "snippet": "Business has continued with Aftermath Labs. GitHub is where backengineering builds software."
+        }
+      ],
+      "searched_at": "2026-09-02"
+    },
+    {
+      "query_id": "community_experience",
+      "query": "Сняли квартиру посуточно. В комнате +17. У двери: 500 ₽ за обогреватель forum problems опыт 2026",
+      "purpose": "форумы и живые проблемы",
+      "result_count": 0,
+      "results": [],
+      "searched_at": "2026-09-02"
+    }
+  ],
+  "errors": []
+}

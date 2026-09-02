@@ -247,6 +247,52 @@ def is_retryable_http(status: int) -> bool:
     return status in {401, 403, 408, 429, 500, 502, 503, 504, 524}
 
 
+def _collect_sse_chat_completion(response: Any) -> dict[str, Any]:
+    """Собирает SSE-чанки OpenAI-совместимого стрима в объект chat.completion."""
+    content_parts: list[str] = []
+    response_id: str | None = None
+    finish_reason: str | None = None
+    usage: dict[str, Any] = {}
+    for raw_line in response:
+        line = raw_line.decode("utf-8", errors="replace").strip()
+        if not line or not line.startswith("data:"):
+            continue
+        chunk_raw = line[5:].strip()
+        if chunk_raw == "[DONE]":
+            break
+        try:
+            chunk = json.loads(chunk_raw)
+        except json.JSONDecodeError:
+            continue
+        if not isinstance(chunk, dict):
+            continue
+        response_id = response_id or chunk.get("id")
+        if isinstance(chunk.get("usage"), dict) and chunk["usage"]:
+            usage = chunk["usage"]
+        for choice in chunk.get("choices") or []:
+            if not isinstance(choice, dict):
+                continue
+            delta = choice.get("delta") or {}
+            piece = delta.get("content") if isinstance(delta, dict) else None
+            if isinstance(piece, str):
+                content_parts.append(piece)
+            if choice.get("finish_reason"):
+                finish_reason = str(choice["finish_reason"])
+    return {
+        "id": response_id,
+        "object": "chat.completion",
+        "choices": [
+            {
+                "index": 0,
+                "message": {"role": "assistant", "content": "".join(content_parts)},
+                "finish_reason": finish_reason,
+            }
+        ],
+        "usage": usage,
+        "streamed": True,
+    }
+
+
 def http_chat_post(
     endpoint: str,
     api_key: str,
@@ -254,12 +300,20 @@ def http_chat_post(
     *,
     timeout: int,
 ) -> dict[str, Any]:
+    # Стриминг (DEROUTER_STREAM=1): длинные роли (writer/research) на не-стрим запросе
+    # упираются в 120-секундный Proxy Read Timeout Cloudflare (HTTP 524). SSE держит
+    # соединение живым; ответ собирается в тот же формат chat.completion.
+    use_stream = str(os.environ.get("DEROUTER_STREAM", "")).strip().casefold() in {"1", "true", "yes", "on"}
+    if use_stream:
+        payload = dict(payload)
+        payload["stream"] = True
+        payload["stream_options"] = {"include_usage": True}
     data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
     request = urllib.request.Request(
         endpoint,
         data=data,
         headers={
-            "Accept": "application/json",
+            "Accept": "text/event-stream" if use_stream else "application/json",
             "Authorization": f"Bearer {api_key}",
             "Content-Type": "application/json",
         },
@@ -267,6 +321,8 @@ def http_chat_post(
     )
     try:
         with urllib.request.urlopen(request, timeout=timeout) as response:
+            if use_stream:
+                return _collect_sse_chat_completion(response)
             body = response.read().decode("utf-8")
     except urllib.error.HTTPError as exc:
         body = exc.read().decode("utf-8", errors="replace")
@@ -322,6 +378,11 @@ def call_derouter_chat(
             {"role": "user", "content": user_prompt},
         ],
     }
+    # Опциональный потолок ответа: провайдерский default у части моделей (8192)
+    # режет длинные роли (research/writer). Без env — поведение прежнее.
+    max_tokens_raw = os.environ.get("DEROUTER_MAX_TOKENS", "").strip()
+    if max_tokens_raw.isdigit() and int(max_tokens_raw) > 0:
+        payload["max_tokens"] = int(max_tokens_raw)
 
     endpoints = [PRIMARY_ENDPOINT, FALLBACK_ENDPOINT]
     last_error: Exception | None = None
@@ -332,6 +393,13 @@ def call_derouter_chat(
             try:
                 response = http_chat_post(endpoint, api_key, payload, timeout=timeout)
                 text = extract_assistant_text(response)
+                finish = (response.get("choices") or [{}])[0].get("finish_reason")
+                if finish == "length":
+                    print(
+                        "WARN Derouter finish_reason=length — ответ обрезан по лимиту токенов; "
+                        "поднимите DEROUTER_MAX_TOKENS",
+                        file=sys.stderr,
+                    )
                 return text, response, endpoint
             except DerouterChatRetryable as exc:
                 last_error = exc

@@ -1,0 +1,12 @@
+{
+  "gate": "case-delivery",
+  "status": "PASS",
+  "stage": "article",
+  "manner_canon": "dobry_dom_gen_only_human_v1",
+  "checks_run": [
+    "writer.html",
+    "article.html"
+  ],
+  "errors": [],
+  "article_dir": "/workspace/memory/blog/articles/B07-snyali-kvartiru-posutochno-v-komnate-17-u-dveri-500-za-obogrevatel"
+}

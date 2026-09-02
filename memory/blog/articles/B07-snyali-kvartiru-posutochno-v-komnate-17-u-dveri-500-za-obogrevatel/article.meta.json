@@ -1,0 +1,47 @@
+{
+  "title": "Сняли квартиру посуточно. Хотели тепла. У двери: +500 ₽ или спать в куртке",
+  "h1": "Сняли квартиру посуточно. Хотели тепла. У двери: +500 ₽ или спать в куртке",
+  "slug": "snyali-kvartiru-posutochno-v-komnate-17-u-dveri-500-za-obogrevatel",
+  "topic_id": "B07",
+  "author_id": "dobry-dom",
+  "editorial_manner_canon": "dobry_dom_gen_only_human_v1",
+  "cover_pipeline_canon": "dobry_dom_gen_only_human_v1",
+  "wp_category_slugs": [
+    "posutochnaya-arenda",
+    "sovety-gostyam"
+  ],
+  "date": "2026-09-02",
+  "writing_model_override": {
+    "model": "claude-fable-5-1",
+    "scope": "this_article_only",
+    "provider": "derouter-rest",
+    "roles": [
+      "scout",
+      "research",
+      "title",
+      "writer",
+      "sol",
+      "description",
+      "cover-text",
+      "schema",
+      "cover-scene"
+    ]
+  },
+  "article_mode": "B",
+  "description": "Сняли квартиру посуточно. Хотели тепла. У двери: +500 ₽ или спать в куртке",
+  "meta_ab": {
+    "title_seo": "Сняли квартиру посуточно. Хотели тепла. У двери: +500 ₽ или спать в куртке",
+    "title_ctr": "Сняли квартиру посуточно. Хотели тепла. У двери: +500 ₽ или спать в куртке",
+    "title_aeo": "Сняли квартиру посуточно. Хотели тепла. У двери: +500 ₽ или спать в куртке",
+    "description_seo": "Сняли квартиру посуточно. Хотели тепла. У двери: +500 ₽ или спать в куртке",
+    "description_ctr": "Сняли квартиру посуточно. Хотели тепла. У двери: +500 ₽ или спать в куртке",
+    "description_aeo": "Сняли квартиру посуточно. Хотели тепла. У двери: +500 ₽ или спать в куртке"
+  },
+  "theme_blocks": {
+    "faq": "skip",
+    "quiz": "skip",
+    "side_stickers": "skip"
+  },
+  "pipeline_canon": "human-first-v3",
+  "editorial_swarm": false
+}

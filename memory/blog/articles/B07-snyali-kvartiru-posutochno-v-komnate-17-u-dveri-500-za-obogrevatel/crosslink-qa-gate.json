@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "{{SITE_BASE}}/blog/oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego/",
+      "slug": "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+      "anchor": "внезапная доплата за третьего гостя: вы уже приехали, уже устали, деваться некуда.Вопрос на драку. Кто ошибся крупнее — хост, который назвал наценку электричеством, или гость, который перевёл за две ночи и не спросил про тепло? Спорю про это только в",
+      "catalog_title": "Оплатили за двоих. У двери попросили доплату за третьего",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_skipped": true
+    },
+    {
+      "href": "{{SITE_BASE}}/blog/vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu/",
+      "slug": "vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu",
+      "anchor": "чемоданы между выездом и поездом — до ключей, а не в день отъезда. И так же работает",
+      "catalog_title": "Выезд в полдень. Поезд через 4 часа — чемоданы у подъезда",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_skipped": true
+    },
+    {
+      "href": "{{SITE_BASE}}/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "anchor": "инструкция по заселению, присланная заранее: всё, что вы узнали до ключей, — ваша опора; всё, что после, — его.У нас тепло до отопления — часть суток, а не строка у двери. Про обогреватель гость спрашивает в чате до брони, и ответ приходит тоже в чат, до перевода. Дверь как касса — так не заселяем.Мой вывод как практикаСначала спросить про тепло в чате. Потом переводить. Не наоборот. Снять квартиру посуточно в межсезонье — это снять не стены, а ночь, в которой можно спать без куртки; если тепло вынесено за скобки цены, вы должны прочитать это в объявлении, а не услышать на пороге. Хост, который держит обогреватель как заложника, торгует не электричеством — он торгует вашей усталостью поздним вечером. А усталость всегда дороже 64 ₽.Спросите, газ в доме или электроплита: от этого зависит тариф — и то, чем греть чайник, если автомат выбьет от обогревателя.Посмотрите фото объявления: кондиционер с режимом обогрева или конвектор под окном видны без вопросов.Уточните окна — пластик или старое дерево: при +7 за стеклом щель в раме съедает тепло быстрее любого прибора.Попросите второе одеяло до заезда: это дешевле спора, и за деньги его почти никогда не продают.При заезде отправьте в чат фото термометра или скрин погоды — пригодится, если на выезде разговор пойдёт о том,",
+      "catalog_title": "Оплатил квартиру посуточно. Код прислали от чужой двери",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_skipped": true
+    },
+    {
+      "href": "{{SITE_BASE}}/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/",
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "anchor": "как удерживают залог «за пользование обогревателем».Вопрос двух лагерей: вы бы отдали 500 ₽ и легли спать в тепле — или спали в куртке и утром написали отзыв на две звезды?Если ищете квартиру посуточно в Тюмени, где вопрос про тепло закрывается в чате, а не у двери, — читайте",
+      "catalog_title": "Снял квартиру посуточно. Залог не вернули — нашли скол на плите",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_skipped": true
+    }
+  ],
+  "catalog_count": 96,
+  "outbound_unique_slugs": [
+    "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+    "vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu",
+    "beskontaktnoe-zaselenie-posutochno-tyumen",
+    "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B07-snyali-kvartiru-posutochno-v-komnate-17-u-dveri-500-za-obogrevatel",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}
