@@ -46,6 +46,7 @@ Prefer **high-volume guest P0** (Wordstat 55+11176, compare 225).
 | 08–10.09 | 6 | `pack_vs_flat` | Что везти с собой vs что уже должно быть в квартире |
 | 08–10.09 | 8 | `checkout_train_bags` | ✅ B06 handoff 2026-09-01 — P0 «квартиры посуточно тюмень» 5446; angle хранение багажа 133/28 |
 | 08–10.09 | 7 | `quiet_center_maps` | «Тихий центр»: 7 минут в Картах/панорамах |
+| 01–03.09 | owner | `heating_offseason_heater_fee` | ✅ B07 published 2026-09-02 — обогреватель 500 ₽ у двери до отопления; P0 «квартиры посуточно тюмень» 5363; angle «когда в тюмени включат отопление» 830 (63→285/день) |
 
 Scout берёт **только** hook из активного окна (today YEKT ∈ window). После handoff —
 stamp `queue_slot` + `used_in_articles` в JSON.

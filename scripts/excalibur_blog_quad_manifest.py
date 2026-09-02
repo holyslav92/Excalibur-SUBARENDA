@@ -176,11 +176,23 @@ def build_manifest(article_dir: Path, root: Path, preserve: dict | None) -> dict
     )
     # Точные строки заголовка обложки и носитель надписи (граффити/бумага/экран) —
     # владеет Cover-text; manifest только переносит их в prompt builder.
-    headline_fields: dict[str, str] = {}
+    headline_fields: dict[str, Any] = {}
     for key in ("cover_headline_line1", "cover_headline_line2", "cover_headline_line3", "cover_headline_medium"):
         value = str(cover_text.get(key) or (preserve or {}).get(key) or "").strip()
         if value:
             headline_fields[key] = value
+    # Cover-QA требует wordstat_stickers (1–3) и cover_phone_cta — при --merge они
+    # раньше терялись (B07): переносим из cover-text.json / прежнего манифеста.
+    stickers = [
+        str(x).strip()
+        for x in (cover_text.get("wordstat_stickers") or (preserve or {}).get("wordstat_stickers") or [])
+        if str(x).strip()
+    ]
+    if stickers:
+        headline_fields["wordstat_stickers"] = stickers
+    phone_cta = str((preserve or {}).get("cover_phone_cta") or "").strip()
+    if phone_cta:
+        headline_fields["cover_phone_cta"] = phone_cta
 
     return {
         "topic_id": topic_id,

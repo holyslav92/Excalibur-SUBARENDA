@@ -1,5 +1,25 @@
 # WP publish log
 
+## B07 — 2026-09-02
+
+- **topic_id:** B07
+- **slug:** snyali-kvartiru-posutochno-v-komnate-17-u-dveri-500-za-obogrevatel
+- **title:** Сняли квартиру посуточно. Хотели тепла. У двери: +500 ₽ или спать в куртке
+- **post_id:** 4307
+- **permalink:** /blog/snyali-kvartiru-posutochno-v-komnate-17-u-dveri-500-za-obogrevatel/
+- **categories:** requested posutochnaya-arenda (101), sovety-gostyam (106) — на live WP терминов 101/106 нет, пост остался в «Без рубрики» (id 1), как и все предыдущие посты; см. INC-20260902-1320
+- **featured_image:** 4308 (cover 2048×1152, graffiti H1, factory logo top-right)
+- **inline_images:** 4309–4311 (3× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS
+- **cover_qa:** PASS (dobry_dom_gen_only_human_v1, 1 Grsai VIP draw, slice4, logo paste cover only)
+- **dzen rss:** /feed/zen/ → 1 enclosure (full cover PNG), format-article/native-yes/evergreen/index, 4 img in content (featured + 3 inline)
+- **interlink inbound:** B01 (3745)
+- **publish_method:** sftp (FTP_TRANSPORT=sftp FTP_PORT=22 явно)
+- **llms_deploy:** PASS (sftp)
+- **writing model (owner one-shot override):** Derouter REST `claude-fable-5-1` для всех текстовых ролей (scout/research/title/writer/sol/description/cover-text/cover-scene/schema) через `--one-shot-model`; дефолт tenant-config (Opus 5 / Terra) не менялся
+- **words:** 1007 (article.html), 994 live
+
 ## B06 — 2026-09-01
 
 - **topic_id:** B06

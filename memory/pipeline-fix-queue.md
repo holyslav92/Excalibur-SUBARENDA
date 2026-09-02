@@ -376,3 +376,72 @@ checks_run:
 - `python3 -m unittest tests.test_llms_deploy_transport tests.test_publish_transport -v`
 - `python3 scripts/excalibur_blog_published_titles.py` → titles=6
 commit: pending
+
+## INC-20260902-1320 — WP-рубрики 101/106 не существуют на live (все посты в «Без рубрики»)
+
+status: open
+run_date: 2026-09-02
+role: excalibur-blog-publish
+topic_id: B07
+article_dir: memory/blog/articles/B07-snyali-kvartiru-posutochno-v-komnate-17-u-dveri-500-za-obogrevatel
+severity: medium
+category: config
+
+### What went wrong
+
+- `shared/wp-blog-categories.json` задаёт wp_id 101–106 (`TODO: sync wp_id with live WP`), publish печатает `OK categories=101,106`,
+  но на live WP есть единственная рубрика `bez-rubriki` (id 1, 617 постов); REST `categories?include=101,106` → `[]`.
+- Пост 4307 (и 4283/B06 до него) остался в «Без рубрики» — гейт `wp_categories` PASS по конфигу, а не по живому WP.
+
+### How the agent recovered this run
+
+- Не создавал рубрики на live (изменение таксономии сайта — решение владельца). Зафиксировано в publish-log.
+
+### Durable fix needed before next run
+
+- Либо создать рубрики на live WP и синхронизировать `wp_id` в `wp-blog-categories.json`, либо bootstrap publish должен
+  создавать термин по slug/name при отсутствии (`wp_insert_term`) и печатать `WARN category_missing_live`.
+- `excalibur_blog_wp_categories.py` — добавить live-проверку существования term id (REST) при наличии `PUBLIC_SITE_URL`.
+
+## INC-20260902-1330 — Derouter HTTP 524 (Cloudflare 120 s) на длинных не-стрим ролях; ответ обрезан по 8192 токенов
+
+status: fixed
+run_date: 2026-09-02
+role: excalibur-blog-writer / excalibur-blog-research
+topic_id: B07
+severity: high
+category: script
+
+### What went wrong
+
+- Writer (claude-fable-5-1, one-shot) на не-стрим запросе получил `HTTP 524 origin_response_timeout` после retry → `DEROUTER WRITER BLOCKER`.
+- Research на первом прогоне обрезан: `completion_tokens: 8192` (провайдерский default), файл без `overlap_note`.
+
+### How the agent recovered this run
+
+- В `excalibur_blog_derouter_opus_chat.py` добавлены opt-in env: `DEROUTER_STREAM=1` (SSE, сборка в chat.completion, usage через `stream_options`),
+  `DEROUTER_MAX_TOKENS=<n>`; WARN при `finish_reason=length`. Без env поведение прежнее.
+
+### Durable fix needed before next run
+
+- Рассмотреть включение стрима по умолчанию для writer/research/sol (длинные роли) в Cloud.
+
+## INC-20260902-1340 — quad_manifest --merge терял wordstat_stickers / cover_phone_cta; inline-scene с «читаемыми цифрами»
+
+status: fixed (manifest) / lesson (cover-scene)
+run_date: 2026-09-02
+role: excalibur-blog-cover / excalibur-blog-cover-qa
+topic_id: B07
+severity: low
+category: script
+
+### What went wrong
+
+- Повторный `quad_manifest.py --merge` сбрасывал `wordstat_stickers` и `cover_phone_cta` → Cover-QA FAIL до ручного восстановления.
+- Cover-scene hint для inline_2 («листок с расчётом от руки») — модель дорисовала собственную арифметику (2 кВт × 8 ч × 7 дней ≈ 500 ₽),
+  которая противоречит тексту статьи. Второй draw не делался (owner: 1 draw; retry только при разбитой кириллице обложки).
+
+### Durable fix needed before next run
+
+- `quad_manifest.py` теперь переносит `wordstat_stickers` (из cover-text.json / прежнего манифеста) и `cover_phone_cta` — сделано.
+- Cover-scene skill: запрещать «читаемые цифры/расчёты» на inline без точного текста; просить «бумага с неразборчивыми пометками» или задавать точные строки через cover-text.

@@ -4,6 +4,11 @@
   "cover_headline_line2": "Хотели тепла.",
   "cover_headline_line3": "У двери: +500 ₽ или спать в куртке",
   "cover_headline_medium": "Spray-paint graffiti street-art lettering painted directly onto the real painted stairwell wall of a Soviet-style panel-house landing next to an apartment door (two-tone wall: pale top, green-blue bottom), bold black letters with a single red accent on «+500 ₽», slight paint drips, huge and readable at thumbnail size, no tent card, no paper, no Canva pill, no stickers.",
+  "wordstat_stickers": [
+    "когда в тюмени включат отопление",
+    "снять квартиру посуточно в тюмени"
+  ],
+  "cover_phone_cta": "+7 (993) 574-83-22",
   "canvas_file": "cover/canvas-slice4.png",
   "layout": "2x2",
   "pipeline": "slice4_grid_1x_image_api",
@@ -81,10 +86,5 @@
       ]
     }
   },
-  "cover_keys_ru": [],
-  "wordstat_stickers": [
-    "когда в тюмени включат отопление",
-    "снять квартиру посуточно в тюмени"
-  ],
-  "cover_phone_cta": "+7 (993) 574-83-22"
+  "cover_keys_ru": []
 }

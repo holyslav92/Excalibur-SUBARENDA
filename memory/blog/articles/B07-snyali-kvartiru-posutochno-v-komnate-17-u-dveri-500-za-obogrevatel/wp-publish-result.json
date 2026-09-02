@@ -1,0 +1,27 @@
+{
+  "slug": "snyali-kvartiru-posutochno-v-komnate-17-u-dveri-500-za-obogrevatel",
+  "topic_id": "B07",
+  "permalink": "{{SITE_BASE}}/blog/snyali-kvartiru-posutochno-v-komnate-17-u-dveri-500-za-obogrevatel/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B07-snyali-kvartiru-posutochno-v-komnate-17-u-dveri-500-za-obogrevatel/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 984389,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4307 slug=snyali-kvartiru-posutochno-v-komnate-17-u-dveri-500-za-obogrevatel\nOK categories=101,106\nOK dzen_yzen_meta=1\nOK featured_image=4308\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4309 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/snyali-kvartiru-posutochno-v-komnate-17-u-dveri-500-za-obogrevatel-inline-01.png\nOK inline_alt=4309\nOK inline_caption=4309\nOK inline_description=4309\nOK inline_image_upload=4310 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/snyali-kvartiru-posutochno-v-komnate-17-u-dveri-500-za-obogrevatel-inline-02.png\nOK inline_alt=4310\nOK inline_caption=4310\nOK inline_description=4310\nOK inline_image_upload=4311 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/snyali-kvartiru-posutochno-v-komnate-17-u-dveri-500-za-obogrevatel-inline-03.png\nOK inline_alt=4311\nOK inline_caption=4311\nOK inline_description=4311\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/snyali-kvartiru-posutochno-v-komnate-17-u-dveri-500-za-obogrevatel/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 3,
+    "expected_inline": 3,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/snyali-kvartiru-posutochno-v-komnate-17-u-dveri-500-za-obogrevatel/",
+    "errors": []
+  }
+}
