@@ -1,0 +1,49 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den/#article",
+  "url": "{{SITE_BASE}}/blog/kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den/"
+  },
+  "headline": "Хозяин написал «кухня есть». За три ночи в кафе ушло 7 200 ₽",
+  "description": "Отметка «кухня есть» не гарантирует наличие посуды и возможность готовить, поэтому за три ночи питание в кафе может добавить около 7 200 ₽. До бронирования уточните состав кухни: посуду, базовые продукты и содержимое шкафов.",
+  "datePublished": "2026-09-02",
+  "dateModified": "2026-09-02",
+  "inLanguage": "ru-RU",
+  "author": {
+    "@type": "Organization",
+    "@id": "{{SITE_BASE}}/#organization",
+    "name": "Добрый дом",
+    "jobTitle": "Апартаменты и квартиры посуточно в Тюмени",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ],
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "{{SITE_BASE}}/#organization",
+    "name": "Добрый дом",
+    "jobTitle": "Апартаменты и квартиры посуточно в Тюмени",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ],
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    }
+  }
+}

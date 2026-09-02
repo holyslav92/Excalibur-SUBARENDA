@@ -1,0 +1,100 @@
+{
+  "topic_id": "B07",
+  "canvas_file": "cover/canvas-slice4.png",
+  "layout": "2x2",
+  "pipeline": "slice4_grid_1x_image_api",
+  "inline_count": 3,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-slice4.png",
+      "batch_file": "cover/slice4-mcp-batch.json",
+      "prompt_file": "cover/slice4-mcp-prompt.txt",
+      "result_file": "cover/slice4-mcp-result.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    }
+  ],
+  "style_preset": "the_rieltor_twilight_gold",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "cover_hook": "Кухня есть — готовить нечем",
+  "cover_hook_highlight": "нечем",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Grsai ONE 2048x1152 2x2 grid slice4 + logo paste cover only. gen_only_human_v1.",
+  "cover_emotion": "разочарование: галочка «кухня есть», а в ящике одна вилка",
+  "cover_scene": "Ранний сентябрь, солнечная кухня Тюмени: гость открывает пустой ящик, на столе распечатка объявления с галочкой «кухня есть»",
+  "cover_motifs": {
+    "composition": "guest opens empty drawer + printed listing on counter with checked kitchen line",
+    "location": "early September sunny Tyumen apartment kitchen, green trees outside, NO winter",
+    "meme": "none photoreal only",
+    "prop_set": "empty drawers, one glass, two forks, worn frying pan, printed listing",
+    "sticker_set": "none on gen_only",
+    "joke": "checkbox says kitchen exists but drawer holds one fork"
+  },
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "кухня в квартире посуточно"
+  ],
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Гость на кухне открывает пустой ящик; на столе лист с галочкой «кухня есть» и крупной кириллицей «готовить нечем».",
+      "scene_hint": "Солнечная кухня квартиры в Тюмени, начало сентября: гость в футболке открывает пустой ящик, на столе распечатка объявления с галочкой «кухня есть» и крупной кириллицей «Кухня есть — готовить нечем» на бумаге; один стакан и две вилки на столешнице; тёплый дневной свет из окна с зелёными деревьями; TOP-RIGHT чистая стена для factory logo paste; без телефона, без мемов, без логотипа в кадре.",
+      "meme_caption_ru": "",
+      "sticky": "А план был другой"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Не плита. Не галочка. А завтрак на столе",
+      "visual_type": "comparison_table_ui",
+      "scene_hint": "Крупный план открытых кухонных ящиков: один стакан, две вилки, старая сковорода на плите; пустые полки, нет масла, соли и губки; фотореал, без инфографики и без логотипа.",
+      "alt": "Пустые ящики и минимальный набор посуды: один стакан, две вилки, изношенная сковорода.",
+      "labels": [
+        "1 стакан",
+        "2 вилки",
+        "старая сковорода",
+        "нет масла",
+        "нет соли",
+        "нет губки"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Сообщение, которое стоит дешевле трёх дней кафе",
+      "visual_type": "bar_timeline_chart",
+      "scene_hint": "Стол у окна: телефон с перепиской «кухня оборудована?» — «да, всё необходимое»; рядом стопка чеков из кафе с суммами завтрак ~500 ₽, обед ~450 ₽, ужин ~1 450 ₽; фотореал, без pill-кнопки телефона и без логотипа.",
+      "alt": "Переписка с хостом и чеки кафе на три дня — итого около 7200 рублей.",
+      "labels": [
+        "завтрак ~500 ₽",
+        "обед ~450 ₽",
+        "ужин ~1 450 ₽",
+        "2 400 ₽/день",
+        "7 200 ₽ всего"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Почему на кухне ломается вся экономия квартиры",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Светлая кухня с плитой слева и вид на уютное кафе за окном справа; на столе лист «сначала проверка — потом перевод» и карандашный список посуды; фотореал, без стикеров и без логотипа.",
+      "alt": "Контраст: кухня с плитой не заменяет траты в кафе, если нет посуды — проверяйте до брони.",
+      "labels": [
+        "спросите про посуду",
+        "масло и соль",
+        "попросите фото ящиков",
+        "сначала проверка",
+        "потом перевод"
+      ]
+    }
+  },
+  "cover_keys_ru": [],
+  "cover_phone_cta": "+7 (993) 574-83-22"
+}

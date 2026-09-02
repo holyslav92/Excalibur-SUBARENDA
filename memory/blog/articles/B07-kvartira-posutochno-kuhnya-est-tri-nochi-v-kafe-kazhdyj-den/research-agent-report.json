@@ -1,0 +1,86 @@
+{
+  "status": "PASS",
+  "topic_id": "B07",
+  "slug": "kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den",
+  "research_date": "2026-09-02",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Klyshin Telegram Aug 2026 (порядок действий до договора) + свежие отзывы Суточно.ру/Kvartirka о посуде на кухне",
+    "source_type": "community",
+    "urls": [
+      "https://t.me/s/klyshin_A",
+      "https://sutochno.ru/votes",
+      "https://kvartirka.com/residence/404774/"
+    ],
+    "accessed_at": "2026-09-02",
+    "note": "Klyshin — угол проверки до брони, не факт о тюменских кухнях; отзывы подтверждают разброс инвентаря при галочке «кухня»."
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "Нет банковских/гос тарифов; цены кафе — меню и медийные ориентиры Тюмени",
+    "verified_claims": 0,
+    "entities_checked": [],
+    "errors": []
+  },
+  "wordstat": {
+    "status": "PASS",
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 5446,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "снять квартиру посуточно в тюмени",
+        "volume": 1742,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "аренда квартиры посуточно",
+        "volume": 756,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "аренда квартир посуточно тюмень",
+        "volume": 197,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "посуточно или отель",
+        "volume": 433,
+        "region": "225"
+      },
+      {
+        "phrase": "отель или посуточная квартира",
+        "volume": 312,
+        "region": "225"
+      },
+      {
+        "phrase": "квартира с кухней посуточно",
+        "volume": 68,
+        "region": "225",
+        "note": "totalCount-only partial"
+      }
+    ]
+  },
+  "practical_facts_count": 15,
+  "source_count": 17,
+  "limitations": [
+    "7 200 ₽ — составной Scout-якорь (3 × 2 400), не подтверждённый расход реального гостя.",
+    "Средний чек ~1 350 ₽ — медийный ориентир (РБК/RG, март 2026); RBC live-fetch недоступен 2026-09-02.",
+    "Меню «Кофеин» — снимок на 16.01.2026; цены могли измениться.",
+    "Отзыв Kvartirka — один объект (Москва), иллюстрация паттерна, не статистика рынка Тюмени.",
+    "Klyshin-сигнал — аналогия порядка проверки, не прямой факт о посуточных кухнях."
+  ],
+  "writer_safe_urls": [
+    "https://t.me/Dobriy_dom_72",
+    "https://t.me/Dobriy_dom_Tyumen",
+    "https://max.ru/id660300569233_biz",
+    "https://добрыйдом-72.рф/booking/",
+    "https://добрыйдом-72.рф/",
+    "https://mag.russpass.ru/rubric/instrukcii/kak-snyat-kvartiru-posutochno",
+    "https://sheriffbarbershop.ru/articles/biznes-lanchi-tyumeni-do-500-rubley",
+    "https://t-j.ru/daily-rent-flat/"
+  ]
+}

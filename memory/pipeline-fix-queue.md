@@ -376,3 +376,58 @@ checks_run:
 - `python3 -m unittest tests.test_llms_deploy_transport tests.test_publish_transport -v`
 - `python3 scripts/excalibur_blog_published_titles.py` → titles=6
 commit: pending
+
+## INC-20260902-0750 — published-titles stale after B07 publish
+
+status: fixed
+run_date: 2026-09-02
+role: excalibur-blog-fixer
+topic_id: B07
+article_dir: memory/blog/articles/B07-kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den
+severity: medium
+category: script
+
+### What went wrong
+
+- After B07 publish PASS, `shared/published-articles.md` had B07 but `shared/published-titles.md` and article `published-titles-only.md` stopped at B06. Scout/Research anti-dup would miss the kitchen angle on next run.
+
+### How the agent recovered this run
+
+- Fixer ran `excalibur_blog_published_titles.py --article-dir …B07…` → titles=7.
+
+### Durable fix needed before next run
+
+- `excalibur_blog_wp_publish.py` must call `refresh_published_titles()` immediately after `upsert_publish_ledger()`.
+- Doctor parity check: ledger published count == published-titles count.
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_wp_publish.py`
+- `scripts/excalibur_blog_doctor.py`
+- `skills/publish-excalibur-blog/SKILL.md`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-09-02
+fix_summary:
+- `refresh_published_titles()` after ledger upsert in wp_publish (BLOCKER on sync failure).
+- Doctor parity check ledger ↔ published-titles.
+- Regenerated `shared/published-titles.md` + B07 `published-titles-only.md` with B07 row.
+files_changed:
+- `scripts/excalibur_blog_wp_publish.py`
+- `scripts/excalibur_blog_doctor.py`
+- `tests/test_wp_categories_interlink.py`
+- `skills/publish-excalibur-blog/SKILL.md`
+- `.cursor/skills/publish-excalibur-blog/SKILL.md`
+- `shared/published-titles.md`
+- `memory/blog/articles/B07-kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den/published-titles-only.md`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_wp_publish.py scripts/excalibur_blog_doctor.py`
+- `python3 scripts/excalibur_blog_published_titles.py --article-dir memory/blog/articles/B07-…` → titles=7
+- `python3 -m unittest tests.test_wp_categories_interlink.WpCategoriesInterlinkTests.test_ledger_upsert_refreshes_published_titles -v`
+commit: dd99021
