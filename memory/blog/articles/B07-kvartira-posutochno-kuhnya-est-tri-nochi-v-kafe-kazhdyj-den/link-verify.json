@@ -23,7 +23,7 @@
       "skipped": false
     },
     {
-      "url": "https://добрыйдом-72.рф/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/",
+      "url": "{{SITE_BASE}}/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/",
       "status": 200,
       "ok": true,
       "method": "HEAD",
@@ -32,7 +32,7 @@
       "skipped": false
     },
     {
-      "url": "https://добрыйдом-72.рф/blog/oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego/",
+      "url": "{{SITE_BASE}}/blog/oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego/",
       "status": 200,
       "ok": true,
       "method": "HEAD",
@@ -41,7 +41,7 @@
       "skipped": false
     },
     {
-      "url": "https://добрыйдом-72.рф/blog/rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super/",
+      "url": "{{SITE_BASE}}/blog/rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super/",
       "status": 200,
       "ok": true,
       "method": "HEAD",
@@ -50,7 +50,7 @@
       "skipped": false
     },
     {
-      "url": "https://добрыйдом-72.рф/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+      "url": "{{SITE_BASE}}/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
       "status": 200,
       "ok": true,
       "method": "HEAD",
@@ -59,7 +59,7 @@
       "skipped": false
     },
     {
-      "url": "https://добрыйдом-72.рф/",
+      "url": "{{SITE_BASE}}/",
       "status": 200,
       "ok": true,
       "method": "HEAD",
@@ -68,7 +68,7 @@
       "skipped": false
     },
     {
-      "url": "https://добрыйдом-72.рф/booking/",
+      "url": "{{SITE_BASE}}/booking/",
       "status": 200,
       "ok": true,
       "method": "HEAD",
