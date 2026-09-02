@@ -1,0 +1,10 @@
+{
+  "topic_id": "B07",
+  "description": "«Кухня есть» — это ещё не значит, что на ней можно готовить. Три ночи в кафе съели 7 200 ₽: попросите фото посуды и ящиков до оплаты.",
+  "rhythm": "klyshin_case_hook",
+  "geo": "Тюмень",
+  "author_brand": "Добрый дом",
+  "not_equal_title": true,
+  "not_truncated_lead": true,
+  "verdict": "PASS"
+}
