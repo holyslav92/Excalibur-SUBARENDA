@@ -431,3 +431,40 @@ checks_run:
 - `python3 scripts/excalibur_blog_published_titles.py --article-dir memory/blog/articles/B07-…` → titles=7
 - `python3 -m unittest tests.test_wp_categories_interlink.WpCategoriesInterlinkTests.test_ledger_upsert_refreshes_published_titles -v`
 commit: dd99021
+
+## INC-20260902-1055 — Metrika credentials missing (Content-learner B07)
+
+status: open
+run_date: 2026-09-02
+role: excalibur-blog-content-learner
+topic_id: B07
+article_dir: memory/blog/articles/B07-kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den
+severity: medium
+category: secrets
+
+### What went wrong
+
+- `python3 scripts/excalibur_blog_metrika_fetch.py --days 30 --ingest` → exit 2, `METRIKA CREDENTIALS BLOCKER`.
+- `YANDEX_METRIKA_OAUTH_TOKEN` and `YANDEX_METRIKA_COUNTER_ID` not set in Cloud Secrets/env.
+- `memory/analytics/metrika-latest.json` absent; no behavioral cohort for B07 (published same day).
+
+### How the agent recovered this run
+
+- Evidence gate SKIP (no content-evidence-report.json under human-first-v3).
+- Recorded named lessons from publish artifacts (article.html, title-brief, description-brief, scout handoff, research-agent-report).
+- Metrika-only causal claims withheld; lessons marked low/medium confidence with `METRIKA_UNAVAILABLE` + `LOW_SAMPLE`.
+
+### Durable fix needed before next run
+
+- Configure `YANDEX_METRIKA_OAUTH_TOKEN` (OAuth metrika:read) and `YANDEX_METRIKA_COUNTER_ID` in Cloud Secrets.
+- Re-run Content-learner Metrika ingest after credentials available.
+
+### Suggested files to inspect/change
+
+- Cloud Secrets / tenant env for Metrika OAuth + counter id
+- `scripts/excalibur_blog_metrika_fetch.py`
+
+### Secrets
+
+- YANDEX_METRIKA_OAUTH_TOKEN — missing
+- YANDEX_METRIKA_COUNTER_ID — missing

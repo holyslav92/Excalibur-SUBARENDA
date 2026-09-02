@@ -4,6 +4,129 @@
 
 ---
 
+## LESSON-20260902-1055-B07-kitchen-three-levels-not-checkbox
+status: proposed
+topic_id: B07
+category: utility
+confidence: medium
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP. Урок из article.html §«Не плита. Не галочка. А завтрак на столе», scout handoff lockpick, description-brief PASS.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest BLOCKER (INC-20260902-1055).
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Три уровня обещания: «есть кухня» (зона) → «есть плита» (техника) → «можно поставить завтрак на двоих» (инвентарь + бюджет) — явное разведение в H2.
+- Lockpick-вопрос в теле: «Что именно на кухне: сковорода, масло, соль, кружки?» — из scout handoff, не how-to.
+- Klyshin-отрез «Нет. Так не заселяем.» + мораль «Сначала проверка. Потом перевод.» — тот же ритм, что B04/B03.
+- Wordstat spine P0 «квартиры посуточно тюмень» 5446 (Tyumen) + contrast cluster «отель или посуточная квартира» 312; kitchen sub-angle «квартира с кухней посуточно» 68–89 (RF) — локализация через кейс, не SEO-хвост.
+
+### Change
+- В kitchen/equipment кейсах сразу в lead называть **что именно отсутствует** (посуда, масло, губка), а не только «кухня плохая».
+- Scout handoff: при hook kitchen_vs_hotel_cafes логировать final P0 spine + kitchen sub-cluster volume.
+
+### Never again
+- Принимать галочку «кухня есть» / «оборудована» / «всё необходимое» как доказательство возможности готовить три дня.
+- How-to «как выбрать квартиру с кухней» до морали и арифметики кафе.
+
+### Proposed apply
+- Scout: hook kitchen_vs_hotel_cafes → handoff lockpick + P0 spine + kitchen sub-phrase volume.
+- Review only; Writer prompt не трогать автоматически.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260902-1055-B07-cafe-burn-arithmetic-lead
+status: proposed
+topic_id: B07
+category: structure
+confidence: medium
+
+### Evidence
+- artifact: article.html#opening + research-agent-report.json#limitations
+  finding: lead с разбивкой 500+450+1 450 ≈ 2 400 ₽/день × 3 ночи = 7 200 ₽; disclaimer «собирательный случай» в §1; research notes 7 200 как Scout-якорь.
+- metrika_signal: none (credentials BLOCKER; article published 2026-09-02, zero-day sample)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Дневная + итоговая сумма в opening (не только «много потратил в кафе»).
+- Диапазон 2 400–3 600 ₽/день как честный разброс, не одна цифра-догма.
+- H1/title: цитата обещания + конкретный burn (7 200 ₽) — klyshin_title_shape 5, description не дублирует H1.
+
+### Change
+- Для kitchen-vs-cafe кейсов всегда давать **поминутную арифметику дня** (завтрак/обед/ужин) до общего итога за N ночей.
+- В limitations research явно маркировать составной якорь — Writer не выдавать за чек одного гостя.
+
+### Never again
+- Заголовок/лид только «каждый день в кафе» без ₽ и без N ночей.
+- Скрывать, что сумма — модельный расчёт, если нет реального чека.
+
+### Proposed apply
+- Research/Writer review: kitchen burn cases → day breakdown + total + collective-case disclaimer in §1.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260902-1055-B07-photo-drawers-before-pay
+status: proposed
+topic_id: B07
+category: cta
+confidence: low
+
+### Evidence
+- artifact: article.html#«Сообщение, которое стоит дешевле…» + checklist «Проверьте до брони»
+  finding: фото открытых ящиков (не гламур кухни) + 8-пунктовый чеклист после морали; CTA «Проверить кухню по конкретной квартире» с TG/MAX.
+- metrika_signal: none (credentials unavailable)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Запрос фото ящиков/шкафа как конкретный шаг до брони — дешевле трёх дней кафе.
+- Чеклист после verdict (не до боли): сковороды, нож, кружки поштучно, масло/соль, губка, техника.
+- Interlink на B01/B02/B04/B05 как sibling «формально прав / деньги каждый день» — не дублировать door-fee angle.
+
+### Change
+- В equipment-кейсах CTA-блок хоста: «список + фото по конкретной квартире» — шаблон для kitchen siblings.
+- Description (Дзен): контраст «галочка ≠ готовить» + action «фото до оплаты».
+
+### Never again
+- Чеклист до раскрытия кейса (термин-дамп).
+- Обещать одинаковый kitchen-kit для всех объектов тенанта.
+
+### Proposed apply
+- Description skill review: kitchen hooks → not_equal_title + фото-якорь в teaser.
+- CTA review-only; не в Writer master-prompt автоматически.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
 ## LESSON-20260830-1745-B04-extra-guest-fee-at-door
 status: proposed
 topic_id: B04
