@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "source": "pexels",
+  "query": "editorial magazine cover typography layout bright apartment rental Перевели 3 000 ₽ — тишина в чате",
+  "photo_id": 4857944,
+  "url": "https://images.pexels.com/photos/4857944/pexels-photo-4857944.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "photographer": "Vie Studio",
+  "orientation": "landscape",
+  "role": "ephemeral_style_reference",
+  "note": "Use in Grsai urls[0] for layout/style only; remove from batch after generation",
+  "fetched_at": "2026-09-03T11:22:40+00:00"
+}

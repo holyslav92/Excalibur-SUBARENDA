@@ -29,13 +29,11 @@ GEN_ONLY_COVER_CHECKS = (
 BRAND_LOGO_PASTE_CHECKS = GEN_ONLY_COVER_CHECKS
 
 FULL_GRSAI_COVER_CHECKS = (
-    "logo_composite_stamp_pass",
-    "cover_logo_pasted",
-    "inline_no_logo_on_inlines",
+    "logo_reference_in_generation",
+    "pexels_style_reference_used",
     "cover_phone_993_large_sticker",
     "forbid_phone_pill_post_composite",
     "forbid_922_phone",
-    "forbid_ai_drawn_logo_cover",
     "forbid_wordpress_ui_in_art",
     "no_logo_plate_cover",
     "require_display_headline",
@@ -43,6 +41,7 @@ FULL_GRSAI_COVER_CHECKS = (
     "forbid_overlapping_text_blocks",
     "forbid_giant_cropped_glyph",
     "forbid_model_drawn_meme_template",
+    "forbid_factory_logo_paste_stamp",
 )
 
 LOGO_REFERENCE_CHECKS = (
@@ -255,9 +254,7 @@ def validate_cover_qa(article_dir: Path, root: Path) -> dict:
 
     if full_grsai_cover:
         try:
-            from excalibur_blog_brand_logo_composite import validate_logo_stamp
             from excalibur_blog_drawn_logo_gate import (
-                validate_article_logo_gates_slim,
                 validate_cover_phone_and_overlap_gates,
                 validate_full_grsai_cover_gates,
             )
@@ -266,14 +263,18 @@ def validate_cover_qa(article_dir: Path, root: Path) -> dict:
                 validate_cover_type_meme_sticker_gates,
             )
 
-            errors.extend(validate_logo_stamp(article_dir, root))
-            errors.extend(validate_article_logo_gates_slim(article_dir, root))
             errors.extend(validate_cover_phone_and_overlap_gates(article_dir, root))
             errors.extend(validate_full_grsai_cover_gates(article_dir, root))
             cover_path = article_dir / "cover" / "cover.png"
             if cover_path.is_file():
                 errors.extend(validate_cover_type_meme_sticker_gates(cover_path))
                 errors.extend(validate_cover_anti_collage_gates(cover_path))
+            stamp_path = article_dir / "cover" / "logo-composite-stamp.json"
+            if stamp_path.is_file():
+                errors.append(
+                    "forbid_factory_logo_paste: logo-composite-stamp.json present — "
+                    "logo must come from Grsai urls[], not factory paste"
+                )
         except ImportError:
             errors.append("excalibur_blog_drawn_logo_gate.py missing — full Grsai cover QA unavailable")
     elif brand_logo_paste:
