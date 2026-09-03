@@ -1,0 +1,38 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "{{SITE_BASE}}/#organization",
+      "name": "Добрый дом",
+      "url": "{{SITE_BASE}}/",
+      "telephone": "+7 (993) 574-83-22",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Тюмень",
+        "addressCountry": "RU"
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "{{SITE_BASE}}/blog/pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate/#article",
+      "url": "{{SITE_BASE}}/blog/pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate/",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{SITE_BASE}}/blog/pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate/"
+      },
+      "headline": "Перевели 3 000 предоплатой к 21:00 — тишина в чате",
+      "author": {
+        "@id": "{{SITE_BASE}}/#organization"
+      },
+      "publisher": {
+        "@id": "{{SITE_BASE}}/#organization"
+      },
+      "inLanguage": "ru-RU",
+      "about": {
+        "@type": "Thing",
+        "name": "Безопасность сделок с недвижимостью в Тюмени"
+      }
+    }
+  ]
+}

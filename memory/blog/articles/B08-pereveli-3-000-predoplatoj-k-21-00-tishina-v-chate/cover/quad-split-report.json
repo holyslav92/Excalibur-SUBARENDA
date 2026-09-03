@@ -1,0 +1,267 @@
+{
+  "agent": "excalibur-blog-cover-quad-split",
+  "status": "PASS",
+  "splits": [
+    {
+      "canvas_index": 1,
+      "manifest": "cover/quad-manifest.json",
+      "split": {
+        "source_canvas": "memory/blog/articles/B08-pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate/cover/canvas-quad-01.png",
+        "source_size_px": [
+          2048,
+          1152
+        ],
+        "panel_size_px": [
+          1018,
+          571
+        ],
+        "split_meta": {
+          "split_mode": "gutter_detect",
+          "h_gutter_px": {
+            "start": 571,
+            "end": 582
+          },
+          "v_gutter_px": {
+            "start": 1018,
+            "end": 1029
+          },
+          "requested_mode": "auto",
+          "gutter_quality": {
+            "h_center_offset_px": 0.5,
+            "v_center_offset_px": 0.5,
+            "max_aspect_crop_loss": 0.0,
+            "per_panel_crop_loss": {
+              "top_left": 0.0,
+              "top_right": 0.0,
+              "bottom_left": 0.0,
+              "bottom_right": 0.0
+            },
+            "reject_reason": null
+          }
+        },
+        "output_size_px": [
+          1200,
+          675
+        ],
+        "outputs": {
+          "inline_1": {
+            "file": "cover/inline-01.png",
+            "quadrant": "top_left",
+            "box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1018,
+              "bottom": 571
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1018,
+              "bottom": 571
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Чек перевода на 3 000 рублей, смартфон с молчащим чатом и блокнот с условиями.",
+            "h2_anchor": "В чате бронь была. На деле — нет"
+          },
+          "inline_2": {
+            "file": "cover/inline-02.png",
+            "quadrant": "top_right",
+            "box_px": {
+              "left": 1029,
+              "top": 0,
+              "right": 2048,
+              "bottom": 571
+            },
+            "raw_box_px": {
+              "left": 1029,
+              "top": 0,
+              "right": 2048,
+              "bottom": 571
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Сравнение перевода на личную карту и пустого поля с адресом в переписке.",
+            "h2_anchor": "Где история сломалась на самом деле"
+          },
+          "inline_3": {
+            "file": "cover/inline-03.png",
+            "quadrant": "bottom_left",
+            "box_px": {
+              "left": 0,
+              "top": 582,
+              "right": 1018,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 582,
+              "right": 1018,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Переписка с вопросом об адресе без ответа, рядом чемодан перед поездкой.",
+            "h2_anchor": "«Сниму с площадки» звучит выгодно, но не даёт гарантий"
+          },
+          "inline_4": {
+            "file": "cover/inline-04.png",
+            "quadrant": "bottom_right",
+            "box_px": {
+              "left": 1029,
+              "top": 582,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 1029,
+              "top": 582,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Чек-лист перед предоплатой: адрес, даты, правила, чек и контакт.",
+            "h2_anchor": "Что должно быть названо до денег"
+          }
+        }
+      }
+    },
+    {
+      "canvas_index": 2,
+      "manifest": "cover/quad-manifest.json",
+      "split": {
+        "source_canvas": "memory/blog/articles/B08-pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate/cover/canvas-quad-02.png",
+        "source_size_px": [
+          2048,
+          1152
+        ],
+        "panel_size_px": [
+          1021,
+          573
+        ],
+        "split_meta": {
+          "split_mode": "gutter_detect",
+          "h_gutter_px": {
+            "start": 573,
+            "end": 579
+          },
+          "v_gutter_px": {
+            "start": 1021,
+            "end": 1026
+          },
+          "requested_mode": "auto",
+          "gutter_quality": {
+            "h_center_offset_px": 0.0,
+            "v_center_offset_px": 0.5,
+            "max_aspect_crop_loss": 0.0,
+            "per_panel_crop_loss": {
+              "top_left": 0.0,
+              "top_right": 0.0,
+              "bottom_left": 0.0,
+              "bottom_right": 0.0
+            },
+            "reject_reason": null
+          }
+        },
+        "output_size_px": [
+          1200,
+          675
+        ],
+        "outputs": {
+          "inline_5": {
+            "file": "cover/inline-05.png",
+            "quadrant": "top_left",
+            "box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1021,
+              "bottom": 573
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1021,
+              "bottom": 573
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Чемодан, табло вечернего прибытия и смартфон в ожидании ответа.",
+            "h2_anchor": "Один вопрос, который вскрывает всё"
+          },
+          "inline_6": {
+            "file": "cover/inline-06.png",
+            "quadrant": "top_right",
+            "box_px": {
+              "left": 1026,
+              "top": 0,
+              "right": 2048,
+              "bottom": 573
+            },
+            "raw_box_px": {
+              "left": 1026,
+              "top": 0,
+              "right": 2048,
+              "bottom": 573
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Подтверждённые условия, адрес на карте и ключи как символ безопасного бронирования.",
+            "h2_anchor": "Сначала проверка. Потом деньги"
+          },
+          "inline_7": {
+            "file": "cover/inline-07.png",
+            "quadrant": "bottom_left",
+            "box_px": {
+              "left": 0,
+              "top": 579,
+              "right": 1021,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 579,
+              "right": 1021,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Шаблон «Сначала условия — потом перевод» рядом с папкой чеков.",
+            "h2_anchor": "Мой вывод как практика"
+          }
+        }
+      }
+    }
+  ],
+  "manifest": "cover/quad-manifest.json",
+  "html_inject": [
+    "skip inline_1: already correct under H2 — В чате бронь была. На деле — нет",
+    "skip inline_2: already correct under H2 — Где история сломалась на самом деле",
+    "skip inline_3: already correct under H2 — «Сниму с площадки» звучит выгодно, но не даёт гарантий",
+    "skip inline_4: already correct under H2 — Что должно быть названо до денег",
+    "injected inline_5 after H2 — Один вопрос, который вскрывает всё",
+    "injected inline_6 after H2 — Сначала проверка. Потом деньги",
+    "injected inline_7 after H2 — Мой вывод как практика"
+  ]
+}

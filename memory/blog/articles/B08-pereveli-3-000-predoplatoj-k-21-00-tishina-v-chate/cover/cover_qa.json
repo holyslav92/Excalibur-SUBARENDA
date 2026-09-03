@@ -1,0 +1,37 @@
+{
+  "agent": "excalibur-blog-cover-qa",
+  "status": "BLOCK",
+  "checked_at": "2026-09-03",
+  "topic_id": "B08",
+  "checks": {
+    "eight_png_exist": true,
+    "quad_manifest_valid": true,
+    "wordstat_stickers_1_3": true,
+    "motif_no_collision_14d": true,
+    "max_one_cat_meme_slot": true,
+    "light_high_key": true,
+    "forbid_922_phone": true,
+    "forbid_phone_on_cover_image": true,
+    "forbid_overlapping_text_blocks": true,
+    "forbid_giant_cropped_glyph": true,
+    "forbid_wordpress_ui_in_art": true,
+    "no_logo_plate_cover": true,
+    "forbid_graphic_collage_overlay": true,
+    "forbid_poster_composite_stamp": true,
+    "forbid_logo_reference_in_batch": true,
+    "logo_composite_stamp_pass": true,
+    "cover_logo_pasted": true,
+    "inline_no_logo_on_inlines": true,
+    "forbid_ai_drawn_logo_cover": false
+  },
+  "notes": "paste-and-ship: pad-clear TR on inline 2/4/5/6; model terracotta remnants may remain; cover 1672 primary.",
+  "validation_errors": [
+    "inline-02.png: forbidden drawn logo on panel without factory paste (score=0.56)",
+    "inline-04.png: forbidden drawn logo on panel without factory paste (score=0.74)",
+    "inline-05.png: forbidden drawn logo on panel without factory paste (score=0.56)",
+    "inline-06.png: forbidden drawn logo on panel without factory paste (score=0.56)"
+  ],
+  "failed_checks": [
+    "forbid_ai_drawn_logo_cover"
+  ]
+}

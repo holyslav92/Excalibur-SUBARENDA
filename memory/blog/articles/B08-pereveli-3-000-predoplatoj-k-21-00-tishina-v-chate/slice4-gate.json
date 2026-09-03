@@ -1,0 +1,16 @@
+{
+  "gate": "slice4",
+  "status": "SKIP",
+  "canon": "dobry_dom_gen_only_human_v1",
+  "errors": [],
+  "checks_run": [
+    "slice4_canon_active",
+    "batch_files",
+    "gen_only_no_overlay",
+    "grsai_draw_count",
+    "quad-manifest",
+    "longform_inline_count_7_skip_slice4"
+  ],
+  "article_dir": "/workspace/memory/blog/articles/B08-pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+  "note": "inline_count=7 uses standalone cover + 2 quad canvases"
+}

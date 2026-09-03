@@ -1,0 +1,54 @@
+{
+  "cover_emotion": "Тревожное недоумение: деньги уже отправлены, а ответа и адреса нет.",
+  "cover_motifs": {
+    "composition": "Крупный смартфон с зависшим чатом на переднем плане, рядом табло прибытия вечернего поезда; справа вверху чистое пустое поле под логотип.",
+    "location": "Тюмень, привокзальная площадь или светлое городское кафе у окна, ранний сентябрь, солнечный день, зелёные деревья.",
+    "meme": "Две галочки есть, адреса нет.",
+    "prop_set": "Смартфон, чек перевода 3 000 ₽, табло прибытия, небольшой чемодан, стакан кофе, солнечные блики.",
+    "sticker_set": "«3 000 ₽ отправили», «тишина», «Сначала условия — потом перевод», «адрес где?»",
+    "joke": "Галочки получили бронь, а гости — только ожидание."
+  },
+  "wordstat_stickers": [
+    "предоплата 3000 рублей",
+    "гость не отвечает",
+    "адрес не прислали",
+    "две галочки в чате",
+    "правила предоплаты",
+    "как безопасно бронировать жильё",
+    "условия до перевода"
+  ],
+  "slots": {
+    "cover": {
+      "scene_hint": "Sunny early Sep Tyumen, green trees. Phone chat: transfer 3 000 ₽, two checks, silence; train arrival board with +7 (993) 574-83-22. Empty top-right logo pad, no people faces.",
+      "alt": "Смартфон с переводом предоплаты 3 000 рублей и сообщениями с двумя галочками без ответа, рядом табло вечернего поезда в солнечной Тюмени."
+    },
+    "inline_1": {
+      "scene_hint": "Clean flatlay: phone with silent chat, payment receipt 3 000 ₽, notebook titled «Условия», warm sunny September light, no faces.",
+      "alt": "Чек перевода на 3 000 рублей, смартфон с молчащим чатом и блокнот с условиями бронирования."
+    },
+    "inline_2": {
+      "scene_hint": "Two-panel contrast: left personal card transfer, right blank address field in chat; warm Tyumen September daylight, no faces.",
+      "alt": "Сравнение перевода на личную карту и пустого поля с адресом в переписке."
+    },
+    "inline_3": {
+      "scene_hint": "Phone close-up: unread conversation, two checkmarks, last message «Подскажите адрес?»; suitcase and green trees blurred behind, no faces.",
+      "alt": "Переписка с вопросом об адресе, на которую не ответили, рядом чемодан перед поездкой."
+    },
+    "inline_4": {
+      "scene_hint": "Simple checklist on table: address, dates, rules, receipt, contact; sunny early September window light, no people.",
+      "alt": "Чек-лист перед предоплатой: адрес, даты, правила проживания, чек и контакт."
+    },
+    "inline_5": {
+      "scene_hint": "Evening train arrival atmosphere in Tyumen: timetable, small suitcase, phone waiting for reply, warm clear early autumn, no faces.",
+      "alt": "Чемодан, табло вечернего прибытия и смартфон в ожидании ответа от арендодателя."
+    },
+    "inline_6": {
+      "scene_hint": "Friendly booking confirmation concept: written terms highlighted, address pin on map, keys on table, sunny warm daylight, no faces.",
+      "alt": "Подтверждённые условия, отметка адреса на карте и ключи как символ безопасного бронирования."
+    },
+    "inline_7": {
+      "scene_hint": "Resolution scene: calm desk, message template «Сначала условия — потом перевод», receipt folder, green September trees outside, no faces.",
+      "alt": "Шаблон сообщения «Сначала условия — потом перевод» рядом с папкой чеков и видом на зелёные деревья."
+    }
+  }
+}

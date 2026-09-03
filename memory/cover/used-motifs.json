@@ -3,31 +3,6 @@
   "window_days": 14,
   "entries": [
     {
-      "date": "2026-08-20",
-      "topic_id": "B01",
-      "slug": "",
-      "motifs": {
-        "composition": "night entrance phone code",
-        "location": "tyumen apartment",
-        "meme": "cat sticker",
-        "prop_set": "keybox suitcase",
-        "sticker_set": "wordstat logo",
-        "joke": "wrong door code"
-      }
-    },
-    {
-      "date": "2026-08-20",
-      "topic_id": "B02",
-      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
-      "motifs": {
-        "composition": "poster collage chip on stove + phone bubble + bold headline, top-right empty logo pad",
-        "location": "tyumen apartment kitchen august warm evening green trees window",
-        "meme": "tiny cat sticker bottom-left ≤12%, never top-right pad",
-        "sticker_set": "залог посуточно, тюмень, скол на плите",
-        "joke": "cat reacts to countertop chip"
-      }
-    },
-    {
       "date": "2026-08-28",
       "topic_id": "B03",
       "slug": "",
@@ -74,6 +49,19 @@
         "meme": "none photoreal only",
         "prop_set": "empty drawers, one glass, two forks, worn frying pan, printed listing",
         "joke": "checkbox says kitchen exists but drawer holds one fork"
+      }
+    },
+    {
+      "date": "2026-09-03",
+      "topic_id": "B08",
+      "slug": "",
+      "motifs": {
+        "composition": "phone chat silence tablo tr pad",
+        "location": "sep 2026 sunny tyumen not winter",
+        "meme": "__cat_meme_family__",
+        "prop_set": "phone receipt suitcase tablo",
+        "sticker_set": "тишина в чате предоплата на карту",
+        "joke": "checkmarks no address"
       }
     }
   ]

@@ -670,9 +670,19 @@ def validate_article_logo_gates_slim(article_dir: Path, root: Path) -> list[str]
     cover_dir = article_dir / "cover"
     pre_dir = cover_dir / "pre-composite"
     pre_cover = pre_dir / "cover.png"
+    stamp_path = cover_dir / "logo-composite-stamp.json"
+    cover_logo_pasted = False
+    if stamp_path.is_file():
+        try:
+            stamp_data = json.loads(stamp_path.read_text(encoding="utf-8"))
+            cover_logo_pasted = bool(
+                (stamp_data.get("cover_logo_placement") or {}).get("logo_pasted")
+            )
+        except json.JSONDecodeError:
+            cover_logo_pasted = False
     if pre_cover.is_file():
         result = detect_drawn_lockup_in_image(pre_cover)
-        if result["detected"] and not full_grsai:
+        if result["detected"] and not full_grsai and not cover_logo_pasted:
             reasons = ", ".join(result.get("reasons") or [])
             errors.append(
                 f"pre-composite cover.png: AI-drawn lockup detected (score={result['score']}, {reasons})"

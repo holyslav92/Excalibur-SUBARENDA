@@ -1,0 +1,141 @@
+{
+  "topic_id": "B08",
+  "slug": "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+  "layout": "2x2",
+  "pipeline": "dzen_story_collage_v2_standalone_cover",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 0,
+      "canvas_file": "cover/cover-canvas.png",
+      "batch_file": "cover/cover-mcp-batch.json",
+      "prompt_file": "cover/cover-mcp-prompt.txt",
+      "result_file": "cover/cover-mcp-result.json",
+      "slots": ["cover"],
+      "has_cover": true,
+      "standalone_cover": true,
+      "export_size": "1200x675"
+    },
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["inline_1", "inline_2", "inline_3", "inline_4"],
+      "has_cover": false
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_5", "inline_6", "inline_7", "panel_quiet_pad"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "cover_hook": "Перевели 3 000 ₽ — тишина в чате",
+  "cover_hook_highlight": "тишина",
+  "cover_headline_line1": "Перевели 3 000 ₽",
+  "cover_headline_line2": "тишина",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_meme_id": "",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "предоплата в посуточной квартире",
+    "снять квартиру посуточно в тюмени"
+  ],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "Phone chat silence tablo TR pad",
+    "location": "Sep 2026 sunny Tyumen NOT winter",
+    "meme": "tiny cat sticker",
+    "prop_set": "phone receipt suitcase tablo",
+    "sticker_set": "тишина в чате, предоплата на карту",
+    "joke": "checkmarks no address",
+    "headline_line1": "Перевели 3 000 ₽",
+    "headline_line2": "тишина"
+  },
+  "cover_emotion": "Тревога: деньги ушли, ответа нет",
+  "cover_scene": "Phone chat silence tablo",
+  "slots": {
+    "cover": {
+      "quadrant": "standalone",
+      "role": "cover_editorial_hero",
+      "alt": "Смартфон с переводом предоплаты 3 000 рублей и сообщениями с двумя галочками без ответа, рядом табло вечернего поезда в солнечной Тюмени.",
+      "scene_hint": "Phone 3000₽ silent chat; tablo +7 (993) 574-83-22; Sep Tyumen; TR pad.",
+      "meme_caption_ru": "",
+      "sticky": "Сначала условия",
+      "meme_id": ""
+    },
+    "inline_1": {
+      "quadrant": "top_left",
+      "h2_anchor": "В чате бронь была. На деле — нет",
+      "visual_type": "comparison_table_ui",
+      "scene_hint": "Flatlay: silent chat, receipt 3000₽, notebook «Условия», sunny Sep.",
+      "alt": "Чек перевода на 3 000 рублей, смартфон с молчащим чатом и блокнот с условиями.",
+      "labels": ["три тысячи", "предоплата", "на карту"]
+    },
+    "inline_2": {
+      "quadrant": "top_right",
+      "h2_anchor": "Где история сломалась на самом деле",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Split: card transfer vs blank address field in chat; sunny Tyumen Sep.",
+      "alt": "Сравнение перевода на личную карту и пустого поля с адресом в переписке.",
+      "labels": ["к вечеру", "чат молчит", "две галочки"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "«Сниму с площадки» звучит выгодно, но не даёт гарантий",
+      "visual_type": "checklist_board",
+      "scene_hint": "Phone: unread chat, two checkmarks, «Адрес?»; suitcase blur.",
+      "alt": "Переписка с вопросом об адресе без ответа, рядом чемодан перед поездкой.",
+      "labels": ["ещё две тысячи", "до ключа", "другой кейс"]
+    },
+    "inline_4": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Что должно быть названо до денег",
+      "visual_type": "schema_faq_ui",
+      "scene_hint": "Checklist: address, dates, rules, receipt, contact; sunny window.",
+      "alt": "Чек-лист перед предоплатой: адрес, даты, правила, чек и контакт.",
+      "labels": ["адрес", "до перевода", "не назвали"]
+    },
+    "inline_5": {
+      "quadrant": "top_left",
+      "h2_anchor": "Один вопрос, который вскрывает всё",
+      "visual_type": "tool_screenshot",
+      "scene_hint": "Train arrival board, suitcase, phone waiting; early autumn Tyumen.",
+      "alt": "Чемодан, табло вечернего прибытия и смартфон в ожидании ответа.",
+      "labels": ["такси четыреста", "запасной вариант", "после поезда"]
+    },
+    "inline_6": {
+      "quadrant": "top_right",
+      "h2_anchor": "Сначала проверка. Потом деньги",
+      "visual_type": "infographic_card",
+      "scene_hint": "Written terms, map pin address, keys on table; sunny daylight.",
+      "alt": "Подтверждённые условия, адрес на карте и ключи как символ безопасного бронирования.",
+      "labels": ["сколько и за что", "до заселения", "ответ с цифрами"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "comparison_table_ui",
+      "scene_hint": "Desk: «Сначала условия — потом перевод», receipt folder, green trees.",
+      "alt": "Шаблон «Сначала условия — потом перевод» рядом с папкой чеков.",
+      "labels": ["сначала проверка", "потом перевод", "не наоборот"]
+    },
+    "panel_quiet_pad": {
+      "quadrant": "bottom_right",
+      "role": "quiet_pad",
+      "alt": "Quiet pad",
+      "scene_hint": "Soft cream blur pad, no text.",
+      "labels": []
+    }
+  },
+  "cover_keys_ru": []
+}

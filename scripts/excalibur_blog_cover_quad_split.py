@@ -817,7 +817,7 @@ def main() -> int:
     for slot_key in slot_keys:
         if slot_key == "cover":
             print(f"OK cover={cover_dir / 'cover.png'}")
-        else:
+        elif slot_key in INLINE_FILES:
             print(f"OK {slot_key}={cover_dir / INLINE_FILES[slot_key]}")
     print(f"OK registry={registry_path}")
     print(f"OK report={report_path}")

@@ -230,10 +230,6 @@ def _inline_logo_bounds(cfg: dict[str, Any]) -> tuple[int, int]:
 
 def resolve_inline_logo_slots(article_dir: Path, cfg: dict[str, Any]) -> list[str]:
     """Какие inline-файлы получают factory logo paste (factory lock: 0 — только cover)."""
-    lo, hi = _inline_logo_bounds(cfg)
-    if lo == 0 and hi == 0:
-        return []
-
     manifest_path = article_dir / "cover" / "quad-manifest.json"
     manifest_slots: list[str] = []
     if manifest_path.is_file():
@@ -244,6 +240,13 @@ def resolve_inline_logo_slots(article_dir: Path, cfg: dict[str, Any]) -> list[st
                 manifest_slots = [str(x).strip() for x in raw if str(x).strip()]
         except json.JSONDecodeError:
             manifest_slots = []
+
+    lo, hi = _inline_logo_bounds(cfg)
+    if lo == 0 and hi == 0:
+        if manifest_slots:
+            files = [inline_file_for_slot(k) if not k.endswith(".png") else k for k in manifest_slots]
+            return [f for f in files if f.startswith("inline-") and f.endswith(".png")]
+        return []
 
     if manifest_slots:
         files = [inline_file_for_slot(k) if not k.endswith(".png") else k for k in manifest_slots]
@@ -584,7 +587,13 @@ def validate_logo_stamp(article_dir: Path, root: Path) -> list[str]:
 
     inline_files = list(stamp.get("inline_logo_files") or [])
     inline_lo, inline_hi = _inline_logo_bounds(cfg)
-    if not (inline_lo <= len(inline_files) <= inline_hi):
+    manifest_inline = resolve_inline_logo_slots(article_dir, cfg)
+    if manifest_inline and inline_lo == 0 and inline_hi == 0:
+        if set(inline_files) != set(manifest_inline):
+            errors.append(
+                f"inline logo files {inline_files} != manifest logo_paste_inline_slots {manifest_inline}"
+            )
+    elif not (inline_lo <= len(inline_files) <= inline_hi):
         errors.append(
             f"inline logo count {len(inline_files)} outside factory {inline_lo}–{inline_hi}"
         )
