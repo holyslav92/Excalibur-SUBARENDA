@@ -1,0 +1,77 @@
+{
+  "topic_id": "B09",
+  "slug": "kod-prislali-v-posutochnuyu-klyuchnica-ne-otkrylas-taksi-uehalo",
+  "cover_family": "brand_collage",
+  "style_preset": "the_rieltor_twilight_gold",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "file": "cover/cover.png",
+  "alt": "Код прислали. Ключница не открылась: 35 минут, такси 480 ₽",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/cover-canvas.png",
+  "generated_at": "2026-09-03T09:35:55+00:00",
+  "assets": [
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Гость приехал вечером: код прислали, но ключница молчит.",
+      "h2_anchor": "Что именно было в чате",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Гость и водитель ждут у закрытой двери уже 35 минут.",
+      "h2_anchor": "Где именно сломалось",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Такси ждёт у дома: поездка уже стоит 480 рублей, а ключа всё ещё нет.",
+      "h2_anchor": "Почему «код в смс» — это ещё не вход",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_4",
+      "file": "cover/inline-04.png",
+      "alt": "Проверяем код, нажимаем кнопку и тянем дверцу ключницы.",
+      "h2_anchor": "Как выглядит проверка с нашей стороны",
+      "visual_type": "schema_faq_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_5",
+      "file": "cover/inline-05.png",
+      "alt": "Код верный, но замок не открылся — заселение сорвано.",
+      "h2_anchor": "Стояли у ключницы больше получаса — что в итоге сработало у вас?",
+      "visual_type": "tool_screenshot",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_6",
+      "file": "cover/inline-06.png",
+      "alt": "Тюмень в начале сентября: прохладный вечер, зелёно-золотые деревья и никакого снега.",
+      "h2_anchor": "Один вопрос, который снимает эту проблему заранее",
+      "visual_type": "infographic_card",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_7",
+      "file": "cover/inline-07.png",
+      "alt": "После 35 минут ожидания такси за 480 рублей уезжает, а вход так и не найден.",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}

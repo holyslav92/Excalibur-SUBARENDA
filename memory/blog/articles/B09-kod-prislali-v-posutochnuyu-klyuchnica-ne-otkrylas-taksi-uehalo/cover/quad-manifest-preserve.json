@@ -1,0 +1,88 @@
+{
+  "inline_count": 7,
+  "cover_hook": "Ключа нет — такси ждёт",
+  "cover_hook_highlight": "такси",
+  "cover_headline_line1": "Код прислали",
+  "cover_headline_line2": "ключница молчит",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "logo_paste_inline_slots": [
+    "inline_1",
+    "inline_3",
+    "inline_7"
+  ],
+  "wordstat_stickers": [
+    "посуточно тюмень",
+    "квартира посуточно тюмень"
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "slots": {
+    "cover": {
+      "scene_hint": "Early September evening in Tyumen. A worried guest stands beside a waiting taxi near the entrance of a modern apartment building. The entrance keybox is visible, but its door is closed. A small lobby tablo or magnetic board clearly displays the phone number +7 (993) 574-83-22. Reserve clean negative space in the top-right for the official logo paste; do not draw a brand lockup.",
+      "alt": "Вечерний заезд в Тюмени: гость ждёт у закрытой ключницы, рядом стоит такси, на табло указан номер +7 (993) 574-83-22.",
+      "sticky": "Код есть, входа нет"
+    },
+    "inline_1": {
+      "scene_hint": "The guest arrives in the early September evening with a phone showing the access code message. In the background, the silent keybox remains closed near the apartment entrance.",
+      "alt": "Гость приехал вечером: код прислали, но ключница молчит.",
+      "labels": [
+        "вечерний заезд",
+        "код прислали",
+        "ключница молчит"
+      ]
+    },
+    "inline_2": {
+      "scene_hint": "A guest and taxi driver wait outside a locked entrance while the taxi meter or phone timer shows that 35 minutes have passed.",
+      "alt": "Гость и водитель ждут у закрытой двери уже 35 минут.",
+      "labels": [
+        "35 минут",
+        "вход закрыт",
+        "ждём у двери"
+      ]
+    },
+    "inline_3": {
+      "scene_hint": "Taxi waiting at the curb while the guest checks the time and realizes the ride has already cost 480 ₽ because the entrance problem is unresolved.",
+      "alt": "Такси ждёт у дома: поездка уже стоит 480 рублей, а ключа всё ещё нет.",
+      "labels": [
+        "такси 480 ₽",
+        "время идёт",
+        "ключа нет"
+      ]
+    },
+    "inline_4": {
+      "scene_hint": "Close-up instructional sequence of a standard keybox: checking the code, pressing the release button, and pulling the small door, which still does not open.",
+      "alt": "Проверяем код, нажимаем кнопку и тянем дверцу ключницы.",
+      "labels": [
+        "проверить код",
+        "нажать кнопку",
+        "потянуть дверцу"
+      ]
+    },
+    "inline_5": {
+      "scene_hint": "The access code is visibly correct on the guest's phone, but the mechanical lock remains shut and the suitcase stays outside.",
+      "alt": "Код верный, но замок не открылся — заселение сорвано.",
+      "labels": [
+        "код верный",
+        "замок не открылся",
+        "заселение сорвано"
+      ]
+    },
+    "inline_6": {
+      "scene_hint": "Tyumen at the beginning of September: apartment entrance, green-and-gold trees, light jacket weather, and a clear evening with absolutely no snow.",
+      "alt": "Тюмень в начале сентября: прохладный вечер, зелёно-золотые деревья и никакого снега.",
+      "labels": [
+        "Тюмень",
+        "начало сентября",
+        "без снега"
+      ]
+    },
+    "inline_7": {
+      "scene_hint": "After 35 minutes of waiting, the guest stands beside the taxi with luggage, looking between the phone, the closed entrance, and the missing keybox access point.",
+      "alt": "После 35 минут ожидания такси за 480 рублей уезжает, а вход так и не найден.",
+      "labels": [
+        "35 минут ожидания",
+        "такси 480 ₽",
+        "вход не найден"
+      ]
+    }
+  }
+}

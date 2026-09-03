@@ -1,0 +1,32 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/kod-prislali-v-posutochnuyu-klyuchnica-ne-otkrylas-taksi-uehalo/#article",
+  "url": "{{SITE_BASE}}/blog/kod-prislali-v-posutochnuyu-klyuchnica-ne-otkrylas-taksi-uehalo/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/kod-prislali-v-posutochnuyu-klyuchnica-ne-otkrylas-taksi-uehalo/"
+  },
+  "headline": "Код прислали в посуточную: ключница не открылась, такси уехало",
+  "inLanguage": "ru-RU",
+  "author": {
+    "@type": "Organization",
+    "@id": "{{SITE_BASE}}/#organization",
+    "name": "Добрый дом",
+    "sameAs": [
+      "{{SITE_BASE}}/"
+    ]
+  },
+  "publisher": {
+    "@type": "LocalBusiness",
+    "@id": "{{SITE_BASE}}/#organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    }
+  }
+}

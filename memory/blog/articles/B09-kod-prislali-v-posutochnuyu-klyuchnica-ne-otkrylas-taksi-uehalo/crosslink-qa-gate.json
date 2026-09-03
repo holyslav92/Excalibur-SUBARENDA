@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "https://добрыйдом-72.рф/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "anchor": "как работает бесконтактное заселение посуточно в Тюмени. Здесь случай жёстче: адрес был верным, а отказала сама точка входа.Стояли у ключницы больше получаса — что в итоге сработало у вас?А как заканчивались похожие истории у вас? Приезжал хозяин, находился сосед с запасным ключом, помогал консьерж — или вы тоже уезжали и платили за другое место? Напишите в",
+      "catalog_title": "Оплатил квартиру посуточно. Код прислали от чужой двери",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate/",
+      "slug": "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+      "anchor": "мы разбирали такой случай отдельно. Если у двери внезапно требуют доплату за третьего гостя, обещание в объявлении тоже оказалось неполным:",
+      "catalog_title": "Перевели 3 000 ₽ предоплатой. К вечеру — тишина в чате",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego/",
+      "slug": "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+      "anchor": "что делать с неожиданной доплатой. А когда нельзя войти, особенно остро чувствуешь цену каждой минуты — как в истории о багаже между выездом и поездом:",
+      "catalog_title": "Оплатили за двоих. У двери попросили доплату за третьего",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu/",
+      "slug": "vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu",
+      "anchor": "куда деть чемоданы между выездом и поездом.Мой вывод как практикаСначала проверка, потом перевод. Не наоборот. Код без исправной ключницы и без человека на связи — это не заселение, а лотерея. В этом случае цена лотереи составила 480 ₽ за второе такси, сорванную ночь и гостиницу вместо оплаченной квартиры.Перед поездкой стоит уточнить пять вещей:Попросить фотографию места ключницы: подъезд, стена и ориентир должны быть понятны.Спросить, кто приедет с ключом, если панель не откроется, и сколько это займёт.Взять телефон человека, а не оставаться только в чате объявления.Уточнить, проверяли ли ключницу именно в день приезда.Если приезжаете поздно, согласовать заселение заранее и получить подтверждение текстом.Эта проверка занимает у хоста несколько минут. Для гостя она может сохранить вечер, деньги и доверие к самому слову «бесконтактно». Мы проверяем вход до приезда и остаёмся на связи, чтобы человек заходил в квартиру, а не переписывался с дверью.Нужна квартира в Тюмени с проверенным входом и человеком на связи?Telegram:",
+      "catalog_title": "Выезд в полдень. Поезд через 4 часа — чемоданы у подъезда",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "outbound_unique_slugs": [
+    "beskontaktnoe-zaselenie-posutochno-tyumen",
+    "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+    "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+    "vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B09-kod-prislali-v-posutochnuyu-klyuchnica-ne-otkrylas-taksi-uehalo",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}

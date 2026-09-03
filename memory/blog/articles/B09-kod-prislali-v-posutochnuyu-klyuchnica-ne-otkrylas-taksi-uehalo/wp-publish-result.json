@@ -1,0 +1,27 @@
+{
+  "slug": "kod-prislali-v-posutochnuyu-klyuchnica-ne-otkrylas-taksi-uehalo",
+  "topic_id": "B09",
+  "permalink": "{{SITE_BASE}}/blog/kod-prislali-v-posutochnuyu-klyuchnica-ne-otkrylas-taksi-uehalo/",
+  "publish_method": "ftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B09-kod-prislali-v-posutochnuyu-klyuchnica-ne-otkrylas-taksi-uehalo/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1132742,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4342 slug=kod-prislali-v-posutochnuyu-klyuchnica-ne-otkrylas-taksi-uehalo\nOK categories=101,106\nOK dzen_yzen_meta=1\nOK featured_image=4343\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4344 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kod-prislali-v-posutochnuyu-klyuchnica-ne-otkrylas-taksi-uehalo-inline-01.png\nOK inline_alt=4344\nOK inline_caption=4344\nOK inline_description=4344\nOK inline_image_upload=4345 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kod-prislali-v-posutochnuyu-klyuchnica-ne-otkrylas-taksi-uehalo-inline-02.png\nOK inline_alt=4345\nOK inline_caption=4345\nOK inline_description=4345\nOK inline_image_upload=4346 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kod-prislali-v-posutochnuyu-klyuchnica-ne-otkrylas-taksi-uehalo-inline-03.png\nOK inline_alt=4346\nOK inline_caption=4346\nOK inline_description=4346\nOK inline_image_upload=4347 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kod-prislali-v-posutochnuyu-klyuchnica-ne-otkrylas-taksi-uehalo-inline-04.png\nOK inline_alt=4347\nOK inline_caption=4347\nOK inline_description=4347\nOK inline_image_upload=4348 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kod-prislali-v-posutochnuyu-klyuchnica-ne-otkrylas-taksi-uehalo-inline-05.png\nOK inline_alt=4348\nOK inline_caption=4348\nOK inline_description=4348\nOK inline_image_upload=4349 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kod-prislali-v-posutochnuyu-klyuchnica-ne-otkrylas-taksi-uehalo-inline-06.png\nOK inline_alt=4349\nOK inline_caption=4349\nOK inline_description=4349\nOK inline_image_upload=4350 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kod-prislali-v-posutochnuyu-klyuchnica-ne-otkrylas-taksi-uehalo-inline-07.png\nOK inline_alt=4350\nOK inline_caption=4350\nOK inline_description=4350\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/kod-prislali-v-posutochnuyu-klyuchnica-ne-otkrylas-taksi-uehalo/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/kod-prislali-v-posutochnuyu-klyuchnica-ne-otkrylas-taksi-uehalo/",
+    "errors": []
+  }
+}
