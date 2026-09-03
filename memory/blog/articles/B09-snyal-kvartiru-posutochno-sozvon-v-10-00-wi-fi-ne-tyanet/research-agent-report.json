@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "topic_id": "B09",
+  "slug": "snyal-kvartiru-posutochno-sozvon-v-10-00-wi-fi-ne-tyanet",
+  "research_date": "2026-09-03",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Klyshin sept_business_trip (Aug 29–31 YEKT) + Newsler 27.08.2026 + NEWS.ru mobile internet 29.08.2026",
+    "source_type": "community+news",
+    "urls": [
+      "https://t.me/klyshin_A",
+      "https://www.newsler.ru/travel/2026/08/27/kak-vybrat-kvartiru-posutochno-i-udachno-zaselitsya",
+      "https://news.ru/society/pochemu-ne-rabotaet-mobilnyj-internet-29-avgusta-prichiny-sboi-v-rossii"
+    ],
+    "accessed_at": "2026-09-03",
+    "note": "Klyshin hook = desk/outlets/real Wi-Fi/closing docs before pay; news week confirms inspect-on-arrival + mobile backup risk."
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "No bank tariffs; Zoom bandwidth from official Zoom Support page",
+    "verified_claims": 4,
+    "entities_checked": ["zoom"],
+    "errors": []
+  },
+  "wordstat": {
+    "status": "PASS",
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 5320,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "снять квартиру посуточно в тюмени",
+        "volume": 1134,
+        "region": "55"
+      },
+      {
+        "phrase": "квартира посуточно командировка",
+        "volume": 69,
+        "region": "225"
+      },
+      {
+        "phrase": "уборка посуточных квартир",
+        "volume": 1951,
+        "region": "225"
+      }
+    ]
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "derouter-opus-stamp-research.json"
+  },
+  "errors": []
+}
