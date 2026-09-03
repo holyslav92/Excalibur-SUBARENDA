@@ -478,14 +478,14 @@ needed_decision_or_secret:
 status: needs-human
 run_date: 2026-09-03
 role: excalibur-blog-content-learner
-topic_id: B08
-article_dir: memory/blog/articles/B08-pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate
+topic_id: B08, B09
+article_dir: memory/blog/articles/B08-pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate; memory/blog/articles/B09-snyal-kvartiru-posutochno-sozvon-v-10-00-wi-fi-ne-tyanet
 severity: medium
 category: env
 
 ### What went wrong
 
-- `excalibur_blog_metrika_fetch.py --days 30 --ingest` → METRIKA CREDENTIALS BLOCKER (no OAuth token / counter id in Cloud Secrets).
+- `excalibur_blog_metrika_fetch.py --days 30 --ingest` → METRIKA CREDENTIALS BLOCKER (no OAuth token / counter id in Cloud Secrets). Recurred on B09 content-learner 2026-09-03.
 
 ### How the agent recovered this run
 

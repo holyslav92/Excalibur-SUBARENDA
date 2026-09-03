@@ -1,0 +1,77 @@
+{
+  "topic_id": "B09",
+  "slug": "snyal-kvartiru-posutochno-sozvon-v-10-00-wi-fi-ne-tyanet",
+  "cover_family": "brand_collage",
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "pipeline": "dzen_story_collage_v2_standalone_cover",
+  "file": "cover/cover.png",
+  "alt": "«Wi‑Fi для работы». Утром Zoom завис на 40 минут",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/cover-canvas.png",
+  "generated_at": "2026-09-03T12:50:32+00:00",
+  "assets": [
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Телефон показывает подключение к Wi‑Fi, но ноутбук на рабочем столе не может нормально провести видеозвонок; сигнал слабый.",
+      "h2_anchor": "«Есть Wi‑Fi» — не значит «можно работать»",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Схема квартиры: роутер находится в коридоре, а рабочий стол отделён от него несколькими стенами; путь сигнала заметно ухудшается.",
+      "h2_anchor": "Где ломается обещание",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Сравнение скорости: рядом с роутером интернет быстрый, а у рабочего стола тест показывает 0,4 Мбит/с и видеозвонок зависает.",
+      "h2_anchor": "Почему у роутера всё летает, а у стола — нет",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_4",
+      "file": "cover/inline-04.png",
+      "alt": "Гость проверяет Wi‑Fi до оплаты: на столе смартфон с тестом скорости, чек-лист и план квартиры, рядом выделена кнопка оплаты.",
+      "h2_anchor": "Проверяете Wi‑Fi до оплаты или уже после заселения?",
+      "visual_type": "comparison_table",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_5",
+      "file": "cover/inline-05.png",
+      "alt": "Специалист измеряет сигнал от роутера до рабочего стола, предлагает улучшить точку доступа и показывает запасной вариант — коворкинг.",
+      "h2_anchor": "Как делаем мы",
+      "visual_type": "schema_faq_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_6",
+      "file": "cover/inline-06.png",
+      "alt": "Ноутбук стоит на паузе, кофе остывает, роутер светится в коридоре, а на записке написано: «Работа подождёт».",
+      "h2_anchor": "Мораль",
+      "visual_type": "tool_screenshot",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_7",
+      "file": "cover/inline-07.png",
+      "alt": "После улучшения сигнала гость спокойно работает за столом; тест скорости показывает хороший результат, все пункты проверки отмечены.",
+      "h2_anchor": "Чек-лист гостя в командировке",
+      "visual_type": "labeled_checklist",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}

@@ -1,0 +1,195 @@
+{
+  "topic_id": "B09",
+  "canvas_file": "cover/cover-canvas.png",
+  "layout": "2x2",
+  "pipeline": "dzen_story_collage_v2_standalone_cover",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 0,
+      "canvas_file": "cover/cover-canvas.png",
+      "batch_file": "cover/cover-mcp-batch.json",
+      "prompt_file": "cover/cover-mcp-prompt.txt",
+      "result_file": "cover/cover-mcp-result.json",
+      "slots": [
+        "cover"
+      ],
+      "has_cover": true,
+      "standalone_cover": true,
+      "export_size": "1200x675"
+    },
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": [
+        "inline_1",
+        "inline_2",
+        "inline_3",
+        "inline_4"
+      ],
+      "has_cover": false
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": [
+        "inline_5",
+        "inline_6",
+        "inline_7",
+        "panel_quiet_pad"
+      ],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "cover_hook": "Вай‑фай для работы — созвон завис сорок минут",
+  "cover_hook_highlight": "завис",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Derouter REST (DEROUTER_API_KEY) — 2K 16:9, one job per canvas (3×). Cover agent invents cover_hook + scene_hint/alt before --write-batch. Host lock = blog-hero.json (navy blazer, not hoodie).",
+  "slots": {
+    "cover": {
+      "quadrant": "standalone",
+      "role": "cover_editorial_hero",
+      "alt": "Солнечная квартира в Тюмени ранней осенью: гость у ноутбука с зависшим Zoom-звонком, таймер показывает 40 минут, скорость — 0,4 Мбит/с. Роутер стоит в коридоре. На инфотабло указан телефон +7 (993) 574-83-22.",
+      "scene_hint": "Sep Tyumen: Zoom frozen at desk, router in corridor, 0.4 Mbps, +7 (993) 574-83-22 tablo; TR pad.",
+      "meme_caption_ru": "",
+      "sticky": "Работа подождёт",
+      "meme_id": ""
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "«Есть Wi‑Fi» — не значит «можно работать»",
+      "visual_type": "comparison_table_ui",
+      "scene_hint": "Flatlay: Wi-Fi icon OK on phone, stalled Zoom on laptop at desk; sunny Sep Tyumen.",
+      "alt": "Телефон показывает подключение к Wi‑Fi, но ноутбук на рабочем столе не может нормально провести видеозвонок; сигнал слабый.",
+      "labels": [
+        "4500 ₽ за ночь",
+        "созвон по работе",
+        "роутер в коридоре",
+        "утром 0,4 Мбит/с"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Где ломается обещание",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Split: chat «Wi‑Fi для работы» vs blank speed in reply; warm daylight.",
+      "alt": "Схема квартиры: роутер находится в коридоре, а рабочий стол отделён от него несколькими стенами; путь сигнала заметно ухудшается.",
+      "labels": [
+        "720р для созвона",
+        "нужно 1,2 Мбит/с",
+        "есть 0,4 Мбит/с",
+        "кубики и задержка"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Почему у роутера всё летает, а у стола — нет",
+      "visual_type": "checklist_board",
+      "scene_hint": "Speed test: fast at router, 0.4 Mbps at desk with pixelated video; green trees.",
+      "alt": "Сравнение скорости: рядом с роутером интернет быстрый, а у рабочего стола тест показывает 0,4 Мбит/с и видеозвонок зависает.",
+      "labels": [
+        "«для работы»",
+        "скорость не указана",
+        "чат до оплаты",
+        "проверить заранее"
+      ]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Проверяете Wi‑Fi до оплаты или уже после заселения?",
+      "visual_type": "comparison_table",
+      "scene_hint": "Diagram 2.4 vs 5 GHz, router in hall, desk behind two walls; sunny apartment.",
+      "alt": "Гость проверяет Wi‑Fi до оплаты: на столе смартфон с тестом скорости, чек-лист и план квартиры, рядом выделена кнопка оплаты.",
+      "labels": [
+        "2,4 ГГц",
+        "5 ГГц",
+        "роутер в холле",
+        "стол за стенами"
+      ]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Как делаем мы",
+      "visual_type": "schema_faq_ui",
+      "scene_hint": "Suitcase, coworking receipt 600₽, phone «перезагрузите роутер»; early autumn Tyumen.",
+      "alt": "Специалист измеряет сигнал от роутера до рабочего стола, предлагает улучшить точку доступа и показывает запасной вариант — коворкинг.",
+      "labels": [
+        "коворкинг 600 ₽",
+        "запасной вариант",
+        "«перезагрузите роутер»",
+        "созвон уже идёт"
+      ]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Мораль",
+      "visual_type": "tool_screenshot",
+      "scene_hint": "Checklist: provider, tariff, desk speed test, honest «нет»; bright window light.",
+      "alt": "Ноутбук стоит на паузе, кофе остывает, роутер светится в коридоре, а на записке написано: «Работа подождёт».",
+      "labels": [
+        "проверить провайдера",
+        "уточнить тариф",
+        "замер у стола",
+        "нет замера — честное «нет»"
+      ]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Чек-лист гостя в командировке",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Desk note «сначала проверка — потом перевод», laptop speed screenshot; sunny Sep.",
+      "alt": "После улучшения сигнала гость спокойно работает за столом; тест скорости показывает хороший результат, все пункты проверки отмечены.",
+      "labels": [
+        "сначала проверка",
+        "потом перевод",
+        "скорость у ноутбука",
+        "спросить до оплаты"
+      ]
+    },
+    "panel_quiet_pad": {
+      "quadrant": "bottom_right",
+      "role": "quiet_pad",
+      "alt": "Quiet pad",
+      "scene_hint": "Soft cream blur pad, no text.",
+      "labels": []
+    }
+  },
+  "cover_keys_ru": [],
+  "slug": "snyal-kvartiru-posutochno-sozvon-v-10-00-wi-fi-ne-tyanet",
+  "cover_headline_line1": "Вай‑фай для работы",
+  "cover_headline_line2": "Утром созвон завис на 40 минут",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_meme_id": "",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "квартира посуточно тюмень с Wi‑Fi",
+    "где остановиться в тюмени"
+  ],
+  "logo_paste_inline_slots": [
+    "inline_1",
+    "inline_3",
+    "inline_7"
+  ],
+  "cover_emotion": "Рабочая паника и ироничное разочарование",
+  "cover_scene": "Morning Zoom freeze laptop desk router corridor tablo",
+  "cover_motifs": {
+    "composition": "Desk Zoom freeze vs corridor router speed gap TR pad",
+    "location": "Tyumen morning apartment mesh wifi behind walls early autumn",
+    "meme": "stonks reaction sticker small",
+    "prop_set": "laptop zoom timer router 0.4mbps tablo phone board",
+    "sticker_set": "Wi-Fi для работы 0.4 Мбит/с 40 минут",
+    "joke": "full bars at router zero at desk",
+    "headline_line1": "Вай‑фай для работы",
+    "headline_line2": "Утром созвон завис на 40 минут"
+  }
+}

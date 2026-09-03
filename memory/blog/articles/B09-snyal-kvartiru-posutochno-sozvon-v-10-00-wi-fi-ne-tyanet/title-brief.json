@@ -1,0 +1,16 @@
+{
+  "topic_id": "B09",
+  "h1": "«Wi‑Fi для работы». Утром Zoom завис на 40 минут",
+  "title": "Квартиры посуточно в Тюмени: Wi‑Fi подвёл на созвоне",
+  "title_tag": "Квартиры посуточно в Тюмени: Wi‑Fi подвёл на созвоне | Добрый дом",
+  "meta_description": "Гость снял квартиру посуточно в Тюмени для командировки, но утром рабочий созвон завис: Wi‑Fi выдавал лишь 400–800 кбит/с.",
+  "slug": "snyal-kvartiru-posutochno-sozvon-v-10-00-wi-fi-ne-tyanet",
+  "subject": "Сбой рабочего видеозвонка из-за слабого Wi‑Fi в арендованной квартире",
+  "angle": "Обещанный Wi‑Fi для работы оказался непригоден для утреннего Zoom-созвона",
+  "klyshin_title_shape": 2,
+  "dzen_pattern": 2,
+  "wordstat_p0": "квартиры посуточно тюмень",
+  "two_beat_check": true,
+  "generated_via": "excalibur_blog_derouter_opus_chat.py --role title",
+  "verdict": "PASS"
+}

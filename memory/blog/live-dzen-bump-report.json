@@ -1,25 +1,25 @@
 {
-  "bumped_at_yekt": "2026-08-31T00:57:19.864149+05:00",
-  "cache_bust": 1788119832,
+  "bumped_at_yekt": "2026-09-03T18:32:10.516530+05:00",
+  "cache_bust": 1788442324,
   "slugs": [
-    "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego"
+    "snyal-kvartiru-posutochno-sozvon-v-10-00-wi-fi-ne-tyanet"
   ],
   "before_modified_gmt": {
-    "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego": "2026-08-30T19:40:02"
+    "snyal-kvartiru-posutochno-sozvon-v-10-00-wi-fi-ne-tyanet": "2026-09-03T13:31:21"
   },
   "after_modified_gmt": {
-    "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego": "2026-08-30T19:57:15"
+    "snyal-kvartiru-posutochno-sozvon-v-10-00-wi-fi-ne-tyanet": "2026-09-03T13:32:07"
   },
   "bootstrap_rows": [
     {
-      "post_id": 4178,
-      "slug": "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
-      "modified_gmt": "2026-08-30 19:57:15",
-      "cover_remote": "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego-cover.png",
-      "cover_attachment_id": 4179
+      "post_id": 4353,
+      "slug": "snyal-kvartiru-posutochno-sozvon-v-10-00-wi-fi-ne-tyanet",
+      "modified_gmt": "2026-09-03 13:32:07",
+      "cover_remote": "snyal-kvartiru-posutochno-sozvon-v-10-00-wi-fi-ne-tyanet-cover-1.png",
+      "cover_attachment_id": 4363
     }
   ],
   "permalink": {
-    "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego": "/blog/oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego/"
+    "snyal-kvartiru-posutochno-sozvon-v-10-00-wi-fi-ne-tyanet": "/blog/snyal-kvartiru-posutochno-sozvon-v-10-00-wi-fi-ne-tyanet/"
   }
 }

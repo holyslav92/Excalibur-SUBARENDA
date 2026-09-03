@@ -155,6 +155,45 @@ status: recorded
 
 ---
 
+## LESSON-20260903-1334-B09-wifi-zoom-commandirovka
+status: proposed
+topic_id: B09
+category: utility
+confidence: low
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP. Publish-артефакты: title-brief, description-brief, article.html §1–чеклист.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы (INC-20260903-0640).
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Two-beat H1 «Wi‑Fi для работы» → «Zoom завис на 40 минут»: обещание в кавычках + измеримый контрфакт.
+- §1: цитата хоста, 4 500 ₽ / 3 ночи, тест 0,4 Мбит/с, коворкинг ~600 ₽; Klyshin «Нет. Так не заселяем.» + «Сначала проверка. Потом перевод.»
+- Вопрос-отмычка «Проверяете Wi‑Fi до оплаты…?» → TG/MAX; порог Zoom 720p ~1,2 Мбит/с как проверяемый факт.
+- Wordstat spine «квартиры посуточно тюмень» (research 5320 Tyumen).
+
+### Change
+- В командировочных кейсах в §1 сразу называть **скорость у рабочего места**, не только «Wi‑Fi есть»; план B (коворкинг ₽) рядом с ценой ночи.
+
+### Never again
+- Принимать «Wi‑Fi для работы» без цифры Мбит/с и скриншота теста в точке ноутбука.
+
+### Proposed apply
+- Scout/Title: hook business_trip_wifi → handoff sub-angle «скорость у стола + утренний созвон»; review-only.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
 ## LESSON-20260903-0602-B08-prepayment-silence-chat
 status: proposed
 topic_id: B08

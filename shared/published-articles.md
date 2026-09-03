@@ -13,3 +13,4 @@ Excalibur-2-Cloud — не копировать URL tymenrieltor.ru.
 | 2026-09-01 | B06 | vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu | /blog/vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu/ | published |
 | 2026-09-02 | B07 | kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den | /blog/kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den/ | published |
 | 2026-09-03 | B08 | pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate | /blog/pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate/ | published |
+| 2026-09-03 | B09 | snyal-kvartiru-posutochno-sozvon-v-10-00-wi-fi-ne-tyanet | /blog/snyal-kvartiru-posutochno-sozvon-v-10-00-wi-fi-ne-tyanet/ | published |
