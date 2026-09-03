@@ -1,0 +1,27 @@
+{
+  "slug": "snyal-kvartiru-posutochno-sozvon-v-10-00-wi-fi-ne-tyanet",
+  "topic_id": "B09",
+  "permalink": "{{SITE_BASE}}/blog/snyal-kvartiru-posutochno-sozvon-v-10-00-wi-fi-ne-tyanet/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B09-snyal-kvartiru-posutochno-sozvon-v-10-00-wi-fi-ne-tyanet/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1122669,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4353 slug=snyal-kvartiru-posutochno-sozvon-v-10-00-wi-fi-ne-tyanet\nOK categories=101\nOK dzen_yzen_meta=1\nOK featured_image=4363\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4364 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/snyal-kvartiru-posutochno-sozvon-v-10-00-wi-fi-ne-tyanet-inline-01-1.png\nOK inline_alt=4364\nOK inline_caption=4364\nOK inline_description=4364\nOK inline_image_upload=4365 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/snyal-kvartiru-posutochno-sozvon-v-10-00-wi-fi-ne-tyanet-inline-02-1.png\nOK inline_alt=4365\nOK inline_caption=4365\nOK inline_description=4365\nOK inline_image_upload=4366 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/snyal-kvartiru-posutochno-sozvon-v-10-00-wi-fi-ne-tyanet-inline-03-1.png\nOK inline_alt=4366\nOK inline_caption=4366\nOK inline_description=4366\nOK inline_image_upload=4367 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/09/snyal-kvartiru-posutochno-sozvon-v-10-00-wi-fi-ne-tyanet-inline-04-1.png\nOK inline_alt=4367\nOK inline_caption=4367\nOK inline_description=4367\nOK inline_image_upload=4368 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/09/snyal-kvartiru-posutochno-sozvon-v-10-00-wi-fi-ne-tyanet-inline-05-1.png\nOK inline_alt=4368\nOK inline_caption=4368\nOK inline_description=4368\nOK inline_image_upload=4369 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/09/snyal-kvartiru-posutochno-sozvon-v-10-00-wi-fi-ne-tyanet-inline-06-1.png\nOK inline_alt=4369\nOK inline_caption=4369\nOK inline_description=4369\nOK inline_image_upload=4370 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/09/snyal-kvartiru-posutochno-sozvon-v-10-00-wi-fi-ne-tyanet-inline-07-1.png\nOK inline_alt=4370\nOK inline_caption=4370\nOK inline_description=4370\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/snyal-kvartiru-posutochno-sozvon-v-10-00-wi-fi-ne-tyanet/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/snyal-kvartiru-posutochno-sozvon-v-10-00-wi-fi-ne-tyanet/",
+    "errors": []
+  }
+}

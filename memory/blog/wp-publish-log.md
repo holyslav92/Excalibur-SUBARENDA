@@ -1,5 +1,22 @@
 # WP publish log
 
+## B09 — 2026-09-03
+
+- **topic_id:** B09
+- **slug:** snyal-kvartiru-posutochno-sozvon-v-10-00-wi-fi-ne-tyanet
+- **title:** «Wi‑Fi для работы». Утром Zoom завис на 40 минут
+- **post_id:** 4353
+- **permalink:** /blog/snyal-kvartiru-posutochno-sozvon-v-10-00-wi-fi-ne-tyanet/
+- **categories:** posutochnaya-arenda (101)
+- **featured_image:** 4363
+- **inline_images:** 4364–4370 (7× wp-content/uploads/2026/09/…-inline-0N-1.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS (cover + 7 inline → wp-content)
+- **dzen bump:** post_modified_gmt touched; cover-1024x576.png on live
+- **interlink inbound:** B01 (3745)
+- **publish_method:** sftp (FTP PASV data timeout on cloud; explicit SFTP:22)
+- **llms_deploy:** PASS (llms.txt + llms-full.txt)
+
 ## B07 — 2026-09-02
 
 - **topic_id:** B07

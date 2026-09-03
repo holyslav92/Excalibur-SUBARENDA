@@ -17,3 +17,4 @@ lessons, benchmarks, QA reports или соседние research-notes как о
 | B06 | vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu | Выезд в полдень. Поезд через 4 часа — чемоданы у подъезда | published |
 | B07 | kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den | Хозяин написал «кухня есть». За три ночи в кафе ушло 7 200 ₽ | published |
 | B08 | pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate | Перевели 3 000 ₽ предоплатой. К вечеру — тишина в чате | published |
+| B09 | snyal-kvartiru-posutochno-sozvon-v-10-00-wi-fi-ne-tyanet | «Wi‑Fi для работы». Утром Zoom завис на 40 минут | published |
