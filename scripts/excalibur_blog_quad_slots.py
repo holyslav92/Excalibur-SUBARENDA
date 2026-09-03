@@ -285,6 +285,9 @@ def canvas_specs_for_inline_count(
 
 
 def all_canvas_specs(inline_count: int, *, scene_poster_v2: bool | None = None) -> tuple[dict[str, Any], ...]:
+    # Longform 7-inline: standalone cover + 2 quad sheets (B06-style), not slice4.
+    if inline_count == 7 and uses_one_2k_slice4():
+        return (STANDALONE_COVER_SPEC,) + SCENE_POSTER_CANVAS_SPECS
     if uses_one_2k_slice4():
         return (SLICE4_CANVAS_SPEC,)
     v2 = uses_scene_poster_v2() if scene_poster_v2 is None else scene_poster_v2

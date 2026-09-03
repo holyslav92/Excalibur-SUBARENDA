@@ -129,6 +129,17 @@ def check_article_dir(article_dir: Path, *, root: Path | None = None) -> dict[st
         checks.append("quad-manifest")
         manifest = _load_json(manifest_path)
         inline_count = int(manifest.get("inline_count") or 0)
+        if inline_count == 7:
+            checks.append("longform_inline_count_7_skip_slice4")
+            return {
+                "gate": "slice4",
+                "status": "SKIP",
+                "canon": GEN_ONLY_HUMAN_CANON_ID if uses_gen_only_human(root) else ONE_2K_SLICE4_CANON_ID,
+                "errors": [],
+                "checks_run": checks,
+                "article_dir": str(article_dir),
+                "note": "inline_count=7 uses standalone cover + 2 quad canvases",
+            }
         if inline_count not in (0, 3):
             errors.append(f"slice4: inline_count={inline_count} — must be 3")
         pipeline = str(manifest.get("pipeline") or "")
