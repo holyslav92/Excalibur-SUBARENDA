@@ -1,0 +1,101 @@
+{
+  "file": "cover/scene-draft.json",
+  "hook": "Ключа нет — такси ждёт",
+  "highlight": "такси",
+  "sticky": "Код есть, входа нет",
+  "season": "early September",
+  "location": "Tyumen",
+  "time": "evening",
+  "weather": "mild early-autumn evening, no snow, no winter elements",
+  "inline_count": 7,
+  "generation_note": "This is an 8-slot scene draft. Final production must follow the single 2048x1152 2x2-grid generation policy; no standalone cover draw or second quad draw.",
+  "logo_paste_inline_slots": [],
+  "logo_policy_note": "Official logo paste is cover-only. Inline tiles must contain zero logos.",
+  "cover": {
+    "scene_hint": "Early September evening in Tyumen. A worried guest stands beside a waiting taxi near the entrance of a modern apartment building. The entrance keybox is visible, but its door is closed. A small lobby tablo or magnetic board clearly displays the phone number +7 (993) 574-83-22. Reserve clean negative space in the top-right for the official logo paste; do not draw a brand lockup.",
+    "alt": "Вечерний заезд в Тюмени: гость ждёт у закрытой ключницы, рядом стоит такси, на табло указан номер +7 (993) 574-83-22.",
+    "visual_direction": "Cinematic editorial realism, 16:9 composition, warm taxi headlights against cool blue September dusk, apartment entrance and closed keybox readable, restrained tension, no snow, no winter clothing, no fake logo or wordmark. Phone number must be legible on the tablo or magnet: +7 (993) 574-83-22."
+  },
+  "inline_1": {
+    "scene_hint": "The guest arrives in the early September evening with a phone showing the access code message. In the background, the silent keybox remains closed near the apartment entrance.",
+    "alt": "Гость приехал вечером: код прислали, но ключница молчит.",
+    "visual_direction": "Documentary close-to-medium shot, Tyumen apartment entrance, phone with an unreadable generic access-code chat, closed keybox as the visual focus, warm dusk light, no logo, no text-heavy overlays. Suggested labels: «вечерний заезд», «код прислали», «ключница молчит»."
+  },
+  "inline_2": {
+    "scene_hint": "A guest and taxi driver wait outside a locked entrance while the taxi meter or phone timer shows that 35 minutes have passed.",
+    "alt": "Гость и водитель ждут у закрытой двери уже 35 минут.",
+    "visual_direction": "Tense realistic street scene, locked entrance door, taxi at the curb, visible timer reading 35 minutes without brand marks, early September foliage, no snow. Suggested labels: «35 минут», «вход закрыт», «ждём у двери»."
+  },
+  "inline_3": {
+    "scene_hint": "Taxi waiting at the curb while the guest checks the time and realizes the ride has already cost 480 ₽ because the entrance problem is unresolved.",
+    "alt": "Такси ждёт у дома: поездка уже стоит 480 рублей, а ключа всё ещё нет.",
+    "visual_direction": "Editorial still life with taxi side mirror, phone calculator or receipt showing 480 ₽, closed entrance blurred in the background, blue-gold evening palette, no logo, no fake branding. Suggested labels: «такси 480 ₽», «время идёт», «ключа нет»."
+  },
+  "inline_4": {
+    "scene_hint": "Close-up instructional sequence of a standard keybox: checking the code, pressing the release button, and pulling the small door, which still does not open.",
+    "alt": "Проверяем код, нажимаем кнопку и тянем дверцу ключницы.",
+    "visual_direction": "Clear practical close-up, hands only, generic keybox with no manufacturer logo, three-step visual rhythm, realistic metal and plastic textures, neutral evening light. Suggested labels: «проверить код», «нажать кнопку», «потянуть дверцу»."
+  },
+  "inline_5": {
+    "scene_hint": "The access code is visibly correct on the guest's phone, but the mechanical lock remains shut and the suitcase stays outside.",
+    "alt": "Код верный, но замок не открылся — заселение сорвано.",
+    "visual_direction": "High-clarity problem illustration, phone with a generic correct-code confirmation, locked keybox and stranded suitcase in the same frame, restrained frustration, no brand marks, no winter details. Suggested labels: «код верный», «замок не открылся», «заселение сорвано»."
+  },
+  "inline_6": {
+    "scene_hint": "Tyumen at the beginning of September: apartment entrance, green-and-gold trees, light jacket weather, and a clear evening with absolutely no snow.",
+    "alt": "Тюмень в начале сентября: прохладный вечер, зелёно-золотые деревья и никакого снега.",
+    "visual_direction": "Atmospheric establishing shot, recognizable but non-specific Tyumen residential setting, early-autumn foliage, damp pavement optional, light jackets only, no snow, frost, ice, or winter decorations. Suggested labels: «Тюмень», «начало сентября», «без снега»."
+  },
+  "inline_7": {
+    "scene_hint": "After 35 minutes of waiting, the guest stands beside the taxi with luggage, looking between the phone, the closed entrance, and the missing keybox access point.",
+    "alt": "После 35 минут ожидания такси за 480 рублей уезжает, а вход так и не найден.",
+    "visual_direction": "Emotional concluding scene, guest with suitcase near a departing or idling taxi, closed entrance dominating the background, phone screen or receipt subtly showing 35 minutes and 480 ₽, early September Tyumen evening, no logo, no fake lockup. Suggested labels: «35 минут ожидания», «такси 480 ₽», «вход не найден»."
+  },
+  "wordstat_stickers": [
+    "посуточно тюмень",
+    "квартира посуточно тюмень"
+  ],
+  "inline_labels": {
+    "inline_1": [
+      "вечерний заезд",
+      "код прислали",
+      "ключница молчит"
+    ],
+    "inline_2": [
+      "35 минут",
+      "вход закрыт",
+      "ждём у двери"
+    ],
+    "inline_3": [
+      "такси 480 ₽",
+      "время идёт",
+      "ключа нет"
+    ],
+    "inline_4": [
+      "проверить код",
+      "нажать кнопку",
+      "потянуть дверцу"
+    ],
+    "inline_5": [
+      "код верный",
+      "замок не открылся",
+      "заселение сорвано"
+    ],
+    "inline_6": [
+      "Тюмень",
+      "начало сентября",
+      "без снега"
+    ],
+    "inline_7": [
+      "35 минут ожидания",
+      "такси 480 ₽",
+      "вход не найден"
+    ]
+  },
+  "cat_meme_policy": {
+    "max_slots": 1,
+    "assigned_slot": null,
+    "note": "No cat meme assigned; do not add cats to more than one inline."
+  },
+  "article_h2s": []
+}

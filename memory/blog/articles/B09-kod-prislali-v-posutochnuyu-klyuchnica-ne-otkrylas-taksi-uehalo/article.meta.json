@@ -1,0 +1,20 @@
+{
+  "title": "Код прислали. Ключница не открылась: 35 минут, такси 480 ₽",
+  "h1": "Код прислали. Ключница не открылась: 35 минут, такси 480 ₽",
+  "slug": "kod-prislali-v-posutochnuyu-klyuchnica-ne-otkrylas-taksi-uehalo",
+  "topic_id": "B09",
+  "author_id": "dobry-dom",
+  "description": "Код пришёл — а ключница молчит. В Тюмени гостю пришлось ждать у двери и платить за второе такси.",
+  "date": "2026-09-03",
+  "wp_category_slugs": [
+    "posutochnaya-arenda",
+    "sovety-gostyam"
+  ],
+  "pipeline_canon": "human-first-v3",
+  "editorial_swarm": false,
+  "theme_blocks": {
+    "faq": "skip",
+    "quiz": "skip",
+    "side_stickers": "skip"
+  }
+}
