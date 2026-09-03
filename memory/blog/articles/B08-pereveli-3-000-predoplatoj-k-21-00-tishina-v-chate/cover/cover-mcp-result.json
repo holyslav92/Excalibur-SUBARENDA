@@ -1,0 +1,19 @@
+{
+  "local_path": "cover/cover-canvas.png",
+  "source": "grsai-draw-api",
+  "quality": "high",
+  "bytes": 1872883,
+  "aspect_ratio": "16:9",
+  "resolution": "2K",
+  "endpoint": "draw/completions+result",
+  "response_kind": "url",
+  "task_id": "13-556be043-1353-4556-b016-b2a033d659d2",
+  "target_canvas": "2048x1152",
+  "native_width": 1672,
+  "native_height": 941,
+  "native_long_side": 1672,
+  "min_long_side_required": 2048,
+  "delivery": "native_undersized_no_vip",
+  "shipped_native": "1672x941",
+  "primary_attempt": 2
+}

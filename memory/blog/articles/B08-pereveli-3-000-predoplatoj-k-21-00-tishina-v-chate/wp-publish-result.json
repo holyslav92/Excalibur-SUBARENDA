@@ -1,0 +1,27 @@
+{
+  "slug": "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+  "topic_id": "B08",
+  "permalink": "{{SITE_BASE}}/blog/pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate/",
+  "publish_method": "ftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B08-pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1089436,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4330 slug=pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate\nOK categories=101,106\nOK dzen_yzen_meta=1\nOK featured_image=4331\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4332 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate-inline-01.png\nOK inline_alt=4332\nOK inline_caption=4332\nOK inline_description=4332\nOK inline_image_upload=4333 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate-inline-02.png\nOK inline_alt=4333\nOK inline_caption=4333\nOK inline_description=4333\nOK inline_image_upload=4334 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate-inline-03.png\nOK inline_alt=4334\nOK inline_caption=4334\nOK inline_description=4334\nOK inline_image_upload=4335 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/09/pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate-inline-04.png\nOK inline_alt=4335\nOK inline_caption=4335\nOK inline_description=4335\nOK inline_image_upload=4336 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/09/pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate-inline-05.png\nOK inline_alt=4336\nOK inline_caption=4336\nOK inline_description=4336\nOK inline_image_upload=4337 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/09/pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate-inline-06.png\nOK inline_alt=4337\nOK inline_caption=4337\nOK inline_description=4337\nOK inline_image_upload=4338 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/09/pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate-inline-07.png\nOK inline_alt=4338\nOK inline_caption=4338\nOK inline_description=4338\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate/",
+    "errors": []
+  }
+}
