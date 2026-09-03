@@ -1,0 +1,66 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "Organization",
+        "LocalBusiness"
+      ],
+      "@id": "{{SITE_BASE}}/#organization",
+      "name": "Добрый дом",
+      "url": "{{SITE_BASE}}/",
+      "sameAs": [
+        "{{SITE_BASE}}/",
+        "{{SITE_BASE}}/blog/"
+      ],
+      "jobTitle": "Апартаменты и квартиры посуточно в Тюмени",
+      "telephone": "+7 (993) 574-83-22",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Тюмень",
+        "addressCountry": "RU"
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "{{SITE_BASE}}/blog/snyal-kvartiru-posutochno-sozvon-v-10-00-wi-fi-ne-tyanet/#article",
+      "url": "{{SITE_BASE}}/blog/snyal-kvartiru-posutochno-sozvon-v-10-00-wi-fi-ne-tyanet/",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{SITE_BASE}}/blog/snyal-kvartiru-posutochno-sozvon-v-10-00-wi-fi-ne-tyanet/"
+      },
+      "headline": "«Wi‑Fi для работы». Утром Zoom завис на 40 минут",
+      "description": "Кейс о том, почему Wi‑Fi в квартире для командировки нужно проверять до бронирования: скорость у рабочего места, стабильность сети и условия для видеозвонков.",
+      "datePublished": "2026-09-03",
+      "dateModified": "2026-09-03",
+      "inLanguage": "ru-RU",
+      "author": {
+        "@id": "{{SITE_BASE}}/#organization"
+      },
+      "publisher": {
+        "@id": "{{SITE_BASE}}/#organization"
+      },
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "Wi-Fi для работы"
+        },
+        {
+          "@type": "Thing",
+          "name": "Командировка"
+        },
+        {
+          "@type": "Place",
+          "name": "Тюмень"
+        }
+      ],
+      "keywords": [
+        "Wi-Fi для работы",
+        "квартира посуточно",
+        "командировка",
+        "Zoom",
+        "Тюмень"
+      ]
+    }
+  ]
+}
