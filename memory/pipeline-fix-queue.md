@@ -431,3 +431,128 @@ checks_run:
 - `python3 scripts/excalibur_blog_published_titles.py --article-dir memory/blog/articles/B07-…` → titles=7
 - `python3 -m unittest tests.test_wp_categories_interlink.WpCategoriesInterlinkTests.test_ledger_upsert_refreshes_published_titles -v`
 commit: dd99021
+
+## INC-20260903-0638 — Cover-QA forbid_ai_drawn_logo inline panels (paste_and_ship)
+
+status: needs-human
+run_date: 2026-09-03
+role: excalibur-blog-cover-qa
+topic_id: B08
+article_dir: memory/blog/articles/B08-pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate
+severity: low
+category: env
+
+### What went wrong
+
+- Cover-QA BLOCK: `forbid_ai_drawn_logo_cover` on inline-02/04/05/06 (model terracotta logo remnants).
+- Factory paste only on cover + inline-01/03/07 per canon; panels 2/4/5/6 have no factory logo slot.
+
+### How the agent recovered this run
+
+- `paste_and_ship_on_exhaust` policy (same as B06): shipped with logo-composite PASS; live publish OK.
+
+### Durable fix needed before next run
+
+- Cover-scene prompts must forbid any logo/lockup glyph on non-logo inline slots; or auto pad-clear + re-gen before paste.
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_cover_qa_gate.py`
+- `.cursor/skills/cover-excalibur-blog/SKILL.md`
+- `shared/derouter-gpt-image-api-contract.md`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+status: needs-human
+reason:
+- Model-drawn logo remnants on non-logo slots; paste_and_ship accepted per slot canon (max 2–3 logo inlines).
+needed_decision_or_secret:
+- Tighten Cover-scene negative prompts vs accept paste_and_ship for inline 2/4/5/6
+
+## INC-20260903-0640 — Metrika credentials missing (Content-learner)
+
+status: needs-human
+run_date: 2026-09-03
+role: excalibur-blog-content-learner
+topic_id: B08
+article_dir: memory/blog/articles/B08-pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate
+severity: medium
+category: env
+
+### What went wrong
+
+- `excalibur_blog_metrika_fetch.py --days 30 --ingest` → METRIKA CREDENTIALS BLOCKER (no OAuth token / counter id in Cloud Secrets).
+
+### How the agent recovered this run
+
+- Recorded optional/low-confidence lesson in `memory/content-lessons.md`; no causal Metrika claims.
+
+### Durable fix needed before next run
+
+- Set YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets for tenant.
+
+### Suggested files to inspect/change
+
+- Cloud Secrets / tenant env
+- `shared/content-learning-contract.md`
+
+### Secrets
+
+- YANDEX_METRIKA_OAUTH_TOKEN, YANDEX_METRIKA_COUNTER_ID (not in git)
+
+### Fixer resolution
+
+status: needs-human
+reason:
+- Env-only blocker; no code path without credentials.
+needed_decision_or_secret:
+- YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets
+
+## INC-20260903-0642 — dzen cover cache bust phone pill gate
+
+status: fixed
+run_date: 2026-09-03
+role: excalibur-blog-publish
+topic_id: B08
+article_dir: memory/blog/articles/B08-pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate
+severity: low
+category: script
+
+### What went wrong
+
+- `excalibur_blog_dzen_cover_cache_bust.py --slug …` failed: `cover phone post-composite pill is forbidden`.
+- Wrong CLI initially used `--article-dir` (unsupported).
+
+### How the agent recovered this run
+
+- Publish + live page PASS without cache bust; Dzen feed may serve stale 1024 preview until manual bust.
+
+### Durable fix needed before next run
+
+- Cache bust must accept composite covers with in-scene phone only (`cover_phone_post_composite=false`).
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_dzen_cover_cache_bust.py`
+- `skills/publish-excalibur-blog/SKILL.md`
+
+### Secrets
+
+- FTP (Cloud Secrets)
+
+### Fixer resolution
+
+fixed_at: 2026-09-03
+fix_summary:
+- `prepare_cover()` uses `add_phone=False` (canon: phone in scene only, no post-composite pill).
+- B08 run uploads dzen-v3 PNGs; `/feed/zen/` enclosure swaps to new full filename.
+files_changed:
+- `scripts/excalibur_blog_dzen_cover_cache_bust.py`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_dzen_cover_cache_bust.py`
+- `python3 scripts/excalibur_blog_dzen_cover_cache_bust.py --slug pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate` (SFTP upload OK)
+commit: pending

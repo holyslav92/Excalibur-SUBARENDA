@@ -99,7 +99,7 @@ def prepare_cover(source_bytes: bytes, *, skip_fix: bool = False) -> tuple[bytes
         raise RuntimeError(f"logo missing: {LOGO}")
     fixed, verify = fix_image(
         source_bytes,
-        add_phone=True,
+        add_phone=False,
         paste_logo=True,
         strict=False,
     )
