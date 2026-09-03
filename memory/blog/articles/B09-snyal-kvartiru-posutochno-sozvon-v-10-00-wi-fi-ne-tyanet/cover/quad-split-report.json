@@ -1,0 +1,272 @@
+{
+  "agent": "excalibur-blog-cover-quad-split",
+  "status": "PASS",
+  "splits": [
+    {
+      "canvas_index": 1,
+      "manifest": "cover/quad-manifest.json",
+      "split": {
+        "source_canvas": "memory/blog/articles/B09-snyal-kvartiru-posutochno-sozvon-v-10-00-wi-fi-ne-tyanet/cover/canvas-quad-01.png",
+        "source_size_px": [
+          2048,
+          1152
+        ],
+        "panel_size_px": [
+          1018,
+          571
+        ],
+        "split_meta": {
+          "split_mode": "gutter_detect",
+          "h_gutter_px": {
+            "start": 571,
+            "end": 582
+          },
+          "v_gutter_px": {
+            "start": 1018,
+            "end": 1028
+          },
+          "requested_mode": "auto",
+          "gutter_quality": {
+            "h_center_offset_px": 0.5,
+            "v_center_offset_px": 1.0,
+            "max_aspect_crop_loss": 0.0069,
+            "per_panel_crop_loss": {
+              "top_left": 0.0,
+              "top_right": 0.0,
+              "bottom_left": 0.0,
+              "bottom_right": 0.0069
+            },
+            "reject_reason": null
+          }
+        },
+        "output_size_px": [
+          1200,
+          675
+        ],
+        "outputs": {
+          "inline_1": {
+            "file": "cover/inline-01.png",
+            "quadrant": "top_right",
+            "box_px": {
+              "left": 1028,
+              "top": 0,
+              "right": 2048,
+              "bottom": 571
+            },
+            "raw_box_px": {
+              "left": 1028,
+              "top": 0,
+              "right": 2048,
+              "bottom": 571
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Телефон показывает подключение к Wi‑Fi, но ноутбук на рабочем столе не может нормально провести видеозвонок; сигнал слабый.",
+            "h2_anchor": "«Есть Wi‑Fi» — не значит «можно работать»"
+          },
+          "inline_2": {
+            "file": "cover/inline-02.png",
+            "quadrant": "bottom_left",
+            "box_px": {
+              "left": 0,
+              "top": 582,
+              "right": 1018,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 582,
+              "right": 1018,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Схема квартиры: роутер находится в коридоре, а рабочий стол отделён от него несколькими стенами; путь сигнала заметно ухудшается.",
+            "h2_anchor": "Где ломается обещание"
+          },
+          "inline_3": {
+            "file": "cover/inline-03.png",
+            "quadrant": "bottom_right",
+            "box_px": {
+              "left": 1031,
+              "top": 582,
+              "right": 2044,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 1028,
+              "top": 582,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Сравнение скорости: рядом с роутером интернет быстрый, а у рабочего стола тест показывает 0,4 Мбит/с и видеозвонок зависает.",
+            "h2_anchor": "Почему у роутера всё летает, а у стола — нет"
+          },
+          "inline_4": {
+            "file": "cover/inline-04.png",
+            "quadrant": "top_left",
+            "box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1018,
+              "bottom": 571
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1018,
+              "bottom": 571
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Гость проверяет Wi‑Fi до оплаты: на столе смартфон с тестом скорости, чек-лист и план квартиры, рядом выделена кнопка оплаты.",
+            "h2_anchor": "Проверяете Wi‑Fi до оплаты или уже после заселения?"
+          }
+        }
+      }
+    },
+    {
+      "canvas_index": 2,
+      "manifest": "cover/quad-manifest.json",
+      "split": {
+        "source_canvas": "memory/blog/articles/B09-snyal-kvartiru-posutochno-sozvon-v-10-00-wi-fi-ne-tyanet/cover/canvas-quad-02.png",
+        "source_size_px": [
+          2048,
+          1152
+        ],
+        "panel_size_px": [
+          1024,
+          576
+        ],
+        "split_meta": {
+          "split_mode": "mechanical_center",
+          "h_gutter_px": null,
+          "v_gutter_px": null,
+          "requested_mode": "auto",
+          "fallback_reason": "aspect_crop_loss_too_high",
+          "rejected_gutter": {
+            "h_gutter_px": {
+              "start": 552,
+              "end": 563
+            },
+            "v_gutter_px": {
+              "start": 1018,
+              "end": 1029
+            },
+            "gutter_quality": {
+              "h_center_offset_px": 18.5,
+              "v_center_offset_px": 0.5,
+              "max_aspect_crop_loss": 0.0373,
+              "per_panel_crop_loss": {
+                "top_left": 0.0363,
+                "top_right": 0.0373,
+                "bottom_left": 0.0272,
+                "bottom_right": 0.0272
+              },
+              "reject_reason": "aspect_crop_loss_too_high"
+            }
+          }
+        },
+        "output_size_px": [
+          1200,
+          675
+        ],
+        "outputs": {
+          "inline_5": {
+            "file": "cover/inline-05.png",
+            "quadrant": "top_right",
+            "box_px": {
+              "left": 1024,
+              "top": 0,
+              "right": 2048,
+              "bottom": 576
+            },
+            "raw_box_px": {
+              "left": 1024,
+              "top": 0,
+              "right": 2048,
+              "bottom": 576
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Специалист измеряет сигнал от роутера до рабочего стола, предлагает улучшить точку доступа и показывает запасной вариант — коворкинг.",
+            "h2_anchor": "Как делаем мы"
+          },
+          "inline_6": {
+            "file": "cover/inline-06.png",
+            "quadrant": "bottom_left",
+            "box_px": {
+              "left": 0,
+              "top": 576,
+              "right": 1024,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 576,
+              "right": 1024,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Ноутбук стоит на паузе, кофе остывает, роутер светится в коридоре, а на записке написано: «Работа подождёт».",
+            "h2_anchor": "Мораль"
+          },
+          "inline_7": {
+            "file": "cover/inline-07.png",
+            "quadrant": "bottom_right",
+            "box_px": {
+              "left": 1024,
+              "top": 576,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 1024,
+              "top": 576,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "После улучшения сигнала гость спокойно работает за столом; тест скорости показывает хороший результат, все пункты проверки отмечены.",
+            "h2_anchor": "Чек-лист гостя в командировке"
+          }
+        }
+      }
+    }
+  ],
+  "manifest": "cover/quad-manifest.json",
+  "html_inject": [
+    "skip inline_1: already correct under H2 — «Есть Wi‑Fi» — не значит «можно работать»",
+    "skip inline_2: already correct under H2 — Где ломается обещание",
+    "skip inline_3: already correct under H2 — Почему у роутера всё летает, а у стола — нет",
+    "skip inline_4: already correct under H2 — Проверяете Wi‑Fi до оплаты или уже после заселения?",
+    "injected inline_5 after H2 — Как делаем мы",
+    "injected inline_6 after H2 — Мораль",
+    "injected inline_7 after H2 — Чек-лист гостя в командировке"
+  ]
+}
