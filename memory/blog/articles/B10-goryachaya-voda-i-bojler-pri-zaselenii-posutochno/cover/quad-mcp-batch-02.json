@@ -1,0 +1,36 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 2,
+  "standalone_cover": false,
+  "vip_disabled": false,
+  "max_generation_attempts": 2,
+  "output_canvas": "cover/canvas-quad-02.png",
+  "result_path": "cover/quad-mcp-result-02.json",
+  "slots": [
+    "inline_4",
+    "inline_5",
+    "inline_6",
+    "inline_7"
+  ],
+  "preferred_image_flow": {
+    "provider": "grsai",
+    "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
+    "resolution": "2K"
+  },
+  "jobs": [
+    {
+      "slot": "canvas_quad",
+      "tool": "grsai",
+      "mcp_args": {
+        "prompt": "ONE canvas 2048×1152 — draw as 2×2 GRID of FOUR complete photoreal 16:9 apartment panels (thin white gutters OK). Each quadrant is its own readable scene — NOT infographic.\nEarly September 2026 Tyumen sunny, green trees — NO snow, NO winter.\nTop-left inline_4 «Где бойлер»: laminated boiler card with steps and printed «+7 993 574-83-22»; switch beside; NO phone pill overlay.\nTop-right inline_5 «40 минут ждать»: wall timer 39:58, towels, tea; ONE tiny cat sticker on timer corner only (max 1 cat in full article).\nBottom-left inline_6 «До оплаты»: hallway info board with boiler card showing «+7 993 574-83-22» as printed ink; shower/boiler icons.\nBottom-right inline_7 «Вывод»: boiler ON indicator glow, warm steam, hand tests shower; green Sep window; no face.\nALL FOUR panels: NO brand logo in generation (factory paste after on selected inlines). NO Shakin/host face.\nBAN: dark cinematic, winter, WordPress UI, phone pill, model-drawn logo, 2+ cat memes.\nTEXT: Russian Cyrillic; Comfort+ Tyumen daily-rental photoreal.",
+        "aspect_ratio": "16:9",
+        "resolution": "2K"
+      }
+    }
+  ],
+  "validation": {
+    "prompt_chars": 1024,
+    "max_prompt_chars": 3500,
+    "resolution": "2K"
+  }
+}

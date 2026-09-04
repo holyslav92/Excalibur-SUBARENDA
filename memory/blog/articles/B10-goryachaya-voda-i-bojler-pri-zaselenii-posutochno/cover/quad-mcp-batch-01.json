@@ -1,0 +1,36 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 1,
+  "standalone_cover": false,
+  "vip_disabled": false,
+  "max_generation_attempts": 2,
+  "output_canvas": "cover/canvas-quad-01.png",
+  "result_path": "cover/quad-mcp-result-01.json",
+  "slots": [
+    "cover",
+    "inline_1",
+    "inline_2",
+    "inline_3"
+  ],
+  "preferred_image_flow": {
+    "provider": "grsai",
+    "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
+    "resolution": "2K"
+  },
+  "jobs": [
+    {
+      "slot": "canvas_quad",
+      "tool": "grsai",
+      "mcp_args": {
+        "prompt": "ONE canvas 2048×1152 — draw as 2×2 GRID of FOUR complete photoreal 16:9 apartment panels (thin white gutters OK). Each quadrant is its own readable scene — NOT one photo sliced at random. NOT infographic.\nEarly September 2026 Tyumen daily-rental: sunny, green trees outside — NO snow, NO winter.\nCOVER PANEL top-left: person IN SCENE (back/side, face hidden) recoils from ice-cold shower stream; LARGE Cyrillic «Душ — лёд, 40 минут» on mirror sticker or bathroom sign (physical object, NOT overlay). TOP-RIGHT empty pad 8–12% for factory logo paste — NO logo in generation.\nTop-right inline_1 ««Есть» ≠ готово»: phone listing «горячая вода есть» + towel; bath blur.\nBottom-left inline_2 «Передача квартиры»: hand to hot on mixer; cold stream; goosebumps; no face.\nBottom-right inline_3 «Вопрос до перевода»: boiler cabinet switch OFF, dark indicator, label «Бойлер».\nPANELS 2–4: NO brand logo, NO curtains lockup — photoreal only. NO Shakin/host face.\nBAN: phone pill, meme soup, dark cinematic, WordPress UI, model-drawn logo, winter snow, yellow sticky collage.\nTEXT: Russian Cyrillic labels; Comfort+ Tyumen apartment mood.",
+        "aspect_ratio": "16:9",
+        "resolution": "2K"
+      }
+    }
+  ],
+  "validation": {
+    "prompt_chars": 1126,
+    "max_prompt_chars": 3500,
+    "resolution": "2K"
+  }
+}
