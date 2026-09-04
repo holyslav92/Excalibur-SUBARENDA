@@ -1,0 +1,27 @@
+{
+  "slug": "posutochno-v-tyumeni-parkovka-ryadom-u-shlagbauma-propuska-net",
+  "topic_id": "B09",
+  "permalink": "{{SITE_BASE}}/blog/posutochno-v-tyumeni-parkovka-ryadom-u-shlagbauma-propuska-net/",
+  "publish_method": "ftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B09-posutochno-v-tyumeni-parkovka-ryadom-u-shlagbauma-propuska-net/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1049102,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4373 slug=posutochno-v-tyumeni-parkovka-ryadom-u-shlagbauma-propuska-net\nOK categories=101,106\nOK dzen_yzen_meta=1\nOK featured_image=4374\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4375 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-v-tyumeni-parkovka-ryadom-u-shlagbauma-propuska-net-inline-01.png\nOK inline_alt=4375\nOK inline_caption=4375\nOK inline_description=4375\nOK inline_image_upload=4376 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-v-tyumeni-parkovka-ryadom-u-shlagbauma-propuska-net-inline-02.png\nOK inline_alt=4376\nOK inline_caption=4376\nOK inline_description=4376\nOK inline_image_upload=4377 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-v-tyumeni-parkovka-ryadom-u-shlagbauma-propuska-net-inline-03.png\nOK inline_alt=4377\nOK inline_caption=4377\nOK inline_description=4377\nOK inline_image_upload=4378 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-v-tyumeni-parkovka-ryadom-u-shlagbauma-propuska-net-inline-04.png\nOK inline_alt=4378\nOK inline_caption=4378\nOK inline_description=4378\nOK inline_image_upload=4379 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-v-tyumeni-parkovka-ryadom-u-shlagbauma-propuska-net-inline-05.png\nOK inline_alt=4379\nOK inline_caption=4379\nOK inline_description=4379\nOK inline_image_upload=4380 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-v-tyumeni-parkovka-ryadom-u-shlagbauma-propuska-net-inline-06.png\nOK inline_alt=4380\nOK inline_caption=4380\nOK inline_description=4380\nOK inline_image_upload=4381 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-v-tyumeni-parkovka-ryadom-u-shlagbauma-propuska-net-inline-07.png\nOK inline_alt=4381\nOK inline_caption=4381\nOK inline_description=4381\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/posutochno-v-tyumeni-parkovka-ryadom-u-shlagbauma-propuska-net/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/posutochno-v-tyumeni-parkovka-ryadom-u-shlagbauma-propuska-net/",
+    "errors": []
+  }
+}

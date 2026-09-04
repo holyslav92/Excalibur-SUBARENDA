@@ -1,0 +1,10 @@
+{
+  "topic_id": "B09",
+  "description": "Ключи получили, а к дому не подъехать: шлагбаум не узнаёт гостей, и парковка внезапно становится платной. Как Добрый дом проверяет такие сюрпризы в Тюмени.",
+  "rhythm": "klyshin_case_hook",
+  "geo": "Тюмень",
+  "author_brand": "Добрый дом",
+  "not_equal_title": true,
+  "not_truncated_lead": true,
+  "verdict": "PASS"
+}
