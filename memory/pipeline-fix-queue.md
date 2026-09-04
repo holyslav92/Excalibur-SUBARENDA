@@ -556,3 +556,42 @@ checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_dzen_cover_cache_bust.py`
 - `python3 scripts/excalibur_blog_dzen_cover_cache_bust.py --slug pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate` (SFTP upload OK)
 commit: pending
+
+## INC-20260904-1337 — Metrika credentials missing (Content-learner B10)
+
+status: needs-human
+run_date: 2026-09-04
+role: excalibur-blog-content-learner
+topic_id: B10
+article_dir: memory/blog/articles/B10-goryachaya-voda-i-bojler-pri-zaselenii-posutochno
+severity: medium
+category: env
+
+### What went wrong
+
+- `excalibur_blog_metrika_fetch.py --days 30 --ingest` → METRIKA CREDENTIALS BLOCKER (no OAuth token / counter id in Cloud Secrets).
+
+### How the agent recovered this run
+
+- Recorded optional/low-confidence lessons in `memory/content-lessons.md`; no causal Metrika claims.
+
+### Durable fix needed before next run
+
+- Set YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets for tenant.
+
+### Suggested files to inspect/change
+
+- Cloud Secrets / tenant env
+- `shared/content-learning-contract.md`
+
+### Secrets
+
+- YANDEX_METRIKA_OAUTH_TOKEN, YANDEX_METRIKA_COUNTER_ID (not in git)
+
+### Fixer resolution
+
+status: needs-human
+reason:
+- Env-only blocker; same root cause as INC-20260903-0640 (B08).
+needed_decision_or_secret:
+- YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets
