@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "topic_id": "B10",
+  "slug": "goryachaya-voda-i-bojler-pri-zaselenii-posutochno",
+  "candidates_count": 13,
+  "outbound_found": [
+    {
+      "slug": "vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu",
+      "title": "vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu"
+    },
+    {
+      "slug": "kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den",
+      "title": "kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den"
+    },
+    {
+      "slug": "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+      "title": "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate"
+    },
+    {
+      "slug": "posutochno-v-tyumeni-parkovka-ryadom-u-shlagbauma-propuska-net",
+      "title": "posutochno-v-tyumeni-parkovka-ryadom-u-shlagbauma-propuska-net"
+    }
+  ],
+  "outbound_unique_slugs": [
+    "posutochno-v-tyumeni-parkovka-ryadom-u-shlagbauma-propuska-net",
+    "vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu",
+    "kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den",
+    "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "warnings": [],
+  "errors": []
+}
