@@ -1,0 +1,27 @@
+{
+  "slug": "goryachaya-voda-i-bojler-pri-zaselenii-posutochno",
+  "topic_id": "B10",
+  "permalink": "{{SITE_BASE}}/blog/goryachaya-voda-i-bojler-pri-zaselenii-posutochno/",
+  "publish_method": "ftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B10-goryachaya-voda-i-bojler-pri-zaselenii-posutochno/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1177818,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4399 slug=goryachaya-voda-i-bojler-pri-zaselenii-posutochno\nOK categories=101,106\nOK dzen_yzen_meta=1\nOK featured_image=4400\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4401 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/goryachaya-voda-i-bojler-pri-zaselenii-posutochno-inline-01.png\nOK inline_alt=4401\nOK inline_caption=4401\nOK inline_description=4401\nOK inline_image_upload=4402 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/09/goryachaya-voda-i-bojler-pri-zaselenii-posutochno-inline-05.png\nOK inline_alt=4402\nOK inline_caption=4402\nOK inline_description=4402\nOK inline_image_upload=4403 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/goryachaya-voda-i-bojler-pri-zaselenii-posutochno-inline-02.png\nOK inline_alt=4403\nOK inline_caption=4403\nOK inline_description=4403\nOK inline_image_upload=4404 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/09/goryachaya-voda-i-bojler-pri-zaselenii-posutochno-inline-06.png\nOK inline_alt=4404\nOK inline_caption=4404\nOK inline_description=4404\nOK inline_image_upload=4405 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/09/goryachaya-voda-i-bojler-pri-zaselenii-posutochno-inline-04.png\nOK inline_alt=4405\nOK inline_caption=4405\nOK inline_description=4405\nOK inline_image_upload=4406 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/goryachaya-voda-i-bojler-pri-zaselenii-posutochno-inline-03.png\nOK inline_alt=4406\nOK inline_caption=4406\nOK inline_description=4406\nOK inline_image_upload=4407 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/09/goryachaya-voda-i-bojler-pri-zaselenii-posutochno-inline-07.png\nOK inline_alt=4407\nOK inline_caption=4407\nOK inline_description=4407\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/goryachaya-voda-i-bojler-pri-zaselenii-posutochno/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/goryachaya-voda-i-bojler-pri-zaselenii-posutochno/",
+    "errors": []
+  }
+}
