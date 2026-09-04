@@ -650,4 +650,4 @@ checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_case_delivery_gate.py`
 - `python3 -m unittest tests.test_slice4_and_manner_gates.KlyshinMannerGateTest -v`
 - `python3 scripts/excalibur_blog_case_delivery_gate.py --article-dir memory/blog/articles/B10-goryachaya-voda-i-bojler-pri-zaselenii-posutochno --stage article` → PASS
-commit: pending
+commit: a93ff2b
