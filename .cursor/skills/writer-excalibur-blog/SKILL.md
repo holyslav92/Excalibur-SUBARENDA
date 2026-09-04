@@ -54,7 +54,7 @@ Scout handoff `dzen_pattern` (prefer 2–5, NOT default 1).
 - «Не X. Не Y. А Z.» hammer
 - «Сначала… потом…» degradation → order-moral
 - Direct speech in quotes as scene
-- Aphoristic close: «Наш вывод простой.» + one metaphor
+- Verdict H2: «Мой вывод как практика» + one metaphor (factory default). Alternate close **only** when `title-brief.json` → `close_h2_slot: «Наш вывод простой.»` — never mix both H2 forms.
 - Refusal: «Так не заселяем.» / «Даже за двойную цену.» (structure only)
 
 ## Обязательные элементы writer.html (HARD)

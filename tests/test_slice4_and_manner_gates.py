@@ -12,8 +12,11 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from excalibur_blog_case_delivery_gate import (  # noqa: E402
+    ALT_CLOSE_H2_SLOT,
+    FACTORY_CLOSE_H2,
     MANNER_CANON_ID,
     WORD_COUNT_HARD_MAX,
+    check_close_h2_slot,
     check_manner_stamps,
     check_word_count,
     check_article_dir,
@@ -51,6 +54,38 @@ class KlyshinMannerGateTest(unittest.TestCase):
     def test_bans_nash_vyvod_stamp(self) -> None:
         html = "<p>Наш вывод простой. Хороший хост — тот, кто говорит цифры заранее.</p>"
         errors = check_manner_stamps(html, label="test")
+        self.assertTrue(errors)
+
+    def test_close_h2_slot_exempts_single_nash_vyvod_h2(self) -> None:
+        html = (
+            "<p>Кейс с цифрами.</p>"
+            "<h2>Наш вывод простой.</h2>"
+            "<p>Метафора без повтора штампа.</p>"
+        )
+        errors = check_manner_stamps(
+            html, label="article.html", close_h2_slot=ALT_CLOSE_H2_SLOT
+        )
+        self.assertFalse(errors)
+        slot_errors = check_close_h2_slot(
+            html, label="article.html", close_h2_slot=ALT_CLOSE_H2_SLOT
+        )
+        self.assertFalse(slot_errors)
+
+    def test_close_h2_slot_still_bans_body_stamp(self) -> None:
+        html = (
+            "<h2>Наш вывод простой.</h2>"
+            "<p>Наш вывод простой. Повтор в теле — FAIL.</p>"
+        )
+        errors = check_manner_stamps(
+            html, label="article.html", close_h2_slot=ALT_CLOSE_H2_SLOT
+        )
+        self.assertTrue(errors)
+
+    def test_factory_default_rejects_nash_vyvod_h2(self) -> None:
+        html = "<h2>Наш вывод простой.</h2><p>Текст.</p>"
+        errors = check_close_h2_slot(
+            html, label="article.html", close_h2_slot=FACTORY_CLOSE_H2
+        )
         self.assertTrue(errors)
 
     def test_bans_repeat_net_tak_ne_zaselyaem(self) -> None:

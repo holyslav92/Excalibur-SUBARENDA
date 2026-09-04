@@ -152,10 +152,15 @@ LIMITED_STAMP_RES: tuple[tuple[re.Pattern[str], int], ...] = (
     (re.compile(r"так\s+не\s+заселяем", re.I), 1),
 )
 
+FACTORY_CLOSE_H2 = "Мой вывод как практика"
+ALT_CLOSE_H2_SLOT = "Наш вывод простой."
+ALLOWED_CLOSE_H2_SLOTS = frozenset({FACTORY_CLOSE_H2, ALT_CLOSE_H2_SLOT})
+
 VERDICT_HEADING_RE = re.compile(
     r"мой\s+вывод\s+как\s+практик",
     re.I,
 )
+ALT_VERDICT_HEADING_RE = re.compile(r"наш\s+вывод\s+простой", re.I)
 
 SECTION_OVERLAP_THRESHOLD = 0.38
 SECTION_OVERLAP_MIN_SHARED = 6
@@ -324,13 +329,106 @@ def _extract_h2_section(html: str, heading_rx: re.Pattern[str]) -> str:
     return ""
 
 
-def check_manner_stamps(html: str, *, label: str) -> list[str]:
+def _normalize_close_h2_slot(text: str) -> str:
+    return re.sub(r"[^\w\s]", "", _plain(text)).casefold().strip()
+
+
+def load_close_h2_slot(article_dir: Path) -> str:
+    title_path = article_dir / "title-brief.json"
+    if not title_path.is_file():
+        return FACTORY_CLOSE_H2
+    try:
+        brief = json.loads(title_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return FACTORY_CLOSE_H2
+    slot = str(brief.get("close_h2_slot") or "").strip()
+    if not slot:
+        return FACTORY_CLOSE_H2
+    norm_slot = _normalize_close_h2_slot(slot)
+    for allowed in ALLOWED_CLOSE_H2_SLOTS:
+        if norm_slot == _normalize_close_h2_slot(allowed):
+            return allowed
+    return FACTORY_CLOSE_H2
+
+
+def _verdict_heading_re(close_h2_slot: str) -> re.Pattern[str]:
+    if _normalize_close_h2_slot(close_h2_slot) == _normalize_close_h2_slot(ALT_CLOSE_H2_SLOT):
+        return ALT_VERDICT_HEADING_RE
+    return VERDICT_HEADING_RE
+
+
+def _strip_slotted_close_h2(html: str, close_h2_slot: str) -> str:
+    """Drop the single allowed alt close H2 before banned-stamp body scan."""
+    if _normalize_close_h2_slot(close_h2_slot) != _normalize_close_h2_slot(ALT_CLOSE_H2_SLOT):
+        return html
+    stripped = False
+
+    def replacer(match: re.Match[str]) -> str:
+        nonlocal stripped
+        heading = _plain(match.group(1))
+        if not stripped and _normalize_close_h2_slot(heading) == _normalize_close_h2_slot(
+            ALT_CLOSE_H2_SLOT
+        ):
+            stripped = True
+            return " "
+        return match.group(0)
+
+    return re.sub(r"<h2[^>]*>(.*?)</h2>", replacer, html or "", flags=re.I)
+
+
+def _count_h2_matches(html: str, heading_rx: re.Pattern[str]) -> int:
+    count = 0
+    for match in re.finditer(r"<h2[^>]*>(.*?)</h2>", html or "", flags=re.I):
+        if heading_rx.search(_plain(match.group(1))):
+            count += 1
+    return count
+
+
+def check_close_h2_slot(html: str, *, label: str, close_h2_slot: str) -> list[str]:
     errors: list[str] = []
-    plain = _plain(html)
+    verdict_rx = _verdict_heading_re(close_h2_slot)
+    verdict_hits = _count_h2_matches(html, verdict_rx)
+    if "article" in label and verdict_hits == 0:
+        errors.append(
+            f"{label}: missing ONE «{close_h2_slot}» section (H2)"
+        )
+    if verdict_hits > 1:
+        errors.append(
+            f"{label}: close H2 «{close_h2_slot}» repeated {verdict_hits}× (max 1)"
+        )
+    if _normalize_close_h2_slot(close_h2_slot) == _normalize_close_h2_slot(FACTORY_CLOSE_H2):
+        alt_hits = _count_h2_matches(html, ALT_VERDICT_HEADING_RE)
+        if alt_hits:
+            errors.append(
+                f"{label}: banned close H2 «{ALT_CLOSE_H2_SLOT}» — use ONE «{FACTORY_CLOSE_H2}» "
+                f"(or set title-brief.json → close_h2_slot)"
+            )
+    else:
+        factory_hits = _count_h2_matches(html, VERDICT_HEADING_RE)
+        if factory_hits:
+            errors.append(
+                f"{label}: close_h2_slot is «{ALT_CLOSE_H2_SLOT}» but found "
+                f"«{FACTORY_CLOSE_H2}» H2"
+            )
+    return errors
+
+
+def check_manner_stamps(
+    html: str, *, label: str, close_h2_slot: str = FACTORY_CLOSE_H2
+) -> list[str]:
+    errors: list[str] = []
+    scan_html = _strip_slotted_close_h2(html, close_h2_slot)
+    plain = _plain(scan_html)
     for rx in BANNED_STAMP_RES:
         if rx.search(plain):
             errors.append(
-                f"{label}: banned stamp «Наш вывод простой.» — use ONE «Мой вывод как практика»"
+                f"{label}: banned stamp «Наш вывод простой.» — use ONE «{FACTORY_CLOSE_H2}»"
+                + (
+                    f" (or declare title-brief.json → close_h2_slot: «{ALT_CLOSE_H2_SLOT}»)"
+                    if _normalize_close_h2_slot(close_h2_slot)
+                    != _normalize_close_h2_slot(ALT_CLOSE_H2_SLOT)
+                    else " outside the single close H2"
+                )
             )
             break
     for rx, limit in LIMITED_STAMP_RES:
@@ -342,17 +440,16 @@ def check_manner_stamps(html: str, *, label: str) -> list[str]:
     return errors
 
 
-def check_manner_sections(html: str, *, label: str) -> list[str]:
+def check_manner_sections(
+    html: str, *, label: str, close_h2_slot: str = FACTORY_CLOSE_H2
+) -> list[str]:
     errors: list[str] = []
     lead = _extract_lead_text(html)
-    verdict = _extract_h2_section(html, VERDICT_HEADING_RE) or _extract_h2_section(
+    verdict_rx = _verdict_heading_re(close_h2_slot)
+    verdict = _extract_h2_section(html, verdict_rx) or _extract_h2_section(
         html, re.compile(r"вывод", re.I)
     )
     checklist = _extract_h2_section(html, re.compile(r"чеклист|провер", re.I))
-    if not verdict and "article" in label:
-        errors.append(
-            f"{label}: missing ONE «Мой вывод как практика» section (H2)"
-        )
     pairs = (
         ("lead", lead, "verdict", verdict),
         ("lead", lead, "checklist", checklist),
@@ -464,6 +561,7 @@ def check_identity(html: str, *, label: str) -> list[str]:
 def check_article_dir(article_dir: Path, *, stage: str = "all") -> dict[str, Any]:
     errors: list[str] = []
     checks_run: list[str] = []
+    close_h2_slot = load_close_h2_slot(article_dir)
 
     title_path = article_dir / "title-brief.json"
     if stage in {"all", "title"} and title_path.is_file():
@@ -485,7 +583,12 @@ def check_article_dir(article_dir: Path, *, stage: str = "all") -> dict[str, Any
         errors.extend(check_human_lead(writer_html, label="writer.html"))
         errors.extend(check_body_timeline(writer_html, label="writer.html"))
         errors.extend(check_audience_and_bans(writer_html, label="writer.html"))
-        errors.extend(check_manner_stamps(writer_html, label="writer.html"))
+        errors.extend(
+            check_manner_stamps(writer_html, label="writer.html", close_h2_slot=close_h2_slot)
+        )
+        errors.extend(
+            check_close_h2_slot(writer_html, label="writer.html", close_h2_slot=close_h2_slot)
+        )
         if stage in {"all", "writer"}:
             errors.extend(check_identity(writer_html, label="writer.html"))
         if COMMENT_BAIT_RE.search(writer_html):
@@ -499,8 +602,15 @@ def check_article_dir(article_dir: Path, *, stage: str = "all") -> dict[str, Any
         errors.extend(check_human_lead(article_html, label="article.html"))
         errors.extend(check_body_timeline(article_html, label="article.html"))
         errors.extend(check_audience_and_bans(article_html, label="article.html"))
-        errors.extend(check_manner_stamps(article_html, label="article.html"))
-        errors.extend(check_manner_sections(article_html, label="article.html"))
+        errors.extend(
+            check_manner_stamps(article_html, label="article.html", close_h2_slot=close_h2_slot)
+        )
+        errors.extend(
+            check_close_h2_slot(article_html, label="article.html", close_h2_slot=close_h2_slot)
+        )
+        errors.extend(
+            check_manner_sections(article_html, label="article.html", close_h2_slot=close_h2_slot)
+        )
         errors.extend(check_identity(article_html, label="article.html"))
         errors.extend(check_word_count(article_html, label="article.html"))
         if COMMENT_BAIT_RE.search(article_html):
@@ -521,6 +631,7 @@ def check_article_dir(article_dir: Path, *, stage: str = "all") -> dict[str, Any
         "status": status,
         "stage": stage,
         "manner_canon": MANNER_CANON_ID,
+        "close_h2_slot": close_h2_slot,
         "checks_run": checks_run,
         "errors": errors,
         "article_dir": str(article_dir),

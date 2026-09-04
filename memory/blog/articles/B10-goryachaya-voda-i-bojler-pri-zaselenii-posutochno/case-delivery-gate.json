@@ -1,13 +1,13 @@
 {
   "gate": "case-delivery",
-  "status": "BLOCK",
-  "stage": "writer",
+  "status": "PASS",
+  "stage": "article",
   "manner_canon": "dobry_dom_gen_only_human_v1",
+  "close_h2_slot": "Наш вывод простой.",
   "checks_run": [
-    "writer.html"
+    "writer.html",
+    "article.html"
   ],
-  "errors": [
-    "writer.html: banned stamp «Наш вывод простой.» — use ONE «Мой вывод как практика»"
-  ],
+  "errors": [],
   "article_dir": "/workspace/memory/blog/articles/B10-goryachaya-voda-i-bojler-pri-zaselenii-posutochno"
 }

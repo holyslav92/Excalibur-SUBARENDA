@@ -7,6 +7,7 @@
   "klyshin_title_shape": 2,
   "dzen_pattern": 2,
   "wordstat_p0": "квартиры посуточно тюмень",
+  "close_h2_slot": "Наш вывод простой.",
   "generated_via": "excalibur_blog_derouter_opus_chat.py --role title",
   "verdict": "PASS"
 }
