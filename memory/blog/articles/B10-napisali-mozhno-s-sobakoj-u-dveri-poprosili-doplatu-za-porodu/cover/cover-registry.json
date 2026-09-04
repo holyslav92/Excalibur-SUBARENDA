@@ -1,0 +1,50 @@
+{
+  "topic_id": "B10",
+  "slug": "napisali-mozhno-s-sobakoj-u-dveri-poprosili-doplatu-za-porodu",
+  "cover_family": "brand_collage",
+  "style_preset": "the_rieltor_twilight_gold",
+  "pipeline": "slice4_grid_1x_image_api",
+  "file": "cover/cover.png",
+  "alt": "Пара с лабрадором у двери подъезда в Тюмени, крупный хук «МОЖНО С СОБАКОЙ — +1 500 ₽?» на табличке.",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-slice4.png",
+  "generated_at": "2026-09-04T09:18:42+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Пара с лабрадором у двери подъезда в Тюмени, крупный хук «МОЖНО С СОБАКОЙ — +1 500 ₽?» на табличке.",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Смартфон с перепиской «с собакой можно» и галочка «можно с животными» в объявлении.",
+      "h2_anchor": "Что они прочитали и что им сказали",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Гость с лабрадором у двери, на экране доплата 1 500 рублей за породу.",
+      "h2_anchor": "Это не про шерсть",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Схема: 10 400 рублей оплачено и внезапные 1 500 рублей у двери.",
+      "h2_anchor": "Отмычка",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}

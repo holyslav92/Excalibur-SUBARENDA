@@ -1,0 +1,27 @@
+{
+  "slug": "napisali-mozhno-s-sobakoj-u-dveri-poprosili-doplatu-za-porodu",
+  "topic_id": "B10",
+  "permalink": "{{SITE_BASE}}/blog/napisali-mozhno-s-sobakoj-u-dveri-poprosili-doplatu-za-porodu/",
+  "publish_method": "ftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B10-napisali-mozhno-s-sobakoj-u-dveri-poprosili-doplatu-za-porodu/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1272518,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4393 slug=napisali-mozhno-s-sobakoj-u-dveri-poprosili-doplatu-za-porodu\nOK categories=101,106\nOK dzen_yzen_meta=1\nOK featured_image=4394\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4395 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-mozhno-s-sobakoj-u-dveri-poprosili-doplatu-za-porodu-inline-01.png\nOK inline_alt=4395\nOK inline_caption=4395\nOK inline_description=4395\nOK inline_image_upload=4396 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-mozhno-s-sobakoj-u-dveri-poprosili-doplatu-za-porodu-inline-02.png\nOK inline_alt=4396\nOK inline_caption=4396\nOK inline_description=4396\nOK inline_image_upload=4397 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-mozhno-s-sobakoj-u-dveri-poprosili-doplatu-za-porodu-inline-03.png\nOK inline_alt=4397\nOK inline_caption=4397\nOK inline_description=4397\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/napisali-mozhno-s-sobakoj-u-dveri-poprosili-doplatu-za-porodu/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 3,
+    "expected_inline": 3,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/napisali-mozhno-s-sobakoj-u-dveri-poprosili-doplatu-za-porodu/",
+    "errors": []
+  }
+}

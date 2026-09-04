@@ -1,0 +1,92 @@
+{
+  "topic_id": "B10",
+  "canvas_file": "cover/canvas-slice4.png",
+  "layout": "2x2",
+  "pipeline": "slice4_grid_1x_image_api",
+  "inline_count": 3,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-slice4.png",
+      "batch_file": "cover/slice4-mcp-batch.json",
+      "prompt_file": "cover/slice4-mcp-prompt.txt",
+      "result_file": "cover/slice4-mcp-result.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    }
+  ],
+  "style_preset": "the_rieltor_twilight_gold",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "cover_hook": "Собакой можно — доплата у двери",
+  "cover_hook_highlight": "собакой",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Derouter REST (DEROUTER_API_KEY) — 2K 16:9, one job per canvas (1×). Cover agent invents cover_hook + scene_hint/alt before --write-batch. Host lock = blog-hero.json (navy blazer, not hoodie).",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Пара с лабрадором у двери подъезда в Тюмени, крупный хук «МОЖНО С СОБАКОЙ — +1 500 ₽?» на табличке.",
+      "scene_hint": "Светлая реалистичная сцена ранней осени в Тюмени: пара со спины стоит у двери подъезда с лабрадором на поводке, рядом сумки. На дверной табличке или листе на стене крупный кириллический хук «МОЖНО С СОБАКОЙ — +1 500 ₽?». Тёплый сентябрьский дневной свет, жёлто-зелёная листва, уютный двор Comfort+, без зимы и снега, без узнаваемых лиц, без логотипов. Верхний правый угол кадра оставить чистым для логотипа.",
+      "meme_caption_ru": "",
+      "sticky": "Сначала порода — потом оплата"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Что они прочитали и что им сказали",
+      "visual_type": "comparison_table_ui",
+      "scene_hint": "Крупный план переписки на смартфоне: сообщение «с собакой можно, без проблем» и галочка «можно с животными» в карточке объявления. Рядом на подоконнике поводок и миска для собаки. Светлая квартира, сентябрь, без людей крупным планом.",
+      "alt": "Смартфон с перепиской «с собакой можно» и галочка «можно с животными» в объявлении.",
+      "labels": [
+        "лабрадор",
+        "у двери",
+        "полторы тысячи"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Это не про шерсть",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Диалог у двери: человек со спины с лабрадором, менеджер показывает на телефон с суммой «+1 500 ₽ за породу». На стикере на двери «КРУПНАЯ ПОРОДА — ДОПЛАТА». Осенний подъезд Тюмени, без лиц.",
+      "alt": "Гость с лабрадором у двери, на экране доплата 1 500 рублей за породу.",
+      "labels": [
+        "можно с собакой",
+        "без проблем",
+        "в чате"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Отмычка",
+      "visual_type": "checklist_board",
+      "scene_hint": "Схема на листе: «10 400 ₽ оплачено» → «+1 500 ₽ у двери» с красной стрелкой. На столе ключи, поводок, чек брони. Инфографично, но фотореалистично, сентябрьский свет.",
+      "alt": "Схема: 10 400 рублей оплачено и внезапные 1 500 рублей у двери.",
+      "labels": [
+        "десять четыреста",
+        "две ночи",
+        "уже оплачено"
+      ]
+    }
+  },
+  "cover_keys_ru": [],
+  "cover_motifs": {
+    "composition": "doorway_dog_breed_fee",
+    "location": "tyumen_apartment_entry_september",
+    "prop_set": "labrador_leash_phone_chat",
+    "meme": ""
+  },
+  "cover_headline_line1": "Можно с собакой",
+  "cover_headline_line2": "+1 500 ₽ у двери",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "квартира посуточно с животными",
+    "с собакой посуточно"
+  ]
+}

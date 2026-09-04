@@ -1,0 +1,26 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/napisali-mozhno-s-sobakoj-u-dveri-poprosili-doplatu-za-porodu/",
+  "url": "{{SITE_BASE}}/blog/napisali-mozhno-s-sobakoj-u-dveri-poprosili-doplatu-za-porodu/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/napisali-mozhno-s-sobakoj-u-dveri-poprosili-doplatu-za-porodu/"
+  },
+  "headline": "«Можно с собакой» — у двери попросили +1 500 ₽ за породу",
+  "description": "«Лабрадор? Тогда доплата», — выяснилось у двери, хотя бронь уже была. В Тюмени с собакой часто пишут «можно», а сумму называют на площадке.",
+  "datePublished": "2026-09-04",
+  "dateModified": "2026-09-04",
+  "inLanguage": "ru-RU",
+  "author": {
+    "@type": "Organization",
+    "@id": "{{SITE_BASE}}/#organization-dobry-dom",
+    "name": "Добрый дом"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "{{SITE_BASE}}/#organization-dobry-dom",
+    "name": "Добрый дом"
+  },
+  "image": "{{SITE_BASE}}/wp-content/uploads/blog/napisali-mozhno-s-sobakoj-u-dveri-poprosili-doplatu-za-porodu/cover.png"
+}
