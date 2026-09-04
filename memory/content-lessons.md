@@ -4,6 +4,93 @@
 
 ---
 
+## LESSON-20260904-1337-B10-hot-water-exists-not-ready
+status: proposed
+topic_id: B10
+category: utility
+confidence: low
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP. Урок из publish-артефактов: title-brief.json, article.html §1–3, description-brief.json PASS, scout handoff wordstat_rework.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest BLOCKER по credentials.
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Two-beat H1 ««Горячая вода есть». Включили душ — лёд и 40 минут нагрева»: цитата обещания → контрфакт (лёд + таймер), не how-to.
+- §1: после дороги на машине, ~10 мин до душа, бойлер OFF, ~40 мин нагрева; цитата гостя «Я же с дороги, думал, уже всё включено»; идентичность хоста после лида.
+- H2 ««Есть» — не значит «готово прямо сейчас»»: разведение «оборудование есть» vs «душ готов»; сентябрьский контекст (городские отключения ГВС к концу августа → лёд скорее квартира/бойлер).
+- Вопрос-отмычка mid-body: «Где бойлер и как включить ДО душа?» → TG/MAX, не комментарии.
+- Klyshin: «Нет. Так не заселяем.» + «Сначала проверка. Потом перевод.» / «Сначала кран и бойлер — потом ключ и ночь».
+- Sibling interlink: B09 parking «слово есть, действия не описаны»; B07 «кухня есть»; B08 предоплата/тишина; B06 первые часы брони.
+- Wordstat P0 «квартиры посуточно тюмень» 5320 Tyumen / 11765 RU; supporting «бойлер горячая вода» 419 / «нет горячей воды квартира» 34.
+
+### Change
+- В hot-water/boiler кейсах в §1 сразу фиксировать: городское ГВС или бойлер, кто включает до заезда, ожидаемое время нагрева (цифра минут) — не только «горячая вода есть».
+- Description (Дзен) держать сцену «после дороги → лёд → 40 минут», не дублировать H1 (description-brief PASS).
+
+### Never again
+- How-to «как включить бойлер» до морали / чеклист вместо кейса у душа.
+- Обещание «горячая вода есть» без различения «прибор» vs «готово к заселению».
+- Игнорировать сезон: в начале сентября лёд в кране чаще бойлер/режим, не городское отключение.
+
+### Proposed apply
+- Scout: при hook hot_water_boiler логировать final P0 spine + lockpick «Где бойлер и как включить ДО душа?» в handoff.
+- Review only; Writer prompt не трогать автоматически.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260904-1337-B10-case-delivery-heading-shipped
+status: proposed
+topic_id: B10
+category: structure
+confidence: medium
+
+### Evidence
+- artifact: case-delivery-gate.json#errors
+  finding: gate BLOCK на banned stamp «Наш вывод простой.» в writer.html и article.html; статья опубликована с этим H2 (live-page PASS). Повтор паттерна B08 (LESSON-20260903-0602-B08-prepayment-silence-chat).
+- metrika_signal: none (credentials unavailable)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- CASE_DELIVERY_GATE_OVERRIDE (BLOCK ignored at publish)
+
+### Keep
+- Чеклист из 7 пунктов после финального H2 — utility без how-to в opening.
+- Метафора «пустой бак с красивой крышкой» перед чеклистом.
+
+### Change
+- Enforce case-delivery gate перед publish: «Наш вывод простой.» → «Мой вывод как практика» (один раз) или rerun Sol/Writer.
+- assembled-sol-inputs.md не должен mandate banned heading при manner_canon dobry_dom_gen_only_human_v1.
+
+### Never again
+- Ship при case-delivery BLOCK на conclusion heading — второй подряд кейс (B08, B10).
+- Writer/Sol inputs с user slot «Наш вывод простой.» при активном manner_canon ban.
+
+### Proposed apply
+- Publish preflight: fail on case-delivery BLOCK (не только live-page/cover).
+- Human decision: обновить assembled-writer/sol inputs template vs manner_canon.
+- Durable candidate после 2-го повтора (B08+B10) — needs-human, не auto Writer prompt.
+
+### Durable applied
+- none
+
+### Resolution
+status: needs-human
+
+---
+
 ## LESSON-20260830-1745-B04-extra-guest-fee-at-door
 status: proposed
 topic_id: B04

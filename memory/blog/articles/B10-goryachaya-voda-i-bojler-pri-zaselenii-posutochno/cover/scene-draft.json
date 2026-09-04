@@ -1,0 +1,55 @@
+{
+  "cover_emotion": "Ледяной шок с бытовой иронией: обещали горячую воду, а гость стоит под внезапно холодным душем",
+  "cover_motifs": {
+    "composition": "Фотореалистичная вертикальная обложка 4:5: современная ванная квартиры посуточно в Тюмени, человек со спины/в профиль без различимого лица отдёргивается от струи душа, полотенце на плечах; крупный план душевой зоны. В правом верхнем углу оставить чистую светлую пустую область 8–12% кадра без предметов, текста и логотипов для последующей вставки логотипа.",
+    "location": "Tyumen daily-rental apartment bathroom, early September 2026, clean practical интерьер: белая плитка, стеклянная душевая перегородка, полотенца, небольшое окно с ярким солнцем и зелёными деревьями снаружи; no snow, no winter.",
+    "meme": "Один визуальный гэг: на маленьком термометре у душа стрелка в синей холодной зоне, без мультяшного стиля. Кот возможен только один раз в inline_5 как крошечная наклейка.",
+    "prop_set": "shower mixer, visible cold water stream, bath towel, fog-free mirror, boiler cabinet/utility hatch, boiler switch in OFF position, instruction card, wall-mounted timer, thermometer, phone only where specified",
+    "sticker_set": "Крупная физическая наклейка или ламинированная табличка на зеркале/стекле душевой с точной кириллицей: «Душ — лёд, 40 минут». Дополнительные небольшие реальные сервисные стикеры: «БОЙЛЕР», «ON / OFF», «ЖДЁМ НАГРЕВ»; без логотипов и без постпаст-оверлеев.",
+    "joke": "Гость уже готов к горячему душу, но вместо этого смотрит на выключенный бойлер и таймер ожидания: квартира словно предлагает записаться на душ заранее."
+  },
+  "wordstat_stickers": [
+    "нет горячей воды",
+    "холодный душ",
+    "бойлер выключен",
+    "ждать горячую воду",
+    "квартира посуточно",
+    "Тюмень посуточно",
+    "душ 40 минут",
+    "горячая вода в квартире"
+  ],
+  "slots": {
+    "cover": {
+      "scene_hint": "Photorealistic Tyumen daily-rental bathroom, early sunny September, green trees visible through small window, no snow. Anonymous adult guest shown from back/side, face hidden, recoils under visibly cold shower stream with towel over shoulders. Clean white tile, shower glass, mixer, blue-cold thermometer. Large legible Cyrillic text printed on a real laminated mirror sticker or bathroom sign: «Душ — лёд, 40 минут». Top-right 10% clean empty pale wall/tile area, no text, no objects, no logo. No host, no Shakin, no recognizable face, no graphic overlay.",
+      "alt": "Гость в ванной квартиры посуточно отдёргивается от ледяной струи душа; на физической табличке у зеркала написано: «Душ — лёд, 40 минут»."
+    },
+    "inline_1": {
+      "scene_hint": "Photoreal close-up of a rental apartment listing on smartphone lying beside folded towel and bathroom key tag; listing line says hot water included, while bathroom shower is blurred in background. Russian interface-like text should be minimal and natural, no brand names, sunny early September light.",
+      "alt": "Объявление обещает горячую воду, а рядом видна ванная квартиры посуточно."
+    },
+    "inline_2": {
+      "scene_hint": "Photoreal bathroom scene: anonymous guest hand turns shower mixer fully toward hot red mark, but water stream looks cold and guest arm has goosebumps; no face visible. White tile, practical Tyumen rental interior, daylight and green foliage outside.",
+      "alt": "Гость включает горячую воду на смесителе, но из душа идёт холодная струя."
+    },
+    "inline_3": {
+      "scene_hint": "Photoreal close-up inside utility cabinet above bathroom: electric water boiler with clearly visible rocker switch in OFF position, unlit indicator, simple Russian label «Бойлер». Realistic pipes and neat wiring, no dangerous damage, no people.",
+      "alt": "В шкафчике над ванной выключен бойлер: переключатель стоит в положении OFF."
+    },
+    "inline_4": {
+      "scene_hint": "Photoreal close-up of a real laminated boiler instruction card mounted inside a utility cabinet in a Tyumen rental. Clear printed Russian steps: «1. Включите бойлер  2. Подождите 40 минут», contact line printed as part of card: «+7 993 574-83-22». Boiler switch and small indicator visible beside card. No floating text, no phone pill, no logos.",
+      "alt": "Инструкция у бойлера предлагает включить его и подождать 40 минут; на карточке указан номер +7 993 574-83-22."
+    },
+    "inline_5": {
+      "scene_hint": "Photoreal bathroom waiting scene: wall timer counting 39:58, folded towels and cup of tea on a small stool, shower off, warm September sunlight. One tiny realistic-style cat sticker on the timer corner, only cat appearance in full set; no other cats, no cartoon scene.",
+      "alt": "Пока бойлер греет воду, таймер отсчитывает почти сорок минут; на таймере маленькая наклейка с котом."
+    },
+    "inline_6": {
+      "scene_hint": "Photoreal rental apartment hallway information board near bathroom door, with a real printed boiler emergency/instruction card. Clearly printed contact number as physical ink on the card: «+7 993 574-83-22». Include icons for shower and boiler, a key hook and neutral interior; no smartphone overlay, no post-paste pill, no logo.",
+      "alt": "На информационной доске у ванной размещена карточка по бойлеру с номером +7 993 574-83-22."
+    },
+    "inline_7": {
+      "scene_hint": "Photoreal resolution scene in same clean Tyumen rental bathroom: boiler indicator glowing ON, gentle steam beginning above a running shower, anonymous guest hand tests now-warm water, face outside frame. Sunny green early September view through window, no winter cues.",
+      "alt": "После включения бойлера индикатор горит, и вода в душе наконец становится тёплой."
+    }
+  }
+}

@@ -1,5 +1,22 @@
 # WP publish log
 
+## B10 — 2026-09-04
+
+- **topic_id:** B10
+- **slug:** goryachaya-voda-i-bojler-pri-zaselenii-posutochno
+- **title:** «Горячая вода есть». Включили душ — лёд и 40 минут нагрева
+- **post_id:** 4399
+- **permalink:** /blog/goryachaya-voda-i-bojler-pri-zaselenii-posutochno/
+- **categories:** posutochnaya-arenda (101), sovety-gostyam (106)
+- **featured_image:** 4400
+- **inline_images:** 4401–4407 (7× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS
+- **outbound interlinks:** 4 (B06, B07, B08, B09)
+- **dzen preview:** cover-1024x576 uploaded (SFTP)
+- **interlink inbound:** B01 (3745)
+- **publish_method:** ftp (Timeweb PASV)
+
 ## B07 — 2026-09-02
 
 - **topic_id:** B07

@@ -1,0 +1,13 @@
+{
+  "gate": "case-delivery",
+  "status": "PASS",
+  "stage": "article",
+  "manner_canon": "dobry_dom_gen_only_human_v1",
+  "close_h2_slot": "Наш вывод простой.",
+  "checks_run": [
+    "writer.html",
+    "article.html"
+  ],
+  "errors": [],
+  "article_dir": "/workspace/memory/blog/articles/B10-goryachaya-voda-i-bojler-pri-zaselenii-posutochno"
+}

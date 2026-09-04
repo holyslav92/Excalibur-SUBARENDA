@@ -1,0 +1,118 @@
+{
+  "topic_id": "B10",
+  "slug": "goryachaya-voda-i-bojler-pri-zaselenii-posutochno",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "cover_hook": "Душ — лёд, 40 минут",
+  "cover_hook_highlight": "лёд",
+  "cover_headline_line1": "Душ — лёд",
+  "cover_headline_line2": "40 минут",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_meme_id": "",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень"
+  ],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "Guest recoils from ice shower + boiler OFF + headline mirror sticker, TOP-RIGHT empty logo pad",
+    "location": "Early September 2026 sunny Tyumen rental bathroom, green trees outside, NOT winter",
+    "meme": "none photoreal only — waiting timer reaction",
+    "prop_set": "shower mixer, OFF boiler switch, timer 40min, towels, instruction card",
+    "sticker_set": "квартиры посуточно тюмень, бойлер выключен, ждать нагрев",
+    "joke": "listing says hot water exists but shower is ice until boiler heats"
+  },
+  "cover_emotion": "Ледяной шок у душа",
+  "cover_scene": "Ice shower + OFF boiler + headline sticker",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Гость в ванной квартиры посуточно отдёргивается от ледяной струи душа; на физической табличке у зеркала написано: «Душ — лёд, 40 минут».",
+      "scene_hint": "Bath Sep: guest recoils from ice shower; «Душ — лёд, 40 минут» sticker; TR pad.",
+      "meme_caption_ru": "",
+      "sticky": "Сначала проверка"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "«Есть» — не значит «готово прямо сейчас»",
+      "visual_type": "comparison_table_ui",
+      "scene_hint": "Phone listing «горячая вода есть» + towel; bath blur; Sep sun.",
+      "alt": "Объявление обещает горячую воду, а рядом видна ванная квартиры посуточно.",
+      "labels": ["заезд", "ледяная вода"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Сломался не бойлер, а передача квартиры",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Hand to hot on mixer; cold stream; goosebumps; no face.",
+      "alt": "Гость включает горячую воду на смесителе, но из душа идёт холодная струя.",
+      "labels": ["бойлер OFF", "40 минут"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Вопрос до перевода, который экономит 40 минут",
+      "visual_type": "checklist_board",
+      "scene_hint": "Boiler cabinet: switch OFF, dark indicator, label «Бойлер».",
+      "alt": "В шкафчике над ванной выключен бойлер: переключатель стоит в положении OFF.",
+      "labels": ["проверка", "где бойлер?"]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Вопрос до перевода, который экономит 40 минут",
+      "visual_type": "schema_faq_ui",
+      "scene_hint": "Boiler card: steps + «+7 993 574-83-22» printed; switch beside.",
+      "alt": "Инструкция у бойлера: включить и ждать 40 минут; номер +7 993 574-83-22.",
+      "labels": ["включить", "40 мин"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Сломался не бойлер, а передача квартиры",
+      "visual_type": "infographic_card",
+      "scene_hint": "Timer 39:58, towels, tea; tiny cat sticker once; Sep sun.",
+      "alt": "Таймер отсчитывает почти сорок минут ожидания нагрева воды.",
+      "labels": ["ждём", "после дороги"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Вопрос до перевода, который экономит 40 минут",
+      "visual_type": "tool_screenshot",
+      "scene_hint": "Hall board: boiler card «+7 993 574-83-22» ink; shower icons.",
+      "alt": "Информационная доска у ванной с карточкой бойлера и номером +7 993 574-83-22.",
+      "labels": ["до оплаты", "+7 993"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Наш вывод простой.",
+      "visual_type": "comparison_table_ui",
+      "scene_hint": "Boiler ON glow, warm steam, hand tests shower; green Sep window.",
+      "alt": "После включения бойлера вода в душе наконец становится тёплой.",
+      "labels": ["проверка", "тёплый душ"]
+    }
+  },
+  "cover_keys_ru": []
+}

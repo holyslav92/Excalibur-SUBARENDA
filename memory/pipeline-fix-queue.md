@@ -556,3 +556,98 @@ checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_dzen_cover_cache_bust.py`
 - `python3 scripts/excalibur_blog_dzen_cover_cache_bust.py --slug pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate` (SFTP upload OK)
 commit: pending
+
+## INC-20260904-1337 — Metrika credentials missing (Content-learner B10)
+
+status: needs-human
+run_date: 2026-09-04
+role: excalibur-blog-content-learner
+topic_id: B10
+article_dir: memory/blog/articles/B10-goryachaya-voda-i-bojler-pri-zaselenii-posutochno
+severity: medium
+category: env
+
+### What went wrong
+
+- `excalibur_blog_metrika_fetch.py --days 30 --ingest` → METRIKA CREDENTIALS BLOCKER (no OAuth token / counter id in Cloud Secrets).
+
+### How the agent recovered this run
+
+- Recorded optional/low-confidence lessons in `memory/content-lessons.md`; no causal Metrika claims.
+
+### Durable fix needed before next run
+
+- Set YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets for tenant.
+
+### Suggested files to inspect/change
+
+- Cloud Secrets / tenant env
+- `shared/content-learning-contract.md`
+
+### Secrets
+
+- YANDEX_METRIKA_OAUTH_TOKEN, YANDEX_METRIKA_COUNTER_ID (not in git)
+
+### Fixer resolution
+
+status: needs-human
+reason:
+- Env-only blocker; same root cause as INC-20260903-0640 (B08).
+needed_decision_or_secret:
+- YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets
+
+## INC-20260904-1336 — case-delivery BLOCK «Наш вывод простой.» vs user close_h2_slot (B10)
+
+status: fixed
+run_date: 2026-09-04
+role: excalibur-blog-fixer
+topic_id: B10
+article_dir: memory/blog/articles/B10-goryachaya-voda-i-bojler-pri-zaselenii-posutochno
+severity: medium
+category: script
+
+### What went wrong
+
+- B10 published with user-slot close H2 «Наш вывод простой.» but `excalibur_blog_case_delivery_gate.py` always banned that phrase and required factory «Мой вывод как практика».
+- `skills/writer-excalibur-blog/SKILL.md` still instructed «Наш вывод простой.» as default aphoristic close — contradicting `shared/writer-master-prompt.md` / `shared/article-style.md`.
+
+### How the agent recovered this run
+
+- Published article left unchanged (live OK). Gate BLOCK recorded in `case-delivery-gate.json`.
+
+### Durable fix needed before next run
+
+- Honor `title-brief.json` → `close_h2_slot` for explicit user slot; factory default remains «Мой вывод как практика».
+- Align Writer skill with factory verdict H2; document alt slot in `shared/article-style.md`.
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_case_delivery_gate.py`
+- `skills/writer-excalibur-blog/SKILL.md`
+- `.cursor/skills/writer-excalibur-blog/SKILL.md`
+- `shared/article-style.md`
+- `tests/test_slice4_and_manner_gates.py`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-09-04
+fix_summary:
+- `load_close_h2_slot()` reads `title-brief.json` → `close_h2_slot` (`Мой вывод как практика` default; alt «Наш вывод простой.» once as H2 only).
+- Writer skill + article-style aligned; B10 `title-brief.json` stamped with `close_h2_slot`.
+files_changed:
+- `scripts/excalibur_blog_case_delivery_gate.py`
+- `skills/writer-excalibur-blog/SKILL.md`
+- `.cursor/skills/writer-excalibur-blog/SKILL.md`
+- `shared/article-style.md`
+- `memory/blog/articles/B10-goryachaya-voda-i-bojler-pri-zaselenii-posutochno/title-brief.json`
+- `tests/test_slice4_and_manner_gates.py`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_case_delivery_gate.py`
+- `python3 -m unittest tests.test_slice4_and_manner_gates.KlyshinMannerGateTest -v`
+- `python3 scripts/excalibur_blog_case_delivery_gate.py --article-dir memory/blog/articles/B10-goryachaya-voda-i-bojler-pri-zaselenii-posutochno --stage article` → PASS
+commit: a93ff2b

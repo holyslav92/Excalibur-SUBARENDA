@@ -63,6 +63,19 @@
         "sticker_set": "тишина в чате предоплата на карту",
         "joke": "checkmarks no address"
       }
+    },
+    {
+      "date": "2026-09-04",
+      "topic_id": "B10",
+      "slug": "",
+      "motifs": {
+        "composition": "guest recoils from ice shower + boiler off + headline mirror sticker, top-right empty logo pad",
+        "location": "early september 2026 sunny tyumen rental bathroom, green trees outside, not winter",
+        "meme": "none photoreal only — waiting timer reaction",
+        "prop_set": "shower mixer, off boiler switch, timer 40min, towels, instruction card",
+        "sticker_set": "квартиры посуточно тюмень, бойлер выключен, ждать нагрев",
+        "joke": "listing says hot water exists but shower is ice until boiler heats"
+      }
     }
   ]
 }

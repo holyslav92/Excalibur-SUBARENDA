@@ -1,0 +1,65 @@
+{
+  "status": "PASS",
+  "topic_id": "B10",
+  "slug": "goryachaya-voda-i-bojler-pri-zaselenii-posutochno",
+  "research_date": "2026-09-04",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "СП 2.1.4284-26 в силе с 1 сентября 2026 + тюменские отзывы Суточно.ру про бойлер как резерв",
+    "source_type": "news+community",
+    "urls": [
+      "https://minjust.consultant.ru/documents/60286",
+      "https://respectrb.ru/node/77462",
+      "https://tyumen.sutochno.ru/"
+    ],
+    "accessed_at": "2026-09-04",
+    "note": "Guest hot-water/boiler check-in case; not legal essay."
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "Нет банковских тарифов; иллюстративные таблицы нагрева бойлера — справочные, не цены услуг",
+    "verified_claims": 2,
+    "entities_checked": [
+      "minjust_consultant_sp_2_1_4284_26",
+      "ao_ustek_tyumen"
+    ],
+    "errors": []
+  },
+  "wordstat": {
+    "status": "PASS",
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 5320,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 11765,
+        "region": "225"
+      },
+      {
+        "phrase": "бойлер горячая вода",
+        "volume": 419,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "бойлер горячая вода",
+        "volume": 24446,
+        "region": "225"
+      },
+      {
+        "phrase": "нет горячей воды квартира",
+        "volume": 34,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "нет горячей воды квартира",
+        "volume": 2763,
+        "region": "225"
+      }
+    ]
+  },
+  "errors": []
+}

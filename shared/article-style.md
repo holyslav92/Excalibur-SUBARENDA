@@ -62,7 +62,7 @@
 | Degradation → moral | Сначала фото крана. Потом чат. Потом перевод. Не наоборот. |
 | Direct speech | «Утром будет» — обещали в чате, а выезд уже завтра. |
 | Refusal | «Так не заселяем.» — **max 1×** на статью |
-| Verdict H2 | «Мой вывод как практика» — **ровно 1×** |
+| Verdict H2 | «Мой вывод как практика» — **ровно 1×** (factory). Alt: `title-brief.json` → `close_h2_slot: «Наш вывод простой.»` for user slot — **never both** |
 | Close | вопрос двух лагерей + один CTA |
 
 **BAN:** vertical ladder (1 sentence per line) as §1 — Klyshin TG rhythm is for **Title** two-beat, not article lead.
