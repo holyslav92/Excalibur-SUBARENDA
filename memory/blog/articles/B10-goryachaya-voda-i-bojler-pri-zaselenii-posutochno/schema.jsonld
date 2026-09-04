@@ -1,0 +1,41 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "{{SITE_BASE}}/#organization",
+      "name": "Добрый дом",
+      "url": "{{SITE_BASE}}/",
+      "telephone": "+7 (993) 574-83-22",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Тюмень",
+        "addressCountry": "RU"
+      },
+      "sameAs": [
+        "{{SITE_BASE}}/",
+        "{{SITE_BASE}}/blog/"
+      ]
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "{{SITE_BASE}}/blog/goryachaya-voda-i-bojler-pri-zaselenii-posutochno/#article",
+      "url": "{{SITE_BASE}}/blog/goryachaya-voda-i-bojler-pri-zaselenii-posutochno/",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{SITE_BASE}}/blog/goryachaya-voda-i-bojler-pri-zaselenii-posutochno/"
+      },
+      "headline": "«Горячая вода есть». Включили душ — лёд и 40 минут нагрева",
+      "description": "Надпись «горячая вода есть» не всегда означает, что душ готов к использованию: бойлер может быть выключен, а нагрев займёт около 40 минут. До оплаты стоит уточнить, где находится бойлер, кто его включает и сколько ждать горячую воду.",
+      "datePublished": "2026-09-04",
+      "dateModified": "2026-09-04",
+      "inLanguage": "ru-RU",
+      "author": {
+        "@id": "{{SITE_BASE}}/#organization"
+      },
+      "publisher": {
+        "@id": "{{SITE_BASE}}/#organization"
+      }
+    }
+  ]
+}
