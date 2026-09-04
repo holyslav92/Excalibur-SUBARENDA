@@ -1,0 +1,50 @@
+{
+  "topic_id": "B09",
+  "slug": "posutochno-v-tyumeni-parkovka-ryadom-u-shlagbauma-propuska-net",
+  "cover_family": "brand_collage",
+  "style_preset": "the_rieltor_twilight_gold",
+  "pipeline": "slice4_grid_1x_image_api",
+  "file": "cover/cover.png",
+  "alt": "Автомобиль у закрытого шлагбаума в Тюмени, человек показывает на терминал, крупный хук «НЕТ ПРОПУСКА — ПЛЮС 600 ₽?» и номер телефона +7 993 574-83-22.",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-slice4.png",
+  "generated_at": "2026-09-04T06:20:11+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Автомобиль у закрытого шлагбаума в Тюмени, человек показывает на терминал, крупный хук «НЕТ ПРОПУСКА — ПЛЮС 600 ₽?» и номер телефона +7 993 574-83-22.",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Закрытый шлагбаум и терминал во дворе Тюмени, на автомобиле нет пропуска.",
+      "h2_anchor": "Как это звучало в переписке",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Человек со спины проверяет смартфон у парковочного терминала, рядом указана сумма 600 рублей.",
+      "h2_anchor": "Почему «рядом» ничего не значит",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Парковочный талон, временный пропуск и уведомление с надписью «НЕТ ПРОПУСКА» на капоте автомобиля.",
+      "h2_anchor": "Вопрос, который стоит задать вслух",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}

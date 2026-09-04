@@ -1,81 +1,77 @@
-# Scout assembled inputs — 2026-09-01 YEKT
+# Scout inputs — 2026-09-04 YEKT slot
 
-## CRITICAL INSTRUCTION FOR DEROUTER SCOUT
-Wordstat MCP-KV preflight and ALL probes were already executed by the orchestrator via live MCP-KV.
-wordstat_preflight: mcp-kv wordstat_get_user_info OK (Yandex Cloud API, Folder b1g6bq34gkivjj20be06)
-DO NOT refuse handoff. DO NOT claim CallMcpTool unavailable.
-Your job: write the complete `.cursor/excalibur-blog-handoff.md` using ONLY the verified data below.
+## Date context
+- today_iso: 2026-09-04
+- timezone: Asia/Yekaterinburg
+- weekday: четверг
+- season: начало сентября, осень (обложка — текущий сезон, не зима)
 
 ## Tenant
-- Brand: Добрый дом (посуточная / субаренда, Тюмень)
-- Format: guest-night CASE (~1100–1800 слов), NOT guide, NOT «N советов»
-- Voice: Klyshin rhythm (case hook, two-beat title), reader inside as guest
-- Cover season: лето/начало сентября (не зима героем)
-- dzen_rf_pack: true
+- Добрый дом, посуточная аренда Тюмень
+- dzen_pattern prefer 2–5 (NOT numbered list default)
+- Guest pains only — NO ЕГРН/суд/наследство/Москва/риэлтор
 
-## Slot context
-- topic_id: B06
-- queue_num: 8, hook_id: checkout_train_bags
-- window YEKT: 2026-09-08 — 2026-09-10 (batch slot; today 2026-09-01 user assigned B06)
-- B05 reviews published today 2026-09-01 — do NOT duplicate reviews angle
-- Site today also covers: parking 800₽, hot water, dog fee, passport, wifi, prepayment — NOT these angles
-- BAN: юр-крючки (ЕГРН, суд, наследники), burn-at-door if saturated, early_checkin (used)
+## Published titles (anti-dup, last 8)
+| topic_id | title |
+| B01 | Оплатил квартиру посуточно. Код прислали от чужой двери |
+| B02 | Снял квартиру посуточно. Залог не вернули — нашли скол на плите |
+| B03 | Привезли сына к вузу — «рядом» оказалось 40 минут пешком |
+| B04 | Оплатили за двоих. У двери попросили доплату за третьего |
+| B05 | Рейтинг 4,8. Два «всё супер» — и 3 900 ₽ под вопросом |
+| B06 | Выезд в полдень. Поезд через 4 часа — чемоданы у подъезда |
+| B07 | Хозяин написал «кухня есть». За три ночи в кафе ушло 7 200 ₽ |
+| B08 | Перевели 3 000 ₽ предоплатой. К вечеру — тишина в чате |
 
-## Angle rotation (last N=3)
-- B03: «Привезли сына к вузу — «рядом» оказалось 40 минут пешком» — parents/uni
-- B04: «Оплатили за двоих. У двери попросили доплату за третьего» — extra guest at door
-- B05: «Рейтинг 4,8 — и два одинаковых «всё супер»» — reviews (published 2026-09-01)
+## Angle rotation (last N=3: B06,B07,B08)
+- burn-at-door (код/дверь): skip — B01 saturated family
+- deposit/scratch: skip — B02
+- prepayment silence: skip — B08 just published
+- parking_before_booking: ACTIVE queue slot 04–07.09 — fresh angle
 
-angle_rotation: checked last N=3 | burn-at-door skip: no (B06 is checkout/luggage gap, not code/door family) | reason: last 3 are uni/extra-guest/reviews; B06 = выезд 12:00 + поезд днём, куда чемоданы; NOT early_checkin
+## Klyshin hook (queue)
+- hook_id: parking_before_booking
+- original angle: «Парковка рядом» — шлагбаум не пускает
+- lockpick: место, пропуск, номер авто — до брони, не у барьера
+- dzen_pattern: 2 (кейс с суммами и датами)
 
-## Published anti-dup (do not repeat)
-B01 contactless code wrong door | B02 deposit chip on stove | B03 vuz walk | B04 third guest fee | B05 fake reviews
+## Wordstat preflight
+- wordstat_get_user_info: OK (Yandex Cloud API)
 
-## Klyshin hook
-klyshin_hook: checkout_train_bags | original: «Выезд в 12:00. Поезд в 16:30.» | angle: куда деть чемоданы между выездом и транспортом; NOT early check-in (banned used) | lockpick: «Можно оставить багаж до вокзала?» / «Есть камера хранения у вас?» | signal: https://t.me/klyshin_A (live 2026-08-31 — ритм «сначала порядок действий, потом ключ/деньги»; map to moral: сначала багаж/хранение, потом сдача ключей)
+## Wordstat live probes (MCP-KV)
 
-## Wordstat rework (LIVE MCP-KV — copy verbatim)
-wordstat_rework: probe «поздний выезд аренда» API empty → probe «выезд посуточно» API empty → probe «поздний выезд» 142 (55+11176, hotel-skew) → probe «хранение багажа» 133 (55+11176) / 12186 (225) → probe «хранение багажа тюмень» 28 (55+11176) → probe «камера хранения багажа тюмень» 18 (55+11176, from cluster) → probe «аренда квартиры посуточно» 756 (55+11176) → probe «квартира посуточно тюмень» → final P0 «квартиры посуточно тюмень» 5446 (55+11176) / 12048 (225) | clusters tried: поздний выезд, выезд посуточно, хранение багажа, хранение багажа тюмень, аренда посуточно, квартиры посуточно тюмень
+### P0 spine
+- «квартиры посуточно тюмень» RU 225: 11765 | Tyumen 55+11176: 5320
+- «снять квартиру посуточно в тюмени» RU: 4216
 
-wordstat: mcp_kv live | regions 55,11176,compare225 | P0 «квартиры посуточно тюмень» 5446 | RU compare 12048 | secondary «хранение багажа» 133 / «хранение багажа тюмень» 28 | angle spine «поздний выезд» 142 (hotel context — case localizes to apartment checkout gap)
+### Hook probes
+- «парковка аренда квартиры» RU 225: 111 (weak alone)
+- «парковка посуточно» RU 225: 5648 (mostly airport parking — not guest apartment)
+- «аренда парковочного места» related: 6083
+
+### Rework log
+1. probe «парковка аренда квартиры» 111 → guest parking at apartment weak nationally
+2. rework «квартиры посуточно тюмень» 11765 / 5320 local → demand spine
+3. angle: parking/barrier/guest car at ЖК — rides P0 «квартиры посуточно тюмень» with parking lockpick
+
+### Final P0
+- phrase: «квартиры посуточно тюмень»
+- volume: 11765 (RU 225), 5320 (55+11176)
+- guest intent: book apartment + need car parking confirmed before pay
+
+## Title draft (two-beat, NOT final Title role)
+«Написали «парковка рядом». У шлагбаума: «пропуска нет»»
 
 ## topic_id
-B06
-
-## short title for research_start (Klyshin rhythm, NOT final H1)
-Выезд в 12:00, поезд в 16:30 — куда деть чемоданы между
-
-## title_draft hint (two-beat stop-factor, CASE not guide)
-Выезд в 12:00. Поезд в 16:30 — чемоданы остались на лестнице у подъезда
-
-## slug hint
-vyezd-v-12-poezd-v-16-30-kuda-det-chemodany
-
-## dzen_pattern
-2 — живой кейс с суммами/датами (12:00 / 16:30 / 4,5 часа окно)
-dzen_shape_hint: «Выезд в полдень, поезд вечером: куда деть чемоданы до вокзала»
+B09
 
 ## signal_urls
 - https://t.me/klyshin_A
 - https://добрыйдом-72.рф/blog/
-- https://dzen.ru/holyslav
 
-## external_signal
-Klyshin live Aug 2026: «сначала порядок действий, потом подпись/ключ» → guest CASE: сначала договориться про багаж/хранение, потом сдача ключей. Wordstat: хранение багажа тюмень 28; P0 spine квартиры посуточно тюмень 5446.
+## Task
+Write the complete scout handoff markdown. The calling script `excalibur_blog_derouter_opus_chat.py` saves your reply to `.cursor/excalibur-blog-handoff.md` — you do NOT need filesystem or MCP access.
 
-## wp_category_slugs
-posutochnaya-arenda, sovety-gostyam
-
-## interlink_siblings (published)
-- B02 /blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/ (выезд family)
-- B04 /blog/oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego/
-- B05 /blog/rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super/
-
-## queue_slot
-2026-09-08 — 2026-09-10 (queue #8 checkout_train_bags)
-
-## cover_season_note
-YEKT 2026-09-01 early September, summer light; no winter hero
-
-## Required handoff format
-Write markdown starting with `# Scout handoff B06`. Include: wordstat_preflight, klyshin_hook, wordstat_rework, wordstat, angle_rotation, dzen_pattern, dzen_shape_hint, topic_id, short_title, title_draft, slug, signal_urls, external_signal, queue_slot, cover_season_note, wp_category_slugs, interlink_siblings, format_note (guest-night CASE not guide).
+**OUTPUT RULES (HARD):**
+- Return ONLY the handoff markdown body (no refusal, no "cannot write", no DEROUTER SCOUT BLOCKER).
+- Include all required lines: topic_id, title_draft, klyshin_hook, wordstat_rework, wordstat, angle_rotation, dzen_pattern, dzen_shape_hint, signal_urls, external_signal.
+- Wordstat frequencies are already verified live in this prompt — use them as-is.

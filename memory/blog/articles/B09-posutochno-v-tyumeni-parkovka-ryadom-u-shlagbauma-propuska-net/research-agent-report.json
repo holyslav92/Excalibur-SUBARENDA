@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "topic_id": "B09",
+  "slug": "posutochno-v-tyumeni-parkovka-ryadom-u-shlagbauma-propuska-net",
+  "research_date": "2026-09-04",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "VK community шлагбаумы Тюмень + visittyumen парковки 2026",
+    "source_type": "community",
+    "urls": [
+      "https://vk.com/wall-1031031_259600",
+      "https://visittyumen.ru/what-to-do/prigoditsya-v-puteshestvii/parkovki-v-tyumeni-polnyy-gid-dlya-avtoputeshestvennikov/"
+    ],
+    "accessed_at": "2026-09-04",
+    "note": "Guest parking/barrier case; not legal essay."
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "Нет банковских тарифов; собирательный guest-case",
+    "verified_claims": 0,
+    "entities_checked": [],
+    "errors": []
+  },
+  "wordstat": {
+    "status": "PASS",
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 5320,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 11765,
+        "region": "225"
+      },
+      {
+        "phrase": "парковка аренда квартиры",
+        "volume": 111,
+        "region": "225"
+      }
+    ]
+  },
+  "errors": []
+}

@@ -1,3 +1,22 @@
-DEROUTER SCOUT BLOCKER: в этом интерфейсе недоступен запуск `scripts/excalibur_blog_derouter_opus_chat.py` и запись `.cursor/excalibur-blog-handoff.md`.
+topic_id: B09
 
-Wordstat-preflight и live-частоты приведены во входных данных, но handoff-прозу, title draft и rework log нельзя формировать вручную: по контракту они должны пройти через Derouter utility tier.
+title_draft: «Написали „парковка рядом“. У шлагбаума: „пропуска нет“»
+
+klyshin_hook: parking_before_booking | original: «Парковка рядом» — шлагбаум не пускает | angle: до оплаты проверить место, пропуск и номер автомобиля в посуточной квартире; signal: https://t.me/klyshin_A
+
+wordstat_rework: probe «парковка аренда квартиры» 111 → слабый гостевой запрос → rework «квартиры посуточно тюмень» 11765 / 5320 локально → финальный P0 «квартиры посуточно тюмень» 5320
+
+wordstat: mcp_kv live | regions 55,11176,compare225 | P0 «квартиры посуточно тюмень» 11765 RU 225 / 5320 Tyumen 55+11176 | дополнительный probe «снять квартиру посуточно в тюмени» 4216 RU 225 | «парковка посуточно» 5648 и «аренда парковочного места» 6083 не использованы как P0 из-за смешения с аэропортами и отдельной арендой парковок
+
+angle_rotation: ACTIVE queue slot 04–07.09 — parking_before_booking; burn-at-door, deposit/scratch и prepayment silence исключены из-за недавних публикаций B01, B02 и B08
+
+dzen_pattern: 2
+
+dzen_shape_hint: «Кейс с суммами и датами»: поездка в Тюмень в начале сентября, стоимость посуточной квартиры и парковки, момент у шлагбаума, затем короткая инструкция — до брони запросить фото места, условия въезда, пропуск и проверить номер автомобиля
+
+signal_urls:
+- https://t.me/klyshin_A
+- https://добрыйдом-72.рф/blog/
+- https://t.me/Dobriy_dom_72
+
+external_signal: Klyshin — сюжет о несоответствии обещанной парковки реальному въезду; dzen/site/Telegram Holyslav — ориентир по подаче бытового риска через конкретный кейс и инструкцию без пустого кликбейта.

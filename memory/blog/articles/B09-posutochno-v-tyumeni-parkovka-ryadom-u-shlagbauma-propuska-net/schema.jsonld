@@ -1,0 +1,38 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "{{SITE_BASE}}/#organization",
+      "name": "Добрый дом",
+      "url": "{{SITE_BASE}}/",
+      "telephone": "+7 (993) 574-83-22",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Тюмень",
+        "addressCountry": "RU"
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "{{SITE_BASE}}/blog/posutochno-v-tyumeni-parkovka-ryadom-u-shlagbauma-propuska-net/#article",
+      "url": "{{SITE_BASE}}/blog/posutochno-v-tyumeni-parkovka-ryadom-u-shlagbauma-propuska-net/",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{SITE_BASE}}/blog/posutochno-v-tyumeni-parkovka-ryadom-u-shlagbauma-propuska-net/"
+      },
+      "headline": "Написали «парковка рядом». У шлагбаума: «пропуска нет», +600 ₽",
+      "author": {
+        "@id": "{{SITE_BASE}}/#organization"
+      },
+      "publisher": {
+        "@id": "{{SITE_BASE}}/#organization"
+      },
+      "inLanguage": "ru-RU",
+      "about": {
+        "@type": "Thing",
+        "name": "Парковка и пропуск при посуточной аренде в Тюмени"
+      }
+    }
+  ]
+}
