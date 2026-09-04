@@ -1,9 +1,10 @@
 {
   "gate": "case-delivery",
   "status": "PASS",
-  "stage": "article",
+  "stage": "all",
   "manner_canon": "dobry_dom_gen_only_human_v1",
   "checks_run": [
+    "title-brief",
     "writer.html",
     "article.html"
   ],
