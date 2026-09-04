@@ -63,6 +63,16 @@
         "sticker_set": "тишина в чате предоплата на карту",
         "joke": "checkmarks no address"
       }
+    },
+    {
+      "date": "2026-09-04",
+      "topic_id": "B10",
+      "slug": "",
+      "motifs": {
+        "composition": "doorway_dog_breed_fee",
+        "location": "tyumen_apartment_entry_september",
+        "prop_set": "labrador_leash_phone_chat"
+      }
     }
   ]
 }

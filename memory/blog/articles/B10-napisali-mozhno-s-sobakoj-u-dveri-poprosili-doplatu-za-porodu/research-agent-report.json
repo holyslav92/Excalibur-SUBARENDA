@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "topic_id": "B10",
+  "slug": "napisali-mozhno-s-sobakoj-u-dveri-poprosili-doplatu-za-porodu",
+  "research_date": "2026-09-04",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "runews24 GOST для питомцев 2026-09-01 + RG pet-friendly 2026-07",
+    "source_type": "news",
+    "urls": [
+      "https://runews24.ru/society/01/09/2026/gost-dlya-pitomczev-doplata-do-15-i-muzyika-bez-stroboskopa",
+      "https://rg.ru/2026/07/16/mozhno-s-sobakoj-pochemu-oteli-otkryvaiut-dveri-dlia-zhivotnyh-i-skolko-eto-stoit.html"
+    ],
+    "accessed_at": "2026-09-04",
+    "note": "Guest pet fee at door case; not legal essay."
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "Market context only; guest-case editorial",
+    "verified_claims": 0,
+    "entities_checked": [],
+    "errors": []
+  },
+  "wordstat": {
+    "status": "PASS",
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 5320,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "квартира посуточно с животными",
+        "volume": 1352,
+        "region": "225"
+      },
+      {
+        "phrase": "с собакой посуточно",
+        "volume": 1178,
+        "region": "225"
+      }
+    ]
+  },
+  "errors": []
+}

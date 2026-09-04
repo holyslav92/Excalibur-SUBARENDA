@@ -1,0 +1,21 @@
+{
+  "title": "«Можно с собакой» — у двери попросили +1 500 ₽ за породу",
+  "h1": "«Можно с собакой» — у двери попросили +1 500 ₽ за породу",
+  "slug": "napisali-mozhno-s-sobakoj-u-dveri-poprosili-doplatu-za-porodu",
+  "topic_id": "B10",
+  "author_id": "dobry-dom",
+  "description": "«Лабрадор? Тогда доплата», — выяснилось у двери, хотя бронь уже была. В Тюмени с собакой часто пишут «можно», а сумму называют на площадке.",
+  "date": "2026-09-04",
+  "wp_category_slugs": [
+    "posutochnaya-arenda",
+    "sovety-gostyam"
+  ],
+  "pipeline_canon": "human-first-v3",
+  "editorial_swarm": false,
+  "theme_blocks": {
+    "faq": "skip",
+    "quiz": "skip",
+    "side_stickers": "skip"
+  },
+  "article_mode": "B"
+}
