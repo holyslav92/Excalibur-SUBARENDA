@@ -603,7 +603,7 @@ checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_wp_publish.py`
 - `python3 -m unittest tests.test_body_probe -v`
 - B10 publish PASS + live-page-report PASS + ledger upsert
-commit: 8b84235 (+ fixer follow-up)
+commit: a927172
 
 ## INC-20260905-1030 — Metrika credentials missing (Content-learner B10)
 
