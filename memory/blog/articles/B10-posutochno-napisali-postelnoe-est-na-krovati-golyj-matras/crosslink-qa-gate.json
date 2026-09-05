@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "https://добрыйдом-72.рф/blog/kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den/",
+      "slug": "kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den",
+      "anchor": "«Квартира посуточно: кухня есть». Три ночи в кафе каждый день.Почему комплектов вдруг не хватаетЧаще всего это не злость и не желание специально испортить гостю вечер. Бельё надо стирать, сушить, гладить, хранить, менять. Оно не возникает в шкафу само. Нормальный ориентир в работе — три комплекта на каждое спальное место: один на кровати, один в стирке, один в резерве. Это не закон. Просто арифметика, которая не оставляет гостя у голого матраса.Но запас стоит денег. На рынке Тюмени сотни предложений, минимальные цены начинаются примерно от 1 150 ₽ за ночь. Когда борьба идёт за нижнюю цену, часто экономят на том, чего не видно на фото. Кровать для фотосессии застелили один раз красиво — и снимок работает годами.Иногда второй комплект действительно идёт за отдельные деньги: в некоторых сервисах доплата бывает порядка 500 ₽. Это нормально, если написано заранее и заметно. Ненормально — узнать об этом у двери вечером.С количеством гостей работает та же схема: бронировали двоих, приехали втроём — и появляется доплата. Об этом был отдельный разговор:",
+      "catalog_title": "Хозяин написал «кухня есть». За три ночи в кафе ушло 7 200 ₽",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego/",
+      "slug": "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+      "anchor": "«Оплатил за двоих. У двери попросили доплату за третьего». Гостей и бельё иногда считают не по брони, а по факту вашего приезда. И это самый плохой момент для торга.Фото не застелют кроватьБелоснежное бельё на снимке, рейтинг 4,8 — кажется, всё в порядке. Но фотография показывает лучший день квартиры, а не ваш вторник. А рейтинг 4,8 из двух отзывов «всё супер» — не гарантия, а украшение карточки. Вот история именно про это:",
+      "catalog_title": "Оплатили за двоих. У двери попросили доплату за третьего",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super/",
+      "slug": "rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super",
+      "anchor": "«Рейтинг 4,8 у квартиры посуточно. Два отзыва, одно и то же: „всё супер“».Отдельно смотрите на бесконтактное заселение. Ключи лежат в сейфе, хозяина рядом нет, и вы обнаруживаете проблему уже после входа. Как заранее не оставить себе эту ловушку — в материале",
+      "catalog_title": "Рейтинг 4,8. Два «всё супер» — и 3 900 ₽ под вопросом",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "anchor": "«Бесконтактное заселение посуточно в Тюмени».Один комплект на бронь — это норма или обман, если вас трое? Напишите свою позицию в",
+      "catalog_title": "Оплатил квартиру посуточно. Код прислали от чужой двери",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "outbound_unique_slugs": [
+    "kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den",
+    "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+    "rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super",
+    "beskontaktnoe-zaselenie-posutochno-tyumen"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B10-posutochno-napisali-postelnoe-est-na-krovati-golyj-matras",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}

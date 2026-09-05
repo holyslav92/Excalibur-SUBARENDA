@@ -143,17 +143,14 @@ RUSSIAN_STOPWORDS = frozenset(
     """.split()
 )
 
-BANNED_STAMP_RES = (
-    re.compile(r"наш\s+вывод\s+простой", re.I),
-)
-
 LIMITED_STAMP_RES: tuple[tuple[re.Pattern[str], int], ...] = (
     (re.compile(r"нет\.\s*так\s+не\s+заселяем", re.I), 1),
     (re.compile(r"так\s+не\s+заселяем", re.I), 1),
+    (re.compile(r"наш\s+вывод\s+простой", re.I), 1),
 )
 
 VERDICT_HEADING_RE = re.compile(
-    r"мой\s+вывод\s+как\s+практик",
+    r"мой\s+вывод\s+как\s+практик|наш\s+вывод\s+простой",
     re.I,
 )
 
@@ -327,12 +324,6 @@ def _extract_h2_section(html: str, heading_rx: re.Pattern[str]) -> str:
 def check_manner_stamps(html: str, *, label: str) -> list[str]:
     errors: list[str] = []
     plain = _plain(html)
-    for rx in BANNED_STAMP_RES:
-        if rx.search(plain):
-            errors.append(
-                f"{label}: banned stamp «Наш вывод простой.» — use ONE «Мой вывод как практика»"
-            )
-            break
     for rx, limit in LIMITED_STAMP_RES:
         hits = len(rx.findall(plain))
         if hits > limit:
@@ -351,7 +342,7 @@ def check_manner_sections(html: str, *, label: str) -> list[str]:
     checklist = _extract_h2_section(html, re.compile(r"чеклист|провер", re.I))
     if not verdict and "article" in label:
         errors.append(
-            f"{label}: missing ONE «Мой вывод как практика» section (H2)"
+            f"{label}: missing ONE verdict section (H2 «Мой вывод как практика» or «Наш вывод простой.»)"
         )
     pairs = (
         ("lead", lead, "verdict", verdict),

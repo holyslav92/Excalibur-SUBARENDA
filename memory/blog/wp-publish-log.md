@@ -1,5 +1,22 @@
 # WP publish log
 
+## B10 — 2026-09-05
+
+- **topic_id:** B10
+- **slug:** posutochno-napisali-postelnoe-est-na-krovati-golyj-matras
+- **title:** Написали «постельное есть». На кровати — голый матрас, нас троих
+- **post_id:** 4410
+- **permalink:** /blog/posutochno-napisali-postelnoe-est-na-krovati-golyj-matras/
+- **categories:** posutochnaya-arenda (101), sovety-gostyam (106)
+- **featured_image:** 4411
+- **inline_images:** 4412–4418 (7× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS (cover + 7 inline → wp-content)
+- **dzen_yzen_meta:** ok (feed/zen preview *-1024x576)
+- **interlink inbound:** B01 (3745) — «Читайте также» applied
+- **llms_deploy:** PASS (sftp, post-publish)
+- **publish_method:** ftp (main bootstrap); post-steps via sftp after FTP PASV hang on mu-plugin
+
 ## B07 — 2026-09-02
 
 - **topic_id:** B07

@@ -69,6 +69,27 @@ class CoverTextTest(unittest.TestCase):
         )
         self.assertEqual(verdict["status"], "BLOCK")
 
+    def test_infographic_inline_panel_bans_meme_hint(self) -> None:
+        import sys
+        sys.path.insert(0, str(ROOT / "scripts"))
+        from excalibur_blog_cover_quad_prompt import inline_panel_prompt
+
+        slot = {
+            "visual_type": "infographic_card",
+            "h2_anchor": "Наш вывод простой.",
+            "scene_hint": "Нумерованный список фактов, иконки.",
+            "labels": ["3 комплекта", "на каждое место"],
+        }
+        prompt = inline_panel_prompt(
+            slot,
+            {"types": {"infographic_card": {"label_ru": "Инфографика"}}},
+            people_meme_hint="Roll Safe / Harold",
+        )
+        self.assertIn("ZERO meme stickers", prompt)
+        self.assertIn("NO Harold/Pepe/Roll Safe/Wojak", prompt)
+        self.assertNotIn("+Roll Safe", prompt)
+        self.assertNotIn("+Roll Safe / Harold", prompt)
+
     def test_prompt_has_text_lock_and_russian_hook(self) -> None:
         import sys
         sys.path.insert(0, str(ROOT / "scripts"))

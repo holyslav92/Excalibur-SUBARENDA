@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "topic_id": "B10",
+  "slug": "posutochno-napisali-postelnoe-est-na-krovati-golyj-matras",
+  "research_date": "2026-09-05",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Москва 24 white-box/матрас 31.08.2026 + Профснаб стандарт белья 31.08.2026 + Суточно.ру Тюмень live",
+    "source_type": "news+community+marketplace",
+    "urls": [
+      "https://www.m24.ru/articles/31082026/935987",
+      "https://profsnabvl.ru/blog/kak-vybrat-postelnoe-bele-dlya-posutochnoi-arendy/",
+      "https://tyumen.sutochno.ru/"
+    ],
+    "accessed_at": "2026-09-05",
+    "note": "Guest bedding/pack-vs-flat case; not legal essay."
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "Нет банковских/гос тарифов; цены белья — рыночная вилка",
+    "verified_claims": 0,
+    "entities_checked": [],
+    "errors": []
+  },
+  "wordstat": {
+    "status": "PASS",
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 5320,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 11765,
+        "region": "225"
+      },
+      {
+        "phrase": "постельное белье посуточно",
+        "volume": 282,
+        "region": "225"
+      },
+      {
+        "phrase": "снять квартиру посуточно в тюмени",
+        "volume": 1681,
+        "region": "55+11176"
+      }
+    ]
+  },
+  "errors": []
+}

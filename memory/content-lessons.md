@@ -233,3 +233,125 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+---
+
+## LESSON-20260905-0721-B10-pack-vs-flat-bedding-kits
+status: proposed
+topic_id: B10
+category: utility
+confidence: low
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP. Урок из publish-артефактов: research-notes.md (pack_vs_flat), title-brief.json, article.html §1 и H2 «Вопрос, который открывает дверь раньше ключа».
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest BLOCKER (INC-20260903-0640).
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Угол pack_vs_flat: «постельное есть» ≠ комплект на каждого гостя; в §1 сразу ₽4 200 за ночь, голый матрас, один комплект на стуле, нас трое.
+- Klyshin-отрез: «Нет. Так не заселяем.» + «Сначала проверка. Потом перевод.» — не how-to до морали.
+- Вопрос-отмычка (письменно, до перевода): «Сколько комплектов постельного белья будет подготовлено именно на нашу бронь?» — цифра, не «есть».
+- Профессиональный ориентир 3 комплекта на спальное место — как арифметика хоста, не закон.
+- Wordstat spine «квартиры посуточно тюмень» 5320 Tyumen / 11765 RU; supporting «постельное белье посуточно» 282.
+- Sibling interlink: B04 (доплата за третьего), B07 («кухня есть»), B05 (рейтинг 4,8), B01 (бесконтакт).
+
+### Change
+- В bedding-кейсах в §1 называть число гостей и число подготовленных комплектов в одном абзаце — не откладывать «нас трое» только в H1.
+- При hook «есть» (бельё, кухня, парковка) в Scout handoff логировать **final P0 spine + sub-angle kit-count**.
+
+### Never again
+- Вопрос «Бельё есть?» как единственный pre-pay чек — всегда заменять на **число комплектов на бронь**.
+- Смешивать «один комплект в шкафу» и «три застеленных места» без явного контраста в lead.
+
+### Proposed apply
+- Scout: hook pack_vs_flat / bedding → handoff final P0 spine Tyumen + «постельное белье посуточно» supporting.
+- Review only; Writer prompt не трогать автоматически.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260905-0721-B10-title-est-bare-mattress-three
+status: proposed
+topic_id: B10
+category: voice
+confidence: low
+
+### Evidence
+- artifact: title-brief.json#h1
+  finding: H1 «Написали «постельное есть». На кровати — голый матрас, нас троих»; description-brief PASS — «сколько на троих», не дубль H1.
+- metrika_signal: none (credentials unavailable; causal CTR не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Two-beat + triple anchor: цитата обещания в кавычках → контрфакт (голый матрас) → headcount (нас троих).
+- Description rhythm klyshin_case_hook: вопрос «это сколько на троих?» без спойлера всей аритметики из H1.
+- H2 «Слово «есть» — самое дорогое в объявлении» — тематический мост, не SEO-хвост.
+- Close H2 «Наш вывод простой.» — допустимый verdict-slot (case_delivery_gate); checklist только после метафоры.
+
+### Change
+- Повторять формулу «кавычки + контрфакт + число людей/мест» для всех «есть»-hooks (бельё, кухня, парковка).
+- Description держать вопрос про количество, H1 — сцену инцидента.
+
+### Never again
+- H1-how-to «что проверить в постельном» / «5 вопросов про бельё».
+- Description-дубль H1 («голый матрас, нас троих» verbatim в карточке Дзен).
+
+### Proposed apply
+- Title/Description review: «есть»-hooks — prefer quoted false promise + measurable counterfact + headcount over generic Tyumen SEO title (title-brief rejected longer SEO variant).
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260905-0721-B10-cover-inline06-infographic-regen
+status: proposed
+topic_id: B10
+category: other
+confidence: low
+
+### Evidence
+- artifact: cover/cover_qa.json#inline_06_regen
+  finding: inline-06 regenerated (Grsai) — Hide the Pain Harold заменён на typography+icons infographic; cover_qa PASS.
+- metrika_signal: none (credentials unavailable)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- COVER_MEME_FACE_ON_INLINE (mitigated by regen)
+
+### Keep
+- Regen prompt: STRICT BAN meme faces on inline-06; headline «Наш вывод простой» + numbered checklist icons.
+- Logo only cover + inline-01/03/07 per cover_qa notes.
+
+### Change
+- При batch-02 Cover-scene сразу exclude Harold/meme faces на infographic slots (inline_6).
+
+### Never again
+- Ship inline infographic with reaction-meme face when forbid_ai_drawn_logo_cover + inline_no_large_meme_person active.
+
+### Proposed apply
+- Cover skill: infographic_card slots → negative prompt meme faces pre-batch, not post-regen only.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded

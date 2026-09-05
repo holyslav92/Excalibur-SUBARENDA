@@ -1,0 +1,27 @@
+{
+  "slug": "posutochno-napisali-postelnoe-est-na-krovati-golyj-matras",
+  "topic_id": "B10",
+  "permalink": "{{SITE_BASE}}/blog/posutochno-napisali-postelnoe-est-na-krovati-golyj-matras/",
+  "publish_method": "ftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B10-posutochno-napisali-postelnoe-est-na-krovati-golyj-matras/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1180053,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4410 slug=posutochno-napisali-postelnoe-est-na-krovati-golyj-matras\nOK categories=101,106\nOK dzen_yzen_meta=1\nOK featured_image=4411\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4412 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-napisali-postelnoe-est-na-krovati-golyj-matras-inline-01.png\nOK inline_alt=4412\nOK inline_caption=4412\nOK inline_description=4412\nOK inline_image_upload=4413 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-napisali-postelnoe-est-na-krovati-golyj-matras-inline-02.png\nOK inline_alt=4413\nOK inline_caption=4413\nOK inline_description=4413\nOK inline_image_upload=4414 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-napisali-postelnoe-est-na-krovati-golyj-matras-inline-03.png\nOK inline_alt=4414\nOK inline_caption=4414\nOK inline_description=4414\nOK inline_image_upload=4415 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-napisali-postelnoe-est-na-krovati-golyj-matras-inline-04.png\nOK inline_alt=4415\nOK inline_caption=4415\nOK inline_description=4415\nOK inline_image_upload=4416 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-napisali-postelnoe-est-na-krovati-golyj-matras-inline-05.png\nOK inline_alt=4416\nOK inline_caption=4416\nOK inline_description=4416\nOK inline_image_upload=4417 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-napisali-postelnoe-est-na-krovati-golyj-matras-inline-06.png\nOK inline_alt=4417\nOK inline_caption=4417\nOK inline_description=4417\nOK inline_image_upload=4418 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-napisali-postelnoe-est-na-krovati-golyj-matras-inline-07.png\nOK inline_alt=4418\nOK inline_caption=4418\nOK inline_description=4418\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/posutochno-napisali-postelnoe-est-na-krovati-golyj-matras/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/posutochno-napisali-postelnoe-est-na-krovati-golyj-matras/",
+    "errors": []
+  }
+}

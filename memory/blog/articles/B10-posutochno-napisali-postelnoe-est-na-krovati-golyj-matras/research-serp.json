@@ -1,0 +1,218 @@
+{
+  "agent": "excalibur-blog",
+  "date_context": {
+    "timezone": "Europe/Moscow",
+    "today_iso": "2026-09-05",
+    "today_ru": "05.09.2026",
+    "year": 2026,
+    "month": 9,
+    "month_name_ru": "сентябрь",
+    "weekday_ru": "суббота"
+  },
+  "topic": {
+    "topic_id": "B10",
+    "title": "Посуточно: написали постельное есть. На кровати голый матрас",
+    "h1": "Посуточно: написали постельное есть. На кровати голый матрас",
+    "slug": "posutochno-napisali-postelnoe-est-na-krovati-golyj-matras",
+    "primary_query": "Посуточно: написали постельное есть. На кровати голый матрас",
+    "priority": "P0"
+  },
+  "searches": [
+    {
+      "query_id": "primary_fresh",
+      "query": "Посуточно: написали постельное есть. На кровати голый матрас 2026",
+      "purpose": "актуальный SERP",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Instagram",
+          "url": "https://www.instagram.com/p/DbySSIajZZP/",
+          "snippet": ""
+        },
+        {
+          "title": "Предложения со словосочетанием ГОЛЫЙ МАТРАС",
+          "url": "https://kartaslov.ru/%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F-%D1%81%D0%BE-%D1%81%D0%BB%D0%BE%D0%B2%D0%BE%D1%81%D0%BE%D1%87%D0%B5%D1%82%D0%B0%D0%BD%D0%B8%D0%B5%D0%BC/%D0%B3%D0%BE%D0%BB%D1%8B%D0%B9+%D0%BC%D0%B0%D1%82%D1%80%D0%B0%D1%81",
+          "snippet": "Как на этих фото: на кровати был голый матрас, т.к после ремонта еще не заехали жить. И с помощью нейросети в кадры было добавлено постельное белье."
+        },
+        {
+          "title": "Instagram",
+          "url": "https://www.instagram.com/reel/DaQezUZMpzm/",
+          "snippet": "На голом матрасе широкой кровати было стопкой сложено чистое постельное бельё, ещё тёплое после сушилки."
+        },
+        {
+          "title": "Снять квартиру посуточно, аренда квартиры на сутки во всех регионах ...",
+          "url": "https://www.avito.ru/all/kvartiry/sdam/posutochno/-ASgBAgICAkSSA8gQ8AeSUg",
+          "snippet": "Теперь у меня другие стандарты. Три вещи, которые нужно проверить перед заселением в любой арендный дом - кровать, матрас, постельное."
+        },
+        {
+          "title": "Образец договора посуточной аренды квартиры - версия от 2026 года",
+          "url": "https://urika.ru/documents/contracts/obrazec-dogovora-posutochnoj-arendy-kvartiry/",
+          "snippet": "В квартире есть всё необходимое для проживания: удобные спальные места, чистое постельное бельё и полотенца, телевизор, Wi-Fi, холодильник, микроволновая печь, варочная поверхность, чайник, посуда, стиральная машина и оборудованный санузел."
+        },
+        {
+          "title": "Белые стены и матрас на полу: что скрывается за дешевой арендой white ...",
+          "url": "https://www.m24.ru/articles/31082026/935987",
+          "snippet": "Образец договора посуточной аренды квартиры. Квартира оборудована мебелью, аксессуарами и бытовой техникой. В стоимость аренды включены расходы по оплате коммунальных услуг и аренде постельного белья. Договор заключается между физическими лицами. Образец договора посуточной аренды квартиры."
+        }
+      ],
+      "searched_at": "2026-09-05"
+    },
+    {
+      "query_id": "title_fresh",
+      "query": "Посуточно: написали постельное есть. На кровати голый матрас 2026",
+      "purpose": "SERP по человеческому title",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Топ-12 лучших матрасов для сна 2026: какой купить, рейтинг пружинных ...",
+          "url": "https://dom.mail.ru/compilations/84785-luchshie-matrasy/",
+          "snippet": ""
+        },
+        {
+          "title": "12 лучших матрасов для кровати 160х200 - рейтинг 2026",
+          "url": "https://markakachestva.ru/rating-of/6896-luchshie-matrasy-dlja-krovati-160x200-rejting.html",
+          "snippet": "В обзоре собраны модели, которые входят в список лучших матрасов для сна в 2026 году."
+        },
+        {
+          "title": "1-комнатная квартира посуточно, Армавир, Новороссийская улица, 111 ...",
+          "url": "https://krasnodar.sutochno.ru/armavir/656199",
+          "snippet": "Рейтинг лучших двуспальных матрасов для кровати 160х200, в том числе и оснащенной подъемным механизмом. В ТОПе только самые популярные и качественные модели от заслуживающих доверия ..."
+        },
+        {
+          "title": "16 лучших жестких матрасов в 2026 году",
+          "url": "https://www.kp.ru/expert/dom/luchshie-zhestkie-matrasy/",
+          "snippet": "От 3000 рублей за сутки — беспроводной интернет Wi-Fi, кондиционер, холодильник, стиральная машина, кабельное ТВ, отчётные документы, постельное бельё, кофеварка, 5 отзывов — объявление об аренде №656199."
+        },
+        {
+          "title": "В долине бабочек (fb2) | Флибуста",
+          "url": "https://flibusta.site/b/887280/read",
+          "snippet": "Рейтинг топ-16 лучших жестких матрасов в 2026 году с ценами и отзывами по версии КП."
+        },
+        {
+          "title": "Двуспальная кровать Элеганте Декор Лучи, 140x200 см Неро",
+          "url": "https://www.ozon.ru/product/dvuspalnaya-krovat-elegante-dekor-luchi-140x200-sm-nero-5082374605/",
+          "snippet": "Я всем своим видом пошла в материну дородную родню с одним маленьким исключением - грудь в этом коктейле генов мне досталась от худосочной отцовской родни."
+        }
+      ],
+      "searched_at": "2026-09-05"
+    },
+    {
+      "query_id": "official_docs",
+      "query": "Посуточно: написали постельное есть. На кровати голый матрас official docs 2026",
+      "purpose": "официальные docs",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Образец договора посуточной аренды квартиры - версия от 2026 года",
+          "url": "https://urika.ru/documents/contracts/obrazec-dogovora-posutochnoj-arendy-kvartiry/",
+          "snippet": ""
+        },
+        {
+          "title": "Instagram",
+          "url": "https://www.instagram.com/p/DbySSIajZZP/",
+          "snippet": "Образец договора посуточной аренды квартиры. Квартира оборудована мебелью, аксессуарами и бытовой техникой. В стоимость аренды включены расходы по оплате коммунальных услуг и аренде постельного белья. Договор заключается между физическими лицами. Образец договора посуточной аренды квартиры."
+        },
+        {
+          "title": "Муж приехал из командировки раньше, чем обещал. Заходит в спальню, а на ...",
+          "url": "https://vk.com/wall-226651834_17667",
+          "snippet": "Как на этих фото: на кровати был голый матрас, т.к после ремонта еще не заехали жить. И с помощью нейросети в кадры было добавлено постельное белье."
+        },
+        {
+          "title": "Образец договора посуточной аренды квартиры. Квартира оборудована ...",
+          "url": "https://amulex.ru/docs/contracts/dogovor-arendy-kvartiry/1404.html",
+          "snippet": "Муж приехал из командировки раньше, чем обещал. Заходит в спальню, а на кровати лежит голый мужик. Муж орет: - Твою мать! Какого хрена ты здесь делаеш"
+        },
+        {
+          "title": "Я лежу голый на кровати, под одеялом. Дома у Леночки, эдакой живой ...",
+          "url": "https://vk.com/wall-50308473_593192",
+          "snippet": "По соглашению сторон договором устанавливается плата за посуточную аренду квартиры в размере рублей в сутки, в состав которой включены расходы по оплате коммунальных услуг и аренде ..."
+        },
+        {
+          "title": "А Ваш муШ, в чём спит?:) Мой сейчас голый сопит на кровати... Жара у ...",
+          "url": "https://otvet.mail.ru/question/92702370",
+          "snippet": "Она сидит передо мной в коротеньком шелковом халатике на голое тело. Иногда делает попытки лечь рядом, видно, что девочка хочет близости, да и просто уже устала."
+        }
+      ],
+      "searched_at": "2026-09-05"
+    },
+    {
+      "query_id": "github_evidence",
+      "query": "site:github.com Посуточно: написали постельное есть. На кровати голый матрас 2026",
+      "purpose": "GitHub evidence",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "GitHub · Change is constant. GitHub keeps you ahead. · GitHub",
+          "url": "https://github.com/",
+          "snippet": ""
+        },
+        {
+          "title": "Sign in to GitHub · GitHub",
+          "url": "https://github.com/login",
+          "snippet": "Join GitHub Copilot Day, live on Sept 10. Come for the product news, stay for the demos, live coding, and surprises. Set your reminder. Navigation Menu. Sign in. Platform. AI CODE CREATION. GitHub CopilotWrite better code with AI. GitHub Copilot appDirect agents from issue to merge. MCP RegistryIntegrate external tools. DEVELOPER WORKFLOWS."
+        },
+        {
+          "title": "GitHub Docs",
+          "url": "https://docs.github.com/",
+          "snippet": "GitHub is where people build software. More than 150 million people use GitHub to discover, fork, and contribute to over 420 million projects."
+        },
+        {
+          "title": "GitHub - art-raz/Highload2026: Курс Проектирование высоконагруженных ...",
+          "url": "https://github.com/art-raz/Highload2026",
+          "snippet": "Get started, troubleshoot, and make the most of GitHub. Documentation for new users, developers, administrators, and all of GitHub's products."
+        },
+        {
+          "title": "zip/logo.png at main · lipodemmerkezi/zip · GitHub",
+          "url": "https://github.com/lipodemmerkezi/zip/blob/main/logo.png",
+          "snippet": "Согласно статистике, на платформе ежедневно публикуется более 500 млн постов [3]. Это включает не только оригинальные посты, но и ответы, и репосты (которые также считаются действиями публикации)."
+        },
+        {
+          "title": "coursera-ddp-shiny/corpora/ru_50k.txt at master - GitHub",
+          "url": "https://github.com/spujadas/coursera-ddp-shiny/blob/master/corpora/ru_50k.txt",
+          "snippet": "Contribute to lipodemmerkezi/zip development by creating an account on GitHub."
+        }
+      ],
+      "searched_at": "2026-09-05"
+    },
+    {
+      "query_id": "community_experience",
+      "query": "Посуточно: написали постельное есть. На кровати голый матрас forum problems опыт 2026",
+      "purpose": "форумы и живые проблемы",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Как закрепить простынь: 5 способов удержать постельное белье на матрасе ...",
+          "url": "https://dom.mail.ru/articles/77471-kak-zakrepit-prostyn/",
+          "snippet": ""
+        },
+        {
+          "title": "Простыня сползает с матраса: 5 способов закрепить постельное белье на ...",
+          "url": "https://dom.mail.ru/articles/88517-prostynya-spolzaet-s-matrasa/",
+          "snippet": "Рассказываем, как закрепить простыню на кровати и диване с помощью резинок, зажимов и различных держателей с маркетплейсов."
+        },
+        {
+          "title": "Перестала просыпаться на голом матрасе: даже шелковая простыня лежит ...",
+          "url": "https://materinstvo.ru/novosti-rossii/18444",
+          "snippet": "Если постельное белье не держится на матрасе, причин тому может быть несколько: неправильно подобранный размер, плохо заправленные края под матрас и слишком гладкий материал."
+        },
+        {
+          "title": "Instagram",
+          "url": "https://www.instagram.com/reel/Da72zhZItNn/",
+          "snippet": "Оказывается, чаще всего это происходит не из-за активного сна, а из-за неправильного размера. Если простыня меньше, чем матрас, она неизбежно будет сбиваться. Гладкие ткани — шёлк, сатин — только усугубляют ситуацию: простыни из них скользят по матрасу, как по льду."
+        },
+        {
+          "title": "Instagram",
+          "url": "https://www.instagram.com/p/DbySSIajZZP/",
+          "snippet": "Когда я вернулась домой с мешками вещей, как назло, в моей комнате был ремонт. Картина удручала: голый матрас , пустая комната с мешками - будто все пространство вторило внутреннему хаосу."
+        },
+        {
+          "title": "Типы Клиентов на съемных квартирах Посуточно (жесть как она есть). ⁠ ⁠",
+          "url": "https://pikabu.ru/story/tipyi_klientov_na_semnyikh_kvartirakh_posutochno_zhest_kak_ona_est_6401540",
+          "snippet": "Как на этих фото: на кровати был голый матрас, т.к после ремонта еще не заехали жить. И с помощью нейросети в кадры было добавлено постельное белье."
+        }
+      ],
+      "searched_at": "2026-09-05"
+    }
+  ],
+  "errors": []
+}

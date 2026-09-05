@@ -124,6 +124,22 @@ PHONE_IN_SCENE_RULE = (
     "quiet zone on bottom edge or side margin; NEVER over cat bottom-left, sticky, meme, or headline"
 )
 MEME_CATALOG_REL = "memory/cover/meme-top100.json"
+# Utility / infographic inline panels must never get people-meme hints (INC-20260905-B10 inline-06 Harold).
+NO_MEME_INLINE_VISUAL_TYPES = frozenset(
+    {
+        "infographic_card",
+        "labeled_checklist",
+        "checklist_board",
+        "workflow_diagram",
+        "comparison_table",
+        "comparison_table_ui",
+        "schema_faq_ui",
+        "structure_diagram",
+        "process_flow",
+        "bar_timeline_chart",
+        "tool_screenshot",
+    }
+)
 MEME_STICKER_INLINE_MAX_SHARE = 0.15
 MAX_CAT_MEME_SLOTS_PER_ARTICLE = 1
 DEFAULT_STYLE_DOBRY_DOM = "memory/cover/quad-style-dobry-dom.json"
@@ -210,7 +226,12 @@ def inline_panel_prompt(
     if labels:
         exact = " | ".join(labels)
         base += f" TXT:{exact}."
-    if slot.get("meme_sticker") or cat_meme_allowed:
+    if type_id in NO_MEME_INLINE_VISUAL_TYPES:
+        base += (
+            " ZERO meme stickers, ZERO reaction faces, ZERO people/portraits — "
+            "typography + flat icons only (NO Harold/Pepe/Roll Safe/Wojak)."
+        )
+    elif slot.get("meme_sticker") or cat_meme_allowed:
         if cat_meme_allowed:
             base += (
                 f" +tiny cat-meme sticker only (≤{int(MEME_STICKER_INLINE_MAX_SHARE * 100)}% frame, "

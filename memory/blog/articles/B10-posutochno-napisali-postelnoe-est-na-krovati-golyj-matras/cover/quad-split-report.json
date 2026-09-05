@@ -1,0 +1,162 @@
+{
+  "agent": "excalibur-blog-cover-quad-split",
+  "status": "PASS",
+  "manifest": "cover/quad-manifest.json",
+  "splits": [
+    {
+      "canvas_index": 2,
+      "slots": [
+        "inline_4",
+        "inline_5",
+        "inline_6",
+        "inline_7"
+      ]
+    },
+    {
+      "canvas_index": 1,
+      "manifest": "cover/quad-manifest.json",
+      "split": {
+        "source_canvas": "memory/blog/articles/B10-posutochno-napisali-postelnoe-est-na-krovati-golyj-matras/cover/canvas-quad-01.png",
+        "source_size_px": [
+          2048,
+          1152
+        ],
+        "panel_size_px": [
+          1016,
+          568
+        ],
+        "split_meta": {
+          "split_mode": "gutter_detect",
+          "h_gutter_px": {
+            "start": 568,
+            "end": 585
+          },
+          "v_gutter_px": {
+            "start": 1016,
+            "end": 1038
+          },
+          "requested_mode": "auto",
+          "gutter_quality": {
+            "h_center_offset_px": 0.5,
+            "v_center_offset_px": 3.0,
+            "max_aspect_crop_loss": 0.0079,
+            "per_panel_crop_loss": {
+              "top_left": 0.0059,
+              "top_right": 0.0,
+              "bottom_left": 0.0079,
+              "bottom_right": 0.0
+            },
+            "reject_reason": null
+          }
+        },
+        "output_size_px": [
+          1200,
+          675
+        ],
+        "outputs": {
+          "inline_1": {
+            "file": "cover/inline-01.png",
+            "quadrant": "top_right",
+            "box_px": {
+              "left": 1038,
+              "top": 0,
+              "right": 2048,
+              "bottom": 568
+            },
+            "raw_box_px": {
+              "left": 1038,
+              "top": 0,
+              "right": 2048,
+              "bottom": 568
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Сравнение обещания «постельное есть» и реальности: голый матрас и один комплект белья.",
+            "h2_anchor": "Слово «есть» — самое дорогое в объявлении"
+          },
+          "inline_2": {
+            "file": "cover/inline-02.png",
+            "quadrant": "bottom_left",
+            "box_px": {
+              "left": 4,
+              "top": 585,
+              "right": 1012,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 585,
+              "right": 1016,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Схема почему не хватает комплектов: один на стуле, остальное «найдём позже».",
+            "h2_anchor": "Почему комплектов вдруг не хватает"
+          },
+          "inline_3": {
+            "file": "cover/inline-03.png",
+            "quadrant": "bottom_right",
+            "box_px": {
+              "left": 1038,
+              "top": 585,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 1038,
+              "top": 585,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Сравнение рекламного фото с бельём и реального голого матраса вечером.",
+            "h2_anchor": "Фото не застелют кровать"
+          },
+          "inline_4": {
+            "file": "cover/inline-04.png",
+            "quadrant": "top_left",
+            "box_px": {
+              "left": 3,
+              "top": 0,
+              "right": 1013,
+              "bottom": 568
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1016,
+              "bottom": 568
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Правильный вопрос до оплаты: сколько комплектов подготовят на бронь.",
+            "h2_anchor": "Вопрос, который открывает дверь раньше ключа"
+          }
+        }
+      }
+    }
+  ],
+  "html_inject": [
+    "skip inline_1: already correct under H2 — Слово «есть» — самое дорогое в объявлении",
+    "skip inline_2: already correct under H2 — Почему комплектов вдруг не хватает",
+    "skip inline_3: already correct under H2 — Фото не застелют кровать",
+    "skip inline_4: already correct under H2 — Вопрос, который открывает дверь раньше ключа",
+    "injected inline_5 after H2 — Порядок нельзя переставлять",
+    "injected inline_6 after H2 — Наш вывод простой.",
+    "injected inline_7 after H2 — Если нужна квартира в Тюмени с понятными цифрами"
+  ]
+}

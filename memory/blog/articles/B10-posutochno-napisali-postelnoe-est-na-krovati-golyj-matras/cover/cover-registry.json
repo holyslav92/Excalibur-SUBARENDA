@@ -1,0 +1,86 @@
+{
+  "topic_id": "B10",
+  "slug": "posutochno-napisali-postelnoe-est-na-krovati-golyj-matras",
+  "cover_family": "brand_collage",
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "file": "cover/cover.png",
+  "alt": "Уставший гость с чемоданом в светлой квартире Тюмени смотрит на голый матрас; крупный кириллический хук «Постельное есть — матрас голый, нас троих» и номер +7 993 574-83-22 на информационном щите.",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-quad.png",
+  "generated_at": "2026-09-05T06:40:31+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Уставший гость с чемоданом в светлой квартире Тюмени смотрит на голый матрас; крупный кириллический хук «Постельное есть — матрас голый, нас троих» и номер +7 993 574-83-22 на информационном щите.",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Сравнение обещания «постельное есть» и реальности: голый матрас и один комплект белья.",
+      "h2_anchor": "Слово «есть» — самое дорогое в объявлении",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Схема почему не хватает комплектов: один на стуле, остальное «найдём позже».",
+      "h2_anchor": "Почему комплектов вдруг не хватает",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Сравнение рекламного фото с бельём и реального голого матраса вечером.",
+      "h2_anchor": "Фото не застелют кровать",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_4",
+      "file": "cover/inline-04.png",
+      "alt": "Правильный вопрос до оплаты: сколько комплектов подготовят на бронь.",
+      "h2_anchor": "Вопрос, который открывает дверь раньше ключа",
+      "visual_type": "schema_faq_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_5",
+      "file": "cover/inline-05.png",
+      "alt": "Схема: сначала проверка и цифры в чате, потом перевод — не наоборот.",
+      "h2_anchor": "Порядок нельзя переставлять",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_6",
+      "file": "cover/inline-06.png",
+      "alt": "Инфографика-вывод: 3 комплекта на каждое место, 3 полотенца на человека — проверить цифрами до оплаты.",
+      "h2_anchor": "Наш вывод простой.",
+      "visual_type": "infographic_card",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_7",
+      "file": "cover/inline-07.png",
+      "alt": "Три застеленных места, три комплекта и напоминание проверить до оплаты.",
+      "h2_anchor": "Если нужна квартира в Тюмени с понятными цифрами",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}

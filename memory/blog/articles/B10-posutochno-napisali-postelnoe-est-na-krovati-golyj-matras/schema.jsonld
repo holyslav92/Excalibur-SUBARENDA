@@ -1,0 +1,35 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/posutochno-napisali-postelnoe-est-na-krovati-golyj-matras/#article",
+  "url": "{{SITE_BASE}}/blog/posutochno-napisali-postelnoe-est-na-krovati-golyj-matras/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/posutochno-napisali-postelnoe-est-na-krovati-golyj-matras/"
+  },
+  "headline": "Написали «постельное есть». На кровати — голый матрас, нас троих",
+  "description": "Фраза «постельное есть» не гарантирует отдельный комплект и застеленное место для каждого гостя. До оплаты уточните, сколько комплектов подготовят на вашу бронь и будут ли кровати застелены к заезду.",
+  "datePublished": "2026-09-05",
+  "dateModified": "2026-09-05",
+  "inLanguage": "ru-RU",
+  "author": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    }
+  }
+}
