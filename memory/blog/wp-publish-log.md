@@ -12,6 +12,7 @@
 - **inline_images:** 4433–4435 (3× wp-content/uploads/2026/09/…-inline-0N-2.png)
 - **schema_meta:** ok
 - **live-page gate:** PASS (body_probe nbsp unescape fix; first FTP run false BLOCK)
+- **dzen cache bust:** cover-dzen-v3 + cover-dzen-v3-1024x576 uploaded; feed enclosure → …-cover-dzen-v3.png
 - **interlink inbound:** B01 (3745)
 - **publish_method:** sftp (FTP PASV data timeout on cloud; SFTP:22 OK)
 - **llms_deploy:** PASS
