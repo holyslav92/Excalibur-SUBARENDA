@@ -560,3 +560,146 @@ checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_dzen_cover_cache_bust.py`
 - `python3 scripts/excalibur_blog_dzen_cover_cache_bust.py --slug pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate` (SFTP upload OK)
 commit: pending
+
+## INC-20260905-0721 — Cover-QA inline-06 meme face (B10)
+
+status: fixed
+run_date: 2026-09-05
+role: excalibur-blog-cover-qa
+topic_id: B10
+article_dir: memory/blog/articles/B10-posutochno-napisali-postelnoe-est-na-krovati-golyj-matras
+severity: low
+category: prompt
+
+### What went wrong
+
+- Quad split put Hide the Pain Harold on `inline-06` (`visual_type=infographic_card`, verdict H2). Cover-QA `inline_no_large_meme_person` FAIL.
+
+### How the agent recovered this run
+
+- Single-panel Grsai regen (`inline-06-regen-batch.json`, typography+icons only) → PASS `cover_qa.json`.
+
+### Durable fix needed before next run
+
+- Quad prompt must not inject people-meme hints on utility/infographic inline slots.
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_cover_quad_prompt.py`
+- `skills/cover-qa-excalibur-blog/SKILL.md`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-09-05
+fix_summary:
+- `NO_MEME_INLINE_VISUAL_TYPES` in `inline_panel_prompt()` — infographic/workflow/table slots get explicit ZERO meme ban, no Harold hint.
+- Cover-QA skill documents single-panel inline regen path (B10 inline-06 pattern).
+files_changed:
+- `scripts/excalibur_blog_cover_quad_prompt.py`
+- `skills/cover-qa-excalibur-blog/SKILL.md`
+- `.cursor/skills/cover-qa-excalibur-blog/SKILL.md`
+- `tests/test_cover_text.py`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_cover_quad_prompt.py`
+- `python3 -m unittest tests.test_cover_text.CoverTextTest.test_infographic_inline_panel_bans_meme_hint -v`
+commit: pending
+
+## INC-20260905-0723 — word count 866 vs stale 1100–1800 in assembled inputs (B10)
+
+status: fixed
+run_date: 2026-09-05
+role: excalibur-blog-writer
+topic_id: B10
+article_dir: memory/blog/articles/B10-posutochno-napisali-postelnoe-est-na-krovati-golyj-matras
+severity: low
+category: docs
+
+### What went wrong
+
+- `assembled-writer-inputs.md` said **1100–1800 words**; Sol skill header still **1100–1800** while canon/gate is **700–1100** (`WORD_COUNT_MIN=650`). Final `article.html` = 866 words — PASS gate but under obsolete target.
+
+### How the agent recovered this run
+
+- Shipped at 866 words; `case-delivery-gate.json` PASS.
+
+### Durable fix needed before next run
+
+- Align Sol + Writer skills and assembled-inputs contract to **700–1100**.
+
+### Suggested files to inspect/change
+
+- `skills/sol-excalibur-blog/SKILL.md`
+- `skills/writer-excalibur-blog/SKILL.md`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-09-05
+fix_summary:
+- Sol skill header **700–1100** (hard fail >1300); Writer skill notes assembled-writer-inputs must use same range.
+files_changed:
+- `skills/sol-excalibur-blog/SKILL.md`
+- `.cursor/skills/sol-excalibur-blog/SKILL.md`
+- `skills/writer-excalibur-blog/SKILL.md`
+- `.cursor/skills/writer-excalibur-blog/SKILL.md`
+- `tests/test_writer_sol_pipeline.py`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m unittest tests.test_writer_sol_pipeline.WriterSolContractsTest.test_sol_skill_word_count_canon -v`
+commit: pending
+
+## INC-20260905-0845 — FTP PASV hang on post-publish mu-plugin (B10)
+
+status: fixed
+run_date: 2026-09-05
+role: excalibur-blog-publish
+topic_id: B10
+article_dir: memory/blog/articles/B10-posutochno-napisali-postelnoe-est-na-krovati-golyj-matras
+severity: medium
+category: transport
+
+### What went wrong
+
+- Main bootstrap OK via FTP; `deploy_dzen_mu_plugin` / post-steps hung on PASV data after large STOR. Agent retried post-steps with SFTP:22.
+
+### How the agent recovered this run
+
+- `llms_deploy` PASS via SFTP; publish completed (post_id 4410).
+
+### Durable fix needed before next run
+
+- MU-plugin + small bootstraps should prefer SFTP:22 when `FTP_TRANSPORT=ftp`; catch `error_temp` 421 in FTP fallback.
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_wp_publish.py`
+- `skills/publish-excalibur-blog/SKILL.md`
+
+### Secrets
+
+- FTP (Cloud Secrets)
+
+### Fixer resolution
+
+fixed_at: 2026-09-05
+fix_summary:
+- `deploy_dzen_mu_plugin()` forces SFTP:22 when env is FTP (small bootstrap after large publish).
+- `publish_via_ftp()` catches `ftplib.error_temp` (421 idle) → SFTP fallback via `_publish_bootstrap_sftp_fallback()`.
+- Publish skill documents MU-plugin SFTP post-step.
+files_changed:
+- `scripts/excalibur_blog_wp_publish.py`
+- `skills/publish-excalibur-blog/SKILL.md`
+- `.cursor/skills/publish-excalibur-blog/SKILL.md`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_wp_publish.py`
+- `python3 -m unittest tests.test_publish_transport -v`
+commit: pending

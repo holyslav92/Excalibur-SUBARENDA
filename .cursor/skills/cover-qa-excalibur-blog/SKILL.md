@@ -29,3 +29,13 @@ python3 scripts/excalibur_blog_cover_qa_gate.py --article-dir <dir>
 ```
 
 Python gates: `validate_cover_type_meme_sticker_gates` + `validate_cover_anti_collage_gates` on `cover.png`.
+
+## 8-panel quad: inline meme FAIL (INC-20260905-B10)
+
+When `inline_no_large_meme_person` / drawn meme template fails on a utility panel (`visual_type=infographic_card`, checklist, workflow):
+
+1. Do **not** paste_and_ship with Harold/Pepe on non-meme slots.
+2. Regen **only** the failed inline via single-panel Grsai batch (`cover/inline-0N-regen-batch.json`) with strict `ZERO meme` prompt — see B10 `inline-06-regen-batch.json`.
+3. Replace `cover/inline-0N.png`, re-run `brand_logo_composite.py` if needed, re-stamp `cover_qa.json`.
+
+`excalibur_blog_cover_quad_prompt.py` omits people-meme hints on `NO_MEME_INLINE_VISUAL_TYPES` (infographic_card, workflow, tables).

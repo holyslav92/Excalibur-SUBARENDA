@@ -38,6 +38,7 @@ from excalibur_blog_wp_dzen_rss import (
     dzen_meta_php_snippet,
     mu_plugin_bytes,
 )
+from ftplib import error_temp
 
 def load_tenant_config(root: Path) -> dict[str, Any]:
     path = root / "shared/tenant-config.json"
@@ -949,8 +950,35 @@ def publish_via_sftp(env: dict[str, str], php: str, public_base: str, *, bootstr
 
 def deploy_dzen_mu_plugin(env: dict[str, str], public_base: str) -> str:
     """Upload MU-plugin that fixes Dzen enclosure/category directives."""
+    from excalibur_blog_remote_transport import resolve_publish_transport
+
     php = build_mu_plugin_deploy_bootstrap(mu_plugin_bytes().decode("utf-8"))
-    return publish_via_sftp(env, php, public_base, bootstrap_name="excalibur-dzen-mu-plugin-once.php")
+    # Small bootstrap after large FTP publish: avoid PASV data hang on Cloud (B10 INC-20260905-0845).
+    env_upload = dict(env)
+    if resolve_publish_transport(env) == "ftp":
+        env_upload["FTP_TRANSPORT"] = "sftp"
+        env_upload["FTP_PORT"] = "22"
+    return publish_via_sftp(env_upload, php, public_base, bootstrap_name="excalibur-dzen-mu-plugin-once.php")
+
+
+def _publish_bootstrap_sftp_fallback(
+    env: dict[str, str],
+    php: str,
+    public_base: str,
+    *,
+    bootstrap_name: str,
+    ftp_exc: BaseException,
+) -> str:
+    """Retry bootstrap upload via SFTP:22 when Timeweb PASV data channel fails (INC-20260901-0830)."""
+    print(
+        f"WARN FTP PASV data channel failed ({type(ftp_exc).__name__}: {ftp_exc}); "
+        "retrying bootstrap upload via SFTP:22",
+        file=sys.stderr,
+    )
+    env_sftp = dict(env)
+    env_sftp["FTP_TRANSPORT"] = "sftp"
+    env_sftp["FTP_PORT"] = "22"
+    return publish_via_sftp(env_sftp, php, public_base, bootstrap_name=bootstrap_name)
 
 
 def publish_via_ftp(
@@ -984,17 +1012,10 @@ def publish_via_ftp(
 
     try:
         upload_bytes(env, remote, data, root=selected_root)
-    except (TimeoutError, OSError) as exc:
-        # Cloud Agent egress often blocks Timeweb PASV data ports; SFTP:22 works with same creds (INC-20260901-0830).
-        print(
-            f"WARN FTP PASV data channel failed ({type(exc).__name__}: {exc}); "
-            "retrying bootstrap upload via SFTP:22",
-            file=sys.stderr,
+    except (TimeoutError, OSError, error_temp) as exc:
+        return _publish_bootstrap_sftp_fallback(
+            env, php, public_base, bootstrap_name=bootstrap_name, ftp_exc=exc
         )
-        env_sftp = dict(env)
-        env_sftp["FTP_TRANSPORT"] = "sftp"
-        env_sftp["FTP_PORT"] = "22"
-        return publish_via_sftp(env_sftp, php, public_base, bootstrap_name=bootstrap_name)
 
     try:
         out = trigger_bootstrap_http(url, root)

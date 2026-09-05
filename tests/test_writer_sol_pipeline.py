@@ -30,6 +30,11 @@ class WriterSolContractsTest(unittest.TestCase):
         self.assertIn("good-outputs.md", skill)
         self.assertIn("SOUL.md", skill)
 
+    def test_sol_skill_word_count_canon(self) -> None:
+        skill = (ROOT / "skills/sol-excalibur-blog/SKILL.md").read_text(encoding="utf-8")
+        self.assertIn("700–1100", skill)
+        self.assertNotIn("1100–1800", skill)
+
     def test_writer_outputs_meaning_draft(self) -> None:
         skill = (ROOT / "skills/writer-excalibur-blog/SKILL.md").read_text(encoding="utf-8")
         self.assertIn("drafts/writer.html", skill)
