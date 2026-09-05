@@ -20,6 +20,10 @@
     "side_stickers": "skip"
   },
   "date": "2026-09-05",
+  "wp_category_slugs": [
+    "posutochnaya-arenda",
+    "zalog-i-vyiezd"
+  ],
   "pipeline_canon": "human-first-v3",
   "editorial_swarm": false
 }
