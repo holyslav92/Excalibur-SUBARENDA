@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "{{SITE_BASE}}/blog/oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego/",
+      "slug": "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+      "anchor": "оплатил за двоих, а у двери попросили доплату за третьего. Бывает и другая тревога:",
+      "catalog_title": "Оплатили за двоих. У двери попросили доплату за третьего",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "{{SITE_BASE}}/blog/pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate/",
+      "slug": "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+      "anchor": "перевели предоплату, а к вечеру в чате тишина. А иногда деньги уходят в залог, который потом",
+      "catalog_title": "Перевели 3 000 ₽ предоплатой. К вечеру — тишина в чате",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "{{SITE_BASE}}/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/",
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "anchor": "обещают не вернуть уже на выезде. Названия разные, но красная линия одна: деньги ушли раньше, чем появилась ясность.Уборка и полотенца отдельной строкой до брони — это честность или уже красный флаг? Напишите, как вы к этому относитесь, в",
+      "catalog_title": "Снял квартиру посуточно. Залог не вернули — нашли скол на плите",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "{{SITE_BASE}}/blog/rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super/",
+      "slug": "rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super",
+      "anchor": "рейтинг 4,8, а отзывов два и оба одинаковые. Рейтинг говорит о том, что было раньше. Состав цены говорит о том, сколько вы отдадите сейчас.Мой вывод как практикаСначала проверка, потом деньги и ключ. Не наоборот. Пока перевод у вас, вы обсуждаете цену на равных: можете уточнить, попросить список, выбрать другой вариант. После перевода разговор уже не о цене. Он о том, готовы ли вы потерять отправленное и искать ночлег на ходу. В этой позиции гость всегда слабее.Цена без расшифровки — как ключ без бирки: он вроде бы у вас в руке, но от какой двери, узнаёте только у подъезда. Просите бирку заранее.Чек-лист перед переводомПопросите итоговую сумму за весь срок — одной цифрой в сообщении.Уточните, что входит в цену и что оплачивается отдельно.Назовите прямо три строки: уборка, полотенца или бельё, сервисный сбор.Спросите: будут ли доплаты при заселении — и сохраните ответ в чате.Сверяйте сумму по переписке, а не по устному разговору у двери.Если список появляется только после перевода, это уже не недоразумение.Если нужна квартира в Тюмени с понятной ценой без сюрпризов в такси, пишите:",
+      "catalog_title": "Рейтинг 4,8. Два «всё супер» — и 3 900 ₽ под вопросом",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "outbound_unique_slugs": [
+    "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+    "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+    "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+    "rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B10-hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}

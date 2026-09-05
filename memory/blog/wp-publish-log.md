@@ -1,5 +1,21 @@
 # WP publish log
 
+## B10 — 2026-09-05
+
+- **topic_id:** B10
+- **slug:** hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400
+- **title:** Хозяин сказал «всё включено». В такси доплатили 2 400 ₽
+- **post_id:** 4421
+- **permalink:** /blog/hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400/
+- **categories:** posutochnaya-arenda (101), sovety-gostyam (106)
+- **featured_image:** 4432
+- **inline_images:** 4433–4435 (3× wp-content/uploads/2026/09/…-inline-0N-2.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS (body_probe nbsp unescape fix; first FTP run false BLOCK)
+- **interlink inbound:** B01 (3745)
+- **publish_method:** sftp (FTP PASV data timeout on cloud; SFTP:22 OK)
+- **llms_deploy:** PASS
+
 ## B07 — 2026-09-02
 
 - **topic_id:** B07

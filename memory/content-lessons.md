@@ -224,9 +224,89 @@ confidence: low
 - Sol переписывает writer POV в «мы как сервис»; при drift — rerun Sol с жёстким «сохранить writer structure» или ship writer→article.
 - Дубли inline-04..07 без второго Grsai-холста — помечать в handoff как paste-and-ship compromise.
 
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260905-1030-B10-all-inclusive-taxi-fee-reveal
+status: proposed
+topic_id: B10
+category: utility
+confidence: low
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP. Урок из publish-артефактов: title-brief.json, description-brief.json, case-delivery-gate PASS, article.html структура, research-notes hook `hidden_fees_all_inclusive`.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest BLOCKER по credentials (INC-20260903-0640).
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Two-beat H1 «Хозяин сказал «всё включено». В такси доплатили 2 400 ₽»: цитата-обещание → контрфакт в движении, не how-to.
+- §1: 4 800 ₽ за две ночи (2 400 ₽/ночь) до списка доплат; сценарий «уже в такси» как асимметрия после перевода.
+- Klyshin «Нет. Так не заселяем.» + «Сначала проверка. Потом деньги и ключ.»; вопрос-отмычка «Что именно входит в «всё включено» — списком до перевода?» → TG/MAX mid-body.
+- Редакционный дисклеймер: 2 400 ₽ — пример кейса, не средняя доплата по Тюмени; рыночные ориентиры уборки 800–1 500 ₽+.
+- H2 «Где фраза «всё включено» разваливается» — три строки (уборка, сервисный сбор, расходники) + Avito Путешествия март 2026 про видимость уборки до брони.
+- Interlink spine: B04 доплата за гостя, B08 тишина после предоплаты, B02 залог на выезде, B05 рейтинг ≠ состав цены.
+- Wordstat: spine «квартиры посуточно тюмень» 5261 (Tyumen 55+11176); узкий «все включено квартира посуточно» 3 (RF) — угол в объявлении, не P0.
+
+### Change
+- В кейсах `hidden_fees_all_inclusive` в §1 сразу называть **момент предъявления** (такси/дорога), не только «у двери» — это усиливает асимметрию после перевода.
+- Параллельно с итоговой суммой за N ночей перечислять три типовые строки (уборка, сервис, полотенца) до морали — гость видит, где «широкая» фраза сужается.
+
+### Never again
+- «Всё включено» без itemized list до перевода; подмена широкого смысла узким («техника и Wi‑Fi») без предупреждения.
+- How-to чеклист до кейса и Klyshin-отреза; чеклист только после «Мой вывод как практика».
+- Выдавать dramatized ₽ за доплату за рыночную статистику без явного editorial disclaimer.
+
 ### Proposed apply
-- Cover canon: при gen_only slice4 документировать допустимость копий inline для publish-слота 7.
+- Scout: при hook `hidden_fees_all_inclusive` логировать original Klyshin hook + final P0 spine Tyumen + note «все включено» query volume (узкий угол).
+- Title/Description: держать контраст «чат vs такси» как в description-brief B10 (не дублировать H1).
 - Review only; Writer prompt не трогать автоматически.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260905-1030-B10-timing-after-transfer-taxi
+status: proposed
+topic_id: B10
+category: structure
+confidence: low
+
+### Evidence
+- artifact: title-brief.json#angle
+  finding: angle «Гость уже ехал в такси… список доплат»; opening-meta-gate PASS; lead фиксирует перевод до сообщения о доплате.
+- metrika_signal: none (credentials unavailable; causal retention не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Слой «после перевода и посадки в такси» отдельным абзацем — объясняет, почему список прилетает именно сейчас (не злодейство, а слабая позиция гостя).
+- Sibling-темы money-before-clarity (B04 door, B08 silence, B09 barrier) собраны одной красной линией в mid-body.
+
+### Change
+- Для money-timing hooks (taxi, barrier, silence) всегда включать **до/после перевода** контраст в utility-блок — не только сумму ₽.
+
+### Never again
+- Писать hidden-fee кейс только про состав строк, игнорируя temporal leverage (когда гость уже в пути и не разворачивается).
+
+### Proposed apply
+- Writer checklist (review-only): hidden_fees + transfer_done → один абзац про asymmetric moment после оплаты.
 
 ### Durable applied
 - none

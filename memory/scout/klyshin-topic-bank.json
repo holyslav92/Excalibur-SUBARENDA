@@ -3,7 +3,7 @@
   "source_channel": "https://t.me/klyshin_A",
   "source_label": "Алексей Клышин — angle only (ритм delivery, не копировать сделки)",
   "tenant": "Добрый дом — посуточная аренда / субаренда Тюмень",
-  "updated_at": "2026-09-01",
+  "updated_at": "2026-09-05",
   "timezone": "Asia/Yekaterinburg",
   "algorithm": "klyshin_hook → wordstat_probe → rework_for_demand → final_P0_or_skip_after_rework",
   "angle_rotation": {
@@ -171,6 +171,22 @@
       "final_p0": {"phrase": "квартиры посуточно тюмень", "volume_tyumen": 5446, "volume_ru": 12048},
       "wordstat_rework_log": "probe «поздний выезд аренда» API empty → «выезд посуточно» API empty → «поздний выезд» 142 (55+11176) → «хранение багажа» 133/12186 → «хранение багажа тюмень» 28 → «камера хранения багажа тюмень» 18 → «аренда квартиры посуточно» 756 → final P0 «квартиры посуточно тюмень» 5446/12048",
       "used_in_articles": ["B06"]
+    },
+    {
+      "id": "hidden_fees_all_inclusive",
+      "hook_ru": "Хозяин написал «всё включено». У двери попросили ещё 2 400.",
+      "angle": "маркетинг «без доплат» vs счёт при заселении (уборка, ЖКХ, сервис); NOT heater +500 (WP), NOT third guest (B04)",
+      "klyshin_signal": "moral: сначала список включённого, потом ключ; lockpick: что входит в «всё включено»?",
+      "wordstat_probes": ["скрытые доплаты посуточно", "все включено квартира посуточно", "квартиры посуточно тюмень"],
+      "dzen_pattern_prefer": [2, 3],
+      "anti_dup": ["hidden_fees", "доплата за третьего", "обогреватель +500", "парковка", "предоплата"],
+      "tyumen_localize": true,
+      "status": "used",
+      "last_seen": "2026-09-05",
+      "queue_slot": "2026-09-05 B10 director",
+      "final_p0": {"phrase": "квартиры посуточно тюмень", "volume_tyumen": 5261, "volume_ru": 728517},
+      "wordstat_rework_log": "probe «скрытые доплаты посуточно» empty → «все включено квартира посуточно» 3 (225) → «доплата за уборку посуточно» 3 → «жкх посуточно» 21 → «уборка посуточно» 2145 host bias → «залог посуточно» 3267 (225) → «аренда квартиры посуточно» 729 (55+11176) → final P0 «квартиры посуточно тюмень» 5261 (55+11176) | compare «снять квартиру посуточно» 728517 (225)",
+      "used_in_articles": ["B10"]
     }
   ],
   "parked_hooks": {
@@ -179,7 +195,6 @@
       "hot_water_boiler",
       "neighbors_night",
       "dog_breed_fee",
-      "hidden_fees",
       "early_checkin",
       "deposit_cleaning",
       "cancel_prepay",

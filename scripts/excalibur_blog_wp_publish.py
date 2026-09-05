@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import base64
+import html as html_lib
 import io
 import json
 import os
@@ -231,6 +232,22 @@ def normalize_post_title(title: str) -> str:
     if not title:
         return title
     return title[0].upper() + title[1:]
+
+
+def build_body_probe(content: str, max_len: int = 120) -> str:
+    """Plain-text prefix of the first <p> for live-page gate matching.
+
+    HTML entities must be unescaped before truncation so probes never end
+    mid-entity (e.g. ``4&nbs`` from ``4&nbsp;800``).
+    """
+    first_paragraph = re.search(
+        r"<p\b[^>]*>(.*?)</p>", str(content or ""), flags=re.I | re.S
+    )
+    if not first_paragraph:
+        return ""
+    probe = re.sub(r"<[^>]+>", " ", first_paragraph.group(1))
+    probe = html_lib.unescape(probe)
+    return re.sub(r"\s+", " ", probe).strip()[:max_len]
 
 
 def normalize_media_text(value: object) -> str:
@@ -1592,13 +1609,7 @@ def main() -> int:
         )
         with urllib.request.urlopen(request, timeout=20) as response:
             live_html = response.read().decode("utf-8", errors="replace")
-        first_paragraph = re.search(
-            r"<p\b[^>]*>(.*?)</p>", str(payload.get("content") or ""), flags=re.I | re.S
-        )
-        body_probe = ""
-        if first_paragraph:
-            body_probe = re.sub(r"<[^>]+>", " ", first_paragraph.group(1))
-            body_probe = re.sub(r"\s+", " ", body_probe).strip()[:120]
+        body_probe = build_body_probe(str(payload.get("content") or ""))
         live_errors = inspect_live_page(
             live_html,
             expected_slug=str(payload.get("slug") or ""),

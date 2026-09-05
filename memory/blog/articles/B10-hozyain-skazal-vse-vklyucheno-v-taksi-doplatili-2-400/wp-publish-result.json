@@ -1,0 +1,27 @@
+{
+  "slug": "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400",
+  "topic_id": "B10",
+  "permalink": "{{SITE_BASE}}/blog/hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B10-hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1097608,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4421 slug=hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400\nOK categories=101,106\nOK dzen_yzen_meta=1\nOK featured_image=4432\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4433 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400-inline-01-2.png\nOK inline_alt=4433\nOK inline_caption=4433\nOK inline_description=4433\nOK inline_image_upload=4434 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400-inline-02-2.png\nOK inline_alt=4434\nOK inline_caption=4434\nOK inline_description=4434\nOK inline_image_upload=4435 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400-inline-03-2.png\nOK inline_alt=4435\nOK inline_caption=4435\nOK inline_description=4435\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 3,
+    "expected_inline": 3,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400/",
+    "errors": []
+  }
+}

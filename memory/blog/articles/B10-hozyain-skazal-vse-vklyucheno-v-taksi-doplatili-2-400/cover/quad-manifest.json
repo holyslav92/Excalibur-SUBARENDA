@@ -1,0 +1,95 @@
+{
+  "topic_id": "B10",
+  "canvas_file": "cover/canvas-slice4.png",
+  "layout": "2x2",
+  "pipeline": "slice4_grid_1x_image_api",
+  "inline_count": 3,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-slice4.png",
+      "batch_file": "cover/slice4-mcp-batch.json",
+      "prompt_file": "cover/slice4-mcp-prompt.txt",
+      "result_file": "cover/slice4-mcp-result.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    }
+  ],
+  "style_preset": "the_rieltor_twilight_gold",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "cover_hook": "В такси доплатили 2 400 ₽",
+  "cover_hook_highlight": "доплатили",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Grsai GRSAI_PRIMARY_IMAGE_MODEL — ONE 2048×1152 slice4 grid. Factory logo paste cover tile only.",
+  "cover_motifs": {
+    "composition": "taxi backseat guest phone chat surprise fee receipt headline top-right logo pad",
+    "location": "early september 2026 warm tyumen evening city lights through taxi window not winter no snow",
+    "meme": "zero catalog stickers photoreal taxi",
+    "prop_set": "smartphone messenger chat suitcase taxi meter printed receipt",
+    "sticker_set": "квартиры посуточно тюмень снять квартиру посуточно в тюмени",
+    "joke": "all inclusive chat until taxi pings plus 2400 rubles"
+  },
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "снять квартиру посуточно в тюмени",
+    "квартиры посуточно в тюмени недорого"
+  ],
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Гость в такси в Тюмени смотрит в телефон: хозяин пишет о доплате 2400 рублей после фразы «всё включено».",
+      "scene_hint": "Салон такси вечером в сентябре, Тюмень за окном — зелёные деревья, тёплый свет, без снега. Гость с чемоданом держит смартфон с перепиской «всё включено» и новым списком доплат 2400 ₽. На бумажном чеке на коленях крупная кириллица L1 «Хозяин: всё включено» L2 «В такси — доплата 2 400 ₽». На табло такси или наклейке в салоне читаемый номер +7 (993) 574-83-22. TOP-RIGHT чистая светлая зона 8–12% для factory logo paste — без логотипа и без мемов.",
+      "meme_caption_ru": "",
+      "sticky": "Сначала проверка — потом перевод"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Где фраза «всё включено» разваливается",
+      "visual_type": "comparison_table_ui",
+      "scene_hint": "Светлая кухня-студия: на столе два листа — слева объявление «всё включено 4800 ₽», справа список строк «уборка», «сервис», «полотенца» с суммой 2400 ₽; фотореал, без логотипа и без мемов.",
+      "alt": "Сравнение: широкая фраза «всё включено» и отдельные строки доплат на 2400 рублей.",
+      "labels": [
+        "4800 ₽ две ночи",
+        "2 400 за ночь",
+        "сообщение в такси",
+        "до заселения"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Прихожая квартиры: слева гость дома с ноутбуком и спокойным чатом до перевода, справа тот же гость в такси с тревожным сообщением о доплате; стрелка «до оплаты → после перевода»; фотореал, без логотипа.",
+      "alt": "До перевода можно спросить список цены, после оплаты в такси — уже поздно спорить.",
+      "labels": [
+        "финальная уборка",
+        "сервисный сбор",
+        "полотенца и бельё",
+        "ещё 2 400 ₽"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Чек-лист перед переводом",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Светлый стол у окна: лист с чек-листом из четырёх пунктов кириллицей «итоговая сумма», «что входит», «уборка отдельно?», «доплаты при заселении?»; рядом телефон с открытым чатом; фотореал, без логотипа.",
+      "alt": "Чек-лист вопросов гостю до перевода денег за посуточную квартиру.",
+      "labels": [
+        "спроси до перевода",
+        "что входит списком",
+        "уборка 800–1500 ₽",
+        "проверка до оплаты"
+      ]
+    }
+  },
+  "cover_keys_ru": []
+}

@@ -1,0 +1,50 @@
+{
+  "topic_id": "B10",
+  "slug": "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400",
+  "cover_family": "brand_collage",
+  "style_preset": "the_rieltor_twilight_gold",
+  "pipeline": "slice4_grid_1x_image_api",
+  "file": "cover/cover.png",
+  "alt": "Гость в такси в Тюмени смотрит в телефон: хозяин пишет о доплате 2400 рублей после фразы «всё включено».",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-slice4.png",
+  "generated_at": "2026-09-05T09:38:02+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Гость в такси в Тюмени смотрит в телефон: хозяин пишет о доплате 2400 рублей после фразы «всё включено».",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Сравнение: широкая фраза «всё включено» и отдельные строки доплат на 2400 рублей.",
+      "h2_anchor": "Где фраза «всё включено» разваливается",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "До перевода можно спросить список цены, после оплаты в такси — уже поздно спорить.",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Чек-лист вопросов гостю до перевода денег за посуточную квартиру.",
+      "h2_anchor": "Чек-лист перед переводом",
+      "visual_type": "labeled_checklist",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}

@@ -556,3 +556,79 @@ checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_dzen_cover_cache_bust.py`
 - `python3 scripts/excalibur_blog_dzen_cover_cache_bust.py --slug pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate` (SFTP upload OK)
 commit: pending
+
+## INC-20260905-1005-publish-body-probe-nbsp
+
+status: fixed
+run_date: 2026-09-05
+role: excalibur-blog-publish
+topic_id: B10
+article_dir: memory/blog/articles/B10-hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400
+severity: medium
+category: script
+
+### What went wrong
+
+- After successful WP post create (B10, post 4421), live-page gate BLOCK: `expected article body probe not found on live page`.
+- `body_probe` truncated at 120 chars mid-`&nbsp;` entity (`4&nbs`) before HTML unescape; live plain text has decoded nbsp.
+
+### How the agent recovered this run
+
+- Added `html.unescape` before `[:120]` slice in `excalibur_blog_wp_publish.py`; re-ran publish via SFTP:22 → live-page PASS.
+
+### Durable fix needed before next run
+
+- Unescape HTML entities in body_probe generation before truncation; extract testable helper + regression test.
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_wp_publish.py`
+- `tests/test_body_probe.py`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-09-05
+fix_summary:
+- `build_body_probe()` unescapes HTML entities before `[:120]` truncation (INC B10 nbsp mid-entity).
+- Regression test `tests/test_body_probe.py` locks B10 opening paragraph scenario.
+files_changed:
+- `scripts/excalibur_blog_wp_publish.py`
+- `tests/test_body_probe.py`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_wp_publish.py`
+- `python3 -m unittest tests.test_body_probe -v`
+- B10 publish PASS + live-page-report PASS + ledger upsert
+commit: a927172
+
+## INC-20260905-1030 — Metrika credentials missing (Content-learner B10)
+
+status: needs-human
+run_date: 2026-09-05
+role: excalibur-blog-content-learner
+topic_id: B10
+article_dir: memory/blog/articles/B10-hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400
+severity: medium
+category: env
+
+### What went wrong
+
+- `excalibur_blog_metrika_fetch.py --days 30 --ingest` → METRIKA CREDENTIALS BLOCKER (same root cause as INC-20260903-0640).
+
+### How the agent recovered this run
+
+- evidence_gate SKIP (no content-evidence-report.json); recorded 2 optional/low-confidence lessons in `memory/content-lessons.md`; no causal Metrika claims.
+
+### Durable fix needed before next run
+
+- Set YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets for tenant.
+
+### Fixer resolution
+
+status: needs-human
+reason: env-only blocker; duplicate of INC-20260903-0640
+needed_decision_or_secret: YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets

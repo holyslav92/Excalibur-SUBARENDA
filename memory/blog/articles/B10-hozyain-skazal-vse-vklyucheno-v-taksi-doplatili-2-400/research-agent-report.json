@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "topic_id": "B10",
+  "slug": "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400",
+  "research_date": "2026-09-05",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Telegram @Dobriy_dom_72 post 99 (2026-09-04) + tenant archive post 79 + Klyshin moral rhythm",
+    "source_type": "community",
+    "urls": [
+      "https://t.me/Dobriy_dom_72/99",
+      "https://t.me/Dobriy_dom_72/79",
+      "https://t.me/klyshin_A/3168",
+      "https://t.me/Avito_budet_bron/1066",
+      "https://vk.com/wall-157771437_718407"
+    ],
+    "accessed_at": "2026-09-05",
+    "note": "Fresh week signal: Dobriy_dom_72/99 (Sep 4). B10 angle: all-inclusive promise vs surprise fee stack; 2400 RUB is editorial case only."
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "No bank/developer/gov tariff digits; Avito platform feature cited from official TG channel",
+    "verified_claims": 0,
+    "entities_checked": [],
+    "errors": []
+  },
+  "wordstat": {
+    "status": "PASS",
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 5261,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "снять квартиру посуточно в тюмени",
+        "volume": 1713,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "уборка посуточно",
+        "volume": 2145,
+        "region": "225"
+      },
+      {
+        "phrase": "все включено квартира посуточно",
+        "volume": 3,
+        "region": "225"
+      },
+      {
+        "phrase": "жкх посуточно",
+        "volume": 21,
+        "region": "225"
+      }
+    ]
+  },
+  "errors": []
+}
