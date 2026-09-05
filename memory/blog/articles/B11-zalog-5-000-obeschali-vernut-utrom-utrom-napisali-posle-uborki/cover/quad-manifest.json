@@ -1,0 +1,119 @@
+{
+  "topic_id": "B11",
+  "slug": "zalog-5-000-obeschali-vernut-utrom-utrom-napisali-posle-uborki",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "cover_hook": "Залог 5 000 — обещали утром",
+  "cover_hook_highlight": "утром",
+  "cover_headline_line1": "Залог 5 000 — обещали утром",
+  "cover_headline_line2": "Написали: после уборки",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "залог посуточно",
+    "квартиры посуточно залог"
+  ],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "guest leaving sunny entryway hands keys suitcase phone chat headline poster person in scene TR pad",
+    "location": "early september 2026 warm tyumen apartment hallway green trees window light NOT winter no snow",
+    "meme": "photoreal only zero catalog stickers",
+    "prop_set": "keys suitcase phone messenger chat cleaning checklist 5000 receipt door sign",
+    "sticker_set": "залог посуточно квартиры посуточно тюмень",
+    "joke": "до обеда became после уборки with no hour"
+  },
+  "cover_emotion": "усталость и тревога: ключи сданы, деньги зависли в чате",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Гость у двери посуточной квартиры в Тюмени с чемоданом и ключами смотрит в телефон: обещали вернуть залог до обеда, а пришло «после уборки».",
+      "scene_hint": "Early Sep sunny Tyumen entryway: tired guest with suitcase and keys, phone shows chat shift «до обеда»→«после уборки»; large Cyrillic L1 «Залог 5 000 — обещали утром» L2 «Написали: после уборки» on printed door sign; infoboard +7 (993) 574-83-22 IN scene; NO cat meme; TOP-RIGHT empty pad 8–12% for factory logo; person in scene NOT empty room.",
+      "meme_caption_ru": "",
+      "sticky": "написали после уборки"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Как «до обеда» превратилось в «ждите»",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Phone chat timeline: morning «до обеда» arrow evening «после уборки» arrow «завтра»; receipt 5000₽; sunny Sep.",
+      "alt": "Переписка показывает, как срок возврата залога отодвигается от «до обеда» к «после уборки» и «завтра».",
+      "labels": ["залог 5 000 ₽", "заезд", "на эту же карту"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Когда «после уборки» действительно нормально",
+      "visual_type": "checklist_board",
+      "scene_hint": "Bright apartment: 30-point maid checklist on clipboard, towels, appliances; deadline note «не позднее 18:00».",
+      "alt": "Чек-лист уборки из тридцати пунктов и понятный срок возврата после проверки квартиры.",
+      "labels": ["ключи сданы", "горничная не была", "после уборки"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "infographic_card",
+      "scene_hint": "Desk card «Сначала срок — потом ключи»; same card icon; keys and transfer receipt; early autumn light.",
+      "alt": "Правило: сначала зафиксировать срок возврата залога, потом передавать ключи и деньги.",
+      "labels": ["до обеда", "часа нет", "ждите"]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Что уточнить до перевода залога",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Pre-pay checklist on table: time, card, sum one line; phone chat draft; sunny window Sep Tyumen.",
+      "alt": "Список вопросов гостю до перевода залога: когда, куда и на какую карту вернут деньги.",
+      "labels": ["вечером", "завтра", "следующая проверка"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Утро выезда: ключи сданы",
+      "visual_type": "comparison_table_ui",
+      "scene_hint": "Morning hallway: guest hands keys, bag in car trunk visible through window; chat still says «до обеда».",
+      "alt": "Утро после выезда: ключи переданы, а в переписке всё ещё обещание вернуть залог до обеда.",
+      "labels": ["нет фото", "нет акта", "нет суммы удержания"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Нет спора о повреждениях",
+      "visual_type": "schema_faq_ui",
+      "scene_hint": "Empty damage folder vs vague «ждите» chat bubbles; 30-point checklist icons; photoreal bright.",
+      "alt": "Нет фото повреждений, акта и суммы удержания — только просьба подождать без срока.",
+      "labels": ["30 пунктов", "техника", "полотенца", "стены"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Сначала срок. Потом ключи и деньги",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Flow diagram: deadline in chat → keys → deposit; same card return arrow; green trees outside.",
+      "alt": "Схема: сначала срок и способ возврата на ту же карту, затем ключи и перевод залога.",
+      "labels": ["сначала срок", "потом ключи", "сумма", "та же карта"]
+    }
+  },
+  "cover_keys_ru": []
+}

@@ -1,0 +1,22 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 1,
+  "max_generation_attempts": 2,
+  "output_canvas": "cover/canvas-quad-01.png",
+  "result_path": "cover/quad-mcp-result-01.json",
+  "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+  "preferred_image_flow": {
+    "provider": "grsai",
+    "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
+    "resolution": "2K"
+  },
+  "jobs": [{
+    "slot": "canvas_quad",
+    "tool": "grsai",
+    "mcp_args": {
+      "prompt": "Canvas 2048x1152 2x2 grid four 16:9 panels thin white gutters. Early September 2026 sunny Tyumen NOT winter NO snow. High-key airy #FFFFFF warm terracotta accents. RU Cyrillic only. NO logos any panel — factory PNG paste after split. NO cat meme. Ban: dark cinematic, WordPress UI, drawn logo, white plaque, winter snow, empty stock room.\nTL COVER POSTER person in scene NOT empty room: tired guest with suitcase and keys at apartment door, phone chat shows «до обеда» crossed to «после уборки». LARGE readable Cyrillic headline L1 «Залог 5 000 — обещали утром» L2 «Написали: после уборки» on printed door sign or luggage tag. Phone EXACT «+7 (993) 574-83-22» painted on light infoboard IN scene — big digits, NOT pill button. TOP-RIGHT empty wall pad 8-12% only. Gold sticky «написали после уборки».\nTR inline: phone chat timeline morning «до обеда»→evening «после уборки»→«завтра»; receipt 5000₽. Labels: залог 5 000 ₽|заезд|на эту же карту.\nBL inline: bright apartment maid 30-point checklist clipboard towels appliances; note «не позднее 18:00». Labels: ключи сданы|горничная не была|после уборки.\nBR inline: desk card «Сначала срок — потом ключи» keys transfer receipt. Labels: до обеда|часа нет|ждите.",
+      "aspect_ratio": "16:9",
+      "resolution": "2K"
+    }
+  }]
+}
