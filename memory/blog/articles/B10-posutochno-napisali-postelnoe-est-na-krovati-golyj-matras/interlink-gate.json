@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "topic_id": "B10",
+  "slug": "posutochno-napisali-postelnoe-est-na-krovati-golyj-matras",
+  "candidates_count": 13,
+  "outbound_found": [
+    {
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "title": "beskontaktnoe-zaselenie-posutochno-tyumen"
+    },
+    {
+      "slug": "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+      "title": "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego"
+    },
+    {
+      "slug": "rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super",
+      "title": "rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super"
+    },
+    {
+      "slug": "kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den",
+      "title": "kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den"
+    }
+  ],
+  "outbound_unique_slugs": [
+    "kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den",
+    "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+    "rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super",
+    "beskontaktnoe-zaselenie-posutochno-tyumen"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "warnings": [],
+  "errors": []
+}
