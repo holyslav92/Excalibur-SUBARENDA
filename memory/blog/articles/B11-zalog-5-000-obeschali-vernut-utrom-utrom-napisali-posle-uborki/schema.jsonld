@@ -1,0 +1,39 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/zalog-5-000-obeschali-vernut-utrom-utrom-napisali-posle-uborki/#article",
+  "url": "{{SITE_BASE}}/blog/zalog-5-000-obeschali-vernut-utrom-utrom-napisali-posle-uborki/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/zalog-5-000-obeschali-vernut-utrom-utrom-napisali-posle-uborki/"
+  },
+  "headline": "Залог 5 000 обещали вернуть утром. Утром написали: «после уборки»",
+  "description": "Залог 5 000 ₽ обещали вернуть до обеда, но после выезда срок сменили на «после уборки» без точного часа. До перевода стоит зафиксировать в чате окно возврата, способ перевода и условия удержания.",
+  "datePublished": "2026-09-05",
+  "dateModified": "2026-09-05",
+  "inLanguage": "ru-RU",
+  "author": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ],
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    }
+  }
+}
