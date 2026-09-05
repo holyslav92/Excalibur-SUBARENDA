@@ -1,0 +1,120 @@
+{
+  "topic_id": "B10",
+  "slug": "posutochno-napisali-postelnoe-est-na-krovati-golyj-matras",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "cover_hook": "Постельное есть — матрас голый, нас троих",
+  "cover_hook_highlight": "голый",
+  "cover_headline_line1": "Постельное есть",
+  "cover_headline_line2": "матрас голый, нас троих",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "снять квартиру посуточно в тюмени",
+    "аренда квартир посуточно тюмень"
+  ],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "tired guest trio at bare mattress one folded linen on chair headline board",
+    "location": "early September 2026 rainy evening Tyumen apartment NOT winter NO snow",
+    "meme": "no stickers photoreal utility panels",
+    "prop_set": "bare mattress folded single linen set chair suitcase rain on window",
+    "sticker_set": "квартиры посуточно тюмень снять квартиру посуточно",
+    "joke": "ad says постельное есть but one set on chair for three guests"
+  },
+  "cover_emotion": "усталость и злость: трое гостей, голый матрас, один комплект",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Уставший гость с чемоданом в светлой квартире Тюмени смотрит на голый матрас; крупный кириллический хук «Постельное есть — матрас голый, нас троих» и номер +7 993 574-83-22 на информационном щите.",
+      "scene_hint": "Светлая high-key сцена раннего сентября 2026 в Тюмени: вечер после дождя, ~18°C, гость в повседневной одежде со спины/в три четверти у открытой спальни — на двуспальной кровати голый матрас, на стуле один сложенный комплект белья в ленте. На крупном бумажном/доском постере в сцене кириллица: «Постельное есть» и «матрас голый, нас троих»; на стеновом инфоборде заметно «+7 993 574-83-22». Тёплый дневной свет из окна, зелёные деревья, без снега и зимы. TOP-RIGHT пустой светлый угол 8–12% для factory logo paste; без AI-логотипа.",
+      "meme_caption_ru": "",
+      "sticky": "Сначала проверка",
+      "meme_id": ""
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Слово «есть» — самое дорогое в объявлении",
+      "visual_type": "comparison_table_ui",
+      "scene_hint": "Сравнение «в объявлении / у двери»: слева скрин «постельное есть», справа голый матрас и один комплект на стуле; осенний свет, без людей крупным планом.",
+      "alt": "Сравнение обещания «постельное есть» и реальности: голый матрас и один комплект белья.",
+      "labels": ["4 200 ₽/ночь", "заезд 20:30", "нас трое", "матрас голый"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Почему комплектов вдруг не хватает",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Схема стирки/сушки/резерва: три блока «1 комплект», «на стуле», «найдём позже»; без мемов, только факты; сентябрь, светло.",
+      "alt": "Схема почему не хватает комплектов: один на стуле, остальное «найдём позже».",
+      "labels": ["1 комплект", "на стуле", "«найдём позже»", "«на кровати»"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Фото не застелют кровать",
+      "visual_type": "checklist_board",
+      "scene_hint": "Контраст: красивое фото застеленной кровати vs вечерний голый матрас; наклейки «бельё: 2 800 ₽», «ждать 40–90 минут».",
+      "alt": "Сравнение рекламного фото с бельём и реального голого матраса вечером.",
+      "labels": ["бельё: 2 800 ₽", "ждать 40–90 минут", "допкомплект ~500 ₽"]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Вопрос, который открывает дверь раньше ключа",
+      "visual_type": "schema_faq_ui",
+      "scene_hint": "Крупный вопрос на карточке: «Сколько комплектов на нашу бронь?»; три иконки кроватей; чат-пузырь «всё имеется» перечёркнут.",
+      "alt": "Правильный вопрос до оплаты: сколько комплектов подготовят на бронь.",
+      "labels": ["вопрос до оплаты", "сколько комплектов?", "на нашу бронь"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Порядок нельзя переставлять",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Две дорожки: «сначала перевод» (красный крест) vs «сначала проверка» (зелёная галочка); цифры на карточках.",
+      "alt": "Схема: сначала проверка и цифры в чате, потом перевод — не наоборот.",
+      "labels": ["сначала проверка", "потом перевод", "от ~1 150 ₽"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Наш вывод простой.",
+      "visual_type": "infographic_card",
+      "scene_hint": "Карточка-вывод: «постельное есть» как рукопожатие в темноте; список из 4 пунктов проверки; светлый фон.",
+      "alt": "Инфографика: слово «есть» — обещание, которое нужно проверить цифрами заранее.",
+      "labels": ["3 комплекта", "на каждое место", "3 полотенца на человека"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Если нужна квартира в Тюмени с понятными цифрами",
+      "visual_type": "comparison_table_ui",
+      "scene_hint": "Итоговая таблица: 3 места / 3 комплекта / 3 полотенца / проверить до оплаты; уютная светлая спальня с тремя застеленными кроватями.",
+      "alt": "Три застеленных места, три комплекта и напоминание проверить до оплаты.",
+      "labels": ["3 места", "3 комплекта", "3 полотенца", "проверить до оплаты"]
+    }
+  },
+  "cover_keys_ru": []
+}
