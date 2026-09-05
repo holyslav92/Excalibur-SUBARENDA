@@ -512,6 +512,10 @@ reason:
 needed_decision_or_secret:
 - YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets
 
+### B10 re-run (2026-09-05)
+
+- Content-learner B10: same METRIKA CREDENTIALS BLOCKER; lessons recorded Metrika-only (low confidence).
+
 ## INC-20260903-0642 — dzen cover cache bust phone pill gate
 
 status: fixed
