@@ -1,3 +1,58 @@
+# Sol inputs B11
+
+topic_id: B11
+h1: Залог 5 000 обещали вернуть утром. Утром написали: «после уборки»
+
+**OUTPUT:** Return ONLY final article.html HTML starting with `<h1>`. No markdown wrapper, no BLOCKER.
+
+## Read for style ONLY
+- shared/SOUL.md
+- shared/soul-examples/good-outputs.md
+- shared/soul-examples/bad-outputs.md
+- shared/article-style.md
+- drafts/writer.html (facts — do NOT invent)
+- title-brief.json
+- research-notes.md
+
+## Sol task
+Apply tenant SOUL voice: warm host «Добрый дом», comfort+, simple Russian, reader inside checkout/chat/plans.
+Rewrite writer.html meaning into CASE rhythm (~900–1200 words, dense §1, not checklist landing).
+
+### CASE delivery (HARD)
+1. §1 = 1–2 dense paragraphs: quote → burn (5 000 ₽, «до обеда» → «после уборки»). NO chopped 3-word lead. NO duty-log (date/HH:MM in §1). **BAN HH:MM clock stamps in entire article** (gate fails at 3+ `\d:\d\d`).
+2. Identity after §1: «Я хост посуточной в Тюмени. Это «Добрый дом».» + Telegram · MAX
+3. Reader inside (you/present tense)
+4. Numbers = price of burn (5 000 ₽)
+5. Dialogue with illusion break in prose
+6. One case → one verdict. Checklist AFTER moral
+7. Moral: first deadline, then keys/money
+8. Lockpick: «Когда именно и куда вернёте залог после выезда?»
+9. ONE mid fight-question → TG or MAX (keep from writer)
+10. NO encyclopedia, NO ЕГРН/Шакin/риэлтор
+
+### Keep from writer.html (facts, links, structure)
+- 5 000 ₽ deposit, promised «до обеда», shift to «после уборки» / «ждите» / «завтра»
+- NO damage/scratch dispute (contrast B02 link only)
+- 30-point maid checklist at «Добрый дом»
+- «Нет. Так не заселяем.» — max 1× in article
+- H2: «Мой вывод как практика» before checklist
+- 4 outbound interlinks (preserve URLs):
+  - perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem
+  - pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate
+  - hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400
+  - oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego
+- Mid fight-question: «после уборки» без часа — TG/MAX
+- ONE CTA block at end: TG, MAX, @Dobriy_dom_Tyumen, booking, site, +7 (993) 574-83-22
+- Word cap: **950–1250 words** (hard fail >1300)
+
+Do NOT add facts not in writer.html/research.
+Do NOT use +7 922 001 65 05.
+Do NOT double CTA blocks.
+Do NOT use literal HH:MM times anywhere in article.
+
+## Writer draft (source of truth)
+
+```html
 <p>«Верну утром, до обеда, на эту же карту» — так было написано в чате чёрным по белому. Залог 5 000 ₽ вы перевели ещё на заселении, ключи на выезде отдали, сумку закинули в багажник, и дальше день расписан: дела, встреча, обратный билет. Телефон вибрирует, вы открываете переписку — а там уже другая формулировка: «горничная ещё не была, вернём после уборки». Не «до обеда». Не «через час». А «после уборки» — без часа, без дедлайна, без конца.</p>
 
 <p>Обещание было конкретным. Замена — нет. И ожог тут не в пяти тысячах, а в том, что срок тихо подменили условием. Условие может наступить в час дня, в шесть вечера или завтра — и формально никто ничего не нарушил, потому что «после уборки» — это не время. Деньги ваши, а календарь чужой.</p>
@@ -32,7 +87,7 @@
 
 <p>Один вопрос закрывает всю эту историю: «Когда именно и куда вернёте залог после выезда?» Именно так, двумя частями — «когда» и «куда». Ответ «после уборки» — это ответ на половину вопроса, и его нужно дожать: «после уборки — но не позднее какого часа?» Нормальный хост назовёт время за пять секунд, потому что он его и так знает. Тот, кто планирует тянуть, начнёт объяснять, что «всё зависит от горничной».</p>
 
-<p>Та же проверка работает не только с залогом. Любая сумма, которая всплывает после оплаты, живёт по этому закону — <a href="https://добрыйдом-72.рф/blog/hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400/">«всё включено», а в такси доплатили 2 400</a>, или <a href="https://добрыйдом-72.рф/blog/oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego/">оплатил за двоих, а у двери попросили доплату за третьего</a>. Схема одна: сначала ваши деньги, потом уточнение условий.</p>
+<p>Та же проверка работает не только с залогом. Любая сумма, которая всплывает после оплаты, живёт по этому закону — <a href="https://добрыйдом-72.рф/blog/hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400/">«всё включено», а в такси доплатили 2 400</a>, или <a href="https://dобрыйдom-72.рф/blog/oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego/">оплатил за двоих, а у двери попросили доплату за третьего</a>. Схема одна: сначала ваши деньги, потом уточнение условий.</p>
 
 <h2>Мой вывод как практика</h2>
 
@@ -57,3 +112,4 @@
 <p>Тридцать секунд переписки до заселения экономят вам вечер бессмысленных напоминаний после выезда. Это вся математика.</p>
 
 <p>Мы в «Добром доме» называем окно возврата залога до выдачи ключей и пишем его текстом. Хотите так же — приходите: канал <a href="https://t.me/Dobriy_dom_72">Telegram</a>, <a href="https://max.ru/id660300569233_biz">MAX</a>, <a href="https://добрыйдом-72.рф/booking/">бронирование</a>, <a href="https://добрыйдом-72.рф/">сайт</a>. Позвонить: +7 (993) 574-83-22. Вопрос менеджеру — <a href="https://t.me/Dobriy_dom_Tyumen">сюда</a>.</p>
+```
