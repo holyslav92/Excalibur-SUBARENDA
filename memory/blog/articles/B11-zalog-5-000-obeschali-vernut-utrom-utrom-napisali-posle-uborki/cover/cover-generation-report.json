@@ -1,0 +1,16 @@
+{
+  "topic_id": "B11",
+  "provider": "grsai",
+  "model_tier": "vip",
+  "canvases": 2,
+  "canvas_size": "2048x1152",
+  "export_size": "1200x675",
+  "attempts": {
+    "canvas_1": 1,
+    "canvas_2": 1,
+    "total": 2
+  },
+  "logo_panels": ["cover", "inline_1", "inline_3", "inline_7"],
+  "logo_files": ["cover.png", "inline-01.png", "inline-03.png", "inline-07.png"],
+  "generated_at": "2026-09-05T13:01:17+00:00"
+}

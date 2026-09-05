@@ -1,5 +1,22 @@
 # WP publish log
 
+## B11 — 2026-09-05
+
+- **topic_id:** B11
+- **slug:** zalog-5-000-obeschali-vernut-utrom-utrom-napisali-posle-uborki
+- **title:** Залог 5 000 обещали вернуть утром. Утром написали: «после уборки»
+- **post_id:** 4439
+- **permalink:** /blog/zalog-5-000-obeschali-vernut-utrom-utrom-napisali-posle-uborki/
+- **categories:** posutochnaya-arenda (101), zalog-i-vyiezd (102)
+- **featured_image:** 4440
+- **inline_images:** 4441–4447 (7× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS (cover + 7 inline → wp-content)
+- **dzen cache bust:** cover-dzen-v3 + cover-dzen-v3-1024x576 uploaded; feed enclosure → …-cover-dzen-v3.png
+- **interlink inbound:** B01 (3745)
+- **publish_method:** sftp (FTP PASV data timeout on cloud; SFTP:22 OK)
+- **llms_deploy:** PASS (SFTP after parent publish hung on post-steps)
+
 ## B10 — 2026-09-05
 
 - **topic_id:** B10

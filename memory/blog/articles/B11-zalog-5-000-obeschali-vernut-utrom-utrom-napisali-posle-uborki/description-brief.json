@@ -1,0 +1,10 @@
+{
+  "topic_id": "B11",
+  "description": "Ключи уже сдали, а 5 000 ₽ всё ещё «на уборке». Сначала обещали вернуть до обеда, потом попросили ждать — когда срок возврата превращается в туман?",
+  "rhythm": "klyshin_case_hook",
+  "geo": "Тюмень",
+  "author_brand": "Добрый дом",
+  "not_equal_title": true,
+  "not_truncated_lead": true,
+  "verdict": "PASS"
+}

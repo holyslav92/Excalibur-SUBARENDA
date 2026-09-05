@@ -313,3 +313,88 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+---
+
+## LESSON-20260905-1346-B11-deposit-after-cleaning-no-deadline
+status: proposed
+topic_id: B11
+category: utility
+confidence: low
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP. Урок из publish-артефактов: title-brief.json angle `deposit_cleaning_delay`, description-brief.json, case-delivery-gate PASS, article.html структура, research-notes hook @klyshin_A.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest BLOCKER (INC-20260903-0640, INC-20260905-1346).
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Two-beat H1 «Залог 5 000 обещали вернуть утром. Утром написали: «после уборки»»: сумма → смена обещания на формулировку без часа, не how-to.
+- §1: цитата «верну утром, до обеда, на эту же карту», ₽5 000 при заселении, цепочка 11:40 → 12:30 → 18:00 до идентичности хоста.
+- Klyshin-отрез: обещанный срок → «после уборки» без дедлайна; mid-body вопрос «после уборки — нормально или красный флаг?» → TG/MAX.
+- H2 «Когда «после уборки» действительно нормально»: чек-лист 30 пунктов + контраст «с пределом (до 18:00) vs без часа».
+- Явное разведение с B02: нет фото/акта/суммы удержания — только temporal shift, не damage dispute.
+- Wordstat: P0 «залог посуточно» 3267 (RF); spine «квартиры посуточно тюмень» 5261 (Tyumen 55+11176); conflict «не вернули залог» 56–62 (RF) — угол B11 = сдвиг срока, не отказ.
+- Interlink spine: B02 прямой отказ, B08 тишина после предоплаты, B10 «всё включено», B04 доплата у двери.
+
+### Change
+- В кейсах `deposit_cleaning_delay` в §1 сразу фиксировать **три точки сдвига с часами** (не только финальную «после уборки») — гость видит паттерн «каждый вопрос = новый шаг».
+- Параллельно с ₽5 000 называть **способ возврата** («на эту же карту») до морали — не только сумму и время.
+
+### Never again
+- Смешивать B11 (timing shift) с B02 (damage/«не вернём») — sibling-link только с явным контрастом «здесь нет предмета спора».
+- «После уборки» без named limit как единственный срок в opening — если в lead уже было «до обеда», контрфакт должен показать замену условия.
+- How-to чеклист до Klyshin-отреза; чеклист только после «Мой вывод как практика».
+
+### Proposed apply
+- Scout: при hook `deposit_cleaning_delay` логировать original Klyshin hook + final P0 «залог посуточно» + note conflict-query volume (узкий «не вернули» vs широкий залог).
+- Title/Description: держать контраст «ключи сданы / деньги на уборке» как в description-brief B11 (не дублировать H1).
+- Review only; Writer prompt не трогать автоматически.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260905-1346-B11-post-checkout-leverage-loss
+status: proposed
+topic_id: B11
+category: structure
+confidence: low
+
+### Evidence
+- artifact: title-brief.json#angle
+  finding: angle «deposit_cleaning_delay — обещанный срок сменили на формулировку без времени»; opening-meta-gate PASS; lead фиксирует ключи уже сданы, рычаг потерян.
+- metrika_signal: none (credentials unavailable; causal retention не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Слой «пока ключи у вас — можно уточнить; после выезда остаётся строчка в чате» — отдельный абзац в utility-блоке, не только мораль.
+- Финал «Сначала срок. Потом ключи и деньги.» — одна строка перед чеклистом, зеркалит Klyshin «Сначала проверка. Потом перевод.» из sibling-тем.
+- H2 «Как «до обеда» превратилось в «ждите»» с inline-перепиской — визуальный таймлайн сдвигов.
+
+### Change
+- Для post-checkout money hooks (deposit return, cleaning delay) всегда включать **asymmetric moment после сдачи ключей** в utility-блок — не только хронологию сообщений.
+
+### Never again
+- Писать deposit-return кейс только про формулировки в чате, игнорируя потерю leverage после key handover.
+
+### Proposed apply
+- Writer checklist (review-only): deposit_cleaning_delay → один абзац «ключи сданы → рычаг исчез» до sibling interlink.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded

@@ -15,3 +15,4 @@ Excalibur-2-Cloud — не копировать URL tymenrieltor.ru.
 | 2026-09-03 | B08 | pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate | /blog/pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate/ | published |
 | 2026-09-04 | B09 | posutochno-v-tyumeni-parkovka-ryadom-u-shlagbauma-propuska-net | /blog/posutochno-v-tyumeni-parkovka-ryadom-u-shlagbauma-propuska-net/ | published |
 | 2026-09-05 | B10 | hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400 | /blog/hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400/ | published |
+| 2026-09-05 | B11 | zalog-5-000-obeschali-vernut-utrom-utrom-napisali-posle-uborki | /blog/zalog-5-000-obeschali-vernut-utrom-utrom-napisali-posle-uborki/ | published |

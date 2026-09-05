@@ -1,0 +1,22 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 2,
+  "max_generation_attempts": 2,
+  "output_canvas": "cover/canvas-quad-02.png",
+  "result_path": "cover/quad-mcp-result-02.json",
+  "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+  "preferred_image_flow": {
+    "provider": "grsai",
+    "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
+    "resolution": "2K"
+  },
+  "jobs": [{
+    "slot": "canvas_quad",
+    "tool": "grsai",
+    "mcp_args": {
+      "prompt": "Canvas 2048x1152 2x2 grid four 16:9 panels thin white gutters. Early September 2026 sunny Tyumen NOT winter NO snow. High-key airy informative editorial collage. RU Cyrillic only. NO logos any panel. NO cat meme max zero stickers. Ban: dark, WordPress UI, drawn logo, winter snow, Shakin host face.\nTL inline: pre-pay checklist on table — time, card, sum one line; phone chat draft. Labels: вечером|завтра|следующая проверка.\nTR inline: morning hallway guest hands keys bag in car trunk through window; chat «до обеда». Labels: нет фото|нет акта|нет суммы удержания.\nBL inline: empty damage folder vs vague «ждите» chat; 30-point checklist icons. Labels: 30 пунктов|техника|полотенца|стены.\nBR inline: flow diagram deadline in chat → keys → deposit; same card return arrow green trees outside. Labels: сначала срок|потом ключи|сумма|та же карта.",
+      "aspect_ratio": "16:9",
+      "resolution": "2K"
+    }
+  }]
+}

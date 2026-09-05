@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "topic_id": "B11",
+  "slug": "zalog-5-000-obeschali-vernut-utrom-utrom-napisali-posle-uborki",
+  "candidates_count": 14,
+  "outbound_found": [
+    {
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "title": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem"
+    },
+    {
+      "slug": "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+      "title": "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego"
+    },
+    {
+      "slug": "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+      "title": "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate"
+    },
+    {
+      "slug": "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400",
+      "title": "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400"
+    }
+  ],
+  "outbound_unique_slugs": [
+    "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+    "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+    "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400",
+    "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "warnings": [],
+  "errors": []
+}

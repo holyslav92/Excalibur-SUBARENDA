@@ -1,0 +1,12 @@
+{
+  "category_ids": [
+    101,
+    102
+  ],
+  "category_slugs": [
+    "posutochnaya-arenda",
+    "zalog-i-vyiezd"
+  ],
+  "errors": [],
+  "status": "PASS"
+}
