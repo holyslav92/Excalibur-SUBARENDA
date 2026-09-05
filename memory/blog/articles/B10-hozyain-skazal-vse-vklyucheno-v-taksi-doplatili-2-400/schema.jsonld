@@ -1,0 +1,44 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "{{SITE_BASE}}/#organization",
+      "name": "Добрый дом",
+      "url": "{{SITE_BASE}}/",
+      "sameAs": [
+        "{{SITE_BASE}}/"
+      ],
+      "telephone": "+7 (993) 574-83-22",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Тюмень",
+        "addressCountry": "RU"
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "{{SITE_BASE}}/blog/hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400/",
+      "url": "{{SITE_BASE}}/blog/hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400/",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{SITE_BASE}}/blog/hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400/"
+      },
+      "headline": "Хозяин сказал «всё включено». В такси доплатили 2 400 ₽",
+      "description": "Хозяин обещал «всё включено», но гость уже в такси получил список доплат на 2 400 ₽: уборка, коммунальные услуги, сервис и полотенца перед заселением.",
+      "datePublished": "2026-09-05",
+      "dateModified": "2026-09-05",
+      "inLanguage": "ru-RU",
+      "author": {
+        "@id": "{{SITE_BASE}}/#organization"
+      },
+      "publisher": {
+        "@id": "{{SITE_BASE}}/#organization"
+      },
+      "contentLocation": {
+        "@type": "City",
+        "name": "Тюмень"
+      }
+    }
+  ]
+}
