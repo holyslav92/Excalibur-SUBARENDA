@@ -1,0 +1,133 @@
+{
+  "agent": "excalibur-blog",
+  "date_context": {
+    "timezone": "Asia/Yekaterinburg",
+    "today_iso": "2026-09-05",
+    "today_ru": "05.09.2026",
+    "year": 2026,
+    "month": 9,
+    "month_name_ru": "сентябрь",
+    "weekday_ru": "суббота"
+  },
+  "topic": {
+    "topic_id": "B11",
+    "title": "Залог 5 000 обещали вернуть утром. Утром написали: после уборки",
+    "h1": "Залог 5 000 обещали вернуть утром. Утром написали: после уборки",
+    "slug": "zalog-5-000-obeschali-vernut-utrom-utrom-napisali-posle-uborki",
+    "primary_query": "залог посуточно вернуть после уборки",
+    "priority": "P0"
+  },
+  "searches": [
+    {
+      "query_id": "primary_fresh",
+      "query": "залог посуточно вернуть после уборки 2026",
+      "purpose": "актуальный SERP",
+      "result_count": 6,
+      "results": [
+        {
+          "url": "https://www.directline.pro/connect/p/zalog-pri-sdache-kvartiry-posutochno/",
+          "title": "Залог при сдаче квартиры посуточно: правила и возврат",
+          "snippet": "Универсальных сроков нет — прописывают в договоре; обычно в течение суток после выезда и осмотра/уборки"
+        },
+        {
+          "url": "https://pravoved.ru/question/4957249/",
+          "title": "Имеет ли она права удерживать 5К за уборку?",
+          "snippet": "Q&A: удержание 5000 ₽ за клининг без пункта в договоре"
+        },
+        {
+          "url": "https://9111.ru/questions/24631387/",
+          "title": "Удержание залога из-за грязи в квартире",
+          "snippet": "Без условия об уборке в договоре — спор об удержании"
+        },
+        {
+          "url": "https://harant.ru/questions/q-176020/",
+          "title": "Как вернуть залог за посуточную аренду",
+          "snippet": "Переписка и перевод как доказательства; претензия со сроком"
+        },
+        {
+          "url": "https://yarhouse63.ru/faq/",
+          "title": "FAQ A-frame: депозит 5000, возврат после уборки до 18:00",
+          "snippet": "Пример явного срока в правилах объекта"
+        },
+        {
+          "url": "https://vyborg.sutochno.ru/1551860",
+          "title": "Суточно.ру: возврат в день выезда после уборки",
+          "snippet": "Маркетплейс-формулировка в карточке объекта"
+        }
+      ],
+      "searched_at": "2026-09-05"
+    },
+    {
+      "query_id": "title_fresh",
+      "query": "не вернули залог за квартиру посуточно 2026",
+      "purpose": "buyer-intent SERP",
+      "result_count": 3,
+      "results": [
+        {
+          "url": "https://pravoved.ru/question/4948935/",
+          "title": "Проблемы с возвращением залога посуточно",
+          "snippet": "Досудебная претензия, фото при выезде"
+        },
+        {
+          "url": "https://harant.ru/questions/q-176020/",
+          "title": "Возврат залога без договора",
+          "snippet": "Иск о неосновательном обогащении"
+        },
+        {
+          "url": "https://www.klerk.ru/user/2674666/692606/",
+          "title": "Обеспечительный платеж по аренде",
+          "snippet": "Срок возврата лучше указать в договоре: 5, 10 или 30 дней"
+        }
+      ],
+      "searched_at": "2026-09-05"
+    },
+    {
+      "query_id": "community_experience",
+      "query": "залог посуточно форум после уборки опыт 2026",
+      "purpose": "форумы и живые проблемы",
+      "result_count": 2,
+      "results": [
+        {
+          "url": "https://t.me/s/nasytkiminsk",
+          "title": "Telegram host community: залог до порога",
+          "snippet": "Хосты берут залог до заселения из-за модели оплаты после заезда на площадках"
+        },
+        {
+          "url": "https://t.me/s/Dobriy_dom_72",
+          "title": "Добрый Дом TG: риск залог/уборка до оплаты",
+          "snippet": "Проверять возврат залога до брони"
+        }
+      ],
+      "searched_at": "2026-09-05"
+    },
+    {
+      "query_id": "tyumen_local",
+      "query": "квартиры посуточно тюмень залог 2026",
+      "purpose": "локальный спрос",
+      "result_count": 1,
+      "results": [
+        {
+          "url": "https://добрыйдом-72.рф/blog/",
+          "title": "Блог Добрый дом — кейсы посуточно Тюмень",
+          "snippet": "Guest-case series; deposit/checkout angles"
+        }
+      ],
+      "searched_at": "2026-09-05"
+    },
+    {
+      "query_id": "official_docs",
+      "query": "обеспечительный платеж аренда ГК 381.1 возврат срок",
+      "purpose": "правовой контекст без EGRN",
+      "result_count": 1,
+      "results": [
+        {
+          "url": "https://www.directline.pro/connect/p/zalog-pri-sdache-kvartiry-posutochno/",
+          "title": "Direct Line: ст. 381.1 ГК, обеспечительный платёж",
+          "snippet": "Юридически — обеспечительный платёж, не залог имущества"
+        }
+      ],
+      "searched_at": "2026-09-05"
+    }
+  ],
+  "errors": []
+}

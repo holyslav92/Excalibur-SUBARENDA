@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "topic_id": "B11",
+  "slug": "zalog-5-000-obeschali-vernut-utrom-utrom-napisali-posle-uborki",
+  "research_date": "2026-09-05",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Telegram @Dobriy_dom_72 Sep 2026 forwards (zalog/uborka risk + deposit return before booking) + Klyshin deposit_cleaning_delay hook + @nasytkiminsk host deposit-timing post",
+    "source_type": "community",
+    "urls": [
+      "https://t.me/s/Dobriy_dom_72",
+      "https://t.me/Dobriy_dom_72",
+      "https://t.me/klyshin_A",
+      "https://t.me/s/nasytkiminsk",
+      "https://www.directline.pro/connect/p/zalog-pri-sdache-kvartiry-posutochno/"
+    ],
+    "accessed_at": "2026-09-05",
+    "note": "Fresh week signal: Dobry Content forwards in @Dobriy_dom_72 feed (Sep 2026) name zalog/uborka as pre-booking risk and urge checking deposit return terms. B11 angle: promised morning return slips to «after cleaning» then «tomorrow»; 5000 RUB is editorial case only."
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "No bank/developer/gov tariff digits; deposit range and return timing cited from industry/host rules with market-context caveat",
+    "verified_claims": 0,
+    "entities_checked": [],
+    "errors": []
+  },
+  "wordstat": {
+    "status": "PASS",
+    "observations": [
+      {
+        "phrase": "залог посуточно",
+        "volume": 3267,
+        "region": "225"
+      },
+      {
+        "phrase": "залог посуточно",
+        "volume": 40,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "не вернули залог за квартиру посуточно",
+        "volume": 56,
+        "region": "225"
+      },
+      {
+        "phrase": "уборка посуточно",
+        "volume": 2145,
+        "region": "225",
+        "note": "host-side bias"
+      },
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 5261,
+        "region": "11176"
+      }
+    ]
+  },
+  "errors": []
+}
