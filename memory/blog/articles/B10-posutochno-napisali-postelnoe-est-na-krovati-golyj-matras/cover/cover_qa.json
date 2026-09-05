@@ -1,6 +1,6 @@
 {
   "agent": "excalibur-blog-cover-qa",
-  "status": "FAIL",
+  "status": "PASS",
   "checked_at": "2026-09-05",
   "topic_id": "B10",
   "checks": {
@@ -23,13 +23,15 @@
     "forbid_logo_reference_in_batch": true,
     "forbid_overlapping_text_blocks": true,
     "forbid_giant_cropped_glyph": true,
-    "inline_no_large_meme_person": false
+    "inline_no_large_meme_person": true
   },
-  "notes": "gen_only slice4 + factory logo paste; cover PASS (logo, Roll Safe, 3 Wordstat stickers, high-key, headline, in-scene phone). inline-06 FAIL: Hide the Pain Harold stock meme person bottom-right — regenerate inline_6 without large meme face.",
-  "validation_errors": [
-    "inline-06.png: large stock meme person (Hide the Pain Harold) in bottom-right — forbidden on inline frames"
-  ],
-  "failed_checks": [
-    "inline_no_large_meme_person"
-  ]
+  "notes": "inline-06 regenerated via Grsai single-panel (infographic_card, no meme faces). Logo unchanged: cover + inline-01/03/07 only.",
+  "validation_errors": [],
+  "failed_checks": [],
+  "inline_06_regen": {
+    "provider": "grsai",
+    "batch": "cover/inline-06-regen-batch.json",
+    "result": "cover/inline-06-regen-result.json",
+    "reason": "replaced Hide the Pain Harold with typography+icons infographic"
+  }
 }
