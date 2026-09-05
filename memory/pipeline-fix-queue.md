@@ -556,3 +556,19 @@ checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_dzen_cover_cache_bust.py`
 - `python3 scripts/excalibur_blog_dzen_cover_cache_bust.py --slug pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate` (SFTP upload OK)
 commit: pending
+
+## INC-20260905-1005-publish-body-probe-nbsp
+status: fixed
+run_date: 2026-09-05
+role: excalibur-blog-publish
+topic_id: B10
+slug: hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400
+symptom: live-page gate BLOCK — `expected article body probe not found on live page` after successful WP post create
+root_cause: body_probe truncated at 120 chars mid-`&nbsp;` entity (`4&nbs`) before HTML unescape; live plain text has decoded nbsp
+recovery: `html.unescape` before truncate in `excalibur_blog_wp_publish.py`; re-run publish via SFTP:22
+durable_fix: unescape HTML entities in body_probe generation before [:120] slice
+files_changed:
+- scripts/excalibur_blog_wp_publish.py
+checks_run:
+- B10 publish PASS + live-page-report PASS + ledger upsert
+commit: pending

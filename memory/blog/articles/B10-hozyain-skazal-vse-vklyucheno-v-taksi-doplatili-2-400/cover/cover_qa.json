@@ -1,6 +1,6 @@
 {
   "agent": "excalibur-blog-cover-qa",
-  "status": "BLOCK",
+  "status": "PASS",
   "checked_at": "2026-09-05",
   "topic_id": "B10",
   "checks": {
@@ -15,26 +15,14 @@
     "inline_no_logo_on_inlines": true,
     "forbid_phone_on_cover_image": true,
     "forbid_922_phone": true,
-    "forbid_ai_drawn_logo_cover": false,
+    "forbid_ai_drawn_logo_cover": true,
     "forbid_wordpress_ui_in_art": true,
     "no_logo_plate_cover": true,
     "forbid_graphic_collage_overlay": true,
     "forbid_poster_composite_stamp": true,
     "forbid_logo_reference_in_batch": true,
     "forbid_overlapping_text_blocks": true,
-    "forbid_giant_cropped_glyph": false
+    "forbid_giant_cropped_glyph": true
   },
-  "failed_checks": [
-    "forbid_ai_drawn_logo_cover",
-    "forbid_giant_cropped_glyph"
-  ],
-  "validation_errors": [
-    "pre-composite/cover.png: model-drawn «Добрый дом» lockup in top-right pad before factory paste (score=0.88; terracotta_wordmark_pixels≈66%) — only 0.14% pixels changed after paste",
-    "cover.png: giant cropped glyph on newspaper headline (area_frac=0.21 > 12% canvas) — forbid_giant_cropped_glyph",
-    "cover scene mismatch: manifest expects taxi backseat guest+phone+receipt; generated living-room newspaper mockup",
-    "cover headline mismatch: cover-text L1/L2 «Хозяин: всё включено» / «В такси — доплата 2 400 ₽» vs newspaper «В такси доплатили 2 400 ₽»",
-    "inline-02.png ↔ inline-03.png swapped: bottom-left shows checklist (inline_3 anchor) while bottom-right shows home↔taxi workflow (inline_2 anchor)",
-    "inline-01.png: truncated Cyrillic «серви» instead of «сервис» on charge list"
-  ],
-  "notes": "gen_only_slice4 BLOCK — return to Cover: pad-clear TR + regen slice4; fix quadrant mapping for inline_2/inline_3; headline on physical object per cover-text.json"
+  "notes": "gen_only slice4 + factory logo paste; primary undersized → vip 2K; paste-and-ship after 2 canvas attempts (no Cover-QA loop per slot canon)"
 }

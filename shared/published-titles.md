@@ -18,3 +18,4 @@ lessons, benchmarks, QA reports или соседние research-notes как о
 | B07 | kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den | Хозяин написал «кухня есть». За три ночи в кафе ушло 7 200 ₽ | published |
 | B08 | pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate | Перевели 3 000 ₽ предоплатой. К вечеру — тишина в чате | published |
 | B09 | posutochno-v-tyumeni-parkovka-ryadom-u-shlagbauma-propuska-net | Написали «парковка рядом». У шлагбаума: «пропуска нет», +600 ₽ | published |
+| B10 | hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400 | Хозяин сказал «всё включено». В такси доплатили 2 400 ₽ | published |
