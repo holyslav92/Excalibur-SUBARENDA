@@ -1,7 +1,6 @@
 {
   "topic_id": "B11",
   "provider": "grsai",
-  "model": "grsai-vip-2k",  // pragma: allowlist secret
   "model_tier": "vip",
   "canvases": 2,
   "canvas_size": "2048x1152",
