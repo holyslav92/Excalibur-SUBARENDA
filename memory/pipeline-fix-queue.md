@@ -558,17 +558,49 @@ checks_run:
 commit: pending
 
 ## INC-20260905-1005-publish-body-probe-nbsp
+
 status: fixed
 run_date: 2026-09-05
 role: excalibur-blog-publish
 topic_id: B10
-slug: hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400
-symptom: live-page gate BLOCK — `expected article body probe not found on live page` after successful WP post create
-root_cause: body_probe truncated at 120 chars mid-`&nbsp;` entity (`4&nbs`) before HTML unescape; live plain text has decoded nbsp
-recovery: `html.unescape` before truncate in `excalibur_blog_wp_publish.py`; re-run publish via SFTP:22
-durable_fix: unescape HTML entities in body_probe generation before [:120] slice
+article_dir: memory/blog/articles/B10-hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400
+severity: medium
+category: script
+
+### What went wrong
+
+- After successful WP post create (B10, post 4421), live-page gate BLOCK: `expected article body probe not found on live page`.
+- `body_probe` truncated at 120 chars mid-`&nbsp;` entity (`4&nbs`) before HTML unescape; live plain text has decoded nbsp.
+
+### How the agent recovered this run
+
+- Added `html.unescape` before `[:120]` slice in `excalibur_blog_wp_publish.py`; re-ran publish via SFTP:22 → live-page PASS.
+
+### Durable fix needed before next run
+
+- Unescape HTML entities in body_probe generation before truncation; extract testable helper + regression test.
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_wp_publish.py`
+- `tests/test_body_probe.py`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-09-05
+fix_summary:
+- `build_body_probe()` unescapes HTML entities before `[:120]` truncation (INC B10 nbsp mid-entity).
+- Regression test `tests/test_body_probe.py` locks B10 opening paragraph scenario.
 files_changed:
-- scripts/excalibur_blog_wp_publish.py
+- `scripts/excalibur_blog_wp_publish.py`
+- `tests/test_body_probe.py`
+- `memory/pipeline-fix-queue.md`
 checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_wp_publish.py`
+- `python3 -m unittest tests.test_body_probe -v`
 - B10 publish PASS + live-page-report PASS + ledger upsert
-commit: pending
+commit: 8b84235 (+ fixer follow-up)
