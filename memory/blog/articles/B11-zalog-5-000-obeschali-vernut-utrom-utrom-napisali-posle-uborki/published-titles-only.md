@@ -19,3 +19,4 @@ lessons, benchmarks, QA reports или соседние research-notes как о
 | B08 | pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate | Перевели 3 000 ₽ предоплатой. К вечеру — тишина в чате | published |
 | B09 | posutochno-v-tyumeni-parkovka-ryadom-u-shlagbauma-propuska-net | Написали «парковка рядом». У шлагбаума: «пропуска нет», +600 ₽ | published |
 | B10 | hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400 | Хозяин сказал «всё включено». В такси доплатили 2 400 ₽ | published |
+| B11 | zalog-5-000-obeschali-vernut-utrom-utrom-napisali-posle-uborki | Залог 5 000 обещали вернуть утром. Утром написали: «после уборки» | published |
