@@ -1,0 +1,11 @@
+{
+  "gate": "case-delivery",
+  "status": "PASS",
+  "stage": "title",
+  "manner_canon": "dobry_dom_gen_only_human_v1",
+  "checks_run": [
+    "title-brief"
+  ],
+  "errors": [],
+  "article_dir": "/workspace/memory/blog/articles/B10-hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400"
+}
