@@ -18,11 +18,11 @@
     },
     {
       "@type": "BlogPosting",
-      "@id": "{{SITE_BASE}}/blog/kvartira-posutochno-tihij-centr-strojka-za-oknom-tyumen/#blogposting",
-      "url": "{{SITE_BASE}}/blog/kvartira-posutochno-tihij-centr-strojka-za-oknom-tyumen/",
+      "@id": "{{SITE_BASE}}/blog/napisali-tihij-centr-v-6-30-za-oknom-kran/#blogposting",
+      "url": "{{SITE_BASE}}/blog/napisali-tihij-centr-v-6-30-za-oknom-kran/",
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "{{SITE_BASE}}/blog/kvartira-posutochno-tihij-centr-strojka-za-oknom-tyumen/"
+        "@id": "{{SITE_BASE}}/blog/napisali-tihij-centr-v-6-30-za-oknom-kran/"
       },
       "headline": "Написали «тихий центр». Три ночи за 12 600 ₽ — под краном",
       "datePublished": "2026-09-06",

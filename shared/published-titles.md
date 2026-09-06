@@ -20,3 +20,4 @@ lessons, benchmarks, QA reports или соседние research-notes как о
 | B09 | posutochno-v-tyumeni-parkovka-ryadom-u-shlagbauma-propuska-net | Написали «парковка рядом». У шлагбаума: «пропуска нет», +600 ₽ | published |
 | B10 | hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400 | Хозяин сказал «всё включено». В такси доплатили 2 400 ₽ | published |
 | B11 | v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik | «Всё для гостей» — ночью без полотенец на 890 ₽ | published |
+| B12 | napisali-tihij-centr-v-6-30-za-oknom-kran | Написали «тихий центр». Три ночи за 12 600 ₽ — под краном | published |
