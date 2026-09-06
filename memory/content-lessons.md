@@ -400,3 +400,92 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+---
+
+## LESSON-20260906-1343-B12-quiet-center-crane-panorama
+status: proposed
+topic_id: B12
+category: utility
+confidence: low
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP. Урок из publish-артефактов: title-brief.json, description-brief.json, case-delivery-gate PASS, article.html, research-notes hook `quiet_center_maps`.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest BLOCKER по credentials (INC-20260903-0640).
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Two-beat H1 «Написали «тихий центр». Три ночи за 12 600 ₽ — под краном»: цитата-обещание → контрфакт крана + полная сумма за N ночей, не how-to.
+- §1: 12 600 ₽ (4 200 ₽/ночь × 3) до идентичности хоста; пятница тихо → суббота 6:30 кран; реплика «Ну это же центр».
+- Klyshin «Нет. Так не заселяем.» + «Сначала проверка. Потом перевод.»; вопрос-отмычка «тихий центр — обещание хоста или повод открыть карту?» → TG/MAX mid-body.
+- H2 «Панорама за три минуты» с ограничениями (не вид из окна, нет слоя «все стройки») — честная utility без overpromise.
+- Interlink spine: B09 «парковка рядом» (оценочные слова), B05 рейтинг ≠ шум, B08 тишина после предоплаты, B03 «рядом» ≠ маршрут.
+- Wordstat: spine «квартиры посуточно тюмень» 5235 (Tyumen 55+11176); узкий «тихий центр квартира посуточно» без частоты — угол в объявлении, не P0; «квартира посуточно тюмень центр» 68.
+- Description не дублирует H1: «6:30 за окном кран» + пожимает плечами (description-brief PASS).
+
+### Change
+- В кейсах `quiet_center_maps` в §1 сразу фиксировать **сторону окон** (на стройплощадку / во двор) рядом с «тихий центр» — не только сумму ₽ и время крана.
+- Параллельно с panorama-utility явно маркировать, что 12 600 ₽ — редакционная сумма кейса, не средняя по Тюмени (как в research constraints).
+
+### Never again
+- «Тихий центр» / «рядом с набережной» без вопроса про окна и панорамы до перевода.
+- Обещать универсальный «слой всех строек» в Яндекс Картах — research constraint.
+- How-to чеклист до кейса; чеклист только после «Мой вывод как практика».
+- Нормализовать «ну это же центр» без контраста «центр ≠ тишина».
+
+### Proposed apply
+- Scout: при hook `quiet_center_maps` логировать original Klyshin hook + final P0 spine Tyumen + note «тихий центр» query volume (узкий угол).
+- Title/Description: держать контраст «обещание в чате vs кран в 6:30» как в description-brief B12.
+- Review only; Writer prompt не трогать автоматически.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260906-1343-B12-friday-quiet-saturday-crane
+status: proposed
+topic_id: B12
+category: structure
+confidence: low
+
+### Evidence
+- artifact: title-brief.json#angle
+  finding: angle «Обещанный тихий центр обернулся краном за окном утром; деньги за три ночи уже уплачены»; opening-meta-gate PASS; lead фиксирует пятницу тихо → суббота кран.
+- metrika_signal: none (credentials unavailable; causal retention не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Слой «вечер заселения тихий → утро субботы 6:30» отдельным абзацем — asymmetric moment после полной оплаты за три ночи.
+- Блок «переезд в субботу = снова искать и платить» объясняет, почему пара осталась под краном — не злодейство, а слабая позиция гостя.
+- Связка «Переводите быстрее, бронь уйдёт» → interlink B08 (предоплата/тишина) — money-timing spine без дублирования B10 taxi.
+- Региональный контекст: 6:30 субботы попадает в ночную тишину до 09:00 (Tyumen-info) — не юридический совет, а фон «шум не «норма центра»».
+
+### Change
+- Для geo-misleading hooks (`quiet_center_maps`, `ryadom`, parking) всегда включать **временной контраст заселения** (вечер vs утро выходных) в utility-блок — не только карту и панораму.
+- При interlink — sibling про оценочные слова (B09 parking, B03 ryadom, B05 rating) одной красной линией «слово ≠ окно/маршрут».
+
+### Never again
+- Писать quiet-center кейс только про панораму, игнорируя temporal leverage (когда исправить нечем — уже оплачено и суббота).
+- Финал «Наш вывод простой» вместо «Мой вывод как практика».
+
+### Proposed apply
+- Writer checklist (review-only): quiet_center_maps + weekend stay → один абзац про Friday-evening false calm после полной оплаты.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
