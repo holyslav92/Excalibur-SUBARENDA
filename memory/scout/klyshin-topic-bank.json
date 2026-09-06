@@ -3,7 +3,7 @@
   "source_channel": "https://t.me/klyshin_A",
   "source_label": "Алексей Клышин — angle only (ритм delivery, не копировать сделки)",
   "tenant": "Добрый дом — посуточная аренда / субаренда Тюмень",
-  "updated_at": "2026-09-05",
+  "updated_at": "2026-09-06",
   "timezone": "Asia/Yekaterinburg",
   "algorithm": "klyshin_hook → wordstat_probe → rework_for_demand → final_P0_or_skip_after_rework",
   "angle_rotation": {
@@ -187,6 +187,22 @@
       "final_p0": {"phrase": "квартиры посуточно тюмень", "volume_tyumen": 5261, "volume_ru": 728517},
       "wordstat_rework_log": "probe «скрытые доплаты посуточно» empty → «все включено квартира посуточно» 3 (225) → «доплата за уборку посуточно» 3 → «жкх посуточно» 21 → «уборка посуточно» 2145 host bias → «залог посуточно» 3267 (225) → «аренда квартиры посуточно» 729 (55+11176) → final P0 «квартиры посуточно тюмень» 5261 (55+11176) | compare «снять квартиру посуточно» 728517 (225)",
       "used_in_articles": ["B10"]
+    },
+    {
+      "id": "cancel_prepay",
+      "hook_ru": "Отменил за сутки до заезда. Предоплату не вернули — «условия по ссылке».",
+      "angle": "отмена брони vs возврат предоплаты; мелкий шрифт Avito/Суточно; NOT B08 silence-before-code",
+      "klyshin_signal": "moral: сначала правила отмены, потом перевод; lockpick: когда вернут и сколько удержат?",
+      "wordstat_probes": ["отмена брони посуточно", "вернуть предоплату за квартиру посуточно", "квартиры посуточно тюмень"],
+      "dzen_pattern_prefer": [2, 3],
+      "anti_dup": ["prepayment_before_keys", "B08", "тишина в чате", "hidden_fees"],
+      "tyumen_localize": true,
+      "status": "used",
+      "last_seen": "2026-09-06",
+      "queue_slot": "2026-09-06 B11 parked restore",
+      "final_p0": {"phrase": "квартиры посуточно тюмень", "volume_tyumen": 5261, "volume_ru": 11342},
+      "wordstat_rework_log": "probe «отмена брони посуточно» 78 (225) → «вернуть предоплату за квартиру посуточно» 55/2 → «вернуть предоплату посуточно» 81/4 → «предоплата квартира посуточно» 754/13 → «квартиры посуточно без предоплаты» 486/9 → «аренда квартиры посуточно» 729 (55+11176) → final P0 «квартиры посуточно тюмень» 5261/11342",
+      "used_in_articles": ["B11"]
     }
   ],
   "parked_hooks": {
@@ -197,7 +213,6 @@
       "dog_breed_fee",
       "early_checkin",
       "deposit_cleaning",
-      "cancel_prepay",
       "hotel_vs_daily",
       "parking_keybox",
       "wifi_boiler_check",
