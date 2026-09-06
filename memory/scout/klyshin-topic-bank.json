@@ -3,7 +3,7 @@
   "source_channel": "https://t.me/klyshin_A",
   "source_label": "Алексей Клышин — angle only (ритм delivery, не копировать сделки)",
   "tenant": "Добрый дом — посуточная аренда / субаренда Тюмень",
-  "updated_at": "2026-09-05",
+  "updated_at": "2026-09-06",
   "timezone": "Asia/Yekaterinburg",
   "algorithm": "klyshin_hook → wordstat_probe → rework_for_demand → final_P0_or_skip_after_rework",
   "angle_rotation": {
@@ -142,18 +142,29 @@
       "wordstat_probes": ["что нужно для аренды квартиры", "квартира посуточно", "аренда квартиры посуточно"],
       "dzen_pattern_prefer": [2, 5],
       "tyumen_localize": true,
-      "status": "queue_active"
+      "status": "used",
+      "last_seen": "2026-09-06",
+      "queue_slot": "2026-09-06 B11",
+      "final_p0": {"phrase": "квартиры посуточно тюмень", "volume_tyumen": 5235, "volume_ru": 11220},
+      "wordstat_rework_log": "probe «полотенца квартира посуточно» 109 (225) → «аренда квартиры посуточно» 42979 (225) → final P0 «квартиры посуточно тюмень» 5235/11220",
+      "used_in_articles": ["B11"]
     },
     {
       "id": "quiet_center_maps",
       "queue_num": 7,
       "hook_ru": "«Тихий центр» — за окном стройка",
-      "angle": "7 минут в Картах/панорамах — не слова хоста",
-      "klyshin_signal": "reader inside; number = 7 min walk",
-      "wordstat_probes": ["аренда квартиры тюмень центр", "квартира посуточно тюмень", "снять квартиру посуточно"],
+      "angle": "7 минут в Картах/панорамах — не слова хоста; панорама + слой стройки до оплаты",
+      "klyshin_signal": "reader inside; number = 6:30 wake-up; lockpick: панорама с балкона",
+      "wordstat_probes": ["аренда квартиры тюмень центр", "квартира посуточно тюмень центр", "снять квартиру посуточно в центре тюмени"],
       "dzen_pattern_prefer": [5, 2],
+      "anti_dup": ["тихий двор", "pack_vs_flat", "полотенца"],
       "tyumen_localize": true,
-      "status": "queue_active"
+      "status": "used",
+      "last_seen": "2026-09-06",
+      "queue_slot": "2026-09-06 B12 scout",
+      "final_p0": {"phrase": "квартиры посуточно тюмень", "volume_tyumen": 5235, "volume_ru": 11220},
+      "wordstat_rework_log": "probe «тихий центр квартира посуточно» empty → «аренда квартиры тюмень центр» 16 → «квартира посуточно тюмень центр» 68 → «снять квартиру посуточно в центре тюмени» 54 → final P0 «квартиры посуточно тюмень» 5235/11220; not picked: соседи шум 220, отмена брони 64",
+      "used_in_articles": ["B12"]
     },
     {
       "id": "checkout_train_bags",

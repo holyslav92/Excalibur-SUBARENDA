@@ -1,101 +1,18 @@
-# EXCALIBUR BLOG HANDOFF — B11
+DEROUTER SCOUT BLOCKER: в текущем окружении недоступны shell/Derouter utility и MCP-KV Wordstat, поэтому я не могу честно сформировать или записать `.cursor/excalibur-blog-handoff.md`.
 
-## 1. Topic
+Для B12 нужно запустить обязательный маршрут:
 
-- **topic_id:** B11
-- **slot:** B11
-- **tenant:** Добрый дом, посуточная Тюмень
-- **date:** 2026-09-06
-- **season:** начало сентября, осень (НЕ зима на обложке)
-- **priority:** P0
-- **topic status:** approved
-- **guest intent:** снять квартиру посуточно и понять, что реально ждёт в квартире по комплектации
-- **supply localization:** посуточные квартиры и работа хоста в Тюмени
-- **article format:** CASE, 1100–1800 слов, не гайд
-- **voice:** тёплый хост Добрый дом, без тона риэлтора
-
-## 2. Title draft
-
-**В объявлении — «всё для гостей». В ванной один мокрый коврик**
-
-- **slug_hint:** `v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik`
-- **title mechanics:** two-beat stop-factor; обещание → пустая ванная
-- **H1 angle:** маркетинг «всё для гостей» vs реальность — нет полотенец, одна постель
-- **не использовать в заголовке:** код, залог, парковка, кухня, предоплата, такси, третий гость
-
-## 3. Dzen shape
-
-- **dzen_pattern:** 2 — кейс с суммами и датами
-- **dzen_shape_hint:** «В объявлении — «всё для гостей». В ванной один мокрый коврик»
-- **opening:** плотный кейс в 1–2 абзацах; гость приехал в 23:00, в ванной один мокрый коврик, полотенец нет
-- **запрет:** вертикальная лестница, how-to H1, encyclopedia §1
-
-## 4. Klyshin hook
-
-- **hook_id:** `pack_vs_flat`
-- **original:** «Собрал чемодан — в квартире нет полотенец»
-- **angle:** что везти vs что обязано быть в объявлении; number = 890 ₽ ночная покупка полотенец в 23:00
-- **lockpick question:** «Сколько комплектов постельного и полотенец на каждого гостя?»
-- **refusal beat:** «Нет. Так не заселяем.» / «Сначала список комплектации. Потом ключ.»
-- **moral rhythm:** сначала фото/список того, что в квартире, потом деньги и ключ
-
-## 5. Case spine
-
-1. Семья из двух человек бронирует квартиру посуточно в Тюмени — в объявлении «всё для гостей».
-2. Приезжают в 23:10 после поезда; в ванной один мокрый коврик, полотенец нет, постельное на одну кровать.
-3. Хозяин в чате: «Ну вы же не просили отдельно».
-4. Гость идёт в ближайший магазин — 890 ₽ на полотенца и простыни.
-5. Lockpick: «Сколько комплектов постельного и полотенец на гостя?»
-6. Refusal: «Нет. Так не заселяем.»
-7. Вердикт: до оплаты — список или фото комплектации, не маркетинговая фраза.
-8. Checklist — только после морали.
-
-## 6. One case → one verdict
-
-**Вердикт:** «всё для гостей» — не комплимент, а обещание. До перевода денег гость просит: сколько полотенец, подушек, простыней на каждого. Сначала список, потом ключ.
-
-## 7. Wordstat
-
-```text
-wordstat_preflight: mcp-kv wordstat_get_user_info OK
-wordstat: mcp_kv live | regions 55,11176,compare225 | P0 «квартиры посуточно тюмень» 5235 | compare 11220 (225) | «полотенца квартира посуточно» 109 (225) | «аренда квартиры посуточно» 42979 (225)
+```bash
+python3 scripts/excalibur_blog_derouter_opus_chat.py \
+  --role scout \
+  --system-file skills/scout-excalibur-blog/SKILL.md \
+  --user-file <assembled-scout-inputs.md> \
+  --output .cursor/excalibur-blog-handoff.md \
+  --article-dir <article_dir_or_memory/scout>
 ```
 
-### Demand spine
+Перед ним обязательны live-проверки `wordstat_get_user_info` и Wordstat-частот, затем:
 
-- **final P0:** «квартиры посуточно тюмень»
-- **volume:** 5235 (55+11176)
-- **national comparison:** 11220 (225)
-
-### Rework log
-
-```text
-wordstat_rework: probe «полотенца квартира посуточно» 109 (225) → «что нужно для аренды квартиры» (rework) → «аренда квартиры посуточно» 42979 (225) → final P0 «квартиры посуточно тюмень» 5235 (55+11176) | compare 11220 (225) | clusters tried: полотенца, аренда посуточно, квартиры посуточно Тюмень
-```
-
-## 8. Angle rotation
-
-```text
-angle_rotation: checked last N=3 | burn-at-door skip: no | reason: B08 предоплата, B09 парковка, B10 всё включено/такси; B11 — комплектация/полотенца, не дублирует B07 кухня, B02 залог, B10 скрытые доплаты
-```
-
-## 9. External signal
-
-- **signal_urls:**
-  - https://t.me/klyshin_A
-  - https://добрыйдом-72.рф/blog/
-  - https://t.me/Dobriy_dom_72
-
-```text
-klyshin_hook: pack_vs_flat | original: «Собрал чемодан — в квартире нет полотенец» | angle: комплектация vs обещание «всё для гостей» | signal: https://t.me/klyshin_A
-```
-
-## 10. Final handoff lines
-
-```text
-wordstat_preflight: mcp-kv wordstat_get_user_info OK
-klyshin_hook: pack_vs_flat | original: «Собрал чемодан — в квартире нет полотенец» | angle: комплектация vs «всё для гостей» | signal: https://t.me/klyshin_A
-wordstat_rework: probe «полотенца квартира посуточно» 109 → «аренда квартиры посуточно» 42979 → final P0 «квартиры посуточно тюмень» 5235 | clusters tried: полотенца, аренда посуточно, квартиры посуточно Тюмень
-wordstat: mcp_kv live | regions 55,11176,compare225 | P0 «квартиры посуточно тюмень» 5235 | compare 11220 (225)
-angle_rotation: checked last N=3 | burn-at-door skip: no | reason: новый угол комплектации/полотенца; не дублирует B07–B10
+```bash
+python3 scripts/excalibur_blog_wordstat_gate.py handoff
 ```
