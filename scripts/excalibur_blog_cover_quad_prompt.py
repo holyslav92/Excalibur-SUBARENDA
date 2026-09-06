@@ -327,6 +327,39 @@ def topic_fact_lock_lines(
     return lines
 
 
+def load_pexels_design_ref(article_dir: Path) -> str:
+    """Эфемерный Pexels URL для urls[0] — один на статью."""
+    path = article_dir / "cover" / "pexels-design-ref.json"
+    if not path.is_file():
+        return ""
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return ""
+    return str(data.get("url") or "").strip()
+
+
+def ensure_pexels_design_ref(article_dir: Path, root: Path) -> str:
+    """Загрузить или создать cover/pexels-design-ref.json."""
+    url = load_pexels_design_ref(article_dir)
+    if url:
+        return url
+    import subprocess
+
+    script = root / "scripts" / "excalibur_blog_pexels_design_ref.py"
+    rel = article_dir.relative_to(root) if article_dir.is_relative_to(root) else article_dir
+    proc = subprocess.run(
+        [sys.executable, str(script), "--article-dir", str(rel)],
+        cwd=str(root),
+        capture_output=True,
+        text=True,
+    )
+    if proc.returncode != 0:
+        print(proc.stderr or proc.stdout, file=sys.stderr)
+        return ""
+    return load_pexels_design_ref(article_dir)
+
+
 def validate_reference_url(ref_url: str) -> bool:
     """Accept live site host URL, {{SITE_BASE}}/… path, or reject [REDACTED]/tool masks."""
     value = (ref_url or "").strip()
@@ -762,13 +795,12 @@ SCENE_POSTER_COVER_BAN = (
 )
 
 DZEN_STORY_FULL_GENERATION_RULE = (
-    "FULL GRSAI EDITORIAL: Cyrillic display type MUST be drawn IN this generation — "
-    "Onest ExtraBold ~860 black sans two-beat headline; yellow/peach brush highlight behind ONE keyword; "
-    "one yellow sticky-note punch; phone +7 (993) 574-83-22 (or +7 (993) 574-83-22) BIG and thumb-readable. "
-    "LOGO PAD top-right 8-12%: images[] includes official PNG (logo-dobry-dom.png) to reserve space — "
-    "do NOT redraw curtains/flower/terracotta «Добрый дом» lockup; factory pastes that PNG pixel-faithful after gen "
-    "(covers any model attempt; that paste IS the brand). NEVER house-with-heart, subtitle, second logo; "
-    "NO white/gray plaque. NEVER +7 922 001 65 05. NO poster composite for type/phone/sticky."
+    "FULL GRSAI EDITORIAL (urls[]): urls[0] = Pexels style/layout reference ONLY — borrow color, composition, "
+    "typography mood; do NOT copy photo subjects verbatim. urls[1] = official Добрый дом logo PNG — place TOP-RIGHT "
+    "8-12% width, pixel-faithful from reference (NOT redrawn, NOT house-with-heart). "
+    "ALL Cyrillic text drawn IN this generation with PERFECT spelling — character-perfect copy of EXACT strings below; "
+    "no garbled/overlapping letters. Phone +7 (993) 574-83-22 BIG and Dzen-thumb readable IN scene. "
+    "NO factory post-composite scripts for type/phone/logo."
 )
 
 DZEN_STORY_GENERATION_BAN = (
@@ -974,9 +1006,12 @@ def build_dzen_story_collage_cover_prompt(
         f"PHONE EXACT «{phone}» readable at Dzen thumb — in-scene tablo or bar, NOT peel-pill, NOT +7 922."
     )
     logo_clause = (
-        "LOGO PAD top-right 8-12%: leave clean space — images[] includes official PNG (memory/cover/assets/brand/logo-dobry-dom.png) "
-        "as layout reference ONLY; do NOT redraw curtains/flower/terracotta «Добрый дом» lockup — factory pastes that file pixel-faithful (native aspect, NOT square) "
-        "after gen and covers any model attempt; NO house-with-heart, subtitle, or second logo; NO white/gray plaque."
+        "LOGO: copy official PNG from urls[1] TOP-RIGHT 8-12% width — pixel-faithful, native aspect; "
+        "NOT redrawn curtains/flower lockup; NO house-with-heart, subtitle, second logo; NO white/gray plaque."
+    )
+    pexels_clause = (
+        "STYLE: follow urls[0] Pexels reference for layout/color/typography energy — unique per article; "
+        "do not clone photo subjects."
     )
     lines = [
         style_prefix,
@@ -990,11 +1025,11 @@ def build_dzen_story_collage_cover_prompt(
         sticky_clause,
         phone_clause,
         logo_clause,
+        pexels_clause,
         "PEOPLE: only when THIS case needs — guest stress face, hands with keys, silhouette; NOT group photo; NOT default zero-people hallway.",
         DZEN_STORY_GENERATION_BAN + ".",
-        "TEXT LANGUAGE LOCK: visible text RUSSIAN Cyrillic only; headline readable at Dzen thumb.",
-        "Grsai primary image API, non-VIP, max 2 gens; images[] MUST include official logo reference for TR pad; "
-        "on exhaust pad-clear TR + resize + factory logo paste (pixel-faithful, native aspect).",
+        "TEXT LANGUAGE LOCK: visible text RUSSIAN Cyrillic only; EXACT spelling of every quoted string; headline readable at Dzen thumb.",
+        "Grsai primary image API; urls[0]=Pexels style, urls[1]=logo; non-VIP max 2 gens; slice/resize ONLY after — NO factory overlay scripts.",
     ]
     return "\n".join(line for line in lines if line)
 
@@ -1155,6 +1190,12 @@ def build_standalone_cover_prompt(
         if case["scene"]
         else "Scene: bright cream/linen hallway, pale oak, houseplant, soft daylight — people default ZERO."
     )
+    pexels_clause = (
+        "STYLE: follow urls[0] Pexels reference for layout/color/typography energy — unique per article."
+    )
+    logo_clause_standalone = (
+        "LOGO: copy official PNG from urls[1] TOP-RIGHT 8-12% width — pixel-faithful; NOT redrawn lockup."
+    )
     lines = [
         style_prefix,
         "Standalone cover canvas 2048x1152 exact 16:9 full-bleed — NOT a quad quadrant.",
@@ -1165,11 +1206,11 @@ def build_standalone_cover_prompt(
         "PEOPLE: default ZERO — at most tiny silhouette/hands/back-of-head if case absolutely needs; NEVER group scene.",
         scene_clause,
         emotion_clause,
-        "TOP-RIGHT pad 8-12% — scene continuation only; " + TOP_RIGHT_PAD_SCENE_RULE.split(";")[0] + ".",
-        "Factory pastes official alpha PNG logo AFTER generation — NEVER send logo as Grsai reference.",
+        logo_clause_standalone,
+        pexels_clause,
         SCENE_POSTER_COVER_BAN + ".",
-        "TEXT LANGUAGE LOCK: visible text RUSSIAN Cyrillic only; headline readable at Dzen thumb.",
-        "Grsai primary image API, non-VIP, max 2 gens; on exhaust neighbor-clone pad-clear TR + factory logo paste.",
+        "TEXT LANGUAGE LOCK: visible text RUSSIAN Cyrillic only; EXACT spelling of every quoted string; headline readable at Dzen thumb.",
+        "Grsai primary image API; urls[0]=Pexels style, urls[1]=logo; non-VIP max 2 gens; slice/resize ONLY — NO factory overlay scripts.",
     ]
     return "\n".join(line for line in lines if line)
 
@@ -1339,6 +1380,17 @@ def main() -> int:
                 else:
                     logo_ref_url = raw_logo_url if raw_logo_url.startswith("http") else ""
 
+        design_ref_url = ""
+        if logo_reference_in_generation or uses_full_grsai_cover(root):
+            design_ref_url = ensure_pexels_design_ref(article_dir, root)
+            if not design_ref_url:
+                print(
+                    "❌ PEXELS DESIGN REF BLOCKER: run "
+                    "python3 scripts/excalibur_blog_pexels_design_ref.py --article-dir <dir>",
+                    file=sys.stderr,
+                )
+                return 1
+
         api_input: dict[str, object] = {
             "prompt": prompt,
             "aspect_ratio": "16:9",
@@ -1352,18 +1404,14 @@ def main() -> int:
             api_input["logo_reference_in_generation"] = True
             if logo_ref_url:
                 api_input["input_urls"] = [logo_ref_url]
+        if design_ref_url:
+            api_input["design_reference_url"] = design_ref_url
 
         image_flow = resolve_image_flow(root)
         apply_script = (
             (
                 "python3 scripts/excalibur_blog_cover_standalone_apply.py "
-                f"--article-dir <article_dir>"
-                + (
-                    " && python3 scripts/excalibur_blog_brand_logo_composite.py "
-                    f"--article-dir <article_dir>"
-                    if uses_full_grsai_cover(root)
-                    else ""
-                )
+                f"--article-dir <article_dir> --skip-pad-clear"
             )
             if standalone_cover
             else (
@@ -1385,6 +1433,8 @@ def main() -> int:
             "logo_reference_local": str(logo_ref_spec.get("local") or "") if logo_reference_in_generation else "",
             "logo_reference_url": logo_ref_url if logo_reference_in_generation else "",
             "logo_reference_in_generation": bool(logo_reference_in_generation),
+            "design_reference_url": design_ref_url,
+            "design_reference_ephemeral": bool(design_ref_url),
             "reference_url_hosted": batch_ref_url,
             "output_canvas": spec["canvas_file"],
             "result_path": spec["result_file"],
