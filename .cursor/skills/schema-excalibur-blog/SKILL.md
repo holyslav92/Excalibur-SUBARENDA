@@ -37,7 +37,7 @@ Bare `--output` filenames resolve under `--article-dir` (same rule as schema-gat
 5. **Canonical article URL (HARD):** `{{SITE_BASE}}/blog/<slug>/` — **must include `/blog/`** path matching live WP permalink.  
    BlogPosting `url`, `@id`, `mainEntityOfPage.@id` — все с `/blog/<slug>/`.  
    **Запрещено** `{{SITE_BASE}}/<slug>/` без `/blog/` (live gate FAIL).
-6. **Publish slug (HARD, INC B12):** `<slug>` = `title-brief.json` → `article.meta.json` → **никогда** только суффикс `--article-dir`**, если Title выдал другой slug.  
+6. **Publish slug (HARD, INC B12):** `<slug>` = `title-brief.json` → `article.meta.json` → **никогда** только суффикс `--article-dir`, если Title выдал другой slug.  
    Пример: dir `B12-kvartira-posutochno-…`, publish slug `napisali-tihij-centr-v-6-30-za-oknom-kran` из title-brief.  
    В `assembled-schema-inputs.md` canonical URL строить только из publish slug (`resolve_publish_slug` в `excalibur_blog_article_meta_index.py`).
 

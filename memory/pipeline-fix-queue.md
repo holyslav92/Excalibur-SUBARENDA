@@ -746,4 +746,4 @@ checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_article_meta_index.py scripts/excalibur_blog_pipeline_canon.py scripts/excalibur_blog_schema_gate.py`
 - `python3 -m unittest tests.test_publish_slug_resolution -v`
 - B12 `excalibur_blog_schema_gate.py --article-dir …` → PASS
-commit: pending
+commit: 00b6079
