@@ -1,5 +1,22 @@
 # WP publish log
 
+## B11 — 2026-09-06
+
+- **topic_id:** B11
+- **slug:** v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik
+- **title:** «Всё для гостей» — ночью без полотенец на 890 ₽
+- **post_id:** 4464
+- **permalink:** /blog/v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik/
+- **categories:** posutochnaya-arenda (101), sovety-gostyam (106)
+- **featured_image:** 4465
+- **inline_images:** 4466–4472 (7× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS
+- **dzen preview:** cover-1024x576.png live (1024×576)
+- **interlink inbound:** B01 (3745)
+- **publish_method:** ftp (Timeweb PASV)
+- **llms_deploy:** PASS
+
 ## B10 — 2026-09-05
 
 - **topic_id:** B10
