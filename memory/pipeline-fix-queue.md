@@ -682,4 +682,4 @@ files_changed:
 checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_case_delivery_gate.py`
 - `python3 -m unittest tests.test_slice4_and_manner_gates.KlyshinMannerGateTest -v`
-commit: pending
+commit: 947c40c
