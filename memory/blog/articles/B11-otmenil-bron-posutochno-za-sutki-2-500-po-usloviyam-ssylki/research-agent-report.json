@@ -1,0 +1,57 @@
+{
+  "status": "PASS",
+  "topic_id": "B11",
+  "slug": "otmenil-bron-posutochno-za-sutki-2-500-po-usloviyam-ssylki",
+  "research_date": "2026-09-06",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Telegram @Dobriy_dom_72 (сентябрь 2026: условия/отмена до оплаты) + Klyshin mechanics «сначала контроль, потом договор»",
+    "source_type": "community",
+    "urls": [
+      "https://t.me/s/Dobriy_dom_72",
+      "https://t.me/s/klyshin_A",
+      "https://добрыйдом-72.рф/blog/"
+    ],
+    "accessed_at": "2026-09-06",
+    "note": "Guest-night cancel_prepay case; not legal essay; distinct from B08 silence-after-transfer."
+  },
+  "official_source_audit": {
+    "required": true,
+    "status": "PASS",
+    "scope": "Platform cancellation rules (Sutochno.ru, Avito); no bank tariffs",
+    "verified_claims": 2,
+    "entities_checked": ["sutochno", "avito"],
+    "errors": []
+  },
+  "wordstat": {
+    "status": "PASS",
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 5261,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 11342,
+        "region": "225"
+      },
+      {
+        "phrase": "вернуть предоплату посуточно",
+        "volume": 81,
+        "region": "225"
+      },
+      {
+        "phrase": "отмена брони посуточно",
+        "volume": 78,
+        "region": "225"
+      },
+      {
+        "phrase": "предоплата квартира посуточно",
+        "volume": 754,
+        "region": "225"
+      }
+    ]
+  },
+  "errors": []
+}
