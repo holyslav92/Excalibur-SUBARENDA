@@ -1,0 +1,11 @@
+{
+  "gate": "case-delivery",
+  "status": "PASS",
+  "stage": "writer",
+  "manner_canon": "dobry_dom_gen_only_human_v1",
+  "checks_run": [
+    "writer.html"
+  ],
+  "errors": [],
+  "article_dir": "/workspace/memory/blog/articles/B11-v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik"
+}
