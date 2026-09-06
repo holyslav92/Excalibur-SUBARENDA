@@ -1,0 +1,97 @@
+{
+  "topic_id": "B11",
+  "canvas_file": "cover/canvas-slice4.png",
+  "layout": "2x2",
+  "pipeline": "slice4_grid_1x_image_api",
+  "inline_count": 3,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-slice4.png",
+      "batch_file": "cover/slice4-mcp-batch.json",
+      "prompt_file": "cover/slice4-mcp-prompt.txt",
+      "result_file": "cover/slice4-mcp-result.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    }
+  ],
+  "style_preset": "the_rieltor_twilight_gold",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "cover_hook": "Сутки до заезда — минус 2 500 ₽",
+  "cover_hook_highlight": "минус",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Grsai GRSAI_PRIMARY_IMAGE_MODEL — ONE 2048×1152 slice4 grid. Factory logo paste cover tile only.",
+  "cover_emotion": "Неприятное открытие в последний момент, но спокойная уверенность: условия можно и нужно уточнить до перевода.",
+  "cover_motifs": {
+    "composition": "guest hands phone at sunny entryway infoboard acrylic sign headline tablo phone screen TR logo pad",
+    "location": "early september 2026 warm sunny tyumen apartment entryway green-yellow trees outside not winter no snow",
+    "meme": "none photoreal messenger cancellation trap hands only",
+    "prop_set": "acrylic infoboard sign smartphone messenger chat key card yellow reminder sticker printed checklist",
+    "sticker_set": "отмена брони посуточно вернуть предоплату за квартиру",
+    "joke": "chat looked fine until cancel then link says no refund for 2500 rubles"
+  },
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "снять квартиру посуточно в тюмени",
+    "квартиры посуточно в тюмени недорого"
+  ],
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Солнечная прихожая квартиры в Тюмени: на акриловой табличке «Сутки до заезда — минус 2 500 ₽», рядом стикер и экран с номером +7 (993) 574-83-22.",
+      "scene_hint": "Светлая прихожая Comfort+; гость с телефоном у инфостены; акриловая табличка «Сутки до заезда — минус 2 500 ₽», «минус» красным. Экран/табло +7 (993) 574-83-22; стикер «Сначала спроси — потом плати». TOP-RIGHT пуст 8–12% для factory logo.",
+      "meme_caption_ru": "",
+      "sticky": "Сначала спроси — потом плати"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Три сообщения, после которых начинаются споры",
+      "visual_type": "comparison_table_ui",
+      "scene_hint": "Руки гостя над светлым столом: телефон с тремя сообщениями — цена, «предоплата отправлена», ссылка после отмены. Фотореал, без логотипа и мемов.",
+      "alt": "Телефон показывает три сообщения: цена, отправленная предоплата и ссылка с условиями отмены после отмены поездки.",
+      "labels": [
+        "Цена",
+        "Предоплата 2 500 ₽",
+        "Отмена + ссылка",
+        "Сначала спроси"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Цена ночи — это ещё не вся цена",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Стол у окна: планшет с карточкой площадки и условиями отмены до оплаты, рядом телефон с пустым чатом мессенджера; стрелка «площадка → личка». Фотореал.",
+      "alt": "Планшет с условиями отмены до оплаты на площадке и пустой чат в мессенджере как контраст.",
+      "labels": [
+        "Платформа: до оплаты",
+        "Чат: спроси сам",
+        "Сохрани скриншот",
+        "Нет чека"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Почему на площадке проще, а в личке опаснее",
+      "visual_type": "checklist_board",
+      "scene_hint": "Кухонная стойка: чек-лист перед переводом, рука отмечает вопрос «Какие условия отмены и когда вернут предоплату — до перевода?»; сентябрь за окном. Без логотипа.",
+      "alt": "Чек-лист с главным вопросом об условиях отмены и возврате предоплаты до перевода денег.",
+      "labels": [
+        "Условия до перевода",
+        "Срок отмены",
+        "Что удержат",
+        "Срок возврата",
+        "Имя получателя"
+      ]
+    }
+  },
+  "cover_keys_ru": []
+}

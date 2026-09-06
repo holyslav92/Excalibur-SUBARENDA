@@ -1,0 +1,149 @@
+{
+  "agent": "excalibur-blog-cover-quad-split",
+  "status": "PASS",
+  "splits": [
+    {
+      "canvas_index": 1,
+      "manifest": "cover/quad-manifest.json",
+      "split": {
+        "source_canvas": "memory/blog/articles/B11-otmenil-bron-posutochno-za-sutki-2-500-po-usloviyam-ssylki/cover/canvas-slice4.png",
+        "source_size_px": [
+          2048,
+          1152
+        ],
+        "panel_size_px": [
+          1019,
+          571
+        ],
+        "split_meta": {
+          "split_mode": "gutter_detect",
+          "h_gutter_px": {
+            "start": 571,
+            "end": 581
+          },
+          "v_gutter_px": {
+            "start": 1019,
+            "end": 1029
+          },
+          "requested_mode": "auto",
+          "gutter_quality": {
+            "h_center_offset_px": 0.0,
+            "v_center_offset_px": 0.0,
+            "max_aspect_crop_loss": 0.0,
+            "per_panel_crop_loss": {
+              "top_left": 0.0,
+              "top_right": 0.0,
+              "bottom_left": 0.0,
+              "bottom_right": 0.0
+            },
+            "reject_reason": null
+          }
+        },
+        "output_size_px": [
+          1200,
+          675
+        ],
+        "outputs": {
+          "cover": {
+            "file": "cover/cover.png",
+            "quadrant": "top_left",
+            "box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1019,
+              "bottom": 571
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1019,
+              "bottom": 571
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Солнечная прихожая квартиры в Тюмени: на акриловой табличке «Сутки до заезда — минус 2 500 ₽», рядом стикер и экран с номером +7 (993) 574-83-22.",
+            "h2_anchor": null
+          },
+          "inline_1": {
+            "file": "cover/inline-01.png",
+            "quadrant": "top_right",
+            "box_px": {
+              "left": 1029,
+              "top": 0,
+              "right": 2048,
+              "bottom": 571
+            },
+            "raw_box_px": {
+              "left": 1029,
+              "top": 0,
+              "right": 2048,
+              "bottom": 571
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Телефон показывает три сообщения: цена, отправленная предоплата и ссылка с условиями отмены после отмены поездки.",
+            "h2_anchor": "Три сообщения, после которых начинаются споры"
+          },
+          "inline_2": {
+            "file": "cover/inline-02.png",
+            "quadrant": "bottom_left",
+            "box_px": {
+              "left": 0,
+              "top": 581,
+              "right": 1019,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 581,
+              "right": 1019,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Планшет с условиями отмены до оплаты на площадке и пустой чат в мессенджере как контраст.",
+            "h2_anchor": "Цена ночи — это ещё не вся цена"
+          },
+          "inline_3": {
+            "file": "cover/inline-03.png",
+            "quadrant": "bottom_right",
+            "box_px": {
+              "left": 1029,
+              "top": 581,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 1029,
+              "top": 581,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Чек-лист с главным вопросом об условиях отмены и возврате предоплаты до перевода денег.",
+            "h2_anchor": "Почему на площадке проще, а в личке опаснее"
+          }
+        }
+      }
+    }
+  ],
+  "manifest": "cover/quad-manifest.json",
+  "html_inject": [
+    "injected inline_1 after H2 — Три сообщения, после которых начинаются споры",
+    "injected inline_2 after H2 — Цена ночи — это ещё не вся цена",
+    "injected inline_3 after H2 — Почему на площадке проще, а в личке опаснее"
+  ]
+}
