@@ -43,7 +43,7 @@
 - `dzen_rf_pack`: мат запрещён; VPN запрещён.
 - `interlink_old_articles=true`.
 - **Dzen pattern 1** (N советов) — **NOT default**.
-- **Длина:** ~1100–1800 слов CASE; **NO chopped lead**; **NO TL;DR** opener.
+- **Длина:** ~700–1100 слов CASE; **NO chopped lead**; **NO TL;DR** opener.
 - **CTA:** один блок в конце (не double funnel).
 
 Пока этот файл заполнен — Sol может запускаться после Writer.

@@ -1,6 +1,6 @@
 # Post → article
 
-Как из calibration lead собрать **guest article** Добрый дом (~**1100–1800 слов**).
+Как из calibration lead собрать **guest article** Добрый дом (~**700–1100 слов**).
 
 ## CASE delivery — 10 правил (HARD, одна формулировка)
 
@@ -22,7 +22,7 @@
 3. **Факты** — только из `drafts/writer.html` / research.
 4. Лид: **1–2 плотных абзаца**. **NO chopped lead.** **NO TL;DR.**
 5. H1 из `title-brief.json`. Cable + consequence. **Ban** «5 вопросов» / «7 шагов» as skeleton.
-6. **~1100–1800 слов**, не checklist-landing на 9 H2.
+6. **~700–1100 слов**, не checklist-landing на 9 H2.
 
 ## Каркас (CASE rhythm, голос Добрый дом)
 
@@ -41,7 +41,7 @@
 ## Длина
 
 - Лид: 1–2 плотных абзаца (не 8–12 рубленых строк).
-- Статья: ~1100–1800 слов.
+- Статья: ~700–1100 слов.
 - **Dzen pattern 1** (N советов) — **NOT default**.
 
 ## Writer vs Sol

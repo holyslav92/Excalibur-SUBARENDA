@@ -182,7 +182,7 @@
 **Длина:**
 
 - Лид: **1–2 плотных абзаца**. **NO chopped lead.** **NO TL;DR.**
-- Статья: **~1100–1800 слов** — CASE, not checklist landing.
+- Статья: **~700–1100 слов** — CASE, not checklist landing.
 - **Ban:** «Разберём», «В этой статье», H1 list numbers as skeleton, telegram-cosplay lead.
 
 **Ходы статьи:**
