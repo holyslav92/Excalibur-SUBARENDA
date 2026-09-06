@@ -1,0 +1,120 @@
+{
+  "topic_id": "B12",
+  "slug": "kvartira-posutochno-tihij-centr-strojka-za-oknom-tyumen",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "«Тихий центр» — кран под окном",
+  "cover_hook_highlight": "кран",
+  "cover_headline_line1": "«Тихий центр»",
+  "cover_headline_line2": "кран под окном",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Grsai draw API — 2K 16:9, one job per canvas (2×). Logo factory paste cover + inline_1/3/7. Phone IN scene on cover + inline_4.",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "снять квартиру посуточно в тюмени"
+  ],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "couple at bright window crane arm outside printed listing headline phone infoboard TR pad",
+    "location": "late august early september 2026 sunny tyumen center apartment green trees NOT winter no snow",
+    "meme": "photoreal zero meme stickers",
+    "prop_set": "smartphone chat screenshot 12600 receipt yandex maps panorama printout open window earplugs mug",
+    "sticker_set": "тихий центр тюмень стройка за окном посуточно",
+    "joke": "ad says quiet center host replies nu eto zhe centr while crane hums outside"
+  },
+  "cover_emotion": "Субботнее утро: вчера тихо, сегодня кран под окном",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Пара у окна в центре Тюмени: за стеклом стройка и кран, на столе объявление «тихий центр», телефон +7 (993) 574-83-22 на дверной табличке.",
+      "scene_hint": "Late-summer sunny apt: couple at open window, tower crane outside; large Cyrillic «Тихий центр» — кран под окном on printed listing; +7 (993) 574-83-22 on door infoboard IN scene; Wordstat stickers; TR pad empty; zero meme stickers.",
+      "meme_caption_ru": "",
+      "sticky": "Тишина закончилась утром"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Не «тихий». Не «рядом». А то, что видно в окне",
+      "visual_type": "comparison_table",
+      "scene_hint": "Split: ad «тихий центр» vs window view crane fence; labels 12 600 | 3 ночи | кран утром | окна на стройку; Sep; TR pad.",
+      "alt": "Сравнение фразы «тихий центр» в объявлении и вида из окна на стройку с краном.",
+      "labels": ["оплата 12 600", "три ночи", "кран утром", "окна на стройку"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Панорама за три минуты: что она покажет",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Laptop Yandex Maps panorama: fence crane road; labels проверь окна | пройди панораму | ищи забор | смотри кран; Sep sunny; no logo.",
+      "alt": "Панорама Яндекс.Карт: забор, кран и дорога вокруг дома — то, что не видно на фото квартиры.",
+      "labels": ["проверь окна", "пройди панораму", "ищи забор", "смотри кран"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Вопрос в зал",
+      "visual_type": "checklist_board",
+      "scene_hint": "Messenger chat guest asks windows host «nu eto zhe centr»; labels спроси до оплаты | что напротив | шум с окном | сохрани ответ; Sep; TR pad.",
+      "alt": "Чат до оплаты: вопрос про окна и ответ «ну это же центр».",
+      "labels": ["спроси до оплаты", "что напротив окон", "шум с открытым окном", "сохрани ответ"]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Сначала проверка. Потом перевод",
+      "visual_type": "process_flow",
+      "scene_hint": "Desk flow map→panorama→question→pay; phone +7 (993) 574-83-22 on paper card IN scene; labels карта | панорама | вопрос | перевод; Sep.",
+      "alt": "Порядок действий: карта и панорама, вопрос хосту, потом перевод — не наоборот.",
+      "labels": ["карта", "панорама", "вопрос хосту", "потом перевод"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Вопрос в зал",
+      "visual_type": "infographic_card",
+      "scene_hint": "Split «тихий центр» promise vs crane noise outside window; labels тихий? | центр | кран | сон; sunny; zero meme stickers.",
+      "alt": "Спор: обещание «тихий центр» против реального шума крана у окна.",
+      "labels": ["тихий?", "центр", "кран", "сон"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Сначала проверка. Потом перевод",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Printed checklist windows panorama reviews screenshot; sticky «Сначала проверка. Потом перевод»; labels адрес | панорама | отзывы | скрин ответа.",
+      "alt": "Чек-лист перед оплатой: адрес, панорама, отзывы про шум, скрин ответа хоста.",
+      "labels": ["адрес в картах", "панорама", "отзывы про шум", "скрин ответа"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "tool_screenshot",
+      "scene_hint": "Host desk honest listing «окна на стройку» + window photo; labels окна | честно | до брони | не «тихий»; Sep; TR pad.",
+      "alt": "Честное описание: куда выходят окна и что слышно — до бронирования.",
+      "labels": ["окна честно", "что напротив", "до брони", "не «тихий»"]
+    }
+  },
+  "cover_keys_ru": []
+}

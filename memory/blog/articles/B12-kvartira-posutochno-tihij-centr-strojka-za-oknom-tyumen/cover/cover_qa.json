@@ -1,0 +1,36 @@
+{
+  "agent": "excalibur-blog-cover-qa",
+  "status": "PASS",
+  "checked_at": "2026-09-06",
+  "topic_id": "B12",
+  "checks": {
+    "eight_png_exist": true,
+    "quad_manifest_valid": true,
+    "wordstat_stickers_1_3": true,
+    "motif_no_collision_14d": true,
+    "max_one_cat_meme_slot": true,
+    "light_high_key": true,
+    "logo_composite_stamp_pass": true,
+    "cover_logo_pasted": true,
+    "inline_no_logo_on_inlines": true,
+    "forbid_phone_on_cover_image": true,
+    "cover_phone_993_in_scene": true,
+    "forbid_phone_pill_post_composite": true,
+    "forbid_922_phone": true,
+    "forbid_ai_drawn_logo_cover": true,
+    "forbid_wordpress_ui_in_art": true,
+    "no_logo_plate_cover": true,
+    "forbid_graphic_collage_overlay": true,
+    "forbid_poster_composite_stamp": true,
+    "forbid_logo_reference_in_batch": true,
+    "forbid_overlapping_text_blocks": true,
+    "forbid_giant_cropped_glyph": true
+  },
+  "notes": [
+    "2× Grsai vip-tier 2048×1152 quad canvases; cover+inline_1/2/3 canvas1, inline_4–7 canvas2",
+    "Factory logo paste: cover + inline_1 + inline_3 + inline_7 (TOP-RIGHT native aspect)",
+    "Phone +7 (993) 574-83-22 IN scene on cover + inline_4; late summer/early autumn NOT winter",
+    "0 cat memes; photoreal poster cover with couple at window + Cyrillic hook",
+    "1 Grsai attempt per canvas (primary undersized → vip fallback)"
+  ]
+}
