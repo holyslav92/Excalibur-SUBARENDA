@@ -29,6 +29,7 @@ Frontmatter обязателен целиком — см. `shared/pipeline-fragm
 2. Site base: только `PUBLIC_SITE_URL` или `memory/brief/site-brief.md`. **Не копировать** URL из старых `schema.jsonld`. В git-артефакте пиши `{{SITE_BASE}}`, не литерал `[REDACTED]`.
 3. Собрать и **записать** `schema.jsonld`: BlogPosting (+ HowTo если нужно).
    - **Canonical URL:** `{{SITE_BASE}}/blog/<slug>/` — **must include `/blog/`** (live WP permalink).
+   - **Publish slug:** `title-brief.json` → `article.meta.json`; не брать slug только из имени `--article-dir` (INC B12).
    - **Author:** Добрый дом (`shared/authors-registry.json`) — **never** Шакин / The Риэлтор.
    FAQPage добавлять только при реальной FAQ-секции; не создавать вопросы ради
    schema. Если FAQ есть, брать только пары `<h3>+<p>`.

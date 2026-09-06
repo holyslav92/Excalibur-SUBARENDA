@@ -1,0 +1,37 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 1,
+  "standalone_cover": false,
+  "model_policy": "primary_2k_first_vip_on_fail",
+  "vip_disabled": false,
+  "max_generation_attempts": 2,
+  "identity_reference_local": "",
+  "identity_reference_id": "",
+  "logo_reference_local": "",
+  "logo_reference_url": "",
+  "logo_reference_in_generation": false,
+  "reference_url_hosted": "",
+  "output_canvas": "cover/canvas-quad-01.png",
+  "result_path": "cover/quad-mcp-result-01.json",
+  "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+  "preferred_image_flow": {
+    "provider": "grsai",
+    "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
+    "resolution": "2K",
+    "apply_script": "python3 scripts/excalibur_blog_quad_apply.py --article-dir <article_dir> --canvas-index 1 --inject-html"
+  },
+  "jobs": [{
+    "slot": "canvas_quad",
+    "tool": "grsai",
+    "mcp_args": {
+      "prompt": "Canvas 2048x1152 exact 2x2; four 16:9 panels; thin white gutters; high-key bright #FFF; late August early September 2026 Tyumen center apartment — warm sunny green trees outside, NOT winter no snow.\nCOVER top-left POSTER: tired couple in bright living room at OPEN window, tower crane and construction fence clearly visible outside; LARGE readable Cyrillic headline printed on listing paper on coffee table «Тихий центр» — кран под окном» with pink/gold highlight ONLY word «кран»; person IN scene looking at window; phone number «+7 (993) 574-83-22» painted on door infoboard IN scene (not pill); Wordstat stickers «квартиры посуточно тюмень» «снять квартиру посуточно в тюмени»; COVER top-right clean light wall pad 8-12% ONLY — NO logo NO brand. NO cat meme. NO host face.\nTop-right inline_1: split comparison vague ad «тихий центр» vs real window view crane fence; labels оплата 12 600 | три ночи | кран утром | окна на стройку; TR pad empty for logo paste; no drawn logo.\nBottom-left inline_2: laptop Yandex Maps street panorama showing fence crane wide road; labels проверь окна | пройди панораму | ищи забор | смотри кран; sunny desk; no logo.\nBottom-right inline_3: messenger chat guest asks about windows host replies «ну это же центр»; labels спроси до оплаты | что напротив окон | шум с открытым окном | сохрани ответ; TR pad empty; no logo.\nBan: dark cinematic, WordPress UI, model-drawn logo, phone pill, winter snow, meme soup, Canva overlay, empty stock room.",
+      "aspect_ratio": "16:9",
+      "resolution": "2K"
+    }
+  }],
+  "validation": {
+    "prompt_chars": 0,
+    "max_prompt_chars": 3500,
+    "resolution": "2K"
+  }
+}

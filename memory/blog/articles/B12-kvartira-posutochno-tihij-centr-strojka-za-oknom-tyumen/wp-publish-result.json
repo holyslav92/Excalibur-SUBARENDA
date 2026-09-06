@@ -1,0 +1,27 @@
+{
+  "slug": "napisali-tihij-centr-v-6-30-za-oknom-kran",
+  "topic_id": "B12",
+  "permalink": "{{SITE_BASE}}/blog/napisali-tihij-centr-v-6-30-za-oknom-kran/",
+  "publish_method": "ftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B12-kvartira-posutochno-tihij-centr-strojka-za-oknom-tyumen/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1240460,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4475 slug=napisali-tihij-centr-v-6-30-za-oknom-kran\nOK categories=101,106\nOK dzen_yzen_meta=1\nOK featured_image=4485\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4486 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-tihij-centr-v-6-30-za-oknom-kran-inline-01-1.png\nOK inline_alt=4486\nOK inline_caption=4486\nOK inline_description=4486\nOK inline_image_upload=4487 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-tihij-centr-v-6-30-za-oknom-kran-inline-02-1.png\nOK inline_alt=4487\nOK inline_caption=4487\nOK inline_description=4487\nOK inline_image_upload=4488 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-tihij-centr-v-6-30-za-oknom-kran-inline-05-1.png\nOK inline_alt=4488\nOK inline_caption=4488\nOK inline_description=4488\nOK inline_image_upload=4489 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-tihij-centr-v-6-30-za-oknom-kran-inline-03-1.png\nOK inline_alt=4489\nOK inline_caption=4489\nOK inline_description=4489\nOK inline_image_upload=4490 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-tihij-centr-v-6-30-za-oknom-kran-inline-06-1.png\nOK inline_alt=4490\nOK inline_caption=4490\nOK inline_description=4490\nOK inline_image_upload=4491 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-tihij-centr-v-6-30-za-oknom-kran-inline-04-1.png\nOK inline_alt=4491\nOK inline_caption=4491\nOK inline_description=4491\nOK inline_image_upload=4492 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-tihij-centr-v-6-30-za-oknom-kran-inline-07-1.png\nOK inline_alt=4492\nOK inline_caption=4492\nOK inline_description=4492\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/napisali-tihij-centr-v-6-30-za-oknom-kran/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/napisali-tihij-centr-v-6-30-za-oknom-kran/",
+    "errors": []
+  }
+}

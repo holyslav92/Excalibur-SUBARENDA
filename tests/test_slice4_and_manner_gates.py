@@ -48,10 +48,18 @@ class KlyshinMannerGateTest(unittest.TestCase):
         self.assertIn("Мой вывод как практика", style)
         self.assertNotIn("1100–1800", style)
 
-    def test_bans_nash_vyvod_stamp(self) -> None:
-        html = "<p>Наш вывод простой. Хороший хост — тот, кто говорит цифры заранее.</p>"
+    def test_bans_repeat_nash_vyvod_stamp(self) -> None:
+        html = (
+            "<p>Наш вывод простой. Хороший хост — тот, кто говорит цифры заранее.</p>"
+            "<p>Снова: наш вывод простой.</p>"
+        )
         errors = check_manner_stamps(html, label="test")
         self.assertTrue(errors)
+
+    def test_allows_single_nash_vyvod_stamp(self) -> None:
+        html = "<p>Наш вывод простой. Хороший хост — тот, кто говорит цифры заранее.</p>"
+        errors = check_manner_stamps(html, label="test")
+        self.assertFalse(errors)
 
     def test_bans_repeat_net_tak_ne_zaselyaem(self) -> None:
         html = (

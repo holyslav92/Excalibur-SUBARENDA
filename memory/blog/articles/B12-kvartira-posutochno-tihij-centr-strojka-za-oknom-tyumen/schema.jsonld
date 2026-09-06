@@ -1,0 +1,42 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "{{SITE_BASE}}/#organization",
+      "name": "Добрый дом",
+      "url": "{{SITE_BASE}}/",
+      "telephone": "+7 (993) 574-83-22",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Тюмень",
+        "addressCountry": "RU"
+      },
+      "sameAs": [
+        "{{SITE_BASE}}/"
+      ]
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "{{SITE_BASE}}/blog/napisali-tihij-centr-v-6-30-za-oknom-kran/#blogposting",
+      "url": "{{SITE_BASE}}/blog/napisali-tihij-centr-v-6-30-za-oknom-kran/",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{SITE_BASE}}/blog/napisali-tihij-centr-v-6-30-za-oknom-kran/"
+      },
+      "headline": "Написали «тихий центр». Три ночи за 12 600 ₽ — под краном",
+      "datePublished": "2026-09-06",
+      "author": {
+        "@id": "{{SITE_BASE}}/#organization"
+      },
+      "publisher": {
+        "@id": "{{SITE_BASE}}/#organization"
+      },
+      "about": {
+        "@type": "City",
+        "name": "Тюмень"
+      },
+      "inLanguage": "ru-RU"
+    }
+  ]
+}

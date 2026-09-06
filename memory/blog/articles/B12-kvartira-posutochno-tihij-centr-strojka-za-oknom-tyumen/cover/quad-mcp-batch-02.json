@@ -1,0 +1,37 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 2,
+  "standalone_cover": false,
+  "model_policy": "primary_2k_first_vip_on_fail",
+  "vip_disabled": false,
+  "max_generation_attempts": 2,
+  "identity_reference_local": "",
+  "identity_reference_id": "",
+  "logo_reference_local": "",
+  "logo_reference_url": "",
+  "logo_reference_in_generation": false,
+  "reference_url_hosted": "",
+  "output_canvas": "cover/canvas-quad-02.png",
+  "result_path": "cover/quad-mcp-result-02.json",
+  "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+  "preferred_image_flow": {
+    "provider": "grsai",
+    "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
+    "resolution": "2K",
+    "apply_script": "python3 scripts/excalibur_blog_quad_apply.py --article-dir <article_dir> --canvas-index 2 --inject-html"
+  },
+  "jobs": [{
+    "slot": "canvas_quad",
+    "tool": "grsai",
+    "mcp_args": {
+      "prompt": "Canvas 2048x1152 exact 2x2; four 16:9 panels; thin white gutters; high-key bright #FFF; late August early September 2026 Tyumen daily-rental apartment mood — warm sunny, NOT winter no snow. NO cover panel — all four are article inline infographics/scenes. NO model-drawn logo any panel.\nTop-left inline_4: process flow arrows map→panorama→question→payment on sunny desk; readable phone «+7 (993) 574-83-22» on paper business card IN scene (not pill); labels карта | панорама | вопрос хосту | потом перевод; sticky «Сначала проверка. Потом перевод».\nTop-right inline_5: split card vague «тихий центр» promise vs crane noise outside window; labels тихий? | центр | кран | сон; photoreal no meme cat.\nBottom-left inline_6: printed checklist on kitchen table: address panorama reviews screenshot host answer; labels адрес в картах | панорама | отзывы про шум | скрин ответа; arrows left to right.\nBottom-right inline_7: host desk honest listing print «окна на стройку» plus window photo with crane; labels окна честно | что напротив | до брони | не «тихий»; top-right clean pad 8-12% for factory logo paste — NO drawn logo.\nBan: dark cinematic, WordPress UI, model-drawn logo, winter snow, meme soup, host face, phone pill, empty stock room.",
+      "aspect_ratio": "16:9",
+      "resolution": "2K"
+    }
+  }],
+  "validation": {
+    "prompt_chars": 0,
+    "max_prompt_chars": 3500,
+    "resolution": "2K"
+  }
+}

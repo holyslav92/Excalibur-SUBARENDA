@@ -1,0 +1,86 @@
+{
+  "topic_id": "B12",
+  "slug": "kvartira-posutochno-tihij-centr-strojka-za-oknom-tyumen",
+  "cover_family": "brand_collage",
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "file": "cover/cover.png",
+  "alt": "Пара у окна в центре Тюмени: за стеклом стройка и кран, на столе объявление «тихий центр», телефон +7 (993) 574-83-22 на дверной табличке.",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-quad-01.png",
+  "generated_at": "2026-09-06T12:33:31+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Пара у окна в центре Тюмени: за стеклом стройка и кран, на столе объявление «тихий центр», телефон +7 (993) 574-83-22 на дверной табличке.",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Сравнение фразы «тихий центр» в объявлении и вида из окна на стройку с краном.",
+      "h2_anchor": "Не «тихий». Не «рядом». А то, что видно в окне",
+      "visual_type": "comparison_table",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Панорама Яндекс.Карт: забор, кран и дорога вокруг дома — то, что не видно на фото квартиры.",
+      "h2_anchor": "Панорама за три минуты: что она покажет",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Чат до оплаты: вопрос про окна и ответ «ну это же центр».",
+      "h2_anchor": "Вопрос в зал",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_4",
+      "file": "cover/inline-04.png",
+      "alt": "Порядок действий: карта и панорама, вопрос хосту, потом перевод — не наоборот.",
+      "h2_anchor": "Сначала проверка. Потом перевод",
+      "visual_type": "process_flow",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_5",
+      "file": "cover/inline-05.png",
+      "alt": "Спор: обещание «тихий центр» против реального шума крана у окна.",
+      "h2_anchor": "Вопрос в зал",
+      "visual_type": "infographic_card",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_6",
+      "file": "cover/inline-06.png",
+      "alt": "Чек-лист перед оплатой: адрес, панорама, отзывы про шум, скрин ответа хоста.",
+      "h2_anchor": "Сначала проверка. Потом перевод",
+      "visual_type": "labeled_checklist",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_7",
+      "file": "cover/inline-07.png",
+      "alt": "Честное описание: куда выходят окна и что слышно — до бронирования.",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "tool_screenshot",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}

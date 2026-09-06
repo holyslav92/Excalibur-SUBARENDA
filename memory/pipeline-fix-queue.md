@@ -660,3 +660,90 @@ category: env
 status: needs-human
 reason: env-only blocker; duplicate of INC-20260903-0640
 needed_decision_or_secret: YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets
+
+## INC-20260906-1343 — Metrika credentials missing (Content-learner B12)
+
+status: needs-human
+run_date: 2026-09-06
+role: excalibur-blog-content-learner
+topic_id: B12
+article_dir: memory/blog/articles/B12-kvartira-posutochno-tihij-centr-strojka-za-oknom-tyumen
+severity: medium
+category: env
+
+### What went wrong
+
+- `excalibur_blog_metrika_fetch.py --days 30 --ingest` → METRIKA CREDENTIALS BLOCKER (same root cause as INC-20260903-0640).
+
+### How the agent recovered this run
+
+- evidence_gate SKIP (no content-evidence-report.json); recorded 2 optional/low-confidence lessons in `memory/content-lessons.md`; no causal Metrika claims.
+
+### Durable fix needed before next run
+
+- Set YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets for tenant.
+
+### Fixer resolution
+
+status: needs-human
+reason: env-only blocker; duplicate of INC-20260903-0640
+needed_decision_or_secret: YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets
+
+## INC-20260906-1345 — schema assembled-inputs dir slug vs title-brief publish slug (B12)
+
+status: fixed
+run_date: 2026-09-06
+role: excalibur-blog-schema
+topic_id: B12
+article_dir: memory/blog/articles/B12-kvartira-posutochno-tihij-centr-strojka-za-oknom-tyumen
+severity: medium
+category: handoff
+
+### What went wrong
+
+- `assembled-schema-inputs.md` passed article-dir suffix `kvartira-posutochno-tihij-centr-strojka-za-oknom-tyumen` as canonical slug; Title/publish slug is `napisali-tihij-centr-v-6-30-za-oknom-kran`.
+- Schema JSON-LD generated with wrong `/blog/` path; manual slug fix in `schema.jsonld` before republish (wp-publish-log).
+
+### How the agent recovered this run
+
+- Corrected `schema.jsonld` BlogPosting URLs to publish slug; publish + live-page PASS (post 4475).
+
+### Durable fix needed before next run
+
+- Resolve publish slug from `title-brief.json` → `article.meta.json`, not article-dir basename alone.
+- Schema skill/agent must document rule; `pipeline_canon` stamp and `schema_gate` must use shared resolver.
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_article_meta_index.py`
+- `scripts/excalibur_blog_pipeline_canon.py`
+- `scripts/excalibur_blog_schema_gate.py`
+- `skills/schema-excalibur-blog/SKILL.md`
+- `agents/excalibur-blog-schema.md`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-09-06
+fix_summary:
+- `resolve_publish_slug()` in article_meta_index: meta → title-brief → dir suffix.
+- `pipeline_canon.stamp_article` and `schema_gate` use shared resolver (INC B12).
+- Schema skill/agent: HARD publish-slug rule; B12 assembled-schema-inputs corrected.
+files_changed:
+- `scripts/excalibur_blog_article_meta_index.py`
+- `scripts/excalibur_blog_pipeline_canon.py`
+- `scripts/excalibur_blog_schema_gate.py`
+- `skills/schema-excalibur-blog/SKILL.md`
+- `.cursor/skills/schema-excalibur-blog/SKILL.md`
+- `agents/excalibur-blog-schema.md`
+- `.cursor/agents/excalibur-blog-schema.md`
+- `tests/test_publish_slug_resolution.py`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_article_meta_index.py scripts/excalibur_blog_pipeline_canon.py scripts/excalibur_blog_schema_gate.py`
+- `python3 -m unittest tests.test_publish_slug_resolution -v`
+- B12 `excalibur_blog_schema_gate.py --article-dir …` → PASS
+commit: 00b6079

@@ -1,5 +1,22 @@
 # WP publish log
 
+## B12 — 2026-09-06
+
+- **topic_id:** B12
+- **slug:** napisali-tihij-centr-v-6-30-za-oknom-kran
+- **title:** Написали «тихий центр». Три ночи за 12 600 ₽ — под краном
+- **post_id:** 4475
+- **permalink:** /blog/napisali-tihij-centr-v-6-30-za-oknom-kran/
+- **categories:** posutochnaya-arenda (101), sovety-gostyam (106)
+- **featured_image:** 4485
+- **inline_images:** 4486–4492 (7× wp-content/uploads/2026/09/…-inline-0N-1.png)
+- **schema_meta:** ok (slug fix in schema.jsonld before republish)
+- **live-page gate:** PASS
+- **dzen preview:** cover-1-1024x576.png refreshed (1024×576)
+- **interlink outbound:** 4 live /blog/ siblings
+- **interlink inbound:** B01 (3745)
+- **publish_method:** ftp (Timeweb PASV)
+
 ## B11 — 2026-09-06
 
 - **topic_id:** B11

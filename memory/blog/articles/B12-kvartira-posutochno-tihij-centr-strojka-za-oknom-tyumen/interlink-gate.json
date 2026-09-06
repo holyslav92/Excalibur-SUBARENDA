@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "topic_id": "B12",
+  "slug": "napisali-tihij-centr-v-6-30-za-oknom-kran",
+  "candidates_count": 15,
+  "outbound_found": [
+    {
+      "slug": "kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki",
+      "title": "kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki"
+    },
+    {
+      "slug": "rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super",
+      "title": "rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super"
+    },
+    {
+      "slug": "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+      "title": "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate"
+    },
+    {
+      "slug": "posutochno-v-tyumeni-parkovka-ryadom-u-shlagbauma-propuska-net",
+      "title": "posutochno-v-tyumeni-parkovka-ryadom-u-shlagbauma-propuska-net"
+    }
+  ],
+  "outbound_unique_slugs": [
+    "posutochno-v-tyumeni-parkovka-ryadom-u-shlagbauma-propuska-net",
+    "rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super",
+    "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+    "kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "warnings": [],
+  "errors": []
+}
