@@ -1,0 +1,213 @@
+{
+  "agent": "excalibur-blog",
+  "date_context": {
+    "timezone": "Europe/Moscow",
+    "today_iso": "2026-09-06",
+    "today_ru": "06.09.2026",
+    "year": 2026,
+    "month": 9,
+    "month_name_ru": "сентябрь",
+    "weekday_ru": "воскресенье"
+  },
+  "topic": {
+    "topic_id": "B12",
+    "title": "квартира посуточно тихий центр стройка за окном тюмень",
+    "h1": "квартира посуточно тихий центр стройка за окном тюмень",
+    "slug": "kvartira-posutochno-tihij-centr-strojka-za-oknom-tyumen",
+    "primary_query": "квартира посуточно тихий центр стройка за окном тюмень",
+    "priority": "P0"
+  },
+  "searches": [
+    {
+      "query_id": "primary_fresh",
+      "query": "квартира посуточно тихий центр стройка за окном тюмень 2026",
+      "purpose": "актуальный SERP",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Снять квартиру посуточно, аренда квартиры на сутки в Тюмени | Авито ...",
+          "url": "https://www.avito.ru/tyumen/kvartiry/sdam/posutochno/-ASgBAgICAkSSA8gQ8AeSUg",
+          "snippet": ""
+        },
+        {
+          "title": "посуточно - Снять квартиру в Тюмени | Цены на аренду квартир в Тюмени ...",
+          "url": "https://www.avito.ru/tyumen/kvartiry/sdam-ASgBAgICAUSSA8gQ?q=%D0%BF%D0%BE%D1%81%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%BE",
+          "snippet": "В квартире выполнен ремонт, комнаты полностью меблированы. В квартире созданы все условия для комфортного проживания. Кондиционер! Есть Wi-Fi интернет и цифровое телевидение."
+        },
+        {
+          "title": "Снять квартиру посуточно в Тюмени — 11383 объявления по аренде квартир ...",
+          "url": "https://arenda.mirkvartir.ru/%D0%A2%D1%8E%D0%BC%D0%B5%D0%BD%D1%81%D0%BA%D0%B0%D1%8F+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C/%D0%A2%D1%8E%D0%BC%D0%B5%D0%BD%D1%8C/%D0%9F%D0%BE%D1%81%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%BE/",
+          "snippet": "Во дворе детская площадка, за домом большой новый парк. Удобная транспортная развязка, множество автобусных маршрутов. Легко выехать в любой район города и горячие источники."
+        },
+        {
+          "title": "Снять квартиру посуточно в Тюмени , аренда квартиры на сутки в Тюмени",
+          "url": "https://tyumen.sutochno.ru/",
+          "snippet": "Сдаётся уютная квартира с новым ремонтом в историческом центре города на пешеходной улице дзержинского, в паре минут пешком цветной бульвар, цирк, набережная реки туры."
+        },
+        {
+          "title": "Снять посуточно квартиру в Тюмени — 1 200 объявлений с посуточной ...",
+          "url": "https://realty.yandex.ru/tyumen/snyat/kvartira/posutochno/",
+          "snippet": "Снять квартиру напрямую у владельцев без посредников и переплаты в Тюмени. Выгодные цены, реальные отзывы, телефоны собственников, гарантия заселения, рейтинг жилья на Суточно.ру."
+        },
+        {
+          "title": "2-комнатная квартира посуточно, Тюмень, Тихий проезд, 6, объявление ...",
+          "url": "https://tyumen.sutochno.ru/2216432",
+          "snippet": "Как выбрать свою лучшую квартиру? Чтобы снять посуточно квартиру в Тюмени, воспользуйтесь удобными фильтрами и сортировкой для выбора среди предложений в выбранном районе"
+        }
+      ],
+      "searched_at": "2026-09-06"
+    },
+    {
+      "query_id": "title_fresh",
+      "query": "квартира посуточно тихий центр стройка за окном тюмень 2026",
+      "purpose": "SERP по человеческому title",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Снять квартиру посуточно, аренда квартиры на сутки в Тюмени | Авито ...",
+          "url": "https://www.avito.ru/tyumen/kvartiry/sdam/posutochno/-ASgBAgICAkSSA8gQ8AeSUg",
+          "snippet": ""
+        },
+        {
+          "title": "«Посуточно»: объявления в Тюмени",
+          "url": "https://www.avito.ru/tyumen/kvartiry/sdam-ASgBAgICAUSSA8gQ?district=161&q=%D0%BF%D0%BE%D1%81%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%BE",
+          "snippet": "В квартире выполнен ремонт, комнаты полностью меблированы. В квартире созданы все условия для комфортного проживания. Кондиционер! Есть Wi-Fi интернет и цифровое телевидение."
+        },
+        {
+          "title": "Снять квартиру посуточно в Тюмени , аренда квартиры на сутки в Тюмени",
+          "url": "https://tyumen.sutochno.ru/",
+          "snippet": "Квартиры от собственников и проверенных агентств в Тюмени: долгосрочная и посуточная аренда. Цены на аренду квартир. Поиск квартир на карте, по району, цене, площади и другим параметрам."
+        },
+        {
+          "title": "Снять квартиру в Тюмени посуточно - бронь за 1 ₽, аренда квартир на ...",
+          "url": "https://24.domclick.ru/tjumen/kvartiry",
+          "snippet": "Снять квартиру напрямую у владельцев без посредников и переплаты в Тюмени. Выгодные цены, реальные отзывы, телефоны собственников, гарантия заселения, рейтинг жилья на Суточно.ру."
+        },
+        {
+          "title": "Тюмень: Квартиры Посуточно & Airbnb | cozycozy",
+          "url": "https://www.cozycozy.com/ru/%D0%BA%D0%B2%D0%B0%D1%80%D1%82%D0%B8%D1%80%D0%B0-%D0%BF%D0%BE%D1%81%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%BE-%D1%82%D1%8E%D0%BC%D0%B5%D0%BD%D1%8C",
+          "snippet": "В квартире имеется все необходимое для кратковременного проживания. В шаговой доступности расположен драмтеатр, различные магазины, торговый центр с кинотеатром, Текутьевский парк ..."
+        },
+        {
+          "title": "Снять посуточно квартиру в Тюмени — 1 200 объявлений с посуточной ...",
+          "url": "https://realty.yandex.ru/tyumen/snyat/kvartira/posutochno/",
+          "snippet": "Тюмень: Хотите снять квартиру посуточно или другое жилье на время отпуска? Сравните все варианты на cozycozy. Выгодная цена без посредников!"
+        }
+      ],
+      "searched_at": "2026-09-06"
+    },
+    {
+      "query_id": "official_docs",
+      "query": "квартира посуточно тихий центр стройка за окном тюмень official docs 2026",
+      "purpose": "официальные docs",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Квартиры посуточно с отчетными документами в Тюмени",
+          "url": "https://sdaminfo.ru/tyumen/poisk-otchyotnye-dokumenty",
+          "snippet": ""
+        },
+        {
+          "title": "1-комнатная квартира посуточно, Тюмень, Тихий проезд, 2, объявление ...",
+          "url": "https://tyumen.sutochno.ru/1997351",
+          "snippet": "Объявления о сдаче квартир с отчетностью в Тюмени посуточно. Жилье можно снять суточно, на день, неделю. Цены за сутки аренды. Телефоны, мессенджеры собственников."
+        },
+        {
+          "title": "Снять квартиру посуточно в районе Центральный в Тюмени",
+          "url": "https://24.domclick.ru/tjumen/kvartiry/rajon-tsentralnyj",
+          "snippet": "Уютная 1-комнатная квартира посуточно в Тюмени в современном доме. Отличный вариант для отдыха, путешествий и командировок."
+        },
+        {
+          "title": "Снять в Тюмени квартиру в центре города 2026 - аренда квартиры для ...",
+          "url": "https://edem-v-gosti.ru/rus/kvartiry-tyumeni-v-tsentre/",
+          "snippet": "Район Центральный в Тюмени - посуточная аренда квартир на Домклик. 758 объектов размещения от 750 рублей. ⭐️ Снять квартиру на сутки в районе Центральный в Тюмени по выгодной цене от ..."
+        },
+        {
+          "title": "Квартиры и апартаменты посуточно в Тюмени.",
+          "url": "https://gorkvartira.ru/city/tyumen",
+          "snippet": "Тюмень, снять квартиру посуточно в центре 2026 - аренда квартиры для отдыха посуточно недорого. Можно снять на сутки. Лучшие цены, отзывы, фото, карта."
+        },
+        {
+          "title": "Центральный район Тюмени — снять квартиру посуточно",
+          "url": "https://tyumen.sutochno.ru/rayon-343",
+          "snippet": "Уютная квартира в центре Тюмени рядом с автовокзалом - Есть все что нужно для комфортного проживания... - Удобная транспортная развязка - Постельное, полотенца меняются после каждого гостя!"
+        }
+      ],
+      "searched_at": "2026-09-06"
+    },
+    {
+      "query_id": "github_evidence",
+      "query": "site:github.com квартира посуточно тихий центр стройка за окном тюмень 2026",
+      "purpose": "GitHub evidence",
+      "result_count": 5,
+      "results": [
+        {
+          "title": "PTO-ISA-260417/docs/figures/isa/TNOT.svg at master - GitHub",
+          "url": "https://github.com/wany16/PTO-ISA-260417/blob/master/docs/figures/isa/TNOT.svg",
+          "snippet": ""
+        },
+        {
+          "title": "unsupervised_topic_modeling/topics/ru/17/50/100/topics at ... - GitHub",
+          "url": "https://github.com/annontopicmodel/unsupervised_topic_modeling/blob/master/topics/ru/17/50/100/topics",
+          "snippet": "Parallel Tile Operation Version 2026 0417. Contribute to wany16/PTO-ISA-260417 development by creating an account on GitHub."
+        },
+        {
+          "title": "sathwikhbhat/icons/java.svg at main - GitHub",
+          "url": "https://github.com/sathwikhbhat/sathwikhbhat/blob/main/icons/java.svg",
+          "snippet": "Documentation Customer support Community forum Trust center Partners View all resources Open Source"
+        },
+        {
+          "title": "was-node-suite-comfyui/image/color_of_shadow_and_highlight_example.jpg ...",
+          "url": "https://github.com/RituCodeWeb/was-node-suite-comfyui/blob/main/image/color_of_shadow_and_highlight_example.jpg",
+          "snippet": "Documentation Customer support Community forum Trust center Partners View all resources Open Source"
+        },
+        {
+          "title": "The-mitosis-and-genetic-mutations-of-this-piece-of-land-that ... - GitHub",
+          "url": "https://github.com/Nobook1121/The-mitosis-and-genetic-mutations-of-this-piece-of-land-that-opened-up-the-world-card-game/blob/main/icon.svg",
+          "snippet": "Documentation Customer support Community forum Trust center Partners View all resources Open Source"
+        }
+      ],
+      "searched_at": "2026-09-06"
+    },
+    {
+      "query_id": "community_experience",
+      "query": "квартира посуточно тихий центр стройка за окном тюмень forum problems опыт 2026",
+      "purpose": "форумы и живые проблемы",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Снять квартиру посуточно в Тюмени, отзывы 2025-2026, аренда - ТВИЛ",
+          "url": "https://tvil.ru/city/tyumen/flats/otzyvy/",
+          "snippet": ""
+        },
+        {
+          "title": "«Посуточно»: объявления в Тюмени",
+          "url": "https://www.avito.ru/tyumen/kvartiry/sdam-ASgBAgICAUSSA8gQ?district=161&q=%D0%BF%D0%BE%D1%81%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%BE",
+          "snippet": "Отзывы об аренде квартир посуточно в Тюмени 2025-2026 от отдыхающих. Снять квартиру в Тюмени можно через сайт. Бронируйте квартиру посуточно, на сутки без посредников по недорогим ценам - ТВИЛ."
+        },
+        {
+          "title": "Центральный район Тюмени — снять квартиру посуточно",
+          "url": "https://tyumen.sutochno.ru/rayon-343",
+          "snippet": "Квартиры от собственников и проверенных агентств в Тюмени: долгосрочная и посуточная аренда. Цены на аренду квартир. Поиск квартир на карте, по району, цене, площади и другим параметрам."
+        },
+        {
+          "title": "1-комнатная квартира посуточно, Тюмень, Тихий проезд, 4, объявление ...",
+          "url": "https://tyumen.sutochno.ru/1289537",
+          "snippet": "Тюмень, Центральный район — снимите квартиру или дом напрямую у владельца жилья. Хороший выбор, без посредников."
+        },
+        {
+          "title": "Снять квартиру посуточно в центре в Тюмень. Найдено 1 055 объявлений.",
+          "url": "https://tyumen.cian.ru/snyat-kvartiru-posutochno-centr/",
+          "snippet": "Уютная однокомнатная квартира в красивом районе Европейский, в заречной части города. Рядом аквапарк Лето, ТЦ Панама, ТЦ Зелёный берег, СК Здоровье, удобный выезд на горячие источники."
+        },
+        {
+          "title": "Квартиры и апартаменты для проживания в Центральном округе Тюмени ...",
+          "url": "https://yandex.ru/maps/discovery/podborka_oteli_kvartira_okr-central-nyj-tyumen-55/",
+          "snippet": "&#10140; Снимите квартиру посуточно в центре в Тюмень на Циан - 1 055 объявлений. Самая маленькая квартира: 18 м². Арендуйте на сутки квартиру в центре в Тюмень по цене от 1,5 тыс. руб."
+        }
+      ],
+      "searched_at": "2026-09-06"
+    }
+  ],
+  "errors": []
+}
