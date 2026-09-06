@@ -1,0 +1,101 @@
+{
+  "topic_id": "B11",
+  "slug": "v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik",
+  "title": "«Всё для гостей» — ночью без полотенец на 890 ₽",
+  "outbound_required_min": 1,
+  "outbound_found": [
+    {
+      "slug": "rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super",
+      "title": "rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super",
+      "permalink": "/blog/rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super/",
+      "topic_id": "B05",
+      "post_id": null,
+      "source": "ledger"
+    },
+    {
+      "slug": "kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den",
+      "title": "kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den",
+      "permalink": "/blog/kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den/",
+      "topic_id": "B07",
+      "post_id": null,
+      "source": "ledger"
+    },
+    {
+      "slug": "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+      "title": "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+      "permalink": "/blog/pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate/",
+      "topic_id": "B08",
+      "post_id": null,
+      "source": "ledger"
+    },
+    {
+      "slug": "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400",
+      "title": "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400",
+      "permalink": "/blog/hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400/",
+      "topic_id": "B10",
+      "post_id": null,
+      "source": "ledger"
+    }
+  ],
+  "outbound_missing_suggestions": [
+    {
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "title": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "permalink": "/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+      "topic_id": "B01",
+      "post_id": 3745,
+      "source": "ledger"
+    },
+    {
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "title": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "permalink": "/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/",
+      "topic_id": "B02",
+      "post_id": 3777,
+      "source": "ledger"
+    },
+    {
+      "slug": "kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki",
+      "title": "kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki",
+      "permalink": "/blog/kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki/",
+      "topic_id": "B03",
+      "post_id": null,
+      "source": "ledger"
+    }
+  ],
+  "inbound_targets": [
+    {
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "title": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "permalink": "/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+      "topic_id": "B01",
+      "post_id": 3745,
+      "source": "ledger"
+    },
+    {
+      "slug": "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400",
+      "title": "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400",
+      "permalink": "/blog/hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400/",
+      "topic_id": "B10",
+      "post_id": null,
+      "source": "ledger"
+    },
+    {
+      "slug": "kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den",
+      "title": "kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den",
+      "permalink": "/blog/kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den/",
+      "topic_id": "B07",
+      "post_id": null,
+      "source": "ledger"
+    }
+  ],
+  "inbound_updates": [
+    {
+      "post_id": 3745,
+      "marker": "data-excalibur-interlink-from=\"v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik\"",
+      "html": "<p class=\"excalibur-interlink-readalso\" data-excalibur-interlink-from=\"v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik\"><b>Читайте также:</b> <a href=\"{{SITE_BASE}}/blog/v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik/\">«Всё для гостей» — ночью без полотенец на 890 ₽</a></p>"
+    }
+  ],
+  "new_url": "/blog/v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik/",
+  "dry_run": false
+}

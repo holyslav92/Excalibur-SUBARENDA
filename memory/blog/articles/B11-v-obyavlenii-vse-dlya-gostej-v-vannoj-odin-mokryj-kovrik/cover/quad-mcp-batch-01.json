@@ -1,0 +1,37 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 1,
+  "standalone_cover": false,
+  "model_policy": "primary_2k_first_vip_on_fail",
+  "vip_disabled": false,
+  "max_generation_attempts": 2,
+  "identity_reference_local": "",
+  "identity_reference_id": "",
+  "logo_reference_local": "",
+  "logo_reference_url": "",
+  "logo_reference_in_generation": false,
+  "reference_url_hosted": "",
+  "output_canvas": "cover/canvas-quad-01.png",
+  "result_path": "cover/quad-mcp-result-01.json",
+  "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+  "preferred_image_flow": {
+    "provider": "grsai",
+    "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
+    "resolution": "2K",
+    "apply_script": "python3 scripts/excalibur_blog_quad_apply.py --article-dir <article_dir> --canvas-index 1 --inject-html"
+  },
+  "jobs": [{
+    "slot": "canvas_quad",
+    "tool": "grsai",
+    "mcp_args": {
+      "prompt": "Canvas 2048x1152 exact 2x2; four 16:9 panels; thin white gutters; high-key bright #FFF; early September 2026 Tyumen apartment — warm light, green trees, NOT winter no snow.\nCOVER top-left: couple in bright bathroom, empty towel rack, one wet bath mat, printed listing Cyrillic «Всё для gостей — без полотенец, 890 ₽» with gold highlight ONLY word «полотенец». Readable phone «+7 (993) 574-83-22» painted on door infoboard IN scene (not pill). Wordstat stickers «квартиры посуточно тюмень». COVER top-right: clean light wall pad 8-12% ONLY — NO logo NO brand. NO cat meme. NO host face.\nTop-right inline_1: split comparison vague listing «всё для gостей» vs bathroom 0 towels 1 mat receipt 890₽; labels 0 полотенец | 1 коврик | 2 полotенца | 890 ₽; TR pad empty for logo paste; no drawn logo.\nBottom-left inline_2: timeline 23:10 train → empty bath → closed store → 890₽ night purchase; labels поезд 23:10 | магазин закрыт | 890 ₽ | спор в чате; no logo.\nBottom-right inline_3: comfort+ bathroom two towel sets on hooks, spare linen, made beds through door; labels 2 на гостя | бельё | до перевода | «всё есть»; TR pad empty; no logo.\nBan: dark cinematic, WordPress UI, model-drawn logo, phone pill, winter snow, meme soup, Canva overlay.",
+      "aspect_ratio": "16:9",
+      "resolution": "2K"
+    }
+  }],
+  "validation": {
+    "prompt_chars": 0,
+    "max_prompt_chars": 3500,
+    "resolution": "2K"
+  }
+}

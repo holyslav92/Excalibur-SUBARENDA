@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "topic_id": "B11",
+  "slug": "v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik",
+  "research_date": "2026-09-06",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Telegram @Dobriy_dom_72 post 98 (2026-09-03) + post 101 (2026-09-06) + Klyshin 3174 (2026-09-01) + pack_vs_flat hook",
+    "source_type": "community",
+    "urls": [
+      "https://t.me/Dobriy_dom_72/98",
+      "https://t.me/Dobriy_dom_72/101",
+      "https://t.me/Dobriy_dom_72/83",
+      "https://t.me/klyshin_A/3174",
+      "https://www.cian.ru/stati-chto-dolzhno-byt-v-kvartire-dlya-posutochnoy-sdachi-339917/"
+    ],
+    "accessed_at": "2026-09-06",
+    "note": "Fresh week signals: Dobriy_dom_72/98 (Sep 3) towels/completeness; Dobriy_dom_72/101 (Sep 6) late-booking rush; Klyshin/3174 (Sep 1) confirm-before-action rhythm. B11 angle: all-for-guests promise vs missing towels/bedding; 890 RUB is editorial case only."
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "No bank/developer/gov tariff digits; Cian/RealtyCalendar are industry recommendations not official tariffs",
+    "verified_claims": 0,
+    "entities_checked": [],
+    "errors": []
+  },
+  "wordstat": {
+    "status": "PASS",
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 5235,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "снять квартиру посуточно в тюмени",
+        "volume": 1703,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "полотенца квартира посуточно",
+        "volume": 109,
+        "region": "225",
+        "note": "totalCount only — WORDSTAT PARTIAL"
+      },
+      {
+        "phrase": "аренда квартиры посуточно",
+        "volume": 42979,
+        "region": "225"
+      }
+    ]
+  },
+  "errors": []
+}
