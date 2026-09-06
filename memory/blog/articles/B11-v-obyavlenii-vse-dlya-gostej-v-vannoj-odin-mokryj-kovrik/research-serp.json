@@ -1,0 +1,218 @@
+{
+  "agent": "excalibur-blog",
+  "date_context": {
+    "timezone": "Europe/Moscow",
+    "today_iso": "2026-09-06",
+    "today_ru": "06.09.2026",
+    "year": 2026,
+    "month": 9,
+    "month_name_ru": "сентябрь",
+    "weekday_ru": "воскресенье"
+  },
+  "topic": {
+    "topic_id": "B11",
+    "title": "В объявлении — всё для гостей. В ванной один мокрый коврик",
+    "h1": "В объявлении — всё для гостей. В ванной один мокрый коврик",
+    "slug": "v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik",
+    "primary_query": "В объявлении — всё для гостей. В ванной один мокрый коврик",
+    "priority": "P0"
+  },
+  "searches": [
+    {
+      "query_id": "primary_fresh",
+      "query": "В объявлении — всё для гостей. В ванной один мокрый коврик 2026",
+      "purpose": "актуальный SERP",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Коврики Для Ванной Комнаты - Купить Коврик В Ванную На Ozon По Низкой Цене",
+          "url": "https://www.ozon.ru/category/kovriki-dlya-vannoy-14596/",
+          "snippet": ""
+        },
+        {
+          "title": "10 лучших ковриков для ванной и туалета в 2026 году - Рейтинг от ...",
+          "url": "https://tehcovet.ru/reitingi/raznye-tovary/luchshie-kovriki-dlya-vannoy-i-tualeta.html",
+          "snippet": "Коврики для ванной - покупайте на OZON по выгодным ценам, быстрая и бесплатная доставка, большой ассортимент, бонусы, рассрочка и кэшбэк, распродажи, скидки и акции, реальные отзывы ..."
+        },
+        {
+          "title": "Мокрый коврик — купить по низкой цене на Яндекс Маркете",
+          "url": "https://market.yandex.ru/search?text=%D0%BC%D0%BE%D0%BA%D1%80%D1%8B%D0%B9%20%D0%BA%D0%BE%D0%B2%D1%80%D0%B8%D0%BA",
+          "snippet": "Ищите ответы в нашем рейтинге Лучших напольных ковров для санузла в 2026. Собрали топовые модели одиночных ковриков и комплектов, которые уберегут Вас от рассадника плесени и грибка."
+        },
+        {
+          "title": "Мокрый коврик для ванны, нескользящая поручня для безопасности при ...",
+          "url": "https://www.ozon.ru/product/mokryy-kovrik-dlya-vanny-neskolzyashchaya-poruchnya-dlya-bezopasnosti-pri-prinyatii-dusha-3916679595/",
+          "snippet": "купить по выгодной цене с доставкой. Популярные новинки и лидеры продаж — в проверенных интернет-магазинах. Поиск по параметрам, удобное сравнение моделей и цен на Яндекс Маркете."
+        },
+        {
+          "title": "5 лучших ковриков для ванной - Рейтинг 2026",
+          "url": "https://vyboroved.ru/reyting/luchshie-kovriki-dlya-vannoj",
+          "snippet": "Надежный и долговечный: изготовлена из пластика ABS и оснащена 3 присосками, обеспечивающими более сильное прижимание, чем ручки с 2 присосками, не скользит даже на мокром полу, удобна для ..."
+        },
+        {
+          "title": "Коврики для ванной комнаты - купить по выгодной цене от 181 рублей ...",
+          "url": "https://www.vseinstrumenti.ru/category/kovriki-dlya-vannoj-komnaty-13805/",
+          "snippet": "В обзоре представлены лучшие коврики для ванной и туалета, а также комплект для раздельного или большого совмещенного санузла."
+        }
+      ],
+      "searched_at": "2026-09-06"
+    },
+    {
+      "query_id": "title_fresh",
+      "query": "В объявлении — всё для гостей. В ванной один мокрый коврик 2026",
+      "purpose": "SERP по человеческому title",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Мокрый коврик для ванны, нескользящая поручня для безопасности при ...",
+          "url": "https://www.ozon.ru/product/mokryy-kovrik-dlya-vanny-neskolzyashchaya-poruchnya-dlya-bezopasnosti-pri-prinyatii-dusha-3916679595/",
+          "snippet": ""
+        },
+        {
+          "title": "Коврики Для Ванной Комнаты - Купить Коврик В Ванную На Ozon По Низкой Цене",
+          "url": "https://www.ozon.ru/category/kovriki-dlya-vannoy-14596/",
+          "snippet": "Надежный и долговечный: изготовлена из пластика ABS и оснащена 3 присосками, обеспечивающими более сильное прижимание, чем ручки с 2 присосками, не скользит даже на мокром полу, удобна для ..."
+        },
+        {
+          "title": "Мокрый коврик — купить по низкой цене на Яндекс Маркете",
+          "url": "https://market.yandex.ru/search?text=%D0%BC%D0%BE%D0%BA%D1%80%D1%8B%D0%B9%20%D0%BA%D0%BE%D0%B2%D1%80%D0%B8%D0%BA",
+          "snippet": "Коврики для ванной - покупайте на OZON по выгодным ценам, быстрая и бесплатная доставка, большой ассортимент, бонусы, рассрочка и кэшбэк, распродажи, скидки и акции, реальные отзывы ..."
+        },
+        {
+          "title": "Коврики для ванной - купить по низкой цене на Яндекс Маркете",
+          "url": "https://market.yandex.ru/category/kovriki-dlya-vannoy",
+          "snippet": "купить по выгодной цене с доставкой. Популярные новинки и лидеры продаж — в проверенных интернет-магазинах. Поиск по параметрам, удобное сравнение моделей и цен на Яндекс Маркете."
+        },
+        {
+          "title": "Коврики для ванной комнаты - купить по выгодной цене от 181 рублей ...",
+          "url": "https://www.vseinstrumenti.ru/category/kovriki-dlya-vannoj-komnaty-13805/",
+          "snippet": "Коврики для ванной — купить на Яндекс Маркете по выгодным ценам. В каталоге с реальными отзывами покупателей. 🚚 Быстрая доставка по клику. 💰 Оплата в рассрочку или по частям."
+        },
+        {
+          "title": "10 лучших ковриков для ванной и туалета в 2026 году - Рейтинг от ...",
+          "url": "https://tehcovet.ru/reitingi/raznye-tovary/luchshie-kovriki-dlya-vannoy-i-tualeta.html",
+          "snippet": "Купить Коврики для ванной комнаты - 23894 оригинальных товаров с гарантией от 181 р. Доставка в срок. Бесплатно в 1200 магазинов по всей России. Отзывы, отсрочка платежа для юрлиц, выбор по ..."
+        }
+      ],
+      "searched_at": "2026-09-06"
+    },
+    {
+      "query_id": "official_docs",
+      "query": "В объявлении — всё для гостей. В ванной один мокрый коврик official docs 2026",
+      "purpose": "официальные docs",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Пост на стене",
+          "url": "https://vk.com/wall-73879952_732737",
+          "snippet": ""
+        },
+        {
+          "title": "Коврики Для Ванной Комнаты - Купить Коврик В Ванную На Ozon По Низкой Цене",
+          "url": "https://www.ozon.ru/category/kovriki-dlya-vannoy-14596/",
+          "snippet": "Решена! Знакомая ситуация: после душа коврик мокрый, под ним лужа, а со временем появляется неприятный запах или даже плесень. Обычные тканевые и резиновые варианты уже не справляются."
+        },
+        {
+          "title": "Мокрый коврик для ванны, нескользящая поручня для безопасности при ...",
+          "url": "https://www.ozon.ru/product/mokryy-kovrik-dlya-vanny-neskolzyashchaya-poruchnya-dlya-bezopasnosti-pri-prinyatii-dusha-3916679595/",
+          "snippet": "Коврики для ванной - покупайте на OZON по выгодным ценам, быстрая и бесплатная доставка, большой ассортимент, бонусы, рассрочка и кэшбэк, распродажи, скидки и акции, реальные отзывы ..."
+        },
+        {
+          "title": "В наличии на свободной продаже Коврик для ванной , один ...",
+          "url": "https://vk.com/wall-221979277_1380",
+          "snippet": "Мокрый коврик для ванны, нескользящая поручня для безопасности при принятии душа, аксессуары для ванной комнаты для пожилых, взрослых и людей с ограниченными возможностями - покупайте на ..."
+        },
+        {
+          "title": "5 лучших ковриков для ванной - Рейтинг 2026",
+          "url": "https://vyboroved.ru/reyting/luchshie-kovriki-dlya-vannoj",
+          "snippet": "В наличии на свободной продаже Коврик для ванной , один единственный и не повторимый , в заказ на вязание не принимаю!!!диаметр 60 см, пушистый, плотный, связанный в две нити, крючок не ..."
+        },
+        {
+          "title": "Коврик противоскользящий JoyArty \"Мокрый лист\" для ванной, сауны ...",
+          "url": "https://www.vseinstrumenti.ru/product/kovrik-protivoskolzyaschij-joyarty-mokryj-list-dlya-vannoj-sauny-bassejna-bath-21871-2007702/",
+          "snippet": "В обзоре представлены лучшие коврики для ванной и туалета, а также комплект для раздельного или большого совмещенного санузла."
+        }
+      ],
+      "searched_at": "2026-09-06"
+    },
+    {
+      "query_id": "github_evidence",
+      "query": "site:github.com В объявлении — всё для гостей. В ванной один мокрый коврик 2026",
+      "purpose": "GitHub evidence",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Показать все фото в объявлении на сайте Авито. · GitHub",
+          "url": "https://gist.github.com/filin49/7c072145c81d8fd236dd",
+          "snippet": ""
+        },
+        {
+          "title": "sql-academy/Задачи.sql at main · yuuliasha/sql-academy",
+          "url": "https://github.com/yuuliasha/sql-academy/blob/main/%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B8.sql",
+          "snippet": "Показать все фото в объявлении на сайте Авито. GitHub Gist: instantly share code, notes, and snippets."
+        },
+        {
+          "title": "coursera-ddp-shiny/corpora/ru_50k.txt at master - GitHub",
+          "url": "https://github.com/spujadas/coursera-ddp-shiny/blob/master/corpora/ru_50k.txt",
+          "snippet": "-- 17. Определить, сколько потратил в 2005 году каждый из членов семьи. В результирующей выборке не выводите тех членов семьи, которые ничего не потратили."
+        },
+        {
+          "title": "Module_3_SQL_Practice_Netology · GitHub",
+          "url": "https://gist.github.com/AleksWhite911/bc6f3d4ccd43a01707cfaba53052a11b",
+          "snippet": "GitHub Copilot appDirect agents from issue to merge. MCP RegistryIntegrate external tools. DEVELOPER WORKFLOWS. ActionsAutomate any workflow. CodespacesInstant dev environments. IssuesPlan and track work. Code ReviewManage code changes. Code QualityEnforce quality at merge. APPLICATION SECURITY. GitHub Advanced SecurityFind and fix vulnerabilities."
+        },
+        {
+          "title": "WaLa/figures/fbee89bee5338798d4837a4534bf020b_voxel.png at main ...",
+          "url": "https://github.com/AutodeskAILab/WaLa/blob/main/figures/fbee89bee5338798d4837a4534bf020b_voxel.png",
+          "snippet": "--ЗАДАНИЕ №5 --Используя данные из таблицы городов составьте одним запросом всевозможные пары городов таким образом, --чтобы в результате не было пар с одинаковыми названиями городов."
+        },
+        {
+          "title": "Yandex-Data-Analysis/3 Исследовательский анализ данных - проект ...",
+          "url": "https://github.com/Higem11/Yandex-Data-Analysis/blob/master/3%20%D0%98%D1%81%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20-%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20%D0%98%D1%81%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BE%D0%B1%D1%8A%D1%8F%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B9%20%D0%BE%20%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B6%D0%B5%20%D0%BA%D0%B2%D0%B0%D1%80%D1%82%D0%B8%D1%80.ipynb",
+          "snippet": "Download raw file Edit and raw actions Footer © 2026 GitHub, Inc. Footer navigation Terms Privacy"
+        }
+      ],
+      "searched_at": "2026-09-06"
+    },
+    {
+      "query_id": "community_experience",
+      "query": "В объявлении — всё для гостей. В ванной один мокрый коврик forum problems опыт 2026",
+      "purpose": "форумы и живые проблемы",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Пост на стене",
+          "url": "https://vk.com/wall-68525876_9534",
+          "snippet": ""
+        },
+        {
+          "title": "Коврик в ванной — вроде мелочь, но если он постоянно мокрый и скользит ...",
+          "url": "https://vk.com/wall-238871102_46",
+          "snippet": "Начинаем неделю с лёгкого, но актуального вопроса: нужен ли ванный коврик в объектах для посуточной аренды? Мы привыкли оценивать всё с точки зрения практичности:"
+        },
+        {
+          "title": "Доска объявлений - форум на Еве.Ру",
+          "url": "https://eva.ru/forum/122",
+          "snippet": "Коврик в ванной — вроде мелочь, но если он постоянно мокрый и скользит по полу, удовольствия ноль."
+        },
+        {
+          "title": "Коврики Для Ванной Комнаты - Купить Коврик В Ванную На Ozon По Низкой Цене",
+          "url": "https://www.ozon.ru/category/kovriki-dlya-vannoy-14596/",
+          "snippet": "Форум «Доска объявлений» на Еве.Ру: свежие темы, вопросы и обсуждения. Делитесь опытом и читайте мнения участниц сообщества."
+        },
+        {
+          "title": "Почему в ванной постоянно сыро: 5 привычек, которые усугубляют проблему",
+          "url": "https://storinka.com.ua/ru/2026/08/pocemu-v-vannoj-postoanno-syro-5-privycek-kotorye-usugublaut-problemu/",
+          "snippet": "Коврики для ванной - покупайте на OZON по выгодным ценам, быстрая и бесплатная доставка, большой ассортимент, бонусы, рассрочка и кэшбэк, распродажи, скидки и акции, реальные отзывы ..."
+        },
+        {
+          "title": "«Забудьте про мокрые ноги и плесень: 5 гениальных решений для ванной ...",
+          "url": "https://myseldon.com/ru/news/index/346878491",
+          "snippet": "Постоянная сырость создает условия для появления неприятного запаха, плесени и повреждения отделки. Иногда причина кроется не в самой ванной, а в повседневных привычках."
+        }
+      ],
+      "searched_at": "2026-09-06"
+    }
+  ],
+  "errors": []
+}
