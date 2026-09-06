@@ -1,0 +1,50 @@
+{
+  "topic_id": "B11",
+  "slug": "otmenil-bron-posutochno-za-sutki-2-500-po-usloviyam-ssylki",
+  "cover_family": "brand_collage",
+  "style_preset": "the_rieltor_twilight_gold",
+  "pipeline": "slice4_grid_1x_image_api",
+  "file": "cover/cover.png",
+  "alt": "Солнечная прихожая квартиры в Тюмени: на акриловой табличке «Сутки до заезда — минус 2 500 ₽», рядом стикер и экран с номером +7 (993) 574-83-22.",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-slice4.png",
+  "generated_at": "2026-09-06T06:26:06+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Солнечная прихожая квартиры в Тюмени: на акриловой табличке «Сутки до заезда — минус 2 500 ₽», рядом стикер и экран с номером +7 (993) 574-83-22.",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Телефон показывает три сообщения: цена, отправленная предоплата и ссылка с условиями отмены после отмены поездки.",
+      "h2_anchor": "Три сообщения, после которых начинаются споры",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Планшет с условиями отмены до оплаты на площадке и пустой чат в мессенджере как контраст.",
+      "h2_anchor": "Цена ночи — это ещё не вся цена",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Чек-лист с главным вопросом об условиях отмены и возврате предоплаты до перевода денег.",
+      "h2_anchor": "Почему на площадке проще, а в личке опаснее",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}

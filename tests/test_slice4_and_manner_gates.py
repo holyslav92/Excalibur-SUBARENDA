@@ -13,8 +13,10 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from excalibur_blog_case_delivery_gate import (  # noqa: E402
     MANNER_CANON_ID,
+    SOL_SHRINK_ARTICLE_FLOOR,
     WORD_COUNT_HARD_MAX,
     check_manner_stamps,
+    check_sol_shrink,
     check_word_count,
     check_article_dir,
 )
@@ -69,6 +71,28 @@ class KlyshinMannerGateTest(unittest.TestCase):
         prompt = (ROOT / "shared/writer-master-prompt.md").read_text(encoding="utf-8")
         self.assertIn("700–1100", prompt)
         self.assertNotIn("1100–1800", prompt)
+
+    def test_sol_skill_forbids_old_length(self) -> None:
+        skill = (ROOT / "skills/sol-excalibur-blog/SKILL.md").read_text(encoding="utf-8")
+        self.assertIn("700–1100", skill)
+        self.assertNotIn("1100–1800", skill)
+
+    def test_writer_stage_blocks_overlong_draft(self) -> None:
+        long_html = "<p>" + "слово " * 1400 + "</p>"
+        errors = check_word_count(long_html, label="writer.html")
+        self.assertTrue(any("writer.html" in e and str(WORD_COUNT_HARD_MAX) in e for e in errors))
+
+    def test_sol_shrink_blocks_b11_pattern(self) -> None:
+        writer = "<p>" + "слово " * 1350 + "</p>"
+        article = "<p>" + "слово " * 900 + "</p>"
+        errors = check_sol_shrink(writer, article)
+        self.assertTrue(errors)
+        self.assertIn(str(SOL_SHRINK_ARTICLE_FLOOR), errors[0])
+
+    def test_sol_shrink_allows_normal_compression(self) -> None:
+        writer = "<p>" + "слово " * 1000 + "</p>"
+        article = "<p>" + "слово " * 850 + "</p>"
+        self.assertEqual(check_sol_shrink(writer, article), [])
 
 
 class Slice4CanonTest(unittest.TestCase):

@@ -25,7 +25,9 @@ python3 scripts/excalibur_blog_derouter_opus_chat.py \
 Ты берёшь **смысл** черновика Writer и **переписываешь** статью слогом
 тенанта. Публикуется твой `article.html`, не сырой Writer.
 
-**Длина:** ~**1100–1800 слов**. **Sol MUST NOT** replace burn scene with how-to encyclopedia or checklist spine.
+**Длина:** ~**700–1100 слов** (канон `shared/pipeline-canon.json` → `opening_rules.word_count_target`).
+**Sol MUST NOT** replace burn scene with how-to encyclopedia or checklist spine.
+**Sol MUST NOT** over-compress: если Writer >1150 слов — сжимай середину H2, держи финал **≥900** (лучше 950–1050), не вырезай checklist/interlinks.
 
 ---
 

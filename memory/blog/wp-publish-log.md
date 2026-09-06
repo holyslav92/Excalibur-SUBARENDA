@@ -1,5 +1,22 @@
 # WP publish log
 
+## B11 — 2026-09-06
+
+- **topic_id:** B11
+- **slug:** otmenil-bron-posutochno-za-sutki-2-500-po-usloviyam-ssylki
+- **title:** Отменил за сутки. 2 500 ₽ — «по условиям ссылки»
+- **post_id:** 4451
+- **permalink:** /blog/otmenil-bron-posutochno-za-sutki-2-500-po-usloviyam-ssylki/
+- **categories:** posutochnaya-arenda (101), sovety-gostyam (106)
+- **featured_image:** 4457
+- **inline_images:** 4458–4460 (3× wp-content/uploads/2026/09/…-inline-0N-1.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS
+- **dzen cache bust:** cover-dzen-v3 + cover-dzen-v3-1024x576 uploaded; feed enclosure → …-cover-dzen-v3.png (MU-plugin strips -1024x576 in RSS)
+- **interlink inbound:** B01 (3745)
+- **publish_method:** sftp (FTP PASV data hang on cloud; SFTP:22 OK)
+- **llms_deploy:** PASS
+
 ## B10 — 2026-09-05
 
 - **topic_id:** B10

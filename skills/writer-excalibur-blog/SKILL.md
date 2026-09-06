@@ -83,6 +83,11 @@ Factory MUST query/use live shapes from `memory/cover/wordstat-geo.json` (MCP-KV
 
 Weave query shapes **inside case voice** (holyslav dense + Klyshin cuts) — no keyword stuffing. City «Тюмень» in copy only when it earns the line.
 
+## assembled-writer-inputs.md (HARD)
+
+Секция `## Word count` в `--user-file` **всегда** `700–1100 words` (канон `shared/pipeline-canon.json`).
+**Запрещено** `1100–1800` — устаревший band; Writer >1300 слов → BLOCK на `case-delivery --stage writer`.
+
 ## Handoff
 
 ```text

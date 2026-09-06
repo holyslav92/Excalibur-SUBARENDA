@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "https://добрыйдом-72.рф/blog/hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400/",
+      "slug": "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400",
+      "anchor": "«всё включено» в переписке, которое на месте оказалось совсем другим. Пока всё идёт гладко, слова кажутся понятными. Как только возникает проблема, каждый вспоминает их по-своему.Цена ночи — это ещё не вся ценаКогда вам называют стоимость квартиры, это только первая цифра. Вторая — сколько стоит отменить поездку. Иногда отмена бесплатна за несколько дней. Иногда удерживают первую ночь. Иногда возврата нет вообще. Это не мелкий шрифт для занудных людей. Это часть цены.В личной переписке легко проскочить этот момент. Хочется быстрее закрепить даты, хозяину хочется быстрее понять, что заезд состоится. Вопросы будто тормозят сделку. Но именно эти тридцать секунд потом отделяют спокойную отмену от перепалки на несколько дней.Перевод в мессенджере сам по себе ничего не объясняет. Он не создаёт автоматическую отмену, не запускает возврат и не ставит посредника между гостем и хозяином. Остаётся переписка. То, что есть в ней до перевода, — и есть ваша реальная опора.Отменяли квартиру посуточно за сутки: деньги вернули или удержали? Напишите, как было у вас, в",
+      "catalog_title": "Хозяин сказал «всё включено». В такси доплатили 2 400 ₽",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/",
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "anchor": "залогом, который внезапно «не вернут» на выезде, и с",
+      "catalog_title": "Снял квартиру посуточно. Залог не вернули — нашли скол на плите",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego/",
+      "slug": "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+      "anchor": "доплатой за третьего человека уже у двери. А высокий рейтинг тоже не заменяет ясных условий: мы разбирали,",
+      "catalog_title": "Оплатили за двоих. У двери попросили доплату за третьего",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super/",
+      "slug": "rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super",
+      "anchor": "почему «4,8» из двух похожих отзывов ничего не гарантирует.Предоплата без условий отмены — как билет без обратной стороны: поехать можно, а вот вернуться по нему уже не получится. Так кто прав: хозяин, который держал даты и потерял заезд, или гость, который заплатил 2 500 ₽ и увидел правила только после отмены? Здесь всегда два лагеря. Но спорить лучше не после, а до перевода.Если нужна квартира посуточно в Тюмени без сюрпризов при отменеМы присылаем условия отмены текстом до предоплаты. Выбирайте удобный способ связи и бронирования:Telegram:",
+      "catalog_title": "Рейтинг 4,8. Два «всё супер» — и 3 900 ₽ под вопросом",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "outbound_unique_slugs": [
+    "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400",
+    "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+    "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+    "rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B11-otmenil-bron-posutochno-za-sutki-2-500-po-usloviyam-ssylki",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}

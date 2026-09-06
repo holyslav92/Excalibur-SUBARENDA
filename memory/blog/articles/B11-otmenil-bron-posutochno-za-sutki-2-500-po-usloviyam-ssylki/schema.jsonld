@@ -1,0 +1,44 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "{{SITE_BASE}}/#organization",
+      "name": "Добрый дом",
+      "url": "{{SITE_BASE}}/",
+      "sameAs": [
+        "{{SITE_BASE}}/"
+      ],
+      "telephone": "+7 (993) 574-83-22",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Тюмень",
+        "addressCountry": "RU"
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "{{SITE_BASE}}/blog/otmenil-bron-posutochno-za-sutki-2-500-po-usloviyam-ssylki/#blogposting",
+      "url": "{{SITE_BASE}}/blog/otmenil-bron-posutochno-za-sutki-2-500-po-usloviyam-ssylki/",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{SITE_BASE}}/blog/otmenil-bron-posutochno-za-sutki-2-500-po-usloviyam-ssylki/"
+      },
+      "headline": "Отменил за сутки. 2 500 ₽ — «по условиям ссылки»",
+      "description": "Гость отменил бронирование посуточного жилья за сутки до заезда, а хозяин удержал предоплату 2 500 ₽, сославшись на правила отмены по ссылке. Практический разбор того, как запросить условия отмены в чате до перевода денег.",
+      "datePublished": "2026-09-06",
+      "dateModified": "2026-09-06",
+      "inLanguage": "ru-RU",
+      "author": {
+        "@id": "{{SITE_BASE}}/#organization"
+      },
+      "publisher": {
+        "@id": "{{SITE_BASE}}/#organization"
+      },
+      "contentLocation": {
+        "@type": "City",
+        "name": "Тюмень"
+      }
+    }
+  ]
+}

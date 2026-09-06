@@ -313,3 +313,134 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+---
+
+## LESSON-20260906-0646-B11-cancel-link-after-payment
+status: proposed
+topic_id: B11
+category: utility
+confidence: low
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP. Урок из publish-артефактов: title-brief.json, description-brief.json, case-delivery-gate PASS, article.html, research-notes hook `cancel_prepay`.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest BLOCKER (INC-20260903-0640).
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Two-beat H1 «Отменил за сутки. 2 500 ₽ — «по условиям ссылки»»: действие → контрфакт ссылки, не how-to «как отменить бронь».
+- §1: отмена за сутки, цитата «по условиям ссылки предоплата не возвращается», 2 500 ₽ до идентичности хоста; pain = ссылку открыли впервые **после** отмены.
+- Угол отличен от B08: не «тишина в чате после предоплаты», а «правила появились ссылкой только при отмене».
+- Klyshin «Нет. Так не заселяем.» + «Сначала проверка. Потом перевод.»; вопрос-отмычка «Какие условия отмены и когда вернут предоплату — до перевода?» → TG/MAX mid-body.
+- H2 «Почему на площадке проще, а в личке опаснее» — контраст карточки отмены vs прямой перевод без оговорки.
+- Редакционный дисклеймер: 2 500 ₽ — конструкция кейса, не средняя предоплата по Тюмени.
+- Interlink: B10 «всё включено», B02 залог, B04 доплата, B05 рейтинг ≠ условия.
+- Wordstat: spine «квартиры посуточно тюмень» 11 342 (225) / 5 261 (55+11176); P0 «отмена брони посуточно» 78; «вернуть предоплату посуточно» 81.
+
+### Change
+- В кейсах `cancel_prepay` в §1 фиксировать **момент появления ссылки** (после отмены, не до перевода) — это отделяет от B08 silence-hook.
+- Параллельно с суммой предоплаты называть три поля до оплаты: срок бесплатной отмены, сумма удержания, срок/способ возврата.
+
+### Never again
+- Смешивать cancel-link кейс с B08 «тишина после перевода» без явного угла «ссылка после отмены».
+- Принимать «ссылку потом» как условия; «разберёмся» / «всё по стандарту» — не ответ.
+- How-to чеклист до кейса; чеклист только после «Мой вывод как практика».
+
+### Proposed apply
+- Scout: при hook `cancel_prepay` логировать original Klyshin + final P0 «отмена брони посуточно» / «вернуть предоплату посуточно» + note «не дублировать B08 silence».
+- Description: контраст «можно отменить vs правила до перевода» — как description-brief B11.
+- Review only; Writer prompt не трогать автоматически.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260906-0646-B11-messenger-no-cancel-card
+status: proposed
+topic_id: B11
+category: structure
+confidence: low
+
+### Evidence
+- artifact: title-brief.json#angle
+  finding: angle «ссылку на невозврат получил только после отмены»; opening-meta-gate PASS; lead фиксирует перевод до появления условий.
+- metrika_signal: none (credentials unavailable; causal retention не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- H2 «Три сообщения, после которых начинаются споры» — цена → перевод → ссылка после отмены как narrative spine.
+- Bold beat «Не бронь. Не удержание дат. А перевод без прописанных условий отмены.» — точка риска до платформенного сравнения.
+- Platform facts (Суточно/Авито) с оговоркой «не переносить на прямой чат» — из research-notes constraints.
+
+### Change
+- Для cancel_prepay hooks всегда включать **platform-vs-messenger** блок — не только список вопросов гостю.
+- При interlink — sibling money-before-clarity (B08 transfer, B10 taxi fee) одной красной линией «условия до денег».
+
+### Never again
+- Писать cancel-кейс только про сумму удержания, игнорируя отсутствие карточки отмены в мессенджере.
+- Ссылку на правила после оплаты подавать как норму без требования текстом в чат до перевода.
+
+### Proposed apply
+- Writer checklist (review-only): cancel_prepay → один абзац platform card vs messenger + screenshot-before-pay.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260906-0700-B11-sol-word-shrink
+status: proposed
+topic_id: B11
+category: structure
+confidence: medium
+
+### Evidence
+- artifact: `drafts/writer.html` 1351 words vs `article.html` 904 words (assembled-sol cap 950–1050).
+- gate: case-delivery PASS (min 650, no writer-stage word count before fix).
+- finding: Writer `--user-file` still said `1100–1800`; Sol skill header duplicated stale band; Sol undershot director cap.
+
+### Named blockers
+- STALE_WORD_COUNT_BAND
+- SOL_OVER_COMPRESS
+
+### Keep
+- Dense §1 + cancel-link angle survived compression; publish PASS.
+- Platform-vs-messenger block retained.
+
+### Change
+- `assembled-writer-inputs.md` → **700–1100 words** only (pipeline-canon).
+- Sol: when Writer >1150, shorten middle H2 — floor **≥900** (target 950–1050), never cut checklist/interlinks/§1.
+- Writer >1300 → BLOCK at `--stage writer`.
+
+### Never again
+- Inject `1100–1800` into Writer user-file while gate target is 700–1100.
+- Accept Sol <900 when Writer was bloated (>1150) without Sol retry.
+
+### Proposed apply
+- `case_delivery_gate.py`: writer word count + `check_sol_shrink` (applied in fixer B11).
+- Sol skill + soul-examples aligned to 700–1100.
+
+### Durable applied
+- `scripts/excalibur_blog_case_delivery_gate.py`
+- `skills/sol-excalibur-blog/SKILL.md`
+- `skills/writer-excalibur-blog/SKILL.md`
+- `shared/soul-examples/SOURCE.md`, `post-to-article.md`, `good-outputs.md`
+
+### Resolution
+status: recorded
