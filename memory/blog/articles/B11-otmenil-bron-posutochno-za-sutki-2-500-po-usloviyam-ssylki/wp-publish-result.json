@@ -1,0 +1,27 @@
+{
+  "slug": "otmenil-bron-posutochno-za-sutki-2-500-po-usloviyam-ssylki",
+  "topic_id": "B11",
+  "permalink": "{{SITE_BASE}}/blog/otmenil-bron-posutochno-za-sutki-2-500-po-usloviyam-ssylki/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B11-otmenil-bron-posutochno-za-sutki-2-500-po-usloviyam-ssylki/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1064165,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4451 slug=otmenil-bron-posutochno-za-sutki-2-500-po-usloviyam-ssylki\nOK categories=101,106\nOK dzen_yzen_meta=1\nOK featured_image=4457\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4458 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/otmenil-bron-posutochno-za-sutki-2-500-po-usloviyam-ssylki-inline-01-1.png\nOK inline_alt=4458\nOK inline_caption=4458\nOK inline_description=4458\nOK inline_image_upload=4459 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/otmenil-bron-posutochno-za-sutki-2-500-po-usloviyam-ssylki-inline-02-1.png\nOK inline_alt=4459\nOK inline_caption=4459\nOK inline_description=4459\nOK inline_image_upload=4460 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/otmenil-bron-posutochno-za-sutki-2-500-po-usloviyam-ssylki-inline-03-1.png\nOK inline_alt=4460\nOK inline_caption=4460\nOK inline_description=4460\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/otmenil-bron-posutochno-za-sutki-2-500-po-usloviyam-ssylki/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 3,
+    "expected_inline": 3,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/otmenil-bron-posutochno-za-sutki-2-500-po-usloviyam-ssylki/",
+    "errors": []
+  }
+}
