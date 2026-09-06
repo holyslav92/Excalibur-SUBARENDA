@@ -1,0 +1,67 @@
+{
+  "status": "PASS",
+  "topic_id": "B12",
+  "slug": "kvartira-posutochno-tihij-centr-strojka-za-oknom-tyumen",
+  "research_date": "2026-09-06",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Telegram @Dobriy_dom_72/99 (2026-09-04) + /101 (2026-09-06) + @klyshin_A/3166 (2026-08-25) + tyumen-info quiet hours (2026-08-24) + 72.ru center build (2026-08-24) + tumentoday crane (2026-08-25)",
+    "source_type": "community",
+    "urls": [
+      "https://t.me/Dobriy_dom_72/99",
+      "https://t.me/Dobriy_dom_72/101",
+      "https://t.me/klyshin_A/3166",
+      "https://tyumen-info.ru/society/2026/08/24/36154.html",
+      "https://72.ru/text/realty/2026/08/24/76604203/",
+      "https://tumentoday.ru/2026/08/25/sekretnyy_signal_dlya_pokupateley_zachem_razbirayut_bashennyy_kran_na_tyumenskoy_stroyke/",
+      "https://yandex.ru/support/maps/ru/concept/panoramas"
+    ],
+    "accessed_at": "2026-09-06",
+    "note": "Fresh week: Dobriy_dom/99 quiet-vs-noisy-road mismatch; /101 payment rush today; Klyshin/3166 check-before-money rhythm; local news on Tyumen quiet hours, center construction, crane marker. B12 angle: quiet center maps/panorama before pay, not courtyard duplicate."
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "No bank/developer tariff digits; Tyumen quiet-hours from law reminder article not bank tariff; Yandex Maps docs are product support not commercial tariffs",
+    "verified_claims": 0,
+    "entities_checked": [],
+    "errors": []
+  },
+  "wordstat": {
+    "status": "PASS",
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 5235,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "снять квартиру посуточно в тюмени",
+        "volume": 1703,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "квартира посуточно тюмень центр",
+        "volume": 68,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "снять квартиру посуточно в центре тюмени",
+        "volume": 54,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "аренда квартиры тюмень центр",
+        "volume": 16,
+        "region": "55+11176"
+      }
+    ]
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "memory/blog/articles/B12-kvartira-posutochno-tihij-centr-strojka-za-oknom-tyumen/derouter-opus-stamp-research.json"
+  },
+  "errors": []
+}
