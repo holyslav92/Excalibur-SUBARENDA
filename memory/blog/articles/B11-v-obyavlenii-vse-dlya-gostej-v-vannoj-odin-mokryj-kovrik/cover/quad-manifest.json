@@ -1,0 +1,121 @@
+{
+  "topic_id": "B11",
+  "slug": "v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "«Всё для гостей» — без полотенец, 890 ₽",
+  "cover_hook_highlight": "полотенец",
+  "cover_headline_line1": "«Всё для гостей»",
+  "cover_headline_line2": "890 ₽",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Grsai draw API — 2K 16:9, one job per canvas (2×). Logo factory paste cover + inline_1/3/7. Phone IN scene on cover.",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "снять квартиру посуточно в тюмени",
+    "квартиры посуточно в тюмени недорого"
+  ],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "Couple bathroom empty rack wet mat listing receipt phone TR pad",
+    "location": "Early September 2026 warm Tyumen apartment bathroom NOT winter",
+    "meme": "photoreal only zero meme stickers",
+    "prop_set": "wet mat empty hooks phone receipt 890 listing printout",
+    "sticker_set": "квартиры посуточно в тюмени недорого комплектация текстиль",
+    "joke": "everything for guests but bare towel bar"
+  },
+  "cover_emotion": "Усталость после поезда: обещали «всё», а в ванной пусто",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Пара в ванной: пустая вешалка, мокрый коврик, чек 890 ₽, телефон +7 (993) 574-83-22.",
+      "scene_hint": "Sep bath: empty rack, wet mat, 890₽ listing; +7 (993) 574-83-22; TR pad.",
+      "meme_caption_ru": "",
+      "sticky": "Сначала список — потом ключ"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "«Всё для гостей» — это настроение, а не комплектация",
+      "visual_type": "comparison_table",
+      "scene_hint": "Split listing vs 0 towels 1 mat 890₽; Sep; TR pad.",
+      "alt": "Сравнение широкой фразы в объявлении и пустой ванной с чеком 890 рублей.",
+      "labels": ["0 полотенец", "1 коврик", "2 полотенца", "890 ₽"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Почему всё ломается именно ночью",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Timeline 23:10 → empty bath → 890₽ store; Sep; no logo.",
+      "alt": "Поздний заезд, пустая ванная, закрытый магазин и ночная покупка за 890 ₽.",
+      "labels": ["поезд 23:10", "магазин закрыт", "890 ₽ ночью", "спор в чате"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Нет. Так не заселяем.",
+      "visual_type": "checklist_board",
+      "scene_hint": "Two towel sets + spare linen; made beds; Sep; TR pad.",
+      "alt": "Два комплекта полотенец на крючках и запасное бельё — наш стандарт.",
+      "labels": ["2 на гостя", "бельё", "до перевода", "«всё есть»"]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Один вопрос, который снимает весь сюжет",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Chat: towel count question vs «всё есть»; Sep desk.",
+      "alt": "Вопрос в чате про количество комплектов до перевода денег.",
+      "labels": ["сколько?", "на гостя", "до перевода", "не «всё»"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Вопрос на спор",
+      "visual_type": "infographic_card",
+      "scene_hint": "Vague «всё» vs towel checklist; Sep; no meme.",
+      "alt": "Спор: широкая фраза против конкретного списка полotенец на каждого.",
+      "labels": ["всё для гостей?", "полотенца на каждого", "Telegram MAX", "свой чемодан"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Мораль",
+      "visual_type": "process_flow",
+      "scene_hint": "Flow list→chat→pay→key; Sep kitchen table.",
+      "alt": "Сначала список комплектации и ответы, потом оплата и ключ.",
+      "labels": ["список до оплаты", "ответы письменно", "потом ключ", "не наоборот"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "tool_screenshot",
+      "scene_hint": "Host checklist + towel stacks photo; Sep; TR pad.",
+      "alt": "Чек-лист комплектации рядом с фото подготовленных полotенец и кроватей.",
+      "labels": ["обещание без списка", "ключ без борodки", "после дороги — душ", "остальное текст"]
+    }
+  },
+  "cover_keys_ru": []
+}
