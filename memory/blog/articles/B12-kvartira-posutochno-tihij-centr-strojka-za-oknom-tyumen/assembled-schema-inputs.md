@@ -10,4 +10,4 @@ site: {{SITE_BASE}} (добрыйдом-72.рф)
 telephone: +7 (993) 574-83-22
 addressLocality: Тюмень
 NO FAQ section in article — do NOT include FAQPage
-canonical URL: {{SITE_BASE}}/blog/kvartira-posutochno-tihij-centr-strojka-za-oknom-tyumen/
+canonical URL: {{SITE_BASE}}/blog/napisali-tihij-centr-v-6-30-za-oknom-kran/

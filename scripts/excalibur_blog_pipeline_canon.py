@@ -10,6 +10,8 @@ from datetime import date
 from pathlib import Path
 from typing import Any
 
+from excalibur_blog_article_meta_index import resolve_publish_slug
+
 
 def project_root() -> Path:
     return Path(__file__).resolve().parents[1]
@@ -119,10 +121,7 @@ def stamp_article(article_dir: Path, root: Path) -> None:
     h1 = str(
         title_brief.get("h1") or title_brief.get("title") or meta.get("h1") or ""
     ).strip()
-    slug = str(
-        meta.get("slug")
-        or (article_dir.name.split("-", 1)[-1] if "-" in article_dir.name else article_dir.name)
-    )
+    slug = str(meta.get("slug") or title_brief.get("slug") or resolve_publish_slug(article_dir)).strip().strip("/")
     topic_id = str(
         meta.get("topic_id")
         or title_brief.get("topic_id")

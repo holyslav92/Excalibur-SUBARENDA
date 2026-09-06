@@ -10,6 +10,7 @@ import sys
 from pathlib import Path
 from typing import Any
 
+from excalibur_blog_article_meta_index import resolve_publish_slug
 from excalibur_blog_html_linter import extract_faq_answer_after_h3
 from excalibur_repo_paths import resolve_article_dir, resolve_article_output
 
@@ -208,7 +209,7 @@ def main() -> int:
                     meta = loaded_meta
             except json.JSONDecodeError:
                 pass
-        slug = str(meta.get("slug") or article_dir.name.split("-", 1)[-1]).strip("/")
+        slug = resolve_publish_slug(article_dir)
         posting_urls: list[str] = []
         for item in objects:
             if str(item.get("@type") or "") != "BlogPosting":

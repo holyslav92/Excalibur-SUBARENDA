@@ -35,6 +35,33 @@ def topic_id_from_dirname(dirname: str) -> str:
     return m.group(1).upper() if m else ""
 
 
+def _load_json_dict(path: Path) -> dict[str, Any]:
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {}
+    return data if isinstance(data, dict) else {}
+
+
+def resolve_publish_slug(article_dir: Path) -> str:
+    """WP permalink slug: article.meta → title-brief → dir suffix (INC B12).
+
+    Title may invent a publish slug that differs from the research/article-dir
+    suffix (e.g. B12 ``napisali-tihij-centr-…`` vs dir ``kvartira-posutochno-…``).
+    Never use article_dir basename alone when title-brief.slug is set.
+    """
+    meta_slug = str(_load_json_dict(article_dir / "article.meta.json").get("slug") or "").strip().strip("/")
+    if meta_slug:
+        return meta_slug
+    title_slug = str(_load_json_dict(article_dir / "title-brief.json").get("slug") or "").strip().strip("/")
+    if title_slug:
+        return title_slug
+    name = article_dir.name
+    if "-" in name:
+        return name.split("-", 1)[-1].strip("/")
+    return name.strip("/")
+
+
 def load_ledger_topic_slugs(root: Path) -> dict[str, str]:
     """topic_id → latest ledger slug (later rows win)."""
     path = root / "shared" / "published-articles.md"
