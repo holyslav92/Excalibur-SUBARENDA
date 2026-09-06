@@ -133,6 +133,9 @@ MANNER_CANON_ID = "dobry_dom_gen_only_human_v1"
 WORD_COUNT_MIN = 650
 WORD_COUNT_TARGET = "700–1100"
 WORD_COUNT_HARD_MAX = 1300
+# When Writer draft was bloated, Sol must not over-compress mid-body (B11: 1351→904).
+SOL_SHRINK_WRITER_TRIGGER = 1150
+SOL_SHRINK_ARTICLE_FLOOR = 900
 
 RUSSIAN_STOPWORDS = frozenset(
     """
@@ -451,6 +454,22 @@ def check_word_count(
     return errors
 
 
+def check_sol_shrink(writer_html: str, article_html: str) -> list[str]:
+    """Fail when Sol over-compresses a bloated Writer draft into the low band."""
+    writer_wc = count_words(writer_html)
+    article_wc = count_words(article_html)
+    if writer_wc <= SOL_SHRINK_WRITER_TRIGGER:
+        return []
+    floor = max(SOL_SHRINK_ARTICLE_FLOOR, int(writer_wc * 0.75))
+    if article_wc < floor:
+        return [
+            "article.html: Sol over-compressed "
+            f"({article_wc} words from writer {writer_wc}; need ≥{floor}, "
+            f"target {WORD_COUNT_TARGET}). Shorten middle H2 prose, not burn scene/checklist."
+        ]
+    return []
+
+
 def check_identity(html: str, *, label: str) -> list[str]:
     low = (html or "").casefold()
     if "хост посуточной" not in low and "добрый дом" not in low:
@@ -488,6 +507,7 @@ def check_article_dir(article_dir: Path, *, stage: str = "all") -> dict[str, Any
         errors.extend(check_manner_stamps(writer_html, label="writer.html"))
         if stage in {"all", "writer"}:
             errors.extend(check_identity(writer_html, label="writer.html"))
+            errors.extend(check_word_count(writer_html, label="writer.html"))
         if COMMENT_BAIT_RE.search(writer_html):
             errors.append("writer.html: WP comment bait — use TG/MAX")
 
@@ -503,6 +523,8 @@ def check_article_dir(article_dir: Path, *, stage: str = "all") -> dict[str, Any
         errors.extend(check_manner_sections(article_html, label="article.html"))
         errors.extend(check_identity(article_html, label="article.html"))
         errors.extend(check_word_count(article_html, label="article.html"))
+        if writer_path.is_file():
+            errors.extend(check_sol_shrink(writer_path.read_text(encoding="utf-8"), article_html))
         if COMMENT_BAIT_RE.search(article_html):
             errors.append("article.html: WP comment bait — use TG/MAX")
         meta_path = article_dir / "article.meta.json"
