@@ -401,3 +401,46 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+---
+
+## LESSON-20260906-0700-B11-sol-word-shrink
+status: proposed
+topic_id: B11
+category: structure
+confidence: medium
+
+### Evidence
+- artifact: `drafts/writer.html` 1351 words vs `article.html` 904 words (assembled-sol cap 950–1050).
+- gate: case-delivery PASS (min 650, no writer-stage word count before fix).
+- finding: Writer `--user-file` still said `1100–1800`; Sol skill header duplicated stale band; Sol undershot director cap.
+
+### Named blockers
+- STALE_WORD_COUNT_BAND
+- SOL_OVER_COMPRESS
+
+### Keep
+- Dense §1 + cancel-link angle survived compression; publish PASS.
+- Platform-vs-messenger block retained.
+
+### Change
+- `assembled-writer-inputs.md` → **700–1100 words** only (pipeline-canon).
+- Sol: when Writer >1150, shorten middle H2 — floor **≥900** (target 950–1050), never cut checklist/interlinks/§1.
+- Writer >1300 → BLOCK at `--stage writer`.
+
+### Never again
+- Inject `1100–1800` into Writer user-file while gate target is 700–1100.
+- Accept Sol <900 when Writer was bloated (>1150) without Sol retry.
+
+### Proposed apply
+- `case_delivery_gate.py`: writer word count + `check_sol_shrink` (applied in fixer B11).
+- Sol skill + soul-examples aligned to 700–1100.
+
+### Durable applied
+- `scripts/excalibur_blog_case_delivery_gate.py`
+- `skills/sol-excalibur-blog/SKILL.md`
+- `skills/writer-excalibur-blog/SKILL.md`
+- `shared/soul-examples/SOURCE.md`, `post-to-article.md`, `good-outputs.md`
+
+### Resolution
+status: recorded

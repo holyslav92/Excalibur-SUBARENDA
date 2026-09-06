@@ -632,3 +632,54 @@ category: env
 status: needs-human
 reason: env-only blocker; duplicate of INC-20260903-0640
 needed_decision_or_secret: YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets
+
+## INC-20260906-0700-b11-sol-word-shrink
+status: fixed
+run_date: 2026-09-06
+role: excalibur-blog-fixer
+topic_id: B11
+article_dir: memory/blog/articles/B11-otmenil-bron-posutochno-za-sutki-2-500-po-usloviyam-ssylki
+severity: low
+category: prompt
+
+### What went wrong
+- Writer draft 1351 words (assembled-writer-inputs still said 1100–1800); Sol compressed to ~904 despite assembled-sol cap 950–1050.
+- case-delivery gate did not check writer.html word count; Sol skill header still said 1100–1800 while canon is 700–1100.
+
+### How the agent recovered this run
+- Publish PASS anyway (904 ≥ gate min 650). Director noted Sol 907 vs target 1100 for fixer loop.
+
+### Durable fix needed before next run
+- Align Sol/soul-examples/writer assembled band to 700–1100; writer-stage word count gate; Sol shrink guard when Writer >1150.
+
+### Suggested files to inspect/change
+- `scripts/excalibur_blog_case_delivery_gate.py`
+- `skills/sol-excalibur-blog/SKILL.md`
+- `skills/writer-excalibur-blog/SKILL.md`
+- `shared/soul-examples/`
+
+### Secrets
+- none recorded
+
+### Fixer resolution
+fixed_at: 2026-09-06
+fix_summary:
+- Writer-stage `check_word_count` blocks drafts >1300 before Sol.
+- `check_sol_shrink()` blocks Sol <900 (or <75% writer) when Writer >1150.
+- Sol/writer skills + soul-examples synced to 700–1100 band; lesson LESSON-20260906-0700-B11-sol-word-shrink.
+files_changed:
+- `scripts/excalibur_blog_case_delivery_gate.py`
+- `skills/sol-excalibur-blog/SKILL.md`
+- `.cursor/skills/sol-excalibur-blog/SKILL.md`
+- `skills/writer-excalibur-blog/SKILL.md`
+- `.cursor/skills/writer-excalibur-blog/SKILL.md`
+- `shared/soul-examples/SOURCE.md`
+- `shared/soul-examples/post-to-article.md`
+- `shared/soul-examples/good-outputs.md`
+- `tests/test_slice4_and_manner_gates.py`
+- `memory/content-lessons.md`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_case_delivery_gate.py`
+- `python3 -m unittest tests.test_slice4_and_manner_gates.KlyshinMannerGateTest -v`
+commit: pending
