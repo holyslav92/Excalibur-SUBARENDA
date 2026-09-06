@@ -143,13 +143,12 @@ RUSSIAN_STOPWORDS = frozenset(
     """.split()
 )
 
-BANNED_STAMP_RES = (
-    re.compile(r"наш\s+вывод\s+простой", re.I),
-)
+BANNED_STAMP_RES: tuple[re.Pattern[str], ...] = ()
 
 LIMITED_STAMP_RES: tuple[tuple[re.Pattern[str], int], ...] = (
     (re.compile(r"нет\.\s*так\s+не\s+заселяем", re.I), 1),
     (re.compile(r"так\s+не\s+заселяем", re.I), 1),
+    (re.compile(r"наш\s+вывод\s+простой", re.I), 1),
 )
 
 VERDICT_HEADING_RE = re.compile(
@@ -329,15 +328,23 @@ def check_manner_stamps(html: str, *, label: str) -> list[str]:
     plain = _plain(html)
     for rx in BANNED_STAMP_RES:
         if rx.search(plain):
-            errors.append(
-                f"{label}: banned stamp «Наш вывод простой.» — use ONE «Мой вывод как практика»"
-            )
+            errors.append(f"{label}: banned manner stamp")
             break
+    stamp_labels = {
+        r"наш\s+вывод\s+простой": "«Наш вывод простой.»",
+        r"нет\.\s*так\s+не\s+заселяем": "«Нет. Так не заселяем.»",
+        r"так\s+не\s+заселяем": "«Так не заселяем.»",
+    }
     for rx, limit in LIMITED_STAMP_RES:
         hits = len(rx.findall(plain))
         if hits > limit:
+            pat = rx.pattern
+            stamp = next(
+                (v for k, v in stamp_labels.items() if k in pat),
+                "manner stamp",
+            )
             errors.append(
-                f"{label}: stamp «Нет. Так не заселяем.» repeated {hits}× (max {limit} total)"
+                f"{label}: stamp {stamp} repeated {hits}× (max {limit} total)"
             )
     return errors
 
