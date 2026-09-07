@@ -1,0 +1,27 @@
+{
+  "slug": "kvartira-posutochno-tyumen-poezd-v-07-20-zaezd-s-14-00",
+  "topic_id": "B13",
+  "permalink": "{{SITE_BASE}}/blog/kvartira-posutochno-tyumen-poezd-v-07-20-zaezd-s-14-00/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B13-kvartira-posutochno-tyumen-poezd-v-07-20-zaezd-s-14-00/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1450054,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4495 slug=kvartira-posutochno-tyumen-poezd-v-07-20-zaezd-s-14-00\nOK categories=101,106\nOK dzen_yzen_meta=1\nOK featured_image=4502\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4503 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kvartira-posutochno-tyumen-poezd-v-07-20-zaezd-s-14-00-inline-01-1.png\nOK inline_alt=4503\nOK inline_caption=4503\nOK inline_description=4503\nOK inline_image_upload=4504 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kvartira-posutochno-tyumen-poezd-v-07-20-zaezd-s-14-00-inline-02-1.png\nOK inline_alt=4504\nOK inline_caption=4504\nOK inline_description=4504\nOK inline_image_upload=4505 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kvartira-posutochno-tyumen-poezd-v-07-20-zaezd-s-14-00-inline-03-1.png\nOK inline_alt=4505\nOK inline_caption=4505\nOK inline_description=4505\nOK inline_image_upload=4506 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kvartira-posutochno-tyumen-poezd-v-07-20-zaezd-s-14-00-inline-04-1.png\nOK inline_alt=4506\nOK inline_caption=4506\nOK inline_description=4506\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/kvartira-posutochno-tyumen-poezd-v-07-20-zaezd-s-14-00/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 4,
+    "expected_inline": 4,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/kvartira-posutochno-tyumen-poezd-v-07-20-zaezd-s-14-00/",
+    "errors": []
+  }
+}
