@@ -14,7 +14,7 @@
 - **live-page gate:** PASS
 - **dzen preview:** cover-1024x576.png live (WP auto-generated, HTTP 200)
 - **interlink outbound:** 4 live /blog/ siblings (crosslink-qa PASS)
-- **interlink inbound:** pending (post-publish interlink FTP PASV timeout in cloud; dry-run plan → B01/3745)
+- **interlink inbound:** OK B01/3745 (`interlink_skip` idempotent; Fixer retry 2026-09-07)
 - **publish_method:** ftp→sftp fallback (Timeweb PASV timeout)
 
 ## B12 — 2026-09-06
