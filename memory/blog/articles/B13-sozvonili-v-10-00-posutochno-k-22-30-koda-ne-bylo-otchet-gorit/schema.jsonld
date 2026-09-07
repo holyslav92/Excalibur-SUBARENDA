@@ -1,0 +1,43 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "{{SITE_BASE}}/#organization",
+      "name": "Добрый дом",
+      "url": "{{SITE_BASE}}/",
+      "sameAs": [
+        "{{SITE_BASE}}/"
+      ],
+      "telephone": "+7 (993) 574-83-22",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Тюмень",
+        "addressCountry": "RU"
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "{{SITE_BASE}}/blog/sozvonili-v-10-00-posutochno-k-22-30-koda-ne-bylo-otchet-gorit/#article",
+      "url": "{{SITE_BASE}}/blog/sozvonili-v-10-00-posutochno-k-22-30-koda-ne-bylo-otchet-gorit/",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{SITE_BASE}}/blog/sozvonili-v-10-00-posutochno-k-22-30-koda-ne-bylo-otchet-gorit/"
+      },
+      "headline": "Две ночи, 8 400 ₽. К ночи кода нет — отчёт горит",
+      "datePublished": "2026-09-07",
+      "dateModified": "2026-09-07",
+      "author": {
+        "@id": "{{SITE_BASE}}/#organization"
+      },
+      "publisher": {
+        "@id": "{{SITE_BASE}}/#organization"
+      },
+      "inLanguage": "ru-RU",
+      "about": {
+        "@type": "City",
+        "name": "Тюмень"
+      }
+    }
+  ]
+}
