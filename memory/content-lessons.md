@@ -489,3 +489,49 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+---
+
+## LESSON-20260907-0803-B13-early-checkin-bezkontakt-split
+status: proposed
+topic_id: B13
+category: utility
+confidence: low
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP. Урок из publish-артефактов: title-brief.json angle, description-brief.json, article.html §1–§4, case-delivery-gate PASS.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest BLOCKER (INC-20260903-0640); выборка отсутствует, causal CTR/retention не выводить.
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- H1 «Приехали утром. Четыре часа у двери — ключ только с двух» — cable pain-scene с измеримым зазором (4 ч), без SEO-хвоста.
+- §1: «бесконтактное заселение» как ложное обещание **времени** vs реальность «ключ с четырнадцати» — два разных вопроса («кто встретит» / «во сколько войдём»).
+- ₽-арифметика утра в одном блоке: 8 400 ₽ две ночи + 420 ₽ такси + ~3 200 ₽ отель на полдня — цена ненаписанной строки.
+- Klyshin-отрез «Сначала проверка. Потом перевод» + чеклист с разделением «способ ключа» и «час входа».
+- Description не дублирует H1: «бесконтактный вход внезапно стал «после двух»» (description-brief PASS).
+- Interlink-siblings: бесконтакт без часа ключа, выезд/чемоданы, предоплата/тишина — money-timing spine без how-to.
+
+### Change
+- Для hook early_checkin / morning_train всегда в §1 называть **оба** слоя: расчётный час (14:00) **и** семантику «бесконтакт» (код ≠ ранний вход).
+- Scout handoff: при P0 «ранний заезд» / «бесконтакт» логировать final phrase + volume и sub-angle «час ключа до оплаты».
+- При interlink — sibling B03 (parents+check-in window) как «утро поезда», не только university-season.
+
+### Never again
+- Принимать галочку «ранний заезд» или «бесконтакт» в фильтре как гарантию бесплатного входа утром.
+- How-to «как договориться о раннем заезде» до морали и ₽-счёта у двери.
+- Писать early-arrival кейс только про поезд, без развода «способ vs время».
+
+### Proposed apply
+- Writer checklist (review-only): morning_train + bezконтакт → lead с цитатой хоста «ключ с N» + ₽ зазора до морали.
+- Title: prefer time-gap reveal (утро → N часов → ключ с X) over generic «ранний заезд посуточно».
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
