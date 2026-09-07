@@ -1,5 +1,22 @@
 # WP publish log
 
+## B13 — 2026-09-07
+
+- **topic_id:** B13
+- **slug:** sozvonili-v-10-00-posutochno-k-22-30-koda-ne-bylo-otchet-gorit
+- **title:** Две ночи, 8 400 ₽. К ночи кода нет — отчёт горит
+- **post_id:** 4527
+- **permalink:** /blog/sozvonili-v-10-00-posutochno-k-22-30-koda-ne-bylo-otchet-gorit/
+- **categories:** posutochnaya-arenda (101), sovety-gostyam (106)
+- **featured_image:** 4528
+- **inline_images:** 4529–4531 (3× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS
+- **dzen cache bust:** cover-dzen-v3 + cover-dzen-v3-1024x576 uploaded; feed enclosure → …-cover-dzen-v3.png
+- **interlink outbound:** 3 live /blog/ siblings (beskontaktnoe, predoplaty, vyezd)
+- **interlink inbound:** B01 (3745)
+- **publish_method:** ftp (Timeweb PASV; post-publish interlink via SFTP:22)
+
 ## B12 — 2026-09-06
 
 - **topic_id:** B12

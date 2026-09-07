@@ -17,3 +17,4 @@ Excalibur-2-Cloud — не копировать URL tymenrieltor.ru.
 | 2026-09-05 | B10 | hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400 | /blog/hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400/ | published |
 | 2026-09-06 | B11 | v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik | /blog/v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik/ | published |
 | 2026-09-06 | B12 | napisali-tihij-centr-v-6-30-za-oknom-kran | /blog/napisali-tihij-centr-v-6-30-za-oknom-kran/ | published |
+| 2026-09-07 | B13 | sozvonili-v-10-00-posutochno-k-22-30-koda-ne-bylo-otchet-gorit | /blog/sozvonili-v-10-00-posutochno-k-22-30-koda-ne-bylo-otchet-gorit/ | published |

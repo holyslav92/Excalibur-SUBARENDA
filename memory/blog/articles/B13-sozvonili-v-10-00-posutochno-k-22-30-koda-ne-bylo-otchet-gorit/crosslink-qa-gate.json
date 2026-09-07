@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "https://добрыйдом-72.рф/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "anchor": "про бесконтактное заселение посуточно в Тюмени.Почему это опаснее обычной тишиныКогда человек перевёл предоплату, а хозяин сразу пропал, ситуация хотя бы быстро становится понятной: связи нет, нужно искать другое жильё. Такой случай мы описывали в",
+      "catalog_title": "Оплатил квартиру посуточно. Код прислали от чужой двери",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate/",
+      "slug": "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+      "anchor": "кейсе про предоплату и тишину в чате.Здесь ловушка мягче. Связь сохраняется. На каждое сообщение приходит надежда: «сейчас пришлю», «уже отправляю», «пять минут». Гость не уезжает, не ищет запасной вариант и не звонит по другим объявлениям, потому что решение вроде бы рядом. Он теряет не только деньги. Он теряет время, силы и возможность спокойно выбрать другое место. Ночью в незнакомом городе это может оказаться дороже 8 400 ₽.В командировке есть и другие детали, которые нельзя оставлять на потом. После выезда поезд может быть только через несколько часов, а чемодан уже негде оставить. Как с этим справляться, мы показывали в",
+      "catalog_title": "Перевели 3 000 ₽ предоплатой. К вечеру — тишина в чате",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu/",
+      "slug": "vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu",
+      "anchor": "разборе про вещи между выездом и поездом. Если гость приезжает на машине, заранее нужен понятный ответ по въезду во двор и парковке у шлагбаума.Вы бронировали жильё в командировку — код приходил вовремя или вы тоже стояли у подъезда под обещание «сейчас пришлю»? Напишите нам в",
+      "catalog_title": "Выезд в полдень. Поезд через 4 часа — чемоданы у подъезда",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "outbound_unique_slugs": [
+    "beskontaktnoe-zaselenie-posutochno-tyumen",
+    "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+    "vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B13-sozvonili-v-10-00-posutochno-k-22-30-koda-ne-bylo-otchet-gorit",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}

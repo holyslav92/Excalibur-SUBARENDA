@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "topic_id": "B13",
+  "slug": "sozvonili-v-10-00-posutochno-k-22-30-koda-ne-bylo-otchet-gorit",
+  "candidates_count": 16,
+  "outbound_found": [
+    {
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "title": "beskontaktnoe-zaselenie-posutochno-tyumen"
+    },
+    {
+      "slug": "vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu",
+      "title": "vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu"
+    },
+    {
+      "slug": "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+      "title": "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate"
+    }
+  ],
+  "outbound_unique_slugs": [
+    "beskontaktnoe-zaselenie-posutochno-tyumen",
+    "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+    "vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "warnings": [],
+  "errors": []
+}
