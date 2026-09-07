@@ -1,0 +1,37 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 1,
+  "standalone_cover": false,
+  "model_policy": "primary_2k_first_vip_on_fail",
+  "vip_disabled": false,
+  "max_generation_attempts": 2,
+  "identity_reference_local": "",
+  "identity_reference_id": "",
+  "logo_reference_local": "",
+  "logo_reference_url": "",
+  "logo_reference_in_generation": false,
+  "reference_url_hosted": "",
+  "output_canvas": "cover/canvas-quad-01.png",
+  "result_path": "cover/quad-mcp-result-01.json",
+  "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+  "preferred_image_flow": {
+    "provider": "grsai",
+    "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
+    "resolution": "2K",
+    "apply_script": "python3 scripts/excalibur_blog_quad_apply.py --article-dir <article_dir> --canvas-index 1 --inject-html"
+  },
+  "jobs": [{
+    "slot": "canvas_quad",
+    "tool": "grsai",
+    "mcp_args": {
+      "prompt": "Canvas 2048x1152 exact 2x2; four 16:9 panels; thin white gutters; high-key bright #FFF; early September 2026 Tyumen daily-rental apartment — warm sunny green trees +9C morning, NOT winter no snow.\nCOVER top-left POSTER: family with suitcases at apartment door; person IN scene; Cyrillic headline «Утром приехали — ключ с двух» on DOOR sign upper half NOT on floor board; highlight «двух»; phone +7 (993) 574-83-22 on small metal door plate; Wordstat stickers top area; bottom 30% must stay busy floor/suitcases NOT white rectangle bar; TR pad NO logo. NO cat.\nTop-right inline_1: split ad «бесконтакт» vs chat «ключ с 14:00»; labels ночной поезд | +9 °C | ключ с 14:00; TR pad empty; no drawn logo.\nBottom-left inline_2: timeline 07:20→14:00; labels поезд | 4 часа | раньше нельзя; sunny; no logo.\nBottom-right inline_3: receipts 8400 taxi 420 hotel 3200 on table; labels 2 ночи | 8 400 | такси 420; TR pad empty; no logo.\nBan: dark cinematic, WordPress UI, model-drawn logo, phone pill bar button, winter snow, meme soup, Trade Offer Wojak, giant letter crop, Canva overlay.",
+      "aspect_ratio": "16:9",
+      "resolution": "2K"
+    }
+  }],
+  "validation": {
+    "prompt_chars": 0,
+    "max_prompt_chars": 3500,
+    "resolution": "2K"
+  }
+}

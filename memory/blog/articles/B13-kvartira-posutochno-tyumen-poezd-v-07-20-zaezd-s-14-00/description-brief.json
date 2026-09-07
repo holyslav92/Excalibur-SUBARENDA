@@ -1,0 +1,10 @@
+{
+  "topic_id": "B13",
+  "description": "Поезд пришёл утром, а бесконтактный вход внезапно стал «после двух». Как не провести день на лестнице с ребёнком — разбирает Добрый дом в Тюмени.",
+  "rhythm": "klyshin_case_hook",
+  "geo": "Тюмень",
+  "author_brand": "Добрый дом",
+  "not_equal_title": true,
+  "not_truncated_lead": true,
+  "verdict": "PASS"
+}

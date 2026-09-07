@@ -1,0 +1,50 @@
+{
+  "topic_id": "B13",
+  "slug": "kvartira-posutochno-tyumen-poezd-v-07-20-zaezd-s-14-00",
+  "cover_family": "brand_collage",
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "file": "cover/cover.png",
+  "alt": "Приехали утром. Четыре часа у двери — ключ только с двух",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-quad-01.png",
+  "generated_at": "2026-09-07T06:54:25+00:00",
+  "assets": [
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Сравнение: «бесконтакт» в объявлении и «ключ с 14:00» в чате после оплаты.",
+      "h2_anchor": "Что на самом деле обещает «бесконтакт»",
+      "visual_type": "comparison_table",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Расчётный час: поезд утром не равен ключу с 14:00 — четыре часа между ними.",
+      "h2_anchor": "«Сутки» — это не двадцать четыре часа от поезда",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Суммы утра: две ночи, такси с вокзала и запасной отель на полдня.",
+      "h2_anchor": "Цена четырёх часов",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_4",
+      "file": "cover/inline-04.png",
+      "alt": "Порядок: спросить час ключа, сохранить ответ, потом перевод — не наоборот.",
+      "h2_anchor": "Сначала проверка. Потом перевод",
+      "visual_type": "process_flow",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}

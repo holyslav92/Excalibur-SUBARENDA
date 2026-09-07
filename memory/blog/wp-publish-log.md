@@ -1,5 +1,23 @@
 # WP publish log
 
+## B13 — 2026-09-07
+
+- **topic_id:** B13
+- **slug:** kvartira-posutochno-tyumen-poezd-v-07-20-zaezd-s-14-00
+- **title:** Приехали утром. Четыре часа у двери — ключ только с двух
+- **post_id:** 4495
+- **permalink:** /blog/kvartira-posutochno-tyumen-poezd-v-07-20-zaezd-s-14-00/
+- **categories:** posutochnaya-arenda (101), sovety-gostyam (106)
+- **featured_image:** 4502
+- **inline_images:** 4503–4506 (4× wp-content/uploads/2026/09/…-inline-0N-1.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS
+- **dzen preview:** cover-1-1024x576.png live (1024×576)
+- **interlink outbound:** 4 live /blog/ siblings
+- **interlink inbound:** B01 (3745)
+- **publish_method:** sftp (FTP PASV data channel stuck >25m on Cloud; INC fallback)
+- **llms_deploy:** PASS
+
 ## B12 — 2026-09-06
 
 - **topic_id:** B12
