@@ -1,0 +1,76 @@
+{
+  "status": "PASS",
+  "topic_id": "B13",
+  "slug": "sozvonili-v-10-00-posutochno-k-22-30-koda-ne-bylo-otchet-gorit",
+  "research_date": "2026-09-07",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Telegram @Dobriy_dom_72/98 (2026-09-03) + /99 (2026-09-04) + /100 (2026-09-05) + @klyshin_A/3179 (2026-09-07) + Yandex for Business closing docs",
+    "source_type": "community",
+    "urls": [
+      "https://t.me/Dobriy_dom_72/98",
+      "https://t.me/Dobriy_dom_72/99",
+      "https://t.me/Dobriy_dom_72/100",
+      "https://t.me/klyshin_A/3179",
+      "https://business.go.yandex/travel/travelabroad/otchetnye-dokumenty-za-prozhivanie-v-kvartire",
+      "https://sutochno.com/blog/otchetnyedokumenty"
+    ],
+    "accessed_at": "2026-09-07",
+    "note": "Fresh week: Dobriy_dom/98 undisclosed remote check-in; /99 post-payment disappearance; /100 evening payment rush; Klyshin/3179 channel active today; B13 angle: business trip + closing docs deadline Monday + delayed access code after morning call."
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "No bank/developer tariff digits; Yandex for Business and Sutochno are document-composition references, not commercial bank tariffs",
+    "verified_claims": 0,
+    "entities_checked": [],
+    "errors": []
+  },
+  "wordstat": {
+    "status": "PASS",
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 5220,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "снять квартиру посуточно в тюмени",
+        "volume": 1689,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "закрывающие документы по аренде",
+        "volume": 270,
+        "region": "225"
+      },
+      {
+        "phrase": "закрывающие документы по договору аренды",
+        "volume": 105,
+        "region": "225"
+      },
+      {
+        "phrase": "командировка квартира посуточно",
+        "volume": 78,
+        "region": "225"
+      },
+      {
+        "phrase": "посуточно или отель",
+        "volume": 415,
+        "region": "225"
+      },
+      {
+        "phrase": "отель или посуточная квартира",
+        "volume": 301,
+        "region": "225"
+      }
+    ]
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "memory/blog/articles/B13-sozvonili-v-10-00-posutochno-k-22-30-koda-ne-bylo-otchet-gorit/derouter-opus-stamp-research.json"
+  },
+  "errors": []
+}
