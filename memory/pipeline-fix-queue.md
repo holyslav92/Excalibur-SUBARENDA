@@ -873,4 +873,4 @@ files_changed:
 checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_wp_publish.py`
 - `python3 scripts/excalibur_blog_post_publish_interlink.py --article-dir memory/blog/articles/B13-kod-srabotal-klyuchnica-pusta-posutochno-tyumen` → OK interlink_done
-commit: pending
+commit: 700bc14
