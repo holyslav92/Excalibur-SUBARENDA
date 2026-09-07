@@ -1,0 +1,131 @@
+{
+  "agent": "excalibur-blog-cover-quad-split",
+  "status": "PASS",
+  "splits": [
+    {
+      "canvas_index": 1,
+      "manifest": "cover/quad-manifest.json",
+      "split": {
+        "source_canvas": "memory/blog/articles/B13-sozvonili-v-10-00-posutochno-k-22-30-koda-ne-bylo-otchet-gorit/cover/canvas-slice4.png",
+        "source_size_px": [
+          2048,
+          1152
+        ],
+        "panel_size_px": [
+          1024,
+          576
+        ],
+        "split_meta": {
+          "split_mode": "mechanical_center",
+          "h_gutter_px": null,
+          "v_gutter_px": null,
+          "requested_mode": "mechanical"
+        },
+        "output_size_px": [
+          1200,
+          675
+        ],
+        "outputs": {
+          "cover": {
+            "file": "cover/cover.png",
+            "quadrant": "top_left",
+            "box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1024,
+              "bottom": 576
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1024,
+              "bottom": 576
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Командировочный с чемоданом стоит снаружи у закрытого входа в тёплый сентябрьский вечер; на листе крупный хук «Код не пришёл — чемодан снаружи».",
+            "h2_anchor": null
+          },
+          "inline_1": {
+            "file": "cover/inline-01.png",
+            "quadrant": "top_right",
+            "box_px": {
+              "left": 1024,
+              "top": 0,
+              "right": 2048,
+              "bottom": 576
+            },
+            "raw_box_px": {
+              "left": 1024,
+              "top": 0,
+              "right": 2048,
+              "bottom": 576
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Сравнение: устный звонок не заменяет письменные договор, акт и чек для бухгалтерии.",
+            "h2_anchor": "Почему звонок не заменяет договорённость"
+          },
+          "inline_2": {
+            "file": "cover/inline-02.png",
+            "quadrant": "bottom_left",
+            "box_px": {
+              "left": 0,
+              "top": 576,
+              "right": 1024,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 576,
+              "right": 1024,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Утреннее обещание «вечером пришлю код» и вечерний чемодан у закрытого входа.",
+            "h2_anchor": "Цена одной фразы «потом пришлю»"
+          },
+          "inline_3": {
+            "file": "cover/inline-03.png",
+            "quadrant": "bottom_right",
+            "box_px": {
+              "left": 1024,
+              "top": 576,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 1024,
+              "top": 576,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Чат обещает «сейчас пришлю», но гость всё ещё стоит с чемоданом у закрытого подъезда.",
+            "h2_anchor": "Почему это опаснее обычной тишины"
+          }
+        }
+      }
+    }
+  ],
+  "manifest": "cover/quad-manifest.json",
+  "html_inject": [
+    "skip inline_1: already correct under H2 — Почему звонок не заменяет договорённость",
+    "skip inline_2: already correct under H2 — Цена одной фразы «потом пришлю»",
+    "skip inline_3: already correct under H2 — Почему это опаснее обычной тишины"
+  ]
+}

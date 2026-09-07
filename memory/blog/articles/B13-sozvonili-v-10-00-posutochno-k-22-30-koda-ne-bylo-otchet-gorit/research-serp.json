@@ -1,0 +1,187 @@
+{
+  "agent": "excalibur-blog",
+  "date_context": {
+    "timezone": "Europe/Moscow",
+    "today_iso": "2026-09-07",
+    "today_ru": "07.09.2026",
+    "year": 2026,
+    "month": 9,
+    "month_name_ru": "сентябрь",
+    "weekday_ru": "понедельник"
+  },
+  "topic": {
+    "topic_id": "B13",
+    "title": "Созвонили в 10:00 посуточно. К 22:30 кода не было — отчёт горит",
+    "h1": "Созвонили в 10:00 посуточно. К 22:30 кода не было — отчёт горит",
+    "slug": "sozvonili-v-10-00-posutochno-k-22-30-koda-ne-bylo-otchet-gorit",
+    "primary_query": "Созвонили в 10:00 посуточно. К 22:30 кода не было — отчёт горит",
+    "priority": "P0"
+  },
+  "searches": [
+    {
+      "query_id": "primary_fresh",
+      "query": "Созвонили в 10:00 посуточно. К 22:30 кода не было — отчёт горит 2026",
+      "purpose": "актуальный SERP",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "МВД перечислило популярные предлоги мошенников, чтобы получить код из ...",
+          "url": "https://www.kp.ru/online/news/6780549/",
+          "snippet": ""
+        },
+        {
+          "title": "Как Мошенники Выманивают Коды Из Sms. Специалисты Все Объяснили",
+          "url": "https://www.rbc.ru/life/news/697328629a794761c47d3b8c",
+          "snippet": "Любой запрос кода из СМС по телефону или в мессенджерах является самым явным признаком мошенничества."
+        },
+        {
+          "title": "Как решить проблему с не получением кода подтверждения",
+          "url": "https://rutube.ru/video/5100c4c169f551cc65a6be57d7677f79/",
+          "snippet": "Одним из самых распространенных предлогов для получения кода из SMS является «запись на прием» в госорганизацию."
+        },
+        {
+          "title": "Код подтверждения не приходит на телефон: причины и решения в Госуслугах",
+          "url": "https://gosuslugisovet.ru/articles/view/kod-podtverzhdeniya-ne-prikhodit-na-telefon-prichiny-i-resheniya-v-gosuslugakh",
+          "snippet": "Смотрите видео онлайн «Как решить проблему с не получением кода подтверждения» на канале «justNinja» в хорошем качестве и бесплатно, опубликованное 2 июля 2026 года в 1:22, длительностью 00:04:36, на ..."
+        },
+        {
+          "title": "Не приходит СМС для Telegram: причины, что делать, как войти без кода",
+          "url": "https://hi-tech.mail.ru/articles/140204-ne-prikhodit-sms-dlya-telegram/",
+          "snippet": "Неправильно указанный номер телефона - частая причина, по которой пользователь не получает код подтверждения в системе государственных услуг. Ошибка может возникнуть при вводе цифр, выборе неверного кода страны или использовании устаревшего номера."
+        },
+        {
+          "title": "Что делать, если не приходит код подтверждения.",
+          "url": "https://gosuslugisovet.ru/articles/view/chto-delat-esli-ne-prikhodit-kod-podtverzhdeniya",
+          "snippet": "Для авторизации в Telegram нужен СМС-код. Сейчас на номера российских операторов коды не доходят. Мессенджер добавил другие способы войти в аккаунт."
+        }
+      ],
+      "searched_at": "2026-09-07"
+    },
+    {
+      "query_id": "title_fresh",
+      "query": "Созвонили в 10:00 посуточно. К 22:30 кода не было — отчёт горит 2026",
+      "purpose": "SERP по человеческому title",
+      "result_count": 0,
+      "results": [],
+      "searched_at": "2026-09-07"
+    },
+    {
+      "query_id": "official_docs",
+      "query": "Созвонили в 10:00 посуточно. К 22:30 кода не было — отчёт горит official docs 2026",
+      "purpose": "официальные docs",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Что делать, если не приходит код подтверждения.",
+          "url": "https://gosuslugisovet.ru/articles/view/chto-delat-esli-ne-prikhodit-kod-podtverzhdeniya",
+          "snippet": ""
+        },
+        {
+          "title": "Что делать, если не приходит СМС в Telegram: как войти без кода",
+          "url": "https://kod.ru/chto-delat-esli-ne-prikhodit-sms-dlya-telegram",
+          "snippet": "Убедитесь, что вы не допустили опечаток и выбрали верный способ получения кода. Если данные введены верно, но сообщение так и не пришло, проверьте соединение с интернетом."
+        },
+        {
+          "title": "Почему не приходит код в МАКС: что делать, если не приходит смс для ...",
+          "url": "https://hi-tech.mail.ru/articles/145851-pochemu-ne-prikhodit-kod-podtverzhdeniya-v-max/",
+          "snippet": "Почему не приходит код подтверждения в Telegram и как войти без SMS. Рабочие способы: код на другое устройство, QR-код, почта для входа и Passkey. Что настроить заранее, чтобы не потерять доступ."
+        },
+        {
+          "title": "[5 Решений] Не приходит смс с кодами подтверждения что делать",
+          "url": "https://www.tenorshare.com/ru/android-tips/not-getting-verification-code-texts.html",
+          "snippet": "Если код не пришел в течение 10—15 минут, проверьте все пункты из инструкции. Если задержка больше часа и остальные сервисы работают нормально, обратитесь в поддержку МАКС."
+        },
+        {
+          "title": "Не приходит код подтверждения Apple ID в 2026: 6 причин и что делать ...",
+          "url": "https://vc.ru/services/2889060-ne-prikhodit-kod-podtverzhdeniya-apple-id",
+          "snippet": "Вот 5 распространенных причин, по которым вы не получаете проверочный код на Android и iPhone. Указанный вами номер телефона или адрес электронной почты может быть неверным."
+        },
+        {
+          "title": "Почему не приходят смс и коды подтверждения на iPhone и Android",
+          "url": "https://journal.sovcombank.ru/tehnologii/pocemu-ne-prixodiat-sms-na-telefon",
+          "snippet": "Если он не приходит, аккаунт фактически заблокирован: ни покупок, ни подписок, ни доступа к iCloud. В 2026 году эта проблема стала массовой среди россиян — особенно с турецкими Apple ID."
+        }
+      ],
+      "searched_at": "2026-09-07"
+    },
+    {
+      "query_id": "github_evidence",
+      "query": "site:github.com Созвонили в 10:00 посуточно. К 22:30 кода не было — отчёт горит 2026",
+      "purpose": "GitHub evidence",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "GitHub - DariaLimarenko/sem6_ASOIU",
+          "url": "https://github.com/DariaLimarenko/sem6_ASOIU",
+          "snippet": ""
+        },
+        {
+          "title": "AI-interview API (сессия, код, тесты, отчёт) #1170",
+          "url": "https://github.com/hexlet-volunteers/hexlet-cv/issues/1170",
+          "snippet": "Эта проверка встречалась и в AddBook, и в AddMagazine. Если бы правило проверки названия изменилось, пришлось бы менять код в двух местах. Это увеличивает риск ошибки."
+        },
+        {
+          "title": "большой код.py · GitHub",
+          "url": "https://gist.github.com/lovasoa/266a8e1cbd32010958718924bc0183b5",
+          "snippet": "Эта задача — серверный контракт всего цикла AI-собеса: без него фронт (#1172) не сможет стартовать сессию, отправлять ответы и показывать отчёт, а прогону кода (#1171) не к чему будет ..."
+        },
+        {
+          "title": "Аудит плана · GitHub",
+          "url": "https://gist.github.com/gajet5/fb29af0f0e1e030c966daac417fb9efc",
+          "snippet": "Author Привет, Павук! Честно говоря, я сам уже не понимаю этот код — написал его 9 лет назад. Но рад, что он сегодня кому-то пригодился. 🙂 Sorry, something went wrong. Uh oh! There was an error while loading. Please reload this page ..."
+        },
+        {
+          "title": "Сканирование кода - Документация GitHub",
+          "url": "https://docs.github.com/ru/code-security/concepts/code-scanning/code-scanning?learn=code_security_actions",
+          "snippet": "Multi-agent verification workflow - параллельные explore-субагенты, личная верификация блокеров, сводный отчёт GO/NO-GO. Не для обычного код-ревью и не для имплементации планов. Аудит план-документов"
+        },
+        {
+          "title": "Устранение ошибок анализа сканирования кода - GitHub Enterprise Server ...",
+          "url": "https://docs.github.com/ru/enterprise-server@3.22/code-security/reference/code-scanning/troubleshoot-analysis-errors",
+          "snippet": "Вы можете запланировать сканирование на определенные дни и время или запускать его при возникновении определенного события в репозитории, например принудительной отправки."
+        }
+      ],
+      "searched_at": "2026-09-07"
+    },
+    {
+      "query_id": "community_experience",
+      "query": "Созвонили в 10:00 посуточно. К 22:30 кода не было — отчёт горит forum problems опыт 2026",
+      "purpose": "форумы и живые проблемы",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Почему не приходят смс и коды подтверждения на iPhone и Android",
+          "url": "https://journal.sovcombank.ru/tehnologii/pocemu-ne-prixodiat-sms-na-telefon",
+          "snippet": ""
+        },
+        {
+          "title": "Что делать, если не приходит код подтверждения.",
+          "url": "https://gosuslugisovet.ru/articles/view/chto-delat-esli-ne-prikhodit-kod-podtverzhdeniya",
+          "snippet": "Рассказываем, что делать, если не приходят смс на телефон, и как справиться со сбоями в сети или настройках."
+        },
+        {
+          "title": "Почему СМС не приходит на телефон и как быстро решить проблему",
+          "url": "https://robob.ru/articles/smartfony-funktsionalnost-i-problemy/pochemu-sms-ne-prihodit-na-telefon-i-kak-bystro-reshit-problemu",
+          "snippet": "Убедитесь, что вы не допустили опечаток и выбрали верный способ получения кода. Если данные введены верно, но сообщение так и не пришло, проверьте соединение с интернетом."
+        },
+        {
+          "title": "Что делать, если не приходит СМС в Telegram: как войти без кода",
+          "url": "https://kod.ru/chto-delat-esli-ne-prikhodit-sms-dlya-telegram",
+          "snippet": "Когда СМС с кодом подтверждения не приходит, чаще всего виноваты три причины: Как понять, что именно с вашим устройством? Вот простой лайфхак: вспомните, что вы делали перед запросом кода. Если вводили номер — проверьте его. Если всё с номером в порядке — смотрите настройки и папку «Спам»."
+        },
+        {
+          "title": "Почему Не Приходят И Не Отправляются Sms С Телефона",
+          "url": "https://www.kp.ru/expert/elektronika/ne-prikhodyat-i-ne-otpravlyayutsya-sms/",
+          "snippet": "Почему не приходит код подтверждения в Telegram и как войти без SMS. Рабочие способы: код на другое устройство, QR-код, почта для входа и Passkey. Что настроить заранее, чтобы не потерять доступ."
+        },
+        {
+          "title": "Почему Не Приходят Sms С Кодом Подтверждения И Что Делать?",
+          "url": "https://androidlime.ru/sms-with-verification-code-not-received",
+          "snippet": "Разбираемся в причинах того, почему не приходят и не отправляются SMS с телефона."
+        }
+      ],
+      "searched_at": "2026-09-07"
+    }
+  ],
+  "errors": []
+}

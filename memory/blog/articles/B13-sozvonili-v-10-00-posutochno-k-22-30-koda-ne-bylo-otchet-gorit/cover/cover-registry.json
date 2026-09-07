@@ -1,0 +1,50 @@
+{
+  "topic_id": "B13",
+  "slug": "sozvonili-v-10-00-posutochno-k-22-30-koda-ne-bylo-otchet-gorit",
+  "cover_family": "brand_collage",
+  "style_preset": "the_rieltor_twilight_gold",
+  "pipeline": "slice4_grid_1x_image_api",
+  "file": "cover/cover.png",
+  "alt": "Командировочный с чемоданом стоит снаружи у закрытого входа в тёплый сентябрьский вечер; на листе крупный хук «Код не пришёл — чемодан снаружи».",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-slice4.png",
+  "generated_at": "2026-09-07T10:06:32+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Командировочный с чемоданом стоит снаружи у закрытого входа в тёплый сентябрьский вечер; на листе крупный хук «Код не пришёл — чемодан снаружи».",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Сравнение: устный звонок не заменяет письменные договор, акт и чек для бухгалтерии.",
+      "h2_anchor": "Почему звонок не заменяет договорённость",
+      "visual_type": "labeled_checklist",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Утреннее обещание «вечером пришлю код» и вечерний чемодан у закрытого входа.",
+      "h2_anchor": "Цена одной фразы «потом пришлю»",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Чат обещает «сейчас пришлю», но гость всё ещё стоит с чемоданом у закрытого подъезда.",
+      "h2_anchor": "Почему это опаснее обычной тишины",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}

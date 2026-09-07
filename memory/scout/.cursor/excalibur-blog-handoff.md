@@ -1,18 +1,11 @@
-DEROUTER SCOUT BLOCKER: в текущем окружении недоступны shell/Derouter utility и MCP-KV Wordstat, поэтому я не могу честно сформировать или записать `.cursor/excalibur-blog-handoff.md`.
+SCOUT BLOCK
 
-Для B12 нужно запустить обязательный маршрут:
+Не могу корректно выпустить handoff: в текущем окружении недоступны обязательные инструменты и файлы для проверки контракта:
 
-```bash
-python3 scripts/excalibur_blog_derouter_opus_chat.py \
-  --role scout \
-  --system-file skills/scout-excalibur-blog/SKILL.md \
-  --user-file <assembled-scout-inputs.md> \
-  --output .cursor/excalibur-blog-handoff.md \
-  --article-dir <article_dir_or_memory/scout>
-```
+- Derouter utility `gpt-5.6-terra` — handoff-проза должна проходить только через него;
+- MCP-KV Wordstat — требуется самостоятельный preflight `wordstat_get_user_info`;
+- `memory/scout/klyshin-topic-bank.md` и `.json`;
+- `shared/published-titles.md` для проверки последних N=3;
+- свежий внешний сигнал `klyshin_A` и дополнительный tenant-сигнал.
 
-Перед ним обязательны live-проверки `wordstat_get_user_info` и Wordstat-частот, затем:
-
-```bash
-python3 scripts/excalibur_blog_wordstat_gate.py handoff
-```
+Переданные вами частоты и строки Wordstat нельзя использовать как замену обязательному live-вызову. Поэтому `.cursor/excalibur-blog-handoff.md` не создаю и полный handoff не выдаю.
