@@ -1,0 +1,10 @@
+{
+  "topic_id": "B13",
+  "description": "«Сейчас пришлю код» — а у вас в Тюмени зависли дверь, закрывающие документы и авансовый отчёт. В «Добром доме» детали командировки лучше проверить до заселения.",
+  "rhythm": "klyshin_case_hook",
+  "geo": "Тюмень",
+  "author_brand": "Добрый дом",
+  "not_equal_title": true,
+  "not_truncated_lead": true,
+  "verdict": "PASS"
+}
