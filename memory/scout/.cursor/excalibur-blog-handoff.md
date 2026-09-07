@@ -1,18 +1,14 @@
-DEROUTER SCOUT BLOCKER: в текущем окружении недоступны shell/Derouter utility и MCP-KV Wordstat, поэтому я не могу честно сформировать или записать `.cursor/excalibur-blog-handoff.md`.
+# Scout handoff B13 — пустая ключница при бесконтактном заселении
 
-Для B12 нужно запустить обязательный маршрут:
-
-```bash
-python3 scripts/excalibur_blog_derouter_opus_chat.py \
-  --role scout \
-  --system-file skills/scout-excalibur-blog/SKILL.md \
-  --user-file <assembled-scout-inputs.md> \
-  --output .cursor/excalibur-blog-handoff.md \
-  --article-dir <article_dir_or_memory/scout>
-```
-
-Перед ним обязательны live-проверки `wordstat_get_user_info` и Wordstat-частот, затем:
-
-```bash
-python3 scripts/excalibur_blog_wordstat_gate.py handoff
-```
+wordstat_preflight: mcp-kv wordstat_get_user_info OK (2026-09-07)
+klyshin_hook: parking_keybox | original: «Код открыл ключницу — ключа внутри нет» (mechanics: бесконтакт / keybox, NOT wrong door)
+wordstat_rework: probe «ключница посуточно» empty (55+11176) → «ключница» 69643 (225 furniture bias) → «бесконтактное заселение посуточно» 59 (55+11176) / 2993 (225) → «аренда квартиры посуточно» 710 (55+11176) → final P0 «квартиры посуточно тюмень» 5220 (55+11176) / 11084 (225)
+wordstat: mcp_kv live | regions 55+11176 compare 225 | P0 «квартиры посуточно тюмень» 5220 | P1 «бесконтактное заселение посуточно» 59 | P1 «снять квартиру посуточно в тюмени» 1689 | compare RU «бесконтактное заселение посуточно» 2993
+season_note: YEKT 2026-09-07 early September — summer/light cover; NO winter hero
+topic_id: B13
+slug: kod-srabotal-klyuchnitsa-pusta-posutochno-tyumen
+title_draft: Код сработал. Открыли ключницу — внутри пусто
+angle: гость у подъезда, код открыл ящик, ключа нет — 23:40, такси уехало; lockpick: «Есть фото ключницы и тест кода до оплаты?»
+anti_dup: B01 wrong door code; WP 2026-09-07 no-code-at-night — different angle (empty box, not missing/wrong code)
+dzen_pattern: 2
+wp_category_slugs: posutochno, zaselenie
