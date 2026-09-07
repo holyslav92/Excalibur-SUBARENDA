@@ -747,3 +747,130 @@ checks_run:
 - `python3 -m unittest tests.test_publish_slug_resolution -v`
 - B12 `excalibur_blog_schema_gate.py --article-dir …` → PASS
 commit: 00b6079
+
+## INC-20260907-1348 — Metrika credentials missing (Content-learner B13)
+
+status: needs-human
+run_date: 2026-09-07
+role: excalibur-blog-content-learner
+topic_id: B13
+article_dir: memory/blog/articles/B13-kod-srabotal-klyuchnica-pusta-posutochno-tyumen
+severity: medium
+category: env
+
+### What went wrong
+
+- `excalibur_blog_metrika_fetch.py --days 30 --ingest` → METRIKA CREDENTIALS BLOCKER (same root cause as INC-20260903-0640).
+
+### How the agent recovered this run
+
+- evidence_gate SKIP (no content-evidence-report.json); recorded 2 optional/low-confidence lessons in `memory/content-lessons.md`; no causal Metrika claims.
+
+### Durable fix needed before next run
+
+- Set YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets for tenant.
+
+### Fixer resolution
+
+status: needs-human
+reason: env-only blocker; duplicate of INC-20260903-0640
+needed_decision_or_secret: YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets
+
+## INC-20260907-1345 — Cover-QA cat-meme gate false positive on prompt negatives (B13)
+
+status: fixed
+run_date: 2026-09-07
+role: excalibur-blog-cover-qa
+topic_id: B13
+article_dir: memory/blog/articles/B13-kod-srabotal-klyuchnica-pusta-posutochno-tyumen
+severity: low
+category: script
+
+### What went wrong
+
+- Cover-QA `max_one_cat_meme_slot` gate counted prompt negatives in `scene_hint` (`NO cat meme`, `no cat no logo`) as cat-meme slots → false FAIL before PASS stamp.
+
+### How the agent recovered this run
+
+- Added `_scrub_negated_cat_mentions()` in `excalibur_blog_meme_cat_gate.py` during Cover-QA; re-stamped `cover_qa.json` PASS.
+
+### Durable fix needed before next run
+
+- Cat-meme quota gate must ignore negated cat mentions in scene hints (EN/RU).
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_meme_cat_gate.py`
+- `tests/test_cover_canon_gates.py`
+- `memory/cover/visual-notes-dobry-dom.json`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-09-07
+fix_summary:
+- `_NEGATED_CAT_MENTION_RE` + `_scrub_negated_cat_mentions()` strip NO cat / no cat no logo before pattern match (commit 5f3cc05).
+- Regression test `test_meme_cat_gate_ignores_negated_no_cat_prompts`; visual-notes `negation_safe` note.
+files_changed:
+- `scripts/excalibur_blog_meme_cat_gate.py`
+- `tests/test_cover_canon_gates.py`
+- `memory/cover/visual-notes-dobry-dom.json`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_meme_cat_gate.py`
+- `python3 -m unittest tests.test_cover_canon_gates.WordstatGateTest.test_meme_cat_gate_ignores_negated_no_cat_prompts -v`
+commit: 5f3cc05
+
+## INC-20260907-1346 — post-publish inbound interlink deferred after PASV timeout (B13)
+
+status: fixed
+run_date: 2026-09-07
+role: excalibur-blog-publish
+topic_id: B13
+article_dir: memory/blog/articles/B13-kod-srabotal-klyuchnica-pusta-posutochno-tyumen
+severity: medium
+category: transport
+
+### What went wrong
+
+- After B13 publish (post 4535, live-page PASS), inbound «Читайте также» to B01/3745 not applied during publish window (FTP PASV timeout / slow bootstrap). `wp-publish-log` noted `interlink inbound: pending`.
+
+### How the agent recovered this run
+
+- Fixer re-ran `excalibur_blog_post_publish_interlink.py` → `OK interlink_skip=3745` + `OK interlink_done` (~6 min SFTP bootstrap).
+
+### Durable fix needed before next run
+
+- Auto-retry interlink once after publish before BLOCKER; document manual retry in interlink contract.
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_wp_publish.py`
+- `shared/interlink-contract.md`
+- `skills/publish-excalibur-blog/SKILL.md`
+
+### Secrets
+
+- FTP (Cloud Secrets)
+
+### Fixer resolution
+
+fixed_at: 2026-09-07
+fix_summary:
+- `wp_publish.py` retries `post_publish_interlink.py` once on first failure before BLOCKER.
+- `shared/interlink-contract.md` + publish skill: manual retry after PASV timeout.
+- B13 inbound applied idempotently to B01/3745.
+files_changed:
+- `scripts/excalibur_blog_wp_publish.py`
+- `shared/interlink-contract.md`
+- `skills/publish-excalibur-blog/SKILL.md`
+- `.cursor/skills/publish-excalibur-blog/SKILL.md`
+- `memory/blog/wp-publish-log.md`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_wp_publish.py`
+- `python3 scripts/excalibur_blog_post_publish_interlink.py --article-dir memory/blog/articles/B13-kod-srabotal-klyuchnica-pusta-posutochno-tyumen` → OK interlink_done
+commit: 700bc14

@@ -213,7 +213,9 @@ python3 scripts/excalibur_blog_post_publish_interlink.py \
   --article-dir <article_dir>
 ```
 
-Контракт: `shared/interlink-contract.md`.
+Контракт: `shared/interlink-contract.md`. При PASV timeout после publish —
+**один автоматический retry** в `wp_publish.py` + ручной повтор команды выше
+(INC B13).
 
 Опционально: `--deploy-llms` (или авто из tenant `publish_options.deploy_llms_after_publish`).
 

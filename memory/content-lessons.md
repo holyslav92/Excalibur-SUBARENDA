@@ -489,3 +489,95 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+---
+
+## LESSON-20260907-1348-B13-empty-keybox-working-code
+status: proposed
+topic_id: B13
+category: utility
+confidence: low
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP. Урок из publish-артефактов: title-brief.json, description-brief.json, case-delivery-gate PASS, article.html, research-notes hook `parking_keybox`.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest BLOCKER по credentials (INC-20260903-0640).
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Two-beat H1 «Код сработал. Пустая ключница — 35 минут у двери»: контрфакт пустого ящика + время у двери, не how-to.
+- §1: цитата «ключи в ключнице, код работает», правильный подъезд/ящик, такси уехало; редакционный дисклеймер 35 мин и 480 ₽ — не тариф города.
+- Разведение сценариев: не B01 (чужая дверь/код) и не WP «к ночи кода нет» — здесь код есть и открывает нужную ключницу.
+- Klyshin «Нет. Так не заселяем.» + «Сначала проверка. Потом перевод.»; вопрос-отмычка «код пришёл = можно ехать или ключ уже лежит в ящике?» → TG/MAX mid-body.
+- H2 «Фраза, которая отвечает не на тот вопрос» — хост про цифры vs гость про пустой карман; utility без злодейства.
+- Interlink spine: B01 бесконтактное (чужой код), B08 тишина после предоплаты, B02 залог, B10 такси-доплата.
+- Wordstat: spine «квартиры посуточно тюмень» 5220–11084 (Tyumen 55+11176); узкий «бесконтактное заселение посуточно» 59–2993 — угол кейбокса, не P0.
+- Description не дублирует H1: «код подходит, а ключа нет» + хост про цифры (description-brief PASS).
+- Cover-QA PASS: 2× Grsai quad, keybox photoreal set, cat-meme false positive fixed in gate.
+
+### Change
+- В кейсах `parking_keybox` / contactless hooks в §1 сразу фиксировать **цепочку** (код открыл ящик → ключа нет → такси уехало) рядом с цитатой хоста — не смешивать с «код не подошёл».
+- Параллельно с механикой ключницы явно маркировать, что домофонный код и код ящика могут различаться — не только «пустой ящик».
+
+### Never again
+- Считать рабочий код доказательством готового заселения без подтверждения физического ключа.
+- Повторять B01 (чужая дверь) или no-code-at-night кейс под видом empty-keybox.
+- How-to каталог кейбоксов / гайд для арендодателей до морали; чеклист только после «Мой вывод как практика».
+- Выдавать 480 ₽ и 35 мин за рыночную статистику без editorial disclaimer.
+- Ломать ключницу как «решение»; советовать повторный перевод под ночным давлением.
+
+### Proposed apply
+- Scout: при hook `parking_keybox` логировать original Klyshin «Код открыл ключницу — ключа внутри нет» + final P0 spine Tyumen + note «бесконтактное заселение» volume (узкий угол).
+- Title/Description: держать контраст «код сработал vs ящик пустой» как в description-brief B13.
+- Review only; Writer prompt не трогать автоматически.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260907-1348-B13-host-answers-digits-not-key
+status: proposed
+topic_id: B13
+category: structure
+confidence: low
+
+### Evidence
+- artifact: title-brief.json#angle
+  finding: angle «Гость около 23:40 оказался у подъезда без ключа и ждал около 35 минут»; opening-meta-gate PASS; H2 «Фраза, которая отвечает не на тот вопрос» с циклом переписки.
+- metrika_signal: none (credentials unavailable; causal retention не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Слой «такси уехало → 35 минут у пустого ящика → вторая машина 480 ₽» отдельным абзацем — asymmetric moment после «код отправлен».
+- Блок переписки «ящик открылся, ключа нет» ↔ «ключи в ключнице, код работает» — объясняет mismatch вопросов без обвинения.
+- Связка night leverage + money-timing spine через interlink B08 (тишина) и B10 (такси) без дублирования B01 wrong-door.
+- Мораль «ключница — обещание, не замок» + «Мой вывод как практика», не «Наш вывод простой».
+
+### Change
+- Для contactless/keybox hooks всегда включать **host-answer mismatch** (ответ про код vs вопрос про ключ) в utility-блок — не только механику ящика.
+- При interlink — sibling про access-timing (B08 silence, B10 taxi, B01 wrong door) одной красной линией «код ≠ ключ внутри».
+
+### Never again
+- Писать empty-keybox кейс только про «наберите код ещё раз», игнорируя temporal leverage (ночь, такси уехало, второй рейс).
+- Финал «Наш вывод простой» вместо «Мой вывод как практика».
+
+### Proposed apply
+- Writer checklist (review-only): parking_keybox + late_checkin → один абзац про host answering digits while guest stares at empty slot.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded

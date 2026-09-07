@@ -38,3 +38,19 @@ append в 1–3 старых поста через bootstrap `excalibur-blog-int
 
 После publish скрипт `excalibur_blog_wp_publish.py` автоматически вызывает
 interlink, если `publish_options.auto_interlink_after_publish=true`.
+
+## Retry после timeout (Cloud / Timeweb)
+
+Если после крупного bootstrap-upload inbound не применился (FTP PASV `421` /
+`TimeoutError`, или `wp-publish-log` → `interlink inbound: pending`):
+
+1. Подождать завершения publish (live-page PASS).
+2. Повторить вручную или через Fixer:
+
+```bash
+python3 scripts/excalibur_blog_post_publish_interlink.py \
+  --article-dir memory/blog/articles/<topic>-<slug>
+```
+
+`excalibur_blog_wp_publish.py` делает **один автоматический retry** interlink
+перед BLOCKER (INC B13). Скрипт interlink всегда идёт через SFTP bootstrap.

@@ -300,6 +300,29 @@ class WordstatGateTest(unittest.TestCase):
         errors = validate_max_one_cat_meme(manifest, catalog)
         self.assertEqual(errors, [])
 
+    def test_meme_cat_gate_ignores_negated_no_cat_prompts(self) -> None:
+        sys.path.insert(0, str(ROOT / "scripts"))
+        from excalibur_blog_meme_cat_gate import (  # noqa: PLC0415
+            is_cat_meme_text,
+            load_meme_catalog,
+            validate_max_one_cat_meme,
+        )
+
+        catalog = load_meme_catalog(ROOT)
+        self.assertFalse(is_cat_meme_text("NO cat meme on cover"))
+        self.assertFalse(is_cat_meme_text("no logo no cat"))
+        manifest = {
+            "cover_motifs": {"meme": "zero stickers photoreal keybox only"},
+            "slots": {
+                "cover": {"scene_hint": "sunny entryway; NO cat meme on cover; TR pad empty"},
+                "inline_2": {"scene_hint": "chat bubbles; no logo no cat"},
+                "inline_5": {"scene_hint": "infographic; NO cat meme NO stickers"},
+                "inline_6": {"scene_hint": "checklist board; Sep; no cat no logo"},
+            },
+        }
+        errors = validate_max_one_cat_meme(manifest, catalog)
+        self.assertEqual(errors, [])
+
     def test_motif_gate_cat_family_collision(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

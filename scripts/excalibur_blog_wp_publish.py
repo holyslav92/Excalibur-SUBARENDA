@@ -1681,16 +1681,19 @@ def main() -> int:
     tenant = load_tenant_config(root)
     auto_interlink = bool((tenant.get("publish_options") or {}).get("auto_interlink_after_publish"))
     if auto_interlink and tenant.get("interlink_old_articles"):
-        interlink_proc = subprocess.run(
-            [
-                sys.executable,
-                str(root / "scripts/excalibur_blog_post_publish_interlink.py"),
-                "--article-dir",
-                str(article_dir.relative_to(root)),
-            ],
-            cwd=str(root),
-            check=False,
-        )
+        interlink_argv = [
+            sys.executable,
+            str(root / "scripts/excalibur_blog_post_publish_interlink.py"),
+            "--article-dir",
+            str(article_dir.relative_to(root)),
+        ]
+        interlink_proc = subprocess.run(interlink_argv, cwd=str(root), check=False)
+        if interlink_proc.returncode != 0:
+            print(
+                "WARN interlink: first attempt failed; retrying with fresh SFTP connection",
+                file=sys.stderr,
+            )
+            interlink_proc = subprocess.run(interlink_argv, cwd=str(root), check=False)
         if interlink_proc.returncode != 0:
             print("BLOCKER: post-publish interlink failed", file=sys.stderr)
             return 1

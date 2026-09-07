@@ -1,0 +1,44 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "{{SITE_BASE}}/#organization",
+      "name": "Добрый дом",
+      "url": "{{SITE_BASE}}/",
+      "telephone": "+7 (993) 574-83-22",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Тюмень",
+        "addressCountry": "RU"
+      },
+      "sameAs": [
+        "{{SITE_BASE}}/"
+      ]
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "{{SITE_BASE}}/blog/kod-srabotal-klyuchnica-pusta-posutochno-tyumen/",
+      "url": "{{SITE_BASE}}/blog/kod-srabotal-klyuchnica-pusta-posutochno-tyumen/",
+      "headline": "Код сработал. Пустая ключница — 35 минут у двери",
+      "datePublished": "2026-09-07",
+      "inLanguage": "ru-RU",
+      "author": {
+        "@id": "{{SITE_BASE}}/#organization"
+      },
+      "publisher": {
+        "@id": "{{SITE_BASE}}/#organization"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{SITE_BASE}}/blog/kod-srabotal-klyuchnica-pusta-posutochno-tyumen/"
+      },
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "{{SITE_BASE}}/#website",
+        "url": "{{SITE_BASE}}/",
+        "name": "Добрый дом"
+      }
+    }
+  ]
+}

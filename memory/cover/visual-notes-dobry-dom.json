@@ -33,7 +33,8 @@
       "max_slots": 1,
       "scope": "cover + inline_1..inline_7",
       "prefer": "non-cat people-meme on cover; cat on one inline if needed",
-      "qa_fail_if": "2+ frames contain cat-meme OR cover has cat + inline has cat"
+      "qa_fail_if": "2+ frames contain cat-meme OR cover has cat + inline has cat",
+      "negation_safe": "Prompt negatives like NO cat meme / no cat no logo in scene_hint must NOT count as cat slots (excalibur_blog_meme_cat_gate.py INC B13)"
     },
     "formats": ["reaction_face", "before_after", "caption_panel", "comic_beat", "meme_sticker"],
     "catalog": "memory/cover/meme-top100.json",

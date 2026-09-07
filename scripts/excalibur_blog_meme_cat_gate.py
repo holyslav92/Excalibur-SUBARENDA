@@ -10,6 +10,21 @@ from pathlib import Path
 # Единое семейство для anti-repeat 14д: любой cat-meme = одна коллизия.
 CAT_MEME_FAMILY_TOKEN = "__cat_meme_family__"
 
+# Prompt negatives like "NO cat meme" / "no logo no cat" must not count as cat slots.
+_NEGATED_CAT_MENTION_RE = re.compile(
+    r"\b(?:"
+    r"no|not|without|zero|forbid(?:den)?|never|avoid|skip|exclude"
+    r")\s+(?:"
+    r"cat(?:\s+meme)?(?:\s+sticker)?|meme\s+cat|cat\s+sticker"
+    r")\b|"
+    r"\b(?:"
+    r"нет|без|не"
+    r")\s+(?:"
+    r"кот(?:ик|а|ы)?|кошк|мем[^\s]*\s*кот|кот[^\s]*\s*мем"
+    r")\b",
+    re.IGNORECASE,
+)
+
 _CAT_TEXT_PATTERNS = (
     re.compile(r"\bcat\b", re.IGNORECASE),
     re.compile(r"\bкот(?:ик|а|ы)?\b", re.IGNORECASE),
@@ -43,11 +58,16 @@ def cat_meme_entry_ids(catalog: dict) -> set[str]:
     return ids
 
 
+def _scrub_negated_cat_mentions(text: str) -> str:
+    return _NEGATED_CAT_MENTION_RE.sub(" ", text)
+
+
 def is_cat_meme_text(text: str) -> bool:
     normalized = " ".join(str(text or "").casefold().split())
     if not normalized:
         return False
-    return any(pattern.search(normalized) for pattern in _CAT_TEXT_PATTERNS)
+    scrubbed = _scrub_negated_cat_mentions(normalized)
+    return any(pattern.search(scrubbed) for pattern in _CAT_TEXT_PATTERNS)
 
 
 def is_cat_meme_entry(entry_id: str, catalog: dict) -> bool:
