@@ -1,5 +1,22 @@
 # WP publish log
 
+## B13 — 2026-09-07
+
+- **topic_id:** B13
+- **slug:** kod-srabotal-klyuchnica-pusta-posutochno-tyumen
+- **title:** Код сработал. Пустая ключница — 35 минут у двери
+- **post_id:** 4535
+- **permalink:** /blog/kod-srabotal-klyuchnica-pusta-posutochno-tyumen/
+- **categories:** posutochnaya-arenda (101), sovety-gostyam (106)
+- **featured_image:** 4536
+- **inline_images:** 4537–4543 (7× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS
+- **dzen preview:** cover-1024x576.png live (WP auto-generated, HTTP 200)
+- **interlink outbound:** 4 live /blog/ siblings (crosslink-qa PASS)
+- **interlink inbound:** pending (post-publish interlink FTP PASV timeout in cloud; dry-run plan → B01/3745)
+- **publish_method:** ftp→sftp fallback (Timeweb PASV timeout)
+
 ## B12 — 2026-09-06
 
 - **topic_id:** B12

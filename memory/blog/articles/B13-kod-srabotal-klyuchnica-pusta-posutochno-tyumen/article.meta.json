@@ -3,6 +3,10 @@
   "h1": "Код сработал. Пустая ключница — 35 минут у двери",
   "slug": "kod-srabotal-klyuchnica-pusta-posutochno-tyumen",
   "topic_id": "B13",
+  "wp_category_slugs": [
+    "posutochnaya-arenda",
+    "sovety-gostyam"
+  ],
   "author_id": "dobry-dom",
   "article_mode": "B",
   "description": "Код сработал. Пустая ключница — 35 минут у двери",
@@ -20,6 +24,8 @@
     "side_stickers": "skip"
   },
   "date": "2026-09-07",
+  "status": "published",
+  "wp_post_id": 4535,
   "pipeline_canon": "human-first-v3",
   "editorial_swarm": false
 }
