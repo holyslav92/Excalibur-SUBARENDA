@@ -1,0 +1,120 @@
+{
+  "topic_id": "B13",
+  "slug": "kvartira-posutochno-tyumen-poezd-v-07-20-zaezd-s-14-00",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "«Утром приехали — ключ с двух»",
+  "cover_hook_highlight": "двух",
+  "cover_headline_line1": "Утром приехали",
+  "cover_headline_line2": "ключ с двух",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Grsai draw API — 2K 16:9, one job per canvas (2×). Logo factory paste cover + inline_1/3/7. Phone IN scene on cover + inline_4 + inline_7.",
+  "wordstat_stickers": [
+    "квартира посуточно Тюмень",
+    "ранний заезд Тюмень"
+  ],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "family with suitcases at apartment door morning printed listing headline phone door plate tr pad",
+    "location": "early september 2026 sunny tyumen apartment entryway green trees +9C morning NOT winter no snow",
+    "meme": "tiny roll safe sticker inline_5 only",
+    "prop_set": "train ticket 0720 smartphone chat ключ с 14:00 child on lap taxi receipt 420 listing бесконтакт",
+    "sticker_set": "квартира посуточно тюмень ранний заезд тюмень",
+    "joke": "ad says contactless guest hears any time host says key from two pm"
+  },
+  "cover_emotion": "Утренний поезд: семья у двери, ключ только с двух",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Семья с чемоданами у двери квартиры утром: на объявлении «Утром приехали — ключ с двух», телефон +7 (993) 574-83-22 на дверной табличке.",
+      "scene_hint": "Sep family at door; «Утром приехали — ключ с двух»; +7 (993) 574-83-22 plate; TR pad.",
+      "meme_caption_ru": "",
+      "sticky": "Четыре часа у двери"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Что на самом деле обещает «бесконтакт»",
+      "visual_type": "comparison_table",
+      "scene_hint": "Split бесконтакт vs ключ 14:00; TR pad.",
+      "alt": "Сравнение: «бесконтакт» в объявлении и «ключ с 14:00» в чате после оплаты.",
+      "labels": ["ночной поезд", "+9 °C", "утро на вокзале"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "«Сутки» — это не двадцать четыре часа от поезда",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Timeline 07:20→14:00; no logo.",
+      "alt": "Расчётный час: поезд утром не равен ключу с 14:00 — четыре часа между ними.",
+      "labels": ["ключ с 14:00", "раньше нельзя", "спроси до оплаты"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Цена четырёх часов",
+      "visual_type": "checklist_board",
+      "scene_hint": "Receipts 8400+420+3200; TR pad.",
+      "alt": "Суммы утра: две ночи, такси с вокзала и запасной отель на полдня.",
+      "labels": ["2 взрослых + ребёнок", "2 ночи", "8 400 ₽ вперёд", "такси 420 ₽"]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Сначала проверка. Потом перевод",
+      "visual_type": "process_flow",
+      "scene_hint": "Ask→pay flow; +7 (993) 574-83-22 paper.",
+      "alt": "Порядок: спросить час ключа, сохранить ответ, потом перевод — не наоборот.",
+      "labels": ["4 часа у двери", "отель на полдня", "около 3 200 ₽"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Цена четырёх часов",
+      "visual_type": "infographic_card",
+      "scene_hint": "Wait vs locker; Roll Safe ≤12%.",
+      "alt": "Альтернатива ожиданию у подъезда — камера хранения на вокзале до 14:00.",
+      "labels": ["номер на табличке", "ранний заезд", "доплата 10–50%"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Сначала проверка. Потом перевод",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Checklist hour+baggage; sticky проверка.",
+      "alt": "Чек-лист перед оплатой: час ключа, ранний заезд, багаж, скрин переписки.",
+      "labels": ["заезд с 14:00", "выезд до 12:00", "бесконтактно ≠ раньше"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "tool_screenshot",
+      "scene_hint": "Host desk hour; +7 (993) 574-83-22 card; TR pad.",
+      "alt": "Честное правило: час входа называется письменно до оплаты.",
+      "labels": ["камера хранения 24/7", "заранее договориться", "Добрый дом"]
+    }
+  },
+  "cover_keys_ru": []
+}
