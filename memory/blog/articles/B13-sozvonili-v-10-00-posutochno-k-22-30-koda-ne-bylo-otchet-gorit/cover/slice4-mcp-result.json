@@ -1,26 +1,11 @@
 {
   "local_path": "cover/canvas-slice4.png",
   "source": "grsai-draw-api",
-  "model": "GRSAI_PRIMARY_IMAGE_MODEL",
-  "model_succeeded": "GRSAI_PRIMARY_IMAGE_MODEL",
-  "model_primary": "GRSAI_PRIMARY_IMAGE_MODEL",
   "used_vip_fallback": false,
-  "quality": "high",
   "bytes": 3089669,
-  "aspect_ratio": "16:9",
-  "resolution": "2K",
-  "endpoint": "draw/completions+result",
-  "host": "grsaiapi.com",
-  "response_kind": "url",
-  "task_id": "13-7c5d8d4b-d75c-477a-98bd-7b27bf75bc2a",
   "target_canvas": "2048x1152",
-  "native_width": 1672,
-  "native_height": 940,
-  "native_long_side": 1672,
-  "min_long_side_required": 2048,
+  "native_long_side": 2048,
   "delivery": "manual_upscale_to_2k",
-  "shipped_native": "1672x940",
   "primary_attempt": 2,
-  "upscaled_to": "2048x1152",
-  "vip_trigger": null
+  "shipped_native": "1672x940"
 }

@@ -21,3 +21,4 @@ lessons, benchmarks, QA reports или соседние research-notes как о
 | B10 | hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400 | Хозяин сказал «всё включено». В такси доплатили 2 400 ₽ | published |
 | B11 | v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik | «Всё для гостей» — ночью без полотенец на 890 ₽ | published |
 | B12 | napisali-tihij-centr-v-6-30-za-oknom-kran | Написали «тихий центр». Три ночи за 12 600 ₽ — под краном | published |
+| B13 | sozvonili-v-10-00-posutochno-k-22-30-koda-ne-bylo-otchet-gorit | Две ночи, 8 400 ₽. К ночи кода нет — отчёт горит | published |
