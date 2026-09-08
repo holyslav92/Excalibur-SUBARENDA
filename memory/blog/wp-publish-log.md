@@ -1,5 +1,23 @@
 # WP publish log
 
+## B15 — 2026-09-08
+
+- **topic_id:** B15
+- **slug:** zaselilsya-v-22-00-v-10-00-sozvon-wi-fi-ne-vyderzhal
+- **title:** Заселился после рейса. За 10 200 ₽ Wi‑Fi сорвал созвон
+- **post_id:** 4559
+- **permalink:** /blog/zaselilsya-v-22-00-v-10-00-sozvon-wi-fi-ne-vyderzhal/
+- **categories:** posutochnaya-arenda (101), sovety-gostyam (106)
+- **featured_image:** 4560
+- **inline_images:** 4561–4567 (7× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS (7/7 inline + cover → wp-content)
+- **dzen preview:** cover-dzen-v3-1024x576.png (HTTP 200); feed enclosure → …-cover-dzen-v3.png
+- **interlink outbound:** 4 live /blog/ siblings (crosslink-qa PASS)
+- **interlink inbound:** B01 (3745), B13 (4535)
+- **publish_method:** ftp (Timeweb PASV; llms retry SFTP:22; theme_contract_deploy ENOENT on FTP_ROOT)
+- **llms_deploy:** PASS (SFTP retry after FTP llms.txt timeout)
+
 ## B14 — 2026-09-08
 
 - **topic_id:** B14
