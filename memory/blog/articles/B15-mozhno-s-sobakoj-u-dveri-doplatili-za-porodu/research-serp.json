@@ -1,0 +1,153 @@
+{
+  "agent": "excalibur-blog",
+  "date_context": {
+    "timezone": "Europe/Moscow",
+    "today_iso": "2026-09-08",
+    "today_ru": "08.09.2026",
+    "year": 2026,
+    "month": 9,
+    "month_name_ru": "сентябрь",
+    "weekday_ru": "вторник"
+  },
+  "topic": {
+    "topic_id": "B15",
+    "title": "Можно с собакой у двери доплатили за породу",
+    "h1": "Можно с собакой у двери доплатили за породу",
+    "slug": "mozhno-s-sobakoj-u-dveri-doplatili-za-porodu",
+    "primary_query": "квартиры посуточно тюмень",
+    "priority": "P0"
+  },
+  "searches": [
+    {
+      "query_id": "primary_fresh",
+      "query": "посуточная аренда с собакой доплата залог 2026",
+      "purpose": "актуальный SERP по доплате за питомца",
+      "result_count": 5,
+      "results": [
+        {
+          "title": "Квартира посуточно, Люблинская ул., 78к2, Москва — доплата по породе",
+          "url": "https://kvartirka.com/residence/418997/",
+          "snippet": "Обновлено 4 сентября 2026: 300/500/1000 ₽ в сутки по размеру собаки, повышенный депозит от 3000 ₽"
+        },
+        {
+          "title": "Путешествие с домашними животными — Суточно.ру",
+          "url": "https://sutochno.ru/sj/kak-puteshestvovat-s-domashnimi-zhivotnymi",
+          "snippet": "Фильтр «С питомцами», запрос породы и веса хозяину, доплаты обговаривать заранее"
+        },
+        {
+          "title": "Аренда с животными в 2026: страховка и двойной депозит | ТотДом",
+          "url": "https://totdom.com/news/rynok_arendy_zhilya_v_2026_godu_kardinalno_menyaet_pravila_igry_dlya_vladeltsev_domashnikh_zhivotnykh/",
+          "snippet": "Тренд: двойной депозит вместо «накидки за шерсть», анкета питомца в договоре"
+        },
+        {
+          "title": "Правила сдачи квартиры посуточно — Avito для хозяев, урок 5",
+          "url": "https://host.avito.com/course/lesson-5",
+          "snippet": "Доплаты за питомцев в настройках объявления; договор при заселении"
+        },
+        {
+          "title": "Доплата за собаку при аренде загородного жилья | Форум Мамлайф",
+          "url": "https://mom.life/post/68fb7414d53e3504dd10d5fa-vopros-k-vladelcam-sobak-kot",
+          "snippet": "Обсуждение: 500–2000 ₽ за срок, доплата за уборку после крупных собак"
+        }
+      ],
+      "searched_at": "2026-09-08"
+    },
+    {
+      "query_id": "title_fresh",
+      "query": "можно с собакой посуточно доплата за породу у двери",
+      "purpose": "SERP по углу кейса",
+      "result_count": 4,
+      "results": [
+        {
+          "title": "Квартира посуточно, ул. Петра Ермолаева, Чебоксары — плата за животных",
+          "url": "https://kvartirka.com/residence/462107/",
+          "snippet": "Одноразово 500–4000 ₽ в зависимости от размера и типа питомца"
+        },
+        {
+          "title": "Студия посуточно СПб — доплата за питомца 1500 ₽",
+          "url": "https://spb.sutochno.ru/1340343",
+          "snippet": "Доплата в день заселения за весь период проживания"
+        },
+        {
+          "title": "Квартира посуточно, ул. Наташи Качуевской, Москва",
+          "url": "https://kvartirka.com/residence/425989/",
+          "snippet": "+1000 ₽/питомец, страховой залог 2900 ₽ при заезде"
+        },
+        {
+          "title": "Гостевой дом Лесной восход — отзыв iRecommend",
+          "url": "https://irecommend.ru/content/mikro-otpusk-v-mikro-dome-vpechatlenii-mnogo-i-vse-ochen-protivorechivye",
+          "snippet": "При заезде 1500 ₽/день за собаку + депозит 5000 ₽ (июнь 2026)"
+        }
+      ],
+      "searched_at": "2026-09-08"
+    },
+    {
+      "query_id": "official_docs",
+      "query": "Avito Sutochno правила проживания с питомцами посуточно",
+      "purpose": "официальные правила площадок",
+      "result_count": 3,
+      "results": [
+        {
+          "title": "Avito — урок 5: договор и доплаты за питомцев",
+          "url": "https://host.avito.com/course/lesson-5",
+          "snippet": "Настройки доплат; договор при заселении; чат до предоплаты"
+        },
+        {
+          "title": "Avito — шаблон договора найма жилья",
+          "url": "https://host.avito.com/documents/dogovor-arendy-i-najma-zhilya",
+          "snippet": "Пункт о животных и ответственности за ущерб"
+        },
+        {
+          "title": "Суточно.ру — гид путешествий с животными",
+          "url": "https://sutochno.ru/sj/kak-puteshestvovat-s-domashnimi-zhivotnymi",
+          "snippet": "Фильтр, согласование породы/веса, бюджет с доплатой"
+        }
+      ],
+      "searched_at": "2026-09-08"
+    },
+    {
+      "query_id": "community_experience",
+      "query": "доплата за собаку посуточно отзыв форум 2026",
+      "purpose": "форумы и живые проблемы",
+      "result_count": 3,
+      "results": [
+        {
+          "title": "Москвичам напомнили правила прогулки с собакой | Москва 24",
+          "url": "https://www.m24.ru/news/06092026/938172",
+          "snippet": "Опубликовано 06.09.2026; pet-friendly контекст, поездки с питомцами"
+        },
+        {
+          "title": "Доплата за собаку — опыт мам | Mom.life",
+          "url": "https://mom.life/post/68fb7414d53e3504dd10d5fa-vopros-k-vladelcam-sobak-kot",
+          "snippet": "Владельцы жилья: доплата за уборку; крупная vs мелкая собака"
+        },
+        {
+          "title": "Квартира посуточно Омск — доплата 600 ₽ за животное",
+          "url": "https://kvartirka.com/residence/480489/",
+          "snippet": "С животными по договорённости; залог 1500 ₽"
+        }
+      ],
+      "searched_at": "2026-09-08"
+    },
+    {
+      "query_id": "tyumen_local",
+      "query": "квартиры посуточно тюмень с собакой",
+      "purpose": "локальный спрос Тюмень",
+      "result_count": 2,
+      "results": [
+        {
+          "title": "Wordstat MCP-KV — квартиры посуточно тюмень",
+          "url": "mcp-kv://wordstat",
+          "snippet": "5134 показов (55+11176); 10865 (225)"
+        },
+        {
+          "title": "Wordstat MCP-KV — квартира посуточно с собакой",
+          "url": "mcp-kv://wordstat",
+          "snippet": "8 показов (55+11176) — слабый локальный кластер; RU intent 571"
+        }
+      ],
+      "searched_at": "2026-09-08"
+    }
+  ],
+  "errors": []
+}

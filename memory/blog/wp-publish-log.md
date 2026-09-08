@@ -1,5 +1,22 @@
 # WP publish log
 
+## B15 — 2026-09-08
+
+- **topic_id:** B15
+- **slug:** mozhno-s-sobakoj-u-dveri-doplatili-za-porodu
+- **title:** «С собакой можно» — у двери крупная порода стоила 3 000 ₽
+- **post_id:** 4572
+- **permalink:** /blog/mozhno-s-sobakoj-u-dveri-doplatili-za-porodu/
+- **categories:** posutochnaya-arenda (101), dogovor-i-pravila (103)
+- **featured_image:** 4573
+- **inline_images:** 4574–4576 (3× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS
+- **dzen preview:** cover-1024x576.png (WP auto-generated, HTTP 200); feed enclosure → full cover PNG
+- **interlink outbound:** 4 live /blog/ siblings (crosslink-qa PASS)
+- **interlink inbound:** B01 (3745), B13 (4535)
+- **publish_method:** ftp (Timeweb PASV)
+
 ## B14 — 2026-09-08
 
 - **topic_id:** B14

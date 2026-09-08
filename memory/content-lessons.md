@@ -661,3 +661,96 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+---
+
+## LESSON-20260908-1330-B15-dog-breed-fee-at-door
+status: proposed
+topic_id: B15
+category: utility
+confidence: low
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP. Урок из publish-артефактов: title-brief.json, description-brief.json, case-delivery-gate PASS, article.html, research-notes hook `dog_breed_fee`.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest BLOCKER (INC-20260903-0640).
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Two-beat H1 ««С собакой можно» — у двери крупная порода стоила 3 000 ₽»: цитата-разрешение → контрфакт породы/₽ у двери, не how-to.
+- §1: 6 800 ₽ за две ночи до доплаты; «крупная порода» + 3 000 ₽ или удвоенный залог «за шерсть»; сумка + поводок = asymmetric moment.
+- Blockquote «Не «можно с собакой». Не «по согласованию». А три тысячи у двери за «крупную породу».»
+- Klyshin «Нет. Так не заселяем.» + «Сначала проверка. Потом перевод.»; вопрос-отмычка «сколько килограммов — и кто решает, «крупная» она или нет?» → TG/MAX mid-body.
+- H2 ««Можно» — это ещё не условие» + «Доплата бывает нормальной. Молчание — нет» — честная лестница тарифов (300/500/1 000 + залог) как контраст к молчанию.
+- Anti-dup: B04 = лишний человек у двери; B15 = питомец/порода/залог за шерсть — не смешивать параметры.
+- Interlink spine: B04 доплата за гостя, B08 предоплата/тишина, B02 залог на выезде, B05 рейтинг ≠ условия.
+- Wordstat: spine «квартиры посуточно тюмень» 5134 (Tyumen 55+11176); pet «посуточная квартира с собакой» 571 (RF) — угол комплектации, не P0.
+- Description не дублирует H1: «в чате ответили «можно»» vs доплата у двери (description-brief PASS).
+- Cover-QA PASS: gen_only_human_v1, guest with dog at door, notice headline on physical sign.
+
+### Change
+- В кейсах `dog_breed_fee` в §1 сразу фиксировать **цепочку решения** (кто в чате сказал «можно» vs кто у двери назвал «крупную породу») рядом с ₽ — не только сумму доплаты.
+- Параллельно с итоговой суммой за N ночей разводить **доплату за питомца** (сутки/разово) и **отдельный залог за животное** — не одним словом «залог».
+
+### Never again
+- Считать «можно с собакой» / галочку «с питомцами» полным согласованием без веса, породы и ₽.
+- Смешивать B04 (третий гость) и B15 (питомец/порода) в одном сюжете.
+- Выдавать 3 000 ₽ или удвоенный залог за рыночный тариф Тюмени без editorial disclaimer (research constraint).
+- How-to «как снять с собакой» / юридический FAQ до кейса; чеклист только после «Мой вывод как практика».
+- SEO-гайд по pet-travel вместо door-surprise кейса.
+
+### Proposed apply
+- Scout: при hook `dog_breed_fee` логировать original Klyshin hook + final P0 spine Tyumen + anti-dup note vs B04 + note «посуточная квартира с собакой» volume (узкий угол).
+- Title/Description: держать контраст «чат «можно» vs порода у двери» как в description-brief B15.
+- Review only; Writer prompt не трогать автоматически.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260908-1330-B15-filter-vs-written-pet-terms
+status: proposed
+topic_id: B15
+category: structure
+confidence: low
+
+### Evidence
+- artifact: title-brief.json#angle
+  finding: angle «в чате разрешили питомца, у двери — крупная порода и 3 000 ₽ или удвоенный залог»; opening-meta-gate PASS; H2 «Фильтр не заменяет переписку».
+- metrika_signal: none (credentials unavailable; causal retention не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Слой «галочка «с питомцами» ≠ письменные условия» отдельным H2 — объясняет platform filter vs host terms gap.
+- Блок «небольшой питомец» без границы (5 кг vs 10 кг vs порода vs шерсть) — зеркальная подмена гостя («небольшая собачка» vs большой пёс на пороге).
+- Связка money-timing spine через interlink B08 (предоплата) и B02 (залог на выезде) без дублирования B04 human-count.
+- Мораль «Сначала проверка. Потом перевод.» + чеклист из 5 пунктов (вес, сумма, сутки/разово, залог, переписка) — не «Наш вывод простой».
+
+### Change
+- Для pet/broad-permission hooks всегда включать **filter-vs-chat mismatch** в utility-блок — не только тарифную лестницу.
+- При interlink — sibling про door surprises (B04 guest count, B10 all-inclusive, B11 «всё для гостей») одной красной линией «слово ≠ itemized list».
+
+### Never again
+- Писать dog_breed_fee кейс только про ₽, игнорируя «по согласованию» = отложенное решение на порог.
+- Финал «Наш вывод простой» вместо «Мой вывод как практика».
+
+### Proposed apply
+- Writer checklist (review-only): dog_breed_fee + platform filter → один абзац про «согласование при заселении» как red flag до оплаты.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded

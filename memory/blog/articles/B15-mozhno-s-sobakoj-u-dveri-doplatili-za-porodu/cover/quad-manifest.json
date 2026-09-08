@@ -1,0 +1,101 @@
+{
+  "topic_id": "B15",
+  "canvas_file": "cover/canvas-slice4.png",
+  "layout": "2x2",
+  "pipeline": "slice4_grid_1x_image_api",
+  "inline_count": 3,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-slice4.png",
+      "batch_file": "cover/slice4-mcp-batch.json",
+      "prompt_file": "cover/slice4-mcp-prompt.txt",
+      "result_file": "cover/slice4-mcp-result.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    }
+  ],
+  "style_preset": "the_rieltor_twilight_gold",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "cover_hook": "Можно с собакой — три тысячи у двери",
+  "cover_hook_highlight": "тысячи",
+  "cover_headline_line1": "Можно с собакой",
+  "cover_headline_line2": "три тысячи у двери",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Grsai ONE 2048x1152 2x2 grid slice4 + logo paste cover only. gen_only_human_v1.",
+  "cover_emotion": "растерянность: в чате «можно», у двери — крупная порода и три тысячи",
+  "cover_scene": "Ранний сентябрь, светлая лестничная площадка Тюмени: гость с собакой на поводке у двери квартиры",
+  "cover_motifs": {
+    "composition": "guest with leashed dog at bright apartment entryway door printed pet fee notice headline person in scene TR pad",
+    "location": "early September 2026 warm sunny Tyumen apartment hallway entryway green trees outside NOT winter no snow",
+    "meme": "none photoreal only zero meme stickers",
+    "prop_set": "leashed medium dog smartphone messenger chat screenshot suitcase printed pet weight fee ladder 3000 rub handwritten note",
+    "sticker_set": "none on gen_only",
+    "joke": "chat said yes with pet at door host points to large breed 3000 rub fee chart"
+  },
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "квартира с собакой посуточно тюмень"
+  ],
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Гость с собакой на поводке у двери посуточной квартиры в Тюмени; на двери крупный заголовок «Можно с собакой — три тысячи у двери».",
+      "scene_hint": "Светлая лестничная площадка квартиры в Тюмени, начало сентября: гость в повседневной одежде с собакой на поводке стоит у двери с чемоданом; на двери или бумажном листе крупная кириллица «Можно с собакой — три тысячи у двери»; рядом рука хоста показывает на распечатку «крупная порода +3000 ₽»; тёплый дневной свет из окна с зелёными деревьями; TOP-RIGHT чистая стена для factory logo paste; без телефона, без мемов, без логотипа в кадре.",
+      "meme_caption_ru": "",
+      "sticky": "Цена всплыла у двери"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "«Можно» — это ещё не условие",
+      "visual_type": "comparison_table_ui",
+      "scene_hint": "Стол у окна: смартфон с перепиской «можно с питомцем» без цифр; рядом пустая строка «вес собаки: ___ кг» на листе; фотореал, без логотипа и без мемов.",
+      "alt": "Переписка «можно с питомцем» без указания веса и суммы — условие ещё не зафиксировано.",
+      "labels": [
+        "две ночи",
+        "6800 рублей",
+        "в чате можно",
+        "без суммы",
+        "без правила"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Доплата бывает нормальной. Молчание — нет",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "На кухонном столе распечатка с лестницей тарифов «300 / 500 / 1000 ₽ + залог 3000»; рядом смартфон с пустым ответом хоста «разберёмся при заселении»; фотореал, без pill-кнопки телефона.",
+      "alt": "Честная лестница тарифов за питомца на бумаге — контраст к молчанию в чате.",
+      "labels": [
+        "крупная порода",
+        "доплата 3000",
+        "или двойной залог",
+        "решение у двери",
+        "ночью искать жильё"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Фильтр не заменяет переписку",
+      "visual_type": "checklist_board",
+      "scene_hint": "Распечатка объявления с галочкой «С питомцами» и ручной список вопросов: порода, вес, сумма, залог; карандаш на столе; светлая квартира, фотореал, без стикеров и логотипа.",
+      "alt": "Галочка «с питомцами» на карточке не заменяет письменные условия по собаке.",
+      "labels": [
+        "порода и вес",
+        "рубли письменно",
+        "оплата до перевода",
+        "залог вернуть",
+        "сохранить чат"
+      ]
+    }
+  },
+  "cover_keys_ru": []
+}

@@ -1,0 +1,50 @@
+{
+  "topic_id": "B15",
+  "slug": "mozhno-s-sobakoj-u-dveri-doplatili-za-porodu",
+  "cover_family": "brand_collage",
+  "style_preset": "the_rieltor_twilight_gold",
+  "pipeline": "slice4_grid_1x_image_api",
+  "file": "cover/cover.png",
+  "alt": "Гость с собакой на поводке у двери посуточной квартиры в Тюмени; на двери крупный заголовок «Можно с собакой — три тысячи у двери».",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-slice4.png",
+  "generated_at": "2026-09-08T12:34:52+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Гость с собакой на поводке у двери посуточной квартиры в Тюмени; на двери крупный заголовок «Можно с собакой — три тысячи у двери».",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Переписка «можно с питомцем» без указания веса и суммы — условие ещё не зафиксировано.",
+      "h2_anchor": "«Можно» — это ещё не условие",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Честная лестница тарифов за питомца на бумаге — контраст к молчанию в чате.",
+      "h2_anchor": "Доплата бывает нормальной. Молчание — нет",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Галочка «с питомцами» на карточке не заменяет письменные условия по собаке.",
+      "h2_anchor": "Фильтр не заменяет переписку",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}
