@@ -1,0 +1,38 @@
+{
+  "agent": "excalibur-blog-cover-qa",
+  "status": "FAIL",
+  "checked_at": "2026-09-08",
+  "topic_id": "B14",
+  "checks": {
+    "eight_png_exist": true,
+    "quad_manifest_valid": true,
+    "wordstat_stickers_1_3": true,
+    "motif_no_collision_14d": true,
+    "max_one_cat_meme_slot": true,
+    "light_high_key": true,
+    "logo_composite_stamp_pass": true,
+    "cover_logo_pasted": true,
+    "inline_no_logo_on_inlines": false,
+    "forbid_phone_on_cover_image": true,
+    "forbid_922_phone": true,
+    "forbid_ai_drawn_logo_cover": true,
+    "forbid_wordpress_ui_in_art": true,
+    "no_logo_plate_cover": true,
+    "forbid_graphic_collage_overlay": true,
+    "forbid_poster_composite_stamp": true,
+    "forbid_logo_reference_in_batch": true,
+    "forbid_overlapping_text_blocks": true,
+    "forbid_giant_cropped_glyph": true
+  },
+  "failures": [
+    "inline-02.png: forbidden drawn logo on panel without factory paste (score=0.56)",
+    "inline-04.png: forbidden drawn logo on panel without factory paste (score=0.56)",
+    "inline-05.png: forbidden drawn logo on panel without factory paste (score=0.56)"
+  ],
+  "notes": [
+    "2× Grsai vip-tier 2048×1152 quad canvases; cover+inline_1/2/3 canvas1, inline_4–7 canvas2",
+    "Factory logo paste OK: cover + inline_1 + inline_3 + inline_7 (TOP-RIGHT native aspect)",
+    "Cover: display headline on paper prop, light high-key, no phone, no meme (gen_only canon)",
+    "RETURN TO COVER: regenerate inline_2/4/5 quadrants — model drew Добрый дом lockup on no-logo panels"
+  ]
+}
