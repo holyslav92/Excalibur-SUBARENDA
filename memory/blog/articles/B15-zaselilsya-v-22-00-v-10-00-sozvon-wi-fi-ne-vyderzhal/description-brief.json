@@ -1,0 +1,10 @@
+{
+  "topic_id": "B15",
+  "description": "Звонок в 10:00, а заселение было в 22:00 — камера рассыпается, стол без розетки. В Тюмени «Wi‑Fi есть» не спасает командировку: Добрый дом подсказывает, что спросить до перевода.",
+  "rhythm": "klyshin_case_hook",
+  "geo": "Тюмень",
+  "author_brand": "Добрый дом",
+  "not_equal_title": true,
+  "not_truncated_lead": true,
+  "verdict": "PASS"
+}
