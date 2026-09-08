@@ -874,3 +874,84 @@ checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_wp_publish.py`
 - `python3 scripts/excalibur_blog_post_publish_interlink.py --article-dir memory/blog/articles/B13-kod-srabotal-klyuchnica-pusta-posutochno-tyumen` → OK interlink_done
 commit: 700bc14
+
+## INC-20260908-0733 — Cover-QA drawn logo retry on no-logo inlines (B14)
+
+status: fixed
+run_date: 2026-09-08
+role: excalibur-blog-cover-qa
+topic_id: B14
+article_dir: memory/blog/articles/B14-napisali-tihij-dom-v-23-40-sosedi-vklyuchili-muzyku
+severity: low
+category: script
+
+### What went wrong
+
+- Cover-QA `forbid_ai_drawn_logo_cover` FAIL on inline-02/04/05 (no-logo slots per `logo_paste_inline_slots` inline_1/3/7). Model drew terracotta lockup remnants in TR pad on workflow/infographic panels.
+
+### How the agent recovered this run
+
+- Regen canvas 1+2 with explicit NO-logo prompts on inline_2/4/5/6; TR pad neutral-clear (`pad_clear`) on no-logo panels; re-ran `brand_logo_composite` + `drawn_logo_gate` → PASS; stamped `cover_qa.json` PASS.
+
+### Durable fix needed before next run
+
+- Stronger no-logo inline prompts in `cover_quad_prompt.py`; idempotent `excalibur_blog_cover_inline_pad_clear.py` before drawn_logo retry; Cover-QA runbook documents pad-clear → regen order.
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_cover_quad_prompt.py`
+- `scripts/excalibur_blog_cover_inline_pad_clear.py`
+- `skills/cover-qa-excalibur-blog/SKILL.md`
+- `agents/excalibur-blog-cover-qa.md`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-09-08
+fix_summary:
+- `inline_panel_prompt()` emits B14-grade NO-logo language on non-logo slots.
+- New `excalibur_blog_cover_inline_pad_clear.py` pad-clears TR on panels outside `logo_paste_inline_slots`.
+- Cover-QA skill/agent: recovery runbook pad-clear → drawn_logo_gate → regen.
+files_changed:
+- `scripts/excalibur_blog_cover_quad_prompt.py`
+- `scripts/excalibur_blog_cover_inline_pad_clear.py`
+- `skills/cover-qa-excalibur-blog/SKILL.md`
+- `.cursor/skills/cover-qa-excalibur-blog/SKILL.md`
+- `agents/excalibur-blog-cover-qa.md`
+- `.cursor/agents/excalibur-blog-cover-qa.md`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_cover_quad_prompt.py scripts/excalibur_blog_cover_inline_pad_clear.py`
+- `python3 scripts/excalibur_blog_cover_inline_pad_clear.py --article-dir memory/blog/articles/B14-napisali-tihij-dom-v-23-40-sosedi-vklyuchili-muzyku`
+commit: pending
+
+## INC-20260908-0735 — Metrika credentials missing (Content-learner B14)
+
+status: needs-human
+run_date: 2026-09-08
+role: excalibur-blog-content-learner
+topic_id: B14
+article_dir: memory/blog/articles/B14-napisali-tihij-dom-v-23-40-sosedi-vklyuchili-muzyku
+severity: medium
+category: env
+
+### What went wrong
+
+- `excalibur_blog_metrika_fetch.py --days 30 --ingest` → METRIKA CREDENTIALS BLOCKER (same root cause as INC-20260903-0640).
+
+### How the agent recovered this run
+
+- evidence_gate SKIP (no content-evidence-report.json); recorded optional/low-confidence lessons in `memory/content-lessons.md`; no causal Metrika claims.
+
+### Durable fix needed before next run
+
+- Set YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets for tenant.
+
+### Fixer resolution
+
+status: needs-human
+reason: env-only blocker; duplicate of INC-20260903-0640
+needed_decision_or_secret: YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets

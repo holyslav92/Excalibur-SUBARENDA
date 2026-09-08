@@ -22,4 +22,3 @@ lessons, benchmarks, QA reports или соседние research-notes как о
 | B11 | v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik | «Всё для гостей» — ночью без полотенец на 890 ₽ | published |
 | B12 | napisali-tihij-centr-v-6-30-za-oknom-kran | Написали «тихий центр». Три ночи за 12 600 ₽ — под краном | published |
 | B13 | kod-srabotal-klyuchnica-pusta-posutochno-tyumen | Код сработал. Пустая ключница — 35 минут у двери | published |
-| B14 | napisali-tihij-dom-v-23-40-sosedi-vklyuchili-muzyku | «Тихий дом» обещали. За 8 400 ₽ — музыка за стеной ночью | published |

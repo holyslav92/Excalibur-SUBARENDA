@@ -1,0 +1,46 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 2,
+  "standalone_cover": false,
+  "model_policy": "",
+  "vip_disabled": false,
+  "max_generation_attempts": 2,
+  "identity_reference_local": "",
+  "identity_reference_id": "",
+  "logo_reference_local": "",
+  "logo_reference_url": "",
+  "logo_reference_in_generation": false,
+  "reference_url_hosted": "",
+  "output_canvas": "cover/canvas-quad-02.png",
+  "result_path": "cover/quad-mcp-result-02.json",
+  "slots": [
+    "inline_4",
+    "inline_5",
+    "inline_6",
+    "inline_7"
+  ],
+  "preferred_image_flow": {
+    "provider": "grsai",
+    "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
+    "resolution": "2K",
+    "note": "PRIMARY: Grsai draw API (PRIMARY_MODEL_ID only; vip permanently disabled; aspectRatio+resolution=2K first, one explicit-size retry, ship native undersized). Fallback: excalibur_blog_kie_gpt_image2_api.py when Grsai fail. FORBIDDEN: *-vip, flux2-pro-*, Seedream, nano_banana*, z-image, mcp-derouter/start-mcp.sh.",
+    "apply_script": "python3 scripts/excalibur_blog_quad_apply.py --article-dir <article_dir> --canvas-index 2 --inject-html"
+  },
+  "jobs": [
+    {
+      "slot": "canvas_quad",
+      "tool": "grsai",
+      "mcp_args": {
+        "prompt": "ONE canvas 2048x1152 as 2x2 GRID of four photoreal 16:9 infographic panels. NO cover panel. Early September bright Tyumen apartment mood, NOT winter.\nTOP-LEFT inline_4: desk flow diagram соседи→проверка→оплата; +7 993 574-83-22 on desk card; TOP-RIGHT completely clean — NO logo NO brand text.\nTOP-RIGHT inline_5: wall cross-section bass arrows; labels стена бас 23:40 соседи; TOP-RIGHT completely clean — NO logo NO brand text NO «Добрый дом».\nBOTTOM-LEFT inline_6: wall board quiet hours 22-08; +7 993 574-83-22 on door sign; TOP-RIGHT completely clean — NO logo NO brand.\nBOTTOM-RIGHT inline_7: host desk sticky «Сначала проверка»; labels не по фото спроси соседей; TOP-RIGHT empty pad 8-12% for factory logo — model draws NOTHING there.\nCRITICAL: panels inline_4 inline_5 inline_6 must have ZERO brand logo, ZERO «Добрый дом», ZERO curtains+flower, ZERO house icon in any corner especially top-right.\nALL panels photoreal infographic; ZERO meme; NO WordPress UI.",
+        "aspect_ratio": "16:9",
+        "resolution": "2K"
+      }
+    }
+  ],
+  "validation": {
+    "prompt_chars": 2419,
+    "max_prompt_chars": 3500,
+    "required_reference_host": "",
+    "resolution": "2K"
+  }
+}

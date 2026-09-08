@@ -1,0 +1,94 @@
+{
+  "status": "PASS",
+  "topic_id": "B14",
+  "slug": "napisali-tihij-dom-v-23-40-sosedi-vklyuchili-muzyku",
+  "research_date": "2026-09-08",
+  "summary": "Research for neighbor party noise at 23:40 in Tyumen short-term rental after host promised «тихий дом». Fresh week signals: megatyumen.ru quiet-hours article (2026-09-03), tenant TG @Dobriy_dom_72 on «тишина» mismatch. Tyumen Law №3 quiet hours and UK limits verified. Guest CASE angle vs B12 external construction noise. Wordstat P0 «квартиры посуточно тюмень» 5220.",
+  "freshness_audit": {
+    "research_date": "2026-09-08",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://megatyumen.ru/obshestvo/chasy-tishiny-v-tyumeni-chto-zapresheno-kogda-i-komu-zhalovatsya/",
+      "published_at": "2026-09-03",
+      "note": "Regional news this week: Tyumen quiet hours, fines, police 102/112, UK cannot fine — contextual for 23:40 party case."
+    },
+    "additional_fresh_signals": [
+      {
+        "url": "https://t.me/Dobriy_dom_72",
+        "published_at": "2026-09-08",
+        "type": "tenant_community",
+        "note": "Forwarded posts: «заявлена тишина» vs reality; «шум не видно на фото» — ecosystem, B14 angle is neighbors through wall."
+      },
+      {
+        "url": "https://tyumen-info.ru/society/2026/08/24/36154.html",
+        "published_at": "2026-08-24",
+        "type": "regional_news",
+        "note": "City admin quiet-hours memo; supports Tyumen Law №3 facts."
+      }
+    ]
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176"],
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 5220,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 11084,
+        "region": "225"
+      },
+      {
+        "phrase": "снять квартиру посуточно в тюмени",
+        "volume": 1689,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "шум соседей",
+        "volume": 240,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "аренда квартиры посуточно",
+        "volume": 710,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "соседи шум посуточно",
+        "volume": 2,
+        "region": "55+11176",
+        "note": "WORDSTAT PARTIAL totalCount-only"
+      },
+      {
+        "phrase": "аренда квартир посуточно тюмень",
+        "volume": 183,
+        "region": "55+11176"
+      }
+    ]
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "No bank/developer tariff digits; Tyumen Law №3 cited as official regional law only",
+    "verified_claims": 0,
+    "entities_checked": [],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "memory/blog/articles/B14-napisali-tihij-dom-v-23-40-sosedi-vklyuchili-muzyku/derouter-opus-stamp-research.json",
+    "first_attempt": "BLOCKER (model refused without conductor preamble)",
+    "retry": "PASS"
+  },
+  "errors": []
+}

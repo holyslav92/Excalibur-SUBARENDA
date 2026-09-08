@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "https://добрыйдом-72.рф/blog/rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super/",
+      "slug": "rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super",
+      "anchor": "рейтинг 4,8 при двух отзывах «всё супер» не расскажет вам, что происходит в подъезде после отбоя.С прилагательными в объявлениях вообще надо быть аккуратнее. Они удобные: «уютно», «чисто», «всё для гостей», «тихий дом». Но за каждым должно стоять что-то, что можно проверить. История про",
+      "catalog_title": "Рейтинг 4,8. Два «всё супер» — и 3 900 ₽ под вопросом",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik/",
+      "slug": "v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik",
+      "anchor": "«всё для гостей» и один мокрый коврик в ванной — из того же жанра. Слова красивые, а гость приезжает в реальность, где ему жить, мыться и спать.Самая дорогая ошибка здесь — спешка. Когда нужно заселиться быстро, сначала отправляют предоплату, потом задают вопросы. Уже был похожий сюжет:",
+      "catalog_title": "«Всё для гостей» — ночью без полотенец на 890 ₽",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate/",
+      "slug": "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+      "anchor": "3 000 ₽ ушли предоплатой, а «тишина» осталась только в чате. Не потому, что человек не умеет бронировать. Потому что в моменте кажется: сейчас переведу, а детали уточню потом. Потом — это обычно когда манёвра уже нет.И источник шума не всегда сидит за стеной. Иногда объявление обещает тихий центр, а утром за окном начинает работать кран — об этом тоже была история:",
+      "catalog_title": "Перевели 3 000 ₽ предоплатой. К вечеру — тишина в чате",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/napisali-tihij-centr-v-6-30-za-oknom-kran/",
+      "slug": "napisali-tihij-centr-v-6-30-za-oknom-kran",
+      "anchor": "написали «тихий центр», а в 6:30 за окном кран. Механика одна: вам продают слово вместо картины. Картина всегда конкретнее — стена, окно, подъезд, соседи, ночной ответ хоста.По запросам «квартиры посуточно тюмень» ищут тысячами в месяц — около 5 220. «Шум соседей» — примерно 240. Это понятный разрыв: про шум вспоминают после заселения, когда уже не до вопросов. Хотя спросить до оплаты дешевле, чем потом выбирать между бессонной ночью и переездом с чемоданом.Вы бы поверили «тихому дому» или спросили про соседей?Если у вас был такой разговор с хостом — спорный, мутный или, наоборот, честный, — напишите мне в",
+      "catalog_title": "Написали «тихий центр». Три ночи за 12 600 ₽ — под краном",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "outbound_unique_slugs": [
+    "rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super",
+    "v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik",
+    "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+    "napisali-tihij-centr-v-6-30-za-oknom-kran"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B14-napisali-tihij-dom-v-23-40-sosedi-vklyuchili-muzyku",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}

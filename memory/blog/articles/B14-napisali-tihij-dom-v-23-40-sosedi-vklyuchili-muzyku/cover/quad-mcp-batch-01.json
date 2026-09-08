@@ -1,0 +1,46 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 1,
+  "standalone_cover": false,
+  "model_policy": "",
+  "vip_disabled": false,
+  "max_generation_attempts": 2,
+  "identity_reference_local": "",
+  "identity_reference_id": "",
+  "logo_reference_local": "",
+  "logo_reference_url": "",
+  "logo_reference_in_generation": false,
+  "reference_url_hosted": "",
+  "output_canvas": "cover/canvas-quad-01.png",
+  "result_path": "cover/quad-mcp-result-01.json",
+  "slots": [
+    "cover",
+    "inline_1",
+    "inline_2",
+    "inline_3"
+  ],
+  "preferred_image_flow": {
+    "provider": "grsai",
+    "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
+    "resolution": "2K",
+    "note": "PRIMARY: Grsai draw API (PRIMARY_MODEL_ID only; vip permanently disabled; aspectRatio+resolution=2K first, one explicit-size retry, ship native undersized). Fallback: excalibur_blog_kie_gpt_image2_api.py when Grsai fail. FORBIDDEN: *-vip, flux2-pro-*, Seedream, nano_banana*, z-image, mcp-derouter/start-mcp.sh.",
+    "apply_script": "python3 scripts/excalibur_blog_quad_apply.py --article-dir <article_dir> --canvas-index 1 --inject-html"
+  },
+  "jobs": [
+    {
+      "slot": "canvas_quad",
+      "tool": "grsai",
+      "mcp_args": {
+        "prompt": "ONE canvas 2048x1152 as 2x2 GRID of four photoreal 16:9 apartment panels. Early September Tyumen, bright, NOT winter.\nTOP-LEFT cover: guest on bed, pillow vibrates from bass; Cyrillic headline on wall paper «Тихий дом — музыка за стеной» gold word «музыка»; +7 993 574-83-22 on nightstand card; person in scene; TOP-RIGHT empty light wall pad 8-12% ONLY — factory logo later, model draws NOTHING there.\nTOP-RIGHT inline_1: split infographic quiet promise vs bass 23:40; labels 8400₽ две ночи свет выкл окно; TOP-RIGHT empty pad for factory logo — NO drawn logo.\nBOTTOM-LEFT inline_2: phone messenger chat bubbles only; labels бас подушка дрожит без слов всю ночь; ENTIRE panel especially TOP-RIGHT corner: absolutely NO logo, NO brand wordmark, NO «Добрый дом» text, NO curtains+red flower icon, NO house-with-heart, NO company lockup anywhere.\nBOTTOM-RIGHT inline_3: clipboard checklist соседи жалобы план проверка; TOP-RIGHT empty pad for factory logo — NO drawn logo.\nALL FOUR panels: photoreal only; ZERO meme stickers; ZERO model-drawn brand lockup except headline on cover wall; NO white plaque under top-right.",
+        "aspect_ratio": "16:9",
+        "resolution": "2K"
+      }
+    }
+  ],
+  "validation": {
+    "prompt_chars": 2419,
+    "max_prompt_chars": 3500,
+    "required_reference_host": "",
+    "resolution": "2K"
+  }
+}

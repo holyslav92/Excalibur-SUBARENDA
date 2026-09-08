@@ -27,6 +27,10 @@ is_background: false
 
 ## PASS → ship
 
+После max-2 gen + pad-clear: если brand lock OK → `status: PASS`, не возвращай Cover.
+
+**Drawn logo on no-logo inline** (inline_2/4/5/6): сначала `excalibur_blog_cover_inline_pad_clear.py`, затем `drawn_logo_gate`; при повторном FAIL — regen canvas.
+
 ```bash
 python3 scripts/excalibur_blog_cover_qa_gate.py --article-dir <dir>
 ```

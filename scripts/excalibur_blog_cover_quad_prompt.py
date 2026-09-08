@@ -223,11 +223,16 @@ def inline_panel_prompt(
     if logo_reference and logo_paste:
         base += " Logo ref top-right, no plate."
     elif logo_paste:
-        base += " TOP-RIGHT empty pad; no drawn logo; no white/gray plate."
+        base += " TOP-RIGHT empty pad for factory logo — NO drawn logo; no white/gray plate."
     elif logo_reference:
         base += " TOP-RIGHT clean; NO visible brand logo on this panel; no white/gray plate."
     else:
-        base += " TOP-RIGHT clean; no logo; no white/gray plate."
+        base += (
+            " TOP-RIGHT completely clean — NO logo NO brand text; "
+            "ENTIRE panel especially TOP-RIGHT corner: absolutely NO logo, NO brand wordmark, "
+            "NO «Добрый дом» text, NO curtains+red flower icon, NO house-with-heart, "
+            "NO company lockup anywhere; no white/gray plate."
+        )
     return base
 
 
