@@ -573,8 +573,88 @@ confidence: low
 - Писать empty-keybox кейс только про «наберите код ещё раз», игнорируя temporal leverage (ночь, такси уехало, второй рейс).
 - Финал «Наш вывод простой» вместо «Мой вывод как практика».
 
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260908-0735-B14-quiet-home-bass-through-wall
+status: proposed
+topic_id: B14
+category: utility
+confidence: low
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP. Урок из publish-артефактов: title-brief.json (8 400 ₽ / две ночи / «тихий дом»), description-brief.json PASS, research-notes hook `neighbors_night`, case-delivery-gate PASS, article.html opening bass-through-wall scene.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest BLOCKER (INC-20260903-0640).
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Two-beat H1 ««Тихий дом» обещали. За 8 400 ₽ — музыка за стеной ночью»: обещание + цена + источник шума (стена, не улица).
+- §1: бас через стену, подушка вибрирует, 23:40; явное «не с улицы» — anti-dup B12.
+- H2 «Что хост на самом деле продал гостю»: «тихий дом» не отвечает на вопросы про этаж/соседей/жалобы.
+- Klyshin «Нет. Так не заселяем.» + «Сначала проверка. Потом перевод.»; вопрос-отмычка про соседей до оплаты.
+- Tyumen quiet-hours context (22:00–08:00) как фон, не legal guide.
+- Interlink spine: B12 внешний шум, B08 тишина после предоплаты, B01/B02 access/deposit siblings.
+- Wordstat P0 spine «квартиры посуточно тюмень»; узкий «шум соседей» на cover sticker.
+- Cover-QA PASS after regen + pad-clear on no-logo inlines (INC-20260908-0733).
+
+### Change
+- В `neighbors_night` hooks в §1 сразу фиксировать **источник шума** (стена vs окно/дорога) — не смешивать с B12 crane/road.
+- Utility-блок: конкретные вопросы хосту (этаж, сбоку/сверху, жалобы за месяц) рядом с цитатой «тихий дом».
+
+### Never again
+- Писать quiet-home кейс только про панораму/фото, игнорируя соседей через стену.
+- Смешивать B12 (стройка/дорога за окном) и B14 (вечеринка в доме).
+- How-to для арендодателей до морали; финал «Наш вывод простой».
+
 ### Proposed apply
-- Writer checklist (review-only): parking_keybox + late_checkin → один абзац про host answering digits while guest stares at empty slot.
+- Scout: при hook `neighbors_night` логировать Klyshin angle + anti-dup note vs B12 + final P0 spine Tyumen.
+- Review only; Writer prompt не трогать автоматически.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260908-0735-B14-host-sells-adjective-not-facts
+status: proposed
+topic_id: B14
+category: structure
+confidence: low
+
+### Evidence
+- artifact: title-brief.json#angle
+  finding: angle «обещание тихого дома → музыка в 23:40 через стену»; opening-meta-gate PASS; blockquote «Не «тихий дом»… А бас из соседней квартиры».
+- metrika_signal: none (credentials unavailable; causal retention не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Контраст прилагательного («тихий дом», «всегда тихо») vs проверяемых фактов (этаж, соседи, жалобы).
+- Хост как первая линия в чате ночью — без выдуманных адресов/дБ.
+- Description не дублирует H1: «после одиннадцати всё стихает» vs бас (description-brief PASS).
+
+### Change
+- Title/Description: держать price anchor (8 400 ₽) + temporal beat (23:40) в паре с обещанием тишины.
+
+### Never again
+- Принимать «у нас всегда тихо» за ответ на вопрос «кто сбоку?».
+- Legal-гайд по шумовым нормам вместо guest-case utility.
+
+### Proposed apply
+- Description agent: rhythm klyshin_case_hook + not_equal_title как в B14 description-brief.
 
 ### Durable applied
 - none

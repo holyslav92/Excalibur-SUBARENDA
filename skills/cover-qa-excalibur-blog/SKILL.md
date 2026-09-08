@@ -1,31 +1,37 @@
 ---
 name: cover-qa-excalibur-blog
-description: "Cover-QA: scene_composite_v1 — anti-collage gates + poster composite stamp, stamp cover_qa.json."
+description: "Cover-QA: slim gate — logo+phone+no plate+no WP UI; stamp cover_qa.json."
 ---
 
-# Cover-QA — scene_composite_v1 slim gate (COVER only)
+# Cover-QA — slim gate (brand lock)
 
-## HARD anti-collage FAIL on `cover.png`
+## FAIL только если (brand lock)
 
-| Check | What |
-|-------|------|
-| `forbid_overlapping_text_blocks` | no 2+ stacked/overlapping model type layers |
-| `forbid_giant_cropped_glyph` | no magnified letter crop >12% canvas |
-| `forbid_model_drawn_meme_template` | no Trade Offer / Drake / Wojak drawn by model |
-| `poster_composite_stamp_pass` | `cover/poster-composite-stamp.json` PASS from factory composite |
-| `require_display_headline` | factory Cormorant+Onest headline after poster composite |
-| `require_cover_meme_sticker` | exactly ONE catalog meme PNG pasted |
-| `require_large_phone_sticker` | kitchen-tablo phone +7 (993) 574-83-22 after poster composite |
-| `forbid_people_heavy_cover` | no people-heavy group scene photo |
-| `forbid_split_white_collage` | no split white-panel + photo cover |
-| `forbid_phone_pill_post_composite` | no opaque phone button/chip from brand_logo_composite |
-| `no_logo_plate_cover` | no plate under logo |
-| `forbid_ai_drawn_logo_cover` | no AI lockup |
-| `cover_logo_pasted` | factory logo on cover |
-| `inline_no_logo_on_inlines` | ZERO company logos on all 7 inline frames |
+- нет factory logo на cover или inline count не 2–3
+- AI-drawn lockup в cover pad или на no-logo inline panels
+- white/gray plate под logo pad на cover
+- нет телефона **+7 (993) 574-83-22** на cover (in-scene или post-composite per tenant)
+- WordPress/Gutenberg/Dashboard UI в арте
+- номер 922 (риелтор) на обложке
+- **2+ frames с cat-meme** (max 1 cat slot на cover+7 inlines)
 
 ```bash
 python3 scripts/excalibur_blog_cover_qa_gate.py --article-dir <dir>
 ```
 
-Python gates: `validate_cover_type_meme_sticker_gates` + `validate_cover_anti_collage_gates` on `cover.png`.
+## Recovery: drawn logo on no-logo inlines (INC B14)
+
+When `forbid_ai_drawn_logo_cover` FAILs on inline-02/04/05/06 (panels without factory logo paste):
+
+1. **Pad-clear** TR zone on no-logo panels (idempotent):
+
+   ```bash
+   python3 scripts/excalibur_blog_cover_inline_pad_clear.py --article-dir <dir>
+   python3 scripts/excalibur_blog_drawn_logo_gate.py --article-dir <dir>
+   ```
+
+2. If still FAIL → **regen** affected canvas(es) with stronger NO-logo prompts (auto in `cover_quad_prompt.py` for non-logo slots), then split + `brand_logo_composite.py` + Cover-QA again.
+
+3. Do **not** paste_and_ship on no-logo panels with visible drawn lockup — pad-clear or regen first.
+
+Logo paste slots come from `quad-manifest.json` → `logo_paste_inline_slots` (default inline_1/3/7).
