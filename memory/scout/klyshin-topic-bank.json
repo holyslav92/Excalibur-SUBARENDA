@@ -91,7 +91,24 @@
       "wordstat_probes": ["командировка тюмень квартира", "аренда квартиры посуточно", "квартира посуточно тюмень"],
       "dzen_pattern_prefer": [2, 3],
       "tyumen_localize": true,
-      "status": "queue_active"
+      "status": "queue_active",
+      "note": "WP live 2026-09-08 zaselilsya-v-22-00 — skip duplicate slot"
+    },
+    {
+      "id": "dog_breed_fee",
+      "queue_num": 9,
+      "hook_ru": "«Можно с собакой» — у двери доплата за породу или залог ×2",
+      "angle": "чат «можно» vs доплата/удвоенный залог у двери за «крупную породу»",
+      "klyshin_signal": "lockpick: кг и кто решает «крупная»; moral: правила питомца письменно до ключа",
+      "wordstat_probes": ["посуточная квартира с собакой", "квартира посуточно с собакой", "квартиры посуточно тюмень"],
+      "dzen_pattern_prefer": [2, 3],
+      "tyumen_localize": true,
+      "status": "used",
+      "last_seen": "2026-09-08",
+      "queue_slot": "2026-09-08 B15 slot",
+      "final_p0": {"phrase": "квартиры посуточно тюмень", "volume_tyumen": 5134, "volume_ru": 10865},
+      "wordstat_rework_log": "probe «квартира посуточно с собакой» 8 (55+11176) → «посуточная квартира с собакой» 571 (225) → final P0 «квартиры посуточно тюмень» 5134/10865",
+      "used_in_articles": ["B15"]
     },
     {
       "id": "kitchen_vs_hotel_cafes",
