@@ -1,0 +1,111 @@
+{
+  "status": "PASS",
+  "topic_id": "B15",
+  "slug": "mozhno-s-sobakoj-u-dveri-doplatili-za-porodu",
+  "research_date": "2026-09-08",
+  "summary": "Research for pet/breed surcharge surprise at check-in for Tyumen short-term rental. Fresh week signals: Kvartirka #418997 updated 2026-09-04 (breed-tier daily surcharges), m24.ru 2026-09-06 pet-travel context. Platform rules from Sutochno + Avito. Wordstat P0 «квартиры посуточно тюмень» 5134; pet P1 571 RU. Guest CASE angle, not guide.",
+  "freshness_audit": {
+    "research_date": "2026-09-08",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://kvartirka.com/residence/418997/",
+      "published_at": "2026-09-04",
+      "note": "Marketplace listing updated this week with written breed-tier pet surcharges (300/500/1000 ₽/day) — contrast for door surprise angle."
+    },
+    "additional_fresh_signals": [
+      {
+        "url": "https://www.m24.ru/news/06092026/938172",
+        "published_at": "2026-09-06",
+        "type": "news",
+        "note": "M24 pet-travel context this week; not rental tariffs."
+      },
+      {
+        "url": "https://t.me/klyshin_A",
+        "published_at": "2026-09-08",
+        "type": "channel_hook",
+        "note": "Klyshin dog_breed_fee angle; not proof of Tyumen transaction."
+      }
+    ]
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176", "225"],
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 5134,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 10865,
+        "region": "225"
+      },
+      {
+        "phrase": "снять квартиру посуточно в тюмени",
+        "volume": 1672,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "посуточная квартира с собакой",
+        "volume": 571,
+        "region": "225"
+      },
+      {
+        "phrase": "снять квартиру посуточно с собакой",
+        "volume": 429,
+        "region": "225"
+      },
+      {
+        "phrase": "квартира посуточно с собакой",
+        "volume": 8,
+        "region": "55+11176",
+        "note": "weak local — rework to RU intent"
+      },
+      {
+        "phrase": "аренда квартиры посуточно",
+        "volume": 704,
+        "region": "55+11176"
+      }
+    ]
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "Platform rules (Sutochno, Avito); no bank/developer tariff digits",
+    "verified_claims": 2,
+    "entities_checked": ["sutochno", "avito"],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "memory/blog/articles/B15-mozhno-s-sobakoj-u-dveri-doplatili-za-porodu/derouter-opus-stamp-research.json",
+    "first_attempt": "BLOCKER (HTTP 524 origin timeout)",
+    "retry": "PASS"
+  },
+  "limitations": [
+    "Klyshin/Telegram signal does not confirm a specific Tyumen rental transaction.",
+    "Marketplace surcharge examples are not universal Tyumen tariffs.",
+    "3 000 ₽ in Scout hook is illustrative case sum, not verified market rate.",
+    "M24 Sept 6 article is pet-walking context, not short-term rental policy."
+  ],
+  "writer_safe_urls": [
+    "https://добрыйдом-72.рф/booking/",
+    "https://добрыйдом-72.рф/",
+    "https://t.me/Dobriy_dom_Tyumen",
+    "https://t.me/Dobriy_dom_72",
+    "https://max.ru/id660300569233_biz",
+    "https://sutochno.ru/sj/kak-puteshestvovat-s-domashnimi-zhivotnymi",
+    "https://host.avito.com/course/lesson-5",
+    "https://host.avito.com/documents/dogovor-arendy-i-najma-zhilya",
+    "https://kvartirka.com/residence/418997/"
+  ],
+  "errors": []
+}
