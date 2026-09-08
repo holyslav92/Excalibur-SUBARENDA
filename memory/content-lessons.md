@@ -661,3 +661,95 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+---
+
+## LESSON-20260908-1042-B15-wifi-video-call-broad-promise
+status: proposed
+topic_id: B15
+category: utility
+confidence: low
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP. Урок из publish-арteфактов: title-brief.json (10 200 ₽ / три ночи / созвон), description-brief.json PASS, research-notes hook `sept_business_trip`, case-delivery-gate PASS, article.html opening Wi‑Fi 3–5 Мбит + розетка у кровати.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest BLOCKER (INC-20260903-0640).
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Two-beat H1 «Заселился после рейса. За 10 200 ₽ Wi‑Fi сорвал созвон»: поздний заезд → утренний провал + полная сумма за N ночей, не how-to.
+- §1: цитата «Wi‑Fi есть, рабочее место есть», 10 200 ₽ (3 ночи), 3–5 Мбит на загрузку у стола; «интернет есть» vs «нормального видеосозвона — нет».
+- H2 «Когда одно слово обещает слишком много»: host «роутер включён» vs guest «меня будет видно» — anti-dup B10 «всё включено», но про connectivity.
+- Klyshin «Сначала проверка. Потом перевод.» + вопрос-отмычка «Сколько Мбит на загрузку у стола — и есть ли розетка рядом?» → TG/MAX mid-body.
+- Вторая ловушка: стол у окна, розетка у изголовья кровати — фото не врёт, рабочим местом не стало.
+- Interlink spine: B10 broad promise (такси), B01 бесконтактное (ночь), B08 тишина после предоплаты, B06 чемодан между выездом и поездом.
+- Wordstat: spine «квартиры посуточно тюмень» 5134 (Tyumen 55+11176); узкий «квартира посуточно командировка» 77 (RF) — угол business-trip, не P0.
+- Description не дублирует H1: «22:00 заселение vs 10:00 звонок» + стол без розетки (description-brief PASS).
+- Cover-QA PASS: pad-clear on no-logo inlines; drawn_logo heuristic FAIL tolerated (paste_and_ship).
+
+### Change
+- В кейсах `sept_business_trip` / Wi‑Fi hooks в §1 сразу фиксировать **загрузку у стола** (Мбит/s upload) рядом с «интернет есть» — не только утренний срыв камеры.
+- Параллельно с суммой за N ночей перечислять **розетку + удлинитель** у рабочего места до морали — не откладывать во второй абзац без ₽ anchor.
+
+### Never again
+- Принимать «Wi‑Fi есть» / «интернет стабильный» за ответ на вопрос про видеосозвон без цифры загрузки у стола.
+- Писать business-trip кейс только про скорость, игнорируя power-at-desk (розетка под кроватью).
+- How-to про тарифы провайдера / Zoom Mbps до кейса; чеклист только после «Мой вывод как практика».
+- Смешивать B15 (Wi‑Fi на созвон) и B14 (шум соседей) — разные источники боли.
+
+### Proposed apply
+- Scout: при hook `sept_business_trip` логировать Klyshin «Звонок в 10:00. Заселился в 22:00.» + final P0 spine Tyumen + note «квартира посуточно командировка» volume (узкий угол).
+- Title/Description: держать temporal contrast 22:00 vs 10:00 как в description-brief B15.
+- Review only; Writer prompt не трогать автоматически.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260908-1042-B15-late-checkin-morning-call-leverage
+status: proposed
+topic_id: B15
+category: structure
+confidence: low
+
+### Evidence
+- artifact: title-brief.json#angle
+  finding: angle «поздний рейс → утренний видеосозвон сорван; розетка у кровати; документы «по запросу»»; opening-meta-gate PASS; H2 «Поздний рейс не делает вопрос меньше».
+- metrika_signal: none (credentials unavailable; causal retention не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Слой «22:00 заселение после рейса → 10:00 созвон» отдельным абзацем — asymmetric moment после «проверка закончилась на Wi‑Fi есть».
+- Host-answer mismatch: «интернет есть» ↔ вопрос про Мбит/камеру — как B13 «код работает» vs «ключа нет».
+- Блок документов «по запросу» → бухгалтерия накануне рейса — money-timing + paperwork spine без legal guide.
+- Чеклист из 4 пунктов (скорость у стола, розетка, поздний заезд, документы) только после «Мой вывод как практика».
+- Связка late access через interlink B01 (бесконтактное) + B08 (тишина) — не дублировать B13 empty-keybox.
+
+### Change
+- Для business-trip hooks всегда включать **temporal leverage** (ночной заезд → утренний hard deadline) в utility-блок — не только Mbps и розетку.
+- При interlink — sibling про broad promises (B10 all-inclusive, B11 «всё для гостей») одной красной линией «слово ≠ пригодность под задачу».
+
+### Never again
+- Писать sept_business_trip кейс только про Wi‑Fi, игнорируя late-checkin leverage (исправить нечем — созвон через час).
+- Финал «Наш вывод простой» вместо «Мой вывод как практика».
+
+### Proposed apply
+- Writer checklist (review-only): sept_business_trip + late flight → один абзац про 22:00→10:00 asymmetric moment после оплаты.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
