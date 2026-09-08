@@ -1,0 +1,86 @@
+{
+  "topic_id": "B15",
+  "slug": "zaselilsya-v-22-00-v-10-00-sozvon-wi-fi-ne-vyderzhal",
+  "cover_family": "brand_collage",
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "file": "cover/cover.png",
+  "alt": "Гость за столом: зависший видеосозвон, заголовок «Созвон сорвался из-за сети».",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-quad-01.png",
+  "generated_at": "2026-09-08T09:50:08+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Гость за столом: зависший видеосозвон, заголовок «Созвон сорвался из-за сети».",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "«Интернет есть» vs 3–5 Мбит у стола.",
+      "h2_anchor": "Когда одно слово обещает слишком много",
+      "visual_type": "comparison_table",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Чат до оплаты: «интернет есть», утром созвон сорван.",
+      "h2_anchor": "Переписка, в которой всё уже случилось",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Розетка у кровати, стол у окна без удлинителя.",
+      "h2_anchor": "Поздний рейс не делает вопрос меньше",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_4",
+      "file": "cover/inline-04.png",
+      "alt": "Поздний заезд: код и контакт утром.",
+      "h2_anchor": "Поздний рейс не делает вопрос меньше",
+      "visual_type": "process_flow",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_5",
+      "file": "cover/inline-05.png",
+      "alt": "Роутер в прихожей, слабый сигнал у стола.",
+      "h2_anchor": "Когда одно слово обещает слишком много",
+      "visual_type": "infographic_card",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_6",
+      "file": "cover/inline-06.png",
+      "alt": "Четыре вопроса в чате до оплаты.",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "labeled_checklist",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_7",
+      "file": "cover/inline-07.png",
+      "alt": "Тюмень: скорость и заезд до оплаты.",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "tool_screenshot",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}
