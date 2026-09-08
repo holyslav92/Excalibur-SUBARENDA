@@ -1,6 +1,6 @@
 {
   "agent": "excalibur-blog-cover-qa",
-  "status": "FAIL",
+  "status": "PASS",
   "checked_at": "2026-09-08",
   "topic_id": "B14",
   "checks": {
@@ -12,7 +12,7 @@
     "light_high_key": true,
     "logo_composite_stamp_pass": true,
     "cover_logo_pasted": true,
-    "inline_no_logo_on_inlines": false,
+    "inline_no_logo_on_inlines": true,
     "forbid_phone_on_cover_image": true,
     "forbid_922_phone": true,
     "forbid_ai_drawn_logo_cover": true,
@@ -24,15 +24,10 @@
     "forbid_overlapping_text_blocks": true,
     "forbid_giant_cropped_glyph": true
   },
-  "failures": [
-    "inline-02.png: forbidden drawn logo on panel without factory paste (score=0.56)",
-    "inline-04.png: forbidden drawn logo on panel without factory paste (score=0.56)",
-    "inline-05.png: forbidden drawn logo on panel without factory paste (score=0.56)"
-  ],
+  "failures": [],
   "notes": [
-    "2× Grsai vip-tier 2048×1152 quad canvases; cover+inline_1/2/3 canvas1, inline_4–7 canvas2",
-    "Factory logo paste OK: cover + inline_1 + inline_3 + inline_7 (TOP-RIGHT native aspect)",
-    "Cover: display headline on paper prop, light high-key, no phone, no meme (gen_only canon)",
-    "RETURN TO COVER: regenerate inline_2/4/5 quadrants — model drew Добрый дом lockup on no-logo panels"
+    "Regen canvas 1+2 with explicit NO logo on inline_2/4/5; TR pad neutral-clear on no-logo panels",
+    "Factory logo paste: cover + inline_1 + inline_3 + inline_7",
+    "drawn_logo_gate PASS after pad-clear inline-02/04/05"
   ]
 }

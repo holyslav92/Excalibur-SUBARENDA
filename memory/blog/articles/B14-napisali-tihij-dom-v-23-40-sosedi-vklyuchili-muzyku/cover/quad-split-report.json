@@ -1,33 +1,13 @@
 {
   "agent": "excalibur-blog-cover-quad-split",
   "status": "PASS",
-  "splits": [
-    {
-      "canvas_index": 1,
-      "slots": [
-        "cover",
-        "inline_1",
-        "inline_2",
-        "inline_3"
-      ]
-    },
-    {
-      "canvas_index": 2,
-      "slots": [
-        "inline_4",
-        "inline_5",
-        "inline_6",
-        "inline_7"
-      ]
-    }
-  ],
   "html_inject": [
-    "injected inline_1 after H2 — Что хост на самом деле продал гостю",
-    "injected inline_2 after H2 — Отмычка до перевода",
-    "injected inline_3 after H2 — Почему фото и отзывы не прикроют стену",
-    "injected inline_4 after H2 — Мой вывод как практика",
-    "injected inline_5 after H2 — Что хост на самом деле продал гостю",
-    "injected inline_6 after H2 — Вы бы поверили «тихому дому» или спросили про соседей?",
-    "injected inline_7 after H2 — Мой вывод как практика"
+    "skip inline_1: already correct under H2 — Что хост на самом деле продал гостю",
+    "skip inline_2: already correct under H2 — Отмычка до перевода",
+    "skip inline_3: already correct under H2 — Почему фото и отзывы не прикроют стену",
+    "skip inline_4: already correct under H2 — Мой вывод как практика",
+    "skip inline_5: already correct under H2 — Что хост на самом деле продал гостю",
+    "skip inline_6: already correct under H2 — Вы бы поверили «тихому дому» или спросили про соседей?",
+    "skip inline_7: already correct under H2 — Мой вывод как практика"
   ]
 }

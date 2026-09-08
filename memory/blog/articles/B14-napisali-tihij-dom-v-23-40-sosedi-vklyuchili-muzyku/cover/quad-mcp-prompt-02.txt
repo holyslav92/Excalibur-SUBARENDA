@@ -1,10 +1,7 @@
-ONE canvas 2048×1152 — draw as 2×2 GRID of FOUR complete photoreal 16:9 apartment panels (thin white gutters OK). Each quadrant is its own readable scene — NOT one photo sliced at random. NOT infographic.
-dobry_dom_gen_only_human_v1 — exactly ONE Grsai primary image draw; factory slices quarters after download.
-COVER PANEL top-left HEADLINE L1 ««Тихий дом»» + L2 «музыка за стеной в 23:40» printed/painted on a physical object in the scene; Cyrillic headline must appear IN the photograph on a real physical object (printed paper on coffee table, TV screen, door sign, barrier sticker, luggage tag) — NOT a graphic-design layer, NOT yellow marker highlight, NOT sticky-note collage, NOT phone pill button, NOT Canva overlay typography.
-FORBIDDEN on cover panel: phone number, logo, meme sticker, yellow marker, sticky note, pill button, dashed frame.
-INLINE PANELS (top-right, bottom-left, bottom-right) — each a FULL standalone 16:9 scene for: inline_1: «Что хост на самом деле продал гостю» — Split тихий дом vs бас 23:40; 8400₽ две ночи свет выкл окно; TR pad.; inline_2: «Отмычка до перевода» — Chat тихо? / тихий дом; бас подушка без слов ночь; no meme.; inline_3: «Почему фото и отзывы не прикроют стену» — Checklist соседи жалобы план проверка; TR pad.
-PANEL 2–4: NO «Добрый дом» logo, NO curtains/flower lockup — photoreal scenes only.
-TOP-RIGHT of COVER PANEL ONLY: leave clean wall/wood pad 8–12% — model does NOT draw logo; factory pastes official cropped-img_7143.png after slice (pixel-faithful, native aspect, NOT square crop).
-FORBIDDEN: four separate images; second API call; logo in images[]; poster_composite; factory typography overlay.
-BAN: 0 memes, 2+ memes, meme soup, people-heavy group photo, tiny in-scene phone on door, Wordstat sticker soup, torn-paper collage, metallic gold, brass, 3D gold type, gold-glitter type, dark leather, wood+Harold lobby stamp, yellow sticky notes, split white-panel+photo, phone pill, peel-pill phone, fridge magnet phone, gold brass plaque, post-composite phone chip, model-drawn logo, house-with-heart, logo plate, empty stock room, WordPress UI, wow poster collage soup, dark cinematic, overlapping type layers, magnified letter crops, Trade Offer/Drake/Wojak drawn by model, collage of stickers covering headline, white/gray plaque under logo, model-drawn lockup.
-TEXT: Russian Cyrillic only; Comfort+ Tyumen daily-rental mood; photoreal apartment interior.
+ONE canvas 2048x1152 as 2x2 GRID of four photoreal 16:9 infographic panels. NO cover panel. Early September bright Tyumen apartment mood, NOT winter.
+TOP-LEFT inline_4: desk flow diagram соседи→проверка→оплата; +7 993 574-83-22 on desk card; TOP-RIGHT completely clean — NO logo NO brand text.
+TOP-RIGHT inline_5: wall cross-section bass arrows; labels стена бас 23:40 соседи; TOP-RIGHT completely clean — NO logo NO brand text NO «Добрый дом».
+BOTTOM-LEFT inline_6: wall board quiet hours 22-08; +7 993 574-83-22 on door sign; TOP-RIGHT completely clean — NO logo NO brand.
+BOTTOM-RIGHT inline_7: host desk sticky «Сначала проверка»; labels не по фото спроси соседей; TOP-RIGHT empty pad 8-12% for factory logo — model draws NOTHING there.
+CRITICAL: panels inline_4 inline_5 inline_6 must have ZERO brand logo, ZERO «Добрый дом», ZERO curtains+flower, ZERO house icon in any corner especially top-right.
+ALL panels photoreal infographic; ZERO meme; NO WordPress UI.

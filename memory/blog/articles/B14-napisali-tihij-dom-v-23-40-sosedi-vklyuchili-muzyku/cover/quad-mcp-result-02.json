@@ -5,6 +5,5 @@
   "used_vip_fallback": true,
   "delivery": "native_2k",
   "vip_trigger": "2k_not_possible_on_primary",
-  "attempts": 1,
-  "primary_undersized_then_vip": true
+  "regen": "cover-qa-fix-inline-2-4-5"
 }
