@@ -960,7 +960,7 @@ needed_decision_or_secret: YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_I
 
 status: needs-human
 run_date: 2026-09-08
-role: excalibir-blog-content-learner
+role: excalibur-blog-content-learner
 topic_id: B15
 article_dir: memory/blog/articles/B15-mozhno-s-sobakoj-u-dveri-doplatili-za-porodu
 severity: medium
