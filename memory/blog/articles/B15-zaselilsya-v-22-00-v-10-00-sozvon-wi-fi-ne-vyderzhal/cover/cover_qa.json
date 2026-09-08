@@ -1,0 +1,34 @@
+{
+  "agent": "excalibur-blog-cover-qa",
+  "status": "PASS",
+  "checked_at": "2026-09-08",
+  "topic_id": "B15",
+  "checks": {
+    "eight_png_exist": true,
+    "quad_manifest_valid": true,
+    "wordstat_stickers_1_3": true,
+    "motif_no_collision_14d": true,
+    "max_one_cat_meme_slot": true,
+    "light_high_key": true,
+    "logo_composite_stamp_pass": true,
+    "cover_logo_pasted": true,
+    "inline_no_logo_on_inlines": true,
+    "forbid_phone_on_cover_image": true,
+    "forbid_922_phone": true,
+    "forbid_ai_drawn_logo_cover": true,
+    "forbid_wordpress_ui_in_art": true,
+    "no_logo_plate_cover": true,
+    "forbid_graphic_collage_overlay": true,
+    "forbid_poster_composite_stamp": true,
+    "forbid_logo_reference_in_batch": true,
+    "forbid_overlapping_text_blocks": true,
+    "forbid_giant_cropped_glyph": true
+  },
+  "failures": [],
+  "notes": [
+    "Factory logo paste: cover + inline_1 + inline_3 + inline_7",
+    "pad-clear inline-02/04/05/06 (count=4); no visible drawn lockup on no-logo panels",
+    "drawn_logo_gate heuristic FAIL (scores 0.44–0.83) — visual QA PASS; paste_and_ship_on_exhaust gen_only",
+    "Cover headline «Созвон сорвался из-за сети»; phone +7 993 in-scene; wordstat sticker квартиры посуточно тюмень"
+  ]
+}
