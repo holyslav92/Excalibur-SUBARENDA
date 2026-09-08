@@ -1,0 +1,169 @@
+{
+  "topic_id": "B14",
+  "slug": "napisali-tihij-dom-v-23-40-sosedi-vklyuchili-muzyku",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": [
+        "inline_4",
+        "inline_5",
+        "inline_6",
+        "inline_7"
+      ],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "Тихий дом — музыка за стеной",
+  "cover_hook_highlight": "музыка",
+  "cover_headline_line1": "«Тихий дом»",
+  "cover_headline_line2": "музыка за стеной в 23:40",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Grsai draw API VIP — 2K 16:9, one job per canvas (2×). Logo factory paste cover + inline_1/3/7.",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "шум соседей"
+  ],
+  "logo_paste_inline_slots": [
+    "inline_1",
+    "inline_3",
+    "inline_7"
+  ],
+  "cover_motifs": {
+    "composition": "guest in bed pillow vibrating bass through wall 23:40 phone nightstand printed headline person in scene TR pad",
+    "location": "early September 2026 warm Tyumen apartment bedroom green trees outside window NOT winter no snow",
+    "meme": "zero meme stickers photoreal bass wall only",
+    "prop_set": "smartphone messenger chat headphones vibrating pillow wall bass printed quiet hours sign 8400 receipt",
+    "sticker_set": "квартиры посуточно тюмень шум соседей снять квартиру посуточно в тюмени",
+    "joke": "host promised quiet home at 23:40 bass starts through shared wall pillow shakes"
+  },
+  "cover_emotion": "",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Гость в светлой спальне посуточной квартиры в Тюмени лежит на кровати: на стене крупный заголовок «Тихий дом — музыка за стеной», подушка вибрирует от баса соседей.",
+      "scene_hint": "Guest bed bass; headline «Тихий дом — музыка за стеной» gold «музыка»; 23:40; +7 993 574-83-22; TR pad.",
+      "meme_caption_ru": "",
+      "sticky": ""
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Что хост на самом деле продал гостю",
+      "visual_type": "comparison_table",
+      "scene_hint": "Split тихий дом vs бас 23:40; 8400₽ две ночи свет выкл окно; TR pad.",
+      "alt": "Сравнение: обещание тихого дома и реальность — бас из соседней квартиры ночью.",
+      "labels": [
+        "8400 рублей",
+        "две ночи",
+        "свет выключен",
+        "окно открыто"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Отмычка до перевода",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Chat тихо? / тихий дом; бас подушка без слов ночь; no meme.",
+      "alt": "Переписка до оплаты: хост обещает тишину, а ночью слышен бас через стену.",
+      "labels": [
+        "бас через стену",
+        "подушка дрожит",
+        "слова не слышны",
+        "всю ночь"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Почему фото и отзывы не прикроют стену",
+      "visual_type": "checklist_board",
+      "scene_hint": "Checklist соседи жалобы план проверка; TR pad.",
+      "alt": "Что спросить до оплаты: соседи, жалобы, план хоста на ночь.",
+      "labels": [
+        "спросить про соседей",
+        "жалобы за месяц",
+        "план на ночь",
+        "сначала проверка"
+      ]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "process_flow",
+      "scene_hint": "Flow соседи→оплата; +7 993 574-83-22 card.",
+      "alt": "Порядок: сначала вопросы о соседях и тишине, потом оплата.",
+      "labels": [
+        "спросить про соседей",
+        "жалобы за месяц",
+        "план на ночь",
+        "сначала проверка"
+      ]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Что хост на самом деле продал гостю",
+      "visual_type": "infographic_card",
+      "scene_hint": "Wall section bass 23:40 соседи.",
+      "alt": "Схема: шум идёт через общую стену, а не с улицы.",
+      "labels": [
+        "стена",
+        "бас",
+        "23:40",
+        "соседи"
+      ]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Вы бы поверили «тихому дому» или спросили про соседей?",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Board 22-08; +7 993 574-83-22 sign; сбоку сверху жалобы.",
+      "alt": "Вопросы про соседей и режим тишины до бронирования.",
+      "labels": [
+        "кто сбоку",
+        "кто сверху",
+        "жалобы",
+        "хост ночью"
+      ]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "tool_screenshot",
+      "scene_hint": "Desk sticky Сначала проверка; TR pad.",
+      "alt": "Вывод: тишину проверяют вопросами до оплаты, не фотографиями.",
+      "labels": [
+        "тишина не по фото",
+        "спроси соседей",
+        "план ночью",
+        "не «тихий дом»"
+      ]
+    }
+  },
+  "cover_keys_ru": []
+}

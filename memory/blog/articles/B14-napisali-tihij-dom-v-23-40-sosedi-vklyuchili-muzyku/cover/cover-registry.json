@@ -1,0 +1,86 @@
+{
+  "topic_id": "B14",
+  "slug": "napisali-tihij-dom-v-23-40-sosedi-vklyuchili-muzyku",
+  "cover_family": "brand_collage",
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "file": "cover/cover.png",
+  "alt": "Гость в светлой спальне посуточной квартиры в Тюмени лежит на кровати: на стене крупный заголовок «Тихий дом — музыка за стеной», подушка вибрирует от баса соседей.",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-quad-01.png",
+  "generated_at": "2026-09-08T06:37:18+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Гость в светлой спальне посуточной квартиры в Тюмени лежит на кровати: на стене крупный заголовок «Тихий дом — музыка за стеной», подушка вибрирует от баса соседей.",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Сравнение: обещание тихого дома и реальность — бас из соседней квартиры ночью.",
+      "h2_anchor": "Что хост на самом деле продал гостю",
+      "visual_type": "comparison_table",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Переписка до оплаты: хост обещает тишину, а ночью слышен бас через стену.",
+      "h2_anchor": "Отмычка до перевода",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Что спросить до оплаты: соседи, жалобы, план хоста на ночь.",
+      "h2_anchor": "Почему фото и отзывы не прикроют стену",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_4",
+      "file": "cover/inline-04.png",
+      "alt": "Порядок: сначала вопросы о соседях и тишине, потом оплата.",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "process_flow",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_5",
+      "file": "cover/inline-05.png",
+      "alt": "Схема: шум идёт через общую стену, а не с улицы.",
+      "h2_anchor": "Что хост на самом деле продал гостю",
+      "visual_type": "infographic_card",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_6",
+      "file": "cover/inline-06.png",
+      "alt": "Вопросы про соседей и режим тишины до бронирования.",
+      "h2_anchor": "Вы бы поверили «тихому дому» или спросили про соседей?",
+      "visual_type": "labeled_checklist",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_7",
+      "file": "cover/inline-07.png",
+      "alt": "Вывод: тишину проверяют вопросами до оплаты, не фотографиями.",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "tool_screenshot",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}
