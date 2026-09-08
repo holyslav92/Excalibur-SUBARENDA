@@ -1,5 +1,22 @@
 # WP publish log
 
+## B14 — 2026-09-08
+
+- **topic_id:** B14
+- **slug:** napisali-tihij-dom-v-23-40-sosedi-vklyuchili-muzyku
+- **title:** «Тихий дом» обещали. За 8 400 ₽ — музыка за стеной ночью
+- **post_id:** 4546
+- **permalink:** /blog/napisali-tihij-dom-v-23-40-sosedi-vklyuchili-muzyku/
+- **categories:** posutochnaya-arenda (101), sovety-gostyam (106)
+- **featured_image:** 4547
+- **inline_images:** 4548–4554 (7× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS
+- **dzen preview:** cover-1024x576.png + cover-dzen-v3-1024x576.png (HTTP 200); feed enclosure → …-cover-dzen-v3.png
+- **interlink outbound:** 4 live /blog/ siblings (crosslink-qa PASS)
+- **interlink inbound:** B01 (3745), B13 (4535)
+- **publish_method:** ftp (Timeweb PASV; post-publish interlink via SFTP:22)
+
 ## B13 — 2026-09-07
 
 - **topic_id:** B13
