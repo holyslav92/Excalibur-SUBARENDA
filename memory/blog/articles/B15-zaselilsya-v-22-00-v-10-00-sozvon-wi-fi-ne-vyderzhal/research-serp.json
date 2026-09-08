@@ -1,0 +1,187 @@
+{
+  "agent": "excalibur-blog",
+  "date_context": {
+    "timezone": "Europe/Moscow",
+    "today_iso": "2026-09-08",
+    "today_ru": "08.09.2026",
+    "year": 2026,
+    "month": 9,
+    "month_name_ru": "сентябрь",
+    "weekday_ru": "вторник"
+  },
+  "topic": {
+    "topic_id": "B15",
+    "title": "Заселился в 22:00. В 10:00 созвон — Wi‑Fi не выдержал",
+    "h1": "Заселился в 22:00. В 10:00 созвон — Wi‑Fi не выдержал",
+    "slug": "zaselilsya-v-22-00-v-10-00-sozvon-wi-fi-ne-vyderzhal",
+    "primary_query": "Заселился в 22:00. В 10:00 созвон — Wi‑Fi не выдержал",
+    "priority": "P0"
+  },
+  "searches": [
+    {
+      "query_id": "primary_fresh",
+      "query": "Заселился в 22:00. В 10:00 созвон — Wi‑Fi не выдержал 2026",
+      "purpose": "актуальный SERP",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Wi-Fi не работает: 10 причин и как их устранить самостоятельно",
+          "url": "https://wi-fi-gid.vercel.app/articles/k/ka/kak-uznat-pochemu-ne-rabotaet-internet-vaj-faj.html",
+          "snippet": ""
+        },
+        {
+          "title": "Wi-Fi на телефоне не подключается: 12 причин и решений 2026",
+          "url": "https://wi-fi-gid.vercel.app/articles/p/po/pochemu-wi-fi-na-telefone-ne-podklyuchaetsya.html",
+          "snippet": "Интернет через вай-фай не подключается? Разбираемся, почему пропадает сигнал, роутер не раздает Wi-Fi или устройство не видит сеть. Пошаговые инструкции для диагностики и решения проблемы."
+        },
+        {
+          "title": "Устранение неполадок с подключением к беспроводной сети - Windows ...",
+          "url": "https://learn.microsoft.com/ru-ru/troubleshoot/windows-client/networking/wireless-network-connectivity-issues-troubleshooting",
+          "snippet": "Почему телефон не видит Wi-Fi или не подключается к сети? Разбираем все причины — от настроек роутера до сбоев в Android/iOS. Пошаговые инструкции + FAQ."
+        },
+        {
+          "title": "Нестабильный Wi-Fi: Причины и решения",
+          "url": "https://ipnet.ua/ru/blog/nestabilnij-wi-fi",
+          "snippet": "Используйте это руководство для диагностики и устранения проблем с подключением Wi-Fi на Windows клиентах."
+        },
+        {
+          "title": "Постоянно «отваливается» Wi-Fi: почему это происходит и как исправить",
+          "url": "https://provayder.net/useful/articles/postoyanno-propadaet-wi-fi/",
+          "snippet": "Одной из наиболее распространенных ошибок, почему отваливается wifi, является затрудненная аутентификация. Причины могут быть разными, однако проблему можно решить в домашних условиях."
+        },
+        {
+          "title": "Что делать, если не работает Wi-Fi: 10 проверенных способов ...",
+          "url": "https://openrunet.ru/chto-delat-esli-ne-rabotaet-wi-fi-10-proverennyh-sposobov-vosstanovit-internet-doma-i-v-ofise",
+          "snippet": "Постоянно пропадает интернет (Wi-Fi) - причины по которым это может происходит и пошаговая инструкция по устранению проблемы."
+        }
+      ],
+      "searched_at": "2026-09-08"
+    },
+    {
+      "query_id": "title_fresh",
+      "query": "Заселился в 22:00. В 10:00 созвон — Wi‑Fi не выдержал 2026",
+      "purpose": "SERP по человеческому title",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Wi-Fi на телефоне не подключается: 12 причин и решений 2026",
+          "url": "https://wi-fi-gid.vercel.app/articles/p/po/pochemu-wi-fi-na-telefone-ne-podklyuchaetsya.html",
+          "snippet": ""
+        },
+        {
+          "title": "Не подключается Wi-Fi на телефоне: 12 способов решить проблему",
+          "url": "https://wi-fi-gid.vercel.app/articles/n/ne/ne-podklyuchaetsya-vaj-faj-na-smartfone-chto-delat.html",
+          "snippet": "Почему телефон не видит Wi-Fi или не подключается к сети? Разбираем все причины — от настроек роутера до сбоев в Android/iOS. Пошаговые инструкции + FAQ."
+        },
+        {
+          "title": "Устранение неполадок с подключением к беспроводной сети - Windows ...",
+          "url": "https://learn.microsoft.com/ru-ru/troubleshoot/windows-client/networking/wireless-network-connectivity-issues-troubleshooting",
+          "snippet": "Wi-Fi не работает на смартфоне? Узнайте, почему телефон не видит сеть или не подключается к роутеру, и как исправить это за 5 минут. Пошаговые инструкции для Android и iOS."
+        },
+        {
+          "title": "Нестабильный Wi-Fi: Причины и решения",
+          "url": "https://ipnet.ua/ru/blog/nestabilnij-wi-fi",
+          "snippet": "Используйте это руководство для диагностики и устранения проблем с подключением Wi-Fi на Windows клиентах."
+        },
+        {
+          "title": "Постоянно «отваливается» Wi-Fi: почему это происходит и как исправить",
+          "url": "https://provayder.net/useful/articles/postoyanno-propadaet-wi-fi/",
+          "snippet": "Одной из наиболее распространенных ошибок, почему отваливается wifi, является затрудненная аутентификация. Причины могут быть разными, однако проблему можно решить в домашних условиях."
+        },
+        {
+          "title": "Что делать, если не работает Wi-Fi: 10 проверенных способов ...",
+          "url": "https://openrunet.ru/chto-delat-esli-ne-rabotaet-wi-fi-10-proverennyh-sposobov-vosstanovit-internet-doma-i-v-ofise",
+          "snippet": "Постоянно пропадает интернет (Wi-Fi) - причины по которым это может происходит и пошаговая инструкция по устранению проблемы."
+        }
+      ],
+      "searched_at": "2026-09-08"
+    },
+    {
+      "query_id": "official_docs",
+      "query": "Заселился в 22:00. В 10:00 созвон — Wi‑Fi не выдержал official docs 2026",
+      "purpose": "официальные docs",
+      "result_count": 0,
+      "results": [],
+      "searched_at": "2026-09-08"
+    },
+    {
+      "query_id": "github_evidence",
+      "query": "site:github.com Заселился в 22:00. В 10:00 созвон — Wi‑Fi не выдержал 2026",
+      "purpose": "GitHub evidence",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Vless Не Работает В 2026: Что Происходит И Что Держится",
+          "url": "https://gist.github.com/BoberSdoh/8568f1e5f711806b05e96bb843df0ba7",
+          "snippet": ""
+        },
+        {
+          "title": "Спустя несколько дней использования не работает прокси #14",
+          "url": "https://github.com/EmptyLibra/Configure-Xray-with-VLESS-Reality-on-VPS-server/issues/14",
+          "snippet": "Если коротко: 25 мая 2026 — в Москве, Сибири и ещё нескольких регионах массово перестали работать VLESS и Xray. Это третья волна за полгода, и каждая охватывает больше провайдеров, чем ..."
+        },
+        {
+          "title": "[Проблема] Орион Телеком — не работает вечером с 17 до 22 #14209",
+          "url": "https://github.com/Flowseal/zapret-discord-youtube/issues/14209",
+          "snippet": "Несколько дней удачно использовал настроенный полностью по гайду прокси. Но сегодня перестал грузить заблокированные в РФ сайты (youtube, chatgpt и пр). В nekobox при тестировании подключения через раз выдает [[VLESS] VLESS-Reality-Clien..."
+        },
+        {
+          "title": "VPN не работает через мобильную сеть, только по Wi-Fi",
+          "url": "https://github.com/OutlineFoundation/outline-sdk/issues/477",
+          "snippet": "Каждый день с 17:00 до 22:00 перестают работать Discord и Roblox. Утром и днём всё работает нормально с ALT9 (пинг ~88ms)."
+        },
+        {
+          "title": "[Проблема] Домашний wifi перестал работать после отключения запрета ...",
+          "url": "https://github.com/Flowseal/zapret-discord-youtube/issues/8141",
+          "snippet": "VPN работает нормально через Wi-Fi, но не подключается при использовании мобильной сети (LTE/4G). Проверял на разных операторах — результат один и тот же."
+        },
+        {
+          "title": "GitHub - AgentMSQ/ipo-lr-10: И сказал торгоовец жадному еврейскому ...",
+          "url": "https://github.com/AgentMSQ/ipo-lr-10",
+          "snippet": "Мобильный интернет на пк подключается и работает, домашний WiFi либо подключен без интернета, либо пишет что подключен, но во всех случаях все ping в консоли имеют 100% лос т.е подключения нет."
+        }
+      ],
+      "searched_at": "2026-09-08"
+    },
+    {
+      "query_id": "community_experience",
+      "query": "Заселился в 22:00. В 10:00 созвон — Wi‑Fi не выдержал forum problems опыт 2026",
+      "purpose": "форумы и живые проблемы",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Wi-Fi на телефоне не подключается: 12 причин и решений 2026",
+          "url": "https://wi-fi-gid.vercel.app/articles/p/po/pochemu-wi-fi-na-telefone-ne-podklyuchaetsya.html",
+          "snippet": ""
+        },
+        {
+          "title": "Устранение неполадок с подключением к беспроводной сети - Windows ...",
+          "url": "https://learn.microsoft.com/ru-ru/troubleshoot/windows-client/networking/wireless-network-connectivity-issues-troubleshooting",
+          "snippet": "Почему телефон не видит Wi-Fi или не подключается к сети? Разбираем все причины — от настроек роутера до сбоев в Android/iOS. Пошаговые инструкции + FAQ."
+        },
+        {
+          "title": "Заселился в 22:00. В 10:00 созвон - Дзен",
+          "url": "https://dzen.ru/a/apPdVV_t_ztB_LUy",
+          "snippet": "Используйте это руководство для диагностики и устранения проблем с подключением Wi-Fi на Windows клиентах."
+        },
+        {
+          "title": "Нестабильный Wi-Fi: Причины и решения",
+          "url": "https://ipnet.ua/ru/blog/nestabilnij-wi-fi",
+          "snippet": "Статья автора «Добрый Дом | посуточно квартиры в Тюмени» в Дзене : 29 августа, 22:10, Тюмень. Инженер выходит из такси у подъезда: командировка, две ночи, утром обязательный видеосозвон в 10:00."
+        },
+        {
+          "title": "Не подключается Wi-Fi на телефоне: 12 способов решить проблему",
+          "url": "https://wi-fi-gid.vercel.app/articles/n/ne/ne-podklyuchaetsya-vaj-faj-na-smartfone-chto-delat.html",
+          "snippet": "Разочарование возникает, когда интернет постоянно вылетает или отключается wifi на роутере. Когда нестабильно работает wifi, дьявол часто кроется в деталях. Мы рассмотрим наиболее распространенные причины проблем с подключением и скоростью."
+        },
+        {
+          "title": "Постоянно «отваливается» Wi-Fi: почему это происходит и как исправить",
+          "url": "https://provayder.net/useful/articles/postoyanno-propadaet-wi-fi/",
+          "snippet": "Wi-Fi не работает на смартфоне? Узнайте, почему телефон не видит сеть или не подключается к роутеру, и как исправить это за 5 минут. Пошаговые инструкции для Android и iOS."
+        }
+      ],
+      "searched_at": "2026-09-08"
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,15 @@
+{
+  "agent": "excalibur-blog-cover-quad-split",
+  "status": "PASS",
+  "manifest": "cover/quad-manifest.json",
+  "splits": "manual CANVAS_1/2_SLOTS longform",
+  "html_inject": [
+    "injected inline_1 after H2 — Когда одно слово обещает слишком много",
+    "injected inline_2 after H2 — Переписка, в которой всё уже случилось",
+    "injected inline_3 after H2 — Поздний рейс не делает вопрос меньше",
+    "injected inline_4 after H2 — Поздний рейс не делает вопрос меньше",
+    "injected inline_5 after H2 — Когда одно слово обещает слишком много",
+    "injected inline_6 after H2 — Мой вывод как практика",
+    "injected inline_7 after H2 — Мой вывод как практика"
+  ]
+}

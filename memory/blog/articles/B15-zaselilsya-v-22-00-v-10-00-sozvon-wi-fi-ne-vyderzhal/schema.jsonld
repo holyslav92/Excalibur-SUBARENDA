@@ -1,0 +1,49 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/zaselilsya-v-22-00-v-10-00-sozvon-wi-fi-ne-vyderzhal/#article",
+  "url": "{{SITE_BASE}}/blog/zaselilsya-v-22-00-v-10-00-sozvon-wi-fi-ne-vyderzhal/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/zaselilsya-v-22-00-v-10-00-sozvon-wi-fi-ne-vyderzhal/"
+  },
+  "headline": "Заселился после рейса. За 10 200 ₽ Wi‑Fi сорвал созвон",
+  "description": "Командировочный после позднего рейса снял квартиру на три ночи за 10 200 ₽, но утренний видеосозвон сорвался из-за Wi‑Fi со скоростью загрузки 3–5 Мбит/с у стола. До оплаты стоит уточнить скорость загрузки у рабочего места, розетку рядом и состав закрывающих документов.",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "inLanguage": "ru-RU",
+  "author": {
+    "@type": "Organization",
+    "@id": "{{SITE_BASE}}/#organization",
+    "name": "Добрый дом",
+    "jobTitle": "Апартаменты и квартиры посуточно в Тюмени",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ],
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "{{SITE_BASE}}/#organization",
+    "name": "Добрый дом",
+    "jobTitle": "Апартаменты и квартиры посуточно в Тюмени",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ],
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    }
+  }
+}

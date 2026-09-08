@@ -1,0 +1,83 @@
+{
+  "status": "PASS",
+  "topic_id": "B15",
+  "slug": "zaselilsya-v-22-00-v-10-00-sozvon-wi-fi-ne-vyderzhal",
+  "research_date": "2026-09-08",
+  "summary": "Research for business-trip CASE: late check-in 22:00, 10:00 video call fails on 3–5 Mbps Wi‑Fi, outlet by bed not desk, closing docs «по запросу». Fresh TG @Dobriy_dom_72 signals (Wi‑Fi/tech check before booking). Zoom/Teams/Meet official bandwidth vs case. Tyumen market ~2800–3500 ₽/night, case ~10200 ₽/3 nights. Wordstat P0 «квартиры посуточно тюмень» 5134.",
+  "freshness_audit": {
+    "research_date": "2026-09-08",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://t.me/Dobriy_dom_72",
+      "published_at": "2026-09-08",
+      "note": "Tenant TG reposts: check Wi‑Fi before booking; night arrival logistics before payment; verify equipment before check-in — supports B15 pre-pay verification angle."
+    },
+    "additional_fresh_signals": [
+      {
+        "url": "https://добрыйдом-72.рф/blog/",
+        "published_at": "2026-09-08",
+        "type": "tenant_site",
+        "note": "Blog index positions apartments for business trips; B01–B14 case series live."
+      }
+    ]
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176", "225"],
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 5134,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "снять квартиру посуточно в тюмени",
+        "volume": 1672,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "аренда квартир посуточно тюмень",
+        "volume": 187,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "аренда квартиры посуточно",
+        "volume": 704,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "квартира посуточно командировка",
+        "volume": 77,
+        "region": "225"
+      },
+      {
+        "phrase": "квартиры для командировок",
+        "volume": 517,
+        "region": "225",
+        "note": "from scout handoff"
+      }
+    ]
+  },
+  "official_source_audit": {
+    "required": false,
+    "status": "PASS",
+    "scope": "No bank/developer tariff digits; Zoom/Teams/Meet bandwidth cited from official support docs only",
+    "verified_claims": 0,
+    "entities_checked": ["zoom", "microsoft_teams", "google_meet"],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "memory/blog/articles/B15-zaselilsya-v-22-00-v-10-00-sozvon-wi-fi-ne-vyderzhal/derouter-opus-stamp-research.json",
+    "first_attempt": "BLOCKER (model refused without conductor preamble)",
+    "retry": "PASS"
+  },
+  "errors": []
+}

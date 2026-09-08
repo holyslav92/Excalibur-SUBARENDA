@@ -1,0 +1,167 @@
+{
+  "topic_id": "B15",
+  "slug": "zaselilsya-v-22-00-v-10-00-sozvon-wi-fi-ne-vyderzhal",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": [
+        "inline_4",
+        "inline_5",
+        "inline_6",
+        "inline_7"
+      ],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "Созвон сорвался из-за сети",
+  "cover_hook_highlight": "сорвался",
+  "cover_headline_line1": "«Созвон сорвался",
+  "cover_headline_line2": "из-за сети»",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Grsai draw API VIP — 2K 16:9, one job per canvas (2×). Logo factory paste cover + inline_1/3/7.",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень"
+  ],
+  "logo_paste_inline_slots": [
+    "inline_1",
+    "inline_3",
+    "inline_7"
+  ],
+  "cover_motifs": {
+    "composition": "business traveler at bright desk laptop frozen video call loading bar printed Cyrillic headline on wall paper person in scene TR pad",
+    "location": "early September 2026 warm sunny Tyumen apartment living room desk by window green trees outside NOT winter no snow",
+    "meme": "zero meme stickers photoreal Wi-Fi desk only",
+    "prop_set": "laptop Zoom frozen frame speedtest 3-5 Mbps router hallway receipt 10200 rub late flight suitcase power socket under bed",
+    "sticker_set": "квартиры посуточно тюмень снять квартиру посуточно в тюмени жильё посуточно тюмень",
+    "joke": "host chat says internet exists while guest at desk sees 3 Mbps upload and meeting chat types you disappeared three times"
+  },
+  "cover_emotion": "",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Гость за столом: зависший видеосозвон, заголовок «Созвон сорвался из-за сети».",
+      "scene_hint": "Desk frozen Zoom; headline «Созвон сорвался из-за сети» gold «сорвался»; +7 993 574-83-22 card; TR pad.",
+      "meme_caption_ru": "",
+      "sticky": "Интернет есть — связи нет"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Когда одно слово обещает слишком много",
+      "visual_type": "comparison_table",
+      "scene_hint": "Split «интернет есть» vs 3–5 Мбит; TR pad.",
+      "alt": "«Интернет есть» vs 3–5 Мбит у стола.",
+      "labels": [
+        "Загрузка 3–5 Мбит",
+        "Камера дёргается",
+        "Звук запаздывает",
+        "«Ты пропал» ×3"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Переписка, в которой всё уже случилось",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Chat speed? → «интернет есть» → 10 200 ₽ → утром сорван.",
+      "alt": "Чат до оплаты: «интернет есть», утром созвон сорван.",
+      "labels": [
+        "Спросил про скорость",
+        "Ответ: «Интернет есть»",
+        "Перевёл 10 200 ₽",
+        "Утром созвон сорван"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Поздний рейс не делает вопрос меньше",
+      "visual_type": "checklist_board",
+      "scene_hint": "Socket under bed vs desk; speed checklist; TR pad.",
+      "alt": "Розетка у кровати, стол у окна без удлинителя.",
+      "labels": [
+        "Скорость у стола",
+        "Розетка у кровати",
+        "Стол у окна",
+        "Удлинителя нет"
+      ]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Поздний рейс не делает вопрос меньше",
+      "visual_type": "process_flow",
+      "scene_hint": "22:00 check-in flow; +7 993 574-83-22 card.",
+      "alt": "Поздний заезд: код и контакт утром.",
+      "labels": [
+        "Заезд после полуночи",
+        "Кто даст код?",
+        "Кому писать утром",
+        "Если сеть упадёт"
+      ]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Когда одно слово обещает слишком много",
+      "visual_type": "infographic_card",
+      "scene_hint": "Router hallway vs desk speed; docs «по запросу».",
+      "alt": "Роутер в прихожей, слабый сигнал у стола.",
+      "labels": [
+        "Документы до оплаты",
+        "Что именно пришлют",
+        "Не оставлять на потом"
+      ]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Board 4 questions; +7 993 574-83-22 sign.",
+      "alt": "Четыре вопроса в чате до оплаты.",
+      "labels": [
+        "Проверьте до оплаты",
+        "Четыре вопроса в чате",
+        "Пять минут вместо утра",
+        "Скорость у стола"
+      ]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "tool_screenshot",
+      "scene_hint": "Sticky Tyumen business; TR pad.",
+      "alt": "Тюмень: скорость и заезд до оплаты.",
+      "labels": [
+        "Тюмень, посуточно",
+        "Для деловых поездок",
+        "Скорость обсудим заранее",
+        "Поздний заезд обсудим"
+      ]
+    }
+  },
+  "cover_keys_ru": []
+}

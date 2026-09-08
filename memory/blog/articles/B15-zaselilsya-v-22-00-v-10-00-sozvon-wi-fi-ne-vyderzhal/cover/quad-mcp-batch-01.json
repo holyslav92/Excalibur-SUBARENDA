@@ -1,0 +1,46 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 1,
+  "standalone_cover": false,
+  "model_policy": "",
+  "vip_disabled": false,
+  "max_generation_attempts": 2,
+  "identity_reference_local": "",
+  "identity_reference_id": "",
+  "logo_reference_local": "",
+  "logo_reference_url": "",
+  "logo_reference_in_generation": false,
+  "reference_url_hosted": "",
+  "output_canvas": "cover/canvas-quad-01.png",
+  "result_path": "cover/quad-mcp-result-01.json",
+  "slots": [
+    "cover",
+    "inline_1",
+    "inline_2",
+    "inline_3"
+  ],
+  "preferred_image_flow": {
+    "provider": "grsai",
+    "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
+    "resolution": "2K",
+    "note": "PRIMARY: Grsai draw API VIP allowed — 2K 16:9, max 2 attempts per canvas.",
+    "apply_script": "python3 scripts/excalibur_blog_cover_quad_split.py --article-dir <article_dir> --inject-html"
+  },
+  "jobs": [
+    {
+      "slot": "canvas_quad",
+      "tool": "grsai",
+      "mcp_args": {
+        "prompt": "ONE canvas 2048x1152 as 2x2 GRID of four photoreal 16:9 apartment panels. Early September Tyumen, bright, NOT winter.\nTOP-LEFT cover: business traveler at desk laptop frozen video call; Cyrillic headline on wall paper «Созвон сорвался из-за сети» gold word «сорвался»; +7 993 574-83-22 on desk card; person in scene; TOP-RIGHT empty light wall pad 8-12% ONLY — factory logo later, model draws NOTHING there.\nTOP-RIGHT inline_1: split infographic «интернет есть» vs 3–5 Мбит upload; labels камера дёргается звук «Ты пропал»; TOP-RIGHT empty pad for factory logo — NO drawn logo.\nBOTTOM-LEFT inline_2: phone messenger chat bubbles; labels спросил скорость интернет есть 10 200 ₽ утром сорван; ENTIRE panel especially TOP-RIGHT: absolutely NO logo, NO brand wordmark, NO «Добрый дом», NO curtains+flower, NO house icon.\nBOTTOM-RIGHT inline_3: clipboard checklist розетка у кровати стол у окна удлинителя нет; TOP-RIGHT empty pad for factory logo — NO drawn logo.\nALL FOUR panels: photoreal only; ZERO meme stickers; ZERO model-drawn brand lockup except headline on cover wall; NO white plaque under top-right.",
+        "aspect_ratio": "16:9",
+        "resolution": "2K"
+      }
+    }
+  ],
+  "validation": {
+    "prompt_chars": 2419,
+    "max_prompt_chars": 3500,
+    "required_reference_host": "",
+    "resolution": "2K"
+  }
+}
