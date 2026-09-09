@@ -1,0 +1,167 @@
+{
+  "topic_id": "B15",
+  "slug": "napisali-bez-zaloga-u-dveri-5000",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": [
+        "inline_4",
+        "inline_5",
+        "inline_6",
+        "inline_7"
+      ],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "«Без залога» — у двери 5 000 ₽",
+  "cover_hook_highlight": "залога",
+  "cover_headline_line1": "«Без залога»",
+  "cover_headline_line2": "у двери 5 000 ₽",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Grsai draw API — 2K 16:9, one job per canvas (2×). Logo factory paste cover + inline_1/3/7. Phone IN SCENE on cover infoboard.",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "залог посуточно",
+    "квартира посуточно без залога"
+  ],
+  "logo_paste_inline_slots": [
+    "inline_1",
+    "inline_3",
+    "inline_7"
+  ],
+  "cover_motifs": {
+    "composition": "guest with suitcase at bright apartment hallway door host gesture 5000 rub printed headline filter screenshot paid nights tr pad photoreal only",
+    "location": "early autumn september 2026 warm sunny tyumen apartment entryway yellow leaves outside window not winter no snow",
+    "meme": "zero meme stickers photoreal deposit door scene only",
+    "prop_set": "smartphone app filter без залога receipt 6000 rub suitcase door intercom printed listing 5000 transfer request",
+    "sticker_set": "квартиры посуточно тюмень залог посуточно квартира посуточно без залога",
+    "joke": "listing filter says no deposit host demands five thousand when taxi already left"
+  },
+  "cover_emotion": "",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Гость с чемоданом у двери посуточной квартиры в Тюмени: на стене крупный заголовок «Без залога — у двери 5 000 ₽», хост показывает сумму на телефоне после оплаченных ночей.",
+      "scene_hint": "Suitcase at door; headline «Без залога — у двери 5 000 ₽» gold «залога»; filter screenshot; +7 993 574-83-22 board; TR pad; autumn.",
+      "meme_caption_ru": "",
+      "sticky": "Ночи уже оплачены"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Залог — не зло. Зло — залог, который появился после оплаты",
+      "visual_type": "comparison_table",
+      "scene_hint": "Split «без залога» vs 5000₽ у двери; nights paid; TR pad.",
+      "alt": "Сравнение: в карточке «без залога», а у двери просят 5 000 ₽ после оплаты ночей.",
+      "labels": [
+        "Фильтр «без залога»",
+        "2–3 ночи оплачены",
+        "Код двери в чате"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Один вопрос, который стоит задать до перевода",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Flow сумма→чат→проверка→перевод; 5000₽ crossed; taxi gone.",
+      "alt": "Порядок: сначала сумма и срок возврата в чате, потом перевод — не наоборот.",
+      "labels": [
+        "5000 ₽ у двери",
+        "Вернут после уборки",
+        "Такси уже уехало"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Вопрос, который я хочу услышать от гостей",
+      "visual_type": "checklist_board",
+      "scene_hint": "Board 5000 vs фильтр; poll sticky; TR pad.",
+      "alt": "Вопрос гостю: 5 000 ₽ норма, если было в карточке, или красная линия после фильтра «без залога»?",
+      "labels": [
+        "Сумма до оплаты",
+        "Срок возврата в чате",
+        "Сначала проверка"
+      ]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Если новая сумма уже прозвучала на пороге",
+      "visual_type": "process_flow",
+      "scene_hint": "Flow скрин→чат→фото→поддержка сегодня.",
+      "alt": "Если залог прозвучал на пороге: сохранить карточку, чат и обратиться в поддержку в день заезда.",
+      "labels": [
+        "скрин карточки",
+        "переписка",
+        "фото в день заезда",
+        "поддержка сегодня"
+      ]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Как это устроено у нас",
+      "visual_type": "infographic_card",
+      "scene_hint": "Chat: цена залог срок до брони; checks.",
+      "alt": "У «Доброго дома» все условия — цена, залог или его отсутствие, срок возврата — в чате до брони.",
+      "labels": [
+        "цена в чате",
+        "залог или нет",
+        "срок возврата",
+        "до брони"
+      ]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Desk checklist проверка→перевод; +7 993 574-83-22 sign; mug.",
+      "alt": "Вывод: сначала проверка условий в карточке и чате, потом перевод и ключи.",
+      "labels": [
+        "проверка карточки",
+        "подтверждение в чате",
+        "потом перевод",
+        "потом ключи"
+      ]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "tool_screenshot",
+      "scene_hint": "Messenger «Подтвердите без залога»; sticky Сначала проверка; TR pad.",
+      "alt": "Практический шаг: попросить подтвердить отсутствие залога в чате до оплаты.",
+      "labels": [
+        "Сначала проверка",
+        "подтвердите без залога",
+        "сохраните чат",
+        "не у двери"
+      ]
+    }
+  },
+  "cover_keys_ru": []
+}
