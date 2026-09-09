@@ -661,3 +661,43 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+---
+
+## LESSON-20260909-1200-B15-exit-cleaning-charge
+status: proposed
+topic_id: B15
+category: utility
+confidence: medium
+
+### Evidence
+- artifact: case-delivery-gate.json#status PASS; title-brief.json two-beat H1
+  finding: «Ключи сдали чисто. Только утром списали 1 500 ₽ за уборку»; opening-meta-gate PASS; §1 с цитатой и ₽ до идентичности хоста.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest BLOCKER по credentials.
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+
+### Keep
+- Угол exit_cleaning_charge: чистый выезд → утреннее списание без предупреждения.
+- Klyshin «Нет. Так не заселяем.» + «Сначала проверка. Потом перевод.»; вопрос-отмычка про цену уборки до перевода → TG/MAX.
+- Wordstat P0 spine «квартиры посуточно тюмень» 5059 (Tyumen) / 10754 (RF).
+- Cover logo paste: cover + inline_1/3/7; phone +7 993 574-83-22 in scene.
+
+### Change
+- В кейсах cleaning-fee сразу в §1 фиксировать сумму ночей + итоговую цену, не только списание 1 500 ₽.
+
+### Never again
+- How-to «как избежать доплаты за уборку» до морали.
+- Списание без цитаты хозяина и без видео/фото выезда в utility.
+
+### Proposed apply
+- Scout: при hook exit_cleaning_charge логировать guest cluster + anti-dup vs залог/включено siblings.
+- Review only; Writer prompt не трогать автоматически.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded

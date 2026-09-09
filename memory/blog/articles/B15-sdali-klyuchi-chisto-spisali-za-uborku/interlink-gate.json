@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "topic_id": "B15",
+  "slug": "sdali-klyuchi-chisto-spisali-za-uborku",
+  "candidates_count": 18,
+  "outbound_found": [
+    {
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "title": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem"
+    },
+    {
+      "slug": "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+      "title": "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate"
+    },
+    {
+      "slug": "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400",
+      "title": "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400"
+    },
+    {
+      "slug": "v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik",
+      "title": "v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik"
+    }
+  ],
+  "outbound_unique_slugs": [
+    "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+    "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400",
+    "v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik",
+    "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "warnings": [],
+  "errors": []
+}

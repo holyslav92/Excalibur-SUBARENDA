@@ -1,0 +1,116 @@
+{
+  "topic_id": "B15",
+  "slug": "sdali-klyuchi-chisto-spisali-za-uborku",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "Ключи сдали — списали 1 500 ₽",
+  "cover_hook_highlight": "списали",
+  "cover_headline_line1": "Ключи сдали чисто",
+  "cover_headline_line2": "утром списали 1 500 ₽",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "Grsai draw API VIP — 2 canvases × 4. Logo paste cover + inline_1/3/7.",
+  "wordstat_stickers": ["квартиры посуточно тюмень", "залог посуточно"],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "guest kitchen keys on table fridge magnet Cyrillic headline phone magnet TR pad",
+    "location": "early September 2026 Tyumen cozy apartment NOT winter no snow",
+    "meme": "photoreal phone notification clean sink reaction",
+    "prop_set": "keys receipt phone bank notification cleaning checklist",
+    "sticker_set": "квартиры посуточно тюмень залог посуточно",
+    "joke": "left clean charged 1500 cleaning next morning"
+  },
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Гость в уютной кухне посуточной квартиры в Тюмени: ключи на столе, на холодильнике магнит «Ключи сдали — списали 1 500 ₽».",
+      "scene_hint": "Cozy kitchen keys; fridge magnet headline «Ключи сдали — списали 1 500 ₽»; +7 993 574-83-22 magnet; person in scene; TR pad empty.",
+      "meme_caption_ru": "",
+      "sticky": "Чисто не значит бесплатно"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Не полторы тысячи. Порядок.",
+      "visual_type": "comparison_table",
+      "scene_hint": "Table 7800 две ночи vs утреннее списание 1500; TR pad.",
+      "alt": "Сравнение: цена двух ночей и утреннее списание за уборку.",
+      "labels": ["7800 рублей", "две ночи", "ключи в кейбоксе", "чисто при выезде"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Как выглядит этот разговор",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Messenger chat утро такси списание уборка; NO logo anywhere.",
+      "alt": "Переписка: гость спрашивает про списание, хост ссылается на правила.",
+      "labels": ["утро в такси", "списание за уборку", "полторы тысячи", "без согласия"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Один вопрос, который надо задать до денег",
+      "visual_type": "checklist_board",
+      "scene_hint": "Checklist уборка входит покажите строку; TR pad.",
+      "alt": "Вопрос до оплаты: входит ли уборка в цену.",
+      "labels": ["уборка входит", "покажите строку", "до оплаты", "один вопрос"]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Чистый выезд надо не доказывать потом, а зафиксировать сразу",
+      "visual_type": "process_flow",
+      "scene_hint": "Video walkthrough kitchen bathroom keys; +7 993 574-83-22 card.",
+      "alt": "Схема: видео при выезде до сдачи ключей.",
+      "labels": ["видео при выезде", "кухня ванная", "отправить в чат", "до ключей"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "С залогом порядок такой же",
+      "visual_type": "infographic_card",
+      "scene_hint": "Deposit 5000 what withheld return timeline.",
+      "alt": "Что уточнить про залог до оплаты.",
+      "labels": ["залог пять тысяч", "за что удержат", "срок возврата", "письменно"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Сначала мораль, потом список",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Sticky сначала проверка потом перевод; +7 993 574-83-22.",
+      "alt": "Мораль: проверка условий до перевода.",
+      "labels": ["сначала проверка", "потом перевод", "не наоборот", "на стикере"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Наш вывод простой.",
+      "visual_type": "tool_screenshot",
+      "scene_hint": "Person phone bank notification clean sink; TR pad; NO cat.",
+      "alt": "Уведомление о списании при чистой раковине.",
+      "labels": ["уборка включена", "без утренних", "списаний", "добрый дом"]
+    }
+  },
+  "cover_keys_ru": []
+}
