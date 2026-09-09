@@ -1,0 +1,41 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "{{SITE_BASE}}/blog/napisali-goryachaya-voda-est-v-dushe-ledyanaya-struya/",
+      "url": "{{SITE_BASE}}/blog/napisali-goryachaya-voda-est-v-dushe-ledyanaya-struya/",
+      "headline": "«Горячая вода есть». В душе — ледяная струя, ждать 40 минут",
+      "description": "В объявлении обещают горячую воду, но после заселения из душа идёт ледяная струя и предлагают включить бойлер и ждать. При стоимости 7 800–9 600 ₽ за 2–3 ночи сначала стоит проверить воду и условия нагрева, а затем переводить оплату.",
+      "datePublished": "2026-09-09",
+      "dateModified": "2026-09-09",
+      "inLanguage": "ru-RU",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{SITE_BASE}}/blog/napisali-goryachaya-voda-est-v-dushe-ledyanaya-struya/"
+      },
+      "author": {
+        "@id": "{{SITE_BASE}}/#organization"
+      },
+      "publisher": {
+        "@id": "{{SITE_BASE}}/#organization"
+      }
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "{{SITE_BASE}}/#organization",
+      "name": "Добрый дом",
+      "url": "{{SITE_BASE}}/",
+      "telephone": "+7 (993) 574-83-22",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Тюмень",
+        "addressCountry": "RU"
+      },
+      "sameAs": [
+        "{{SITE_BASE}}/",
+        "{{SITE_BASE}}/blog/"
+      ]
+    }
+  ]
+}
