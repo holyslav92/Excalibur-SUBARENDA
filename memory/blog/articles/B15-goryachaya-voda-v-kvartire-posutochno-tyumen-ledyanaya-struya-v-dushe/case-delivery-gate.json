@@ -1,9 +1,11 @@
 {
   "gate": "case-delivery",
   "status": "PASS",
-  "stage": "title",
+  "stage": "writer",
   "manner_canon": "dobry_dom_gen_only_human_v1",
-  "checks_run": [],
+  "checks_run": [
+    "writer.html"
+  ],
   "errors": [],
   "article_dir": "/workspace/memory/blog/articles/B15-goryachaya-voda-v-kvartire-posutochno-tyumen-ledyanaya-struya-v-dushe"
 }
