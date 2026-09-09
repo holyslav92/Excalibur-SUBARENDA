@@ -1,5 +1,22 @@
 # WP publish log
 
+## B15 — 2026-09-09
+
+- **topic_id:** B15
+- **slug:** napisali-bez-zaloga-u-dveri-5000
+- **title:** Написали «без залога». У двери попросили 5 000 ₽
+- **post_id:** 4598
+- **permalink:** /blog/napisali-bez-zaloga-u-dveri-5000/
+- **categories:** posutochnaya-arenda (101), zalog-i-vyiezd (102)
+- **featured_image:** 4599
+- **inline_images:** 4600–4607 (8× wp-content/uploads/2026/09/…)
+- **schema_meta:** ok
+- **live-page gate:** PASS
+- **dzen preview:** cover-dzen-v3-1024x576.png (HTTP 200); feed enclosure → …-cover-dzen-v3.png
+- **interlink outbound:** 4 live /blog/ siblings (crosslink-qa PASS)
+- **interlink inbound:** B01 (3745), B13 (4535)
+- **publish_method:** ftp (Timeweb PASV)
+
 ## B14 — 2026-09-08
 
 - **topic_id:** B14

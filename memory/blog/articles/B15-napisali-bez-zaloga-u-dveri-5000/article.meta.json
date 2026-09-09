@@ -14,6 +14,10 @@
     "description_ctr": "Написали «без залога». У двери попросили 5 000 ₽",
     "description_aeo": "Написали «без залога». У двери попросили 5 000 ₽"
   },
+  "wp_category_slugs": [
+    "posutochnaya-arenda",
+    "zalog-i-vyiezd"
+  ],
   "theme_blocks": {
     "faq": "skip",
     "quiz": "skip",

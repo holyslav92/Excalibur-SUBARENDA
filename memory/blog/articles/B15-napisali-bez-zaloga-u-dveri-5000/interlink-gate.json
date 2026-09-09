@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "topic_id": "B15",
+  "slug": "napisali-bez-zaloga-u-dveri-5000",
+  "candidates_count": 18,
+  "outbound_found": [
+    {
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "title": "beskontaktnoe-zaselenie-posutochno-tyumen"
+    },
+    {
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "title": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem"
+    },
+    {
+      "slug": "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+      "title": "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego"
+    },
+    {
+      "slug": "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+      "title": "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate"
+    }
+  ],
+  "outbound_unique_slugs": [
+    "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+    "beskontaktnoe-zaselenie-posutochno-tyumen",
+    "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+    "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "warnings": [],
+  "errors": []
+}

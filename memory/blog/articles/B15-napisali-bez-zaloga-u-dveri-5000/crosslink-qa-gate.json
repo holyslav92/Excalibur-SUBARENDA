@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "https://добрыйдом-72.рф/blog/pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate/",
+      "slug": "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+      "anchor": "чате наступила тишина: после перевода переговорная позиция гостя резко слабеет. При бесконтактном заселении порядок тот же — сначала вы открываете квартиру и сверяете её с описанием, а уже потом решаете вопрос с депозитом. Пошагово это показано в материале о",
+      "catalog_title": "Перевели 3 000 ₽ предоплатой. К вечеру — тишина в чате",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "anchor": "бесконтактном заселении посуточно в Тюмени.Важно не смешивать разные ситуации. Здесь депозит появляется внезапно, уже при заселении. Это не спор о том,",
+      "catalog_title": "Оплатил квартиру посуточно. Код прислали от чужой двери",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/",
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "anchor": "вернут ли заранее согласованный залог на выезде. И не случай, когда у двери требуют доплату за третьего гостя, хотя",
+      "catalog_title": "Снял квартиру посуточно. Залог не вернули — нашли скол на плите",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego/",
+      "slug": "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+      "anchor": "оплачено проживание за двоих. Но механизм у всех историй похожий: условие меняется тогда, когда отказаться от него дороже всего.Вопрос, который я хочу услышать от гостей5 000 ₽ — для вас нормальная сумма, если она была видна в карточке до брони, или это красная линия в любом случае, если вы выбрали жильё по фильтру «без залога»? Напишите в",
+      "catalog_title": "Оплатили за двоих. У двери попросили доплату за третьего",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "outbound_unique_slugs": [
+    "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+    "beskontaktnoe-zaselenie-posutochno-tyumen",
+    "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+    "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B15-napisali-bez-zaloga-u-dveri-5000",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}
