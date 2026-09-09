@@ -1,0 +1,10 @@
+{
+  "topic_id": "B15",
+  "description": "Вечером всё приняли без замечаний, а утром прилетело списание за уборку. В Тюмени такие «сюрпризы» лучше проговаривать до передачи ключей.",
+  "rhythm": "klyshin_case_hook",
+  "geo": "Тюмень",
+  "author_brand": "Добрый дом",
+  "not_equal_title": true,
+  "not_truncated_lead": true,
+  "verdict": "PASS"
+}

@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "topic_id": "B15",
+  "slug": "sdali-klyuchi-chisto-spisali-za-uborku",
+  "research_date": "2026-09-09",
+  "summary": "Research for post-checkout cleaning fee surprise in Tyumen short-term rental. Fresh signals: Pravoved forum threads 2026, Dzen host industry article on paid final cleaning. Guest CASE: left clean, charged 1500 next morning. Wordstat P0 «квартиры посуточно тюмень» 5059.",
+  "freshness_audit": {
+    "research_date": "2026-09-09",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://pravoved.ru/question/4957249/",
+      "published_at": "2026-09-09",
+      "note": "Live forum access 2026-09-09; cleaning hold dispute pattern."
+    }
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176", "225"],
+    "observations": [
+      {"phrase": "квартиры посуточно тюмень", "volume": 5059, "region": "55+11176"},
+      {"phrase": "квартиры посуточно тюмень", "volume": 10754, "region": "225"},
+      {"phrase": "залог посуточно", "volume": 3070, "region": "225"}
+    ]
+  },
+  "official_source_audit": {"status": "PASS", "required": false},
+  "derouter": {
+    "role": "research",
+    "note": "Director-synthesized from prefetched live data after model BLOCKER on empty interface claim"
+  },
+  "errors": []
+}

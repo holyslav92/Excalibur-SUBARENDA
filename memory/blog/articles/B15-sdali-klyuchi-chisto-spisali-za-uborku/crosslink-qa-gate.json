@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "https://добрыйдом-72.рф/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/",
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "anchor": "его не вернут. С обещанием «всё включено» — когда в такси выясняется, что",
+      "catalog_title": "Снял квартиру посуточно. Залог не вернули — нашли скол на плите",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400/",
+      "slug": "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400",
+      "anchor": "включено оказалось не всё. С красивыми словами в объявлении — когда «всё для гостей» по факту превращается в",
+      "catalog_title": "Хозяин сказал «всё включено». В такси доплатили 2 400 ₽",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik/",
+      "slug": "v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik",
+      "anchor": "один мокрый коврик в ванной. Обёртки разные. Приём один: важное условие показывают тогда, когда спорить уже неудобно.Чистый выезд надо не доказывать потом, а зафиксировать сразуВы не обязаны превращать отдых в следственную работу. Но две минуты с телефоном перед выездом могут сберечь неделю переписки.Пройдите квартирой одним коротким видео. Кухня, раковина, плита, ванная, комната, кровать, мусорное ведро. Не надо снимать кино на двадцать минут. Достаточно нормального прохода, где видно состояние квартиры. Отдельно снимите ключи в кейбоксе или там, где их оставляете. И отправьте видео в чат ещё из квартиры: «Выезжаю, оставляю так».С залогом порядок такой же. Если берут 5 000 ₽ или ставят блокировку на карте, до оплаты должно быть ясно: за что могут удержать, в какой срок вернут, что именно считают основанием. Иначе залог становится чужим кошельком, из которого можно достать деньги за уборку, поздний выезд или «лишнее полотенце». По отдельности каждый повод звучит мелко. Вместе — это уже половина ночи.А вы узнали цену уборки до перевода или утром, когда деньги уже списали? Напишите нам в",
+      "catalog_title": "«Всё для гостей» — ночью без полотенец на 890 ₽",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate/",
+      "slug": "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+      "anchor": "тишина в чате после перевода почти всегда дороже неудобного вопроса до него.Если вместо цифры вам отвечают «у всех так», остановитесь и попросите показать условие письменно.Наш вывод простой.Цена — это не цифра, которую вы увидели первой в объявлении. Цена — это всё, что вам назвали до того, как вы отдали деньги и взяли ключи. Всё, что появляется после выезда, уже не цена. Это счёт за доверие.У нас уборка входит в стоимость. Сумма, которую вы видите в чате перед бронью, — это сумма, которую вы платите. Без утренних списаний на 1 500 ₽. Без «это было в правилах», которые никто не показывал.Написать нам:",
+      "catalog_title": "Перевели 3 000 ₽ предоплатой. К вечеру — тишина в чате",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "outbound_unique_slugs": [
+    "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+    "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400",
+    "v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik",
+    "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B15-sdali-klyuchi-chisto-spisali-za-uborku",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}

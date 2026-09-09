@@ -1,0 +1,86 @@
+{
+  "topic_id": "B15",
+  "slug": "sdali-klyuchi-chisto-spisali-za-uborku",
+  "cover_family": "brand_collage",
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "file": "cover/cover.png",
+  "alt": "Гость в уютной кухне посуточной квартиры в Тюмени: ключи на столе, на холодильнике магнит «Ключи сдали — списали 1 500 ₽».",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-quad-01.png",
+  "generated_at": "2026-09-09T12:19:29+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Гость в уютной кухне посуточной квартиры в Тюмени: ключи на столе, на холодильнике магнит «Ключи сдали — списали 1 500 ₽».",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Сравнение: цена двух ночей и утреннее списание за уборку.",
+      "h2_anchor": "Не полторы тысячи. Порядок.",
+      "visual_type": "comparison_table",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Переписка: гость спрашивает про списание, хост ссылается на правила.",
+      "h2_anchor": "Как выглядит этот разговор",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Вопрос до оплаты: входит ли уборка в цену.",
+      "h2_anchor": "Один вопрос, который надо задать до денег",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_4",
+      "file": "cover/inline-04.png",
+      "alt": "Схема: видео при выезде до сдачи ключей.",
+      "h2_anchor": "Чистый выезд надо не доказывать потом, а зафиксировать сразу",
+      "visual_type": "process_flow",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_5",
+      "file": "cover/inline-05.png",
+      "alt": "Что уточнить про залог до оплаты.",
+      "h2_anchor": "С залогом порядок такой же",
+      "visual_type": "infographic_card",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_6",
+      "file": "cover/inline-06.png",
+      "alt": "Мораль: проверка условий до перевода.",
+      "h2_anchor": "Сначала мораль, потом список",
+      "visual_type": "labeled_checklist",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_7",
+      "file": "cover/inline-07.png",
+      "alt": "Уведомление о списании при чистой раковине.",
+      "h2_anchor": "Наш вывод простой.",
+      "visual_type": "tool_screenshot",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}
