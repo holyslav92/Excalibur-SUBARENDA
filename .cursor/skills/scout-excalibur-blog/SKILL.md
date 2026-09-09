@@ -127,7 +127,12 @@ klyshin_hook: <hook_id> | original: «…» | angle: <…> | signal: https://t.m
 wordstat_rework: probe «…» <freq> → … → final P0 «квартира посуточно тюмень» <freq> | clusters tried: …
 wordstat: mcp_kv live | regions 55,11176,compare225 | P0 «…» <freq> | …
 angle_rotation: checked last N=3 | burn-at-door skip: yes|no | reason: …
+wp_category_slugs: posutochnaya-arenda, zalog-i-vyiezd
 ```
+
+**HARD:** `wp_category_slugs` — только ключи из `shared/wp-blog-categories.json` (`posutochnaya-arenda`, `zalog-i-vyiezd`, `dogovor-i-pravila`, `zhkh-i-doplaty`, `subarenda`, `sovety-gostyam`). **Не** сокращения `posutochno` / `zalog`.
+
+**slug vs slug_hint:** Scout пишет `slug:` или `slug_hint:` как черновик; финальный publish slug задаёт Title → `title-brief.json` (Title может укоротить «5000» vs «5-000»).
 
 ```bash
 python3 scripts/excalibur_blog_wordstat_gate.py handoff
