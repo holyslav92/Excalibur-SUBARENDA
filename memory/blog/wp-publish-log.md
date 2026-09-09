@@ -1,5 +1,23 @@
 # WP publish log
 
+## B15 — 2026-09-09
+
+- **topic_id:** B15
+- **slug:** napisali-goryachaya-voda-est-v-dushe-ledyanaya-struya
+- **title:** «Горячая вода есть». В душе — ледяная струя, ждать 40 минут
+- **post_id:** 4580
+- **permalink:** /blog/napisali-goryachaya-voda-est-v-dushe-ledyanaya-struya/
+- **categories:** posutochnaya-arenda (101), sovety-gostyam (106)
+- **featured_image:** 4581
+- **inline_images:** 4582–4584 (3× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS
+- **dzen preview:** cover-dzen-v3-1024x576.png (HTTP 200); feed enclosure → …-cover-dzen-v3.png
+- **interlink outbound:** 4 live /blog/ siblings (crosslink-qa PASS)
+- **interlink inbound:** B01 (3745), B13 (4535)
+- **publish_method:** ftp (Timeweb PASV)
+- **llms_deploy:** PASS
+
 ## B14 — 2026-09-08
 
 - **topic_id:** B14

@@ -19,3 +19,4 @@ Excalibur-2-Cloud — не копировать URL tymenrieltor.ru.
 | 2026-09-06 | B12 | napisali-tihij-centr-v-6-30-za-oknom-kran | /blog/napisali-tihij-centr-v-6-30-za-oknom-kran/ | published |
 | 2026-09-07 | B13 | kod-srabotal-klyuchnica-pusta-posutochno-tyumen | /blog/kod-srabotal-klyuchnica-pusta-posutochno-tyumen/ | published |
 | 2026-09-08 | B14 | napisali-tihij-dom-v-23-40-sosedi-vklyuchili-muzyku | /blog/napisali-tihij-dom-v-23-40-sosedi-vklyuchili-muzyku/ | published |
+| 2026-09-09 | B15 | napisali-goryachaya-voda-est-v-dushe-ledyanaya-struya | /blog/napisali-goryachaya-voda-est-v-dushe-ledyanaya-struya/ | published |
