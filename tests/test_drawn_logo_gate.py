@@ -358,6 +358,51 @@ class DrawnLogoGateTest(unittest.TestCase):
         self.assertFalse(img.get("logo_required_as_generation_reference"))
         self.assertIn("logo-dobry-dom.png", img.get("logo_factory_paste_only", ""))
 
+    def test_terracotta_typography_without_green_not_detected_as_lockup(self) -> None:
+        from PIL import Image, ImageDraw
+
+        from excalibur_blog_drawn_logo_gate import detect_drawn_lockup_in_image
+
+        with tempfile.TemporaryDirectory() as tmp:
+            canvas = Path(tmp) / "terracotta-pad.png"
+            img = Image.new("RGB", (1200, 675), (245, 240, 235))
+            draw = ImageDraw.Draw(img)
+            x0 = 1200 - int(1200 * 0.12)
+            draw.rectangle((x0, 0, 1199, int(675 * 0.26)), fill=(158, 74, 54))
+            img.save(canvas)
+            result = detect_drawn_lockup_in_image(canvas)
+            self.assertFalse(result["detected"], result)
+            self.assertGreaterEqual(result["terracotta_ratio"], 0.5)
+            self.assertLess(result["green_ratio"], 0.015)
+
+    def test_drawn_lockup_requires_green_curtain_with_terracotta(self) -> None:
+        from PIL import Image, ImageDraw
+
+        from excalibur_blog_drawn_logo_gate import detect_drawn_lockup_in_image
+
+        with tempfile.TemporaryDirectory() as tmp:
+            canvas = Path(tmp) / "lockup-pad.png"
+            img = Image.new("RGB", (1200, 675), (245, 240, 235))
+            draw = ImageDraw.Draw(img)
+            x0 = 1200 - int(1200 * 0.12)
+            y1 = int(675 * 0.26)
+            draw.rectangle((x0, 0, 1199, y1 // 2), fill=(60, 120, 70))
+            draw.rectangle((x0, y1 // 2, 1199, y1), fill=(158, 74, 54))
+            img.save(canvas)
+            result = detect_drawn_lockup_in_image(canvas)
+            self.assertTrue(result["detected"], result)
+
+    def test_b15_no_logo_inlines_not_detected_after_terracotta_fp_fix(self) -> None:
+        from excalibur_blog_drawn_logo_gate import detect_drawn_lockup_in_image
+
+        cover_dir = (
+            ROOT / "memory/blog/articles/B15-napisali-bez-zaloga-u-dveri-5000/cover"
+        )
+        self.assertTrue(cover_dir.is_dir(), cover_dir)
+        for name in ("inline-02.png", "inline-04.png", "inline-05.png", "inline-06.png"):
+            result = detect_drawn_lockup_in_image(cover_dir / name)
+            self.assertFalse(result["detected"], result)
+
     def test_bright_window_pad_exempt_when_no_lockup_colors(self) -> None:
         from excalibur_blog_drawn_logo_gate import (
             detect_drawn_lockup_in_image,

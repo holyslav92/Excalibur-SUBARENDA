@@ -14,6 +14,7 @@ DEFAULT_LOGO_REL = "memory/cover/assets/brand/logo-dobry-dom.png"
 PAD_WIDTH_FRACTION = 0.12
 PAD_HEIGHT_FRACTION = 0.26
 DRAWN_LOCKUP_SCORE_THRESHOLD = 0.38
+DRAWN_LOCKUP_MIN_GREEN_RATIO = 0.015
 OFFICIAL_PASTE_MAE_MAX = 36.0
 OFFICIAL_PASTE_MATCH_MIN = 0.78
 LIGHT_PLATE_LUMA_MIN = 200.0
@@ -447,6 +448,21 @@ def detect_white_plate_under_logo(
     }
 
 
+def lockup_has_curtain_signal(analysis: PadAnalysis) -> bool:
+    """Canonical Dobry Dom lockup includes green curtain pixels, not terracotta L1 alone."""
+    return analysis.green_ratio >= DRAWN_LOCKUP_MIN_GREEN_RATIO
+
+
+def is_terracotta_typography_pad_false_positive(analysis: PadAnalysis) -> bool:
+    """Pad-clear smudge or editorial terracotta in TR zone without green curtain."""
+    if lockup_has_curtain_signal(analysis):
+        return False
+    return (
+        analysis.score >= DRAWN_LOCKUP_SCORE_THRESHOLD
+        or analysis.terracotta_ratio >= 0.012
+    )
+
+
 def detect_drawn_lockup_in_image(
     image_path: Path,
     *,
@@ -455,7 +471,10 @@ def detect_drawn_lockup_in_image(
 ) -> dict[str, Any]:
     arr = np_array_rgb(image_path)
     analysis = analyze_top_right_pad(arr, pad_w_frac=pad_w_frac, pad_h_frac=pad_h_frac)
-    detected = analysis.score >= DRAWN_LOCKUP_SCORE_THRESHOLD
+    detected = (
+        analysis.score >= DRAWN_LOCKUP_SCORE_THRESHOLD
+        and lockup_has_curtain_signal(analysis)
+    )
     return {
         "path": str(image_path),
         "detected": detected,
@@ -465,6 +484,7 @@ def detect_drawn_lockup_in_image(
         "green_ratio": round(analysis.green_ratio, 4),
         "terracotta_ratio": round(analysis.terracotta_ratio, 4),
         "edge_density": round(analysis.edge_density, 4),
+        "curtain_signal": lockup_has_curtain_signal(analysis),
     }
 
 
