@@ -1,0 +1,93 @@
+{
+  "status": "PASS",
+  "topic_id": "B15",
+  "slug": "napisali-bez-zaloga-u-dveri-5000",
+  "research_date": "2026-09-09",
+  "summary": "Research for «без залога» in listing vs 5 000 ₽ demanded at door in Tyumen short-term rental. Fresh week signals: tenant TG @Dobriy_dom_72 (Sept 2026, fix state at check-in), Dobry Dom Dzen on zalog before door not at threshold. Sutochno official: 61% objects with deposit, filter «без депозита», deposit must be in card before booking; guest review Apr 2026 undeclared deposit at check-in. Wordstat P0 «квартиры посуточно тюмень» 3552 (55), guest cluster «квартира посуточно без залога» 1173 (225).",
+  "freshness_audit": {
+    "research_date": "2026-09-09",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://t.me/Dobriy_dom_72",
+      "published_at": "2026-09-09",
+      "note": "Tenant Telegram live fetch 09.09.2026: posts on fixing apartment state at check-in and listing/conditions mismatch before payment — deposit-dispute prevention angle."
+    },
+    "additional_fresh_signals": [
+      {
+        "url": "https://dzen.ru/a/akkFYx3Sl17w7p2B",
+        "published_at": "2026",
+        "type": "tenant_editorial",
+        "note": "Dobry Dom Dzen: sudden zalog at doorstep; agree sum and return terms before check-in, not at door."
+      },
+      {
+        "url": "https://harant.ru/questions/q-222054/",
+        "published_at": "2026-08-15",
+        "type": "community_qa",
+        "note": "Forum Q&A on deposit return; accessed during research week."
+      }
+    ]
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "225"],
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 3552,
+        "region": "55"
+      },
+      {
+        "phrase": "снять квартиру посуточно в тюмени",
+        "volume": 1094,
+        "region": "55"
+      },
+      {
+        "phrase": "квартира посуточно без залога",
+        "volume": 1173,
+        "region": "225"
+      },
+      {
+        "phrase": "снять квартиру посуточно без залога",
+        "volume": 923,
+        "region": "225"
+      },
+      {
+        "phrase": "залог посуточно",
+        "volume": 3070,
+        "region": "225"
+      },
+      {
+        "phrase": "квартира посуточно залог",
+        "volume": 1914,
+        "region": "225"
+      },
+      {
+        "phrase": "не возвращают залог за квартиру посуточно",
+        "volume": 64,
+        "region": "225"
+      }
+    ]
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "Sutochno.ru official journal and blog for deposit rules; no bank/developer tariff digits",
+    "verified_claims": 2,
+    "entities_checked": ["sutochno.ru"],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "memory/blog/articles/B15-napisali-bez-zaloga-u-dveri-5000/derouter-opus-stamp-research.json",
+    "first_attempt": "BLOCKER (model refused without conductor preamble)",
+    "retry": "PASS"
+  },
+  "errors": []
+}
