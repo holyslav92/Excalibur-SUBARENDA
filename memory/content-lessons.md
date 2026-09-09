@@ -661,3 +661,95 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+---
+
+## LESSON-20260909-1034-B15-no-zalog-filter-deposit-at-door
+status: proposed
+topic_id: B15
+category: utility
+confidence: low
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP. Урок из publish-артефактов: title-brief.json, description-brief.json, case-delivery-gate PASS, opening-meta-gate PASS, article.html, research-notes hook `deposit_at_door_no_zalog_filter`.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest BLOCKER (INC-20260903-0640).
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Two-beat H1 «Написали «без залога». У двери попросили 5 000 ₽»: цитата-фильтр → контрфакт у двери + ₽, не how-to.
+- §1: фильтр «без залога», 2–3 ночи оплачены (6–9 тыс. ₽), таксист уехал; требование «5 000 ₽ залога, вернём после уборки» впервые на пороге.
+- H2 «Залог — не зло. Зло — залог, который появился после оплаты» — нюанс: 5 000 ₽ норма, если видна до брони; риск = появление после фильтра.
+- Klyshin «Нет. Так не заселяем.» + «Сначала проверка. Потом перевод.»; вопрос-отмычка «где в карточке и в чате сумма залога и дата возврата?» → TG/MAX mid-body.
+- Anti-dup: явное разведение с B02 (возврат согласованного залога на выезде) и B04 (доплата за третьего) — один механизм «условие меняется, когда отказаться дороже».
+- Interlink spine: B08 тишина после предоплаты, B01 бесконтактное (депозит после проверки), B02 залог на выезде, B04 доплата за гостя.
+- Wordstat: spine «квартиры посуточно тюмень» 3552 (Tyumen 55+11176); supporting «квартира посуточно без залога» 1173 (RF), «залог посуточно» 3070.
+- Description не дублирует H1: «с чемоданом у двери» + «до перевода» (description-brief PASS).
+- Cover-QA PASS: 2× quad, deposit-at-door motif, wordstat stickers.
+
+### Change
+- В кейсах `deposit_at_door_no_zalog_filter` в §1 сразу фиксировать **скрин фильтра** («без залога») рядом с цитатой хоста — не только строку в карточке.
+- Параллельно с суммой 5 000 ₽ называть полную оплату за N ночей (6–9 тыс. ₽) — гость видит двойной leverage после перевода.
+
+### Never again
+- Смешивать B15 (новый залог у двери после фильтра «без залога») с B02 (спор о возврате уже согласованного залога на выезде).
+- Объявлять любой залог незаконным — research constraint; фокус на раскрытии до оплаты.
+- How-to чеклист до кейса; чеклист только после «Мой вывод как практика».
+- Финал «Наш вывод простой» вместо «Мой вывод как практика».
+
+### Proposed apply
+- Scout: при hook `deposit_at_door_no_zalog_filter` логировать original Klyshin hook + final P0 spine Tyumen + note «квартира посуточно без залога» volume (узкий угол).
+- Title/Description: держать контраст «фильтр в приложении vs чемодан у двери» как в description-brief B15.
+- Review only; Writer prompt не трогать автоматически.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260909-1034-B15-filter-promise-temporal-leverage
+status: proposed
+topic_id: B15
+category: structure
+confidence: low
+
+### Evidence
+- artifact: title-brief.json#angle
+  finding: angle «Гость заранее оплатил 2–3 ночи после фильтра «без залога», но при заселении хозяин потребовал депозит»; opening-meta-gate PASS; lead фиксирует таксист уехал + оплата списана до требования 5 000 ₽.
+- metrika_signal: none (credentials unavailable; causal retention не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Слой «фильтр без залога → оплата ночей → таксист уехал → новая сумма» отдельным абзацем — asymmetric moment после выбора жилья.
+- Блок «покупал не просто две ночи, а понятное условие — без депозита» объясняет, почему 5 000 ₽ — не спор о рыночной норме, а подмена обещания.
+- Mid-body вопрос «5 000 ₽ норма, если было в карточке, или красная линия после фильтра «без залога»?» — разводит прозрачный залог и door-surprise.
+- Связка money-timing spine через interlink B08 (тишина после предоплаты) без дублирования B04 door-fee или B02 checkout dispute.
+- Utility «сохраните карточку, фильтр и переписку» + обращение в поддержку в день заезда — не legal guide.
+
+### Change
+- Для deposit/filter hooks всегда включать **тройной контраст** (фильтр + оплата ночей + момент у двери) в utility-блок — не только сумму ₽.
+- При interlink — sibling про door-timing (B04, B08, B10 taxi) одной красной линией «условие после перевода».
+
+### Never again
+- Писать no-deposit кейс только про размер залога, игнорируя temporal leverage (таксист уехал, ночи оплачены).
+- Принимать «вернём после уборки» за ответ на вопрос «где сумма в карточке?».
+
+### Proposed apply
+- Writer checklist (review-only): deposit_at_door + no_zalog_filter → один абзац про filter-promise asymmetric moment после полной оплаты ночей.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
