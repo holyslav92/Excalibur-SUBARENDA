@@ -1,0 +1,50 @@
+{
+  "topic_id": "B15",
+  "slug": "napisali-goryachaya-voda-est-v-dushe-ledyanaya-struya",
+  "cover_family": "brand_collage",
+  "style_preset": "the_rieltor_twilight_gold",
+  "pipeline": "slice4_grid_1x_image_api",
+  "file": "cover/cover.png",
+  "alt": "Гость в ванной посуточной квартиры в Тюмени — из душа ледяная струя, на стене распечатка объявления «Горячая вода есть»",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-slice4.png",
+  "generated_at": "2026-09-09T06:51:42+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Гость в ванной посуточной квартиры в Тюмени — из душа ледяная струя, на стене распечатка объявления «Горячая вода есть»",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Сравнение времени нагрева бойлера и центрального ГВС — почему 40 минут не гарантия",
+      "h2_anchor": "Почему 40 минут — не всегда 40 минут",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Гость ищет выключатель бойлера после позднего заезда — хозяин пишет ждать 40 минут",
+      "h2_anchor": "Та же механика, что и в других объявлениях",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Чек-лист вопросов про бойлер и горячую воду перед оплатой посуточной квартиры",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}
