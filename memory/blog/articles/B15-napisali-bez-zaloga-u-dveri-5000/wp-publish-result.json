@@ -1,0 +1,27 @@
+{
+  "slug": "napisali-bez-zaloga-u-dveri-5000",
+  "topic_id": "B15",
+  "permalink": "{{SITE_BASE}}/blog/napisali-bez-zaloga-u-dveri-5000/",
+  "publish_method": "ftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B15-napisali-bez-zaloga-u-dveri-5000/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1076216,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4598 slug=napisali-bez-zaloga-u-dveri-5000\nOK categories=101,102\nOK dzen_yzen_meta=1\nOK featured_image=4599\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4600 src=cover/cover.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-bez-zaloga-u-dveri-5000-cover-1.png\nOK inline_alt=4600\nOK inline_caption=4600\nOK inline_description=4600\nOK inline_image_upload=4601 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-bez-zaloga-u-dveri-5000-inline-01.png\nOK inline_alt=4601\nOK inline_caption=4601\nOK inline_description=4601\nOK inline_image_upload=4602 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-bez-zaloga-u-dveri-5000-inline-02.png\nOK inline_alt=4602\nOK inline_caption=4602\nOK inline_description=4602\nOK inline_image_upload=4603 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-bez-zaloga-u-dveri-5000-inline-03.png\nOK inline_alt=4603\nOK inline_caption=4603\nOK inline_description=4603\nOK inline_image_upload=4604 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-bez-zaloga-u-dveri-5000-inline-04.png\nOK inline_alt=4604\nOK inline_caption=4604\nOK inline_description=4604\nOK inline_image_upload=4605 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-bez-zaloga-u-dveri-5000-inline-05.png\nOK inline_alt=4605\nOK inline_caption=4605\nOK inline_description=4605\nOK inline_image_upload=4606 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-bez-zaloga-u-dveri-5000-inline-06.png\nOK inline_alt=4606\nOK inline_caption=4606\nOK inline_description=4606\nOK inline_image_upload=4607 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-bez-zaloga-u-dveri-5000-inline-07.png\nOK inline_alt=4607\nOK inline_caption=4607\nOK inline_description=4607\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/napisali-bez-zaloga-u-dveri-5000/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 8,
+    "expected_inline": 8,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/napisali-bez-zaloga-u-dveri-5000/",
+    "errors": []
+  }
+}

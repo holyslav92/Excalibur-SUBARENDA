@@ -105,6 +105,42 @@ def handoff_has_rework_log(handoff_text: str) -> tuple[bool, str]:
     return True, value
 
 
+def load_wp_category_registry(root: Path) -> dict[str, dict]:
+    path = root / "shared/wp-blog-categories.json"
+    if not path.is_file():
+        return {}
+    data = load_json(path)
+    categories = data.get("categories") or {}
+    return {str(k): v for k, v in categories.items() if isinstance(v, dict)}
+
+
+def handoff_has_angle_rotation(handoff_text: str) -> tuple[bool, str]:
+    value = parse_handoff_field(handoff_text, "angle_rotation")
+    if not value:
+        return False, "angle_rotation field missing (required: checked last N=3 | burn-at-door skip | reason)"
+    low = value.casefold()
+    if "checked" not in low and "last n" not in low and "last n=" not in low:
+        return False, "angle_rotation must log checked last N=3 rotation decision"
+    return True, value
+
+
+def handoff_has_valid_wp_categories(handoff_text: str, root: Path) -> tuple[bool, str]:
+    value = parse_handoff_field(handoff_text, "wp_category_slugs")
+    if not value:
+        return False, "wp_category_slugs missing (use keys from shared/wp-blog-categories.json)"
+    registry = load_wp_category_registry(root)
+    if not registry:
+        return False, "shared/wp-blog-categories.json missing or empty"
+    slugs = [s.strip() for s in re.split(r"[,;/\s]+", value) if s.strip()]
+    if not slugs:
+        return False, "wp_category_slugs empty"
+    unknown = [s for s in slugs if s not in registry]
+    if unknown:
+        valid = ", ".join(sorted(registry.keys()))
+        return False, f"unknown wp_category_slugs {unknown}; valid keys: {valid}"
+    return True, value
+
+
 def handoff_has_live_wordstat(handoff_text: str, geo: dict) -> tuple[bool, str]:
     value = parse_handoff_wordstat(handoff_text)
     if not value:
@@ -174,9 +210,20 @@ def cmd_handoff(root: Path, args: argparse.Namespace) -> int:
     if not ok_handoff:
         print(f"FAIL SCOUT WORDSTAT GATE: {reason}", file=sys.stderr)
         return 1
+    ok_rotation, reason_rot = handoff_has_angle_rotation(text)
+    if not ok_rotation:
+        print(f"FAIL SCOUT WORDSTAT GATE: {reason_rot}", file=sys.stderr)
+        return 1
+    ok_cats, reason_cats = handoff_has_valid_wp_categories(text, root)
+    if not ok_cats:
+        print(f"FAIL SCOUT WORDSTAT GATE: {reason_cats}", file=sys.stderr)
+        return 1
 
     ids = geo.get("scout_required_region_ids") or []
-    print(f"OK scout wordstat handoff (mcp_kv live, klyshin+rework log); region_ids={ids}")
+    print(
+        f"OK scout wordstat handoff (mcp_kv live, klyshin+rework, angle_rotation, wp_category_slugs); "
+        f"region_ids={ids}"
+    )
     return 0
 
 

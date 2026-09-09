@@ -22,6 +22,8 @@
 
 При 404 model id скрипт пробует алиасы (`gpt-5.6-terra`, `openai/gpt-5.6-terra` для utility; `claude-opus-5`, `anthropic/claude-opus-5` для powerful) и при smoke может зафиксировать рабочий id в tenant-config.
 
+**Retry:** HTTP **529** (overload) и 502/503/504/524 — retryable с backoff (`DEFAULT_RETRY_WAIT_SECONDS`); не BLOCKER на первом 529 если второй endpoint/attempt успешен.
+
 ## Thin Cursor conductor (HARD)
 
 Cursor Cloud Agent — **тонкий дирижёр**: git, shell, MCP Wordstat, image REST, Python gates.  

@@ -1,0 +1,39 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/napisali-bez-zaloga-u-dveri-5000/#article",
+  "url": "{{SITE_BASE}}/blog/napisali-bez-zaloga-u-dveri-5000/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/napisali-bez-zaloga-u-dveri-5000/"
+  },
+  "headline": "Написали «без залога». У двери попросили 5 000 ₽",
+  "description": "Фильтр «без залога» не отменяет риск, если после оплаты 2–3 ночей у двери внезапно просят 5 000 ₽. До перевода проверьте сумму и срок возврата в карточке жилья и переписке.",
+  "datePublished": "2026-09-09",
+  "dateModified": "2026-09-09",
+  "inLanguage": "ru-RU",
+  "author": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    },
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  }
+}

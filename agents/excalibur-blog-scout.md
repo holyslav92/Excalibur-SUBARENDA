@@ -43,8 +43,12 @@ Handoff:
 klyshin_hook: <id> | original: «…» | angle: … | signal: https://t.me/klyshin_A/…
 wordstat_rework: probe «…» <freq> → … → final P0 «…» <freq>
 wordstat: mcp_kv live | regions 55,11176,compare225 | P0 «…» <freq> | …
+angle_rotation: checked last N=3 | burn-at-door skip: yes|no | reason: …
+wp_category_slugs: posutochnaya-arenda, zalog-i-vyiezd
 dzen_pattern: <1|2|3|4|5> | dzen_shape_hint: «…»
 ```
+
+**wp_category_slugs:** только ключи `shared/wp-blog-categories.json` (не `posutochno`/`zalog`).
 
 ## Dzen feed — угол темы
 

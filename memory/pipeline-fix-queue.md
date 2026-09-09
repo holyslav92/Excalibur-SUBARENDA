@@ -955,3 +955,150 @@ category: env
 status: needs-human
 reason: env-only blocker; duplicate of INC-20260903-0640
 needed_decision_or_secret: YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets
+
+## INC-20260909-1034 — Derouter HTTP 529 overload retries (B15)
+
+status: fixed
+run_date: 2026-09-09
+role: excalibur-blog-scout
+topic_id: B15
+article_dir: memory/blog/articles/B15-napisali-bez-zaloga-u-dveri-5000
+severity: medium
+category: api
+
+### What went wrong
+
+- Derouter utility calls during B15 hit HTTP **529** overload on primary endpoint; `is_retryable_http` did not include 529 → instant BLOCKER or manual re-run instead of script backoff retry (same class as B13 research `HTTP 529`).
+
+### How the agent recovered this run
+
+- Retried Derouter calls; stamps show successful completion on second attempt / fallback endpoint.
+
+### Durable fix needed before next run
+
+- Treat HTTP 529 as retryable in `excalibur_blog_derouter_opus_chat.py`; document in derouter contract.
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_derouter_opus_chat.py`
+- `shared/derouter-opus-brain-contract.md`
+- `tests/test_derouter_retryable_http.py`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-09-09
+fix_summary:
+- Added HTTP 529 to `is_retryable_http()` retry set (Derouter overload).
+- Documented 529 retry policy in `shared/derouter-opus-brain-contract.md`.
+files_changed:
+- `scripts/excalibur_blog_derouter_opus_chat.py`
+- `shared/derouter-opus-brain-contract.md`
+- `tests/test_derouter_retryable_http.py`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_derouter_opus_chat.py`
+- `python3 -m unittest tests.test_derouter_retryable_http -v`
+commit: pending
+
+## INC-20260909-1035 — drawn_logo terracotta pad smudge false positive (B15 Cover-QA)
+
+status: fixed
+run_date: 2026-09-09
+role: excalibur-blog-cover-qa
+topic_id: B15
+article_dir: memory/blog/articles/B15-napisali-bez-zaloga-u-dveri-5000
+severity: low
+category: script
+
+### What went wrong
+
+- `drawn_logo_gate` FAIL on inline-02/04/05/06 (no-logo slots) after pad-clear: terracotta editorial smudge in TR pad scored ≥0.38 without green curtain pixels (69–100% terracotta_ratio, green=0). Cover-QA shipped PASS via visual override after 4 pad-clear rounds.
+
+### How the agent recovered this run
+
+- `excalibur_blog_cover_inline_pad_clear.py` (5 passes/panel) + manual visual QA; stamped `cover_qa.json` PASS with note.
+
+### Durable fix needed before next run
+
+- Lockup detection must require green curtain signal (canonical logo) — terracotta-only TR pad is not AI lockup.
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_drawn_logo_gate.py`
+- `tests/test_drawn_logo_gate.py`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-09-09
+fix_summary:
+- `lockup_has_curtain_signal()` — drawn lockup requires `green_ratio >= 0.015` (Dobry Dom curtains + terracotta wordmark).
+- Regression tests incl. B15 inline-02/04/05/06; `drawn_logo_gate` → PASS on B15 article dir.
+files_changed:
+- `scripts/excalibur_blog_drawn_logo_gate.py`
+- `tests/test_drawn_logo_gate.py`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_drawn_logo_gate.py`
+- `python3 -m unittest tests.test_drawn_logo_gate.DrawnLogoGateTest.test_terracotta_typography_without_green_not_detected_as_lockup tests.test_drawn_logo_gate.DrawnLogoGateTest.test_b15_no_logo_inlines_not_detected_after_terracotta_fp_fix -v`
+- `python3 scripts/excalibur_blog_drawn_logo_gate.py --article-dir memory/blog/articles/B15-napisali-bez-zaloga-u-dveri-5000` → OK
+commit: pending
+
+## INC-20260909-1036 — Scout handoff wp_category_slugs + angle_rotation format (B15)
+
+status: fixed
+run_date: 2026-09-09
+role: excalibur-blog-scout
+topic_id: B15
+article_dir: memory/blog/articles/B15-napisali-bez-zaloga-u-dveri-5000
+severity: low
+category: handoff
+
+### What went wrong
+
+- B15 handoff used abbreviated `wp_category_slugs: posutochno, zalog` (invalid vs `shared/wp-blog-categories.json`); publish used correct `posutochnaya-arenda, zalog-i-vyiezd` from Title/meta. `angle_rotation` line was free-form prose, not the required `checked last N=3 | burn-at-door skip | reason` shape. Scout slug draft `…poprosili-5-000` diverged from Title slug `…5000` (expected, but undocumented).
+
+### How the agent recovered this run
+
+- Title/research_start resolved publish slug via `title-brief.json`; `article.meta.json` set canonical WP category slugs before publish.
+
+### Durable fix needed before next run
+
+- `wordstat_gate.py handoff` must validate `wp_category_slugs` against registry + require structured `angle_rotation`; scout skill documents canonical slugs and slug vs slug_hint.
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_wordstat_gate.py`
+- `skills/scout-excalibur-blog/SKILL.md`
+- `agents/excalibur-blog-scout.md`
+- `tests/test_scout_handoff_gate.py`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-09-09
+fix_summary:
+- `handoff_has_valid_wp_categories()` + `handoff_has_angle_rotation()` in wordstat handoff gate.
+- Scout skill/agent: canonical wp_category keys; slug vs slug_hint note.
+files_changed:
+- `scripts/excalibur_blog_wordstat_gate.py`
+- `skills/scout-excalibur-blog/SKILL.md`
+- `.cursor/skills/scout-excalibur-blog/SKILL.md`
+- `agents/excalibur-blog-scout.md`
+- `.cursor/agents/excalibur-blog-scout.md`
+- `tests/test_scout_handoff_gate.py`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_wordstat_gate.py`
+- `python3 -m unittest tests.test_scout_handoff_gate -v`
+commit: pending
