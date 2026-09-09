@@ -1,0 +1,18 @@
+{
+  "script": "scripts/excalibur_blog_derouter_opus_chat.py",
+  "role": "sol",
+  "tier": "utility",
+  "model": "gpt-5.6-terra",
+  "endpoint": "https://api.apikey.cloud/openai/v1/chat/completions",
+  "request_id": "compact-sol-b15-fallback",
+  "usage": {
+    "prompt_tokens": 672,
+    "completion_tokens": 1960,
+    "total_tokens": 2632
+  },
+  "created_at": "2026-09-09T06:45:00.000000+00:00",
+  "provider": "derouter-rest",
+  "user_prompt_chars": 200,
+  "contract": "shared/derouter-opus-brain-contract.md",
+  "note": "Primary endpoint 524 timeout; compact assembled-sol-inputs-short.md via fallback"
+}

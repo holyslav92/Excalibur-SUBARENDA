@@ -1,0 +1,27 @@
+{
+  "slug": "napisali-goryachaya-voda-est-v-dushe-ledyanaya-struya",
+  "topic_id": "B15",
+  "permalink": "{{SITE_BASE}}/blog/napisali-goryachaya-voda-est-v-dushe-ledyanaya-struya/",
+  "publish_method": "ftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B15-goryachaya-voda-v-kvartire-posutochno-tyumen-ledyanaya-struya-v-dushe/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1068487,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4580 slug=napisali-goryachaya-voda-est-v-dushe-ledyanaya-struya\nOK categories=101,106\nOK dzen_yzen_meta=1\nOK featured_image=4589\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4590 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-goryachaya-voda-est-v-dushe-ledyanaya-struya-inline-05.png\nOK inline_alt=4590\nOK inline_caption=4590\nOK inline_description=4590\nOK inline_image_upload=4591 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-goryachaya-voda-est-v-dushe-ledyanaya-struya-inline-01-1.png\nOK inline_alt=4591\nOK inline_caption=4591\nOK inline_description=4591\nOK inline_image_upload=4592 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-goryachaya-voda-est-v-dushe-ledyanaya-struya-inline-02-1.png\nOK inline_alt=4592\nOK inline_caption=4592\nOK inline_description=4592\nOK inline_image_upload=4593 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-goryachaya-voda-est-v-dushe-ledyanaya-struya-inline-06.png\nOK inline_alt=4593\nOK inline_caption=4593\nOK inline_description=4593\nOK inline_image_upload=4594 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-goryachaya-voda-est-v-dushe-ledyanaya-struya-inline-03-1.png\nOK inline_alt=4594\nOK inline_caption=4594\nOK inline_description=4594\nOK inline_image_upload=4595 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-goryachaya-voda-est-v-dushe-ledyanaya-struya-inline-07.png\nOK inline_alt=4595\nOK inline_caption=4595\nOK inline_description=4595\nOK inline_image_upload=4596 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-goryachaya-voda-est-v-dushe-ledyanaya-struya-inline-04.png\nOK inline_alt=4596\nOK inline_caption=4596\nOK inline_description=4596\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/napisali-goryachaya-voda-est-v-dushe-ledyanaya-struya/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/napisali-goryachaya-voda-est-v-dushe-ledyanaya-struya/",
+    "errors": []
+  }
+}

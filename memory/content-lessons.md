@@ -661,3 +661,94 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+---
+
+## LESSON-20260909-0736-B15-hot-water-exists-not-ready
+status: proposed
+topic_id: B15
+category: utility
+confidence: low
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP. Урок из publish-артефактов: title-brief.json, description-brief.json, case-delivery-gate PASS, research-notes hook `hot_water_boiler`, article.html opening ice-shower scene.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest BLOCKER (INC-20260903-0640).
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Two-beat H1 ««Горячая вода есть». В душе — ледяная струя, ждать 40 минут»: цитата-обещание → контрфакт в душе + время ожидания, не how-to.
+- §1: 7 800–9 600 ₽ за 2–3 ночи до идентичности хоста; поздний заезд; реплика хозяина «включите бойлер, подождите 40 минут».
+- Klyshin «Нет. Так не заселяем.» + «Сначала проверка. Потом перевод.»; вопрос-отмычка «Где бойлер, был ли включён до заезда, сколько ждать?» → TG/MAX mid-body.
+- H2 «Почему 40 минут — не всегда 40 минут» — накопительный vs проточный vs центральное ГВС без ЖКХ-гайда; editorial: 40 мин ≠ гарантия душа.
+- Контраст «слово «есть»» vs готовность услуги; sibling spine B11 «всё для гостей», B07 «кухня есть», B08 тишина после предоплаты, B05 рейтинг ≠ комплектация.
+- Wordstat: spine «квартиры посуточно тюмень» 5 134 (Tyumen 55+11176); supporting «в квартире нет горячей воды» 2 589 (RF) — угол usability, не P0.
+- Description не дублирует H1: поздний заезд + вопрос про бойлер (description-brief PASS).
+- Cover-QA PASS: gen_only slice4 hot-water/boiler motif; zero cat memes.
+
+### Change
+- В кейсах `hot_water_boiler` в §1 сразу фиксировать **тип нагрева** (бойлер/проточный/центральное ГВС) рядом с цитатой «горячая вода есть» — не только ледяную струю.
+- Параллельно с суммой за N ночей явно маркировать, что 7 800–9 600 ₽ — редакционный диапазон кейса, не средняя по Тюмени.
+
+### Never again
+- «Горячая вода есть» без вопроса про включён ли бойлер до заезда и реальный срок нагрева.
+- Смешивать B15 (бойлер/ГВС usability) с B10 (скрытые доплаты), B13 (ключница), B14 (соседи/шум).
+- How-to для арендодателей / маршрут в УК до морали; чеклист только после «Мой вывод как практика».
+- Выдавать «40 минут» за универсальный срок без оговорки про объём бака и мощность.
+
+### Proposed apply
+- Scout: при hook `hot_water_boiler` логировать original Klyshin hook + final P0 spine Tyumen + note «в квартире нет горячей воды» volume (supporting angle).
+- Title/Description: держать контраст «обещание в объявлении vs ледяной душ» как в description-brief B15.
+- Review only; Writer prompt не трогать автоматически.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260909-0736-B15-late-checkin-boiler-leverage
+status: proposed
+topic_id: B15
+category: structure
+confidence: low
+
+### Evidence
+- artifact: title-brief.json#angle
+  finding: angle «после заселения ледяной душ и просьба ждать нагрева бойлера»; opening-meta-gate PASS; H2 «Та же механика, что и в других объявлениях» связывает «есть» с broad-promise spine.
+- metrika_signal: none (credentials unavailable; causal retention не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Слой «поздний заезд → чемодан в прихожей → ледяной душ → ждать у ванной» отдельным абзацем — asymmetric moment после полной оплаты.
+- Блок «хозяйская подготовка переносится на гостя» (поиск выключателя, включение, засчёт времени) объясняет mismatch без злодейства.
+- Связка late leverage + money-timing spine через interlink B08 (тишина/предоплата) и B11 (broad promise в ванной) без дублирования B10 taxi.
+- Сентябрьский контекст опрессовок Тюмени как фон (research-notes), не legal guide для гостя.
+- Мораль «Сначала проверка. Потом перевод.» — не «Наш вывод простой».
+
+### Change
+- Для amenities/utility hooks (`hot_water_boiler`, `pack_vs_flat`, `kitchen_exists`) всегда включать **late-checkin leverage** (после дороги, магазин/хост недоступен) в utility-блок — не только перечень систем нагрева.
+- При interlink — sibling про broad promises одной красной линией «галочка ≠ готовность к использованию».
+
+### Never again
+- Писать hot-water кейс только про технологию бойлера, игнорируя temporal leverage (когда исправить нечем — уже оплачено и поздно).
+- Финал «Наш вывод простой» вместо «Мой вывод как практика».
+
+### Proposed apply
+- Writer checklist (review-only): hot_water_boiler + late_checkin → один абзац про asymmetric moment после «горячая вода есть».
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded

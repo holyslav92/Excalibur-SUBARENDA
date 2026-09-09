@@ -1,0 +1,94 @@
+{
+  "status": "PASS",
+  "topic_id": "B15",
+  "slug": "goryachaya-voda-v-kvartire-posutochno-tyumen-ledyanaya-struya-v-dushe",
+  "research_date": "2026-09-09",
+  "summary": "Research for hot water/boiler guest pain in Tyumen short-term rental: listing promises «горячая вода есть», ice shower at ~21:00, host says «turn on boiler, wait 40 min» after ~7800–9600 RUB paid. Fresh week signals: USTEK/tumentoday 2026-09-01 opressovki completed early; t-l.ru Lenina 77 works until 2026-09-11. Centralized GVS vs boiler facts verified. Anti-dup vs B10/B13/B14. Wordstat P0 «квартиры посуточно тюмень» 5134.",
+  "freshness_audit": {
+    "research_date": "2026-09-09",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://tumentoday.ru/2026/09/01/v_tyumeni_dosrochno_zavershili_posledniy_etap_opressovok/",
+      "published_at": "2026-09-01",
+      "note": "Regional news this week: final opressovki stage finished early; some addresses still restricted in September."
+    },
+    "additional_fresh_signals": [
+      {
+        "url": "https://ao-ustek.ru/press-tsentr/novosti/ao-ustek-zavershilo-gidravlicheskie-ispytaniya-sistemy-teplosnabzheniya-tyumeni/",
+        "published_at": "2026-09-01",
+        "type": "official",
+        "note": "USTEK official press release matching tumentoday facts."
+      },
+      {
+        "url": "https://t-l.ru/403615.html",
+        "published_at": "2026-09-09",
+        "type": "regional_news",
+        "note": "Active page 2026-09-09: Lenina 77 reconstruction until 11.09.2026."
+      },
+      {
+        "url": "https://t.me/klyshin_A",
+        "published_at": "2026-09-09",
+        "type": "community",
+        "note": "Scout hook signal: hot water promise vs boiler wait."
+      }
+    ]
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176", "225"],
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 5134,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 10865,
+        "region": "225"
+      },
+      {
+        "phrase": "снять квартиру посуточно в тюмени",
+        "volume": 1672,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "горячая вода посуточно",
+        "volume": 76,
+        "region": "225",
+        "note": "WORDSTAT PARTIAL totalCount-only"
+      },
+      {
+        "phrase": "в квартире нет горячей воды",
+        "volume": 2589,
+        "region": "225"
+      },
+      {
+        "phrase": "нет горячей воды в квартире что делать",
+        "volume": 233,
+        "region": "225"
+      }
+    ]
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "No bank/developer tariff digits; USTEK official pages for GVS restrictions and opressovki completion only",
+    "verified_claims": 2,
+    "entities_checked": ["USTEK"],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "memory/blog/articles/B15-goryachaya-voda-v-kvartire-posutochno-tyumen-ledyanaya-struya-v-dushe/derouter-opus-stamp-research.json",
+    "first_attempt": "PASS"
+  },
+  "errors": []
+}
