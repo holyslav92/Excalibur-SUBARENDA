@@ -1,9 +1,9 @@
 {
   "topic_id": "B15",
-  "canvas_file": "cover/canvas-slice4.png",
+  "canvas_file": "cover/canvas-quad-01.png",
   "layout": "2x2",
-  "pipeline": "slice4_grid_1x_image_api",
-  "inline_count": 3,
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
   "canvases": [
     {
       "index": 1,
@@ -18,6 +18,20 @@
         "inline_3"
       ],
       "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": [
+        "inline_4",
+        "inline_5",
+        "inline_6",
+        "inline_7"
+      ],
+      "has_cover": false
     }
   ],
   "style_preset": "the_rieltor_twilight_gold",
@@ -90,7 +104,64 @@
         "сколько ждать",
         "спросить до оплаты"
       ]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "process_flow",
+      "scene_hint": "Desk flow diagram: check boiler before payment then key; phone card +7 993 574-83-22 on desk magnet; September Tyumen apartment; NO logo top-right",
+      "alt": "Порядок: сначала вопросы про бойлер и горячую воду, потом оплата",
+      "labels": [
+        "где бойлер",
+        "включён до заезда",
+        "сколько ждать",
+        "сначала проверка"
+      ]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Почему 40 минут — не всегда 40 минут",
+      "visual_type": "infographic_card",
+      "scene_hint": "Wall diagram water heater tank 50-80L heating 1-2 hours vs 40 min promise; thermometer; September bathroom NOT winter",
+      "alt": "Схема накопительного бойлера: почему обещание 40 минут не гарантирует душ",
+      "labels": [
+        "бойлер 50-80 л",
+        "1-2 часа",
+        "холодный бак",
+        "40 минут"
+      ]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Та же механика, что и в других объявлениях",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Messenger chat screenshot style on phone: host says turn on boiler wait 40 min; guest wet hair towel; +7 993 574-83-22 on fridge magnet",
+      "alt": "Переписка: хозяин просит включить бойлер и ждать после позднего заезда",
+      "labels": [
+        "включите бойлер",
+        "ждите 40 мин",
+        "поздний заезд",
+        "ледяной душ"
+      ]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "tool_screenshot",
+      "scene_hint": "Host desk sticky note Сначала проверка потом перевод; boiler checklist; TOP-RIGHT empty pad 8-12% for factory logo — model draws NOTHING there",
+      "alt": "Вывод: горячую воду проверяют вопросами до оплаты, не формулировкой в объявлении",
+      "labels": [
+        "не по словам",
+        "спроси про бойлер",
+        "до оплаты",
+        "потом ключ"
+      ]
     }
   },
-  "cover_keys_ru": []
+  "cover_keys_ru": [],
+  "logo_paste_inline_slots": [
+    "inline_1",
+    "inline_3",
+    "inline_7"
+  ]
 }
