@@ -1,0 +1,27 @@
+{
+  "slug": "pozvonili-v-10-00-v-22-00-wifi-ne-tyanet-sozvon",
+  "topic_id": "B15",
+  "permalink": "{{SITE_BASE}}/blog/pozvonili-v-10-00-v-22-00-wifi-ne-tyanet-sozvon/",
+  "publish_method": "ftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B15-pozvonili-v-10-00-v-22-00-wifi-ne-tyanet-sozvon/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1079719,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4637 slug=pozvonili-v-10-00-v-22-00-wifi-ne-tyanet-sozvon\nOK categories=101,106\nOK dzen_yzen_meta=1\nOK featured_image=4638\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4639 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/09/pozvonili-v-10-00-v-22-00-wifi-ne-tyanet-sozvon-inline-05.png\nOK inline_alt=4639\nOK inline_caption=4639\nOK inline_description=4639\nOK inline_image_upload=4640 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/pozvonili-v-10-00-v-22-00-wifi-ne-tyanet-sozvon-inline-01.png\nOK inline_alt=4640\nOK inline_caption=4640\nOK inline_description=4640\nOK inline_image_upload=4641 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/pozvonili-v-10-00-v-22-00-wifi-ne-tyanet-sozvon-inline-02.png\nOK inline_alt=4641\nOK inline_caption=4641\nOK inline_description=4641\nOK inline_image_upload=4642 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/09/pozvonili-v-10-00-v-22-00-wifi-ne-tyanet-sozvon-inline-06.png\nOK inline_alt=4642\nOK inline_caption=4642\nOK inline_description=4642\nOK inline_image_upload=4643 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/pozvonili-v-10-00-v-22-00-wifi-ne-tyanet-sozvon-inline-03.png\nOK inline_alt=4643\nOK inline_caption=4643\nOK inline_description=4643\nOK inline_image_upload=4644 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/09/pozvonili-v-10-00-v-22-00-wifi-ne-tyanet-sozvon-inline-04.png\nOK inline_alt=4644\nOK inline_caption=4644\nOK inline_description=4644\nOK inline_image_upload=4645 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/09/pozvonili-v-10-00-v-22-00-wifi-ne-tyanet-sozvon-inline-07.png\nOK inline_alt=4645\nOK inline_caption=4645\nOK inline_description=4645\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/pozvonili-v-10-00-v-22-00-wifi-ne-tyanet-sozvon/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/pozvonili-v-10-00-v-22-00-wifi-ne-tyanet-sozvon/",
+    "errors": []
+  }
+}

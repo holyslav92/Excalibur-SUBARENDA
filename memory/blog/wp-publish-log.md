@@ -1,5 +1,22 @@
 # WP publish log
 
+## B15 — 2026-09-10
+
+- **topic_id:** B15
+- **slug:** pozvonili-v-10-00-v-22-00-wifi-ne-tyanet-sozvon
+- **title:** «Рабочий стол» обещали. За 11 400 ₽ — журнальный столик
+- **post_id:** 4637
+- **permalink:** /blog/pozvonili-v-10-00-v-22-00-wifi-ne-tyanet-sozvon/
+- **categories:** posutochnaya-arenda (101), sovety-gostyam (106)
+- **featured_image:** 4638
+- **inline_images:** 4639–4645 (7× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS
+- **dzen preview:** cover-dzen-v1-1024x576.png (HTTP 200); feed enclosure → …-cover-dzen-v1.png
+- **interlink outbound:** 4 live /blog/ siblings (crosslink-qa PASS)
+- **interlink inbound:** B01 (3745), B13 (4535)
+- **publish_method:** ftp (Timeweb PASV)
+
 ## B14 — 2026-09-08
 
 - **topic_id:** B14

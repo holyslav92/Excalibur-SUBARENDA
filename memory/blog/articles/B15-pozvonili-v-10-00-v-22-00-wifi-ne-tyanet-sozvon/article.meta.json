@@ -3,6 +3,10 @@
   "h1": "«Рабочий стол» обещали. За 11 400 ₽ — журнальный столик",
   "slug": "pozvonili-v-10-00-v-22-00-wifi-ne-tyanet-sozvon",
   "topic_id": "B15",
+  "wp_category_slugs": [
+    "posutochnaya-arenda",
+    "sovety-gostyam"
+  ],
   "author_id": "dobry-dom",
   "article_mode": "B",
   "description": "«Рабочий стол» обещали. За 11 400 ₽ — журнальный столик",
@@ -20,6 +24,8 @@
     "side_stickers": "skip"
   },
   "date": "2026-09-10",
+  "status": "published",
+  "wp_post_id": 4637,
   "pipeline_canon": "human-first-v3",
   "editorial_swarm": false
 }
