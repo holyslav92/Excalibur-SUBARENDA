@@ -1,0 +1,27 @@
+{
+  "slug": "otel-byl-dorozhe-900-kvartira-shum-koridor-do-treh",
+  "topic_id": "B16",
+  "permalink": "{{SITE_BASE}}/blog/otel-byl-dorozhe-900-kvartira-shum-koridor-do-treh/",
+  "publish_method": "ftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B16-otel-dorozhe-na-900-kvartira-shum-do-treh/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1036424,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4650 slug=otel-byl-dorozhe-900-kvartira-shum-koridor-do-treh\nOK categories=101,106\nOK dzen_yzen_meta=1\nOK featured_image=4651\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4652 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/09/otel-byl-dorozhe-900-kvartira-shum-koridor-do-treh-inline-06.png\nOK inline_alt=4652\nOK inline_caption=4652\nOK inline_description=4652\nOK inline_image_upload=4653 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/otel-byl-dorozhe-900-kvartira-shum-koridor-do-treh-inline-02.png\nOK inline_alt=4653\nOK inline_caption=4653\nOK inline_description=4653\nOK inline_image_upload=4654 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/otel-byl-dorozhe-900-kvartira-shum-koridor-do-treh-inline-01.png\nOK inline_alt=4654\nOK inline_caption=4654\nOK inline_description=4654\nOK inline_image_upload=4655 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/09/otel-byl-dorozhe-900-kvartira-shum-koridor-do-treh-inline-04.png\nOK inline_alt=4655\nOK inline_caption=4655\nOK inline_description=4655\nOK inline_image_upload=4656 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/09/otel-byl-dorozhe-900-kvartira-shum-koridor-do-treh-inline-05.png\nOK inline_alt=4656\nOK inline_caption=4656\nOK inline_description=4656\nOK inline_image_upload=4657 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/otel-byl-dorozhe-900-kvartira-shum-koridor-do-treh-inline-03.png\nOK inline_alt=4657\nOK inline_caption=4657\nOK inline_description=4657\nOK inline_image_upload=4658 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/09/otel-byl-dorozhe-900-kvartira-shum-koridor-do-treh-inline-07.png\nOK inline_alt=4658\nOK inline_caption=4658\nOK inline_description=4658\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/otel-byl-dorozhe-900-kvartira-shum-koridor-do-treh/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/otel-byl-dorozhe-900-kvartira-shum-koridor-do-treh/",
+    "errors": []
+  }
+}

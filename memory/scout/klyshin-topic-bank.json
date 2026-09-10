@@ -203,6 +203,22 @@
       "final_p0": {"phrase": "квартиры посуточно тюмень", "volume_tyumen": 5261, "volume_ru": 728517},
       "wordstat_rework_log": "probe «скрытые доплаты посуточно» empty → «все включено квартира посуточно» 3 (225) → «доплата за уборку посуточно» 3 → «жкх посуточно» 21 → «уборка посуточно» 2145 host bias → «залог посуточно» 3267 (225) → «аренда квартиры посуточно» 729 (55+11176) → final P0 «квартиры посуточно тюмень» 5261 (55+11176) | compare «снять квартиру посуточно» 728517 (225)",
       "used_in_articles": ["B10"]
+    },
+    {
+      "id": "hotel_vs_daily",
+      "hook_ru": "Квартира дешевле отеля на 900 ₽. Первая ночь — как в хостеле",
+      "angle": "квартира посуточно или отель; экономия на цене vs сон, коридор/лифт, ночная поддержка",
+      "klyshin_signal": "reader inside; number = price of sleepless nights; refusal: «Нет. Так не выбираем.»",
+      "wordstat_probes": ["посуточно или отель", "квартира посуточно или отель", "квартиры посуточно тюмень"],
+      "dzen_pattern_prefer": [4, 2],
+      "anti_dup": ["kitchen_vs_hotel_cafes", "neighbors_night", "sept_business_trip"],
+      "tyumen_localize": true,
+      "status": "used",
+      "last_seen": "2026-09-10",
+      "queue_slot": "2026-09-10 B16 scout (parked restore)",
+      "final_p0": {"phrase": "квартиры посуточно тюмень", "volume_tyumen": 10694, "volume_ru": 10694},
+      "wordstat_rework_log": "probe «посуточно или отель» 387 (225) → «квартира посуточно или отель» 282 (225) → «что лучше отель или квартира посуточно» 15 (225) → «отели тюмень» 23102 (55+11176 contrast) → final P0 «квартиры посуточно тюмень» 10694/10694",
+      "used_in_articles": ["B16"]
     }
   ],
   "parked_hooks": {
@@ -214,7 +230,6 @@
       "early_checkin",
       "deposit_cleaning",
       "cancel_prepay",
-      "hotel_vs_daily",
       "parking_keybox",
       "wifi_boiler_check",
       "utilities_jkh",

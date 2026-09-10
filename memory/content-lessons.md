@@ -750,3 +750,137 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+---
+
+## LESSON-20260910-1354-B16-hotel-vs-apartment-corridor-sleep
+status: proposed
+topic_id: B16
+category: utility
+confidence: medium
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP. Урок из publish-артефактов: title-brief.json, description-brief.json, case-delivery-gate PASS, research-notes hook `hotel_vs_daily`, article.html opening corridor/elevator scene.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest BLOCKER (INC-20260903-0640).
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Угол `hotel_vs_daily`: экономия 900 ₽/ночь vs сон — не бинар «отель лучше квартира», а что гость не проверил до оплаты (коридор, лифт, ночная поддержка).
+- Two-beat H1 «Отель был дороже на 900 ₽ за ночь. Квартира — две ночи без сна»: цена-контраст → контрфакт сна, не how-to.
+- §1: «тихо, как дома» + 2 700 ₽ экономии на три ночи; шум — коридор/лифт/площадка до 03:00, явно «не музыка за стеной» (anti-dup B14).
+- H2 «Тихо — это где именно?»: хост контролирует квартиру, не подъезд; ответ «это же МКД» — mismatch до оплаты, не злодейство.
+- H2 «Почему отзывы могут ничего не сказать» + interlink B05 рейтинг ≠ ночной коридор.
+- H2 «Что реально даёт отель за +900 ₽»: стойка/смена номера как возможный сервис, не гарантия тишины; честный контраст с мессенджером хоста ночью.
+- Вопрос-отмычка: свежие отзывы про коридор/лифт + что даёт отель за +900 ₽ → TG mid-body.
+- Klyshin «Нет. Так не выбираем.» + «Сначала проверка. Потом перевод.»; чеклист из 5 пунктов в финале.
+- Interlink spine: B14 тихий дом/соседи, B12 тихий центр/окно, B05 рейтинг без слов про шум.
+- Wordstat P0 spine «квартиры посуточно тюмень» 5020 (Tyumen); supporting «отели тюмень» 7182, «посуточно или отель» 387.
+- Description не дублирует H1: «лифт не спит» + проверка за дверью после полуночи (description-brief PASS).
+- Cover-QA PASS: 2× Grsai quad, manual manifest-slots (B15 layout legacy).
+
+### Change
+- В `hotel_vs_daily` кейсах в §1 сразу фиксировать **источник шума** (коридор/лифт/площадка МКД) и **арифметику экономии** (900 ₽/ночь × N ночей) рядом с цитатой «тихо, как дома» — не смешивать с B14 (соседи/музыка) или B12 (стройка/окно).
+- Scout handoff: при weak narrow query логировать rework на spine P0 + sub-angle corridor/elevator vs hotel night service (как assembled-scout-inputs-b16).
+
+### Never again
+- Противопоставлять отели и квартиры как «тихий vs шумный» тип жилья.
+- Писать hotel-vs-apartment кейс только про цену, игнорируя коридор МКД и ночной канал поддержки.
+- Смешивать B14 (бас за стеной) и B16 (подъезд/лифт).
+- How-to «как выбрать отель» до морали; чеклист только после «Мой вывод как практика».
+- Выдавать 4 500 ₽ срочного отеля или 2 700 ₽ экономии за рыночную статистику без editorial disclaimer.
+
+### Proposed apply
+- Scout: hook `hotel_vs_daily` → handoff lockpick (коридор/лифт + отзывы + что даёт отель за Δ₽) + final P0 spine Tyumen + anti-dup note vs B14/B12.
+- Review only; Writer prompt не трогать автоматически.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260910-1354-B16-two-nights-emergency-hotel-cost
+status: proposed
+topic_id: B16
+category: structure
+confidence: low
+
+### Evidence
+- artifact: title-brief.json#angle
+  finding: angle «Экономия на квартире обернулась двумя ночами без сна и срочным переездом в отель»; opening-meta-gate PASS; lead фиксирует две бессонные ночи → отель ~4 500 ₽ на последнюю.
+- metrika_signal: none (credentials unavailable; causal retention не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Слой «две ночи без сна → срочный отель» отдельным абзацем — asymmetric moment после «разумной» экономии 900 ₽/ночь.
+- Формула «Сначала сон и правила, потом экономия» (research voice_angle) — не мораль «всегда берите отель».
+- Короткий заезд 2–3 ночи: цена ошибки выше, чем кажется по строке «−900 ₽».
+- Связка money-timing spine через interlink B10 (такси-доплата) и B13 (ночь у двери) без дублирования их сюжетов.
+
+### Change
+- Для `hotel_vs_daily` hooks всегда включать **стоимость срочного запасного варианта** (отель в последний момент) в utility-блок — не только Δ₽ в объявлении.
+- При interlink — sibling про «тихо»-прилагательные (B12, B14, B05) одной красной линией «слово ≠ коридор/окно/соседи».
+
+### Never again
+- Считать экономию за N ночей окончательной без учёта срочного переезда после неудачной ночёвки.
+- Финал «Наш вывод простой» вместо «Мой вывод как практика».
+
+### Proposed apply
+- Writer checklist (review-only): hotel_vs_daily + short_stay → один абзац про price-of-error после второй бессонной ночи.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260910-1354-B16-title-price-inversion-sleep-reveal
+status: proposed
+topic_id: B16
+category: voice
+confidence: low
+
+### Evidence
+- artifact: title-brief.json / scout handoff
+  finding: scout shape «Квартира дешевле отеля на 900 ₽. Первая ночь — как в хостеле» → финальный H1 «Отель был дороже на 900 ₽ за ночь. Квартира — две ночи без сна»; slug сохранил corridor hook (`shum-koridor-do-treh`).
+- metrika_signal: none (credentials unavailable; causal CTR не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Cable pain-scene: инверсия перспективы (отель дороже) + price anchor (900 ₽) + контрфакт сна (две ночи), без SEO-хвоста.
+- Description держит лифт/дверь, не дублирует H1 (description-brief PASS).
+- «Первая ночь — как в хостеле» остаётся в research/scout, не в H1-спойлере; раскрытие — две ночи + коридор в lead.
+
+### Change
+- Для hotel_vs_daily hooks: prefer **price inversion + sleep failure** over «hostel night» metaphor в H1.
+- Slug может нести corridor/timing-hook для URL/anti-dup, пока H1 — ₽ + sleep reveal.
+
+### Never again
+- H1 со всеми битами («900 ₽, хостел, коридор, три ночи») — оставлять раскрытие по слоям в lead/H2.
+- Description, дублирующий H1 про две ночи без сна.
+
+### Proposed apply
+- Title skill review: hotel_vs_daily — price delta inversion + measurable sleep counterfact > hostel metaphor H1.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded

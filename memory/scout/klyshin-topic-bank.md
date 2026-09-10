@@ -47,6 +47,7 @@ Prefer **high-volume guest P0** (Wordstat 55+11176, compare 225).
 | 08–10.09 | 8 | `checkout_train_bags` | ✅ B06 handoff 2026-09-01 — P0 «квартиры посуточно тюмень» 5446; angle хранение багажа 133/28 |
 | 08–10.09 | 7 | `quiet_center_maps` | ✅ B12 handoff 2026-09-06 — «тихий центр»/панорама; P0 «квартиры посуточно тюмень» 5235 |
 | 05.09 | B10 | `hidden_fees_all_inclusive` | ✅ B10 handoff 2026-09-05 — «всё включено» vs 2 400 ₽; P0 «квартиры посуточно тюмень» 5261 |
+| 10.09 | B16 | `hotel_vs_daily` | ✅ B16 published 2026-09-10 — отель +900 ₽ vs коридор до 3:00; P0 «квартиры посуточно тюмень» 10694 (parked restore) |
 
 Scout берёт **только** hook из активного окна (today YEKT ∈ window). После handoff —
 stamp `queue_slot` + `used_in_articles` в JSON.

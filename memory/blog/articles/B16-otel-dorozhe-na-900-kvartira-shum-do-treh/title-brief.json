@@ -1,0 +1,12 @@
+{
+  "topic_id": "B16",
+  "h1": "Отель был дороже на 900 ₽ за ночь. Квартира — две ночи без сна",
+  "title": "Отель был дороже на 900 ₽ за ночь. Квартира — две ночи без сна",
+  "slug": "otel-byl-dorozhe-900-kvartira-shum-koridor-do-treh",
+  "subject": "Квартира посуточно или отель: цена ночного сна",
+  "angle": "Экономия на квартире обернулась двумя ночами без сна и срочным переездом в отель",
+  "klyshin_title_shape": 4,
+  "wordstat_p0": "квартиры посуточно тюмень",
+  "generated_via": "excalibur_blog_derouter_opus_chat.py --role title",
+  "verdict": "PASS"
+}

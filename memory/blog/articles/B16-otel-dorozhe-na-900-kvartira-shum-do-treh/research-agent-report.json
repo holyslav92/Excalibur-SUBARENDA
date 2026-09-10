@@ -1,0 +1,88 @@
+{
+  "status": "PASS",
+  "topic_id": "B16",
+  "slug": "otel-dorozhe-na-900-kvartira-shum-do-treh",
+  "research_date": "2026-09-10",
+  "summary": "Research for hotel_vs_daily CASE: Tyumen guest saves 900₽/night choosing flat over hotel, loses sleep to MKD corridor/elevator noise until 3am, no night reception; editorial totals 9300/2700/4500. Fresh week: Megatyumen 09.09.2026 weather/trip context; Travelandia live Sep2026 Tyumen pricing (apt avg 3343 vs hotel 4554). Wordstat P0 «квартиры посуточно тюмень» 5020. Anti-dup vs B14 neighbors/music — B16 is corridor price-of-error vs hotel service.",
+  "freshness_audit": {
+    "research_date": "2026-09-10",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://megatyumen.ru/obshestvo/teplo-v-tyumeni-sohranitsya-pochti-do-konca-nedeli-prognoz-pogody/",
+      "published_at": "2026-09-09",
+      "note": "Regional news this week: warm Tyumen through 12.09, cooler from 13.09 — short September trip context for accommodation choice."
+    },
+    "additional_fresh_signals": [
+      {
+        "url": "https://travelandia.ru/tyumen/otdyh-v-sentyabre/",
+        "published_at": "2026-09-10",
+        "type": "live_market",
+        "note": "Live September 2026 Tyumen pricing table accessed today: 1331 listings, apt avg 3343 vs hotel avg 4554."
+      },
+      {
+        "url": "https://t.me/Dobriy_dom_72",
+        "published_at": "2026-09-10",
+        "type": "tenant_community",
+        "note": "Tenant voice: warm practical host framing without impossible silence promises."
+      }
+    ]
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176", "225"],
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 5020,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "снять квартиру посуточно в тюмени",
+        "volume": 1621,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "отели тюмень",
+        "volume": 7182,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "посуточно или отель",
+        "volume": 387,
+        "region": "225"
+      },
+      {
+        "phrase": "квартира посуточно или отель",
+        "volume": 282,
+        "region": "225"
+      },
+      {
+        "phrase": "что лучше отель или квартира посуточно",
+        "volume": 15,
+        "region": "225"
+      }
+    ]
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "No bank/developer/gov tariff digits; market averages from Travelandia/Tutu/media as dated context only",
+    "verified_claims": 0,
+    "entities_checked": [],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "memory/blog/articles/B16-otel-dorozhe-na-900-kvartira-shum-do-treh/derouter-opus-stamp-research.json",
+    "first_attempt": "BLOCKER (model refusal / HTTP 529 overload)",
+    "retry": "PASS via derouter-short-input.md after multiple 529/524 retries"
+  },
+  "errors": []
+}

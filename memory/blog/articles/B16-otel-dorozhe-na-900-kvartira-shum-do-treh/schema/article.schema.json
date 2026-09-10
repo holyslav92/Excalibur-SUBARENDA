@@ -1,0 +1,39 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/otel-byl-dorozhe-900-kvartira-shum-koridor-do-treh/#article",
+  "url": "{{SITE_BASE}}/blog/otel-byl-dorozhe-900-kvartira-shum-koridor-do-treh/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/otel-byl-dorozhe-900-kvartira-shum-koridor-do-treh/"
+  },
+  "headline": "Отель был дороже на 900 ₽ за ночь. Квартира — две ночи без сна",
+  "description": "Квартира была дешевле отеля на 900 ₽ за ночь, но обещание «тихо, как дома» не спасло от шума коридора и лифта до трёх утра. После двух бессонных ночей пришлось срочно переехать в отель: до оплаты стоит проверить отзывы о подъезде и узнать, что даёт отель за доплату.",
+  "datePublished": "2026-09-10",
+  "dateModified": "2026-09-10",
+  "inLanguage": "ru-RU",
+  "author": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ],
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    }
+  }
+}

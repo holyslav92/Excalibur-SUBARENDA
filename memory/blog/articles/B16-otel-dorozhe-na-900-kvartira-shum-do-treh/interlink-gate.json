@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "topic_id": "B16",
+  "slug": "otel-byl-dorozhe-900-kvartira-shum-koridor-do-treh",
+  "candidates_count": 19,
+  "outbound_found": [
+    {
+      "slug": "rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super",
+      "title": "rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super"
+    },
+    {
+      "slug": "napisali-tihij-centr-v-6-30-za-oknom-kran",
+      "title": "napisali-tihij-centr-v-6-30-za-oknom-kran"
+    },
+    {
+      "slug": "napisali-tihij-dom-v-23-40-sosedi-vklyuchili-muzyku",
+      "title": "napisali-tihij-dom-v-23-40-sosedi-vklyuchili-muzyku"
+    }
+  ],
+  "outbound_unique_slugs": [
+    "napisali-tihij-dom-v-23-40-sosedi-vklyuchili-muzyku",
+    "napisali-tihij-centr-v-6-30-za-oknom-kran",
+    "rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "warnings": [],
+  "errors": []
+}
