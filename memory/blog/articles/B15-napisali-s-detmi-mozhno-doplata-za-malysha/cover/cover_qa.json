@@ -1,0 +1,46 @@
+{
+  "agent": "excalibur-blog-cover-qa",
+  "status": "FAIL",
+  "checked_at": "2026-09-10",
+  "topic_id": "B15",
+  "checks": {
+    "eight_png_exist": true,
+    "quad_manifest_valid": true,
+    "wordstat_stickers_1_3": true,
+    "motif_no_collision_14d": true,
+    "max_one_cat_meme_slot": true,
+    "light_high_key": true,
+    "logo_composite_stamp_pass": true,
+    "cover_logo_pasted": true,
+    "inline_no_logo_on_inlines": true,
+    "forbid_phone_on_cover_image": false,
+    "forbid_922_phone": true,
+    "forbid_ai_drawn_logo_cover": true,
+    "forbid_wordpress_ui_in_art": true,
+    "no_logo_plate_cover": true,
+    "forbid_graphic_collage_overlay": true,
+    "forbid_poster_composite_stamp": true,
+    "forbid_logo_reference_in_batch": true,
+    "forbid_overlapping_text_blocks": true,
+    "forbid_giant_cropped_glyph": true,
+    "cyrillic_hook_on_cover": true
+  },
+  "failures": [
+    "forbid_phone_on_cover_image: на cover.png номер +7 (993) 574-83-22 на табличке у ручки двери — tenant forbid_cover_phone_on_image=true, телефон только в тексте статьи"
+  ],
+  "visual_notes": {
+    "cover": "Factory logo TR OK; Cyrillic hook «С детьми МОЖНО — 2 000 у двери» с gold highlight «детьми»; photoreal door scene; phone sign on door = BLOCKER",
+    "inline_01": "Logo TR; comparison_table + Wordstat sticker; utility OK",
+    "inline_02": "No factory logo (pad-clear OK); chat UI + hook labels; utility OK",
+    "inline_03": "Logo TR; labeled_checklist кроватка/люлька; utility OK",
+    "inline_04": "No factory logo (pad-clear OK); process_flow проверка→перевод; utility OK",
+    "inline_05": "No factory logo (pad-clear OK); comparison люлька vs трёхлетка + Wordstat sticky; utility OK",
+    "inline_06": "No factory logo (pad-clear OK); bar_timeline вечер/давление у двери; utility OK",
+    "inline_07": "Logo TR; fact_card цифры до перевода; utility OK"
+  },
+  "notes": [
+    "TR pad-clear applied to inline-02/04/05/06; visual no drawn logo on no-logo panels",
+    "Factory logo paste: cover + inline_1 + inline_3 + inline_7 (count=3)",
+    "Regen cover canvas: remove door phone sign; keep headline hook only"
+  ]
+}
