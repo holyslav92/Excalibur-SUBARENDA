@@ -4,147 +4,34 @@
   "splits": [
     {
       "canvas_index": 1,
-      "manifest": "cover/quad-manifest.json",
-      "split": {
-        "source_canvas": "memory/blog/articles/B15-pozvonili-v-10-00-v-22-00-wifi-ne-tyanet-sozvon/cover/canvas-quad-01.png",
-        "source_size_px": [
-          2048,
-          1152
-        ],
-        "panel_size_px": [
-          1023,
-          575
-        ],
-        "split_meta": {
-          "split_mode": "gutter_detect",
-          "h_gutter_px": {
-            "start": 575,
-            "end": 577
-          },
-          "v_gutter_px": {
-            "start": 1023,
-            "end": 1025
-          },
-          "requested_mode": "auto",
-          "gutter_quality": {
-            "h_center_offset_px": 0.0,
-            "v_center_offset_px": 0.0,
-            "max_aspect_crop_loss": 0.0,
-            "per_panel_crop_loss": {
-              "top_left": 0.0,
-              "top_right": 0.0,
-              "bottom_left": 0.0,
-              "bottom_right": 0.0
-            },
-            "reject_reason": null
-          }
-        },
-        "output_size_px": [
-          1200,
-          675
-        ],
-        "outputs": {
-          "inline_1": {
-            "file": "cover/inline-01.png",
-            "quadrant": "top_right",
-            "box_px": {
-              "left": 1025,
-              "top": 0,
-              "right": 2048,
-              "bottom": 575
-            },
-            "raw_box_px": {
-              "left": 1025,
-              "top": 0,
-              "right": 2048,
-              "bottom": 575
-            },
-            "size_px": [
-              1200,
-              675
-            ],
-            "aspect_ratio": "16:9",
-            "alt": "Сравнение: обещание быстрого интернета и реальность — созвон срывается.",
-            "h2_anchor": "«Wi‑Fi есть» не значит, что созвон пройдёт"
-          },
-          "inline_2": {
-            "file": "cover/inline-02.png",
-            "quadrant": "bottom_left",
-            "box_px": {
-              "left": 0,
-              "top": 577,
-              "right": 1023,
-              "bottom": 1152
-            },
-            "raw_box_px": {
-              "left": 0,
-              "top": 577,
-              "right": 1023,
-              "bottom": 1152
-            },
-            "size_px": [
-              1200,
-              675
-            ],
-            "aspect_ratio": "16:9",
-            "alt": "Схема: розетка за диваном, кабель не дотягивается до журнального столика.",
-            "h2_anchor": "Журнальный столик — не рабочее место"
-          },
-          "inline_3": {
-            "file": "cover/inline-03.png",
-            "quadrant": "bottom_right",
-            "box_px": {
-              "left": 1025,
-              "top": 577,
-              "right": 2048,
-              "bottom": 1152
-            },
-            "raw_box_px": {
-              "left": 1025,
-              "top": 577,
-              "right": 2048,
-              "bottom": 1152
-            },
-            "size_px": [
-              1200,
-              675
-            ],
-            "aspect_ratio": "16:9",
-            "alt": "Что запросить до оплаты: фото стола, розетка, замер Wi‑Fi, список документов.",
-            "h2_anchor": "Закрывающие не должны появляться из тумана"
-          },
-          "inline_4": {
-            "file": "cover/inline-04.png",
-            "quadrant": "top_left",
-            "box_px": {
-              "left": 0,
-              "top": 0,
-              "right": 1023,
-              "bottom": 575
-            },
-            "raw_box_px": {
-              "left": 0,
-              "top": 0,
-              "right": 1023,
-              "bottom": 575
-            },
-            "size_px": [
-              1200,
-              675
-            ],
-            "aspect_ratio": "16:9",
-            "alt": "12 часов между обещанием утром и проверкой вечером.",
-            "h2_anchor": "Спешка всегда просит не проверять"
-          }
-        }
-      }
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "outputs": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ]
+    },
+    {
+      "canvas_index": 2,
+      "slots": [
+        "inline_4",
+        "inline_5",
+        "inline_6",
+        "inline_7"
+      ],
+      "outputs": [
+        "inline_4",
+        "inline_5",
+        "inline_6",
+        "inline_7"
+      ]
     }
   ],
-  "manifest": "cover/quad-manifest.json",
-  "html_inject": [
-    "injected inline_1 after H2 — «Wi‑Fi есть» не значит, что созвон пройдёт",
-    "injected inline_2 after H2 — Журнальный столик — не рабочее место",
-    "injected inline_3 after H2 — Закрывающие не должны появляться из тумана",
-    "injected inline_4 after H2 — Спешка всегда просит не проверять"
-  ]
+  "note": "manual manifest-slots split (gen_only longform legacy layout)"
 }

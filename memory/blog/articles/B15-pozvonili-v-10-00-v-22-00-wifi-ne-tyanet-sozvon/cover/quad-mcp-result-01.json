@@ -1,3 +1,9 @@
 {
-  "local_path": "cover/canvas-quad-01.png"
+  "local_path": "cover/canvas-quad-01.png",
+  "native_width": 2048,
+  "native_height": 1152,
+  "used_vip_fallback": true,
+  "delivery": "native_2k",
+  "vip_trigger": "2k_not_possible_on_primary",
+  "regen": "cover-qa-fix-drawn-logo-gate"
 }
