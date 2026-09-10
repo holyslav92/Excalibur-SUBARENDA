@@ -1,0 +1,88 @@
+{
+  "status": "PASS",
+  "topic_id": "B15",
+  "slug": "pozvonili-v-10-00-v-22-00-wifi-ne-tyanet-sozvon",
+  "research_date": "2026-09-10",
+  "summary": "Research for sept_business_trip CASE: Tyumen short-term guest promised fast Wi-Fi and docs at 10:00, after 22:00 check-in finds coffee-table desk, outlet behind sofa, ~8 Mbps, unstable video call; host deflects on workspace and delays closing docs. Fresh week signals: glavkniga.ru Sept business-trip memo (PP RF №501, 3-day expense report), gazeta-unp Aug 2026 closing-docs package, VK market Wi-Fi/docs claims. Wordstat P0 «квартиры посуточно тюмень» 5020. Anti-dup vs 08.09 paid Wi-Fi fail post — B15 is pre-payment lockpick.",
+  "freshness_audit": {
+    "research_date": "2026-09-10",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://glavkniga.ru/seminars/142",
+      "published_at": "2026-09-01-context",
+      "note": "September business-trip rules memo accessed 2026-09-10; PP RF №501, 3 working days for expense report, rented flat = contract + payment doc."
+    },
+    "additional_fresh_signals": [
+      {
+        "url": "https://vk.com/club105746653",
+        "published_at": "2026-09-10",
+        "type": "community_market",
+        "note": "VK listing: Wi-Fi up to 100 Mbps + reporting docs for business travelers — market language, not per-flat guarantee."
+      },
+      {
+        "url": "https://www.gazeta-unp.ru/articles/55697-otchetnye-dokumenty-pri-sdache-kvartiry-posutochno-polnyy-paket-dlya-buhgalterii-statgb",
+        "published_at": "2026-08-05",
+        "type": "media",
+        "note": "Closing-docs package for short-term rental command trips; certificate of stay vs contract+act."
+      }
+    ]
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176"],
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 5020,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "снять квартиру посуточно в тюмени",
+        "volume": 1621,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "справка о проживании",
+        "volume": 160,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "командировка тюмень",
+        "volume": 45,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "аренда квартир посуточно тюмень",
+        "volume": 179,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "командировка квартира посуточно",
+        "volume": 85,
+        "region": "225"
+      }
+    ]
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "No bank/developer tariff digits; business-trip document norms from media/reference only",
+    "verified_claims": 0,
+    "entities_checked": [],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "memory/blog/articles/B15-pozvonili-v-10-00-v-22-00-wifi-ne-tyanet-sozvon/derouter-opus-stamp-research.json",
+    "first_attempt": "BLOCKER (HTTP 529 overloaded)",
+    "retry": "PASS"
+  },
+  "errors": []
+}
