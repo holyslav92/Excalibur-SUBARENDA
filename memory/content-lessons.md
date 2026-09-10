@@ -661,3 +661,92 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+---
+
+## LESSON-20260910-1045-B15-business-trip-desk-wifi-docs
+status: proposed
+topic_id: B15
+category: utility
+confidence: medium
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP. Урок из publish-артефактов: article.html (§Wi‑Fi/стол/документы), title-brief.json angle, scout handoff sept_business_trip.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest BLOCKER (INC-20260903-0640).
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Угол `sept_business_trip`: стол + розетка + Wi‑Fi **на видеосозвон** + закрывающие **до оплаты**, не после заселения в 22:00.
+- §1 с ₽ (11 400 за 3 ночи), цитатой хоста «ну вы же не просили отдельно рабочее место» и конкретикой: журнальный столик, розетка за диваном, ~8 Мбит/с.
+- Разведение «Wi‑Fi есть» vs «созвон пройдёт» — замер из точки ноутбука / тестовый видеозвонок, не обещание «быстрый».
+- Фото стола и розетки в одном кадре — utility-шаг, не общий интерьер.
+- Закрывающие: список документов и срок в чате до перевода; «потом» как красный флаг.
+- Вопрос-отмычка: «Где розетка у стола и какой реальный Wi‑Fi на видеосозвон? Закрывающие пришлёте до оплаты?»
+- Klyshin «Нет. Так не заселяем.» + «Сначала проверка. Потом перевод.»; чеклист из 4 пунктов в финале.
+- Interlink spine: B10 «всё включено», B05 рейтинг≠рабочее место, B08 предоплата+тишина, B06 поздний заезд без запаса.
+- Wordstat P0 spine «квартиры посуточно тюмень» 5020 (Tyumen); hook «командировка» слабый локально (45–85) — честный guest-intent на сентябрь.
+
+### Change
+- В `sept_business_trip` кейсах в §1 называть **все три слоя** сразу: поверхность стола, розетка в досягаемости, Mbps/видеозвон — не раскрывать по одному H2.
+- Scout handoff: при weak local «командировка» логировать rework на spine P0 + sub-angle desk/Wi‑Fi/docs (как в assembled-scout-inputs-b15).
+
+### Never again
+- Принимать «Wi‑Fi есть» / «быстрый интернет» без проверки с рабочего места.
+- Считать барную стойку / журнальный столик «рабочим столом» из объявления.
+- Оставлять закрывающие на «пришлём после выезда» без письменного списка до оплаты.
+- How-to для арендодателей; legal-гайд по справкам вместо guest-case.
+
+### Proposed apply
+- Scout: hook `sept_business_trip` → handoff lockpick (розетка + Wi‑Fi созвон + документы) + final P0 spine Tyumen.
+- Review only; Writer prompt не трогать автоматически.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260910-1045-B15-title-desk-reveal-over-timing
+status: proposed
+topic_id: B15
+category: voice
+confidence: low
+
+### Evidence
+- artifact: derouter-title-raw.json / title-brief.json
+  finding: scout shape «Позвонили в 10:00. В 22:00 Wi‑Fi не тянет созвон» → финальный H1 ««Рабочий стол» обещали. За 11 400 ₽ — журнальный столик»; slug сохранил timing (`pozvonili-v-10-00-v-22-00-wifi-ne-tyanet-sozvon`).
+- metrika_signal: none (credentials unavailable; causal CTR не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Cable pain-scene: обещание в кавычках + price anchor (11 400 ₽) + физический контрфакт (журнальный столик), без SEO-хвоста.
+- Description держит Wi‑Fi/розетку, не дублирует H1 (description-brief PASS: «Wi‑Fi есть» vs столик).
+- Timing 10:00 vs 22:00 остаётся в теле (H2 «Спешка всегда просит не проверять»), не в заголовке-спойлере.
+
+### Change
+- Для business-trip hooks: prefer **quoted amenity lie + ₽ + tangible mismatch** over compound timing spoiler в H1.
+- Slug может нести timing-hook для URL/anti-dup, пока H1 — desk/price reveal.
+
+### Never again
+- H1 со всеми битами («10:00, 22:00, Wi‑Fi, стол») — оставлять раскрытие по слоям в lead/H2.
+- Description, дублирующий H1 про стол (как в meta_ab B15 — там дубль, но description-brief корректен).
+
+### Proposed apply
+- Title skill review: sept_business_trip — quoted promise + price + physical counterfact > timing-only H1.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
