@@ -1,0 +1,86 @@
+{
+  "topic_id": "B15",
+  "slug": "pozvonili-v-10-00-v-22-00-wifi-ne-tyanet-sozvon",
+  "cover_family": "brand_collage",
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "file": "cover/cover.png",
+  "alt": "Командировочный за журнальным столиком у дивана: на ноутбуке рассыпается видеосозвон, на стене заголовок «Рабочий стол — журнальный столик».",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-quad-01.png",
+  "generated_at": "2026-09-10T09:39:04+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Командировочный за журнальным столиком у дивана: на ноутбуке рассыпается видеосозвон, на стене заголовок «Рабочий стол — журнальный столик».",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Сравнение: обещание быстрого интернета и реальность — созвон срывается.",
+      "h2_anchor": "«Wi‑Fi есть» не значит, что созвон пройдёт",
+      "visual_type": "comparison_table",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Схема: розетка за диваном, кабель не дотягивается до журнального столика.",
+      "h2_anchor": "Журнальный столик — не рабочее место",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Что запросить до оплаты: фото стола, розетка, замер Wi‑Fi, список документов.",
+      "h2_anchor": "Закрывающие не должны появляться из тумана",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_4",
+      "file": "cover/inline-04.png",
+      "alt": "12 часов между обещанием утром и проверкой вечером.",
+      "h2_anchor": "Спешка всегда просит не проверять",
+      "visual_type": "process_flow",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_5",
+      "file": "cover/inline-05.png",
+      "alt": "8 Мбит/с может не хватить для стабильного видеосозвона.",
+      "h2_anchor": "«Wi‑Fi есть» не значит, что созвон пройдёт",
+      "visual_type": "infographic_card",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_6",
+      "file": "cover/inline-06.png",
+      "alt": "Какие закрывающие и срок отправки — до оплаты в чате.",
+      "h2_anchor": "Закрывающие не должны появляться из тумана",
+      "visual_type": "labeled_checklist",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_7",
+      "file": "cover/inline-07.png",
+      "alt": "Вывод: проверка стола, связи и документов до перевода.",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "tool_screenshot",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}

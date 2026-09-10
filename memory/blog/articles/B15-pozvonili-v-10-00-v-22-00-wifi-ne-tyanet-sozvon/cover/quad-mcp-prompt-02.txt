@@ -1,0 +1,7 @@
+ONE canvas 2048x1152 as 2x2 GRID of four photoreal 16:9 infographic panels. NO cover panel. Early September 2026 bright Tyumen apartment mood, warm light, NOT winter, NO snow.
+TOP-LEFT inline_4: timeline flow 10:00 morning phone call arrow 12 hours gap arrow 22:00 late check-in; +7 993 574-83-22 printed on desk business card IN scene; labels утренний созвон вечерний заезд; TOP-RIGHT completely clean — NO logo NO brand text.
+TOP-RIGHT inline_5: speed gauge infographic ~8 Mbps vs HD video call upload needs; labels 8 мегабит upload jitter HD созвон; TOP-RIGHT completely clean — NO logo NO «Добрый дом» NO brand lockup.
+BOTTOM-LEFT inline_6: wall-mounted board checklist closing documents: contract act receipt deadline in chat; +7 993 574-83-22 on printed door sign IN scene (not pill); labels договор акт чек срок в чате; TOP-RIGHT completely clean — NO logo NO brand.
+BOTTOM-RIGHT inline_7: host operations desk sticky note «Сначала проверка, потом перевод»; labels стол розетка wifi документы; TOP-RIGHT empty pad 8-12% for factory logo — model draws NOTHING there.
+CRITICAL: inline_4 inline_5 inline_6 must have ZERO brand logo, ZERO «Добрый дом», ZERO curtains+flower, ZERO house icon in any corner especially top-right.
+ALL panels photoreal infographic; ZERO cat meme; ZERO meme stickers; NO WordPress UI.

@@ -1,0 +1,46 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 1,
+  "standalone_cover": false,
+  "model_policy": "",
+  "vip_disabled": false,
+  "max_generation_attempts": 2,
+  "identity_reference_local": "",
+  "identity_reference_id": "",
+  "logo_reference_local": "",
+  "logo_reference_url": "",
+  "logo_reference_in_generation": false,
+  "reference_url_hosted": "",
+  "output_canvas": "cover/canvas-quad-01.png",
+  "result_path": "cover/quad-mcp-result-01.json",
+  "slots": [
+    "cover",
+    "inline_1",
+    "inline_2",
+    "inline_3"
+  ],
+  "preferred_image_flow": {
+    "provider": "grsai",
+    "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
+    "resolution": "2K",
+    "note": "Grsai draw API VIP 2K, max 2 attempts per canvas",
+    "apply_script": "python3 scripts/excalibur_blog_quad_apply.py --article-dir <article_dir> --canvas-index 1 --inject-html"
+  },
+  "jobs": [
+    {
+      "slot": "canvas_quad",
+      "tool": "grsai",
+      "mcp_args": {
+        "prompt": "ONE canvas 2048x1152 as 2x2 GRID of four photoreal 16:9 apartment panels. Early September 2026 Tyumen, bright warm sunlight, green trees outside, NOT winter, NO snow.\nTOP-LEFT cover: tired business traveler in shirt at LOW journal coffee table by sofa, laptop shows pixelated frozen video call; Cyrillic headline printed on wall paper «Рабочий стол — журнальный столик» with gold highlight ONLY word «журнальный»; phone screen shows messenger «быстрый интернет» and number +7 993 574-83-22 IN scene (not pill button); Wordstat stickers «квартиры посуточно тюмень» «снять квартиру посуточно в тюмени»; person IN scene; TOP-RIGHT empty light wall pad 8-12% ONLY — factory logo later, model draws NOTHING there. ZERO cat meme.\nTOP-RIGHT inline_1: split infographic left «Wi-Fi есть» vs right pixelated video call; labels звонок в десять три ночи 11 400 рублей столик у дивана; TOP-RIGHT empty pad for factory logo — NO drawn logo.\nBOTTOM-LEFT inline_2: diagram journal table vs real desk, socket hidden behind sofa, short cable; labels интернет 8 мегабит розетка за диваном кабель не дотянется; ENTIRE panel especially TOP-RIGHT: absolutely NO logo, NO brand wordmark, NO «Добрый дом», NO curtains+red flower, NO house icon.\nBOTTOM-RIGHT inline_3: clipboard checklist before payment: photo desk+socket, speedtest from laptop seat, documents list; labels фото стола документы до оплаты срок в чате; TOP-RIGHT empty pad for factory logo — NO drawn logo.\nALL FOUR panels: photoreal Comfort+ apartment; ZERO meme stickers; ZERO model-drawn brand lockup; NO white plaque under top-right; NO WordPress UI.",
+        "aspect_ratio": "16:9",
+        "resolution": "2K"
+      }
+    }
+  ],
+  "validation": {
+    "prompt_chars": 1596,
+    "max_prompt_chars": 3500,
+    "required_reference_host": "",
+    "resolution": "2K"
+  }
+}
