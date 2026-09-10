@@ -1,5 +1,23 @@
 # WP publish log
 
+## B15 — 2026-09-10
+
+- **topic_id:** B15
+- **slug:** napisali-s-detmi-mozhno-doplata-za-malysha
+- **title:** «С детьми можно» в чате. У двери — 2 000 ₽ за трёхлетку
+- **post_id:** 4625
+- **permalink:** /blog/napisali-s-detmi-mozhno-doplata-za-malysha/
+- **categories:** posutochnaya-arenda (101), sovety-gostyam (106)
+- **featured_image:** 4626
+- **inline_images:** 4627–4633 (7× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS
+- **dzen preview:** cover-1024x576.png live (WP auto-generated, HTTP 200); feed enclosure → …-cover.png (dzen-rss-contract)
+- **interlink outbound:** 4 live /blog/ siblings (crosslink-qa PASS)
+- **interlink inbound:** B01 (3745), B13 (4535)
+- **publish_method:** ftp (Timeweb PASV)
+- **llms deploy:** PASS (llms.txt + llms-full.txt)
+
 ## B14 — 2026-09-08
 
 - **topic_id:** B14
