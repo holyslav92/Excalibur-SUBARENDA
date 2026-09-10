@@ -1,0 +1,163 @@
+{
+  "topic_id": "B16",
+  "slug": "otel-dorozhe-na-900-kvartira-shum-do-treh",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": [
+        "inline_4",
+        "inline_5",
+        "inline_6",
+        "inline_7"
+      ],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "Квартира дешевле — две ночи без сна",
+  "cover_hook_highlight": "дешевле",
+  "cover_headline_line1": "Квартира дешевле",
+  "cover_headline_line2": "две ночи без сна",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Grsai draw API VIP 2K — 2 canvases × 4 panels. Logo factory paste cover + inline_1/3/7.",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "отели тюмень",
+    "посуточно или отель"
+  ],
+  "logo_paste_inline_slots": [
+    "inline_1",
+    "inline_3",
+    "inline_7"
+  ],
+  "cover_motifs": {
+    "composition": "exhausted guest in bed corridor light under door printed headline nightstand smartphone +7 993 574-83-22 on screen tr pad",
+    "location": "early September 2026 warm sunny Tyumen apartment bedroom green trees outside window NOT winter no snow",
+    "meme": "tiny distracted boyfriend people-meme sticker inline_5 only not cat",
+    "prop_set": "smartphone messenger 03:00 hotel booking 4500 receipt earplugs corridor door gap 2700 savings printout",
+    "sticker_set": "квартиры посуточно тюмень отели тюмень посуточно или отель",
+    "joke": "saved 900 per night on apartment but corridor elevator and doors until 3am two sleepless nights"
+  },
+  "cover_emotion": "exhausted disbelief",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Уставший гость в кровати: под дверью свет коридора, на тумбочке заголовок «Квартира дешевле — две ночи без сна», на экране телефона +7 993 574-83-22.",
+      "scene_hint": "Sep 2026 sunny apt bedroom: tired person in bed corridor light under door; headline «Квартира дешевле — две ночи без сна» gold «дешевле» on printed paper; +7 993 574-83-22 large on smartphone screen IN scene; TR pad.",
+      "meme_caption_ru": "",
+      "sticky": "Коридор до трёх"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "«Тихо» — это где именно?",
+      "visual_type": "comparison_table",
+      "scene_hint": "Split quiet inside apartment vs noisy corridor elevator doors; labels дешевле на девятьсот лифт на площадке двери хлопают ночью; TR pad.",
+      "alt": "Сравнение: в квартире тихо, а коридор и лифт слышны ночью.",
+      "labels": [
+        "дешевле на девятьсот",
+        "лифт на площадке",
+        "двери хлопают ночью"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "«Тихо» — это где именно?",
+      "visual_type": "bar_timeline_chart",
+      "scene_hint": "Night timeline 23:00 to 03:00 corridor noise icons; labels разговоры до трёх две ночи без сна утром тяжёлая голова; no logo no cat.",
+      "alt": "Ночная шкала: шум в коридоре до трёх, две ночи без сна.",
+      "labels": [
+        "разговоры до трёх",
+        "две ночи без сна",
+        "утром тяжёлая голова"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Что реально даёт отель за +900 ₽",
+      "visual_type": "checklist_board",
+      "scene_hint": "Price board apartment 9300 vs hotel 10200 minus 900 per night checklist before pay; labels отель дороже девятьсот за ночь сначала проверка; TR pad.",
+      "alt": "Сравнение цены: квартира дешевле на 900 ₽, но проверка до оплаты.",
+      "labels": [
+        "отель дороже",
+        "девятьсот за ночь",
+        "сначала проверка"
+      ]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Почему отзывы могут ничего не сказать",
+      "visual_type": "infographic_card",
+      "scene_hint": "Phone reviews 4.8 stars but no corridor keywords; labels рейтинг высокий про коридор молчат спросить про лифт; no logo.",
+      "alt": "Высокий рейтинг без слов про коридор и лифт ночью.",
+      "labels": [
+        "рейтинг высокий",
+        "про коридор молчат",
+        "спросить про лифт"
+      ]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Что реально даёт отель за +900 ₽",
+      "visual_type": "comparison_table",
+      "scene_hint": "Hotel desk 24/7 vs apartment messenger split; labels стойка круглосуточно другой номер плюс девятьсот; no logo.",
+      "alt": "За +900 ₽ в отеле может быть стойка и смена номера.",
+      "labels": [
+        "стойка круглосуточно",
+        "другой номер",
+        "плюс девятьсот"
+      ]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "«Тихо» — это где именно?",
+      "visual_type": "process_flow",
+      "scene_hint": "MKD corridor diagram host cannot control elevator; labels хост в мессенджере это же мкд подъезд не его; no logo.",
+      "alt": "Хост не управляет подъездом и лифтом многоквартирного дома.",
+      "labels": [
+        "хост в мессенджере",
+        "это же мкд",
+        "подъезд не его"
+      ]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Wall checklist noise corridor elevator before payment sticky Коридор до трёх; labels отзывы про шум лифт и площадка потом перевод; TR pad.",
+      "alt": "Перед оплатой: отзывы про шум, лифт, площадку — потом перевод.",
+      "labels": [
+        "отзывы про шум",
+        "лифт и площадка",
+        "потом перевод"
+      ]
+    }
+  },
+  "cover_keys_ru": []
+}

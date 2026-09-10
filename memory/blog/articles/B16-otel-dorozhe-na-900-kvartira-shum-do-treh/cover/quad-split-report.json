@@ -1,0 +1,37 @@
+{
+  "agent": "excalibur-blog-cover-quad-split",
+  "status": "PASS",
+  "splits": [
+    {
+      "canvas_index": 1,
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "outputs": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ]
+    },
+    {
+      "canvas_index": 2,
+      "slots": [
+        "inline_4",
+        "inline_5",
+        "inline_6",
+        "inline_7"
+      ],
+      "outputs": [
+        "inline_4",
+        "inline_5",
+        "inline_6",
+        "inline_7"
+      ]
+    }
+  ],
+  "note": "manual manifest-slots split (gen_only longform legacy layout)"
+}
