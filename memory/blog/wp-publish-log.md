@@ -1,5 +1,24 @@
 # WP publish log
 
+## B16 — 2026-09-10
+
+- **topic_id:** B16
+- **slug:** otel-byl-dorozhe-900-kvartira-shum-koridor-do-treh
+- **title:** Отель был дороже на 900 ₽ за ночь. Квартира — две ночи без сна
+- **post_id:** 4650
+- **permalink:** /blog/otel-byl-dorozhe-900-kvartira-shum-koridor-do-treh/
+- **categories:** posutochnaya-arenda (101), sovety-gostyam (106)
+- **featured_image:** 4651
+- **inline_images:** 4652–4658 (7× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **description-brief:** ok
+- **live-page gate:** PASS
+- **link-verify:** pass
+- **dzen preview:** cover-1024x576.png (HTTP 200, WP auto-generated)
+- **interlink outbound:** 3 live /blog/ siblings (crosslink-qa PASS)
+- **interlink inbound:** B01 (3745), B13 (4535)
+- **publish_method:** ftp (Timeweb PASV)
+
 ## B15 — 2026-09-10
 
 - **topic_id:** B15

@@ -24,3 +24,4 @@ lessons, benchmarks, QA reports или соседние research-notes как о
 | B13 | kod-srabotal-klyuchnica-pusta-posutochno-tyumen | Код сработал. Пустая ключница — 35 минут у двери | published |
 | B14 | napisali-tihij-dom-v-23-40-sosedi-vklyuchili-muzyku | «Тихий дом» обещали. За 8 400 ₽ — музыка за стеной ночью | published |
 | B15 | pozvonili-v-10-00-v-22-00-wifi-ne-tyanet-sozvon | «Рабочий стол» обещали. За 11 400 ₽ — журнальный столик | published |
+| B16 | otel-byl-dorozhe-900-kvartira-shum-koridor-do-treh | Отель был дороже на 900 ₽ за ночь. Квартира — две ночи без сна | published |

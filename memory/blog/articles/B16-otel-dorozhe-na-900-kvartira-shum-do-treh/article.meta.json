@@ -3,6 +3,10 @@
   "h1": "Отель был дороже на 900 ₽ за ночь. Квартира — две ночи без сна",
   "slug": "otel-byl-dorozhe-900-kvartira-shum-koridor-do-treh",
   "topic_id": "B16",
+  "wp_category_slugs": [
+    "posutochnaya-arenda",
+    "sovety-gostyam"
+  ],
   "author_id": "dobry-dom",
   "article_mode": "B",
   "description": "Отель был дороже на 900 ₽ за ночь. Квартира — две ночи без сна",
@@ -20,6 +24,8 @@
     "side_stickers": "skip"
   },
   "date": "2026-09-10",
+  "status": "published",
+  "wp_post_id": 4650,
   "pipeline_canon": "human-first-v3",
   "editorial_swarm": false
 }
