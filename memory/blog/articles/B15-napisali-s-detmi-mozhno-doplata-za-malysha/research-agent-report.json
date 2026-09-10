@@ -1,0 +1,105 @@
+{
+  "status": "PASS",
+  "topic_id": "B15",
+  "slug": "napisali-s-detmi-mozhno-doplata-za-malysha",
+  "research_date": "2026-09-10",
+  "summary": "Research for family with ~3yo child: listing promised «с детьми можно» / crib; at door 2 000 ₽ child surcharge or sofa without sides. Fresh Sept 2026 tenant blog burn-at-door series (dog 3 000 ₽, deposit 5 000 ₽). Tyumen kvartirka crib pricing 1 500 ₽/stay vs 2 000 ₽/day. Avito host docs on child/guest surcharges. Wordstat P0 «квартиры посуточно тюмень» 5059/10754. Anti-dup vs B04 third guest. No EGRN/legal hooks.",
+  "freshness_audit": {
+    "research_date": "2026-09-10",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://добрыйдом-72.рф/blog/mozhno-s-sobakoj-u-dveri-doplatili-za-porodu/",
+      "published_at": "2026-09-08",
+      "note": "Tenant blog Sept series: «можно» without digits → surcharge at door; explicitly links extra-guest-at-door mechanic. B15 uses same pattern for child/crib, not pet."
+    },
+    "additional_fresh_signals": [
+      {
+        "url": "https://добрыйдом-72.рф/blog/napisali-bez-zaloga-u-dveri-5000/",
+        "published_at": "2026-09-09",
+        "type": "tenant_blog",
+        "note": "Burn-at-door deposit surprise; editorial ecosystem for September guest-pain cases."
+      },
+      {
+        "url": "https://kvartirka.com/residence/479058/",
+        "published_at": "2026-03-30",
+        "type": "marketplace_listing",
+        "note": "Live Tyumen listing fetched 2026-09-10: crib 2 000 ₽/day on request; family filters active."
+      }
+    ]
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176", "225"],
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 5059,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 10754,
+        "region": "225"
+      },
+      {
+        "phrase": "снять квартиру посуточно в тюмени",
+        "volume": 1634,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "квартира посуточно с детьми",
+        "volume": 283,
+        "region": "225"
+      },
+      {
+        "phrase": "снять квартиру посуточно с детьми",
+        "volume": 211,
+        "region": "225"
+      },
+      {
+        "phrase": "детская кроватка посуточно",
+        "volume": 67,
+        "region": "225"
+      },
+      {
+        "phrase": "квартира посуточно с детской кроваткой",
+        "volume": 51,
+        "region": "225"
+      },
+      {
+        "phrase": "доплата за ребенка посуточно",
+        "volume": 10,
+        "region": "225",
+        "note": "WORDSTAT PARTIAL totalCount-only"
+      },
+      {
+        "phrase": "с детьми посуточно тюмень",
+        "volume": 2,
+        "region": "55+11176",
+        "note": "WORDSTAT PARTIAL totalCount-only"
+      }
+    ]
+  },
+  "official_source_audit": {
+    "required": false,
+    "status": "PASS",
+    "scope": "No bank/developer/government tariff digits; marketplace and platform docs only",
+    "verified_claims": 0,
+    "entities_checked": [],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "memory/blog/articles/B15-napisali-s-detmi-mozhno-doplata-za-malysha/derouter-opus-stamp-research.json",
+    "first_attempt": "BLOCKER (HTTP 529 server overloaded)",
+    "retry": "PASS"
+  },
+  "errors": []
+}

@@ -661,3 +661,97 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+---
+
+## LESSON-20260910-0719-B15-children-can-not-price-or-bed
+status: proposed
+topic_id: B15
+category: utility
+confidence: low
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP. Урок из publish-артефактов: title-brief.json, description-brief.json, case-delivery-gate PASS, article.html, research-notes hook `children_daily_rental`.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest BLOCKER (INC-20260903-0640).
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Two-beat H1 ««С детьми можно» в чате. У двери — 2 000 ₽ за трёхлетку»: обещание → контрфакт ₽ + возраст ребёнка, не how-to.
+- §1: ~7 900 ₽ за две ночи до доплаты; предоплата ушла; цитата «с детьми можно» + значок кроватки без суммы в карточке.
+- Anti-dup B04: конфликт про ребёнка/возраст/место сна, не пересчёт лишнего взрослого гостя.
+- Klyshin «Сначала проверка. Потом перевод.»; вопрос-отмычка «кроватка для трёхлетки — кровать с бортиками или люлька, и сколько: за ночь или за весь срок?» → TG/MAX mid-body.
+- H2 ««Можно» — это ещё не цена и не кроватка»: четыре неизвестных за одним словом «кроватка».
+- Interlink spine: B04 доплата за гостя, B08 предоплата/тишина, B10 «всё включено», B11 «всё для гостей» — одна красная линия «тёплая формулировка → цифра у двери».
+- Wordstat: spine «квартиры посуточно тюмень» 5059 (Tyumen 55+11176); семейный «квартира посуточно с детьми» 283 (RF); «детская кроватка посуточно» 67 — узкий угол, не P0.
+- Description не дублирует H1: «это ещё не ответ» + уточнить до перевода (description-brief PASS).
+- Cover-QA PASS: 2× quad, Cyrillic hook «С детьми МОЖНО — 2 000 у двери».
+
+### Change
+- В кейсах `children_daily_rental` в §1 сразу фиксировать **возраст ребёнка цифрой** рядом с «с детьми можно» — не только ₽ доплаты.
+- Параллельно с итоговой суммой за N ночей называть **единицу расчёта** доплаты (за ночь vs за весь срок) — research surprising_fact: 1 500 ₽ за период vs 2 000 ₽/сутки на живых карточках Тюмени.
+
+### Never again
+- Принимать «с детьми можно» или фильтр «подходит для маленьких детей» за готовую цену и комплектацию.
+- Смешивать B04 (лишний взрослый) и B15 (ребёнок/кроватка/детский тариф).
+- Смешивать B11 (полотенца/комплектация) с детским местом для сна.
+- How-to чеклист до кейса; чеклист только после «Мой вывод как практика».
+- Выдавать 2 000 ₽ за рыночную статистику Тюмени без editorial disclaimer (собирательный кейс).
+- Обещать кроватку во всех квартирах Добрый дом без проверки конкретного объекта.
+
+### Proposed apply
+- Scout: при hook `children_daily_rental` логировать original Klyshin hook + final P0 spine Tyumen + anti-dup note vs B04 + note «квартира посуточно с детьми» volume.
+- Title/Description: держать контраст «чат vs дверь» как в description-brief B15.
+- Review only; Writer prompt не трогать автоматически.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260910-0719-B15-crib-word-four-unknowns
+status: proposed
+topic_id: B15
+category: structure
+confidence: low
+
+### Evidence
+- artifact: title-brief.json#angle
+  finding: angle «семья с трёхлетним… доплата 2 000 ₽ после обещания «с детьми можно»»; opening-meta-gate PASS; H2 про люльку vs кровать с бортиками; lead «положите на диван» без бортиков.
+- metrika_signal: none (credentials unavailable; causal retention не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Слой «ребёнок засыпает на руках у двери» + «свободных квартир на вечер почти не осталось» — asymmetric moment после предоплаты (не только ₽).
+- Двойной контрфакт в одном кейсе: доплата 2 000 ₽ **и** диван вместо обещанной кроватки — не сводить к одной строке.
+- Блок «кроватка = четыре неизвестных» (в тарифе? за ночь? уже стоит? люлька vs дошкольник?) — utility без юридики.
+- Мораль «Сначала проверка. Потом перевод.» + чеклист из 7 пунктов после «Мой вывод как практика», не «Наш вывод простой».
+
+### Change
+- Для children/broad-promise hooks всегда включать **terminology mismatch** (люлька vs кровать с бортиками) в utility-блок — не только сумму доплаты.
+- При interlink — sibling про door-timing (B04, B08, B10) одной красной линией «уставший ребёнок = слабая позиция гостя».
+
+### Never again
+- Писать children_daily_rental кейс только про доплату, игнорируя место для сна и возрастную непригодность «кроватки».
+- Вопрос «с детьми можно?» как единственный mid-body CTA вместо itemized sleep+price question.
+- Финал «Наш вывод простой» вместо «Мой вывод как практика».
+
+### Proposed apply
+- Writer checklist (review-only): children_daily_rental → один абзац про crib-icon vs toddler bed + door leverage после предоплаты.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded

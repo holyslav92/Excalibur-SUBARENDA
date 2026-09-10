@@ -1,0 +1,46 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 1,
+  "standalone_cover": false,
+  "model_policy": "",
+  "vip_disabled": false,
+  "max_generation_attempts": 2,
+  "identity_reference_local": "",
+  "identity_reference_id": "",
+  "logo_reference_local": "",
+  "logo_reference_url": "",
+  "logo_reference_in_generation": false,
+  "reference_url_hosted": "",
+  "output_canvas": "cover/canvas-quad-01.png",
+  "result_path": "cover/quad-mcp-result-01.json",
+  "slots": [
+    "cover",
+    "inline_1",
+    "inline_2",
+    "inline_3"
+  ],
+  "preferred_image_flow": {
+    "provider": "grsai",
+    "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
+    "resolution": "2K",
+    "note": "PRIMARY: Grsai draw API VIP 2K 16:9 one job per canvas. Logo factory paste after split.",
+    "apply_script": "python3 scripts/excalibur_blog_quad_apply.py --article-dir <article_dir> --canvas-index 1 --inject-html"
+  },
+  "jobs": [
+    {
+      "slot": "canvas_quad",
+      "tool": "grsai",
+      "mcp_args": {
+        "prompt": "ONE canvas 2048x1152 as 2x2 GRID of four photoreal 16:9 apartment panels. Early September 2026 Tyumen, warm golden evening light, green trees, NOT winter, NO snow.\nTOP-LEFT cover: tired parent holding sleeping toddler at apartment door, host gesturing 2000 rub cash; large Cyrillic headline printed on door sign «С детьми можно» — 2 000 у двери with gold word «детьми»; +7 993 574-83-22 on small entry card in scene; photoreal only ZERO meme stickers; person in scene; TOP-RIGHT empty light wall pad 8-12% ONLY — factory logo later, model draws NOTHING there.\nTOP-RIGHT inline_1: split infographic «с детьми можно» promise vs hidden 2000₽ child fee; labels 2 взрослых ребёнку 3 года 2 ночи 7900 рублей предоплата ушла; Wordstat sticker «квартира посуточно с детьми»; TOP-RIGHT empty pad for factory logo — NO drawn logo.\nBOTTOM-LEFT inline_2: phone messenger chat bubbles «с детьми можно» then door scene 2000 now; labels две тысячи у двери не за кроватку сейчас; ENTIRE panel especially TOP-RIGHT: absolutely NO logo NO brand wordmark NO «Добрый дом» NO curtains+red flower NO house icon; ZERO meme cat.\nBOTTOM-RIGHT inline_3: clipboard checklist кроватка или люлька для трёхлетки за ночь или срок сначала проверка; TOP-RIGHT empty pad for factory logo — NO drawn logo; ZERO meme.\nALL FOUR panels: photoreal only; ZERO model-drawn brand lockup except headline on cover; NO white plaque under top-right; early autumn September mood.",
+        "aspect_ratio": "16:9",
+        "resolution": "2K"
+      }
+    }
+  ],
+  "validation": {
+    "prompt_chars": 0,
+    "max_prompt_chars": 3500,
+    "required_reference_host": "",
+    "resolution": "2K"
+  }
+}

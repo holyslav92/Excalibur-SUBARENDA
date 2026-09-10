@@ -1,0 +1,218 @@
+{
+  "agent": "excalibur-blog",
+  "date_context": {
+    "timezone": "Europe/Moscow",
+    "today_iso": "2026-09-10",
+    "today_ru": "10.09.2026",
+    "year": 2026,
+    "month": 9,
+    "month_name_ru": "сентябрь",
+    "weekday_ru": "четверг"
+  },
+  "topic": {
+    "topic_id": "B15",
+    "title": "Написали с детьми можно — доплата за малыша",
+    "h1": "Написали с детьми можно — доплата за малыша",
+    "slug": "napisali-s-detmi-mozhno-doplata-za-malysha",
+    "primary_query": "Написали с детьми можно — доплата за малыша",
+    "priority": "P0"
+  },
+  "searches": [
+    {
+      "query_id": "primary_fresh",
+      "query": "Написали с детьми можно — доплата за малыша 2026",
+      "purpose": "актуальный SERP",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Новая семейная выплата 2026: кому положена и как оформить",
+          "url": "https://ponyatnee.ru/articles/novaya-semeynaya-vyplata-2026",
+          "snippet": ""
+        },
+        {
+          "title": "Кто получит новую выплату семьям с детьми в 2026 году - условия, размер ...",
+          "url": "https://www.baby.ru/articles/posobia/novaya-vyplata-semyam-s-detmi/",
+          "snippet": "В 2026 году в России появилась новая мера поддержки семей — ежегодная семейная выплата. Она позволяет работающим родителям с двумя и более детьми вернуть часть НДФЛ, уплаченного за ..."
+        },
+        {
+          "title": "Федеральная поддержка семей с детьми в 2026 году: все выплаты, льготы и ...",
+          "url": "https://rus.team/articles/gosudarstvennaya-podderzhka-semey-s-detmi-v-2026-godu-vse-vyplaty-lgoty-i-pravila-ih-sochetaniya",
+          "snippet": "Родители с двумя и более детьми смогут оформить ежегодную выплату уже в 2026 году. Разбираем условия получения, требования к доходу, размер и сроки подачи заявления."
+        },
+        {
+          "title": "С 2026 года для семей с детьми появилась семейная налоговая выплата ...",
+          "url": "https://rg.ru/2026/01/10/semi-s-dvumia-i-bolee-detmi-s-2026-goda-mogut-rasschityvat-na-novuiu-vyplatu.html",
+          "snippet": "Предлагаем исчерпывающий разбор всех федеральных мер поддержки семей с детьми, действующих в России с 1 февраля 2026 года. Материал разбит на логические блоки и содержит все необходимые суммы, критерии и практические алгоритмы действий."
+        },
+        {
+          "title": "Пособия на детей в 2026 году: размеры выплат и порядок оформления",
+          "url": "https://darstroy-yug.ru/articles/posobiya-na-detey-skolko-mozhno-poluchit-kak-oformit/",
+          "snippet": "С 2026 года в России появилась новая форма поддержки семей с детьми - семейная налоговая выплата. Родители ..."
+        },
+        {
+          "title": "Единое пособие для детей и беременных женщин в 2026 году: кому положено ...",
+          "url": "https://www.raiffeisen-media.ru/money/yedinoye-posobiye-dlya-detey-i-beremennykh-zhenschin/",
+          "snippet": "Какие пособия на детей в 2026 году: кому положены выплаты, сколько можно получить, какие документы нужны и как подать заявление без ошибок."
+        }
+      ],
+      "searched_at": "2026-09-10"
+    },
+    {
+      "query_id": "title_fresh",
+      "query": "Написали с детьми можно — доплата за малыша 2026",
+      "purpose": "SERP по человеческому title",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Кто получит новую выплату семьям с детьми в 2026 году - условия, размер ...",
+          "url": "https://www.baby.ru/articles/posobia/novaya-vyplata-semyam-s-detmi/",
+          "snippet": ""
+        },
+        {
+          "title": "Новая налоговая выплата для семей с детьми с 2026 года - ndflka_ru",
+          "url": "https://www.tbank.ru/invest/social/profile/NDFLka_ru/24f4e554-5051-4a89-90b7-daab49f49e34/",
+          "snippet": "Родители с двумя и более детьми смогут оформить ежегодную выплату уже в 2026 году. Разбираем условия получения, требования к доходу, размер и сроки подачи заявления."
+        },
+        {
+          "title": "Юрист рассказал о новых выплатах семьям с детьми в 2026 году",
+          "url": "https://alrf.ru/news/yurist-rasskazal-o-novykh-vyplatakh-semyam-s-detmi-v-2026-godu/",
+          "snippet": "👨‍👨‍👦‍👦👶👧💰 НОВАЯ ВЫПЛАТА С 2026 ГОДА: кому, сколько и как получить? С 1 января 2026 года заработает новая государственная поддержка — ежегодная налоговая выплата для семей с детьми."
+        },
+        {
+          "title": "С 2026 года для семей с детьми появилась семейная налоговая выплата ...",
+          "url": "https://rg.ru/2026/01/10/semi-s-dvumia-i-bolee-detmi-s-2026-goda-mogut-rasschityvat-na-novuiu-vyplatu.html",
+          "snippet": "Семьям с детьми в 2026 году положена новая ежегодная выплата до 189 тысяч рублей, а также повышенные пособия по уходу за ребенком до полутора лет, рассказал юрист, член Ассоциации юристов ..."
+        },
+        {
+          "title": "Новая ежегодная выплата до 189 тысяч для семей с детьми: кто получит ...",
+          "url": "https://pub.9111.ru/news/24978210-novaya-ezhegodnaya-viplata-do-189-tisyach-dlya-semey-s-detmi/",
+          "snippet": "С 2026 года в России появилась новая форма поддержки семей с детьми - семейная налоговая выплата. Родители ..."
+        },
+        {
+          "title": "Федеральная поддержка семей с детьми в 2026 году: все выплаты, льготы и ...",
+          "url": "https://rus.team/articles/gosudarstvennaya-podderzhka-semey-s-detmi-v-2026-godu-vse-vyplaty-lgoty-i-pravila-ih-sochetaniya",
+          "snippet": "Скоро у многих родителей появится дополнительная поддержка от государства. В 2026-ом запустят ежегодную выплату до 189 тысяч рублей, а ещё поднимут пособие по уходу за малышом до полутора лет. Юрист Иван Курбаков поделился деталями — давайте разберёмся, кому положены эти деньги и что ещё поменяется. Кому дадут 189 тысяч в год?"
+        }
+      ],
+      "searched_at": "2026-09-10"
+    },
+    {
+      "query_id": "official_docs",
+      "query": "Написали с детьми можно — доплата за малыша official docs 2026",
+      "purpose": "официальные docs",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Юрист рассказал о новых выплатах семьям с детьми в 2026 году",
+          "url": "https://ria.ru/20260517/semya-2092935074.html",
+          "snippet": ""
+        },
+        {
+          "title": "Кто получит новую выплату семьям с детьми в 2026 году - условия, размер ...",
+          "url": "https://www.baby.ru/articles/posobia/novaya-vyplata-semyam-s-detmi/",
+          "snippet": "Семьям с детьми в 2026 году положена новая ежегодная выплата до 189 тысяч рублей, а также повышенные пособия по уходу за ребенком до полутора лет, рассказал РИА Новости юрист Иван Курбаков...."
+        },
+        {
+          "title": "Материальная поддержка семей с детьми в 2026 году",
+          "url": "https://www.vedomosti.ru/press_releases/2026/02/16/materialnaya-podderzhka-semei-s-detmi-v-2026-godu",
+          "snippet": "Родители с двумя и более детьми смогут оформить ежегодную выплату уже в 2026 году. Разбираем условия получения, требования к доходу, размер и сроки подачи заявления."
+        },
+        {
+          "title": "Федеральная поддержка семей с детьми в 2026 году: все выплаты, льготы и ...",
+          "url": "https://rus.team/articles/gosudarstvennaya-podderzhka-semey-s-detmi-v-2026-godu-vse-vyplaty-lgoty-i-pravila-ih-sochetaniya",
+          "snippet": "С февраля 2026 года значительные изменения произошли в системе социальной поддержки семей при рождении ребенка. Проведена плановая индексация большинства государственных пособий, а с начала года действуют новые механизмы помощи."
+        },
+        {
+          "title": "Родителям напомнили какие выплаты семьям с детьми доступны в 2026",
+          "url": "https://budgetrf.ru/28175-semyam-s-detmi-letom-2026-kakie-vyplaty-mozhno-oformit-i-gde-chashhe-vsego-otkazyvayut.html",
+          "snippet": "Предлагаем исчерпывающий разбор всех федеральных мер поддержки семей с детьми, действующих в России с 1 февраля 2026 года. Материал разбит на логические блоки и содержит все необходимые суммы, критерии и практические алгоритмы действий."
+        },
+        {
+          "title": "Как изменились выплаты семьям с детьми в России с 2026 года",
+          "url": "https://dzen.ru/a/aWHdWbQyR0fEw95f",
+          "snippet": "Система поддержки семей с детьми в 2026 году стала заметно разнообразнее: к действующим пособиям добавилась новая семейная выплата, приём заявлений на которую открылся с 1 июня."
+        }
+      ],
+      "searched_at": "2026-09-10"
+    },
+    {
+      "query_id": "github_evidence",
+      "query": "site:github.com Написали с детьми можно — доплата за малыша 2026",
+      "purpose": "GitHub evidence",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "GitHub - thedenisnikulin/os-project: Пишем свою собственную ...",
+          "url": "https://github.com/thedenisnikulin/os-project",
+          "snippet": ""
+        },
+        {
+          "title": "coursera-ddp-shiny/corpora/ru_50k.txt at master - GitHub",
+          "url": "https://github.com/spujadas/coursera-ddp-shiny/blob/master/corpora/ru_50k.txt",
+          "snippet": "Пишем свою собственную операционную систему с нуля (bootloader + tiny kernel) - thedenisnikulin/os-project"
+        },
+        {
+          "title": "boss-rush/icon.svg at main · DiegoStm3701/boss-rush · GitHub",
+          "url": "https://github.com/DiegoStm3701/boss-rush/blob/main/icon.svg",
+          "snippet": "Coursera Developing Data Products Week 4 Peer-graded Assignment: Shiny - spujadas/coursera-ddp-shiny"
+        },
+        {
+          "title": "obs-teleport/img/teleport-output.png at main · fzwoch/obs-teleport",
+          "url": "https://github.com/fzwoch/obs-teleport/blob/main/img/teleport-output.png",
+          "snippet": "Contribute to DiegoStm3701/boss-rush development by creating an account on GitHub."
+        },
+        {
+          "title": "mintlify-docs/favicon.svg at main · mkdir700/mintlify-docs · GitHub",
+          "url": "https://github.com/mkdir700/mintlify-docs/blob/main/favicon.svg",
+          "snippet": "Download raw file Edit and raw actions Footer © 2026 GitHub, Inc. Footer navigation Terms Privacy"
+        },
+        {
+          "title": "wordpiece-tokenizer-cpp/tokenizer.json at main · ansharyan03 ... - GitHub",
+          "url": "https://github.com/ansharyan03/wordpiece-tokenizer-cpp/blob/main/tokenizer.json",
+          "snippet": "Contribute to mkdir700/mintlify-docs development by creating an account on GitHub."
+        }
+      ],
+      "searched_at": "2026-09-10"
+    },
+    {
+      "query_id": "community_experience",
+      "query": "Написали с детьми можно — доплата за малыша forum problems опыт 2026",
+      "purpose": "форумы и живые проблемы",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Родителям напомнили какие выплаты семьям с детьми доступны в 2026",
+          "url": "https://budgetrf.ru/28175-semyam-s-detmi-letom-2026-kakie-vyplaty-mozhno-oformit-i-gde-chashhe-vsego-otkazyvayut.html",
+          "snippet": ""
+        },
+        {
+          "title": "Миллион за малыша: почему 2026 год называют переломным для семей с детьми",
+          "url": "https://dzen.ru/a/aVJdmFuMh35Wxxpp",
+          "snippet": "Система поддержки семей с детьми в 2026 году стала заметно разнообразнее: к действующим пособиям добавилась новая семейная выплата, приём заявлений на которую открылся с 1 июня."
+        },
+        {
+          "title": "В 2026 году семьи с детьми получат новое пособие. Узнали, кому оно ...",
+          "url": "https://www.banki.ru/news/daytheme/?id=11016894",
+          "snippet": "Поддержка семей с детьми в России в 2026 году выходит на новый уровень: одновременно усиливаются государственные выплаты и расширяются возможности помощи со стороны работодателей."
+        },
+        {
+          "title": "Пособия на детей в 2026 году: сколько можно получить и как",
+          "url": "https://blog.domclick.ru/nedvizhimost/post/posobiya-na-detej-skolko-mozhno-poluchit-i-kak",
+          "snippet": "С 2026 года в России появится новая ежегодная выплата для семей с детьми. Это не обычное пособие — сумма зависит не от фиксированных нормативов, а от налогов, которые заплатил родитель. Чем выше уплаченный НДФЛ, тем больше может быть выплата, но есть и важные ограничения по доходам семьи."
+        },
+        {
+          "title": "Доплата к пенсии за детей: кому положена, перерасчет и размер в 2026 ...",
+          "url": "https://www.banki.ru/news/daytheme/?id=11023356",
+          "snippet": "В 2026 году эта мера остается ключевой формой помощи семьям с детьми в России со своими правилами назначения и расчета. Рассказываем в статье об основных ежемесячных и единовременных пособиях для семей с детьми и как они рассчитываются."
+        },
+        {
+          "title": "Россиянам рассказали про меры поддержки семей с детьми в 2026 году",
+          "url": "https://finance.rambler.ru/money/56605773-rossiyanam-rasskazali-pro-mery-podderzhki-semey-s-detmi-v-2026-godu/",
+          "snippet": "Разберем, кому в 2026 году положена прибавка к пенсии за детей, в каких случаях можно оформить перерасчет, что дает статус многодетной матери и когда сумма выплат действительно может ..."
+        }
+      ],
+      "searched_at": "2026-09-10"
+    }
+  ],
+  "errors": []
+}

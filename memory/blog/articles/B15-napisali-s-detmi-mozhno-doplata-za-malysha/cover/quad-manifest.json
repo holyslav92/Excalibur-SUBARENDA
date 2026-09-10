@@ -1,0 +1,171 @@
+{
+  "topic_id": "B15",
+  "slug": "napisali-s-detmi-mozhno-doplata-za-malysha",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": [
+        "inline_4",
+        "inline_5",
+        "inline_6",
+        "inline_7"
+      ],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "«С детьми можно» — 2 000 у двери",
+  "cover_hook_highlight": "детьми",
+  "cover_headline_line1": "«С детьми можно»",
+  "cover_headline_line2": "2 000 ₽ у двери",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Grsai draw API VIP — 2K 16:9, one job per canvas (2×). Logo factory paste cover + inline_1/3/7.",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "квартира посуточно с детьми",
+    "снять квартиру посуточно с детьми"
+  ],
+  "logo_paste_inline_slots": [
+    "inline_1",
+    "inline_3",
+    "inline_7"
+  ],
+  "cover_motifs": {
+    "composition": "tired parent at apartment door sleeping toddler in arms host hand 2000 rub gesture printed headline person in scene tr pad photoreal no meme",
+    "location": "early September 2026 warm Tyumen apartment entryway evening golden light green trees outside not winter no snow",
+    "meme": "photoreal zero meme stickers door scene only no cat",
+    "prop_set": "smartphone messenger chat child cot icon 7900 receipt suitcase door peephole 2000 cash gesture printed listing",
+    "sticker_set": "квартиры посуточно тюмень квартира посуточно с детьми снять квартиру посуточно с детьми",
+    "joke": "listing says children welcome host asks 2000 at door after prepayment for cot that is baby cradle not toddler bed"
+  },
+  "cover_emotion": "",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Усталый родитель с ребёнком у двери посуточной квартиры в Тюмени: крупный заголовок «С детьми можно — 2 000 у двери», хозяин показывает доплату.",
+      "scene_hint": "Parent+toddler door; headline «С детьми можно» — 2 000 у двери gold «детьми»; +7 993 574-83-22 card; photoreal no meme; TR pad.",
+      "meme_caption_ru": "",
+      "sticky": "А цена — потом"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "«Можно» — это ещё не цена и не кроватка",
+      "visual_type": "comparison_table",
+      "scene_hint": "Split «с детьми можно» vs hidden 2000₽; labels 2 взрослых ребёнку 3 года 7900₽; TR pad.",
+      "alt": "Сравнение: обещание «с детьми можно» и скрытая доплата за ребёнка.",
+      "labels": [
+        "2 взрослых",
+        "ребёнку 3 года",
+        "2 ночи",
+        "7 900 рублей",
+        "предоплата ушла"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Почему лишняя цифра всплывает именно у двери",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Chat «с детьми можно» / door 2000₽ now; labels две тысячи у двери не за кроватку; no meme no logo.",
+      "alt": "Переписка обещает «можно», а у двери просят две тысячи сразу.",
+      "labels": [
+        "«с детьми можно»",
+        "две тысячи у двери",
+        "не за кроватку",
+        "сейчас"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Вопрос, который открывает замок",
+      "visual_type": "checklist_board",
+      "scene_hint": "Clipboard кроватка или люлька для трёхлетки; labels сначала проверка; TR pad.",
+      "alt": "Чеклист вопросов про кроватку и доплату до оплаты.",
+      "labels": [
+        "кроватка или люлька?",
+        "для трёхлетки",
+        "за ночь или срок?",
+        "сначала проверка"
+      ]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "process_flow",
+      "scene_hint": "Flow проверка→перевод; +7 993 574-83-22 desk card; no logo.",
+      "alt": "Порядок: сначала уточнить условия по ребёнку, потом перевод.",
+      "labels": [
+        "сначала проверка",
+        "потом перевод",
+        "возраст цифрой",
+        "ответ в чате"
+      ]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "«Можно» — это ещё не цена и не кроватка",
+      "visual_type": "infographic_card",
+      "scene_hint": "Cot icon vs toddler bed mismatch infographic; labels люлька до 5 мес vs 3 года.",
+      "alt": "Схема: «кроватка» в объявлении может означать люльку, а не кровать для трёхлетки.",
+      "labels": [
+        "люлька 0–5 мес",
+        "трёхлетка",
+        "диван без бортиков",
+        "уточни до оплаты"
+      ]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Почему лишняя цифра всплывает именно у двери",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Door evening tired family; +7 993 574-83-22 on entry sign; no logo.",
+      "alt": "Почему доплату называют у двери, когда семья уже устала.",
+      "labels": [
+        "вечер",
+        "ребёнок спит",
+        "искать некуда",
+        "давление у двери"
+      ]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "tool_screenshot",
+      "scene_hint": "Desk sticky «Сначала проверка»; labels не «можно» а цена; TR pad.",
+      "alt": "Вывод: «с детьми можно» — начало разговора, не готовая цена.",
+      "labels": [
+        "не договорённость",
+        "начало разговора",
+        "цифры до перевода",
+        "сначала проверка"
+      ]
+    }
+  },
+  "cover_keys_ru": []
+}

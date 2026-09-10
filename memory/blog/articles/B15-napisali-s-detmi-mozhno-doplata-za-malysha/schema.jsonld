@@ -1,0 +1,41 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/napisali-s-detmi-mozhno-doplata-za-malysha/#article",
+  "url": "{{SITE_BASE}}/blog/napisali-s-detmi-mozhno-doplata-za-malysha/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/napisali-s-detmi-mozhno-doplata-za-malysha/"
+  },
+  "headline": "«С детьми можно» в чате. У двери — 2 000 ₽ за трёхлетку",
+  "description": "Фраза «с детьми можно» не означает цену и подходящую кроватку: семья с трёхлеткой после оплаты около 7 900 ₽ узнаёт у двери о доплате 2 000 ₽. До перевода уточните возраст ребёнка, тариф, итоговую сумму и место для сна.",
+  "datePublished": "2026-09-10",
+  "dateModified": "2026-09-10",
+  "inLanguage": "ru-RU",
+  "author": {
+    "@type": "Organization",
+    "@id": "{{SITE_BASE}}/#organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "{{SITE_BASE}}/#organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    },
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  }
+}
