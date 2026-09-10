@@ -1,0 +1,39 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/pozvonili-v-10-00-v-22-00-wifi-ne-tyanet-sozvon/#article",
+  "url": "{{SITE_BASE}}/blog/pozvonili-v-10-00-v-22-00-wifi-ne-tyanet-sozvon/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/pozvonili-v-10-00-v-22-00-wifi-ne-tyanet-sozvon/"
+  },
+  "headline": "«Рабочий стол» обещали. За 11 400 ₽ — журнальный столик",
+  "description": "Обещание рабочего стола и быстрого интернета не гарантирует, что получится провести созвон: гость за 11 400 ₽ получил журнальный столик, розетку за диваном и Wi‑Fi около 8 Мбит. До перевода проверьте стол, связь из точки работы и список закрывающих документов со сроком.",
+  "datePublished": "2026-09-10",
+  "dateModified": "2026-09-10",
+  "inLanguage": "ru-RU",
+  "author": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    },
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  }
+}
