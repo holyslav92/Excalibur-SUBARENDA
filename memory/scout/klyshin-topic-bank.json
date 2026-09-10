@@ -3,7 +3,7 @@
   "source_channel": "https://t.me/klyshin_A",
   "source_label": "Алексей Клышин — angle only (ритм delivery, не копировать сделки)",
   "tenant": "Добрый дом — посуточная аренда / субаренда Тюмень",
-  "updated_at": "2026-09-06",
+  "updated_at": "2026-09-10",
   "timezone": "Asia/Yekaterinburg",
   "algorithm": "klyshin_hook → wordstat_probe → rework_for_demand → final_P0_or_skip_after_rework",
   "angle_rotation": {
@@ -91,7 +91,12 @@
       "wordstat_probes": ["командировка тюмень квартира", "аренда квартиры посуточно", "квартира посуточно тюмень"],
       "dzen_pattern_prefer": [2, 3],
       "tyumen_localize": true,
-      "status": "queue_active"
+      "status": "used",
+      "last_seen": "2026-09-10",
+      "queue_slot": "2026-09-10 B15 scout",
+      "final_p0": {"phrase": "квартиры посуточно тюмень", "volume_tyumen": 5020, "volume_ru": 10694},
+      "wordstat_rework_log": "probe «командировка тюмень квартира» empty → «командировка тюмень» 45 → «квартиры посуточно командировка» 85 (225 only) → «аренда квартир посуточно тюмень» 179 → «снять квартиру посуточно в тюмени» 1621 → final P0 «квартиры посуточно тюмень» 5020/10694 | supporting: справка о проживании 160, отели тюмень 7182 (contrast)",
+      "used_in_articles": ["B15"]
     },
     {
       "id": "kitchen_vs_hotel_cafes",
