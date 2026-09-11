@@ -1,0 +1,179 @@
+{
+  "topic_id": "B17",
+  "slug": "zalog-5-000-obeschali-vernut-utrom",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": [
+        "inline_4",
+        "inline_5",
+        "inline_6",
+        "inline_7"
+      ],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "Обещали утром — после уборки",
+  "cover_hook_highlight": "утром",
+  "cover_headline_line1": "Залог 5 000 ₽",
+  "cover_headline_line2": "обещали вернуть утром",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Grsai draw API 2K — 2 canvases × 4 panels. Logo factory paste cover + inline_1/3/7.",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "снять квартиру посуточно в тюмени",
+    "залог посуточно тюмень"
+  ],
+  "logo_paste_inline_slots": [
+    "inline_1",
+    "inline_3",
+    "inline_7"
+  ],
+  "cover_motifs": {
+    "composition": "гость у двери с чемоданом, телефон, хук слева, tr pad",
+    "location": "осень Тюмень 2026, золотые листья, без снега",
+    "meme": "Roll Safe sticker cover only",
+    "prop_set": "телефон 5000₽ ключница чемодан",
+    "sticker_set": "посуточно тюмень залог",
+    "joke": "10:00 на календаре vs «после уборки» в чате"
+  },
+  "cover_emotion": "спокойное раздражение, деньги без статуса",
+  "cover_scene": "Гость у двери с чемоданом, телефон «после уборки», хук «Обещали утром — после уборки», пустой top-right pad.",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "scene_hint": "Гость у двери с чемоданом, телефон «после уборки», хук «Обещали утром — после уборки», пустой top-right pad.",
+      "alt": "Гость у двери с чемоданом, сообщение о залоге после уборки.",
+      "meme_caption_ru": "",
+      "role": "cover_editorial_hero",
+      "sticky": "Срок назвали — и забыли"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "scene_hint": "Инфографика: 5 000 ₽, до заселения, «вернём утром». Пустой top-right.",
+      "alt": "Инфографика о залоге 5 000 ₽ до заселения и обещании вернуть утром.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Где обещание ломается",
+      "visual_type": "comparison_table_ui",
+      "labels": [
+        "5 000 рублей",
+        "до заселения",
+        "вернём утром"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "scene_hint": "Прихожая: выезд 12:00, ключи в боксе, посуда убрана, мусор вынесен.",
+      "alt": "Чистая квартира после выезда: ключи в кейбоксе, убранная посуда.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Чистая сдача без претензий",
+      "visual_type": "workflow_diagram",
+      "labels": [
+        "выезд в полдень",
+        "ключи в боксе",
+        "посуда убрана",
+        "мусор вынесен"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "scene_hint": "Чек-лист: фото в чат, комнаты проверены, доказательства. Пустой top-right.",
+      "alt": "Чек-лист фото квартиры в чате как доказательство чистой сдачи.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Фото в переписке",
+      "visual_type": "checklist_board",
+      "labels": [
+        "сняли квартиру",
+        "фото в чат",
+        "комнаты проверены",
+        "доказательства на месте"
+      ]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "scene_hint": "Телефон: «после уборки», календарь без даты/часа, сумма не указана.",
+      "alt": "Сообщение «после уборки» без даты, часа и суммы возврата залога.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Неопределённое «после уборки»",
+      "visual_type": "process_flow",
+      "labels": [
+        "после уборки",
+        "день не назван",
+        "час не назван",
+        "сумма не указана"
+      ]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "scene_hint": "Такси с чемоданами: деньги замерли, поезд не ждёт, претензий нет.",
+      "alt": "Гость в такси на вокзал, пока залог 5 000 ₽ завис без статуса.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Деньги зависли в поездке",
+      "visual_type": "tool_screenshot",
+      "labels": [
+        "деньги замерли",
+        "такси уже ждёт",
+        "поезд не ждёт",
+        "претензий не назвали"
+      ]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "scene_hint": "Карточка: срок, способ, условие, полная сумма — до залога.",
+      "alt": "Четыре вопроса, которые стоит задать до перевода залога.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Что нужно проговорить до залога",
+      "visual_type": "labeled_checklist",
+      "labels": [
+        "срок возврата",
+        "способ перевода",
+        "условие возврата",
+        "полная сумма"
+      ]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "scene_hint": "Инфографика: сначала срок, потом перевод, фото и расчёт. Пустой top-right.",
+      "alt": "Порядок действий: сначала срок возврата залога, потом перевод при чистой сдаче.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "infographic_card",
+      "labels": [
+        "сначала срок",
+        "потом перевод",
+        "чистая квартира",
+        "фото и расчёт"
+      ]
+    }
+  },
+  "cover_keys_ru": [],
+  "no_host_face": true,
+  "skip_identity_i2i": true
+}

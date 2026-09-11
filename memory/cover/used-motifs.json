@@ -141,6 +141,19 @@
         "sticker_set": "вернуть предоплату посуточно отмена рейса тюмень",
         "joke": "calendar day four circled while host still says checking refund"
       }
+    },
+    {
+      "date": "2026-09-11",
+      "topic_id": "B17",
+      "slug": "",
+      "motifs": {
+        "composition": "гость у двери с чемоданом, телефон, хук слева, tr pad",
+        "location": "осень тюмень 2026, золотые листья, без снега",
+        "meme": "roll safe sticker cover only",
+        "prop_set": "телефон 5000₽ ключница чемодан",
+        "sticker_set": "посуточно тюмень залог",
+        "joke": "10:00 на календаре vs «после уборки» в чате"
+      }
     }
   ]
 }
