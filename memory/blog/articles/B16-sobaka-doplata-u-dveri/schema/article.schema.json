@@ -1,0 +1,25 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "https://добрыйдом-72.рф/blog/napisali-mozhno-s-sobakoj-u-dveri-doplatili-3-000/#blogposting",
+  "url": "https://добрыйдом-72.рф/blog/napisali-mozhno-s-sobakoj-u-dveri-doplatili-3-000/",
+  "headline": "Написали «можно с собакой». У двери — доплата 3 000 ₽",
+  "description": "Что делать, если в объявлении указано «можно с собакой», а при заселении требуют доплату 3 000 ₽: как заранее уточнить условия и зафиксировать договорённости.",
+  "datePublished": "2026-09-11",
+  "dateModified": "2026-09-11",
+  "inLanguage": "ru-RU",
+  "author": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "identifier": "dobry-dom"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "https://добрыйдом-72.рф/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://добрыйдом-72.рф/blog/napisali-mozhno-s-sobakoj-u-dveri-doplatili-3-000/"
+  }
+}

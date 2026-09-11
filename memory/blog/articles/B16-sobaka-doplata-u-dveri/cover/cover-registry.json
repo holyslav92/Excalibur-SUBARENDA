@@ -1,0 +1,50 @@
+{
+  "topic_id": "B16",
+  "slug": "napisali-mozhno-s-sobakoj-u-dveri-doplatili-3-000",
+  "cover_family": "brand_collage",
+  "style_preset": "the_rieltor_twilight_gold",
+  "pipeline": "slice4_grid_1x_image_api",
+  "file": "cover/cover.png",
+  "alt": "Гость с собакой у двери квартиры вечером в Тюмени, на табличке надпись про доплату за питомца",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-slice4.png",
+  "generated_at": "2026-09-11T06:27:13+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Гость с собакой у двери квартиры вечером в Тюмени, на табличке надпись про доплату за питомца",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Сравнение: в чате «да, можно» и у двери доплата за собаку",
+      "h2_anchor": "Что было в чате и что оказалось у двери",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Схема: оплата, вечерний заезд и доплата у двери",
+      "h2_anchor": "Почему именно вечером и именно у двери",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Чеклист правил для гостей с собакой до оплаты",
+      "h2_anchor": "Как мы в «Добрый дом» пишем про питомцев",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}
