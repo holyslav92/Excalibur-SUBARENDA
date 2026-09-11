@@ -1,0 +1,9 @@
+{
+  "gate": "writer-ready",
+  "status": "BLOCK",
+  "errors": [
+    "missing writer-ready.json",
+    "missing article.html (Writer final)"
+  ],
+  "choice_file": null
+}
