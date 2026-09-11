@@ -1,0 +1,27 @@
+{
+  "slug": "otmenili-rejs-predoplatu-vernut",
+  "topic_id": "B16",
+  "permalink": "{{SITE_BASE}}/blog/otmenili-rejs-predoplatu-vernut/",
+  "publish_method": "ftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B16-otmenili-rejs-predoplatu-vernut/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1292971,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4668 slug=otmenili-rejs-predoplatu-vernut\nOK categories=101,106\nOK dzen_yzen_meta=1\nOK featured_image=4669\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4670 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/otmenili-rejs-predoplatu-vernut-inline-01.png\nOK inline_alt=4670\nOK inline_caption=4670\nOK inline_description=4670\nOK inline_image_upload=4671 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/otmenili-rejs-predoplatu-vernut-inline-02.png\nOK inline_alt=4671\nOK inline_caption=4671\nOK inline_description=4671\nOK inline_image_upload=4672 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/otmenili-rejs-predoplatu-vernut-inline-03.png\nOK inline_alt=4672\nOK inline_caption=4672\nOK inline_description=4672\nOK inline_image_upload=4673 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/09/otmenili-rejs-predoplatu-vernut-inline-05.png\nOK inline_alt=4673\nOK inline_caption=4673\nOK inline_description=4673\nOK inline_image_upload=4674 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/09/otmenili-rejs-predoplatu-vernut-inline-07.png\nOK inline_alt=4674\nOK inline_caption=4674\nOK inline_description=4674\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/otmenili-rejs-predoplatu-vernut/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 5,
+    "expected_inline": 5,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/otmenili-rejs-predoplatu-vernut/",
+    "errors": []
+  }
+}

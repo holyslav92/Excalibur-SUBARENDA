@@ -3,6 +3,10 @@
   "h1": "Рейс отменили. 4 200 ₽ обещали вернуть за три дня — срок вышел",
   "slug": "otmenili-rejs-predoplatu-vernut",
   "topic_id": "B16",
+  "wp_category_slugs": [
+    "posutochnaya-arenda",
+    "sovety-gostyam"
+  ],
   "author_id": "dobry-dom",
   "article_mode": "B",
   "description": "Рейс отменили. 4 200 ₽ обещали вернуть за три дня — срок вышел",
@@ -20,6 +24,8 @@
     "side_stickers": "skip"
   },
   "date": "2026-09-11",
+  "status": "published",
+  "wp_post_id": 4668,
   "pipeline_canon": "human-first-v3",
   "editorial_swarm": false
 }

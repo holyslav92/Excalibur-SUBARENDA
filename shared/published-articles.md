@@ -20,3 +20,4 @@ Excalibur-2-Cloud — не копировать URL tymenrieltor.ru.
 | 2026-09-07 | B13 | kod-srabotal-klyuchnica-pusta-posutochno-tyumen | /blog/kod-srabotal-klyuchnica-pusta-posutochno-tyumen/ | published |
 | 2026-09-08 | B14 | napisali-tihij-dom-v-23-40-sosedi-vklyuchili-muzyku | /blog/napisali-tihij-dom-v-23-40-sosedi-vklyuchili-muzyku/ | published |
 | 2026-09-10 | B15 | pozvonili-v-10-00-v-22-00-wifi-ne-tyanet-sozvon | /blog/pozvonili-v-10-00-v-22-00-wifi-ne-tyanet-sozvon/ | published |
+| 2026-09-11 | B16 | otmenili-rejs-predoplatu-vernut | /blog/otmenili-rejs-predoplatu-vernut/ | published |

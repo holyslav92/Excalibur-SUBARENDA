@@ -1,0 +1,39 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/otmenili-rejs-predoplatu-vernut/#article",
+  "url": "{{SITE_BASE}}/blog/otmenili-rejs-predoplatu-vernut/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/otmenili-rejs-predoplatu-vernut/"
+  },
+  "headline": "Рейс отменили. 4 200 ₽ обещали вернуть за три дня — срок вышел",
+  "description": "После отменённого рейса гость ждёт возврат предоплаты 4 200 ₽: обещали перевести за три дня, но на четвёртый день денег нет. До перевода стоит уточнить календарную дату и способ возврата при отмене до заселения.",
+  "datePublished": "2026-09-11",
+  "dateModified": "2026-09-11",
+  "inLanguage": "ru-RU",
+  "author": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ],
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    }
+  }
+}

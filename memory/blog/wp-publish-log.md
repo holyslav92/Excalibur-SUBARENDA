@@ -1,5 +1,22 @@
 # WP publish log
 
+## B16 — 2026-09-11
+
+- **topic_id:** B16
+- **slug:** otmenili-rejs-predoplatu-vernut
+- **title:** Рейс отменили. 4 200 ₽ обещали вернуть за три дня — срок вышел
+- **post_id:** 4668
+- **permalink:** /blog/otmenili-rejs-predoplatu-vernut/
+- **categories:** posutochnaya-arenda (101), sovety-gostyam (106)
+- **featured_image:** 4669
+- **inline_images:** 4670–4674 (5× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS
+- **dzen preview:** cover-dzen-v1-1024x576.png (HTTP 200); feed enclosure → …-cover-dzen-v1.png
+- **interlink outbound:** 4 live /blog/ siblings (crosslink-qa PASS)
+- **interlink inbound:** B01 (3745), B13 (4535) via SFTP:22
+- **publish_method:** ftp (Timeweb PASV); post-publish interlink via SFTP:22
+
 ## B15 — 2026-09-10
 
 - **topic_id:** B15
