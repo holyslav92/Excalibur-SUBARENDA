@@ -750,3 +750,48 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+---
+
+## LESSON-20260911-0652-B16-dog-breed-fee-at-door
+status: proposed
+topic_id: B16
+category: utility
+confidence: medium
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP. Урок из publish-артефактов: article.html (§собака/вес/доплата), title-brief.json, scout handoff dog_breed_fee.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest BLOCKER (INC-20260903-0640).
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- SOL_TRUNCATED_OUTPUT (Derouter Terra вернул обрезанный ответ; article восстановлен из writer.html)
+
+### Keep
+- Угол `dog_breed_fee`: «можно с собакой» в чате → у двери доплата 3 000 ₽ за метиса ~18 кг при лимите «до 10 кг».
+- §1: 2 ночи × 4 200 ₽ = 8 400 ₽, цитата хоста, вечер у подъезда с поводком.
+- Двухтактный H1: «Написали «можно с собакой». У двери — доплата 3 000 ₽».
+- Klyshin: «Нет. Так не заселяем.» + «Не на словах. Не у двери. А в чате до перевода.» + вопрос-отмычка про вес/доплату → TG/MAX.
+- Interlink spine: B04 доплата за третьего, B10 «всё включено», B08 предоплата+тишина, B06 залог не вернули.
+- Wordstat P0 «снять квартиру посуточно с собакой» 427 (RU 225), локально 7; spine «квартиры посуточно тюмень» 5020.
+
+### Change
+- В pet-case §1 называть лимит веса и доплату в ₽, которые появились у двери, и итоговую сумму за N ночей до identity-line.
+- Scout: при hook dog_breed_fee логировать original hook + final P0 + локальный объём Tyumen.
+
+### Never again
+- «Можно с животными» без цифр веса/доплаты/залога до перевода.
+- How-to «как снять с собакой»; legal-гайд по породам.
+- Дубль stamp «Нет. Так не заселяем.» (case-delivery-gate BLOCK).
+
+### Proposed apply
+- Scout: pet hooks — требовать в handoff вес-лимит + ₽ доплата + spine Tyumen.
+- Sol recovery: при truncated Terra output — structural restore from writer.html (не Composer rewrite).
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
