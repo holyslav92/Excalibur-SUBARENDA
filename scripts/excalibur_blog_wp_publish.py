@@ -27,6 +27,7 @@ from excalibur_blog_site_base import (
 from excalibur_repo_paths import repo_relative
 from image_validate import sniff_image_format, validate_image_file
 from excalibur_blog_live_page_gate import inspect as inspect_live_page
+from excalibur_blog_cover_quad_split import run_inject_only
 from excalibur_blog_quad_slots import active_inline_keys, inline_count_from_tenant
 from excalibur_blog_pipeline_canon import (
     _plain,
@@ -1225,6 +1226,24 @@ def check_publish_prerequisites(
     if not cover_path.is_file():
         blockers.append("cover/cover.png missing")
     article_html_path = article_dir / "article.html"
+    tenant_path = project_root() / "shared/tenant-config.json"
+    try:
+        tenant = json.loads(tenant_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        tenant = {}
+    inline_count = inline_count_from_tenant(tenant)
+    required_inline_slots = active_inline_keys(inline_count)
+    manifest_path = article_dir / "cover" / "quad-manifest.json"
+    if manifest_path.is_file() and article_html_path.is_file():
+        inject_rc, _ = run_inject_only(
+            article_dir,
+            required_slot_keys=required_inline_slots,
+        )
+        if inject_rc != 0:
+            blockers.append(
+                "cover quad-split --inject-only failed (phantom h2_anchor or missing inline figures; "
+                "see cover/quad-split-report.json)"
+            )
     article_html = (
         article_html_path.read_text(encoding="utf-8")
         if article_html_path.is_file()
@@ -1232,13 +1251,7 @@ def check_publish_prerequisites(
     )
     if not article_html or len(article_html) < 200:
         blockers.append("article.html missing or too small")
-    tenant_path = project_root() / "shared/tenant-config.json"
-    try:
-        tenant = json.loads(tenant_path.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
-        tenant = {}
-    inline_count = inline_count_from_tenant(tenant)
-    for slot in active_inline_keys(inline_count):
+    for slot in required_inline_slots:
         if article_html.count(f'data-slot="{slot}"') != 1:
             blockers.append(f"article.html requires exactly one {slot} slot")
 

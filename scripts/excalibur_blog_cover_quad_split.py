@@ -487,6 +487,65 @@ def nearest_preceding_h2(html: str, pos: int) -> str | None:
     return _normalize_h2_text(matches[-1].group(1))
 
 
+def _article_h2_texts(html: str) -> list[str]:
+    """Plain-text H2 headings in document order."""
+    return [
+        re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", raw or "")).strip()
+        for raw in _H2_RE.findall(html)
+    ]
+
+
+def _slot_index(slot_key: str) -> int:
+    try:
+        return int(slot_key.split("_", 1)[1])
+    except (IndexError, ValueError):
+        return 0
+
+
+def _positional_h2_anchor(slot_key: str, h2_texts: list[str]) -> tuple[str, int] | None:
+    """Map orphan inline slot to real article H2 + paragraph offset (INC B16).
+
+    Cover-scene often invents ``h2_anchor`` labels that Sol never writes. When the
+    manifest anchor is missing, place up to two slots per H2 section: odd slots right
+    after the H2, even slots after the first paragraph in that section.
+    """
+    if not h2_texts:
+        return None
+    slot_num = _slot_index(slot_key)
+    if slot_num <= 0:
+        return None
+    h2_idx = min((slot_num - 1) // 2, len(h2_texts) - 1)
+    para_offset = 0 if slot_num % 2 == 1 else 1
+    return h2_texts[h2_idx], para_offset
+
+
+def _inject_after_h2_paragraph(
+    html: str,
+    h2_text: str,
+    paragraph_offset: int,
+    figure: str,
+) -> tuple[str, bool]:
+    """Insert ``figure`` after ``paragraph_offset``-th ``<p>`` in the H2 section."""
+    h2_pattern = re.compile(
+        rf"(<h2[^>]*>\s*{re.escape(h2_text)}\s*</h2>)",
+        re.I | re.S,
+    )
+    h2_match = h2_pattern.search(html)
+    if not h2_match:
+        return html, False
+    section_start = h2_match.end()
+    next_h2 = _H2_RE.search(html, section_start)
+    section_end = next_h2.start() if next_h2 else len(html)
+    section = html[section_start:section_end]
+    para_iter = list(re.finditer(r"<p\b[^>]*>[\s\S]*?</p>", section, re.I))
+    if not para_iter:
+        insert_at = section_start
+    else:
+        idx = min(paragraph_offset, len(para_iter) - 1)
+        insert_at = section_start + para_iter[idx].end()
+    return html[:insert_at] + figure + html[insert_at:], True
+
+
 def _figure_src_alt(figure_html: str) -> tuple[str, str]:
     src_m = re.search(r'<img\b[^>]*\bsrc="([^"]*)"', figure_html, re.I)
     alt_m = re.search(r'<img\b[^>]*\balt="([^"]*)"', figure_html, re.I)
@@ -517,6 +576,27 @@ def _remove_slot_figures(html: str, slot_key: str) -> tuple[str, int, list[str]]
         last = match.end()
     parts.append(html[last:])
     return "".join(parts), count, preceding
+
+
+def _try_positional_inject(
+    html: str,
+    slot_key: str,
+    figure: str,
+    manifest_h2: str,
+) -> tuple[str, str | None]:
+    """Insert figure by article H2 order when manifest ``h2_anchor`` is phantom."""
+    h2_texts = _article_h2_texts(html)
+    positional = _positional_h2_anchor(slot_key, h2_texts)
+    if not positional:
+        return html, None
+    real_h2, para_offset = positional
+    html, ok = _inject_after_h2_paragraph(html, real_h2, para_offset, figure)
+    if not ok:
+        return html, None
+    return html, (
+        f"injected {slot_key} positional after H2 — {real_h2} "
+        f"(manifest anchor missing: {manifest_h2}; para_offset={para_offset})"
+    )
 
 
 def inject_figures(
@@ -554,31 +634,50 @@ def inject_figures(
         pattern = re.compile(rf"(<h2[^>]*>\s*{re.escape(h2)}\s*</h2>)", re.I | re.S)
         existing = list(_slot_figure_pattern(slot_key).finditer(html))
 
+        positional = _positional_h2_anchor(slot_key, _article_h2_texts(html))
+        positional_h2_norm = (
+            _normalize_h2_text(positional[0]) if positional else None
+        )
+
         if existing:
             all_ok = True
             for match in existing:
                 prev_h2 = nearest_preceding_h2(html, match.start())
                 fig_src, fig_alt = _figure_src_alt(match.group(0))
-                if prev_h2 != target_h2_norm or fig_src != src or fig_alt != alt:
+                h2_ok = prev_h2 == target_h2_norm or (
+                    positional_h2_norm is not None and prev_h2 == positional_h2_norm
+                )
+                if not h2_ok or fig_src != src or fig_alt != alt:
                     all_ok = False
                     break
             if all_ok and len(existing) == 1:
-                changes.append(f"skip {slot_key}: already correct under H2 — {h2}")
+                anchor_note = h2 if positional_h2_norm != target_h2_norm else h2
+                changes.append(f"skip {slot_key}: already correct under H2 — {anchor_note}")
                 continue
             html, removed, prev_list = _remove_slot_figures(html, slot_key)
             prev_note = ", ".join(prev_list) if prev_list else "(no H2)"
-            if not pattern.search(html):
+            if pattern.search(html):
+                html = pattern.sub(r"\1" + figure, html, count=1)
                 changes.append(
-                    f"removed {slot_key} from wrong H2 [{prev_note}] but target H2 not found — {h2}"
+                    f"moved {slot_key} → H2 — {h2} (was under [{prev_note}]; removed={removed})"
                 )
                 continue
-            html = pattern.sub(r"\1" + figure, html, count=1)
+            html, pos_msg = _try_positional_inject(html, slot_key, figure, h2)
+            if pos_msg:
+                changes.append(
+                    f"moved {slot_key} positional (was under [{prev_note}]; removed={removed}); {pos_msg}"
+                )
+                continue
             changes.append(
-                f"moved {slot_key} → H2 — {h2} (was under [{prev_note}]; removed={removed})"
+                f"removed {slot_key} from wrong H2 [{prev_note}] but target H2 not found — {h2}"
             )
             continue
 
         if not pattern.search(html):
+            html, pos_msg = _try_positional_inject(html, slot_key, figure, h2)
+            if pos_msg:
+                changes.append(pos_msg)
+                continue
             changes.append(f"skip {slot_key}: H2 not found — {h2}")
             continue
         html = pattern.sub(r"\1" + figure, html, count=1)
@@ -587,6 +686,104 @@ def inject_figures(
     if not dry_run and any(not c.startswith("skip ") for c in changes):
         article_html.write_text(html, encoding="utf-8", newline="\n")
     return changes
+
+
+def load_registry_outputs(cover_dir: Path) -> dict[str, Any]:
+    """Build inject map from cover-registry.json (post-Sol re-inject)."""
+    registry_path = cover_dir / "cover-registry.json"
+    merged: dict[str, Any] = {}
+    if not registry_path.is_file():
+        return merged
+    registry = load_json(registry_path)
+    for asset in registry.get("assets") or []:
+        slot = asset.get("slot")
+        if not slot:
+            continue
+        merged[str(slot)] = {
+            "file": asset.get("file"),
+            "alt": asset.get("alt") or "",
+            "h2_anchor": asset.get("h2_anchor"),
+        }
+    return merged
+
+
+def finalize_inject_report(
+    article_path: Path,
+    inject_log: list[str],
+    inline_keys: tuple[str, ...],
+    merged_outputs: dict[str, Any],
+    *,
+    required_slot_keys: tuple[str, ...] | None = None,
+) -> dict[str, Any]:
+    """Return quad-split-report inject section; BLOCK on unresolved skips / bad counts."""
+    required = required_slot_keys or inline_keys
+    inject_errors = [
+        item
+        for item in inject_log
+        if "H2 not found" in item or "article.html not found" in item
+    ]
+    if article_path.is_file():
+        injected_html = article_path.read_text(encoding="utf-8")
+        for slot_key in required:
+            if slot_key not in merged_outputs:
+                continue
+            count = len(list(_slot_figure_pattern(slot_key).finditer(injected_html)))
+            if count != 1:
+                inject_errors.append(f"{slot_key} figure count after inject={count} (need exactly 1)")
+    status = "BLOCK" if inject_errors else "PASS"
+    report: dict[str, Any] = {
+        "agent": "excalibur-blog-cover-quad-split",
+        "status": status,
+        "html_inject": inject_log,
+    }
+    if inject_errors:
+        report["errors"] = inject_errors
+    return report
+
+
+def run_inject_only(
+    article_dir: Path,
+    *,
+    dry_run: bool = False,
+    required_slot_keys: tuple[str, ...] | None = None,
+) -> tuple[int, list[str]]:
+    """Re-inject inline figures after Sol overwrote article.html (INC B16)."""
+    cover_dir = article_dir / "cover"
+    manifest_path = cover_dir / "quad-manifest.json"
+    if not manifest_path.is_file():
+        print("❌ INLINE INJECT BLOCKER: missing cover/quad-manifest.json", file=sys.stderr)
+        return 1, []
+    manifest = load_json(manifest_path)
+    inline_count = inline_count_from_manifest(manifest)
+    inline_keys = active_inline_keys(inline_count)
+    keys_to_inject = required_slot_keys or inline_keys
+    merged_outputs = load_registry_outputs(cover_dir)
+    article_path = article_dir / "article.html"
+    inject_log = inject_figures(article_path, merged_outputs, keys_to_inject, dry_run=dry_run)
+    report = finalize_inject_report(
+        article_path,
+        inject_log,
+        keys_to_inject,
+        merged_outputs,
+        required_slot_keys=required_slot_keys or keys_to_inject,
+    )
+    report_path = cover_dir / "quad-split-report.json"
+    existing: dict[str, Any] = {}
+    if report_path.is_file():
+        try:
+            existing = load_json(report_path)
+        except json.JSONDecodeError:
+            existing = {}
+    existing.update(report)
+    if not dry_run:
+        save_json(report_path, existing)
+    if report["status"] != "PASS":
+        for error in report.get("errors") or []:
+            print(f"❌ INLINE INJECT BLOCKER: {error}", file=sys.stderr)
+        return 1, inject_log
+    for line in inject_log:
+        print(line)
+    return 0, inject_log
 
 
 def create_demo_canvas(path: Path, style_label: str) -> None:
@@ -633,6 +830,11 @@ def main() -> int:
     )
     ap.add_argument("--inject-html", action="store_true", help="Insert <figure> after matched H2 in article.html")
     ap.add_argument(
+        "--inject-only",
+        action="store_true",
+        help="Re-inject inline figures from cover-registry after Sol (no canvas split)",
+    )
+    ap.add_argument(
         "--split-mode",
         choices=list(SPLIT_MODES),
         default="auto",
@@ -649,13 +851,18 @@ def main() -> int:
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
 
-    if not require_pillow():
-        return 2
-
     root = project_root()
     article_dir = Path(args.article_dir)
     if not article_dir.is_absolute():
         article_dir = root / article_dir
+
+    if args.inject_only:
+        rc, _ = run_inject_only(article_dir, dry_run=args.dry_run)
+        return rc
+
+    if not require_pillow():
+        return 2
+
     cover_dir = article_dir / "cover"
     cover_dir.mkdir(parents=True, exist_ok=True)
 
@@ -788,25 +995,13 @@ def main() -> int:
             inline_keys,
             dry_run=False,
         )
-        report["html_inject"] = inject_log
-        inject_errors = [
-            item
-            for item in inject_log
-            if "H2 not found" in item or "article.html not found" in item
-        ]
-        if article_path.is_file():
-            injected_html = article_path.read_text(encoding="utf-8")
-            for slot_key in inline_keys:
-                if slot_key not in merged_outputs:
-                    continue
-                count = len(list(_slot_figure_pattern(slot_key).finditer(injected_html)))
-                if count != 1:
-                    inject_errors.append(
-                        f"{slot_key} figure count after inject={count} (need exactly 1)"
-                    )
-        if inject_errors:
-            report["status"] = "BLOCK"
-            report["errors"] = inject_errors
+        inject_report = finalize_inject_report(
+            article_path,
+            inject_log,
+            inline_keys,
+            merged_outputs,
+        )
+        report.update(inject_report)
     save_json(report_path, report)
 
     if report["status"] != "PASS":

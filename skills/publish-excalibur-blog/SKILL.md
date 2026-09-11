@@ -118,6 +118,19 @@ live-page gate после upload заблокирует generic FAQ/quiz/sticker
 
 ### 1. Preflight publish
 
+**Post-Sol inline inject (INC B16):** Cover `--inject-html` runs до Sol; Sol перезаписывает
+`article.html` без `<figure>`. Перед publish (или в `wp_publish` preflight) обязательно:
+
+```bash
+python3 scripts/excalibur_blog_cover_quad_split.py \
+  --article-dir memory/blog/articles/<topic_id>-<slug> \
+  --inject-only
+```
+
+Скрипт матчит manifest `h2_anchor` или **positional fallback** (2 слота на H2: odd сразу
+после H2, even после 1-го `<p>` в секции). BLOCK если tenant-required слоты (обычно
+`inline_1..3`) не получили ровно одну фигуру — см. `cover/quad-split-report.json`.
+
 ```bash
 python3 scripts/excalibur_blog_link_verify.py \
   memory/blog/articles/<topic_id>-<slug>/article.html \
