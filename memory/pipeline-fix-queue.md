@@ -955,3 +955,102 @@ category: env
 status: needs-human
 reason: env-only blocker; duplicate of INC-20260903-0640
 needed_decision_or_secret: YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets
+
+## INC-20260911-1038 — Cover-QA drawn logo on no-logo inlines (B16)
+
+status: fixed
+run_date: 2026-09-11
+role: excalibur-blog-cover-qa
+topic_id: B16
+article_dir: memory/blog/articles/B16-otmenili-rejs-predoplatu-vernut
+severity: low
+category: script
+
+### What went wrong
+
+- Cover-QA `forbid_ai_drawn_logo_cover` FAIL on inline-02/05 (no-logo slots) and white plate on cover TR pad before regen.
+
+### How the agent recovered this run
+
+- `excalibur_blog_cover_inline_pad_clear.py` on no-logo panels; replaced inline-02; re-stamped `cover_qa.json` PASS (commit 097b05b).
+
+### Durable fix needed before next run
+
+- Same as INC-20260908-0733 (B14): pad-clear + NO-logo prompts on non-logo slots.
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_cover_inline_pad_clear.py`
+- `skills/cover-qa-excalibur-blog/SKILL.md`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-09-11
+fix_summary:
+- Duplicate of B14 pad-clear fix (INC-20260908-0733); no new code required.
+files_changed:
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- B16 `cover/cover_qa.json` status PASS
+commit: pending
+
+## INC-20260911-1040 — post-Sol missing inline figures / phantom h2_anchor (B16 publish)
+
+status: fixed
+run_date: 2026-09-11
+role: excalibur-blog-publish
+topic_id: B16
+article_dir: memory/blog/articles/B16-otmenili-rejs-predoplatu-vernut
+severity: medium
+category: handoff
+
+### What went wrong
+
+- Cover `--inject-html` ran before Sol; Sol overwrote `article.html` without `<figure>` tags.
+- Manifest `h2_anchor` values (`Вежливый ответ без даты`, etc.) did not match Sol H2s → quad-split skipped inline_2/4/6.
+- Publish agent manually inserted inline_1/2/3/5/7 figures before upload (post 4668).
+
+### How the agent recovered this run
+
+- Manual `<figure data-slot="inline_*">` injection in `article.html` during publish commit fae1df9; live-page PASS.
+
+### Durable fix needed before next run
+
+- Post-Sol `cover_quad_split.py --inject-only` with positional H2 fallback when manifest anchor missing.
+- `wp_publish` preflight auto-runs inject-only before inline slot gate.
+- Publish skill documents post-Sol inject step.
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_cover_quad_split.py`
+- `scripts/excalibur_blog_wp_publish.py`
+- `skills/publish-excalibur-blog/SKILL.md`
+- `tests/test_cover_quad_inject.py`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-09-11
+fix_summary:
+- `_positional_h2_anchor()` + `_inject_after_h2_paragraph()` fallback when manifest H2 missing (INC B16).
+- `--inject-only` mode re-injects from `cover-registry.json` after Sol.
+- `wp_publish.check_publish_prerequisites` auto-runs inject-only; tenant-required slots gated.
+- Publish skill runbook updated.
+files_changed:
+- `scripts/excalibur_blog_cover_quad_split.py`
+- `scripts/excalibur_blog_wp_publish.py`
+- `skills/publish-excalibur-blog/SKILL.md`
+- `.cursor/skills/publish-excalibur-blog/SKILL.md`
+- `tests/test_cover_quad_inject.py`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_cover_quad_split.py scripts/excalibur_blog_wp_publish.py`
+- `python3 -m unittest tests.test_cover_quad_inject -v`
+commit: pending
