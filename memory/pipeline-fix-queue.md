@@ -1054,3 +1054,31 @@ checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_cover_quad_split.py scripts/excalibur_blog_wp_publish.py`
 - `python3 -m unittest tests.test_cover_quad_inject -v`
 commit: pending
+
+## INC-20260911-1046 — Metrika credentials missing (Content-learner B16)
+
+status: needs-human
+run_date: 2026-09-11
+role: excalibur-blog-content-learner
+topic_id: B16
+article_dir: memory/blog/articles/B16-otmenili-rejs-predoplatu-vernut
+severity: medium
+category: env
+
+### What went wrong
+
+- `excalibur_blog_metrika_fetch.py --days 30 --ingest` → METRIKA CREDENTIALS BLOCKER (same root cause as INC-20260903-0640).
+
+### How the agent recovered this run
+
+- evidence_gate SKIP (no content-evidence-report.json); recorded optional/low-confidence lessons in `memory/content-lessons.md`; no causal Metrika claims.
+
+### Durable fix needed before next run
+
+- Set YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets for tenant.
+
+### Fixer resolution
+
+status: needs-human
+reason: env-only blocker; duplicate of INC-20260903-0640
+needed_decision_or_secret: YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets

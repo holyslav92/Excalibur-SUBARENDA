@@ -750,3 +750,130 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+---
+
+## LESSON-20260911-1046-B16-cancel-prepay-refund-deadline
+status: proposed
+topic_id: B16
+category: utility
+confidence: medium
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP. Урок из publish-артефактов: article.html (§отмена рейса/4200₽/четвёртый день), scout handoff cancel_prepay, title-brief.json, description-brief.json.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest BLOCKER (INC-20260903-0640, INC-20260911-1046).
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Угол `cancel_prepay`: отмена поездки **до заселения**, хозяин **отвечает**, но «вернём после проверки за три дня» без даты отправки — не дублировать B08 (тишина в чате).
+- §1: цитата «Вернём после проверки, в течение трёх дней», **4 200 ₽** за две ночи, отменённый рейс за день до заезда; четвёртый день — «ещё проверяем».
+- Разведение «три дня» vs **календарный день отправки** и **канал возврата** (площадка / тот же перевод); банковское зачисление ≠ отправка.
+- Utility: маршруты Avito / Суточно.ру (сроки зачисления) vs прямой перевод хозяину — без юридического гайда.
+- Вопрос-отмычка: «Если поездка сорвётся до заселения, в какой день и каким способом вы вернёте предоплату?»
+- Klyshin «Нет. Так не заселяем.» → «так не **берём** предоплату»; «Сначала проверка. Потом деньги и ключи.»
+- Interlink spine: B08 тишина после предоплаты, B04 доплата у двери, B02 залог на выезде, B10 «всё включено» — одна красная линия «сумма названа, условия нет».
+- Wordstat P0 spine «квартиры посуточно тюмень» 4 929 (Tyumen); узкие «вернуть предоплату» 46 — честный rework на широкий spine + конфликтный sub-angle.
+- Description не дублирует H1: «после проверки» vs четвёртый день (description-brief PASS).
+
+### Change
+- В `cancel_prepay` кейсах в §1 сразу фиксировать **от какого дня** считаются «три дня» (отмена / сообщение / заезд) — не оставлять в теле.
+- Scout handoff: при weak refund phrases логировать rework chain (как B16 handoff) + anti-dup vs B08 silence.
+
+### Never again
+- Строить возврат-предоплаты кейс как юридическую консультацию или how-to «как вернуть через суд».
+- Смешивать B08 (хозяин молчит) и B16 (хозяин вежлив, но без даты).
+- Принимать «после проверки» или «в течение трёх дней» за согласованный срок без даты отправки и канала.
+- Финал «Наш вывод простой»; чеклист только после вывода.
+
+### Proposed apply
+- Scout: hook `cancel_prepay` → handoff lockpick (дата + способ возврата) + final P0 spine Tyumen + anti-dup B08.
+- Review only; Writer prompt не трогать автоматически.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260911-1046-B16-polite-vagueness-vs-silence
+status: proposed
+topic_id: B16
+category: voice
+confidence: low
+
+### Evidence
+- artifact: title-brief.json#angle
+  finding: angle «хозяин обещал вернуть 4 200 ₽ после проверки за три дня, на четвёртый день деньги не поступили»; H1 «Рейс отменили. 4 200 ₽ обещали вернуть за три дня — срок вышел»; opening-meta-gate PASS.
+- metrika_signal: none (credentials unavailable; causal CTR не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Cable pain-scene: внешнее событие (рейс отменили) + price anchor (4 200 ₽) + истёкший срок — без SEO-хвоста в H1.
+- Контраст «вежливый ответ как обезболивающее» vs B08 «тишина в чате» — mid-body явная ссылка на sibling.
+- Description rhythm klyshin_case_hook: «после проверки» звучит вежливо, пока четвёртый день (not_equal_title PASS).
+- Cover-text sticky «Дата и способ до оплаты» + wordstat spine на обложке.
+
+### Change
+- Для money-before-clarity hooks после B08: если хозяин **отвечает**, держать tension в **пустом параметре** (дата/канал), не в молчании.
+- Title: prefer **event + ₽ + deadline breach** over narrow «вернуть предоплату» SEO lead.
+
+### Never again
+- H1-спойлер со всеми платформенными сроками Avito/Суточно — оставлять в utility H2.
+- Description, дублирующий H1 про рейс и 4 200 ₽ (meta_ab B16 дублирует; description-brief корректен).
+
+### Proposed apply
+- Title/Description review: cancel_prepay — quoted vague promise + ₽ + expired deadline > refund-keyword H1.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260911-1046-B16-post-sol-inline-inject-pipeline
+status: proposed
+topic_id: B16
+category: other
+confidence: high
+
+### Evidence
+- artifact: memory/pipeline-fix-queue.md#INC-20260911-1040
+  finding: Cover `--inject-html` до Sol; Sol перезаписал article.html без `<figure>`; manifest `h2_anchor` не совпал с Sol H2 → quad-split пропустил inline_2/4/6; publish вручную вставил inline_1/2/3/5/7.
+- metrika_signal: none (pipeline incident; не поведенческий сигнал)
+
+### Named blockers
+- ASSUMED_BEHAVIOR
+
+### Keep
+- Publish live-page PASS post 4668; cover_qa PASS; 5 inline figures на live.
+
+### Change
+- После Sol всегда `--inject-only` из cover-registry (durable fix INC-20260911-1040: positional H2 fallback + wp_publish preflight).
+
+### Never again
+- Inject figures до Sol без post-Sol re-inject.
+- Phantom h2_anchor из cover-scene draft, не сверенные с финальными Sol H2.
+
+### Proposed apply
+- Publish skill runbook: post-Sol inject-only обязателен (уже в fixer resolution INC-20260911-1040).
+
+### Durable applied
+- scripts/excalibur_blog_cover_quad_split.py — positional H2 fallback + --inject-only
+- scripts/excalibur_blog_wp_publish.py — auto inject-only preflight
+- rollback: revert commits on cover_quad_split/wp_publish if inject breaks legacy articles
+
+### Resolution
+status: recorded
