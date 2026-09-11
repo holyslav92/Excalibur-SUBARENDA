@@ -1,0 +1,98 @@
+{
+  "status": "PASS",
+  "topic_id": "B16",
+  "slug": "otmenili-rejs-predoplatu-vernut",
+  "research_date": "2026-09-11",
+  "summary": "Research for cancel_prepay CASE: Tyumen guest cancelled trip before check-in after flight cancellation; 4 200 ₽ prepaid; host replied and promised refund in 3 days 'after verification'; day 4 no transfer. Differentiated from B08 (silence before keys). Fresh week: Klyshin Telegram Sep 9–10 posts on agreed vs actual deadlines; cancel_prepay hook validated 2026-09-11. Platform facts: Avito flexible/non-refundable cancellation types, up to 5 business days card credit; Sutochno 2–10 business days withdrawal. Wordstat P0 «квартиры посуточно тюмень» 4929 (55+11176), 10527 (225).",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Klyshin Telegram week of 2026-09-08 + cancel_prepay hook validated Scout 2026-09-11",
+    "source_type": "community",
+    "urls": [
+      "https://t.me/s/klyshin_A",
+      "https://irecommend.ru/content/pri-otmene-broni-snimayut-komissiyu-bolee-80"
+    ],
+    "accessed_at": "2026-09-11",
+    "note": "Klyshin Sep 10 post on missed agreed deadline; iRecommend pattern — cancelled flight as cancellation reason, saved chat, escalation. Guest CASE mechanics, not legal essay."
+  },
+  "freshness_audit": {
+    "research_date": "2026-09-11",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://t.me/s/klyshin_A",
+      "published_at": "2026-09-10",
+      "note": "Fresh channel post: sellers missed agreed two-week move-out deadline — parallel to promised vs elapsed refund deadline."
+    },
+    "additional_fresh_signals": [
+      {
+        "url": "https://t.me/s/klyshin_A",
+        "published_at": "2026-09-09",
+        "type": "community_channel",
+        "note": "Deal-chain post: fix agreements in writing before money moves."
+      },
+      {
+        "url": "https://irecommend.ru/content/pri-otmene-broni-snimayut-komissiyu-bolee-80",
+        "published_at": "undated_page",
+        "type": "community_review",
+        "note": "Guest cancelled after airline cancelled flight; partial refund dispute resolved via support after documentation."
+      }
+    ]
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176", "225"],
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 4929,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 10527,
+        "region": "225"
+      },
+      {
+        "phrase": "предоплата посуточно",
+        "volume": 913,
+        "region": "225"
+      },
+      {
+        "phrase": "отмена брони посуточно",
+        "volume": 85,
+        "region": "225"
+      },
+      {
+        "phrase": "вернуть предоплату за квартиру посуточно",
+        "volume": 46,
+        "region": "225"
+      },
+      {
+        "phrase": "отмена брони авито посуточно",
+        "volume": 41,
+        "region": "225"
+      }
+    ]
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "Platform cancellation/refund mechanics (Avito journal, Sutochno help); no bank tariff digits",
+    "verified_claims": 4,
+    "entities_checked": ["avito", "sutochno"],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "memory/blog/articles/B16-otmenili-rejs-predoplatu-vernut/derouter-opus-stamp-research.json",
+    "first_attempt": "PASS"
+  },
+  "errors": []
+}
