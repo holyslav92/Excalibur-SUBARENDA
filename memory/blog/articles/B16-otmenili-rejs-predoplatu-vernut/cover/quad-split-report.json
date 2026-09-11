@@ -1,0 +1,33 @@
+{
+  "agent": "excalibur-blog-cover-quad-split",
+  "status": "PASS",
+  "splits": [
+    {
+      "canvas_index": 1,
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ]
+    },
+    {
+      "canvas_index": 2,
+      "slots": [
+        "inline_4",
+        "inline_5",
+        "inline_6",
+        "inline_7"
+      ]
+    }
+  ],
+  "html_inject": [
+    "injected inline_1 after H2 — Не отмена рейса, а пустое обещание",
+    "skip inline_2: H2 not found — Вежливый ответ без даты",
+    "injected inline_3 after H2 — Один вопрос до перевода",
+    "skip inline_4: H2 not found — Три дня без календаря",
+    "injected inline_5 after H2 — Когда четвёртый день уже наступил",
+    "skip inline_6: H2 not found — Что сохранить в переписке",
+    "injected inline_7 after H2 — Мой вывод как практика"
+  ]
+}

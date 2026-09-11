@@ -1,0 +1,10 @@
+{
+  "local_path": "cover/canvas-quad-01.png",
+  "native_width": 2048,
+  "native_height": 1152,
+  "used_vip_fallback": true,
+  "delivery": "native_2k",
+  "vip_trigger": "2k_not_possible_on_primary",
+  "grsai_attempts": 2,
+  "attempt_log": ["primary_undersized_1672x940", "vip_native_2048x1152"]
+}

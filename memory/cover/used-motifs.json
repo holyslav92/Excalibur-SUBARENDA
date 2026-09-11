@@ -3,19 +3,6 @@
   "window_days": 14,
   "entries": [
     {
-      "date": "2026-08-28",
-      "topic_id": "B03",
-      "slug": "",
-      "motifs": {
-        "composition": "wow poster collage parents student sunny window phone map 40min walk top-right empty pad",
-        "location": "august sunny tyumen apartment green trees student district not winter",
-        "meme": "roll safe people-meme bottom-left",
-        "prop_set": "printed campus map suitcases student folder bus ticket august calendar",
-        "sticker_set": "квартиры посуточно тюмень рядом снять квартиру три остановки",
-        "joke": "roll safe taps temple when ad says рядом but map shows 40 min пешком"
-      }
-    },
-    {
       "date": "2026-09-01",
       "topic_id": "B05",
       "slug": "",
@@ -140,6 +127,19 @@
         "prop_set": "smartphone chat быстрый интернет journal coffee table socket behind sofa speedtest 8 mbps receipt 11400 rub",
         "sticker_set": "квартиры посуточно тюмень снять квартиру посуточно в тюмени командировка",
         "joke": "host promised desk at 10am call guest got journal table and 8 mbps at 22:00 check-in"
+      }
+    },
+    {
+      "date": "2026-09-11",
+      "topic_id": "B16",
+      "slug": "",
+      "motifs": {
+        "composition": "guest at autumn window phone chat refund deadline headline tr pad",
+        "location": "early september 2026 warm sunny tyumen apartment golden leaves not winter no snow",
+        "meme": "photoreal zero stickers only no meme characters",
+        "prop_set": "smartphone chat boarding pass cancelled receipt 4200 rub calendar day four",
+        "sticker_set": "вернуть предоплату посуточно отмена рейса тюмень",
+        "joke": "calendar day four circled while host still says checking refund"
       }
     }
   ]
