@@ -1,0 +1,23 @@
+{
+  "title": "Написали «можно с собакой». У двери — доплата 3 000 ₽",
+  "h1": "Написали «можно с собакой». У двери — доплата 3 000 ₽",
+  "slug": "napisali-mozhno-s-sobakoj-u-dveri-doplatili-3-000",
+  "topic_id": "B16",
+  "wp_category_slugs": [
+    "posutochnaya-arenda",
+    "sovety-gostyam"
+  ],
+  "author_id": "dobry-dom",
+  "article_mode": "B",
+  "description": "В Тюмени фраза «с собакой можно» не спасла от ночного отказа: после оплаты назвали лимит 10 кг и доплату за метиса — правила должны быть в чате до перевода.",
+  "date": "2026-09-11",
+  "status": "published",
+  "wp_post_id": 4662,
+  "pipeline_canon": "human-first-v3",
+  "theme_blocks": {
+    "faq": "skip",
+    "quiz": "skip",
+    "side_stickers": "skip"
+  },
+  "editorial_swarm": false
+}

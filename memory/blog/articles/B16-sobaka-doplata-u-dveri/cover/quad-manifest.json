@@ -1,0 +1,86 @@
+{
+  "topic_id": "B16",
+  "canvas_file": "cover/canvas-slice4.png",
+  "layout": "2x2",
+  "pipeline": "slice4_grid_1x_image_api",
+  "inline_count": 3,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-slice4.png",
+      "batch_file": "cover/slice4-mcp-batch.json",
+      "prompt_file": "cover/slice4-mcp-prompt.txt",
+      "result_file": "cover/slice4-mcp-result.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    }
+  ],
+  "style_preset": "the_rieltor_twilight_gold",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "cover_hook": "Можно с собакой\n+3 000 у двери",
+  "cover_hook_highlight": "собакой",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Derouter REST (DEROUTER_API_KEY) — 2K 16:9, one job per canvas (1×). Cover agent invents cover_hook + scene_hint/alt before --write-batch. Host lock = blog-hero.json (navy blazer, not hoodie).",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Гость с собакой у двери квартиры вечером в Тюмени, на табличке надпись про доплату за питомца",
+      "scene_hint": "September evening Tyumen apartment entryway, couple with medium mixed-breed dog on leash at door, large Cyrillic headline painted on door sign about pet fee, fridge magnet with phone +7 993 574-83-22 visible, warm autumn light, top-right corner empty for logo paste, photoreal Comfort+ interior, no brand logo drawn",
+      "meme_caption_ru": "",
+      "sticky": "Правила до оплаты"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Что было в чате и что оказалось у двери",
+      "visual_type": "comparison_table_ui",
+      "scene_hint": "Split comparison infographic: left phone chat bubble Da mozhno vs right door scene dog weight limit 10 kg plus 3000 rub fee, clean UI sketch style",
+      "alt": "Сравнение: в чате «да, можно» и у двери доплата за собаку",
+      "labels": [
+        "«Да, можно»",
+        "Без платы",
+        "Проверьте правила"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Почему именно вечером и именно у двери",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Workflow diagram arrows: paid 8400 rub evening arrival dog 18kg door ultimatum extra 3000, hand-drawn scheme on notebook",
+      "alt": "Схема: оплата, вечерний заезд и доплата у двери",
+      "labels": [
+        "Оплачено 8 400 ₽",
+        "Пёс 18 кг",
+        "Лимит 10 кг",
+        "Доплата у двери"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Как мы в «Добрый дом» пишем про питомцев",
+      "visual_type": "checklist_board",
+      "scene_hint": "Checklist board on kitchen wall: pet weight limit, fee in rubles, deposit rules before payment, cozy Tyumen apartment",
+      "alt": "Чеклист правил для гостей с собакой до оплаты",
+      "labels": [
+        "Вечерний заезд",
+        "Пёс на поводке",
+        "Правила до оплаты",
+        "Звоните +7 (993) 574-83-22"
+      ]
+    }
+  },
+  "cover_keys_ru": [],
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "wordstat_stickers": [
+    "снять квартиру посуточно с собакой",
+    "квартиры посуточно тюмень",
+    "залог посуточно"
+  ]
+}
