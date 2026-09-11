@@ -1,0 +1,7 @@
+Canvas 2048x1152 2x2 grid, thin gutters, photoreal Tyumen autumn apartment, NO snow.
+CRITICAL TR PAD: top-right 12% of EVERY panel = continuous wall/wood texture ONLY — zero white/gray/cream card, zero logo colors (no green curtains, no terracotta text, no red flower, no house icon). Factory pastes logo AFTER on cover+inline_1+inline_3 only.
+Cover TL: apartment ENTRYWAY hallway — guest with rolling suitcase at front door, LARGE smartphone in hand showing messenger «Залог вернём после уборки», printed paper on table «Залог 5 000 ₽ обещали вернуть утром», door plate «+7 (993) 574-83-22». NO sofa living room. Highlight «утром» gold. Sticky «Срок назвали — и забыли». Clean empty TR wall.
+TR inline_1: infographic cards 5 000 ₽, до заселения, вернём утром. Empty TR pad for factory logo — NO drawn logo.
+BL inline_2: hallway keybox, clean exit. TR corner empty wall — NO logo NO brand colors NO plate.
+BR inline_3: checklist фото в чат. Empty TR pad for factory logo.
+Russian Cyrillic only. High-key light. NO WordPress.

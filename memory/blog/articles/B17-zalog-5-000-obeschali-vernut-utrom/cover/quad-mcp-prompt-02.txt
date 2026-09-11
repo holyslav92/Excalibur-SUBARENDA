@@ -1,0 +1,7 @@
+Canvas 2048x1152 2x2, four inline panels only (no cover). Photoreal Tyumen autumn, NO snow.
+CRITICAL: top-right 12% each panel = plain beige wall texture ONLY — absolutely NO logo, NO «Добрый дом», NO green/red/terracotta/gold brand marks, NO white/gray plate/card. Factory logo paste ONLY on inline_7 after split.
+TL inline_4: phone on table, chat «после уборки», calendar no date. TR empty wall only.
+TR inline_5: taxi with suitcases outside, frozen money mood. TR empty wall — zero brand graphics.
+BL inline_6: checklist card before deposit: срок, способ, условие. TR empty wall only.
+BR inline_7: infographic сначала срок, потом перевод. Empty TR pad for factory logo.
+Russian Cyrillic labels. NO drawn lockups anywhere on inline_4/5/6.

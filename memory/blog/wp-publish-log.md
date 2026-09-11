@@ -1,5 +1,23 @@
 # WP publish log
 
+## B17 — 2026-09-11
+
+- **topic_id:** B17
+- **slug:** zalog-5-000-obeschali-vernut-utrom
+- **title:** Залог 5 000 ₽ обещали вернуть утром. А потом — «после уборки»
+- **post_id:** 4679
+- **permalink:** /blog/zalog-5-000-obeschali-vernut-utrom/
+- **categories:** posutochnaya-arenda (101), zalog-i-vyiezd (102)
+- **featured_image:** 4680
+- **inline_images:** 4681–4687 (7× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS (0 cover/ paths; all img → wp-content)
+- **dzen preview:** cover-1024x576.png (HTTP 200); feed enclosure → …-cover.png (MU-plugin full size)
+- **interlink outbound:** 4 live /blog/ siblings (crosslink-qa PASS)
+- **interlink inbound:** B01 (3745), B13 (4535)
+- **publish_method:** sftp (FTP PASV data hang on cloud; SFTP:22 OK)
+- **llms_deploy:** PASS
+
 ## B16 — 2026-09-11
 
 - **topic_id:** B16

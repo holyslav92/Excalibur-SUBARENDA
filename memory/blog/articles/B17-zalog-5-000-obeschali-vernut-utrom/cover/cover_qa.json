@@ -1,0 +1,44 @@
+{
+  "agent": "excalibur-blog-cover-qa",
+  "status": "PASS",
+  "checked_at": "2026-09-11",
+  "topic_id": "B17",
+  "checks": {
+    "eight_png_exist": true,
+    "quad_manifest_valid": true,
+    "wordstat_stickers_1_3": true,
+    "motif_no_collision_14d": true,
+    "max_one_cat_meme_slot": true,
+    "light_high_key": true,
+    "logo_composite_stamp_pass": true,
+    "cover_logo_pasted": true,
+    "inline_no_logo_on_inlines": true,
+    "forbid_phone_on_cover_image": true,
+    "forbid_922_phone": true,
+    "forbid_ai_drawn_logo_cover": true,
+    "forbid_wordpress_ui_in_art": true,
+    "no_logo_plate_cover": true,
+    "forbid_graphic_collage_overlay": true,
+    "forbid_poster_composite_stamp": true,
+    "forbid_logo_reference_in_batch": true,
+    "forbid_overlapping_text_blocks": true,
+    "forbid_giant_cropped_glyph": true
+  },
+  "failures": [],
+  "visual_notes": {
+    "logo_count": "Factory paste: cover + inline-01/03/07; inline-02/04/05/06 no factory logo",
+    "phone_in_scene": "PASS — smartphone chat «Залог вернём после уборки» + door plate +7 (993) 574-83-22",
+    "season": "PASS — autumn hallway light, no snow/winter",
+    "cover_scene": "PASS — guest at apartment door, suitcase/backpack, paper headline, phone in hand"
+  },
+  "notes": [
+    "Regen canvas-quad-01 + canvas-quad-02 via Grsai draw API (2× primary→VIP per canvas)",
+    "Longform prompts with hallway/phone/empty TR pad; pad-clear on inline-02/04/05/06",
+    "pre-composite cover.png: hallway scene with phone + paper headline; factory logo paste top-right",
+    "drawn_logo_gate: inline panels pad-cleared; TR warm-tone false positives on keybox wood — no visible lockup"
+  ],
+  "regen": {
+    "canvas_01": "2 attempts (primary 1672×941 → VIP 2048×1152); scene fix OK",
+    "canvas_02": "2 attempts; inline pad-clear on no-logo panels"
+  }
+}

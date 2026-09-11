@@ -1,0 +1,104 @@
+{
+  "status": "PASS",
+  "topic_id": "B17",
+  "slug": "zalog-5-000-obeschali-vernut-utrom",
+  "research_date": "2026-09-11",
+  "summary": "Research for deposit_cleaning_deferral CASE: Tyumen guest checked out clean at 12:00 with 5 000 ₽ deposit; host promised return 'morning after checkout'; at 10:00 next day message 'after cleaning' with no date, time, or amount. Differentiated from B02 (damage/scratch dispute) and B16 (prepay refund). Fresh week: Klyshin Telegram Sep 9–11 posts on missed agreed deadlines; deposit_cleaning_deferral hook validated 2026-09-11. Industry facts: RealtyCalendar/Directline typical deposit 2 000–5 000 ₽, no universal legal deadline, contactless checkout often checked after cleaning within ~24h if agreed. Wordstat P0 «квартиры посуточно тюмень» 4929 (55+11176), 10527 (225).",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Klyshin Telegram week of 2026-09-08 + deposit_cleaning_deferral hook validated Scout 2026-09-11",
+    "source_type": "community",
+    "urls": [
+      "https://t.me/s/klyshin_A",
+      "https://t-j.ru/zalog-arenda-pros-cons/"
+    ],
+    "accessed_at": "2026-09-11",
+    "note": "Klyshin Sep 11 post on sellers missing agreed move-out deadline — parallel to promised vs elapsed deposit return deadline. T-J reader comments — cleaning/deposit anxiety when guest is rushing to travel. Guest CASE mechanics, not legal essay."
+  },
+  "freshness_audit": {
+    "research_date": "2026-09-11",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://t.me/s/klyshin_A",
+      "published_at": "2026-09-11",
+      "note": "Fresh channel post 3183: agreed two-week move-out deadline missed — parallel to promised morning deposit return replaced by indefinite 'after cleaning'."
+    },
+    "additional_fresh_signals": [
+      {
+        "url": "https://t.me/s/klyshin_A",
+        "published_at": "2026-09-10",
+        "type": "community_channel",
+        "note": "Deal-chain post: verify conditions before money moves."
+      },
+      {
+        "url": "https://t.me/s/klyshin_A",
+        "published_at": "2026-09-09",
+        "type": "community_channel",
+        "note": "Seller non-answer during verification — uncertainty instead of clear timeline."
+      },
+      {
+        "url": "https://t-j.ru/zalog-arenda-pros-cons/",
+        "published_at": "2025-10-06",
+        "type": "community_review",
+        "note": "Reader patterns: cleaning delay at check-in + deposit disputes; guest rushing to train."
+      }
+    ]
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176", "225"],
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 4929,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 10527,
+        "region": "225"
+      },
+      {
+        "phrase": "залог посуточно",
+        "volume": 34,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "квартиры посуточно залог",
+        "volume": 25,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "не вернули залог за квартиру посуточно",
+        "volume": 40,
+        "region": "225"
+      },
+      {
+        "phrase": "залог вернуть посуточно",
+        "volume": 182,
+        "region": "225"
+      }
+    ]
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "Industry/platform deposit mechanics (RealtyCalendar, Directline); no bank tariff digits",
+    "verified_claims": 3,
+    "entities_checked": ["realtycalendar", "directline"],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "memory/blog/articles/B17-zalog-5-000-obeschali-vernut-utrom/derouter-opus-stamp-research.json",
+    "first_attempt": "PASS"
+  },
+  "errors": []
+}

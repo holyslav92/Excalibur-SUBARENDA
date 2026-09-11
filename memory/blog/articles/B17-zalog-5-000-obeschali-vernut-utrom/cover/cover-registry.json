@@ -1,0 +1,50 @@
+{
+  "topic_id": "B17",
+  "slug": "zalog-5-000-obeschali-vernut-utrom",
+  "cover_family": "brand_collage",
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "file": "cover/cover.png",
+  "alt": "Залог 5 000 ₽ обещали вернуть утром. А потом — «после уборки»",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-quad-01.png",
+  "generated_at": "2026-09-11T12:24:32+00:00",
+  "assets": [
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Инфографика о залоге 5 000 ₽ до заселения и обещании вернуть утром.",
+      "h2_anchor": "Где обещание ломается",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Чистая квартира после выезда: ключи в кейбоксе, убранная посуда.",
+      "h2_anchor": "Чистая сдача без претензий",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Чек-лист фото квартиры в чате как доказательство чистой сдачи.",
+      "h2_anchor": "Фото в переписке",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_4",
+      "file": "cover/inline-04.png",
+      "alt": "Сообщение «после уборки» без даты, часа и суммы возврата залога.",
+      "h2_anchor": "Неопределённое «после уборки»",
+      "visual_type": "process_flow",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}
