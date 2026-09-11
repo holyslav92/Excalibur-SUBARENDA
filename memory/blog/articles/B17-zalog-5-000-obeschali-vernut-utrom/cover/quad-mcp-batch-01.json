@@ -2,45 +2,34 @@
   "pipeline": "quad_canvas_2x_image_api_longform",
   "canvas_index": 1,
   "standalone_cover": false,
-  "model_policy": "",
-  "vip_disabled": false,
-  "max_generation_attempts": 1,
-  "identity_reference_local": "",
-  "identity_reference_id": "",
-  "logo_reference_local": "",
-  "logo_reference_url": "",
-  "logo_reference_in_generation": false,
-  "reference_url_hosted": "",
-  "output_canvas": "cover/canvas-quad-01.png",
-  "result_path": "cover/quad-mcp-result-01.json",
+  "max_generation_attempts": 2,
   "slots": [
+    "cover",
     "inline_1",
     "inline_2",
-    "inline_3",
-    "inline_4"
+    "inline_3"
   ],
+  "output_canvas": "cover/canvas-quad-01.png",
+  "result_path": "cover/quad-mcp-result-01.json",
   "preferred_image_flow": {
     "provider": "grsai",
     "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
-    "resolution": "2K",
-    "note": "PRIMARY: Grsai draw API (PRIMARY_MODEL_ID only; vip permanently disabled; aspectRatio+resolution=2K first, one explicit-size retry, ship native undersized). Fallback: excalibur_blog_kie_gpt_image2_api.py when Grsai fail. FORBIDDEN: *-vip, flux2-pro-*, Seedream, nano_banana*, z-image, mcp-derouter/start-mcp.sh.",
-    "apply_script": "python3 scripts/excalibur_blog_quad_apply.py --article-dir <article_dir> --canvas-index 1 --inject-html"
+    "resolution": "2K"
   },
   "jobs": [
     {
       "slot": "canvas_quad",
       "tool": "grsai",
       "mcp_args": {
-        "prompt": "ONE canvas 2048×1152 — draw as 2×2 GRID of FOUR complete photoreal 16:9 apartment panels (thin white gutters OK). Each quadrant is its own readable scene — NOT one photo sliced at random. NOT infographic.\ndobry_dom_gen_only_human_v1 — exactly ONE Grsai primary image draw; factory slices quarters after download.\nCOVER PANEL top-left HEADLINE L1 «Залог 5 000 ₽» + L2 «обещали вернуть утром» printed/painted on a physical object in the scene; Cyrillic headline must appear IN the photograph on a real physical object (printed paper on coffee table, TV screen, door sign, barrier sticker, luggage tag) — NOT a graphic-design layer, NOT yellow marker highlight, NOT sticky-note collage, NOT phone pill button, NOT Canva overlay typography.\nFORBIDDEN on cover panel: phone number, logo, meme sticker, yellow marker, sticky note, pill button, dashed frame.\nINLINE PANELS (top-right, bottom-left, bottom-right) — each a FULL standalone 16:9 scene for: inline_1: «Где обещание ломается» — Инфографика: 5 000 ₽, до заселения, «вернём утром». Пустой top-right.; inline_2: «Чистая сдача без претензий» — Прихожая: выезд 12:00, ключи в боксе, посуда убрана, мусор вынесен.; inline_3: «Фото в переписке» — Чек-лист: фото в чат, комнаты проверены, доказательства. Пустой top-right.\nPANEL 2–4: NO «Добрый дом» logo, NO curtains/flower lockup — photoreal scenes only.\nTOP-RIGHT of COVER PANEL ONLY: leave clean wall/wood pad 8–12% — model does NOT draw logo; factory pastes official cropped-img_7143.png after slice (pixel-faithful, native aspect, NOT square crop).\nFORBIDDEN: four separate images; second API call; logo in images[]; poster_composite; factory typography overlay.\nBAN: 0 memes, 2+ memes, meme soup, people-heavy group photo, tiny in-scene phone on door, Wordstat sticker soup, torn-paper collage, metallic gold, brass, 3D gold type, gold-glitter type, dark leather, wood+Harold lobby stamp, yellow sticky notes, split white-panel+photo, phone pill, peel-pill phone, fridge magnet phone, gold brass plaque, post-composite phone chip, model-drawn logo, house-with-heart, logo plate, empty stock room, WordPress UI, wow poster collage soup, dark cinematic, overlapping type layers, magnified letter crops, Trade Offer/Drake/Wojak drawn by model, collage of stickers covering headline, white/gray plaque under logo, model-drawn lockup.\nTEXT: Russian Cyrillic only; Comfort+ Tyumen daily-rental mood; photoreal apartment interior.",
+        "prompt": "Canvas 2048x1152 2x2 grid, thin gutters, photoreal Tyumen autumn apartment, NO snow.\nCRITICAL TR PAD: top-right 12% of EVERY panel = continuous wall/wood texture ONLY — zero white/gray/cream card, zero logo colors (no green curtains, no terracotta text, no red flower, no house icon). Factory pastes logo AFTER on cover+inline_1+inline_3 only.\nCover TL: apartment ENTRYWAY hallway — guest with rolling suitcase at front door, LARGE smartphone in hand showing messenger «Залог вернём после уборки», printed paper on table «Залог 5 000 ₽ обещали вернуть утром», door plate «+7 (993) 574-83-22». NO sofa living room. Highlight «утром» gold. Sticky «Срок назвали — и забыли». Clean empty TR wall.\nTR inline_1: infographic cards 5 000 ₽, до заселения, вернём утром. Empty TR pad for factory logo — NO drawn logo.\nBL inline_2: hallway keybox, clean exit. TR corner empty wall — NO logo NO brand colors NO plate.\nBR inline_3: checklist фото в чат. Empty TR pad for factory logo.\nRussian Cyrillic only. High-key light. NO WordPress.",
         "aspect_ratio": "16:9",
         "resolution": "2K"
       }
     }
   ],
   "validation": {
-    "prompt_chars": 2426,
+    "prompt_chars": 1024,
     "max_prompt_chars": 3500,
-    "required_reference_host": "",
     "resolution": "2K"
   }
 }

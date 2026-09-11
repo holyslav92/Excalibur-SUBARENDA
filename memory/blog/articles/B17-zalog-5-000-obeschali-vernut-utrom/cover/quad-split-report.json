@@ -1,5 +1,4 @@
 {
-  "agent": "excalibur-blog-cover-quad-split",
   "status": "PASS",
   "splits": [
     {
@@ -63,7 +62,7 @@
               675
             ],
             "aspect_ratio": "16:9",
-            "alt": "Гость у двери с чемоданом, сообщение о залоге после уборки.",
+            "alt": "Гость у двери с чемоданом и телефоном, в чате «после уборки», осенняя Тюмень.",
             "h2_anchor": null
           },
           "inline_1": {
@@ -147,29 +146,29 @@
           1152
         ],
         "panel_size_px": [
-          1021,
-          573
+          1019,
+          572
         ],
         "split_meta": {
           "split_mode": "gutter_detect",
           "h_gutter_px": {
-            "start": 573,
-            "end": 579
+            "start": 572,
+            "end": 582
           },
           "v_gutter_px": {
-            "start": 1021,
-            "end": 1026
+            "start": 1019,
+            "end": 1028
           },
           "requested_mode": "auto",
           "gutter_quality": {
-            "h_center_offset_px": 0.0,
+            "h_center_offset_px": 1.0,
             "v_center_offset_px": 0.5,
-            "max_aspect_crop_loss": 0.0,
+            "max_aspect_crop_loss": 0.0069,
             "per_panel_crop_loss": {
               "top_left": 0.0,
               "top_right": 0.0,
               "bottom_left": 0.0,
-              "bottom_right": 0.0
+              "bottom_right": 0.0069
             },
             "reject_reason": null
           }
@@ -185,14 +184,14 @@
             "box_px": {
               "left": 0,
               "top": 0,
-              "right": 1021,
-              "bottom": 573
+              "right": 1019,
+              "bottom": 572
             },
             "raw_box_px": {
               "left": 0,
               "top": 0,
-              "right": 1021,
-              "bottom": 573
+              "right": 1019,
+              "bottom": 572
             },
             "size_px": [
               1200,
@@ -206,16 +205,16 @@
             "file": "cover/inline-05.png",
             "quadrant": "top_right",
             "box_px": {
-              "left": 1026,
+              "left": 1028,
               "top": 0,
               "right": 2048,
-              "bottom": 573
+              "bottom": 572
             },
             "raw_box_px": {
-              "left": 1026,
+              "left": 1028,
               "top": 0,
               "right": 2048,
-              "bottom": 573
+              "bottom": 572
             },
             "size_px": [
               1200,
@@ -230,14 +229,14 @@
             "quadrant": "bottom_left",
             "box_px": {
               "left": 0,
-              "top": 579,
-              "right": 1021,
+              "top": 582,
+              "right": 1019,
               "bottom": 1152
             },
             "raw_box_px": {
               "left": 0,
-              "top": 579,
-              "right": 1021,
+              "top": 582,
+              "right": 1019,
               "bottom": 1152
             },
             "size_px": [
@@ -252,14 +251,14 @@
             "file": "cover/inline-07.png",
             "quadrant": "bottom_right",
             "box_px": {
-              "left": 1026,
-              "top": 579,
-              "right": 2048,
+              "left": 1031,
+              "top": 582,
+              "right": 2044,
               "bottom": 1152
             },
             "raw_box_px": {
-              "left": 1026,
-              "top": 579,
+              "left": 1028,
+              "top": 582,
               "right": 2048,
               "bottom": 1152
             },
@@ -274,12 +273,5 @@
         }
       }
     }
-  ],
-  "manifest": "cover/quad-manifest.json",
-  "html_inject": [
-    "skip inline_1: already correct under H2 — Где обещание ломается",
-    "skip inline_2: already correct under H2 — Чистая сдача без претензий",
-    "skip inline_3: already correct under H2 — Фото в переписке",
-    "skip inline_4: already correct under H2 — Неопределённое «после уборки»"
   ]
 }
