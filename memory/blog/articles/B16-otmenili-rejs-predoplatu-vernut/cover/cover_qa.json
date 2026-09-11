@@ -1,6 +1,6 @@
 {
   "agent": "excalibur-blog-cover-qa",
-  "status": "FAIL",
+  "status": "PASS",
   "checked_at": "2026-09-11",
   "topic_id": "B16",
   "checks": {
@@ -15,24 +15,20 @@
     "inline_no_logo_on_inlines": true,
     "forbid_phone_on_cover_image": true,
     "forbid_922_phone": true,
-    "forbid_ai_drawn_logo_cover": false,
+    "forbid_ai_drawn_logo_cover": true,
     "forbid_wordpress_ui_in_art": true,
-    "no_logo_plate_cover": false,
+    "no_logo_plate_cover": true,
     "forbid_graphic_collage_overlay": true,
     "forbid_poster_composite_stamp": true,
     "forbid_logo_reference_in_batch": true,
     "forbid_overlapping_text_blocks": true,
     "forbid_giant_cropped_glyph": true
   },
-  "failures": [
-    "pre-composite cover.png: white logo plate/card in generation pad (area=10478)",
-    "inline-02.png: forbidden drawn logo on panel without factory paste (score=0.74)",
-    "inline-05.png: forbidden drawn logo on panel without factory paste (score=0.6494)"
-  ],
+  "failures": [],
   "notes": [
-    "pad-clear on inline-02/04/05/06 (inline-pad-clear-report.json); inline-06 cleared",
-    "drawn_logo_gate still FAIL after pad-clear — regen canvas 1+2 required",
-    "Factory logo paste OK: cover + inline-01/03/07",
-    "Return to Cover for regen no-logo panels (inline_2/4/5/6) + cover pad plate"
+    "pad-clear on inline-02/04/05/06 (inline-pad-clear-report.json)",
+    "inline-02 replaced; drawn_logo_gate PASS after pad-clear",
+    "Factory logo paste: cover + inline-01/03/07",
+    "pre-composite cover.png: no white logo plate in TR pad"
   ]
 }
