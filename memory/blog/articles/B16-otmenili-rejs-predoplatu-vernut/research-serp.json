@@ -1,0 +1,218 @@
+{
+  "agent": "excalibur-blog",
+  "date_context": {
+    "timezone": "Europe/Moscow",
+    "today_iso": "2026-09-11",
+    "today_ru": "11.09.2026",
+    "year": 2026,
+    "month": 9,
+    "month_name_ru": "сентябрь",
+    "weekday_ru": "пятница"
+  },
+  "topic": {
+    "topic_id": "B16",
+    "title": "Отменили рейс предоплату вернуть",
+    "h1": "Отменили рейс предоплату вернуть",
+    "slug": "otmenili-rejs-predoplatu-vernut",
+    "primary_query": "Отменили рейс предоплату вернуть",
+    "priority": "P0"
+  },
+  "searches": [
+    {
+      "query_id": "primary_fresh",
+      "query": "Отменили рейс предоплату вернуть 2026",
+      "purpose": "актуальный SERP",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Рейс отменили, а деньги не отдают? Вот пошаговый план, который заставит ...",
+          "url": "https://www.pravda.ru/news/travel/2403732-airline-ticket-refund-new-rules-2026/",
+          "snippet": ""
+        },
+        {
+          "title": "Отмена рейса в 2026 году: полная инструкция по возврату денег",
+          "url": "https://vottak.me/blog/articles-92.html",
+          "snippet": "Как вернуть 100% стоимости невозвратного авиабилета при задержке рейса от 30 минут. Пошаговая инструкция по взысканию убытков и компенсаций с авиакомпаний."
+        },
+        {
+          "title": "Как вернуть деньги за авиабилеты, рассказали в Госдуме",
+          "url": "https://www.rosbalt.ru/news/2026-08-20/v-gosdume-rasskazali-o-vozvrate-dengi-za-otmenennye-aviareysy-5663511",
+          "snippet": "Что делать, если самолет не летит? Пошаговый алгоритм действий при отмене рейса: как вернуть деньги, получить компенсацию и общаться с авиакомпанией."
+        },
+        {
+          "title": "Отменили рейс? Как вернуть деньги (2026) - TripProf",
+          "url": "https://tripprof.com/ru/blog/flight-cancelled-refund-guide-2026/",
+          "snippet": "Пассажиры смогут вернуть полную стоимость авиабилета, включая купленный по невозвратному тарифу, если рейс отменен или задержан более чем на 30 минут. Такие правила действуют в России с 1 марта 2026 года."
+        },
+        {
+          "title": "Компенсация за отмену рейса в 2026 году: права и выплаты",
+          "url": "https://travelto.ru/blog/kompensacii-za-otmenu-reisov/",
+          "snippet": "Самый быстрый способ вернуть деньги после отмены рейса - это четырехэтапная эскалация: отказ от ваучера, подача претензии, обращение к регулятору и, в крайнем случае, чарджбэк."
+        },
+        {
+          "title": "Задержали или отменили рейс: права пассажира в 2026 году",
+          "url": "https://jsprav.ru/news/reys-zaderzhali-ili-otmenili-chto-dolzhna-aviakompaniya/",
+          "snippet": "Если авиакомпания отменила рейс, пассажиру важно разделять три разных требования: возврат денег за билет, обслуживание во время ожидания и денежную компенсацию."
+        }
+      ],
+      "searched_at": "2026-09-11"
+    },
+    {
+      "query_id": "title_fresh",
+      "query": "Отменили рейс предоплату вернуть 2026",
+      "purpose": "SERP по человеческому title",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Рейс отменили, а деньги не отдают? Вот пошаговый план, который заставит ...",
+          "url": "https://www.pravda.ru/news/travel/2403732-airline-ticket-refund-new-rules-2026/",
+          "snippet": ""
+        },
+        {
+          "title": "Отмена рейса в 2026 году: полная инструкция по возврату денег",
+          "url": "https://vottak.me/blog/articles-92.html",
+          "snippet": "Как вернуть 100% стоимости невозвратного авиабилета при задержке рейса от 30 минут. Пошаговая инструкция по взысканию убытков и компенсаций с авиакомпаний."
+        },
+        {
+          "title": "Как вернуть деньги за отмененный рейс: правила и сроки",
+          "url": "https://amajingworld.com/articles/vernut-dengi-za-otmenennyy-reys/",
+          "snippet": "Что делать, если самолет не летит? Пошаговый алгоритм действий при отмене рейса: как вернуть деньги, получить компенсацию и общаться с авиакомпанией."
+        },
+        {
+          "title": "Компенсация за отмену рейса в 2026 году: права и выплаты",
+          "url": "https://travelto.ru/blog/kompensacii-za-otmenu-reisov/",
+          "snippet": "Узнайте, как оформить вынужденный возврат билета при отмене рейса. Разбираем новые правила Минтранса, сроки подачи претензии и нюансы выплат на карту."
+        },
+        {
+          "title": "Задержали или отменили рейс: права пассажира в 2026 году",
+          "url": "https://jsprav.ru/news/reys-zaderzhali-ili-otmenili-chto-dolzhna-aviakompaniya/",
+          "snippet": "Если авиакомпания отменила рейс, пассажиру важно разделять три разных требования: возврат денег за билет, обслуживание во время ожидания и денежную компенсацию."
+        },
+        {
+          "title": "Что делать, если отменили рейс: Полное руководство 2026",
+          "url": "https://ru.trip.com/guide/info/%D1%87%D1%82%D0%BE-%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C-%D0%B5%D1%81%D0%BB%D0%B8-%D0%BE%D1%82%D0%BC%D0%B5%D0%BD%D0%B8%D0%BB%D0%B8-%D1%80%D0%B5%D0%B9%D1%81.html",
+          "snippet": "С 1 марта 2026 года задержка более чем на 30 минут прямо отнесена к основаниям для вынужденного отказа от перелёта. Пассажир может потребовать полный возврат провозной платы, в том числе по невозвратному билету."
+        }
+      ],
+      "searched_at": "2026-09-11"
+    },
+    {
+      "query_id": "official_docs",
+      "query": "Отменили рейс предоплату вернуть official docs 2026",
+      "purpose": "официальные docs",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Рейс отменили, а деньги не отдают? Вот пошаговый план, который заставит ...",
+          "url": "https://www.pravda.ru/news/travel/2403732-airline-ticket-refund-new-rules-2026/",
+          "snippet": ""
+        },
+        {
+          "title": "Отменили рейс? Как вернуть деньги (2026) - TripProf",
+          "url": "https://tripprof.com/ru/blog/flight-cancelled-refund-guide-2026/",
+          "snippet": "Как вернуть 100% стоимости невозвратного авиабилета при задержке рейса от 30 минут. Пошаговая инструкция по взысканию убытков и компенсаций с авиакомпаний."
+        },
+        {
+          "title": "Возврат денег за билет при задержке рейса: новые правила 2026",
+          "url": "https://azpp.ru/pravila-aviaperevozok-2026-chto-izmenilos",
+          "snippet": "Самый быстрый способ вернуть деньги после отмены рейса - это четырехэтапная эскалация: отказ от ваучера, подача претензии, обращение к регулятору и, в крайнем случае, чарджбэк."
+        },
+        {
+          "title": "Как вернуть деньги за авиабилеты, рассказали в Госдуме",
+          "url": "https://www.rosbalt.ru/news/2026-08-20/v-gosdume-rasskazali-o-vozvrate-dengi-za-otmenennye-aviareysy-5663511",
+          "snippet": "Возврат денег за билет и компенсация за задержку рейса по новым правилам 2026: порог 30 минут, штраф 100 руб/час, гостиница за 2 часа. Что изменилось — читайте."
+        },
+        {
+          "title": "Что делать, если отменили рейс в 2026: инструкция для пассажиров",
+          "url": "https://www.cian.ru/stati-chto-delat-esli-otmenili-rejs-344823/",
+          "snippet": "Пассажиры смогут вернуть полную стоимость авиабилета, включая купленный по невозвратному тарифу, если рейс отменен или задержан более чем на 30 минут. Такие правила действуют в России с 1 марта 2026 года."
+        },
+        {
+          "title": "Как вернуть деньги за отмененный рейс: правила и сроки",
+          "url": "https://amajingworld.com/articles/vernut-dengi-za-otmenennyy-reys/",
+          "snippet": "Разбираемся, что делать пассажиру в 2026 году, если рейс или поезд отменили, какие возвраты и компенсации положены по закону за билеты и жильё."
+        }
+      ],
+      "searched_at": "2026-09-11"
+    },
+    {
+      "query_id": "github_evidence",
+      "query": "site:github.com Отменили рейс предоплату вернуть 2026",
+      "purpose": "GitHub evidence",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "GitHub - bonsabonsa/yousend-amboras: YouSend shipping provider for ...",
+          "url": "https://github.com/bonsabonsa/yousend-amboras",
+          "snippet": ""
+        },
+        {
+          "title": "feed.xml · GitHub",
+          "url": "https://gist.github.com/seviall/93dfed2294d96c4f898e3b23671f62d7",
+          "snippet": "Модуль не использует исходящие вебхуки YouSend и не создаёт отправления при выборе доставки в корзине. Заказ курьера отдельным действием не выполняется."
+        },
+        {
+          "title": "openui/assets/demo.gif at main · wandb/openui · GitHub",
+          "url": "https://github.com/wandb/openui/blob/main/assets/demo.gif/",
+          "snippet": "GitHub Gist: instantly share code, notes, and snippets."
+        },
+        {
+          "title": "RimWorld AutoTranslation Cache - Russian / Русский (Google)",
+          "url": "https://gist.github.com/csh1668/91c83db991e2226dcfbc04a618911eb6",
+          "snippet": "OpenUI let's you describe UI using your imagination, then see it rendered live. - openui/assets/demo.gif at main · wandb/openui"
+        },
+        {
+          "title": "Отмена запроса на вытягивание - Документация GitHub",
+          "url": "https://docs.github.com/ru/pull-requests/how-tos/merge-and-close-pull-requests/reverting-a-pull-request",
+          "snippet": "<Cache Language=\"Russian / Русский\"><Entry Key ..."
+        },
+        {
+          "title": "Отмена запроса на вытягивание - GitHub Docs",
+          "url": "https://docs.github.com/ru/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/reverting-a-pull-request",
+          "snippet": "В списке \"Запросы на вытягивание\" щелкните запрос на вытягивание, который требуется вернуть. В нижней части запроса на вытягивание щелкните Отменить изменения."
+        }
+      ],
+      "searched_at": "2026-09-11"
+    },
+    {
+      "query_id": "community_experience",
+      "query": "Отменили рейс предоплату вернуть forum problems опыт 2026",
+      "purpose": "форумы и живые проблемы",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Что делать, если отменили рейс: Полное руководство 2026",
+          "url": "https://ru.trip.com/guide/info/%D1%87%D1%82%D0%BE-%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C-%D0%B5%D1%81%D0%BB%D0%B8-%D0%BE%D1%82%D0%BC%D0%B5%D0%BD%D0%B8%D0%BB%D0%B8-%D1%80%D0%B5%D0%B9%D1%81.html",
+          "snippet": ""
+        },
+        {
+          "title": "Рейс отменили, а деньги не отдают? Вот пошаговый план, который заставит ...",
+          "url": "https://www.pravda.ru/news/travel/2403732-airline-ticket-refund-new-rules-2026/",
+          "snippet": "Ваш рейс отменили или задержали? Узнайте, как вернуть деньги за билет, перебронировать рейс или получить компенсацию. Актуальные правила для путешественников в 2026 году."
+        },
+        {
+          "title": "Отменили рейс? Как вернуть деньги (2026) - TripProf",
+          "url": "https://tripprof.com/ru/blog/flight-cancelled-refund-guide-2026/",
+          "snippet": "Как вернуть 100% стоимости невозвратного авиабилета при задержке рейса от 30 минут. Пошаговая инструкция по взысканию убытков и компенсаций с авиакомпаний."
+        },
+        {
+          "title": "Что делать российскому туристу, если рейс отменили или задержали",
+          "url": "https://vc.ru/life/2683047-prava-rossijskih-turistov-pri-otmene-ili-zaderzhke-reysa",
+          "snippet": "Самый быстрый способ вернуть деньги после отмены рейса - это четырехэтапная эскалация: отказ от ваучера, подача претензии, обращение к регулятору и, в крайнем случае, чарджбэк."
+        },
+        {
+          "title": "Отмена рейса в 2026 году: полная инструкция по возврату денег",
+          "url": "https://vottak.me/blog/articles-92.html",
+          "snippet": "Руководство на 2026 год: ваши права, деньги и действия. Задержка или отмена рейса — не просто неудобство, а ситуация, в которой у вас есть реальные права на компенсации и возмещение убытков."
+        },
+        {
+          "title": "Что делать, если отменили рейс в 2026: инструкция для пассажиров",
+          "url": "https://www.cian.ru/stati-chto-delat-esli-otmenili-rejs-344823/",
+          "snippet": "Что делать, если самолет не летит? Пошаговый алгоритм действий при отмене рейса: как вернуть деньги, получить компенсацию и общаться с авиакомпанией."
+        }
+      ],
+      "searched_at": "2026-09-11"
+    }
+  ],
+  "errors": []
+}
