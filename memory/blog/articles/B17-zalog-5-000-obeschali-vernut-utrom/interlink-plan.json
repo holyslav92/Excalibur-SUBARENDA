@@ -1,0 +1,106 @@
+{
+  "topic_id": "B17",
+  "slug": "zalog-5-000-obeschali-vernut-utrom",
+  "title": "Залог 5 000 ₽ обещали вернуть утром. А потом — «после уборки»",
+  "outbound_required_min": 1,
+  "outbound_found": [
+    {
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "title": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "permalink": "{{SITE_BASE}}/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+      "topic_id": "B01",
+      "post_id": 3745,
+      "source": "ledger"
+    },
+    {
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "title": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "permalink": "{{SITE_BASE}}/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/",
+      "topic_id": "B02",
+      "post_id": 3777,
+      "source": "ledger"
+    },
+    {
+      "slug": "vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu",
+      "title": "vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu",
+      "permalink": "/blog/vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu/",
+      "topic_id": "B06",
+      "post_id": null,
+      "source": "ledger"
+    },
+    {
+      "slug": "otmenili-rejs-predoplatu-vernut",
+      "title": "otmenili-rejs-predoplatu-vernut",
+      "permalink": "/blog/otmenili-rejs-predoplatu-vernut/",
+      "topic_id": "B16",
+      "post_id": 4668,
+      "source": "ledger"
+    }
+  ],
+  "outbound_missing_suggestions": [
+    {
+      "slug": "kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki",
+      "title": "kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki",
+      "permalink": "/blog/kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki/",
+      "topic_id": "B03",
+      "post_id": null,
+      "source": "ledger"
+    },
+    {
+      "slug": "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+      "title": "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+      "permalink": "/blog/oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego/",
+      "topic_id": "B04",
+      "post_id": null,
+      "source": "ledger"
+    },
+    {
+      "slug": "rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super",
+      "title": "rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super",
+      "permalink": "/blog/rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super/",
+      "topic_id": "B05",
+      "post_id": null,
+      "source": "ledger"
+    }
+  ],
+  "inbound_targets": [
+    {
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "title": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "permalink": "{{SITE_BASE}}/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+      "topic_id": "B01",
+      "post_id": 3745,
+      "source": "ledger"
+    },
+    {
+      "slug": "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400",
+      "title": "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400",
+      "permalink": "/blog/hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400/",
+      "topic_id": "B10",
+      "post_id": null,
+      "source": "ledger"
+    },
+    {
+      "slug": "kod-srabotal-klyuchnica-pusta-posutochno-tyumen",
+      "title": "kod-srabotal-klyuchnica-pusta-posutochno-tyumen",
+      "permalink": "/blog/kod-srabotal-klyuchnica-pusta-posutochno-tyumen/",
+      "topic_id": "B13",
+      "post_id": 4535,
+      "source": "ledger"
+    }
+  ],
+  "inbound_updates": [
+    {
+      "post_id": 3745,
+      "marker": "data-excalibur-interlink-from=\"zalog-5-000-obeschali-vernut-utrom\"",
+      "html": "<p class=\"excalibur-interlink-readalso\" data-excalibur-interlink-from=\"zalog-5-000-obeschali-vernut-utrom\"><b>Читайте также:</b> <a href=\"{{SITE_BASE}}/blog/zalog-5-000-obeschali-vernut-utrom/\">Залог 5 000 ₽ обещали вернуть утром. А потом — «после уборки»</a></p>"
+    },
+    {
+      "post_id": 4535,
+      "marker": "data-excalibur-interlink-from=\"zalog-5-000-obeschali-vernut-utrom\"",
+      "html": "<p class=\"excalibur-interlink-readalso\" data-excalibur-interlink-from=\"zalog-5-000-obeschali-vernut-utrom\"><b>Читайте также:</b> <a href=\"{{SITE_BASE}}/blog/zalog-5-000-obeschali-vernut-utrom/\">Залог 5 000 ₽ обещали вернуть утром. А потом — «после уборки»</a></p>"
+    }
+  ],
+  "new_url": "{{SITE_BASE}}/blog/zalog-5-000-obeschali-vernut-utrom/",
+  "dry_run": false
+}

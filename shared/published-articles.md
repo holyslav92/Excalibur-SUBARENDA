@@ -21,3 +21,4 @@ Excalibur-2-Cloud — не копировать URL tymenrieltor.ru.
 | 2026-09-08 | B14 | napisali-tihij-dom-v-23-40-sosedi-vklyuchili-muzyku | /blog/napisali-tihij-dom-v-23-40-sosedi-vklyuchili-muzyku/ | published |
 | 2026-09-10 | B15 | pozvonili-v-10-00-v-22-00-wifi-ne-tyanet-sozvon | /blog/pozvonili-v-10-00-v-22-00-wifi-ne-tyanet-sozvon/ | published |
 | 2026-09-11 | B16 | otmenili-rejs-predoplatu-vernut | /blog/otmenili-rejs-predoplatu-vernut/ | published |
+| 2026-09-11 | B17 | zalog-5-000-obeschali-vernut-utrom | /blog/zalog-5-000-obeschali-vernut-utrom/ | published |

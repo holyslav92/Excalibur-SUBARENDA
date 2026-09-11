@@ -273,5 +273,11 @@
         }
       }
     }
+  ],
+  "agent": "excalibur-blog-cover-quad-split",
+  "html_inject": [
+    "skip inline_1: already correct under H2 — Где обещание ломается",
+    "skip inline_2: already correct under H2 — Чистая сдача без претензий",
+    "skip inline_3: already correct under H2 — Фото в переписке"
   ]
 }

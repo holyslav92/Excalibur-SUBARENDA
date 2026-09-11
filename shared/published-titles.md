@@ -25,3 +25,4 @@ lessons, benchmarks, QA reports или соседние research-notes как о
 | B14 | napisali-tihij-dom-v-23-40-sosedi-vklyuchili-muzyku | «Тихий дом» обещали. За 8 400 ₽ — музыка за стеной ночью | published |
 | B15 | pozvonili-v-10-00-v-22-00-wifi-ne-tyanet-sozvon | «Рабочий стол» обещали. За 11 400 ₽ — журнальный столик | published |
 | B16 | otmenili-rejs-predoplatu-vernut | Рейс отменили. 4 200 ₽ обещали вернуть за три дня — срок вышел | published |
+| B17 | zalog-5-000-obeschali-vernut-utrom | Залог 5 000 ₽ обещали вернуть утром. А потом — «после уборки» | published |

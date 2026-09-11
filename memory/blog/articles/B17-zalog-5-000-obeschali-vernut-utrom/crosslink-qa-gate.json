@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "https://добрыйдом-72.рф/blog/vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu/",
+      "slug": "vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu",
+      "anchor": "выезд в 12:00, поезд в 16:30 — куда деть чемоданы между. А если ключи передаются без встречи, полезно заранее понимать механику:",
+      "catalog_title": "Выезд в полдень. Поезд через 4 часа — чемоданы у подъезда",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "anchor": "бесконтактное заселение посуточно в Тюмени.Кейбокс удобен: не нужно подстраивать приезд и выезд под личную передачу ключей. Но он убирает одну важную точку — совместную приёмку квартиры. Никто не прошёлся вместе с гостем по комнатам и не сказал: «Принято». Значит, переписка и фото становятся не лишней формальностью, а нормальной защитой для обеих сторон.Бывает и другой разговор: хост прямо сообщает, что удерживает деньги, и называет причину. Это уже спор, но хотя бы спор с предметом. Вот такая ситуация:",
+      "catalog_title": "Оплатил квартиру посуточно. Код прислали от чужой двери",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/",
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "anchor": "перевёл залог за посуточную, на выезде сказали «не вернём». В нашем случае предмета нет вовсе. Квартира сдана, претензии не предъявлены, а залог повис. По ощущению это похоже на историю, когда",
+      "catalog_title": "Снял квартиру посуточно. Залог не вернули — нашли скол на плите",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/otmenili-rejs-predoplatu-vernut/",
+      "slug": "otmenili-rejs-predoplatu-vernut",
+      "anchor": "отменили рейс, предоплату вернуть: деньги обещают вернуть, но календаря в обещании нет.И вот вопрос для честного разговора: если квартира чистая, нормально ли держать 5 000 ₽ только потому, что «уборка ещё не закончилась»? Напишите мне в",
+      "catalog_title": "Рейс отменили. 4 200 ₽ обещали вернуть за три дня — срок вышел",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "outbound_unique_slugs": [
+    "vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu",
+    "beskontaktnoe-zaselenie-posutochno-tyumen",
+    "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+    "otmenili-rejs-predoplatu-vernut"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B17-zalog-5-000-obeschali-vernut-utrom",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}
