@@ -1161,4 +1161,4 @@ files_changed:
 checks_run:
 - `rg 'system-file skills/excalibur-research/SKILL.md' skills/ .cursor/skills/` → no matches
 - `test -f shared/research-derouter-system.md`
-commit: pending
+commit: db8536d
