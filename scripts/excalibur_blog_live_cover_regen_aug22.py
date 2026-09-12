@@ -290,6 +290,8 @@ def build_spec_from_wp(slug: str) -> dict:
         "cover_emotion": meta.get("cover_emotion", h1[:100]),
         "cover_scene": meta.get("cover_scene", f"Rental shock scene; {DAYLIGHT_SCENE_SUFFIX}"),
         "motif_composition": meta.get("motif_composition", "WOW poster collage, empty top-right logo pad"),
+        "motif_location": meta.get("motif_location", DAYLIGHT_LOCATION),
+        "inline_scene_light": meta.get("inline_scene_light", "natural daylight"),
         "motif_meme": meta.get("motif_meme", "tiny ginger cat sticker bottom-left ≤10%"),
         "motif_props": meta.get("motif_props", "torn paper, gold tape, phone, keys"),
         "motif_joke": meta.get("motif_joke", "cat reacts to rental shock"),
@@ -354,12 +356,13 @@ def bootstrap(spec: dict) -> Path:
     quadrants = ["top_right", "bottom_left", "bottom_right", "top_left", "top_right", "bottom_left", "bottom_right"]
     for i, h2 in enumerate(spec["h2s"], 1):
         vt = VISUAL_TYPES[(i - 1) % len(VISUAL_TYPES)]
+        inline_light = spec.get("inline_scene_light", "natural daylight")
         slots[f"inline_{i}"] = {
             "quadrant": quadrants[i - 1],
             "h2_anchor": h2[:72],
             "visual_type": vt,
             "scene_hint": (
-                f"{vt}: {h2[:48]}; gold labels; torn paper; natural daylight; "
+                f"{vt}: {h2[:48]}; gold labels; torn paper; {inline_light}; "
                 "empty top-right if logo."
             ),
             "alt": h2[:100],
@@ -383,7 +386,7 @@ def bootstrap(spec: dict) -> Path:
         "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
         "cover_motifs": {
             "composition": spec.get("motif_composition", "WOW poster collage, empty top-right logo pad"),
-            "location": DAYLIGHT_LOCATION,
+            "location": spec.get("motif_location", DAYLIGHT_LOCATION),
             "meme": spec.get("motif_meme", "tiny ginger cat sticker bottom-left ≤10%"),
             "prop_set": spec.get("motif_props", "torn paper, gold tape, phone, keys"),
             "sticker_set": spec["wordstat"],
