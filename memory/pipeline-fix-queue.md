@@ -1183,3 +1183,31 @@ files_changed:
 checks_run:
 - B17 `wp-publish-result.json` publish_method=sftp, live-page PASS
 commit: pending
+
+## INC-20260912-1343 — Metrika credentials missing (Content-learner B18)
+
+status: needs-human
+run_date: 2026-09-12
+role: excalibur-blog-content-learner
+topic_id: B18
+article_dir: memory/blog/articles/B18-kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda
+severity: medium
+category: env
+
+### What went wrong
+
+- `excalibur_blog_metrika_fetch.py --days 30 --ingest` → METRIKA CREDENTIALS BLOCKER (same root cause as INC-20260903-0640).
+
+### How the agent recovered this run
+
+- evidence_gate SKIP (no content-evidence-report.json); recorded 3 optional/low-confidence lessons in `memory/content-lessons.md`; no causal Metrika claims.
+
+### Durable fix needed before next run
+
+- Set YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets for tenant.
+
+### Fixer resolution
+
+status: needs-human
+reason: env-only blocker; duplicate of INC-20260903-0640
+needed_decision_or_secret: YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets
