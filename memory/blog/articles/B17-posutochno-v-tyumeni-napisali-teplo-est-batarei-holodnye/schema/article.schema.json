@@ -1,0 +1,39 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/posutochno-v-tyumeni-napisali-teplo-est-batarei-holodnye/#article",
+  "url": "{{SITE_BASE}}/blog/posutochno-v-tyumeni-napisali-teplo-est-batarei-holodnye/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/posutochno-v-tyumeni-napisali-teplo-est-batarei-holodnye/"
+  },
+  "headline": "Написали «тепло есть». За окном +6 °C — батареи холодные на 2 ночи",
+  "description": "В объявлении обещали «тепло есть», но при +6 °C за окном батареи оказались холодными на две оплаченные ночи. До перевода спросите, греют ли радиаторы в квартире сегодня вечером.",
+  "datePublished": "2026-09-12",
+  "dateModified": "2026-09-12",
+  "inLanguage": "ru-RU",
+  "author": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    },
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  }
+}
