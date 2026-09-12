@@ -1055,13 +1055,19 @@ checks_run:
 - `python3 -m unittest tests.test_cover_quad_inject -v`
 commit: pending
 
-## INC-20260911-1046 — Metrika credentials missing (Content-learner B16)
+### Fixer resolution
 
 status: needs-human
-run_date: 2026-09-11
+reason: env-only blocker; duplicate of INC-20260903-0640
+needed_decision_or_secret: YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets
+
+## INC-20260912-1047 — Metrika credentials missing (Content-learner B17)
+
+status: needs-human
+run_date: 2026-09-12
 role: excalibur-blog-content-learner
-topic_id: B16
-article_dir: memory/blog/articles/B16-otmenili-rejs-predoplatu-vernut
+topic_id: B17
+article_dir: memory/blog/articles/B17-kommunalka-vklyuchena-schet-1840-na-vyezde
 severity: medium
 category: env
 
