@@ -1,0 +1,10 @@
+{
+  "topic_id": "B17",
+  "description": "«Тепло есть», пишут в чате. А в сентябрьской Тюмени батарея молчит, и плед внезапно становится частью посуточной аренды. Добрый дом — о проверках до заезда.",
+  "rhythm": "klyshin_case_hook",
+  "geo": "Тюмень",
+  "author_brand": "Добрый дом",
+  "not_equal_title": true,
+  "not_truncated_lead": true,
+  "verdict": "PASS"
+}
