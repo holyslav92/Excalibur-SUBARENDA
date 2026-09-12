@@ -1,0 +1,39 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/kommunalka-vklyuchena-schet-1840-na-vyezde/#article",
+  "url": "{{SITE_BASE}}/blog/kommunalka-vklyuchena-schet-1840-na-vyezde/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/kommunalka-vklyuchena-schet-1840-na-vyezde/"
+  },
+  "headline": "«Коммуналка включена». На выезде — счётчики и 1 840 ₽",
+  "description": "Три ночи в Тюмени с обещанием «коммуналка включена» закончились фото счётчиков на выезде и доплатой 1 840 ₽ без стартовых показаний при заезде. Перед переводом денег достаточно уточнить один вопрос: коммунальные услуги входят в цену или оплачиваются по счётчикам.",
+  "datePublished": "2026-09-12",
+  "dateModified": "2026-09-12",
+  "inLanguage": "ru-RU",
+  "author": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    },
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  }
+}
