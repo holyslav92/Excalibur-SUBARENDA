@@ -23,14 +23,14 @@ python3 scripts/excalibur_blog_cover_qa_gate.py --article-dir <dir>
 
 When `forbid_ai_drawn_logo_cover` FAILs on inline-02/04/05/06 (panels without factory logo paste):
 
-1. **Pad-clear** TR zone on no-logo panels (idempotent):
+1. **Pad-clear** TR zone on no-logo panels (idempotent; auto-invalidates matching `cover/pre-composite/*.png` — INC B17):
 
    ```bash
    python3 scripts/excalibur_blog_cover_inline_pad_clear.py --article-dir <dir>
    python3 scripts/excalibur_blog_drawn_logo_gate.py --article-dir <dir>
    ```
 
-2. If still FAIL → **regen** affected canvas(es) with stronger NO-logo prompts (auto in `cover_quad_prompt.py` for non-logo slots), then split + `brand_logo_composite.py` + Cover-QA again.
+2. If still FAIL → **regen** affected canvas(es) with stronger NO-logo prompts (auto in `cover_quad_prompt.py` for non-logo slots), then **quad-split** (also invalidates pre-composite per panel) + `brand_logo_composite.py` + Cover-QA again. Do **not** manually `rm -rf pre-composite` unless split/pad-clear did not run.
 
 3. Do **not** paste_and_ship on no-logo panels with visible drawn lockup — pad-clear or regen first.
 
