@@ -12,11 +12,15 @@ description: Current-date facts from live sources; no invented series continuati
 ```bash
 python3 scripts/excalibur_blog_derouter_opus_chat.py \
   --role research \
-  --system-file skills/excalibur-research/SKILL.md \
+  --system-file shared/research-derouter-system.md \
   --user-file <assembled-research-inputs.md> \
   --output research-notes.md \
   --article-dir <article_dir>
 ```
+
+**HARD:** `--system-file` must be `shared/research-derouter-system.md` (slim synthesizer prompt).
+Do **not** pass this SKILL.md as system — conductor/bash/meta triggers Derouter meta-refusal
+(see INC-20260912-0740-research-derouter-meta-refusal).
 
 `DEROUTER RESEARCH BLOCKER` → стоп. Контракт: `shared/derouter-opus-brain-contract.md`.
 

@@ -1082,3 +1082,83 @@ category: env
 status: needs-human
 reason: env-only blocker; duplicate of INC-20260903-0640
 needed_decision_or_secret: YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets
+
+## INC-20260912-0737 — Metrika credentials missing (Content-learner B17)
+
+status: needs-human
+run_date: 2026-09-12
+role: excalibur-blog-content-learner
+topic_id: B17
+article_dir: memory/blog/articles/B17-posutochno-v-tyumeni-napisali-teplo-est-batarei-holodnye
+severity: medium
+category: env
+
+### What went wrong
+
+- `excalibur_blog_metrika_fetch.py --days 30 --ingest` → METRIKA CREDENTIALS BLOCKER (same root cause as INC-20260903-0640).
+
+### How the agent recovered this run
+
+- evidence_gate SKIP (no content-evidence-report.json); recorded optional/low-confidence lessons in `memory/content-lessons.md`; no causal Metrika claims.
+
+### Durable fix needed before next run
+
+- Set YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets for tenant.
+
+### Fixer resolution
+
+status: needs-human
+reason: env-only blocker; duplicate of INC-20260903-0640
+needed_decision_or_secret: YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets
+
+## INC-20260912-0740 — Research Derouter meta-refusal (B17)
+
+status: fixed
+run_date: 2026-09-12
+role: excalibur-blog-research
+topic_id: B17
+article_dir: memory/blog/articles/B17-posutochno-v-tyumeni-napisali-teplo-est-batarei-holodnye
+severity: medium
+category: prompt
+
+### What went wrong
+
+- First Derouter research attempts with `--system-file skills/excalibur-research/SKILL.md` returned meta-refusal (conductor/bash in system prompt).
+- Recovery used article-local `research-derouter-system.md` + `--timeout 600` after API 524 retry.
+- Same pattern as B14 (`model refused without conductor preamble`).
+
+### How the agent recovered this run
+
+- Synthesis succeeded with slim system prompt; `research-agent-report.json` PASS; pipeline continued to publish (post 4691).
+
+### Durable fix needed before next run
+
+- Canonical slim system prompt `shared/research-derouter-system.md`; skill/agent must not pass full SKILL.md as `--system-file`.
+
+### Suggested files to inspect/change
+
+- `shared/research-derouter-system.md`
+- `skills/excalibur-research/SKILL.md`
+- `agents/excalibur-blog-research.md`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-09-12
+fix_summary:
+- Added `shared/research-derouter-system.md` (slim synthesizer; no conductor/bash/meta).
+- Research skill/agent: `--system-file shared/research-derouter-system.md` HARD; do not pass SKILL.md as system.
+files_changed:
+- `shared/research-derouter-system.md`
+- `skills/excalibur-research/SKILL.md`
+- `.cursor/skills/excalibur-research/SKILL.md`
+- `agents/excalibur-blog-research.md`
+- `.cursor/agents/excalibur-blog-research.md`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `rg 'system-file skills/excalibur-research/SKILL.md' skills/ .cursor/skills/` → no matches
+- `test -f shared/research-derouter-system.md`
+commit: db8536d

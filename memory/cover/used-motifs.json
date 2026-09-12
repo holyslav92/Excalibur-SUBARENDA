@@ -141,6 +141,19 @@
         "sticker_set": "вернуть предоплату посуточно отмена рейса тюмень",
         "joke": "calendar day four circled while host still says checking refund"
       }
+    },
+    {
+      "date": "2026-09-12",
+      "topic_id": "B17",
+      "slug": "",
+      "motifs": {
+        "composition": "постер: гость у холодной батареи, хук слева, tr pad.",
+        "location": "тюмень, сентябрь 2026, +6 за окном, без снега.",
+        "meme": "roll safe sticker cover only",
+        "prop_set": "радиатор, термометр, плед, телефон",
+        "sticker_set": "квартиры посуточно тюмень, +6 за окном, 16 в комнате",
+        "joke": "плед подписан «не греет батареи»."
+      }
     }
   ]
 }

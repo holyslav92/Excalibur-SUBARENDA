@@ -1,0 +1,107 @@
+{
+  "status": "PASS",
+  "topic_id": "B17",
+  "slug": "posutochno-v-tyumeni-napisali-teplo-est-batarei-holodnye",
+  "research_date": "2026-09-12",
+  "summary": "Research for sept_cold_radiators_guest CASE: Tyumen short-term guest books in September, listing says «тепло/отопление есть», outside ~+6 °C but radiators cold. Fresh week: KP 2026-09-02 night frost pleas; NG72 2026-09-11 heating likely not before October; URA 2026-09-01 +8°C/5-day rule; Lyubimy gorod 2026-09-03 UK radiator duties. Wordstat P0 «квартиры посуточно тюмень» 4929 (55+11176); «батареи холодные» 7704 (225). Synthetic case — not Добрый дом incident.",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Tyumen heating-season news week of 2026-09-01 — 2026-09-11 + Klyshin sept_cold_radiators_guest hook",
+    "source_type": "news",
+    "urls": [
+      "https://www.tumen.kp.ru/online/news/7151989/",
+      "https://ng72.ru/society/5446078-v-tyumeni-otoplenie-vklyuchat-ne-ranshe-oktyabrya",
+      "https://lyubimiigorod.ru/tumen/news/18491458"
+    ],
+    "accessed_at": "2026-09-12",
+    "note": "Fresh local news on shoulder-season cold vs legal heating start delay; guest routes through host not UK."
+  },
+  "freshness_audit": {
+    "research_date": "2026-09-12",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://ng72.ru/society/5446078-v-tyumeni-otoplenie-vklyuchat-ne-ranshe-oktyabrya",
+      "published_at": "2026-09-11",
+      "note": "Heating in Tyumen city may not start before October per forecast; past starts 21–23 Sep."
+    },
+    "additional_fresh_signals": [
+      {
+        "url": "https://www.tumen.kp.ru/online/news/7151989/",
+        "published_at": "2026-09-02",
+        "type": "news",
+        "note": "Residents report frost on windowsills, social pleas to turn on heating."
+      },
+      {
+        "url": "https://lyubimiigorod.ru/tumen/news/18491458",
+        "published_at": "2026-09-03",
+        "type": "news",
+        "note": "UK must check radiators after launch; +18/+20 room norms; air locks."
+      },
+      {
+        "url": "https://ura.news/news/1053123274",
+        "published_at": "2026-09-01",
+        "type": "news",
+        "note": "City admin on +8 °C five-day rule and monitoring."
+      }
+    ]
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176", "225"],
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 4929,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "батареи холодные",
+        "volume": 7704,
+        "region": "225"
+      },
+      {
+        "phrase": "в квартирах холодно батареи",
+        "volume": 393,
+        "region": "225"
+      },
+      {
+        "phrase": "отопление посуточно",
+        "volume": 36,
+        "region": "225"
+      },
+      {
+        "phrase": "холодно в квартире",
+        "volume": 359,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "отопление в квартире холодно",
+        "volume": 19,
+        "region": "55+11176"
+      }
+    ]
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "Heating rules via city admin news + PP RF 354 cited in media; Sutochno guest cold guide; no bank tariff digits",
+    "verified_claims": 0,
+    "entities_checked": [],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "memory/blog/articles/B17-posutochno-v-tyumeni-napisali-teplo-est-batarei-holodnye/derouter-opus-stamp-research.json",
+    "first_attempt": "BLOCKER_REFUSAL",
+    "final_attempt": "PASS",
+    "note": "First attempts with SKILL.md system returned meta-refusal; synthesis succeeded with research-derouter-system.md and --timeout 600 after API 524 retry."
+  },
+  "errors": []
+}

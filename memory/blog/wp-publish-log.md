@@ -168,6 +168,22 @@
 - **interlink inbound:** B01 (3745)
 - **publish_method:** sftp (FTP PASV data channel timeout on cloud; SFTP:22 OK)
 
+## B17 — 2026-09-12
+
+- **topic_id:** B17
+- **slug:** posutochno-v-tyumeni-napisali-teplo-est-batarei-holodnye
+- **title:** Написали «тепло есть». За окном +6 °C — батареи холодные на 2 ночи
+- **post_id:** 4691
+- **permalink:** /blog/posutochno-v-tyumeni-napisali-teplo-est-batarei-holodnye/
+- **category:** posutochnaya-arenda (101)
+- **featured_image:** 4692
+- **inline_images:** 4693–4699 (7× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS
+- **dzen:** cover-1024x576 OK; feed/zen/ item live
+- **interlink inbound:** B01 (3745), B13 (4535) — SFTP retry after FTP hang
+- **publish_method:** ftp (bootstrap trigger OK; post-publish interlink via SFTP:22)
+
 ## B03 — 2026-08-28
 
 - **topic_id:** B03

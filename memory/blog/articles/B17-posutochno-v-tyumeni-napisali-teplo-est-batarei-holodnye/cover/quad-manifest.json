@@ -1,0 +1,179 @@
+{
+  "topic_id": "B17",
+  "slug": "posutochno-v-tyumeni-napisali-teplo-est-batarei-holodnye",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": [
+        "inline_4",
+        "inline_5",
+        "inline_6",
+        "inline_7"
+      ],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "«Тепло есть» — батареи холодные",
+  "cover_hook_highlight": "холодные",
+  "cover_headline_line1": "«Тепло есть»",
+  "cover_headline_line2": "батареи холодные",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Grsai draw API VIP 2K — 2 canvases × 4 panels. Logo factory paste cover + inline_1/3/7.",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "снять квартиру посуточно в тюмени"
+  ],
+  "logo_paste_inline_slots": [
+    "cover",
+    "inline_1",
+    "inline_3",
+    "inline_7"
+  ],
+  "cover_motifs": {
+    "composition": "Постер: гость у холодной батареи, хук слева, TR pad.",
+    "location": "Тюмень, сентябрь 2026, +6 за окном, без снега.",
+    "meme": "Roll Safe sticker cover only",
+    "prop_set": "радиатор, термометр, плед, телефон",
+    "sticker_set": "квартиры посуточно тюмень, +6 за окном, 16 в комнате",
+    "joke": "Плед подписан «не греет батареи»."
+  },
+  "cover_emotion": "Усталое недоумение: ключ есть, батарея холодная",
+  "cover_scene": "Гость у холодной батареи; хук «Тепло есть — батареи холодные»; TR pad.",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "scene_hint": "Гость у холодной батареи; хук «Тепло есть — батареи холодные»; TR pad.",
+      "alt": "Гость в посуточной квартире Тюмени держит ладонь на холодной батарее; на экране переписка «тепло есть», за окном осенняя прохлада.",
+      "meme_caption_ru": "",
+      "role": "cover_editorial_hero",
+      "sticky": "Плед не греет батареи"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "scene_hint": "Инфо: +6 снаружи, 16 внутри, батарея холодная.",
+      "alt": "Сравнение температуры на улице и в комнате при холодной батарее в посуточной квартире.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Тепло есть ≠ батарея греет",
+      "visual_type": "comparison_table_ui",
+      "labels": [
+        "+6 снаружи",
+        "16 внутри",
+        "батарея холодная"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "scene_hint": "Чат: две ночи оплачены, фото батареи, термометр. Тел на ленте +7 (993) 574-83-22.",
+      "alt": "Переписка после перевода: гость просит фото батареи и спрашивает, что хозяин делает сегодня вечером.",
+      "meme_caption_ru": "",
+      "h2_anchor": "После перевода",
+      "visual_type": "workflow_diagram",
+      "labels": [
+        "2 ночи",
+        "фото батареи",
+        "термометр",
+        "спросить"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "scene_hint": "Чек-лист: обогреватель, переезд, проверка, перевод.",
+      "alt": "Чек-лист вариантов, если батареи не греют: обогреватель, переезд или возврат денег.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Вопрос до перевода",
+      "visual_type": "checklist_board",
+      "labels": [
+        "обогреватель",
+        "переезд",
+        "проверка",
+        "перевод"
+      ]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "scene_hint": "Схема: город не включил, уточнить до оплаты. Тел на ленте +7 (993) 574-83-22.",
+      "alt": "Схема: городской запуск отопления и разница между наличием батарей и их работой сегодня.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Сентябрьская ловушка",
+      "visual_type": "process_flow",
+      "labels": [
+        "график",
+        "город ждёт",
+        "не обещание",
+        "до оплаты"
+      ]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "scene_hint": "Шаблон: фото батареи, термометр, +6/16. Тел на ленте +7 (993) 574-83-22.",
+      "alt": "Пример сообщения хозяину с фото батареи и показаниями термометра до оплаты.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Спросить до оплаты",
+      "visual_type": "tool_screenshot",
+      "labels": [
+        "фото в чат",
+        "термометр",
+        "+6 окно",
+        "16 комната"
+      ]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "scene_hint": "Ночь: плед не спасает, свитер, холодная батарея. Тел на ленте +7 (993) 574-83-22.",
+      "alt": "Ночь в холодной квартире: плед не заменяет отопление, две ночи уже оплачены.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Плед не спасает",
+      "visual_type": "labeled_checklist",
+      "labels": [
+        "плед слаб",
+        "ночь свитер",
+        "2 ночи",
+        "спросить"
+      ]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "scene_hint": "Маршрут: проверка → перевод → не наоборот.",
+      "alt": "Порядок действий: сначала проверить батареи, потом переводить деньги за посуточную квартиру.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Вывод практика",
+      "visual_type": "infographic_card",
+      "labels": [
+        "проверка",
+        "перевод",
+        "не наоборот",
+        "вывод"
+      ]
+    }
+  },
+  "cover_keys_ru": [],
+  "no_host_face": true,
+  "skip_identity_i2i": true
+}

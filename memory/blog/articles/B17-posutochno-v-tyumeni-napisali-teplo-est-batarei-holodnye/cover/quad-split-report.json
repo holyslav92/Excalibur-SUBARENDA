@@ -1,0 +1,11 @@
+{
+  "agent": "excalibur-blog-cover-quad-split",
+  "status": "PASS",
+  "splits": [],
+  "manifest": "cover/quad-manifest.json",
+  "html_inject": [
+    "skip inline_1: already correct under H2 — Тепло есть ≠ батарея греет",
+    "skip inline_2: already correct under H2 — После перевода",
+    "skip inline_3: already correct under H2 — Вопрос до перевода"
+  ]
+}
