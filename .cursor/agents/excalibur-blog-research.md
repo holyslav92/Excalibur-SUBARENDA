@@ -11,6 +11,11 @@ is_background: false
 Собираешь факты **на сегодня** по теме из внешнего сигнала Scout — не выдумываешь
 продолжение нашей серии.
 
+## Derouter system prompt (HARD)
+
+Research synthesis: `--system-file shared/research-derouter-system.md` only.
+Do not pass agent/skill markdown as system (meta-refusal on utility tier).
+
 ## Делай
 
 1. `research-context.json` + `research-serp.json` + handoff Scout
