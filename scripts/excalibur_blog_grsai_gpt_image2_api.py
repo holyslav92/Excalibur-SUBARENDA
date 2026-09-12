@@ -262,6 +262,23 @@ def batch_mcp_args(batch_path: Path) -> dict[str, Any]:
         out["logo_reference_local"] = logo_local
     if args.get("logo_reference_in_generation") or batch.get("logo_reference_in_generation"):
         out["logo_reference_in_generation"] = True
+
+    design_ref = str(
+        args.get("design_reference_url")
+        or batch.get("design_reference_url")
+        or ""
+    ).strip()
+    if not design_ref:
+        pexels_path = batch_path.parent / "pexels-design-ref.json"
+        if pexels_path.is_file():
+            try:
+                pexels_data = load_json(pexels_path)
+                design_ref = str(pexels_data.get("url") or "").strip()
+            except json.JSONDecodeError:
+                design_ref = ""
+    if design_ref:
+        out["design_reference_url"] = design_ref
+
     if _tenant_forbids_logo_reference(project_root()):
         _strip_logo_reference_fields(out)
     return out
@@ -276,7 +293,14 @@ def _tenant_forbids_logo_reference(root: Path) -> bool:
     except json.JSONDecodeError:
         return False
     img = tenant.get("image_generation") or {}
+    if img.get("logo_required_as_generation_reference") is True:
+        return False
+    wow = tenant.get("cover_wow_rules") or {}
+    if wow.get("logo_reference_required") is True:
+        return False
     if img.get("logo_never_as_generation_reference") is True:
+        return True
+    if wow.get("forbid_logo_reference_in_generation") is True:
         return True
     mode = str(tenant.get("cover_mode") or "").strip().casefold()
     logo_mode = str(tenant.get("logo_mode") or mode).strip().casefold()
@@ -285,6 +309,8 @@ def _tenant_forbids_logo_reference(root: Path) -> bool:
         "logo_reference_in_generation",
         "reference_in_gen",
     }:
+        return False
+    if mode in {"full_grsai_cover", "grsai_full_cover"}:
         return False
     return mode in {"brand_logo_paste", "brand_logo_composite", "paste_png"}
 
@@ -312,33 +338,44 @@ def local_image_to_data_url(path: Path) -> str:
     return f"data:{mime};base64,{encoded}"
 
 
+def resolve_generation_reference_urls(
+    image_input: dict[str, Any],
+    *,
+    root: Path,
+) -> list[str] | None:
+    """urls[] для Grsai: [0] Pexels style (ephemeral), [1] official logo PNG."""
+    refs: list[str] = []
+    design_ref = str(image_input.get("design_reference_url") or "").strip()
+    if design_ref:
+        refs.append(design_ref)
+
+    if not _tenant_forbids_logo_reference(root):
+        logo_local = str(image_input.get("logo_reference_local") or "").strip()
+        if logo_local:
+            local_path = Path(logo_local)
+            if not local_path.is_absolute():
+                local_path = root / local_path
+            if local_path.is_file():
+                refs.append(local_image_to_data_url(local_path))
+
+        if not any(r.startswith("data:") for r in refs):
+            raw_urls = image_input.get("input_urls")
+            if isinstance(raw_urls, list):
+                for raw in raw_urls:
+                    url = str(raw or "").strip()
+                    if url and url not in refs:
+                        refs.append(url)
+
+    return refs or None
+
+
 def resolve_logo_reference_images(
     image_input: dict[str, Any],
     *,
     root: Path,
 ) -> list[str] | None:
-    """Full-res logo reference для Grsai urls/aroma — локальный PNG без downscale."""
-    if _tenant_forbids_logo_reference(root):
-        return None
-    refs: list[str] = []
-    logo_local = str(image_input.get("logo_reference_local") or "").strip()
-    if logo_local:
-        local_path = Path(logo_local)
-        if not local_path.is_absolute():
-            local_path = root / local_path
-        if local_path.is_file():
-            refs.append(local_image_to_data_url(local_path))
-
-    if refs:
-        return refs
-
-    raw_urls = image_input.get("input_urls")
-    if isinstance(raw_urls, list):
-        for raw in raw_urls:
-            url = str(raw or "").strip()
-            if url:
-                refs.append(url)
-    return refs or None
+    """Обратная совместимость — делегирует resolve_generation_reference_urls."""
+    return resolve_generation_reference_urls(image_input, root=root)
 
 
 def http_json_post(url: str, api_key: str, payload: dict[str, Any], *, timeout: int) -> dict[str, Any]:
@@ -645,7 +682,7 @@ def generate_image(
     ship_native_if_undersized: bool = False,
 ) -> tuple[bytes, dict[str, Any]]:
     root = root or project_root()
-    images = resolve_logo_reference_images(image_input, root=root)
+    images = resolve_generation_reference_urls(image_input, root=root)
     aspect_ratio = str(image_input.get("aspect_ratio") or DEFAULT_ASPECT_RATIO)
     resolution = str(image_input.get("resolution") or DEFAULT_RESOLUTION)
     prompt = str(image_input["prompt"])
@@ -697,6 +734,9 @@ def generate_image(
             if images:
                 meta["input_urls_count"] = len(images)
                 meta["logo_reference_in_generation"] = bool(image_input.get("logo_reference_in_generation"))
+                if image_input.get("design_reference_url"):
+                    meta["design_reference_url"] = str(image_input["design_reference_url"])
+                    meta["design_reference_ephemeral"] = True
             return image_bytes, meta
         except Grsai2KNotMetError as exc:
             # Не жечь host-retry на quality/size для non-vip.
@@ -1014,6 +1054,22 @@ def main() -> int:
             **meta,
         }
         save_json(result_path, record)
+
+        # Эфемерный Pexels ref — убрать из batch после успешной генерации (логотип остаётся в настройках).
+        if batch_path.is_file() and image_input.get("design_reference_url"):
+            try:
+                batch_after = load_json(batch_path)
+                batch_after.pop("design_reference_url", None)
+                batch_after.pop("design_reference_ephemeral", None)
+                jobs = batch_after.get("jobs")
+                if isinstance(jobs, list) and jobs:
+                    mcp_args = jobs[0].get("mcp_args")
+                    if isinstance(mcp_args, dict):
+                        mcp_args.pop("design_reference_url", None)
+                save_json(batch_path, batch_after)
+            except (json.JSONDecodeError, OSError):
+                pass
+
         print(
             f"OK local_path={rel_canvas} bytes={len(image_bytes)} "
             f"model={meta.get('model_succeeded', model)} host={meta.get('host')}"

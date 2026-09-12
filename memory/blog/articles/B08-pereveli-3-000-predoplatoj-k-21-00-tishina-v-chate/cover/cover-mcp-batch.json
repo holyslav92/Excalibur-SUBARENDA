@@ -7,9 +7,11 @@
   "max_generation_attempts": 2,
   "identity_reference_local": "",
   "identity_reference_id": "",
-  "logo_reference_local": "",
-  "logo_reference_url": "",
-  "logo_reference_in_generation": false,
+  "logo_reference_local": "memory/cover/assets/brand/logo-dobry-dom.png",
+  "logo_reference_url": "{{SITE_BASE}}/wp-content/uploads/2026/03/cropped-img_7143.png",
+  "logo_reference_in_generation": true,
+  "design_reference_url": "https://images.pexels.com/photos/4857944/pexels-photo-4857944.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "design_reference_ephemeral": true,
   "reference_url_hosted": "",
   "output_canvas": "cover/cover-canvas.png",
   "result_path": "cover/cover-mcp-result.json",
@@ -21,21 +23,28 @@
     "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
     "resolution": "2K",
     "note": "PRIMARY: Grsai draw API (PRIMARY_MODEL_ID only; vip permanently disabled; aspectRatio+resolution=2K first, one explicit-size retry, ship native undersized). Fallback: excalibur_blog_kie_gpt_image2_api.py when Grsai fail. FORBIDDEN: *-vip, flux2-pro-*, Seedream, nano_banana*, z-image, mcp-derouter/start-mcp.sh.",
-    "apply_script": "python3 scripts/excalibur_blog_cover_standalone_apply.py --article-dir <article_dir> && python3 scripts/excalibur_blog_brand_logo_composite.py --article-dir <article_dir>"
+    "apply_script": "python3 scripts/excalibur_blog_cover_standalone_apply.py --article-dir <article_dir> --skip-pad-clear"
   },
   "jobs": [
     {
       "slot": "canvas_quad",
       "tool": "grsai",
       "mcp_args": {
-        "prompt": "DZEN STORY COLLAGE 16:9 standalone 2048x1152. ONE Grsai generation = scene + Cyrillic type + sticky + phone IN gen; images[] reserves TR pad — factory pastes logo-dobry-dom.png pixel-faithful after (native aspect, NOT s…\nStandalone cover canvas 2048x1152 exact 16:9 full-bleed — NOT a quad quadrant.\nTYPE-LED EDITORIAL MAGAZINE POSTER — tender light, NOT people-photo scene, NOT 3D gold.\nNOT A TEMPLATE — rebuild THIS cover from THIS article case only (H1, bait/switch, figure, quote). Cyrillic display lines must be unique punchlines for THIS story — NEVER recycle default stamps (wood texture + Harold + peel-pill phone combo or any fixed prop soup).\nTENDER LIGHT: cream/linen hallway, pale oak, houseplant, soft daylight; palette warm milk/oatmeal + matte terracotta rgb(158,74,54) + charcoal rgb(33,29,26); BAN metallic gold/brass/3D gold/dark leather/wood+Harold lobby\nHERO two-beat CASE headline — L1 «Перевели 3 000 ₽» + L2 «тишина»; Two-beat CASE Cyrillic in-frame: L1 Cormorant Garamond SemiBold Italic terracotta tracking+2; L2 Onest 860 charcoal lowercase — NOT Arial/Impact/Unbounded, NOT 3D gold; NOT a recycled stamp.\nBAIT/SWITCH for THIS story: checkmarks no address.\nCASE FIGURE/PROP (invent layout around it): phone receipt suitcase tablo.\nQUOTE PUNCHLINE sticker EXACT Cyrillic «Сначала условия» — unique to THIS case, not a recycled factory stamp.\nEXACTLY ONE catalog meme die-cut sticker with white peel border: «Trade Offer» (id=trade_offer; picked=topic_tag_overlap paste real asset memory/cover/memes/trade_offer.png). Prefer pasting real file memory/cover/memes/trade_offer.png. NEVER hide_the_pain_harold or roll_safe; NOT invented face; NOT 0 memes; NOT 2+; never same face as last 8 covers.\nPhone EXACT «+7 (993) 574-83-22» on ONE LARGE light information board (painted ceramic / pale wood kitchen tablo) — cream/sage panel, BIG Cyrillic digits readable at Dzen thumb; caption «добрый дом • тюмень» under digits; NOT fridge magnet, NOT peel-pill, NOT realtor scrap, NOT gold/brass plaque, NOT tiny door/intercom number, NOT beige/gray UI pill/button/banner, NOT bottom-left post-composite chip\nPEOPLE: default ZERO — at most tiny silhouette/hands/back-of-head if case absolutely needs; NEVER group scene.\nCase scene on tender-light hallway mood: Phone 3000₽ silent chat; tablo +7 (993) 574-83-22; Sep Tyumen; TR pad..\nCase emotion: Тревога: деньги ушли, ответа нет.\nTOP-RIGHT pad 8-12% — scene continuation only; TOP-RIGHT pad 8-12% width — continuous SCENE only (wall/wood/sky/pattern texture).\nFactory pastes official alpha PNG logo AFTER generation — NEVER send logo as Grsai reference.\nBAN: 0 memes, 2+ memes, meme soup, people-heavy group photo, tiny in-scene phone on door, Wordstat sticker soup, torn-paper collage, metallic gold, brass, 3D gold type, gold-glitter type, dark leather, wood+Harold lobby stamp, yellow sticky notes, split white-panel+photo, phone pill, peel-pill phone, fridge magnet phone, gold brass plaque, post-composite phone chip, model-drawn logo, house-with-heart, logo plate, empty stock room, WordPress UI, wow poster collage soup, dark cinematic, overlapping type layers, magnified letter crops, Trade Offer/Drake/Wojak drawn by model, collage of stickers covering headline, white/gray plaque under logo, model-drawn lockup.\nTEXT LANGUAGE LOCK: visible text RUSSIAN Cyrillic only; headline readable at Dzen thumb.\nGrsai primary image API, non-VIP, max 2 gens; on exhaust neighbor-clone pad-clear TR + factory logo paste.",
+        "prompt": "DZEN STORY COLLAGE 16:9 standalone 2048x1152. ONE Grsai generation = scene + Cyrillic type + phone + logo IN gen; urls[0]=Pexels style ref, urls[1]=logo-dobry-dom.png — NO factory overlay scripts.\nStandalone cover canvas 2048x1152 exact 16:9 full-bleed — COMPLETE Dzen editorial thumbnail IN one generation.\nFULL GRSAI EDITORIAL (urls[]): urls[0] = Pexels style/layout reference ONLY — borrow color, composition, typography mood; do NOT copy photo subjects verbatim. urls[1] = official Добрый дом logo PNG — place TOP-RIGHT 8-12% width, pixel-faithful from reference (NOT redrawn, NOT house-with-heart). ALL Cyrillic text drawn IN this generation with PERFECT spelling — character-perfect copy of EXACT strings below; no garbled/overlapping letters. Phone +7 (993) 574-83-22 BIG and Dzen-thumb readable IN scene. NO factory post-composite scripts for type/phone/logo.\nDZEN STORY COLLAGE: photoreal bright Comfort+ Tyumen daily-rental; slightly blurred apartment background; split layout photo + type; palette warm milk/oatmeal + charcoal rgb(33,29,26) + mustard brush rgb(255,210,80); BAN metallic gold/brass/3D gold/dark leather/empty hallway default\nHERO for THIS case — story objects/props: phone receipt suitcase tablo; emotion cue: Тревога: деньги ушли, ответа нет; bait/switch visual: checkmarks no address.\nScene context: Phone 3000₽ silent chat; tablo +7 (993) 574-83-22; Sep Tyumen; TR pad..\nHEADLINE two beats EXACT Cyrillic — L1 «Перевели 3 000 ₽» + L2 «тишина»; Cyrillic headline must appear IN the photograph on a real physical object (printed paper on coffee table, TV screen, door sign, barrier sticker, luggage tag) — NOT a graphic-design layer, NOT yellow marker highlight, NOT sticky-note collage, NOT phone pill button, NOT Canva overlay typography.\nBrush highlight keyword EXACT «тишина» behind ONE word in headline.\nYellow sticky-note punch EXACT Cyrillic «Сначала условия».\nPHONE EXACT «+7 (993) 574-83-22» readable at Dzen thumb — in-scene tablo or bar, NOT peel-pill, NOT +7 922.\nLOGO: copy official PNG from urls[1] TOP-RIGHT 8-12% width — pixel-faithful, native aspect; NOT redrawn curtains/flower lockup; NO house-with-heart, subtitle, second logo; NO white/gray plaque.\nSTYLE: follow urls[0] Pexels reference for layout/color/typography energy — unique per article; do not clone photo subjects.\nPEOPLE: only when THIS case needs — guest stress face, hands with keys, silhouette; NOT group photo; NOT default zero-people hallway.\nBAN: overlapping type layers, magnified letter crops, Trade Offer/Drake/Wojak template drawn by model, white/gray/beige plaque or card under logo, empty hallway as default layout, phone pill/peel-pill, WordPress UI, 2+ memes / meme soup, realtor phone +7 922, factory poster composite, model-invented logo, house-with-heart lockup, extra logo subtitle, second logo copy.\nTEXT LANGUAGE LOCK: visible text RUSSIAN Cyrillic only; EXACT spelling of every quoted string; headline readable at Dzen thumb.\nGrsai primary image API; urls[0]=Pexels style, urls[1]=logo; non-VIP max 2 gens; slice/resize ONLY after — NO factory overlay scripts.",
         "aspect_ratio": "16:9",
-        "resolution": "2K"
+        "resolution": "2K",
+        "logo_reference_local": "memory/cover/assets/brand/logo-dobry-dom.png",
+        "logo_reference_url": "{{SITE_BASE}}/wp-content/uploads/2026/03/cropped-img_7143.png",
+        "logo_reference_in_generation": true,
+        "input_urls": [
+          "{{SITE_BASE}}/wp-content/uploads/2026/03/cropped-img_7143.png"
+        ],
+        "design_reference_url": "https://images.pexels.com/photos/4857944/pexels-photo-4857944.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
       }
     }
   ],
   "validation": {
-    "prompt_chars": 3480,
+    "prompt_chars": 3090,
     "max_prompt_chars": 3500,
     "required_reference_host": "{{SITE_HOST}}",
     "resolution": "2K"

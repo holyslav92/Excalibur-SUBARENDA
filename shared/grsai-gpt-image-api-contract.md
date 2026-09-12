@@ -80,7 +80,10 @@ python3 scripts/excalibur_blog_grsai_base_probe.py
 ```
 
 - **webHook:** `"-1"` → sync polling mode (no callback URL)
-- **images:** optional reference URLs or base64 data-URLs for i2i
+- **images / urls:** optional reference URLs or base64 data-URLs for i2i
+- **Per-article refs (mandatory for Добрый дом):**
+  - `urls[0]` — ephemeral Pexels style/layout (`cover/pexels-design-ref.json`); cleared from batch after gen
+  - `urls[1]` — official `memory/cover/assets/brand/logo-dobry-dom.png` (persistent tenant setting)
 - Response: `data.id` = task id
 
 ### aspectRatio → 2K long side (Grsai, resolution=2K)
@@ -126,17 +129,19 @@ Doctor: **WARN** when `GRSAI_API_KEY` missing and `image_api.provider=grsai`; Co
 ## Cover command
 
 ```bash
+python3 scripts/excalibur_blog_pexels_design_ref.py --article-dir memory/blog/articles/<topic_id>-<slug>
 python3 scripts/excalibur_blog_grsai_gpt_image2_api.py \
   --article-dir memory/blog/articles/<topic_id>-<slug> \
-  --batch cover/quad-mcp-batch-01.json \
-  --result cover/quad-mcp-result-01.json
+  --batch cover/cover-mcp-batch.json \
+  --result cover/cover-mcp-result.json
 ```
 
-Then:
+Then (slice/resize only — **no** logo composite):
 
 ```bash
-python3 scripts/excalibur_blog_quad_apply.py --article-dir <dir> --canvas-index 1 --inject-html
-python3 scripts/excalibur_blog_quad_apply.py --article-dir <dir> --canvas-index 2 --inject-html
+python3 scripts/excalibur_blog_cover_standalone_apply.py --article-dir <dir> --skip-pad-clear
+# OR for 2×2 grid:
+python3 scripts/excalibur_blog_cover_quad_split.py --article-dir <dir> --inject-html
 ```
 
 ## Retry
