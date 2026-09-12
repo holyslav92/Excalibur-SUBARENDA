@@ -877,3 +877,135 @@ confidence: high
 
 ### Resolution
 status: recorded
+
+---
+
+## LESSON-20260912-0737-B17-sept-cold-radiators-heating-promise
+status: proposed
+topic_id: B17
+category: utility
+confidence: low
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP. Урок из publish-артефактов: article.html (§«тепло есть» vs греющая батарея), title-brief.json, description-brief.json, scout handoff sept_cold_radiators_guest, case-delivery-gate PASS.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest BLOCKER (INC-20260903-0640, INC-20260912-0737).
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Two-beat H1 «Написали «тепло есть». За окном +6 °C — батареи холодные на 2 ночи»: обещание + погодный контрфакт + длительность (2 ночи), не how-to.
+- §1: **6 800 ₽ за две ночи**, +6 °C за окном, 16–17 °C в комнате, холодная батарея и стояк в ванной, конденсат на стекле; плед как «дотерпеть», не решение.
+- Разведение «отопление есть» (система в доме) vs «батарея греет сегодня вечером» — центральный utility-слой, anti-dup с отключением ГВС и зимним hero.
+- Tyumen правило +8 °C пять суток + прогноз сентября 2026 (старт не раньше октября) как фон, не legal guide; прошлые даты 21–23 сентября — не гарантия.
+- Хост-ответы «сезон не начался» / «УК скоро включит» / «возьмите плед» — каждый может быть правдой, но не решает оплаченную ночь.
+- Вопрос-отмычка: «Батареи уже греют в этой квартире сегодня вечером или отопление только после старта сезона?» → TG/MAX mid-body.
+- Klyshin «Нет. Так не заселяем.» + «Сначала проверка. Потом перевод.»; чеклист из 6 пунктов (тип отопления, резерв, обогреватель, действия хозяина).
+- Interlink spine: B12 «тихий центр» (оценочное слово), B07 «кухня есть», B10 «всё включено», B11 «всё для гостей» — красная линия «наличие ≠ результат сегодня».
+- Wordstat P0 spine «квартиры посуточно тюмень» 4929 (Tyumen); supporting «батареи холодные» 7704 (225); узкий «отопление посуточно» 36 — rework на spine + seasonal sub-angle.
+- Description не дублирует H1: «батарея молчит» + плед (description-brief PASS).
+
+### Change
+- В `sept_cold_radiators_guest` кейсах в §1 сразу фиксировать **три слоя**: температура в комнате (16–17 °C), состояние батареи/стояка (холодные), ночная погода (+6 °C) — не раскрывать только в H2 про городской сезон.
+- Scout handoff: при weak «отопление посуточно» логировать rework chain (как B17) на spine P0 + symptom «батареи холодные»; anti-dup vs ГВС и зимние cover heroes.
+
+### Never again
+- Путать отсутствие отопления с отключением горячей воды; зимний heating hero на сентябрьском кейсе.
+- Принимать «тепло есть» / «отопление есть» без вопроса «греют ли батареи **сегодня вечером** в этой квартире».
+- Считать городской старт сезона или календарь 21–23 сентября гарантией тёплой ночи гостя.
+- Назначать гостя звонить в УК вместо хозяина; обогреватель без согласования в чате.
+- How-to «5 советов» / юридическая претензия; финал «Наш вывод простой».
+
+### Proposed apply
+- Scout: hook `sept_cold_radiators_guest` → handoff lockpick (батареи сегодня + тип отопления + резерв) + final P0 spine Tyumen + note «батареи холодные» volume.
+- Review only; Writer prompt не трогать автоматически.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260912-0737-B17-september-paradox-city-calendar-vs-paid-night
+status: proposed
+topic_id: B17
+category: structure
+confidence: low
+
+### Evidence
+- artifact: title-brief.json#angle
+  finding: angle «две оплаченные ночи при холодных батареях при +6 °C»; opening-meta-gate PASS; H2 «Почему одна фраза каждый сентябрь становится проблемой».
+- metrika_signal: none (credentials unavailable; causal retention не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Слой «город ждёт +8 °C пять дней → гость лежит при 16 °C» отдельным абзацем — asymmetric moment после полной оплаты за две ночи.
+- Блок «даже после официального старта тепло приходит не во все квартиры сразу» — guest с двумя ночами не дожидается настройки системы.
+- Хост-цепочка «сезон не начался → УК скоро → плед» как escalating vagueness без решения текущей ночи (контраст с B16 polite vagueness на деньги, B08 silence).
+- Utility после перевода: фото/видео батареи + термометр + конкретный вопрос «что делаете сегодня вечером» (обогреватель, переезд, возврат).
+
+### Change
+- Для seasonal/heating hooks всегда включать **calendar paradox** (законная задержка города vs оплаченная ночь) в utility-блок — не только механику батарей.
+- При interlink — sibling про broad promises (B10, B07, B11, B12) одной красной линией «слово в карточке ≠ результат вечером заезда».
+
+### Never again
+- Писать cold-radiators кейс только про норматив +8 °C, игнорируя temporal leverage (ключ в руке, спать сегодня).
+- Советовать гостю ждать пятидневного температурного периода вместо запроса решения у хозяина.
+
+### Proposed apply
+- Writer checklist (review-only): sept_cold_radiators + short stay → один абзац про city-calendar vs paid-night paradox после §1.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260912-0737-B17-title-temp-duration-over-heating-keyword
+status: proposed
+topic_id: B17
+category: voice
+confidence: low
+
+### Evidence
+- artifact: title-brief.json / scout handoff
+  finding: Klyshin original «отопление есть» + «батареи ледяные» → финальный H1 «тепло есть» + +6 °C + «на 2 ночи»; klyshin_title_shape 3; description rhythm klyshin_case_hook.
+- metrika_signal: none (credentials unavailable; causal CTR не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Cable pain-scene: цитата-обещание в кавычках + измеримый контрфакт (+6 °C) + duration anchor (2 ночи), без SEO-хвоста «батареи холодные посуточно тюмень».
+- Description держит «батарея молчит» и плед, не дублирует H1 (not_equal_title PASS).
+- Slug `posutochno-v-tyumeni-napisali-teplo-est-batarei-holodnye` несёт geo + symptom для anti-dup, H1 — promise + weather + nights.
+
+### Change
+- Для seasonal heating hooks: prefer **quoted «тепло есть» + °C + paid nights** over narrow «батареи холодные» or «отопление посуточно» в H1.
+- Title: temperature outdoors в H1 усиливает сентябрьский paradox без спойлера всей utility H2.
+
+### Never again
+- H1-спойлер со всеми нормативами (+8 °C, пять дней, октябрь) — оставлять в body H2.
+- Description, дублирующий H1 про +6 °C и две ночи.
+
+### Proposed apply
+- Title/Description review: sept_cold_radiators — quoted promise + weather + duration > heating-keyword H1.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
