@@ -1,16 +1,10 @@
-topic_id: B17  
+Задача: выведи ТОЛЬКО текст handoff-файла `.cursor/excalibur-blog-handoff.md` — без BLOCKER, без «недоступен интерфейс», без shell-команд. Ты Derouter utility tier Scout; Wordstat уже выполнен дирижёром через MCP-KV.
+
+## Данные (используй как есть)
+
+topic_id: B17
 slug: napisali-teplo-est-za-oknom-6-gradusov-batarei-holodnye
-
 title_draft: «Написали «тепло есть». За окном +6 °C — батареи холодные»
-
-dzen_pattern: 5  
-dzen_shape_hint: «Написали «тепло есть». За окном +6 °C — батареи холодные»
-
-external_signal: klyshin angle bank + seasonal Tyumen guest pain (September heating start)
-
-signal_urls:
-- https://t.me/klyshin_A
-- https://добрыйдом-72.рф/blog/
 
 wordstat_preflight: mcp-kv wordstat_get_user_info OK
 
@@ -22,4 +16,14 @@ wordstat: mcp_kv live | regions 55,11176,compare225 | P0 «квартиры по
 
 angle_rotation: checked last N=3 (B16 cancel, B15 wifi, B14 neighbors) | burn-at-door skip: no | reason: fresh heating/seasonal family
 
-case_angle: Гость бронирует квартиру посуточно в Тюмени, читает в описании «тепло есть», а вечером при +6 °C за окном понимает: батареи холодные, ночевать придётся в одежде. Исследованию нужен практический ракурс гостя: что уточнить до предоплаты, как проверить обещание «тепло» в сезон запуска отопления и какой выход просить у хозяина, если квартира не пригодна для ночёвки.
+dzen_pattern: 5
+dzen_shape_hint: «Написали «тепло есть». За окном +6 °C — батареи холодные»
+
+external_signal: klyshin angle bank + seasonal Tyumen guest pain (September heating start)
+signal_urls:
+- https://t.me/klyshin_A
+- https://добрыйдом-72.рф/blog/
+
+## Формат выхода
+
+Markdown handoff по шаблону skill scout-excalibur-blog: topic_id, title draft, dzen_pattern, external_signal, signal_urls, klyshin_hook line, wordstat_rework line, wordstat line, angle_rotation line, case_angle paragraph (2-3 предложения для Research).
