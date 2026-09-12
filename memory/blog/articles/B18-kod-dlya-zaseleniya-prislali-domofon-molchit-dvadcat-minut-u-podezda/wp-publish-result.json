@@ -1,0 +1,27 @@
+{
+  "slug": "kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda",
+  "topic_id": "B18",
+  "permalink": "{{SITE_BASE}}/blog/kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B18-kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1143364,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4724 slug=kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda\nOK categories=101,106\nOK dzen_yzen_meta=1\nOK featured_image=4734\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4735 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda-inline-02-1.png\nOK inline_alt=4735\nOK inline_caption=4735\nOK inline_description=4735\nOK inline_image_upload=4736 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda-inline-01-1.png\nOK inline_alt=4736\nOK inline_caption=4736\nOK inline_description=4736\nOK inline_image_upload=4737 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda-inline-05-1.png\nOK inline_alt=4737\nOK inline_caption=4737\nOK inline_description=4737\nOK inline_image_upload=4738 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda-inline-04-1.png\nOK inline_alt=4738\nOK inline_caption=4738\nOK inline_description=4738\nOK inline_image_upload=4739 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda-inline-03-1.png\nOK inline_alt=4739\nOK inline_caption=4739\nOK inline_description=4739\nOK inline_image_upload=4740 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda-inline-07-1.png\nOK inline_alt=4740\nOK inline_caption=4740\nOK inline_description=4740\nOK inline_image_upload=4741 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda-inline-06-1.png\nOK inline_alt=4741\nOK inline_caption=4741\nOK inline_description=4741\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda/",
+    "errors": []
+  }
+}
