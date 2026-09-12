@@ -1,0 +1,21 @@
+{
+  "slug": "vyezd-v-12-00-poezd-v-16-30-kuda-chemodany",
+  "wp_post_id": 4274,
+  "h1": "Сняли квартиру посуточно. Хотели дождаться поезда. У двери: +2 100 ₽ или чемоданы в подъезд",
+  "url": "{{PUBLIC_SITE_URL}}/blog/vyezd-v-12-00-poezd-v-16-30-kuda-chemodany/",
+  "cover_remote": "vyezd-v-12-00-poezd-v-16-30-kuda-chemodany-cover-graffiti-v1.png",
+  "cover_url": "{{PUBLIC_SITE_URL}}/wp-content/uploads/2026/09/vyezd-v-12-00-poezd-v-16-30-kuda-chemodany-cover-graffiti-v1.png",
+  "remote_path": "wp-content/uploads/2026/09/vyezd-v-12-00-poezd-v-16-30-kuda-chemodany-cover-graffiti-v1.png",
+  "media_id": 4298,
+  "uploaded": {
+    "vyezd-v-12-00-poezd-v-16-30-kuda-chemodany-cover-graffiti-v1.png": "{{PUBLIC_SITE_URL}}/wp-content/uploads/2026/09/vyezd-v-12-00-poezd-v-16-30-kuda-chemodany-cover-graffiti-v1.png",
+    "vyezd-v-12-00-poezd-v-16-30-kuda-chemodany-cover-graffiti-v1-1024x576.png": "{{PUBLIC_SITE_URL}}/wp-content/uploads/2026/09/vyezd-v-12-00-poezd-v-16-30-kuda-chemodany-cover-graffiti-v1-1024x576.png"
+  },
+  "version_suffix": "cover-graffiti-v1",
+  "php_out": "OK post_updated=4274; attachment_id=4298",
+  "live_verify": {
+    "h1_count": 1,
+    "og_image_contains": "cover-graffiti-v1.png",
+    "featured_contains": "cover-graffiti-v1.png"
+  }
+}
