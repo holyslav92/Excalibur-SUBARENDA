@@ -1140,7 +1140,7 @@ files_changed:
 checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_brand_logo_composite.py scripts/excalibur_blog_cover_inline_pad_clear.py scripts/excalibur_blog_cover_quad_split.py`
 - `python3 -m unittest tests.test_pre_composite_invalidate -v`
-commit: pending
+commit: 79b2806
 
 ## INC-20260912-1049 — FTP PASV hang on 16MB bootstrap, SFTP workaround (B17 publish)
 
