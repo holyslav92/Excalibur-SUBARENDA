@@ -1,0 +1,15 @@
+{
+  "agent": "excalibur-blog-cover-quad-split",
+  "status": "PASS",
+  "splits": [],
+  "manifest": "cover/quad-manifest.json",
+  "html_inject": [
+    "injected inline_1 positional after H2 — «Тепло есть» — не значит, что батарея греет сегодня (manifest anchor missing: Тепло есть ≠ батарея греет; para_offset=0)",
+    "injected inline_2 positional after H2 — «Тепло есть» — не значит, что батарея греет сегодня (manifest anchor missing: После перевода; para_offset=1)",
+    "injected inline_3 positional after H2 — Что происходит после перевода (manifest anchor missing: Вопрос до перевода; para_offset=0)",
+    "injected inline_4 positional after H2 — Что происходит после перевода (manifest anchor missing: Сентябрьская ловушка; para_offset=1)",
+    "injected inline_5 positional after H2 — Почему одна фраза каждый сентябрь становится проблемой (manifest anchor missing: Спросить до оплаты; para_offset=0)",
+    "injected inline_6 positional after H2 — Почему одна фраза каждый сентябрь становится проблемой (manifest anchor missing: Плед не спасает; para_offset=1)",
+    "injected inline_7 positional after H2 — Мой вывод как практика (manifest anchor missing: Вывод практика; para_offset=0)"
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "topic_id": "B17",
+  "slug": "posutochno-v-tyumeni-napisali-teplo-est-batarei-holodnye",
+  "cover_family": "brand_collage",
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "file": "cover/cover.png",
+  "alt": "Гость в посуточной квартире Тюмени держит ладонь на холодной батарее; на экране переписка «тепло есть», за окном осенняя прохлада.",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-quad-01.png",
+  "generated_at": "2026-09-12T07:00:05+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Гость в посуточной квартире Тюмени держит ладонь на холодной батарее; на экране переписка «тепло есть», за окном осенняя прохлада.",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Сравнение температуры на улице и в комнате при холодной батарее в посуточной квартире.",
+      "h2_anchor": "Тепло есть ≠ батарея греет",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Переписка после перевода: гость просит фото батареи и спрашивает, что хозяин делает сегодня вечером.",
+      "h2_anchor": "После перевода",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Чек-лист вариантов, если батареи не греют: обогреватель, переезд или возврат денег.",
+      "h2_anchor": "Вопрос до перевода",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_4",
+      "file": "cover/inline-04.png",
+      "alt": "Схема: городской запуск отопления и разница между наличием батарей и их работой сегодня.",
+      "h2_anchor": "Сентябрьская ловушка",
+      "visual_type": "process_flow",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_5",
+      "file": "cover/inline-05.png",
+      "alt": "Пример сообщения хозяину с фото батареи и показаниями термометра до оплаты.",
+      "h2_anchor": "Спросить до оплаты",
+      "visual_type": "tool_screenshot",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_6",
+      "file": "cover/inline-06.png",
+      "alt": "Ночь в холодной квартире: плед не заменяет отопление, две ночи уже оплачены.",
+      "h2_anchor": "Плед не спасает",
+      "visual_type": "labeled_checklist",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_7",
+      "file": "cover/inline-07.png",
+      "alt": "Порядок действий: сначала проверить батареи, потом переводить деньги за посуточную квартиру.",
+      "h2_anchor": "Вывод практика",
+      "visual_type": "infographic_card",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}
