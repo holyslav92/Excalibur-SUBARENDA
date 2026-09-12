@@ -378,6 +378,15 @@ def split_canvas(
             out_name = "cover.png" if slot_key == "cover" else INLINE_FILES[slot_key]
             out_path = cover_dir / out_name
             crop.save(out_path, format="PNG", optimize=True)
+            try:
+                from excalibur_blog_brand_logo_composite import (
+                    PRE_COMPOSITE_DIRNAME,
+                    invalidate_pre_composite_panel,
+                )
+
+                invalidate_pre_composite_panel(cover_dir / PRE_COMPOSITE_DIRNAME, out_name)
+            except ImportError:
+                pass
 
             try:
                 from excalibur_blog_brand_logo_composite import (

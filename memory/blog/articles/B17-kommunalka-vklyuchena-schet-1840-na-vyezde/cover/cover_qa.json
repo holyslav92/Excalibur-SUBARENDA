@@ -1,0 +1,52 @@
+{
+  "agent": "excalibur-blog-cover-qa",
+  "status": "PASS",
+  "checked_at": "2026-09-12",
+  "topic_id": "B17",
+  "checks": {
+    "eight_png_exist": true,
+    "quad_manifest_valid": true,
+    "wordstat_stickers_1_3": true,
+    "motif_no_collision_14d": true,
+    "max_one_cat_meme_slot": true,
+    "light_high_key": true,
+    "logo_composite_stamp_pass": true,
+    "cover_logo_pasted": true,
+    "inline_no_logo_on_inlines": true,
+    "forbid_phone_on_cover_image": true,
+    "forbid_922_phone": true,
+    "forbid_ai_drawn_logo_cover": true,
+    "forbid_wordpress_ui_in_art": true,
+    "no_logo_plate_cover": true,
+    "forbid_graphic_collage_overlay": true,
+    "forbid_poster_composite_stamp": true,
+    "forbid_logo_reference_in_batch": true,
+    "forbid_overlapping_text_blocks": true,
+    "forbid_giant_cropped_glyph": true,
+    "cyrillic_hook_on_cover": true,
+    "phone_in_scene_cover": true,
+    "logo_count_cover_and_inlines": true,
+    "no_double_logos": true,
+    "season_matches_manifest": true
+  },
+  "failures": [],
+  "visual_review": {
+    "logo_count": "cover 1 factory TR; inline-01/03/07 factory paste; inline-02/04/05/06 no factory logo after full-wipe pad-clear",
+    "phone_in_scene": "+7 (993) 574-83-22 inside smartphone messenger chat on cover; no gold tape pill",
+    "double_logos": "none",
+    "cyrillic_hook": "Коммуналка включена — доплата на выезде (highlight: Коммуналка)",
+    "season": "early September 2026 Tyumen overcast autumn, golden leaves through window"
+  },
+  "regen_log": [
+    "canvas-quad-01 regen ×2 (QA: phone in chat UI, zero cover memes, autumn overcast)",
+    "canvas-quad-02 regen ×2 (QA: inline_4 TR pad no drawn lockup)",
+    "pre-composite/ cleared before split+logo composite (stale restore fix)",
+    "full-wipe pad-clear on inline-02/04/05/06"
+  ],
+  "notes": [
+    "Factory logo paste: cover + inline-01/03/07",
+    "Cat meme quota: inline-06 only",
+    "validate_cover_phone_and_overlap_gates: PASS",
+    "validate_logo_stamp: PASS"
+  ]
+}

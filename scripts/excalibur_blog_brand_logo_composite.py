@@ -325,6 +325,27 @@ def clamp_logo_fraction(value: float, cfg: dict[str, Any] | None = None) -> floa
     return max(lo, min(hi, target))
 
 
+def pre_composite_panel_path(pre_dir: Path, panel_name: str) -> Path:
+    return pre_dir / panel_name
+
+
+def invalidate_pre_composite_panel(pre_dir: Path, panel_name: str) -> bool:
+    """Drop stale pre-composite snapshot after regen/pad-clear/split (INC B17)."""
+    path = pre_composite_panel_path(pre_dir, panel_name)
+    if path.is_file():
+        path.unlink()
+        return True
+    return False
+
+
+def invalidate_pre_composite_panels(pre_dir: Path, panel_names: list[str]) -> list[str]:
+    removed: list[str] = []
+    for name in panel_names:
+        if invalidate_pre_composite_panel(pre_dir, name):
+            removed.append(name)
+    return removed
+
+
 def snapshot_pre_composite(image_path: Path, pre_dir: Path) -> tuple[Path, bool]:
     """Сохранить копию до factory paste — для QA drawn-lockup gate."""
     pre_dir.mkdir(parents=True, exist_ok=True)

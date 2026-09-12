@@ -8,7 +8,12 @@ import json
 import sys
 from pathlib import Path
 
-from excalibur_blog_brand_logo_composite import load_tenant_logo_config, resolve_inline_logo_slots
+from excalibur_blog_brand_logo_composite import (
+    PRE_COMPOSITE_DIRNAME,
+    invalidate_pre_composite_panel,
+    load_tenant_logo_config,
+    resolve_inline_logo_slots,
+)
 from excalibur_blog_cover_standalone_apply import pad_clear_top_right_scene_clone
 from excalibur_blog_quad_slots import INLINE_FILES, active_inline_keys, inline_count_from_manifest
 
@@ -39,12 +44,15 @@ def no_logo_inline_files(article_dir: Path, root: Path) -> list[Path]:
 
 def pad_clear_no_logo_inlines(article_dir: Path, root: Path) -> dict:
     cleared: list[dict] = []
+    pre_dir = article_dir / "cover" / PRE_COMPOSITE_DIRNAME
     for path in no_logo_inline_files(article_dir, root):
         passes = pad_clear_top_right_scene_clone(path)
+        pre_invalidated = invalidate_pre_composite_panel(pre_dir, path.name)
         cleared.append(
             {
                 "file": str(path.relative_to(article_dir)),
                 "pad_clear_passes": passes,
+                "pre_composite_invalidated": pre_invalidated,
             }
         )
     return {

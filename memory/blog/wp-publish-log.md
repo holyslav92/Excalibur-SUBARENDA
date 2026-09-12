@@ -1,5 +1,23 @@
 # WP publish log
 
+## B17 — 2026-09-12
+
+- **topic_id:** B17
+- **slug:** kommunalka-vklyuchena-schet-1840-na-vyezde
+- **title:** «Коммуналка включена». На выезде — счётчики и 1 840 ₽
+- **post_id:** 4703
+- **permalink:** /blog/kommunalka-vklyuchena-schet-1840-na-vyezde/
+- **categories:** posutochnaya-arenda (101), zhkh-i-doplaty (104)
+- **featured_image:** 4713
+- **inline_images:** 4714–4720 (7× wp-content/uploads/2026/09/…-inline-0N-1.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS
+- **dzen preview:** cover-1024x576.png (HTTP 200)
+- **interlink outbound:** 4 live /blog/ siblings (crosslink-qa PASS)
+- **interlink inbound:** B01 (3745), B13 (4535) via SFTP:22
+- **publish_method:** sftp:22 (default FTP PASV hung on 16MB bootstrap; llms.txt redeployed after publish)
+- **preflight fix:** crosslink anchor for B11 sibling aligned to catalog title
+
 ## B16 — 2026-09-11
 
 - **topic_id:** B16

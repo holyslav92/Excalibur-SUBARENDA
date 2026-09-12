@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "https://добрыйдом-72.рф/blog/hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400/",
+      "slug": "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400",
+      "anchor": "хозяин сказал «всё включено», а за такси доплатили 2 400 ₽. Или когда",
+      "catalog_title": "Хозяин сказал «всё включено». В такси доплатили 2 400 ₽",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/",
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "anchor": "залог перевели заранее, а на выезде сказали, что не вернут. Бывает и так: в объявлении",
+      "catalog_title": "Снял квартиру посуточно. Залог не вернули — нашли скол на плите",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik/",
+      "slug": "v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik",
+      "anchor": "обещали «всё для гостей», а ночью без полотенец на 890 ₽. Или цена меняется у двери:",
+      "catalog_title": "«Всё для гостей» — ночью без полотенец на 890 ₽",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego/",
+      "slug": "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+      "anchor": "оплатил за двоих, а просят доплату за третьего.Во всех случаях проблема не в самом платеже. Доплаты иногда бывают честными. Проблема в моменте, когда о них говорят. Условие до бронирования — это выбор гостя. Условие на пороге — это уже давление обстоятельств.И важная оговорка. Считать коммунальные услуги по приборам учёта можно. При долгом проживании это нормальная схема, если она прозрачна: в договоре это написано, тарифы известны, стартовые показатели сняты вместе, итог можно проверить. Тогда человек понимает, на что соглашается.Но если до перевода написано «включено», а после появляется «по факту», это уже не прозрачный расчёт. Это смена условий задним числом.А вы что выберете: спросить заранее или спорить с фотографиями счётчика на выезде? Напишите нам в",
+      "catalog_title": "Оплатили за двоих. У двери попросили доплату за третьего",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "outbound_unique_slugs": [
+    "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400",
+    "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+    "v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik",
+    "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B17-kommunalka-vklyuchena-schet-1840-na-vyezde",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}

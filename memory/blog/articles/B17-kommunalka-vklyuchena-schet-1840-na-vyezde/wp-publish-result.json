@@ -1,0 +1,27 @@
+{
+  "slug": "kommunalka-vklyuchena-schet-1840-na-vyezde",
+  "topic_id": "B17",
+  "permalink": "{{SITE_BASE}}/blog/kommunalka-vklyuchena-schet-1840-na-vyezde/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B17-kommunalka-vklyuchena-schet-1840-na-vyezde/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1129310,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4703 slug=kommunalka-vklyuchena-schet-1840-na-vyezde\nOK categories=101,104\nOK dzen_yzen_meta=1\nOK featured_image=4713\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4714 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kommunalka-vklyuchena-schet-1840-na-vyezde-inline-02-1.png\nOK inline_alt=4714\nOK inline_caption=4714\nOK inline_description=4714\nOK inline_image_upload=4715 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kommunalka-vklyuchena-schet-1840-na-vyezde-inline-01-1.png\nOK inline_alt=4715\nOK inline_caption=4715\nOK inline_description=4715\nOK inline_image_upload=4716 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kommunalka-vklyuchena-schet-1840-na-vyezde-inline-04-1.png\nOK inline_alt=4716\nOK inline_caption=4716\nOK inline_description=4716\nOK inline_image_upload=4717 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kommunalka-vklyuchena-schet-1840-na-vyezde-inline-03-1.png\nOK inline_alt=4717\nOK inline_caption=4717\nOK inline_description=4717\nOK inline_image_upload=4718 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kommunalka-vklyuchena-schet-1840-na-vyezde-inline-06-1.png\nOK inline_alt=4718\nOK inline_caption=4718\nOK inline_description=4718\nOK inline_image_upload=4719 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kommunalka-vklyuchena-schet-1840-na-vyezde-inline-05-1.png\nOK inline_alt=4719\nOK inline_caption=4719\nOK inline_description=4719\nOK inline_image_upload=4720 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kommunalka-vklyuchena-schet-1840-na-vyezde-inline-07-1.png\nOK inline_alt=4720\nOK inline_caption=4720\nOK inline_description=4720\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/kommunalka-vklyuchena-schet-1840-na-vyezde/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/kommunalka-vklyuchena-schet-1840-na-vyezde/",
+    "errors": []
+  }
+}

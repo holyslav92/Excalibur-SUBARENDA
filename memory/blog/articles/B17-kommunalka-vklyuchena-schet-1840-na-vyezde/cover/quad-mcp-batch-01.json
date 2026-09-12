@@ -1,0 +1,36 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 1,
+  "standalone_cover": false,
+  "model_policy": "primary_or_vip_for_2k",
+  "vip_disabled": false,
+  "max_generation_attempts": 2,
+  "output_canvas": "cover/canvas-quad-01.png",
+  "result_path": "cover/quad-mcp-result-01.json",
+  "slots": [
+    "cover",
+    "inline_1",
+    "inline_2",
+    "inline_3"
+  ],
+  "preferred_image_flow": {
+    "provider": "grsai",
+    "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
+    "resolution": "2K"
+  },
+  "jobs": [
+    {
+      "slot": "canvas_quad",
+      "tool": "grsai",
+      "mcp_args": {
+        "prompt": "ATTEMPT2 COVER HARD: ZERO meme stickers — NO Roll Safe NO Harold NO Wojak NO cat NO faces in corners. NO yellow sticky note. NO gold tape strip. NO horizontal phone banner/pill anywhere. Phone +7 (993) 574-83-22 ONLY as small text inside smartphone messenger/chat UI on the phone screen. Early September 2026 Tyumen: overcast autumn window, golden yellow leaves outside, muted grey-warm light — NOT summer sun. Designed RU editorial frames, airy #FFFFFF high-key on inlines, warm comfort+ Tyumen (посуточно). Clean readable Cyrillic labels on inline panels. NO host Shakin/identity-real. NO brand logo on inlines (ZERO logos on inline_1..inline_7). NO WordPress/Gutenberg/Dashboard/wp-admin. NO empty stock; NO WP screenshot. No dark cinematic.\nCAT-MEME QUOTA: max ONE cat-meme sticker across entire 8-panel set (cover + 7 inlines). Prefer cover OR one inline — never both. All other meme slots = people-memes/reaction templates from memory/cover/meme-top100.json (Roll Safe, Harold, Pepe, Wojak, Gigachad, etc.) — NOT grumpy/ginger/tardar/smudge cat repeats.\nCanvas 2048x1152 exact 2x2; four 16:9 panels (1024x576); thin white gutters; no bleed.\nBan: dark/low-key; inventory props; celebrity memes; EXCALIBUR stamp; chubby host; stock/generated man co-host on inline; large meme person on inline; icon slogans; empty cells; desk scene; cover copy; celebrity memes; stock model man; handsome realtor co-host; generated stranger presenter; large human on inline; meme person >15% frame; invented meme face; WordPress; Gutenberg; wp-admin; block editor; theme chrome; cookie bar; overlapping headline stickers meme cat phone logo; timid system font; wall of tiny labels; empty stock; wordpress screenshot; NO drawn logo/wordmark/lockup/curtains+red flower/dashed logo frame/gold house; factory cropped-img_7143.png PNG paste after split; NO white/gray/cream card/square/plate/tablichka/box in TOP-RIGHT pad — pad must be continuous scene texture; factory alpha PNG after split only.\nTEXT LANGUAGE LOCK: all visible text is RUSSIAN Cyrillic only; exact LABELS per panel only.\nCover TL: NO host; NO logo in gen (factory cropped-img_7143.png alpha after split); phone IN scene only — Phone +7 (993) 574-83-22 ONLY inside smartphone screen chat UI — NOT tape NOT magnet NOT banner NOT pill; NEVER post-composite pill.\nTL COVER WOW POSTER (magazine, not stock): «Коммуналка включена — доплата на выезде» bold DISPLAY Cyrillic readable, paint ONLY the highlight word \"Коммуналка\" in gold #dcc5a1;  scene props; natural daylight clean white balance, NO yellow/amber cast, NO muddy skin, NO winter/snow. NO logo in gen. Phone +7 (993) 574-83-22 ONLY inside smartphone screen chat UI — NOT tape NOT magnet NOT banner NOT pill. Expr: Раздражение и беспомощность у порога — чемодан уже собран, а в чате счётчики. soft daylight crisp sharp; gold tape; 1-3 Wordstat; Осень пасмурно: у двери чемодан, смартфон — мессенджер со счётчиками 1 840 ₽ и +7 (993) 574-83-22 на экране; хук «Коммуналка включена — доплата на выезде»; ZERO memes; pad TR.; ZERO memes on cover — photoreal only; NO cat); TOP-RIGHT empty clear pad — no logo, no house icon, no «Добрый дом» lettering, no plate, no sticker; tape/pins/strings/paper scraps; high-key #FFF/gold; not noir; #FFF\nTop-right inline: comparison_table_ui; «Считаем то, что показали»; Сравнение: 9 600 ₽ три ночи vs «коммуналка включена». Pad TR.. TXT:три ночи | 9 600 рублей | коммуналка включена. TOP-RIGHT empty pad for factory logo — NO drawn logo; no white/gray plate.\nBottom-left inline: workflow_diagram; «Считаем то, что показали»; Чат: три фото счётчиков, 1 840 ₽, нет показаний заезда.. TXT:три фото счётчиков | 1 840 рублей | нет показаний заезда. TOP-RIGHT completely clean — NO logo NO brand text; ENTIRE panel especially TOP-RIGHT corner: absolutely NO logo, NO brand wordmark, NO «Добрый дом» text, NO curtains+red flower icon, NO house-with-heart, NO company lockup anywhere; no white/gray plate.\nBottom-right inline: checklist_board; «Почему это всплывает именно на выезде»; 429 кВт·ч, 143 кВт·ч/сут, «проверьте до перевода». Pad TR.. TXT:429 киловатт | 143 киловатта в день | проверьте до перевода. TOP-RIGHT empty pad for factory logo — NO drawn logo; no white/gray plate.\nInline all: #FFF collage, gold/black Cyrillic labels, tape/pins/strings/paper scraps; high-key #FFF/gold; not noir; dense facts/numbers; exact TXT per panel; meme only if +meme AND sticker-scale; CAT-MEME QUOTA: max ONE cat-meme sticker across entire 8-panel set (cover + 7 inlines). Prefer cover OR one inline — never both. All other meme slots = people-memes/reaction templates from memory/cover/meme-top100.json (Roll Safe, Harold, Pepe, Wojak, Gigachad, etc.) — NOT grumpy/ginger/tardar/smudge cat repeats.; no human hero on inline; no icon soup; zero typos.",
+        "aspect_ratio": "16:9",
+        "resolution": "2K"
+      }
+    }
+  ],
+  "validation": {
+    "prompt_chars": 4780,
+    "qa_regen_attempt": 2
+  }
+}

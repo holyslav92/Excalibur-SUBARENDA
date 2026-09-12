@@ -1,0 +1,22 @@
+{
+  "article_dir": "/workspace/memory/blog/articles/B17-kommunalka-vklyuchena-schet-1840-na-vyezde",
+  "panels_cleared": [
+    {
+      "file": "cover/inline-02.png",
+      "pad_clear_passes": 6
+    },
+    {
+      "file": "cover/inline-04.png",
+      "pad_clear_passes": 5
+    },
+    {
+      "file": "cover/inline-05.png",
+      "pad_clear_passes": 5
+    },
+    {
+      "file": "cover/inline-06.png",
+      "pad_clear_passes": 5
+    }
+  ],
+  "count": 4
+}

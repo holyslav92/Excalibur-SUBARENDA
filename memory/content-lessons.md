@@ -877,3 +877,136 @@ confidence: high
 
 ### Resolution
 status: recorded
+
+---
+
+## LESSON-20260912-1047-B17-utilities-included-vs-meter-checkout
+status: proposed
+topic_id: B17
+category: utility
+confidence: low
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP. Урок из publish-артефактов: title-brief.json, description-brief.json, case-delivery-gate PASS, article.html, research-notes hook `utilities_jkh`, scout handoff 2026-09-12.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest BLOCKER (INC-20260912-1047).
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Two-beat H1 ««Коммуналка включена». На выезде — счётчики и 1 840 ₽»: цитата-обещание → контрфакт счётчиков + ₽ на выезде, не how-to ЖКХ.
+- §1: 9 600 ₽ (3 200 ₽/ночь × 3) до идентичности хоста; «коммуналка включена» — не «частично», не «по приборам»; три фото счётчиков и 1 840 ₽ когда чемодан у двери.
+- Разведение «включено» vs честный расчёт по счётчикам **если согласовано до брони** — utility H2 «Считаем то, что показали», не legal guide.
+- Проверяемая математика: 12 418 → 12 847 = 429 кВт·ч ≈ 1 841 ₽ при 4,29 ₽/кВт·ч (сентябрь 2026, Тюмень); обычный расход 150–320 ₽ за три ночи — editorial disclaimer, не норма рынка.
+- Ключевой перелом: **нет стартовых показаний при заезде** — фото на выезде не доказывает базу расчёта.
+- Klyshin «Нет. Так не заселяем.» → «Так не считаем»; вопрос-отмычка «Коммуналка в цене или по счётчикам?» → TG/MAX mid-body.
+- Interlink spine: B10 «всё включено»+такси, B02 залог на выезде, B11 «всё для гостей», B04 доплата у двери — одна красная линия «условие до брони vs на пороге».
+- Wordstat P0 spine «квартиры посуточно тюмень» 4 840 (Tyumen); узкие «жкх посуточно» / «коммуналка посуточно» API empty — стоп-фактор внутри spine, не P0.
+- Description не дублирует H1: ««Включено» — пока не взяли чемодан?» + счётчики вслепую (description-brief PASS).
+- Anti-dup vs B10 (taxi all-inclusive), B12 (кран/шум), hot water — центральный конфликт только utilities_jkh.
+
+### Change
+- В `utilities_jkh` кейсах в §1 сразу фиксировать **три слоя**: (1) цитата «включено» в карточке, (2) отсутствие стартовых показаний, (3) сумма на выезде — не раскрывать математику только во втором H2.
+- Scout handoff: при weak ЖКХ Wordstat логировать rework chain (как B17 handoff) + note «коммуналка посуточно» empty → spine Tyumen.
+
+### Never again
+- Строить utilities-кейс как статью о тарифах ЖКХ или перечень всех скрытых платежей.
+- Смешивать B10 «всё включено»+такси и B17 «коммуналка включена»+счётчики — разные hook_id.
+- Принимать фото счётчика на выезде без стартовой точки и тарифа за доказательство расхода гостя.
+- Выдавать 1 840 ₽ или диапазон 150–320 ₽ за рыночную статистику без editorial disclaimer.
+- Октябрьские тарифы в сентябрьском сюжете (9–12.09.2026).
+- How-to для арендодателей; финал «Наш вывод простой».
+
+### Proposed apply
+- Scout: hook `utilities_jkh` → handoff lockpick (включено vs счётчики + стартовые показания) + final P0 spine Tyumen + anti-dup B10.
+- Review only; Writer prompt не трогать автоматически.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260912-1047-B17-checkout-leverage-meter-photos
+status: proposed
+topic_id: B17
+category: structure
+confidence: low
+
+### Evidence
+- artifact: title-brief.json#angle
+  finding: angle «Гость забронировал… обещанием включённой коммуналки, а при выезде получил фото счётчиков и требование доплатить 1 840 ₽»; opening-meta-gate PASS; H2 «Почему это всплывает именно на выезде».
+- metrika_signal: none (credentials unavailable; causal retention не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Слой «чемодан у двери → через час в дорогу → спорить неудобно» отдельным абзацем — asymmetric moment после полной оплаты 9 600 ₽.
+- Контраст «до оплаты можно сравнить карточки» vs «после трёх ночей ключи сдавать» — money-timing spine без дублирования B10 taxi.
+- Блок «условие до бронирования — выбор; условие на пороге — давление» — объясняет leverage без злодейства.
+- Связка с sibling B02 (залог на выезде), B10 (такси), B04 (дверь) в mid-body одной красной линией.
+
+### Change
+- Для `utilities_jkh` hooks всегда включать **checkout temporal leverage** (чемодан, ключи, поезд) в utility-блок — не только математику счётчиков.
+- При interlink — sibling про broad/included promises (B10, B11) + checkout surprises (B02) одной линией «слово до брони ≠ строка на выезде».
+
+### Never again
+- Писать utilities кейс только про тарифы и кВт·ч, игнорируя temporal leverage (когда исправить нечем).
+- Финал «Наш вывод простой» вместо «Мой вывод как практика».
+
+### Proposed apply
+- Writer checklist (review-only): utilities_jkh + checkout → один абзац про asymmetric moment после «включено» в карточке.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260912-1047-B17-title-quote-meter-reveal
+status: proposed
+topic_id: B17
+category: voice
+confidence: low
+
+### Evidence
+- artifact: title-brief.json / derouter-title
+  finding: scout draft «Написали „коммуналка включена“. На выезде прислали счётчики — 1 840 ₽» → финальный H1 ««Коммуналка включена». На выезде — счётчики и 1 840 ₽»; klyshin_title_shape:3.
+- metrika_signal: none (credentials unavailable; causal CTR не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Cable pain-scene: обещание в кавычках + temporal beat «на выезде» + tangible counterfact (счётчики) + ₽ (1 840), без SEO-хвоста ЖКХ.
+- Description rhythm klyshin_case_hook: ««Включено» — пока не взяли чемодан?» (not_equal_title PASS).
+- Cover-text sticky «Сначала проверка, потом перевод» + wordstat spine «квартиры посуточно тюмень» на обложке.
+
+### Change
+- Для utilities_jkh hooks: prefer **quoted «включено» + checkout beat + meter/₽ reveal** over narrow «жкх посуточно» SEO lead.
+- Title: двухчастный ритм (обещание / контрфакт на выезде) > compound «три ночи + счётчики + тариф» spoiler.
+
+### Never again
+- H1-спойлер со всей математикой 429 кВт·ч — оставлять расчёт в utility H2.
+- Description, дублирующий H1 про «коммуналка включена» и 1 840 ₽.
+
+### Proposed apply
+- Title/Description review: utilities_jkh — quoted promise + checkout + ₽ > ЖКХ-keyword H1.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded

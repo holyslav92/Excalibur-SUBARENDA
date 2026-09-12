@@ -1055,13 +1055,19 @@ checks_run:
 - `python3 -m unittest tests.test_cover_quad_inject -v`
 commit: pending
 
-## INC-20260911-1046 — Metrika credentials missing (Content-learner B16)
+### Fixer resolution
 
 status: needs-human
-run_date: 2026-09-11
+reason: env-only blocker; duplicate of INC-20260903-0640
+needed_decision_or_secret: YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets
+
+## INC-20260912-1047 — Metrika credentials missing (Content-learner B17)
+
+status: needs-human
+run_date: 2026-09-12
 role: excalibur-blog-content-learner
-topic_id: B16
-article_dir: memory/blog/articles/B16-otmenili-rejs-predoplatu-vernut
+topic_id: B17
+article_dir: memory/blog/articles/B17-kommunalka-vklyuchena-schet-1840-na-vyezde
 severity: medium
 category: env
 
@@ -1082,3 +1088,98 @@ category: env
 status: needs-human
 reason: env-only blocker; duplicate of INC-20260903-0640
 needed_decision_or_secret: YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets
+
+## INC-20260912-1048 — stale pre-composite restore after Cover-QA regen (B17)
+
+status: fixed
+run_date: 2026-09-12
+role: excalibur-blog-cover-qa
+topic_id: B17
+article_dir: memory/blog/articles/B17-kommunalka-vklyuchena-schet-1840-na-vyezde
+severity: low
+category: script
+
+### What went wrong
+
+- Cover-QA FAIL (`forbid_ai_drawn_logo_cover` on inline-04, phone overlap on cover) → pad-clear + canvas regen ×2.
+- Before split+`brand_logo_composite`, agent manually cleared `cover/pre-composite/` — stale snapshots would have restored old generation-only art over fresh regen panels.
+
+### How the agent recovered this run
+
+- Pad-clear on inline-02/04/05/06; regen both quads; manual pre-composite wipe; split + logo composite → `cover_qa.json` PASS.
+
+### Durable fix needed before next run
+
+- Auto-invalidate matching `pre-composite/*.png` on pad-clear and quad-split panel write.
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_brand_logo_composite.py`
+- `scripts/excalibur_blog_cover_inline_pad_clear.py`
+- `scripts/excalibur_blog_cover_quad_split.py`
+- `skills/cover-qa-excalibur-blog/SKILL.md`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-09-12
+fix_summary:
+- `invalidate_pre_composite_panel()` + pad-clear/quad-split auto-drop stale snapshots before composite (INC B17).
+- Cover-QA skill documents automatic invalidation; regression test `tests/test_pre_composite_invalidate.py`.
+files_changed:
+- `scripts/excalibur_blog_brand_logo_composite.py`
+- `scripts/excalibur_blog_cover_inline_pad_clear.py`
+- `scripts/excalibur_blog_cover_quad_split.py`
+- `skills/cover-qa-excalibur-blog/SKILL.md`
+- `.cursor/skills/cover-qa-excalibur-blog/SKILL.md`
+- `tests/test_pre_composite_invalidate.py`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_brand_logo_composite.py scripts/excalibur_blog_cover_inline_pad_clear.py scripts/excalibur_blog_cover_quad_split.py`
+- `python3 -m unittest tests.test_pre_composite_invalidate -v`
+commit: 79b2806
+
+## INC-20260912-1049 — FTP PASV hang on 16MB bootstrap, SFTP workaround (B17 publish)
+
+status: fixed
+run_date: 2026-09-12
+role: excalibur-blog-publish
+topic_id: B17
+article_dir: memory/blog/articles/B17-kommunalka-vklyuchena-schet-1840-na-vyezde
+severity: medium
+category: transport
+
+### What went wrong
+
+- Default `FTP_TRANSPORT=ftp` PASV data channel hung on ~16MB publish bootstrap; publish completed via SFTP:22 (post 4703).
+
+### How the agent recovered this run
+
+- Re-ran publish with SFTP:22 (same `FTP_*` creds); live-page PASS; interlink inbound via SFTP.
+
+### Durable fix needed before next run
+
+- Cloud Secrets template should default `FTP_TRANSPORT=sftp` / port 22; auto-fallback already in `publish_via_ftp` (INC-20260901-0830).
+
+### Suggested files to inspect/change
+
+- `CLOUD-FIRST-RUN.md`
+
+### Secrets
+
+- FTP (Cloud Secrets)
+
+### Fixer resolution
+
+fixed_at: 2026-09-12
+fix_summary:
+- Duplicate of INC-20260901-0830 auto-fallback; updated `CLOUD-FIRST-RUN.md` Cloud template to recommend `FTP_TRANSPORT=sftp` + port 22 upfront (INC B17).
+files_changed:
+- `CLOUD-FIRST-RUN.md`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- B17 `wp-publish-result.json` publish_method=sftp, live-page PASS
+commit: pending
