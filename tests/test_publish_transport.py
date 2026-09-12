@@ -1,6 +1,7 @@
 """Tests for FTP remote transport helpers."""
 from __future__ import annotations
 
+import os
 import sys
 import unittest
 from pathlib import Path
@@ -10,7 +11,10 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from excalibur_blog_remote_transport import (  # noqa: E402
+    effective_publish_transport,
     ftp_creds,
+    is_cursor_cloud_agent,
+    resolve_publish_transport,
     transport_mode,
     upload_bytes,
 )
@@ -26,6 +30,19 @@ class PublishTransportTest(unittest.TestCase):
         env = {"FTP_PORT": "22"}
         self.assertEqual(transport_mode(env), "sftp")
 
+    @patch.dict(os.environ, {"CURSOR_AGENT": "1"})
+    def test_effective_transport_cloud_overrides_ftp(self) -> None:
+        env = {"FTP_TRANSPORT": "ftp", "FTP_PORT": "21"}
+        self.assertTrue(is_cursor_cloud_agent())
+        self.assertEqual(resolve_publish_transport(env), "ftp")
+        self.assertEqual(effective_publish_transport(env), "sftp")
+
+    @patch.dict(os.environ, {}, clear=True)
+    def test_effective_transport_local_keeps_ftp(self) -> None:
+        env = {"FTP_TRANSPORT": "ftp", "FTP_PORT": "21"}
+        self.assertFalse(is_cursor_cloud_agent())
+        self.assertEqual(effective_publish_transport(env), "ftp")
+
     def test_ftp_creds_from_env(self) -> None:
         env = {
             "FTP_HOST": "[REDACTED]",
@@ -39,6 +56,7 @@ class PublishTransportTest(unittest.TestCase):
         self.assertEqual(user, "ca21576_svyat")
         self.assertEqual(password, "secret")
 
+    @patch.dict(os.environ, {}, clear=True)
     def test_env_check_report_ftp_mode(self) -> None:
         env = {
             "FTP_HOST": "[REDACTED]",
@@ -53,6 +71,7 @@ class PublishTransportTest(unittest.TestCase):
         report = publish_env_check_report(env)
         transport = report["transport"]
         self.assertIsInstance(transport, dict)
+        self.assertEqual(transport["configured_mode"], "ftp")
         self.assertEqual(transport["mode"], "ftp")
         self.assertFalse(report["allow_publish"])
         self.assertEqual(transport["root"], "configured-non-dot")
