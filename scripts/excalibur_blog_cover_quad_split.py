@@ -891,11 +891,15 @@ def main() -> int:
     manifest = load_json(manifest_path)
     inline_count = inline_count_from_manifest(manifest)
     inline_keys = active_inline_keys(inline_count)
-    scene_v2 = uses_scene_poster_v2(root)
-    if uses_one_2k_slice4(root) or scene_v2:
-        canvas_specs = all_canvas_specs(inline_count)
+    manifest_canvases = manifest.get("canvases")
+    if isinstance(manifest_canvases, list) and manifest_canvases:
+        canvas_specs = manifest_canvases
     else:
-        canvas_specs = canvas_specs_for_inline_count(inline_count)
+        scene_v2 = uses_scene_poster_v2(root)
+        if uses_one_2k_slice4(root) or scene_v2:
+            canvas_specs = all_canvas_specs(inline_count)
+        else:
+            canvas_specs = canvas_specs_for_inline_count(inline_count)
 
     canvas_index = args.canvas_index
     if canvas_index <= 0 and len(canvas_specs) == 1:
