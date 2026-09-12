@@ -26,3 +26,4 @@ lessons, benchmarks, QA reports или соседние research-notes как о
 | B15 | pozvonili-v-10-00-v-22-00-wifi-ne-tyanet-sozvon | «Рабочий стол» обещали. За 11 400 ₽ — журнальный столик | published |
 | B16 | otmenili-rejs-predoplatu-vernut | Рейс отменили. 4 200 ₽ обещали вернуть за три дня — срок вышел | published |
 | B17 | kommunalka-vklyuchena-schet-1840-na-vyezde | «Коммуналка включена». На выезде — счётчики и 1 840 ₽ | published |
+| B18 | kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda | Код уже есть. Только в подъезд не попасть — 20 минут с чемоданом | published |

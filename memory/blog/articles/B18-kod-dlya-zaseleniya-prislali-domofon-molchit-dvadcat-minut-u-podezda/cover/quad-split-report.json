@@ -281,10 +281,6 @@
   "html_inject": [
     "skip inline_1: already correct under H2 — Первая дверь и вторая дверь — это два разных заселения",
     "skip inline_2: already correct under H2 — Первая дверь и вторая дверь — это два разных заселения",
-    "skip inline_3: already correct under H2 — Что здесь сломалось на самом деле",
-    "skip inline_4: already correct under H2 — Что здесь сломалось на самом деле",
-    "skip inline_5: already correct under H2 — Что здесь сломалось на самом деле",
-    "skip inline_6: already correct under H2 — Мой вывод как практика",
-    "skip inline_7: already correct under H2 — Мой вывод как практика"
+    "skip inline_3: already correct under H2 — Что здесь сломалось на самом деле"
   ]
 }
