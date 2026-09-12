@@ -1,0 +1,86 @@
+{
+  "topic_id": "B18",
+  "slug": "kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda",
+  "cover_family": "brand_collage",
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "file": "cover/cover.png",
+  "alt": "Гость с чемоданом у домофона подъезда в Тюмени: код квартиры в чате есть, но дверь не открывается после трёх нажатий.",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-quad-01.png",
+  "generated_at": "2026-09-12T13:00:18+00:00",
+  "assets": [
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Сравнение первой двери подъезда и второй двери квартиры как двух независимых этапов заселения.",
+      "h2_anchor": "Первая дверь и вторая дверь — это два разных заселения",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Экран телефона с перепиской и тремя безуспешными попытками вызвать домофон.",
+      "h2_anchor": "Первая дверь и вторая дверь — это два разных заселения",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Гость с чемоданом у закрытого подъезда: такси уехало, в чате обещание перезвонить управляющей.",
+      "h2_anchor": "Что здесь сломалось на самом деле",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_4",
+      "file": "cover/inline-04.png",
+      "alt": "Неполная инструкция в мессенджере: есть код квартиры, но нет метода входа в подъезд.",
+      "h2_anchor": "Что здесь сломалось на самом деле",
+      "visual_type": "process_flow",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Гость с чемоданом у домофона подъезда в Тюмени: код квартиры в чате есть, но дверь не открывается после трёх нажатий.",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_5",
+      "file": "cover/inline-05.png",
+      "alt": "Один проверочный вопрос до оплаты: что делать, если домофон не отвечает.",
+      "h2_anchor": "Что здесь сломалось на самом деле",
+      "visual_type": "tool_screenshot",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_6",
+      "file": "cover/inline-06.png",
+      "alt": "Список вопросов гостю перед переводом: как открыть подъезд и кто ответит ночью.",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "labeled_checklist",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_7",
+      "file": "cover/inline-07.png",
+      "alt": "Порядок: проверить вход в подъезд до перевода, а не ждать управляющую с чемоданом на улице.",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "infographic_card",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "status": "PASS",
+  "topic_id": "B18",
+  "slug": "kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda",
+  "research_date": "2026-09-12",
+  "summary": "Research for domofon_zaselenie CASE: Tyumen guest, early autumn evening Sep 12 2026, apartment/keybox code in chat but building intercom silent ~20 min at entrance; host promises to call UK without backup access. Fresh signal: Scout hook validated 2026-09-12 + Klyshin CASE mechanics + Darstroy/Sutochno contactless entrance chain. Wordstat P0 «квартиры посуточно тюмень» 4840 (55+11176), 10385 (225); narrow «бесконтактное заселение посуточно» 49 local. No bank/JKH tariff digits — official audit N/A.",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Scout external_signal 2026-09-12 domofon_zaselenie hook + Klyshin @klyshin_A CASE pattern + Darstroy 22.06.2026 domofon failure risks",
+    "source_type": "community",
+    "urls": [
+      "https://t.me/klyshin_A",
+      "https://darstroy-yug.ru/articles/beskontaktnoe-zaselenie-v-kvartiru/",
+      "https://добрыйдом-72.рф/blog/"
+    ],
+    "accessed_at": "2026-09-12",
+    "note": "Hook activated today; guest CASE at building entrance (not B01 wrong door, not B13 empty keybox). Entrance access before apartment code."
+  },
+  "freshness_audit": {
+    "research_date": "2026-09-12",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://t.me/klyshin_A",
+      "published_at": "2026-09-12",
+      "note": "Scout-validated domofon_zaselenie hook and CASE editorial pattern for guest short-term rent at entrance door."
+    },
+    "additional_fresh_signals": [
+      {
+        "url": "https://darstroy-yug.ru/articles/beskontaktnoe-zaselenie-v-kvartiru/",
+        "published_at": "2026-06-22",
+        "type": "industry",
+        "note": "Updated June 2026: domofon may not open; instruction must cover entrance + apartment; backup contact required."
+      },
+      {
+        "url": "https://добрыйдом-72.рф/",
+        "published_at": "2026-09-12",
+        "type": "tenant",
+        "note": "Contactless check-in by instruction, messenger support up to 5 min — contrast standard."
+      }
+    ]
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176", "225"],
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 4840,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 10385,
+        "region": "225"
+      },
+      {
+        "phrase": "бесконтактное заселение посуточно",
+        "volume": 49,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "бесконтактное заселение посуточно",
+        "volume": 2902,
+        "region": "225"
+      },
+      {
+        "phrase": "не работает домофон",
+        "volume": 97,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "снять квартиру посуточно в тюмени",
+        "volume": 1498,
+        "region": "55+11176"
+      }
+    ]
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "No bank/JKH tariff digits in article; tenant service claims verified on dobry-dom site only",
+    "verified_claims": 2,
+    "entities_checked": ["dobry-dom-tenant-site"],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "memory/blog/articles/B18-kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda/derouter-opus-stamp-research.json",
+    "first_attempt": "PASS"
+  },
+  "key_facts_count": 14,
+  "errors": []
+}

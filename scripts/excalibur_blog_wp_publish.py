@@ -192,12 +192,18 @@ def validate_publish_env(env: dict[str, str]) -> list[str]:
 
 
 def publish_env_check_report(env: dict[str, str]) -> dict[str, object]:
-    from excalibur_blog_remote_transport import transport_mode
+    from excalibur_blog_remote_transport import (
+        effective_publish_transport,
+        is_cursor_cloud_agent,
+        resolve_publish_transport,
+    )
 
     root_label = sftp_root_label(env)
-    mode = transport_mode(env)
+    configured = resolve_publish_transport(env)
+    mode = effective_publish_transport(env)
     transport_block: dict[str, object] = {
         "mode": mode,
+        "configured_mode": configured,
         "host_configured": bool(env.get("SSH_HOST") or env.get("FTP_HOST")),
         "user_configured": bool(env.get("SSH_USER") or env.get("FTP_USER")),
         "password_configured": bool(
@@ -215,6 +221,8 @@ def publish_env_check_report(env: dict[str, str]) -> dict[str, object]:
     else:
         transport_block["ftp_aliases_are_sftp"] = True
         transport_block["dot_fallback_enabled"] = root_label == "configured-non-dot"
+    if configured == "ftp" and mode == "sftp" and is_cursor_cloud_agent():
+        transport_block["cloud_agent_sftp_override"] = True
     return {
         "allow_publish": env.get("EXCALIBUR_BLOG_ALLOW_PUBLISH", "").strip().lower() == "yes",
         "public_site_url_configured": bool(env.get("PUBLIC_SITE_URL") or env.get("WP_HOME") or env.get("WP_SITE_URL")),
@@ -222,7 +230,7 @@ def publish_env_check_report(env: dict[str, str]) -> dict[str, object]:
         "missing": validate_publish_env(env),
         "note": (
             "FTP_TRANSPORT=ftp uses Timeweb PASV rewrite (188.225.40.162); "
-            "otherwise SFTP on port 22."
+            "otherwise SFTP on port 22. Cloud Agent auto-uses SFTP when Secrets still say ftp."
         ),
     }
 
@@ -943,10 +951,16 @@ def trigger_bootstrap_http(url: str, root: Path) -> str:
 
 
 def publish_via_sftp(env: dict[str, str], php: str, public_base: str, *, bootstrap_name: str = "excalibur-blog-publish-once.php") -> str:
-    from excalibur_blog_remote_transport import transport_mode
+    from excalibur_blog_remote_transport import effective_publish_transport, resolve_publish_transport
 
-    if transport_mode(env) == "ftp":
+    if effective_publish_transport(env) == "ftp":
         return publish_via_ftp(env, php, public_base, bootstrap_name=bootstrap_name)
+    if resolve_publish_transport(env) == "ftp" and effective_publish_transport(env) == "sftp":
+        print(
+            "WARN Cloud Agent: FTP_TRANSPORT=ftp ignored; using SFTP:22 for bootstrap "
+            "(PASV data blocked on egress; INC B17/B18)",
+            file=sys.stderr,
+        )
 
     remote = bootstrap_name
     data = php.encode("utf-8")
@@ -1586,11 +1600,13 @@ def main() -> int:
     safe_permalink = redact_site_base(permalink, public)
     safe_raw = redact_site_base(out, public)
     verdict = "pass" if media["ok"] else "fail"
+    from excalibur_blog_remote_transport import effective_publish_transport
+
     result = {
         "slug": payload["slug"],
         "topic_id": payload["topic_id"],
         "permalink": safe_permalink,
-        "publish_method": "ftp" if (env.get("FTP_TRANSPORT") or "").strip().lower() == "ftp" else "sftp",
+        "publish_method": effective_publish_transport(env),
         "cover_evidence": redact_structure(payload.get("cover_evidence", {}), public),
         "raw_output": safe_raw,
         "media_check": {

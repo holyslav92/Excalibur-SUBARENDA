@@ -1,0 +1,10 @@
+{
+  "topic_id": "B18",
+  "description": "«Код есть» — а домофон молчит, и ключница остаётся по ту сторону двери. В Тюмени Добрый дом напоминает: бесконтактное заселение начинается с подъезда, а не с квартиры.",
+  "rhythm": "klyshin_case_hook",
+  "geo": "Тюмень",
+  "author_brand": "Добрый дом",
+  "not_equal_title": true,
+  "not_truncated_lead": true,
+  "verdict": "PASS"
+}

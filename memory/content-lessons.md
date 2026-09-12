@@ -1010,3 +1010,136 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+---
+
+## LESSON-20260912-1343-B18-first-door-blocks-entire-chain
+status: proposed
+topic_id: B18
+category: utility
+confidence: low
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP. Урок из publish-артефактов: title-brief.json, description-brief.json, case-delivery-gate PASS, opening-meta-gate PASS, article.html, research-notes hook `domofon_silent_entrance`.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest BLOCKER по credentials (INC-20260903-0640).
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Two-beat H1 «Код уже есть. Только в подъезд не попасть — 20 минут с чемоданом»: код в чате ≠ пропуск в здание + время с чемоданом, не how-to.
+- §1: цитата «Сейчас позвоню в управляющую, подождите», три нажатия домофона без ответа, такси уехало; редакционный дисклеймер 20 мин и 600 ₽ — не тариф города.
+- H2 «Первая дверь и вторая дверь — это два разных заселения» — явная цепочка подъезд → квартира; ключница за первой дверью блокирует весь заезд.
+- Разведение сценариев в теле: не B01 (чужая дверь/код), не B13 (пустая ключница после входа в подъезд), не B08 (тишина после предоплаты) — конфликт на этапе **до** подъезда.
+- Klyshin «Нет. Так не заселяем.» + «Сначала проверка. Потом перевод.»; вопрос-отмычка «код прислали — можно ехать или подъезд уже открывается?» → TG/MAX mid-body.
+- Interlink spine: B01 wrong-door stage, B13 empty keybox inside, B08 silence at door, B10 ~600 ₽ taxi parallel — одна красная линия «код квартиры бесполезен, пока не открыт подъезд».
+- Wordstat spine «квартиры посуточно тюмень» (title-brief); узкий «код для заселения» / «домофон молчит» — angle hook, не binary skip.
+- Description не дублирует H1: «код есть — домофон молчит, ключница по ту сторону двери» (description-brief PASS).
+
+### Change
+- В contactless/access hooks всегда маркировать **этап сбоя** (подъезд vs ключница vs чужая дверь) в §1 — не смешивать B01/B13/B18 под одним «код не сработал».
+- Параллельно с кодом квартиры в §1 называть, где висит ключница (внутри/снаружи подъезда) — иначе читатель не видит, почему первый рубеж критичен.
+
+### Never again
+- Считать код квартиры полным бесконтактным заселением без проверенного входа в подъезд.
+- Повторять B13 empty-keybox или B01 wrong-door под видом «домофон молчит» без явного этапа.
+- How-to каталог домофонов / обход системы до морали; чеклист только после «Мой вывод как практика».
+- Выдавать 600 ₽ и 20 мин за рыночную статистику без editorial disclaimer.
+
+### Proposed apply
+- Scout: при hook `domofon_silent_entrance` логировать original Klyshin «Код для заселения прислали — домофон молчит» + final P0 spine Tyumen + note «этап: подъезд, не ключница».
+- Writer checklist (review-only): contactless chain → first door + keybox location в §1.
+- Review only; Writer prompt не трогать автоматически.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260912-1343-B18-uk-improvisation-not-backup-plan
+status: proposed
+topic_id: B18
+category: structure
+confidence: low
+
+### Evidence
+- artifact: research-notes.md#typical_mistakes
+  finding: «позвоню в УК» как подмена резервного плана; H2 «Что здесь сломалось на самом деле» с неполной инструкцией (адрес+код квартиры без способа открыть подъезд).
+- metrika_signal: none (credentials unavailable; causal retention не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Слой «такси уехало → 20 минут между чемоданом и закрытой дверью → вторая машина за свои» — asymmetric moment после «код в переписке».
+- Блок «инструкция была неполной» ↔ «сейчас позвоню в управляющую» — объясняет mismatch «бесконтактно» vs импровизация без злодейства.
+- Utility-вопрос до оплаты: «как откроете **подъезд**, если домофон не ответит?» — не «квартиру», не «код ключницы».
+- Чеклист после «Мой вывод как практика»: способ подъезда, резерв при молчании домофона, кто отвечает ночью, где ключница, номер подъезда/этаж.
+- Мораль «код в чате — ключ от комнаты, не пропуск в здание» + «15 минут без внятного ответа — уже ответ».
+
+### Change
+- Для entrance-access hooks всегда включать **host improvisation vs backup plan** (УК/«дошлю позже» vs конкретный способ) в utility-блок — не только механику домофона.
+- При interlink — sibling про access-timing (B08 silence, B10 taxi, B01 wrong stage) одной линией «обещание в чате ≠ цепочка до двери квартиры».
+
+### Never again
+- Писать entrance-block кейс только про «наберите код ещё раз», игнорируя temporal leverage (такси уехало, улица, чемодан).
+- Принимать «позвоню в управляющую» как резервный план в тексте без разбора.
+- Финал «Наш вывод простой» вместо «Мой вывод как практика».
+
+### Proposed apply
+- Sol/Writer review-only: entrance-access → один абзац «импровизация vs план» до checklist.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260912-1343-B18-title-code-exists-wrong-stage
+status: proposed
+topic_id: B18
+category: voice
+confidence: low
+
+### Evidence
+- artifact: title-brief.json / derouter-title
+  finding: H1 «Код уже есть. Только в подъезд не попасть — 20 минут с чемоданом»; klyshin_title_shape:2; angle «код квартиры бесполезен, пока не открыт подъезд».
+- metrika_signal: none (credentials unavailable; causal CTR не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Cable pain-scene: «код уже есть» (ложная безопасность) + контрфакт «в подъезд не попасть» + время (20 мин) + prop (чемодан), без SEO-хвоста «код для заселения».
+- Description rhythm klyshin_case_hook: «код есть — домофон молчит, ключница по ту сторону» (not_equal_title PASS).
+- Hammer «Не забытый код. Не сломанный замок. А первая дверь подъезда…» — стадия сбоя в opening, не спойлер всей цепочки в H1.
+- Cover-text sticky «Сначала проверка, потом перевод» + wordstat spine «квартиры посуточно тюмень» на обложке.
+
+### Change
+- Для entrance-access hooks: prefer **«код есть / не туда» + stage reveal (подъезд) + time + prop** over narrow «домофон не работает» SEO lead.
+- Title: двухчастный ритм (иллюзия «код прислали» / контрфакт «первая дверь») > compound «три нажатия + УК + 600 ₽» spoiler.
+
+### Never again
+- H1-спойлер со всей механикой домофона и УК — оставлять детали в §1/H2.
+- Description, дублирующий H1 про «20 минут с чемоданом» без контраста «ключница за дверью».
+
+### Proposed apply
+- Title/Description review: entrance-access — quoted illusion + stage + time > domofon-keyword H1.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded

@@ -68,6 +68,11 @@ def transport_mode(env: dict[str, str]) -> str:
     return resolve_publish_transport(env)
 
 
+def is_cursor_cloud_agent() -> bool:
+    """True when running inside Cursor Cloud Agent (CURSOR_AGENT=1)."""
+    return os.environ.get("CURSOR_AGENT", "").strip().lower() in {"1", "true", "yes"}
+
+
 def resolve_publish_transport(env: dict[str, str]) -> str:
     """Resolve ftp vs sftp from explicit FTP_TRANSPORT or FTP_PORT (21 → ftp)."""
     explicit = (env.get("FTP_TRANSPORT") or "").strip().lower()
@@ -77,6 +82,19 @@ def resolve_publish_transport(env: dict[str, str]) -> str:
         return "sftp"
     port = (env.get("FTP_PORT") or "22").strip()
     return "ftp" if port == "21" else "sftp"
+
+
+def effective_publish_transport(env: dict[str, str]) -> str:
+    """Transport used for bootstrap upload (may override configured ftp on Cloud Agent).
+
+    Timeweb PASV data ports are often blocked on Cloud Agent egress; large bootstrap
+    uploads hang until manual SFTP retry (INC B17/B18). Skip FTP attempt when
+    CURSOR_AGENT=1 even if Secrets still say FTP_TRANSPORT=ftp.
+    """
+    mode = resolve_publish_transport(env)
+    if mode == "ftp" and is_cursor_cloud_agent():
+        return "sftp"
+    return mode
 
 
 def remote_path(env: dict[str, str], remote_name: str) -> str:

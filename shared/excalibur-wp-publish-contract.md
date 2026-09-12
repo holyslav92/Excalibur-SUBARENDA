@@ -20,7 +20,7 @@ Excalibur BLOG готовит артефакты локально; публик�
 - **Секреты:** `FTP_HOST` / `FTP_USER` / `FTP_PASS` / `FTP_ROOT` / `FTP_PORT` / `FTP_TRANSPORT`
   - **SFTP (default):** port 22 — `FTP_*` = те же SFTP-учётные данные; `SSH_*` = алиасы
   - **FTP passive (Добрый дом / Timeweb, локально):** `FTP_PORT=21` или `FTP_TRANSPORT=ftp`; `FTP_ROOT=[REDACTED]`
-  - **Cloud Agent PASV data timeout:** `publish_via_ftp` автоматически повторяет bootstrap через **SFTP:22** (те же `FTP_*` creds). Ручной override: `FTP_TRANSPORT=sftp FTP_PORT=22`.
+  - **Cloud Agent:** при `CURSOR_AGENT=1` publish сразу через **SFTP:22** (даже если Secrets ещё `FTP_TRANSPORT=ftp`; INC B17/B18). Локальный PASV timeout → авто-fallback на SFTP (те же `FTP_*` creds).
 - Env precedence: переменные окружения перекрывают `memory/site.env.local`.
 - Root: `FTP_ROOT` относительно FTP login cwd (Timeweb: `sublease/public_html`). Пустой или `/` → `.`
 

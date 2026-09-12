@@ -1,5 +1,23 @@
 # WP publish log
 
+## B18 — 2026-09-12
+
+- **topic_id:** B18
+- **slug:** kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda
+- **title:** Код уже есть. Только в подъезд не попасть — 20 минут с чемоданом
+- **post_id:** 4724
+- **permalink:** /blog/kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda/
+- **categories:** posutochnaya-arenda (101), sovety-gostyam (106)
+- **featured_image:** 4734
+- **inline_images:** 4735–4741 (7× wp-content/uploads/2026/09/…-inline-0N-1.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS (0 cover/ paths; all inline → wp-content)
+- **dzen preview:** cover-1-1024x576.png + cover-1024x576.png (HTTP 200)
+- **interlink outbound:** 4 live /blog/ siblings (crosslink-qa PASS)
+- **interlink inbound:** B01 (3745), B13 (4535)
+- **publish_method:** sftp:22 (FTP PASV hung on 16MB bootstrap; retry with FTP_TRANSPORT=sftp)
+- **llms_deploy:** PASS (llms.txt + llms-full.txt)
+
 ## B17 — 2026-09-12
 
 - **topic_id:** B17

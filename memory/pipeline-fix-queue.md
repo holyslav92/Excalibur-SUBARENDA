@@ -1183,3 +1183,87 @@ files_changed:
 checks_run:
 - B17 `wp-publish-result.json` publish_method=sftp, live-page PASS
 commit: pending
+
+## INC-20260912-1343 — Metrika credentials missing (Content-learner B18)
+
+status: needs-human
+run_date: 2026-09-12
+role: excalibur-blog-content-learner
+topic_id: B18
+article_dir: memory/blog/articles/B18-kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda
+severity: medium
+category: env
+
+### What went wrong
+
+- `excalibur_blog_metrika_fetch.py --days 30 --ingest` → METRIKA CREDENTIALS BLOCKER (same root cause as INC-20260903-0640).
+
+### How the agent recovered this run
+
+- evidence_gate SKIP (no content-evidence-report.json); recorded 3 optional/low-confidence lessons in `memory/content-lessons.md`; no causal Metrika claims.
+
+### Durable fix needed before next run
+
+- Set YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets for tenant.
+
+### Fixer resolution
+
+status: needs-human
+reason: env-only blocker; duplicate of INC-20260903-0640
+needed_decision_or_secret: YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets
+
+## INC-20260912-1344 — FTP PASV hang on 16MB bootstrap, manual SFTP retry (B18 publish)
+
+status: fixed
+run_date: 2026-09-12
+role: excalibur-blog-publish
+topic_id: B18
+article_dir: memory/blog/articles/B18-kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda
+severity: medium
+category: transport
+
+### What went wrong
+
+- Default `FTP_TRANSPORT=ftp` in Cloud Secrets: PASV data channel hung on ~16MB publish bootstrap; agent re-ran with `FTP_TRANSPORT=sftp` (post 4724).
+
+### How the agent recovered this run
+
+- Manual SFTP:22 retry; live-page PASS; llms_deploy PASS; interlink inbound B01/B13.
+
+### Durable fix needed before next run
+
+- Skip FTP attempt on `CURSOR_AGENT=1` (Secrets still say ftp until owner updates dashboard).
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_remote_transport.py`
+- `scripts/excalibur_blog_wp_publish.py`
+- `scripts/excalibur_blog_doctor.py`
+- `CLOUD-FIRST-RUN.md`
+- `skills/publish-excalibur-blog/SKILL.md`
+
+### Secrets
+
+- FTP (Cloud Secrets)
+
+### Fixer resolution
+
+fixed_at: 2026-09-12
+fix_summary:
+- `effective_publish_transport()` forces SFTP on `CURSOR_AGENT=1` even when Secrets say `FTP_TRANSPORT=ftp` (INC B18; extends B17 doc-only fix).
+- `publish_via_sftp` WARN + doctor WARN when override active; env-check shows `configured_mode` vs `mode`.
+files_changed:
+- `scripts/excalibur_blog_remote_transport.py`
+- `scripts/excalibur_blog_wp_publish.py`
+- `scripts/excalibur_blog_doctor.py`
+- `tests/test_publish_transport.py`
+- `CLOUD-FIRST-RUN.md`
+- `.env.example`
+- `shared/excalibur-wp-publish-contract.md`
+- `skills/publish-excalibur-blog/SKILL.md`
+- `.cursor/skills/publish-excalibur-blog/SKILL.md`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_remote_transport.py scripts/excalibur_blog_wp_publish.py scripts/excalibur_blog_doctor.py`
+- `python3 -m unittest tests.test_publish_transport -v`
+commit: 83f5aac

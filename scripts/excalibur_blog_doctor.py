@@ -430,6 +430,18 @@ def main() -> int:
         check(bool(env.get("FTP_HOST")), "publish host configured (FTP/SFTP)", errors, warnings, warn=not args.publish)
         check(bool(env.get("FTP_USER")), "publish user configured", errors, warnings, warn=not args.publish)
         check(bool(env.get("FTP_PASS")), "publish password configured", errors, warnings, warn=not args.publish)
+        if os.environ.get("CURSOR_AGENT", "").strip() == "1":
+            sys.path.insert(0, str(root / "scripts"))
+            from excalibur_blog_remote_transport import resolve_publish_transport
+
+            if resolve_publish_transport(env) == "ftp":
+                check(
+                    True,
+                    "Cloud Agent: FTP_TRANSPORT=ftp in Secrets — publish uses SFTP override (set FTP_TRANSPORT=sftp to silence)",
+                    errors,
+                    warnings,
+                    warn=True,
+                )
     else:
         print("NOTE skip publish secret checks until setup complete (use --publish to force)")
     if args.publish:
