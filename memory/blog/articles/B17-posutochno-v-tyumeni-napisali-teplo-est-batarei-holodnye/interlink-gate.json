@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "topic_id": "B17",
+  "slug": "posutochno-v-tyumeni-napisali-teplo-est-batarei-holodnye",
+  "candidates_count": 20,
+  "outbound_found": [
+    {
+      "slug": "kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den",
+      "title": "kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den"
+    },
+    {
+      "slug": "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400",
+      "title": "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400"
+    },
+    {
+      "slug": "v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik",
+      "title": "v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik"
+    },
+    {
+      "slug": "napisali-tihij-centr-v-6-30-za-oknom-kran",
+      "title": "napisali-tihij-centr-v-6-30-za-oknom-kran"
+    }
+  ],
+  "outbound_unique_slugs": [
+    "napisali-tihij-centr-v-6-30-za-oknom-kran",
+    "kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den",
+    "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400",
+    "v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "warnings": [],
+  "errors": []
+}

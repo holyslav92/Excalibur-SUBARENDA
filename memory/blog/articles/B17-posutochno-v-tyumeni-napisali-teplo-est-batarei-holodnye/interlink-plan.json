@@ -1,0 +1,106 @@
+{
+  "topic_id": "B17",
+  "slug": "posutochno-v-tyumeni-napisali-teplo-est-batarei-holodnye",
+  "title": "Написали «тепло есть». За окном +6 °C — батареи холодные на 2 ночи",
+  "outbound_required_min": 1,
+  "outbound_found": [
+    {
+      "slug": "kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den",
+      "title": "kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den",
+      "permalink": "/blog/kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den/",
+      "topic_id": "B07",
+      "post_id": null,
+      "source": "ledger"
+    },
+    {
+      "slug": "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400",
+      "title": "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400",
+      "permalink": "/blog/hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400/",
+      "topic_id": "B10",
+      "post_id": null,
+      "source": "ledger"
+    },
+    {
+      "slug": "v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik",
+      "title": "v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik",
+      "permalink": "/blog/v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik/",
+      "topic_id": "B11",
+      "post_id": null,
+      "source": "ledger"
+    },
+    {
+      "slug": "napisali-tihij-centr-v-6-30-za-oknom-kran",
+      "title": "napisali-tihij-centr-v-6-30-za-oknom-kran",
+      "permalink": "/blog/napisali-tihij-centr-v-6-30-za-oknom-kran/",
+      "topic_id": "B12",
+      "post_id": null,
+      "source": "ledger"
+    }
+  ],
+  "outbound_missing_suggestions": [
+    {
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "title": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "permalink": "{{SITE_BASE}}/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+      "topic_id": "B01",
+      "post_id": 3745,
+      "source": "ledger"
+    },
+    {
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "title": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "permalink": "{{SITE_BASE}}",
+      "topic_id": "B02",
+      "post_id": 3777,
+      "source": "ledger"
+    },
+    {
+      "slug": "kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki",
+      "title": "kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki",
+      "permalink": "/blog/kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki/",
+      "topic_id": "B03",
+      "post_id": null,
+      "source": "ledger"
+    }
+  ],
+  "inbound_targets": [
+    {
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "title": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "permalink": "{{SITE_BASE}}/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+      "topic_id": "B01",
+      "post_id": 3745,
+      "source": "ledger"
+    },
+    {
+      "slug": "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400",
+      "title": "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400",
+      "permalink": "/blog/hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400/",
+      "topic_id": "B10",
+      "post_id": null,
+      "source": "ledger"
+    },
+    {
+      "slug": "kod-srabotal-klyuchnica-pusta-posutochno-tyumen",
+      "title": "kod-srabotal-klyuchnica-pusta-posutochno-tyumen",
+      "permalink": "/blog/kod-srabotal-klyuchnica-pusta-posutochno-tyumen/",
+      "topic_id": "B13",
+      "post_id": 4535,
+      "source": "ledger"
+    }
+  ],
+  "inbound_updates": [
+    {
+      "post_id": 3745,
+      "marker": "data-excalibur-interlink-from=\"posutochno-v-tyumeni-napisali-teplo-est-batarei-holodnye\"",
+      "html": "<p class=\"excalibur-interlink-readalso\" data-excalibur-interlink-from=\"posutochno-v-tyumeni-napisali-teplo-est-batarei-holodnye\"><b>Читайте также:</b> <a href=\"{{SITE_BASE}}">Написали «тепло есть». За окном +6 °C — батареи холодные на 2 ночи</a></p>"
+    },
+    {
+      "post_id": 4535,
+      "marker": "data-excalibur-interlink-from=\"posutochno-v-tyumeni-napisali-teplo-est-batarei-holodnye\"",
+      "html": "<p class=\"excalibur-interlink-readalso\" data-excalibur-interlink-from=\"posutochno-v-tyumeni-napisali-teplo-est-batarei-holodnye\"><b>Читайте также:</b> <a href=\"{{SITE_BASE}}">Написали «тепло есть». За окном +6 °C — батареи холодные на 2 ночи</a></p>"
+    }
+  ],
+  "new_url": "{{SITE_BASE}}",
+  "dry_run": false
+}
