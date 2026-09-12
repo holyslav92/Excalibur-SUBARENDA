@@ -1,0 +1,86 @@
+{
+  "topic_id": "B17",
+  "slug": "kommunalka-vklyuchena-schet-1840-na-vyezde",
+  "cover_family": "brand_collage",
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "file": "cover/cover.png",
+  "alt": "Гость у двери посуточной квартиры в Тюмени получает в чате фото счётчиков и требование доплатить; на экране виден номер телефона, за окном золотая осень.",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-quad-01.png",
+  "generated_at": "2026-09-12T09:25:09+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Гость у двери посуточной квартиры в Тюмени получает в чате фото счётчиков и требование доплатить; на экране виден номер телефона, за окном золотая осень.",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Сравнение оплаты за три ночи и обещания включённой коммуналки в карточке объявления.",
+      "h2_anchor": "Считаем то, что показали",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Переписка с тремя фотографиями приборов учёта и суммой доплаты без стартовых показаний.",
+      "h2_anchor": "Считаем то, что показали",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Схема расхода электроэнергии за три ночи и предупреждение проверить до оплаты.",
+      "h2_anchor": "Почему это всплывает именно на выезде",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_4",
+      "file": "cover/inline-04.png",
+      "alt": "Схема почему доплату предъявляют именно на выезде когда гость уже собрал вещи.",
+      "h2_anchor": "Почему это всплывает именно на выезде",
+      "visual_type": "process_flow",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_5",
+      "file": "cover/inline-05.png",
+      "alt": "Один проверочный вопрос перед оплатой: включена ли коммуналка или считается отдельно.",
+      "h2_anchor": "Отмычка — один вопрос",
+      "visual_type": "tool_screenshot",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_6",
+      "file": "cover/inline-06.png",
+      "alt": "Чек-лист вопросов гостю перед переводом денег за посуточную квартиру.",
+      "h2_anchor": "Отмычка — один вопрос",
+      "visual_type": "labeled_checklist",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_7",
+      "file": "cover/inline-07.png",
+      "alt": "Порядок действий: проверить условия до оплаты, а не спорить со счётчиками на выезде.",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "infographic_card",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}

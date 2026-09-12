@@ -1,0 +1,130 @@
+{
+  "topic_id": "B17",
+  "slug": "kommunalka-vklyuchena-schet-1840-na-vyezde",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "Коммуналка включена — доплата на выезде",
+  "cover_hook_highlight": "Коммуналка",
+  "cover_headline_line1": "Коммуналка включена",
+  "cover_headline_line2": "доплата на выезде",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Grsai draw API 2K — 2 canvases × 4 panels. Logo factory paste cover + inline_1/3/7.",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "снять квартиру посуточно в тюмени"
+  ],
+  "logo_paste_inline_slots": ["cover", "inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "Вертикальный постер: гость в лёгкой осенней куртке у двери однушки с чемоданом, смартфон с тремя фото счётчиков; крупный хук слева, чистая зона top-right под логотип.",
+    "location": "Светлая посуточная однушка в Тюмени, ранний сентябрь 2026: золотые листья за окном, тёплый день, без снега и зимних деталей.",
+    "meme": "photoreal zero meme stickers only no meme characters on cover",
+    "prop_set": "Смартфон с фото электросчётчика 12 847, распечатка «коммуналка включена», чемодан у двери, чек 9 600 ₽, магнит с телефоном +7 (993) 574-83-22.",
+    "sticker_set": "коммуналка включена счётчики на выезде посуточно тюмень",
+    "joke": "На распечатке «включено» жирным, а в чате три фото счётчиков и «добить по факту»."
+  },
+  "cover_emotion": "Раздражение и беспомощность у порога — чемодан уже собран, а в чате счётчики",
+  "cover_scene": "Гость у двери, чемодан, телефон — фото счётчиков 1 840 ₽; магнит +7 (993) 574-83-22; хук «Коммуналка включена — доплата на выезде»; pad top-right.",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "scene_hint": "У двери: чемодан, телефон со счётчиками 1 840 ₽, магнит +7 (993) 574-83-22, хук «Коммуналка включена — доплата на выезде», pad TR.",
+      "alt": "Гость у двери посуточной квартиры в Тюмени получает в чате фото счётчиков и требование доплатить; на экране виден номер телефона, за окном золотая осень.",
+      "meme_caption_ru": "",
+      "role": "cover_editorial_hero",
+      "sticky": "Сначала проверка, потом перевод"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "scene_hint": "Сравнение: 9 600 ₽ три ночи vs «коммуналка включена». Pad TR.",
+      "alt": "Сравнение оплаты за три ночи и обещания включённой коммуналки в карточке объявления.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Считаем то, что показали",
+      "visual_type": "comparison_table_ui",
+      "labels": ["три ночи", "9 600 рублей", "коммуналка включена"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "scene_hint": "Чат: три фото счётчиков, 1 840 ₽, нет показаний заезда.",
+      "alt": "Переписка с тремя фотографиями приборов учёта и суммой доплаты без стартовых показаний.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Считаем то, что показали",
+      "visual_type": "workflow_diagram",
+      "labels": ["три фото счётчиков", "1 840 рублей", "нет показаний заезда"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "scene_hint": "429 кВт·ч, 143 кВт·ч/сут, «проверьте до перевода». Pad TR.",
+      "alt": "Схема расхода электроэнергии за три ночи и предупреждение проверить до оплаты.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Почему это всплывает именно на выезде",
+      "visual_type": "checklist_board",
+      "labels": ["429 киловатт", "143 киловатта в день", "проверьте до перевода"]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "scene_hint": "Выезд: чемодан, ключи, доплата в чате.",
+      "alt": "Схема почему доплату предъявляют именно на выезде когда гость уже собрал вещи.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Почему это всплывает именно на выезде",
+      "visual_type": "process_flow",
+      "labels": ["чемодан у двери", "доплата в чате", "спорить неудобно", "на выезде"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "scene_hint": "Лист: «Коммуналка в цене или по счётчикам?»",
+      "alt": "Один проверочный вопрос перед оплатой: включена ли коммуналка или считается отдельно.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Отмычка — один вопрос",
+      "visual_type": "tool_screenshot",
+      "labels": ["в цене или счётчики", "один вопрос", "до перевода", "ответ письменно"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "scene_hint": "Чек-лист вопросов до оплаты; кот-стикер ≤12% с блокнотом.",
+      "alt": "Чек-лист вопросов гостю перед переводом денег за посуточную квартиру.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Отмычка — один вопрос",
+      "visual_type": "labeled_checklist",
+      "labels": ["тарифы и показания", "что входит", "итоговая сумма", "сначала проверка"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "scene_hint": "«Сначала проверка → потом перевод», ключ, осень. Pad TR.",
+      "alt": "Порядок действий: проверить условия до оплаты, а не спорить со счётчиками на выезде.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "infographic_card",
+      "labels": ["сначала проверка", "потом перевод", "цена до оплаты", "не на выезде"]
+    }
+  },
+  "cover_keys_ru": [],
+  "no_host_face": true,
+  "skip_identity_i2i": true
+}
