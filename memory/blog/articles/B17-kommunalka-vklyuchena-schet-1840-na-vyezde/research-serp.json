@@ -1,0 +1,218 @@
+{
+  "agent": "excalibur-blog",
+  "date_context": {
+    "timezone": "Europe/Moscow",
+    "today_iso": "2026-09-12",
+    "today_ru": "12.09.2026",
+    "year": 2026,
+    "month": 9,
+    "month_name_ru": "сентябрь",
+    "weekday_ru": "суббота"
+  },
+  "topic": {
+    "topic_id": "B17",
+    "title": "Коммуналка включена — счёт 1840 на выезде",
+    "h1": "Коммуналка включена — счёт 1840 на выезде",
+    "slug": "kommunalka-vklyuchena-schet-1840-na-vyezde",
+    "primary_query": "Коммуналка включена — счёт 1840 на выезде",
+    "priority": "P0"
+  },
+  "searches": [
+    {
+      "query_id": "primary_fresh",
+      "query": "Коммуналка включена — счёт 1840 на выезде 2026",
+      "purpose": "актуальный SERP",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Калькулятор коммунальных платежей онлайн — расчет по счетчику и тарифам",
+          "url": "https://handycalc.ru/finance/utility-bill-calculator-online/",
+          "snippet": ""
+        },
+        {
+          "title": "Калькулятор Коммунальных Платежей 2026 — Расчет ЖКХ Онлайн",
+          "url": "https://www.mycalculators.app/ru/kalkulyator-kommunalnykh-platezhey",
+          "snippet": "Этот калькулятор коммуналки помогает быстро посчитать сумму к оплате по тарифам: вода, электричество, газ, отопление, вывоз мусора и любые другие услуги. Вы можете рассчитывать по показаниям счётчиков (предыдущие/текущие) или по объёму за период, а также добавить фиксированные платежи и скидку/субсидию."
+        },
+        {
+          "title": "Калькулятор ЖКХ - калькулятор расчета коммунальных платежей",
+          "url": "https://raschetgkh.ru/online-kalkulyator-rascheta-kommunalnykh-platezhej.html",
+          "snippet": "Тарифы на ЖКХ значительно различаются по регионам России. Самые дорогие — Москва и Санкт-Петербург, самые дешевые — регионы Сибири и Дальнего Востока (при высоких тарифах на отопление)."
+        },
+        {
+          "title": "Расчёт размера платы за коммунальные услуги: что входит в коммуналку и ...",
+          "url": "https://yustihab.ru/journal/raschyot-razmera-platy-za-kommunalnye-uslugi-chto-vkhodit-v-kommunalku-i-kak-eyo-schitat",
+          "snippet": "Все, что Вам для этого нужно - выбрать коммунальную услугу, необходимый вариант расчета, и правильно ввести данные в поля калькулятора."
+        },
+        {
+          "title": "Калькулятор коммуналки по счётчикам — вода, свет, газ",
+          "url": "https://platidom.ru/",
+          "snippet": "Чтобы понимать, за что именно вы платите, важно знать: какие услуги входят в коммуналку, как формируется тариф, чем отличается расчёт по счётчикам и без них, и как проверить правильность начислений. В этой статье вы найдёте полную расшифровку квитанции, формулы, реальные примеры расчётов и алгоритмы проверки платежей."
+        },
+        {
+          "title": "Тарифы ЖКХ в 2026 году: что изменилось в оплате коммунальных услуг",
+          "url": "https://www.cian.ru/stati-tarify-zhkh-kakie-izmenenija-i-mozhno-li-snizit-340749/",
+          "snippet": "Удобный калькулятор коммунальных платежей по счётчикам: вода, электричество (1/2 тарифа), газ. Сохранение тарифов в браузере."
+        }
+      ],
+      "searched_at": "2026-09-12"
+    },
+    {
+      "query_id": "title_fresh",
+      "query": "Коммуналка включена — счёт 1840 на выезде 2026",
+      "purpose": "SERP по человеческому title",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Калькулятор коммунальных платежей онлайн — расчет по счетчику и тарифам",
+          "url": "https://handycalc.ru/finance/utility-bill-calculator-online/",
+          "snippet": ""
+        },
+        {
+          "title": "Калькулятор коммуналки по счётчикам — вода, свет, газ",
+          "url": "https://platidom.ru/",
+          "snippet": "Этот калькулятор коммуналки помогает быстро посчитать сумму к оплате по тарифам: вода, электричество, газ, отопление, вывоз мусора и любые другие услуги. Вы можете рассчитывать по показаниям счётчиков (предыдущие/текущие) или по объёму за период, а также добавить фиксированные платежи и скидку/субсидию."
+        },
+        {
+          "title": "Калькулятор Коммунальных Платежей 2026 — Расчет ЖКХ Онлайн",
+          "url": "https://www.mycalculators.app/ru/kalkulyator-kommunalnykh-platezhey",
+          "snippet": "Удобный калькулятор коммунальных платежей по счётчикам: вода, электричество (1/2 тарифа), газ. Сохранение тарифов в браузере."
+        },
+        {
+          "title": "Калькулятор ЖКХ - калькулятор расчета коммунальных платежей",
+          "url": "https://raschetgkh.ru/online-kalkulyator-rascheta-kommunalnykh-platezhej.html",
+          "snippet": "Тарифы на ЖКХ значительно различаются по регионам России. Самые дорогие — Москва и Санкт-Петербург, самые дешевые — регионы Сибири и Дальнего Востока (при высоких тарифах на отопление)."
+        },
+        {
+          "title": "Расчёт размера платы за коммунальные услуги: что входит в коммуналку и ...",
+          "url": "https://yustihab.ru/journal/raschyot-razmera-platy-za-kommunalnye-uslugi-chto-vkhodit-v-kommunalku-i-kak-eyo-schitat",
+          "snippet": "Все, что Вам для этого нужно - выбрать коммунальную услугу, необходимый вариант расчета, и правильно ввести данные в поля калькулятора."
+        },
+        {
+          "title": "Vi. Порядок Расчета И Внесения Платы За Коммунальные Услуги",
+          "url": "https://www.consultant.ru/document/cons_doc_LAW_114247/2c89fbd61239ac65f3203353df59d3c653c9a2f8/",
+          "snippet": "Чтобы понимать, за что именно вы платите, важно знать: какие услуги входят в коммуналку, как формируется тариф, чем отличается расчёт по счётчикам и без них, и как проверить правильность начислений. В этой статье вы найдёте полную расшифровку квитанции, формулы, реальные примеры расчётов и алгоритмы проверки платежей."
+        }
+      ],
+      "searched_at": "2026-09-12"
+    },
+    {
+      "query_id": "official_docs",
+      "query": "Коммуналка включена — счёт 1840 на выезде official docs 2026",
+      "purpose": "официальные docs",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Коммуналка-2026: как читать новую квитанцию по строчкам",
+          "url": "https://4b.by/journal/kommunalka-2026-po-strochkam",
+          "snippet": ""
+        },
+        {
+          "title": "Нормы оплаты жилищно-коммунальных услуг — что нового? - Дом и уют ...",
+          "url": "https://blog.domclick.ru/dom-i-uyut/post/oplata-uslug-zhkh",
+          "snippet": "С 2026 года платёжки за ЖКУ снова подросли в два этапа. Разбираем, из чего складывается сумма в жировке, какой тариф считается субсидируемым и кому положена безналичная жилищная субсидия."
+        },
+        {
+          "title": "Выезд за границу с долгом за коммунальные услуги ЖКХ в 2026 году",
+          "url": "https://visasam.ru/samotur/rules/dolg-za-kommunalnye-uslugi.html",
+          "snippet": "С 1 марта 2026 года действует новая редакция статьи 155 ЖК РФ: срок оплаты перенесен с 10-го на 15-е число месяца, следующего за расчетным, а платежные документы должны направлять не позднее 5-го числа. Изменения внесены федеральным законом № 177-ФЗ от 24 июня 2025 года."
+        },
+        {
+          "title": "Где коммуналка взлетит на 22%: полный список тарифов ЖКХ с 1 октября ...",
+          "url": "https://www.maximonline.ru/guide/kommunalka-vzletit-do-22-kak-izmenyatsya-tarify-zhkkh-s-1-oktyabrya-2026-goda-id7280781/",
+          "snippet": "Кто принимает решение о запрете на выезд, и как узнать, есть ли у Вас задолженность? Само по себе наличие задолженности - ещё не повод отказать в заграничной поездке. Чтобы пограничная служба запретила гражданину пересекать границу, должно быть соответствующее предписание."
+        },
+        {
+          "title": "Повышение тарифов ЖКХ с 1 октября 2026 года: на сколько вырастет коммуналка",
+          "url": "https://www.vbr.ru/novosti/jkh/2026/09/01/povishenie-tarifov-jkh-s-1-oktyabrya-2026/",
+          "snippet": "Простым языком объясняем, как устроена индексация тарифов ЖКХ в 2026 году, в каких регионах цены подскочат выше всего и где оформить государственную субсидию."
+        },
+        {
+          "title": "Коммуналка по новым правилам: что изменится с марта 2026 года",
+          "url": "https://ruspress.ru/kommynalka-po-novym-pravilam-chto-izmenitsia-s-marta-2026-goda/",
+          "snippet": "С 1 октября 2026 года тарифы ЖКХ вырастут на 8-22%. Рассказываем, на сколько подорожает коммуналка в разных регионах и как проверить платёжку."
+        }
+      ],
+      "searched_at": "2026-09-12"
+    },
+    {
+      "query_id": "github_evidence",
+      "query": "site:github.com Коммуналка включена — счёт 1840 на выезде 2026",
+      "purpose": "GitHub evidence",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "adaywarwick-rgb/kommunalka: Коммуналка - GitHub",
+          "url": "https://github.com/adaywarwick-rgb/kommunalka",
+          "snippet": ""
+        },
+        {
+          "title": "The Aclara Metrum Cellular Web Interface is vulnerable to...",
+          "url": "https://github.com/advisories/ghsa-gx8p-xc64-fg2f",
+          "snippet": "Коммуналка — семейный учёт и снижение расходов на коммунальные услуги - adaywarwick-rgb/kommunalka"
+        },
+        {
+          "title": "GitHub - smolnp/IPTVru: IPTV лист на русском",
+          "url": "https://github.com/smolnp/IPTVru",
+          "snippet": "Such unauthorized changes can disrupt normal functionality and, if performed repeatedly, may lead to a loss of communications to the device. This score calculates overall vulnerability severity from 0 to 10 and is based on the Common Vulnerability Scoring System (CVSS)."
+        },
+        {
+          "title": "HelloVulkan/Doc/Src/Cmake04.png at main · Italink/HelloVulkan",
+          "url": "https://github.com/Italink/HelloVulkan/blob/main/Doc/Src/Cmake04.png",
+          "snippet": "Именно в этот плейлист вы можете добавить свой канал, даже без ссылки (главное: имя и атрибуты) и как только скрипты найдут на этот канал рабочую ссылку он, со временем появится во всех плейлистах."
+        },
+        {
+          "title": "XLSX ComunalPays/Коммуналка.xlsx at main · NickGlackikh ... - GitHub",
+          "url": "https://github.com/NickGlackikh/ComunalPays/blob/main/%D0%9A%D0%BE%D0%BC%D0%BC%D1%83%D0%BD%D0%B0%D0%BB%D0%BA%D0%B0.xlsx",
+          "snippet": "Contribute to Italink/HelloVulkan development by creating an account on GitHub."
+        },
+        {
+          "title": "Что делать, если в Roblox не грузятся ... - GitHub",
+          "url": "https://github.com/Flowseal/zapret-discord-youtube/discussions/16332",
+          "snippet": "Contribute to NickGlackikh/ComunalPays development by creating an account on GitHub."
+        }
+      ],
+      "searched_at": "2026-09-12"
+    },
+    {
+      "query_id": "community_experience",
+      "query": "Коммуналка включена — счёт 1840 на выезде forum problems опыт 2026",
+      "purpose": "форумы и живые проблемы",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Где коммуналка взлетит на 22%: полный список тарифов ЖКХ с 1 октября ...",
+          "url": "https://www.maximonline.ru/guide/kommunalka-vzletit-do-22-kak-izmenyatsya-tarify-zhkkh-s-1-oktyabrya-2026-goda-id7280781/",
+          "snippet": ""
+        },
+        {
+          "title": "Повышение тарифов ЖКХ с 1 октября 2026 года: на сколько вырастет коммуналка",
+          "url": "https://www.vbr.ru/novosti/jkh/2026/09/01/povishenie-tarifov-jkh-s-1-oktyabrya-2026/",
+          "snippet": "Абсолютным рекордсменом этой осени стал Ставропольский край, здесь тарифы поднимутся сразу на 22%. Несладко придется и жителям Республики Дагестан, где планка установлена на уровне 19,7%."
+        },
+        {
+          "title": "Почему приходят большие счета за коммунальные услуги",
+          "url": "https://kvartplata.ru/blog/pochemu-prihodyat-bolshie-scheta-za-zhkh",
+          "snippet": "С 1 октября 2026 года тарифы ЖКХ вырастут на 8-22%. Рассказываем, на сколько подорожает коммуналка в разных регионах и как проверить платёжку."
+        },
+        {
+          "title": "Индексации тарифов ЖКХ в 2026 году: на сколько подорожает коммуналка ...",
+          "url": "https://lenta.ru/articles/2026/02/13/indeksatsii-tarifov-zhkh-v-2026-godu/",
+          "snippet": "Почему приходят большие счета за воду, свет, газ и ЖКХ. Разбираем причины: ошибки в начислениях, неисправные счетчики, действия управляющей компании, и как оспорить завышенные суммы."
+        },
+        {
+          "title": "Повышение тарифов ЖКХ в 2026 году: на сколько вырастет коммуналка с 1 ...",
+          "url": "https://life.ru/p/1874820",
+          "snippet": "«Лента.ру» рассказывает, на сколько процентов вырастут счета, почему повышение цен необратимо и какие льготы на услуги ЖКХ можно получить. С 1 января 2026 года федеральное повышение установлено..."
+        },
+        {
+          "title": "Счета за коммуналку - как остановить начисления, если выехали за ...",
+          "url": "https://www.rbc.ua/ukr/news/viyihali-kordon-vdoma-rostut-rahunki-komunalku-1765547271.html",
+          "snippet": "Рассказываем, почему так происходит, где коммуналка подорожает сильнее и как оформить субсидию."
+        }
+      ],
+      "searched_at": "2026-09-12"
+    }
+  ],
+  "errors": []
+}
