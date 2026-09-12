@@ -286,10 +286,6 @@
   "html_inject": [
     "skip inline_1: already correct under H2 — Считаем то, что показали",
     "skip inline_2: already correct under H2 — Считаем то, что показали",
-    "skip inline_3: already correct under H2 — Почему это всплывает именно на выезде",
-    "skip inline_4: already correct under H2 — Почему это всплывает именно на выезде",
-    "injected inline_5 after H2 — Отмычка — один вопрос",
-    "injected inline_6 after H2 — Отмычка — один вопрос",
-    "injected inline_7 after H2 — Мой вывод как практика"
+    "skip inline_3: already correct under H2 — Почему это всплывает именно на выезде"
   ]
 }
