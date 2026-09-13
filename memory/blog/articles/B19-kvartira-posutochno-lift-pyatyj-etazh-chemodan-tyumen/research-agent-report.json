@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "topic_id": "B19",
+  "slug": "kvartira-posutochno-lift-pyatyj-etazh-chemodan-tyumen",
+  "research_date": "2026-09-13",
+  "summary": "Research for elevator_floor_luggage CASE: Tyumen guest, early autumn Sep 13 2026, 5th floor with 23kg suitcase, host promised elevator works, sign says out of service. Fresh: T-J Airbnb community comment + Airbnb refund policy + ПриветТур FAQ. Wordstat P0 «квартиры посуточно тюмень» 4840/10385.",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "T-J community + Scout hook 2026-09-13",
+    "source_type": "community",
+    "urls": ["https://t-j.ru/airbnb-problems/", "https://добрыйдом-72.рф/blog/", "https://t.me/klyshin_A"],
+    "accessed_at": "2026-09-13"
+  },
+  "freshness_audit": {
+    "research_date": "2026-09-13",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true
+  },
+  "wordstat_audit": {"status": "PASS", "regions": ["55", "11176", "225"]},
+  "official_source_audit": {"status": "PASS", "required": false},
+  "derouter": {"role": "research", "tier": "utility", "model": "gpt-5.6-terra"},
+  "errors": []
+}

@@ -1,0 +1,41 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "{{SITE_BASE}}/#organization",
+      "name": "Добрый дом",
+      "url": "{{SITE_BASE}}/",
+      "sameAs": "{{SITE_BASE}}/",
+      "telephone": "+7 (993) 574-83-22",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Тюмень",
+        "addressCountry": "RU"
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "{{SITE_BASE}}/blog/kvartira-posutochno-lift-pyatyj-etazh-chemodan-tyumen/#blogposting",
+      "url": "{{SITE_BASE}}/blog/kvartira-posutochno-lift-pyatyj-etazh-chemodan-tyumen/",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{SITE_BASE}}/blog/kvartira-posutochno-lift-pyatyj-etazh-chemodan-tyumen/"
+      },
+      "headline": "Написали «лифт есть». За 8 400 ₽ — пятый этаж пешком",
+      "datePublished": "2026-09-13",
+      "dateModified": "2026-09-13",
+      "inLanguage": "ru-RU",
+      "author": {
+        "@id": "{{SITE_BASE}}/#organization"
+      },
+      "publisher": {
+        "@id": "{{SITE_BASE}}/#organization"
+      },
+      "about": {
+        "@type": "Thing",
+        "name": "Посуточная аренда квартир в Тюмени"
+      }
+    }
+  ]
+}
