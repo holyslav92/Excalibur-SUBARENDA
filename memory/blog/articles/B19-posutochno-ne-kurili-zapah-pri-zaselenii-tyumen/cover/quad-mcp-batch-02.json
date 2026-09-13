@@ -1,0 +1,25 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 2,
+  "model_policy": "primary_2k_first_vip_on_2k_fail_or_api_fail",
+  "vip_disabled": false,
+  "max_generation_attempts": 2,
+  "output_canvas": "cover/canvas-quad-02.png",
+  "result_path": "cover/quad-mcp-result-02.json",
+  "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+  "preferred_image_flow": {
+    "provider": "grsai",
+    "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
+    "resolution": "2K"
+  },
+  "jobs": [{
+    "slot": "canvas_quad",
+    "tool": "grsai",
+    "mcp_args": {
+      "prompt": "WOW RU collage, airy #FFF high-key, warm comfort+ Tyumen early autumn September golden leaves, NO winter/snow. Canvas 2048x1152 2x2; gutters. NO cover panel. ABSOLUTELY NO logo/brand/lockup/curtains/flower/wordmark on ANY panel — factory pastes PNG later on inline_3+inline_7 ONLY. ALL four panels: TOP-RIGHT must be clean wall/wood continuation — ZERO drawn logo, ZERO white/gray plate. Cat-meme max 1/8 — ONE tiny cat sticker ≤12% on BL ONLY. Ban: dark, WP UI, drawn logo, white plate, Shakin face, empty stock room, Добрый дом text. RU Cyrillic only.\nTL: child window lock no key 8cm. TXT:детский замок|ключа в квартире нет|щель восемь сантиметров. NO logo TR.\nTR: 35 min hallway suitcases. TXT:тридцать пять минут|стоим в коридоре|сумки не разобраны. NO logo TR.\nBL: checklist video; ONE cat-meme ≤12% bottom. TXT:снимите видео от двери|ручку не чините|просите ключ или замену. NO logo TR.\nBR: check first then pay. TXT:до первой ночи|можно отказаться|сначала проверка потом перевод. NO logo TR — clean pad.",
+      "aspect_ratio": "16:9",
+      "resolution": "2K"
+    }
+  }],
+  "validation": {"prompt_chars": 1100, "max_prompt_chars": 3500, "resolution": "2K"}
+}

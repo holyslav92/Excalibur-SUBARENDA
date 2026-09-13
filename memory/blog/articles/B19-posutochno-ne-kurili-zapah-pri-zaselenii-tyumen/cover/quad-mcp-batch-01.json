@@ -1,0 +1,25 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 1,
+  "model_policy": "primary_2k_first_vip_on_2k_fail_or_api_fail",
+  "vip_disabled": false,
+  "max_generation_attempts": 2,
+  "output_canvas": "cover/canvas-quad-01.png",
+  "result_path": "cover/quad-mcp-result-01.json",
+  "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+  "preferred_image_flow": {
+    "provider": "grsai",
+    "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
+    "resolution": "2K"
+  },
+  "jobs": [{
+    "slot": "canvas_quad",
+    "tool": "grsai",
+    "mcp_args": {
+      "prompt": "WOW RU collage, airy #FFF high-key, warm comfort+ Tyumen early autumn September 2026 golden leaves, NO winter/snow. Bold Cyrillic hook. Person IN scene — NOT empty room. ABSOLUTELY NO logo/brand on ANY panel — factory PNG after split on cover+inline_1+inline_3 ONLY. Canvas 2048x1152 2x2; gutters. Ban: dark, WP UI, drawn logo, white plate, Shakin face, empty stock room, pill button, rounded phone chip. RU Cyrillic only.\nPhone «+7 (993) 574-83-22» painted on WOOD TABLO/signboard in scene — flat printed text, NOT rounded pill, NOT overlay chip, NOT bottom band button.\nCover TL: family child+bags bedroom doorway; LARGE Cyrillic «Не курили — а пахнет» gold «пахнет»; sticky «Сначала проверка, потом перевод»; phone on wall tablo upper area; people-meme ≤12% bottom-left; TOP-RIGHT clean pad 8-12% NO logo.\nTR inline: listing vs smoke comparison. TXT:«не курили» в карточке|заезд вечером|ребёнок и сумки. TR clean pad for factory logo.\nBL inline: smell curtains pillows. TXT:запах старого табака|шторы и подушки|в спальне. NO logo TR — clean wall only.\nBR inline: chat locked window. TXT:пишите сразу|окно не открывается|«сейчас уточню». TR clean pad for factory logo.",
+      "aspect_ratio": "16:9",
+      "resolution": "2K"
+    }
+  }],
+  "validation": {"prompt_chars": 1200, "max_prompt_chars": 3500, "resolution": "2K"}
+}

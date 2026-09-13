@@ -1,0 +1,100 @@
+{
+  "status": "PASS",
+  "topic_id": "B19",
+  "slug": "posutochno-ne-kurili-zapah-pri-zaselenii-tyumen",
+  "research_date": "2026-09-13",
+  "summary": "Research for smoke_smell_checkin CASE: Tyumen guest, early autumn evening Sep 13 2026, listing says «не курили» but bedroom smells of cigarettes and window locked (child safety lock, no key) — cannot ventilate after check-in. Fresh signal: Scout hook validated 2026-09-13 + Klyshin @klyshin_A channel active through 2026-09-12 + Sutochno Extranet legal-issues (Feb 2026) smoking/deposit rules. Wordstat P0 «квартиры посуточно тюмень» 4826 (55+11176), 10385 (225); narrow «курение квартира посуточно» 54 RU. No bank/JKH tariff digits — official audit N/A.",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Scout external_signal 2026-09-13 smoke_smell_checkin hook + Klyshin @klyshin_A CASE pattern + Sutochno Extranet smoking/deposit guidance",
+    "source_type": "community",
+    "urls": [
+      "https://t.me/klyshin_A",
+      "https://extranet.sutochno.ru/blog/legal-issues",
+      "https://добрыйдом-72.рф/blog/"
+    ],
+    "accessed_at": "2026-09-13",
+    "note": "Hook activated today; guest CASE inside apartment (not B18 entrance, not B14 neighbors). Sensory conflict: smell + locked window."
+  },
+  "freshness_audit": {
+    "research_date": "2026-09-13",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://t.me/klyshin_A",
+      "published_at": "2026-09-13",
+      "note": "Scout-validated smoke_smell_checkin hook and CASE editorial pattern for guest short-term rent smell at check-in."
+    },
+    "additional_fresh_signals": [
+      {
+        "url": "https://t.me/klyshin_A",
+        "published_at": "2026-09-12",
+        "type": "community",
+        "note": "Klyshin channel latest posts through Sep 12 2026; editorial CASE mechanics source."
+      },
+      {
+        "url": "https://extranet.sutochno.ru/blog/legal-issues",
+        "published_at": "2026-02-23",
+        "type": "industry",
+        "note": "Sutochno Extranet: smoking compensation vs admin fine; deposit rules for short-term hosts."
+      }
+    ]
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176", "225"],
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 4826,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 10385,
+        "region": "225"
+      },
+      {
+        "phrase": "аренда квартиры посуточно",
+        "volume": 664,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "снять квартиру посуточно в тюмени",
+        "volume": 1501,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "курение квартира посуточно",
+        "volume": 54,
+        "region": "225"
+      },
+      {
+        "phrase": "запах в квартире посуточно",
+        "volume": 12,
+        "region": "225"
+      }
+    ]
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "No bank/JKH tariff digits in article; tenant service claims verified on dobry-dom site only",
+    "verified_claims": 1,
+    "entities_checked": ["dobry-dom-tenant-site"],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "memory/blog/articles/B19-posutochno-ne-kurili-zapah-pri-zaselenii-tyumen/derouter-opus-stamp-research.json",
+    "first_attempt": "PASS"
+  },
+  "key_facts_count": 12,
+  "errors": []
+}

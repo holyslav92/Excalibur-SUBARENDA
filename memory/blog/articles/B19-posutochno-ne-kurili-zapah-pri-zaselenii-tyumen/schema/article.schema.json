@@ -1,0 +1,49 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/napisali-ne-kurili-v-spalne-zapah-i-okno-na-zamke/#article",
+  "url": "{{SITE_BASE}}/blog/napisali-ne-kurili-v-spalne-zapah-i-okno-na-zamke/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/napisali-ne-kurili-v-spalne-zapah-i-okno-na-zamke/"
+  },
+  "headline": "Написали «не курили». В спальне — запах и окно на замке: 35 минут ожидания ключа",
+  "description": "В карточке квартиры было указано, что в ней не курили, но в спальне семья обнаружила табачный запах, а окно оказалось на детском замке без ключа. В Тюмени пришлось провести 35 минут в прихожей с ребёнком: разберём, что проверить до принятия ночи.",
+  "datePublished": "2026-09-13",
+  "dateModified": "2026-09-13",
+  "inLanguage": "ru-RU",
+  "author": {
+    "@type": "Organization",
+    "@id": "{{SITE_BASE}}/#organization",
+    "name": "Добрый дом",
+    "jobTitle": "Апартаменты и квартиры посуточно в Тюмени",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ],
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "{{SITE_BASE}}/#organization",
+    "name": "Добрый дом",
+    "jobTitle": "Апартаменты и квартиры посуточно в Тюмени",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ],
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    }
+  }
+}

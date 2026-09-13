@@ -1,5 +1,23 @@
 # WP publish log
 
+## B19 — 2026-09-13
+
+- **topic_id:** B19
+- **slug:** napisali-ne-kurili-v-spalne-zapah-i-okno-na-zamke
+- **title:** Написали «не курили». В спальне — запах и окно на замке: 35 минут ожидания ключа
+- **post_id:** 4755
+- **permalink:** /blog/napisali-ne-kurili-v-spalne-zapah-i-okno-na-zamke/
+- **categories:** posutochnaya-arenda (101), dogovor-i-pravila (103)
+- **featured_image:** 4756
+- **inline_images:** 4757–4763 (7× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS (all img src → wp-content)
+- **dzen preview:** cover-1024x576.png (HTTP 200); dzen_touch post_modified bumped
+- **interlink outbound:** 4 live /blog/ siblings (crosslink-qa PASS)
+- **interlink inbound:** B01 (3745), B18 (4724)
+- **publish_method:** sftp:22 (Cloud Agent; FTP PASV blocked)
+- **llms_deploy:** PASS (llms.txt + llms-full.txt)
+
 ## B18 — 2026-09-12
 
 - **topic_id:** B18

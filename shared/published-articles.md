@@ -23,3 +23,4 @@ Excalibur-2-Cloud — не копировать URL tymenrieltor.ru.
 | 2026-09-11 | B16 | otmenili-rejs-predoplatu-vernut | /blog/otmenili-rejs-predoplatu-vernut/ | published |
 | 2026-09-12 | B17 | kommunalka-vklyuchena-schet-1840-na-vyezde | /blog/kommunalka-vklyuchena-schet-1840-na-vyezde/ | published |
 | 2026-09-12 | B18 | kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda | /blog/kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda/ | published |
+| 2026-09-13 | B19 | napisali-ne-kurili-v-spalne-zapah-i-okno-na-zamke | /blog/napisali-ne-kurili-v-spalne-zapah-i-okno-na-zamke/ | published |
