@@ -1,0 +1,130 @@
+{
+  "topic_id": "B19",
+  "slug": "napisali-ne-kurili-v-spalne-zapah-i-okno-na-zamke",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "Не курили — а пахнет",
+  "cover_hook_highlight": "пахнет",
+  "cover_headline_line1": "Не курили",
+  "cover_headline_line2": "а пахнет",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Grsai draw API 2K — 2 canvases × 4 panels. Logo factory paste cover + inline_1/3/7. Phone IN scene on cover.",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "аренда квартиры посуточно"
+  ],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "Семья с ребёнком и сумками в дверях спальни: гость вдыхает воздух, окно на детском замке; крупный кириллический хук на постере; человек в кадре — не пустая комната",
+    "location": "Ранняя осень Тюмень 2026: тёплый сентябрьский вечер, золотые листья за окном, лёгкая куртка — без снега и зимы",
+    "meme": "photoreal zero stickers on cover; people-meme reaction only inline_6 if any not cat",
+    "prop_set": "Смартфон с чатом «сейчас уточню», окно с детской защитой без ключа, сумки, карточка «не курили», телефон +7 (993) 574-83-22 на табло",
+    "sticker_set": "запах в квартире посуточно не курили тюмень",
+    "joke": "В карточке «не курили» — а в спальне запах и окно на замке"
+  },
+  "cover_emotion": "Шок при входе: обещали чистый воздух, а спальня пахнет табаком и не проветривается",
+  "cover_scene": "Спальня осенью: семья у порога, запах; хук; телефон на табло; pad TR.",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "scene_hint": "Спальня осенью: семья у порога, запах; хук «Не курили — а пахнет»; телефон на табло; pad TR.",
+      "alt": "Семья с ребёнком и сумками у двери спальни в Тюмени: в карточке было «не курили», но в комнате табачный запах и окно на замке.",
+      "meme_caption_ru": "",
+      "role": "cover_editorial_hero",
+      "sticky": "Сначала проверка, потом перевод"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "scene_hint": "Карточка «не курили» vs запах в спальне. Pad TR.",
+      "alt": "Сравнение обещания в объявлении и реального запаха табака в спальне при заселении.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Запах не обязан доказывать виноватого",
+      "visual_type": "comparison_table_ui",
+      "labels": ["«не курили» в карточке", "заезд вечером", "ребёнок и сумки"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "scene_hint": "Запах в шторах и подушках.",
+      "alt": "Табачный запах, въевшийся в текстиль спальни: шторы, подушки, матрас.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Запах не обязан доказывать виноватого",
+      "visual_type": "workflow_diagram",
+      "labels": ["запах старого табака", "шторы и подушки", "в спальне"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "scene_hint": "Чат: «сейчас уточню», окно не открывается. Pad TR.",
+      "alt": "Переписка с хозяином: гость пишет про запах, в ответ обещание уточнить, окно закрыто на ключ.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Окно на замке: сломано или защищено?",
+      "visual_type": "checklist_board",
+      "labels": ["пишите сразу", "окно не открывается", "«сейчас уточню»"]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "scene_hint": "Детский замок — ключа нет, щель 8 см.",
+      "alt": "Оконная защита с ключом, которого нет у гостя: створка открывается только на узкую щель.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Окно на замке: сломано или защищено?",
+      "visual_type": "process_flow",
+      "labels": ["детский замок", "ключа в квартире нет", "щель восемь сантиметров"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "scene_hint": "35 минут в коридоре, сумки не разобраны.",
+      "alt": "Семья стоит в прихожей 35 минут с неразобранными сумками, ожидая решения по запаху и окну.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Почему важны именно эти 35 минут",
+      "visual_type": "tool_screenshot",
+      "labels": ["тридцать пять минут", "стоим в коридоре", "сумки не разобраны"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "scene_hint": "Чек-лист до ночи; мем-стикер ≤12%.",
+      "alt": "Список действий гостю: снять видео, не чинить ручку, просить ключ или замену до принятия ночи.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Что проверить до принятия ночи",
+      "visual_type": "labeled_checklist",
+      "labels": ["снимите видео от двери", "ручку не чините", "просите ключ или замену"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "scene_hint": "Сначала проверка, потом перевод. Pad TR.",
+      "alt": "Порядок: проверить спальню и окно до перевода денег, а не после первой ночи.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "infographic_card",
+      "labels": ["до первой ночи", "можно отказаться", "сначала проверка потом перевод"]
+    }
+  },
+  "cover_keys_ru": [],
+  "no_host_face": true,
+  "skip_identity_i2i": true
+}
