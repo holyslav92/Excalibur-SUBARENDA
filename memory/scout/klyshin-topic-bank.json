@@ -219,12 +219,28 @@
       "final_p0": {"phrase": "квартиры посуточно тюмень", "volume_tyumen": 4840, "volume_ru": 10385},
       "wordstat_rework_log": "probe «жкх посуточно» API empty → «коммуналка посуточно» API empty → «коммунальные посуточно» API empty → «коммунальные аренда квартиры» 24 → «показания счетчиков аренда» 1 → «уборка посуточно» 15 → «залог посуточно» 30 → «аренда квартиры посуточно» 679 → «аренда квартиры тюмень посуточно» 164 → «снять квартиру посуточно в тюмени» 1498 → final P0 «квартиры посуточно тюмень» 4840/10385",
       "used_in_articles": ["B17"]
+    },
+    {
+      "id": "hot_water_boiler",
+      "queue_num": 9,
+      "hook_ru": "Написали «горячая вода есть». В 23:10 — ледяной душ и мигающий бойлер",
+      "angle": "накопительный бойлер/ГВС ночью, не отопление/батареи; lockpick: литры бака и когда был последний душ",
+      "klyshin_signal": "moral: сначала проверка крана/бойлера, потом ночь; 80 мин нагрева 50L",
+      "wordstat_probes": ["горячая вода посуточно", "бойлер", "квартиры посуточно тюмень"],
+      "dzen_pattern_prefer": [2, 3],
+      "anti_dup": ["hot_water", "batteries", "utilities_jkh", "quiet_center_maps"],
+      "tyumen_localize": true,
+      "status": "used",
+      "last_seen": "2026-09-13",
+      "queue_slot": "2026-09-13 B20 scout",
+      "final_p0": {"phrase": "квартиры посуточно тюмень", "volume_tyumen": 4826, "volume_ru": 10308},
+      "wordstat_rework_log": "probe «горячая вода посуточно» 2/74 → «бойлер» 9007 → «аренда квартиры посуточно» 664 → final P0 «квартиры посуточно тюмень» 4826/10308",
+      "used_in_articles": ["B20"]
     }
   ],
   "parked_hooks": {
     "reason": "saturated last-5 + burn-at-door; restore after queue 2026-09-10",
     "ids": [
-      "hot_water_boiler",
       "neighbors_night",
       "dog_breed_fee",
       "early_checkin",
