@@ -1,0 +1,102 @@
+{
+  "status": "PASS",
+  "topic_id": "B20",
+  "slug": "kvartira-posutochno-tyumen-napisali-goryachaya-voda-est-ledyanoj-dush-bojler",
+  "research_date": "2026-09-13",
+  "summary": "Research for hot_water_boiler CASE: Tyumen guest at 23:10 after listing promised «горячая вода есть» — cold shower + blinking accumulation boiler; NOT heating/batteries, NOT legal/EGRN hook. Fresh signals: Scout handoff 2026-09-13 + @Dobriy_dom_72 post 2026-09-13 + @klyshin_A through 2026-09-12. Boiler mechanics: 50 L reheat 80–160 min; shower 30–50 L; Dzen SERP snippets 40 min may fail / 1–2 h reheat. Wordstat P0 «квартиры посуточно тюмень» 4826 (55+11176), 10308 (225); «бойлер» 9007. Tenant site claims verified; no bank/JKH tariff digits.",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Scout external_signal 2026-09-13 hot_water_boiler hook + tenant TG @Dobriy_dom_72 post today + Klyshin @klyshin_A CASE pattern",
+    "source_type": "community",
+    "urls": [
+      "https://t.me/klyshin_A",
+      "https://t.me/Dobriy_dom_72",
+      "https://добрыйдом-72.рф/"
+    ],
+    "accessed_at": "2026-09-13",
+    "note": "Guest-night boiler/GVS conflict at 23:10; distinct from B14 neighbors, B17 kommunalka, heating/batteries."
+  },
+  "freshness_audit": {
+    "research_date": "2026-09-13",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://t.me/Dobriy_dom_72",
+      "published_at": "2026-09-13",
+      "note": "Tenant channel post 2026-09-13T08:10:56+00:00 — fresh ecosystem signal same day as research."
+    },
+    "additional_fresh_signals": [
+      {
+        "url": "https://t.me/klyshin_A",
+        "published_at": "2026-09-12",
+        "type": "community",
+        "note": "Klyshin channel latest posts through Sep 12 2026; editorial CASE mechanics source for hot_water_boiler hook."
+      },
+      {
+        "url": "https://tyumen-info.ru/society/2026/09/01/38449.html",
+        "published_at": "2026-09-01",
+        "type": "regional_news",
+        "note": "USTEK completed Tyumen hydraulic tests; background only — case angle is apartment boiler not city shutdown."
+      }
+    ]
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176", "225"],
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 4826,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 10308,
+        "region": "225"
+      },
+      {
+        "phrase": "снять квартиру посуточно в тюмени",
+        "volume": 1501,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "аренда квартиры посуточно",
+        "volume": 664,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "бойлер",
+        "volume": 9007,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "горячая вода посуточно",
+        "volume": 74,
+        "region": "225",
+        "note": "WORDSTAT PARTIAL totalCount-only"
+      }
+    ]
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "No bank/JKH tariff digits; tenant service claims verified on dobry-dom site only",
+    "verified_claims": 2,
+    "entities_checked": ["dobry-dom-tenant-site"],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "memory/blog/articles/B20-kvartira-posutochno-tyumen-napisali-goryachaya-voda-est-ledyanoj-dush-bojler/derouter-opus-stamp-research.json",
+    "first_attempt": "BLOCKER (model refused without conductor preamble)",
+    "retry": "PASS"
+  },
+  "key_facts_count": 11,
+  "errors": []
+}

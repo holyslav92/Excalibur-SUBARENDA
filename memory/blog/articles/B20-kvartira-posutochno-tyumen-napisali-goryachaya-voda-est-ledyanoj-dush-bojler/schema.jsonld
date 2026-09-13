@@ -1,0 +1,41 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/napisali-goryachaya-voda-est-ledyanoj-dush-migayushij-boiler/#article",
+  "url": "{{SITE_BASE}}/blog/napisali-goryachaya-voda-est-ledyanoj-dush-migayushij-boiler/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/napisali-goryachaya-voda-est-ledyanoj-dush-migayushij-boiler/"
+  },
+  "headline": "Написали «горячая вода есть». Ночью — ледяной душ и 80 минут до тепла",
+  "description": "В карточке указано, что горячая вода есть, но ночью гостя может ждать ледяной душ и мигающий бойлер. Накопительному баку после расхода нужно около 80 минут до тепла: воду стоит проверить при заселении.",
+  "datePublished": "2026-09-13",
+  "dateModified": "2026-09-13",
+  "inLanguage": "ru-RU",
+  "author": {
+    "@type": "Organization",
+    "@id": "{{SITE_BASE}}/#organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "{{SITE_BASE}}/#organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    },
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  }
+}

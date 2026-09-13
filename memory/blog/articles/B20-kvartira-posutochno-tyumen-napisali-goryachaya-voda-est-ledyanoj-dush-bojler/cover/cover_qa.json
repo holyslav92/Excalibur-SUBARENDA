@@ -1,0 +1,58 @@
+{
+  "agent": "excalibur-blog-cover-qa",
+  "status": "FAIL",
+  "checked_at": "2026-09-13",
+  "topic_id": "B20",
+  "checks": {
+    "eight_png_exist": true,
+    "quad_manifest_valid": true,
+    "wordstat_stickers_1_3": true,
+    "motif_no_collision_14d": true,
+    "max_one_cat_meme_slot": true,
+    "light_high_key": true,
+    "logo_composite_stamp_pass": true,
+    "cover_logo_pasted": true,
+    "inline_no_logo_on_inlines": false,
+    "forbid_phone_on_cover_image": true,
+    "forbid_922_phone": true,
+    "forbid_ai_drawn_logo_cover": false,
+    "forbid_wordpress_ui_in_art": true,
+    "no_logo_plate_cover": true,
+    "forbid_graphic_collage_overlay": true,
+    "forbid_poster_composite_stamp": true,
+    "forbid_logo_reference_in_batch": true,
+    "forbid_overlapping_text_blocks": true,
+    "forbid_giant_cropped_glyph": true,
+    "cyrillic_hook_on_cover": true,
+    "phone_in_scene_cover": true,
+    "logo_count_cover_and_inlines": true,
+    "no_double_logos": true,
+    "season_matches_manifest": true
+  },
+  "failures": [
+    "forbid_ai_drawn_logo_cover: inline-02/04/05/06 scored drawn lockup (0.56) on no-logo panels after 2 canvas attempts + pad-clear"
+  ],
+  "visual_review": {
+    "logo_count": "cover 1 factory TR; inline-01/03/07 factory paste; inline-02/04/05/06 no factory logo",
+    "phone_in_scene": "+7 (993) 574-83-22 on wood tablo in cover generation; no post-composite pill",
+    "double_logos": "none on logo panels",
+    "cyrillic_hook": "«Горячая есть» — ледяной душ (highlight: ледяной)",
+    "season": "late September 2026 Tyumen evening bathroom, autumn light, no winter/snow"
+  },
+  "regen_log": [
+    "canvas-quad-01 attempt1 Grsai primary undersized → vip",
+    "canvas-quad-02 attempt1 Grsai primary undersized → vip",
+    "pad-clear inline-02/04/05/06 after attempt1",
+    "canvas-quad-01 attempt2 ATTEMPT2 NO-logo prompts → vip",
+    "canvas-quad-02 attempt2 ATTEMPT2 NO-logo prompts → vip",
+    "pad-clear inline-02/04/05/06 after attempt2 — drawn logo gate still FAIL; shipped per 2-attempt cap"
+  ],
+  "notes": [
+    "Factory logo paste: cover + inline-01/03/07",
+    "Cat meme quota: zero cat stickers (people-meme inline_6 only)",
+    "validate_logo_stamp: PASS",
+    "validate_cover_phone_and_overlap_gates: PASS",
+    "validate_article_logo_gates_slim: FAIL inline-02/04/05/06 score=0.56",
+    "Grsai primary undersized → vip fallback both canvases both attempts"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "topic_id": "B20",
+  "slug": "napisali-goryachaya-voda-est-ledyanoj-dush-migayushij-boiler",
+  "candidates_count": 23,
+  "outbound_found": [
+    {
+      "slug": "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+      "title": "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate"
+    },
+    {
+      "slug": "v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik",
+      "title": "v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik"
+    },
+    {
+      "slug": "kommunalka-vklyuchena-schet-1840-na-vyezde",
+      "title": "kommunalka-vklyuchena-schet-1840-na-vyezde"
+    },
+    {
+      "slug": "napisali-ne-kurili-v-spalne-zapah-i-okno-na-zamke",
+      "title": "napisali-ne-kurili-v-spalne-zapah-i-okno-na-zamke"
+    }
+  ],
+  "outbound_unique_slugs": [
+    "v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik",
+    "napisali-ne-kurili-v-spalne-zapah-i-okno-na-zamke",
+    "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+    "kommunalka-vklyuchena-schet-1840-na-vyezde"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "warnings": [],
+  "errors": []
+}

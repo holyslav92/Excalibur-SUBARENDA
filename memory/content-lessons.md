@@ -1143,3 +1143,137 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+---
+
+## LESSON-20260913-1628-B20-hot-water-promise-vs-temperature
+status: proposed
+topic_id: B20
+category: utility
+confidence: low
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP. Урок из publish-артефактов: title-brief.json, description-brief.json, case-delivery-gate PASS, article.html, research-notes hook `hot_water_boiler`, scout handoff 2026-09-13.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest BLOCKER (INC-20260903-0640).
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+- COVER_QA_PASTE_AND_SHIP (forbid_ai_drawn_logo_cover на inline-02/04/05/06 после 2 canvas attempts; shipped per cap)
+
+### Keep
+- Two-beat H1 «Написали «горячая вода есть». Ночью — ледяной душ и 80 минут до тепла»: цитата-обещание → контрфакт душа + время нагрева, не how-to.
+- §1: 5 200 ₽ за две ночи, цитата хоста «Сейчас нагревается, подождите», 20/40 мин холодная → 80+ мин полный нагрев 50 L; без HH:MM в §1 (scout 23:10 остаётся в slug/cover, не duty-log).
+- Разведение «есть бойлер» vs «температура из крана сейчас»; H2 «Почему «есть» и «горячая» — разные вещи» с арифметикой 30–50 L душ / 80–160 мин нагрев.
+- Klyshin «Нет. Так не заселяем.» (ночной DIY на чужом бойлере) + «Сначала проверка. Потом перевод.»; вопрос-отмычка «строчка в объявлении или температура из крана в первые пять минут?» → TG/MAX mid-body.
+- Anti-dup явный: не B14 (соседи), не B17 (коммуналка), не отопление/батареи/городское ГВС — только накопительный бойлер.
+- Interlink spine: B11 «всё для гостей»+коврик, B19 «не курили»+запах, B08 тишина, B17 «включено» — одна красная линия «слово в карточке ≠ тело гостя».
+- Wordstat P0 spine «квартиры посуточно тюмень» 4 826 (Tyumen) / 10 308 (RU); «бойлер» 9 007 — широкий угол; узкий «горячая вода посуточно» 74 (WORDSTAT PARTIAL).
+- Description не дублирует H1: «строка в объявлении или температура из крана?» + мигающий бойлер (description-brief PASS).
+
+### Change
+- В `hot_water_boiler` кейсах в §1 сразу фиксировать **три слоя**: (1) цитата «горячая вода есть», (2) объём бака / предыдущий расход, (3) реальное время ожидания (80+ мин) — не раскрывать математику только во втором H2.
+- Scout handoff: при hook `hot_water_boiler` логировать original Klyshin «23:10 ледяной душ» + final P0 spine Tyumen + anti-dup vs heating/batteries/city GVS.
+
+### Never again
+- Строить hot-water кейс как гайд по ремонту бойлера или объяснение городских отключений ГВС.
+- Смешивать B12/B14 (шум) и B20 (температура воды / накопительный бак).
+- Принимать «горячая вода есть» за мгновенный душ без вопроса про объём бака и последний расход.
+- Советовать гостю вскрывать/крутить настройки бойлера; мигание = диагноз без инструкции прибора.
+- HH:MM в §1 opening; how-to до морали; финал «Наш вывод простой».
+
+### Proposed apply
+- Scout: hook `hot_water_boiler` → handoff lockpick (литры + включён ли + когда последний душ) + final P0 spine Tyumen + anti-dup heating/GVS.
+- Review only; Writer prompt не трогать автоматически.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260913-1628-B20-blinking-indicator-night-leverage
+status: proposed
+topic_id: B20
+category: structure
+confidence: low
+
+### Evidence
+- artifact: title-brief.json#angle
+  finding: angle «обещанная горячая вода → ледяной душ и долгое ожидание нагрева»; opening-meta-gate PASS; H2 «Мигает индикатор — это «греется» или «не трогай»?».
+- metrika_signal: none (credentials unavailable; causal retention не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Слой «поздний заезд после дороги → первым делом душ → ледяная струя» — asymmetric moment после 5 200 ₽ и двух сумок в коридоре.
+- Блок «мигает ≠ диагноз» (нагрев / NTC / накипь / плата) — utility без злодейства; фото индикатора + timestamp в чат, не DIY.
+- Контраст «подождите, нагревается» (оптимизм хоста) vs 20/40 мин холодная — host-answer mismatch без B08-тишины.
+- Чеклист после «Мой вывод как практика»: 30 сек кран при заселении, не ложиться спать без доказательств.
+- Связка night leverage + money-timing через interlink B08 (тишина), B17 (включено на выезде) — не дублировать B11 night shop.
+
+### Change
+- Для `hot_water_boiler` hooks всегда включать **night temporal leverage** (дорога, душ сейчас, час+ нагрева) в utility-блок — не только литры и ТЭН.
+- При interlink — sibling про broad promises (B11 amenities, B10 all-inclusive) одной линией «галочка ≠ запас в баке сейчас».
+
+### Never again
+- Писать boiler кейс только про кВт·ч и объём, игнорируя temporal leverage (когда исправить нечем — ночь уже оплачена).
+- Принимать мигание индикатора за «точно греется» или «точно сломан» без хоста.
+- Финал «Наш вывод простой» вместо «Мой вывод как практика».
+
+### Proposed apply
+- Writer checklist (review-only): hot_water_boiler + late_checkin → один абзац про asymmetric moment после «горячая есть» в карточке.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260913-1628-B20-title-quote-night-reheat-reveal
+status: proposed
+topic_id: B20
+category: voice
+confidence: low
+
+### Evidence
+- artifact: title-brief.json / title-user-prompt.md
+  finding: scout draft «В 23:10 — ледяной душ и мигающий бойлер» → финальный H1 «Ночью — ледяной душ и 80 минут до тепла»; klyshin_title_shape:3; slug сохранил `migayushij-boiler`.
+- metrika_signal: none (credentials unavailable; causal CTR не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Cable pain-scene: обещание в кавычках + temporal beat «ночью» + tangible counterfact (ледяной душ) + измеримое ожидание (80 мин), без SEO-хвоста «бойлер посуточно».
+- Description rhythm klyshin_case_hook: «строка в объявлении или температура из крана?» (not_equal_title PASS).
+- Cover-text sticky «Сначала проверка. Потом перевод.» + wordstat spine «квартиры посуточно тюмень» на обложке.
+- 23:10 остаётся в cover manifest / slug, не в §1 duty-log — opening-meta-gate PASS.
+
+### Change
+- Для hot_water_boiler hooks: prefer **quoted «горячая есть» + night beat + physical counterfact + reheat minutes** over narrow «бойлер» SEO lead или HH:MM spoiler в H1.
+- Title: двухчастный ритм (обещание / ночной контрфакт + время) > compound «мигающий бойлер + 23:10 + 50 литров» spoiler.
+
+### Never again
+- H1-спойлер со всей арифметикой 50 L / ТЭН 1,5 кВт — оставлять в utility H2.
+- Description, дублирующий H1 про «ледяной душ и 80 минут» без контраста «строка vs кран».
+
+### Proposed apply
+- Title/Description review: hot_water_boiler — quoted promise + night + reheat minutes > boiler-keyword H1.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded

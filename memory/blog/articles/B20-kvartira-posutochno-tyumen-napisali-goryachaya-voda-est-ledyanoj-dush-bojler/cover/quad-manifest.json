@@ -1,0 +1,130 @@
+{
+  "topic_id": "B20",
+  "slug": "napisali-goryachaya-voda-est-ledyanoj-dush-bojler",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "«Горячая есть» — ледяной душ",
+  "cover_hook_highlight": "ледяной",
+  "cover_headline_line1": "«Горячая есть»",
+  "cover_headline_line2": "ледяной душ",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Grsai draw API 2K — 2 canvases × 4 panels. Logo factory paste cover + inline_1/3/7. Phone IN scene on cover.",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "снять квартиру посуточно в тюмени"
+  ],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "Гость в ванной под ледяной струёй: смартфон с чатом «подождите», мигающий бойлер, крупный кириллический хук на зеркале/табло; человек в кадре — не пустая ванная",
+    "location": "Поздний сентябрьский вечер 23:10: посуточная ванная Тюмени, тёплый свет из окна, осенние деревья за стеклом — без снега и зимы",
+    "meme": "photoreal zero stickers on cover; people-meme reaction sticker ≤12% on inline_6 only — NO cat (B08 quota)",
+    "prop_set": "накопительный бойлер 50л мигающий индикатор две сумки в коридоре смартфон чат 5200₽ телефон +7 (993) 574-83-22 на деревянном табло",
+    "sticker_set": "горячая вода посуточно тюмень ледяной душ бойлер",
+    "joke": "В карточке «горячая вода есть» — а из крана ледяная струя и мигает бойлер"
+  },
+  "cover_emotion": "Шок под ледяной водой: обещали горячую, а бак пуст и индикатор мигает",
+  "cover_scene": "Ванная осенью: гость под холодным душем; хук на зеркале; телефон на табло; pad TR.",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "scene_hint": "Ванная сентябрь 23:10: гость под ледяной струёй, сумки видны в коридоре; LARGE Cyrillic «Горячая есть — ледяной душ» gold «ледяной»; sticky «Сначала проверка. Потом перевод.»; phone +7 (993) 574-83-22 on wood tablo; blinking boiler; TOP-RIGHT clean pad 8-12% NO logo.",
+      "alt": "Гость в посуточной квартире Тюмени под ледяной водой: в объявлении было «горячая вода есть», а из душа идёт холодная струя и мигает бойлер.",
+      "meme_caption_ru": "",
+      "role": "cover_editorial_hero",
+      "sticky": "Сначала проверка. Потом перевод."
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "scene_hint": "Сравнение: карточка «горячая вода есть» vs ледяной кран. Pad TR for factory logo.",
+      "alt": "Обещание в объявлении «горячая вода есть» и реальность: ледяная вода из крана при позднем заезде.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Почему «есть» и «горячая» — разные вещи",
+      "visual_type": "comparison_table_ui",
+      "labels": ["поздний заезд", "две сумки", "ледяная вода"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "scene_hint": "5200₽ две ночи — гость идёт в душ сразу после заезда. NO logo TR.",
+      "alt": "5 200 ₽ за две ночи: гость сразу после заселения идёт в душ и получает ледяную воду.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Почему «есть» и «горячая» — разные вещи",
+      "visual_type": "workflow_diagram",
+      "labels": ["пять тысяч двести", "две ночи", "душ сразу"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "scene_hint": "Чат: «подождите нагревается» — 20 и 40 мин холодная вода. Pad TR.",
+      "alt": "Переписка с хозяином: обещание что вода нагревается, но через 20 и 40 минут из крана всё ещё холодная.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Почему «есть» и «горячая» — разные вещи",
+      "visual_type": "checklist_board",
+      "labels": ["двадцать минут", "вода холодная", "сорок минут"]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "scene_hint": "Бак 50 литров — полный нагрев 80 минут. NO logo.",
+      "alt": "Накопительный бойлер 50 литров: полный нагрев после опустошения занимает около 80 минут.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Мигает индикатор — это «греется» или «не трогай»?",
+      "visual_type": "process_flow",
+      "labels": ["бак пятьдесят литров", "восемьдесят минут", "до нагрева"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "scene_hint": "Мигающий индикатор — сфотографируйте и пишите сразу. NO logo.",
+      "alt": "Мигающий индикатор на бойлере: гость фотографирует и сразу пишет администратору, не трогая настройки.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Мигает индикатор — это «греется» или «не трогай»?",
+      "visual_type": "tool_screenshot",
+      "labels": ["мигает индикатор", "сфотографируйте", "пишите сразу"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "scene_hint": "Чек-лист до перевода: объём бака, когда был душ; tiny people-meme sticker ≤12% bottom corner — NO cat. NO logo.",
+      "alt": "Вопросы до оплаты: объём бойлера, включён ли он, когда последний гость пользовался душем.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Мигает индикатор — это «греется» или «не трогай»?",
+      "visual_type": "labeled_checklist",
+      "labels": ["спросите объём бака", "когда был душ", "до перевода"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "scene_hint": "Кран 30 секунд до распаковки — сначала проверка. Pad TR for factory logo.",
+      "alt": "При заселении первым делом открыть горячий кран на 30 секунд — до того как разложить вещи.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "infographic_card",
+      "labels": ["кран тридцать секунд", "до распаковки", "не ждите утра"]
+    }
+  },
+  "cover_keys_ru": [],
+  "no_host_face": true,
+  "skip_identity_i2i": true
+}
