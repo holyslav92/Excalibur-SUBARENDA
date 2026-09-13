@@ -1143,3 +1143,133 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+---
+
+## LESSON-20260913-1006-B19-doorway-35-min-before-accept
+status: proposed
+topic_id: B19
+category: structure
+confidence: low
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP. Урок из article.html H2 «Почему важны именно эти 35 минут», opening §1–2, interlink-plan outbound.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest SKIP по запросу директора (credentials unavailable)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Temporal leverage: семья **в прихожей**, не разувалась, не разложила вещи — 35 минут до «принятия ночи».
+- Формула «закроешь дверь, занесёшь чемодан — для второй стороны ты уже принял квартиру» — граница ответственности до обживания.
+- Klyshin-отрез «Нет. Так не заселяем.» + вопрос-отмычка «ключ, другая квартира или отмена?» → TG, не комментарии.
+- Interlink-линия: B02 залог на выезде, B16 предоплата до проверки, B18 код vs первая дверь — «деньги ушли вперёд, проверка должна быть до ночи».
+- Чеклист «Что проверить до принятия ночи»: зайти в спальню **до** разувания и сумок.
+
+### Change
+- Для sensory-inside hooks (запах, окно, текстиль) всегда включать **doorway temporal window** в utility-блок — не только «что пахнет», но и «пока стоите в дверях».
+- При interlink — sibling про money-timing (B02, B16) + access-timing (B18) одной линией «проверка до принятия ночи».
+
+### Never again
+- Писать smell/window кейс только про «напишите хозяину», игнорируя leverage «ещё не заселились».
+- Принимать ночь молча после сообщения о запахе — без блока про 35 минут в проёме.
+
+### Proposed apply
+- Writer checklist (review-only): sensory-inside → doorway time + «не разувались» в §1 или отдельный H2.
+- Scout: smoke_smell_checkin — note «этап: внутри квартиры, leverage = прихожая до обживания».
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260913-1006-B19-smoke-window-sensory-combo
+status: proposed
+topic_id: B19
+category: utility
+confidence: medium
+
+### Evidence
+- artifact: research-agent-report.json#fresh_signal
+  finding: sensory conflict «не курили» vs bedroom smell + child window lock without key; narrow Wordstat «курение квартира посуточно» 54 (225) → spine P0 «квартиры посуточно тюмень» 4826.
+- metrika_signal: none (credentials unavailable; causal behavior не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Двойной удар: **запах** (нельзя дышать) + **окно на ключе** (нельзя проветрить) — не сводить к одному слою.
+- H2 «Запах не обязан доказывать виноватого» — гость фиксирует факт, не расследование «кто курил».
+- Видео от порога: дверь, спальня, ручка, щель — «видео не передаст запах, и не должно».
+- H2 «Окно на замке: сломано или защищено?» — детская защита нормальна, но ключ должен быть у хозяина/управляющего.
+- Запрет DIY: не снимать ограничитель, не чинить ручку — риск залога.
+- Wordstat rework в handoff: probe smoking phrases weak → localize Tyumen spine; не строить hook только на «курение» SEO.
+
+### Change
+- Для smoke/smell hooks: в §1 называть **оба** барьера (запах + вентиляция), если оба в кейсе.
+- Семья с ребёнком → заранее спрашивать про детскую защиту и **где ключ** (чеклист п.2).
+- Scout: при weak narrow Wordstat («запах в квартире посуточно» 12) — rework к buyer spine Tyumen + sensory angle, не skip hook.
+
+### Never again
+- How-to «как убрать запах табака» / детектив «кто курил до вас».
+- Писать «не курили» кейс без блока про окно/проветривание, если окно — часть конфликта.
+- Ставить narrow smoking SEO в H1 вместо cable pain-scene.
+
+### Proposed apply
+- Scout handoff template: smoke_smell_checkin → original Klyshin hook + final P0 spine + «ventilation barrier yes/no».
+- Description (Дзен): держать контраст «нечем дышать + окно не открыть» — как description-brief B19 PASS.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260913-1006-B19-title-quoted-ne-kurili
+status: proposed
+topic_id: B19
+category: voice
+confidence: low
+
+### Evidence
+- artifact: title-brief.json#h1
+  finding: H1 «Написали «не курили». В спальне — запах и окно на замке: 35 минут ожидания ключа»; klyshin_title_shape:3; description not_equal_title PASS.
+- metrika_signal: none (credentials unavailable; causal CTR не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Cable pain-scene: цитата обещания в кавычках («не курили») + сенсорный контрфакт (запах) + механика (окно на замке) + время (35 мин) + объект ожидания (ключ).
+- Description rhythm klyshin_case_hook: «нечем дышать, и окно не открыть без ключа» — не дублирует H1 дословно.
+- Opening: «В карточке было написано: «не курили»» — раскрытие после H1, не спойлер всех деталей в заголовке.
+- Hammer «Сначала проверка. Потом перевод.» — closing, не в H1.
+
+### Change
+- Для listing-promise vs reality hooks: prefer **quoted marketing line + room-level counterfact + time + missing object (ключ)** over narrow «запрет курения» SEO lead.
+- Title shape 3 (Klyshin): обещание → инцидент в комнате → цифра времени — шаблон для sensory-inside, не только entrance-access.
+
+### Never again
+- H1-спойлер со всей механикой (детский замок, 8 см щель, ₽) — детали в §1/H2.
+- Description, копирующий H1 про «35 минут» без контраста «семья с ребёнком в дверях».
+
+### Proposed apply
+- Title/Description review: smoke_smell_checkin — quoted card promise + sensory counterfact + time > smoking-keyword H1.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
