@@ -1,5 +1,25 @@
 # WP publish log
 
+## B20 — 2026-09-13
+
+- **topic_id:** B20
+- **slug:** napisali-goryachaya-voda-est-ledyanoj-dush-migayushij-boiler
+- **title:** Написали «горячая вода есть». Ночью — ледяной душ и 80 минут до тепла
+- **post_id:** 4767
+- **permalink:** /blog/napisali-goryachaya-voda-est-ledyanoj-dush-migayushij-boiler/
+- **categories:** posutochnaya-arenda (101), sovety-gostyam (106)
+- **featured_image:** 4768
+- **inline_images:** 4769–4775 (7× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS (28/28 img src → wp-content)
+- **cover_qa:** FAIL forbid_ai_drawn_logo inline-02/04/05/06 — shipped per 2-attempt cap
+- **dzen preview:** cover-1024x576.png (HTTP 200); feed enclosure → full cover.png
+- **interlink outbound:** 4 live /blog/ siblings (crosslink-qa PASS)
+- **interlink inbound:** B01 (3745), B18 (4724)
+- **publish_method:** sftp:22 (Cloud Agent; FTP PASV blocked)
+- **llms_deploy:** PASS (llms.txt + llms-full.txt)
+- **theme_contract_deploy:** WARN (script expects kov4eg-mcp-theme; live theme dir is `theme`)
+
 ## B19 — 2026-09-13
 
 - **topic_id:** B19

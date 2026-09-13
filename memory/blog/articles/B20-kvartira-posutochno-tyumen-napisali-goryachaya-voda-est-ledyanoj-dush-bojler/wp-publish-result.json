@@ -1,0 +1,27 @@
+{
+  "slug": "napisali-goryachaya-voda-est-ledyanoj-dush-migayushij-boiler",
+  "topic_id": "B20",
+  "permalink": "{{SITE_BASE}}/blog/napisali-goryachaya-voda-est-ledyanoj-dush-migayushij-boiler/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B20-kvartira-posutochno-tyumen-napisali-goryachaya-voda-est-ledyanoj-dush-bojler/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1138485,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4767 slug=napisali-goryachaya-voda-est-ledyanoj-dush-migayushij-boiler\nOK categories=101,106\nOK dzen_yzen_meta=1\nOK featured_image=4768\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4769 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-goryachaya-voda-est-ledyanoj-dush-migayushij-boiler-inline-03.png\nOK inline_alt=4769\nOK inline_caption=4769\nOK inline_description=4769\nOK inline_image_upload=4770 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-goryachaya-voda-est-ledyanoj-dush-migayushij-boiler-inline-02.png\nOK inline_alt=4770\nOK inline_caption=4770\nOK inline_description=4770\nOK inline_image_upload=4771 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-goryachaya-voda-est-ledyanoj-dush-migayushij-boiler-inline-01.png\nOK inline_alt=4771\nOK inline_caption=4771\nOK inline_description=4771\nOK inline_image_upload=4772 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-goryachaya-voda-est-ledyanoj-dush-migayushij-boiler-inline-06.png\nOK inline_alt=4772\nOK inline_caption=4772\nOK inline_description=4772\nOK inline_image_upload=4773 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-goryachaya-voda-est-ledyanoj-dush-migayushij-boiler-inline-05.png\nOK inline_alt=4773\nOK inline_caption=4773\nOK inline_description=4773\nOK inline_image_upload=4774 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-goryachaya-voda-est-ledyanoj-dush-migayushij-boiler-inline-04.png\nOK inline_alt=4774\nOK inline_caption=4774\nOK inline_description=4774\nOK inline_image_upload=4775 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-goryachaya-voda-est-ledyanoj-dush-migayushij-boiler-inline-07.png\nOK inline_alt=4775\nOK inline_caption=4775\nOK inline_description=4775\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/napisali-goryachaya-voda-est-ledyanoj-dush-migayushij-boiler/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/napisali-goryachaya-voda-est-ledyanoj-dush-migayushij-boiler/",
+    "errors": []
+  }
+}
