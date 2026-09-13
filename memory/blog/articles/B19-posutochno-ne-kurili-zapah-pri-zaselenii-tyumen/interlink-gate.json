@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "topic_id": "B19",
+  "slug": "napisali-ne-kurili-v-spalne-zapah-i-okno-na-zamke",
+  "candidates_count": 22,
+  "outbound_found": [
+    {
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "title": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem"
+    },
+    {
+      "slug": "v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik",
+      "title": "v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik"
+    },
+    {
+      "slug": "otmenili-rejs-predoplatu-vernut",
+      "title": "otmenili-rejs-predoplatu-vernut"
+    },
+    {
+      "slug": "kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda",
+      "title": "kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda"
+    }
+  ],
+  "outbound_unique_slugs": [
+    "v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik",
+    "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+    "otmenili-rejs-predoplatu-vernut",
+    "kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "warnings": [],
+  "errors": []
+}
