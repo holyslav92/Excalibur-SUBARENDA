@@ -232,3 +232,99 @@ def path_from_site_url(url: str) -> str:
     if "://" in value:
         return urlparse(value).path or "/"
     return value
+
+
+def idna_encode_host(host: str) -> str:
+    """Punycode-encode a Unicode hostname (urllib-safe)."""
+    value = (host or "").strip().lower()
+    if not value or value.isascii():
+        return value
+    try:
+        return value.encode("idna").decode("ascii")
+    except UnicodeError:
+        return value
+
+
+def idna_decode_host(host: str) -> str:
+    """Decode punycode hostname to Unicode when possible."""
+    value = (host or "").strip().lower()
+    if not value or ("xn--" not in value and not value.isascii()):
+        return value
+    try:
+        return value.encode("ascii").decode("idna")
+    except (UnicodeError, UnicodeDecodeError):
+        return value
+
+
+def href_host_variants(url: str) -> list[str]:
+    """Return lowercase host variants (unicode + punycode) for URL equivalence checks."""
+    parsed = urlparse((url or "").strip())
+    host = (parsed.hostname or "").lower()
+    if not host:
+        return []
+    variants = {host}
+    decoded = idna_decode_host(host)
+    if decoded:
+        variants.add(decoded)
+    encoded = idna_encode_host(host)
+    if encoded:
+        variants.add(encoded)
+    return sorted(variants)
+
+
+def _normalize_path_key(path: str) -> str:
+    value = (path or "/").strip()
+    if not value.startswith("/"):
+        value = f"/{value}"
+    if value != "/" and not value.endswith("/"):
+        value = f"{value}/"
+    return value
+
+
+def canonicalize_tenant_site_hrefs_in_html(
+    html: str, tenant: dict[str, Any]
+) -> tuple[str, list[str]]:
+    """Replace punycode tenant site/booking hrefs with canonical cta_channels URLs.
+
+    Sol/Writer sometimes emit ``xn--`` href with Cyrillic link text; community-cta
+    and link-verify expect canonical Cyrillic hosts from tenant-config (INC B21).
+    """
+    channels = tenant.get("cta_channels") if isinstance(tenant, dict) else {}
+    if not isinstance(channels, dict):
+        return html or "", []
+
+    canonical_by_path: dict[str, str] = {}
+    for key in ("site", "booking", "blog"):
+        url = str(channels.get(key) or "").strip()
+        if not url or "://" not in url:
+            continue
+        path = _normalize_path_key(urlparse(url).path or "/")
+        canonical_by_path[path] = url
+
+    if not canonical_by_path:
+        return html or "", []
+
+    changes: list[str] = []
+
+    def repl(match: re.Match[str]) -> str:
+        quote = match.group(1)
+        href = match.group(2).strip()
+        parsed = urlparse(href)
+        if parsed.scheme not in ("http", "https"):
+            return match.group(0)
+        host = (parsed.hostname or "").lower()
+        if not host or ("xn--" not in host and host.isascii() and "добрыйдом" not in host):
+            # Only rewrite punycode tenant hosts (IDN).
+            if not (host.startswith("xn--") or ".xn--" in host):
+                return match.group(0)
+        path_key = _normalize_path_key(parsed.path or "/")
+        canon = canonical_by_path.get(path_key)
+        if not canon:
+            return match.group(0)
+        if href == canon:
+            return match.group(0)
+        changes.append(f"{href} -> {canon}")
+        return f"href={quote}{canon}{quote}"
+
+    out = re.sub(r'href=(["\'])([^"\']+)\1', repl, html or "")
+    return out, changes

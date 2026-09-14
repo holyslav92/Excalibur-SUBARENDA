@@ -12,7 +12,9 @@ import argparse
 import json
 import re
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import urlparse, urlunparse
+
+from excalibur_blog_site_base import SITE_BASE_PLACEHOLDER, href_host_variants
 
 
 def load_tenant(root: Path) -> dict:
@@ -24,6 +26,33 @@ def load_tenant(root: Path) -> dict:
 
 def normalize_phone_digits(value: str) -> str:
     return re.sub(r"\D", "", value or "")
+
+
+def equivalent_cta_urls(url: str) -> list[str]:
+    """Unicode + punycode host variants for tenant CTA equivalence (INC B21)."""
+    value = (url or "").strip()
+    if not value or value.lower().startswith("tel:"):
+        return [value]
+    parsed = urlparse(value)
+    if parsed.scheme not in ("http", "https"):
+        return [value]
+    hosts = href_host_variants(value) or [(parsed.hostname or "").lower()]
+    out: list[str] = []
+    for host in hosts:
+        port = f":{parsed.port}" if parsed.port else ""
+        rebuilt = urlunparse(
+            (
+                parsed.scheme,
+                f"{host}{port}",
+                parsed.path,
+                parsed.params,
+                parsed.query,
+                parsed.fragment,
+            )
+        )
+        if rebuilt not in out:
+            out.append(rebuilt)
+    return out or [value]
 
 
 def url_patterns(url: str) -> re.Pattern[str]:
@@ -42,9 +71,6 @@ def url_patterns(url: str) -> re.Pattern[str]:
     return re.compile(pat, re.I)
 
 
-from excalibur_blog_site_base import SITE_BASE_PLACEHOLDER
-
-
 def check_tel_link(html: str, tel_url: str) -> bool:
     digits = normalize_phone_digits(tel_url.removeprefix("tel:"))
     if len(digits) < 10:
@@ -57,11 +83,28 @@ def check_tel_link(html: str, tel_url: str) -> bool:
     return tail in normalize_phone_digits(html or "")
 
 
+def punycode_href_matches_cta_path(html: str, link: str) -> bool:
+    """True when html has punycode href with same path as tenant CTA URL (INC B21)."""
+    parsed = urlparse((link or "").strip())
+    if parsed.scheme not in ("http", "https"):
+        return False
+    path = (parsed.path or "/").rstrip("/") or "/"
+    if path != "/":
+        path_re = re.escape(path.rstrip("/")) + r"(?:/|\b|\"|'|>|\?)"
+    else:
+        path_re = r"/(?:\b|\"|'|>|\?)"
+    pat = rf"""href=["']https?://xn--[^"']+{path_re}"""
+    return bool(re.search(pat, html or "", re.I))
+
+
 def link_in_html(html: str, link: str) -> bool:
     link = (link or "").strip()
     if link.lower().startswith("tel:"):
         return check_tel_link(html, link)
-    if url_patterns(link).search(html or ""):
+    for variant in equivalent_cta_urls(link):
+        if url_patterns(variant).search(html or ""):
+            return True
+    if punycode_href_matches_cta_path(html, link):
         return True
     parsed = urlparse(link)
     path = parsed.path or "/"

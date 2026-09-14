@@ -132,6 +132,16 @@ def _settings() -> tuple[str, str, str, int, list[str]]:
     return host, user, password, port, roots
 
 
+def theme_dir_candidates() -> list[str]:
+    """Remote wp-content/themes/* slugs to probe (INC B21: live dir is ``theme``)."""
+    env_slug = (os.environ.get("WP_THEME_SLUG") or "").strip()
+    slugs: list[str] = []
+    for slug in (env_slug, "kov4eg-mcp-theme", "theme"):
+        if slug and slug not in slugs:
+            slugs.append(slug)
+    return slugs
+
+
 def deploy() -> None:
     import paramiko
 
@@ -143,17 +153,23 @@ def deploy() -> None:
     stamp = datetime.now(timezone.utc).strftime("%Y%m%d%H%M%S")
     try:
         for root in roots:
-            candidate = posixpath.normpath(
-                posixpath.join(root, "wp-content/themes/kov4eg-mcp-theme")
-            )
-            try:
-                sftp.stat(candidate)
-                base = candidate
+            for slug in theme_dir_candidates():
+                candidate = posixpath.normpath(
+                    posixpath.join(root, f"wp-content/themes/{slug}")
+                )
+                try:
+                    sftp.stat(candidate)
+                    base = candidate
+                    break
+                except OSError:
+                    continue
+            if base:
                 break
-            except OSError:
-                continue
         if not base:
-            raise RuntimeError("WordPress theme path not found in configured root or login cwd")
+            tried = ", ".join(theme_dir_candidates())
+            raise RuntimeError(
+                f"WordPress theme path not found (tried wp-content/themes/{{{tried}}})"
+            )
         for name, patcher in (
             ("functions.php", patch_functions),
             ("single.php", patch_single),

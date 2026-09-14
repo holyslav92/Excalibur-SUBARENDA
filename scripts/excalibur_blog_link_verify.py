@@ -16,6 +16,7 @@ from urllib.parse import urlparse, urlunparse
 
 from excalibur_blog_site_base import (
     SITE_BASE_PLACEHOLDER,
+    canonicalize_tenant_site_hrefs_in_html,
     expand_site_base,
     normalize_public_base,
     redact_site_base,
@@ -471,6 +472,21 @@ def verify_article(
     }
 
 
+def maybe_normalize_tenant_hrefs(html_path: Path) -> list[str]:
+    """Rewrite punycode tenant funnel hrefs to canonical Cyrillic (INC B21)."""
+    root = Path(__file__).resolve().parents[1]
+    tenant_path = root / "shared" / "tenant-config.json"
+    try:
+        tenant = json.loads(tenant_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return []
+    html = html_path.read_text(encoding="utf-8")
+    fixed, changes = canonicalize_tenant_site_hrefs_in_html(html, tenant)
+    if changes:
+        html_path.write_text(fixed, encoding="utf-8")
+    return changes
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="Verify links in Excalibur article.html")
     ap.add_argument("html", type=Path, help="Path to article.html")
@@ -488,6 +504,10 @@ def main() -> int:
     if not args.html.is_file():
         print(f"Not found: {args.html}", file=sys.stderr)
         return 2
+
+    href_fixes = maybe_normalize_tenant_hrefs(args.html)
+    if href_fixes:
+        print(f"OK normalized_tenant_hrefs={len(href_fixes)}", file=sys.stderr)
 
     try:
         report = verify_article(

@@ -1295,3 +1295,103 @@ category: env
 status: needs-human
 reason: env-only blocker; duplicate of INC-20260903-0640
 needed_decision_or_secret: YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets
+
+## INC-20260914-0708 — theme_contract_deploy kov4eg-mcp-theme path miss (B21 publish)
+
+status: fixed
+run_date: 2026-09-14
+role: excalibur-blog-publish
+topic_id: B21
+article_dir: memory/blog/articles/B21-rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00
+severity: low
+category: script
+
+### What went wrong
+
+- `excalibur_blog_theme_contract_deploy.py --deploy` WARN: script probed only `wp-content/themes/kov4eg-mcp-theme`; live Добрый дом theme dir is `theme`.
+
+### How the agent recovered this run
+
+- Publish + live-page PASS without theme patch; post meta skip flags already set.
+
+### Durable fix needed before next run
+
+- Probe `theme` slug (and optional `WP_THEME_SLUG` env) before failing.
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_theme_contract_deploy.py`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-09-14
+fix_summary:
+- `theme_dir_candidates()` probes `WP_THEME_SLUG`, `kov4eg-mcp-theme`, then `theme` (INC B21).
+files_changed:
+- `scripts/excalibur_blog_theme_contract_deploy.py`
+- `tests/test_theme_contract_deploy.py`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_theme_contract_deploy.py`
+- `python3 -m unittest tests.test_theme_contract_deploy -v`
+commit: pending
+
+## INC-20260914-0709 — Sol punycode funnel href vs Cyrillic CTA (B21 publish)
+
+status: fixed
+run_date: 2026-09-14
+role: excalibur-blog-publish
+topic_id: B21
+article_dir: memory/blog/articles/B21-rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00
+severity: medium
+category: handoff
+
+### What went wrong
+
+- Sol/Writer emitted punycode `xn--` href for booking/site funnel links while link text used Cyrillic `добрыйдом-72.рф`. Publish preflight manually rewrote hrefs before community-cta / link-verify PASS.
+
+### How the agent recovered this run
+
+- Manual `article.html` href fix punycode → Cyrillic; gates PASS; post 4779 live.
+
+### Durable fix needed before next run
+
+- Auto-normalize punycode tenant site hrefs to `cta_channels` canonical URLs before link-verify.
+- community-cta gate must accept punycode/unicode host equivalents.
+- Sol skill: prefer Cyrillic href in funnel block.
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_site_base.py`
+- `scripts/excalibur_blog_link_verify.py`
+- `scripts/excalibur_blog_community_cta_gate.py`
+- `skills/sol-excalibur-blog/SKILL.md`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-09-14
+fix_summary:
+- `canonicalize_tenant_site_hrefs_in_html()` + `href_host_variants()` in site_base; link-verify auto-normalizes before HTTP check.
+- `equivalent_cta_urls()` in community-cta gate for punycode tolerance.
+- Sol skill documents Cyrillic funnel href canon.
+files_changed:
+- `scripts/excalibur_blog_site_base.py`
+- `scripts/excalibur_blog_link_verify.py`
+- `scripts/excalibur_blog_community_cta_gate.py`
+- `skills/sol-excalibur-blog/SKILL.md`
+- `.cursor/skills/sol-excalibur-blog/SKILL.md`
+- `tests/test_site_base_xlink.py`
+- `tests/test_community_cta_punycode.py`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_site_base.py scripts/excalibur_blog_link_verify.py scripts/excalibur_blog_community_cta_gate.py`
+- `python3 -m unittest tests.test_site_base_xlink tests.test_community_cta_punycode tests.test_theme_contract_deploy -v`
+commit: pending

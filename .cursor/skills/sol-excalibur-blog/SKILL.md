@@ -69,6 +69,7 @@ python3 scripts/excalibur_blog_derouter_opus_chat.py \
    - один mid fight-question → **TG** or MAX
    - checklist **после** moral if present — never 8 H2 spine
    - **один** CTA-блок в конце (TG+MAX+site+tel+manager) — not double
+   - funnel href: **Cyrillic** `https://добрыйдом-72.рф/…` from `cta_channels` — **not** punycode `xn--` in `href` (link-verify auto-fixes, but prefer canonical)
    - **3–4** outbound `/blog/` cross-links (живые, разные slug)
 4. Сохрани `article.html`, `drafts/variant-a.html`; не затирай `drafts/writer.html`
 5. Сверка с `bad-outputs.md` — especially chopped lead, encyclopedia, double CTA
