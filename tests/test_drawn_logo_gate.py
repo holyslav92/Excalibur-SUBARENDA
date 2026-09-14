@@ -358,6 +358,29 @@ class DrawnLogoGateTest(unittest.TestCase):
         self.assertFalse(img.get("logo_required_as_generation_reference"))
         self.assertIn("logo-dobry-dom.png", img.get("logo_factory_paste_only", ""))
 
+    def test_ui_terracotta_card_pad_exempt_on_no_logo_inlines(self) -> None:
+        from excalibur_blog_drawn_logo_gate import (
+            detect_drawn_lockup_in_image,
+            is_ui_terracotta_card_pad_false_positive,
+            analyze_top_right_pad,
+            np_array_rgb,
+        )
+
+        b23_cover = (
+            ROOT
+            / "memory/blog/articles/B23-napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni/cover"
+        )
+        for name in ("inline-04.png", "inline-05.png", "inline-06.png"):
+            panel = b23_cover / name
+            self.assertTrue(panel.is_file(), panel)
+            raw = analyze_top_right_pad(np_array_rgb(panel))
+            self.assertTrue(
+                is_ui_terracotta_card_pad_false_positive(raw),
+                f"{name} terracotta UI card should qualify for exemption",
+            )
+            result = detect_drawn_lockup_in_image(panel)
+            self.assertFalse(result["detected"], result)
+
     def test_bright_window_pad_exempt_when_no_lockup_colors(self) -> None:
         from excalibur_blog_drawn_logo_gate import (
             detect_drawn_lockup_in_image,

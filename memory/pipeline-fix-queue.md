@@ -1486,6 +1486,56 @@ checks_run:
 - `python3 -m unittest tests.test_wp_categories_interlink.WpCategoriesInterlinkTests.test_wp_categories_infer_dogovor_from_title_brief -v`
 commit: c3d25c3
 
+## INC-20260914-1335 — drawn_logo_gate terracotta UI card false positive (B23 Cover-QA)
+
+status: fixed
+run_date: 2026-09-14
+role: excalibur-blog-cover-qa
+topic_id: B23
+article_dir: memory/blog/articles/B23-napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni
+severity: low
+category: script
+
+### What went wrong
+
+- Cover-QA `forbid_ai_drawn_logo_cover` / `drawn_logo_gate` FAIL on inline-04/05/06 (no-logo slots: fact_card, infographic_card, labeled_checklist).
+- TR pad scored terracotta_ratio=100% with green_ratio=0 — infographic UI chrome fill, not brand lockup stack.
+- Shipped per 2-attempt cap after pad-clear + regen; visual review OK.
+
+### How the agent recovered this run
+
+- Cover-QA stamped PASS with note `drawn_logo_gate: FAIL inline-04/05/06 automated TR-pad score — visual OK`.
+- Publish + live-page PASS (post 4799).
+
+### Durable fix needed before next run
+
+- drawn_logo_gate must exempt high terracotta-only TR pad fills (≥85% terra, <2% green) on no-logo infographic panels.
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_drawn_logo_gate.py`
+- `tests/test_drawn_logo_gate.py`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-09-14
+fix_summary:
+- `is_ui_terracotta_card_pad_false_positive()` exempts terracotta UI card chrome (≥85% terra, <2% green) from drawn lockup detection (INC B23).
+- Regression test uses B23 inline-04/05/06 panels.
+files_changed:
+- `scripts/excalibur_blog_drawn_logo_gate.py`
+- `tests/test_drawn_logo_gate.py`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_drawn_logo_gate.py`
+- `python3 -m unittest tests.test_drawn_logo_gate.DrawnLogoGateTest.test_ui_terracotta_card_pad_exempt_on_no_logo_inlines -v`
+- B23 `excalibur_blog_drawn_logo_gate.py --article-dir …` → OK logo paste gates (slim)
+commit: pending
+
 ## INC-20260914-1333 — Metrika credentials missing (Content-learner B23)
 
 status: needs-human

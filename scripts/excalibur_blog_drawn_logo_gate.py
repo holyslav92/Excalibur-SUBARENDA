@@ -456,6 +456,8 @@ def detect_drawn_lockup_in_image(
     arr = np_array_rgb(image_path)
     analysis = analyze_top_right_pad(arr, pad_w_frac=pad_w_frac, pad_h_frac=pad_h_frac)
     detected = analysis.score >= DRAWN_LOCKUP_SCORE_THRESHOLD
+    if detected and is_ui_terracotta_card_pad_false_positive(analysis):
+        detected = False
     return {
         "path": str(image_path),
         "detected": detected,
@@ -584,6 +586,13 @@ def detect_logo_text_overlap(
         "score": round(overlap_score, 3),
         "logo_edges": round(float(logo_edges), 4),
     }
+
+
+def is_ui_terracotta_card_pad_false_positive(analysis: PadAnalysis) -> bool:
+    """Infographic/fact_card panels fill TR pad with terracotta UI chrome — not green+terra lockup."""
+    if analysis.green_ratio >= 0.02:
+        return False
+    return analysis.terracotta_ratio >= 0.85
 
 
 def is_bright_window_pad_false_positive(
