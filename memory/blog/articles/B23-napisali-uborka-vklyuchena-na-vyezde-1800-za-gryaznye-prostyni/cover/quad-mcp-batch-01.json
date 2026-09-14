@@ -1,0 +1,26 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 1,
+  "model_policy": "primary_2k_first_vip_on_2k_fail_or_api_fail",
+  "vip_disabled": false,
+  "max_generation_attempts": 2,
+  "attempt": 1,
+  "output_canvas": "cover/canvas-quad-01.png",
+  "result_path": "cover/quad-mcp-result-01.json",
+  "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+  "preferred_image_flow": {
+    "provider": "grsai",
+    "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
+    "resolution": "2K"
+  },
+  "jobs": [{
+    "slot": "canvas_quad",
+    "tool": "grsai",
+    "mcp_args": {
+      "prompt": "WOW RU collage, airy #FFF high-key, Tyumen early September 2026 sunny afternoon autumn light through window, green-yellow trees outside, NO winter/snow/ice. Person IN scene NOT empty hallway. Canvas 2048x1152 2x2 grid; white gutters between panels. Ban: dark cinematic, WP UI, Shakin host identity, pill phone chip, model-drawn logo. RU Cyrillic only.\nALL four panels TOP-RIGHT = clean wall/tile continuation ONLY — ZERO drawn logo, ZERO «Добрый дом» text, ZERO curtains+flower, ZERO white/gray plate. Factory pastes logo AFTER on cover+inline_1+inline_3 ONLY.\nPhone «+7 (993) 574-83-22» on WOOD TABLO flat painted text NOT pill NOT sticker chip.\nCover TL: guest with suitcase at apartment door, host shows smartphone with crumpled sheet photo; taxi waiting outside window; LARGE Cyrillic «Уборка включена — 1 800 за простыню» with gold accent on «простыню»; sticky note «А бельё — отдельно»; phone number on wood tablo; TR pad EMPTY clean wall 8-12%.\nTR inline_1: comparison UI listing «уборка включена» vs 10800 for 3 nights. TXT:три ночи|10 800 рублей|уборка включена. TR pad EMPTY for factory logo paste.\nBL inline_2: checkout rush — taxi, keys still with guest. TXT:выезд из квартиры|такси ждёт|ключи у гостя. CRITICAL: TR corner = plain hallway wall ONLY — absolutely NO logo NO brand.\nBR inline_3: phone screen sheet photo stain flash. TXT:фото простыни|пятно у края|вспышка телефона. TR pad EMPTY for factory logo.",
+      "aspect_ratio": "16:9",
+      "resolution": "2K"
+    }
+  }],
+  "validation": {"prompt_chars": 1400, "max_prompt_chars": 3500, "resolution": "2K"}
+}
