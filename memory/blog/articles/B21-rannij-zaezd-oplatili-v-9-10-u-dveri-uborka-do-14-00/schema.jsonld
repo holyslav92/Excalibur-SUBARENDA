@@ -1,0 +1,39 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00/#article",
+  "url": "{{SITE_BASE}}/blog/rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00/"
+  },
+  "headline": "Ранний заезд оплатили. У двери с чемоданом — почти 5 часов ожидания",
+  "description": "Оплаченный ранний заезд не означает, что квартира уже готова: гость с чемоданом ждал почти пять часов. До оплаты важно зафиксировать время уборки, готовность белья и способ передачи ключей.",
+  "datePublished": "2026-09-14",
+  "dateModified": "2026-09-14",
+  "inLanguage": "ru-RU",
+  "author": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ],
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    }
+  }
+}
