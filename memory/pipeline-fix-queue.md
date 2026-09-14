@@ -1395,3 +1395,93 @@ checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_site_base.py scripts/excalibur_blog_link_verify.py scripts/excalibur_blog_community_cta_gate.py`
 - `python3 -m unittest tests.test_site_base_xlink tests.test_community_cta_punycode tests.test_theme_contract_deploy -v`
 commit: pending
+
+## INC-20260914-0939 — crosslink anchor RU inflection mismatch (B22 publish)
+
+status: fixed
+run_date: 2026-09-14
+role: excalibur-blog-publish
+topic_id: B22
+article_dir: memory/blog/articles/B22-posutochno-tyumen-foto-pasporta-v-chat-kod-ne-prislali
+severity: low
+category: script
+
+### What went wrong
+
+- Publish preflight crosslink-qa BLOCK: anchor «как устроено бесконтактное заселение и чего ждать от кода» vs catalog «Оплатил квартиру… Код прислали…» — genitive «кода» did not token-match nominative «код».
+
+### How the agent recovered this run
+
+- Manual anchor rewrite to «бесконтактное заселение, когда код есть, а дверь чужая»; crosslink-qa PASS.
+
+### Durable fix needed before next run
+
+- Crosslink anchor matcher must accept common RU inflection variants (кода↔код, двери↔дверь).
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_crosslink_qa_gate.py`
+- `tests/test_crosslink_qa_gate.py`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-09-14
+fix_summary:
+- `ru_stem_variants()` in crosslink QA `title_tokens()` — lightweight RU suffix stripping so genitive/plural anchors match catalog titles (INC B22/B11 pattern).
+files_changed:
+- `scripts/excalibur_blog_crosslink_qa_gate.py`
+- `tests/test_crosslink_qa_gate.py`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_crosslink_qa_gate.py`
+- `python3 -m unittest tests.test_crosslink_qa_gate.CrosslinkQaGateTests.test_anchor_matches_ru_inflection_koda_vs_kod -v`
+commit: 79abf84
+
+## INC-20260914-0940 — wp_category_slugs missing before publish (B22)
+
+status: fixed
+run_date: 2026-09-14
+role: excalibur-blog-publish
+topic_id: B22
+article_dir: memory/blog/articles/B22-posutochno-tyumen-foto-pasporta-v-chat-kod-ne-prislali
+severity: low
+category: script
+
+### What went wrong
+
+- `article.meta.json` lacked `wp_category_slugs`; only default primary `posutochnaya-arenda` would apply. Publish agent manually added `dogovor-i-pravila` for passport/contract angle.
+
+### How the agent recovered this run
+
+- Added `wp_category_slugs: [posutochnaya-arenda, dogovor-i-pravila]` in publish commit; wp-categories-gate PASS.
+
+### Durable fix needed before next run
+
+- Infer secondary WP rubric from `title-brief.json` subject/angle keywords when meta has no explicit slugs.
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_wp_categories.py`
+- `tests/test_wp_categories_interlink.py`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-09-14
+fix_summary:
+- `infer_secondary_slugs_from_brief()` maps title-brief subject/angle keywords → secondary rubrics (passport/договор → dogovor-i-pravila).
+files_changed:
+- `scripts/excalibur_blog_wp_categories.py`
+- `tests/test_wp_categories_interlink.py`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_wp_categories.py`
+- `python3 -m unittest tests.test_wp_categories_interlink.WpCategoriesInterlinkTests.test_wp_categories_infer_dogovor_from_title_brief -v`
+commit: c3d25c3

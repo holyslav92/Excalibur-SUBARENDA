@@ -52,6 +52,53 @@ class WpCategoriesInterlinkTests(unittest.TestCase):
         self.assertIn(101, report["category_ids"])
         self.assertIn("posutochnaya-arenda", report["category_slugs"])
 
+    def test_wp_categories_infer_dogovor_from_title_brief(self) -> None:
+        article_dir = ROOT / "memory/blog/articles/_gate_fixture_brief_categories"
+        try:
+            article_dir.mkdir(parents=True, exist_ok=True)
+            (article_dir / "article.meta.json").write_text(
+                json.dumps(
+                    {
+                        "slug": "fixture-passport-brief",
+                        "topic_id": "B99",
+                        "title": "Fixture passport brief",
+                    },
+                    ensure_ascii=False,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            (article_dir / "title-brief.json").write_text(
+                json.dumps(
+                    {
+                        "subject": "Фото паспорта и селфи в мессенджере",
+                        "angle": "отправил документы для договора без кода",
+                    },
+                    ensure_ascii=False,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            proc = subprocess.run(
+                [
+                    "python3",
+                    str(ROOT / "scripts/excalibur_blog_wp_categories.py"),
+                    "--article-dir",
+                    str(article_dir.relative_to(ROOT)),
+                ],
+                cwd=ROOT,
+                capture_output=True,
+                text=True,
+                check=False,
+            )
+            self.assertEqual(proc.returncode, 0, proc.stdout + proc.stderr)
+            report = json.loads((article_dir / "wp-categories-gate.json").read_text(encoding="utf-8"))
+            self.assertEqual(report["status"], "PASS")
+            self.assertIn("dogovor-i-pravila", report["category_slugs"])
+            self.assertIn("posutochnaya-arenda", report["category_slugs"])
+        finally:
+            shutil.rmtree(article_dir, ignore_errors=True)
+
     def test_interlink_gate_pass_with_outbound(self) -> None:
         links = (
             '<a href="/blog/beskontaktnoe-zaselenie-posutochno-tyumen/">бесконтактное заселение</a>, '

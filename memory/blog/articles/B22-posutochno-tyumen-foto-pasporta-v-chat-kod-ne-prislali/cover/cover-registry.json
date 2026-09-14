@@ -1,0 +1,50 @@
+{
+  "topic_id": "B22",
+  "slug": "posutochno-tyumen-foto-pasporta-v-chat-kod-ne-prislali",
+  "cover_family": "brand_collage",
+  "style_preset": "the_rieltor_twilight_gold",
+  "pipeline": "slice4_grid_1x_image_api",
+  "file": "cover/cover.png",
+  "alt": "Семья с чемоданом у подъезда квартиры: на смартфоне переписка с отправленным фото паспорта, обещание «код через пять минут» и пустое поле доступа.",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-slice4.png",
+  "generated_at": "2026-09-14T09:24:06+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Семья с чемоданом у подъезда квартиры: на смартфоне переписка с отправленным фото паспорта, обещание «код через пять минут» и пустое поле доступа.",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Сравнение минимальных данных для договора и избыточного запроса селфи с паспортом в мессенджере.",
+      "h2_anchor": "Паспорт могут спросить. Но не так",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Неправильный порядок: сначала документы и перевод в другой чат, потом обещание кода, которое не выполняется.",
+      "h2_anchor": "Где в переписке перестаёт быть спокойно",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Правильный порядок: подтверждённый объект и способ входа до передачи паспортных данных.",
+      "h2_anchor": "Сначала доступ, потом данные",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}

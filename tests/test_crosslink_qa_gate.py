@@ -169,6 +169,13 @@ class CrosslinkQaGateTests(unittest.TestCase):
         self.assertEqual(report["status"], "PASS")
         self.assertGreaterEqual(len(report.get("outbound_unique_slugs") or []), 3)
 
+    def test_anchor_matches_ru_inflection_koda_vs_kod(self) -> None:
+        from excalibur_blog_crosslink_qa_gate import anchor_matches_catalog_title
+
+        anchor = "как устроено бесконтактное заселение и чего ждать от кода"
+        catalog_title = "Оплатил квартиру посуточно. Код прислали от чужой двери"
+        self.assertTrue(anchor_matches_catalog_title(anchor, catalog_title))
+
 
 if __name__ == "__main__":
     unittest.main()

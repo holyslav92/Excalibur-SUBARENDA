@@ -1,0 +1,39 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/posutochno-tyumen-foto-pasporta-v-chat-kod-ne-prislali/#article",
+  "url": "{{SITE_BASE}}/blog/posutochno-tyumen-foto-pasporta-v-chat-kod-ne-prislali/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/posutochno-tyumen-foto-pasporta-v-chat-kod-ne-prislali/"
+  },
+  "headline": "Оплатили 3 ночи. Фото паспорта в чат — код не пришёл, багаж у двери",
+  "description": "Гость оплатил три ночи, отправил в чат фото паспорта и селфи, но обещанный код доступа не пришёл, а багаж остался у двери. Безопасный порядок заселения: сначала доступ и подтверждение брони, затем минимальные данные для договора.",
+  "datePublished": "2026-09-14",
+  "dateModified": "2026-09-14",
+  "inLanguage": "ru-RU",
+  "author": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    },
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "topic_id": "B22",
+  "h1": "Оплатили 3 ночи. Фото паспорта в чат — код не пришёл, багаж у двери",
+  "title": "Оплатили 3 ночи. Фото паспорта в чат — код не пришёл, багаж у двери",
+  "slug": "posutochno-tyumen-foto-pasporta-v-chat-kod-ne-prislali",
+  "subject": "Фото паспорта и селфи в мессенджере до доступа в квартиру",
+  "angle": "Гость оплатил проживание, отправил документы для договора и остался у подъезда с багажом без обещанного кода",
+  "klyshin_title_shape": 1,
+  "wordstat_p0": "квартиры посуточно тюмень",
+  "generated_via": "excalibur_blog_derouter_opus_chat.py --role title",
+  "verdict": "PASS"
+}
