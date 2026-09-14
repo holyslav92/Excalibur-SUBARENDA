@@ -25,3 +25,4 @@ Excalibur-2-Cloud — не копировать URL tymenrieltor.ru.
 | 2026-09-12 | B18 | kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda | /blog/kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda/ | published |
 | 2026-09-13 | B19 | napisali-ne-kurili-v-spalne-zapah-i-okno-na-zamke | /blog/napisali-ne-kurili-v-spalne-zapah-i-okno-na-zamke/ | published |
 | 2026-09-13 | B20 | napisali-goryachaya-voda-est-ledyanoj-dush-migayushij-boiler | /blog/napisali-goryachaya-voda-est-ledyanoj-dush-migayushij-boiler/ | published |
+| 2026-09-14 | B21 | rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00 | /blog/rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00/ | published |

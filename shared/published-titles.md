@@ -29,3 +29,4 @@ lessons, benchmarks, QA reports или соседние research-notes как о
 | B18 | kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda | Код уже есть. Только в подъезд не попасть — 20 минут с чемоданом | published |
 | B19 | napisali-ne-kurili-v-spalne-zapah-i-okno-na-zamke | Написали «не курили». В спальне — запах и окно на замке: 35 минут ожидания ключа | published |
 | B20 | napisali-goryachaya-voda-est-ledyanoj-dush-migayushij-boiler | Написали «горячая вода есть». Ночью — ледяной душ и 80 минут до тепла | published |
+| B21 | rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00 | Ранний заезд оплатили. У двери с чемоданом — почти 5 часов ожидания | published |

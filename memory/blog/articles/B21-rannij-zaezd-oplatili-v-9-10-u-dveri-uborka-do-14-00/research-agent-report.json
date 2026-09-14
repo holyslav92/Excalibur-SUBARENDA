@@ -1,0 +1,106 @@
+{
+  "status": "PASS",
+  "topic_id": "B21",
+  "slug": "rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00",
+  "research_date": "2026-09-14",
+  "summary": "Research for early_checkin CASE: guest paid +1 500 ₽ for 9:00 check-in, arrived 9:10, apartment still in cleaning until 14:00; NOT burn-at-door/domofon, NOT boiler/hot water, NOT smoking/smell. Fresh signals: Scout handoff 2026-09-14 + Klyshin @klyshin_A early_checkin hook + Restfor guest guide published 2026-09-10 (confirmed early check-in time/cost table). Turnover mechanics: standard 12:00–14:00 window, 2–5h cleaning buffer, Tutu real case of waiting at door with dirty apartment. Wordstat P0 «квартиры посуточно тюмень» 4826 (55+11176), 10308 (225); supporting «квартиры посуточно ранний заезд» 197 RU. No bank/JKH tariff digits.",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Scout external_signal 2026-09-14 early_checkin hook + Klyshin @klyshin_A CASE mechanic + Restfor.ru guide published 2026-09-10",
+    "source_type": "community",
+    "urls": [
+      "https://t.me/klyshin_A",
+      "https://restfor.ru/kak-snyat-kvartiru-posutochno/",
+      "https://t.me/Dobriy_dom_72"
+    ],
+    "accessed_at": "2026-09-14",
+    "note": "Paid early check-in vs apartment readiness after turnover cleaning; distinct from B06 late checkout, B18 domofon, B19 smell, B20 boiler."
+  },
+  "freshness_audit": {
+    "research_date": "2026-09-14",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://t.me/klyshin_A",
+      "published_at": "2026-09-14",
+      "note": "Scout Klyshin early_checkin hook selected same day as research; CASE mechanic: promise → surcharge → morning arrival → cleaning wait."
+    },
+    "additional_fresh_signals": [
+      {
+        "url": "https://restfor.ru/kak-snyat-kvartiru-posutochno/",
+        "published_at": "2026-09-10",
+        "type": "guide",
+        "note": "Fresh guest guide this week: table requires confirmed early check-in time and cost; daily rental ≠ 24h from guest arrival."
+      },
+      {
+        "url": "https://t.me/Dobriy_dom_72",
+        "published_at": "2026-09-14",
+        "type": "tenant_channel",
+        "note": "Tenant ecosystem channel; safe CTA destination."
+      }
+    ]
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176", "225"],
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 4826,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 10308,
+        "region": "225"
+      },
+      {
+        "phrase": "снять квартиру посуточно в тюмени",
+        "volume": 1501,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "аренда квартиры тюмень посуточно",
+        "volume": 169,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "ранний заезд посуточно",
+        "volume": 273,
+        "region": "225"
+      },
+      {
+        "phrase": "квартиры посуточно ранний заезд",
+        "volume": 197,
+        "region": "225"
+      },
+      {
+        "phrase": "снять квартиру посуточно с ранним заездом",
+        "volume": 81,
+        "region": "225"
+      }
+    ]
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "No bank/JKH/company tariff digits; scenario amounts 1 500 ₽ / 890 ₽ are case-scenario only, not verified market tariffs",
+    "verified_claims": 0,
+    "entities_checked": [],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "memory/blog/articles/B21-rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00/derouter-opus-stamp-research.json",
+    "first_attempt": "BLOCKER (model refused without conductor preamble)",
+    "retry": "PASS"
+  },
+  "key_facts_count": 12,
+  "errors": []
+}

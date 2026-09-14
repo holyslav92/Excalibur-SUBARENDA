@@ -1,0 +1,50 @@
+{
+  "topic_id": "B21",
+  "slug": "rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00",
+  "cover_family": "brand_collage",
+  "style_preset": "the_rieltor_twilight_gold",
+  "pipeline": "slice4_grid_1x_image_api",
+  "file": "cover/cover.png",
+  "alt": "Гость с чемоданом в холле подъезда после ночного поезда: оплатил ранний заезд, но квартира ещё на уборке и ждать до обеда.",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-slice4.png",
+  "generated_at": "2026-09-14T06:24:23+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Гость с чемоданом в холле подъезда после ночного поезда: оплатил ранний заезд, но квартира ещё на уборке и ждать до обеда.",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Между выездом прежних гостей и передачей ключей — уборка, смена белья и время на подготовку квартиры.",
+      "h2_anchor": "Между выездом и ключом есть работа",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "До перевода доплаты нужно было спросить про выезд прежних гостей, уборку, бельё и время передачи ключей.",
+      "h2_anchor": "Где надо было остановиться до перевода",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "890 ₽ на кофе и такси с чемоданом — цена ожидания; правило: сначала проверка, потом перевод.",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "infographic_card",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}
