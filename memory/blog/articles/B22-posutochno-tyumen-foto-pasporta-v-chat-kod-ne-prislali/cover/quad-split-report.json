@@ -142,8 +142,8 @@
   ],
   "manifest": "cover/quad-manifest.json",
   "html_inject": [
-    "injected inline_1 after H2 — Паспорт могут спросить. Но не так",
-    "injected inline_2 after H2 — Где в переписке перестаёт быть спокойно",
-    "injected inline_3 after H2 — Сначала доступ, потом данные"
+    "skip inline_1: already correct under H2 — Паспорт могут спросить. Но не так",
+    "skip inline_2: already correct under H2 — Где в переписке перестаёт быть спокойно",
+    "skip inline_3: already correct under H2 — Сначала доступ, потом данные"
   ]
 }

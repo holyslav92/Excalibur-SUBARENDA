@@ -1,5 +1,24 @@
 # WP publish log
 
+## B22 — 2026-09-14
+
+- **topic_id:** B22
+- **slug:** posutochno-tyumen-foto-pasporta-v-chat-kod-ne-prislali
+- **title:** Оплатили 3 ночи. Фото паспорта в чат — код не пришёл, багаж у двери
+- **post_id:** 4791
+- **permalink:** /blog/posutochno-tyumen-foto-pasporta-v-chat-kod-ne-prislali/
+- **categories:** posutochnaya-arenda (101), dogovor-i-pravila (103)
+- **featured_image:** 4792
+- **inline_images:** 4793–4795 (3× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS
+- **dzen preview:** dzen_yzen_meta=1; cover-1024x576.png HTTP 200; feed enclosure → full cover.png
+- **interlink outbound:** 4 live /blog/ siblings (crosslink-qa PASS)
+- **interlink inbound:** B01 (3745), B18 (4724)
+- **publish_method:** sftp:22 (Cloud Agent; FTP PASV blocked)
+- **llms_deploy:** PASS (llms.txt + llms-full.txt)
+- **preflight fix:** crosslink anchor для beskontaktnoe-zaselenie; wp_category_slugs added
+
 ## B21 — 2026-09-14
 
 - **topic_id:** B21

@@ -1,0 +1,27 @@
+{
+  "slug": "posutochno-tyumen-foto-pasporta-v-chat-kod-ne-prislali",
+  "topic_id": "B22",
+  "permalink": "{{SITE_BASE}}/blog/posutochno-tyumen-foto-pasporta-v-chat-kod-ne-prislali/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B22-posutochno-tyumen-foto-pasporta-v-chat-kod-ne-prislali/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1033902,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4791 slug=posutochno-tyumen-foto-pasporta-v-chat-kod-ne-prislali\nOK categories=101,103\nOK dzen_yzen_meta=1\nOK featured_image=4792\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4793 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-foto-pasporta-v-chat-kod-ne-prislali-inline-01.png\nOK inline_alt=4793\nOK inline_caption=4793\nOK inline_description=4793\nOK inline_image_upload=4794 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-foto-pasporta-v-chat-kod-ne-prislali-inline-02.png\nOK inline_alt=4794\nOK inline_caption=4794\nOK inline_description=4794\nOK inline_image_upload=4795 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-foto-pasporta-v-chat-kod-ne-prislali-inline-03.png\nOK inline_alt=4795\nOK inline_caption=4795\nOK inline_description=4795\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/posutochno-tyumen-foto-pasporta-v-chat-kod-ne-prislali/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 3,
+    "expected_inline": 3,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/posutochno-tyumen-foto-pasporta-v-chat-kod-ne-prislali/",
+    "errors": []
+  }
+}
