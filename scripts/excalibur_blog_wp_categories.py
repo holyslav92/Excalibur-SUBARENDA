@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 from typing import Any
 
@@ -34,6 +35,49 @@ def slug_to_wp_id(registry: dict[str, Any], slug: str) -> int | None:
     return int(wp_id) if wp_id else None
 
 
+ANGLE_CATEGORY_KEYWORDS: dict[str, tuple[str, ...]] = {
+    "dogovor-i-pravila": (
+        "договор",
+        "договора",
+        "паспорт",
+        "паспорта",
+        "документ",
+        "документы",
+        "правил",
+        "селфи",
+    ),
+    "zalog-i-vyiezd": ("залог", "депозит", "выезд", "vyezd"),
+    "zhkh-i-doplaty": ("коммунал", "жкх", "счет", "счёт", "доплат"),
+    "sovety-gostyam": ("совет", "гост", "кухн", "отзыв"),
+}
+
+
+def infer_secondary_slugs_from_brief(article_dir: Path) -> list[str]:
+    """Infer WP rubrics from title-brief subject/angle when meta lacks wp_category_slugs."""
+    brief_path = article_dir / "title-brief.json"
+    if not brief_path.is_file():
+        return []
+    try:
+        brief = json.loads(brief_path.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return []
+    parts = [str(brief.get(key) or "") for key in ("subject", "angle", "h1", "title")]
+    text = " ".join(parts).casefold().replace("ё", "е")
+    tokens = {tok for tok in re.split(r"[^\w]+", text) if len(tok) >= 3}
+    found: list[str] = []
+    for slug, keywords in ANGLE_CATEGORY_KEYWORDS.items():
+        for keyword in keywords:
+            kw = keyword.casefold().replace("ё", "е")
+            if len(kw) >= 5:
+                if kw in text:
+                    found.append(slug)
+                    break
+            elif kw in tokens:
+                found.append(slug)
+                break
+    return found
+
+
 def resolve_category_slugs(root: Path, article_dir: Path) -> list[str]:
     registry = load_registry(root)
     meta_path = article_dir / "article.meta.json"
@@ -59,6 +103,10 @@ def resolve_category_slugs(root: Path, article_dir: Path) -> list[str]:
         default_slug = str(registry.get("default_primary_slug") or "").strip()
         if default_slug:
             slugs = [default_slug]
+
+    for inferred in infer_secondary_slugs_from_brief(article_dir):
+        if inferred not in slugs:
+            slugs.append(inferred)
 
     # Уникальные slug в порядке приоритета.
     seen: set[str] = set()
