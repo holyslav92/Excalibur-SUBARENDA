@@ -1,98 +1,122 @@
 {
   "topic_id": "B21",
-  "canvas_file": "cover/canvas-slice4.png",
+  "slug": "rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00",
+  "canvas_file": "cover/canvas-quad-01.png",
   "layout": "2x2",
-  "pipeline": "slice4_grid_1x_image_api",
-  "inline_count": 3,
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
   "canvases": [
     {
       "index": 1,
-      "canvas_file": "cover/canvas-slice4.png",
-      "batch_file": "cover/slice4-mcp-batch.json",
-      "prompt_file": "cover/slice4-mcp-prompt.txt",
-      "result_file": "cover/slice4-mcp-result.json",
-      "slots": [
-        "cover",
-        "inline_1",
-        "inline_2",
-        "inline_3"
-      ],
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
       "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+      "has_cover": false
     }
   ],
-  "style_preset": "the_rieltor_twilight_gold",
+  "style_preset": "dobry_dom_light_meme_wordstat",
   "style_file": "memory/cover/quad-style-dobry-dom.json",
   "blog_hero": "memory/cover/blog-hero.json",
-  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
   "cover_hook": "Оплатили заезд — пять часов у двери",
   "cover_hook_highlight": "пять",
   "cover_headline_line1": "Оплатили заезд",
   "cover_headline_line2": "пять часов у двери",
   "cover_phone_cta": "+7 (993) 574-83-22",
   "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
-  "cover_emotion": "усталость после ночного поезда: доплату приняли, а ключи всё ещё в уборке",
-  "cover_scene": "Раннее сентябрьское утро 9:10: гость с чемоданом в светлом холле подъезда, на стенде крупный кириллический хук",
-  "cover_motifs": {
-    "composition": "solo traveler on lobby bench with suitcase notice board headline cleaning cart through glass",
-    "location": "early autumn September 2026 sunny Tyumen apartment entrance hall NOT winter",
-    "meme": "photoreal only zero meme stickers no cat",
-    "prop_set": "suitcase smartphone 1500 receipt coffee cup cleaning cart",
-    "sticker_set": "none on gen_only",
-    "joke": "paid early check-in chat says cleaning until lunch"
-  },
+  "mcp_note": "Grsai 2 canvases × 4 panels. Logo factory paste cover + inline_1/3/7. Phone IN scene on cover.",
   "wordstat_stickers": [
     "квартиры посуточно тюмень",
     "снять квартиру посуточно в тюмени"
   ],
-  "mcp_note": "PRIMARY: Derouter REST (DEROUTER_API_KEY) — 2K 16:9, one job per canvas (1×). Cover agent invents cover_hook + scene_hint/alt before --write-batch. Host lock = blog-hero.json (navy blazer, not hoodie).",
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "гость чемодан холл",
+    "location": "сентябрь Тюмень без снега",
+    "meme": "мем inline_6 только",
+    "prop_set": "чемодан 1500 чек",
+    "sticker_set": "ранний заезд",
+    "joke": "оплатили — ждут"
+  },
+  "cover_emotion": "усталость у двери",
+  "cover_scene": "холл, чемодан, хук",
   "slots": {
     "cover": {
       "quadrant": "top_left",
+      "scene_hint": "Холл: гость, чемодан, кириллица хук, тел на табло, TR пусто.",
+      "alt": "Гость с чемоданом у подъезда после ночного поезда: оплатил ранний заезд, но квартира ещё на уборке.",
       "role": "cover_editorial_hero",
-      "alt": "Гость с чемоданом в холле подъезда после ночного поезда: оплатил ранний заезд, но квартира ещё на уборке и ждать до обеда.",
-      "scene_hint": "Светлый холл подъезда, ранняя осень сентябрь 9:10: уставший гость в лёгкой куртке сидит на скамейке с чемоданом и бумажным стаканом кофе; на пробковой доске крупная кириллица «Оплатили заезд — пять часов у двери» с выделенным словом «пять»; смартфон в руке — чат «уборка до обеда»; за стеклянной дверью видна тележка уборщицы; золотые листья за окном, без снега; TOP-RIGHT чистая стена для factory logo paste; без телефона-табло, без мемов, без логотипа в кадре.",
-      "meme_caption_ru": "",
       "sticky": "Сначала проверка, потом перевод"
     },
     "inline_1": {
       "quadrant": "top_right",
       "h2_anchor": "Между выездом и ключом есть работа",
       "visual_type": "workflow_diagram",
-      "scene_hint": "Схема на листе ватмана на столе: выезд 12:00 → уборка 2–3 ч → заезд 14:00; рядом чек 1500 ₽ «ранний заезд» и часы 9:10; фотореал квартира-кухня, без логотипа.",
-      "alt": "Между выездом прежних гостей и передачей ключей — уборка, смена белья и время на подготовку квартиры.",
-      "labels": [
-        "полторы тысячи",
-        "после ночного поезда",
-        "десять минут позже",
-        "пять часов ожидания"
-      ]
+      "scene_hint": "Схема выезд→уборка→заезд; чек 1500₽. TR pad.",
+      "alt": "Между выездом прежних гостей и передачей ключей — уборка и смена белья.",
+      "labels": ["полторы тысячи", "после ночного поезда", "пять часов ожидания"]
     },
     "inline_2": {
       "quadrant": "bottom_left",
-      "h2_anchor": "Где надо было остановиться до перевода",
-      "visual_type": "checklist_board",
-      "scene_hint": "Светлый стол: смартфон с перепиской «заселим с утра» и список вопросов на листе — когда выедут гости, к какому часу уборка, когда ключ; фотореал, без pill-кнопки телефона и без логотипа.",
-      "alt": "До перевода доплаты нужно было спросить про выезд прежних гостей, уборку, бельё и время передачи ключей.",
-      "labels": [
-        "уборка до обеда",
-        "гости съехали",
-        "бельё поменяли",
-        "ключ свободен"
-      ]
+      "h2_anchor": "Между выездом и ключом есть работа",
+      "visual_type": "comparison_table_ui",
+      "scene_hint": "Таблица: ранний заезд vs уборка до обеда.",
+      "alt": "Обещание раннего заезда и реальность: квартира ещё убирается.",
+      "labels": ["заселим с утра", "уборка до обеда", "ключ позже"]
     },
     "inline_3": {
       "quadrant": "bottom_right",
+      "h2_anchor": "Где надо было остановиться до перевода",
+      "visual_type": "checklist_board",
+      "scene_hint": "Чеклист вопросов до перевода + телефон.",
+      "alt": "Вопросы до оплаты: выезд гостей, уборка, бельё, время ключа.",
+      "labels": ["гости съехали", "бельё поменяли", "ключ свободен"]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Где надо было остановиться до перевода",
+      "visual_type": "process_flow",
+      "scene_hint": "Таймлайн: доплата → приезд → 5ч ожидания.",
+      "alt": "После оплаты раннего заезда гость ждёт почти пять часов у двери.",
+      "labels": ["перевод доплаты", "чемодан у двери", "кофе и такси"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Где надо было остановиться до перевода",
+      "visual_type": "tool_screenshot",
+      "scene_hint": "Чат «не готово»; тел на магните на холодильнике.",
+      "alt": "Переписка: гость спрашивает ключ, хозяин отвечает про уборку до обеда.",
+      "labels": ["где ключ", "не готово", "уборка"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Чеклист; мем-стикер ≤12%, без кота.",
+      "alt": "Пять вопросов до перевода доплаты за ранний заезд.",
+      "labels": ["во сколько выезд", "когда уборка", "до перевода"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
       "h2_anchor": "Мой вывод как практика",
       "visual_type": "infographic_card",
-      "scene_hint": "Уютное кафе у подъезда: два чека кофе, такси с чемоданом на улице за окном, на салфетке надпись «сначала проверка — потом перевод»; фотореал осень, без стикеров и без логотипа.",
-      "alt": "890 ₽ на кофе и такси с чемоданом — цена ожидания; правило: сначала проверка, потом перевод.",
-      "labels": [
-        "кофе восемьсот девяносто",
-        "такси с чемоданом",
-        "сначала проверка",
-        "потом перевод"
-      ]
+      "scene_hint": "Кафе: чеки 890₽, такси; TR pad.",
+      "alt": "890 ₽ на кофе и такси — цена ожидания вместо раннего заезда.",
+      "labels": ["кофе восемьсот девяносто", "сначала проверка", "потом перевод"]
     }
   },
-  "cover_keys_ru": []
+  "cover_keys_ru": [],
+  "no_host_face": true,
+  "skip_identity_i2i": true
 }
