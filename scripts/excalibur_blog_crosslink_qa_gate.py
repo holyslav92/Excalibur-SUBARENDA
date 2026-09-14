@@ -76,6 +76,42 @@ def normalize_title(value: str) -> str:
     return value
 
 
+RU_STEM_SUFFIXES: tuple[str, ...] = (
+    "ами",
+    "ями",
+    "ого",
+    "его",
+    "ому",
+    "ему",
+    "ах",
+    "ях",
+    "ой",
+    "ей",
+    "ом",
+    "ем",
+    "ам",
+    "ям",
+    "ы",
+    "и",
+    "е",
+    "у",
+    "а",
+    "я",
+    "о",
+)
+
+
+def ru_stem_variants(token: str) -> set[str]:
+    """Lightweight RU inflection variants so «кода» matches catalog «код» (INC B22)."""
+    variants: set[str] = {token}
+    if len(token) > 5:
+        variants.add(token[:5])
+    for suffix in RU_STEM_SUFFIXES:
+        if token.endswith(suffix) and len(token) > len(suffix) + 2:
+            variants.add(token[: -len(suffix)])
+    return variants
+
+
 def title_tokens(value: str) -> set[str]:
     stop = {
         "и",
@@ -104,9 +140,7 @@ def title_tokens(value: str) -> set[str]:
     for tok in normalize_title(value).split():
         if len(tok) < 3 or tok in stop:
             continue
-        tokens.add(tok)
-        if len(tok) > 5:
-            tokens.add(tok[:5])
+        tokens.update(ru_stem_variants(tok))
     return tokens
 
 
