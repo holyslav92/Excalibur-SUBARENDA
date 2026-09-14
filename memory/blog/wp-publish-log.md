@@ -1,5 +1,23 @@
 # WP publish log
 
+## B23 — 2026-09-14
+
+- **topic_id:** B23
+- **slug:** napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni
+- **title:** В карточке: «уборка включена» — 3 ночи. Выезд: фото простыни — 1 800 ₽
+- **post_id:** 4799
+- **permalink:** /blog/napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni/
+- **categories:** posutochnaya-arenda (101), zalog-i-vyiezd (102), zhkh-i-doplaty (104)
+- **featured_image:** 4800
+- **inline_images:** 4801–4807 (7× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS (all img src → wp-content)
+- **dzen preview:** dzen_yzen_meta=1; cover-1024x576.png HTTP 200; feed enclosure → full cover.png
+- **interlink outbound:** 4 live /blog/ siblings (crosslink-qa PASS)
+- **interlink inbound:** B01 (3745), B18 (4724)
+- **publish_method:** sftp:22 (Cloud Agent; FTP PASV blocked)
+- **preflight fix:** wp_category_slugs added; theme_contract_deploy skipped (functions.php bounds already patched)
+
 ## B22 — 2026-09-14
 
 - **topic_id:** B22

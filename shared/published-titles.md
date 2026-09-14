@@ -31,3 +31,4 @@ lessons, benchmarks, QA reports или соседние research-notes как о
 | B20 | napisali-goryachaya-voda-est-ledyanoj-dush-migayushij-boiler | Написали «горячая вода есть». Ночью — ледяной душ и 80 минут до тепла | published |
 | B21 | rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00 | Ранний заезд оплатили. У двери с чемоданом — почти 5 часов ожидания | published |
 | B22 | posutochno-tyumen-foto-pasporta-v-chat-kod-ne-prislali | Оплатили 3 ночи. Фото паспорта в чат — код не пришёл, багаж у двери | published |
+| B23 | napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni | В карточке: «уборка включена» — 3 ночи. Выезд: фото простыни — 1 800 ₽ | published |
