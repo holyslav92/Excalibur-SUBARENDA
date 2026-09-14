@@ -1,0 +1,27 @@
+{
+  "slug": "rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00",
+  "topic_id": "B21",
+  "permalink": "{{SITE_BASE}}/blog/rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B21-rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1085455,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4779 slug=rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00\nOK categories=101,106\nOK dzen_yzen_meta=1\nOK featured_image=4780\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4781 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00-inline-02.png\nOK inline_alt=4781\nOK inline_caption=4781\nOK inline_description=4781\nOK inline_image_upload=4782 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00-inline-01.png\nOK inline_alt=4782\nOK inline_caption=4782\nOK inline_description=4782\nOK inline_image_upload=4783 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/09/rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00-inline-05.png\nOK inline_alt=4783\nOK inline_caption=4783\nOK inline_description=4783\nOK inline_image_upload=4784 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/09/rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00-inline-04.png\nOK inline_alt=4784\nOK inline_caption=4784\nOK inline_description=4784\nOK inline_image_upload=4785 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00-inline-03.png\nOK inline_alt=4785\nOK inline_caption=4785\nOK inline_description=4785\nOK inline_image_upload=4786 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/09/rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00-inline-07.png\nOK inline_alt=4786\nOK inline_caption=4786\nOK inline_description=4786\nOK inline_image_upload=4787 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/09/rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00-inline-06.png\nOK inline_alt=4787\nOK inline_caption=4787\nOK inline_description=4787\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00/",
+    "errors": []
+  }
+}

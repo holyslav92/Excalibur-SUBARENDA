@@ -1,5 +1,25 @@
 # WP publish log
 
+## B21 — 2026-09-14
+
+- **topic_id:** B21
+- **slug:** rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00
+- **title:** Ранний заезд оплатили. У двери с чемоданом — почти 5 часов ожидания
+- **post_id:** 4779
+- **permalink:** /blog/rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00/
+- **categories:** posutochnaya-arenda (101), sovety-gostyam (106)
+- **featured_image:** 4780
+- **inline_images:** 4781–4787 (7× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS (all img src → wp-content)
+- **dzen preview:** dzen_yzen_meta=1 (cover-1024x576 for /feed/zen/)
+- **interlink outbound:** 4 live /blog/ siblings (crosslink-qa PASS)
+- **interlink inbound:** B01 (3745), B18 (4724)
+- **publish_method:** sftp:22 (Cloud Agent; FTP PASV blocked)
+- **llms_deploy:** PASS (llms.txt + llms-full.txt)
+- **theme_contract_deploy:** WARN (script expects kov4eg-mcp-theme; live theme dir is `theme`)
+- **preflight fix:** funnel href punycode → Cyrillic domain for link-verify PASS
+
 ## B20 — 2026-09-13
 
 - **topic_id:** B20

@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "https://добрыйдом-72.рф/blog/pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate/",
+      "slug": "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+      "anchor": "история про 3 000 ₽ предоплаты и тишину в чате к вечеру: деньги ушли раньше ответа на главный вопрос. А вот история про",
+      "catalog_title": "Перевели 3 000 ₽ предоплатой. К вечеру — тишина в чате",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego/",
+      "slug": "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+      "anchor": "доплату за третьего у двери, когда условия внезапно меняются на пороге, где человеку труднее всего спорить.Ожидание с вещами — вообще знакомая посуточная поза. Иногда причина в домофоне:",
+      "catalog_title": "Оплатили за двоих. У двери попросили доплату за третьего",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda/",
+      "slug": "kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda",
+      "anchor": "код прислали, а дверь молчит двадцать минут. Иногда проблема возникает на другом конце поездки:",
+      "catalog_title": "Код уже есть. Только в подъезд не попасть — 20 минут с чемоданом",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu/",
+      "slug": "vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu",
+      "anchor": "выезд в двенадцать, поезд позже и чемоданы между ними. Поводы разные, картина одна: закрытая дверь, вещи, часы.И не надо путать хранение багажа с ранним заездом. Оставить чемодан и погулять — нормальный выход, если нужно переждать пару часов. Но если человек заплатил за возможность после поезда зайти, умыться и лечь спать, камера хранения не заменяет эту услугу.А для вас ранний заезд — это строчка в объявлении или ключ в руке в согласованный час? Напишите, что вам отвечали на вопрос об уборке до оплаты, в",
+      "catalog_title": "Выезд в полдень. Поезд через 4 часа — чемоданы у подъезда",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "outbound_unique_slugs": [
+    "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+    "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+    "kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda",
+    "vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B21-rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}
