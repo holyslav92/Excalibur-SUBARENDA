@@ -1413,3 +1413,178 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+---
+
+## LESSON-20260914-0943-B22-passport-selfie-before-code
+status: proposed
+topic_id: B22
+category: utility
+confidence: low
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP. Урок из publish-артефактов: title-brief.json, description-brief.json, case-delivery-gate PASS, article.html, research-notes hook `passport_checkin_photo`.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest BLOCKER (INC-20260903-0640, INC-20260914-0943).
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Two-beat H1 «Оплатили 3 ночи. Фото паспорта в чат — код не пришёл, багаж у двери»: оплата → контрфакт (документы отправлены, кода нет) + prop (багаж у двери), не how-to.
+- §1: цитата «Пришлите паспорт и селфи — код пришлю сразу», 12 300 ₽ за три ночи до идентичности хоста; «в течение пяти минут» → тишина; «напишите на другой номер».
+- Разведение «паспортные данные для договора» vs «полный разворот + селфи с лицом в чате»; H2 «Паспорт могут спросить. Но не так» с Суточно.ру (текст, не фото) и 152-ФЗ disclaimer.
+- Разведение сценариев: не B01 (чужая дверь), не B08 (тишина без паспортного угла), не B13 (пустая ключница), не B18 (домофон), не B21 (ранний заезд) — конфликт «документы до кода → доступ не выдан».
+- Klyshin «Сначала проверка. Потом перевод.» + чеклист из 7 пунктов после «Мой вывод как практика»; вопрос-отмычка «Код приходит до передачи документов или после?» → TG/MAX mid-body.
+- Контекст MAX Digital ID (с 01.09.2026, отели 50+ номеров) vs статичное фото в чате — не юридический гайд, anti-misuse.
+- Interlink spine: B01 wrong-door, B08 предоплата+тишина, B18 домофон, B13 пустая ключница — одна красная линия «гость у двери с багажом».
+- Wordstat P0 spine «квартиры посуточно тюмень» 4 805 (Tyumen) / 10 133 (RU); узкие «паспорт при заселении» 96 / «фото паспорта» 47 (RF) — честный sub-angle, не binary skip.
+- Description не дублирует H1: «Паспорт и селфи — код сразу» + чемодан у закрытой двери (description-brief PASS).
+- Cover-QA PASS: gen_only_human_v1, 4 PNG, comparison/workflow/checklist inline frames.
+
+### Change
+- В `passport_checkin_photo` кейсах в §1 сразу фиксировать **три слоя**: (1) сумма за N ночей + цитата «код сразу», (2) что именно просят (разворот + селфи vs текстовые данные), (3) отсутствие адреса/этажа/кода после отправки — не раскрывать порядок «доступ vs данные» только во втором H2.
+- Scout handoff: при hook `passport_checkin_photo` логировать original Klyshin «Сначала документы — потом ключ» + final P0 spine Tyumen + anti-dup B01/B08/B13/B18/B21.
+
+### Never again
+- Строить passport-кейс как юридический гайд по 152-ФЗ или обвинение всех хостов в мошенничестве.
+- Смешивать B08 (тишина после предоплаты без паспортного угла) и B22 (документы отправлены, кода нет).
+- Принимать «данные для договора» за требование селфи с паспортом в личном чате до способа входа.
+- Представлять MAX Digital ID как обязательный стандарт для всех квартир посуточно.
+- Советовать повторный перевод «для ускорения кода» или пересылать SMS-коды.
+- How-to до морали; финал «Наш вывод простой».
+
+### Proposed apply
+- Scout: hook `passport_checkin_photo` → handoff lockpick (текст vs фото vs селфи + порядок до/после кода) + final P0 spine Tyumen + anti-dup access siblings.
+- Review only; Writer prompt не трогать автоматически.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260914-0943-B22-documents-order-door-leverage
+status: proposed
+topic_id: B22
+category: structure
+confidence: low
+
+### Evidence
+- artifact: title-brief.json#angle
+  finding: angle «Гость оплатил проживание, отправил документы для договора и остался у подъезда с багажом без обещанного кода»; opening-meta-gate PASS; H2 «Где в переписке перестаёт быть спокойно» + «Сначала доступ, потом данные».
+- metrika_signal: none (credentials unavailable; causal retention не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Слой «оплата → документы в чат → обещание 5 минут → 40 минут у двери → другой номер менеджера» — asymmetric moment после 12 300 ₽.
+- Блок «порядок наоборот»: нормальная последовательность (объект, даты, инструкция, код) vs «сначала разворот и селфи» — объясняет leverage без злодейства.
+- Контраст Костарика/YouRenta (код после подтверждения) vs кейс (документы до кода) — utility-якоря без overpromise.
+- Красные флаги в одном блоке: другой чат, SMS-код, «бронь слетит», давление у подъезда с ребёнком.
+- Связка access-timing spine через interlink B01, B08, B18, B13 — не дублировать B21 early-checkin.
+
+### Change
+- Для `passport_checkin_photo` hooks всегда включать **documents-before-access temporal leverage** (чемодан у подъезда, ребёнок, чужой номер) в utility-блок — не только список красных флагов.
+- При interlink — sibling про access chain (B01 door, B18 domofon, B13 keybox, B08 silence) одной линией «документы ≠ ключ от квартиры».
+
+### Never again
+- Писать passport-кейс только про 152-ФЗ и Суточно.ру, игнорируя asymmetric moment (уже отдал фото, некуда деться).
+- Финал «Наш вывод простой» вместо «Мой вывод как практика».
+
+### Proposed apply
+- Writer checklist (review-only): passport_checkin_photo + door_wait → один абзац про asymmetric moment после «код через пять минут».
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260914-0943-B22-title-paid-docs-no-code-reveal
+status: proposed
+topic_id: B22
+category: voice
+confidence: low
+
+### Evidence
+- artifact: title-brief.json / derouter-title-output.json
+  finding: Klyshin hook «Сначала документы — потом ключ» → финальный H1 «Оплатили 3 ночи. Фото паспорта в чат — код не пришёл, багаж у двери»; klyshin_title_shape:1; scout dzen_shape «Оплатили сутки. Попросили фото паспорта в чат — код так и не прислали».
+- metrika_signal: none (credentials unavailable; causal CTR не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Cable pain-scene: оплата за N ночи + контрфакт (фото в чат, кода нет) + prop (багаж у двери), без SEO-хвоста «паспорт при заселении посуточно».
+- Description rhythm klyshin_case_hook: «Паспорт и селфи — код сразу» + чемодан (not_equal_title PASS).
+- Cover-text sticky «Сначала проверка, потом перевод» + wordstat spine «квартиры посуточно тюмень» на обложке.
+- «40 минут» и «другой номер» — в теле, не duty-log в §1.
+
+### Change
+- Для passport_checkin hooks: prefer **paid nights + docs-in-chat + no-code counterfact + door prop** over narrow «фото паспорта посуточно» SEO lead.
+- Title: двухчастный ритм (оплата / документы+отсутствие кода+дверь) > compound «селфи + 152-ФЗ + MAX ID» spoiler.
+
+### Never again
+- H1-спойлер со всей перепиской и красными флагами — оставлять в utility H2 и чеклисте.
+- Description, дублирующий H1 про «3 ночи» и «код не пришёл» без контраста «код сразу».
+
+### Proposed apply
+- Title/Description review: passport_checkin_photo — paid action + docs counterfact + door prop > passport-keyword H1.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260914-0943-B22-publish-crosslink-wp-rubric-preflight
+status: proposed
+topic_id: B22
+category: other
+confidence: high
+
+### Evidence
+- artifact: memory/pipeline-fix-queue.md#INC-20260914-0939
+  finding: crosslink-qa BLOCK: anchor genitive «кода» vs catalog nominative «код»; manual rewrite → PASS.
+- artifact: memory/pipeline-fix-queue.md#INC-20260914-0940
+  finding: article.meta.json lacked wp_category_slugs; publish added dogovor-i-pravila for passport/contract angle.
+- metrika_signal: none (pipeline incident; не поведенческий сигнал)
+
+### Named blockers
+- ASSUMED_BEHAVIOR
+
+### Keep
+- Publish live-page PASS post 4791; categories 101+103; 3 inline figures; crosslink to B01/B08/B18/B13.
+
+### Change
+- Crosslink anchors with RU inflection must match catalog titles (durable: ru_stem_variants in crosslink QA).
+- WP secondary rubric dogovor-i-pravila must infer from title-brief passport/договор keywords when meta empty (durable: infer_secondary_slugs_from_brief).
+
+### Never again
+- Publish with genitive-only anchor tokens that fail crosslink QA.
+- Publish passport/contract articles with only default posutochnaya-arenda rubric.
+
+### Proposed apply
+- Publish runbook: preflight crosslink-qa + wp-categories-gate before wp_publish (fixes already in INC resolutions).
+
+### Durable applied
+- scripts/excalibur_blog_crosslink_qa_gate.py — ru_stem_variants() (INC-20260914-0939, commit 79abf84)
+- scripts/excalibur_blog_wp_categories.py — infer_secondary_slugs_from_brief() (INC-20260914-0940, commit c3d25c3)
+- rollback: revert crosslink_qa/wp_categories commits if matcher over-stems legitimate mismatches
+
+### Resolution
+status: recorded
