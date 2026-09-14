@@ -1277,3 +1277,139 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+---
+
+## LESSON-20260914-0707-B21-early-checkin-paid-vs-cleaning
+status: proposed
+topic_id: B21
+category: utility
+confidence: low
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP. Урок из publish-артефактов: title-brief.json, description-brief.json, case-delivery-gate PASS, article.html, research-notes hook `early_checkin_cleaning`.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest BLOCKER (INC-20260903-0640).
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Two-beat H1 «Ранний заезд оплатили. У двери с чемоданом — почти 5 часов ожидания»: оплата → контрфакт ожидания у двери + prop (чемодан), не how-to.
+- §1: цитата «Мы оплатили ранний заезд. Где ключ?» → «До обеда не готово, уборка»; 1 500 ₽ доплаты, 890 ₽ кофе+такси, приезд 9:10 при согласованном 9:00; editorial disclaimer — не тюменский прайс.
+- Разведение «ранний заезд согласован» vs «квартира убрана, бельё сменено, ключ готов»; H2 «Между выездом и ключом есть работа» с окном 2–3 / 4–5 ч turnover.
+- Вопрос-отмычка «Во сколько квартира свободна после предыдущих гостей и что именно входит в «ранний заезд» — уборка, бельё, ключ?» → TG/MAX mid-body.
+- «Сначала проверка. Потом перевод.» + чеклист из 5 пунктов после «Мой вывод как практика».
+- Разведение хранения багажа vs раннего заезда — явный абзац, anti-dup B06 (поздний выезд/чемоданы).
+- Interlink spine: B08 предоплата+тишина, B04 доплата у двери, B18 домофон+ожидание, B06 чемоданы между — одна красная линия «закрытая дверь, вещи, часы».
+- Wordstat P0 spine «квартиры посуточно тюмень» 4 826 (Tyumen); «ранний заезд посуточно» 273 (RF) — честный sub-angle, не binary skip.
+- Description не дублирует H1: «доплата не отменяет уборку до обеда» + чемодан у подъезда (description-brief PASS).
+- Cover-QA PASS: gen_only_human_v1, 4 PNG + factory logo, no phone on cover.
+
+### Change
+- В `early_checkin_cleaning` кейсах в §1 сразу фиксировать **три слоя**: (1) сумма доплаты + согласованный час, (2) ответ хоста про уборку/готовность, (3) реальное время ожидания (почти 5 ч) — не раскрывать turnover-математику только во втором H2.
+- Scout handoff: при hook `early_checkin_cleaning` логировать original Klyshin «Ранний заезд обещали. Ключи — только после уборки» + final P0 spine Tyumen + anti-dup B06 late-checkout.
+
+### Never again
+- Строить early-checkin кейс как юридический спор или how-to «как добиться раннего заезда».
+- Смешивать B06 (поздний выезд, чемоданы до поезда) и B21 (утро до стандартного заселения, уборка после прежних гостей).
+- Принимать «ранний заезд возможен» / доплату за ранний заезд без вопроса про выезд прежних гостей и час готовности.
+- Путать камеру хранения / «оставьте чемодан» с оплаченным ранним заселением после ночного поезда.
+- Советовать вход до уборки «переждать» без предупреждения про чужое бельё и посуду.
+- Выдавать 1 500 ₽ / 890 ₽ за рыночные тарифы без editorial disclaimer.
+- How-to до морали; финал «Наш вывод простой».
+
+### Proposed apply
+- Scout: hook `early_checkin_cleaning` → handoff lockpick (выезд прежних + час уборки + ключ) + final P0 spine Tyumen + anti-dup B06.
+- Review only; Writer prompt не трогать автоматически.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260914-0707-B21-turnover-day-suitcase-leverage
+status: proposed
+topic_id: B21
+category: structure
+confidence: low
+
+### Evidence
+- artifact: title-brief.json#angle
+  finding: angle «Гость утром оказался у двери с чемоданом и почти пять часов ждал заселения, потеряв 890 ₽ на кафе и такси»; opening-meta-gate PASS; H2 «Где надо было остановиться до перевода».
+- metrika_signal: none (credentials unavailable; causal retention не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Слой «ночной поезд → 9:10 у подъезда → уборка до обеда → 14:00 ключ» — asymmetric moment после 1 500 ₽; не прогулка по желанию.
+- Блок «вы приехали раньше» vs «9:10 при согласованном 9:00» — снимает формальную отговорку без обвинения.
+- Контраст «доплата = готовая квартира» (гость) vs «доплата без проверки turnover» (хост) — объясняет mismatch без злодейства.
+- Два типа раннего заезда: пустая квартира vs день смены жильцов — surprising_fact из research в теле.
+- Связка money-timing spine через interlink B08 (тишина), B04 (дверь), B18 (подъезд) — не дублировать B06 late-checkout.
+
+### Change
+- Для `early_checkin_cleaning` hooks всегда включать **turnover temporal leverage** (ночная дорога, чемодан у подъезда, часы до стандартного 14:00) в utility-блок — не только математику 2–3 / 4–5 ч уборки.
+- При interlink — sibling про access/wait (B18 domofon, B08 silence, B06 luggage) одной линией «оплата ≠ ключ в руке».
+
+### Never again
+- Писать early-checkin кейс только про окно 12:00–14:00, игнорируя asymmetric moment (уже оплатил, уже у двери, некуда деться).
+- Финал «Наш вывод простой» вместо «Мой вывод как практика».
+
+### Proposed apply
+- Writer checklist (review-only): early_checkin + turnover_day → один абзац про asymmetric moment после доплаты и ночной дороги.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260914-0707-B21-title-paid-wait-reveal
+status: proposed
+topic_id: B21
+category: voice
+confidence: low
+
+### Evidence
+- artifact: title-brief.json / research-notes
+  finding: Klyshin hook «Ранний заезд обещали. Ключи — только после уборки» → финальный H1 «Ранний заезд оплатили. У двери с чемоданом — почти 5 часов ожидания»; klyshin_title_shape:1; slug сохранил 9-10 и cleaning до 14:00.
+- metrika_signal: none (credentials unavailable; causal CTR не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Cable pain-scene: «оплатили ранний заезд» (действие/деньги) + контрфакт «почти 5 часов у двери» + prop (чемодан), без SEO-хвоста «ранний заезд посуточно».
+- Description rhythm klyshin_case_hook: «Ранний заезд оплатили — где ключ?» + «уборка до обеда» (not_equal_title PASS).
+- Cover-text sticky «Сначала проверка, потом перевод» + wordstat spine «квартиры посуточно тюмень» на обложке.
+- 9:10 vs 9:00 — в slug/cover stickers, не duty-log в §1; opening-meta-gate PASS.
+
+### Change
+- Для early_checkin hooks: prefer **paid action + door wait + measurable hours + prop** over narrow «ранний заезд посуточно» SEO lead или HH:MM spoiler в H1.
+- Title: двухчастный ритм (оплата / контрфакт ожидания) > compound «9:10 + уборка + 14:00 + 1500 ₽» spoiler.
+
+### Never again
+- H1-спойлер со всей turnover-математикой и списком вопросов — оставлять в utility H2 и чеклисте.
+- Description, дублирующий H1 про «пять часов» без контраста «где ключ?» vs «уборка до обеда».
+
+### Proposed apply
+- Title/Description review: early_checkin_cleaning — paid action + wait hours + prop > early-checkin-keyword H1.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
