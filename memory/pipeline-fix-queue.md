@@ -1439,7 +1439,7 @@ files_changed:
 checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_crosslink_qa_gate.py`
 - `python3 -m unittest tests.test_crosslink_qa_gate.CrosslinkQaGateTests.test_anchor_matches_ru_inflection_koda_vs_kod -v`
-commit: pending
+commit: 79abf84
 
 ## INC-20260914-0940 — wp_category_slugs missing before publish (B22)
 
@@ -1484,4 +1484,4 @@ files_changed:
 checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_wp_categories.py`
 - `python3 -m unittest tests.test_wp_categories_interlink.WpCategoriesInterlinkTests.test_wp_categories_infer_dogovor_from_title_brief -v`
-commit: pending
+commit: c3d25c3
