@@ -1,0 +1,10 @@
+{
+  "topic_id": "B23",
+  "description": "«Уборка включена» — а за простыню счёт у двери. В Тюмени Добрый дом разбирает, как не выяснять правила текстиля в тот момент, когда такси уже ждёт.",
+  "rhythm": "klyshin_case_hook",
+  "geo": "Тюмень",
+  "author_brand": "Добрый дом",
+  "not_equal_title": true,
+  "not_truncated_lead": true,
+  "verdict": "PASS"
+}

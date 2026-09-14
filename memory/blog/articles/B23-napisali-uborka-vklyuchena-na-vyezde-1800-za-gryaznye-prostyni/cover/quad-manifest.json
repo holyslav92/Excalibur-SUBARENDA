@@ -1,0 +1,127 @@
+{
+  "topic_id": "B23",
+  "slug": "napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "Уборка включена — 1 800 за простыню",
+  "cover_hook_highlight": "простыню",
+  "cover_headline_line1": "Уборка включена",
+  "cover_headline_line2": "1 800 за простыню",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Grsai draw API 2K — 2 canvases × 4 panels. Logo factory paste cover + inline_1/3/7. Phone IN scene on cover.",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "снять квартиру посуточно в тюмени"
+  ],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "Гость с чемоданом у двери: хост разворачивает телефон с фото смятой простыни, крупный кириллический хук на табло/доске; человек в кадре — не пустая прихожая",
+    "location": "Ранний сентябрь 2026 солнечный день: прихожая посуточной квартиры Тюмени, тёплый дневной свет, осенние деревья за окном — без снега и зимы",
+    "meme": "photoreal zero cat on cover; tiny people-meme reaction sticker ≤12% on inline_6 only — max one cat-meme family across all 8 frames = zero cat",
+    "prop_set": "смартфон фото простыни 1800₽ чемодан такси за окном ключи скрин карточки уборка включена телефон +7 (993) 574-83-22 на деревянном табло",
+    "sticker_set": "квартиры посуточно тюмень уборка включена постельное белье",
+    "joke": "В карточке «уборка включена» — а на выезде фото простыни и 1 800 ₽ у двери перед поездом"
+  },
+  "cover_emotion": "Шок на пороге: три ночи прожил, а хост показывает фото белья и требует 1 800 ₽ когда такси уже ждёт",
+  "cover_scene": "Прихожая сентябрь: гость с чемоданом, хост с телефоном-фото простыни; хук на табло; телефон на табло; pad TR.",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "scene_hint": "Ранняя осень сентябрь 14:30: гость с чемоданом у двери, хост показывает телефон с фото смятой простыни; LARGE Cyrillic «Уборка включена — 1 800 за простыню» gold «простыню»; sticky «А бельё — отдельно»; phone +7 (993) 574-83-22 on wood tablo flat text NOT pill; taxi visible through window; TOP-RIGHT clean pad 8-12% NO logo.",
+      "alt": "Гость с чемоданом на выезде из посуточной квартиры в Тюмени: хост показывает фото простыни и требует 1 800 ₽, хотя в объявлении было «уборка включена».",
+      "meme_caption_ru": "",
+      "role": "cover_editorial_hero",
+      "sticky": "А бельё — отдельно"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "scene_hint": "Сравнение: карточка «уборка включена» vs счёт 10 800 за три ночи. Pad TR for factory logo.",
+      "alt": "Три ночи за 10 800 ₽: в карточке написано «уборка включена», но отдельной строки про бельё не было.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Что именно здесь сломалось",
+      "visual_type": "comparison_table_ui",
+      "labels": ["три ночи", "10 800 рублей", "уборка включена"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "scene_hint": "Выезд: такси ждёт, ключи ещё у гостя, спорить некогда. NO logo TR.",
+      "alt": "На выезде такси уже под окнами, ключи ещё не сданы — времени оспаривать доплату нет.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Что именно здесь сломалось",
+      "visual_type": "workflow_diagram",
+      "labels": ["выезд из квартиры", "такси ждёт", "ключи у гостя"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "scene_hint": "Телефон: фото простыни, пятно у края, вспышка. Pad TR for factory logo.",
+      "alt": "На экране телефона — фото смятого белья с пятном у края, снятое вспышкой на выезде.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Что именно здесь сломалось",
+      "visual_type": "checklist_board",
+      "labels": ["фото простыни", "пятно у края", "вспышка телефона"]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "scene_hint": "1 800 ₽ доплата — правила не показали заранее. NO logo.",
+      "alt": "Требование 1 800 ₽ за простыню без ссылки на заранее показанное правило — только фото и сумма.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Где проходит граница между «пожил» и «испортил»",
+      "visual_type": "fact_card",
+      "labels": ["1 800 рублей", "платить сейчас", "правила не показали"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "scene_hint": "Залог 2–5 тысяч — не доплата, не пустой чек. NO logo.",
+      "alt": "Депозит 2 000–5 000 ₽ — это залог, а не карт-бланш на любую доплату у двери.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Где проходит граница между «пожил» и «испортил»",
+      "visual_type": "infographic_card",
+      "labels": ["залог 2–5 тысяч", "не доплата", "не пустой чек"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "scene_hint": "Пять минут фото при заезде: кровать, бельё, ванная, кухня; tiny people-meme sticker ≤12% bottom corner — NO cat. NO logo.",
+      "alt": "При заселении за пять минут сфотографировать кровать, бельё, ванную и кухню — чтобы на выезде был факт, а не «мне кажется».",
+      "meme_caption_ru": "",
+      "h2_anchor": "Почему давление появляется именно на выезде",
+      "visual_type": "labeled_checklist",
+      "labels": ["пять минут фото", "бельё при заезде", "ванная и кухня"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "scene_hint": "Попросить основание, сверить с фото, потом перевод. Pad TR for factory logo.",
+      "alt": "Перед переводом попросить письменное основание и сверить претензию с фотографиями при заселении.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "workflow_diagram",
+      "labels": ["попросить основание", "сверить с фото", "потом перевод"]
+    }
+  }
+}

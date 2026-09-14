@@ -1413,3 +1413,139 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+---
+
+## LESSON-20260914-1333-B23-cleaning-included-vs-linen-checkout
+status: proposed
+topic_id: B23
+category: utility
+confidence: low
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP. Урок из publish-артефактов: title-brief.json, description-brief.json, case-delivery-gate PASS, article.html, research-notes hook `deposit_cleaning`, scout handoff 2026-09-14.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest BLOCKER (INC-20260903-0640, INC-20260914-1333).
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Two-beat H1 «В карточке: «уборка включена» — 3 ночи. Выезд: фото простыни — 1 800 ₽»: обещание в карточке → контрфакт фото простыни + ₽ на выезде, не how-to.
+- §1: 10 800 ₽ (3 ночи), цитата «уборка — это после вас, а простынь — отдельно»; два прочтения одной строки (гость vs хост) до идентичности хоста.
+- H2 «Где проходит граница между «пожил» и «испортил»» — три слоя: обычное использование / доп. уборка / порча; депозит 2 000–5 000 ₽ ≠ карт-бланш.
+- Klyshin «Нет. Так не заселяем.» + «Сначала проверка. Потом перевод.»; вопрос-отмычка «что входит в «уборку включена» — полы, бельё, стирка?» → TG/MAX mid-body.
+- Редакционный дисклеймер: 1 800 ₽ — сценарная сумма; FD Aparts 500–1 000 ₽ — пример правил оператора, не рыночная норма.
+- Interlink spine: B02 залог на выезде, B17 «коммуналка включена», B10 «всё включено», B21 ранний заезд/уборка — одна красная линия «слово до брони ≠ строка на выходе».
+- Wordstat P0 spine «квартиры посуточно тюмень» 4 805 (Tyumen); «постельное белье посуточно» 239 — узкий угол; «уборка посуточно» 2 018 mixed intent — не P0.
+- Description не дублирует H1: «счёт у двери» + такси ждёт (description-brief PASS).
+- Anti-dup явный: не B11 полотенца, не B17 счётчики, не B21 turnover wait, не B22 паспорт/код.
+- Cover-QA PASS: gen_only_human_v1, 2× Grsai quad, drawn_logo_gate false-positive inline-04/05/06 shipped per cap.
+
+### Change
+- В `deposit_cleaning` кейсах в §1 сразу фиксировать **три слоя**: (1) цитата «уборка включена» в карточке, (2) отсутствие правил по текстилю до брони, (3) фото простыни + 1 800 ₽ на выезде — не раскрывать границу «пожил/испортил» только во втором H2.
+- Scout handoff: при hook `deposit_cleaning` логировать original Klyshin «три ночи — уборка включена — фото простыни» + final P0 spine Tyumen + anti-dup B17/B11/B21.
+
+### Never again
+- Строить cleaning/linen кейс как юридический гайд по залогу или how-to «как вернуть деньги».
+- Смешивать B17 utilities checkout и B23 linen charge — разные hook_id.
+- Принимать «уборка включена» за автоматическое покрытие стирки/замены белья без itemized list.
+- Выдавать 1 800 ₽ или диапазон 500–1 000 ₽ за рыночную статистику без editorial disclaimer.
+- Считать смятую простыню после трёх ночей автоматической «порчей» без baseline-фото при заселении.
+- How-to до морали; финал «Наш вывод простой».
+
+### Proposed apply
+- Scout: hook `deposit_cleaning` → handoff lockpick (что входит в уборку + правила текстиля + baseline-фото) + final P0 spine Tyumen + anti-dup B17.
+- Review only; Writer prompt не трогать автоматически.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260914-1333-B23-checkout-sheet-photo-leverage
+status: proposed
+topic_id: B23
+category: structure
+confidence: low
+
+### Evidence
+- artifact: title-brief.json#angle
+  finding: angle «обещанная уборка не спасла от 1 800 ₽ за простыню перед поездом»; opening-meta-gate PASS; H2 «Почему давление появляется именно на выезде».
+- metrika_signal: none (credentials unavailable; causal retention не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Слой «чемодан в руке + билет на поезд + такси под окнами + ключи не сданы» — asymmetric moment после 10 800 ₽.
+- Блок «фото простыни без ссылки на правило» ↔ «три ночи платил, уборка в цене» — host-answer mismatch без B08-тишины.
+- Utility «фото при заселении за 5 минут» — снимает спор «мне кажется» на выходе; sibling B02 залог, B06 чемоданы между.
+- Контраст депозит vs доплата в дверях — объясняет leverage без злодейства.
+- Связка broad-promise spine через interlink B10/B17 — «включено» как ловушка, не дублировать B11 night shop.
+
+### Change
+- Для `deposit_cleaning` hooks всегда включать **checkout temporal leverage** (поезд через два часа, такси, чемодан) в utility-блок — не только перечень «пожил vs испортил».
+- При interlink — sibling про checkout surprises (B02 deposit, B17 meters, B06 luggage) одной линией «оплата завершена ≠ спор можно отложить».
+
+### Never again
+- Писать linen/checkout кейс только про правила стирки, игнорируя temporal leverage (когда исправить нечем).
+- Финал «Наш вывод простой» вместо «Мой вывод как практика».
+
+### Proposed apply
+- Writer checklist (review-only): deposit_cleaning + checkout → один абзац про asymmetric moment после «уборка включена» в карточке.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260914-1333-B23-title-card-vs-checkout-reveal
+status: proposed
+topic_id: B23
+category: voice
+confidence: low
+
+### Evidence
+- artifact: title-brief.json / title-user-prompt.md
+  finding: scout draft «Написали «уборка включена». На выезде — 1 800 ₽ за «грязные простыни»» → финальный H1 «В карточке: … — 3 ночи. Выезд: фото простыни — 1 800 ₽»; klyshin_title_shape:3; slug сохранил checkout angle.
+- metrika_signal: none (credentials unavailable; causal CTR не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Cable pain-scene: обещание в карточке (с контекстом «3 ночи») + temporal beat «выезд» + tangible counterfact (фото простыни) + ₽ (1 800), без SEO-хвоста «уборка посуточно».
+- Description rhythm klyshin_case_hook: «счёт у двери» + такси (not_equal_title PASS).
+- Cover-text two-beat «Уборка включена — 1 800 за простыню» + sticky «А бельё — отдельно» — дублирует H1-контраст без полного спойлера.
+- «Два часа до поезда» — в research/scout, не HH:MM в §1; opening-meta-gate PASS.
+
+### Change
+- Для deposit_cleaning hooks: prefer **card promise + stay duration + checkout beat + photo/₽ reveal** over narrow «грязные простыни» SEO lead.
+- Title: двухчастный ритм «в карточке / на выезде» > compound «три ночи + поезд + депозит + стирка» spoiler.
+
+### Never again
+- H1-спойлер со всей таксономией «пожил/испортил/депозит» — оставлять в utility H2 и чеклисте.
+- HH:MM в H1 (gate BLOCK).
+- Description, дублирующий H1 про «уборка включена» и 1 800 ₽ без контраста «такси ждёт».
+
+### Proposed apply
+- Title/Description review: deposit_cleaning — card vs checkout two-beat + ₽ > linen-keyword H1.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded

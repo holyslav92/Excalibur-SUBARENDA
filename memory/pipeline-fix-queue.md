@@ -270,7 +270,7 @@ files_changed:
 - `memory/pipeline-fix-queue.md`
 checks_run:
 - interlink retry → OK interlink_done (2 targets)
-commit: pending
+commit: 116ac04
 
 ## INC-20260901-0830 — Cloud Agent FTP PASV data channel timeout (B05 publish)
 
@@ -326,7 +326,7 @@ files_changed:
 checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_remote_transport.py scripts/excalibur_blog_wp_publish.py scripts/excalibur_blog_theme_contract_deploy.py scripts/excalibur_blog_dzen_cover_cache_bust.py`
 - `python3 -m unittest tests.test_publish_transport -v`
-commit: pending
+commit: 116ac04
 
 ## INC-20260901-1216 — llms deploy FTP-only upload on Cloud SFTP publish (B06)
 
@@ -375,7 +375,7 @@ checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_llms_deploy.py`
 - `python3 -m unittest tests.test_llms_deploy_transport tests.test_publish_transport -v`
 - `python3 scripts/excalibur_blog_published_titles.py` → titles=6
-commit: pending
+commit: 116ac04
 
 ## INC-20260902-0750 — published-titles stale after B07 publish
 
@@ -555,7 +555,7 @@ files_changed:
 checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_dzen_cover_cache_bust.py`
 - `python3 scripts/excalibur_blog_dzen_cover_cache_bust.py --slug pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate` (SFTP upload OK)
-commit: pending
+commit: 116ac04
 
 ## INC-20260905-1005-publish-body-probe-nbsp
 
@@ -926,7 +926,7 @@ files_changed:
 checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_cover_quad_prompt.py scripts/excalibur_blog_cover_inline_pad_clear.py`
 - `python3 scripts/excalibur_blog_cover_inline_pad_clear.py --article-dir memory/blog/articles/B14-napisali-tihij-dom-v-23-40-sosedi-vklyuchili-muzyku`
-commit: pending
+commit: 116ac04
 
 ## INC-20260908-0735 — Metrika credentials missing (Content-learner B14)
 
@@ -996,7 +996,7 @@ files_changed:
 - `memory/pipeline-fix-queue.md`
 checks_run:
 - B16 `cover/cover_qa.json` status PASS
-commit: pending
+commit: 116ac04
 
 ## INC-20260911-1040 — post-Sol missing inline figures / phantom h2_anchor (B16 publish)
 
@@ -1053,7 +1053,7 @@ files_changed:
 checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_cover_quad_split.py scripts/excalibur_blog_wp_publish.py`
 - `python3 -m unittest tests.test_cover_quad_inject -v`
-commit: pending
+commit: 116ac04
 
 ### Fixer resolution
 
@@ -1182,7 +1182,7 @@ files_changed:
 - `memory/pipeline-fix-queue.md`
 checks_run:
 - B17 `wp-publish-result.json` publish_method=sftp, live-page PASS
-commit: pending
+commit: 116ac04
 
 ## INC-20260912-1343 — Metrika credentials missing (Content-learner B18)
 
@@ -1338,7 +1338,7 @@ files_changed:
 checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_theme_contract_deploy.py`
 - `python3 -m unittest tests.test_theme_contract_deploy -v`
-commit: pending
+commit: 116ac04
 
 ## INC-20260914-0709 — Sol punycode funnel href vs Cyrillic CTA (B21 publish)
 
@@ -1394,7 +1394,7 @@ files_changed:
 checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_site_base.py scripts/excalibur_blog_link_verify.py scripts/excalibur_blog_community_cta_gate.py`
 - `python3 -m unittest tests.test_site_base_xlink tests.test_community_cta_punycode tests.test_theme_contract_deploy -v`
-commit: pending
+commit: 116ac04
 
 ## INC-20260914-0939 — crosslink anchor RU inflection mismatch (B22 publish)
 
@@ -1485,3 +1485,81 @@ checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_wp_categories.py`
 - `python3 -m unittest tests.test_wp_categories_interlink.WpCategoriesInterlinkTests.test_wp_categories_infer_dogovor_from_title_brief -v`
 commit: c3d25c3
+
+## INC-20260914-1335 — drawn_logo_gate terracotta UI card false positive (B23 Cover-QA)
+
+status: fixed
+run_date: 2026-09-14
+role: excalibur-blog-cover-qa
+topic_id: B23
+article_dir: memory/blog/articles/B23-napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni
+severity: low
+category: script
+
+### What went wrong
+
+- Cover-QA `forbid_ai_drawn_logo_cover` / `drawn_logo_gate` FAIL on inline-04/05/06 (no-logo slots: fact_card, infographic_card, labeled_checklist).
+- TR pad scored terracotta_ratio=100% with green_ratio=0 — infographic UI chrome fill, not brand lockup stack.
+- Shipped per 2-attempt cap after pad-clear + regen; visual review OK.
+
+### How the agent recovered this run
+
+- Cover-QA stamped PASS with note `drawn_logo_gate: FAIL inline-04/05/06 automated TR-pad score — visual OK`.
+- Publish + live-page PASS (post 4799).
+
+### Durable fix needed before next run
+
+- drawn_logo_gate must exempt high terracotta-only TR pad fills (≥85% terra, <2% green) on no-logo infographic panels.
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_drawn_logo_gate.py`
+- `tests/test_drawn_logo_gate.py`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-09-14
+fix_summary:
+- `is_ui_terracotta_card_pad_false_positive()` exempts terracotta UI card chrome (≥85% terra, <2% green) from drawn lockup detection (INC B23).
+- Regression test uses B23 inline-04/05/06 panels.
+files_changed:
+- `scripts/excalibur_blog_drawn_logo_gate.py`
+- `tests/test_drawn_logo_gate.py`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_drawn_logo_gate.py`
+- `python3 -m unittest tests.test_drawn_logo_gate.DrawnLogoGateTest.test_ui_terracotta_card_pad_exempt_on_no_logo_inlines -v`
+- B23 `excalibur_blog_drawn_logo_gate.py --article-dir …` → OK logo paste gates (slim)
+commit: 116ac04
+
+## INC-20260914-1333 — Metrika credentials missing (Content-learner B23)
+
+status: needs-human
+run_date: 2026-09-14
+role: excalibur-blog-content-learner
+topic_id: B23
+article_dir: memory/blog/articles/B23-napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni
+severity: medium
+category: env
+
+### What went wrong
+
+- `excalibur_blog_metrika_fetch.py --days 30 --ingest` → METRIKA CREDENTIALS BLOCKER (same root cause as INC-20260903-0640).
+
+### How the agent recovered this run
+
+- evidence_gate SKIP (no content-evidence-report.json); recorded 3 optional/low-confidence lessons in `memory/content-lessons.md`; no causal Metrika claims.
+
+### Durable fix needed before next run
+
+- Set YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets for tenant.
+
+### Fixer resolution
+
+status: needs-human
+reason: env-only blocker; duplicate of INC-20260903-0640
+needed_decision_or_secret: YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets

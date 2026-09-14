@@ -1,0 +1,27 @@
+{
+  "slug": "napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni",
+  "topic_id": "B23",
+  "permalink": "{{SITE_BASE}}/blog/napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B23-napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1139894,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4799 slug=napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni\nOK categories=101,102,104\nOK dzen_yzen_meta=1\nOK featured_image=4800\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4801 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni-inline-03.png\nOK inline_alt=4801\nOK inline_caption=4801\nOK inline_description=4801\nOK inline_image_upload=4802 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni-inline-02.png\nOK inline_alt=4802\nOK inline_caption=4802\nOK inline_description=4802\nOK inline_image_upload=4803 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni-inline-01.png\nOK inline_alt=4803\nOK inline_caption=4803\nOK inline_description=4803\nOK inline_image_upload=4804 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni-inline-05.png\nOK inline_alt=4804\nOK inline_caption=4804\nOK inline_description=4804\nOK inline_image_upload=4805 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni-inline-04.png\nOK inline_alt=4805\nOK inline_caption=4805\nOK inline_description=4805\nOK inline_image_upload=4806 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni-inline-06.png\nOK inline_alt=4806\nOK inline_caption=4806\nOK inline_description=4806\nOK inline_image_upload=4807 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni-inline-07.png\nOK inline_alt=4807\nOK inline_caption=4807\nOK inline_description=4807\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni/",
+    "errors": []
+  }
+}
