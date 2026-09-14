@@ -1,0 +1,101 @@
+{
+  "topic_id": "B22",
+  "canvas_file": "cover/canvas-slice4.png",
+  "layout": "2x2",
+  "pipeline": "slice4_grid_1x_image_api",
+  "inline_count": 3,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-slice4.png",
+      "batch_file": "cover/slice4-mcp-batch.json",
+      "prompt_file": "cover/slice4-mcp-prompt.txt",
+      "result_file": "cover/slice4-mcp-result.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    }
+  ],
+  "style_preset": "the_rieltor_twilight_gold",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "cover_hook": "Паспорт в чат — кода нет",
+  "cover_hook_highlight": "кода",
+  "cover_headline_line1": "Паспорт в чат",
+  "cover_headline_line2": "кода нет",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "cover_emotion": "тревога у чужой двери: документы ушли в мессенджер, обещанный код так и не пришёл",
+  "cover_scene": "Сентябрьское утро: семья с чемоданом у подъезда, на телефоне чат с фото паспорта и пустым полем «код»",
+  "cover_motifs": {
+    "composition": "family at apartment door phone passport chat empty code field suitcase on tile notice board headline",
+    "location": "early september 2026 sunny Tyumen apartment entryway warm daylight NOT winter no snow",
+    "meme": "zero stickers pure photoreal apartment scenes only",
+    "prop_set": "smartphone messenger passport selfie screenshot suitcase intercom tile receipt 12300",
+    "sticker_set": "none on gen_only",
+    "joke": "five minutes promise forty minutes at door with child and luggage"
+  },
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "фото паспорта при заселении"
+  ],
+  "mcp_note": "PRIMARY: Grsai GRSAI_PRIMARY_IMAGE_MODEL VIP — ONE 2048×1152 2×2 grid → slice 4. Factory logo paste cover tile ONLY after split.",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Семья с чемоданом у подъезда квартиры: на смартфоне переписка с отправленным фото паспорта, обещание «код через пять минут» и пустое поле доступа.",
+      "scene_hint": "Светлый подъезд сентябрь 2026: взрослый с чемоданом и ребёнком стоит у закрытой двери, чемодан на плитке; смартфон в руке — чат «пришлите паспорт и селфи», отправленное фото и «код через 5 мин» без ответа; на пробковой доске у домофона крупная кириллица «Паспорт в чат — кода нет» с выделенным «кода»; зелёные деревья за стеклом, без снега; TOP-RIGHT чистая стена для factory logo paste; без телефона-табло, без мемов, без логотипа в кадре.",
+      "meme_caption_ru": "",
+      "sticky": "Три ночи оплачены"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Паспорт могут спросить. Но не так",
+      "visual_type": "comparison_table_ui",
+      "scene_hint": "Светлый стол в квартире: две колонки на листе — «данные текстом для договора» vs «селфи с паспортом в чате»; рядом чек 12 300 ₽ и часы 40 мин; фотореал, без логотипа и без pill-телефона.",
+      "alt": "Сравнение минимальных данных для договора и избыточного запроса селфи с паспортом в мессенджере.",
+      "labels": [
+        "три ночи оплачены",
+        "двенадцать тысяч рублей",
+        "код не пришёл",
+        "сорок минут у двери",
+        "багаж на плитке"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Где в переписке перестаёт быть спокойно",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Схема на ватмане: красная цепочка «оплата → паспорт+селфи → другой номер → нет кода» vs зелёная «бронь → адрес → доступ → данные»; смартфон с серыми галочками; фотореал осень, без логотипа.",
+      "alt": "Неправильный порядок: сначала документы и перевод в другой чат, потом обещание кода, которое не выполняется.",
+      "labels": [
+        "паспорт и селфи",
+        "ответ через пять минут",
+        "проверка на другой номер",
+        "чат вне брони",
+        "код не пересылать"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Сначала доступ, потом данные",
+      "visual_type": "checklist_board",
+      "scene_hint": "Светлая кухня: чек-лист на магнитной доске — адрес, даты, способ входа письменно, потом минимальные данные; ключи и распечатка инструкции на столе; фотореал сентябрь, без стикеров и без логотипа.",
+      "alt": "Правильный порядок: подтверждённый объект и способ входа до передачи паспортных данных.",
+      "labels": [
+        "сначала проверка",
+        "потом перевод",
+        "адрес в чате",
+        "способ доступа письменно",
+        "тишина тридцать минут"
+      ]
+    }
+  },
+  "cover_keys_ru": []
+}
