@@ -270,7 +270,7 @@ files_changed:
 - `memory/pipeline-fix-queue.md`
 checks_run:
 - interlink retry → OK interlink_done (2 targets)
-commit: pending
+commit: 116ac04
 
 ## INC-20260901-0830 — Cloud Agent FTP PASV data channel timeout (B05 publish)
 
@@ -326,7 +326,7 @@ files_changed:
 checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_remote_transport.py scripts/excalibur_blog_wp_publish.py scripts/excalibur_blog_theme_contract_deploy.py scripts/excalibur_blog_dzen_cover_cache_bust.py`
 - `python3 -m unittest tests.test_publish_transport -v`
-commit: pending
+commit: 116ac04
 
 ## INC-20260901-1216 — llms deploy FTP-only upload on Cloud SFTP publish (B06)
 
@@ -375,7 +375,7 @@ checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_llms_deploy.py`
 - `python3 -m unittest tests.test_llms_deploy_transport tests.test_publish_transport -v`
 - `python3 scripts/excalibur_blog_published_titles.py` → titles=6
-commit: pending
+commit: 116ac04
 
 ## INC-20260902-0750 — published-titles stale after B07 publish
 
@@ -555,7 +555,7 @@ files_changed:
 checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_dzen_cover_cache_bust.py`
 - `python3 scripts/excalibur_blog_dzen_cover_cache_bust.py --slug pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate` (SFTP upload OK)
-commit: pending
+commit: 116ac04
 
 ## INC-20260905-1005-publish-body-probe-nbsp
 
@@ -926,7 +926,7 @@ files_changed:
 checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_cover_quad_prompt.py scripts/excalibur_blog_cover_inline_pad_clear.py`
 - `python3 scripts/excalibur_blog_cover_inline_pad_clear.py --article-dir memory/blog/articles/B14-napisali-tihij-dom-v-23-40-sosedi-vklyuchili-muzyku`
-commit: pending
+commit: 116ac04
 
 ## INC-20260908-0735 — Metrika credentials missing (Content-learner B14)
 
@@ -996,7 +996,7 @@ files_changed:
 - `memory/pipeline-fix-queue.md`
 checks_run:
 - B16 `cover/cover_qa.json` status PASS
-commit: pending
+commit: 116ac04
 
 ## INC-20260911-1040 — post-Sol missing inline figures / phantom h2_anchor (B16 publish)
 
@@ -1053,7 +1053,7 @@ files_changed:
 checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_cover_quad_split.py scripts/excalibur_blog_wp_publish.py`
 - `python3 -m unittest tests.test_cover_quad_inject -v`
-commit: pending
+commit: 116ac04
 
 ### Fixer resolution
 
@@ -1182,7 +1182,7 @@ files_changed:
 - `memory/pipeline-fix-queue.md`
 checks_run:
 - B17 `wp-publish-result.json` publish_method=sftp, live-page PASS
-commit: pending
+commit: 116ac04
 
 ## INC-20260912-1343 — Metrika credentials missing (Content-learner B18)
 
@@ -1338,7 +1338,7 @@ files_changed:
 checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_theme_contract_deploy.py`
 - `python3 -m unittest tests.test_theme_contract_deploy -v`
-commit: pending
+commit: 116ac04
 
 ## INC-20260914-0709 — Sol punycode funnel href vs Cyrillic CTA (B21 publish)
 
@@ -1394,7 +1394,7 @@ files_changed:
 checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_site_base.py scripts/excalibur_blog_link_verify.py scripts/excalibur_blog_community_cta_gate.py`
 - `python3 -m unittest tests.test_site_base_xlink tests.test_community_cta_punycode tests.test_theme_contract_deploy -v`
-commit: pending
+commit: 116ac04
 
 ## INC-20260914-0939 — crosslink anchor RU inflection mismatch (B22 publish)
 
@@ -1534,7 +1534,7 @@ checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_drawn_logo_gate.py`
 - `python3 -m unittest tests.test_drawn_logo_gate.DrawnLogoGateTest.test_ui_terracotta_card_pad_exempt_on_no_logo_inlines -v`
 - B23 `excalibur_blog_drawn_logo_gate.py --article-dir …` → OK logo paste gates (slim)
-commit: pending
+commit: 116ac04
 
 ## INC-20260914-1333 — Metrika credentials missing (Content-learner B23)
 
