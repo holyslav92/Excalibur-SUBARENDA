@@ -1,0 +1,118 @@
+{
+  "status": "PASS",
+  "topic_id": "B23",
+  "slug": "napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni",
+  "research_date": "2026-09-14",
+  "summary": "Research for guest CASE: listing promised «уборка включена» but checkout brought photo of used sheet and 1 800 ₽ charge for «грязное бельё» two hours before train. Fresh signals: Scout deposit_cleaning hook (2026-09-14), Dobriy Dom TG checkout photo advice (2026-09-13), Directline deposit/cleaning industry article (2026-08-07). Mechanics: distinguish standard turnover cleaning vs linen damage/extra cleaning; disclose rules before payment. Anti-dup vs B17/B02/B21/B22.",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Scout Klyshin deposit_cleaning editorial hook + Dobriy Dom TG 2026-09-13 + Directline.pro 2026-08-07",
+    "source_type": "community_and_industry",
+    "urls": [
+      "https://t.me/klyshin_A",
+      "https://t.me/Dobriy_dom_72/106",
+      "https://www.directline.pro/connect/p/zalog-pri-sdache-kvartiry-posutochno/"
+    ],
+    "accessed_at": "2026-09-14",
+    "note": "Composite guest case from Scout hook; not a verified transcript of one Tyumen booking. Distinct from B17 utilities checkout, B21 early check-in cleaning wait, B22 door/passport."
+  },
+  "freshness_audit": {
+    "research_date": "2026-09-14",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://t.me/Dobriy_dom_72/106",
+      "published_at": "2026-09-13",
+      "note": "Local tenant channel: photograph apartment state at check-in to avoid checkout disputes."
+    },
+    "additional_fresh_signals": [
+      {
+        "url": "https://t.me/klyshin_A",
+        "published_at": "2026-09-14",
+        "type": "scout_editorial",
+        "note": "deposit_cleaning hook from topic bank: included cleaning vs checkout linen charge 1 800 ₽."
+      },
+      {
+        "url": "https://www.directline.pro/connect/p/zalog-pri-sdache-kvartiry-posutochno/",
+        "published_at": "2026-08-07",
+        "type": "industry_article",
+        "note": "Deposit withhold rules require advance warning and photo evidence."
+      }
+    ]
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176", "225"],
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 4805,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "снять квартиру посуточно в тюмени",
+        "volume": 1490,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "постельное белье посуточно",
+        "volume": 239,
+        "region": "225"
+      },
+      {
+        "phrase": "уборка посуточно",
+        "volume": 2018,
+        "region": "225",
+        "note": "host/job bias — not standalone P0"
+      },
+      {
+        "phrase": "уборка на выезде посуточно",
+        "volume": 0,
+        "region": "225",
+        "note": "empty cluster"
+      }
+    ]
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "No bank/developer/JKH tariff digits; FD Aparts and Directline figures cited as operator/industry examples only",
+    "verified_claims": 0,
+    "entities_checked": [],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "memory/blog/articles/B23-napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni/derouter-opus-stamp-research.json",
+    "first_attempt": "BLOCKER_META",
+    "second_attempt": "PASS"
+  },
+  "source_count": 11,
+  "limitations": [
+    "No verified transcript of a specific Tyumen booking; case mechanic from Scout editorial deposit_cleaning hook.",
+    "Live Klyshin channel post on 2026-09-14 covers purchase documents, not this cleaning hook — hook is from topic bank angle.",
+    "FD Aparts tariff table is one Krasnodar operator example, not Tyumen market norm.",
+    "Prav.io and T-J are consultative/community context, not binding legal guidance.",
+    "Woman.ru thread on cleaning disputes could not be fetched (HTTP 428); not used as primary source."
+  ],
+  "writer_safe_urls": [
+    "https://t.me/Dobriy_dom_72",
+    "https://t.me/Dobriy_dom_Tyumen",
+    "https://max.ru/id660300569233_biz",
+    "https://добрыйдом-72.рф/",
+    "https://добрыйдом-72.рф/booking/",
+    "https://добрыйдом-72.рф/blog/",
+    "https://t-j.ru/posutochno-guests-cleaning/",
+    "https://www.directline.pro/connect/p/zalog-pri-sdache-kvartiry-posutochno/",
+    "https://www.directline.pro/connect/p/pravila-prozhivaniya-v-posutochnoj-kvartire/",
+    "https://fd-aparts.ru/pravila",
+    "https://new.realtycalendar.ru/blog/osnovnye-problemy-pri-sdache-kvartiry"
+  ],
+  "errors": []
+}
