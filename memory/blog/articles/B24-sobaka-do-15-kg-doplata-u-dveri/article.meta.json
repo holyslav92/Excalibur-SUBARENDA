@@ -3,6 +3,10 @@
   "h1": "В чате: «собака до 15 кг». У двери: «крупная» — 2 500 ₽",
   "slug": "sobaka-do-15-kg-doplata-u-dveri",
   "topic_id": "B24",
+  "wp_category_slugs": [
+    "posutochnaya-arenda",
+    "dogovor-i-pravila"
+  ],
   "author_id": "dobry-dom",
   "article_mode": "B",
   "description": "В чате: «собака до 15 кг». У двери: «крупная» — 2 500 ₽",
