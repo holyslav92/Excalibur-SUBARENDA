@@ -1,0 +1,21 @@
+{
+  "article_dir": "/workspace/memory/blog/articles/B24-vyezd-v-polden-v-11-45-poprosili-900-za-lishnij-chas",
+  "panels_cleared": [
+    {
+      "file": "cover/inline-01.png",
+      "pad_clear_passes": 6,
+      "pre_composite_invalidated": true
+    },
+    {
+      "file": "cover/inline-02.png",
+      "pad_clear_passes": 6,
+      "pre_composite_invalidated": true
+    },
+    {
+      "file": "cover/inline-03.png",
+      "pad_clear_passes": 5,
+      "pre_composite_invalidated": true
+    }
+  ],
+  "count": 3
+}

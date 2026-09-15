@@ -142,8 +142,8 @@
   ],
   "manifest": "cover/quad-manifest.json",
   "html_inject": [
-    "injected inline_1 after H2 — Уборщица у двери — ещё не счётчик",
-    "injected inline_2 after H2 — На выезде особенно легко давить",
-    "injected inline_3 after H2 — Когда доплата честная"
+    "skip inline_1: already correct under H2 — Уборщица у двери — ещё не счётчик",
+    "skip inline_2: already correct under H2 — На выезде особенно легко давить",
+    "skip inline_3: already correct under H2 — Когда доплата честная"
   ]
 }
