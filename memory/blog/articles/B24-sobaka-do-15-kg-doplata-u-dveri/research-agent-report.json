@@ -1,0 +1,117 @@
+{
+  "status": "PASS",
+  "topic_id": "B24",
+  "slug": "sobaka-do-15-kg-doplata-u-dveri",
+  "research_date": "2026-09-15",
+  "summary": "Research for guest CASE: chat promised dog up to 15 kg, at door host calls pet «large» and demands 2 500 ₽ extra or refuses check-in. Fresh signals: Scout dog_breed_fee hook (2026-09-15), 9111.ru pet-fee disclosure article (2026-09-14), Dobriy Dom TG clarify-before-booking (2026-09-13–14). Mechanics: four pet-policy points (weight, breed/size, surcharge type, deposit) must be confirmed in writing before payment. Anti-dup vs B21/B22/B23/B04 and WP dog 3000 duplicate.",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Scout Klyshin dog_breed_fee editorial hook + 9111.ru 2026-09-14 + Dobriy Dom TG 2026-09-13–14",
+    "source_type": "community_and_editorial",
+    "urls": [
+      "https://t.me/klyshin_A",
+      "https://pub.9111.ru/legal/25063896-gostinitsa-prosit-1-500--za-sobaku-zakonna-li-takaya-doplata/",
+      "https://t.me/Dobriy_dom_72"
+    ],
+    "accessed_at": "2026-09-15",
+    "note": "Composite guest case from Scout hook; not a verified transcript of one Tyumen booking. Distinct from B21 early check-in, B22 door/passport, B23 checkout cleaning."
+  },
+  "freshness_audit": {
+    "research_date": "2026-09-15",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://pub.9111.ru/legal/25063896-gostinitsa-prosit-1-500--za-sobaku-zakonna-li-takaya-doplata/",
+      "published_at": "2026-09-14",
+      "note": "Fresh publication on pet surcharge disclosed only at check-in; parallel to apartment door surprise, hotel context only."
+    },
+    "additional_fresh_signals": [
+      {
+        "url": "https://t.me/klyshin_A",
+        "published_at": "2026-09-15",
+        "type": "scout_editorial",
+        "note": "dog_breed_fee hook from topic bank: chat allows dog, door demands 2 500 ₽ for large breed."
+      },
+      {
+        "url": "https://t.me/Dobriy_dom_72",
+        "published_at": "2026-09-13",
+        "type": "local_tenant_channel",
+        "note": "Clarify listing conditions before booking; document state at check-in."
+      }
+    ]
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176", "225"],
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 4805,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "снять квартиру посуточно в тюмени",
+        "volume": 1490,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "с собакой посуточно",
+        "volume": 10,
+        "region": "55+11176",
+        "note": "weak local pet cluster"
+      },
+      {
+        "phrase": "залог посуточно",
+        "volume": 29,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "посуточно с собакой",
+        "volume": 986,
+        "region": "225",
+        "note": "RU-wide supporting intent — not Tyumen"
+      }
+    ]
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "No bank/developer/JKH tariff digits; listing and industry figures cited as examples only",
+    "verified_claims": 0,
+    "entities_checked": [],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "memory/blog/articles/B24-sobaka-do-15-kg-doplata-u-dveri/derouter-opus-stamp-research.json",
+    "first_attempt": "BLOCKER_META",
+    "second_attempt": "PASS"
+  },
+  "source_count": 11,
+  "limitations": [
+    "No verified transcript of a specific Tyumen booking; case mechanic from Scout editorial dog_breed_fee hook.",
+    "Live Klyshin channel posts in Sept 2026 cover purchase/inheritance topics, not this pet hook — hook is from topic bank angle.",
+    "9111.ru article is hotel/reception context; use only as disclosure parallel, not legal brief for apartments.",
+    "Kvartirka and Sutochno listing examples are individual operator cards, not Tyumen market norms.",
+    "Mom.life forum thread dated 2025-10-24 — community experience, not fresh news but valid pattern evidence."
+  ],
+  "writer_safe_urls": [
+    "https://t.me/Dobriy_dom_72",
+    "https://t.me/Dobriy_dom_Tyumen",
+    "https://max.ru/id660300569233_biz",
+    "https://добрыйдом-72.рф/",
+    "https://добрыйдом-72.рф/booking/",
+    "https://pub.9111.ru/legal/25063896-gostinitsa-prosit-1-500--za-sobaku-zakonna-li-takaya-doplata/",
+    "https://24medhelp.ru/novosti/snyat-zhile-posutochno-s-zhivotnymi-pravila-doplaty-i-podvodnye-kamni/",
+    "https://sutochno.ru/blog/pet-friendly",
+    "https://www.directline.pro/connect/p/pravila-prozhivaniya-v-posutochnoj-kvartire/",
+    "https://mom.life/post/68fb7414d53e3504dd10d5fa-vopros-k-vladelcam-sobak-kot"
+  ],
+  "errors": []
+}

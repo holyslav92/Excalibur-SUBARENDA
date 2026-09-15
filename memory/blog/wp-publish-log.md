@@ -1,5 +1,24 @@
 # WP publish log
 
+## B24 — 2026-09-15
+
+- **topic_id:** B24
+- **slug:** sobaka-do-15-kg-doplata-u-dveri
+- **title:** В чате: «собака до 15 кг». У двери: «крупная» — 2 500 ₽
+- **post_id:** 4811
+- **permalink:** /blog/sobaka-do-15-kg-doplata-u-dveri/
+- **categories:** posutochnaya-arenda (101), dogovor-i-pravila (103), zhkh-i-doplaty (104)
+- **featured_image:** 4812
+- **inline_images:** 4813–4819 (7× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS (7/7 inline + cover → wp-content)
+- **dzen preview:** cover-dzen-v3-1024x576.png HTTP 200; feed enclosure → cover-dzen-v3.png (MU yzen_thumb_imgurl)
+- **interlink outbound:** 4 live /blog/ siblings (crosslink-qa PASS)
+- **interlink inbound:** B01 (3745), B18 (4724)
+- **publish_method:** sftp:22 (Cloud Agent; FTP PASV blocked)
+- **phone:** +7 (993) 574-83-22 (article + schema + cover scene)
+- **llms_deploy:** PASS (llms.txt + llms-full.txt)
+
 ## B23 — 2026-09-14
 
 - **topic_id:** B23
