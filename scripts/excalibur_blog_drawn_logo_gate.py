@@ -458,6 +458,8 @@ def detect_drawn_lockup_in_image(
     detected = analysis.score >= DRAWN_LOCKUP_SCORE_THRESHOLD
     if detected and is_ui_terracotta_card_pad_false_positive(analysis):
         detected = False
+    if detected and is_scene_prop_terracotta_pad_false_positive(analysis):
+        detected = False
     return {
         "path": str(image_path),
         "detected": detected,
@@ -593,6 +595,15 @@ def is_ui_terracotta_card_pad_false_positive(analysis: PadAnalysis) -> bool:
     if analysis.green_ratio >= 0.02:
         return False
     return analysis.terracotta_ratio >= 0.85
+
+
+def is_scene_prop_terracotta_pad_false_positive(analysis: PadAnalysis) -> bool:
+    """Scene props (mug, cork coaster) in TR pad — terracotta tones + high edge, no green lockup."""
+    if analysis.green_ratio >= 0.02:
+        return False
+    if analysis.terracotta_ratio < 0.40 or analysis.terracotta_ratio >= 0.85:
+        return False
+    return analysis.edge_density >= 1.5
 
 
 def is_bright_window_pad_false_positive(
