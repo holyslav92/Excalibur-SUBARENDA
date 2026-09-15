@@ -1,0 +1,27 @@
+{
+  "slug": "napisali-stiralnaya-est-v-kvartire-tolko-rakovina",
+  "topic_id": "B24",
+  "permalink": "{{SITE_BASE}}/blog/napisali-stiralnaya-est-v-kvartire-tolko-rakovina/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B24-stiralnaya-na-foto-rakovina-v-kvartire/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1174381,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4824 slug=napisali-stiralnaya-est-v-kvartire-tolko-rakovina\nOK categories=101,106\nOK dzen_yzen_meta=1\nOK featured_image=4834\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4835 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-stiralnaya-est-v-kvartire-tolko-rakovina-inline-01-1.png\nOK inline_alt=4835\nOK inline_caption=4835\nOK inline_description=4835\nOK inline_image_upload=4836 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-stiralnaya-est-v-kvartire-tolko-rakovina-inline-02-1.png\nOK inline_alt=4836\nOK inline_caption=4836\nOK inline_description=4836\nOK inline_image_upload=4837 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-stiralnaya-est-v-kvartire-tolko-rakovina-inline-04-1.png\nOK inline_alt=4837\nOK inline_caption=4837\nOK inline_description=4837\nOK inline_image_upload=4838 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-stiralnaya-est-v-kvartire-tolko-rakovina-inline-05-1.png\nOK inline_alt=4838\nOK inline_caption=4838\nOK inline_description=4838\nOK inline_image_upload=4839 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-stiralnaya-est-v-kvartire-tolko-rakovina-inline-03-1.png\nOK inline_alt=4839\nOK inline_caption=4839\nOK inline_description=4839\nOK inline_image_upload=4840 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-stiralnaya-est-v-kvartire-tolko-rakovina-inline-06-1.png\nOK inline_alt=4840\nOK inline_caption=4840\nOK inline_description=4840\nOK inline_image_upload=4841 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/09/napisali-stiralnaya-est-v-kvartire-tolko-rakovina-inline-07-1.png\nOK inline_alt=4841\nOK inline_caption=4841\nOK inline_description=4841\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/napisali-stiralnaya-est-v-kvartire-tolko-rakovina/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/napisali-stiralnaya-est-v-kvartire-tolko-rakovina/",
+    "errors": []
+  }
+}

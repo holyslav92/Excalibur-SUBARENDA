@@ -1,0 +1,48 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/napisali-stiralnaya-est-v-kvartire-tolko-rakovina/#article",
+  "url": "{{SITE_BASE}}/blog/napisali-stiralnaya-est-v-kvartire-tolko-rakovina/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/napisali-stiralnaya-est-v-kvartire-tolko-rakovina/"
+  },
+  "headline": "На фото — стиралка. На третий день — прачечная за 600 ₽",
+  "description": "Гость снял квартиру в Тюмени на три ночи по фото стиральной машины, а на месте обнаружил только раковину и общую прачечную примерно за 600 ₽. Разбираем, что спросить до брони, чтобы не потратить время и деньги на стирку.",
+  "datePublished": "2026-09-15",
+  "dateModified": "2026-09-15",
+  "inLanguage": "ru-RU",
+  "author": {
+    "@type": "Organization",
+    "@id": "{{SITE_BASE}}/#organization",
+    "name": "Добрый дом",
+    "jobTitle": "Апартаменты и квартиры посуточно в Тюмени",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ],
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "{{SITE_BASE}}/#organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ],
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    }
+  }
+}

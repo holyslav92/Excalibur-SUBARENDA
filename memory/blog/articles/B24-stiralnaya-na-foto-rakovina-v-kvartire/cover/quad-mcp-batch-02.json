@@ -1,0 +1,37 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 2,
+  "model_policy": "primary_2k_first_vip_on_2k_fail_or_api_fail",
+  "vip_disabled": false,
+  "max_generation_attempts": 2,
+  "attempt": 2,
+  "output_canvas": "cover/canvas-quad-02.png",
+  "result_path": "cover/quad-mcp-result-02.json",
+  "slots": [
+    "inline_4",
+    "inline_5",
+    "inline_6",
+    "inline_7"
+  ],
+  "preferred_image_flow": {
+    "provider": "grsai",
+    "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
+    "resolution": "2K"
+  },
+  "jobs": [
+    {
+      "slot": "canvas_quad",
+      "tool": "grsai",
+      "mcp_args": {
+        "prompt": "ATTEMPT2 HARD: ALL four panels TOP-RIGHT = clean wall/tile ONLY — ZERO drawn logo, ZERO Добрый дом text, ZERO curtains+flower, ZERO white/gray plate. Factory pastes logo AFTER on inline_7 ONLY — NEVER draw logo on inline_4/5/6.\nWOW RU editorial inline panels, airy #FFFFFF high-key, Tyumen mid-September 2026 sunny apartment/laundry, warm autumn daylight NO winter/snow. Canvas 2048x1152 2x2 grid; white gutters. Ban: dark, WP UI, Shakin, pill phone, model-drawn logo. RU Cyrillic labels readable.\n\nTL inline_4: basement shared washer quest. TXT:общая в подвале|ключ у соседки|машинку чинят|три ночи. CRITICAL TR = plain wall ONLY NO logo NO brand.\n\nTR inline_5: laundromat cost chart; phone +7 (993) 574-83-22 flat on board NOT pill. TXT:стирка 350|сушка 150|итого 600|прачечная. CRITICAL TR = plain wall ONLY NO logo.\n\nBL inline_6: video call showing washer; +7 (993) 574-83-22 on screen flat. TXT:в квартире или общая|попросите видео|где стоит. CRITICAL TR = plain wall ONLY NO logo.\n\nBR inline_7: checklist save screenshot before booking. TXT:сначала проверка|потом перевод|сохраните скрин|до брони. TR pad EMPTY for factory logo paste.",
+        "aspect_ratio": "16:9",
+        "resolution": "2K"
+      }
+    }
+  ],
+  "validation": {
+    "prompt_chars": 1140,
+    "max_prompt_chars": 3500,
+    "resolution": "2K"
+  }
+}

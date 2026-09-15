@@ -1,0 +1,168 @@
+{
+  "topic_id": "B24",
+  "slug": "stiralnaya-na-foto-rakovina-v-kvartire",
+  "canvas_file": "cover/canvas-slice4.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-slice4.png",
+      "batch_file": "cover/slice4-mcp-batch.json",
+      "prompt_file": "cover/slice4-mcp-prompt.txt",
+      "result_file": "cover/slice4-mcp-result.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true,
+      "slice4_grid": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": [
+        "inline_4",
+        "inline_5",
+        "inline_6",
+        "inline_7"
+      ],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "На фото стиралка — прачечная 600 рублей",
+  "cover_hook_highlight": "прачечная",
+  "cover_headline_line1": "На фото стиралка",
+  "cover_headline_line2": "прачечная 600 рублей",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "Canvas 1: Grsai slice4 (done). Canvas 2: Grsai VIP 2K quad inline_4..7. Logo factory paste cover + inline_1/3/7. Phone IN scene on cover + 1-2 canvas-2 panels.",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "снять квартиру посуточно в тюмени"
+  ],
+  "logo_paste_inline_slots": [
+    "inline_1",
+    "inline_3",
+    "inline_7"
+  ],
+  "cover_motifs": {
+    "composition": "Гость в ванной с телефоном: на экране фото стиралки из объявления, в реальности — раковина и сушилка; кириллический хук на листе у зеркала; человек в кадре",
+    "location": "Середина сентября 2026 солнечный день: ванная посуточной квартиры Тюмени, тёплый осенний свет из окна, золотые листья за стеклом — без снега",
+    "meme": "photoreal zero meme stickers no cat",
+    "prop_set": "смартфон скрин объявления со стиралкой раковина складная сушилка мокрая футболка пакет для прачечной",
+    "sticker_set": "фото стиралки объявление снять квартиру посуточно фото",
+    "joke": "на фото белая машинка под столешницей — в квартире только кран и молитва о сухой футболке"
+  },
+  "cover_emotion": "Обида и растерянность: на экране стиралка, в ванной — только раковина",
+  "cover_scene": "Сентябрь: гость в ванной, на телефоне фото стиралки из объявления, у раковины пусто; хук на листе у зеркала; TOP-RIGHT pad NO logo.",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "scene_hint": "Сентябрь: гость в ванной, на телефоне фото стиралки из объявления, у раковины пусто; хук на листе у зеркала; sticky «Сначала проверка, потом перевод»; TOP-RIGHT pad NO logo.",
+      "alt": "Гость в ванной посуточной квартиры в Тюмени: на телефоне фото стиралки из объявления, а в комнате только раковина и сушилка.",
+      "meme_caption_ru": "",
+      "sticky": "Сначала проверка, потом перевод"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Фото стало обещанием, которого никто не проговорил",
+      "visual_type": "comparison_table_ui",
+      "scene_hint": "Инфографика-сравнение: слева скрин объявления со стиралкой, справа реальная ванная с раковиной; метки «три ночи», «8 400 рублей», «фото стиралки». Pad TR for factory logo.",
+      "alt": "Сравнение: в карточке на фото стиральная машина, в квартире её нет — только раковина.",
+      "labels": [
+        "три ночи",
+        "8 400 рублей",
+        "фото стиралки"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "На третий день пришлось искать прачечную",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Схема-таймлайн: «нет стиралки» → «холодный радиатор» → «ключ у соседа»; сентябрьская ванная, бельё на сушилке не сохнет.",
+      "alt": "На третий день: машинки нет, батарея холодная, ключ от общей стиралки у соседки.",
+      "labels": [
+        "нет стиралки",
+        "холодный радиатор",
+        "ключ у соседа"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Один вопрос, который экономит 600 ₽",
+      "visual_type": "bar_timeline_chart",
+      "scene_hint": "Столбчатая диаграмма расходов: стирка 350, сушка 150, порошок 50, итого 600 рублей; рядом пакет с вещами для прачечной. Pad TR for factory logo.",
+      "alt": "Неожиданные 600 рублей в прачечной: стирка, сушка и порошок сверху оплаты за жильё.",
+      "labels": [
+        "стирка 350 рублей",
+        "сушка 150 рублей",
+        "порошок 50 рублей",
+        "итого 600 рублей"
+      ]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "На третий день пришлось искать прачечную",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Подъезд: записка у двери подвала, ключи, «общая стиралка». NO logo.",
+      "alt": "Гость у двери в подвал с запиской о том, что общая стиральная машина недоступна.",
+      "labels": [
+        "общая в подвале",
+        "ключ у соседки",
+        "машинку чинят",
+        "три ночи"
+      ]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "На третий день пришлось искать прачечную",
+      "visual_type": "bar_timeline_chart",
+      "scene_hint": "Прачечная: бельё в машине, меню 350/150/600; phone +7 (993) 574-83-22 на табло. NO logo.",
+      "alt": "Гость стирает вещи в городской прачечной и считает расходы на стирку и сушку.",
+      "labels": [
+        "стирка 350 рублей",
+        "сушка 150 рублей",
+        "итого 600 рублей",
+        "прачечная"
+      ]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Один вопрос, который экономит 600 ₽",
+      "visual_type": "tool_screenshot",
+      "scene_hint": "Видеозвонок: стиралка на экране; +7 (993) 574-83-22 на инфоэкране. NO logo.",
+      "alt": "Гость по видеосвязи уточняет, находится ли стиральная машина в квартире.",
+      "labels": [
+        "в квартире или общая",
+        "попросите видео",
+        "где стоит машинка"
+      ]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Стол: скрин переписки, «сначала проверка — потом перевод». TR pad empty.",
+      "alt": "Гость сохраняет скрин переписки и проверяет условия до бронирования квартиры.",
+      "labels": [
+        "сначала проверка",
+        "потом перевод",
+        "сохраните скрин",
+        "до брони"
+      ]
+    }
+  },
+  "cover_keys_ru": []
+}

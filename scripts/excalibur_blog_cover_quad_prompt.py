@@ -1216,7 +1216,10 @@ def main() -> int:
 
     inline_count = inline_count_from_manifest(manifest)
     scene_v2 = uses_scene_poster_v2(root)
-    if uses_one_2k_slice4(root) or scene_v2:
+    manifest_canvases = manifest.get("canvases")
+    if isinstance(manifest_canvases, list) and manifest_canvases:
+        canvas_specs = manifest_canvases
+    elif uses_one_2k_slice4(root) or scene_v2:
         canvas_specs = all_canvas_specs(inline_count)
     else:
         canvas_specs = canvas_specs_for_inline_count(inline_count)
@@ -1266,7 +1269,7 @@ def main() -> int:
                 meme_catalog=meme_catalog,
                 root=root,
             )
-        elif spec.get("slice4_grid") or uses_one_2k_slice4(root):
+        elif spec.get("slice4_grid"):
             prompt = build_one_2k_slice4_grid_prompt(
                 manifest,
                 style,
