@@ -1,0 +1,50 @@
+{
+  "topic_id": "B24",
+  "slug": "vyezd-v-polden-v-11-45-poprosili-900-za-lishnij-chas",
+  "cover_family": "brand_collage",
+  "style_preset": "dobry_dom_gen_only_slice4",
+  "pipeline": "slice4_grid_1x_image_api",
+  "file": "cover/cover.png",
+  "alt": "Семья собирается на выезд из посуточной квартиры в Тюмени: уборщица стучит в 11:45, хотя выезд в полдень, а хост требует 900 ₽ за «лишний час».",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-slice4.png",
+  "generated_at": "2026-09-15T12:40:18+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Семья собирается на выезд из посуточной квартиры в Тюмени: уборщица стучит в 11:45, хотя выезд в полдень, а хост требует 900 ₽ за «лишний час».",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Приход уборщицы в 11:45 не означает, что оплаченный срок до полудня уже закончился — «лишний час» начинается после согласованного выезда.",
+      "h2_anchor": "Уборщица у двери — ещё не счётчик",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "На пороге выезда срочный перевод звучит сильнее: чемодан в руке, ребёнок устал, а в чате просят 900 ₽ до полудня.",
+      "h2_anchor": "На выезде особенно легко давить",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Честная доплата за поздний выезд — только после согласованного полудня и с заранее объявленным тарифом, не с прихода уборщицы.",
+      "h2_anchor": "Когда доплата честная",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}

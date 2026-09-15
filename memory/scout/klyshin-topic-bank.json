@@ -236,6 +236,23 @@
       "final_p0": {"phrase": "квартиры посуточно тюмень", "volume_tyumen": 4826, "volume_ru": 10308},
       "wordstat_rework_log": "probe «горячая вода посуточно» 2/74 → «бойлер» 9007 → «аренда квартиры посуточно» 664 → final P0 «квартиры посуточно тюмень» 4826/10308",
       "used_in_articles": ["B20"]
+    },
+    {
+      "id": "late_checkout_cleaner_fee",
+      "queue_num": 10,
+      "hook_ru": "Выезд в полдень. Уборщица пришла раньше — 900 ₽ за «лишний час»",
+      "angle": "уборщица до checkout ≠ поздний выезд; NOT B06 bags, NOT B21 early check-in",
+      "klyshin_signal": "moral: сначала проверка правил выезда, потом перевод; lockpick: с какого момента «лишний час»?",
+      "wordstat_probes": ["поздний выезд", "ранний заезд и поздний выезд", "квартиры посуточно тюмень"],
+      "dzen_pattern_prefer": [2, 3],
+      "anti_dup": ["checkout_train_bags", "early_checkin", "cleaning_fee_sheets"],
+      "tyumen_localize": true,
+      "status": "used",
+      "last_seen": "2026-09-15",
+      "queue_slot": "2026-09-15 B24 scout",
+      "final_p0": {"phrase": "квартиры посуточно тюмень", "volume_tyumen": 4724, "volume_ru": 10016},
+      "wordstat_rework_log": "probe «поздний выезд аренда» empty → «поздний выезд» 11935 (225) → «ранний заезд и поздний выезд» 386 → «аренда квартиры посуточно» 623 (55+11176) → final P0 «квартиры посуточно тюмень» 4724/10016",
+      "used_in_articles": ["B24"]
     }
   ],
   "parked_hooks": {

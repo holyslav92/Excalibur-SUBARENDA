@@ -381,6 +381,27 @@ class DrawnLogoGateTest(unittest.TestCase):
             result = detect_drawn_lockup_in_image(panel)
             self.assertFalse(result["detected"], result)
 
+    def test_scene_prop_terracotta_pad_exempt_on_no_logo_inline(self) -> None:
+        from excalibur_blog_drawn_logo_gate import (
+            analyze_top_right_pad,
+            detect_drawn_lockup_in_image,
+            is_scene_prop_terracotta_pad_false_positive,
+            np_array_rgb,
+        )
+
+        panel = (
+            ROOT
+            / "memory/blog/articles/B24-vyezd-v-polden-v-11-45-poprosili-900-za-lishnij-chas/cover/inline-03.png"
+        )
+        self.assertTrue(panel.is_file(), panel)
+        raw = analyze_top_right_pad(np_array_rgb(panel))
+        self.assertTrue(
+            is_scene_prop_terracotta_pad_false_positive(raw),
+            "B24 inline-03 mug/coaster TR corner should qualify for exemption",
+        )
+        result = detect_drawn_lockup_in_image(panel)
+        self.assertFalse(result["detected"], result)
+
     def test_bright_window_pad_exempt_when_no_lockup_colors(self) -> None:
         from excalibur_blog_drawn_logo_gate import (
             detect_drawn_lockup_in_image,

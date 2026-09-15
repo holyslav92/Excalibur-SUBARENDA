@@ -1,0 +1,89 @@
+{
+  "source": "memory/blog/articles/B24-vyezd-v-polden-v-11-45-poprosili-900-za-lishnij-chas/article.html",
+  "total_links": 9,
+  "failed_count": 0,
+  "verdict": "pass",
+  "links": [
+    {
+      "url": "https://добрыйдом-72.рф/blog/rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00/",
+      "status": 200,
+      "ok": true,
+      "method": "HEAD",
+      "error": null,
+      "kind": "external",
+      "skipped": false
+    },
+    {
+      "url": "https://добрыйдом-72.рф/blog/napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni/",
+      "status": 200,
+      "ok": true,
+      "method": "HEAD",
+      "error": null,
+      "kind": "external",
+      "skipped": false
+    },
+    {
+      "url": "https://t.me/Dobriy_dom_72",
+      "status": 200,
+      "ok": true,
+      "method": "HEAD",
+      "error": null,
+      "kind": "external",
+      "skipped": false
+    },
+    {
+      "url": "https://max.ru/id660300569233_biz",
+      "status": 200,
+      "ok": true,
+      "method": "HEAD",
+      "error": null,
+      "kind": "external",
+      "skipped": false
+    },
+    {
+      "url": "https://добрыйдом-72.рф/blog/kommunalka-vklyuchena-schet-1840-na-vyezde/",
+      "status": 200,
+      "ok": true,
+      "method": "HEAD",
+      "error": null,
+      "kind": "external",
+      "skipped": false
+    },
+    {
+      "url": "https://добрыйдом-72.рф/blog/vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu/",
+      "status": 200,
+      "ok": true,
+      "method": "HEAD",
+      "error": null,
+      "kind": "external",
+      "skipped": false
+    },
+    {
+      "url": "https://добрыйдом-72.рф/booking/",
+      "status": 200,
+      "ok": true,
+      "method": "HEAD",
+      "error": null,
+      "kind": "external",
+      "skipped": false
+    },
+    {
+      "url": "https://добрыйдом-72.рф/",
+      "status": 200,
+      "ok": true,
+      "method": "HEAD",
+      "error": null,
+      "kind": "external",
+      "skipped": false
+    },
+    {
+      "url": "https://t.me/Dobriy_dom_Tyumen",
+      "status": 200,
+      "ok": true,
+      "method": "HEAD",
+      "error": null,
+      "kind": "external",
+      "skipped": false
+    }
+  ]
+}

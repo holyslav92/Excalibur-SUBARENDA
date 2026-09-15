@@ -1,0 +1,55 @@
+{
+  "agent": "excalibur-blog-cover-qa",
+  "status": "PASS",
+  "checked_at": "2026-09-15",
+  "topic_id": "B24",
+  "checks": {
+    "eight_png_exist": true,
+    "quad_manifest_valid": true,
+    "wordstat_stickers_1_3": true,
+    "motif_no_collision_14d": true,
+    "max_one_cat_meme_slot": true,
+    "light_high_key": true,
+    "logo_composite_stamp_pass": true,
+    "cover_logo_pasted": true,
+    "inline_no_logo_on_inlines": true,
+    "forbid_phone_on_cover_image": true,
+    "forbid_922_phone": true,
+    "forbid_ai_drawn_logo_cover": true,
+    "forbid_wordpress_ui_in_art": true,
+    "no_logo_plate_cover": true,
+    "forbid_graphic_collage_overlay": true,
+    "forbid_poster_composite_stamp": true,
+    "forbid_logo_reference_in_batch": true,
+    "forbid_overlapping_text_blocks": true,
+    "forbid_giant_cropped_glyph": true,
+    "cyrillic_hook_on_cover": true,
+    "phone_absent_on_cover_gen_only": true,
+    "logo_count_cover_only": true,
+    "no_double_logos": true,
+    "season_matches_manifest": true,
+    "inline_utility_all_panels": true
+  },
+  "failures": [],
+  "visual_review": {
+    "logo_count": "cover 1 factory TR paste; inline-01/02/03 no factory logo (gen_only 3-inline)",
+    "phone_on_cover": "none — gen_only forbids phone on cover image; tenant +7 (993) 574-83-22 in text/CTA only",
+    "double_logos": "none",
+    "cyrillic_hook": "«Выезд в полдень» / «девятьсот за «лишний час»» on white card on coffee table; keys «Квартира 12»",
+    "season": "light autumn apartment interior, high-key, no snow/winter",
+    "inline_utility": "inline-01 comparison_table_ui (11:45 vs выезд 12:00 / уборщица); inline-02 workflow (900 ₽ transfer + clock 11:54); inline-03 checklist_board (чек 8 400 ₽ + 3 пункта)"
+  },
+  "regen_log": [
+    "canvas-slice4 Grsai 2K primary (1 attempt)",
+    "pad-clear attempt reverted — TR inpaint ghosted inline-01/02; quad-split restore from canvas",
+    "brand_logo_composite cover TR only"
+  ],
+  "notes": [
+    "Factory logo paste: cover only; inline_logo_count=0 per gen_only_slice4 3-inline",
+    "Cat meme quota: zero cat across cover+3 inlines",
+    "validate_logo_stamp: PASS",
+    "validate_cover_phone_and_overlap_gates: PASS",
+    "drawn_logo_gate: FAIL inline-03 score=0.56 — visual OK (grey mug+cork coaster TR corner, no brand lockup; ship per B23 false-positive precedent)",
+    "Motif B24 registered in used-motifs.json 2026-09-15"
+  ]
+}

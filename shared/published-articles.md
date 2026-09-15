@@ -28,3 +28,4 @@ Excalibur-2-Cloud — не копировать URL tymenrieltor.ru.
 | 2026-09-14 | B21 | rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00 | /blog/rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00/ | published |
 | 2026-09-14 | B22 | posutochno-tyumen-foto-pasporta-v-chat-kod-ne-prislali | /blog/posutochno-tyumen-foto-pasporta-v-chat-kod-ne-prislali/ | published |
 | 2026-09-14 | B23 | napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni | /blog/napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni/ | published |
+| 2026-09-15 | B24 | vyezd-v-polden-v-11-45-poprosili-900-za-lishnij-chas | /blog/vyezd-v-polden-v-11-45-poprosili-900-za-lishnij-chas/ | published |

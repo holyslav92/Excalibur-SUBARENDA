@@ -1,0 +1,107 @@
+{
+  "status": "PASS",
+  "topic_id": "B24",
+  "slug": "vyezd-v-polden-v-11-45-poprosili-900-za-lishnij-chas",
+  "research_date": "2026-09-15",
+  "summary": "Research for guest CASE: contract checkout 12:00, cleaning staff at 11:45, host demands 900 ₽/hour «extra time» while guest still inside paid window. Fresh signals: Dobriy Dom TG week of 2026-09-08–15 (access/checkout coordination), Scout checkout_train_bags variant, RentTools/Rent365 host logic. Anti-dup vs B06/B21/B23.",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Dobriy Dom TG @Dobriy_dom_72 week 2026-09-08–15 + Scout checkout_train_bags B24 angle",
+    "source_type": "community_and_editorial",
+    "urls": [
+      "https://t.me/Dobriy_dom_72",
+      "https://t.me/klyshin_A"
+    ],
+    "accessed_at": "2026-09-15",
+    "note": "Composite guest case from Scout hook; not a verified transcript of one Tyumen booking. Distinct from B06 luggage/train, B21 early check-in wait, B23 linen cleaning fee."
+  },
+  "freshness_audit": {
+    "research_date": "2026-09-15",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://t.me/Dobriy_dom_72",
+      "published_at": "2026-09-08 — 2026-09-15",
+      "note": "Local tenant channel: coordinate checkout/access times, cleaning checklists, photo at check-in — relevant to early-cleaner vs contract-time conflict."
+    },
+    "additional_fresh_signals": [
+      {
+        "url": "https://rent365.net/ru/news/32",
+        "published_at": "2026-02-19",
+        "type": "industry_news",
+        "note": "12:00–14:00 cleaning buffer; late checkout tariff examples when calendar allows."
+      }
+    ]
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176", "225"],
+    "observations": [
+      {
+        "phrase": "поздний выезд",
+        "volume": 11935,
+        "region": "225"
+      },
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 4724,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "снять квартиру посуточно в тюмени",
+        "volume": 1452,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "ранний заезд и поздний выезд",
+        "volume": 386,
+        "region": "225"
+      },
+      {
+        "phrase": "доплата за поздний выезд",
+        "volume": 90,
+        "region": "225"
+      }
+    ]
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "No bank/developer tariff digits; market listing rates cited as range examples only",
+    "verified_claims": 0,
+    "entities_checked": [],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "memory/blog/articles/B24-vyezd-v-polden-v-11-45-poprosili-900-za-lishnij-chas/derouter-opus-stamp-research.json",
+    "first_attempt": "PASS"
+  },
+  "source_count": 13,
+  "practical_facts_count": 32,
+  "limitations": [
+    "No verified transcript of a specific Tyumen booking; case mechanic from Scout editorial checkout_train_bags variant.",
+    "900 ₽/hour is scenario figure, not Dobriy Dom or Tyumen market tariff.",
+    "Market hourly rates (400–990 ₽) are Moscow/regional listing examples only.",
+    "T-J community story is April 2025; used as pattern evidence, not fresh news."
+  ],
+  "writer_safe_urls": [
+    "https://t.me/Dobriy_dom_72",
+    "https://t.me/Dobriy_dom_Tyumen",
+    "https://max.ru/id660300569233_biz",
+    "https://добрыйдом-72.рф/",
+    "https://добрыйдом-72.рф/booking/",
+    "https://sutochno.ru/sj/ranniy-zaezd-i-pozdniy-vyezd",
+    "https://rent365.net/ru/news/32",
+    "https://renttools.io/ru/blog/late-checkout-fee-policy",
+    "https://new.realtycalendar.ru/blog/gornichnaya-dlya-kvartir-v-posutochnoj-arende-gajd-po-rabote",
+    "https://t-j.ru/v-kakom-vide-my-nedavno-priniali-zhile-u-turista/"
+  ],
+  "errors": []
+}

@@ -1549,3 +1549,139 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+---
+
+## LESSON-20260915-1314-B24-cleaner-before-checkout-extra-hour
+status: proposed
+topic_id: B24
+category: utility
+confidence: low
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP. Урок из publish-артефактов: title-brief.json, description-brief.json, case-delivery-gate PASS, article.html, research-notes hook `checkout_train_bags` / early cleaner angle, scout-handoff 2026-09-15.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / YANDEX_METRIKA_COUNTER_ID не заданы; ingest BLOCKER (INC-20260903-0640, INC-20260915-1314).
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Two-beat H1 «Выезд в полдень. За четверть часа — 900 ₽ за «лишний час»»: согласованный checkout → контрфакт доплаты за 15 мин до полудня, не how-to.
+- §1: цитата «900 ₽ за каждый лишний час. Уборщица уже ждёт», 8 400 ₽ за две ночи, открытый чемодан и ребёнок; Klyshin «Нет» — до полудня нет «лишнего часа».
+- H2 «Уборщица у двери — ещё не счётчик»: поздний выезд начинается после согласованного часа, не с прихода клинера.
+- Вопрос-отмычка «с какого момента начинается «лишний час» — с прихода уборщицы или с полудня?» → TG/MAX mid-body.
+- Рыночные примеры 400/990 ₽/час и 10% суток — только как разброс тарифов с editorial disclaimer; 900 ₽/час не норма Тюмени.
+- Interlink spine: B21 ранний заезд/уборка до 14:00, B23 «уборка включена»+простыни, B17 «коммуналка включена», B06 чемоданы между — одна красная линия «внутренний график ≠ оплаченное время».
+- Anti-dup явный: не B06 (чемоданы у подъезда/поезд 16:30), не B21 (утро до заселения), не B23 (плата за бельё на выезде).
+- Wordstat P0 spine «квартиры посуточно тюмень» 4 724 (Tyumen); «поздний выезд» 11 935 (RU) — sub-angle; «доплата за поздний выезд» 90.
+- Description не дублирует H1: «уборщица в 11:45 — и что, оплаченное время закончилось?» (description-brief PASS).
+- Cover-QA PASS: gen_only_human_v1, 3 inline, drawn_logo_gate false-positive inline-03 shipped per B23 precedent.
+
+### Change
+- В checkout/cleaner-timing hooks в §1 сразу фиксировать **три слоя**: (1) согласованный час выезда (полдень), (2) приход уборщицы (11:45), (3) требование 900 ₽ «за час» до наступления checkout — не раскрывать определение «поздний выезд» только во втором H2.
+- Scout handoff: при hook `checkout_train_bags` + early-cleaner angle логировать original Klyshin «Выезд в 12:00. Поезд в 16:30» + final P0 spine Tyumen + anti-dup B06/B21/B23.
+
+### Never again
+- Строить late-checkout кейс как юридический гайд или how-to «как не платить за задержку».
+- Смешивать B06 luggage-between и B24 cleaner-before-noon — разные hook_id (поезд/чемоданы vs уборщица до checkout).
+- Принимать приход уборщицы за доказательство «лишнего часа» до согласованного времени выезда.
+- Выдавать 900 ₽/час за тариф «Доброго дома» или норму Тюмени без editorial disclaimer.
+- Обвинять уборщицу как нарушителя — причина в координации графика, не в злодействе.
+- How-to до морали; финал «Наш вывод простой».
+
+### Proposed apply
+- Scout: hook early-cleaner + checkout → handoff lockpick (час выезда + когда входит уборка + тариф после checkout) + final P0 spine Tyumen + anti-dup B06/B21.
+- Review only; Writer prompt не трогать автоматически.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260915-1314-B24-checkout-door-cleaner-leverage
+status: proposed
+topic_id: B24
+category: structure
+confidence: low
+
+### Evidence
+- artifact: title-brief.json#angle
+  finding: angle «Ранняя уборка не означает, что оплаченный срок проживания уже закончился»; opening-meta-gate PASS; H2 «На выезде особенно легко давить».
+- metrika_signal: none (credentials unavailable; causal retention не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Слой «чемодан в руке, ребёнок устал, стук уборщицы, срочный перевод» — asymmetric moment до полудня, не после checkout.
+- Блок «оплаченное время как билет до границы, не до прихода контролёра» — объясняет подмену без злодейства.
+- Контраст «внутренний график клининга» vs «за что уже заплатили» — sibling B21 early check-in mirror.
+- Чеклист после «Мой вывод как практика»: сохранить бронь, тариф после checkout, когда уборка может войти, не переводить срочную сумму без правила.
+- Interlink B06 «куда деть чемоданы» — отдельный non-conflict path (хранение vs лишний час в квартире).
+
+### Change
+- Для checkout-timing hooks всегда включать **pre-noon temporal leverage** (уборщица у двери до согласованного часа) в utility-блок — не только определение позднего выезда.
+- При interlink — sibling про cleaning/turnover (B21 check-in, B23 linen) одной линией «график уборки ≠ конец оплаченного времени».
+
+### Never again
+- Писать late-checkout кейс только про тарифы 400/990 ₽, игнорируя asymmetric moment (давление до полудня).
+- Финал «Наш вывод простой» вместо «Мой вывод как практика».
+
+### Proposed apply
+- Writer checklist (review-only): early-cleaner + checkout → один абзац про asymmetric moment до согласованного часа.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260915-1314-B24-title-quarter-hour-reveal
+status: proposed
+topic_id: B24
+category: voice
+confidence: low
+
+### Evidence
+- artifact: title-brief.json / scout-handoff
+  finding: Klyshin «Выезд в 12:00. Поезд в 16:30» → scout draft «В 11:45 попросили 900 ₽» → финальный H1 «За четверть часа — 900 ₽ за «лишний час»»; klyshin_title_shape:2; slug сохранил 11:45.
+- metrika_signal: none (credentials unavailable; causal CTR не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Cable pain-scene: согласованный checkout (полдень) + измеримый интервал (четверть часа) + ₽ (900) + quoted «лишний час», без SEO-хвоста «поздний выезд посуточно».
+- Description rhythm klyshin_case_hook: «уборщица в 11:45 — оплаченное время закончилось?» (not_equal_title PASS).
+- Cover-text two-beat «Выезд в полдень — девятьсот за «лишний час»» + sticky «Сначала проверка, потом перевод».
+- 11:45 — в slug/cover stickers, не HH:MM duty-log в §1; opening-meta-gate PASS.
+
+### Change
+- Для checkout/cleaner hooks: prefer **agreed checkout + short interval + ₽ + quoted tariff label** over narrow «поздний выезд» SEO lead или поезд-спойлер в H1.
+- Title: двухчастный ритм (выезд в полдень / контрфакт за 15 мин) > compound «11:45 + уборщица + ребёнок + 8 400 ₽» spoiler.
+
+### Never again
+- H1-спойлер с поездом 16:30 и чемоданами — оставлять luggage path в interlink B06.
+- HH:MM в §1 opening (gate BLOCK).
+- Description, дублирующий H1 про «900 ₽» без контраста «оплаченное время vs график уборщицы».
+
+### Proposed apply
+- Title/Description review: early-cleaner checkout — agreed hour + interval + ₽ > late-checkout-keyword H1.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded

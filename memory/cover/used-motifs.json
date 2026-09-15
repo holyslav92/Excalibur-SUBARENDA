@@ -3,30 +3,6 @@
   "window_days": 14,
   "entries": [
     {
-      "date": "2026-09-01",
-      "topic_id": "B05",
-      "slug": "",
-      "motifs": {
-        "composition": "phone twin reviews 4.8 tablo stonks",
-        "location": "september tyumen apt",
-        "meme": "stonks",
-        "prop_set": "phone reviews stars tablo",
-        "sticker_set": "посуточно тюмень",
-        "joke": "copy-paste reviews"
-      }
-    },
-    {
-      "date": "2026-09-01",
-      "topic_id": "B06",
-      "slug": "",
-      "motifs": {
-        "composition": "couple+suitcases at door, headline, tablo, tr pad",
-        "location": "sep 2026 sunny tyumen apt entryway, not winter",
-        "meme": "trade_offer sticker small",
-        "sticker_set": "багаж после выезда, вокзал тюмень"
-      }
-    },
-    {
       "date": "2026-09-02",
       "topic_id": "B07",
       "slug": "",
@@ -229,6 +205,18 @@
         "prop_set": "смартфон фото простыни 1800 чемодан такси ключи табло телефон",
         "sticker_set": "квартиры посуточно тюмень уборка включена",
         "joke": "уборка включена в карточке 1800 за простыню на выезде"
+      }
+    },
+    {
+      "date": "2026-09-15",
+      "topic_id": "B24",
+      "slug": "",
+      "motifs": {
+        "composition": "мама с ребёнком за завтраком открытый чемодан уборщица стучит в дверь 11:45 хук на листе брони на столе",
+        "location": "ранняя осень сентябрь 2026 солнечный день квартира посуточно тюмень золотые листья за окном без снега",
+        "meme": "kitchen checkout dispute zero die-cut reaction stickers",
+        "prop_set": "открытый чемодан тарелка завтрака ключи на столе смартфон чат 11:45 лист брони выезд 12:00 сумка уборщицы за дверью",
+        "joke": "уборщица пришла до полудня а хост уже считает 900 рублей за лишний час"
       }
     }
   ]

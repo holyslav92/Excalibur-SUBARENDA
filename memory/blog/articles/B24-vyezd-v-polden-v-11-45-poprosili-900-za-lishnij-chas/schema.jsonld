@@ -1,0 +1,39 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/vyezd-v-polden-v-11-45-poprosili-900-za-lishnij-chas/#article",
+  "url": "{{SITE_BASE}}/blog/vyezd-v-polden-v-11-45-poprosili-900-za-lishnij-chas/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/vyezd-v-polden-v-11-45-poprosili-900-za-lishnij-chas/"
+  },
+  "headline": "Выезд в полдень. За четверть часа — 900 ₽ за «лишний час»",
+  "description": "Уборщица пришла до полудня, а гостю предложили заплатить 900 ₽ за «лишний час» при выезде в 12:00. Приход клинера не сдвигает оплаченное время: до перевода стоит проверить тариф и условия начисления доплаты в брони.",
+  "datePublished": "2026-09-15",
+  "dateModified": "2026-09-15",
+  "inLanguage": "ru-RU",
+  "author": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    },
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  }
+}

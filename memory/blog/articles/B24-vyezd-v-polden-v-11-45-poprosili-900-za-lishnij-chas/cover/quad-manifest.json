@@ -1,0 +1,99 @@
+{
+  "topic_id": "B24",
+  "slug": "vyezd-v-polden-v-11-45-poprosili-900-za-lishnij-chas",
+  "canvas_file": "cover/canvas-slice4.png",
+  "layout": "2x2",
+  "pipeline": "slice4_grid_1x_image_api",
+  "inline_count": 3,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-slice4.png",
+      "batch_file": "cover/slice4-mcp-batch.json",
+      "prompt_file": "cover/slice4-mcp-prompt.txt",
+      "result_file": "cover/slice4-mcp-result.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    }
+  ],
+  "style_preset": "dobry_dom_gen_only_slice4",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "cover_hook": "Выезд в полдень — девятьсот за «лишний час»",
+  "cover_hook_highlight": "девятьсот",
+  "cover_headline_line1": "Выезд в полдень",
+  "cover_headline_line2": "девятьсот за «лишний час»",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "cover_emotion": "раздражение и спешка: уборщица уже стучит, а до полудня ещё четверть часа",
+  "cover_scene": "Светлая кухня-гостиная ранней осени: семья собирается, на столе лист брони с крупным кириллическим хуком",
+  "cover_motifs": {
+    "composition": "мама с ребёнком за завтраком открытый чемодан уборщица стучит в дверь 11:45 хук на листе брони на столе",
+    "location": "ранняя осень сентябрь 2026 солнечный день квартира посуточно Тюмень золотые листья за окном без снега",
+    "meme": "kitchen checkout dispute zero die-cut reaction stickers",
+    "prop_set": "открытый чемодан тарелка завтрака ключи на столе смартфон чат 11:45 лист брони выезд 12:00 сумка уборщицы за дверью",
+    "sticker_set": "none on gen_only",
+    "joke": "уборщица пришла до полудня а хост уже считает 900 рублей за лишний час"
+  },
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "снять квартиру посуточно в тюмени"
+  ],
+  "mcp_note": "PRIMARY: Grsai draw API ONE 2048x1152 2x2 grid → slice4. Logo factory paste cover tile ONLY after split.",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Семья собирается на выезд из посуточной квартиры в Тюмени: уборщица стучит в 11:45, хотя выезд в полдень, а хост требует 900 ₽ за «лишний час».",
+      "scene_hint": "Светлая кухня осень 11:45: мама с ребёнком, чемодан, лист брони с хуком; уборщица за дверью; pad TR 8–12%, без логотипа и мемов.",
+      "meme_caption_ru": "",
+      "sticky": "Сначала проверка, потом перевод"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Уборщица у двери — ещё не счётчик",
+      "visual_type": "comparison_table_ui",
+      "scene_hint": "Сравнение на листе ватмана на светлом столе: слева «выезд 12:00» и часы 11:45, справа «уборщица у двери» со стрелкой НЕ равно «лишний час»; фотореал квартира, без логотипа.",
+      "alt": "Приход уборщицы в 11:45 не означает, что оплаченный срок до полудня уже закончился — «лишний час» начинается после согласованного выезда.",
+      "labels": [
+        "11:45 в чате",
+        "выезд в полдень",
+        "уборщица у двери",
+        "девятьсот за час"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "На выезде особенно легко давить",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Прихожая: чемодан в руке, ребёнок в куртке, на телефоне экран «переведите 900 ₽ сейчас»; на стене часы 11:50 и лист «выезд 12:00»; фотореал осень, без pill-кнопки телефона и без логотипа.",
+      "alt": "На пороге выезда срочный перевод звучит сильнее: чемодан в руке, ребёнок устал, а в чате просят 900 ₽ до полудня.",
+      "labels": [
+        "восемь тысяч четыреста",
+        "ключи на столе",
+        "ребёнок завтракает",
+        "сборы ещё идут"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Когда доплата честная",
+      "visual_type": "checklist_board",
+      "scene_hint": "Светлый стол: чек 8 400 ₽ за две ночи, рядом список «час после 12:00», «подтверждение в чате», «перевод после проверки»; часы показывают 12:15 как пример позднего выезда; фотореал, без логотипа.",
+      "alt": "Честная доплата за поздний выезд — только после согласованного полудня и с заранее объявленным тарифом, не с прихода уборщицы.",
+      "labels": [
+        "Час после выезда",
+        "не от прихода уборщицы",
+        "сверьте час в чате",
+        "перевод после проверки"
+      ]
+    }
+  },
+  "cover_keys_ru": []
+}
