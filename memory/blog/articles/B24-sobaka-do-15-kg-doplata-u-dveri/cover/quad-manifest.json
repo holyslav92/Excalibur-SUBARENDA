@@ -1,0 +1,127 @@
+{
+  "topic_id": "B24",
+  "slug": "sobaka-do-15-kg-doplata-u-dveri",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "До пятнадцати в чате — крупная у двери",
+  "cover_hook_highlight": "крупная",
+  "cover_headline_line1": "До пятнадцати в чате",
+  "cover_headline_line2": "крупная у двери",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Grsai VIP 2K — 2 canvases × 4 panels. Logo factory paste cover + inline_1/3/7. Phone IN scene on cover and some inlines.",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "снять квартиру посуточно в тюмени"
+  ],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "Гостья с чемоданом и псом на поводке у двери: хост указывает на табло «крупная», крупный кириллический двухударный хук на физическом объекте; собака 14 кг спокойно сидит — не пустая прихожая",
+    "location": "Ранняя осень сентябрь 2026 солнечный день: прихожая посуточной квартиры Тюмени, жёлтые листья за окном, лёгкая куртка — без снега зимы и меха",
+    "meme": "photoreal cover zero stickers; tiny people-meme reaction sticker ≤12% on inline_6 only — zero cat",
+    "prop_set": "поводок собака 14 кг чемодан смартфон чат табло 2500 такси ключи телефон табло",
+    "sticker_set": "собака до 15 кг можно с собакой посуточно",
+    "joke": "В чате «собака до 15 кг» — у двери «крупная» и 2 500 ₽ когда такси уже уехало"
+  },
+  "cover_emotion": "Шок на пороге: в переписке согласовали вес, а у двери новое слово «крупная» и доплата 2 500 ₽",
+  "cover_scene": "Прихожая ранняя осень: гостья с собакой на поводке и чемоданом, хост с табло; двухударный хук на табло; телефон на табло; pad TR.",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "scene_hint": "Осень: гостья, собака, чемодан у двери; хук gold «крупная»; sticky; phone +7 (993) 574-83-22 табло; NO snow; pad TR.",
+      "alt": "Гостья с собакой на поводке у двери посуточной квартиры в Тюмени: в чате согласовали «до 15 кг», а на пороге требуют 2 500 ₽ за «крупную» собаку.",
+      "meme_caption_ru": "",
+      "role": "cover_editorial_hero",
+      "sticky": "Правила — до оплаты"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "scene_hint": "Чат «до 15 кг» vs табло «крупная 2 500». Pad TR logo.",
+      "alt": "В переписке было «собака до 15 кг», а у двери появилось «крупная» и доплата 2 500 ₽.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Почему «можно с собакой» — ещё не условия",
+      "visual_type": "comparison_table_ui",
+      "labels": ["до пятнадцати", "вес собаки", "порода", "до оплаты"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "scene_hint": "Такси уехало, гостья с собакой у двери, ключей нет. NO logo.",
+      "alt": "Такси уже уехало, вещи и уставшая собака у двери — спорить некогда.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Почему «можно с собакой» — ещё не условия",
+      "visual_type": "workflow_diagram",
+      "labels": ["крупная у двери", "две пятьсот", "такси уехало", "ключ или отказ"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "scene_hint": "Скрин чата «можно с собакой» / «до 15 кг». Pad TR logo.",
+      "alt": "На экране телефона — переписка: «можно с собакой» и ответ «собака до 15 кг» без суммы и залога.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Четыре пункта до перевода денег",
+      "visual_type": "checklist_board",
+      "labels": ["доплата срок", "залог возврат", "за ночь", "четыре вопроса"]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "scene_hint": "Доска: вес, порода, доплата, залог — до оплаты. NO logo.",
+      "alt": "Четыре вопроса до оплаты: максимальный вес, ограничения по породе, сумма доплаты, залог.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Четыре пункта до перевода денег",
+      "visual_type": "fact_card",
+      "labels": ["вес числом", "порода", "доплата", "залог"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "scene_hint": "14 кг на весах vs «крупная» без цифры. NO logo.",
+      "alt": "14 кг на весах — измеримый факт; слово «крупная» без порога веса — оценка на глаз.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Четыре пункта до перевода денег",
+      "visual_type": "infographic_card",
+      "labels": ["четырнадцать кило", "крупная на глаз", "до пятнадцати", "ключ у хозяина"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "scene_hint": "Скрин переписки до оплаты; tiny people-meme ≤12% corner. NO logo.",
+      "alt": "Сохраните скриншот переписки с весом, породой, доплатой и залогом — до перевода денег.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "labeled_checklist",
+      "labels": ["скрин до оплаты", "вес и порода", "сумма и залог"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "scene_hint": "Табло «правила в переписке — потом ключ». Pad TR logo. Phone на табличке.",
+      "alt": "Правило: сначала письменные условия про питомца в переписке, потом ключ — не наоборот.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "workflow_diagram",
+      "labels": ["правила в переписке", "потом ключ", "не наоборот"]
+    }
+  }
+}

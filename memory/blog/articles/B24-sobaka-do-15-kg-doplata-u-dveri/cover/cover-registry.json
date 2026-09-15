@@ -1,0 +1,86 @@
+{
+  "topic_id": "B24",
+  "slug": "sobaka-do-15-kg-doplata-u-dveri",
+  "cover_family": "brand_collage",
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "file": "cover/cover.png",
+  "alt": "Гостья с собакой на поводке у двери посуточной квартиры в Тюмени: в чате согласовали «до 15 кг», а на пороге требуют 2 500 ₽ за «крупную» собаку.",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-quad-01.png",
+  "generated_at": "2026-09-15T06:30:56+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Гостья с собакой на поводке у двери посуточной квартиры в Тюмени: в чате согласовали «до 15 кг», а на пороге требуют 2 500 ₽ за «крупную» собаку.",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "В переписке было «собака до 15 кг», а у двери появилось «крупная» и доплата 2 500 ₽.",
+      "h2_anchor": "Почему «можно с собакой» — ещё не условия",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Такси уже уехало, вещи и уставшая собака у двери — спорить некогда.",
+      "h2_anchor": "Почему «можно с собакой» — ещё не условия",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "На экране телефона — переписка: «можно с собакой» и ответ «собака до 15 кг» без суммы и залога.",
+      "h2_anchor": "Четыре пункта до перевода денег",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_4",
+      "file": "cover/inline-04.png",
+      "alt": "Четыре вопроса до оплаты: максимальный вес, ограничения по породе, сумма доплаты, залог.",
+      "h2_anchor": "Четыре пункта до перевода денег",
+      "visual_type": "fact_card",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_5",
+      "file": "cover/inline-05.png",
+      "alt": "14 кг на весах — измеримый факт; слово «крупная» без порога веса — оценка на глаз.",
+      "h2_anchor": "Четыре пункта до перевода денег",
+      "visual_type": "infographic_card",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_6",
+      "file": "cover/inline-06.png",
+      "alt": "Сохраните скриншот переписки с весом, породой, доплатой и залогом — до перевода денег.",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "labeled_checklist",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_7",
+      "file": "cover/inline-07.png",
+      "alt": "Правило: сначала письменные условия про питомца в переписке, потом ключ — не наоборот.",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}

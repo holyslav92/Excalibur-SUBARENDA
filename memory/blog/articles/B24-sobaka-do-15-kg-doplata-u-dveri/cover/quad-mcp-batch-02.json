@@ -1,0 +1,26 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 2,
+  "model_policy": "primary_2k_first_vip_on_2k_fail_or_api_fail",
+  "vip_disabled": false,
+  "max_generation_attempts": 2,
+  "attempt": 1,
+  "output_canvas": "cover/canvas-quad-02.png",
+  "result_path": "cover/quad-mcp-result-02.json",
+  "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+  "preferred_image_flow": {
+    "provider": "grsai",
+    "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
+    "resolution": "2K"
+  },
+  "jobs": [{
+    "slot": "canvas_quad",
+    "tool": "grsai",
+    "mcp_args": {
+      "prompt": "WOW RU editorial inline panels, airy #FFFFFF high-key, Tyumen early September 2026 sunny apartment interior, warm daylight, autumn mood NO winter/snow. Canvas 2048x1152 2x2 grid; white gutters. Ban: dark, WP UI, Shakin, pill phone, model-drawn logo. RU Cyrillic labels readable.\nALL four panels TOP-RIGHT on inline_4/5/6 = clean wall ONLY — ZERO logo. inline_7 TR pad EMPTY for factory logo paste later.\nTL inline_4: four questions board before payment — weight breed fee deposit. TXT:вес числом|порода|доплата|залог. NO logo.\nTR inline_5: 14 kg on scale vs word «крупная» without number infographic. TXT:четырнадцать кило|крупная на глаз|до пятнадцати|ключ у хозяина. NO logo.\nBL inline_6: save chat screenshot before payment; ONE tiny cat-meme sticker ≤12% bottom-left corner ONLY — max one cat this article. TXT:скрин до оплаты|вес и порода|сумма и залог. TR = plain wall NO logo.\nBR inline_7: rules in chat first then key sign at door. TXT:правила в переписке|потом ключ|не наоборот. Phone +7 (993) 574-83-22 on small door sign flat text. TR pad EMPTY for factory logo.",
+      "aspect_ratio": "16:9",
+      "resolution": "2K"
+    }
+  }],
+  "validation": {"prompt_chars": 1180, "max_prompt_chars": 3500, "resolution": "2K"}
+}
