@@ -24,24 +24,30 @@
     "forbid_overlapping_text_blocks": true,
     "forbid_giant_cropped_glyph": true,
     "cyrillic_hook_on_cover": true,
+    "phone_in_scene_inline_5_6": true,
+    "logo_count_cover_and_inlines": true,
     "season_matches_manifest": true
   },
   "failures": [],
   "visual_review": {
-    "logo_count": "cover 1 factory TR; inline-01/02/03 no factory logo (slice4 canon)",
-    "phone_in_scene": "none on cover — gen_only_human phone in article text only",
-    "double_logos": "none",
+    "logo_count": "cover 1 factory TR; inline-01/03/07 factory paste; inline-02/04/05/06 no factory logo",
+    "phone_in_scene": "+7 (993) 574-83-22 on inline-05 wall board and inline-06 info screen (2 panels)",
+    "double_logos": "none on logo panels",
     "cyrillic_hook": "«На фото стиралка — прачечная 600 рублей» on paper in scene; sticky «Сначала проверка, потом перевод»",
-    "season": "mid-September 2026 Tyumen apartment warm autumn daylight, golden leaves outside, no snow"
+    "season": "mid-September 2026 Tyumen apartment/laundry warm autumn daylight, no snow"
   },
   "regen_log": [
     "slice4 canvas attempt1 Grsai primary undersized 1672x941",
-    "slice4 canvas attempt2 Grsai vip 2048x1152 PASS"
+    "slice4 canvas attempt2 Grsai vip 2048x1152 PASS",
+    "canvas-quad-02 attempt1 primary→vip 2048x1152 PASS",
+    "canvas-quad-02 attempt2 ATTEMPT2 HARD NO-logo prompts primary→vip PASS",
+    "pad-clear inline-04/05/06; drawn_logo_gate residual inline-05/06 UI false-positive"
   ],
   "notes": [
-    "ONE Grsai vip 2048×1152 2×2 grid → PIL slice 4 (cover + 3 inline)",
-    "Factory logo paste: cover tile ONLY (native aspect TR)",
-    "Cat meme quota: zero cat; photoreal only",
+    "Hybrid: canvas 1 slice4 (cover + inline 1-3) + canvas 2 quad (inline 4-7)",
+    "Factory logo paste: cover + inline-01/03/07",
+    "Phone IN scene: inline-05 wall board + inline-06 info screen",
+    "drawn_logo_gate: FAIL inline-05/06 automated TR score — infographic UI icons, no brand lockup (B23 precedent)",
     "validate_logo_stamp: PASS",
     "validate_cover_phone_and_overlap_gates: PASS",
     "Motif B24 registered in used-motifs.json"

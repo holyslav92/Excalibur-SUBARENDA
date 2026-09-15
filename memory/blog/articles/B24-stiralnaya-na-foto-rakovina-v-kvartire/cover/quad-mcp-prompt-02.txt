@@ -1,0 +1,10 @@
+ATTEMPT2 HARD: ALL four panels TOP-RIGHT = clean wall/tile ONLY — ZERO drawn logo, ZERO Добрый дом text, ZERO curtains+flower, ZERO white/gray plate. Factory pastes logo AFTER on inline_7 ONLY — NEVER draw logo on inline_4/5/6.
+WOW RU editorial inline panels, airy #FFFFFF high-key, Tyumen mid-September 2026 sunny apartment/laundry, warm autumn daylight NO winter/snow. Canvas 2048x1152 2x2 grid; white gutters. Ban: dark, WP UI, Shakin, pill phone, model-drawn logo. RU Cyrillic labels readable.
+
+TL inline_4: basement shared washer quest. TXT:общая в подвале|ключ у соседки|машинку чинят|три ночи. CRITICAL TR = plain wall ONLY NO logo NO brand.
+
+TR inline_5: laundromat cost chart; phone +7 (993) 574-83-22 flat on board NOT pill. TXT:стирка 350|сушка 150|итого 600|прачечная. CRITICAL TR = plain wall ONLY NO logo.
+
+BL inline_6: video call showing washer; +7 (993) 574-83-22 on screen flat. TXT:в квартире или общая|попросите видео|где стоит. CRITICAL TR = plain wall ONLY NO logo.
+
+BR inline_7: checklist save screenshot before booking. TXT:сначала проверка|потом перевод|сохраните скрин|до брони. TR pad EMPTY for factory logo paste.

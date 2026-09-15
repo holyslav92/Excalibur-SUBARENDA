@@ -2,13 +2,13 @@
   "topic_id": "B24",
   "slug": "napisali-stiralnaya-est-v-kvartire-tolko-rakovina",
   "cover_family": "brand_collage",
-  "style_preset": "dobry_dom_gen_only_human_v1",
-  "pipeline": "slice4_grid_1x_image_api",
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "pipeline": "quad_canvas_2x_image_api_longform",
   "file": "cover/cover.png",
   "alt": "Гость в ванной посуточной квартиры в Тюмени: на телефоне фото стиралки из объявления, а в комнате только раковина и сушилка.",
   "aspect_ratio": "16:9",
   "canvas_source": "cover/canvas-slice4.png",
-  "generated_at": "2026-09-15T09:32:03+00:00",
+  "generated_at": "2026-09-15T09:59:01+00:00",
   "assets": [
     {
       "role": "cover",
@@ -44,6 +44,42 @@
       "alt": "Неожиданные 600 рублей в прачечной: стирка, сушка и порошок сверху оплаты за жильё.",
       "h2_anchor": "Один вопрос, который экономит 600 ₽",
       "visual_type": "bar_timeline_chart",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_4",
+      "file": "cover/inline-04.png",
+      "alt": "Гость у двери в подвал с запиской о том, что общая стиральная машина недоступна.",
+      "h2_anchor": "На третий день пришлось искать прачечную",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_5",
+      "file": "cover/inline-05.png",
+      "alt": "Гость стирает вещи в городской прачечной и считает расходы на стирку и сушку.",
+      "h2_anchor": "На третий день пришлось искать прачечную",
+      "visual_type": "bar_timeline_chart",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_6",
+      "file": "cover/inline-06.png",
+      "alt": "Гость по видеосвязи уточняет, находится ли стиральная машина в квартире.",
+      "h2_anchor": "Один вопрос, который экономит 600 ₽",
+      "visual_type": "tool_screenshot",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_7",
+      "file": "cover/inline-07.png",
+      "alt": "Гость сохраняет скрин переписки и проверяет условия до бронирования квартиры.",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "labeled_checklist",
       "aspect_ratio": "16:9"
     }
   ]
