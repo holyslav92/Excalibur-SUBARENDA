@@ -107,3 +107,10 @@
 ## Required output structure for research-notes.md
 
 Follow excalibur-research skill: research_date 2026-09-15, reader_problem, reader_outcome, signal_and_demand, community_signal, practical_facts, editorial_case_boundary, constraints, typical_reader_mistakes, voice_angle, surprising_fact, official_verifications, source_table (all accessed_at 2026-09-15), writer_safe_urls. No h2_outline, no lead, no FAQ skeleton.
+
+## DEROUTER TASK (mandatory)
+
+You are the Research synthesis step. The calling script writes your reply to `research-notes.md`.
+Output ONLY the complete research-notes.md markdown body (start with `# research-notes.md`).
+Do NOT output BLOCKER, refusal, or meta commentary about file writes or environment.
+Synthesize facts from this document only; do not invent sources or dates.

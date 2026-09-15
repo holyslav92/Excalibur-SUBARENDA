@@ -1,0 +1,121 @@
+{
+  "status": "PASS",
+  "topic_id": "B24",
+  "slug": "stiralnaya-na-foto-rakovina-v-kvartire",
+  "research_date": "2026-09-15",
+  "summary": "Research for guest CASE: listing photos show in-unit washing machine; on arrival only sink + hanger; by day 3 guest uses self-service laundry (~550–600 ₽ Tyumen market band). Fresh signals: Dobry Dom TG listing-mismatch posts (2026-09-15), Directline.pro guest memo on appliances (2026-06-08), Wordstat Tyumen P0 4724. Composite Scout hook appliance_lie_washing_machine; Klyshin live posts are unrelated. Anti-dup vs B07/B11/B15/B20/B23.",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Dobry Dom TG @Dobriy_dom_72 listing mismatch + appliance check posts (2026-09-15) + Scout editorial hook",
+    "source_type": "community_and_editorial",
+    "urls": [
+      "https://t.me/Dobriy_dom_72",
+      "https://t.me/klyshin_A",
+      "https://www.directline.pro/connect/p/pravila-prozhivaniya-v-posutochnoj-kvartire/"
+    ],
+    "accessed_at": "2026-09-15",
+    "note": "Composite guest case from Scout hook; not a verified transcript of one Tyumen booking. Klyshin channel live 2026-09-15 covers purchase/inheritance, not washer hook."
+  },
+  "freshness_audit": {
+    "research_date": "2026-09-15",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://t.me/Dobriy_dom_72",
+      "published_at": "2026-09-15",
+      "note": "Local tenant channel: listing mismatch (photo vs reality), check equipment before check-in, real photos policy."
+    },
+    "additional_fresh_signals": [
+      {
+        "url": "https://www.directline.pro/connect/p/pravila-prozhivaniya-v-posutochnoj-kvartire/",
+        "published_at": "2026-06-08",
+        "type": "industry_memo",
+        "note": "Appliance usage rules and photo/video at check-in for short-term rentals."
+      },
+      {
+        "url": "https://t.me/klyshin_A",
+        "published_at": "2026-09-15",
+        "type": "scout_editorial_source",
+        "note": "Hook appliance_lie_washing_machine from topic bank; live posts unrelated to washer story."
+      }
+    ]
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176", "225"],
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 4724,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "снять квартиру посуточно в тюмени",
+        "volume": 1452,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "снять квартиру посуточно фото",
+        "volume": 3693,
+        "region": "225"
+      },
+      {
+        "phrase": "стиральная машина аренда квартиры",
+        "volume": 114,
+        "region": "225"
+      },
+      {
+        "phrase": "стиральная машина посуточно",
+        "volume": 2,
+        "region": "55+11176",
+        "note": "totalCount-only WORDSTAT PARTIAL"
+      }
+    ]
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "No bank/developer/JKH tariff digits; laundry prices cited as Tyumen market examples only",
+    "verified_claims": 0,
+    "entities_checked": [],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "memory/blog/articles/B24-stiralnaya-na-foto-rakovina-v-kvartire/derouter-opus-stamp-research.json",
+    "first_attempt": "BLOCKER_HTTP_529",
+    "second_attempt": "PASS_META_BLOCKER",
+    "third_attempt": "PASS"
+  },
+  "source_count": 15,
+  "limitations": [
+    "No verified transcript of a specific Tyumen booking; case mechanic from Scout editorial appliance_lie_washing_machine hook.",
+    "Live Klyshin channel posts on 2026-09-15 cover Moscow stats/inheritance, not washing machine hook.",
+    "600 ₽ scenario aligns with Tyumen self-service laundry band (550–600 ₽ per 72.ru/BIG WASH), not a host penalty.",
+    "Dzen Tutkakdoma article auth-walled on fetch; used via search snippet only.",
+    "RG.ru fraud guide returned HTTP 401 on live fetch; used via search index only.",
+    "Rospotreb/consumer-rights context is general guidance, not guaranteed refund outcome."
+  ],
+  "writer_safe_urls": [
+    "https://t.me/Dobriy_dom_72",
+    "https://t.me/Dobriy_dom_Tyumen",
+    "https://max.ru/id660300569233_biz",
+    "https://добрыйдом-72.рф/",
+    "https://добрыйдом-72.рф/booking/",
+    "https://добрыйдом-72.рф/blog/",
+    "https://www.directline.pro/connect/p/pravila-prozhivaniya-v-posutochnoj-kvartire/",
+    "https://dzen.ru/a/ao1aO1_t_ztBxd-r",
+    "https://xn--80asmdh4e.xn--p1ai/2026/08/14/rospotrebnadzor-razyasnil-prava-turistov-pri-nesootvetstvii-otelya-usloviyam-bronirovaniya/",
+    "https://new.realtycalendar.ru/blog/osnovnye-problemy-pri-sdache-kvartiry",
+    "https://tyumen.moskowsky.big-wash.ru/",
+    "https://72.ru/text/gorod/2024/04/27/73384673/",
+    "https://topstirka.ru/"
+  ],
+  "errors": []
+}
