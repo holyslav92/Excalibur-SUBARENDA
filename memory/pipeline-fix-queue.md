@@ -1639,4 +1639,4 @@ checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_drawn_logo_gate.py`
 - `python3 -m unittest tests.test_drawn_logo_gate.DrawnLogoGateTest.test_scene_prop_terracotta_pad_exempt_on_no_logo_inline -v`
 - B24 `excalibur_blog_drawn_logo_gate.py --article-dir …` → OK logo paste gates (slim)
-commit: pending
+commit: 74e35d7
