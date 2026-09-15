@@ -1,0 +1,27 @@
+{
+  "slug": "sobaka-do-15-kg-doplata-u-dveri",
+  "topic_id": "B24",
+  "permalink": "{{SITE_BASE}}/blog/sobaka-do-15-kg-doplata-u-dveri/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B24-sobaka-do-15-kg-doplata-u-dveri/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1315576,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4811 slug=sobaka-do-15-kg-doplata-u-dveri\nOK categories=101,103,104\nOK dzen_yzen_meta=1\nOK featured_image=4812\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4813 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/sobaka-do-15-kg-doplata-u-dveri-inline-02.png\nOK inline_alt=4813\nOK inline_caption=4813\nOK inline_description=4813\nOK inline_image_upload=4814 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/sobaka-do-15-kg-doplata-u-dveri-inline-01.png\nOK inline_alt=4814\nOK inline_caption=4814\nOK inline_description=4814\nOK inline_image_upload=4815 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/09/sobaka-do-15-kg-doplata-u-dveri-inline-05.png\nOK inline_alt=4815\nOK inline_caption=4815\nOK inline_description=4815\nOK inline_image_upload=4816 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/09/sobaka-do-15-kg-doplata-u-dveri-inline-04.png\nOK inline_alt=4816\nOK inline_caption=4816\nOK inline_description=4816\nOK inline_image_upload=4817 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/sobaka-do-15-kg-doplata-u-dveri-inline-03.png\nOK inline_alt=4817\nOK inline_caption=4817\nOK inline_description=4817\nOK inline_image_upload=4818 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/09/sobaka-do-15-kg-doplata-u-dveri-inline-07.png\nOK inline_alt=4818\nOK inline_caption=4818\nOK inline_description=4818\nOK inline_image_upload=4819 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/09/sobaka-do-15-kg-doplata-u-dveri-inline-06.png\nOK inline_alt=4819\nOK inline_caption=4819\nOK inline_description=4819\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/sobaka-do-15-kg-doplata-u-dveri/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/sobaka-do-15-kg-doplata-u-dveri/",
+    "errors": []
+  }
+}

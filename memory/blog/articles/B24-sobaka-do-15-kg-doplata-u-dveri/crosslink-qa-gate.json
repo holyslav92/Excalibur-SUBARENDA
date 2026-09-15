@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "/blog/rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00/",
+      "slug": "rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00",
+      "anchor": "ранний заезд нужно подтверждать заранее, а",
+      "catalog_title": "Ранний заезд оплатили. У двери с чемоданом — почти 5 часов ожидания",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "/blog/napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni/",
+      "slug": "napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni",
+      "anchor": "доплату за уборку лучше увидеть до выезда, а не в последний момент.«Еду с одной собакой: вес ___ кг, порода ___. Подтвердите, пожалуйста: можно ли заселиться, есть ли доплата или залог за питомца, какая сумма и когда возвращается залог».Если после оплаты начинают менять договорённости, не считайте это мелочью:",
+      "catalog_title": "В карточке: «уборка включена» — 3 ночи. Выезд: фото простыни — 1 800 ₽",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "/blog/oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego/",
+      "slug": "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+      "anchor": "доплата у двери может означать срыв исходных условий. А если после брони не прислали важные данные для заезда, полезно заранее понимать,",
+      "catalog_title": "Оплатили за двоих. У двери попросили доплату за третьего",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "/blog/posutochno-tyumen-foto-pasporta-v-chat-kod-ne-prislali/",
+      "slug": "posutochno-tyumen-foto-pasporta-v-chat-kod-ne-prislali",
+      "anchor": "что делать, когда условия меняются уже после оплаты.«Можно с собакой» без веса, суммы и залога — это не договорённость, а занавеска: выглядит как вход, но отодвигается в любую сторону. Надёжная дверь начинается с цифр в переписке.Забронировать и задать вопросыНапишите даты, число гостей, вес и породу собаки — менеджер ответит в личке и заранее подтвердит условия:Telegram:",
+      "catalog_title": "Оплатили 3 ночи. Фото паспорта в чат — код не пришёл, багаж у двери",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "outbound_unique_slugs": [
+    "rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00",
+    "napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni",
+    "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+    "posutochno-tyumen-foto-pasporta-v-chat-kod-ne-prislali"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B24-sobaka-do-15-kg-doplata-u-dveri",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}
