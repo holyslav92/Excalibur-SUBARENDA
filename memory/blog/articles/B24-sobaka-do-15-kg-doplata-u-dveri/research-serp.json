@@ -1,0 +1,218 @@
+{
+  "agent": "excalibur-blog",
+  "date_context": {
+    "timezone": "Europe/Moscow",
+    "today_iso": "2026-09-15",
+    "today_ru": "15.09.2026",
+    "year": 2026,
+    "month": 9,
+    "month_name_ru": "сентябрь",
+    "weekday_ru": "вторник"
+  },
+  "topic": {
+    "topic_id": "B24",
+    "title": "собака до 15 кг доплата у двери",
+    "h1": "собака до 15 кг доплата у двери",
+    "slug": "sobaka-do-15-kg-doplata-u-dveri",
+    "primary_query": "собака до 15 кг доплата у двери",
+    "priority": "P0"
+  },
+  "searches": [
+    {
+      "query_id": "primary_fresh",
+      "query": "собака до 15 кг доплата у двери 2026",
+      "purpose": "актуальный SERP",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "ГОСТ для питомцев: доплата до 15% и музыка без стробоскопа",
+          "url": "https://runews24.ru/society/01/09/2026/gost-dlya-pitomczev-doplata-do-15-i-muzyika-bez-stroboskopa",
+          "snippet": ""
+        },
+        {
+          "title": "Подкармливать нельзя запретить: что происходит с законом о бездомных ...",
+          "url": "https://www.rambler.ru/eco/pomosch/56490713-podkarmlivat-nelzya-zapretit-chto-proishodit-s-zakonom-o-bezdomnyh-sobakah-v-2026-godu/",
+          "snippet": "Новый национальный стандарт для pet-friendly-отелей, который вступает в силу с 1 декабря 2026 года, содержит не только очевидные требования вроде лежанок и мисок."
+        },
+        {
+          "title": "ГОСТ для питомцев: доплата до 15% и музыка без стробоскопа",
+          "url": "https://dzen.ru/news/story/af154955-feae-507a-bf81-3a679c9abf3d",
+          "snippet": "Но собаки — не единственные животные, чьё кормление вызывает споры. Все подробности о том, законно ли угощать голубей хлебом и семечками, читайте в нашем материале."
+        },
+        {
+          "title": "Отели с собаками в России 2026: новые правила заселения с 1 сентября",
+          "url": "https://dzen.ru/a/aphAv6CBjx8KEoD9",
+          "snippet": "Новый национальный стандарт для pet-friendly-отелей, который вступает в силу с 1 декабря 2026 года, содержит не только очевидные требования вроде лежанок и мисок."
+        },
+        {
+          "title": "ГОСТ для питомцев: доплата до 15% и музыка без стробоскопа",
+          "url": "https://finance.rambler.ru/money/56994440-gost-dlya-pitomtsev-doplata-do-15-i-muzyka-bez-stroboskopa/",
+          "snippet": "С 1 сентября 2026 года в России вступают в силу новые требования доступности для инвалидов объектов туристской индустрии. Одно из ключевых изменений напрямую касается владельцев собак. Гостиница не вправе отказать в заселении и размещении незрячего инвалида с собакой-проводником только на том основании, что в отеле нельзя с животными."
+        },
+        {
+          "title": "Правила дорожного движения - ПДД 2026 года",
+          "url": "https://pddmaster.ru/documents/pdd",
+          "snippet": "ГОСТ также допускает разовую доплату за подготовку номера и аллергенную уборку — обычно 10-15% от стоимости брони, а также возможность устанавливать возвращаемый депозит для покрытия возможного ущерба. Впрочем, стоимость проживания с питомцем может варьироваться."
+        }
+      ],
+      "searched_at": "2026-09-15"
+    },
+    {
+      "query_id": "title_fresh",
+      "query": "собака до 15 кг доплата у двери 2026",
+      "purpose": "SERP по человеческому title",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "ГОСТ для питомцев: доплата до 15% и музыка без стробоскопа",
+          "url": "https://runews24.ru/society/01/09/2026/gost-dlya-pitomczev-doplata-do-15-i-muzyika-bez-stroboskopa",
+          "snippet": ""
+        },
+        {
+          "title": "Подкармливать нельзя запретить: что происходит с законом о бездомных ...",
+          "url": "https://www.rambler.ru/eco/pomosch/56490713-podkarmlivat-nelzya-zapretit-chto-proishodit-s-zakonom-o-bezdomnyh-sobakah-v-2026-godu/",
+          "snippet": "Новый национальный стандарт для pet-friendly-отелей, который вступает в силу с 1 декабря 2026 года, содержит не только очевидные требования вроде лежанок и мисок."
+        },
+        {
+          "title": "Правила выгула собак 2025-2026: ФЗ-498, штрафы и изменения",
+          "url": "https://bistrodengi.ru/articles/pravila-vygula-sobak-v-2025-2026-godu-chto-vazhno-znat/",
+          "snippet": "Но собаки — не единственные животные, чьё кормление вызывает споры. Все подробности о том, законно ли угощать голубей хлебом и семечками, читайте в нашем материале."
+        },
+        {
+          "title": "ГОСТ для питомцев: доплата до 15% и музыка без стробоскопа",
+          "url": "https://dzen.ru/news/story/af154955-feae-507a-bf81-3a679c9abf3d",
+          "snippet": "Ключевым документом, регламентирующим правила выгула собак на территории Российской Федерации, является Федеральный закон № 498-ФЗ «Об ответственном обращении с животными». Он действует с 2020 года и регулярно пополняется новыми нормами и является ответом на вопрос какой закон о выгуле собак."
+        },
+        {
+          "title": "Как перевозить животных в самолёте: правила и тарифы 2026 года",
+          "url": "https://otello.ru/nomer/kak-perevozit-zhivotnyh-v-samolyote-pravila-i-tarify-2026-goda",
+          "snippet": "Новый национальный стандарт для pet-friendly-отелей, который вступает в силу с 1 декабря 2026 года, содержит не только очевидные требования вроде лежанок и мисок."
+        },
+        {
+          "title": "Перевозка животных в самолете: правила, стоимость, документы и условия ...",
+          "url": "https://www.aviasales.ru/psgr/article/animal-flight",
+          "snippet": "Рассказываем, как выбрать переноску, оформить справки для России и за рубеж, а также делимся актуальными ценами авиакомпаний."
+        }
+      ],
+      "searched_at": "2026-09-15"
+    },
+    {
+      "query_id": "official_docs",
+      "query": "собака до 15 кг доплата у двери official docs 2026",
+      "purpose": "официальные docs",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Подкармливать нельзя запретить: что происходит с законом о бездомных ...",
+          "url": "https://www.rambler.ru/eco/pomosch/56490713-podkarmlivat-nelzya-zapretit-chto-proishodit-s-zakonom-o-bezdomnyh-sobakah-v-2026-godu/",
+          "snippet": ""
+        },
+        {
+          "title": "Новые правила для собак: что изменилось и кого это касается 2026.",
+          "url": "https://sevlis.ru/17.03.2026-novie-pravila-dlya-sobak-mart-2026.php",
+          "snippet": "Но собаки — не единственные животные, чьё кормление вызывает споры. Все подробности о том, законно ли угощать голубей хлебом и семечками, читайте в нашем материале."
+        },
+        {
+          "title": "ГОСТ для питомцев: доплата до 15% и музыка без стробоскопа",
+          "url": "https://runews24.ru/society/01/09/2026/gost-dlya-pitomczev-doplata-do-15-i-muzyika-bez-stroboskopa",
+          "snippet": "С 1 сентября 2026 года (по плану) — обязательная регистрация всех собак и кошек в единой государственной базе. Процедура бесплатная, с чипированием или маркировкой."
+        },
+        {
+          "title": "Правила выгула собак: закон в 2026 году, штраф, запрещенные места ...",
+          "url": "https://pronormy.ru/obshchestvo/zakon/zakon-o-vygule-sobak",
+          "snippet": "Новый национальный стандарт для pet-friendly-отелей, который вступает в силу с 1 декабря 2026 года, содержит не только очевидные требования вроде лежанок и мисок."
+        },
+        {
+          "title": "Закон о собаках 2025: новые правила выгула, перевозки и содержания ...",
+          "url": "https://www.fontanka.ru/2025/09/23/76041581/",
+          "snippet": "Выгул собак, правила и требования к содержанию их, а также кошек стали основными тезисами нормативного документа. С первого января 2019 года он включен в действующее на территории страны законодательство, но некоторые статьи вступили в действие с нынешнего, 2026 года."
+        },
+        {
+          "title": "Отели с собаками в России 2026: новые правила заселения с 1 сентября",
+          "url": "https://dzen.ru/a/aphAv6CBjx8KEoD9",
+          "snippet": "С 2026 года в регионе планируется ввести фотографирование и биометрию домашних и бездомных животных, что позволит их быстро идентифицировать. Отдельная инициатива касается бродячих собак. Рабочая группа продолжает настаивать на запрете их подкармливания."
+        }
+      ],
+      "searched_at": "2026-09-15"
+    },
+    {
+      "query_id": "github_evidence",
+      "query": "site:github.com собака до 15 кг доплата у двери 2026",
+      "purpose": "GitHub evidence",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "GitHub - mrRosRobot/Zadachki",
+          "url": "https://github.com/mrRosRobot/Zadachki",
+          "snippet": ""
+        },
+        {
+          "title": "unsupervised_topic_modeling/topics/ru/17/100/50/topics at ... - GitHub",
+          "url": "https://github.com/annontopicmodel/unsupervised_topic_modeling/blob/master/topics/ru/17/100/50/topics",
+          "snippet": "Создайте переменные для хранения вашего имени, возраста, роста (в см), веса (в кг) и любимого цвета. Выведите всю эту информацию одним предложением, используя f-строки."
+        },
+        {
+          "title": "RimWorld AutoTranslation Cache - Russian / Русский (Google)",
+          "url": "https://gist.github.com/csh1668/a6f6ab1471bfbb1f2e840b4fd937226f",
+          "snippet": "Contribute to annontopicmodel/unsupervised_topic_modeling development by creating an account on GitHub."
+        },
+        {
+          "title": "coursera-ddp-shiny/corpora/ru_50k.txt at master - GitHub",
+          "url": "https://github.com/spujadas/coursera-ddp-shiny/blob/master/corpora/ru_50k.txt",
+          "snippet": "<Cache Language=\"Russian / Русский\"><Entry Key=\"NGxvcmlzNC5tb3JlbGlua2FibGVzOkJ1aWxkIGEgd2VsbCBzdG9ja2VkIGNhYmluZXQgdGhhdCBncmFudHMgYW4gZXZlbiBiaWdnZXIgc3BlZWQgYm9udXMu\">Build a well stocked cabinet that grants an even bigger speed bonus.</Entry><Entry Key ..."
+        },
+        {
+          "title": "algorithms/688. Суслик и собака at master - GitHub",
+          "url": "https://github.com/AngelinaKhilman/algorithms/blob/master/688.%20%D0%A1%D1%83%D1%81%D0%BB%D0%B8%D0%BA%20%D0%B8%20%D1%81%D0%BE%D0%B1%D0%B0%D0%BA%D0%B0",
+          "snippet": "Coursera Developing Data Products Week 4 Peer-graded Assignment: Shiny - spujadas/coursera-ddp-shiny"
+        },
+        {
+          "title": "Multi-Page-Sales-Analysis-PowerBI/navigator_dashboard.png at main ...",
+          "url": "https://github.com/Esraa-MOhamed7/Multi-Page-Sales-Analysis-PowerBI/blob/main/navigator_dashboard.png",
+          "snippet": "Ни собака, ни суслик в математике не сильны, но, с другой стороны, они и не беспросветно глупы. Суслик выбирает определенную норку и бежит к ней по прямой с определенной скоростью."
+        }
+      ],
+      "searched_at": "2026-09-15"
+    },
+    {
+      "query_id": "community_experience",
+      "query": "собака до 15 кг доплата у двери forum problems опыт 2026",
+      "purpose": "форумы и живые проблемы",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Собаки. Форум о домашних животных — Моё зверьё",
+          "url": "https://animals.moe-online.ru/forum/sobaki",
+          "snippet": ""
+        },
+        {
+          "title": "Пёсик - обсуждение вопросов содержания, дрессировки и разведения собак",
+          "url": "https://www.pesiq.ru/forum/",
+          "snippet": "Надоела! В нашем доме, в нашем подъезде у соседей появилась собачка такса. Первое время с ней на улицу постоянно выходили гулять дети."
+        },
+        {
+          "title": "Как обустроить дом для собаки: советы по зонированию и выбору ...",
+          "url": "https://lemanapro.ru/journal/kak-obustroit-dom-esli-zaveli-sobaku/",
+          "snippet": "Форум о содержании собак. Дрессировка, кормление, здоровье и разведение четвероногих питомцев. Отзывы о ветеринарных клиниках, питомниках. Анонсы выставок, семинаров и мастер-классов."
+        },
+        {
+          "title": "Моя собака ссыт в подъезде, лифте. в общем пока не дошли до улицы ...",
+          "url": "https://vk.com/wall-244420_237090",
+          "snippet": "В статье рассказываем, как организовать входную зону, защитить мебель, подобрать напольные покрытия и сделать квартиру комфортной для всех членов семьи."
+        },
+        {
+          "title": "Форум о собаках | MyDog.su - сайт о собаках",
+          "url": "https://www.mydog.su/forum",
+          "snippet": "Сносить на руках не реально , весит 35 кг. Гуляем каждые 3 часа и не помогает. Тоже не знаем что делать, у нас в подъезде 3 собаки, соседи которые без животных уже пишут на подъездной двери ..."
+        },
+        {
+          "title": "Почему собака идёт к двери ДО того, как ты приехал",
+          "url": "https://www.youtube.com/watch?v=htufCS-A8iY",
+          "snippet": "Форум о собаках для всех любителей собак - оперативные ответы на любые вопросы собаководов, приятное общение, консультации специалистов. Заходите, здесь Вам всегда рады."
+        }
+      ],
+      "searched_at": "2026-09-15"
+    }
+  ],
+  "errors": []
+}
