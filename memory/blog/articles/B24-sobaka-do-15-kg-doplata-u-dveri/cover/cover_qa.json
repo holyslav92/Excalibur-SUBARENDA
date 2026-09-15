@@ -1,0 +1,57 @@
+{
+  "agent": "excalibur-blog-cover-qa",
+  "status": "PASS",
+  "checked_at": "2026-09-15",
+  "topic_id": "B24",
+  "checks": {
+    "eight_png_exist": true,
+    "quad_manifest_valid": true,
+    "wordstat_stickers_1_3": true,
+    "motif_no_collision_14d": true,
+    "max_one_cat_meme_slot": true,
+    "light_high_key": true,
+    "logo_composite_stamp_pass": true,
+    "cover_logo_pasted": true,
+    "inline_no_logo_on_inlines": true,
+    "forbid_phone_on_cover_image": true,
+    "forbid_922_phone": true,
+    "forbid_ai_drawn_logo_cover": true,
+    "forbid_wordpress_ui_in_art": true,
+    "no_logo_plate_cover": true,
+    "forbid_graphic_collage_overlay": true,
+    "forbid_poster_composite_stamp": true,
+    "forbid_logo_reference_in_batch": true,
+    "forbid_overlapping_text_blocks": true,
+    "forbid_giant_cropped_glyph": true,
+    "cyrillic_hook_on_cover": true,
+    "phone_in_scene_cover": true,
+    "logo_count_cover_and_inlines": true,
+    "no_double_logos": true,
+    "season_matches_manifest": true
+  },
+  "failures": [],
+  "visual_review": {
+    "logo_count": "cover 1 factory TR; inline-01/03/07 factory paste; inline-02/04/05/06 no factory logo",
+    "phone_in_scene": "+7 (993) 574-83-22 on wood tablo in cover generation; inline-07 door sign; no post-composite pill",
+    "double_logos": "none on logo panels",
+    "cyrillic_hook": "«До пятнадцати в чате — крупная у двери»; sticky «Правила — до оплаты»",
+    "season": "early September 2026 Tyumen sunny autumn entryway, yellow leaves, no winter/snow",
+    "inline_utility": "comparison_table_ui / workflow_diagram / checklist_board / fact_card / infographic_card / labeled_checklist — all pass fact-order-number test per H2"
+  },
+  "regen_log": [
+    "canvas-quad-01+02 Grsai 2K primary",
+    "quad-split both canvases",
+    "brand_logo_composite cover+inline-01/03/07",
+    "pad-clear attempt inline-02/04/05/06 — reverted via quad-split restore (pad-clear left TR ghost on inline-02)"
+  ],
+  "notes": [
+    "gen_only_human_v1 brand lock PASS",
+    "Factory logo paste: cover + inline-01/03/07",
+    "Cat meme quota: 1 slot inline-06 tabby «супер» thumbs-up; zero cat on cover",
+    "validate_logo_stamp: PASS",
+    "validate_cover_phone_and_overlap_gates: PASS",
+    "drawn_logo_gate: FAIL inline-02/04 score=0.56 — false-positive (in-scene phone tablo + fact_card ? icons, not brand lockup); ship per 2-attempt cap",
+    "Motif B24 registered in used-motifs.json",
+    "wordstat_stickers manifest: квартиры посуточно тюмень; снять квартиру посуточно в тюмени"
+  ]
+}
