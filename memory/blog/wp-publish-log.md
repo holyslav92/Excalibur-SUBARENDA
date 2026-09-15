@@ -1,5 +1,25 @@
 # WP publish log
 
+## B24 — 2026-09-15
+
+- **topic_id:** B24
+- **slug:** napisali-stiralnaya-est-v-kvartire-tolko-rakovina
+- **title:** На фото — стиралка. На третий день — прачечная за 600 ₽
+- **post_id:** 4824
+- **permalink:** /blog/napisali-stiralnaya-est-v-kvartire-tolko-rakovina/
+- **categories:** posutochnaya-arenda (101), sovety-gostyam (106)
+- **featured_image:** 4834
+- **inline_images:** 4835–4841 (7× wp-content/uploads/2026/09/…-inline-0N-1.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS (all article img src → wp-content)
+- **dzen preview:** dzen_yzen_meta=1; cover-1-1024x576.png HTTP 200; feed enclosure → full cover-1.png
+- **interlink outbound:** 4 live /blog/ siblings (crosslink-qa PASS)
+- **interlink inbound:** B01 (3745), B18 (4724)
+- **publish_method:** sftp:22 (Cloud Agent; first attempt hung on SFTP banner — retry OK)
+- **preflight fix:** wp_category_slugs added; crosslink anchor split for goryachaya-voda / vse-vklyucheno
+- **llms_deploy:** PASS (llms.txt + llms-full.txt)
+- **theme_contract_deploy:** WARN skipped (functions.php FAQ bounds already patched)
+
 ## B23 — 2026-09-14
 
 - **topic_id:** B23
