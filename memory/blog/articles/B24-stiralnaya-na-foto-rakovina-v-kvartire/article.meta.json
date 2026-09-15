@@ -3,6 +3,10 @@
   "h1": "На фото — стиралка. На третий день — прачечная за 600 ₽",
   "slug": "napisali-stiralnaya-est-v-kvartire-tolko-rakovina",
   "topic_id": "B24",
+  "wp_category_slugs": [
+    "posutochnaya-arenda",
+    "sovety-gostyam"
+  ],
   "author_id": "dobry-dom",
   "article_mode": "B",
   "description": "На фото — стиралка. На третий день — прачечная за 600 ₽",

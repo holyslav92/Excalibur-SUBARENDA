@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "topic_id": "B24",
+  "slug": "napisali-stiralnaya-est-v-kvartire-tolko-rakovina",
+  "candidates_count": 27,
+  "outbound_found": [
+    {
+      "slug": "kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den",
+      "title": "kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den"
+    },
+    {
+      "slug": "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400",
+      "title": "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400"
+    },
+    {
+      "slug": "v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik",
+      "title": "v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik"
+    },
+    {
+      "slug": "napisali-goryachaya-voda-est-ledyanoj-dush-migayushij-boiler",
+      "title": "napisali-goryachaya-voda-est-ledyanoj-dush-migayushij-boiler"
+    }
+  ],
+  "outbound_unique_slugs": [
+    "kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den",
+    "v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik",
+    "napisali-goryachaya-voda-est-ledyanoj-dush-migayushij-boiler",
+    "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "warnings": [],
+  "errors": []
+}
