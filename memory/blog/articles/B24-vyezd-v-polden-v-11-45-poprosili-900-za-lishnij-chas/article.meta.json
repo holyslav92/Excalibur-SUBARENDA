@@ -3,6 +3,10 @@
   "h1": "Выезд в полдень. За четверть часа — 900 ₽ за «лишний час»",
   "slug": "vyezd-v-polden-v-11-45-poprosili-900-za-lishnij-chas",
   "topic_id": "B24",
+  "wp_category_slugs": [
+    "posutochnaya-arenda",
+    "zalog-i-vyiezd"
+  ],
   "author_id": "dobry-dom",
   "article_mode": "B",
   "description": "Выезд в полдень. За четверть часа — 900 ₽ за «лишний час»",

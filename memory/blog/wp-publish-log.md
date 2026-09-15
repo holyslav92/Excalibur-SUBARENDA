@@ -1,5 +1,23 @@
 # WP publish log
 
+## B24 — 2026-09-15
+
+- **topic_id:** B24
+- **slug:** vyezd-v-polden-v-11-45-poprosili-900-za-lishnij-chas
+- **title:** Выезд в полдень. За четверть часа — 900 ₽ за «лишний час»
+- **post_id:** 4845
+- **permalink:** /blog/vyezd-v-polden-v-11-45-poprosili-900-za-lishnij-chas/
+- **categories:** posutochnaya-arenda (101), zalog-i-vyiezd (102)
+- **featured_image:** 4846
+- **inline_images:** 4847–4849 (3× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS (all img src → wp-content)
+- **dzen preview:** cover-dzen-v3 + cover-dzen-v3-1024x576 uploaded; feed enclosure → …-cover-dzen-v3.png
+- **interlink outbound:** 4 live /blog/ siblings (crosslink-qa PASS)
+- **interlink inbound:** B01 (3745), B18 (4724)
+- **publish_method:** sftp:22 (Cloud Agent; FTP PASV blocked)
+- **preflight fix:** wp_category_slugs added; theme_contract_deploy skipped (functions.php bounds not found — already live)
+
 ## B23 — 2026-09-14
 
 - **topic_id:** B23
