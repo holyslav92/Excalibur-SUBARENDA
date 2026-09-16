@@ -1563,3 +1563,31 @@ category: env
 status: needs-human
 reason: env-only blocker; duplicate of INC-20260903-0640
 needed_decision_or_secret: YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets
+
+## INC-20260916-1020 — Metrika credentials missing (Content-learner B24)
+
+status: needs-human
+run_date: 2026-09-16
+role: excalibur-blog-content-learner
+topic_id: B24
+article_dir: memory/blog/articles/B24-mozhno-s-detmi-doplata-za-rebenka
+severity: medium
+category: env
+
+### What went wrong
+
+- `excalibur_blog_metrika_fetch.py --days 30 --ingest` → METRIKA CREDENTIALS BLOCKER (same root cause as INC-20260903-0640).
+
+### How the agent recovered this run
+
+- evidence_gate SKIP (no content-evidence-report.json); recorded 3 optional/low-confidence lessons in `memory/content-lessons.md`; no causal Metrika claims.
+
+### Durable fix needed before next run
+
+- Set YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets for tenant.
+
+### Fixer resolution
+
+status: needs-human
+reason: env-only blocker; duplicate of INC-20260903-0640
+needed_decision_or_secret: YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets

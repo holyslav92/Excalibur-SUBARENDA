@@ -1549,3 +1549,138 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+---
+
+## LESSON-20260916-1020-B24-kids-badge-permission-vs-price
+status: proposed
+topic_id: B24
+category: utility
+confidence: low
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP. Урок из publish-артефактов: title-brief.json, description-brief.json, case-delivery-gate PASS, article.html, research-notes hook `kids_extra_fee`, scout handoff 2026-09-16.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest BLOCKER (INC-20260903-0640, INC-20260916-1020).
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Two-beat H1 ««Можно с детьми» в карточке. При заезде: 1 500 ₽ за 2 ночи, 6-летнему»: значок-обещание → контрфакт доплаты + возраст + ₽, не how-to.
+- §1: цитата «за шестилетнего — полторы тысячи за две ночи», 8 400 ₽ (2 взрослых + ребёнок), кроватка 500 ₽ отдельной строкой; editorial disclaimer — 1 500 ₽ композитный кейс, не тариф «Доброго дома».
+- H2 «Значок разрешает приехать. Он не называет итог» — разведение permission vs price; примеры «бесплатно до 3/5/7 лет» как условия объекта, не норма Тюмени.
+- Klyshin «Нет. Так не заселяем.» → «цена за ребёнка не может появиться на пороге»; вопрос-отмычка «ребёнку шесть — он входит в базовое число гостей или считается сверх?» → TG/MAX mid-body.
+- Четыре слоя семейного бронирования: возраст, учёт в числе гостей, итог за все ночи, кроватка/бельё — в чеклисте после «Мой вывод как практика».
+- Interlink spine: B04 доплата за третьего у двери (явная ссылка — та же механика), B10 «всё включено», B03 «рядом», B06 чемоданы между — одна красная линия «цифру называют, когда отказаться дороже».
+- Wordstat P0 spine «квартиры посуточно тюмень» 4 724 (Tyumen); «квартира посуточно с детьми» 239 (RF); «доплата за ребенка посуточно» 4 (WORDSTAT PARTIAL) — узкий угол, не binary skip.
+- Description не дублирует H1: «а сколько за ребёнка?» + кроватка у двери (description-brief PASS).
+- Anti-dup явный: не B04 (третий взрослый), не B22 (паспорт/код), не pet-fee; центральный конфликт — значок «можно с детьми» ≠ цена ребёнка.
+- Cover-QA PASS: gen_only_human_v1, 2× Grsai quad; drawn_logo_gate false-positive inline-06 Gatsby people-meme documented.
+
+### Change
+- В `kids_extra_fee` кейсах в §1 сразу фиксировать **три слоя**: (1) значок «можно с детьми» в карточке, (2) 8 400 ₽ как оплаченная сумма без строки про ребёнка, (3) 1 500 ₽ + 500 ₽ кроватка при заезде — не раскрывать permission vs price только во втором H2.
+- Scout handoff: при hook `kids_extra_fee` логировать original Klyshin «можно с детьми — доплата за ребёнка» + final P0 spine Tyumen + anti-dup B04 third-adult.
+
+### Never again
+- Строить kids-fee кейс как правовой гайд о дискриминации семей или how-to «как вернуть доплату».
+- Читать «можно с детьми» как «ребёнок бесплатен» / «входит в цену» без itemized list.
+- Смешивать B04 (доплата за взрослого гостя) и B24 (ребёнок + семейный значок) — разные hook_id, но явная sibling-ссылка в mid-body допустима.
+- Бронировать «2 взрослых» и обсуждать ребёнка на месте; не писать возраст в переписке.
+- Выдавать 1 500 ₽ / 500 ₽ за рыночные тарифы без editorial disclaimer.
+- How-to до морали; финал «Наш вывод простой».
+
+### Proposed apply
+- Scout: hook `kids_extra_fee` → handoff lockpick (возраст + число гостей + итог + кроватка) + final P0 spine Tyumen + anti-dup B04.
+- Review only; Writer prompt не трогать автоматически.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260916-1020-B24-door-leverage-tired-child
+status: proposed
+topic_id: B24
+category: structure
+confidence: low
+
+### Evidence
+- artifact: title-brief.json#angle
+  finding: angle «Отметка «можно с детьми» не означала, что ребёнок включён в уже оплаченную цену»; opening-meta-gate PASS; H2 «Почему полторы тысячи называют именно у двери».
+- metrika_signal: none (credentials unavailable; causal retention не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Слой «чемоданы + ребёнок после дороги не держится + такси уехало» — asymmetric moment после 8 400 ₽; не скандал, а «цена за покой».
+- Блок «семья прочитала значок как цену / хост как разрешение» — двойное прочтение без обвинения; «по букве никто не обманул, по смыслу — другая цена».
+- Явная sibling-ссылка на B04 «оплатил за двоих — доплата за третьего» как та же door-leverage механика с другим поводом.
+- Контраст «8 400 ₽ переведены» vs «1 500 ₽ у подъезда» — money-timing spine без дублирования B08 тишины.
+- Чеклист из 7 пунктов после «Мой вывод как практика»; мораль «Сначала проверка. Потом перевод.»
+
+### Change
+- Для `kids_extra_fee` hooks всегда включать **family door temporal leverage** (уставший ребёнок, нельзя развернуться) в utility-блок — не только таблицу возрастных порогов.
+- При interlink — sibling про door surprises (B04 guest, B10 taxi, B21 early wait) одной линией «оплата завершена ≠ все условия названы».
+
+### Never again
+- Писать kids-fee кейс только про возрастные пороги платформ, игнорируя asymmetric moment (когда искать новое жильё с шестилетним дороже согласия).
+- Финал «Наш вывод простой» вместо «Мой вывод как практика».
+
+### Proposed apply
+- Writer checklist (review-only): kids_extra_fee + family arrival → один абзац про asymmetric moment после значка «можно с детьми».
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260916-1020-B24-title-card-vs-checkin-reveal
+status: proposed
+topic_id: B24
+category: voice
+confidence: low
+
+### Evidence
+- artifact: title-brief.json / derouter-title
+  finding: H1 ««Можно с детьми» в карточке. При заезде: 1 500 ₽ за 2 ночи, 6-летнему»; klyshin_title_shape:3; angle permission vs paid child.
+- metrika_signal: none (credentials unavailable; causal CTR не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Cable pain-scene: обещание в карточке (кавычки) + temporal beat «при заезде» + ₽ (1 500) + возраст (6-летнему) + длительность (2 ночи), без SEO-хвоста «с детьми посуточно».
+- Description rhythm klyshin_case_hook: «а сколько за ребёнка?» + кроватка у двери (not_equal_title PASS).
+- Cover-text two-beat «Можно с детьми — 1 500 у двери» + sticky «Сначала проверка, потом перевод» — контраст без полного спойлера H1.
+- 8 400 ₽ и возраст шесть — в §1/cover stickers, не duty-log HH:MM; opening-meta-gate PASS.
+
+### Change
+- Для kids_extra_fee hooks: prefer **card badge + check-in beat + ₽ + age + nights** over narrow «доплата за ребенка посуточно» SEO lead.
+- Title: двухчастный ритм «в карточке / при заезде» > compound «8 400 + кроватка + платформа» spoiler.
+
+### Never again
+- H1-спойлер со всей таблицей возрастных порогов Avito/Sutochno — оставлять в utility H2.
+- Description, дублирующий H1 про «1 500 ₽ за 2 ночи» без контраста «а сколько за ребёнка?».
+
+### Proposed apply
+- Title/Description review: kids_extra_fee — card vs check-in two-beat + age/₽ > children-keyword H1.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
