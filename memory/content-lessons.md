@@ -1684,3 +1684,138 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+---
+
+## LESSON-20260916-1259-B25-sleeping-places-type-mismatch
+status: proposed
+topic_id: B25
+category: utility
+confidence: low
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP. Урок из publish-артефактов: title-brief.json, description-brief.json, case-delivery-gate PASS, article.html, research-notes hook `sleeping_places_mismatch`, scout handoff 2026-09-16.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest SKIP (INC-20260903-0640, per director Metrika optional without token).
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Two-beat H1 «На фото две кровати. Ночью троих — диван и складной матрас»: фото/шапка → ночной контрфакт (диван + матрас на полу), не how-to.
+- §1: 10 400 ₽ за две ночи, трое взрослых, шапка «2 кровати», цитаты «Две кровати, троим нормально» / «Диван же тоже спальное место. В карточке написано»; editorial disclaimer — не рыночный тариф.
+- Центральный конфликт **TYPE mismatch** (кровать vs диван-кровать vs складной матрас), не COUNT fee — явный anti-dup vs B04 «доплата за третьего у двери».
+- H2 «Почему «2 кровати» в карточке — это не две кровати»: шапка vs блок «Спальные места» (основные/дополнительные); диван законен, если назван и показан разложенным.
+- Klyshin «Нет. Так не заселяем.» → «если спальное место — диван, называю диваном до оплаты»; вопрос-отмычка «Сколько спальных мест и что именно — кровать или диван?» → TG/MAX mid-body.
+- Interlink spine: B04 count-at-door (явное разведение), B05 рейтинг ≠ фото дивана, B11 «всё для гостей», B07 «кухня есть» — одна красная линия «слово в шапке ≠ тип поверхности».
+- Wordstat P0 spine «квартиры посуточно тюмень» 4 724 (Tyumen); «спальные места посуточно» 131 (RF) — узкий угол, не binary skip.
+- Description не дублирует H1: ««Две кровати» — это какие именно?» + диван и матрас на полу (description-brief PASS).
+- Cover-QA PASS: gen_only_human_v1, 2× Grsai quad, sleeping-places infographic inline-02, no cat meme.
+
+### Change
+- В `sleeping_places_mismatch` кейсах в §1 сразу фиксировать **три слоя**: (1) шапка/фото «2 кровати», (2) переписка «всем будет удобно» как оценка не тип, (3) ночная схема (кровать + диван + матрас) — не раскрывать блок «Спальные места» только во втором H2.
+- Scout handoff: при hook `sleeping_places_mismatch` логировать original Klyshin «Две кровати на фото. Ночью второй гость — на диване и складном матрасе» + final P0 spine Tyumen + anti-dup B04 third-adult COUNT.
+
+### Never again
+- Строить sleeping-places кейс как юридический спор о возврате или how-to «как пожаловаться на модерацию».
+- Смешивать B04 (доплата за число гостей у двери) и B25 (тип поверхности при трёх взрослых) — разные hook_id.
+- Принимать «2 кровати» в шапке или «всем будет удобно» за itemized list типов мест без блока «Спальные места» и фото разложенного дивана.
+- Считать диван-кровать автоматически «второй кроватью» без раскрытия состояния, белья и раскладки.
+- Выдавать 10 400 ₽ за рыночный тариф без editorial disclaimer.
+- How-to до морали; финал «Наш вывод простой».
+
+### Proposed apply
+- Scout: hook `sleeping_places_mismatch` → handoff lockpick (тип на каждого + фото разложенного дивана + бельё на N) + final P0 spine Tyumen + anti-dup B04.
+- Review only; Writer prompt не трогать автоматически.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260916-1259-B25-late-checkin-night-leverage
+status: proposed
+topic_id: B25
+category: structure
+confidence: low
+
+### Evidence
+- artifact: title-brief.json#angle
+  finding: angle «Две кровати в карточке оказались одной кроватью, диваном и складным матрасом»; opening-meta-gate PASS; H2 «И ещё один слой… позднее заселение» + asymmetric moment после оплаты.
+- metrika_signal: none (credentials unavailable; causal retention не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Слой «поздний вечер → деньги переведены → некуда переселяться → спать на том, что есть» — asymmetric moment после 10 400 ₽; не злодейство, а слабая позиция гостя.
+- Блок «утром можно отменить / поздним вечером уже никуда» — объясняет, почему TYPE mismatch всплывает ночью, не днём.
+- Контраст «оценка „всем будет удобно“» vs «ответ: кровать 160×200, диван разложенный, третьему матрас» — host-answer mismatch без B08-тишины.
+- Чеклист после «Мой вывод как практика»: тип на каждого, фото разложенного дивана, бельё на всех, письменный ответ до перевода.
+- Связка night leverage + money-timing через interlink B08 (тишина), B04 (дверь/count) — не дублировать B11 night shop.
+
+### Change
+- Для `sleeping_places_mismatch` hooks всегда включать **late-checkin temporal leverage** (оплата заранее + некуда уехать ночью) в utility-блок — не только механику шапки vs «Спальные места».
+- При interlink — sibling про broad/card promises (B05 rating, B11 amenities, B10 all-inclusive) одной линией «галочка/шапка ≠ тип сна сейчас».
+
+### Never again
+- Писать sleeping-places кейс только про блок карточки, игнорируя temporal leverage (когда исправить нечем — уже внутри и оплачено).
+- Финал «Наш вывод простой» вместо «Мой вывод как практика».
+
+### Proposed apply
+- Writer checklist (review-only): sleeping_places_mismatch + late_checkin → один абзац про asymmetric moment после «2 кровати» в шапке.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260916-1259-B25-title-photo-vs-night-reveal
+status: proposed
+topic_id: B25
+category: voice
+confidence: low
+
+### Evidence
+- artifact: title-brief.json / title-user-prompt.md
+  finding: scout draft «Две кровати на фото. Ночью — диван и складной матрас» → финальный H1 «На фото две кровати. Ночью троих — диван и складной матрас»; klyshin_title_shape:1; figure gate «троих».
+- metrika_signal: none (credentials unavailable; causal CTR не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Cable pain-scene: «на фото две кровати» (визуальное обещание) + temporal beat «ночью» + figure «троих» + tangible counterfact (диван + складной матрас), без SEO-хвоста «спальные места посуточно».
+- Description rhythm klyshin_case_hook: ««Две кровати» — это какие именно?» (not_equal_title PASS).
+- Cover-text two-beat «На фото две кровати — диван и пол» + sticky «Сначала проверка, потом перевод» — контраст без полного спойлера H1.
+- 10 400 ₽ и «две ночи» — в §1/cover stickers, не duty-log HH:MM; opening-meta-gate PASS.
+
+### Change
+- Для sleeping_places_mismatch hooks: prefer **photo/card beat + night beat + figure (троих/2 ночи) + sofa/mat reveal** over narrow «спальные места посуточно» SEO lead.
+- Title: двухчастный ритм «на фото / ночью» > compound «10 400 + диван + матрас + блок карточки» spoiler.
+
+### Never again
+- H1-спойлер со всей таксономией «основные/дополнительные места» — оставлять в utility H2 и чеклисте.
+- HH:MM в H1 (gate BLOCK).
+- Description, дублирующий H1 про «диван и складной матрас» без контраста «какие именно две кровати?».
+
+### Proposed apply
+- Title/Description review: sleeping_places_mismatch — photo vs night two-beat + figure > sleeping-places-keyword H1.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
