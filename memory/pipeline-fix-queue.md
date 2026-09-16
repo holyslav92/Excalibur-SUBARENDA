@@ -1686,3 +1686,50 @@ category: env
 status: needs-human
 reason: env-only blocker; duplicate of INC-20260903-0640
 needed_decision_or_secret: YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets
+
+## INC-20260916-1256 — wp_category_slugs manual add for sleeping-places angle (B25 publish)
+
+status: fixed
+run_date: 2026-09-16
+role: excalibur-blog-publish
+topic_id: B25
+article_dir: memory/blog/articles/B25-dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras
+severity: low
+category: script
+
+### What went wrong
+
+- Publish preflight manually added `wp_category_slugs` (posutochnaya-arenda, sovety-gostyam) before upload.
+- `infer_secondary_slugs_from_brief()` returned [] for B25 title-brief (спальные места / кровати / диван / матрас) — keywords map lacked sleeping-place tokens.
+
+### How the agent recovered this run
+
+- Publish agent set explicit slugs in `article.meta.json`; wp-categories-gate PASS (101, 106); post 4877 live.
+
+### Durable fix needed before next run
+
+- Extend sovety-gostyam keyword map with спальн/кроват/диван/матрас for guest sleeping-place advice angles.
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_wp_categories.py`
+- `tests/test_wp_categories_interlink.py`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-09-16
+fix_summary:
+- Added sleeping-place keywords (спальн, кроват, диван, матрас) to sovety-gostyam inference map; B25 brief now auto-infers sovety-gostyam without manual slug edit.
+files_changed:
+- `scripts/excalibur_blog_wp_categories.py`
+- `tests/test_wp_categories_interlink.py`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_wp_categories.py`
+- `python3 -m unittest tests.test_wp_categories_interlink.WpCategoriesInterlinkTests.test_wp_categories_infer_sovety_from_sleeping_places_brief -v`
+- B25 `infer_secondary_slugs_from_brief()` → sovety-gostyam
+commit: pending
