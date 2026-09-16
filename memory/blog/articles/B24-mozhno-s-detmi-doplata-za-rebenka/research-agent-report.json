@@ -1,0 +1,122 @@
+{
+  "status": "PASS",
+  "topic_id": "B24",
+  "slug": "mozhno-s-detmi-doplata-za-rebenka",
+  "research_date": "2026-09-16",
+  "summary": "Research for guest CASE: listing badge «можно с детьми» but check-in brings undisclosed 1 500 ₽ child surcharge (+ optional crib/bedding). Fresh signals: Scout kids_extra_fee hook (2026-09-16), Dobriy Dom TG post ~2026-09-15 on details noticed after payment, Sutochno.ru/Avito official rules that mandatory guest/child surcharges belong in booking calculation or listing. Mechanics: permission badge ≠ price; age/base-guest/extra-bed/bedding are four separate pre-pay questions. Anti-dup vs B04 (third adult), B21/B22 (door), B23 (checkout linen).",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Scout Klyshin kids_extra_fee editorial hook + Dobriy Dom TG ~2026-09-15 listing-mismatch post + Mom.life family booking thread",
+    "source_type": "community_and_platform",
+    "urls": [
+      "https://t.me/klyshin_A",
+      "https://t.me/Dobriy_dom_72",
+      "https://mom.life/post/69d8ea49af3306a95901134a-dobryj-denranshe-vsegda-kog"
+    ],
+    "accessed_at": "2026-09-16",
+    "note": "Composite guest case from Scout hook; not a verified transcript of one Tyumen booking. Klyshin live posts on 2026-09-16 cover other real-estate topics; hook is from topic bank angle."
+  },
+  "freshness_audit": {
+    "research_date": "2026-09-16",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://t.me/Dobriy_dom_72",
+      "published_at": "2026-09-15",
+      "note": "Local tenant channel: guests notice listing mismatches (bed type, check-in mode, undisclosed details) after payment — supports pre-pay price/child-condition fixation."
+    },
+    "additional_fresh_signals": [
+      {
+        "url": "https://t.me/klyshin_A",
+        "published_at": "2026-09-16",
+        "type": "scout_editorial",
+        "note": "kids_extra_fee hook from topic bank: «можно с детьми» vs 1 500 ₽ at check-in."
+      },
+      {
+        "url": "https://mom.life/post/69d8ea49af3306a95901134a-dobryj-denranshe-vsegda-kog",
+        "published_at": "community_thread",
+        "type": "community_forum",
+        "note": "Parents discuss apartment booking with child on Sutochno/Ostrovok; platform support matters; no universal child-fee rule."
+      }
+    ]
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176", "225"],
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 4724,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "снять квартиру посуточно в тюмени",
+        "volume": 1452,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "квартира посуточно с детьми",
+        "volume": 239,
+        "region": "225"
+      },
+      {
+        "phrase": "снять квартиру посуточно с детьми",
+        "volume": 168,
+        "region": "225"
+      },
+      {
+        "phrase": "доплата за гостя",
+        "volume": 309,
+        "region": "225"
+      },
+      {
+        "phrase": "доплата за ребенка посуточно",
+        "volume": 4,
+        "region": "225",
+        "note": "WORDSTAT PARTIAL totalCount-only"
+      }
+    ]
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "No bank/developer/JKH tariff digits; Sutochno/Avito platform policy cited as official platform context; case 1 500 ₽ is editorial scenario only",
+    "verified_claims": 0,
+    "entities_checked": [],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "memory/blog/articles/B24-mozhno-s-detmi-doplata-za-rebenka/derouter-opus-stamp-research.json",
+    "first_attempt": "PASS"
+  },
+  "source_count": 16,
+  "limitations": [
+    "No verified transcript of a specific Tyumen booking; case mechanic from Scout editorial kids_extra_fee hook.",
+    "Live Klyshin channel posts on 2026-09-16 do not cover this child-fee hook — hook is from topic bank angle.",
+    "Sutochno listing age thresholds (3/5/7 years, 300–600 ₽) are per-object examples, not Tyumen market norms.",
+    "SO apartments 1 000 ₽ per extra guest is one operator offer example, not universal short-term rule.",
+    "Mom.life thread is community opinion, not binding platform policy.",
+    "Direct booking via messenger may bypass aggregator price-calculation rules cited from Sutochno/Avito."
+  ],
+  "writer_safe_urls": [
+    "https://t.me/Dobriy_dom_72",
+    "https://t.me/Dobriy_dom_Tyumen",
+    "https://max.ru/id660300569233_biz",
+    "https://добрыйдом-72.рф/",
+    "https://добрыйдом-72.рф/booking/",
+    "https://добрыйдом-72.рф/blog/",
+    "https://sutochno.ru/sj/iz-chego-skladivaetsya-stoimost-bronirovaniya",
+    "https://sutochno.ru/blog/rules",
+    "https://host.avito.com/course/lesson-3",
+    "https://host.avito.com/course/lesson-5",
+    "https://mom.life/post/69d8ea49af3306a95901134a-dobryj-denranshe-vsegda-kog"
+  ],
+  "errors": []
+}

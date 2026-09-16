@@ -1,0 +1,218 @@
+{
+  "agent": "excalibur-blog",
+  "date_context": {
+    "timezone": "Europe/Moscow",
+    "today_iso": "2026-09-16",
+    "today_ru": "16.09.2026",
+    "year": 2026,
+    "month": 9,
+    "month_name_ru": "сентябрь",
+    "weekday_ru": "среда"
+  },
+  "topic": {
+    "topic_id": "B24",
+    "title": "можно с детьми доплата за ребёнка",
+    "h1": "можно с детьми доплата за ребёнка",
+    "slug": "mozhno-s-detmi-doplata-za-rebenka",
+    "primary_query": "можно с детьми доплата за ребёнка",
+    "priority": "P0"
+  },
+  "searches": [
+    {
+      "query_id": "primary_fresh",
+      "query": "можно с детьми доплата за ребёнка 2026",
+      "purpose": "актуальный SERP",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Детские пособия в 2026 году — полный список выплат на детей",
+          "url": "https://posobium.ru/blog/detskie-posobiya-2026",
+          "snippet": ""
+        },
+        {
+          "title": "Все пособия на детей в 2026 году — полный гид | Kids4U",
+          "url": "https://kids4u.ru/blog/posobiya-na-detej-2026",
+          "snippet": "Все детские пособия в 2026 году: единое пособие, по уходу до 1.5 лет, при рождении, материнский капитал. Размеры, условия, как оформить — подробный обзор для родителей."
+        },
+        {
+          "title": "Все пособия в 2026 году — полный список с размерами и условиями",
+          "url": "https://posobium.ru/blog/vse-posobiya-2026",
+          "snippet": "Полный список пособий на детей в 2026 году: единое пособие, маткапитал, выплаты при рождении. Суммы, условия, как оформить."
+        },
+        {
+          "title": "Какие пособия и выплаты на детей вырастут в 2026 году",
+          "url": "https://www.sravni.ru/text/kakie-posobiya-i-vyplaty-na-detej-vyrastut-v-2026-godu/",
+          "snippet": "Какие пособия можно получить в 2026 году: единое пособие, по уходу за ребёнком, по беременности, по безработице. Таблица размеров, условия назначения, как оформить."
+        },
+        {
+          "title": "Детские пособия 2026 — все выплаты на ребёнка, суммы, как получить",
+          "url": "https://moycalc.ru/blog/detskoe-posobie-2026",
+          "snippet": "Для родителей предусмотрены разные единовременные и ежемесячные выплаты. Разбираемся‚ какие есть пособия на детей и какие из них вырастут в 2026 году."
+        },
+        {
+          "title": "Детские пособия 2026: полный список выплат и новые правила получения",
+          "url": "https://life.ru/p/1875544",
+          "snippet": "Все детские пособия 2026: единое пособие, маткапитал, выплата при рождении 28 450 ₽, декретные до 955 836 ₽. Суммы, условия, пошаговое оформление."
+        }
+      ],
+      "searched_at": "2026-09-16"
+    },
+    {
+      "query_id": "title_fresh",
+      "query": "можно с детьми доплата за ребёнка 2026",
+      "purpose": "SERP по человеческому title",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Детские пособия в 2026 году — полный список выплат на детей",
+          "url": "https://posobium.ru/blog/detskie-posobiya-2026",
+          "snippet": ""
+        },
+        {
+          "title": "Все пособия на детей в 2026 году — полный гид | Kids4U",
+          "url": "https://kids4u.ru/blog/posobiya-na-detej-2026",
+          "snippet": "Все детские пособия в 2026 году: единое пособие, по уходу до 1.5 лет, при рождении, материнский капитал. Размеры, условия, как оформить — подробный обзор для родителей."
+        },
+        {
+          "title": "Все пособия в 2026 году — полный список с размерами и условиями",
+          "url": "https://posobium.ru/blog/vse-posobiya-2026",
+          "snippet": "Полный список пособий на детей в 2026 году: единое пособие, маткапитал, выплаты при рождении. Суммы, условия, как оформить."
+        },
+        {
+          "title": "Какие пособия и выплаты на детей вырастут в 2026 году",
+          "url": "https://www.sravni.ru/text/kakie-posobiya-i-vyplaty-na-detej-vyrastut-v-2026-godu/",
+          "snippet": "Какие пособия можно получить в 2026 году: единое пособие, по уходу за ребёнком, по беременности, по безработице. Таблица размеров, условия назначения, как оформить."
+        },
+        {
+          "title": "Детские пособия 2026 — все выплаты на ребёнка, суммы, как получить",
+          "url": "https://moycalc.ru/blog/detskoe-posobie-2026",
+          "snippet": "Для родителей предусмотрены разные единовременные и ежемесячные выплаты. Разбираемся‚ какие есть пособия на детей и какие из них вырастут в 2026 году."
+        },
+        {
+          "title": "Детские пособия 2026: полный список выплат и новые правила получения",
+          "url": "https://life.ru/p/1875544",
+          "snippet": "Универсальная мера поддержки для семей с детьми 0-17 лет и беременных женщин с доходом ниже 1 прожиточного минимума на человека. Размер: 50%, 75% или 100% ПМ на ребёнка в регионе (7 500-15 000 ₽/мес)."
+        }
+      ],
+      "searched_at": "2026-09-16"
+    },
+    {
+      "query_id": "official_docs",
+      "query": "можно с детьми доплата за ребёнка official docs 2026",
+      "purpose": "официальные docs",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Детские пособия в 2026 году — полный список выплат на детей",
+          "url": "https://posobium.ru/blog/detskie-posobiya-2026",
+          "snippet": ""
+        },
+        {
+          "title": "Детские пособия 2026 — все выплаты на ребёнка, суммы, как получить",
+          "url": "https://moycalc.ru/blog/detskoe-posobie-2026",
+          "snippet": "Все детские пособия в 2026 году: единое пособие, по уходу до 1.5 лет, при рождении, материнский капитал. Размеры, условия, как оформить — подробный обзор для родителей."
+        },
+        {
+          "title": "Все пособия на детей в 2026 году — полный гид | Kids4U",
+          "url": "https://kids4u.ru/blog/posobiya-na-detej-2026",
+          "snippet": "Универсальная мера поддержки для семей с детьми 0-17 лет и беременных женщин с доходом ниже 1 прожиточного минимума на человека. Размер: 50%, 75% или 100% ПМ на ребёнка в регионе (7 500-15 000 ₽/мес)."
+        },
+        {
+          "title": "Детские пособия 2026: полный список выплат и новые правила получения",
+          "url": "https://life.ru/p/1875544",
+          "snippet": "Система детских пособий в России ежегодно обновляется. В 2026 году произошли важные изменения: проиндексированы размеры выплат, расширены категории получателей, упрощена процедура оформления. В этой статье мы собрали полный список пособий, актуальные суммы и пошаговые инструкции по оформлению."
+        },
+        {
+          "title": "Пособия на детей в 2026 году: размеры выплат и порядок оформления",
+          "url": "https://darstroy-yug.ru/articles/posobiya-na-detey-skolko-mozhno-poluchit-kak-oformit/",
+          "snippet": "В 2026 году российские семьи с детьми могут получать более десятка видов пособий: от единого пособия на детей до 17 лет (в размере 50%, 75% или 100% детского прожиточного минимума) до материнского ..."
+        },
+        {
+          "title": "Детские выплаты-2026: полный гид по новым суммам и правилам получения",
+          "url": "https://finance.rambler.ru/money/56139179-detskie-vyplaty-2026-polnyy-gid-po-novym-summam-i-pravilam-polucheniya/",
+          "snippet": "Какие пособия на детей в 2026 году: кому положены выплаты, сколько можно получить, какие документы нужны и как подать заявление без ошибок."
+        }
+      ],
+      "searched_at": "2026-09-16"
+    },
+    {
+      "query_id": "github_evidence",
+      "query": "site:github.com можно с детьми доплата за ребёнка 2026",
+      "purpose": "GitHub evidence",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "accomplish/docs/banner.svg at main · jwangkun/accomplish · GitHub",
+          "url": "https://github.com/jwangkun/accomplish/blob/main/docs/banner.svg",
+          "snippet": ""
+        },
+        {
+          "title": "AcFANcom (AcFAN) · GitHub",
+          "url": "https://github.com/AcFANcom",
+          "snippet": "Accomplish™ is the open source Al coworker that lives on your desktop - jwangkun/accomplish"
+        },
+        {
+          "title": "Download GitHub Desktop",
+          "url": "https://desktop.github.com/download/",
+          "snippet": "ACFAN是一个免费面向二次元用户、动漫爱好者与漫画阅读用户的内容平台，聚合动漫推荐、漫画内容、追番资讯、热门更新、分类浏览与同好分享等板块社区。 官网地址：https://acpcssr.47u3j9k8.work/ - AcFANcom."
+        },
+        {
+          "title": "Как настроить свой VPN с VLESS Reality на VPS — полный гайд для России 2026",
+          "url": "https://gist.github.com/evilork/e6ab383bb3df19bb3a9a8068ae0bca4f",
+          "snippet": "Focus on what matters instead of fighting with Git. Whether you're new to Git or a seasoned user, GitHub Desktop simplifies your development workflow. Experience the latest features and bug fixes before they're released. Looking for Windows? Need to download the installer for Windows? Do you use a Mac with Intel chip?"
+        },
+        {
+          "title": "Sign in to GitHub · GitHub",
+          "url": "https://github.com/login",
+          "snippet": "Краткое описание — Пошаговая инструкция по развёртыванию open-source Xray-core с протоколом VLESS+Reality на VPS. Для DevOps-инженеров, разработчиков и системных администраторов которым нужен защищённый туннель между серверами или клиентами с активной DPI-классификацией трафика."
+        },
+        {
+          "title": "docs/favicon.svg at main · biniyamd7-source/docs · GitHub",
+          "url": "https://github.com/biniyamd7-source/docs/blob/main/favicon.svg",
+          "snippet": "GitHub is where people build software. More than 150 million people use GitHub to discover, fork, and contribute to over 420 million projects."
+        }
+      ],
+      "searched_at": "2026-09-16"
+    },
+    {
+      "query_id": "community_experience",
+      "query": "можно с детьми доплата за ребёнка forum problems опыт 2026",
+      "purpose": "форумы и живые проблемы",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Федеральная поддержка семей с детьми в 2026 году: все выплаты, льготы и ...",
+          "url": "https://rus.team/articles/gosudarstvennaya-podderzhka-semey-s-detmi-v-2026-godu-vse-vyplaty-lgoty-i-pravila-ih-sochetaniya",
+          "snippet": ""
+        },
+        {
+          "title": "Родителям напомнили какие выплаты семьям с детьми доступны в 2026",
+          "url": "https://budgetrf.ru/28175-semyam-s-detmi-letom-2026-kakie-vyplaty-mozhno-oformit-i-gde-chashhe-vsego-otkazyvayut.html",
+          "snippet": "Предлагаем исчерпывающий разбор всех федеральных мер поддержки семей с детьми, действующих в России с 1 февраля 2026 года. Материал разбит на логические блоки и содержит все необходимые суммы, критерии и практические алгоритмы действий."
+        },
+        {
+          "title": "Социальные и налоговые льготы для семей с детьми: что положено в 2026 ...",
+          "url": "https://sbersova.ru/sections/economy/sotsialnyye-i-nalogovyye-lgoty-dlya-semey-2025-godu",
+          "snippet": "Система поддержки семей с детьми в 2026 году стала заметно разнообразнее: к действующим пособиям добавилась новая семейная выплата, приём заявлений на которую открылся с 1 июня."
+        },
+        {
+          "title": "Новые меры поддержки семей с детьми в 2026 году: что изменится, кому ...",
+          "url": "https://rzn.mk.ru/social/2026/07/22/novye-mery-podderzhki-semey-s-detmi-v-2026-godu-chto-izmenitsya-komu-polozheny-vyplaty-i-kak-ikh-poluchit.html",
+          "snippet": "В этой статье рассмотрим, какие социальные и налоговые преимущества действуют в 2026 году и на что рассчитывать семьям с детьми."
+        },
+        {
+          "title": "Детские пособия 2026: полный список выплат и новые правила получения",
+          "url": "https://life.ru/p/1875544",
+          "snippet": "С начала 2026 года действует Федеральный закон № 179‑ФЗ «О ежегодной семейной выплате гражданам Российской Федерации, имеющим двух и более детей»."
+        },
+        {
+          "title": "Как изменились выплаты семьям с детьми в России с 2026 года",
+          "url": "https://dzen.ru/a/aWHdWbQyR0fEw95f",
+          "snippet": "В 2026 году российские семьи с детьми могут получать более десятка видов пособий: от единого пособия на детей до 17 лет (в размере 50%, 75% или 100% детского прожиточного минимума) до ..."
+        }
+      ],
+      "searched_at": "2026-09-16"
+    }
+  ],
+  "errors": []
+}
