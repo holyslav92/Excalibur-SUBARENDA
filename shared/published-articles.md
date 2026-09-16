@@ -29,3 +29,4 @@ Excalibur-2-Cloud — не копировать URL tymenrieltor.ru.
 | 2026-09-14 | B22 | posutochno-tyumen-foto-pasporta-v-chat-kod-ne-prislali | /blog/posutochno-tyumen-foto-pasporta-v-chat-kod-ne-prislali/ | published |
 | 2026-09-14 | B23 | napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni | /blog/napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni/ | published |
 | 2026-09-16 | B24 | mozhno-s-detmi-doplata-za-rebenka | /blog/mozhno-s-detmi-doplata-za-rebenka/ | published |
+| 2026-09-16 | B25 | dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras | /blog/dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras/ | published |
