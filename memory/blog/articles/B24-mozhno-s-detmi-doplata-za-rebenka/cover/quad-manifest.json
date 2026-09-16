@@ -61,12 +61,12 @@
     },
     "inline_1": {
       "quadrant": "top_right",
-      "scene_hint": "«можно с детьми» vs 8 400₽. Pad TR logo.",
+      "scene_hint": "comparison_table_ui: «можно с детьми» / «две ночи» / «8 400 рублей» — FULL panel NOT empty wall. Pad TR logo.",
       "alt": "Две ночи за 8 400 ₽: в карточке отметка «можно с детьми», но отдельной строки про доплату за ребёнка не было.",
       "meme_caption_ru": "",
       "h2_anchor": "Значок разрешает приехать. Он не называет итог",
       "visual_type": "comparison_table_ui",
-      "labels": ["можно с детьми", "2 ночи", "8 400 ₽"]
+      "labels": ["можно с детьми", "две ночи", "8 400 рублей"]
     },
     "inline_2": {
       "quadrant": "bottom_left",

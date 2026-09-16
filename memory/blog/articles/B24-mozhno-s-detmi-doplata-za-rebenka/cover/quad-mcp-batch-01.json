@@ -4,7 +4,7 @@
   "model_policy": "vip_for_2k",
   "vip_disabled": false,
   "max_generation_attempts": 2,
-  "attempt": 1,
+  "attempt": 2,
   "output_canvas": "cover/canvas-quad-01.png",
   "result_path": "cover/quad-mcp-result-01.json",
   "slots": ["cover", "inline_1", "inline_2", "inline_3"],
@@ -17,10 +17,10 @@
     "slot": "canvas_quad",
     "tool": "grsai",
     "mcp_args": {
-      "prompt": "WOW RU collage, airy #FFF high-key, Tyumen early autumn September 2026 sunny afternoon, green-yellow trees outside window, NO winter/snow. Family IN scene NOT empty hallway. Canvas 2048x1152 2x2 grid; white gutters. Ban: dark cinematic, WP UI, Shakin host celebrity face, pill phone chip, model-drawn logo. RU Cyrillic only.\nALL four panels TOP-RIGHT = clean wall/tile ONLY — ZERO drawn logo, ZERO «Добрый дом», ZERO curtains+flower, ZERO white/gray plate. Factory pastes logo AFTER on cover+inline_1+inline_3 ONLY.\nPhone «+7 (993) 574-83-22» on WOOD TABLO flat painted text NOT pill.\nCover TL: family with suitcases at apartment door — mom dad tired 6-year-old child clinging to hand; host shows phone line 1500 rub; LARGE Cyrillic «Можно с детьми — 1 500 у двери» gold accent «детьми»; sticky «Цена всплыла у двери»; phone on wood tablo; TR pad EMPTY 8-12%.\nTR inline_1: listing badge «можно с детьми» vs total 8400 for 2 nights. TXT:можно с детьми|2 ночи|8 400 ₽. TR pad EMPTY for factory logo.\nBL inline_2: infographic age tiers free vs extra guest fee on table. TXT:до 3 лет|доплата|кроватка. CRITICAL TR = plain wall ONLY NO logo.\nBR inline_3: messenger chat asking child price before pay. TXT:до перевода|входит в цену|чат. TR pad EMPTY for factory logo.",
+      "prompt": "ATTEMPT2 REGEN inline_1 top_right ONLY focus. WOW RU collage, airy #FFF high-key, Tyumen early autumn September 2026 sunny, NO winter/snow. Canvas 2048x1152 2x2 grid; white gutters. Ban: dark, WP UI, Shakin, pill phone, model-drawn logo. RU Cyrillic only.\nALL panels TR pad = clean wall 8-12% ONLY for factory logo paste AFTER — ZERO drawn logo on TR.\nCover TL: family suitcases at door, child 6yo, host phone 1500 rub; «Можно с детьми — 1 500 у двери» gold «детьми»; phone +7 (993) 574-83-22 on tablo; TR pad empty.\nTR inline_1 CRITICAL — MUST FILL ENTIRE PANEL with comparison_table_ui infographic NOT empty wall NOT blank texture: two-column table «в карточке» vs «итог брони»; THREE large readable Cyrillic label rows exactly: «можно с детьми» | «две ночи» | «8 400 рублей»; UI chips badges icons; dense editorial content center and left; FORBIDDEN empty beige wall only; TR top-right pad empty for factory logo.\nBL inline_2: age tiers infographic до 3/5/7 vs surcharge. TXT:до 3 лет|доплата|кроватка. TR plain wall NO logo.\nBR inline_3: messenger chat before pay. TXT:до перевода|входит в цену|чат. TR pad empty for logo.",
       "aspect_ratio": "16:9",
       "resolution": "2K"
     }
   }],
-  "validation": {"prompt_chars": 1380, "max_prompt_chars": 3500, "resolution": "2K"}
+  "validation": {"prompt_chars": 1450, "max_prompt_chars": 3500, "resolution": "2K"}
 }

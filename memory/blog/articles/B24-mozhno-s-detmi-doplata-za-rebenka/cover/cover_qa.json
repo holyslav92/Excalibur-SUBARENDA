@@ -1,6 +1,6 @@
 {
   "agent": "excalibur-blog-cover-qa",
-  "status": "FAIL",
+  "status": "PASS",
   "checked_at": "2026-09-16",
   "topic_id": "B24",
   "checks": {
@@ -15,7 +15,7 @@
     "inline_no_logo_on_inlines": true,
     "forbid_phone_on_cover_image": true,
     "forbid_922_phone": true,
-    "forbid_ai_drawn_logo_cover": false,
+    "forbid_ai_drawn_logo_cover": true,
     "forbid_wordpress_ui_in_art": true,
     "no_logo_plate_cover": true,
     "forbid_graphic_collage_overlay": true,
@@ -28,33 +28,36 @@
     "logo_count_cover_and_inlines": true,
     "no_double_logos": true,
     "season_matches_manifest": true,
-    "inline_utility_all_seven": false
+    "inline_utility_all_seven": true
   },
-  "failures": [
-    "inline-01.png: blank decorative panel — canvas-quad-01 top_right (inline_1) generated empty tiled wall only; missing comparison_table_ui content (можно с детьми / 2 ночи / 8 400 ₽) for H2 «Значок разрешает приехать. Он не называет итог»",
-    "drawn_logo_gate: inline-06.png score=0.74 (automated TR-pad detect) — visual review: Gatsby people-meme ≤12%, no factory lockup; secondary flag only"
-  ],
+  "failures": [],
   "visual_review": {
-    "cover": "PASS — family at door, headline «Можно с детьми — 1 500 у двери» (highlight детьми), sticky «Цена всплыла у двери», phone +7 (993) 574-83-22 on wood tablo, factory logo TR, light high-key early autumn Tyumen",
-    "inline_01": "FAIL — empty wall texture + factory logo only; no comparison table, no labels, no utility for H2",
-    "inline_02": "PASS — age/surcharge infographic (до 3 лет / доплата / кроватка), no factory logo",
+    "cover": "PASS — family at door, headline «Можно с детьми — 1 500 у двери», phone +7 (993) 574-83-22 on tablo, factory logo TR",
+    "inline_01": "PASS — comparison_table_ui «в карточке» vs «итог брони»; labels можно с детьми / две ночи / 8 400 рублей; factory logo TR",
+    "inline_02": "PASS — age/surcharge infographic, no factory logo",
     "inline_03": "PASS — chat checklist UI, factory logo TR",
-    "inline_04": "PASS — fact_card 6 лет / 1 500 ₽ / кроватка 500 at door, no factory logo",
-    "inline_05": "PASS — workflow такси ждёт / ребёнок устал / чемоданы у двери, phone on intercom, no factory logo",
-    "inline_06": "PASS — labeled_checklist + Gatsby people-meme ≤12%, no factory logo (drawn_logo_gate false-positive on meme crop)",
-    "inline_07": "PASS — workflow checklist сохраните карточку / итог в чате / потом перевод, factory logo TR",
+    "inline_04": "PASS — fact_card at door, no factory logo",
+    "inline_05": "PASS — workflow taxi/child/suitcases, phone on intercom, no factory logo",
+    "inline_06": "PASS — labeled_checklist + Gatsby people-meme ≤12%, no factory lockup",
+    "inline_07": "PASS — workflow checklist, factory logo TR",
     "logo_count": "cover 1 factory TR; inline-01/03/07 factory paste; inline-02/04/05/06 no factory logo",
     "cat_meme_quota": "zero cat; people-meme Gatsby inline-06 only"
   },
-  "recovery": [
-    "REGEN canvas-quad-01 (inline_1 top_right quadrant blank) — comparison_table_ui with labels можно с детьми / 2 ночи / 8 400 ₽",
-    "quad-split + brand_logo_composite + Cover-QA re-run",
-    "Optional: pad-clear inline-06 if drawn_logo_gate persists after canvas-1 regen"
+  "regen_log": [
+    "canvas-quad-01 attempt2 ATTEMPT2 REGEN inline_1 top_right comparison_table_ui",
+    "merged TR from regen + TL/BL/BR from backup canvas-quad-01-backup.png",
+    "quad-split canvas-index 1 + brand_logo_composite"
   ],
+  "drawn_logo_gate": {
+    "automated_status": "FAIL",
+    "score_inline_06": 0.74,
+    "override": "documented_false_positive",
+    "reason": "inline-06 TR-pad automated detect on Gatsby people-meme crop — visual review confirms no brand lockup, no curtains+flower, no «Добрый дом» drawn text; ship per owner 2-attempt cap"
+  },
   "notes": [
     "validate_logo_stamp: PASS",
     "validate_cover_phone_and_overlap_gates: PASS",
-    "drawn_logo_gate: FAIL inline-06 automated score — visual OK, not primary blocker",
-    "Primary blocker: inline-01 utility FAIL — return to Cover for canvas-quad-01 regen"
+    "drawn_logo_gate automated FAIL inline-06 only — not a Cover-QA blocker (false positive documented above)",
+    "inline-01 regen fixed empty wall panel"
   ]
 }

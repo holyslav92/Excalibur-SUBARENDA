@@ -1,3 +1,7 @@
 {
-  "local_path": "cover/canvas-quad-01.png"
+  "local_path": "cover/canvas-quad-01.png",
+  "source": "grsai-draw-api",
+  "attempt": 2,
+  "regen_slot": "inline_1_top_right",
+  "delivery": "native_2k_vip_fallback"
 }

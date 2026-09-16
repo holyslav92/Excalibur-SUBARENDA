@@ -3,143 +3,6 @@
   "status": "PASS",
   "splits": [
     {
-      "canvas_index": 1,
-      "manifest": "cover/quad-manifest.json",
-      "split": {
-        "source_canvas": "memory/blog/articles/B24-mozhno-s-detmi-doplata-za-rebenka/cover/canvas-quad-01.png",
-        "source_size_px": [
-          2048,
-          1152
-        ],
-        "panel_size_px": [
-          1018,
-          570
-        ],
-        "split_meta": {
-          "split_mode": "gutter_detect",
-          "h_gutter_px": {
-            "start": 570,
-            "end": 582
-          },
-          "v_gutter_px": {
-            "start": 1018,
-            "end": 1030
-          },
-          "requested_mode": "auto",
-          "gutter_quality": {
-            "h_center_offset_px": 0.0,
-            "v_center_offset_px": 0.0,
-            "max_aspect_crop_loss": 0.0,
-            "per_panel_crop_loss": {
-              "top_left": 0.0,
-              "top_right": 0.0,
-              "bottom_left": 0.0,
-              "bottom_right": 0.0
-            },
-            "reject_reason": null
-          }
-        },
-        "output_size_px": [
-          1200,
-          675
-        ],
-        "outputs": {
-          "cover": {
-            "file": "cover/cover.png",
-            "quadrant": "top_left",
-            "box_px": {
-              "left": 0,
-              "top": 0,
-              "right": 1018,
-              "bottom": 570
-            },
-            "raw_box_px": {
-              "left": 0,
-              "top": 0,
-              "right": 1018,
-              "bottom": 570
-            },
-            "size_px": [
-              1200,
-              675
-            ],
-            "aspect_ratio": "16:9",
-            "alt": "Семья у двери: «можно с детьми» в карточке, 1 500 ₽ при заезде.",
-            "h2_anchor": null
-          },
-          "inline_1": {
-            "file": "cover/inline-01.png",
-            "quadrant": "top_right",
-            "box_px": {
-              "left": 1030,
-              "top": 0,
-              "right": 2048,
-              "bottom": 570
-            },
-            "raw_box_px": {
-              "left": 1030,
-              "top": 0,
-              "right": 2048,
-              "bottom": 570
-            },
-            "size_px": [
-              1200,
-              675
-            ],
-            "aspect_ratio": "16:9",
-            "alt": "Две ночи за 8 400 ₽: в карточке отметка «можно с детьми», но отдельной строки про доплату за ребёнка не было.",
-            "h2_anchor": "Значок разрешает приехать. Он не называет итог"
-          },
-          "inline_2": {
-            "file": "cover/inline-02.png",
-            "quadrant": "bottom_left",
-            "box_px": {
-              "left": 0,
-              "top": 582,
-              "right": 1018,
-              "bottom": 1152
-            },
-            "raw_box_px": {
-              "left": 0,
-              "top": 582,
-              "right": 1018,
-              "bottom": 1152
-            },
-            "size_px": [
-              1200,
-              675
-            ],
-            "aspect_ratio": "16:9",
-            "alt": "У разных объектов ребёнок может быть бесплатным до определённого возраста или считаться дополнительным гостем — угадать нельзя.",
-            "h2_anchor": "Значок разрешает приехать. Он не называет итог"
-          },
-          "inline_3": {
-            "file": "cover/inline-03.png",
-            "quadrant": "bottom_right",
-            "box_px": {
-              "left": 1030,
-              "top": 582,
-              "right": 2048,
-              "bottom": 1152
-            },
-            "raw_box_px": {
-              "left": 1030,
-              "top": 582,
-              "right": 2048,
-              "bottom": 1152
-            },
-            "size_px": [
-              1200,
-              675
-            ],
-            "aspect_ratio": "16:9",
-            "alt": "В переписке до оплаты нужно спросить, входит ли шестилетний ребёнок в базовое число гостей и какова итоговая сумма.",
-            "h2_anchor": "Значок разрешает приехать. Он не называет итог"
-          }
-        }
-      }
-    },
-    {
       "canvas_index": 2,
       "manifest": "cover/quad-manifest.json",
       "split": {
@@ -272,6 +135,143 @@
             "aspect_ratio": "16:9",
             "alt": "Перед оплатой: возраст ребёнка, число гостей, итог за все ночи и условия по кроватке — в переписке, не у порога.",
             "h2_anchor": "Мой вывод как практика"
+          }
+        }
+      }
+    },
+    {
+      "canvas_index": 1,
+      "manifest": "cover/quad-manifest.json",
+      "split": {
+        "source_canvas": "memory/blog/articles/B24-mozhno-s-detmi-doplata-za-rebenka/cover/canvas-quad-01.png",
+        "source_size_px": [
+          2048,
+          1152
+        ],
+        "panel_size_px": [
+          1018,
+          570
+        ],
+        "split_meta": {
+          "split_mode": "gutter_detect",
+          "h_gutter_px": {
+            "start": 570,
+            "end": 582
+          },
+          "v_gutter_px": {
+            "start": 1018,
+            "end": 1030
+          },
+          "requested_mode": "auto",
+          "gutter_quality": {
+            "h_center_offset_px": 0.0,
+            "v_center_offset_px": 0.0,
+            "max_aspect_crop_loss": 0.0,
+            "per_panel_crop_loss": {
+              "top_left": 0.0,
+              "top_right": 0.0,
+              "bottom_left": 0.0,
+              "bottom_right": 0.0
+            },
+            "reject_reason": null
+          }
+        },
+        "output_size_px": [
+          1200,
+          675
+        ],
+        "outputs": {
+          "cover": {
+            "file": "cover/cover.png",
+            "quadrant": "top_left",
+            "box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1018,
+              "bottom": 570
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1018,
+              "bottom": 570
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Семья у двери: «можно с детьми» в карточке, 1 500 ₽ при заезде.",
+            "h2_anchor": null
+          },
+          "inline_1": {
+            "file": "cover/inline-01.png",
+            "quadrant": "top_right",
+            "box_px": {
+              "left": 1030,
+              "top": 0,
+              "right": 2048,
+              "bottom": 570
+            },
+            "raw_box_px": {
+              "left": 1030,
+              "top": 0,
+              "right": 2048,
+              "bottom": 570
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Две ночи за 8 400 ₽: в карточке отметка «можно с детьми», но отдельной строки про доплату за ребёнка не было.",
+            "h2_anchor": "Значок разрешает приехать. Он не называет итог"
+          },
+          "inline_2": {
+            "file": "cover/inline-02.png",
+            "quadrant": "bottom_left",
+            "box_px": {
+              "left": 0,
+              "top": 582,
+              "right": 1018,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 582,
+              "right": 1018,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "У разных объектов ребёнок может быть бесплатным до определённого возраста или считаться дополнительным гостем — угадать нельзя.",
+            "h2_anchor": "Значок разрешает приехать. Он не называет итог"
+          },
+          "inline_3": {
+            "file": "cover/inline-03.png",
+            "quadrant": "bottom_right",
+            "box_px": {
+              "left": 1030,
+              "top": 582,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 1030,
+              "top": 582,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "В переписке до оплаты нужно спросить, входит ли шестилетний ребёнок в базовое число гостей и какова итоговая сумма.",
+            "h2_anchor": "Значок разрешает приехать. Он не называет итог"
           }
         }
       }
