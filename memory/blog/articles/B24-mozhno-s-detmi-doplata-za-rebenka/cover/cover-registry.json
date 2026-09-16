@@ -1,0 +1,86 @@
+{
+  "topic_id": "B24",
+  "slug": "mozhno-s-detmi-doplata-za-rebenka",
+  "cover_family": "brand_collage",
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "file": "cover/cover.png",
+  "alt": "Семья у двери: «можно с детьми» в карточке, 1 500 ₽ при заезде.",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-quad-01.png",
+  "generated_at": "2026-09-16T09:33:13+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Семья у двери: «можно с детьми» в карточке, 1 500 ₽ при заезде.",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Две ночи за 8 400 ₽: в карточке отметка «можно с детьми», но отдельной строки про доплату за ребёнка не было.",
+      "h2_anchor": "Значок разрешает приехать. Он не называет итог",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "У разных объектов ребёнок может быть бесплатным до определённого возраста или считаться дополнительным гостем — угадать нельзя.",
+      "h2_anchor": "Значок разрешает приехать. Он не называет итог",
+      "visual_type": "infographic_card",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "В переписке до оплаты нужно спросить, входит ли шестилетний ребёнок в базовое число гостей и какова итоговая сумма.",
+      "h2_anchor": "Значок разрешает приехать. Он не называет итог",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_4",
+      "file": "cover/inline-04.png",
+      "alt": "Полторы тысячи называют у двери, когда после дороги искать новое жильё с уставшим ребёнком уже дороже согласия.",
+      "h2_anchor": "Почему полторы тысячи называют именно у двери",
+      "visual_type": "fact_card",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_5",
+      "file": "cover/inline-05.png",
+      "alt": "Такси уже приехало, ребёнок хочет спать, чемоданы тяжёлые — в этот момент доплата воспринимается не как спор, а как цена за покой.",
+      "h2_anchor": "Почему полторы тысячи называют именно у двери",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_6",
+      "file": "cover/inline-06.png",
+      "alt": "Один прямой вопрос до оплаты вскрывает, считается ли ребёнок дополнительным гостем или входит в базовую цену.",
+      "h2_anchor": "Один вопрос, который вскрывает цену",
+      "visual_type": "labeled_checklist",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_7",
+      "file": "cover/inline-07.png",
+      "alt": "Перед оплатой: возраст ребёнка, число гостей, итог за все ночи и условия по кроватке — в переписке, не у порога.",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}

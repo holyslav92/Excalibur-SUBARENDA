@@ -3,42 +3,6 @@
   "window_days": 14,
   "entries": [
     {
-      "date": "2026-09-01",
-      "topic_id": "B05",
-      "slug": "",
-      "motifs": {
-        "composition": "phone twin reviews 4.8 tablo stonks",
-        "location": "september tyumen apt",
-        "meme": "stonks",
-        "prop_set": "phone reviews stars tablo",
-        "sticker_set": "посуточно тюмень",
-        "joke": "copy-paste reviews"
-      }
-    },
-    {
-      "date": "2026-09-01",
-      "topic_id": "B06",
-      "slug": "",
-      "motifs": {
-        "composition": "couple+suitcases at door, headline, tablo, tr pad",
-        "location": "sep 2026 sunny tyumen apt entryway, not winter",
-        "meme": "trade_offer sticker small",
-        "sticker_set": "багаж после выезда, вокзал тюмень"
-      }
-    },
-    {
-      "date": "2026-09-02",
-      "topic_id": "B07",
-      "slug": "",
-      "motifs": {
-        "composition": "guest opens empty drawer + printed listing on counter with checked kitchen line",
-        "location": "early september sunny tyumen apartment kitchen, green trees outside, no winter",
-        "meme": "none photoreal only",
-        "prop_set": "empty drawers, one glass, two forks, worn frying pan, printed listing",
-        "joke": "checkbox says kitchen exists but drawer holds one fork"
-      }
-    },
-    {
       "date": "2026-09-03",
       "topic_id": "B08",
       "slug": "",
@@ -229,6 +193,19 @@
         "prop_set": "смартфон фото простыни 1800 чемодан такси ключи табло телефон",
         "sticker_set": "квартиры посуточно тюмень уборка включена",
         "joke": "уборка включена в карточке 1800 за простыню на выезде"
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "topic_id": "B24",
+      "slug": "",
+      "motifs": {
+        "composition": "семья у двери хост телефон 1500 табло хук",
+        "location": "ранняя осень сентябрь 2026 тюмень прихожая",
+        "meme": "people-meme inline_6 only zero cat",
+        "prop_set": "чемоданы телефон 1500 кроватка 500 табло",
+        "sticker_set": "квартиры посуточно тюмень",
+        "joke": "можно с детьми в карточке 1500 у двери"
       }
     }
   ]

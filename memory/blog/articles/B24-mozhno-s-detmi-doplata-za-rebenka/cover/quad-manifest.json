@@ -1,0 +1,126 @@
+{
+  "topic_id": "B24",
+  "slug": "mozhno-s-detmi-doplata-za-rebenka",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "Можно с детьми — 1 500 у двери",
+  "cover_hook_highlight": "детьми",
+  "cover_headline_line1": "Можно с детьми",
+  "cover_headline_line2": "1 500 у двери",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "Grsai 2K VIP 2 canvases. Logo cover+inline_1/3/7.",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень"
+  ],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "семья у двери хост телефон 1500 табло хук",
+    "location": "ранняя осень сентябрь 2026 тюмень прихожая",
+    "meme": "people-meme inline_6 only zero cat",
+    "prop_set": "чемоданы телефон 1500 кроватка 500 табло",
+    "sticker_set": "квартиры посуточно тюмень",
+    "joke": "можно с детьми в карточке 1500 у двери"
+  },
+  "cover_emotion": "усталость у двери 1500 когда отказ дороже",
+  "cover_scene": "Семья у двери, хост с телефоном, табло с хуком и телефоном, pad TR.",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "scene_hint": "Семья у двери; «Можно с детьми — 1 500 у двери»; +7 993 574-83-22; pad TR.",
+      "alt": "Семья у двери: «можно с детьми» в карточке, 1 500 ₽ при заезде.",
+      "meme_caption_ru": "",
+      "role": "cover_editorial_hero",
+      "sticky": "Цена всплыла у двери"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "scene_hint": "«можно с детьми» vs 8 400₽. Pad TR logo.",
+      "alt": "Две ночи за 8 400 ₽: в карточке отметка «можно с детьми», но отдельной строки про доплату за ребёнка не было.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Значок разрешает приехать. Он не называет итог",
+      "visual_type": "comparison_table_ui",
+      "labels": ["можно с детьми", "2 ночи", "8 400 ₽"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "scene_hint": "Бесплатно до 3/5/7 vs доплата. NO logo.",
+      "alt": "У разных объектов ребёнок может быть бесплатным до определённого возраста или считаться дополнительным гостем — угадать нельзя.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Значок разрешает приехать. Он не называет итог",
+      "visual_type": "infographic_card",
+      "labels": ["до 3 лет", "доплата", "кроватка"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "scene_hint": "Чат: ребёнок входит в цену? Pad TR logo.",
+      "alt": "В переписке до оплаты нужно спросить, входит ли шестилетний ребёнок в базовое число гостей и какова итоговая сумма.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Значок разрешает приехать. Он не называет итог",
+      "visual_type": "checklist_board",
+      "labels": ["до перевода", "входит в цену", "чат"]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "scene_hint": "1 500₽ у двери, отказ дороже. NO logo.",
+      "alt": "Полторы тысячи называют у двери, когда после дороги искать новое жильё с уставшим ребёнком уже дороже согласия.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Почему полторы тысячи называют именно у двери",
+      "visual_type": "fact_card",
+      "labels": ["6 лет", "1 500 ₽", "кроватка 500"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "scene_hint": "Такси ждёт, ребёнок зевает; +7 993 574-83-22 на домофоне. NO logo.",
+      "alt": "Такси уже приехало, ребёнок хочет спать, чемоданы тяжёлые — в этот момент доплата воспринимается не как спор, а как цена за покой.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Почему полторы тысячи называют именно у двери",
+      "visual_type": "workflow_diagram",
+      "labels": ["такси ждёт", "ребёнок устал", "чемоданы у двери"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "scene_hint": "Чат: ребёнок в базе? people-meme ≤12%. NO logo.",
+      "alt": "Один прямой вопрос до оплаты вскрывает, считается ли ребёнок дополнительным гостем или входит в базовую цену.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Один вопрос, который вскрывает цену",
+      "visual_type": "labeled_checklist",
+      "labels": ["ребёнку шесть", "входит в базу?", "итог одной цифрой"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "scene_hint": "Чек-лист до перевода. Pad TR logo.",
+      "alt": "Перед оплатой: возраст ребёнка, число гостей, итог за все ночи и условия по кроватке — в переписке, не у порога.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "workflow_diagram",
+      "labels": ["сохраните карточку", "итог в чате", "потом перевод"]
+    }
+  }
+}
