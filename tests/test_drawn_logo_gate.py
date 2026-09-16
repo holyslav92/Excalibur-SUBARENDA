@@ -381,6 +381,17 @@ class DrawnLogoGateTest(unittest.TestCase):
             result = detect_drawn_lockup_in_image(panel)
             self.assertFalse(result["detected"], result)
 
+        b24_inline_6 = (
+            ROOT
+            / "memory/blog/articles/B24-mozhno-s-detmi-doplata-za-rebenka/cover/inline-06.png"
+        )
+        self.assertTrue(b24_inline_6.is_file(), b24_inline_6)
+        result = detect_drawn_lockup_in_image(b24_inline_6)
+        self.assertFalse(
+            result["detected"],
+            "B24 chat UI terracotta pad (84.6%) must not trigger drawn lockup",
+        )
+
     def test_bright_window_pad_exempt_when_no_lockup_colors(self) -> None:
         from excalibur_blog_drawn_logo_gate import (
             detect_drawn_lockup_in_image,

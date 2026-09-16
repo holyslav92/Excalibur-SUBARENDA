@@ -589,10 +589,11 @@ def detect_logo_text_overlap(
 
 
 def is_ui_terracotta_card_pad_false_positive(analysis: PadAnalysis) -> bool:
-    """Infographic/fact_card panels fill TR pad with terracotta UI chrome — not green+terra lockup."""
+    """Infographic/fact_card/chat UI panels fill TR pad with terracotta chrome — not green+terra lockup."""
     if analysis.green_ratio >= 0.02:
         return False
-    return analysis.terracotta_ratio >= 0.85
+    # B24 inline-06 labeled_checklist chat UI scored 84.6% terra, 0% green — not brand lockup.
+    return analysis.terracotta_ratio >= 0.835
 
 
 def is_bright_window_pad_false_positive(
