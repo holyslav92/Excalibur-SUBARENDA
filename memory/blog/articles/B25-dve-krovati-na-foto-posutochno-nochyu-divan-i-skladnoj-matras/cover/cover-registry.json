@@ -1,0 +1,86 @@
+{
+  "topic_id": "B25",
+  "slug": "dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras",
+  "cover_family": "brand_collage",
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "file": "cover/cover.png",
+  "alt": "Трое гостей вечером: в карточке две кровати, в квартире диван и матрас на полу.",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-quad-01.png",
+  "generated_at": "2026-09-16T12:31:02+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Трое гостей вечером: в карточке две кровати, в квартире диван и матрас на полу.",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Трое взрослых на две ночи за 10 400 ₽: в шапке карточки «2 кровати», без расшифровки типа мест.",
+      "h2_anchor": "Почему «2 кровати» в карточке не всегда означают две кровати",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "В карточке шапка считает поверхности, а блок «Спальные места» может разделить кровать и диван-кровать.",
+      "h2_anchor": "Почему «2 кровати» в карточке не всегда означают две кровати",
+      "visual_type": "infographic_card",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Одна двуспальная кровать, продавленный диван-кровать и складной матрас на полу для третьего взрослого.",
+      "h2_anchor": "Где именно ломается доверие",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_4",
+      "file": "cover/inline-04.png",
+      "alt": "Третьему гостю — тонкая простыня без второго комплекта белья и подушки.",
+      "h2_anchor": "Где именно ломается доверие",
+      "visual_type": "fact_card",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_5",
+      "file": "cover/inline-05.png",
+      "alt": "Кровать, диван-кровать и складной матрас — разные ночи; тип места важнее формального счёта поверхностей.",
+      "h2_anchor": "Как это устроено у нас",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_6",
+      "file": "cover/inline-06.png",
+      "alt": "До оплаты: открыть «Спальные места», уточнить тип каждой поверхности и попросить фото дивана разложенным.",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "labeled_checklist",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_7",
+      "file": "cover/inline-07.png",
+      "alt": "Перед оплатой: спросить про каждое место, сохранить ответ в чате — сначала проверка, потом перевод.",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}

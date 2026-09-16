@@ -1,0 +1,27 @@
+{
+  "slug": "dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras",
+  "topic_id": "B25",
+  "permalink": "{{SITE_BASE}}/blog/dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B25-dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1280441,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4877 slug=dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras\nOK categories=101,106\nOK dzen_yzen_meta=1\nOK featured_image=4878\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4879 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras-inline-02.png\nOK inline_alt=4879\nOK inline_caption=4879\nOK inline_description=4879\nOK inline_image_upload=4880 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras-inline-01.png\nOK inline_alt=4880\nOK inline_caption=4880\nOK inline_description=4880\nOK inline_image_upload=4881 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/09/dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras-inline-04.png\nOK inline_alt=4881\nOK inline_caption=4881\nOK inline_description=4881\nOK inline_image_upload=4882 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras-inline-03.png\nOK inline_alt=4882\nOK inline_caption=4882\nOK inline_description=4882\nOK inline_image_upload=4883 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/09/dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras-inline-05.png\nOK inline_alt=4883\nOK inline_caption=4883\nOK inline_description=4883\nOK inline_image_upload=4884 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/09/dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras-inline-07.png\nOK inline_alt=4884\nOK inline_caption=4884\nOK inline_description=4884\nOK inline_image_upload=4885 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/09/dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras-inline-06.png\nOK inline_alt=4885\nOK inline_caption=4885\nOK inline_description=4885\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras/",
+    "errors": []
+  }
+}

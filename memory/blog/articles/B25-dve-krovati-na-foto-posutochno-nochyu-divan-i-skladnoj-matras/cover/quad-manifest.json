@@ -1,0 +1,127 @@
+{
+  "topic_id": "B25",
+  "slug": "dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "На фото две кровати — диван и пол",
+  "cover_hook_highlight": "кровати",
+  "cover_headline_line1": "На фото две кровати",
+  "cover_headline_line2": "диван и пол",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "Grsai 2K VIP 2 canvases. Logo cover+inline_1/3/7. Zero cat zero meme — photoreal only.",
+  "wordstat_stickers": [
+    "снять квартиру посуточно в тюмени",
+    "спальные места посуточно"
+  ],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "трое взрослых поздний вечер гостиная спальня фото карточки диван матрас табло хук",
+    "location": "середина сентября 2026 тёплый вечер тюмень посуточная квартира осенние деревья за окном без снега",
+    "meme": "photoreal zero meme stickers no cat",
+    "prop_set": "складной матрас диван-кровать телефон карточка 10400 простыня табло",
+    "sticker_set": "спальные места посуточно снять квартиру тюмени",
+    "joke": "на фото две кровати ночью диван и пол"
+  },
+  "cover_emotion": "усталость третьего гостя на полу когда в карточке две кровати",
+  "cover_scene": "Трое взрослых вечером в квартире: на телефоне фото двух кроватей, в реальности диван и матрас; крупный кириллический хук; pad TR.",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "scene_hint": "Трое вечером; телефон с двумя кроватями vs диван+матрас; хук на табло; +7 993 574-83-22; pad TR.",
+      "alt": "Трое гостей вечером: в карточке две кровати, в квартире диван и матрас на полу.",
+      "meme_caption_ru": "",
+      "role": "cover_editorial_hero",
+      "sticky": "Удобно — это где спать"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "scene_hint": "comparison_table_ui 3 rows; pad TR logo.",
+      "alt": "Трое взрослых на две ночи за 10 400 ₽: в шапке карточки «2 кровати», без расшифровки типа мест.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Почему «2 кровати» в карточке не всегда означают две кровати",
+      "visual_type": "comparison_table_ui",
+      "labels": ["трое взрослых", "две ночи", "10 400 рублей"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "scene_hint": "Спальные места: основные vs доп. NO logo.",
+      "alt": "В карточке шапка считает поверхности, а блок «Спальные места» может разделить кровать и диван-кровать.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Почему «2 кровати» в карточке не всегда означают две кровати",
+      "visual_type": "infographic_card",
+      "labels": ["в карточке две кровати", "фото разных комнат", "проверьте тип места"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "scene_hint": "Кровать, диван, матрас на полу. Pad TR logo.",
+      "alt": "Одна двуспальная кровать, продавленный диван-кровать и складной матрас на полу для третьего взрослого.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Где именно ломается доверие",
+      "visual_type": "workflow_diagram",
+      "labels": ["одна двуспальная кровать", "диван скрипит", "матрас на полу"]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "scene_hint": "Тонкая простыня, нет белья. NO logo.",
+      "alt": "Третьему гостю — тонкая простыня без второго комплекта белья и подушки.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Где именно ломается доверие",
+      "visual_type": "fact_card",
+      "labels": ["простыня тонкая", "второго белья нет", "подушки на всех"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "scene_hint": "Кровать vs диван vs матрас; телефон на магните. NO logo.",
+      "alt": "Кровать, диван-кровать и складной матрас — разные ночи; тип места важнее формального счёта поверхностей.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Как это устроено у нас",
+      "visual_type": "comparison_table_ui",
+      "labels": ["диван не кровать", "матрас не кровать", "важен тип места"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "scene_hint": "Чат: блок мест. NO logo.",
+      "alt": "До оплаты: открыть «Спальные места», уточнить тип каждой поверхности и попросить фото дивана разложенным.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "labeled_checklist",
+      "labels": ["раскройте блок мест", "основные и дополнительные", "фото разложенного дивана"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "scene_hint": "Чек-лист до оплаты. Pad TR logo.",
+      "alt": "Перед оплатой: спросить про каждое место, сохранить ответ в чате — сначала проверка, потом перевод.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "checklist_board",
+      "labels": ["спросите до оплаты", "сохраните ответ в чате", "сначала проверка"]
+    }
+  }
+}
