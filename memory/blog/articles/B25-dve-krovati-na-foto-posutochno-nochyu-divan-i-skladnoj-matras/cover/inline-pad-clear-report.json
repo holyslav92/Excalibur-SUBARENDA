@@ -1,0 +1,26 @@
+{
+  "article_dir": "/workspace/memory/blog/articles/B25-dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras",
+  "panels_cleared": [
+    {
+      "file": "cover/inline-02.png",
+      "pad_clear_passes": 6,
+      "pre_composite_invalidated": true
+    },
+    {
+      "file": "cover/inline-04.png",
+      "pad_clear_passes": 5,
+      "pre_composite_invalidated": true
+    },
+    {
+      "file": "cover/inline-05.png",
+      "pad_clear_passes": 6,
+      "pre_composite_invalidated": true
+    },
+    {
+      "file": "cover/inline-06.png",
+      "pad_clear_passes": 5,
+      "pre_composite_invalidated": true
+    }
+  ],
+  "count": 4
+}
