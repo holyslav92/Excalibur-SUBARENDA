@@ -3,6 +3,10 @@
   "h1": "«Можно с детьми» в карточке. При заезде: 1 500 ₽ за 2 ночи, 6-летнему",
   "slug": "mozhno-s-detmi-doplata-za-rebenka",
   "topic_id": "B24",
+  "wp_category_slugs": [
+    "posutochnaya-arenda",
+    "sovety-gostyam"
+  ],
   "author_id": "dobry-dom",
   "article_mode": "B",
   "description": "«Можно с детьми» в карточке. При заезде: 1 500 ₽ за 2 ночи, 6-летнему",

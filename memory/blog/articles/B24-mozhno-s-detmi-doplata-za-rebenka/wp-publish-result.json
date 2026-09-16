@@ -1,0 +1,27 @@
+{
+  "slug": "mozhno-s-detmi-doplata-za-rebenka",
+  "topic_id": "B24",
+  "permalink": "{{SITE_BASE}}/blog/mozhno-s-detmi-doplata-za-rebenka/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B24-mozhno-s-detmi-doplata-za-rebenka/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1070438,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4865 slug=mozhno-s-detmi-doplata-za-rebenka\nOK categories=101,106,104\nOK dzen_yzen_meta=1\nOK featured_image=4866\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4867 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/mozhno-s-detmi-doplata-za-rebenka-inline-03.png\nOK inline_alt=4867\nOK inline_caption=4867\nOK inline_description=4867\nOK inline_image_upload=4868 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/mozhno-s-detmi-doplata-za-rebenka-inline-02.png\nOK inline_alt=4868\nOK inline_caption=4868\nOK inline_description=4868\nOK inline_image_upload=4869 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/mozhno-s-detmi-doplata-za-rebenka-inline-01.png\nOK inline_alt=4869\nOK inline_caption=4869\nOK inline_description=4869\nOK inline_image_upload=4870 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/09/mozhno-s-detmi-doplata-za-rebenka-inline-05.png\nOK inline_alt=4870\nOK inline_caption=4870\nOK inline_description=4870\nOK inline_image_upload=4871 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/09/mozhno-s-detmi-doplata-za-rebenka-inline-04.png\nOK inline_alt=4871\nOK inline_caption=4871\nOK inline_description=4871\nOK inline_image_upload=4872 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/09/mozhno-s-detmi-doplata-za-rebenka-inline-06.png\nOK inline_alt=4872\nOK inline_caption=4872\nOK inline_description=4872\nOK inline_image_upload=4873 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/09/mozhno-s-detmi-doplata-za-rebenka-inline-07.png\nOK inline_alt=4873\nOK inline_caption=4873\nOK inline_description=4873\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/mozhno-s-detmi-doplata-za-rebenka/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/mozhno-s-detmi-doplata-za-rebenka/",
+    "errors": []
+  }
+}

@@ -1,5 +1,23 @@
 # WP publish log
 
+## B24 — 2026-09-16
+
+- **topic_id:** B24
+- **slug:** mozhno-s-detmi-doplata-za-rebenka
+- **title:** «Можно с детьми» в карточке. При заезде: 1 500 ₽ за 2 ночи, 6-летнему
+- **post_id:** 4865
+- **permalink:** /blog/mozhno-s-detmi-doplata-za-rebenka/
+- **categories:** posutochnaya-arenda (101), sovety-gostyam (106), zhkh-i-doplaty (104)
+- **featured_image:** 4866
+- **inline_images:** 4867–4873 (7× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS (all inline img src → wp-content; 0 local cover paths)
+- **dzen preview:** cover-1024x576.png refreshed (747104 bytes, HTTP 200); dzen_touch post_modified bumped
+- **interlink outbound:** 4 live /blog/ siblings (crosslink-qa PASS)
+- **interlink inbound:** B01 (3745), B18 (4724)
+- **publish_method:** sftp:22 (Cloud Agent; FTP PASV blocked)
+- **preflight fix:** wp_category_slugs added; theme_contract_deploy skipped (functions.php bounds not found — already patched on live)
+
 ## B23 — 2026-09-14
 
 - **topic_id:** B23
