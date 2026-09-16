@@ -1732,4 +1732,4 @@ checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_wp_categories.py`
 - `python3 -m unittest tests.test_wp_categories_interlink.WpCategoriesInterlinkTests.test_wp_categories_infer_sovety_from_sleeping_places_brief -v`
 - B25 `infer_secondary_slugs_from_brief()` → sovety-gostyam
-commit: pending
+commit: d6d3bf1
