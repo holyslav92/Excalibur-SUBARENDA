@@ -1,0 +1,21 @@
+{
+  "title": "Залог 5 000 ₽ обещали утром. После уборки — без срока",
+  "h1": "Залог 5 000 ₽ обещали утром. После уборки — без срока",
+  "slug": "zalog-5000-obeshchali-utrom-posle-uborki-bez-sroka",
+  "topic_id": "B24",
+  "wp_category_slugs": [
+    "posutochnaya-arenda",
+    "zalog-i-vyiezd"
+  ],
+  "author_id": "dobry-dom",
+  "article_mode": "B",
+  "description": "«После уборки» — это когда именно? В Тюмени гость уже уехал, а залог завис без даты: Добрый дом разбирает, что уточнить ещё до заселения.",
+  "date": "2026-09-16",
+  "pipeline_canon": "human-first-v3",
+  "editorial_swarm": false,
+  "theme_blocks": {
+    "faq": "skip",
+    "quiz": "skip",
+    "side_stickers": "skip"
+  }
+}

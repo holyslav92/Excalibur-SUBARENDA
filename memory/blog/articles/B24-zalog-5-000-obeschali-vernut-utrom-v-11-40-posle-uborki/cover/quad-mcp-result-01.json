@@ -1,0 +1,19 @@
+{
+  "local_path": "cover/canvas-quad-01.png",
+  "source": "grsai-draw-api",
+  "used_vip_fallback": true,
+  "quality": "high",
+  "bytes": 3538814,
+  "aspect_ratio": "16:9",
+  "resolution": "2K",
+  "endpoint": "draw/completions+result",
+  "response_kind": "url",
+  "task_id": "12-747a9c49-3bcd-4507-aef2-e3a5672cc519",
+  "target_canvas": "2048x1152",
+  "native_width": 2048,
+  "native_height": 1152,
+  "native_long_side": 2048,
+  "min_long_side_required": 2048,
+  "delivery": "native_2k",
+  "vip_trigger": "api_failure"
+}

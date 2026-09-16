@@ -1,0 +1,27 @@
+{
+  "slug": "zalog-5000-obeshchali-utrom-posle-uborki-bez-sroka",
+  "topic_id": "B24",
+  "permalink": "{{SITE_BASE}}/blog/zalog-5000-obeshchali-utrom-posle-uborki-bez-sroka/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B24-zalog-5-000-obeschali-vernut-utrom-v-11-40-posle-uborki/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1197678,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4854 slug=zalog-5000-obeshchali-utrom-posle-uborki-bez-sroka\nOK categories=101,102\nOK dzen_yzen_meta=1\nOK featured_image=4855\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4856 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/zalog-5000-obeshchali-utrom-posle-uborki-bez-sroka-inline-01.png\nOK inline_alt=4856\nOK inline_caption=4856\nOK inline_description=4856\nOK inline_image_upload=4857 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/zalog-5000-obeshchali-utrom-posle-uborki-bez-sroka-inline-02.png\nOK inline_alt=4857\nOK inline_caption=4857\nOK inline_description=4857\nOK inline_image_upload=4858 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/zalog-5000-obeshchali-utrom-posle-uborki-bez-sroka-inline-03.png\nOK inline_alt=4858\nOK inline_caption=4858\nOK inline_description=4858\nOK inline_image_upload=4859 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/09/zalog-5000-obeshchali-utrom-posle-uborki-bez-sroka-inline-04.png\nOK inline_alt=4859\nOK inline_caption=4859\nOK inline_description=4859\nOK inline_image_upload=4860 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/09/zalog-5000-obeshchali-utrom-posle-uborki-bez-sroka-inline-05.png\nOK inline_alt=4860\nOK inline_caption=4860\nOK inline_description=4860\nOK inline_image_upload=4861 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/09/zalog-5000-obeshchali-utrom-posle-uborki-bez-sroka-inline-06.png\nOK inline_alt=4861\nOK inline_caption=4861\nOK inline_description=4861\nOK inline_image_upload=4862 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/09/zalog-5000-obeshchali-utrom-posle-uborki-bez-sroka-inline-07.png\nOK inline_alt=4862\nOK inline_caption=4862\nOK inline_description=4862\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/zalog-5000-obeshchali-utrom-posle-uborki-bez-sroka/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/zalog-5000-obeshchali-utrom-posle-uborki-bez-sroka/",
+    "errors": []
+  }
+}

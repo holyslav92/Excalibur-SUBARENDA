@@ -1549,3 +1549,44 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+---
+
+## LESSON-20260916-0639-B24-deposit-after-cleaning-no-deadline
+status: proposed
+topic_id: B24
+category: voice
+confidence: low
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest BLOCKER по credentials.
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+
+### Keep
+- Two-beat H1 «Залог 5 000 ₽ обещали утром. После уборки — без срока» — обещание → размывание, не how-to.
+- §1: ₽5 000, цитата «после уборки», такси/ключи; identity хоста «Добрый дом» + TG/MAX до механики.
+- Klyshin spine: «не прямой отказ… размывание срока» + mid-body вопрос → TG/MAX (не комментарии).
+- Wordstat P0 spine «квартиры посуточно тюмень» 4724; supporting «залог посуточно» / «не возвращают залог».
+- 4 crosslink sibling (B02 залог, B23 уборка, B08 предоплата, B17 коммуналка) — HTTP 200.
+
+### Change
+- При hook deposit_return_blur сразу в §1 фиксировать три стадии формулировки (бронь → заселение → выезд) — усиливает «подмену» до H2.
+
+### Never again
+- How-to «как вернуть залог» / чеклист до морали.
+- Юр-крючки ЕГРН/суд/наследство в guest-night кейсе.
+
+### Proposed apply
+- Scout: deposit_return_blur → handoff с rework «не возвращают залог» + Tyumen spine; anti-dup B02 скол плиты / B23 простыни.
+- Review only; Writer prompt не трогать автоматически.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
