@@ -1,0 +1,60 @@
+{
+  "agent": "excalibur-blog-cover-qa",
+  "status": "FAIL",
+  "checked_at": "2026-09-16",
+  "topic_id": "B24",
+  "checks": {
+    "eight_png_exist": true,
+    "quad_manifest_valid": true,
+    "wordstat_stickers_1_3": true,
+    "motif_no_collision_14d": true,
+    "max_one_cat_meme_slot": true,
+    "light_high_key": true,
+    "logo_composite_stamp_pass": true,
+    "cover_logo_pasted": true,
+    "inline_no_logo_on_inlines": true,
+    "forbid_phone_on_cover_image": true,
+    "forbid_922_phone": true,
+    "forbid_ai_drawn_logo_cover": false,
+    "forbid_wordpress_ui_in_art": true,
+    "no_logo_plate_cover": true,
+    "forbid_graphic_collage_overlay": true,
+    "forbid_poster_composite_stamp": true,
+    "forbid_logo_reference_in_batch": true,
+    "forbid_overlapping_text_blocks": true,
+    "forbid_giant_cropped_glyph": true,
+    "cyrillic_hook_on_cover": true,
+    "phone_in_scene_cover": true,
+    "logo_count_cover_and_inlines": true,
+    "no_double_logos": true,
+    "season_matches_manifest": true,
+    "inline_utility_all_seven": false
+  },
+  "failures": [
+    "inline-01.png: blank decorative panel — canvas-quad-01 top_right (inline_1) generated empty tiled wall only; missing comparison_table_ui content (можно с детьми / 2 ночи / 8 400 ₽) for H2 «Значок разрешает приехать. Он не называет итог»",
+    "drawn_logo_gate: inline-06.png score=0.74 (automated TR-pad detect) — visual review: Gatsby people-meme ≤12%, no factory lockup; secondary flag only"
+  ],
+  "visual_review": {
+    "cover": "PASS — family at door, headline «Можно с детьми — 1 500 у двери» (highlight детьми), sticky «Цена всплыла у двери», phone +7 (993) 574-83-22 on wood tablo, factory logo TR, light high-key early autumn Tyumen",
+    "inline_01": "FAIL — empty wall texture + factory logo only; no comparison table, no labels, no utility for H2",
+    "inline_02": "PASS — age/surcharge infographic (до 3 лет / доплата / кроватка), no factory logo",
+    "inline_03": "PASS — chat checklist UI, factory logo TR",
+    "inline_04": "PASS — fact_card 6 лет / 1 500 ₽ / кроватка 500 at door, no factory logo",
+    "inline_05": "PASS — workflow такси ждёт / ребёнок устал / чемоданы у двери, phone on intercom, no factory logo",
+    "inline_06": "PASS — labeled_checklist + Gatsby people-meme ≤12%, no factory logo (drawn_logo_gate false-positive on meme crop)",
+    "inline_07": "PASS — workflow checklist сохраните карточку / итог в чате / потом перевод, factory logo TR",
+    "logo_count": "cover 1 factory TR; inline-01/03/07 factory paste; inline-02/04/05/06 no factory logo",
+    "cat_meme_quota": "zero cat; people-meme Gatsby inline-06 only"
+  },
+  "recovery": [
+    "REGEN canvas-quad-01 (inline_1 top_right quadrant blank) — comparison_table_ui with labels можно с детьми / 2 ночи / 8 400 ₽",
+    "quad-split + brand_logo_composite + Cover-QA re-run",
+    "Optional: pad-clear inline-06 if drawn_logo_gate persists after canvas-1 regen"
+  ],
+  "notes": [
+    "validate_logo_stamp: PASS",
+    "validate_cover_phone_and_overlap_gates: PASS",
+    "drawn_logo_gate: FAIL inline-06 automated score — visual OK, not primary blocker",
+    "Primary blocker: inline-01 utility FAIL — return to Cover for canvas-quad-01 regen"
+  ]
+}
