@@ -99,6 +99,54 @@ class WpCategoriesInterlinkTests(unittest.TestCase):
         finally:
             shutil.rmtree(article_dir, ignore_errors=True)
 
+    def test_wp_categories_infer_sovety_zhkh_from_child_fee_brief(self) -> None:
+        article_dir = ROOT / "memory/blog/articles/_gate_fixture_b24_categories"
+        try:
+            article_dir.mkdir(parents=True, exist_ok=True)
+            (article_dir / "article.meta.json").write_text(
+                json.dumps(
+                    {
+                        "slug": "mozhno-s-detmi-doplata-za-rebenka",
+                        "topic_id": "B24",
+                        "title": "Fixture child fee brief",
+                    },
+                    ensure_ascii=False,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            (article_dir / "title-brief.json").write_text(
+                json.dumps(
+                    {
+                        "subject": "Доплата за ребёнка при заселении в посуточную квартиру",
+                        "angle": "Отметка «можно с детьми» не означала, что ребёнок включён в цену",
+                    },
+                    ensure_ascii=False,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            proc = subprocess.run(
+                [
+                    "python3",
+                    str(ROOT / "scripts/excalibur_blog_wp_categories.py"),
+                    "--article-dir",
+                    str(article_dir.relative_to(ROOT)),
+                ],
+                cwd=ROOT,
+                capture_output=True,
+                text=True,
+                check=False,
+            )
+            self.assertEqual(proc.returncode, 0, proc.stdout + proc.stderr)
+            report = json.loads((article_dir / "wp-categories-gate.json").read_text(encoding="utf-8"))
+            self.assertEqual(report["status"], "PASS")
+            self.assertIn("sovety-gostyam", report["category_slugs"])
+            self.assertIn("zhkh-i-doplaty", report["category_slugs"])
+            self.assertIn("posutochnaya-arenda", report["category_slugs"])
+        finally:
+            shutil.rmtree(article_dir, ignore_errors=True)
+
     def test_interlink_gate_pass_with_outbound(self) -> None:
         links = (
             '<a href="/blog/beskontaktnoe-zaselenie-posutochno-tyumen/">бесконтактное заселение</a>, '
