@@ -19,6 +19,7 @@
 - [Код сработал. Пустая ключница — 35 минут у двери]({{SITE_BASE}}/kod-srabotal-klyuchnica-pusta-posutochno-tyumen/): Код сработал. Пустая ключница — 35 минут у двери
 - [Хозяин написал «кухня есть». За три ночи в кафе ушло 7 200 ₽]({{SITE_BASE}}/kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den/): Хозяин написал «кухня есть». За три ночи в кафе ушло 7 200 ₽
 - [Выезд в полдень. Поезд через 4 часа — чемоданы у подъезда]({{SITE_BASE}}/vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu/): Выезд в полдень. Поезд через 4 часа — чемоданы у подъезда
+- [«Можно с детьми» в карточке. При заезде: 1 500 ₽ за 2 ночи, 6-летнему]({{SITE_BASE}}/mozhno-s-detmi-doplata-za-rebenka/): «Можно с детьми» в карточке. При заезде: 1 500 ₽ за 2 ночи, 6-летнему
 - [Написали «горячая вода есть». Ночью — ледяной душ и 80 минут до тепла]({{SITE_BASE}}/napisali-goryachaya-voda-est-ledyanoj-dush-migayushij-boiler/): Написали «горячая вода есть». Ночью — ледяной душ и 80 минут до тепла
 - [«Всё для гостей» — ночью без полотенец на 890 ₽]({{SITE_BASE}}/v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik/): «Всё для гостей» — ночью без полотенец на 890 ₽
 - [Код уже есть. Только в подъезд не попасть — 20 минут с чемоданом]({{SITE_BASE}}/kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda/): Код уже есть. Только в подъезд не попасть — 20 минут с чемоданом
