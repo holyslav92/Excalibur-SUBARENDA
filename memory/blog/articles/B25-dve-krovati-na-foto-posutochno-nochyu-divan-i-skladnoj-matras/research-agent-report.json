@@ -1,0 +1,118 @@
+{
+  "status": "PASS",
+  "topic_id": "B25",
+  "slug": "dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras",
+  "research_date": "2026-09-16",
+  "summary": "Research for guest CASE: listing photos imply two beds for three adults, but night reality is bed + worn sofa-bed + folding mattress. Fresh signals: Dobriy Dom TG ~2026-09-15 bed-vs-sofa mismatch post, Scout sleeping_places_mismatch hook, Eva.ru guest forum on sofas in daily rentals. Platform norms: Sutochno requires photo/description match; cards separate «основные» vs «дополнительные» sleeping places; «2 кровати» can mean bed + sofa-bed. Anti-dup vs B04 (third guest count), B22-B24 (door/cleaning/child fee). NOT legal/EGRN.",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Scout Klyshin sleeping_places_mismatch hook + Dobriy Dom TG ~2026-09-15 listing-mismatch post + Eva.ru sofa-in-rentals thread",
+    "source_type": "community_and_platform",
+    "urls": [
+      "https://t.me/klyshin_A",
+      "https://t.me/Dobriy_dom_72",
+      "https://eva.ru/house-and-hobby/messages-3668167.htm"
+    ],
+    "accessed_at": "2026-09-16",
+    "note": "Composite guest case from Scout hook; not a verified transcript of one Tyumen booking. Klyshin live posts on 2026-09-16 cover other real-estate topics; hook is from topic bank angle."
+  },
+  "freshness_audit": {
+    "research_date": "2026-09-16",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://t.me/Dobriy_dom_72",
+      "published_at": "2026-09-15",
+      "note": "Local tenant channel: bed on photo vs sofa in reality — explicit sleeping-place mismatch example; guest notices details after payment."
+    },
+    "additional_fresh_signals": [
+      {
+        "url": "https://t.me/klyshin_A",
+        "published_at": "2026-09-16",
+        "type": "scout_editorial",
+        "note": "sleeping_places_mismatch hook from topic bank: two beds on photo, sofa + folding mattress at night."
+      },
+      {
+        "url": "https://serpuhov.sutochno.ru/1933552",
+        "published_at": "2026-03-23",
+        "type": "platform_guest_review",
+        "note": "Guest review notes outdated photos and sofa vs bed layout; supports photo/type mismatch mechanic."
+      }
+    ]
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176", "225"],
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 4724,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "снять квартиру посуточно в тюмени",
+        "volume": 1452,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "спальные места посуточно",
+        "volume": 131,
+        "region": "225"
+      },
+      {
+        "phrase": "спальное место посуточно",
+        "volume": 131,
+        "region": "225"
+      },
+      {
+        "phrase": "диван вместо кровати аренда",
+        "volume": null,
+        "region": "225",
+        "note": "WORDSTAT PARTIAL — no reliable top phrases"
+      }
+    ]
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "No bank/developer/JKH tariff digits; Sutochno/Avito platform policy cited as official platform context; case sums are editorial scenario only",
+    "verified_claims": 0,
+    "entities_checked": [],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "memory/blog/articles/B25-dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras/derouter-opus-stamp-research.json",
+    "first_attempt": "PASS"
+  },
+  "source_count": 10,
+  "limitations": [
+    "No verified transcript of a specific Tyumen booking; case mechanic from Scout editorial sleeping_places_mismatch hook.",
+    "Live Klyshin channel posts on 2026-09-16 do not cover this sleeping-places hook — hook is from topic bank angle.",
+    "Serpukhov listing review is outside Tyumen; used only for platform sleeping-place structure and photo mismatch pattern.",
+    "Eva.ru thread is from 2024; evergreen guest frustration, not Tyumen-specific.",
+    "Sutochno «2 кровати» header counting sofa-beds is platform UI pattern, not universal across direct bookings.",
+    "Direct booking via messenger may bypass aggregator sleeping-place fields cited from Sutochno/Avito."
+  ],
+  "writer_safe_urls": [
+    "https://t.me/Dobriy_dom_72",
+    "https://t.me/Dobriy_dom_Tyumen",
+    "https://max.ru/id660300569233_biz",
+    "https://добрыйдом-72.рф/",
+    "https://добрыйдом-72.рф/booking/",
+    "https://добрыйдом-72.рф/blog/",
+    "https://sutochno.ru/blog/opisanie",
+    "https://sutochno.ru/blog/rules",
+    "https://sutochno.ru/sj/iz-chego-skladivaetsya-stoimost-bronirovaniya",
+    "https://host.avito.com/course/lesson-3",
+    "https://eva.ru/house-and-hobby/messages-3668167.htm",
+    "https://serpuhov.sutochno.ru/1933552"
+  ],
+  "errors": []
+}
