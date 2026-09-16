@@ -1,0 +1,39 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/mozhno-s-detmi-doplata-za-rebenka/#article",
+  "url": "{{SITE_BASE}}/blog/mozhno-s-detmi-doplata-za-rebenka/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/mozhno-s-detmi-doplata-za-rebenka/"
+  },
+  "headline": "«Можно с детьми» в карточке. При заезде: 1 500 ₽ за 2 ночи, 6-летнему",
+  "description": "Отметка «можно с детьми» в карточке не всегда означает, что ребёнок уже включён в итоговую стоимость. Разбираем доплату 1 500 ₽ за ребёнка при заезде в Тюмени и что уточнить в переписке до оплаты.",
+  "datePublished": "2026-09-16",
+  "dateModified": "2026-09-16",
+  "inLanguage": "ru-RU",
+  "author": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    },
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  }
+}
