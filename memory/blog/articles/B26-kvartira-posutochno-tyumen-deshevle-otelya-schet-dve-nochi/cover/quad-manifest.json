@@ -26,8 +26,10 @@
   "inline_types_catalog": "memory/cover/inline-visual-types.json",
   "cover_hook": "Квартира дешевле — счёт 13 400",
   "cover_hook_highlight": "дешевле",
+  "cover_headline_line1": "Квартира дешевле",
+  "cover_headline_line2": "счёт 13 400",
+  "cover_phone_cta": "+7 (993) 574-83-22",
   "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
-  "mcp_note": "PRIMARY: Grsai GRSAI_PRIMARY_IMAGE_MODEL ONE 2048x1152 2x2 grid, slice4 + logo paste cover only.",
   "cover_motifs": {
     "composition": "couple kitchen island two printed receipts apartment vs hotel headline on paper tr pad",
     "location": "mid september 2026 sunny tyumen apartment birch golden leaves outside window not winter no snow",
@@ -36,7 +38,11 @@
     "sticker_set": "отель тюмень посуточно или отель сравнение цены",
     "joke": "per night card says cheaper total receipt 13400 surprises couple at kitchen"
   },
-  "wordstat_stickers": [],
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "снять квартиру посуточно в тюмени"
+  ],
+  "mcp_note": "PRIMARY: Derouter REST (DEROUTER_API_KEY) — 2K 16:9, one job per canvas (1×). Cover agent invents cover_hook + scene_hint/alt before --write-batch. Host lock = blog-hero.json (navy blazer, not hoodie).",
   "slots": {
     "cover": {
       "quadrant": "top_left",
