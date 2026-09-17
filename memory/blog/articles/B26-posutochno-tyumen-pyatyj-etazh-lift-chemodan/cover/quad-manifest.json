@@ -1,0 +1,127 @@
+{
+  "topic_id": "B26",
+  "slug": "posutochno-tyumen-pyatyj-etazh-lift-chemodan",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "Пятый этаж — лифт встал",
+  "cover_hook_highlight": "лифт",
+  "cover_headline_line1": "Пятый этаж",
+  "cover_headline_line2": "лифт встал",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "Grsai 2K VIP 2 canvases. Logo cover+inline_1/3/7. Phone IN scene. Autumn 2026 no winter. Max 1 cat — zero cat photoreal.",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "снять квартиру посуточно в тюмени"
+  ],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "гость чемодан подъезд закрытый лифт записка ремонт табло хук пятый этаж",
+    "location": "середина сентября 2026 осень тюмень подъезд пятиэтажки золотые листья без снега",
+    "meme": "photoreal zero cat zero meme stickers",
+    "prop_set": "чемодан лифт записка табло телефон 8400 смартфон галочка лифт",
+    "sticker_set": "квартира пятый этаж лифт посуточно тюмень",
+    "joke": "галочка лифт есть а кабина стоит чемодан внизу пятый этаж"
+  },
+  "cover_emotion": "Усталость у подъезда: деньги ушли, лифт стоит, чемодан на бордюре после такси",
+  "cover_scene": "Осенний подъезд: гость со спины у чемодана, лифт с запиской «не работает», хук на табло; телефон на домофоне; pad TR.",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "scene_hint": "Сентябрь 2026 подъезд: гость со спины у чемодана, лифт с запиской «Лифт не работает»; LARGE Cyrillic «Пятый этаж — лифт встал» gold «лифт»; sticky «Деньги уже перевели»; phone +7 (993) 574-83-22 on intercom tablo NOT pill; golden leaves; TR pad empty.",
+      "alt": "Гость с чемоданом у неработающего лифта в подъезде пятиэтажного дома в Тюмени после оплаты двух ночей.",
+      "meme_caption_ru": "",
+      "role": "cover_editorial_hero",
+      "sticky": "Деньги уже перевели"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "scene_hint": "comparison_table_ui: заезд после оплаты vs 8400 рублей. Labels + phone on screen. Pad TR logo.",
+      "alt": "После перевода 8 400 ₽ за две ночи гость узнаёт условия заезда у подъезда.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Галочка отвечает не на тот вопрос",
+      "visual_type": "comparison_table_ui",
+      "labels": ["заезд после оплаты", "восемь тысяч четыреста", "телефон +7 (993) 574-83-22"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "scene_hint": "infographic_card: галочка «лифт есть» vs пятый этаж и лифт на ремонте. NO logo.",
+      "alt": "В карточке стоит галочка «лифт», но квартира на пятом этаже, а лифт остановлен на ремонт.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Галочка отвечает не на тот вопрос",
+      "visual_type": "infographic_card",
+      "labels": ["галочка «лифт есть»", "пятый этаж", "лифт на ремонте"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "scene_hint": "workflow_diagram: спросите до перевода — какой этаж и лифт. Phone on chat screen. Pad TR logo.",
+      "alt": "До перевода денег стоит спросить этаж и работает ли лифт сегодня, а не только есть ли он в доме.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Галочка отвечает не на тот вопрос",
+      "visual_type": "workflow_diagram",
+      "labels": ["спросите до перевода", "какой этаж", "телефон +7 (993) 574-83-22"]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "scene_hint": "checklist_board: лифт работает сегодня, фото ремонта, какой подъезд. NO logo.",
+      "alt": "Перед заездом полезно уточнить, работает ли лифт сегодня, и попросить фото ремонта или таблички.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Разговор, в котором все правы",
+      "visual_type": "checklist_board",
+      "labels": ["лифт работает сегодня", "фото ремонта", "какой подъезд"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "scene_hint": "workflow_diagram: чемодан у бордюра, такси уехало, багаж помогут поднять. NO logo.",
+      "alt": "После такси чемодан остаётся у бордюра — стоит заранее спросить, помогут ли с багажом наверх.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Разговор, в котором все правы",
+      "visual_type": "workflow_diagram",
+      "labels": ["багаж помогут поднять", "чемодан у бордюра", "такси уже уехало"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "scene_hint": "fact_card: бумага на створке может устареть — напишите хозяину. Tiny people-meme ≤12% OK. NO logo.",
+      "alt": "Табличка «лифт не работает» не всегда актуальна — лучше написать хозяину, чем тащить чемодан наверх.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Разговор, в котором все правы",
+      "visual_type": "fact_card",
+      "labels": ["бумага может устареть", "напишите хозяину", "не лезьте сразу"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "scene_hint": "labeled_checklist: сначала проверка потом перевод. Phone on board. Pad TR logo.",
+      "alt": "Перед оплатой посуточной квартиры в Тюмени: сначала проверка этажа и лифта, потом перевод.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "labeled_checklist",
+      "labels": ["сначала проверка", "потом перевод", "телефон +7 (993) 574-83-22"]
+    }
+  }
+}
