@@ -1,0 +1,10 @@
+{
+  "topic_id": "B26",
+  "description": "«Лифт есть», — написал хозяин. У подъезда табличка, пятый этаж и чемодан после такси: в Тюмени Добрый дом советует уточнять не наличие лифта, а работает ли он сегодня.",
+  "rhythm": "klyshin_case_hook",
+  "geo": "Тюмень",
+  "author_brand": "Добрый дом",
+  "not_equal_title": true,
+  "not_truncated_lead": true,
+  "verdict": "PASS"
+}
