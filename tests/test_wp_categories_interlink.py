@@ -147,6 +147,53 @@ class WpCategoriesInterlinkTests(unittest.TestCase):
         finally:
             shutil.rmtree(article_dir, ignore_errors=True)
 
+    def test_wp_categories_infer_sovety_from_elevator_luggage_brief(self) -> None:
+        article_dir = ROOT / "memory/blog/articles/_gate_fixture_b26_categories"
+        try:
+            article_dir.mkdir(parents=True, exist_ok=True)
+            (article_dir / "article.meta.json").write_text(
+                json.dumps(
+                    {
+                        "slug": "posutochno-tyumen-pyatyj-etazh-lift-chemodan",
+                        "topic_id": "B26",
+                        "title": "Fixture elevator luggage brief",
+                    },
+                    ensure_ascii=False,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            (article_dir / "title-brief.json").write_text(
+                json.dumps(
+                    {
+                        "subject": "Пятый этаж, неработающий лифт и багаж после оплаты",
+                        "angle": "Гость узнаёт о вертикальном пути у подъезда, когда чемодан уже вынут из такси",
+                    },
+                    ensure_ascii=False,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            proc = subprocess.run(
+                [
+                    "python3",
+                    str(ROOT / "scripts/excalibur_blog_wp_categories.py"),
+                    "--article-dir",
+                    str(article_dir.relative_to(ROOT)),
+                ],
+                cwd=ROOT,
+                capture_output=True,
+                text=True,
+                check=False,
+            )
+            self.assertEqual(proc.returncode, 0, proc.stdout + proc.stderr)
+            report = json.loads((article_dir / "wp-categories-gate.json").read_text(encoding="utf-8"))
+            self.assertEqual(report["status"], "PASS")
+            self.assertIn("sovety-gostyam", report["category_slugs"])
+            self.assertIn("posutochnaya-arenda", report["category_slugs"])
+        finally:
+            shutil.rmtree(article_dir, ignore_errors=True)
+
     def test_wp_categories_infer_sovety_from_sleeping_places_brief(self) -> None:
         article_dir = ROOT / "memory/blog/articles/_gate_fixture_b25_categories"
         try:

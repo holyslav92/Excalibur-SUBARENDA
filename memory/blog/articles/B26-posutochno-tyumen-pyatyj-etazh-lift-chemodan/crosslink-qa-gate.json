@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "https://добрыйдом-72.рф/blog/kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki/",
+      "slug": "kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki",
+      "anchor": "про «рядом с вузом». Так же чемодан становится главным героем между выездом из квартиры и поездом — мы писали об этом в материале",
+      "catalog_title": "Привезли сына к вузу — «рядом» оказалось 40 минут пешком",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu/",
+      "slug": "vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu",
+      "anchor": "«выезд и поезд». В объявлении багаж почти никогда не выглядит важной деталью. На месте он быстро становится главной.Мой вывод как практикаЕсли гость приезжает с багажом, этаж и состояние лифта надо проговорить до перевода — письменно, в том же чате, где идёт бронь. Не после приезда. Не в формате «на месте решим». Если этого не сделано — Нет. Так не заселяем. Не потому, что хочется усложнить человеку жизнь, а потому, что после оплаты у него меньше свободы спокойно выбрать другой вариант.Лифт — это железо, обслуживание и ремонтные работы. Никто не может честно обещать, что кабина никогда не остановится. Но можно обещать другое: гость узнает этаж и актуальный статус лифта раньше, чем нажмёт кнопку перевода. Путь до двери вообще состоит из мелочей, которые легко испортить молчанием. В истории про",
+      "catalog_title": "Выезд в полдень. Поезд через 4 часа — чемоданы у подъезда",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "anchor": "бесконтактное заселение, когда код прислали от чужой двери это видно особенно хорошо: инструкция важна не меньше ключа.А иногда человек не добирается даже до лифта, потому что молчит домофон — отдельный случай в тексте",
+      "catalog_title": "Оплатил квартиру посуточно. Код прислали от чужой двери",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda/",
+      "slug": "kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda",
+      "anchor": "про код домофона.Сначала проверка. Потом перевод. Не наоборот. В этой истории перевёрнутый порядок стоит 8 400 ₽ за две ночи и пять этажей с чемоданом в руках.Перед оплатой достаточно спросить:какой точный этаж и сколько этажей в доме;лифт работает сегодня, а не просто есть ли он в подъезде;если объявлен ремонт — можно ли подтвердить ситуацию фото или сообщением;есть ли помощь с тяжёлым багажом, если лифт не поедет;где именно входить в подъезд и как не тащить вещи вокруг дома.Если нужна квартира посуточно в Тюмени и хотите заранее проговорить этаж, подъезд и путь до двери, напишите нам в",
+      "catalog_title": "Код уже есть. Только в подъезд не попасть — 20 минут с чемоданом",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "outbound_unique_slugs": [
+    "kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki",
+    "vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu",
+    "beskontaktnoe-zaselenie-posutochno-tyumen",
+    "kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B26-posutochno-tyumen-pyatyj-etazh-lift-chemodan",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}

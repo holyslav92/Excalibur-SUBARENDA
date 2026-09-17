@@ -95,6 +95,10 @@ class Grsai2KNotMetError(GrsaiApiError):
         super().__init__(message)
 
 
+def is_retryable_http(status: int) -> bool:
+    return status in {408, 429, 500, 502, 503, 504, 524}
+
+
 def project_root() -> Path:
     env_root = os.environ.get("EXCALIBUR_PROJECT_ROOT", "").strip()
     if env_root:

@@ -1733,3 +1733,170 @@ checks_run:
 - `python3 -m unittest tests.test_wp_categories_interlink.WpCategoriesInterlinkTests.test_wp_categories_infer_sovety_from_sleeping_places_brief -v`
 - B25 `infer_secondary_slugs_from_brief()` → sovety-gostyam
 commit: d6d3bf1
+
+## INC-20260917-1405 — wp_category_slugs manual add for elevator/luggage angle (B26 publish)
+
+status: fixed
+run_date: 2026-09-17
+role: excalibur-blog-publish
+topic_id: B26
+article_dir: memory/blog/articles/B26-posutochno-tyumen-pyatyj-etazh-lift-chemodan
+severity: low
+category: script
+
+### What went wrong
+
+- Publish preflight manually added `wp_category_slugs` (posutochnaya-arenda, sovety-gostyam) before upload.
+- `infer_secondary_slugs_from_brief()` returned [] for B26 title-brief (лифт / этаж / багаж / чемодан) — keywords map lacked vertical-access and luggage tokens.
+
+### How the agent recovered this run
+
+- Publish agent set explicit slugs in `article.meta.json`; wp-categories-gate PASS (101, 106); post 4907 live.
+
+### Durable fix needed before next run
+
+- Extend sovety-gostyam keyword map with лифт/этаж/багаж/чемодан for guest path-of-travel advice angles.
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_wp_categories.py`
+- `tests/test_wp_categories_interlink.py`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-09-17
+fix_summary:
+- Added elevator/luggage keywords (лифт, этаж, багаж, чемодан) to sovety-gostyam inference map; B26 brief now auto-infers sovety-gostyam without manual slug edit.
+files_changed:
+- `scripts/excalibur_blog_wp_categories.py`
+- `tests/test_wp_categories_interlink.py`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_wp_categories.py`
+- `python3 -m unittest tests.test_wp_categories_interlink.WpCategoriesInterlinkTests.test_wp_categories_infer_sovety_from_elevator_luggage_brief -v`
+- B26 `infer_secondary_slugs_from_brief()` → sovety-gostyam
+commit: 1829d47
+
+## INC-20260917-1406 — crosslink anchor topic label vs case-style catalog H1 (B26 publish)
+
+status: fixed
+run_date: 2026-09-17
+role: excalibur-blog-publish
+topic_id: B26
+article_dir: memory/blog/articles/B26-posutochno-tyumen-pyatyj-etazh-lift-chemodan
+severity: low
+category: script
+
+### What went wrong
+
+- Publish preflight crosslink-qa BLOCK: anchor «бесконтактное заселение» vs catalog «Оплатил квартиру посуточно. Код прислали от чужой двери» — topic descriptor vs case-style H1, zero title token overlap.
+
+### How the agent recovered this run
+
+- Manual anchor rewrite to «бесконтактное заселение, когда код прислали от чужой двери» + split paragraph; crosslink-qa PASS.
+
+### Durable fix needed before next run
+
+- Crosslink QA must accept short topic anchors when slug Cyrillic stems match (beskontaktnoe + zaselenie ↔ бесконтакт + заселен).
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_crosslink_qa_gate.py`
+- `tests/test_crosslink_qa_gate.py`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-09-17
+fix_summary:
+- `anchor_matches_catalog_slug()` + `anchor_matches_catalog()` slug-stem fallback for topic-style anchors vs case-style catalog titles (INC B26).
+- Regression test `test_anchor_matches_topic_label_via_slug_stems_b26`.
+files_changed:
+- `scripts/excalibur_blog_crosslink_qa_gate.py`
+- `tests/test_crosslink_qa_gate.py`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_crosslink_qa_gate.py`
+- `python3 -m unittest tests.test_crosslink_qa_gate.CrosslinkQaGateTests.test_anchor_matches_topic_label_via_slug_stems_b26 -v`
+commit: 1829d47
+
+## INC-20260917-1407 — wp_intermediate_refresh hardcoded 2026/08 uploads path (B26 dzen preview)
+
+status: fixed
+run_date: 2026-09-17
+role: excalibur-blog-publish
+topic_id: B26
+article_dir: memory/blog/articles/B26-posutochno-tyumen-pyatyj-etazh-lift-chemodan
+severity: medium
+category: script
+
+### What went wrong
+
+- After B26 publish (uploads under `wp-content/uploads/2026/09/`), `excalibur_blog_wp_intermediate_refresh.py` used hardcoded `UPLOADS_PREFIX = wp-content/uploads/2026/08/` — Dzen 1024×576 refresh would target wrong path for September posts.
+
+### How the agent recovered this run
+
+- Publish commit e7f13d3: dynamic `uploads_prefix_from_source_url()` + `zen_upload_names()` year/month parsing; refreshed cover + inline *-1024x576 via SFTP (report `live-dzen-intermediate-refresh-report.json`).
+
+### Durable fix needed before next run
+
+- Intermediate refresh must derive upload subdir from media `source_url` and `/feed/zen/` enclosure, not fixed 2026/08.
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_wp_intermediate_refresh.py`
+- `tests/test_wp_intermediate_refresh.py`
+
+### Secrets
+
+- FTP (Cloud Secrets)
+
+### Fixer resolution
+
+fixed_at: 2026-09-17
+fix_summary:
+- `uploads_prefix_from_source_url()` + dynamic zen feed year/month in `zen_upload_names()` / `collect_targets()` (commit e7f13d3 during publish).
+- Fixer added regression tests for 2026/09 path parsing.
+files_changed:
+- `scripts/excalibur_blog_wp_intermediate_refresh.py`
+- `tests/test_wp_intermediate_refresh.py`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_wp_intermediate_refresh.py`
+- `python3 -m unittest tests.test_wp_intermediate_refresh.WpIntermediateRefreshTest -v`
+commit: e7f13d3, 1829d47
+
+## INC-20260917-1408 — Metrika credentials missing (Content-learner B26)
+
+status: needs-human
+run_date: 2026-09-17
+role: excalibur-blog-content-learner
+topic_id: B26
+article_dir: memory/blog/articles/B26-posutochno-tyumen-pyatyj-etazh-lift-chemodan
+severity: medium
+category: env
+
+### What went wrong
+
+- `excalibur_blog_metrika_fetch.py --days 30 --ingest` → METRIKA CREDENTIALS BLOCKER (same root cause as INC-20260903-0640).
+
+### How the agent recovered this run
+
+- evidence_gate SKIP (no content-evidence-report.json); optional lessons only; no causal Metrika claims.
+
+### Durable fix needed before next run
+
+- Set YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets for tenant.
+
+### Fixer resolution
+
+status: needs-human
+reason: env-only blocker; duplicate of INC-20260903-0640
+needed_decision_or_secret: YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets
