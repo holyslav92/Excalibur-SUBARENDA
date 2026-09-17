@@ -1,5 +1,23 @@
 # WP publish log
 
+## B26 — 2026-09-17
+
+- **topic_id:** B26
+- **slug:** zaselenie-s-14-00-v-15-45-mokryj-pol
+- **title:** Заезд с двух. 105 мин с чемоданом: пахнет химией, мокрый пол, «ещё пять»
+- **post_id:** 4889
+- **permalink:** /blog/zaselenie-s-14-00-v-15-45-mokryj-pol/
+- **categories:** posutochnaya-arenda (101), sovety-gostyam (106)
+- **featured_image:** 4890
+- **inline_images:** 4891–4897 (7× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS (cover + 7 inline img src → wp-content)
+- **dzen preview:** dzen_yzen_meta=1
+- **interlink outbound:** 4 live /blog/ siblings (crosslink-qa PASS)
+- **interlink inbound:** B01 (3745)
+- **publish_method:** sftp:22 (Cloud Agent; FTP PASV blocked)
+- **preflight fix:** theme_contract_deploy skipped (functions.php bounds not found — already patched on live); llms_deploy timeout on SFTP (post live OK)
+
 ## B25 — 2026-09-16
 
 - **topic_id:** B25

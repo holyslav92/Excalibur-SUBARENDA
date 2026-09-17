@@ -1,0 +1,26 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 2,
+  "model_policy": "vip_for_2k",
+  "vip_disabled": false,
+  "max_generation_attempts": 2,
+  "attempt": 2,
+  "output_canvas": "cover/canvas-quad-02.png",
+  "result_path": "cover/quad-mcp-result-02.json",
+  "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+  "preferred_image_flow": {
+    "provider": "grsai",
+    "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
+    "resolution": "2K"
+  },
+  "jobs": [{
+    "slot": "canvas_quad",
+    "tool": "grsai",
+    "mcp_args": {
+      "prompt": "WOW RU editorial, airy #FFF high-key, Tyumen mid-September 2026 sunny autumn afternoon, NO winter/snow. Canvas 2048x1152 2x2 grid; white gutters. Ban: dark, WP UI, Shakin, pill phone, ANY brand lockup, curtains+flower, Добрый дом text.\nCRITICAL panels TL/TR/BL except inline_7: TOP-RIGHT = plain empty wall ONLY — NO logo NO wordmark.\nTL inline_4: entryway host hand with key open door inside bucket wet floor visible; listing card «заезд в четырнадцать»; TXT:заезд в четырнадцать|ключ есть|жить пока нельзя; TR blank.\nTR inline_5: bedroom mid-cleaning sheets stack on chair unmade bed; fridge magnet +7 (993) 574-83-22 flat NOT pill; TXT:простыни на стуле|кровать не готова|сумку поставить некуда; TR blank.\nBL inline_6: cafe table receipt 420₽ coffee bun suitcase by chair; ONE tiny cat-meme sticker bottom-left «ещё пять минут» — ONLY cat in entire article; TXT:кофе и булочка|четыреста двадцать рублей|две ночи короче; TR blank.\nBR inline_7: magnetic checklist board «уборка завершена?» «пол уже сухой?» «сначала проверка»; bright kitchen; ONLY inline_7 TR pad empty for factory logo paste AFTER.",
+      "aspect_ratio": "16:9",
+      "resolution": "2K"
+    }
+  }],
+  "validation": {"prompt_chars": 1288, "max_prompt_chars": 3500, "resolution": "2K"}
+}

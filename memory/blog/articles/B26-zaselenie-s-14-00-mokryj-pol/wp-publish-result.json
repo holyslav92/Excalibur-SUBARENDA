@@ -1,0 +1,27 @@
+{
+  "slug": "zaselenie-s-14-00-v-15-45-mokryj-pol",
+  "topic_id": "B26",
+  "permalink": "{{SITE_BASE}}/blog/zaselenie-s-14-00-v-15-45-mokryj-pol/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B26-zaselenie-s-14-00-mokryj-pol/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1226394,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4889 slug=zaselenie-s-14-00-v-15-45-mokryj-pol\nOK categories=101,106\nOK dzen_yzen_meta=1\nOK featured_image=4890\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4891 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/zaselenie-s-14-00-v-15-45-mokryj-pol-inline-02.png\nOK inline_alt=4891\nOK inline_caption=4891\nOK inline_description=4891\nOK inline_image_upload=4892 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/zaselenie-s-14-00-v-15-45-mokryj-pol-inline-01.png\nOK inline_alt=4892\nOK inline_caption=4892\nOK inline_description=4892\nOK inline_image_upload=4893 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/09/zaselenie-s-14-00-v-15-45-mokryj-pol-inline-04.png\nOK inline_alt=4893\nOK inline_caption=4893\nOK inline_description=4893\nOK inline_image_upload=4894 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/zaselenie-s-14-00-v-15-45-mokryj-pol-inline-03.png\nOK inline_alt=4894\nOK inline_caption=4894\nOK inline_description=4894\nOK inline_image_upload=4895 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/09/zaselenie-s-14-00-v-15-45-mokryj-pol-inline-06.png\nOK inline_alt=4895\nOK inline_caption=4895\nOK inline_description=4895\nOK inline_image_upload=4896 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/09/zaselenie-s-14-00-v-15-45-mokryj-pol-inline-05.png\nOK inline_alt=4896\nOK inline_caption=4896\nOK inline_description=4896\nOK inline_image_upload=4897 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/09/zaselenie-s-14-00-v-15-45-mokryj-pol-inline-07.png\nOK inline_alt=4897\nOK inline_caption=4897\nOK inline_description=4897\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/zaselenie-s-14-00-v-15-45-mokryj-pol/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/zaselenie-s-14-00-v-15-45-mokryj-pol/",
+    "errors": []
+  }
+}

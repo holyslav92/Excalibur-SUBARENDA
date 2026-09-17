@@ -1,0 +1,108 @@
+{
+  "status": "PASS",
+  "topic_id": "B26",
+  "slug": "zaselenie-s-14-00-mokryj-pol",
+  "research_date": "2026-09-17",
+  "summary": "Research for guest CASE: card promises check-in from 14:00, guest arrives on time, at 15:45 wet floor, cleaning smell, «ещё пять минут» — NOT paid early check-in (B21). Fresh signals: Dobriy Dom TG ~2026-09-17 cleaning checklist + pre-check-in state verification; Scout checkin_time_not_ready hook. Industry: standard 12:00–14:00 turnover window; 2–5h cleaning depending on flat size. Anti-dup vs B21 early check-in paid, B23 checkout cleaning fee.",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Dobriy Dom TG ~2026-09-17 cleaning/check-in readiness posts + Scout Klyshin checkin_time_not_ready hook",
+    "source_type": "community_and_editorial",
+    "urls": [
+      "https://t.me/Dobriy_dom_72",
+      "https://t.me/klyshin_A"
+    ],
+    "accessed_at": "2026-09-17",
+    "note": "Composite guest case from Scout hook; not a verified transcript of one Tyumen booking. Live Klyshin channel posts on 2026-09-16–17 cover other real-estate topics; hook is from topic bank angle."
+  },
+  "freshness_audit": {
+    "research_date": "2026-09-17",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://t.me/Dobriy_dom_72",
+      "published_at": "2026-09-17",
+      "note": "Tenant channel: rushed cleaning fails; 30-point maid checklist; apartment state verified before guest check-in."
+    },
+    "additional_fresh_signals": [
+      {
+        "url": "https://t.me/klyshin_A",
+        "published_at": "editorial-bank",
+        "type": "scout_editorial",
+        "note": "checkin_time_not_ready hook: 14:00 on card, wet floor and «ещё пять минут» at door."
+      }
+    ]
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176", "225"],
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 4724,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "снять квартиру посуточно в тюмени",
+        "volume": 1452,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "время заселения посуточно",
+        "volume": 56,
+        "region": "225",
+        "note": "WORDSTAT PARTIAL — totalCount only on one call"
+      },
+      {
+        "phrase": "квартиры посуточно ранний заезд",
+        "volume": 188,
+        "region": "225",
+        "note": "Contrast intent — B26 is standard check-in, not early check-in (B21)"
+      }
+    ]
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "No bank/developer/JKH tariff digits; case sums editorial only",
+    "verified_claims": 0,
+    "entities_checked": [],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "memory/blog/articles/B26-zaselenie-s-14-00-mokryj-pol/derouter-opus-stamp-research.json",
+    "first_attempt": "PARTIAL",
+    "note": "Full assembled inputs caused HTTP 500; canonical notes synthesized via condensed reformat pass (assembled-research-reformat.md) after successful partial run."
+  },
+  "source_count": 11,
+  "limitations": [
+    "No verified transcript of a specific Tyumen booking; case mechanic from Scout editorial checkin_time_not_ready hook.",
+    "Live Klyshin channel posts on 2026-09-16–17 do not cover this hook — hook is from topic bank angle.",
+    "Otzovik review is Moscow 2022; used only for dirty-at-check-in pattern, not Tyumen market claim.",
+    "Wordstat «время заселения посуточно» — partial totalCount only.",
+    "Industry turnover times are orientation ranges, not guarantees for every host."
+  ],
+  "writer_safe_urls": [
+    "https://t.me/Dobriy_dom_72",
+    "https://t.me/Dobriy_dom_Tyumen",
+    "https://max.ru/id660300569233_biz",
+    "https://добрыйдом-72.рф/",
+    "https://добрыйдом-72.рф/booking/",
+    "https://добрыйдом-72.рф/blog/",
+    "https://www.tutu.ru/geo/journal/polezno-passazhiru/article/rannij-zaezd-i-pozdnij-vyezd/",
+    "https://rent365.net/ru/news/32",
+    "https://vseuberu.ru/blog/kak-organizovat-uborku-posutochnyix-kvartir",
+    "https://renttools.io/ru/blog/early-check-in-fee-math",
+    "https://sutochno.ru/blog/cleaning",
+    "https://t-j.ru/posutochno-guests-cleaning/",
+    "https://t.me/klyshin_A"
+  ],
+  "errors": []
+}

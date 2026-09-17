@@ -1,0 +1,218 @@
+{
+  "agent": "excalibur-blog",
+  "date_context": {
+    "timezone": "Europe/Moscow",
+    "today_iso": "2026-09-17",
+    "today_ru": "17.09.2026",
+    "year": 2026,
+    "month": 9,
+    "month_name_ru": "сентябрь",
+    "weekday_ru": "четверг"
+  },
+  "topic": {
+    "topic_id": "B26",
+    "title": "Заселение с 14:00 — мокрый пол",
+    "h1": "Заселение с 14:00 — мокрый пол",
+    "slug": "zaselenie-s-14-00-mokryj-pol",
+    "primary_query": "Заселение с 14:00 — мокрый пол",
+    "priority": "P0"
+  },
+  "searches": [
+    {
+      "query_id": "primary_fresh",
+      "query": "Заселение с 14:00 — мокрый пол 2026",
+      "purpose": "актуальный SERP",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Приемная кампания 2026: чек-лист, как иногородним абитуриентам ...",
+          "url": "https://mospolytech.ru/news/priemnaya-kampaniya-2026-chek-list-kak-inogorodnim-abiturientam-zaselitsya-v-obshchezhitie-moskovsko/",
+          "snippet": ""
+        },
+        {
+          "title": "Заселение 2026 — что нужно знать? Рассказываем, как пройдёт заселение ...",
+          "url": "https://vk.ru/wall-28511920_76566",
+          "snippet": "Иногородние абитуриенты Московского Политеха, поступающие на первый курс очного отделения, смогут рассчитывать на общежитие: в сентябре 2026 года для них забронировано свыше 900 мест. Уже с февраля 2027 года появится возможность заселиться в 130 комнат с повышенным уровнем комфорта."
+        },
+        {
+          "title": "⏰ Check in — Заселение В Отель, С 14:00. Это Международный Стандарт ...",
+          "url": "https://vk.com/wall43107415_3157",
+          "snippet": "Когда начнется заселение: • для первокурсников — с 09:00 14 сентября; • для студентов 2+ курсов — с 16 сентября; • заселение в городские общежития — с 09:00 7 сентября."
+        },
+        {
+          "title": "РАННЕЕ ЗАСЕЛЕНИЕ — что такое и зачем нужно Стандартное время заселения ...",
+          "url": "https://vk.com/wall-236434630_13",
+          "snippet": "Браслет могут надеть сразу, а могут — только в 14:00. Это зависит от политики отеля. Полезные лайфхаки для туристов • Приехали рано? Переодевайтесь сразу — отдыхайте, а не ждите."
+        },
+        {
+          "title": "Все о заселении в общежития Московского Политеха: льготы, очереди ...",
+          "url": "https://mospolytech.ru/news/vse-o-zaselenii-v-obshchezhitiya-moskovskogo-politekha-lgoty-ocheredi-stoimost-i-bytovye-uslugi/",
+          "snippet": "Гарантированное раннее заселение Если вы точно знаете, что прилёт ранний и хотите сразу в номер - можно заранее: • оплатить раннее заселение • забронировать номер на сутки больше"
+        },
+        {
+          "title": "PDF ПАМЯТКА ПЕРВОКУРСНИКА КГЭУ 2026",
+          "url": "https://kgeu.ru/upload/iblock/348/ir1hxrso70spb0wc9357onb6twk6s6p3/Pamyatka_pervokursnika_KGEU_2026.pdf",
+          "snippet": "Подготовили подробный разбор всех ключевых аспектов заселения в общежития Московского Политеха — от перечня льгот и порядка их подтверждения до правил очередности для абитуриентов, стоимости проживания, тарифов на услуги прачечной и возможности выбора комнаты."
+        }
+      ],
+      "searched_at": "2026-09-17"
+    },
+    {
+      "query_id": "title_fresh",
+      "query": "Заселение с 14:00 — мокрый пол 2026",
+      "purpose": "SERP по человеческому title",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "ПРАВИЛА ЗАСЕЛЕНИЯ И ПРОЖИВАНИЯ. Заселение с 14:00, выезд в день выезда ...",
+          "url": "https://vk.com/wall-237088684_2",
+          "snippet": ""
+        },
+        {
+          "title": "Заселение 2026 — что нужно знать? Рассказываем, как пройдёт заселение ...",
+          "url": "https://vk.ru/wall-28511920_76566",
+          "snippet": "В выходные и праздничные дни заселение с 15:00. Заселение дистанционное, необходимо предоставление фото документа - паспорт: главная страница и страница регистрации."
+        },
+        {
+          "title": "Приехали в Питер в 6 утра, а заселение в 14:00? Вот что делать с ...",
+          "url": "https://dzen.ru/a/ahtKvrEOOCWo8dCq",
+          "snippet": "Когда начнется заселение: • для первокурсников — с 09:00 14 сентября; • для студентов 2+ курсов — с 16 сентября; • заселение в городские общежития — с 09:00 7 сентября."
+        },
+        {
+          "title": "РАННЕЕ ЗАСЕЛЕНИЕ — что это и зачем оно нужно ⏰ СТАНДАРТЫ Обычно ...",
+          "url": "https://vk.com/wall-231514716_688",
+          "snippet": "Если у вас аренда квартиры, апартаментов или нашей студии, где оставить вещи заранее физически невозможно (заселение строго с 14:00-15:00), то мой совет — автоматические камеры хранения."
+        },
+        {
+          "title": "Прилетели в 5 утра, а заселение в 14:00. Что делать эти девять часов?",
+          "url": "https://aerotur.travel/blog/prileteli-v-5-utra-zaselenie-v-1400-chto-delat-eti-devyat-chasov",
+          "snippet": "СТАНДАРТЫ Обычно заселение — с 14:00-15:00. До этого времени номер может быть занят предыдущими гостями (горничным нужно время на уборку). 🟢 КОГДА МОГУТ ЗАСЕЛИТЬ РАНЬШЕ БЕСПЛАТНО?"
+        },
+        {
+          "title": "Что делать если заселение заселение с 14ч а прилетел раньше",
+          "url": "https://dadanews.ru/obschestvo/chto-delat-esli-zaselenie-zaselenie-s-14ch-a-priletel-ranshe/",
+          "snippet": "Сидеть с чемоданом в холле и считать минуты необязательно. Разбираемся, что делать при раннем прилёте, можно ли заселиться в отель раньше и как не потерять первый день отдыха."
+        }
+      ],
+      "searched_at": "2026-09-17"
+    },
+    {
+      "query_id": "official_docs",
+      "query": "Заселение с 14:00 — мокрый пол official docs 2026",
+      "purpose": "официальные docs",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Google Docs",
+          "url": "https://docs.google.com/",
+          "snippet": ""
+        },
+        {
+          "title": "Заселение 2026 — что нужно знать? Рассказываем, как пройдёт заселение ...",
+          "url": "https://vk.ru/wall-28511920_76566",
+          "snippet": "Create and edit web-based documents, spreadsheets, and presentations. Store documents online and access them from any computer."
+        },
+        {
+          "title": "Google Документы: вход в систему",
+          "url": "https://docs.google.com/document/create?hl=ru",
+          "snippet": "Когда начнется заселение: • для первокурсников — с 09:00 14 сентября; • для студентов 2+ курсов — с 16 сентября; • заселение в городские общежития — с 09:00 7 сентября."
+        },
+        {
+          "title": "PDF Порядок заселения и регистрации в гостинице с «01» сентября 2026 г.",
+          "url": "https://site-m25.cosmosgroup.ru/files/hotel_documents/1086_RU_1788160097.pdf",
+          "snippet": "Подробнее об использовании гостевого режима. Используйте Google Документы в аккаунте Google (для личных целей) или в аккаунте Google Workspace (для бизнеса)."
+        },
+        {
+          "title": "PDF Всё, что нужно знать про заселение в общежития МГУ географам магистрам ...",
+          "url": "https://www.geogr.msu.ru/admission/oby/%D0%9F%D0%9E%D0%A1%D0%95%D0%9B%D0%95%D0%9D%D0%98%D0%95-%D0%9C%D0%90%D0%93%D0%98%D0%A1%D0%A2%D0%A0%D0%AB.pdf",
+          "snippet": "В соответствии с Правилами предоставления гостиничных услуг в Российской Федерации, утвержденных Постановлением Правительства РФ No1912 от 27.11.2025г., с «01» марта 2026 г. заселение потребителя ..."
+        },
+        {
+          "title": "По каким документам можно заселиться в отель в 2026 году",
+          "url": "https://bronirui-online.ru/jurnal/novosti/po-kakim-dokumentam-mozhno-zaselyat-gostej-v-otel-v-2026-godu/",
+          "snippet": "Когда заселяться? - Заселение в общежитие строго с 26 августа 2026 г. Можно приезжать в любое время суток — вас встретит дежурный администратор и вы получите пропуск. Что взять с собой? - Паспорт"
+        }
+      ],
+      "searched_at": "2026-09-17"
+    },
+    {
+      "query_id": "github_evidence",
+      "query": "site:github.com Заселение с 14:00 — мокрый пол 2026",
+      "purpose": "GitHub evidence",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "BlendNeRF/assets/PB.png at main · naver-ai/BlendNeRF · GitHub",
+          "url": "https://github.com/naver-ai/BlendNeRF/blob/main/assets/PB.png",
+          "snippet": ""
+        },
+        {
+          "title": "mlp/tex/7b262a0b10ae8325622072f36a36c9ab.svg at master - GitHub",
+          "url": "https://github.com/filipecalasans/mlp/blob/master/tex/7b262a0b10ae8325622072f36a36c9ab.svg?invert_in_darkmode&sanitize=true",
+          "snippet": "Official pytorch implementation of BlendNeRF (ICCV 2023) - BlendNeRF/assets/PB.png at main · naver-ai/BlendNeRF"
+        },
+        {
+          "title": "Как настроить свой VPN с VLESS Reality на VPS — полный гайд для России 2026",
+          "url": "https://gist.github.com/evilork/e6ab383bb3df19bb3a9a8068ae0bca4f",
+          "snippet": "Multilayer Perceptron Implementation in Python. Contribute to filipecalasans/mlp development by creating an account on GitHub."
+        },
+        {
+          "title": "RimWorld AutoTranslation Cache - Russian / Русский (LibreTranslate)",
+          "url": "https://gist.github.com/csh1668/a0e1d162ba0e5a659e73bdcb179138b1",
+          "snippet": "Краткое описание — Пошаговая инструкция по развёртыванию open-source Xray-core с протоколом VLESS+Reality на VPS. Для DevOps-инженеров, разработчиков и системных администраторов которым нужен защищённый туннель между серверами или клиентами с активной DPI-классификацией трафика."
+        },
+        {
+          "title": "Начните работу с документацией GitHub",
+          "url": "https://docs.github.com/ru/get-started",
+          "snippet": "Агрессивный отбор Мировых Пешек в версии 1.6 иногда удаляет отцов еще до рождения детей и до того, как они смогут прийти забрать своих детей.</Entry><Entry Key ..."
+        },
+        {
+          "title": "hermes-optimization-guide/assets/architecture.svg at main · OnlyTerp ...",
+          "url": "https://github.com/OnlyTerp/hermes-optimization-guide/blob/main/assets/architecture.svg",
+          "snippet": "Узнайте, как GitHub и Copilot могут помочь вам развить навыки программирования, писать лучший код и создавать безопасные проекты. В основе GitHub лежит открытая система контроля версий (VCS) под названием Git. Git отвечает за всё GitHub, что происходит локально на вашем компьютере."
+        }
+      ],
+      "searched_at": "2026-09-17"
+    },
+    {
+      "query_id": "community_experience",
+      "query": "Заселение с 14:00 — мокрый пол forum problems опыт 2026",
+      "purpose": "форумы и живые проблемы",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "РАННЕЕ ЗАСЕЛЕНИЕ — что такое и зачем нужно Стандартное время заселения ...",
+          "url": "https://vk.com/wall-239180871_4",
+          "snippet": ""
+        },
+        {
+          "title": "РАННЕЕ ЗАСЕЛЕНИЕ — что такое и зачем нужно Стандартное время заселения ...",
+          "url": "https://vk.com/wall-174782122_222",
+          "snippet": "Гарантированное раннее заселение Если вы точно знаете, что прилёт ранний и хотите сразу в номер - можно заранее: • оплатить раннее заселение • забронировать номер на сутки больше"
+        },
+        {
+          "title": "Что делать если заселение заселение с 14ч а прилетел раньше",
+          "url": "https://dadanews.ru/obschestvo/chto-delat-esli-zaselenie-zaselenie-s-14ch-a-priletel-ranshe/",
+          "snippet": "Гарантированное раннее заселение Если вы точно знаете, что прилёт ранний и хотите сразу в номер - можно заранее: • оплатить раннее заселение • забронировать номер на сутки больше"
+        },
+        {
+          "title": "Позднее заселение в отель Саньи: советы и личный опыт | Вопросы и ответы",
+          "url": "https://travelanswer.ru/questions/pozdnee-zaselenie-v-otely-mozhno-li-otdohnuty-posle-nochnogo-pereliota.html",
+          "snippet": "Представьте ситуацию: вы прилетели в долгожданный отпуск на несколько часов раньше официального времени заселения в отель, которое установлено на 14:00."
+        },
+        {
+          "title": "Ранний заезд и поздний выезд в отеле: всё, что нужно знать в 2026 году ...",
+          "url": "https://www.akkahotels.com/ru/blog/early-check-in-late-check-out-everything-you-need-to-know-in-2026-akka-hotels",
+          "snippet": "Что делать, если прилетаешь в Санью ночью, а заселение только в 12:00? Практические советы от путешественников, как решить проблему с ранним заездом в отель."
+        },
+        {
+          "title": "Вопрос про заселение, если прилетаем в 01:00 ночи",
+          "url": "https://u-mama.ru/forum/travel-and-relocation/travel/394279/",
+          "snippet": "О чём эта статья: Что такое ранний заезд и поздний выезд, как правильно запросить эти услуги, когда они бесплатны, а когда — платны, и какие лайфхаки помогут получить одобрение с первого раза."
+        }
+      ],
+      "searched_at": "2026-09-17"
+    }
+  ],
+  "errors": []
+}
