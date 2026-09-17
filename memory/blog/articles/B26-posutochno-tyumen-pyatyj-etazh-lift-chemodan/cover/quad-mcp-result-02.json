@@ -1,0 +1,22 @@
+{
+  "local_path": "cover/canvas-quad-02.png",
+  "source": "grsai-draw-api",
+  "model": "[REDACTED]-vip",
+  "model_succeeded": "[REDACTED]-vip",
+  "model_primary": "[REDACTED]",
+  "used_vip_fallback": true,
+  "quality": "high",
+  "bytes": 2951457,
+  "aspect_ratio": "16:9",
+  "resolution": "2K",
+  "endpoint": "draw/completions+result",
+  "host": "grsaiapi.com",
+  "native_width": 2048,
+  "native_height": 1152,
+  "native_long_side": 2048,
+  "min_long_side_required": 2048,
+  "delivery": "native_2k",
+  "vip_trigger": "2k_not_possible_on_primary",
+  "batch_attempt": 2,
+  "note": "attempt 1 failed vip system error; attempt 2 vip OK"
+}

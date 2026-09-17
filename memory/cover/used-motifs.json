@@ -3,19 +3,6 @@
   "window_days": 14,
   "entries": [
     {
-      "date": "2026-09-03",
-      "topic_id": "B08",
-      "slug": "",
-      "motifs": {
-        "composition": "phone chat silence tablo tr pad",
-        "location": "sep 2026 sunny tyumen not winter",
-        "meme": "__cat_meme_family__",
-        "prop_set": "phone receipt suitcase tablo",
-        "sticker_set": "тишина в чате предоплата на карту",
-        "joke": "checkmarks no address"
-      }
-    },
-    {
       "date": "2026-09-05",
       "topic_id": "B10",
       "slug": "",
@@ -219,6 +206,19 @@
         "prop_set": "складной матрас диван-кровать телефон карточка 10400 простыня табло",
         "sticker_set": "спальные места посуточно снять квартиру тюмени",
         "joke": "на фото две кровати ночью диван и пол"
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "topic_id": "B26",
+      "slug": "",
+      "motifs": {
+        "composition": "гость чемодан подъезд закрытый лифт записка ремонт табло хук пятый этаж",
+        "location": "середина сентября 2026 осень тюмень подъезд пятиэтажки золотые листья без снега",
+        "meme": "photoreal zero cat zero meme stickers",
+        "prop_set": "чемодан лифт записка табло телефон 8400 смартфон галочка лифт",
+        "sticker_set": "квартира пятый этаж лифт посуточно тюмень",
+        "joke": "галочка лифт есть а кабина стоит чемодан внизу пятый этаж"
       }
     }
   ]
