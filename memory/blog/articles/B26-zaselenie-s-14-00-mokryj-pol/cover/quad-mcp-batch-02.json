@@ -4,7 +4,7 @@
   "model_policy": "vip_for_2k",
   "vip_disabled": false,
   "max_generation_attempts": 2,
-  "attempt": 1,
+  "attempt": 2,
   "output_canvas": "cover/canvas-quad-02.png",
   "result_path": "cover/quad-mcp-result-02.json",
   "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
