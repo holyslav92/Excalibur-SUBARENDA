@@ -176,6 +176,18 @@ class CrosslinkQaGateTests(unittest.TestCase):
         catalog_title = "Оплатил квартиру посуточно. Код прислали от чужой двери"
         self.assertTrue(anchor_matches_catalog_title(anchor, catalog_title))
 
+    def test_anchor_matches_topic_label_via_slug_stems_b26(self) -> None:
+        from excalibur_blog_crosslink_qa_gate import (
+            anchor_matches_catalog,
+            anchor_matches_catalog_title,
+        )
+
+        anchor = "бесконтактное заселение"
+        catalog_title = "Оплатил квартиру посуточно. Код прислали от чужой двери"
+        slug = "beskontaktnoe-zaselenie-posutochno-tyumen"
+        self.assertFalse(anchor_matches_catalog_title(anchor, catalog_title))
+        self.assertTrue(anchor_matches_catalog(anchor, catalog_title, slug))
+
 
 if __name__ == "__main__":
     unittest.main()

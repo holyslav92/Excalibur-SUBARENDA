@@ -167,6 +167,67 @@ def anchor_matches_catalog_title(anchor: str, catalog_title: str) -> bool:
     return False
 
 
+SKIP_SLUG_PARTS = frozenset(
+    {
+        "tyumen",
+        "tyumeni",
+        "posutochno",
+        "posutochnaya",
+        "kvartiry",
+        "kvartira",
+        "blog",
+        "arenda",
+        "arendy",
+    }
+)
+
+SLUG_PART_CYRILLIC_STEMS: dict[str, tuple[str, ...]] = {
+    "beskontaktnoe": ("бесконтакт",),
+    "zaselenie": ("заселен",),
+    "domofon": ("домофон",),
+    "chemodan": ("чемодан",),
+    "chemodany": ("чемодан",),
+    "kod": ("код",),
+    "lift": ("лифт",),
+    "etazh": ("этаж",),
+    "bagazh": ("багаж",),
+    "vyezd": ("выезд",),
+    "zalog": ("залог",),
+    "uborka": ("уборк",),
+    "doplata": ("доплат",),
+    "doplaty": ("доплат",),
+    "rebenka": ("ребен", "ребён"),
+    "detmi": ("дет",),
+    "krovati": ("кроват",),
+    "divan": ("диван",),
+    "matras": ("матрас",),
+    "spalnye": ("спальн",),
+}
+
+
+def anchor_matches_catalog_slug(anchor: str, slug: str) -> bool:
+    """Topic-style anchor vs case-style catalog H1 — match slug stems (INC B26)."""
+    anchor_norm = normalize_title(anchor)
+    parts = [p for p in slug.lower().split("-") if p not in SKIP_SLUG_PARTS and len(p) >= 4]
+    if not parts:
+        return False
+    hits = 0
+    for part in parts:
+        stems = SLUG_PART_CYRILLIC_STEMS.get(part)
+        if stems and any(stem in anchor_norm for stem in stems):
+            hits += 1
+    needed = min(2, len(parts)) if len(parts) >= 2 else 1
+    return hits >= needed
+
+
+def anchor_matches_catalog(anchor: str, catalog_title: str, slug: str = "") -> bool:
+    if anchor_matches_catalog_title(anchor, catalog_title):
+        return True
+    if slug:
+        return anchor_matches_catalog_slug(anchor, slug)
+    return False
+
+
 class ArticleLinkExtractor(HTMLParser):
     def __init__(self) -> None:
         super().__init__()
@@ -327,7 +388,7 @@ def validate_article_crosslinks(
             checks.append(check)
             continue
 
-        if not anchor_matches_catalog_title(anchor, str(catalog_row.get("title") or slug)):
+        if not anchor_matches_catalog(anchor, str(catalog_row.get("title") or slug), slug):
             errors.append(
                 f"anchor/title mismatch for {href}: «{anchor}» vs catalog "
                 f"«{catalog_row.get('title')}»"

@@ -15,7 +15,9 @@ from excalibur_blog_wp_intermediate_refresh import (  # noqa: E402
     full_name_from_intermediate,
     is_intermediate_name,
     resize_wp_image,
+    uploads_prefix_from_source_url,
     wp_constrain_dimensions,
+    zen_upload_names,
 )
 
 
@@ -39,6 +41,32 @@ class WpIntermediateRefreshTest(unittest.TestCase):
         self.assertEqual(
             full_name_from_intermediate(name),
             "dogovor-arendy-pravila-prozhivaniya-posutochno-cover-1.png",
+        )
+
+    def test_uploads_prefix_from_2026_09_source_url(self) -> None:
+        url = (
+            "https://example.test/wp-content/uploads/2026/09/"
+            "posutochno-tyumen-pyatyj-etazh-lift-chemodan-cover.png"
+        )
+        self.assertEqual(
+            uploads_prefix_from_source_url(url),
+            "wp-content/uploads/2026/09/",
+        )
+
+    def test_zen_upload_names_parses_year_month(self) -> None:
+        feed = """
+        <item>
+          <enclosure url="https://example.test/wp-content/uploads/2026/09/slug-cover-1024x576.png"/>
+        </item>
+        """
+        with unittest.mock.patch(
+            "excalibur_blog_wp_intermediate_refresh.zen_feed_block",
+            return_value=feed,
+        ):
+            pairs = zen_upload_names("https://example.test", "slug")
+        self.assertEqual(
+            pairs,
+            [("wp-content/uploads/2026/09/", "slug-cover-1024x576.png")],
         )
 
 
