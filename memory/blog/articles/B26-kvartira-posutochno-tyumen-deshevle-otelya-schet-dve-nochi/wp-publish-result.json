@@ -1,0 +1,27 @@
+{
+  "slug": "kvartira-posutochno-tyumen-deshevle-otelya-schet-dve-nochi",
+  "topic_id": "B26",
+  "permalink": "{{SITE_BASE}}/blog/kvartira-posutochno-tyumen-deshevle-otelya-schet-dve-nochi/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B26-kvartira-posutochno-tyumen-deshevle-otelya-schet-dve-nochi/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 998636,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4900 slug=kvartira-posutochno-tyumen-deshevle-otelya-schet-dve-nochi\nOK categories=101,106,104\nOK dzen_yzen_meta=1\nOK featured_image=4901\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4902 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kvartira-posutochno-tyumen-deshevle-otelya-schet-dve-nochi-inline-01.png\nOK inline_alt=4902\nOK inline_caption=4902\nOK inline_description=4902\nOK inline_image_upload=4903 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kvartira-posutochno-tyumen-deshevle-otelya-schet-dve-nochi-inline-02.png\nOK inline_alt=4903\nOK inline_caption=4903\nOK inline_description=4903\nOK inline_image_upload=4904 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kvartira-posutochno-tyumen-deshevle-otelya-schet-dve-nochi-inline-03.png\nOK inline_alt=4904\nOK inline_caption=4904\nOK inline_description=4904\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/kvartira-posutochno-tyumen-deshevle-otelya-schet-dve-nochi/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 3,
+    "expected_inline": 3,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/kvartira-posutochno-tyumen-deshevle-otelya-schet-dve-nochi/",
+    "errors": []
+  }
+}

@@ -142,8 +142,8 @@
   ],
   "manifest": "cover/quad-manifest.json",
   "html_inject": [
-    "injected inline_1 after H2 — Где квартира внезапно проигрывает отелю",
-    "injected inline_2 after H2 — В разговоре правы оба — и от этого хуже",
-    "injected inline_3 after H2 — Залог не надо прятать в цену поездки"
+    "skip inline_1: already correct under H2 — Где квартира внезапно проигрывает отелю",
+    "skip inline_2: already correct under H2 — В разговоре правы оба — и от этого хуже",
+    "skip inline_3: already correct under H2 — Залог не надо прятать в цену поездки"
   ]
 }
