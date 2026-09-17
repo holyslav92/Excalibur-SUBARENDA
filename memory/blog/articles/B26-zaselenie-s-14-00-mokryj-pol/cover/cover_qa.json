@@ -1,0 +1,95 @@
+{
+  "agent": "excalibur-blog-cover-qa",
+  "status": "FAIL",
+  "checked_at": "2026-09-17",
+  "topic_id": "B26",
+  "checks": {
+    "eight_png_exist": true,
+    "quad_manifest_valid": true,
+    "wordstat_stickers_1_3": true,
+    "motif_no_collision_14d": true,
+    "max_one_cat_meme_slot": true,
+    "light_high_key": true,
+    "logo_composite_stamp_pass": true,
+    "cover_logo_pasted": true,
+    "inline_no_logo_on_inlines": true,
+    "forbid_phone_on_cover_image": true,
+    "forbid_922_phone": true,
+    "forbid_ai_drawn_logo_cover": false,
+    "forbid_wordpress_ui_in_art": true,
+    "no_logo_plate_cover": true,
+    "forbid_graphic_collage_overlay": true,
+    "forbid_poster_composite_stamp": true,
+    "forbid_logo_reference_in_batch": true,
+    "forbid_overlapping_text_blocks": true,
+    "forbid_giant_cropped_glyph": true,
+    "cyrillic_hook_on_cover": true,
+    "phone_in_scene_cover": false,
+    "logo_count_cover_and_inlines": true,
+    "no_double_logos": true,
+    "season_matches_manifest": true,
+    "inline_utility_all_seven": false
+  },
+  "failures": [
+    "inline-05.png: blank/unrendered panel — canvas-quad-02 TR quadrant empty (std=13, mean=234); pad-clear 5 passes on already-blank source; inline utility FAIL",
+    "drawn_logo_gate: inline-02.png score=0.56 on no-logo panel (see paste_and_ship evaluation below)",
+    "drawn_logo_gate: pre-composite cover.png white logo plate in generation pad (area=15360) — factory paste OK on final cover.png",
+    "validate_cover_phone_and_overlap_gates: cover.png wordstat sticker pills flagged as phone pill (false positive — no phone on cover per canon)"
+  ],
+  "paste_and_ship": {
+    "policy": "paste_and_ship_on_exhaust",
+    "tenant_enabled": true,
+    "inline_02": {
+      "eligible": true,
+      "canvas": "canvas-quad-01",
+      "attempt": 2,
+      "max_attempts": 2,
+      "pad_clear_passes": 6,
+      "drawn_logo_score": 0.56,
+      "verdict": "paste-and-ship applies — canvas1 attempt2 exhausted + pad-clear done; visual review confirms workflow_diagram with in-scene +7 (993) 574-83-22 flat tablo and gold workflow icons (flask/bucket/clock), NO brand lockup in TR pad",
+      "blocker": false
+    },
+    "inline_05": {
+      "eligible": false,
+      "canvas": "canvas-quad-02",
+      "attempt": 1,
+      "max_attempts": 2,
+      "verdict": "NOT paste-and-ship — panel never rendered (blank TR quadrant); canvas2 attempt1 only, regen required",
+      "blocker": true
+    }
+  },
+  "visual_review": {
+    "cover": "PASS — guest+чемодан wet floor, hook «Заезд с двух — мокрый пол», sticky «Сначала проверка», wordstat stickers, factory logo TR; no phone; no cat",
+    "inline_01": "PASS — comparison_table_ui мокрый пол/заезд/чемодан; factory logo TR",
+    "inline_02": "PASS (paste-and-ship) — workflow_diagram corridor bucket+mop; phone +7 (993) 574-83-22 flat on wall; gold icons; no factory logo; drawn_logo_gate false-positive score 0.56",
+    "inline_03": "PASS — 105 min timeline staircase→cafe; factory logo TR",
+    "inline_04": "PASS — fact_card key+open door+wet floor; no factory logo",
+    "inline_05": "FAIL — blank off-white panel, no bedroom/cleaning scene, no phone tablo, no utility content",
+    "inline_06": "PASS — cafe receipt 420₽, ONE cat meme «ещё пять минут» BL only; no factory logo",
+    "inline_07": "PASS — checklist board уборка/пол сухой/проверка; factory logo TR",
+    "logo_count": "cover 1 factory TR; inline-01/03/07 factory paste; inline-02/04/05/06 no factory logo",
+    "cat_meme_quota": "visual: 1 cat slot inline-06 only; manifest cover_motifs.meme text triggers automated false-positive on cover slot"
+  },
+  "regen_log": [
+    "canvas-quad-01 attempt2 ATTEMPT2 ZERO drawn logo ALL panels",
+    "canvas-quad-02 attempt1 — inline_5 TR quadrant blank/unrendered",
+    "pad-clear inline-02/04/05/06 (5–6 passes each)",
+    "drawn_logo_gate FAIL inline-02 score=0.56 + pre-composite cover white plate"
+  ],
+  "artifacts": {
+    "cover": "cover/cover.png",
+    "inline_01": "cover/inline-01.png",
+    "inline_02": "cover/inline-02.png",
+    "inline_03": "cover/inline-03.png",
+    "inline_04": "cover/inline-04.png",
+    "inline_05": "cover/inline-05.png",
+    "inline_06": "cover/inline-06.png",
+    "inline_07": "cover/inline-07.png"
+  },
+  "notes": [
+    "BLOCK — return to Cover: regen canvas-quad-02 attempt2 for blank inline_5 (bedroom mid-cleaning + phone tablo)",
+    "inline-02 drawn_logo: paste-and-ship eligible per 2-attempt cap; not a standalone blocker once inline-05 fixed",
+    "validate_logo_stamp: PASS",
+    "Factory logo paste: cover + inline-01/03/07"
+  ]
+}
