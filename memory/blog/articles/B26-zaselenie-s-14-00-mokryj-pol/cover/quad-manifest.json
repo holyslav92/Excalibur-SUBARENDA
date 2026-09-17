@@ -1,0 +1,128 @@
+{
+  "topic_id": "B26",
+  "slug": "zaselenie-s-14-00-mokryj-pol",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "Заезд с двух — мокрый пол",
+  "cover_hook_highlight": "мокрый",
+  "cover_headline_line1": "Заезд с двух",
+  "cover_headline_line2": "мокрый пол",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "Grsai 2K VIP 2 canvases. Logo cover+inline_1/3/7. Phone in-scene inline_2/5. One cat meme inline_6 only.",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "снять квартиру посуточно в тюмени"
+  ],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "inline_phone_tablo_slots": ["inline_2", "inline_5"],
+  "cover_motifs": {
+    "composition": "гость с чемоданом в прихожей мокрый пол ведро швабра табло хук человек в кадре",
+    "location": "середина сентября 2026 тёплый солнечный день тюмень посуточная квартира осенние деревья за окном без снега",
+    "meme": "one small cat meme sticker inline_6 only zero cat elsewhere",
+    "prop_set": "чемодан мокрый пол ведро швабра спрей химии 3200 кофе 420 табло",
+    "sticker_set": "время заселения посуточно заезд с двух тюмень",
+    "joke": "заезд с двух а пол блестит ещё пять минут третий раз"
+  },
+  "cover_emotion": "усталость с чемоданом у двери: ключ есть, жить ещё нельзя — мокрый пол и запах химии",
+  "cover_scene": "Сентябрь 14:00 прихожая: гость, мокрый пол, табло хук, TR pad.",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "scene_hint": "Сентябрь 14:00: гость+чемодан на мокром полу, ведро; табло «Заезд с двух — мокрый пол»; TR pad; человек.",
+      "alt": "Гость с чемоданом в прихожей в обещанное время заезда: пол мокрый после уборки, рядом ведро и швабра, пахнет химией.",
+      "meme_caption_ru": "",
+      "role": "cover_editorial_hero",
+      "sticky": "Сначала проверка. Потом перевод."
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "scene_hint": "comparison_table_ui: «мокрый пол»|«заезд с двух»|«чемодан у двери»; TR pad logo.",
+      "alt": "Три факта у двери: мокрый пол, обещанный заезд с двух и чемодан, который нельзя поставить.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Заезд с двух — не открытая дверь",
+      "visual_type": "comparison_table_ui",
+      "labels": ["мокрый пол", "заезд с двух", "чемодан у двери"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "scene_hint": "Коридор: ведро, швабра, химия; табло +7 (993) 574-83-22 flat; TXT:пахнет химией|ведро и швабра|ещё пять минут.",
+      "alt": "Незавершённая уборка: запах химии, ведро и швабра в коридоре, обещание «ещё пять минут».",
+      "meme_caption_ru": "",
+      "h2_anchor": "Заезд с двух — не открытая дверь",
+      "visual_type": "workflow_diagram",
+      "labels": ["пахнет химией", "ведро и швабра", "ещё пять минут"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "scene_hint": "Таймлайн 105 мин: лестница→кафе; TXT:сто пять минут|лестничная площадка|кафе через дорогу; TR pad logo.",
+      "alt": "105 минут с чемоданом: часть на лестничной площадке, часть в кафе через дорогу.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Где в этой истории теряются деньги",
+      "visual_type": "checklist_board",
+      "labels": ["сто пять минут", "лестничная площадка", "кафе через дорогу"]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "scene_hint": "Прихожая: ключ, открытая дверь, ведро; TXT:заезд в четырнадцать|ключ есть|жить пока нельзя.",
+      "alt": "Ключ передан и дверь открыта, но квартира ещё не готова к жизни — уборка не закончена.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Где в этой истории теряются деньги",
+      "visual_type": "fact_card",
+      "labels": ["заезд в четырнадцать", "ключ есть", "жить пока нельзя"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "scene_hint": "Спальня уборка: простыни на стуле; магнит +7 (993) 574-83-22 flat; TXT:простыни на стуле|кровать не готова|сумку поставить некуда.",
+      "alt": "Бельё на стуле, кровать не застелена — некуда поставить сумку, пока уборка не закончена.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Вопрос, который надо задать до оплаты",
+      "visual_type": "comparison_table_ui",
+      "labels": ["простыни на стуле", "кровать не готова", "сумку поставить некуда"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "scene_hint": "Кафе: чек 420₽ кофе+булочка, чемодан; ONE cat meme «ещё пять минут»; TXT:кофе и булочка|420 рублей|две ночи короче.",
+      "alt": "420 ₽ на кофе и булочку — цена ожидания, пока квартира не готова; короткая поездка на две ночи.",
+      "meme_caption_ru": "ещё пять минут",
+      "h2_anchor": "Вопрос, который надо задать до оплаты",
+      "visual_type": "reaction_card",
+      "labels": ["кофе и булочка", "четыреста двадцать рублей", "две ночи короче"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "scene_hint": "Чек-лист доска: уборка завершена?|пол сухой?|сначала проверка; TR pad logo.",
+      "alt": "Перед оплатой спросите: уборка завершена, пол сухой — сначала проверка, потом перевод.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "checklist_board",
+      "labels": ["уборка завершена?", "пол уже сухой?", "сначала проверка"]
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "topic_id": "B26",
+  "slug": "zaselenie-s-14-00-v-15-45-mokryj-pol",
+  "cover_family": "brand_collage",
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "file": "cover/cover.png",
+  "alt": "Гость с чемоданом в прихожей в обещанное время заезда: пол мокрый после уборки, рядом ведро и швабра, пахнет химией.",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-quad-01.png",
+  "generated_at": "2026-09-17T06:43:41+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Гость с чемоданом в прихожей в обещанное время заезда: пол мокрый после уборки, рядом ведро и швабра, пахнет химией.",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Три факта у двери: мокрый пол, обещанный заезд с двух и чемодан, который нельзя поставить.",
+      "h2_anchor": "Заезд с двух — не открытая дверь",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Незавершённая уборка: запах химии, ведро и швабра в коридоре, обещание «ещё пять минут».",
+      "h2_anchor": "Заезд с двух — не открытая дверь",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "105 минут с чемоданом: часть на лестничной площадке, часть в кафе через дорогу.",
+      "h2_anchor": "Где в этой истории теряются деньги",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_4",
+      "file": "cover/inline-04.png",
+      "alt": "Ключ передан и дверь открыта, но квартира ещё не готова к жизни — уборка не закончена.",
+      "h2_anchor": "Где в этой истории теряются деньги",
+      "visual_type": "fact_card",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_5",
+      "file": "cover/inline-05.png",
+      "alt": "Бельё на стуле, кровать не застелена — некуда поставить сумку, пока уборка не закончена.",
+      "h2_anchor": "Вопрос, который надо задать до оплаты",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_6",
+      "file": "cover/inline-06.png",
+      "alt": "420 ₽ на кофе и булочку — цена ожидания, пока квартира не готова; короткая поездка на две ночи.",
+      "h2_anchor": "Вопрос, который надо задать до оплаты",
+      "visual_type": "reaction_card",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_7",
+      "file": "cover/inline-07.png",
+      "alt": "Перед оплатой спросите: уборка завершена, пол сухой — сначала проверка, потом перевод.",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}
