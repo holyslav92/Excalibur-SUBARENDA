@@ -34,3 +34,4 @@ lessons, benchmarks, QA reports или соседние research-notes как о
 | B23 | napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni | В карточке: «уборка включена» — 3 ночи. Выезд: фото простыни — 1 800 ₽ | published |
 | B24 | mozhno-s-detmi-doplata-za-rebenka | «Можно с детьми» в карточке. При заезде: 1 500 ₽ за 2 ночи, 6-летнему | published |
 | B25 | dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras | На фото две кровати. Ночью троих — диван и складной матрас | published |
+| B26 | zaselenie-s-14-00-v-15-45-mokryj-pol | Заезд с двух. 105 мин с чемоданом: пахнет химией, мокрый пол, «ещё пять» | published |

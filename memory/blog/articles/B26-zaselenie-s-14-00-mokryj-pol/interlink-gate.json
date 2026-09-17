@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "topic_id": "B26",
+  "slug": "zaselenie-s-14-00-v-15-45-mokryj-pol",
+  "candidates_count": 29,
+  "outbound_found": [
+    {
+      "slug": "v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik",
+      "title": "v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik"
+    },
+    {
+      "slug": "kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda",
+      "title": "kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda"
+    },
+    {
+      "slug": "rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00",
+      "title": "rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00"
+    },
+    {
+      "slug": "napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni",
+      "title": "napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni"
+    }
+  ],
+  "outbound_unique_slugs": [
+    "rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00",
+    "v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik",
+    "napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni",
+    "kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "warnings": [],
+  "errors": []
+}
