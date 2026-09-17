@@ -1,0 +1,12 @@
+{
+  "topic_id": "B26",
+  "h1": "Квартира дешевле отеля за ночь. За две ночи — 13 400 ₽",
+  "title": "Квартира дешевле отеля за ночь. За две ночи — 13 400 ₽",
+  "slug": "kvartira-posutochno-tyumen-deshevle-otelya-schet-dve-nochi",
+  "subject": "Полный счёт за две ночи в посуточной квартире",
+  "angle": "Цена за ночь оказалась ниже отеля, но доплаты перевернули итоговый бюджет",
+  "klyshin_title_shape": 4,
+  "wordstat_p0": "квартиры посуточно тюмень",
+  "generated_via": "excalibur_blog_derouter_opus_chat.py --role title",
+  "verdict": "PASS"
+}
