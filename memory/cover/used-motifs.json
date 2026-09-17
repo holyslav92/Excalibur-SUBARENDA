@@ -3,19 +3,6 @@
   "window_days": 14,
   "entries": [
     {
-      "date": "2026-09-03",
-      "topic_id": "B08",
-      "slug": "",
-      "motifs": {
-        "composition": "phone chat silence tablo tr pad",
-        "location": "sep 2026 sunny tyumen not winter",
-        "meme": "__cat_meme_family__",
-        "prop_set": "phone receipt suitcase tablo",
-        "sticker_set": "тишина в чате предоплата на карту",
-        "joke": "checkmarks no address"
-      }
-    },
-    {
       "date": "2026-09-05",
       "topic_id": "B10",
       "slug": "",
@@ -219,6 +206,19 @@
         "prop_set": "складной матрас диван-кровать телефон карточка 10400 простыня табло",
         "sticker_set": "спальные места посуточно снять квартиру тюмени",
         "joke": "на фото две кровати ночью диван и пол"
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "topic_id": "B26",
+      "slug": "",
+      "motifs": {
+        "composition": "couple kitchen island two printed receipts apartment vs hotel headline on paper tr pad",
+        "location": "mid september 2026 sunny tyumen apartment birch golden leaves outside window not winter no snow",
+        "meme": "photoreal apartment price compare scenes only zero stickers",
+        "prop_set": "printed receipts 13400 4200 4800 smartphone booking breakdown laptop cork checklist deposit 5000 cleaning 1500",
+        "sticker_set": "отель тюмень посуточно или отель сравнение цены",
+        "joke": "per night card says cheaper total receipt 13400 surprises couple at kitchen"
       }
     }
   ]
