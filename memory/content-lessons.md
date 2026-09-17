@@ -1819,3 +1819,140 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+---
+
+## LESSON-20260917-1405-B26-lift-badge-vs-operational-status
+status: proposed
+topic_id: B26
+category: utility
+confidence: low
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP. Урок из publish-артефактов: title-brief.json, description-brief.json, case-delivery-gate PASS, article.html, research-notes hook `floor_elevator_luggage`, scout handoff 2026-09-17.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest SKIP (per director Metrika optional without token).
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Two-beat H1 «Квартира на пятом этаже. Лифт встал — 2 ночи, чемодан внизу»: этаж + остановка + prop (чемодан внизу), не how-to.
+- §1: цитата «Лифт есть, заезжайте», 8 400 ₽ за две ночи, табличка «Лифт не работает», пятый этаж; editorial disclaimer — не тариф «Доброго дома».
+- H2 «Галочка отвечает не на тот вопрос» — разведение «лифт в доме» vs «кабина работает сегодня»; два сценария (нет лифта / ремонт в день заезда).
+- Klyshin «Нет. Так не заселяем.» + «Сначала проверка. Потом перевод.»; вопрос-отмычка «Квартира на каком этаже?» и «Лифт сегодня работает?» → TG/MAX mid-body.
+- Host-answer mismatch: «Так он есть. Просто сегодня не работает» — обе стороны правы, спор вязкий.
+- Табличка у лифта не финальный диагноз (Kerch.FM контраст) — utility без overpromise.
+- Interlink spine: B03 «рядом» (оценочные слова), B06 чемоданы между, B01/B18 access chain (код/домофон до лифта) — одна красная линия «путь до двери».
+- Wordstat P0 spine «квартиры посуточно тюмень» 4 570 (Tyumen); «этаж лифт квартира» 2 413 (RF); узкие «квартира 5 этаж без лифта» 101 / «этаж лифт посуточно» 9 (PARTIAL) — sub-angle, не binary skip.
+- Description не дублирует H1: «работает ли он сегодня» vs «лифт есть» (description-brief PASS).
+- Anti-dup явный: не B18 (домофон/подъезд), не B21 (ранний заезд/уборка), не B06 (чемоданы между выездом и поездом) — центральный конфликт только floor_elevator_luggage.
+- Cover-QA PASS: gen_only_human_v1, 2× Grsai quad, tiny people-meme inline-06 OK.
+
+### Change
+- В `floor_elevator_luggage` кейсах в §1 сразу фиксировать **три слоя**: (1) галочка/цитата «лифт есть», (2) точный этаж, (3) оперативный статус кабины + prop (чемодан у бордюра) — не раскрывать два сценария только во втором H2.
+- Scout handoff: при hook `floor_elevator_luggage` логировать original Klyshin «пятый этаж + лифт не едет + чемодан» + final P0 spine Tyumen + anti-dup B18/B21.
+
+### Never again
+- Строить lift/floor кейс как гайд по ЖКХ/лифтовому обслуживанию или how-to «как поднять чемодан».
+- Смешивать B18 (домофон молчит) и B26 (лифт встал внутри подъезда) — разные этапы access chain.
+- Принимать «Лифт есть?» / галочку в карточке за ответ про **сегодняшнюю** работоспособность и этаж.
+- Считать табличку «лифт не работает» исчерпывающим фактом без письма хосту.
+- Выдавать 8 400 ₽ или время подъёма за рыночную статистику без editorial disclaimer.
+- How-to до морали; финал «Наш вывод простой».
+
+### Proposed apply
+- Scout: hook `floor_elevator_luggage` → handoff lockpick (этаж + лифт сегодня + помощь с багажом) + final P0 spine Tyumen + anti-dup B18.
+- Review only; Writer prompt не трогать автоматически.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260917-1405-B26-taxi-curb-vertical-leverage
+status: proposed
+topic_id: B26
+category: structure
+confidence: low
+
+### Evidence
+- artifact: title-brief.json#angle
+  finding: angle «Гость узнаёт о вертикальном пути у подъезда, когда чемодан уже вынут из такси»; opening-meta-gate PASS; H2 «Разговор, в котором все правы» + asymmetric moment после перевода.
+- metrika_signal: none (credentials unavailable; causal retention не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Слой «такси уехало → чемодан у бордюра → пять этажей вверх» — asymmetric moment после 8 400 ₽; не злодейство, а слабая позиция гостя.
+- Блок «ключ оставлен / деньги ушли / выбор исчез» — объясняет leverage без обвинения хоста.
+- Контраст «цифра 5 из 9 в карточке» vs «этаж становится работой» когда чемодан на асфальте.
+- Чеклист из 5 пунктов после «Мой вывод как практика»; помощь с багажом как вопрос до оплаты, не обязанность.
+- Связка luggage spine через interlink B06 (чемоданы между), B18 (20 мин у подъезда), B21 (часы у двери) — не дублировать B04 door fee.
+
+### Change
+- Для `floor_elevator_luggage` hooks всегда включать **taxi-curb temporal leverage** (багажник закрыт, такси уехало, некуда деть чемодан) в utility-блок — не только галочку «лифт».
+- При interlink — sibling про access/luggage (B18 domofon, B06 luggage timing, B21 early wait) одной линией «оплата завершена ≠ путь пройден».
+
+### Never again
+- Писать floor/lift кейс только про поля карточки, игнорируя temporal leverage (когда исправить нечем — уже оплачено и у подъезда).
+- Финал «Наш вывод простой» вместо «Мой вывод как практика».
+
+### Proposed apply
+- Writer checklist (review-only): floor_elevator_luggage + taxi arrival → один абзац про asymmetric moment после «лифт есть» в чате.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260917-1405-B26-title-floor-stopped-suitcase-reveal
+status: proposed
+topic_id: B26
+category: voice
+confidence: low
+
+### Evidence
+- artifact: title-brief.json / assembled-research-inputs.md
+  finding: scout draft «Квартира на пятом. Лифт не едет — чемодан уже не в такси» → финальный H1 «Квартира на пятом этаже. Лифт встал — 2 ночи, чемодан внизу»; klyshin_title_shape:1; WP anti-dup title «лифт есть — пятый этаж пешком» avoided in H1 wording.
+- metrika_signal: none (credentials unavailable; causal CTR не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Cable pain-scene: этаж (пятый) + temporal beat «лифт встал» + stay anchor (2 ночи) + prop (чемодан внизу), без SEO-хвоста «этаж лифт посуточно».
+- Description rhythm klyshin_case_hook: ««Лифт есть» — написал хозяин» + табличка/чемодан (not_equal_title PASS).
+- Cover-text two-beat «Пятый этаж — лифт встал» + sticky «Деньги уже перевели» — контраст без полного спойлера H1.
+- Hammer «Не «лифт в удобствах». Не бумажка… А пятый этаж и чемодан у бордюра» — стадия сбоя в opening, не duty-log HH:MM.
+
+### Change
+- Для floor_elevator_luggage hooks: prefer **floor + stopped elevator + nights + suitcase-below** over narrow «5 этаж без лифта» SEO lead или quoted «лифт есть» spoiler в H1.
+- Title: двухчастный ритм (этаж / контрфакт лифта + prop) > compound «8400 + табличка + ремонт + такси» spoiler.
+
+### Never again
+- H1-спойлер со всей перепиской «лифт есть — заезжайте» и математикой подъёма — оставлять в §1/H2.
+- Description, дублирующий H1 про «пятый этаж и чемодан внизу» без контраста «работает ли сегодня».
+- Повторять WP anti-dup lead «Написали „лифт есть“. За 8 400 ₽ — пятый этаж пешком» в H1.
+
+### Proposed apply
+- Title/Description review: floor_elevator_luggage — floor + stopped beat + prop > elevator-keyword H1.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
