@@ -1,0 +1,124 @@
+{
+  "status": "PASS",
+  "topic_id": "B26",
+  "slug": "kvartira-posutochno-tyumen-deshevle-otelya-schet-dve-nochi",
+  "research_date": "2026-09-17",
+  "summary": "Research for guest CASE: per-night flat card looks cheaper than nearby hotel, but mandatory service fee, linen and cleaning make 2-night apartment bill 13 400 vs naive 8 400. Fresh signals: Dobriy Dom TG 2026-09-17 price+district-only check; Scout hotel_vs_daily hook; Sutochno official fee disclosure rules. Platform: no guest commission but object-level cleaning/deposit/extra guests in calc. Anti-dup vs B23 checkout cleaning, B24 child fee, B25 beds.",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Scout hotel_vs_daily hook + Dobriy Dom TG 2026-09-17 + Sutochno official pricing pages",
+    "source_type": "community_and_platform",
+    "urls": [
+      "https://t.me/s/Dobriy_dom_72",
+      "https://sutochno.ru/sj/iz-chego-skladivaetsya-stoimost-bronirovaniya",
+      "https://tyumen.sutochno.ru/"
+    ],
+    "accessed_at": "2026-09-17",
+    "note": "Editorial case sums (4200/4800/8400/13400) are Scout illustration, not verified receipt. Klyshin live posts 2026-09-16/17 cover other topics; hook from topic bank."
+  },
+  "freshness_audit": {
+    "research_date": "2026-09-17",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://t.me/s/Dobriy_dom_72",
+      "published_at": "2026-09-17",
+      "note": "Guest checks only price and district; details noticed after payment — aligns with full-trip vs per-night contrast."
+    },
+    "additional_fresh_signals": [
+      {
+        "url": "https://t.me/s/Dobriy_dom_72",
+        "published_at": "2026-09-17",
+        "type": "tenant_channel",
+        "note": "Direct booking without aggregator commission 15-25% claim — tenant positioning, not universal market fact."
+      },
+      {
+        "url": "https://sutochno.ru/sj/iz-chego-skladivaetsya-stoimost-bronirovaniya",
+        "published_at": "2025-12-10",
+        "type": "platform_official",
+        "note": "Official fee/cleaning/prepay rules accessed live 2026-09-17 for guest comparison mechanic."
+      }
+    ]
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176", "225"],
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 4570,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "снять квартиру посуточно в тюмени",
+        "volume": 1404,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "отели тюмень",
+        "volume": 7141,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "квартира посуточно или отель",
+        "volume": 283,
+        "region": "225"
+      },
+      {
+        "phrase": "посуточно или отель",
+        "volume": 370,
+        "region": "225"
+      },
+      {
+        "phrase": "посуточно или отель",
+        "volume": 7,
+        "region": "55+11176"
+      }
+    ]
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "Sutochno.ru platform policy (cleaning, deposit, prepay, no guest commission); no bank/JKH tariff digits",
+    "verified_claims": 3,
+    "entities_checked": ["sutochno"],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "memory/blog/articles/B26-kvartira-posutochno-tyumen-deshevle-otelya-schet-dve-nochi/derouter-opus-stamp-research.json",
+    "first_attempt": "PASS",
+    "note": "Initial full-input call hit HTTP 500; succeeded on retry with verified URL bundle."
+  },
+  "source_count": 11,
+  "limitations": [
+    "Editorial case sums are Scout illustration, not a verified Tyumen booking receipt.",
+    "Klyshin @klyshin_A live posts this week do not cover hotel_vs_daily hook — angle from topic bank.",
+    "NowTrip/Kvartirka/Domclick prices are aggregator snapshots 2026-09-17, not guaranteed quotes for reader dates.",
+    "Dobriy Dom 15-25% direct-booking savings is tenant channel claim only.",
+    "Deposit is returnable — must be shown separately from non-refundable trip cost.",
+    "Messenger/direct booking may bypass aggregator fee fields cited from Sutochno."
+  ],
+  "writer_safe_urls": [
+    "https://t.me/Dobriy_dom_72",
+    "https://t.me/Dobriy_dom_Tyumen",
+    "https://max.ru/id660300569233_biz",
+    "https://добрыйдом-72.рф/",
+    "https://добрыйдом-72.рф/booking/",
+    "https://добрыйдом-72.рф/blog/",
+    "https://sutochno.ru/sj/iz-chego-skladivaetsya-stoimost-bronirovaniya",
+    "https://sutochno.ru/help/gosti/safety",
+    "https://sutochno.ru/blog/rules",
+    "https://tyumen.sutochno.ru/",
+    "https://kvartirka.com/location/tyumen-12/filter-documents/",
+    "https://nowtrip.ru/hotels/places/russia/tyumen/budget",
+    "https://light-fin.ru/otel-ili-kvartira-na-sutki-gde-vygodnee-bronirovat-prozhivanie/"
+  ],
+  "errors": []
+}
