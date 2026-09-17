@@ -1825,7 +1825,7 @@ files_changed:
 checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_crosslink_qa_gate.py`
 - `python3 -m unittest tests.test_crosslink_qa_gate.CrosslinkQaGateTests.test_anchor_matches_topic_label_via_slug_stems_b26 -v`
-commit: pending
+commit: 1829d47
 
 ## INC-20260917-1407 — wp_intermediate_refresh hardcoded 2026/08 uploads path (B26 dzen preview)
 
@@ -1871,7 +1871,7 @@ files_changed:
 checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_wp_intermediate_refresh.py`
 - `python3 -m unittest tests.test_wp_intermediate_refresh.WpIntermediateRefreshTest -v`
-commit: e7f13d3 (script), pending (tests)
+commit: e7f13d3, 1829d47
 
 ## INC-20260917-1408 — Metrika credentials missing (Content-learner B26)
 
