@@ -3,6 +3,10 @@
   "h1": "Квартира на пятом этаже. Лифт встал — 2 ночи, чемодан внизу",
   "slug": "posutochno-tyumen-pyatyj-etazh-lift-chemodan",
   "topic_id": "B26",
+  "wp_category_slugs": [
+    "posutochnaya-arenda",
+    "sovety-gostyam"
+  ],
   "author_id": "dobry-dom",
   "article_mode": "B",
   "description": "Квартира на пятом этаже. Лифт встал — 2 ночи, чемодан внизу",
