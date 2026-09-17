@@ -1,0 +1,27 @@
+{
+  "slug": "posutochno-tyumen-pyatyj-etazh-lift-chemodan",
+  "topic_id": "B26",
+  "permalink": "{{SITE_BASE}}/blog/posutochno-tyumen-pyatyj-etazh-lift-chemodan/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B26-posutochno-tyumen-pyatyj-etazh-lift-chemodan/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1276034,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4907 slug=posutochno-tyumen-pyatyj-etazh-lift-chemodan\nOK categories=101,106\nOK dzen_yzen_meta=1\nOK featured_image=4908\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4909 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-03.png\nOK inline_alt=4909\nOK inline_caption=4909\nOK inline_description=4909\nOK inline_image_upload=4910 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-02.png\nOK inline_alt=4910\nOK inline_caption=4910\nOK inline_description=4910\nOK inline_image_upload=4911 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-01.png\nOK inline_alt=4911\nOK inline_caption=4911\nOK inline_description=4911\nOK inline_image_upload=4912 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-06.png\nOK inline_alt=4912\nOK inline_caption=4912\nOK inline_description=4912\nOK inline_image_upload=4913 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-05.png\nOK inline_alt=4913\nOK inline_caption=4913\nOK inline_description=4913\nOK inline_image_upload=4914 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-04.png\nOK inline_alt=4914\nOK inline_caption=4914\nOK inline_description=4914\nOK inline_image_upload=4915 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-07.png\nOK inline_alt=4915\nOK inline_caption=4915\nOK inline_description=4915\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/posutochno-tyumen-pyatyj-etazh-lift-chemodan/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/posutochno-tyumen-pyatyj-etazh-lift-chemodan/",
+    "errors": []
+  }
+}

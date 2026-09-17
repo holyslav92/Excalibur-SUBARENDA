@@ -1,5 +1,23 @@
 # WP publish log
 
+## B26 — 2026-09-17
+
+- **topic_id:** B26
+- **slug:** posutochno-tyumen-pyatyj-etazh-lift-chemodan
+- **title:** Квартира на пятом этаже. Лифт встал — 2 ночи, чемодан внизу
+- **post_id:** 4907
+- **permalink:** /blog/posutochno-tyumen-pyatyj-etazh-lift-chemodan/
+- **categories:** posutochnaya-arenda (101), sovety-gostyam (106)
+- **featured_image:** 4908
+- **inline_images:** 4909–4915 (7× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS (all inline img src → wp-content; 0 local cover paths)
+- **dzen preview:** cover-1024x576.png + inline *-1024x576 refreshed via wp_intermediate_refresh (2026/09 path)
+- **interlink outbound:** 4 live /blog/ siblings (crosslink-qa PASS)
+- **interlink inbound:** B01 (3745)
+- **publish_method:** sftp:22 (Cloud Agent; FTP PASV blocked)
+- **preflight fix:** wp_category_slugs added; crosslink anchor fix for beskontaktnoe sibling; theme_contract_deploy skipped (functions.php bounds not found — already patched on live)
+
 ## B25 — 2026-09-16
 
 - **topic_id:** B25

@@ -1,0 +1,973 @@
+{
+  "slugs": [
+    "posutochno-tyumen-pyatyj-etazh-lift-chemodan"
+  ],
+  "results": [
+    {
+      "slug": "posutochno-tyumen-pyatyj-etazh-lift-chemodan",
+      "full_images": [
+        {
+          "full_remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-cover.png",
+          "full_bytes": 1276034,
+          "full_sha256": "55974a41c85d341f9c6b05ae4d994935cf22bae4811b396273f41e5396ef03ff",
+          "intermediates": [
+            {
+              "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-cover-1024x576.png",
+              "width": 1024,
+              "height": 576,
+              "crop": false,
+              "bytes": 985577,
+              "sha256": "5f925b288513d60a1791e597c9d90670437c5b005de7ce5c4074a2cd626d7c88",
+              "live_sha256": "802c50b5ec89ca66c2dfa4769e0b2436eaa34839afc3fb172634bd785c98838d",
+              "live_bytes": 856940,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-cover-1024x576.png"
+            },
+            {
+              "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-cover-150x150.png",
+              "width": 150,
+              "height": 150,
+              "crop": true,
+              "bytes": 42832,
+              "sha256": "d34f36600bf87f0c3e91e0c75f872e9941e73967a9da3f8b918a9bcdeb518948",
+              "live_sha256": "37f64cc3438b2100ac8b2b0a3251ee5ae1a4a6c2fa868575117fbe33673aac43",
+              "live_bytes": 38832,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-cover-150x150.png"
+            },
+            {
+              "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-cover-300x169.png",
+              "width": 300,
+              "height": 169,
+              "crop": false,
+              "bytes": 88630,
+              "sha256": "cc83f3beab95c703b5859e0e9a8c3ae9f638fb823552e13b75274f2ece5f25b7",
+              "live_sha256": "5d0629a625dfdf229b721035f2f94b0ed45d71363925d773472a446c59efb622",
+              "live_bytes": 79867,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-cover-300x169.png"
+            },
+            {
+              "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-cover-768x432.png",
+              "width": 768,
+              "height": 432,
+              "crop": false,
+              "bytes": 566231,
+              "sha256": "64b0671824401ea89b37a40bbdc0ab210912853981ac656dc5c8f1778e69c1d7",
+              "live_sha256": "293997e90f997ddd023c2a6599b9b275cf6d9f21fda548918b8bf22d6e7d3fa6",
+              "live_bytes": 487028,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-cover-768x432.png"
+            }
+          ]
+        },
+        {
+          "full_remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-01.png",
+          "full_bytes": 701287,
+          "full_sha256": "680263592d3f1fc3d877fe87466c552d13102061230b1471598c62d42ff17651",
+          "intermediates": [
+            {
+              "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-01-1024x576.png",
+              "width": 1024,
+              "height": 576,
+              "crop": false,
+              "bytes": 574563,
+              "sha256": "df9fb5dc34a14bd1377bbbc25f56612f4e167543b1f1522bb0eda48d5021023a",
+              "live_sha256": "3afedb35b9cfb8a305ead3f87d9e45a9f0e263acc2b9a234c232df3a8c2d9f8a",
+              "live_bytes": 523381,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-01-1024x576.png"
+            },
+            {
+              "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-01-150x150.png",
+              "width": 150,
+              "height": 150,
+              "crop": true,
+              "bytes": 30692,
+              "sha256": "1ce553197dae6299308193085c46d7632b6205cc90f55a770f08741041ef3bb2",
+              "live_sha256": "9dec5d35e94e4a58b3b64ffb80421bf169d4367f2c860caa8efa94aee4cf0dcd",
+              "live_bytes": 25152,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-01-150x150.png"
+            },
+            {
+              "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-01-300x169.png",
+              "width": 300,
+              "height": 169,
+              "crop": false,
+              "bytes": 65852,
+              "sha256": "38174da381370796e02bacdf74480d5086651c19fbf1935fe804f69e112ba59e",
+              "live_sha256": "e56c280d28ae0a3240140ddc2bc9a8d326607ac9cf9a98e42e733956bb918d74",
+              "live_bytes": 55129,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-01-300x169.png"
+            },
+            {
+              "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-01-768x432.png",
+              "width": 768,
+              "height": 432,
+              "crop": false,
+              "bytes": 357237,
+              "sha256": "8fa5f1a2774552320fcf957ebc9e781efcdcd717aaeb0babeb0e26ac772f5aa0",
+              "live_sha256": "7ff64e1ff3baa42a9bb383450ede1f68dbb41faf609a3de560eb09ec749da8d1",
+              "live_bytes": 314141,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-01-768x432.png"
+            }
+          ]
+        },
+        {
+          "full_remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-02.png",
+          "full_bytes": 761971,
+          "full_sha256": "ec12d9b3692f8cf7ae30f212db87760770cf18214e17d3ea04770c44b6bf4cba",
+          "intermediates": [
+            {
+              "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-02-1024x576.png",
+              "width": 1024,
+              "height": 576,
+              "crop": false,
+              "bytes": 610021,
+              "sha256": "5309db5c3a1ea58372fab4ea636341fcf01a83fe62b8ff3658d1a3322fad485a",
+              "live_sha256": "7819261a55fd52269490fa852362b30e87c7759476f8bc58d71e0802a3300727",
+              "live_bytes": 549716,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-02-1024x576.png"
+            },
+            {
+              "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-02-150x150.png",
+              "width": 150,
+              "height": 150,
+              "crop": true,
+              "bytes": 33495,
+              "sha256": "9f6e5dffb1584f09e4a5c9aeffadb14d007f73d8736d6331f3d0fd4a9e861a1c",
+              "live_sha256": "fa6eb27d35eefa5599ab240199169238299e54f12504a43ff451fb1d7f81a3f4",
+              "live_bytes": 28721,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-02-150x150.png"
+            },
+            {
+              "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-02-300x169.png",
+              "width": 300,
+              "height": 169,
+              "crop": false,
+              "bytes": 68589,
+              "sha256": "85728a70eaea26f4ca35d0fb6ed0a593c3de6bba5ea01ef9c76c6809ee4e5159",
+              "live_sha256": "5a3e678cbc5e13d24035c9729a11598af995b2fcc9275db5c1b0f1d976bb211b",
+              "live_bytes": 58865,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-02-300x169.png"
+            },
+            {
+              "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-02-768x432.png",
+              "width": 768,
+              "height": 432,
+              "crop": false,
+              "bytes": 370338,
+              "sha256": "ee709577c9a5bec87d12ffaa6e2149abe6ce1adc54f9979cd45fe14a183bc969",
+              "live_sha256": "4ccd1ad60fe94dd301aa55d4859d97036a9504c0ed10b39d8e5e17d32694499d",
+              "live_bytes": 323894,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-02-768x432.png"
+            }
+          ]
+        },
+        {
+          "full_remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-03.png",
+          "full_bytes": 715642,
+          "full_sha256": "0c37f27f528296ec8e531bc4d76cbbe202000992f42290ed8495a9630a424e7f",
+          "intermediates": [
+            {
+              "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-03-1024x576.png",
+              "width": 1024,
+              "height": 576,
+              "crop": false,
+              "bytes": 571200,
+              "sha256": "3d80c56689fb0a364070767d1a9eafe0f6eaab658923bd3a0ef5c8e9346d9970",
+              "live_sha256": "ac735d228af99aae927088a3f94422a6792f89aa29ff97c9b2ef4c2a602003cf",
+              "live_bytes": 515193,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-03-1024x576.png"
+            },
+            {
+              "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-03-150x150.png",
+              "width": 150,
+              "height": 150,
+              "crop": true,
+              "bytes": 29783,
+              "sha256": "beeb719c89c0e7ac73505ba9016ade7e277d879d64adf2636019a8510cbc4a5e",
+              "live_sha256": "4665d675e39c6b1d5ba5df1ce05f4aae3113485ce93b66385cd2a6ecb9187924",
+              "live_bytes": 24082,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-03-150x150.png"
+            },
+            {
+              "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-03-300x169.png",
+              "width": 300,
+              "height": 169,
+              "crop": false,
+              "bytes": 60770,
+              "sha256": "87b4a44b851039c68ced8876bd47942f4837e16a4ff907743947f000c9bf1084",
+              "live_sha256": "ea655d5de4e9caedd33b7b350e7f4bf7eccc86ea53cb265510ea918e9c7593c0",
+              "live_bytes": 50066,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-03-300x169.png"
+            },
+            {
+              "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-03-768x432.png",
+              "width": 768,
+              "height": 432,
+              "crop": false,
+              "bytes": 350832,
+              "sha256": "95573411a52ad8bdd4c4b9b8d06beff53b0a82fe7071f28edb4975400e7fddb6",
+              "live_sha256": "1e904016b40f0e25e2c911f198325af7edc34fdcf6dbe457611ec19d4e87588d",
+              "live_bytes": 299119,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-03-768x432.png"
+            }
+          ]
+        },
+        {
+          "full_remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-04.png",
+          "full_bytes": 978508,
+          "full_sha256": "47b7408fb898ca71cee04494d8805f86e0d1af0d5297fbdf2af31221557bc07a",
+          "intermediates": [
+            {
+              "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-04-1024x576.png",
+              "width": 1024,
+              "height": 576,
+              "crop": false,
+              "bytes": 772622,
+              "sha256": "777ea798ed480ce624094a70cf6edd7c79f17ffa8fe761ceb38207a86fced3b0",
+              "live_sha256": "1989a948fee2dd1cb1bf3c0b97870bec86be3aeebb3929b8c69194bcfe866413",
+              "live_bytes": 664370,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-04-1024x576.png"
+            },
+            {
+              "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-04-150x150.png",
+              "width": 150,
+              "height": 150,
+              "crop": true,
+              "bytes": 32227,
+              "sha256": "0691fcb8feccf834c0bf34c500874980b5921e35df3d3fa314f996bd7d7f0619",
+              "live_sha256": "9fa115bc42ca36d709081f111863793d160bbcfb13e4a046d93dbf5d8ff7a816",
+              "live_bytes": 27627,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-04-150x150.png"
+            },
+            {
+              "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-04-300x169.png",
+              "width": 300,
+              "height": 169,
+              "crop": false,
+              "bytes": 76133,
+              "sha256": "8e5172d804d097d58946ced1cf83080647f10f32847a1dc2e5a1d6f96a502a56",
+              "live_sha256": "6b436d1dfb72ab3846fc1399a90b8ea1c55ea3e6c24acab68c03f7aa5798873e",
+              "live_bytes": 68089,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-04-300x169.png"
+            },
+            {
+              "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-04-768x432.png",
+              "width": 768,
+              "height": 432,
+              "crop": false,
+              "bytes": 452990,
+              "sha256": "83c664fd5736bae69ee4326654db73859db737943a7f9500d491763f5fe8a2a8",
+              "live_sha256": "96422dfb17972334d1c7111dc0152b5d73e939d969a20c67ef51be1e42262801",
+              "live_bytes": 388732,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-04-768x432.png"
+            }
+          ]
+        },
+        {
+          "full_remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-05.png",
+          "full_bytes": 1036727,
+          "full_sha256": "86703445aeff89824baa347001b7783d7e6f4d2fc54050d707269e41270f3c8f",
+          "intermediates": [
+            {
+              "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-05-1024x576.png",
+              "width": 1024,
+              "height": 576,
+              "crop": false,
+              "bytes": 817954,
+              "sha256": "9d2a25ebbd87f03b8bb73efecf29ed5e8f3daf41c669dcaaad7ccc782117606d",
+              "live_sha256": "ae1dc82de74598fea712c1d15db059a9181e282fa2b339adf16572e53201dba2",
+              "live_bytes": 716047,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-05-1024x576.png"
+            },
+            {
+              "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-05-150x150.png",
+              "width": 150,
+              "height": 150,
+              "crop": true,
+              "bytes": 35331,
+              "sha256": "24cf93eb0d299a3b572ea7b0680bf67af31d05fa08ddaf5153d9202bd0f91af3",
+              "live_sha256": "7603c5134af149ab498642a6a26383573a2fc9c2d2ef0a11298ddd71fa1d7a57",
+              "live_bytes": 30262,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-05-150x150.png"
+            },
+            {
+              "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-05-300x169.png",
+              "width": 300,
+              "height": 169,
+              "crop": false,
+              "bytes": 82117,
+              "sha256": "e5216eaab2a006c8128572b1247f83e51d97bea0464c45c1ce66010793a0f617",
+              "live_sha256": "8e82a75b4b26930931a05d2800cba9aa32a74ed5a6475e61d65cedfa95592d5f",
+              "live_bytes": 72895,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-05-300x169.png"
+            },
+            {
+              "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-05-768x432.png",
+              "width": 768,
+              "height": 432,
+              "crop": false,
+              "bytes": 485732,
+              "sha256": "95f0cdd5cfaaa4aad4dcce479cf43cf7c70c0d45d8f0ba835d094492d6e934ae",
+              "live_sha256": "6c69a9b59525e15a9952e10a6ab5f8ed1f2216ee1ae3074c80ec0b6b43a37f03",
+              "live_bytes": 419958,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-05-768x432.png"
+            }
+          ]
+        },
+        {
+          "full_remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-06.png",
+          "full_bytes": 971674,
+          "full_sha256": "a9b1cbd262382ae0b8f715fce9532c29c108a835aaa62f87ba614169892db070",
+          "intermediates": [
+            {
+              "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-06-1024x576.png",
+              "width": 1024,
+              "height": 576,
+              "crop": false,
+              "bytes": 769931,
+              "sha256": "1ede4c7492b1805beb87db0d2ccb7fe897c240c2d754b40a5ab13c7651667d74",
+              "live_sha256": "6a390bce15c7f5f5f176c8d62bbf2c29794746844b6bd0f865276580832ac5b8",
+              "live_bytes": 661702,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-06-1024x576.png"
+            },
+            {
+              "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-06-150x150.png",
+              "width": 150,
+              "height": 150,
+              "crop": true,
+              "bytes": 35054,
+              "sha256": "7d42acd44b06f52ff172983591e486d6c9939b302cba57c36b0fad0a3b00bb7d",
+              "live_sha256": "40103707c91d5e7c1f5f0ef60a6faaf4ad0794187cc3d9998f47c97814ec6d3e",
+              "live_bytes": 30703,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-06-150x150.png"
+            },
+            {
+              "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-06-300x169.png",
+              "width": 300,
+              "height": 169,
+              "crop": false,
+              "bytes": 74898,
+              "sha256": "1e9dfc1af16bf59eae4416b300e1a79da7f2b4deaf21541c57464ed7a8894958",
+              "live_sha256": "9e5bf07230c3be9a7d179d109b9c672fe8a6c51a193b2a7e0e0b79f8fd71e6f5",
+              "live_bytes": 66241,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-06-300x169.png"
+            },
+            {
+              "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-06-768x432.png",
+              "width": 768,
+              "height": 432,
+              "crop": false,
+              "bytes": 453583,
+              "sha256": "b191ccf8ea32bdfbd70e0a842dde52d612d0739463e544d9e729b65b96e08938",
+              "live_sha256": "48fea351cf4c87ebbdb134e19676712a7b81ffbf2ba8b20c6b071fcf62b711e7",
+              "live_bytes": 386527,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-06-768x432.png"
+            }
+          ]
+        },
+        {
+          "full_remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-07.png",
+          "full_bytes": 831489,
+          "full_sha256": "a05bc5c853009bd742b40369d143ebb91ba68207c6462ed3d6f2654c72eb4bd0",
+          "intermediates": [
+            {
+              "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-07-1024x576.png",
+              "width": 1024,
+              "height": 576,
+              "crop": false,
+              "bytes": 668285,
+              "sha256": "26bea1942c03df75b4af7b6bc05db4dd28b5e58ded55fa0b063e96ffdcdb0128",
+              "live_sha256": "9bc915d392363bcd262cd91a72fb8758ea1d57b2dd6ad94f2bc9335957a52ed5",
+              "live_bytes": 578594,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-07-1024x576.png"
+            },
+            {
+              "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-07-150x150.png",
+              "width": 150,
+              "height": 150,
+              "crop": true,
+              "bytes": 31539,
+              "sha256": "87b460c6020a44c3910f058a099fc79a54090ef9046f43b9b8d3a5f77f86a7c7",
+              "live_sha256": "3943826ab7ac19291a809663755f6fd577cd73d904e85a5eaab4f10915a946e7",
+              "live_bytes": 26780,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-07-150x150.png"
+            },
+            {
+              "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-07-300x169.png",
+              "width": 300,
+              "height": 169,
+              "crop": false,
+              "bytes": 70538,
+              "sha256": "49160eb562ad8195daeed33ce85c199a4c612210ff6be334588b3cf697fe8023",
+              "live_sha256": "a75d7a4af0305294fa6fd2ff57f4a668dccdebafb01e16272713102491d1c742",
+              "live_bytes": 61382,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-07-300x169.png"
+            },
+            {
+              "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-07-768x432.png",
+              "width": 768,
+              "height": 432,
+              "crop": false,
+              "bytes": 399482,
+              "sha256": "05b19d206297eededd571acfa3a6de061a22894fd83bd7eaa7ecad527212177d",
+              "live_sha256": "8e44f3e0fc728e1c94480011e9693f081265134deebba1edb2742f7c7e31c512",
+              "live_bytes": 340282,
+              "changed": true,
+              "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-07-768x432.png"
+            }
+          ]
+        }
+      ],
+      "uploads": [
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-cover-1024x576.png",
+          "width": 1024,
+          "height": 576,
+          "crop": false,
+          "bytes": 985577,
+          "sha256": "5f925b288513d60a1791e597c9d90670437c5b005de7ce5c4074a2cd626d7c88",
+          "live_sha256": "802c50b5ec89ca66c2dfa4769e0b2436eaa34839afc3fb172634bd785c98838d",
+          "live_bytes": 856940,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-cover-1024x576.png"
+        },
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-cover-150x150.png",
+          "width": 150,
+          "height": 150,
+          "crop": true,
+          "bytes": 42832,
+          "sha256": "d34f36600bf87f0c3e91e0c75f872e9941e73967a9da3f8b918a9bcdeb518948",
+          "live_sha256": "37f64cc3438b2100ac8b2b0a3251ee5ae1a4a6c2fa868575117fbe33673aac43",
+          "live_bytes": 38832,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-cover-150x150.png"
+        },
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-cover-300x169.png",
+          "width": 300,
+          "height": 169,
+          "crop": false,
+          "bytes": 88630,
+          "sha256": "cc83f3beab95c703b5859e0e9a8c3ae9f638fb823552e13b75274f2ece5f25b7",
+          "live_sha256": "5d0629a625dfdf229b721035f2f94b0ed45d71363925d773472a446c59efb622",
+          "live_bytes": 79867,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-cover-300x169.png"
+        },
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-cover-768x432.png",
+          "width": 768,
+          "height": 432,
+          "crop": false,
+          "bytes": 566231,
+          "sha256": "64b0671824401ea89b37a40bbdc0ab210912853981ac656dc5c8f1778e69c1d7",
+          "live_sha256": "293997e90f997ddd023c2a6599b9b275cf6d9f21fda548918b8bf22d6e7d3fa6",
+          "live_bytes": 487028,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-cover-768x432.png"
+        },
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-01-1024x576.png",
+          "width": 1024,
+          "height": 576,
+          "crop": false,
+          "bytes": 574563,
+          "sha256": "df9fb5dc34a14bd1377bbbc25f56612f4e167543b1f1522bb0eda48d5021023a",
+          "live_sha256": "3afedb35b9cfb8a305ead3f87d9e45a9f0e263acc2b9a234c232df3a8c2d9f8a",
+          "live_bytes": 523381,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-01-1024x576.png"
+        },
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-01-150x150.png",
+          "width": 150,
+          "height": 150,
+          "crop": true,
+          "bytes": 30692,
+          "sha256": "1ce553197dae6299308193085c46d7632b6205cc90f55a770f08741041ef3bb2",
+          "live_sha256": "9dec5d35e94e4a58b3b64ffb80421bf169d4367f2c860caa8efa94aee4cf0dcd",
+          "live_bytes": 25152,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-01-150x150.png"
+        },
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-01-300x169.png",
+          "width": 300,
+          "height": 169,
+          "crop": false,
+          "bytes": 65852,
+          "sha256": "38174da381370796e02bacdf74480d5086651c19fbf1935fe804f69e112ba59e",
+          "live_sha256": "e56c280d28ae0a3240140ddc2bc9a8d326607ac9cf9a98e42e733956bb918d74",
+          "live_bytes": 55129,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-01-300x169.png"
+        },
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-01-768x432.png",
+          "width": 768,
+          "height": 432,
+          "crop": false,
+          "bytes": 357237,
+          "sha256": "8fa5f1a2774552320fcf957ebc9e781efcdcd717aaeb0babeb0e26ac772f5aa0",
+          "live_sha256": "7ff64e1ff3baa42a9bb383450ede1f68dbb41faf609a3de560eb09ec749da8d1",
+          "live_bytes": 314141,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-01-768x432.png"
+        },
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-02-1024x576.png",
+          "width": 1024,
+          "height": 576,
+          "crop": false,
+          "bytes": 610021,
+          "sha256": "5309db5c3a1ea58372fab4ea636341fcf01a83fe62b8ff3658d1a3322fad485a",
+          "live_sha256": "7819261a55fd52269490fa852362b30e87c7759476f8bc58d71e0802a3300727",
+          "live_bytes": 549716,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-02-1024x576.png"
+        },
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-02-150x150.png",
+          "width": 150,
+          "height": 150,
+          "crop": true,
+          "bytes": 33495,
+          "sha256": "9f6e5dffb1584f09e4a5c9aeffadb14d007f73d8736d6331f3d0fd4a9e861a1c",
+          "live_sha256": "fa6eb27d35eefa5599ab240199169238299e54f12504a43ff451fb1d7f81a3f4",
+          "live_bytes": 28721,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-02-150x150.png"
+        },
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-02-300x169.png",
+          "width": 300,
+          "height": 169,
+          "crop": false,
+          "bytes": 68589,
+          "sha256": "85728a70eaea26f4ca35d0fb6ed0a593c3de6bba5ea01ef9c76c6809ee4e5159",
+          "live_sha256": "5a3e678cbc5e13d24035c9729a11598af995b2fcc9275db5c1b0f1d976bb211b",
+          "live_bytes": 58865,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-02-300x169.png"
+        },
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-02-768x432.png",
+          "width": 768,
+          "height": 432,
+          "crop": false,
+          "bytes": 370338,
+          "sha256": "ee709577c9a5bec87d12ffaa6e2149abe6ce1adc54f9979cd45fe14a183bc969",
+          "live_sha256": "4ccd1ad60fe94dd301aa55d4859d97036a9504c0ed10b39d8e5e17d32694499d",
+          "live_bytes": 323894,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-02-768x432.png"
+        },
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-03-1024x576.png",
+          "width": 1024,
+          "height": 576,
+          "crop": false,
+          "bytes": 571200,
+          "sha256": "3d80c56689fb0a364070767d1a9eafe0f6eaab658923bd3a0ef5c8e9346d9970",
+          "live_sha256": "ac735d228af99aae927088a3f94422a6792f89aa29ff97c9b2ef4c2a602003cf",
+          "live_bytes": 515193,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-03-1024x576.png"
+        },
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-03-150x150.png",
+          "width": 150,
+          "height": 150,
+          "crop": true,
+          "bytes": 29783,
+          "sha256": "beeb719c89c0e7ac73505ba9016ade7e277d879d64adf2636019a8510cbc4a5e",
+          "live_sha256": "4665d675e39c6b1d5ba5df1ce05f4aae3113485ce93b66385cd2a6ecb9187924",
+          "live_bytes": 24082,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-03-150x150.png"
+        },
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-03-300x169.png",
+          "width": 300,
+          "height": 169,
+          "crop": false,
+          "bytes": 60770,
+          "sha256": "87b4a44b851039c68ced8876bd47942f4837e16a4ff907743947f000c9bf1084",
+          "live_sha256": "ea655d5de4e9caedd33b7b350e7f4bf7eccc86ea53cb265510ea918e9c7593c0",
+          "live_bytes": 50066,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-03-300x169.png"
+        },
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-03-768x432.png",
+          "width": 768,
+          "height": 432,
+          "crop": false,
+          "bytes": 350832,
+          "sha256": "95573411a52ad8bdd4c4b9b8d06beff53b0a82fe7071f28edb4975400e7fddb6",
+          "live_sha256": "1e904016b40f0e25e2c911f198325af7edc34fdcf6dbe457611ec19d4e87588d",
+          "live_bytes": 299119,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-03-768x432.png"
+        },
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-04-1024x576.png",
+          "width": 1024,
+          "height": 576,
+          "crop": false,
+          "bytes": 772622,
+          "sha256": "777ea798ed480ce624094a70cf6edd7c79f17ffa8fe761ceb38207a86fced3b0",
+          "live_sha256": "1989a948fee2dd1cb1bf3c0b97870bec86be3aeebb3929b8c69194bcfe866413",
+          "live_bytes": 664370,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-04-1024x576.png"
+        },
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-04-150x150.png",
+          "width": 150,
+          "height": 150,
+          "crop": true,
+          "bytes": 32227,
+          "sha256": "0691fcb8feccf834c0bf34c500874980b5921e35df3d3fa314f996bd7d7f0619",
+          "live_sha256": "9fa115bc42ca36d709081f111863793d160bbcfb13e4a046d93dbf5d8ff7a816",
+          "live_bytes": 27627,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-04-150x150.png"
+        },
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-04-300x169.png",
+          "width": 300,
+          "height": 169,
+          "crop": false,
+          "bytes": 76133,
+          "sha256": "8e5172d804d097d58946ced1cf83080647f10f32847a1dc2e5a1d6f96a502a56",
+          "live_sha256": "6b436d1dfb72ab3846fc1399a90b8ea1c55ea3e6c24acab68c03f7aa5798873e",
+          "live_bytes": 68089,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-04-300x169.png"
+        },
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-04-768x432.png",
+          "width": 768,
+          "height": 432,
+          "crop": false,
+          "bytes": 452990,
+          "sha256": "83c664fd5736bae69ee4326654db73859db737943a7f9500d491763f5fe8a2a8",
+          "live_sha256": "96422dfb17972334d1c7111dc0152b5d73e939d969a20c67ef51be1e42262801",
+          "live_bytes": 388732,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-04-768x432.png"
+        },
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-05-1024x576.png",
+          "width": 1024,
+          "height": 576,
+          "crop": false,
+          "bytes": 817954,
+          "sha256": "9d2a25ebbd87f03b8bb73efecf29ed5e8f3daf41c669dcaaad7ccc782117606d",
+          "live_sha256": "ae1dc82de74598fea712c1d15db059a9181e282fa2b339adf16572e53201dba2",
+          "live_bytes": 716047,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-05-1024x576.png"
+        },
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-05-150x150.png",
+          "width": 150,
+          "height": 150,
+          "crop": true,
+          "bytes": 35331,
+          "sha256": "24cf93eb0d299a3b572ea7b0680bf67af31d05fa08ddaf5153d9202bd0f91af3",
+          "live_sha256": "7603c5134af149ab498642a6a26383573a2fc9c2d2ef0a11298ddd71fa1d7a57",
+          "live_bytes": 30262,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-05-150x150.png"
+        },
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-05-300x169.png",
+          "width": 300,
+          "height": 169,
+          "crop": false,
+          "bytes": 82117,
+          "sha256": "e5216eaab2a006c8128572b1247f83e51d97bea0464c45c1ce66010793a0f617",
+          "live_sha256": "8e82a75b4b26930931a05d2800cba9aa32a74ed5a6475e61d65cedfa95592d5f",
+          "live_bytes": 72895,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-05-300x169.png"
+        },
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-05-768x432.png",
+          "width": 768,
+          "height": 432,
+          "crop": false,
+          "bytes": 485732,
+          "sha256": "95f0cdd5cfaaa4aad4dcce479cf43cf7c70c0d45d8f0ba835d094492d6e934ae",
+          "live_sha256": "6c69a9b59525e15a9952e10a6ab5f8ed1f2216ee1ae3074c80ec0b6b43a37f03",
+          "live_bytes": 419958,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-05-768x432.png"
+        },
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-06-1024x576.png",
+          "width": 1024,
+          "height": 576,
+          "crop": false,
+          "bytes": 769931,
+          "sha256": "1ede4c7492b1805beb87db0d2ccb7fe897c240c2d754b40a5ab13c7651667d74",
+          "live_sha256": "6a390bce15c7f5f5f176c8d62bbf2c29794746844b6bd0f865276580832ac5b8",
+          "live_bytes": 661702,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-06-1024x576.png"
+        },
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-06-150x150.png",
+          "width": 150,
+          "height": 150,
+          "crop": true,
+          "bytes": 35054,
+          "sha256": "7d42acd44b06f52ff172983591e486d6c9939b302cba57c36b0fad0a3b00bb7d",
+          "live_sha256": "40103707c91d5e7c1f5f0ef60a6faaf4ad0794187cc3d9998f47c97814ec6d3e",
+          "live_bytes": 30703,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-06-150x150.png"
+        },
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-06-300x169.png",
+          "width": 300,
+          "height": 169,
+          "crop": false,
+          "bytes": 74898,
+          "sha256": "1e9dfc1af16bf59eae4416b300e1a79da7f2b4deaf21541c57464ed7a8894958",
+          "live_sha256": "9e5bf07230c3be9a7d179d109b9c672fe8a6c51a193b2a7e0e0b79f8fd71e6f5",
+          "live_bytes": 66241,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-06-300x169.png"
+        },
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-06-768x432.png",
+          "width": 768,
+          "height": 432,
+          "crop": false,
+          "bytes": 453583,
+          "sha256": "b191ccf8ea32bdfbd70e0a842dde52d612d0739463e544d9e729b65b96e08938",
+          "live_sha256": "48fea351cf4c87ebbdb134e19676712a7b81ffbf2ba8b20c6b071fcf62b711e7",
+          "live_bytes": 386527,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-06-768x432.png"
+        },
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-07-1024x576.png",
+          "width": 1024,
+          "height": 576,
+          "crop": false,
+          "bytes": 668285,
+          "sha256": "26bea1942c03df75b4af7b6bc05db4dd28b5e58ded55fa0b063e96ffdcdb0128",
+          "live_sha256": "9bc915d392363bcd262cd91a72fb8758ea1d57b2dd6ad94f2bc9335957a52ed5",
+          "live_bytes": 578594,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-07-1024x576.png"
+        },
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-07-150x150.png",
+          "width": 150,
+          "height": 150,
+          "crop": true,
+          "bytes": 31539,
+          "sha256": "87b460c6020a44c3910f058a099fc79a54090ef9046f43b9b8d3a5f77f86a7c7",
+          "live_sha256": "3943826ab7ac19291a809663755f6fd577cd73d904e85a5eaab4f10915a946e7",
+          "live_bytes": 26780,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-07-150x150.png"
+        },
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-07-300x169.png",
+          "width": 300,
+          "height": 169,
+          "crop": false,
+          "bytes": 70538,
+          "sha256": "49160eb562ad8195daeed33ce85c199a4c612210ff6be334588b3cf697fe8023",
+          "live_sha256": "a75d7a4af0305294fa6fd2ff57f4a668dccdebafb01e16272713102491d1c742",
+          "live_bytes": 61382,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-07-300x169.png"
+        },
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-07-768x432.png",
+          "width": 768,
+          "height": 432,
+          "crop": false,
+          "bytes": 399482,
+          "sha256": "05b19d206297eededd571acfa3a6de061a22894fd83bd7eaa7ecad527212177d",
+          "live_sha256": "8e44f3e0fc728e1c94480011e9693f081265134deebba1edb2742f7c7e31c512",
+          "live_bytes": 340282,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-07-768x432.png"
+        }
+      ],
+      "skipped_same_hash": [],
+      "zen_enclosures": [
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-cover-1024x576.png",
+          "width": 1024,
+          "height": 576,
+          "crop": false,
+          "bytes": 985577,
+          "sha256": "5f925b288513d60a1791e597c9d90670437c5b005de7ce5c4074a2cd626d7c88",
+          "live_sha256": "802c50b5ec89ca66c2dfa4769e0b2436eaa34839afc3fb172634bd785c98838d",
+          "live_bytes": 856940,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-cover-1024x576.png"
+        },
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-cover-150x150.png",
+          "width": 150,
+          "height": 150,
+          "crop": true,
+          "bytes": 42832,
+          "sha256": "d34f36600bf87f0c3e91e0c75f872e9941e73967a9da3f8b918a9bcdeb518948",
+          "live_sha256": "37f64cc3438b2100ac8b2b0a3251ee5ae1a4a6c2fa868575117fbe33673aac43",
+          "live_bytes": 38832,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-cover-150x150.png"
+        },
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-cover-300x169.png",
+          "width": 300,
+          "height": 169,
+          "crop": false,
+          "bytes": 88630,
+          "sha256": "cc83f3beab95c703b5859e0e9a8c3ae9f638fb823552e13b75274f2ece5f25b7",
+          "live_sha256": "5d0629a625dfdf229b721035f2f94b0ed45d71363925d773472a446c59efb622",
+          "live_bytes": 79867,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-cover-300x169.png"
+        },
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-cover-768x432.png",
+          "width": 768,
+          "height": 432,
+          "crop": false,
+          "bytes": 566231,
+          "sha256": "64b0671824401ea89b37a40bbdc0ab210912853981ac656dc5c8f1778e69c1d7",
+          "live_sha256": "293997e90f997ddd023c2a6599b9b275cf6d9f21fda548918b8bf22d6e7d3fa6",
+          "live_bytes": 487028,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-cover-768x432.png"
+        },
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-01-1024x576.png",
+          "width": 1024,
+          "height": 576,
+          "crop": false,
+          "bytes": 574563,
+          "sha256": "df9fb5dc34a14bd1377bbbc25f56612f4e167543b1f1522bb0eda48d5021023a",
+          "live_sha256": "3afedb35b9cfb8a305ead3f87d9e45a9f0e263acc2b9a234c232df3a8c2d9f8a",
+          "live_bytes": 523381,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-01-1024x576.png"
+        },
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-02-1024x576.png",
+          "width": 1024,
+          "height": 576,
+          "crop": false,
+          "bytes": 610021,
+          "sha256": "5309db5c3a1ea58372fab4ea636341fcf01a83fe62b8ff3658d1a3322fad485a",
+          "live_sha256": "7819261a55fd52269490fa852362b30e87c7759476f8bc58d71e0802a3300727",
+          "live_bytes": 549716,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-02-1024x576.png"
+        },
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-03-1024x576.png",
+          "width": 1024,
+          "height": 576,
+          "crop": false,
+          "bytes": 571200,
+          "sha256": "3d80c56689fb0a364070767d1a9eafe0f6eaab658923bd3a0ef5c8e9346d9970",
+          "live_sha256": "ac735d228af99aae927088a3f94422a6792f89aa29ff97c9b2ef4c2a602003cf",
+          "live_bytes": 515193,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-03-1024x576.png"
+        },
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-04-1024x576.png",
+          "width": 1024,
+          "height": 576,
+          "crop": false,
+          "bytes": 772622,
+          "sha256": "777ea798ed480ce624094a70cf6edd7c79f17ffa8fe761ceb38207a86fced3b0",
+          "live_sha256": "1989a948fee2dd1cb1bf3c0b97870bec86be3aeebb3929b8c69194bcfe866413",
+          "live_bytes": 664370,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-04-1024x576.png"
+        },
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-05-1024x576.png",
+          "width": 1024,
+          "height": 576,
+          "crop": false,
+          "bytes": 817954,
+          "sha256": "9d2a25ebbd87f03b8bb73efecf29ed5e8f3daf41c669dcaaad7ccc782117606d",
+          "live_sha256": "ae1dc82de74598fea712c1d15db059a9181e282fa2b339adf16572e53201dba2",
+          "live_bytes": 716047,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-05-1024x576.png"
+        },
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-06-1024x576.png",
+          "width": 1024,
+          "height": 576,
+          "crop": false,
+          "bytes": 769931,
+          "sha256": "1ede4c7492b1805beb87db0d2ccb7fe897c240c2d754b40a5ab13c7651667d74",
+          "live_sha256": "6a390bce15c7f5f5f176c8d62bbf2c29794746844b6bd0f865276580832ac5b8",
+          "live_bytes": 661702,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-06-1024x576.png"
+        },
+        {
+          "remote": "posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-07-1024x576.png",
+          "width": 1024,
+          "height": 576,
+          "crop": false,
+          "bytes": 668285,
+          "sha256": "26bea1942c03df75b4af7b6bc05db4dd28b5e58ded55fa0b063e96ffdcdb0128",
+          "live_sha256": "9bc915d392363bcd262cd91a72fb8758ea1d57b2dd6ad94f2bc9335957a52ed5",
+          "live_bytes": 578594,
+          "changed": true,
+          "url": "{{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-pyatyj-etazh-lift-chemodan-inline-07-1024x576.png"
+        }
+      ]
+    }
+  ]
+}

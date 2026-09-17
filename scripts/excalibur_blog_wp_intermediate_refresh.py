@@ -32,12 +32,18 @@ from excalibur_blog_wp_publish import (  # noqa: E402
 
 ROOT = project_root()
 UPLOADS_PREFIX = "wp-content/uploads/2026/08/"
+UPLOADS_DIR_RE = re.compile(r"(wp-content/uploads/\d{4}/\d{2}/)", re.I)
 INTERMEDIATE_RE = re.compile(r"-\d+x\d+(?=\.[a-z]+$)", re.I)
 SCALED_RE = re.compile(r"-scaled(?=\.[a-z]+$)", re.I)
 ZEN_UPLOAD_RE = re.compile(
-    r"uploads/2026/08/([^\"'\s?#]+\.(?:png|jpe?g|webp))",
+    r"uploads/(\d{4}/\d{2}/)([^\"'\s?#]+\.(?:png|jpe?g|webp))",
     re.I,
 )
+
+
+def uploads_prefix_from_source_url(source_url: str, *, fallback: str = UPLOADS_PREFIX) -> str:
+    match = UPLOADS_DIR_RE.search(str(source_url or ""))
+    return match.group(1) if match else fallback
 
 
 @dataclass
@@ -144,9 +150,13 @@ def zen_feed_block(public_base: str, slug: str) -> str:
     return match.group(0)
 
 
-def zen_upload_names(public_base: str, slug: str) -> list[str]:
+def zen_upload_names(public_base: str, slug: str) -> list[tuple[str, str]]:
+    """Return (uploads_prefix, basename) pairs referenced by /feed/zen/ for slug."""
     block = zen_feed_block(public_base, slug)
-    return sorted(set(ZEN_UPLOAD_RE.findall(block)))
+    found: set[tuple[str, str]] = set()
+    for year_month, basename in ZEN_UPLOAD_RE.findall(block):
+        found.add((f"wp-content/uploads/{year_month}", basename))
+    return sorted(found)
 
 
 def post_media(public_base: str, slug: str) -> tuple[int, list[dict[str, Any]]]:
@@ -167,24 +177,25 @@ def post_media(public_base: str, slug: str) -> tuple[int, list[dict[str, Any]]]:
     return post_id, list(dedup.values())
 
 
-def collect_targets(public_base: str, slug: str) -> dict[str, list[SizeTarget]]:
-    """Map full remote basename -> intermediate SizeTarget list."""
+def collect_targets(public_base: str, slug: str) -> dict[str, tuple[str, list[SizeTarget]]]:
+    """Map full remote basename -> (uploads_prefix, intermediate SizeTarget list)."""
     _, media_items = post_media(public_base, slug)
-    by_full: dict[str, list[SizeTarget]] = {}
+    by_full: dict[str, tuple[str, list[SizeTarget]]] = {}
     for media in media_items:
         targets = size_targets_from_media(media)
         if not targets:
             continue
         full_name = targets[0].source_full
-        existing = {t.remote_name for t in by_full.get(full_name, [])}
-        merged = list(by_full.get(full_name, []))
+        prefix = uploads_prefix_from_source_url(str(media.get("source_url") or ""))
+        existing = {t.remote_name for t in by_full.get(full_name, (prefix, []))[1]}
+        merged = list(by_full.get(full_name, (prefix, []))[1])
         for target in targets:
             if target.remote_name not in existing:
                 merged.append(target)
                 existing.add(target.remote_name)
-        by_full[full_name] = merged
+        by_full[full_name] = (prefix, merged)
 
-    for name in zen_upload_names(public_base, slug):
+    for prefix, name in zen_upload_names(public_base, slug):
         if not is_intermediate_name(name):
             continue
         full_name = full_name_from_intermediate(name)
@@ -196,9 +207,10 @@ def collect_targets(public_base: str, slug: str) -> dict[str, list[SizeTarget]]:
         width, height = int(dim.group(1)), int(dim.group(2))
         crop = width == height and width <= 200
         target = SizeTarget(name, width, height, crop, full_name)
-        bucket = by_full.setdefault(full_name, [])
+        bucket_prefix, bucket = by_full.get(full_name, (prefix, []))
         if target.remote_name not in {t.remote_name for t in bucket}:
             bucket.append(target)
+        by_full[full_name] = (bucket_prefix or prefix, bucket)
     return by_full
 
 
@@ -241,7 +253,6 @@ def refresh_slug(
 
     env = env or load_env(ROOT)
     targets_by_full = collect_targets(public_base, slug)
-    uploads_dir = f"{public_base}/{UPLOADS_PREFIX}"
     report: dict[str, Any] = {
         "slug": slug,
         "full_images": [],
@@ -250,7 +261,8 @@ def refresh_slug(
         "zen_enclosures": [],
     }
 
-    for full_name, targets in sorted(targets_by_full.items()):
+    for full_name, (uploads_prefix, targets) in sorted(targets_by_full.items()):
+        uploads_dir = f"{public_base}/{uploads_prefix}"
         full_url = uploads_dir + full_name
         full_bytes = download_url(full_url)
         full_hash = sha256_hex(full_bytes)
@@ -295,7 +307,7 @@ def refresh_slug(
                 report["uploads"].append({**row, "dry_run": True})
                 continue
             if upload:
-                remote_rel = UPLOADS_PREFIX + target.remote_name
+                remote_rel = uploads_prefix + target.remote_name
                 upload_bytes_sftp(env, remote_rel, out_bytes)
                 report["uploads"].append(row)
         report["full_images"].append(entry)
