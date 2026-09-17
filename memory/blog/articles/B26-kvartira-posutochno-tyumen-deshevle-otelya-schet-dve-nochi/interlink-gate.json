@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "topic_id": "B26",
+  "slug": "kvartira-posutochno-tyumen-deshevle-otelya-schet-dve-nochi",
+  "candidates_count": 29,
+  "outbound_found": [
+    {
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "title": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem"
+    },
+    {
+      "slug": "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400",
+      "title": "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400"
+    },
+    {
+      "slug": "napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni",
+      "title": "napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni"
+    },
+    {
+      "slug": "mozhno-s-detmi-doplata-za-rebenka",
+      "title": "mozhno-s-detmi-doplata-za-rebenka"
+    }
+  ],
+  "outbound_unique_slugs": [
+    "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400",
+    "napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni",
+    "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+    "mozhno-s-detmi-doplata-za-rebenka"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "warnings": [],
+  "errors": []
+}

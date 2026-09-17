@@ -1,0 +1,50 @@
+{
+  "topic_id": "B26",
+  "slug": "kvartira-posutochno-tyumen-deshevle-otelya-schet-dve-nochi",
+  "cover_family": "brand_collage",
+  "style_preset": "the_rieltor_twilight_gold",
+  "pipeline": "slice4_grid_1x_image_api",
+  "file": "cover/cover.png",
+  "alt": "Пара за кухонным столом в светлой тюменской квартире сравнивает два распечатанных чека: квартира и отель, на листе крупно «Квартира дешевле — счёт 13 400»",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-slice4.png",
+  "generated_at": "2026-09-17T09:46:51+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Пара за кухонным столом в светлой тюменской квартире сравнивает два распечатанных чека: квартира и отель, на листе крупно «Квартира дешевле — счёт 13 400»",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Два телефона на столе: карточка квартиры 4 200 и отеля 4 800 за две ночи",
+      "h2_anchor": "Где квартира внезапно проигрывает отелю",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Пара на диване с ноутбуком: базовая сумма квартиры 8 400 против отеля 9 600 — кажется выгодно",
+      "h2_anchor": "В разговоре правы оба — и от этого хуже",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Доска с заметками: база 8 400, итог 13 400, плюс 5 000 залог отдельно от поездки",
+      "h2_anchor": "Залог не надо прятать в цену поездки",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}

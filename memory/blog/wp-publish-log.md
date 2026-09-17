@@ -1,5 +1,23 @@
 # WP publish log
 
+## B26 — 2026-09-17
+
+- **topic_id:** B26
+- **slug:** kvartira-posutochno-tyumen-deshevle-otelya-schet-dve-nochi
+- **title:** Квартира дешевле отеля за ночь. За две ночи — 13 400 ₽
+- **post_id:** 4900
+- **permalink:** /blog/kvartira-posutochno-tyumen-deshevle-otelya-schet-dve-nochi/
+- **categories:** posutochnaya-arenda (101), sovety-gostyam (106), zhkh-i-doplaty (104)
+- **featured_image:** 4901
+- **inline_images:** 4902–4904 (3× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS (cover + 3 inline img src → wp-content; 0 local cover paths)
+- **dzen preview:** dzen_yzen_meta=1; cover-1024x576.png HTTP 200 (676043 bytes, 1024×576); feed enclosure → full cover.png (MU-plugin canon)
+- **interlink outbound:** 4 live /blog/ siblings HTTP 200 (crosslink-qa PASS)
+- **interlink inbound:** B01 (3745)
+- **publish_method:** sftp:22 (Cloud Agent; FTP PASV blocked)
+- **preflight fix:** wp_category_slugs added; theme_contract_deploy skipped (functions.php bounds not found — already patched on live)
+
 ## B25 — 2026-09-16
 
 - **topic_id:** B25
