@@ -1779,7 +1779,7 @@ checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_wp_categories.py`
 - `python3 -m unittest tests.test_wp_categories_interlink.WpCategoriesInterlinkTests.test_wp_categories_infer_sovety_from_elevator_luggage_brief -v`
 - B26 `infer_secondary_slugs_from_brief()` → sovety-gostyam
-commit: pending
+commit: 1829d47
 
 ## INC-20260917-1406 — crosslink anchor topic label vs case-style catalog H1 (B26 publish)
 
