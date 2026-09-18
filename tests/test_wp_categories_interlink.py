@@ -194,6 +194,90 @@ class WpCategoriesInterlinkTests(unittest.TestCase):
         finally:
             shutil.rmtree(article_dir, ignore_errors=True)
 
+    def test_wp_categories_normalize_posutochno_handoff_alias(self) -> None:
+        article_dir = ROOT / "memory/blog/articles/_gate_fixture_b26_slug_alias"
+        try:
+            article_dir.mkdir(parents=True, exist_ok=True)
+            (article_dir / "article.meta.json").write_text(
+                json.dumps(
+                    {
+                        "slug": "sobaka-doplata-posutochno",
+                        "topic_id": "B26",
+                        "wp_category_slugs": ["posutochno", "sovety-gostyam"],
+                    },
+                    ensure_ascii=False,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            proc = subprocess.run(
+                [
+                    "python3",
+                    str(ROOT / "scripts/excalibur_blog_wp_categories.py"),
+                    "--article-dir",
+                    str(article_dir.relative_to(ROOT)),
+                ],
+                cwd=ROOT,
+                capture_output=True,
+                text=True,
+                check=False,
+            )
+            self.assertEqual(proc.returncode, 0, proc.stdout + proc.stderr)
+            report = json.loads((article_dir / "wp-categories-gate.json").read_text(encoding="utf-8"))
+            self.assertEqual(report["status"], "PASS")
+            self.assertIn("posutochnaya-arenda", report["category_slugs"])
+            self.assertNotIn("posutochno", report["category_slugs"])
+        finally:
+            shutil.rmtree(article_dir, ignore_errors=True)
+
+    def test_wp_categories_infer_sovety_zhkh_from_pet_fee_brief(self) -> None:
+        article_dir = ROOT / "memory/blog/articles/_gate_fixture_b26_pet_categories"
+        try:
+            article_dir.mkdir(parents=True, exist_ok=True)
+            (article_dir / "article.meta.json").write_text(
+                json.dumps(
+                    {
+                        "slug": "sobaka-doplata-posutochno",
+                        "topic_id": "B26",
+                        "title": "Fixture pet fee brief",
+                    },
+                    ensure_ascii=False,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            (article_dir / "title-brief.json").write_text(
+                json.dumps(
+                    {
+                        "subject": "Неожиданная доплата за породу собаки при заселении в посуточную квартиру",
+                        "angle": "Гость забронировал жильё с собакой по обещанию в карточке, но у двери — доплата за крупную породу",
+                    },
+                    ensure_ascii=False,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            proc = subprocess.run(
+                [
+                    "python3",
+                    str(ROOT / "scripts/excalibur_blog_wp_categories.py"),
+                    "--article-dir",
+                    str(article_dir.relative_to(ROOT)),
+                ],
+                cwd=ROOT,
+                capture_output=True,
+                text=True,
+                check=False,
+            )
+            self.assertEqual(proc.returncode, 0, proc.stdout + proc.stderr)
+            report = json.loads((article_dir / "wp-categories-gate.json").read_text(encoding="utf-8"))
+            self.assertEqual(report["status"], "PASS")
+            self.assertIn("sovety-gostyam", report["category_slugs"])
+            self.assertIn("zhkh-i-doplaty", report["category_slugs"])
+            self.assertIn("posutochnaya-arenda", report["category_slugs"])
+        finally:
+            shutil.rmtree(article_dir, ignore_errors=True)
+
     def test_interlink_gate_pass_with_outbound(self) -> None:
         links = (
             '<a href="/blog/beskontaktnoe-zaselenie-posutochno-tyumen/">бесконтактное заселение</a>, '

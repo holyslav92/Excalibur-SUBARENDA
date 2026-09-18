@@ -1734,6 +1734,102 @@ checks_run:
 - B25 `infer_secondary_slugs_from_brief()` → sovety-gostyam
 commit: d6d3bf1
 
+## INC-20260918-0727 — scout handoff wp slug `posutochno` unknown (B26 publish)
+
+status: fixed
+run_date: 2026-09-18
+role: excalibur-blog-publish
+topic_id: B26
+article_dir: memory/blog/articles/B26-sobaka-doplata-posutochno
+severity: low
+category: handoff
+
+### What went wrong
+
+- Scout handoff + assembled-research-inputs used `wp_category_slugs: ["posutochno", "sovety-gostyam"]`; registry slug is `posutochnaya-arenda`. Publish preflight manually rewrote primary slug before wp-categories-gate PASS.
+
+### How the agent recovered this run
+
+- Publish agent set `article.meta.json` → `posutochnaya-arenda`, `sovety-gostyam`; inference added `zhkh-i-doplaty` via «доплат»; live post 4918 categories 101,106,104.
+
+### Durable fix needed before next run
+
+- Normalize legacy handoff alias `posutochno` → `posutochnaya-arenda` in category resolver.
+- Scout handoff contract must emit registry slugs only.
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_wp_categories.py`
+- `skills/scout-excalibur-blog/SKILL.md`
+- `memory/scout/scout-format-system.md`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-09-18
+fix_summary:
+- `normalize_category_slug()` + `SLUG_ALIASES` map `posutochno` → `posutochnaya-arenda` before gate/publish resolve.
+- Scout skill + scout-format-system: primary rubric MUST be `posutochnaya-arenda`, never `posutochno`.
+files_changed:
+- `scripts/excalibur_blog_wp_categories.py`
+- `skills/scout-excalibur-blog/SKILL.md`
+- `.cursor/skills/scout-excalibur-blog/SKILL.md`
+- `memory/scout/scout-format-system.md`
+- `tests/test_wp_categories_interlink.py`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_wp_categories.py`
+- `python3 -m unittest tests.test_wp_categories_interlink.WpCategoriesInterlinkTests.test_wp_categories_normalize_posutochno_handoff_alias -v`
+commit: pending
+
+## INC-20260918-0728 — wp_category inference missed pet/sovet angles (B26 publish)
+
+status: fixed
+run_date: 2026-09-18
+role: excalibur-blog-publish
+topic_id: B26
+article_dir: memory/blog/articles/B26-sobaka-doplata-posutochno
+severity: low
+category: script
+
+### What went wrong
+
+- Title-brief pet-fee angle («собак», «Гость») did not auto-infer `sovety-gostyam`; publish manually added secondary rubric. `zhkh-i-doplaty` inferred via «доплат» only.
+
+### How the agent recovered this run
+
+- Manual `wp_category_slugs` in publish preflight; live categories 101,106,104 PASS.
+
+### Durable fix needed before next run
+
+- Extend `sovety-gostyam` keyword map with pet tokens (собак, животн, пород, питом) and «гость» substring match.
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_wp_categories.py`
+- `tests/test_wp_categories_interlink.py`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-09-18
+fix_summary:
+- Added pet/family guest keywords + «гость» to `sovety-gostyam` inference; B26 brief now auto-infers sovety-gostyam + zhkh-i-doplaty without manual slug edit.
+files_changed:
+- `scripts/excalibur_blog_wp_categories.py`
+- `tests/test_wp_categories_interlink.py`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m unittest tests.test_wp_categories_interlink.WpCategoriesInterlinkTests.test_wp_categories_infer_sovety_zhkh_from_pet_fee_brief -v`
+- B26 `resolve_category_slugs()` → posutochnaya-arenda, sovety-gostyam, zhkh-i-doplaty
+commit: pending
+
 ## INC-20260918-0727 — Metrika credentials missing (Content-learner B26)
 
 status: needs-human

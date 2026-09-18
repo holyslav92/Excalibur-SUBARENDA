@@ -35,6 +35,17 @@ def slug_to_wp_id(registry: dict[str, Any], slug: str) -> int | None:
     return int(wp_id) if wp_id else None
 
 
+# Legacy handoff typos / abbreviations → registry slugs (INC B26 scout `posutochno`).
+SLUG_ALIASES: dict[str, str] = {
+    "posutochno": "posutochnaya-arenda",
+}
+
+
+def normalize_category_slug(slug: str) -> str:
+    cleaned = str(slug or "").strip()
+    return SLUG_ALIASES.get(cleaned, cleaned)
+
+
 ANGLE_CATEGORY_KEYWORDS: dict[str, tuple[str, ...]] = {
     "dogovor-i-pravila": (
         "договор",
@@ -51,6 +62,7 @@ ANGLE_CATEGORY_KEYWORDS: dict[str, tuple[str, ...]] = {
     "sovety-gostyam": (
         "совет",
         "гост",
+        "гость",
         "кухн",
         "отзыв",
         "ребен",
@@ -61,6 +73,10 @@ ANGLE_CATEGORY_KEYWORDS: dict[str, tuple[str, ...]] = {
         "кроват",
         "диван",
         "матрас",
+        "собак",
+        "животн",
+        "пород",
+        "питом",
     ),
 }
 
@@ -103,7 +119,7 @@ def resolve_category_slugs(root: Path, article_dir: Path) -> list[str]:
     if isinstance(explicit, str):
         explicit = [explicit]
     if isinstance(explicit, list):
-        slugs = [str(item).strip() for item in explicit if str(item).strip()]
+        slugs = [normalize_category_slug(str(item)) for item in explicit if str(item).strip()]
 
     if not slugs:
         topic_id = str(meta.get("topic_id") or "").upper()

@@ -160,6 +160,12 @@ python3 scripts/excalibur_blog_wordstat_gate.py handoff
 
 В handoff: `dzen_pattern: N` + `dzen_shape_hint: «…»` (shape, не финальный H1).
 
+**WP rubrics (`wp_category_slugs`):** только slug из `shared/wp-blog-categories.json`.
+Primary **всегда** `posutochnaya-arenda` — **не** `posutochno` (unknown slug → publish gate BLOCK).
+Типичные вторичные: `sovety-gostyam`, `zhkh-i-doplaty`, `zalog-i-vyiezd`, `dogovor-i-pravila`.
+
+Пример: `wp_category_slugs: ["posutochnaya-arenda", "sovety-gostyam"]`
+
 ## Выход
 
 `.cursor/excalibur-blog-handoff.md` — topic_id, title draft (Klyshin rhythm), `dzen_pattern`, external_signal, signal_urls, klyshin_hook + wordstat_rework + wordstat + angle_rotation lines.
