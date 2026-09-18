@@ -1,0 +1,10 @@
+{
+  "topic_id": "B27",
+  "description": "«Без залога», — написано в карточке. У подъезда в Тюмени код вдруг становится платным: Добрый дом объясняет, какой перевод не обязан появляться после оплаты.",
+  "rhythm": "klyshin_case_hook",
+  "geo": "Тюмень",
+  "author_brand": "Добрый дом",
+  "not_equal_title": true,
+  "not_truncated_lead": true,
+  "verdict": "PASS"
+}
