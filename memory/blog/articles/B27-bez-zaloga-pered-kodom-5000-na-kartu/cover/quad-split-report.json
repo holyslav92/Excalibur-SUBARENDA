@@ -286,10 +286,6 @@
   "html_inject": [
     "skip inline_1: already correct under H2 — «Без залога» в карточке — это ещё надо подтвердить",
     "skip inline_2: already correct under H2 — Не смешивайте цену проживания, депозит и перевод на карту",
-    "skip inline_3: already correct under H2 — Не смешивайте цену проживания, депозит и перевод на карту",
-    "injected inline_4 after H2 — Код не должен становиться рычагом",
-    "injected inline_5 after H2 — Код не должен становиться рычагом",
-    "injected inline_6 after H2 — Код не должен становиться рычагом",
-    "injected inline_7 after H2 — Мой вывод как практика"
+    "skip inline_3: already correct under H2 — Не смешивайте цену проживания, депозит и перевод на карту"
   ]
 }

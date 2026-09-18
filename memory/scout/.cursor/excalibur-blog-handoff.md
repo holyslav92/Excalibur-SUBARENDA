@@ -1,20 +1,17 @@
-Принял слот B20: проверю ротацию и файлы банка, затем передам собранный контекст Derouter для обязательного handoff.DEROUTER SCOUT BLOCKER: в текущей среде недоступны shell/Derouter utility и файловая запись, поэтому я не могу легитимно сформировать или записать `.cursor/excalibur-blog-handoff.md`.
+Запускаю обязательную проверку конфигурации и затем передам собранный бриф Derouter; частоты беру только из предоставленного live MCP-KV лога.DEROUTER SCOUT BLOCKER
 
-Wordstat-данные из входа приняты как уже пройденные live-проверки, но handoff-прозу по контракту должен генерировать только `gpt-5.6-terra` через:
+В этой среде недоступен запуск обязательной utility:
 
 ```bash
-python3 scripts/excalibur_blog_derouter_opus_chat.py \
-  --role scout \
-  --system-file skills/scout-excalibur-blog/SKILL.md \
-  --user-file <assembled-scout-inputs.md> \
-  --output .cursor/excalibur-blog-handoff.md \
-  --article-dir <article_dir_or_memory/scout>
+python3 scripts/excalibur_blog_derouter_opus_chat.py ...
 ```
 
-После генерации требуется запустить:
+По жёсткому контракту Scout не может самостоятельно писать handoff-прозу, topic/title/rework log или `.cursor/excalibur-blog-handoff.md` без Derouter tier `gpt-5.6-terra`.
+
+Предоставленный бриф содержит корректный preflight и live Wordstat-лог, однако требуется выполнить Derouter-команду с собранным input-файлом, а затем:
 
 ```bash
 python3 scripts/excalibur_blog_wordstat_gate.py handoff
 ```
 
-Не создаю handoff вручную, чтобы не нарушить обязательный Derouter-only контракт.
+После доступа к utility можно продолжить без повторного подбора частот.
