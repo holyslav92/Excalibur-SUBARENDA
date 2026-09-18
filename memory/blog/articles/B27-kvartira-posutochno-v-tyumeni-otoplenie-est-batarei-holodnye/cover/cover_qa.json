@@ -1,6 +1,6 @@
 {
   "agent": "excalibur-blog-cover-qa",
-  "status": "FAIL",
+  "status": "PASS",
   "checked_at": "2026-09-18",
   "topic_id": "B27",
   "checks": {
@@ -15,7 +15,7 @@
     "inline_no_logo_on_inlines": true,
     "forbid_phone_on_cover_image": true,
     "forbid_922_phone": true,
-    "forbid_ai_drawn_logo_cover": false,
+    "forbid_ai_drawn_logo_cover": true,
     "forbid_wordpress_ui_in_art": true,
     "no_logo_plate_cover": true,
     "forbid_graphic_collage_overlay": true,
@@ -28,32 +28,27 @@
     "logo_count_cover_and_inlines": true,
     "no_double_logos": true,
     "season_matches_manifest": true,
-    "inline_utility_all_seven": true
+    "inline_utility_all_seven": true,
+    "inline_05_no_drawn_logo": true,
+    "inline_06_spelling_dates": true
   },
-  "failures": [
-    "inline-05.png: forbidden drawn logo on panel without factory paste (drawn_logo_gate score=0.56; terracotta_wordmark_pixels=37.4% in TR pad)",
-    "inline-06.png: typo in header — «Спросить про уаты» should be «Спросить про даты» (schema_faq_ui label mismatch)"
-  ],
+  "failures": [],
   "visual_review": {
-    "cover": "PASS — guest in jacket on sofa, cold radiator +14 °C, hook «Отопление есть — ледяные батареи», phone +7 (993) 574-83-22 on tablo, factory logo TR, Wordstat stickers, autumn high-key",
-    "inline_01": "PASS — comparison_table_ui 8400/4200/+14 °C/40 мин; factory logo TR",
-    "inline_02": "PASS — infographic_card батареи ледяные/тронул дважды; no factory logo; pad-clear OK",
-    "inline_03": "PASS — workflow_diagram первая ночь/УК завтра; factory logo TR",
-    "inline_04": "PASS — labeled_checklist трубы есть/пять дней ниже +8; no factory logo",
-    "inline_05": "FAIL — comparison_table_ui +18 vs +14 °C content OK but drawn_logo_gate detects TR pad lockup (score=0.56)",
-    "inline_06": "FAIL — schema_faq_ui utility OK but typo «Спросить про уаты» instead of «даты»",
-    "inline_07": "PASS — checklist_board фото термометра/батареи/скрин; factory logo TR",
-    "logo_count": "cover 1 factory TR; inline-01/03/07 factory paste; inline-02/04/05/06 no factory logo (correct slots)",
+    "cover": "PASS — guest in jacket cold radiator +14 °C, hook «Отопление есть — ледяные батареи», phone +7 (993) 574-83-22 on tablo, factory logo TR, early autumn",
+    "inline_01": "PASS — comparison_table_ui 8400/4200/+14/40 мин; factory logo TR",
+    "inline_02": "PASS — infographic_card ледяные батареи; no factory logo",
+    "inline_03": "PASS — workflow_diagram УК завтра; factory logo TR",
+    "inline_04": "PASS — labeled_checklist трубы/сезон; no factory logo",
+    "inline_05": "PASS — comparison +18 vs +14 Тюмень 21–23 сент; no factory logo TR empty",
+    "inline_06": "PASS — schema_faq «Спросить про даты» spelled correctly; empty TR wall; no factory logo",
+    "inline_07": "PASS — checklist_board фото/проверка/перевод; factory logo TR",
+    "logo_count": "cover 1 factory TR; inline-01/03/07 factory paste; inline-02/04/05/06 no factory logo",
     "cat_meme_quota": "zero cat; zero meme stickers"
   },
   "regen_log": [
-    "drawn_logo_gate: inline-05 TR pad terracotta lockup (score=0.56)",
-    "pad-clear attempted on inline-02/04/05/06 — worsened TR corners; images restored from git"
-  ],
-  "fix_instructions": [
-    "Regen canvas-quad-02.png (slots inline_4/5/6/7) with stronger NO-logo prompt on inline_5 TR pad",
-    "Fix inline_6 header to «Спросить про даты» in quad prompt before regen",
-    "quad-split + brand_logo_composite.py + Cover-QA again"
+    "canvas-quad-02 attempt2: inline-05 drawn logo TR — stronger NO-logo prompt",
+    "canvas-quad-02 attempt2b: inline-06 TR empty wall layout (no pad-clear)",
+    "canvas-quad-02 attempt2d: inline-06 typo уаты→даты via split badge prompt"
   ],
   "artifacts": {
     "cover": "cover/cover.png",

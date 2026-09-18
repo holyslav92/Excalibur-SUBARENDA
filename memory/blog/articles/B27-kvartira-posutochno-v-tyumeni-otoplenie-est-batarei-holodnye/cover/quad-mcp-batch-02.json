@@ -4,7 +4,8 @@
   "model_policy": "vip_for_2k",
   "vip_disabled": false,
   "max_generation_attempts": 2,
-  "attempt": 1,
+  "attempt": 2,
+  "regen_reason": "inline-06 spelling даты not уаты",
   "output_canvas": "cover/canvas-quad-02.png",
   "result_path": "cover/quad-mcp-result-02.json",
   "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
@@ -17,10 +18,10 @@
     "slot": "canvas_quad",
     "tool": "grsai",
     "mcp_args": {
-      "prompt": "WOW RU editorial, airy #FFFFFF high-key, Tyumen mid-September 2026 autumn evening, yellow leaves, NO winter/snow. Canvas 2048x1152 2x2 grid; white gutters. Ban: dark, WP UI, Shakin, pill phone, brand lockup, meme cat, text walls, host face.\nALL panels TR = plain wall EXCEPT inline_7 TR pad empty for factory logo.\nTL inline_4: labeled_checklist heating season sketch. TXT:Трубы есть тепла нет|Не включили ещё|Пять дней ниже +8|Не тепло на даты. TR plain wall.\nTR inline_5: two-column comparison +18 vs +14 norms. TXT:Норма от +18 °C|+14 °C ниже нормы|Это не каприз|Тюмень 21–23 сентября. TR plain wall.\nBL inline_6: schema_faq_ui questions before pay. TXT:Спросить про даты|Температура вечером|Обогреватель и плед|План на холод|До оплаты. TR plain wall. ZERO cat meme.\nBR inline_7: checklist board evidence first pay later. TXT:Фото термометра|Фото батареи|Скрин карточки|Сначала проверка|Потом перевод. ONLY inline_7 TR pad empty for factory logo. Phone +7 993 574-83-22 on wall calendar in scene NOT pill.",
+      "prompt": "ATTEMPT2d REGEN canvas2. WOW RU editorial, airy #FFFFFF high-key, Tyumen mid-September 2026 autumn, NO winter/snow. Canvas 2048x1152 2x2 grid; white gutters. Ban: dark, WP UI, Shakin, pill phone, brand lockup, meme cat, Добрый дом.\nTL inline_4: labeled_checklist heating. TXT:Трубы есть тепла нет|Не включили ещё|Пять дней ниже +8|Не тепло на даты. TR empty wall.\nTR inline_5: comparison +18 vs +14 with radiator and autumn window. TXT:Норма от +18 °C|+14 °C ниже нормы|Это не каприз|Тюмень 21–23 сентября. TR empty wall NO logo.\nBL inline_6 FAQ card LEFT 65% RIGHT 35% empty gray wall. Row1: calendar icon + text split: «Спросить про» then green badge with ONLY word «даты» (Cyrillic Д-А-Т-Ы meaning dates/check-in dates). FORBIDDEN word «уаты». Rows: Температура вечером|Обогреватель и плед|План на холод|До оплаты.\nBR inline_7: checklist LEFT. TXT:Фото термометра|Фото батареи|Скрин карточки|Сначала проверка|Потом перевод. ONLY inline_7 TR pad empty for factory logo.",
       "aspect_ratio": "16:9",
       "resolution": "2K"
     }
   }],
-  "validation": {"prompt_chars": 1180, "max_prompt_chars": 3500, "resolution": "2K"}
+  "validation": {"prompt_chars": 1120, "max_prompt_chars": 3500, "resolution": "2K"}
 }
