@@ -1,0 +1,48 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/kvartira-posutochno-v-tyumeni-otoplenie-est-batarei-holodnye/#article",
+  "url": "{{SITE_BASE}}/blog/kvartira-posutochno-v-tyumeni-otoplenie-est-batarei-holodnye/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/kvartira-posutochno-v-tyumeni-otoplenie-est-batarei-holodnye/"
+  },
+  "headline": "«Отопление есть»: 2 ночи, +14 °C — ледяные батареи, «УК не включила»",
+  "description": "В объявлении указано, что отопление есть, но в квартире в Тюмени оказалось +14 °C, а батареи были ледяными. Разбираем, что уточнить до оплаты и перевода денег, чтобы проверить, будет ли тепло в день заезда.",
+  "datePublished": "2026-09-18",
+  "dateModified": "2026-09-18",
+  "inLanguage": "ru-RU",
+  "author": {
+    "@type": "Organization",
+    "@id": "{{SITE_BASE}}/#organization",
+    "name": "Добрый дом",
+    "jobTitle": "Апартаменты и квартиры посуточно в Тюмени",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ],
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "{{SITE_BASE}}/#organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ],
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    }
+  }
+}
