@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "https://добрыйдом-72.рф/blog/napisali-goryachaya-voda-est-ledyanoj-dush-migayushij-boiler/",
+      "slug": "napisali-goryachaya-voda-est-ledyanoj-dush-migayushij-boiler",
+      "anchor": "«горячая вода есть», а гость получил ледяной душ и мигающий котёл. В другом объявлении было",
+      "catalog_title": "Написали «горячая вода есть». Ночью — ледяной душ и 80 минут до тепла",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik/",
+      "slug": "v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik",
+      "anchor": "«всё для гостей», но в ванной лежал один мокрый коврик. Ещё один пример —",
+      "catalog_title": "«Всё для гостей» — ночью без полотенец на 890 ₽",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den/",
+      "slug": "kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den",
+      "anchor": "«кухня есть», после которой три ночи прошли в кафе. И похожая история с деньгами:",
+      "catalog_title": "Хозяин написал «кухня есть». За три ночи в кафе ушло 7 200 ₽",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/kommunalka-vklyuchena-schet-1840-na-vyezde/",
+      "slug": "kommunalka-vklyuchena-schet-1840-na-vyezde",
+      "anchor": "«коммуналка включена», а на выезде появился счёт 1 840 ₽. Везде одно: наличие выдают за пригодность.Мой вывод как практикаНет. Так не заселяем. Если сезон в городе ещё не открыт, а вечера уже холодные, я не пишу в карточке два удобных слова и не жду, что гость догадается сам. Я указываю: центральное отопление в доме есть, сезон пока не стартовал, в квартире есть обогреватель и тёплое одеяло, а вечерняя температура может быть такой-то. Это менее красиво, зато решение принимается до оплаты, а не после заселения.Тем, кто ищет квартиру посуточно в Тюмени в межсезонье, советую задать один прямой вопрос: «Отопление уже включено на мои даты или сезон ещё не начался, и что есть на случай холода?» Ответ «не переживайте» ничего не объясняет. Нужны цифры и конкретный план. Сначала проверка. Потом перевод. Не наоборот.Сохраните этот список перед бронированием:Уточните, включено ли отопление именно на ваши даты.Спросите вечернюю температуру в комнате цифрой.Узнайте, есть ли обогреватель и второе одеяло.Спросите, что будет при холоде: замена квартиры, обогреватель или возврат за ночь.Сохраните скриншот объявления с фразой «отопление есть».При заселении сфотографируйте термометр и радиатор.Не принимайте «завтра УК включит» как единственный план.Хосту тоже стоит помнить: фраза «УК не включила» объясняет регламент, но не возвращает гостю комфорт и репутацию. Гость запомнит не порядок запуска, а ночь за 4 200 ₽, проведённую в куртке. Он платит не за наличие батарей, а за возможность снять куртку и уснуть.Если нужна квартира в Тюмени и важно заранее знать, будет ли тепло вечером, напишите нам. Ответим цифрами и условиями:Telegram:",
+      "catalog_title": "«Коммуналка включена». На выезде — счётчики и 1 840 ₽",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "outbound_unique_slugs": [
+    "napisali-goryachaya-voda-est-ledyanoj-dush-migayushij-boiler",
+    "v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik",
+    "kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den",
+    "kommunalka-vklyuchena-schet-1840-na-vyezde"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B27-kvartira-posutochno-v-tyumeni-otoplenie-est-batarei-holodnye",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}
