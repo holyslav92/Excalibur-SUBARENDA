@@ -1,0 +1,39 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/bez-zaloga-pered-kodom-5000-na-kartu/#article",
+  "url": "{{SITE_BASE}}/blog/bez-zaloga-pered-kodom-5000-na-kartu/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/bez-zaloga-pered-kodom-5000-na-kartu/"
+  },
+  "headline": "Написали «без залога». Перед кодом просят 5 000 ₽ на карту",
+  "description": "В карточке указано «без залога», но перед выдачей кода просят перевести 5 000 ₽ на карту. Разбираем, что уточнить до оплаты и как отличить предоплату от депозита.",
+  "datePublished": "2026-09-18",
+  "dateModified": "2026-09-18",
+  "inLanguage": "ru-RU",
+  "author": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    },
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  }
+}
