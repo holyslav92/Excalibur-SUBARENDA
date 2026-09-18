@@ -1,0 +1,128 @@
+{
+  "status": "PASS",
+  "topic_id": "B27",
+  "slug": "kvartira-posutochno-v-tyumeni-otoplenie-est-batarei-holodnye",
+  "research_date": "2026-09-18",
+  "summary": "Research for guest CASE: listing «отопление есть» but mid-September Tyumen short-term rental room ~+14°C with icy radiators; host cites UK not yet switched on. Fresh signals: KP/MegaTyumen/tyumen-news 14–17 Sep 2026 on Tyumen heating not started; regional district decrees for social buildings only. Mechanics: amenity ≠ current heat; 5-day +8°C rule; ask heating-on-now + backup heater before pay. Editorial 4200 ₽/night composite. Anti-dup vs B20 boiler/GVS, B14 neighbors.",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Scout cold_radiators_heating_sept hook + Tyumen heating-season news week of 2026-09-14–18 + Dobriy Dom TG pre-pay clarity posts",
+    "source_type": "news_and_community",
+    "urls": [
+      "https://www.tumen.kp.ru/daily/277815.4/5303021/",
+      "https://megatyumen.ru/obshestvo/holoda-blizko-kogda-v-tyumeni-vklyuchat-otoplenie-v-2026-godu-i-ot-chego-zavisit-data/",
+      "https://megatyumen.ru/obshestvo/v-tyumenskoj-oblasti-startuet-otopitelnyj-sezon/",
+      "https://tyumen-news.net/society/2026/09/17/643665.html",
+      "https://t.me/klyshin_A",
+      "https://t.me/s/Dobriy_dom_72"
+    ],
+    "accessed_at": "2026-09-18",
+    "note": "Composite guest case from Scout hook; not a verified transcript of one Tyumen booking."
+  },
+  "freshness_audit": {
+    "research_date": "2026-09-18",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://www.tumen.kp.ru/daily/277815.4/5303021/",
+      "published_at": "2026-09-15",
+      "note": "Tyumen no heating decree as of 15 Sep; warm weather delays +8°C rule — directly supports guest cold-radiator scenario mid-September."
+    },
+    "additional_fresh_signals": [
+      {
+        "url": "https://megatyumen.ru/obshestvo/v-tyumenskoj-oblasti-startuet-otopitelnyj-sezon/",
+        "published_at": "2026-09-16",
+        "type": "local_news",
+        "note": "Regional district heating decrees 16–18 Sep for social objects; Tyumen city residential later."
+      },
+      {
+        "url": "https://tyumen-news.net/society/2026/09/17/643665.html",
+        "published_at": "2026-09-17",
+        "type": "local_news",
+        "note": "Same regional heating start context; residential homes heat later by outdoor temperature."
+      },
+      {
+        "url": "https://t.me/s/Dobriy_dom_72",
+        "published_at": "2026-09-18",
+        "type": "tenant_channel",
+        "note": "Clarify listing details before payment — thematic support, not cold-radiator incident."
+      }
+    ]
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176", "225"],
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 4495,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "снять квартиру посуточно в тюмени",
+        "volume": 1341,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "батареи холодные квартира",
+        "volume": 674,
+        "region": "225"
+      },
+      {
+        "phrase": "батареи холодные квартира",
+        "volume": 10,
+        "region": "55+11176",
+        "note": "weak local cluster — editorial angle on P0 demand"
+      },
+      {
+        "phrase": "отопление квартира посуточно",
+        "volume": 12,
+        "region": "225",
+        "note": "totalCount only — WORDSTAT PARTIAL"
+      }
+    ]
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": true,
+    "scope": "PP RF 354 temperature norms and heating-season timing via Consultant.ru; no bank/developer tariff digits",
+    "verified_claims": 2,
+    "entities_checked": ["PP_RF_354"],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "memory/blog/articles/B27-kvartira-posutochno-v-tyumeni-otoplenie-est-batarei-holodnye/derouter-opus-stamp-research.json",
+    "first_attempt": "RETRY_PASS",
+    "note": "Primary Derouter endpoint HTTP 524/529; synthesis succeeded via fallback endpoint api.apikey.cloud after compact system prompt."
+  },
+  "source_count": 10,
+  "limitations": [
+    "No verified transcript of a specific Tyumen booking; case mechanic from Scout editorial cold_radiators_heating_sept hook.",
+    "4 200 ₽/night and +14°C are editorial composite numbers, not measured or Dobriy Dom tariff.",
+    "Heating start forecast ~1–2 October is media forecast, not official Tyumen decree as of 2026-09-18.",
+    "Regional district heating decrees 16–18 Sep do not mean Tyumen city apartments have heat.",
+    "Harant.ru cited for guest documentation context only, not as court precedent.",
+    "Dobriy Dom TG posts support pre-pay clarification, not a verified cold-radiator incident.",
+    "Tyumen Wordstat for «батареи холодные квартира» is 10 — narrow local cluster."
+  ],
+  "writer_safe_urls": [
+    "https://t.me/Dobriy_dom_72",
+    "https://t.me/Dobriy_dom_Tyumen",
+    "https://max.ru/id660300569233_biz",
+    "https://добрыйдом-72.рф/",
+    "https://добрыйдом-72.рф/booking/",
+    "https://добрыйдом-72.рф/blog/",
+    "https://www.tumen.kp.ru/daily/277815.4/5303021/",
+    "https://megatyumen.ru/obshestvo/holoda-blizko-kogda-v-tyumeni-vklyuchat-otoplenie-v-2026-godu-i-ot-chego-zavisit-data/",
+    "https://megatyumen.ru/obshestvo/v-tyumenskoj-oblasti-startuet-otopitelnyj-sezon/",
+    "https://www.consultant.ru/document/cons_doc_LAW_114247/38f223113cabebcdfa928503d5524f19d8309589/"
+  ],
+  "errors": []
+}

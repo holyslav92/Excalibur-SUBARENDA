@@ -1,0 +1,218 @@
+{
+  "agent": "excalibur-blog",
+  "date_context": {
+    "timezone": "Europe/Moscow",
+    "today_iso": "2026-09-18",
+    "today_ru": "18.09.2026",
+    "year": 2026,
+    "month": 9,
+    "month_name_ru": "сентябрь",
+    "weekday_ru": "пятница"
+  },
+  "topic": {
+    "topic_id": "B27",
+    "title": "Квартира посуточно в Тюмени: отопление есть — батареи холодные",
+    "h1": "Квартира посуточно в Тюмени: отопление есть — батареи холодные",
+    "slug": "kvartira-posutochno-v-tyumeni-otoplenie-est-batarei-holodnye",
+    "primary_query": "Квартира посуточно в Тюмени: отопление есть — батареи холодные",
+    "priority": "P0"
+  },
+  "searches": [
+    {
+      "query_id": "primary_fresh",
+      "query": "Квартира посуточно в Тюмени: отопление есть — батареи холодные 2026",
+      "purpose": "актуальный SERP",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Снять квартиру посуточно, аренда квартиры на сутки в Тюмени | Авито ...",
+          "url": "https://www.avito.ru/tyumen/kvartiry/sdam/posutochno/-ASgBAgICAkSSA8gQ8AeSUg",
+          "snippet": ""
+        },
+        {
+          "title": "Снять квартиру посуточно в Тюмени , аренда квартиры на сутки в Тюмени",
+          "url": "https://tyumen.sutochno.ru/",
+          "snippet": "Уютная квартира в Жилом комплексе \"Корней\" с прекрасным видом из окна! 🧸 Почему это отличный вариант: Не далеко от центр города — 10 минут и вы на пересечении улиц Республики и Мельникайте ..."
+        },
+        {
+          "title": "Снять квартиру посуточно в Тюмени — забронировать квартиру для отдыха ...",
+          "url": "https://ostrovok.ru/hotel/russia/tyumen/kvartiry/?dateless_form=yes",
+          "snippet": "Снять квартиру напрямую у владельцев без посредников и переплаты в Тюмени. Выгодные цены, реальные отзывы, телефоны собственников, гарантия заселения, рейтинг жилья на Суточно.ру."
+        },
+        {
+          "title": "отопление - Снять квартиру посуточно в Тюмени | Цены на аренду квартир ...",
+          "url": "https://www.avito.ru/tyumen/kvartiry/sdam/posutochno/-ASgBAgICAkSSA8gQ8AeSUg?q=%D0%BE%D1%82%D0%BE%D0%BF%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5",
+          "snippet": "Снимайте квартиры в Тюмени посуточно онлайн по самым выгодным ценам на 2026 год. Выбирайте из 3727 объектов с реальными фото и отзывами."
+        },
+        {
+          "title": "Снять квартиру посуточно в Тюмени - цены 2026, отзывы, фото ...",
+          "url": "https://tropki.ru/rossiya/tyumenskaya-oblast/tyumen/apartamenty",
+          "snippet": "59 объявлений о сдаче квартир в краткосрочную аренду в Тюмени. На Авито вы можете недорого снять квартиру посуточно, выбрав предложения без посредников. Цены на аренду квартир в Тюмени."
+        },
+        {
+          "title": "Квартиры и Апартаменты посуточно в Тюмени по лучшим ценам 2026 года от ...",
+          "url": "https://hotel.tutu.ru/c_russia/tyumen/f_apartments/",
+          "snippet": "Выбираем \"Пять звёзд\" уже дважды. Квартира уютная, дом находится в центре города, рядом есть магазины, кинотеатр. Сотрудники быстро выходят на связь, готовы помочь и проконсультировать."
+        }
+      ],
+      "searched_at": "2026-09-18"
+    },
+    {
+      "query_id": "title_fresh",
+      "query": "Квартира посуточно в Тюмени: отопление есть — батареи холодные 2026",
+      "purpose": "SERP по человеческому title",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Снять квартиру посуточно, аренда квартиры на сутки в Тюмени | Авито ...",
+          "url": "https://www.avito.ru/tyumen/kvartiry/sdam/posutochno/-ASgBAgICAkSSA8gQ8AeSUg",
+          "snippet": ""
+        },
+        {
+          "title": "Снять квартиру посуточно в Тюмени , аренда квартиры на сутки в Тюмени",
+          "url": "https://tyumen.sutochno.ru/",
+          "snippet": "Уютная квартира в Жилом комплексе \"Корней\" с прекрасным видом из окна! 🧸 Почему это отличный вариант: Не далеко от центр города — 10 минут и вы на пересечении улиц Республики и Мельникайте ..."
+        },
+        {
+          "title": "Снять квартиру посуточно в Тюмени — забронировать квартиру для отдыха ...",
+          "url": "https://ostrovok.ru/hotel/russia/tyumen/kvartiry/?dateless_form=yes",
+          "snippet": "Снять квартиру напрямую у владельцев без посредников и переплаты в Тюмени. Выгодные цены, реальные отзывы, телефоны собственников, гарантия заселения, рейтинг жилья на Суточно.ру."
+        },
+        {
+          "title": "отопление - Снять квартиру посуточно в Тюмени | Цены на аренду квартир ...",
+          "url": "https://www.avito.ru/tyumen/kvartiry/sdam/posutochno/-ASgBAgICAkSSA8gQ8AeSUg?q=%D0%BE%D1%82%D0%BE%D0%BF%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5",
+          "snippet": "Снимайте квартиры в Тюмени посуточно онлайн по самым выгодным ценам на 2026 год. Выбирайте из 3727 объектов с реальными фото и отзывами."
+        },
+        {
+          "title": "Снять квартиру посуточно в Тюмени - цены 2026, отзывы, фото ...",
+          "url": "https://tropki.ru/rossiya/tyumenskaya-oblast/tyumen/apartamenty",
+          "snippet": "59 объявлений о сдаче квартир в краткосрочную аренду в Тюмени. На Авито вы можете недорого снять квартиру посуточно, выбрав предложения без посредников. Цены на аренду квартир в Тюмени."
+        },
+        {
+          "title": "Снять посуточно квартиру в Тюмени — 1 180 объявлений с посуточной ...",
+          "url": "https://realty.yandex.ru/tyumen/snyat/kvartira/posutochno/",
+          "snippet": "Выбираем \"Пять звёзд\" уже дважды. Квартира уютная, дом находится в центре города, рядом есть магазины, кинотеатр. Сотрудники быстро выходят на связь, готовы помочь и проконсультировать."
+        }
+      ],
+      "searched_at": "2026-09-18"
+    },
+    {
+      "query_id": "official_docs",
+      "query": "Квартира посуточно в Тюмени: отопление есть — батареи холодные official docs 2026",
+      "purpose": "официальные docs",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Снять квартиру посуточно, аренда квартиры на сутки в Тюмени | Авито ...",
+          "url": "https://www.avito.ru/tyumen/kvartiry/sdam/posutochno/-ASgBAgICAkSSA8gQ8AeSUg",
+          "snippet": ""
+        },
+        {
+          "title": "Снять квартиру посуточно в Тюмени , аренда квартиры на сутки в Тюмени",
+          "url": "https://tyumen.sutochno.ru/",
+          "snippet": "Если квартира не занята то с удовольствием заселим Вас. ⚠️Предоставляем все необходимые отчётные документы. ⚠️Наличный и безналичный расчёт. ⚠️Онлайн касса с QR кодом. ⛔Курить в ..."
+        },
+        {
+          "title": "Снять квартиру посуточно в Тюмени — забронировать квартиру для отдыха ...",
+          "url": "https://ostrovok.ru/hotel/russia/tyumen/kvartiry/?dateless_form=yes",
+          "snippet": "Снять квартиру напрямую у владельцев без посредников и переплаты в Тюмени. Выгодные цены, реальные отзывы, телефоны собственников, гарантия заселения, рейтинг жилья на Суточно.ру."
+        },
+        {
+          "title": "Квартиры посуточно в Тюмени — Официальный сайт gosh.rent | от 1900 ...",
+          "url": "https://gosh.rent/",
+          "snippet": "Снимайте квартиры в Тюмени посуточно онлайн по самым выгодным ценам на 2026 год. Выбирайте из 3727 объектов с реальными фото и отзывами."
+        },
+        {
+          "title": "Снять квартиру посуточно в Тюмени",
+          "url": "https://arenda.mirkvartir.ru/%D0%A2%D1%8E%D0%BC%D0%B5%D0%BD%D1%81%D0%BA%D0%B0%D1%8F+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C/%D0%A2%D1%8E%D0%BC%D0%B5%D0%BD%D1%8C/%D0%9F%D0%BE%D1%81%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%BE/",
+          "snippet": "100+ апартаментов посуточно в Тюмени от 1900 ₽/сутки. Рейтинг 4.9★ по 2000+ отзывам. Самозаселение 24/7, панорамный вид, документы для командировок. Бронируй напрямую — дешевле на 10%!"
+        },
+        {
+          "title": "Снять квартиру в Тюмени посуточно - 493 объявления с посуточной арендой ...",
+          "url": "https://www.ligakvartir.ru/tyumen",
+          "snippet": "Снять посуточно квартиру в Тюмени 11589 объявлений по аренде квартир на сутки от собственников 🏠 в базе недвижимости МирКвартир. Быстрый поиск ⚡ и актуальные цены на квартиры."
+        }
+      ],
+      "searched_at": "2026-09-18"
+    },
+    {
+      "query_id": "github_evidence",
+      "query": "site:github.com Квартира посуточно в Тюмени: отопление есть — батареи холодные 2026",
+      "purpose": "GitHub evidence",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "GitHub - alex-bogatiuk/Xiaomi-CoreCharge: Системная утилита для ...",
+          "url": "https://github.com/alex-bogatiuk/Xiaomi-CoreCharge",
+          "snippet": ""
+        },
+        {
+          "title": "RimWorld AutoTranslation Cache - Russian / Русский (Yandex)",
+          "url": "https://gist.github.com/csh1668/173fc6cfba8a32486104dce9ad0a50dc/dba493b56c7320fa0553072c15152ec91d0d8ad6",
+          "snippet": "Xiaomi CoreCharge — системная утилита для ноутбуков Xiaomi и Redmi, предназначенная для управления аппаратным контроллером (Embedded Controller, EC). Программа позволяет ограничивать уровень заряда аккумулятора, переключать тепловые режимы процессора, а также обеспечивает интеграцию с системным треем Windows и экранную OSD-индикацию."
+        },
+        {
+          "title": "Emotion-LLaMA/images/framework.png at main · ZebangCheng/Emotion-LLaMA",
+          "url": "https://github.com/ZebangCheng/Emotion-LLaMA/blob/main/images/framework.png",
+          "snippet": "<Cache Language=\"Russian / Русский\"><Entry Key ..."
+        },
+        {
+          "title": "unsupervised_topic_modeling/topics/ru/15/100/100/topics at ... - GitHub",
+          "url": "https://github.com/annontopicmodel/unsupervised_topic_modeling/blob/master/topics/ru/15/100/100/topics",
+          "snippet": "Emotion-LLaMA: Multimodal Emotion Recognition and Reasoning with Instruction Tuning - ZebangCheng/Emotion-LLaMA"
+        },
+        {
+          "title": "clear-answers/SKILL.md at main · nikosters/clear-answers",
+          "url": "https://github.com/nikosters/clear-answers/blob/main/SKILL.md",
+          "snippet": "Contribute to annontopicmodel/unsupervised_topic_modeling development by creating an account on GitHub."
+        },
+        {
+          "title": "ProjectQ/docs/images/braket_notation.svg at develop - GitHub",
+          "url": "https://github.com/ProjectQ-Framework/ProjectQ/blob/develop/docs/images/braket_notation.svg",
+          "snippet": "A skill for concise, precise and natural AI answers, with examples. - clear-answers/SKILL.md at main · nikosters/clear-answers"
+        }
+      ],
+      "searched_at": "2026-09-18"
+    },
+    {
+      "query_id": "community_experience",
+      "query": "Квартира посуточно в Тюмени: отопление есть — батареи холодные forum problems опыт 2026",
+      "purpose": "форумы и живые проблемы",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Квартиры на сутки, г. Тюмень, \"Форум\" | Квартиры посуточно в Тюмени ...",
+          "url": "https://vk.ru/forum3452",
+          "snippet": ""
+        },
+        {
+          "title": "Снять квартиру посуточно, аренда квартиры на сутки в Тюмени | Авито ...",
+          "url": "https://www.avito.ru/tyumen/kvartiry/sdam/posutochno/-ASgBAgICAkSSA8gQ8AeSUg",
+          "snippet": "Квартиры на сутки, г. Тюмень, \"Форум\" в сообществе обновилась фотография 30 ноя 2016"
+        },
+        {
+          "title": "Снять квартиру посуточно в Тюмени , аренда квартиры на сутки в Тюмени",
+          "url": "https://tyumen.sutochno.ru/",
+          "snippet": "Уютная квартира в Жилом комплексе \"Корней\" с прекрасным видом из окна! 🧸 Почему это отличный вариант: Не далеко от центр города — 10 минут и вы на пересечении улиц Республики и Мельникайте ..."
+        },
+        {
+          "title": "отопление - Снять квартиру посуточно в Тюмени | Цены на аренду квартир ...",
+          "url": "https://www.avito.ru/tyumen/kvartiry/sdam/posutochno/-ASgBAgICAkSSA8gQ8AeSUg?q=%D0%BE%D1%82%D0%BE%D0%BF%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5",
+          "snippet": "Краткосрочная аренда квартир — идеальное решение для туристов и командированных. Здесь можно сдать и недорого снять квартиру на сутки в Тюмени и другом городе без посредников! Забронируйте до 30 сентября 2026 — и получите кэшбэк бонусами после оценки проживания. Подробнее."
+        },
+        {
+          "title": "Снять квартиру посуточно в Тюмени — забронировать квартиру для отдыха ...",
+          "url": "https://ostrovok.ru/hotel/russia/tyumen/kvartiry/?dateless_form=yes",
+          "snippet": "59 объявлений о сдаче квартир в краткосрочную аренду в Тюмени. На Авито вы можете недорого снять квартиру посуточно, выбрав предложения без посредников. Цены на аренду квартир в Тюмени."
+        },
+        {
+          "title": "Снять квартиру посуточно в Тюмени",
+          "url": "https://arenda.mirkvartir.ru/%D0%A2%D1%8E%D0%BC%D0%B5%D0%BD%D1%81%D0%BA%D0%B0%D1%8F+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C/%D0%A2%D1%8E%D0%BC%D0%B5%D0%BD%D1%8C/%D0%9F%D0%BE%D1%81%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%BE/",
+          "snippet": "Снимайте квартиры в Тюмени посуточно онлайн по самым выгодным ценам на 2026 год. Выбирайте из 3727 объектов с реальными фото и отзывами."
+        }
+      ],
+      "searched_at": "2026-09-18"
+    }
+  ],
+  "errors": []
+}
