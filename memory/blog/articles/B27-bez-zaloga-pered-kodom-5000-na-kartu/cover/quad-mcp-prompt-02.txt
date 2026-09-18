@@ -1,0 +1,6 @@
+WOW RU collage, airy #FFFFFF high-key, Tyumen mid-September 2026 early AUTUMN warm light, yellow leaves, NO winter/snow/ice. Canvas 2048x1152 2x2 grid; white gutters. Ban: dark cinematic, WP UI, Shakin/host face, pill phone overlay, model-drawn logo, cat memes, text walls. RU Cyrillic only.
+ALL panels TR pad = clean wall 8-12% ONLY for factory logo paste AFTER on inline_7 — ZERO drawn logo elsewhere.
+TL inline_4: labeled_checklist before payment questions. TXT:до оплаты спросить|сумма залога|когда вернут. NO logo.
+TR inline_5: comparison_table_ui chat screenshot + LARGE phone +7 (993) 574-83-22 painted flat on entrance info board NOT pill sticker. TXT:ответ в чате|«залога нет»|сохранить переписку. NO logo TR plain wall.
+BL inline_6: schema_faq_ui three payment mechanics. TXT:оплата ночей|залог отдельно|перевод не блокировка. NO logo NO cat.
+BR inline_7: checklist_board code timing + LARGE phone +7 (993) 574-83-22 on door sign flat painted NOT pill. TXT:код когда пришлют|условия заранее|потом перевод. TR pad empty for factory logo.
