@@ -1,0 +1,68 @@
+{
+  "agent": "excalibur-blog-cover-qa",
+  "status": "FAIL",
+  "checked_at": "2026-09-18",
+  "topic_id": "B27",
+  "checks": {
+    "eight_png_exist": true,
+    "quad_manifest_valid": true,
+    "wordstat_stickers_1_3": true,
+    "motif_no_collision_14d": true,
+    "max_one_cat_meme_slot": true,
+    "light_high_key": true,
+    "logo_composite_stamp_pass": true,
+    "cover_logo_pasted": true,
+    "inline_no_logo_on_inlines": true,
+    "forbid_phone_on_cover_image": true,
+    "forbid_922_phone": true,
+    "forbid_ai_drawn_logo_cover": false,
+    "forbid_wordpress_ui_in_art": true,
+    "no_logo_plate_cover": true,
+    "forbid_graphic_collage_overlay": true,
+    "forbid_poster_composite_stamp": true,
+    "forbid_logo_reference_in_batch": true,
+    "forbid_overlapping_text_blocks": true,
+    "forbid_giant_cropped_glyph": true,
+    "cyrillic_hook_on_cover": true,
+    "phone_in_scene_cover": true,
+    "logo_count_cover_and_inlines": true,
+    "no_double_logos": true,
+    "season_matches_manifest": true,
+    "inline_utility_all_seven": true
+  },
+  "failures": [
+    "inline-05.png: forbidden drawn logo on panel without factory paste (drawn_logo_gate score=0.56; terracotta_wordmark_pixels=37.4% in TR pad)",
+    "inline-06.png: typo in header — «Спросить про уаты» should be «Спросить про даты» (schema_faq_ui label mismatch)"
+  ],
+  "visual_review": {
+    "cover": "PASS — guest in jacket on sofa, cold radiator +14 °C, hook «Отопление есть — ледяные батареи», phone +7 (993) 574-83-22 on tablo, factory logo TR, Wordstat stickers, autumn high-key",
+    "inline_01": "PASS — comparison_table_ui 8400/4200/+14 °C/40 мин; factory logo TR",
+    "inline_02": "PASS — infographic_card батареи ледяные/тронул дважды; no factory logo; pad-clear OK",
+    "inline_03": "PASS — workflow_diagram первая ночь/УК завтра; factory logo TR",
+    "inline_04": "PASS — labeled_checklist трубы есть/пять дней ниже +8; no factory logo",
+    "inline_05": "FAIL — comparison_table_ui +18 vs +14 °C content OK but drawn_logo_gate detects TR pad lockup (score=0.56)",
+    "inline_06": "FAIL — schema_faq_ui utility OK but typo «Спросить про уаты» instead of «даты»",
+    "inline_07": "PASS — checklist_board фото термометра/батареи/скрин; factory logo TR",
+    "logo_count": "cover 1 factory TR; inline-01/03/07 factory paste; inline-02/04/05/06 no factory logo (correct slots)",
+    "cat_meme_quota": "zero cat; zero meme stickers"
+  },
+  "regen_log": [
+    "drawn_logo_gate: inline-05 TR pad terracotta lockup (score=0.56)",
+    "pad-clear attempted on inline-02/04/05/06 — worsened TR corners; images restored from git"
+  ],
+  "fix_instructions": [
+    "Regen canvas-quad-02.png (slots inline_4/5/6/7) with stronger NO-logo prompt on inline_5 TR pad",
+    "Fix inline_6 header to «Спросить про даты» in quad prompt before regen",
+    "quad-split + brand_logo_composite.py + Cover-QA again"
+  ],
+  "artifacts": {
+    "cover": "cover/cover.png",
+    "inline_01": "cover/inline-01.png",
+    "inline_02": "cover/inline-02.png",
+    "inline_03": "cover/inline-03.png",
+    "inline_04": "cover/inline-04.png",
+    "inline_05": "cover/inline-05.png",
+    "inline_06": "cover/inline-06.png",
+    "inline_07": "cover/inline-07.png"
+  }
+}
