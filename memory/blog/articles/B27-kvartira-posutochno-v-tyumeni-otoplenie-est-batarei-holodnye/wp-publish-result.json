@@ -1,0 +1,27 @@
+{
+  "slug": "kvartira-posutochno-v-tyumeni-otoplenie-est-batarei-holodnye",
+  "topic_id": "B27",
+  "permalink": "{{SITE_BASE}}/blog/kvartira-posutochno-v-tyumeni-otoplenie-est-batarei-holodnye/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B27-kvartira-posutochno-v-tyumeni-otoplenie-est-batarei-holodnye/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1327948,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4940 slug=kvartira-posutochno-v-tyumeni-otoplenie-est-batarei-holodnye\nOK categories=101,106\nOK dzen_yzen_meta=1\nOK featured_image=4941\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4942 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kvartira-posutochno-v-tyumeni-otoplenie-est-batarei-holodnye-inline-05.png\nOK inline_alt=4942\nOK inline_caption=4942\nOK inline_description=4942\nOK inline_image_upload=4943 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kvartira-posutochno-v-tyumeni-otoplenie-est-batarei-holodnye-inline-04.png\nOK inline_alt=4943\nOK inline_caption=4943\nOK inline_description=4943\nOK inline_image_upload=4944 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kvartira-posutochno-v-tyumeni-otoplenie-est-batarei-holodnye-inline-02.png\nOK inline_alt=4944\nOK inline_caption=4944\nOK inline_description=4944\nOK inline_image_upload=4945 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kvartira-posutochno-v-tyumeni-otoplenie-est-batarei-holodnye-inline-01.png\nOK inline_alt=4945\nOK inline_caption=4945\nOK inline_description=4945\nOK inline_image_upload=4946 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kvartira-posutochno-v-tyumeni-otoplenie-est-batarei-holodnye-inline-03.png\nOK inline_alt=4946\nOK inline_caption=4946\nOK inline_description=4946\nOK inline_image_upload=4947 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kvartira-posutochno-v-tyumeni-otoplenie-est-batarei-holodnye-inline-07.png\nOK inline_alt=4947\nOK inline_caption=4947\nOK inline_description=4947\nOK inline_image_upload=4948 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kvartira-posutochno-v-tyumeni-otoplenie-est-batarei-holodnye-inline-06.png\nOK inline_alt=4948\nOK inline_caption=4948\nOK inline_description=4948\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/kvartira-posutochno-v-tyumeni-otoplenie-est-batarei-holodnye/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/kvartira-posutochno-v-tyumeni-otoplenie-est-batarei-holodnye/",
+    "errors": []
+  }
+}

@@ -31,3 +31,4 @@ Excalibur-2-Cloud — не копировать URL tymenrieltor.ru.
 | 2026-09-16 | B24 | mozhno-s-detmi-doplata-za-rebenka | /blog/mozhno-s-detmi-doplata-za-rebenka/ | published |
 | 2026-09-16 | B25 | dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras | /blog/dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras/ | published |
 | 2026-09-18 | B26 | sobaka-doplata-posutochno | /blog/sobaka-doplata-posutochno/ | published |
+| 2026-09-18 | B27 | kvartira-posutochno-v-tyumeni-otoplenie-est-batarei-holodnye | /blog/kvartira-posutochno-v-tyumeni-otoplenie-est-batarei-holodnye/ | published |

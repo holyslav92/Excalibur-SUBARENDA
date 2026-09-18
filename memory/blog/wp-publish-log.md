@@ -1,5 +1,24 @@
 # WP publish log
 
+## B27 — 2026-09-18
+
+- **topic_id:** B27
+- **slug:** kvartira-posutochno-v-tyumeni-otoplenie-est-batarei-holodnye
+- **title:** «Отопление есть»: 2 ночи, +14 °C — ледяные батареи, «УК не включила»
+- **post_id:** 4940
+- **permalink:** /blog/kvartira-posutochno-v-tyumeni-otoplenie-est-batarei-holodnye/
+- **categories:** posutochnaya-arenda (101), sovety-gostyam (106)
+- **featured_image:** 4941
+- **inline_images:** 4942–4948 (7× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS (HTTP 200; all inline img src → wp-content)
+- **dzen preview:** dzen_yzen_meta=1; cover-1024x576.png HTTP 200; feed enclosure → full cover.png; dzen_touch post_modified bumped
+- **interlink outbound:** 4 live /blog/ siblings (crosslink-qa PASS)
+- **interlink inbound:** B01 (3745)
+- **publish_method:** sftp:22 (Cloud Agent; FTP PASV blocked)
+- **preflight fix:** wp_category_slugs added; gates generated; theme_contract_deploy skipped (functions.php bounds not found — already patched on live)
+- **llms_deploy:** PASS (llms.txt + llms-full.txt)
+
 ## B26 — 2026-09-18
 
 - **topic_id:** B26
