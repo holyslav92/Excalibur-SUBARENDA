@@ -1,0 +1,137 @@
+{
+  "status": "PASS",
+  "topic_id": "B27",
+  "slug": "bez-zaloga-pered-kodom-5000-na-kartu",
+  "research_date": "2026-09-18",
+  "summary": "Research for guest CASE: listing «без залога» but before access code host demands 5 000 ₽ card transfer as deposit. Fresh signals: Scout no_deposit_door_surprise hook, Dobriy Dom TG ~2026-09-15–18 on pre-pay detail fixation + card-transfer caution + contactless access risks, Tutkakdoma Aug 2026 payment safety. Mechanics: badge «без залога» ≠ no deposit at door; deposit terms must be fixed before payment; code-as-leverage before surprise transfer. Editorial 5 000 ₽ composite only. Anti-dup vs B02 (checkout return), B08 (silence), B13/B18/B22 (access), B26 (pet fee).",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Scout Klyshin no_deposit_door_surprise editorial hook + Dobriy Dom TG fresh posts ~2026-09-15–18 + Tutkakdoma payment safety Aug 2026",
+    "source_type": "community_and_platform",
+    "urls": [
+      "https://t.me/klyshin_A",
+      "https://t.me/Dobriy_dom_72",
+      "https://tutkakdoma.ru/blog/kak-bezopasno-platit-za-zhilyo",
+      "https://добрыйдом-72.рф/blog/"
+    ],
+    "accessed_at": "2026-09-18",
+    "note": "Composite guest case from Scout hook; not a verified transcript of one Tyumen booking. Klyshin live posts on 2026-09-18 cover long-term sale stories; hook is from topic bank angle."
+  },
+  "freshness_audit": {
+    "research_date": "2026-09-18",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://t.me/Dobriy_dom_72",
+      "published_at": "2026-09-18",
+      "note": "Local tenant channel: pre-pay detail fixation, card-transfer rush warning, contactless check-in risks before booking — supports deposit-before-code moral."
+    },
+    "additional_fresh_signals": [
+      {
+        "url": "https://t.me/klyshin_A",
+        "published_at": "2026-09-18",
+        "type": "scout_editorial",
+        "note": "no_deposit_door_surprise hook from topic bank: «без залога» vs card transfer before code."
+      },
+      {
+        "url": "https://tutkakdoma.ru/blog/kak-bezopasno-platit-za-zhilyo",
+        "published_at": "2026-08-25",
+        "type": "industry_article",
+        "note": "Card transfer vulnerability, deposit size in writing, rush/third-name red flags."
+      },
+      {
+        "url": "https://promokod.pikabu.ru/blog/skritie-rashodi-pri-kratkosrochnoi-arende-zhilya-v-rossii-za-chto-turisti-pereplachivayut-chasche-vsego",
+        "published_at": "2026-09-18",
+        "type": "community_article",
+        "note": "Deposit vs prepayment; typical 1–2 nights context, not Tyumen norm."
+      }
+    ]
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176", "225"],
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 4495,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 9696,
+        "region": "225"
+      },
+      {
+        "phrase": "снять квартиру посуточно в тюмени",
+        "volume": 1341,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "залог посуточно",
+        "volume": 2689,
+        "region": "225"
+      },
+      {
+        "phrase": "квартира посуточно без залога",
+        "volume": 1101,
+        "region": "225"
+      },
+      {
+        "phrase": "квартира посуточно без залога",
+        "volume": 6,
+        "region": "55+11176",
+        "note": "weak local no-deposit cluster"
+      },
+      {
+        "phrase": "не вернули залог за квартиру посуточно",
+        "volume": 32,
+        "region": "225",
+        "note": "return-delay cluster; not B27 focus"
+      }
+    ]
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "No bank/developer/JKH tariff digits; Sutochno platform policy cited as official platform context; case 5 000 ₽ is editorial scenario only",
+    "verified_claims": 2,
+    "entities_checked": ["Sutochno.ru"],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "memory/blog/articles/B27-bez-zaloga-pered-kodom-5000-na-kartu/derouter-opus-stamp-research.json",
+    "first_attempt": "524_TIMEOUT",
+    "note": "Script run hit Cloudflare 524; Derouter REST retry on primary endpoint succeeded (~78s)."
+  },
+  "source_count": 9,
+  "limitations": [
+    "No verified transcript of a specific Tyumen booking; case mechanic from Scout editorial no_deposit_door_surprise hook.",
+    "Live Klyshin channel posts on 2026-09-18 do not cover this deposit-before-code hook — hook is from topic bank angle.",
+    "Tyumen Wordstat for «квартира посуточно без залога» is 6 — topic is editorial guest pain anchored on broad local P0 «квартиры посуточно тюмень».",
+    "5 000 ₽ and 1–2 nights deposit context are illustration only, not Tyumen norms or Dobriy Dom tariff.",
+    "Dobriy Dom TG fresh posts support pre-pay fixation and card caution, not a verified «без залога → 5000 before code» incident.",
+    "Direct booking via messenger may bypass aggregator deposit-disclosure rules cited from Sutochno."
+  ],
+  "writer_safe_urls": [
+    "https://t.me/Dobriy_dom_72",
+    "https://t.me/Dobriy_dom_Tyumen",
+    "https://max.ru/id660300569233_biz",
+    "https://добрыйдом-72.рф/",
+    "https://добрыйдом-72.рф/booking/",
+    "https://добрыйдom-72.рф/blog/",
+    "https://sutochno.ru/blog/rules",
+    "https://sutochno.ru/sj/iz-chego-skladivaetsya-stoimost-bronirovaniya",
+    "https://tutkakdoma.ru/blog/kak-bezopasno-platit-za-zhilyo",
+    "https://promokod.pikabu.ru/blog/skritie-rashodi-pri-kratkosrochnoi-arende-zhilya-v-rossii-za-chto-turisti-pereplachivayut-chasche-vsego",
+    "https://dzen.ru/a/aobYga3UpQP2aQiz",
+    "https://t.me/klyshin_A"
+  ],
+  "errors": []
+}
