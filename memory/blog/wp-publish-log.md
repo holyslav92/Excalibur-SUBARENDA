@@ -1,5 +1,23 @@
 # WP publish log
 
+## B26 — 2026-09-18
+
+- **topic_id:** B26
+- **slug:** sobaka-doplata-posutochno
+- **title:** «Можно с собакой» написали. При заезде — 2 500 ₽ за «крупную породу»
+- **post_id:** 4918
+- **permalink:** /blog/sobaka-doplata-posutochno/
+- **categories:** posutochnaya-arenda (101), sovety-gostyam (106), zhkh-i-doplaty (104)
+- **featured_image:** 4919
+- **inline_images:** 4920–4926 (7× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok (2× application/ld+json on live)
+- **live-page gate:** PASS
+- **dzen preview:** dzen_yzen_meta=1; cover-1024x576.png HTTP 200 (914407 bytes); feed enclosure → full cover.png; dzen_touch post_modified bumped
+- **interlink outbound:** 4 live /blog/ siblings (crosslink-qa PASS)
+- **interlink inbound:** B01 (3745)
+- **publish_method:** sftp:22 (Cloud Agent; FTP PASV blocked)
+- **preflight fix:** wp_category_slugs added (handoff `posutochno` → registry `posutochnaya-arenda`); gates generated; theme_contract_deploy skipped (functions.php bounds not found — already patched on live)
+
 ## B25 — 2026-09-16
 
 - **topic_id:** B25

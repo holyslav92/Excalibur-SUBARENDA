@@ -286,10 +286,6 @@
   "html_inject": [
     "skip inline_1: already correct under H2 — Значок разрешает животное, но не объясняет цену",
     "skip inline_2: already correct under H2 — Значок разрешает животное, но не объясняет цену",
-    "skip inline_3: already correct under H2 — Почему доплата появляется у двери",
-    "injected inline_4 after H2 — Почему доплата появляется у двери",
-    "injected inline_5 after H2 — Мой вывод как практика",
-    "injected inline_6 after H2 — Почему доплата появляется у двери",
-    "injected inline_7 after H2 — Мой вывод как практика"
+    "skip inline_3: already correct under H2 — Почему доплата появляется у двери"
   ]
 }

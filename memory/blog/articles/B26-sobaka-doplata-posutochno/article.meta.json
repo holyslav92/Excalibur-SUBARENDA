@@ -3,6 +3,10 @@
   "h1": "«Можно с собакой» написали. При заезде — 2 500 ₽ за «крупную породу»",
   "slug": "sobaka-doplata-posutochno",
   "topic_id": "B26",
+  "wp_category_slugs": [
+    "posutochnaya-arenda",
+    "sovety-gostyam"
+  ],
   "author_id": "dobry-dom",
   "article_mode": "B",
   "description": "«Можно с собакой» написали. При заезде — 2 500 ₽ за «крупную породу»",

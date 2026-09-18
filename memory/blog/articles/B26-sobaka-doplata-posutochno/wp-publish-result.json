@@ -1,0 +1,27 @@
+{
+  "slug": "sobaka-doplata-posutochno",
+  "topic_id": "B26",
+  "permalink": "{{SITE_BASE}}/blog/sobaka-doplata-posutochno/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B26-sobaka-doplata-posutochno/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1325239,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4918 slug=sobaka-doplata-posutochno\nOK categories=101,106,104\nOK dzen_yzen_meta=1\nOK featured_image=4919\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4920 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/sobaka-doplata-posutochno-inline-02.png\nOK inline_alt=4920\nOK inline_caption=4920\nOK inline_description=4920\nOK inline_image_upload=4921 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/sobaka-doplata-posutochno-inline-01.png\nOK inline_alt=4921\nOK inline_caption=4921\nOK inline_description=4921\nOK inline_image_upload=4922 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/09/sobaka-doplata-posutochno-inline-06.png\nOK inline_alt=4922\nOK inline_caption=4922\nOK inline_description=4922\nOK inline_image_upload=4923 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/09/sobaka-doplata-posutochno-inline-04.png\nOK inline_alt=4923\nOK inline_caption=4923\nOK inline_description=4923\nOK inline_image_upload=4924 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/sobaka-doplata-posutochno-inline-03.png\nOK inline_alt=4924\nOK inline_caption=4924\nOK inline_description=4924\nOK inline_image_upload=4925 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/09/sobaka-doplata-posutochno-inline-07.png\nOK inline_alt=4925\nOK inline_caption=4925\nOK inline_description=4925\nOK inline_image_upload=4926 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/09/sobaka-doplata-posutochno-inline-05.png\nOK inline_alt=4926\nOK inline_caption=4926\nOK inline_description=4926\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/sobaka-doplata-posutochno/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/sobaka-doplata-posutochno/",
+    "errors": []
+  }
+}
