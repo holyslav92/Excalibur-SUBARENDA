@@ -221,6 +221,23 @@
       "used_in_articles": ["B17"]
     },
     {
+      "id": "cold_radiators_heating_sept",
+      "queue_num": 10,
+      "hook_ru": "Написали «отопление есть». В комнате +14 °C — батареи холодные",
+      "angle": "отопление/батареи при посуточной в ранней осени — не ГВС/бойлер (B20), не соседи (B14)",
+      "klyshin_signal": "moral: сначала тепло в комнате, потом ночь; lockpick: когда включают отопление в Тюмени",
+      "wordstat_probes": ["батареи холодные квартира", "отопление квартира посуточно", "квартиры посуточно тюмень"],
+      "dzen_pattern_prefer": [5, 2],
+      "anti_dup": ["hot_water_boiler", "neighbors_night", "utilities_jkh"],
+      "tyumen_localize": true,
+      "status": "used",
+      "last_seen": "2026-09-18",
+      "queue_slot": "2026-09-18 B27 scout",
+      "final_p0": {"phrase": "квартиры посуточно тюмень", "volume_tyumen": 4495, "volume_ru": 9696},
+      "wordstat_rework_log": "probe «батареи холодные квартира» 674 (225) → «отопление квартира посуточно» 12 → final P0 «квартиры посуточно тюмень» 4495/9696",
+      "used_in_articles": ["B27"]
+    },
+    {
       "id": "hot_water_boiler",
       "queue_num": 9,
       "hook_ru": "Написали «горячая вода есть». В 23:10 — ледяной душ и мигающий бойлер",
