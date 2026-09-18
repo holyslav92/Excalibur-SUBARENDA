@@ -1,0 +1,127 @@
+{
+  "topic_id": "B27",
+  "slug": "kvartira-posutochno-v-tyumeni-otoplenie-est-batarei-holodnye",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "«Отопление есть» — ледяные батареи",
+  "cover_hook_highlight": "ледяные",
+  "cover_headline_line1": "«Отопление есть»",
+  "cover_headline_line2": "ледяные батареи",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "Grsai VIP 2K 2 canvases. Logo cover+inline_1/3/7. Max 1 cat meme. Early autumn September Tyumen NO snow.",
+  "wordstat_stickers": [
+    "батареи холодные квартира",
+    "отопление есть посуточно тюмень"
+  ],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "guest in jacket on sofa touching cold radiator thermometer tablo hook tr pad",
+    "location": "early autumn september 2026 tyumen apartment evening golden light yellow leaves outside window no snow no winter",
+    "meme": "photoreal zero cat meme stickers people by topic only",
+    "prop_set": "thermometer 14C cold radiator smartphone listing отопление есть blanket jacket absent heater tablo",
+    "sticker_set": "батареи холодные посуточно тюмень отопление есть",
+    "joke": "ad says heating exists batteries cold like stair rail"
+  },
+  "cover_emotion": "усталость гостя в куртке на диване при +14 °C и ледяных батареях",
+  "cover_scene": "Гость в куртке на диване трогает ледяную батарею; термометр +14 °C; телефон с карточкой «отопление есть»; крупный кириллический хук; pad TR.",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "scene_hint": "Гость в куртке на диване трогает ледяную батарею; настенный термометр +14 °C; смартфон с карточкой «отопление есть»; крупный хук «Отопление есть — ледяные батареи» с выделением «ледяные» на табло; +7 993 574-83-22 на инфодоске в сцене; золотой стикер «Куртка вместо сна»; осенний вечер за окном без снега; pad TR.",
+      "alt": "В квартире посуточно в Тюмени написали «отопление есть», а в комнате +14 °C и ледяные батареи.",
+      "meme_caption_ru": "",
+      "role": "cover_editorial_hero",
+      "sticky": "Куртка вместо сна"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "scene_hint": "comparison_table_ui: цена 8400 две ночи vs 4200 за ночь vs +14 °C vs 40 мин в куртке. Pad TR logo.",
+      "alt": "Две ночи за 8 400 ₽, 4 200 ₽ за ночь — и +14 °C в комнате, сорок минут в куртке.",
+      "meme_caption_ru": "",
+      "h2_anchor": "«Есть» — не значит «греет»",
+      "visual_type": "comparison_table_ui",
+      "labels": ["8400 ₽ две ночи", "4200 ₽ за ночь", "+14 °C в комнате", "40 минут в куртке"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "scene_hint": "infographic_card: батареи ледяные, тронул дважды, как перила, вечерний заезд. NO logo.",
+      "alt": "Батареи ледяные — гость тронул дважды, как перила в подъезде, вечером после заезда.",
+      "meme_caption_ru": "",
+      "h2_anchor": "«Есть» — не значит «греет»",
+      "visual_type": "infographic_card",
+      "labels": ["Батареи ледяные", "Тронул дважды", "Как перила", "Вечерний заезд"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "scene_hint": "workflow_diagram: первая ночь идёт, УК завтра, обогревателя нет, второго пледа нет. Pad TR logo.",
+      "alt": "Первая ночь уже идёт, а хост пишет «УК завтра» — обогревателя и второго пледа нет.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Почему «завтра включат» не спасает сегодняшнюю ночь",
+      "visual_type": "workflow_diagram",
+      "labels": ["Первая ночь идёт", "УК завтра", "Обогревателя нет", "Второго пледа нет", "Другой квартиры нет"]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "scene_hint": "labeled_checklist: трубы есть тепла нет, не включили, пять дней ниже +8, не тепло на даты. NO logo.",
+      "alt": "Трубы есть, тепла нет: сезон ещё не начался, пять дней ниже +8 °C — не тепло на ваши даты.",
+      "meme_caption_ru": "",
+      "h2_anchor": "«Есть» — не значит «греет»",
+      "visual_type": "labeled_checklist",
+      "labels": ["Трубы есть тепла нет", "Не включили ещё", "Пять дней ниже +8", "Не тепло на даты"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "scene_hint": "comparison_table_ui: норма +18 °C vs +14 °C ниже нормы, Тюмень 21–23 сентября. NO logo.",
+      "alt": "Норма +18 °C, в комнате +14 °C — ниже нормы; в Тюмени сезон часто стартует 21–23 сентября.",
+      "meme_caption_ru": "",
+      "h2_anchor": "«Есть» — не значит «греет»",
+      "visual_type": "comparison_table_ui",
+      "labels": ["Норма от +18 °C", "+14 °C ниже нормы", "Это не каприз", "Тюмень 21–23 сентября"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "scene_hint": "schema_faq_ui: вопросы до оплаты — даты отопления, температура вечером, обогреватель, плед. NO logo NO cat.",
+      "alt": "До оплаты спросить про даты отопления, вечернюю температуру, обогреватель и план на холод.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "schema_faq_ui",
+      "labels": ["Спросить про даты", "Температура вечером", "Обогреватель и плед", "План на холод", "До оплаты"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "scene_hint": "checklist_board: фото термометра, фото батареи, скрин карточки, сначала проверка потом перевод. Pad TR logo.",
+      "alt": "Сохранить фото термометра и батареи, скрин карточки — сначала проверка, потом перевод.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "checklist_board",
+      "labels": ["Фото термометра", "Фото батареи", "Скрин карточки", "Не верить завтра", "Сначала проверка", "Потом перевод"]
+    }
+  }
+}

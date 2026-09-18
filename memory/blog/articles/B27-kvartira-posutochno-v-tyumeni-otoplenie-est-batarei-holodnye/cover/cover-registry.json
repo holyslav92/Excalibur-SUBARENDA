@@ -1,0 +1,86 @@
+{
+  "topic_id": "B27",
+  "slug": "kvartira-posutochno-v-tyumeni-otoplenie-est-batarei-holodnye",
+  "cover_family": "brand_collage",
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "file": "cover/cover.png",
+  "alt": "В квартире посуточно в Тюмени написали «отопление есть», а в комнате +14 °C и ледяные батареи.",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-quad-01.png",
+  "generated_at": "2026-09-18T13:09:47+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "В квартире посуточно в Тюмени написали «отопление есть», а в комнате +14 °C и ледяные батареи.",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Две ночи за 8 400 ₽, 4 200 ₽ за ночь — и +14 °C в комнате, сорок минут в куртке.",
+      "h2_anchor": "«Есть» — не значит «греет»",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Батареи ледяные — гость тронул дважды, как перила в подъезде, вечером после заезда.",
+      "h2_anchor": "«Есть» — не значит «греет»",
+      "visual_type": "infographic_card",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Первая ночь уже идёт, а хост пишет «УК завтра» — обогревателя и второго пледа нет.",
+      "h2_anchor": "Почему «завтра включат» не спасает сегодняшнюю ночь",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_4",
+      "file": "cover/inline-04.png",
+      "alt": "Трубы есть, тепла нет: сезон ещё не начался, пять дней ниже +8 °C — не тепло на ваши даты.",
+      "h2_anchor": "«Есть» — не значит «греет»",
+      "visual_type": "labeled_checklist",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_5",
+      "file": "cover/inline-05.png",
+      "alt": "Норма +18 °C, в комнате +14 °C — ниже нормы; в Тюмени сезон часто стартует 21–23 сентября.",
+      "h2_anchor": "«Есть» — не значит «греет»",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_6",
+      "file": "cover/inline-06.png",
+      "alt": "До оплаты спросить про даты отопления, вечернюю температуру, обогреватель и план на холод.",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "schema_faq_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_7",
+      "file": "cover/inline-07.png",
+      "alt": "Сохранить фото термометра и батареи, скрин карточки — сначала проверка, потом перевод.",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}
