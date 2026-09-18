@@ -1819,3 +1819,138 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+---
+
+## LESSON-20260918-0727-B26-pet-badge-permission-vs-price
+status: proposed
+topic_id: B26
+category: utility
+confidence: low
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP. Урок из publish-артефактов: title-brief.json, description-brief.json, case-delivery-gate PASS, article.html, scout handoff `dog_breed_fee` 2026-09-18.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest BLOCKER (INC-20260903-0640, INC-20260918-0727).
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Two-beat H1 ««Можно с собакой» написали. При заезде — 2 500 ₽ за «крупную породу»»: значок-обещание → контрфакт доплаты + ₽ + критерий «крупная порода», не how-to.
+- §1: цитата «за крупную породу — две с половиной тысячи», лабрадор ~30 кг, 8 200 ₽ за две ночи (1 взрослый + собака), значок «Можно с животными»; второй слой «залог за шерсть — отдельно»; editorial disclaimer — 2 500 ₽ композитный кейс, не тариф «Доброго дома».
+- H2 «Значок разрешает животное, но не объясняет цену» — разведение permission vs price; модели оплаты (за ночь / за заезд / залог / уборка) как условия объекта.
+- Klyshin «Нет. Так не заселяем.» → «плата у двери с ключами в руке — давление»; вопрос-отмычка «лабрадор — это «крупная порода» в вашей карточке или только в голове хоста?» → TG/MAX mid-body.
+- Шесть пунктов чеклиста: вид/порода/вес, модель доплаты, итог за свои ночи, залог, уборка/шерсть, сохранить карточку и чат.
+- Interlink spine: B24 «можно с детьми» (явная sibling — та же механика permission vs price), B04 третий гость, B10 «всё включено», B23 уборка/простыни — одна красная линия «условие не названо до оплаты».
+- Wordstat P0 spine «квартиры посуточно тюмень» 4 570 (Tyumen); «с собакой посуточно» 886 (RF) / 10 (Tyumen weak) — localize через guest cluster, не binary skip.
+- Description не дублирует H1: «можно с животными» ≠ «с собакой без доплат» + порода и залог до ключей (description-brief PASS).
+- Anti-dup явный: не B24 (ребёнок + семейный значок), не B04 (третий взрослый), не B23 (уборка на выезде); центральный конфликт — pet-friendly badge ≠ itemized breed/size fee + hair deposit.
+- Cover-QA PASS: gen_only_human_v1, 2× quad; autumn season_matches_manifest.
+
+### Change
+- В `dog_breed_fee` кейсах в §1 сразу фиксировать **четыре слоя**: (1) значок «можно с животными» / «можно с собакой», (2) 8 200 ₽ как оплаченная сумма без строки про породу, (3) 2 500 ₽ при заезде, (4) залог за шерсть как отложенный спор — не раскрывать permission vs price только во втором H2.
+- Scout handoff: при hook `dog_breed_fee` логировать original Klyshin «можно с животными — доплата за породу/размер» + final P0 spine Tyumen + anti-dup B24 kids_extra_fee.
+
+### Never again
+- Строить pet-fee кейс как зоо-правовой гайд или how-to «как вернуть доплату за собаку».
+- Читать «можно с животными» как «любая собака любого размера входит в цену» без itemized list.
+- Смешивать B24 (ребёнок + значок) и B26 (питомец + порода/вес) — разные hook_id, но явная sibling-ссылка в mid-body допустима.
+- Обсуждать собаку только у двери без породы/веса в переписке.
+- Выдавать 2 500 ₽ / залог за шерсть за рыночные тарифы без editorial disclaimer.
+- How-to до морали; финал «Наш вывод простой».
+
+### Proposed apply
+- Scout: hook `dog_breed_fee` → handoff lockpick (порода + вес + итог за ночи + залог/шерсть) + final P0 spine Tyumen + anti-dup B24.
+- Review only; Writer prompt не трогать автоматически.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260918-0727-B26-door-leverage-tired-pet
+status: proposed
+topic_id: B26
+category: structure
+confidence: low
+
+### Evidence
+- artifact: title-brief.json#angle
+  finding: angle «Гость забронировал жильё с собакой по обещанию в карточке, но у двери перед выдачей ключей столкнулся с неуказанной доплатой»; opening-meta-gate PASS; H2 «Почему доплата появляется у двери».
+- metrika_signal: none (credentials unavailable; causal retention не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Слой «дорога закончилась, собака устала, поводок в кулаке, ключи в руке хоста» — asymmetric moment после 8 200 ₽; не скандал, а «цена отказа выше, чем при бронировании».
+- Блок «гость читал значок как цену / хост как разрешение» — двойное прочтение без обвинения; «это не спор о двух с половиной тысячах» — money-timing spine.
+- Явная sibling-ссылка на B24 «можно с детьми» и B04 «доплата за третьего» как та же door-leverage механика с другим поводом.
+- Второй temporal слой: залог за шерсть назван у двери — отложенный спор после согласия на 2 500 ₽.
+- Чеклист из 6 пунктов после «Мой вывод как практика»; мораль «Сначала проверка. Потом перевод.»
+
+### Change
+- Для `dog_breed_fee` hooks всегда включать **pet door temporal leverage** (уставшая собака, некуда развернуться с питомцем) в utility-блок — не только таблицу пород/веса.
+- При interlink — sibling про door surprises (B24 kids, B04 guest, B10 all-inclusive, B23 cleaning) одной линией «оплата завершена ≠ все условия названы».
+
+### Never again
+- Писать pet-fee кейс только про лимиты платформ по животным, игнорируя asymmetric moment (когда искать новое жильё с собакой после дороги дороже согласия).
+- Финал «Наш вывод простой» вместо «Мой вывод как практика».
+
+### Proposed apply
+- Writer checklist (review-only): dog_breed_fee + pet arrival → один абзац про asymmetric moment после значка «можно с собакой».
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260918-0727-B26-title-card-vs-checkin-reveal
+status: proposed
+topic_id: B26
+category: voice
+confidence: low
+
+### Evidence
+- artifact: title-brief.json / derouter-title
+  finding: H1 ««Можно с собакой» написали. При заезде — 2 500 ₽ за «крупную породу»»; klyshin_title_shape:3; angle permission vs paid pet/breed.
+- metrika_signal: none (credentials unavailable; causal CTR не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Cable pain-scene: обещание в карточке (кавычки «можно с собакой») + temporal beat «при заезде» + ₽ (2 500) + критерий («крупная порода»), без SEO-хвоста «с собакой посуточно тюмень».
+- Description rhythm klyshin_case_hook: «можно с животными» ≠ «с собакой без доплат» + порода и залог до ключей (not_equal_title PASS).
+- Cover-text two-beat pet-friendly vs door surcharge + sticky «Сначала проверка, потом перевод» — контраст без полного спойлера H1.
+- 8 200 ₽, лабрадор 30 кг, две ночи — в §1/cover stickers, не duty-log HH:MM; opening-meta-gate PASS.
+
+### Change
+- Для dog_breed_fee hooks: prefer **card promise + check-in beat + ₽ + breed/size criterion** over narrow «с собакой посуточно» SEO lead (RF 886 / Tyumen 10 — spine через «квартиры посуточно тюмень»).
+- Title: двухчастный ритм «написали / при заезде» > compound «8 200 + залог за шерсть + лабрадор» spoiler.
+
+### Never again
+- H1-спойлер со всей таблицей порогов веса/пород Avito/Sutochno — оставлять в utility H2 и чеклисте.
+- Description, дублирующий H1 про «2 500 ₽ за крупную породу» без контраста «можно с животными ≠ без доплат».
+
+### Proposed apply
+- Title/Description review: dog_breed_fee — card vs check-in two-beat + ₽/breed > pet-keyword H1.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
