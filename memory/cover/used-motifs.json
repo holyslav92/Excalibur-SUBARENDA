@@ -3,19 +3,6 @@
   "window_days": 14,
   "entries": [
     {
-      "date": "2026-09-03",
-      "topic_id": "B08",
-      "slug": "",
-      "motifs": {
-        "composition": "phone chat silence tablo tr pad",
-        "location": "sep 2026 sunny tyumen not winter",
-        "meme": "__cat_meme_family__",
-        "prop_set": "phone receipt suitcase tablo",
-        "sticker_set": "тишина в чате предоплата на карту",
-        "joke": "checkmarks no address"
-      }
-    },
-    {
       "date": "2026-09-05",
       "topic_id": "B10",
       "slug": "",
@@ -219,6 +206,19 @@
         "prop_set": "складной матрас диван-кровать телефон карточка 10400 простыня табло",
         "sticker_set": "спальные места посуточно снять квартиру тюмени",
         "joke": "на фото две кровати ночью диван и пол"
+      }
+    },
+    {
+      "date": "2026-09-18",
+      "topic_id": "B27",
+      "slug": "",
+      "motifs": {
+        "composition": "guest suitcase entrance intercom smartphone no-deposit badge messenger 5000 tablo hook tr pad",
+        "location": "mid-september 2026 warm autumn tyumen apartment entrance yellow leaves outside no snow no winter",
+        "meme": "__cat_meme_family__",
+        "prop_set": "suitcase smartphone chat 5000 receipt no-deposit icon intercom autumn coat",
+        "sticker_set": "без залога посуточно депозит перед кодом тюмень",
+        "joke": "badge says no deposit then five thousand before code at door"
       }
     }
   ]

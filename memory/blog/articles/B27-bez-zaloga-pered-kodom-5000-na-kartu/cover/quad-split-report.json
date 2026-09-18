@@ -1,0 +1,295 @@
+{
+  "agent": "excalibur-blog-cover-quad-split",
+  "status": "PASS",
+  "splits": [
+    {
+      "canvas_index": 1,
+      "manifest": "cover/quad-manifest.json",
+      "split": {
+        "source_canvas": "memory/blog/articles/B27-bez-zaloga-pered-kodom-5000-na-kartu/cover/canvas-quad-01.png",
+        "source_size_px": [
+          2048,
+          1152
+        ],
+        "panel_size_px": [
+          1024,
+          576
+        ],
+        "split_meta": {
+          "split_mode": "mechanical_center",
+          "h_gutter_px": null,
+          "v_gutter_px": null,
+          "requested_mode": "auto",
+          "fallback_reason": "gutter_too_far_from_center",
+          "rejected_gutter": {
+            "h_gutter_px": {
+              "start": 629,
+              "end": 641
+            },
+            "v_gutter_px": {
+              "start": 1019,
+              "end": 1068
+            },
+            "gutter_quality": {
+              "h_center_offset_px": 59.0,
+              "v_center_offset_px": 19.5,
+              "max_aspect_crop_loss": 0.124,
+              "per_panel_crop_loss": {
+                "top_left": 0.089,
+                "top_right": 0.124,
+                "bottom_left": 0.1089,
+                "bottom_right": 0.0735
+              },
+              "reject_reason": "gutter_too_far_from_center"
+            }
+          }
+        },
+        "output_size_px": [
+          1200,
+          675
+        ],
+        "outputs": {
+          "cover": {
+            "file": "cover/cover.png",
+            "quadrant": "top_left",
+            "box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1024,
+              "bottom": 576
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1024,
+              "bottom": 576
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "У подъезда с багажом: в карточке «без залога», в чате перед кодом просят 5 000 ₽ на карту.",
+            "h2_anchor": null
+          },
+          "inline_1": {
+            "file": "cover/inline-01.png",
+            "quadrant": "top_right",
+            "box_px": {
+              "left": 1024,
+              "top": 0,
+              "right": 2048,
+              "bottom": 576
+            },
+            "raw_box_px": {
+              "left": 1024,
+              "top": 0,
+              "right": 2048,
+              "bottom": 576
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Две ночи за 8 600 ₽ оплачены заранее, в карточке значок «без залога» — но это ещё надо подтвердить в переписке.",
+            "h2_anchor": "«Без залога» в карточке — это ещё надо подтвердить"
+          },
+          "inline_2": {
+            "file": "cover/inline-02.png",
+            "quadrant": "bottom_left",
+            "box_px": {
+              "left": 0,
+              "top": 576,
+              "right": 1024,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 576,
+              "right": 1024,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Цена проживания, страховой депозит и перевод на карту — разные механики, их нельзя смешивать.",
+            "h2_anchor": "Не смешивайте цену проживания, депозит и перевод на карту"
+          },
+          "inline_3": {
+            "file": "cover/inline-03.png",
+            "quadrant": "bottom_right",
+            "box_px": {
+              "left": 1024,
+              "top": 576,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 1024,
+              "top": 576,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "«Это страховка», перевод на карту супруги и отказ выдать код без перевода — три красных флага у двери.",
+            "h2_anchor": "Не смешивайте цену проживания, депозит и перевод на карту"
+          }
+        }
+      }
+    },
+    {
+      "canvas_index": 2,
+      "manifest": "cover/quad-manifest.json",
+      "split": {
+        "source_canvas": "memory/blog/articles/B27-bez-zaloga-pered-kodom-5000-na-kartu/cover/canvas-quad-02.png",
+        "source_size_px": [
+          2048,
+          1152
+        ],
+        "panel_size_px": [
+          1019,
+          573
+        ],
+        "split_meta": {
+          "split_mode": "gutter_detect",
+          "h_gutter_px": {
+            "start": 573,
+            "end": 581
+          },
+          "v_gutter_px": {
+            "start": 1019,
+            "end": 1028
+          },
+          "requested_mode": "auto",
+          "gutter_quality": {
+            "h_center_offset_px": 1.0,
+            "v_center_offset_px": 0.5,
+            "max_aspect_crop_loss": 0.0,
+            "per_panel_crop_loss": {
+              "top_left": 0.0,
+              "top_right": 0.0,
+              "bottom_left": 0.0,
+              "bottom_right": 0.0
+            },
+            "reject_reason": null
+          }
+        },
+        "output_size_px": [
+          1200,
+          675
+        ],
+        "outputs": {
+          "inline_4": {
+            "file": "cover/inline-04.png",
+            "quadrant": "top_left",
+            "box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1019,
+              "bottom": 573
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1019,
+              "bottom": 573
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "До оплаты спросить: есть ли залог, какая сумма, когда и как вернут.",
+            "h2_anchor": "Код не должен становиться рычагом"
+          },
+          "inline_5": {
+            "file": "cover/inline-05.png",
+            "quadrant": "top_right",
+            "box_px": {
+              "left": 1028,
+              "top": 0,
+              "right": 2048,
+              "bottom": 573
+            },
+            "raw_box_px": {
+              "left": 1028,
+              "top": 0,
+              "right": 2048,
+              "bottom": 573
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Попросите написать «залога нет» в чате и сохраните переписку до перевода.",
+            "h2_anchor": "Код не должен становиться рычагом"
+          },
+          "inline_6": {
+            "file": "cover/inline-06.png",
+            "quadrant": "bottom_left",
+            "box_px": {
+              "left": 0,
+              "top": 581,
+              "right": 1019,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 581,
+              "right": 1019,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Оплата ночей, отдельный залог и блокировка на карте — три разных способа, не путать под давлением у двери.",
+            "h2_anchor": "Код не должен становиться рычагом"
+          },
+          "inline_7": {
+            "file": "cover/inline-07.png",
+            "quadrant": "bottom_right",
+            "box_px": {
+              "left": 1028,
+              "top": 581,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 1028,
+              "top": 581,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Уточните заранее: когда пришлют код, какие условия — сначала проверка, потом перевод.",
+            "h2_anchor": "Мой вывод как практика"
+          }
+        }
+      }
+    }
+  ],
+  "manifest": "cover/quad-manifest.json",
+  "html_inject": [
+    "skip inline_1: already correct under H2 — «Без залога» в карточке — это ещё надо подтвердить",
+    "skip inline_2: already correct under H2 — Не смешивайте цену проживания, депозит и перевод на карту",
+    "skip inline_3: already correct under H2 — Не смешивайте цену проживания, депозит и перевод на карту",
+    "injected inline_4 after H2 — Код не должен становиться рычагом",
+    "injected inline_5 after H2 — Код не должен становиться рычагом",
+    "injected inline_6 after H2 — Код не должен становиться рычагом",
+    "injected inline_7 after H2 — Мой вывод как практика"
+  ]
+}

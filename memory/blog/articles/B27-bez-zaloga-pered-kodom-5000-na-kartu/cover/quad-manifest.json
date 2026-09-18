@@ -1,0 +1,127 @@
+{
+  "topic_id": "B27",
+  "slug": "bez-zaloga-pered-kodom-5000-na-kartu",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "Без залога — 5 000 перед кодом",
+  "cover_hook_highlight": "залога",
+  "cover_headline_line1": "Без залога",
+  "cover_headline_line2": "5 000 перед кодом",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "Grsai VIP 2K 2 canvases. Logo cover+inline_1/3/7. Max 1 cat meme. Autumn NOT winter. Phone on inline_5/7.",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "снять квартиру посуточно в тюмени"
+  ],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "guest suitcase entrance intercom smartphone no-deposit badge messenger 5000 tablo hook tr pad",
+    "location": "mid-september 2026 warm autumn tyumen apartment entrance yellow leaves outside no snow no winter",
+    "meme": "one small cat meme sticker on cover only",
+    "prop_set": "suitcase smartphone chat 5000 receipt no-deposit icon intercom autumn coat",
+    "sticker_set": "без залога посуточно депозит перед кодом тюмень",
+    "joke": "badge says no deposit then five thousand before code at door"
+  },
+  "cover_emotion": "усталость гостя с чемоданом когда перед кодом просят перевод на карту",
+  "cover_scene": "Гость у подъезда с чемоданом; телефон с чатом «переведите 5000»; значок «без залога»; крупный кириллический хук; pad TR.",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "scene_hint": "Гость с чемоданом у подъезда; смартфон с чатом «переведите 5000 — пришлю код»; карточка со значком «без залога»; крупный хук на табло; один маленький cat-meme стикер; pad TR.",
+      "alt": "У подъезда с багажом: в карточке «без залога», в чате перед кодом просят 5 000 ₽ на карту.",
+      "meme_caption_ru": "",
+      "role": "cover_editorial_hero",
+      "sticky": "Сначала проверка, потом перевод"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "scene_hint": "comparison_table_ui: карточка vs чат vs чек. Pad TR logo.",
+      "alt": "Две ночи за 8 600 ₽ оплачены заранее, в карточке значок «без залога» — но это ещё надо подтвердить в переписке.",
+      "meme_caption_ru": "",
+      "h2_anchor": "«Без залога» в карточке — это ещё надо подтвердить",
+      "visual_type": "comparison_table_ui",
+      "labels": ["две ночи", "восемь шестьсот рублей", "значок без залога", "оплачено заранее"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "scene_hint": "infographic_card три вида денег: ночи, депозит, перевод. NO logo.",
+      "alt": "Цена проживания, страховой депозит и перевод на карту — разные механики, их нельзя смешивать.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Не смешивайте цену проживания, депозит и перевод на карту",
+      "visual_type": "infographic_card",
+      "labels": ["у подъезда", "«пять тысяч»", "код после перевода"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "scene_hint": "workflow_diagram «это страховка» карта супруги код не дадут. Pad TR logo.",
+      "alt": "«Это страховка», перевод на карту супруги и отказ выдать код без перевода — три красных флага у двери.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Не смешивайте цену проживания, депозит и перевод на карту",
+      "visual_type": "workflow_diagram",
+      "labels": ["«это страховка»", "карта супруги", "код не дадут"]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "scene_hint": "labeled_checklist вопросы до оплаты. NO logo.",
+      "alt": "До оплаты спросить: есть ли залог, какая сумма, когда и как вернут.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Код не должен становиться рычагом",
+      "visual_type": "labeled_checklist",
+      "labels": ["до оплаты спросить", "сумма залога", "когда вернут"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "scene_hint": "comparison_table_ui чат «залога нет» + телефон +7 993 574-83-22 на стене инфодоски. NO logo.",
+      "alt": "Попросите написать «залога нет» в чате и сохраните переписку до перевода.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Код не должен становиться рычагом",
+      "visual_type": "comparison_table_ui",
+      "labels": ["ответ в чате", "«залога нет»", "сохранить переписку"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "scene_hint": "schema_faq_ui оплата ночей vs залог vs блокировка. NO logo NO cat.",
+      "alt": "Оплата ночей, отдельный залог и блокировка на карте — три разных способа, не путать под давлением у двери.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Код не должен становиться рычагом",
+      "visual_type": "schema_faq_ui",
+      "labels": ["оплата ночей", "залог отдельно", "перевод не блокировка"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "scene_hint": "checklist_board код когда пришлют + телефон +7 993 574-83-22 на дверной табличке. Pad TR logo.",
+      "alt": "Уточните заранее: когда пришлют код, какие условия — сначала проверка, потом перевод.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "checklist_board",
+      "labels": ["код когда пришлют", "условия заранее", "потом перевод"]
+    }
+  }
+}
