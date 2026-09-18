@@ -1,0 +1,39 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/sobaka-doplata-posutochno/#article",
+  "url": "{{SITE_BASE}}/blog/sobaka-doplata-posutochno/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/sobaka-doplata-posutochno/"
+  },
+  "headline": "«Можно с собакой» написали. При заезде — 2 500 ₽ за «крупную породу»",
+  "description": "Значок «можно с собакой» в карточке жилья не всегда означает окончательную стоимость: при заезде в Тюмени могут назвать доплату 2 500 ₽ за «крупную породу». Рассказываем, что уточнить в переписке до оплаты.",
+  "datePublished": "2026-09-18",
+  "dateModified": "2026-09-18",
+  "inLanguage": "ru-RU",
+  "author": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    },
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  }
+}
