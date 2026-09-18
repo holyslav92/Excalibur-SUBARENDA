@@ -1,0 +1,127 @@
+{
+  "topic_id": "B26",
+  "slug": "sobaka-doplata-posutochno",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "Можно с собакой — доплата у двери",
+  "cover_hook_highlight": "доплата",
+  "cover_headline_line1": "Можно с собакой",
+  "cover_headline_line2": "доплата у двери",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "Grsai 2K VIP 2 canvases. Logo cover+inline_1/3/7. Max 1 cat meme. Autumn NOT winter.",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "снять квартиру посуточно в тюмени"
+  ],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "guest labrador doorway host keys receipt tablo hook tr pad",
+    "location": "mid-september 2026 warm autumn tyumen apartment entrance yellow leaves outside no snow no winter",
+    "meme": "photoreal zero cat meme stickers people by topic only",
+    "prop_set": "labrador leash suitcase smartphone listing pet icon receipt 2500 tablo",
+    "sticker_set": "квартиры посуточно тюмень посуточно с собакой",
+    "joke": "pet friendly badge then breed surcharge at door"
+  },
+  "cover_emotion": "усталость гостя с собакой когда доплату назвали у подъезда",
+  "cover_scene": "Гость с лабрадором у подъезда; хост с ключами; телефон со значком «можно с животными»; крупный кириллический хук; pad TR.",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "scene_hint": "Гость с лабрадором у двери подъезда; хост с ключами показывает доплату 2500; телефон со значком животные; крупный хук на табло; +7 993 574-83-22 на стене; pad TR.",
+      "alt": "Гость с лабрадором у подъезда: в карточке «можно с собакой», при заселении доплата за крупную породу.",
+      "meme_caption_ru": "",
+      "role": "cover_editorial_hero",
+      "sticky": "Спросили слишком поздно"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "scene_hint": "comparison_table_ui: карточка vs чат vs чек. Pad TR logo.",
+      "alt": "Значок «можно с животными» не равен готовой цене: собака 30 кг, 2 ночи, оплачено 8 200 ₽.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Значок разрешает животное, но не объясняет цену",
+      "visual_type": "comparison_table_ui",
+      "labels": ["можно с животными", "собака 30 кг", "2 ночи", "оплачено 8 200 ₽"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "scene_hint": "infographic_card доплата 2500 не в карточке чате чеке. NO logo.",
+      "alt": "Доплата 2 500 ₽ за крупную породу появилась у двери — её не было в карточке, чате и чеке.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Значок разрешает животное, но не объясняет цену",
+      "visual_type": "infographic_card",
+      "labels": ["доплата 2 500 ₽", "не в карточке", "не в чате", "не в чеке"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "scene_hint": "workflow_diagram залог шерсть у двери. Pad TR logo.",
+      "alt": "Залог «за шерсть» отдельно от цены — назвали у двери, когда отказаться уже трудно.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Почему доплата появляется у двери",
+      "visual_type": "workflow_diagram",
+      "labels": ["залог за шерсть", "отдельно от цены", "у двери", "отказаться трудно"]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "scene_hint": "labeled_checklist порода вес до перевода. NO logo.",
+      "alt": "До оплаты спросить породу, вес и итог в рублях за свои ночи.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Почему доплата появляется у двери",
+      "visual_type": "labeled_checklist",
+      "labels": ["порода и вес", "спросить в чате", "до перевода", "итог в рублях"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "scene_hint": "comparison_table_ui ночь vs весь заезд залог уборка. NO logo.",
+      "alt": "Доплата может быть за ночь или за весь заезд; залог и уборка — отдельные строки.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "comparison_table_ui",
+      "labels": ["за ночь или всё", "залог отдельно", "уборка отдельно", "сохранить переписку"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "scene_hint": "schema_faq_ui sibling cases дети третий гость. NO logo NO cat.",
+      "alt": "Тот же порог: доплата за ребёнка, третьего гостя или «всё включено» — условие не названо до оплаты.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Почему доплата появляется у двери",
+      "visual_type": "schema_faq_ui",
+      "labels": ["дети — доплата", "третий гость", "всё включено", "цена меняется"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "scene_hint": "checklist_board сначала проверка потом перевод. Pad TR logo.",
+      "alt": "Перед оплатой: сохранить карточку и чат — сначала проверка, потом перевод.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "checklist_board",
+      "labels": ["сначала проверка", "потом перевод", "карточка и чат", "цена на пороге"]
+    }
+  }
+}

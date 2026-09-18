@@ -1,0 +1,26 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 1,
+  "model_policy": "vip_for_2k",
+  "vip_disabled": false,
+  "max_generation_attempts": 2,
+  "attempt": 1,
+  "output_canvas": "cover/canvas-quad-01.png",
+  "result_path": "cover/quad-mcp-result-01.json",
+  "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+  "preferred_image_flow": {
+    "provider": "grsai",
+    "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
+    "resolution": "2K"
+  },
+  "jobs": [{
+    "slot": "canvas_quad",
+    "tool": "grsai",
+    "mcp_args": {
+      "prompt": "WOW RU collage, airy #FFFFFF high-key, Tyumen mid-September 2026 early AUTUMN warm golden evening light, yellow leaves outside window, NO winter/snow/ice. Canvas 2048x1152 2x2 grid; white gutters. Ban: dark cinematic, WP UI, Shakin/host face, identity lock, pill phone overlay, model-drawn logo, meme cat stickers, text walls. RU Cyrillic only.\nALL panels TR pad = clean wall 8-12% ONLY for factory logo paste AFTER — ZERO drawn logo on TR.\nCover TL: tired guest with medium labrador on leash at apartment entrance; host holding keys points to printed receipt showing +2500 rub; smartphone screen shows pet-friendly badge «можно с животными»; person in scene NOT host presenter; LARGE Cyrillic hook «Можно с собакой — доплата у двери» with gold highlight word «доплата» on wall tablo; phone +7 (993) 574-83-22 painted flat on entrance info board NOT pill; small gold sticky «Спросили слишком поздно»; autumn coat no snow; TR pad empty.\nTR inline_1 CRITICAL — FULL comparison_table_ui infographic NOT empty wall: four Cyrillic rows «можно с животными» | «собака 30 кг» | «2 ночи» | «оплачено 8 200 ₽»; dense UI chips scheme; TR pad empty for factory logo.\nBL inline_2: infographic_card scheme доплата breakdown. TXT:доплата 2 500 ₽|не в карточке|не в чате|не в чеке. NO logo TR plain wall.\nBR inline_3: workflow_diagram arrows залог шерсть at door. TXT:залог за шерсть|отдельно от цены|у двери|отказаться трудно. TR pad empty for logo.",
+      "aspect_ratio": "16:9",
+      "resolution": "2K"
+    }
+  }],
+  "validation": {"prompt_chars": 1680, "max_prompt_chars": 3500, "resolution": "2K"}
+}

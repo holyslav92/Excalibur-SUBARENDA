@@ -1,0 +1,133 @@
+{
+  "status": "PASS",
+  "topic_id": "B26",
+  "slug": "mozhno-s-sobakoj-doplata-za-porodu-posutochno-tyumen",
+  "research_date": "2026-09-18",
+  "summary": "Research for guest CASE: listing badge «можно с животными» but check-in brings undisclosed 2 500 ₽ breed/size surcharge and/or hair deposit. Fresh signals: Scout dog_breed_fee hook, Dobriy Dom TG ~2026-09-15–18 on details noticed after payment, Mom.life + U-mama forum pet-fee threads. Mechanics: pet-friendly badge ≠ price; breed/weight/deposit/cleaning are separate pre-pay questions. Editorial 2 500 ₽ composite only. Anti-dup vs B02 (checkout deposit), B24 (child fee), B23 (cleaning).",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Scout Klyshin dog_breed_fee editorial hook + Dobriy Dom TG listing-mismatch posts ~2026-09-15–18 + Mom.life/U-mama pet surcharge forum threads",
+    "source_type": "community_and_platform",
+    "urls": [
+      "https://t.me/klyshin_A",
+      "https://t.me/Dobriy_dom_72",
+      "https://mom.life/post/68fb7414d53e3504dd10d5fa-vopros-k-vladelcam-sobak-kot",
+      "https://u-mama.ru/forum/family/housing/979973/"
+    ],
+    "accessed_at": "2026-09-18",
+    "note": "Composite guest case from Scout hook; not a verified transcript of one Tyumen booking. Klyshin live posts on 2026-09-18 cover other real-estate topics; hook is from topic bank angle."
+  },
+  "freshness_audit": {
+    "research_date": "2026-09-18",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://t.me/Dobriy_dom_72",
+      "published_at": "2026-09-15",
+      "note": "Local tenant channel: guests notice listing mismatches after payment — supports pre-pay pet rules/deposit fixation before key."
+    },
+    "additional_fresh_signals": [
+      {
+        "url": "https://t.me/klyshin_A",
+        "published_at": "2026-09-18",
+        "type": "scout_editorial",
+        "note": "dog_breed_fee hook from topic bank: «можно с животными» vs breed surcharge/deposit at check-in."
+      },
+      {
+        "url": "https://mom.life/post/68fb7414d53e3504dd10d5fa-vopros-k-vladelcam-sobak-kot",
+        "published_at": "community_thread",
+        "type": "community_forum",
+        "note": "Owners discuss pet surcharges 500–2000 ₽/day, 3000–5000 ₽ deposits; no universal rule."
+      },
+      {
+        "url": "https://u-mama.ru/forum/family/housing/979973/",
+        "published_at": "community_thread",
+        "type": "community_forum",
+        "note": "Host/guest debate on pet surcharge + deposit; Kazan example 1000 ₽ dog + 5000 ₽ deposit."
+      }
+    ]
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176", "225"],
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 4570,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "снять квартиру посуточно в тюмени",
+        "volume": 1404,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "посуточно с собакой",
+        "volume": 886,
+        "region": "225"
+      },
+      {
+        "phrase": "посуточно с собакой",
+        "volume": 10,
+        "region": "55+11176",
+        "note": "weak local pet cluster"
+      },
+      {
+        "phrase": "залог посуточно",
+        "volume": 2716,
+        "region": "225"
+      },
+      {
+        "phrase": "можно с животными посуточно",
+        "volume": 110,
+        "region": "225",
+        "note": "totalCount; top phrase 46"
+      }
+    ]
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "No bank/developer/JKH tariff digits; Sutochno/Avito platform policy cited as official platform context; case 2 500 ₽ is editorial scenario only",
+    "verified_claims": 3,
+    "entities_checked": ["Sutochno.ru", "Avito Host"],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "memory/blog/articles/B26-sobaka-doplata-posutochno/derouter-opus-stamp-research.json",
+    "first_attempt": "RETRY_PASS",
+    "note": "First Derouter call returned meta BLOCKER text; second call with explicit output instruction succeeded."
+  },
+  "source_count": 21,
+  "limitations": [
+    "No verified transcript of a specific Tyumen booking; case mechanic from Scout editorial dog_breed_fee hook.",
+    "Live Klyshin channel posts on 2026-09-18 do not cover this pet-fee hook — hook is from topic bank angle.",
+    "Tyumen Wordstat for «посуточно с собакой» is 10 — topic is editorial guest pain, not mass local search cluster.",
+    "Pet&Rent 500–3000 ₽/day, Mom.life and U-mama figures are illustration only, not Tyumen norms.",
+    "Omsk Sibdom listing (300/500 ₽) is single-object example from another city.",
+    "Dobriy Dom TG fresh posts support pre-pay detail fixation, not a verified pet-fee incident.",
+    "Direct booking via messenger may bypass aggregator price-calculation rules cited from Sutochno/Avito."
+  ],
+  "writer_safe_urls": [
+    "https://t.me/Dobriy_dom_72",
+    "https://t.me/Dobriy_dom_Tyumen",
+    "https://max.ru/id660300569233_biz",
+    "https://добрыйдом-72.рф/",
+    "https://добрыйдом-72.рф/booking/",
+    "https://добрыйдом-72.рф/blog/",
+    "https://sutochno.ru/blog/rules",
+    "https://sutochno.ru/sj/iz-chego-skladivaetsya-stoimost-bronirovaniya",
+    "https://host.avito.com/course/lesson-3",
+    "https://mom.life/post/68fb7414d53e3504dd10d5fa-vopros-k-vladelcam-sobak-kot",
+    "https://u-mama.ru/forum/family/housing/979973/",
+    "https://dzen.ru/a/ak33R8DdYlsmEEWo"
+  ],
+  "errors": []
+}
