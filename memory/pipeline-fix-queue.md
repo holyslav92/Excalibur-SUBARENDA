@@ -1783,7 +1783,7 @@ files_changed:
 checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_wp_categories.py`
 - `python3 -m unittest tests.test_wp_categories_interlink.WpCategoriesInterlinkTests.test_wp_categories_normalize_posutochno_handoff_alias -v`
-commit: pending
+commit: 350558c
 
 ## INC-20260918-0728 — wp_category inference missed pet/sovet angles (B26 publish)
 
@@ -1828,9 +1828,9 @@ files_changed:
 checks_run:
 - `python3 -m unittest tests.test_wp_categories_interlink.WpCategoriesInterlinkTests.test_wp_categories_infer_sovety_zhkh_from_pet_fee_brief -v`
 - B26 `resolve_category_slugs()` → posutochnaya-arenda, sovety-gostyam, zhkh-i-doplaty
-commit: pending
+commit: 350558c
 
-## INC-20260918-0727 — Metrika credentials missing (Content-learner B26)
+## INC-20260918-0730 — Metrika credentials missing (Content-learner B26)
 
 status: needs-human
 run_date: 2026-09-18
