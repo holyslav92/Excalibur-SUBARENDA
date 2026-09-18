@@ -3,6 +3,10 @@
   "h1": "Написали «без залога». Перед кодом просят 5 000 ₽ на карту",
   "slug": "bez-zaloga-pered-kodom-5000-na-kartu",
   "topic_id": "B27",
+  "wp_category_slugs": [
+    "posutochnaya-arenda",
+    "zalog-i-vyiezd"
+  ],
   "author_id": "dobry-dom",
   "article_mode": "B",
   "description": "Написали «без залога». Перед кодом просят 5 000 ₽ на карту",

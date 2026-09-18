@@ -1,0 +1,27 @@
+{
+  "slug": "bez-zaloga-pered-kodom-5000-na-kartu",
+  "topic_id": "B27",
+  "permalink": "{{SITE_BASE}}/blog/bez-zaloga-pered-kodom-5000-na-kartu/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B27-bez-zaloga-pered-kodom-5000-na-kartu/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1264265,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4929 slug=bez-zaloga-pered-kodom-5000-na-kartu\nOK categories=101,102\nOK dzen_yzen_meta=1\nOK featured_image=4930\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4931 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/bez-zaloga-pered-kodom-5000-na-kartu-inline-01.png\nOK inline_alt=4931\nOK inline_caption=4931\nOK inline_description=4931\nOK inline_image_upload=4932 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/bez-zaloga-pered-kodom-5000-na-kartu-inline-03.png\nOK inline_alt=4932\nOK inline_caption=4932\nOK inline_description=4932\nOK inline_image_upload=4933 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/bez-zaloga-pered-kodom-5000-na-kartu-inline-02.png\nOK inline_alt=4933\nOK inline_caption=4933\nOK inline_description=4933\nOK inline_image_upload=4934 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/09/bez-zaloga-pered-kodom-5000-na-kartu-inline-06.png\nOK inline_alt=4934\nOK inline_caption=4934\nOK inline_description=4934\nOK inline_image_upload=4935 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/09/bez-zaloga-pered-kodom-5000-na-kartu-inline-05.png\nOK inline_alt=4935\nOK inline_caption=4935\nOK inline_description=4935\nOK inline_image_upload=4936 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/09/bez-zaloga-pered-kodom-5000-na-kartu-inline-04.png\nOK inline_alt=4936\nOK inline_caption=4936\nOK inline_description=4936\nOK inline_image_upload=4937 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/09/bez-zaloga-pered-kodom-5000-na-kartu-inline-07.png\nOK inline_alt=4937\nOK inline_caption=4937\nOK inline_description=4937\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/bez-zaloga-pered-kodom-5000-na-kartu/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/bez-zaloga-pered-kodom-5000-na-kartu/",
+    "errors": []
+  }
+}

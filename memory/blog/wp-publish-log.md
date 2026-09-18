@@ -1,5 +1,24 @@
 # WP publish log
 
+## B27 — 2026-09-18
+
+- **topic_id:** B27
+- **slug:** bez-zaloga-pered-kodom-5000-na-kartu
+- **title:** Написали «без залога». Перед кодом просят 5 000 ₽ на карту
+- **post_id:** 4929
+- **permalink:** /blog/bez-zaloga-pered-kodom-5000-na-kartu/
+- **categories:** posutochnaya-arenda (101), zalog-i-vyiezd (102)
+- **featured_image:** 4930
+- **inline_images:** 4931–4937 (7× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS
+- **dzen preview:** dzen_yzen_meta=1; cover-1024x576.png HTTP 200 (885365 bytes); feed enclosure → full cover.png
+- **interlink outbound:** 4 live /blog/ siblings (crosslink-qa PASS, HTTP 200)
+- **interlink inbound:** B01 (3745)
+- **publish_method:** sftp:22 (Cloud Agent; FTP PASV blocked)
+- **llms_deploy:** PASS (llms.txt + llms-full.txt)
+- **preflight fix:** wp_category_slugs added; gates generated; theme_contract_deploy skipped (functions.php bounds not found — already patched on live)
+
 ## B26 — 2026-09-18
 
 - **topic_id:** B26

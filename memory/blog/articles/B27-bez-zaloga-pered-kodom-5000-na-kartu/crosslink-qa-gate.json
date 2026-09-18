@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "https://добрыйдом-72.рф/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/",
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "anchor": "о залоге после проживания. Бывает тишина после предоплаты на личную карту — там человек вообще перестаёт отвечать в чате:",
+      "catalog_title": "Снял квартиру посуточно. Залог не вернули — нашли скол на плите",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate/",
+      "slug": "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+      "anchor": "история про предоплату и молчание. Иногда код есть, но подъезд не открывается:",
+      "catalog_title": "Перевели 3 000 ₽ предоплатой. К вечеру — тишина в чате",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda/",
+      "slug": "kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda",
+      "anchor": "домофон молчит, хотя код прислали. А иногда дополнительный шаг появляется уже после оплаты и задерживает доступ:",
+      "catalog_title": "Код уже есть. Только в подъезд не попасть — 20 минут с чемоданом",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/posutochno-tyumen-foto-pasporta-v-chat-kod-ne-prislali/",
+      "slug": "posutochno-tyumen-foto-pasporta-v-chat-kod-ne-prislali",
+      "anchor": "код придерживают после нового требования.Здесь ситуация уже: «без залога» в карточке против перевода перед кодом. И это надо решать не эмоцией у двери, а заранее зафиксированными условиями.Мой вывод как практикаНет. Так не заселяем. Условия должны появляться до оплаты: стоимость ночей, отдельный депозит, способ его передачи, срок возврата и момент отправки кода. Не потому, что все друг другу обязаны доверять на слово. А потому, что ясные правила защищают обе стороны.Сначала проверка, потом перевод. Не наоборот. Спросить занимает несколько минут. Перевести деньги под давлением — несколько секунд. Но вернуть контроль над ситуацией после такого перевода гораздо сложнее.До оплаты уточните: есть ли отдельный залог, сколько он составляет и когда возвращается.Спросите письменно, когда придёт код: до депозита или после него.Сохраните карточку объекта со значком «без залога» и всю переписку.Разделяйте оплату проживания и страховой депозит: это разные деньги.Не соглашайтесь на внезапный перевод третьему лицу только потому, что вы уже у подъезда.Если бронируете через площадку, проверяйте итоговую стоимость и условия именно в оформленной брони.Если договариваетесь напрямую, получите все условия в чате до отправки денег.«Добрый дом» — посуточные квартиры в Тюмени.\nУсловия, порядок заселения и возможный депозит обсуждаем до оплаты:",
+      "catalog_title": "Оплатили 3 ночи. Фото паспорта в чат — код не пришёл, багаж у двери",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "outbound_unique_slugs": [
+    "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+    "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+    "kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda",
+    "posutochno-tyumen-foto-pasporta-v-chat-kod-ne-prislali"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B27-bez-zaloga-pered-kodom-5000-na-kartu",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}

@@ -35,3 +35,4 @@ lessons, benchmarks, QA reports или соседние research-notes как о
 | B24 | mozhno-s-detmi-doplata-za-rebenka | «Можно с детьми» в карточке. При заезде: 1 500 ₽ за 2 ночи, 6-летнему | published |
 | B25 | dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras | На фото две кровати. Ночью троих — диван и складной матрас | published |
 | B26 | sobaka-doplata-posutochno | «Можно с собакой» написали. При заезде — 2 500 ₽ за «крупную породу» | published |
+| B27 | bez-zaloga-pered-kodom-5000-na-kartu | Написали «без залога». Перед кодом просят 5 000 ₽ на карту | published |
