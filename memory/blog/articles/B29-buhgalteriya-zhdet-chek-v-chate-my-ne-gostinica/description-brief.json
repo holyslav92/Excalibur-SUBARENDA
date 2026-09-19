@@ -1,0 +1,10 @@
+{
+  "topic_id": "B29",
+  "description": "Перевод ушёл, а для авансового отчёта — тишина: хозяин внезапно «не гостиница». В Тюмени чек «Мой налог» лучше просить до оплаты, пока чат ещё не стал стеной.",
+  "rhythm": "klyshin_case_hook",
+  "geo": "Тюмень",
+  "author_brand": "Добрый дом",
+  "not_equal_title": true,
+  "not_truncated_lead": true,
+  "verdict": "PASS"
+}
