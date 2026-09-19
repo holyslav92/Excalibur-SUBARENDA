@@ -1,0 +1,70 @@
+{
+  "agent": "excalibur-blog-cover-qa",
+  "status": "FAIL",
+  "checked_at": "2026-09-19",
+  "topic_id": "B28",
+  "checks": {
+    "eight_png_exist": true,
+    "quad_manifest_valid": true,
+    "wordstat_stickers_1_3": true,
+    "motif_no_collision_14d": true,
+    "max_one_cat_meme_slot": true,
+    "light_high_key": true,
+    "logo_composite_stamp_pass": true,
+    "cover_logo_pasted": true,
+    "inline_no_logo_on_inlines": false,
+    "forbid_phone_on_cover_image": true,
+    "forbid_922_phone": true,
+    "forbid_ai_drawn_logo_cover": false,
+    "forbid_wordpress_ui_in_art": true,
+    "no_logo_plate_cover": true,
+    "forbid_graphic_collage_overlay": true,
+    "forbid_poster_composite_stamp": true,
+    "forbid_logo_reference_in_batch": true,
+    "forbid_overlapping_text_blocks": true,
+    "forbid_giant_cropped_glyph": true,
+    "cyrillic_hook_on_cover": true,
+    "phone_in_scene_cover": true,
+    "logo_count_cover_and_inlines": true,
+    "no_double_logos": true,
+    "season_matches_manifest": true,
+    "inline_utility_all_seven": true
+  },
+  "failures": [
+    "forbid_ai_drawn_logo_cover: validate_article_logo_gates_slim FAIL — inline-02 score=0.56, inline-05 score=0.4533, inline-06 score=0.7988 on no-logo panels",
+    "inline-04 TR ghost multicolor bar after pad-clear on no-logo panel",
+    "inline-06 TR ghost «другой пакет» watermark after pad-clear on no-logo panel"
+  ],
+  "visual_review": {
+    "cover": "PASS — high-key autumn interior, hook «Чек и справка / мы не гостиница» on tent card, factory logo TR, no phone on image",
+    "inline_01": "PASS — comparison_table_ui 3-Г vs договор+чек; factory logo TR",
+    "inline_02": "PASS visual — workflow_diagram бухгалтер→не гостиница; TR clean post pad-clear; heuristic score 0.56",
+    "inline_03": "PASS — infographic_card справку и чек?; factory logo TR",
+    "inline_04": "FAIL — labeled_checklist slot shows cover-hook duplicate; TR ghost logo bar after pad-clear",
+    "inline_05": "PASS visual — comparison table; TR clean; heuristic score 0.4533",
+    "inline_06": "FAIL — schema_faq_ui flowchart OK but TR ghost «другой пакет» after pad-clear (score 0.7988)",
+    "inline_07": "PASS — checklist_board on fridge; factory logo TR",
+    "logo_count": "cover 1 factory TR; inline-01/03/07 factory paste; inline-02/04/05/06 no factory logo",
+    "cat_meme_quota": "zero cat; zero meme stickers"
+  },
+  "regen_log": [
+    "pad-clear inline-02/04/05/06 — drawn logo gate still FAIL; inline-04/06 TR ghost artifacts worsened"
+  ],
+  "recovery": {
+    "action": "regen canvas-quad-02 (inline_4–7) with stronger NO-logo prompts; review inline_2 on canvas-quad-01 if heuristic persists",
+    "scripts": [
+      "python3 scripts/excalibur_blog_cover_inline_pad_clear.py --article-dir memory/blog/articles/B28-spravka-dlya-buhgalterii-posutochno",
+      "python3 scripts/excalibur_blog_drawn_logo_gate.py --article-dir memory/blog/articles/B28-spravka-dlya-buhgalterii-posutochno"
+    ]
+  },
+  "artifacts": {
+    "cover": "cover/cover.png",
+    "inline_01": "cover/inline-01.png",
+    "inline_02": "cover/inline-02.png",
+    "inline_03": "cover/inline-03.png",
+    "inline_04": "cover/inline-04.png",
+    "inline_05": "cover/inline-05.png",
+    "inline_06": "cover/inline-06.png",
+    "inline_07": "cover/inline-07.png"
+  }
+}
