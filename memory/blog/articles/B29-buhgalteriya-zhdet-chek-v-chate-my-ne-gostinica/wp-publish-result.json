@@ -1,0 +1,27 @@
+{
+  "slug": "buhgalteriya-zhdet-chek-v-chate-my-ne-gostinica",
+  "topic_id": "B29",
+  "permalink": "{{SITE_BASE}}/blog/buhgalteriya-zhdet-chek-v-chate-my-ne-gostinica/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B29-buhgalteriya-zhdet-chek-v-chate-my-ne-gostinica/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1113301,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4973 slug=buhgalteriya-zhdet-chek-v-chate-my-ne-gostinica\nOK categories=101,103,102\nOK dzen_yzen_meta=1\nOK featured_image=4974\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4975 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/buhgalteriya-zhdet-chek-v-chate-my-ne-gostinica-inline-01.png\nOK inline_alt=4975\nOK inline_caption=4975\nOK inline_description=4975\nOK inline_image_upload=4976 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/buhgalteriya-zhdet-chek-v-chate-my-ne-gostinica-inline-02.png\nOK inline_alt=4976\nOK inline_caption=4976\nOK inline_description=4976\nOK inline_image_upload=4977 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/buhgalteriya-zhdet-chek-v-chate-my-ne-gostinica-inline-03.png\nOK inline_alt=4977\nOK inline_caption=4977\nOK inline_description=4977\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/buhgalteriya-zhdet-chek-v-chate-my-ne-gostinica/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 3,
+    "expected_inline": 3,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/buhgalteriya-zhdet-chek-v-chate-my-ne-gostinica/",
+    "errors": []
+  }
+}

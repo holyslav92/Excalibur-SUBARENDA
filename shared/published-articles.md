@@ -33,3 +33,4 @@ Excalibur-2-Cloud — не копировать URL tymenrieltor.ru.
 | 2026-09-18 | B26 | sobaka-doplata-posutochno | /blog/sobaka-doplata-posutochno/ | published |
 | 2026-09-18 | B27 | kvartira-posutochno-v-tyumeni-otoplenie-est-batarei-holodnye | /blog/kvartira-posutochno-v-tyumeni-otoplenie-est-batarei-holodnye/ | published |
 | 2026-09-19 | B28 | posutochno-tyumen-stiralnaya-v-kartochke-i-zalog | /blog/posutochno-tyumen-stiralnaya-v-kartochke-i-zalog/ | published |
+| 2026-09-19 | B29 | buhgalteriya-zhdet-chek-v-chate-my-ne-gostinica | /blog/buhgalteriya-zhdet-chek-v-chate-my-ne-gostinica/ | published |

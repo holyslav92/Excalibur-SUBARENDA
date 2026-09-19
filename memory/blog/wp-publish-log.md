@@ -1,5 +1,23 @@
 # WP publish log
 
+## B29 — 2026-09-19
+
+- **topic_id:** B29
+- **slug:** buhgalteriya-zhdet-chek-v-chate-my-ne-gostinica
+- **title:** Оплатили 2 ночи. Бухгалтерия просит чек — «мы не гостиница»
+- **post_id:** 4973
+- **permalink:** /blog/buhgalteriya-zhdet-chek-v-chate-my-ne-gostinica/
+- **categories:** posutochnaya-arenda (101), dogovor-i-pravila (103), zalog-i-vyiezd (102)
+- **featured_image:** 4974
+- **inline_images:** 4975–4977 (3× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS
+- **dzen preview:** dzen_yzen_meta=1; uploaded cover-dzen-v3 + cover-dzen-v3-1024x576.png; feed enclosure → …-cover-dzen-v3.png
+- **interlink outbound:** 4 live /blog/ siblings (crosslink-qa PASS; wifi slug → zaselilsya-v-22-00-v-10-00-sozvon-wi-fi-ne-vyderzhal)
+- **interlink inbound:** B01 (3745)
+- **publish_method:** sftp:22 (Cloud Agent)
+- **preflight:** schema (Derouter) + wp_category_slugs; theme_contract_deploy skipped (functions.php bounds not found — live already patched)
+
 ## B28 — 2026-09-19
 
 - **topic_id:** B28
