@@ -1,0 +1,48 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/spravka-dlya-buhgalterii-posutochno-tyumen/#article",
+  "url": "{{SITE_BASE}}/blog/spravka-dlya-buhgalterii-posutochno-tyumen/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/spravka-dlya-buhgalterii-posutochno-tyumen/"
+  },
+  "headline": "Бухгалтер: чек и справка до оплаты. 2 ночи — в чате «мы не гостиница»",
+  "description": "Бухгалтерия просит справку о проживании и чек до оплаты командировки в Тюмени, а хост отвечает: «мы не гостиница». Разбираем, какой пакет документов нужен для найма квартиры на две ночи и что запросить до перевода аванса.",
+  "datePublished": "2026-09-19",
+  "dateModified": "2026-09-19",
+  "inLanguage": "ru-RU",
+  "author": {
+    "@type": "Organization",
+    "@id": "{{SITE_BASE}}/#organization",
+    "name": "Добрый дом",
+    "jobTitle": "Апартаменты и квартиры посуточно в Тюмени",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ],
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "{{SITE_BASE}}/#organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ],
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    }
+  }
+}
