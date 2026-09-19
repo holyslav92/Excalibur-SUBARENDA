@@ -1,0 +1,14 @@
+{
+  "category_ids": [
+    101,
+    103,
+    102
+  ],
+  "category_slugs": [
+    "posutochnaya-arenda",
+    "dogovor-i-pravila",
+    "zalog-i-vyiezd"
+  ],
+  "errors": [],
+  "status": "PASS"
+}

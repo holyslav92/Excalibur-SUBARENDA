@@ -3,6 +3,10 @@
   "h1": "Оплатили 2 ночи. Бухгалтерия просит чек — «мы не гостиница»",
   "slug": "buhgalteriya-zhdet-chek-v-chate-my-ne-gostinica",
   "topic_id": "B29",
+  "wp_category_slugs": [
+    "posutochnaya-arenda",
+    "dogovor-i-pravila"
+  ],
   "author_id": "dobry-dom",
   "article_mode": "B",
   "description": "Оплатили 2 ночи. Бухгалтерия просит чек — «мы не гостиница»",

@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "topic_id": "B29",
+  "slug": "buhgalteriya-zhdet-chek-v-chate-my-ne-gostinica",
+  "candidates_count": 32,
+  "outbound_found": [
+    {
+      "slug": "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+      "title": "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate"
+    },
+    {
+      "slug": "otmenili-rejs-predoplatu-vernut",
+      "title": "otmenili-rejs-predoplatu-vernut"
+    },
+    {
+      "slug": "posutochno-tyumen-foto-pasporta-v-chat-kod-ne-prislali",
+      "title": "posutochno-tyumen-foto-pasporta-v-chat-kod-ne-prislali"
+    }
+  ],
+  "outbound_unique_slugs": [
+    "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+    "posutochno-tyumen-foto-pasporta-v-chat-kod-ne-prislali",
+    "zaselilsya-v-22-00-v-10-00-sozvon-wi-fi-ne-vyderzhal",
+    "otmenili-rejs-predoplatu-vernut"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "warnings": [],
+  "errors": []
+}
