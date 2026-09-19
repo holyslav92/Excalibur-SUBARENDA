@@ -1819,3 +1819,138 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+---
+
+## LESSON-20260919-1032-B28-hotel-form-vs-lease-package
+status: proposed
+topic_id: B28
+category: utility
+confidence: low
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP. Урок из publish-артефактов: title-brief.json angle, description-brief.json, case-delivery-gate PASS, article.html, scout hook `business_trip_receipt`, research-context angle.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest BLOCKER (INC-20260903-0640).
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Two-beat H1 «Бухгалтер: чек и справка до оплаты. 2 ночи — в чате «мы не гостиница»»: бухгалтерия до клика → цитата хоста как угроза отчёту, не how-to.
+- §1: бухгалтер пишет раньше брони; **2 ночи** командировка; цитата «Мы не гостиница» читается как отказ; editorial frame — найм ≠ гостиница, пакет другой.
+- Центральный конфликт **FORMAT mismatch** (гостиничная справка/3‑Г vs договор найма + чек/«Мой налог»/платёжка), не Wi‑Fi/стол (B15), не залог (B02), не отмена рейса (B16).
+- H2 «Мы не гостиница — это другой пакет»: ПП РФ №1853 п.26 (гостиница) vs связка договор + документ об оплате; **ПП РФ №501 с 01.09.2025** — отдельные правила найма и гостиницы.
+- Самозанятый: договор недостаточен без чека «Мой налог» с адресом и датами; скрин перевода ≠ пакет.
+- Klyshin «Нет. Так не заселяем.» → не брать деньги, пока гость не понимает пакет; вопрос-отмычка «Справку и чек дадите до оплаты — в каком виде?» → TG/MAX mid-body.
+- Interlink: B08 предоплата до ответа, B11 «всё для гостей», B16 отмена рейса — линия «сначала ясность, потом деньги».
+- Wordstat P0 spine «квартиры посуточно тюмень» 4495 (Tyumen); supporting «командировка тюмень» 114 (225) — узкий угол на документы, не binary skip.
+- Description не дублирует H1: ««А если чек потом не примут?»» + найм vs гостиничная справка (description-brief PASS).
+- Cover-text: «Чек и справка — мы не гостиница» + sticky «Сначала проверка»; inline stickers «договор найма», «чек мой налог», «три дня на отчёт».
+
+### Change
+- В `business_trip_receipt` кейсах в §1 сразу фиксировать **три слоя**: (1) бухгалтерия до оплаты, (2) гостиничное ожидание гостя vs честная фраза хоста, (3) конкретный пакет (статус ООО/ИП/самозанятый) — не откладывать ПП №501 только во второй H2.
+- Scout handoff: при hook `business_trip_receipt` логировать original Klyshin «Командировка… справка — “мы не гостиница”» + final P0 spine Tyumen + **anti-dup B15** (desk/Wi‑Fi — отдельный hook).
+
+### Never again
+- Строить командировочный кейс как сравнение «квартира vs отель» или how-to «как оформить авансовый отчёт».
+- Смешивать B15 (стол/Wi‑Fi/созвон) и B28 (закрывающие / форма документов) — разные hook_id.
+- Принимать «отчётные документы» в карточке за гостиничную справку без уточнения статуса арендодателя.
+- Считать «мы не гостиница» финальным отказом без расшифровки пакета найма.
+- Выдуманные суммы аренды без editorial disclaimer.
+
+### Proposed apply
+- Scout: hook `business_trip_receipt` → handoff lockpick (статус + договор + формат чека + PDF образцы до перевода) + final P0 spine Tyumen + anti-dup B15.
+- Review only; Writer prompt не трогать автоматически.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260919-1032-B28-three-day-advance-report-leverage
+status: proposed
+topic_id: B28
+category: structure
+confidence: low
+
+### Evidence
+- artifact: title-brief.json#angle
+  finding: angle «До оплаты гость просит чек и справку, но ответ хозяина ставит авансовый отчёт под угрозу»; opening-meta-gate PASS; figure **3 рабочих дня** на авансовый отчёт в utility H2.
+- metrika_signal: none (credentials unavailable; causal retention не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Слой «короткая командировка 2 ночи + жёсткий срок отчёта» — цена ошибки = невозмещённый расход, не только «неудобно».
+- Блок «три дня — слишком короткий запас искать хоста после поездки» — temporal leverage **до** оплаты, не post-mortem how-to.
+- Чеклист «Мой вывод как практика»: статус, договор, формат чека, акт, PDF бухгалтеру, запрет «на карту потом разберёмся».
+- Host-answer template: «самозанятый → договор сейчас, чек Мой налог после оплаты» vs плохие «потом решим».
+- Связка money-timing через interlink B08/B16 — не дублировать B02 залог.
+
+### Change
+- Для `business_trip_receipt` hooks всегда включать **advance-report deadline** (3 рабочих дня) в utility-блок вместе с «документы до оплаты» — не только формат справки.
+- При interlink — sibling про card promises (B11 amenities, B05 rating) одной линией «текст карточки ≠ пакет под ваши даты».
+
+### Never again
+- Писать документный кейс только про «справку», игнорируя срок авансового отчёта и момент отправки PDF бухгалтеру **до** перевода.
+- Финал «Наш вывод простой» вместо «Мой вывод как практика».
+
+### Proposed apply
+- Writer checklist (review-only): business_trip_receipt → deadline + PDF-before-payment в одном материале.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260919-1032-B28-title-accountant-before-chat-reveal
+status: proposed
+topic_id: B28
+category: voice
+confidence: low
+
+### Evidence
+- artifact: title-brief.json / title-user-prompt.md
+  finding: scout draft «Нужна справка для бухгалтерии. В чате: «мы не гостиница»» → финальный H1 «Бухгалтер: чек и справка до оплаты. 2 ночи — в чате «мы не гостиница»»; klyshin_title_shape:3; figure **2 ночи**.
+- metrika_signal: none (credentials unavailable; causal CTR не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Cable pain-scene: роль «Бухгалтер» + требование **до оплаты** + figure «2 ночи» + quoted host line «мы не гостиница», без SEO-хвоста «справка для бухгалтерии посуточно».
+- Description rhythm klyshin_case_hook: ««А если чек потом не примут?»» (not_equal_title PASS).
+- Cover-text two-beat «Чек и справка — мы не гостиница» + sticky «Сначала проверка» — контраст без полного дубля H1.
+- Figure «2 ночи» и «три дня на отчёт» — в §1/stickers, не HH:MM; opening-meta-gate PASS.
+
+### Change
+- Для `business_trip_receipt` hooks: prefer **stakeholder beat (бухгалтер) + timing beat (до оплаты) + figure (ночи) + chat quote reveal** over narrow «справка посуточно» SEO lead.
+- Title: «Бухгалтер: … до оплаты» > generic «нужна справка» без агента, требующего документы.
+
+### Never again
+- H1-спойлер со всей юридической схемой ПП №501 — оставлять в utility H2 и чеклисте.
+- HH:MM в H1 (gate BLOCK).
+- Description, дублирующий H1 про «мы не гостиница» без контраста «а если чек не примут?».
+
+### Proposed apply
+- Title/Description review: business_trip_receipt — accountant + before-payment + nights figure + chat quote > document-keyword H1.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
