@@ -286,10 +286,6 @@
   "html_inject": [
     "skip inline_1: already correct under H2 — Галочка обещает предмет. Гость читает в ней возможность",
     "skip inline_2: already correct under H2 — Почему прачечная вдруг стоит 1 100 ₽",
-    "skip inline_3: already correct under H2 — Один вопрос до перевода",
-    "skip inline_4: already correct under H2 — Галочка обещает предмет. Гость читает в ней возможность",
-    "skip inline_5: already correct under H2 — Почему прачечная вдруг стоит 1 100 ₽",
-    "skip inline_6: already correct under H2 — Один вопрос до перевода",
-    "skip inline_7: already correct under H2 — Мой вывод как практика"
+    "skip inline_3: already correct under H2 — Один вопрос до перевода"
   ]
 }
