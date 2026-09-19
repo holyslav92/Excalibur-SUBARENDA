@@ -1,0 +1,126 @@
+{
+  "topic_id": "B28",
+  "slug": "posutochno-tyumen-stiralnaya-v-kartochke-i-zalog",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "«Стиральная есть» — мокрое бельё",
+  "cover_hook_highlight": "мокрое",
+  "cover_headline_line1": "«Стиральная есть»",
+  "cover_headline_line2": "мокрое бельё",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "снять квартиру посуточно в тюмени"
+  ],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "guest kneeling at washer drum water error tablo hook tr pad",
+    "location": "mid-september 2026 autumn tyumen bathroom golden evening yellow leaves window no snow no winter",
+    "meme": "photoreal zero cat meme stickers people by topic only",
+    "prop_set": "washer drum water smartphone filter checkbox laundromat receipt 1100 wet laundry tablo",
+    "sticker_set": "квартиры посуточно тюмень стиральная машина посуточно",
+    "joke": "filter checkbox wet laundry third night host says machine stands there"
+  },
+  "cover_emotion": "усталость гостини на третью ночь с мокрым бельём у стиралки",
+  "cover_scene": "Гостья на коленях у барабана с водой и ошибкой на дисплее; телефон с галочкой «стиральная»; крупный хук; pad TR.",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "scene_hint": "Гостья на коленях у стиралки: вода в барабане, ошибка на дисплее, мокрое бельё; смартфон с галочкой «стиральная машина»; крупный хук «Стиральная есть — мокрое бельё» с выделением «мокрое» на табло; +7 993 574-83-22 на инфодоске в сцене; золотой стикер «А бельё не высохло»; осенний свет за окном без снега; pad TR.",
+      "alt": "В фильтре была стиральная, а к третьей ночи бельё осталось мокрым в барабане с ошибкой на дисплее.",
+      "meme_caption_ru": "",
+      "role": "cover_editorial_hero",
+      "sticky": "А бельё не высохло"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "scene_hint": "comparison_table_ui: третья ночь vs вода в барабане vs ошибка vs бельё мокрое. Pad TR logo.",
+      "alt": "Третья ночь: вода в барабане, ошибка на дисплее — бельё осталось мокрым.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Галочка обещает предмет. Гость читает в ней возможность",
+      "visual_type": "comparison_table_ui",
+      "labels": ["Третья ночь", "Вода в барабане", "Ошибка на дисплее", "Бельё мокрое"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "scene_hint": "infographic_card: две загрузки гель сушка 1100 утром выезд. NO logo.",
+      "alt": "Две загрузки, гель, сушка — 1 100 ₽ вместо кофе перед выездом.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Почему прачечная вдруг стоит 1 100 ₽",
+      "visual_type": "infographic_card",
+      "labels": ["Две загрузки", "Гель и сушка", "Счёт 1100 ₽", "Утром выезд"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "scene_hint": "workflow_diagram: спросите до оплаты полный цикл слив отжим чек. Pad TR logo.",
+      "alt": "До оплаты спросить про полный цикл, слив, отжим и сохранить чек.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Один вопрос до перевода",
+      "visual_type": "workflow_diagram",
+      "labels": ["Спросите до оплаты", "Полный цикл стирки", "Слив и отжим", "Чек сохраните"]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "scene_hint": "labeled_checklist: галочка vs цикл vs сухое бельё vs 10500 три ночи. NO logo.",
+      "alt": "Галочка в фильтре не равна завершённому циклу и сухому белью за 10 500 ₽ за три ночи.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Галочка обещает предмет. Гость читает в ней возможность",
+      "visual_type": "labeled_checklist",
+      "labels": ["Галочка в фильтре", "Не цикл", "Сухое бельё", "10 500 ₽ три ночи"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "scene_hint": "comparison_table_ui: стирка 350 сушка 150 vs самообслуживание 650-1250. NO logo.",
+      "alt": "Прачечная полного цикла ~600 ₽, самообслуживание срочно — коридор 650–1 250 ₽.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Почему прачечная вдруг стоит 1 100 ₽",
+      "visual_type": "comparison_table_ui",
+      "labels": ["Стирка ~350 ₽", "Сушка ~150 ₽", "Самообслуживание", "650–1250 ₽"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "scene_hint": "schema_faq_ui: вопросы рабочая ли когда проверяли слив отжим. NO logo NO cat.",
+      "alt": "Спросить: стиральная рабочая, когда проверяли, слив и отжим, что если встанет.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Один вопрос до перевода",
+      "visual_type": "schema_faq_ui",
+      "labels": ["Рабочая ли", "Когда проверяли", "Слив и отжим", "Если встанет"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "scene_hint": "checklist_board: фото ошибки мокрое бельё переписка чек прачечной. Pad TR logo.",
+      "alt": "Сохранить фото ошибки, мокрого белья, переписку и чек прачечной — сначала проверка.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "checklist_board",
+      "labels": ["Фото ошибки", "Мокрое бельё", "Переписка", "Чек прачечной", "Сначала проверка"]
+    }
+  }
+}
