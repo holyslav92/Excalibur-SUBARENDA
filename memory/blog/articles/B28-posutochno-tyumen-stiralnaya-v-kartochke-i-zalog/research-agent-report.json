@@ -1,0 +1,116 @@
+{
+  "status": "PASS",
+  "topic_id": "B28",
+  "slug": "posutochno-tyumen-stiralnaya-v-kartochke-i-zalog",
+  "research_date": "2026-09-19",
+  "summary": "Research for guest CASE: listing «стиральная машина» checkbox but washer fails by night 3, wet laundry, Tyumen self-service laundromat spend ~1100 ₽ editorial. Fresh signals: @Dobriy_dom_72 week 13–19 Sep 2026 listing-vs-fact + equipment check posts; Tyumen autumn event forwards 18–19 Sep. Wordstat P0 «квартиры посуточно тюмень» 4423. Official laundromat tariffs Big Wash + tyumen1. Anti-dup vs B11 towels, B07 kitchen, B02 zalog plate.",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Scout washer_amenity_lie hook + @Dobriy_dom_72 community posts week of 2026-09-13–19 on listing mismatch and pre-check-in equipment",
+    "source_type": "community",
+    "urls": [
+      "https://t.me/s/Dobriy_dom_72",
+      "https://rybinsk.sutochno.ru/1671953"
+    ],
+    "accessed_at": "2026-09-19",
+    "note": "Composite Tyumen guest case from Scout; Dobriy TG supports amenity-check mechanic, not verified washer failure transcript."
+  },
+  "freshness_audit": {
+    "research_date": "2026-09-19",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://t.me/s/Dobriy_dom_72",
+      "published_at": "2026-09-19",
+      "note": "Channel posts this week: listing description vs fact; check appliances before guest; forwarded Tyumen events 18–20 Sep."
+    },
+    "additional_fresh_signals": [
+      {
+        "url": "https://t.me/s/Dobriy_dom_72",
+        "published_at": "2026-09-18",
+        "type": "tenant_channel",
+        "note": "Forwarded «Тюменская осень» 18–20 Sep and «Гадкий утёнок» 18 Sep — fresh channel activity."
+      }
+    ]
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176", "225"],
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 4423,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "снять квартиру посуточно в тюмени",
+        "volume": 1311,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "квартиры посуточно",
+        "volume": 961910,
+        "region": "225"
+      },
+      {
+        "phrase": "залог посуточно",
+        "volume": 2698,
+        "region": "225"
+      },
+      {
+        "phrase": "аренда квартиры стиральная машина",
+        "volume": 99,
+        "region": "225"
+      },
+      {
+        "phrase": "стиральная машина посуточно",
+        "volume": 55,
+        "region": "225",
+        "note": "totalCount only — WORDSTAT PARTIAL"
+      }
+    ]
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": true,
+    "scope": "Tyumen laundromat official tariffs (Big Wash, tyumen1); ZPP arts 4/10/29 via Consultant; no bank/developer tariff digits",
+    "verified_claims": 3,
+    "entities_checked": ["big_wash_tyumen", "tyumen1_laundry", "ZPP_LAW_2300"],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "memory/blog/articles/B28-posutochno-tyumen-stiralnaya-v-kartochke-i-zalog/derouter-opus-stamp-research.json",
+    "first_attempt": "PASS"
+  },
+  "source_count": 21,
+  "limitations": [
+    "No verified transcript of a specific Tyumen booking; case from Scout editorial washer_amenity_lie hook.",
+    "1 100 ₽ is editorial composite laundromat spend, not a single official flat rate.",
+    "Rybinsk Sutochno review Aug 2026 illustrates pattern only — not Tyumen.",
+    "Dobriy Dom TG posts support pre-pay amenity clarity, not a documented guest washer failure.",
+    "Zalog dispute over broken washer is risk framing only — not a verified B28 incident.",
+    "Wordstat «стиральная машина посуточно» is partial (55 totalCount)."
+  ],
+  "writer_safe_urls": [
+    "https://t.me/Dobriy_dom_72",
+    "https://t.me/Dobriy_dom_Tyumen",
+    "https://max.ru/id660300569233_biz",
+    "https://добрыйдом-72.рф/",
+    "https://добрыйдом-72.рф/booking/",
+    "https://добрыйдом-72.рф/blog/",
+    "https://tyumen.moskowsky.big-wash.ru/",
+    "https://xn--80apgxdg.com/tyumen1",
+    "https://72.ru/text/gorod/2024/04/27/73384673/",
+    "https://rybinsk.sutochno.ru/1671953",
+    "https://www.consultant.ru/document/cons_doc_LAW_305/",
+    "https://www.rentalhome.ru/to-rent/slomalas-stiralnaya-mashina-v-syomnoy-kvartire/"
+  ],
+  "errors": []
+}
