@@ -1,0 +1,111 @@
+{
+  "status": "PASS",
+  "topic_id": "B29",
+  "slug": "buhgalteriya-zhdet-chek-v-chate-my-ne-gostinica",
+  "research_date": "2026-09-19",
+  "summary": "Research for guest CASE: 2 nights paid, accounting wants receipt, host chat «мы не гостиница»; Tyumen business traveler. Fresh signals: @Dobriy_dom_72 week 13–19 Sep 2026 (QR checks + accounting package for командировочные); HR Tek advance-report article 31 Aug 2026. Wordstat P0 «квартиры посуточно тюмень» 4423. Official: Minfin 03-03-07/803 via eg-online; NPD 4% npd.nalog.ru. Anti-dup vs B15 Wi‑Fi/desk.",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Scout sept_business_trip hook × @Dobriy_dom_72 TG posts week 2026-09-13–19 (accounting docs for business stays) × HR Tek Aug 2026 advance-report guide",
+    "source_type": "community",
+    "urls": [
+      "https://t.me/s/Dobriy_dom_72",
+      "https://hrtek.vk.ru/blog/avansovii-otchet-po-komandirovke-kakie-dokumenti-prilozhit-i-kak-pravilno-zapolnit-v-2026-godu/"
+    ],
+    "accessed_at": "2026-09-19",
+    "note": "Composite Tyumen guest case from Scout; Dobriy TG confirms market expectation of document packages; not verified chat transcript of «не гостиница»."
+  },
+  "freshness_audit": {
+    "research_date": "2026-09-19",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://t.me/s/Dobriy_dom_72",
+      "published_at": "2026-09-19",
+      "note": "Posts this week: ЖК Новин — кассовые чеки с QR и полный комплект для бухгалтерии; отчётные документы командировочным."
+    },
+    "additional_fresh_signals": [
+      {
+        "url": "https://hrtek.vk.ru/blog/avansovii-otchet-po-komandirovke-kakie-dokumenti-prilozhit-i-kak-pravilno-zapolnit-v-2026-godu/",
+        "published_at": "2026-08-31",
+        "type": "media",
+        "note": "2026 advance report: lease + payment doc for apartment; chat-only risk; PP 501 three-day deadline."
+      }
+    ]
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176", "225"],
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 4423,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "снять квартиру посуточно в тюмени",
+        "volume": 1311,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "квартиры посуточно",
+        "volume": 9530,
+        "region": "225"
+      },
+      {
+        "phrase": "чек командировка проживание",
+        "volume": 307,
+        "region": "225"
+      },
+      {
+        "phrase": "командировка посуточно",
+        "volume": 1,
+        "region": "55+11176",
+        "note": "totalCount only — WORDSTAT PARTIAL"
+      }
+    ]
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": true,
+    "scope": "Minfin 03-03-07/803 (eg-online mirror); NPD 4%/6% npd.nalog.ru; no bank tariff digits",
+    "verified_claims": 2,
+    "entities_checked": ["minfin_letter_803", "npd_fns"],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "memory/blog/articles/B29-buhgalteriya-zhdet-chek-v-chate-my-ne-gostinica/derouter-opus-stamp-research.json",
+    "first_attempt": "PASS"
+  },
+  "source_count": 16,
+  "limitations": [
+    "No verified transcript of host refusing receipt; case from Scout editorial sept_business_trip hook.",
+    "Klyshin_A recent posts are purchase-law content, not посуточно receipts — rhythm only.",
+    "Minfin letter cited via eg-online regulatory mirror, not minfin.gov.ru page.",
+    "HR Tek and Consultant podborka are orientation, not employer-specific accounting rules.",
+    "Wordstat «командировка посуточно» Tyumen is partial (totalCount 1).",
+    "Dobriy Dom TG documents claim is operator marketing, not universal Tyumen host practice."
+  ],
+  "writer_safe_urls": [
+    "https://t.me/Dobriy_dom_72",
+    "https://t.me/Dobriy_dom_Tyumen",
+    "https://max.ru/id660300569233_biz",
+    "https://добрыйдом-72.рф/",
+    "https://добрыйдом-72.рф/booking/",
+    "https://добрыйдом-72.рф/blog/",
+    "https://t.me/klyshin_A",
+    "https://hrtek.vk.ru/blog/avansovii-otchet-po-komandirovke-kakie-dokumenti-prilozhit-i-kak-pravilno-zapolnit-v-2026-godu/",
+    "https://www.consultant.ru/law/podborki/arenda_kvartiry_v_komandirovke_podtverzhdayuschie_dokumenty/",
+    "https://www.eg-online.ru/document/regulatory/303228/",
+    "https://npd.nalog.ru/",
+    "https://dzen.ru/holyslav"
+  ],
+  "errors": []
+}
