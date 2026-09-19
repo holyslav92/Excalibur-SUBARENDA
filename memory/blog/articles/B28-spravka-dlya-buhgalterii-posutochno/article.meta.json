@@ -3,6 +3,10 @@
   "h1": "Бухгалтер: чек и справка до оплаты. 2 ночи — в чате «мы не гостиница»",
   "slug": "spravka-dlya-buhgalterii-posutochno-tyumen",
   "topic_id": "B28",
+  "wp_category_slugs": [
+    "posutochnaya-arenda",
+    "dogovor-i-pravila"
+  ],
   "author_id": "dobry-dom",
   "article_mode": "B",
   "description": "Бухгалтер: чек и справка до оплаты. 2 ночи — в чате «мы не гостиница»",
