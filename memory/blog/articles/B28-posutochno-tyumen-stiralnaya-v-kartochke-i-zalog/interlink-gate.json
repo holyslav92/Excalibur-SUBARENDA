@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "topic_id": "B28",
+  "slug": "posutochno-tyumen-stiralnaya-v-kartochke-i-zalog",
+  "candidates_count": 31,
+  "outbound_found": [
+    {
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "title": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem"
+    },
+    {
+      "slug": "v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik",
+      "title": "v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik"
+    },
+    {
+      "slug": "napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni",
+      "title": "napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni"
+    },
+    {
+      "slug": "dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras",
+      "title": "dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras"
+    }
+  ],
+  "outbound_unique_slugs": [
+    "dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras",
+    "v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik",
+    "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+    "napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "warnings": [],
+  "errors": []
+}
