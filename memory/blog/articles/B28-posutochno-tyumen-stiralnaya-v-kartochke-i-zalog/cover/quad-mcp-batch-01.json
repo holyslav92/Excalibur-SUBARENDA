@@ -4,7 +4,7 @@
   "model_policy": "vip_for_2k",
   "vip_disabled": false,
   "max_generation_attempts": 2,
-  "attempt": 1,
+  "attempt": 2,
   "output_canvas": "cover/canvas-quad-01.png",
   "result_path": "cover/quad-mcp-result-01.json",
   "slots": ["cover", "inline_1", "inline_2", "inline_3"],
@@ -17,7 +17,7 @@
     "slot": "canvas_quad",
     "tool": "grsai",
     "mcp_args": {
-      "prompt": "WOW RU collage, airy #FFFFFF high-key, Tyumen mid-September 2026 early AUTUMN warm golden evening light, yellow leaves outside bathroom window, NO winter/snow/ice. Canvas 2048x1152 2x2 grid; white gutters. Ban: dark cinematic, WP UI, Shakin/host face, identity lock, pill phone overlay, model-drawn logo, meme cat stickers, text walls. RU Cyrillic only.\nALL panels TR pad = clean wall 8-12% ONLY for factory logo paste AFTER — ZERO drawn logo on TR.\nCover TL: tired guest woman kneeling at front-load washer, water inside drum, wet clothes, error code on display; smartphone shows listing filter checkbox «стиральная машина»; person in scene NOT host presenter; LARGE Cyrillic hook «Стиральная есть — мокрое бельё» with gold highlight word «мокрое» on wall tablo; phone +7 (993) 574-83-22 painted flat on apartment info board NOT pill; small gold sticky «А бельё не высохло»; Wordstat stickers «квартиры посуточно тюмень» «снять квартиру посуточно в тюмени»; TR pad empty.\nTR inline_1 CRITICAL — FULL comparison_table_ui infographic: four Cyrillic rows «Третья ночь» | «Вода в барабане» | «Ошибка на дисплее» | «Бельё мокрое»; dense UI chips; TR pad empty for factory logo.\nBL inline_2: infographic_card laundromat morning rush. TXT:Две загрузки|Гель и сушка|Счёт 1100 ₽|Утром выезд. NO logo TR plain wall.\nBR inline_3: workflow_diagram arrows ask before pay full cycle drain spin save receipt. TXT:Спросите до оплаты|Полный цикл стирки|Слив и отжим|Чек сохраните. TR pad empty for logo.",
+      "prompt": "WOW RU collage, airy #FFFFFF high-key, Tyumen mid-September 2026 early AUTUMN warm golden evening light, yellow leaves outside bathroom window, NO winter/snow/ice. Canvas 2048x1152 2x2 grid; white gutters. Ban: dark cinematic, WP UI, Shakin/host face, identity lock, pill phone overlay, model-drawn logo, meme cat stickers, text walls. RU Cyrillic only.\nALL panels TR pad = clean wall 8-12% ONLY for factory logo paste AFTER — ZERO drawn logo on TR.\nCover TL: tired guest woman kneeling at front-load washer, water inside drum, wet clothes, error code on display; smartphone shows listing filter checkbox «стиральная машина»; person in scene NOT host presenter; LARGE Cyrillic hook «Стиральная есть — мокрое бельё» with gold highlight word «мокрое» on wall tablo; phone +7 (993) 574-83-22 as small vertical text block on white listing card corner — NOT wide horizontal gold bar NOT pill button; small gold sticky «А бельё не высохло»; Wordstat stickers «квартиры посуточно тюмень» «снять квартиру посуточно в тюмени»; TR pad empty.\nTR inline_1 CRITICAL — FULL comparison_table_ui infographic: four Cyrillic rows «Третья ночь» | «Вода в барабане» | «Ошибка на дисплее» | «Бельё мокрое»; dense UI chips; TR pad empty for factory logo.\nBL inline_2: infographic_card laundromat morning rush. TXT:Две загрузки|Гель и сушка|Счёт 1100 ₽|Утром выезд. NO logo TR plain wall.\nBR inline_3: workflow_diagram arrows ask before pay full cycle drain spin save receipt. TXT:Спросите до оплаты|Полный цикл стирки|Слив и отжим|Чек сохраните. TR pad empty for logo.",
       "aspect_ratio": "16:9",
       "resolution": "2K"
     }

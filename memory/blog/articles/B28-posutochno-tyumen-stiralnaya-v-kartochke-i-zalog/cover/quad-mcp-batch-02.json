@@ -4,7 +4,7 @@
   "model_policy": "vip_for_2k",
   "vip_disabled": false,
   "max_generation_attempts": 2,
-  "attempt": 1,
+  "attempt": 2,
   "output_canvas": "cover/canvas-quad-02.png",
   "result_path": "cover/quad-mcp-result-02.json",
   "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
@@ -17,7 +17,7 @@
     "slot": "canvas_quad",
     "tool": "grsai",
     "mcp_args": {
-      "prompt": "WOW RU editorial, airy #FFFFFF high-key, Tyumen mid-September 2026 autumn golden light, yellow leaves outside, NO winter/snow. Canvas 2048x1152 2x2 grid; white gutters. Ban: dark, WP UI, Shakin, pill phone, brand lockup, meme cat, Добрый дом drawn.\nTL inline_4: labeled_checklist filter vs cycle vs dry laundry vs 10500 three nights. TXT:Галочка в фильтре|Не цикл|Сухое бельё|10 500 ₽ три ночи. TR empty wall NO logo.\nTR inline_5: comparison_table_ui laundromat tariffs autumn Tyumen. TXT:Стирка ~350 ₽|Сушка ~150 ₽|Самообслуживание|650–1250 ₽. TR empty wall NO logo.\nBL inline_6 FAQ card: questions before payment washer check drain spin if breaks. TXT:Рабочая ли|Когда проверяли|Слив и отжим|Если встанет. NO logo NO cat.\nBR inline_7: checklist_board save proof. TXT:Фото ошибки|Мокрое бельё|Переписка|Чек прачечной|Сначала проверка. ONLY inline_7 TR pad empty for factory logo.",
+      "prompt": "WOW RU editorial, airy #FFFFFF high-key, Tyumen mid-September 2026 autumn golden light, yellow leaves outside, NO winter/snow. Canvas 2048x1152 2x2 grid; white gutters. Ban: dark, WP UI, Shakin, pill phone, brand lockup, meme cat, Добрый дом drawn.\nTL inline_4: labeled_checklist filter vs cycle vs dry laundry vs 10500 three nights. TXT:Галочка в фильтре|Не цикл|Сухое бельё|10 500 ₽ три ночи. TR empty wall NO logo.\nTR inline_5 MANDATORY FULL-PANEL comparison_table_ui: four gold header columns + data rows filling entire top-right quadrant — NO empty beige wall. TXT headers:Стирка ~350 ₽|Сушка ~150 ₽|Самообслуживание|650–1250 ₽. Dense tariff chips laundromat Tyumen autumn. TR empty wall NO logo.\nBL inline_6 FAQ card: questions before payment washer check drain spin if breaks. TXT:Рабочая ли|Когда проверяли|Слив и отжим|Если встанет. NO logo NO cat.\nBR inline_7: checklist_board save proof. TXT:Фото ошибки|Мокрое бельё|Переписка|Чек прачечной|Сначала проверка. ONLY inline_7 TR pad empty for factory logo.",
       "aspect_ratio": "16:9",
       "resolution": "2K"
     }
