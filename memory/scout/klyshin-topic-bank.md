@@ -48,6 +48,7 @@ Prefer **high-volume guest P0** (Wordstat 55+11176, compare 225).
 | 08–10.09 | 7 | `quiet_center_maps` | ✅ B12 handoff 2026-09-06 — «тихий центр»/панорама; P0 «квартиры посуточно тюмень» 5235 |
 | 05.09 | B10 | `hidden_fees_all_inclusive` | ✅ B10 handoff 2026-09-05 — «всё включено» vs 2 400 ₽; P0 «квартиры посуточно тюмень» 5261 |
 | 12.09 | B17 | `utilities_jkh` | ✅ B17 handoff 2026-09-12 — «коммуналка включена» vs 1 840 ₽ по счётчикам; P0 «квартиры посуточно тюмень» 4840 |
+| 19.09 | B28 | `business_trip_receipt` | ✅ B28 scout — справка для бухгалтерии / «мы не гостиница»; P0 «квартиры посуточно тюмень» 4495 |
 
 Scout берёт **только** hook из активного окна (today YEKT ∈ window). После handoff —
 stamp `queue_slot` + `used_in_articles` в JSON.

@@ -3,7 +3,7 @@
   "source_channel": "https://t.me/klyshin_A",
   "source_label": "Алексей Клышин — angle only (ритм delivery, не копировать сделки)",
   "tenant": "Добрый дом — посуточная аренда / субаренда Тюмень",
-  "updated_at": "2026-09-12",
+  "updated_at": "2026-09-19",
   "timezone": "Asia/Yekaterinburg",
   "algorithm": "klyshin_hook → wordstat_probe → rework_for_demand → final_P0_or_skip_after_rework",
   "angle_rotation": {
@@ -253,6 +253,23 @@
       "final_p0": {"phrase": "квартиры посуточно тюмень", "volume_tyumen": 4826, "volume_ru": 10308},
       "wordstat_rework_log": "probe «горячая вода посуточно» 2/74 → «бойлер» 9007 → «аренда квартиры посуточно» 664 → final P0 «квартиры посуточно тюмень» 4826/10308",
       "used_in_articles": ["B20"]
+    },
+    {
+      "id": "business_trip_receipt",
+      "queue_num": 11,
+      "hook_ru": "Командировка в Тюмень. Бухгалтерия просит справку — в чате: «мы не гостиница»",
+      "angle": "закрывающие документы до брони; справка о проживании и чек для отчёта; NOT Wi‑Fi/стол (B15), NOT hotel price compare (WP)",
+      "klyshin_signal": "moral: сначала справка/договор/чек для командировочных, потом оплата; lockpick: «Справку и чек дадите до оплаты — в каком виде?»",
+      "wordstat_probes": ["справка о проживании в посуточной квартире", "справка о проживании в гостинице для командировочных", "командировка тюмень", "квартиры посуточно тюмень"],
+      "dzen_pattern_prefer": [3, 2],
+      "anti_dup": ["sept_business_trip", "hotel_vs_daily", "wifi_boiler_check", "B15", "B27", "B26", "B25"],
+      "tyumen_localize": true,
+      "status": "used",
+      "last_seen": "2026-09-19",
+      "queue_slot": "2026-09-19 B28 scout",
+      "final_p0": {"phrase": "квартиры посуточно тюмень", "volume_tyumen": 4495, "volume_ru": 9696},
+      "wordstat_rework_log": "probe «справка о проживании в посуточной квартире» 11 (225) → «справка о проживании в квартире для командировочных» 16 → «справка о проживании в гостинице для командировочных» 289 → «командировка тюмень» 114 → «договор посуточной аренды квартиры» 37 → final P0 «квартиры посуточно тюмень» 4495/9696",
+      "used_in_articles": ["B28"]
     }
   ],
   "parked_hooks": {
