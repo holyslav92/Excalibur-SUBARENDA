@@ -1,0 +1,50 @@
+{
+  "topic_id": "B29",
+  "slug": "buhgalteriya-zhdet-chek-v-chate-my-ne-gostinica",
+  "cover_family": "brand_collage",
+  "style_preset": "dobry_dom_gen_only_slice4",
+  "pipeline": "slice4_grid_1x_image_api",
+  "file": "cover/cover.png",
+  "alt": "После двух ночей в Тюмени бухгалтерия просит чек, а хозяин в чате отвечает: мы не гостиница.",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-slice4.png",
+  "generated_at": "2026-09-19T12:26:21+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "После двух ночей в Тюмени бухгалтерия просит чек, а хозяин в чате отвечает: мы не гостиница.",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Две ночи оплачены переводом, но чек для бухгалтерии не появляется сам — аренда не гостиница.",
+      "h2_anchor": "Почему чек из квартиры не появляется сам",
+      "visual_type": "labeled_checklist",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Гость не спросил про договор и чек до перевода — остались только скрин перевода и отказ хозяина.",
+      "h2_anchor": "Где гость проиграл на самом деле",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "До оплаты спросить про пакет документов и срок чека — три рабочих дня на авансовый отчёт.",
+      "h2_anchor": "Вопрос, который открывает объявление",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}

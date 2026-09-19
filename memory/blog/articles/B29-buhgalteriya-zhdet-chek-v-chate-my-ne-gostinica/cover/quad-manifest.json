@@ -1,0 +1,97 @@
+{
+  "topic_id": "B29",
+  "canvas_file": "cover/canvas-slice4.png",
+  "layout": "2x2",
+  "pipeline": "slice4_grid_1x_image_api",
+  "inline_count": 3,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-slice4.png",
+      "batch_file": "cover/slice4-mcp-batch.json",
+      "prompt_file": "cover/slice4-mcp-prompt.txt",
+      "result_file": "cover/slice4-mcp-result.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    }
+  ],
+  "style_preset": "dobry_dom_gen_only_slice4",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "cover_hook": "Оплатили ночи — чека нет",
+  "cover_hook_highlight": "чека",
+  "cover_headline_line1": "Оплатили ночи",
+  "cover_headline_line2": "чека нет",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "снять квартиру посуточно в тюмени"
+  ],
+  "cover_motifs": {
+    "composition": "business traveler at bright kitchen table laptop bank app messenger chat printed expense form missing receipt tablo hook tr pad",
+    "location": "mid-september 2026 warm sunny tyumen apartment kitchen golden afternoon yellow birch leaves outside window no snow no winter",
+    "meme": "photoreal zero cat meme stickers no stickers on inlines",
+    "prop_set": "laptop smartphone messenger screenshot bank transfer 2 nights договор бланк бухгалтерии sticky note мы не гостиница",
+    "sticker_set": "квартиры посуточно тюмень снять квартиру посуточно в тюмени",
+    "joke": "accountant asks receipt after checkout host chat says we are not a hotel"
+  },
+  "cover_emotion": "усталость командировочного после выезда — бухгалтерия ждёт бумагу, в чате отказ",
+  "cover_scene": "Командировочный за кухонным столом: на ноутбуке выписка, на телефоне переписка «мы не гостиница», на столе бланк авансового отчёта; крупный хук на листе; pad TR.",
+  "mcp_note": "ONE Grsai 2048×1152 slice4 — factory logo paste cover tile only after split.",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "После двух ночей в Тюмени бухгалтерия просит чек, а хозяин в чате отвечает: мы не гостиница.",
+      "scene_hint": "Командировочный в светлой кухне посуточной квартиры: ноутбук с выпиской, смартфон с сообщением «мы не гостиница», бланк авансового отчёта и ручка; крупный хук «Оплатили ночи — чека нет» с выделением слова «чека» на листе на столе; сентябрьское солнце и жёлтые листья за окном без снега; чистый pad TR 8–12% без логотипа и без телефона на картинке.",
+      "meme_caption_ru": "",
+      "sticky": "Сначала проверка. Потом перевод."
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Почему чек из квартиры не появляется сам",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "labeled_checklist UI card: 2 ночи оплачены, чек после выезда, цитата «не гостиница» — светлый фон, крупная кириллица, без людей крупно, NO logo.",
+      "alt": "Две ночи оплачены переводом, но чек для бухгалтерии не появляется сам — аренда не гостиница.",
+      "labels": [
+        "2 ночи оплачены",
+        "Чек после выезда",
+        "«Не гостиница»"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Где гость проиграл на самом деле",
+      "visual_type": "comparison_table_ui",
+      "scene_hint": "comparison_table_ui: договор аренды vs подтверждение перевода vs чек «Мой налог» vs спросить до перевода — таблица на светлой доске, NO logo NO people.",
+      "alt": "Гость не спросил про договор и чек до перевода — остались только скрин перевода и отказ хозяина.",
+      "labels": [
+        "Договор аренды",
+        "Подтверждение перевода",
+        "Чек «Мой налог»",
+        "Спросить до перевода"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Вопрос, который открывает объявление",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "workflow_diagram: 3 рабочих дня, авансовый отчёт, пакет документов, сначала проверка — стрелки слева направо, NO logo.",
+      "alt": "До оплаты спросить про пакет документов и срок чека — три рабочих дня на авансовый отчёт.",
+      "labels": [
+        "3 рабочих дня",
+        "Авансовый отчёт",
+        "Пакет документов",
+        "Сначала проверка"
+      ]
+    }
+  },
+  "cover_keys_ru": []
+}
