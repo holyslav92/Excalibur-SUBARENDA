@@ -1,5 +1,24 @@
 # WP publish log
 
+## B28 — 2026-09-19
+
+- **topic_id:** B28
+- **slug:** spravka-dlya-buhgalterii-posutochno-tyumen
+- **title:** Бухгалтер: чек и справка до оплаты. 2 ночи — в чате «мы не гостиница»
+- **post_id:** 4951
+- **permalink:** /blog/spravka-dlya-buhgalterii-posutochno-tyumen/
+- **categories:** posutochnaya-arenda (101), dogovor-i-pravila (103)
+- **featured_image:** 4952
+- **inline_images:** 4953–4959 (7× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS (HTTP 200; all 7 inline img src → wp-content)
+- **dzen preview:** dzen_yzen_meta=1; cover-1024x576.png HTTP 200 (721854 bytes); feed enclosure → full cover.png
+- **interlink outbound:** 4 live /blog/ siblings (crosslink-qa PASS)
+- **interlink inbound:** B01 (3745)
+- **publish_method:** sftp:22 (Cloud Agent; FTP PASV blocked)
+- **preflight fix:** gates generated; theme_contract_deploy skipped (functions.php bounds not found — already patched on live)
+- **llms_deploy:** live /llms.txt HTTP 200 (post-publish script interrupted; files on live)
+
 ## B27 — 2026-09-18
 
 - **topic_id:** B27

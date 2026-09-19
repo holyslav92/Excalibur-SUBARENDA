@@ -1,0 +1,123 @@
+{
+  "topic_id": "B28",
+  "slug": "spravka-dlya-buhgalterii-posutochno",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "Чек и справка — мы не гостиница",
+  "cover_hook_highlight": "справка",
+  "cover_headline_line1": "Чек и справка",
+  "cover_headline_line2": "мы не гостиница",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "wordstat_stickers": ["квартиры посуточно тюмень"],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "traveler documents phone laptop hook tr pad",
+    "location": "autumn 2026 tyumen no snow",
+    "meme": "sticker Сначала проверка",
+    "prop_set": "phone chat receipt certificate laptop",
+    "sticker_set": "посуточно тюмень",
+    "joke": "hotel form vs rental receipt"
+  },
+  "cover_emotion": "проверка до оплаты",
+  "cover_scene": "Чек и справка на столе; хук; pad TR; осень.",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "scene_hint": "Чат «не гостиница», чек, справка; хук; +7 993 574-83-22; осень; pad TR.",
+      "alt": "Чек и справка на столе — «мы не гостиница».",
+      "meme_caption_ru": "",
+      "role": "cover_editorial_hero",
+      "sticky": "Сначала проверка"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "scene_hint": "comparison_table_ui: 3-Г vs договор+чек; 2 ночи; pad TR.",
+      "alt": "3-Г vs договор найма с чеком.",
+      "meme_caption_ru": "",
+      "h2_anchor": "«Мы не гостиница» — это другой пакет",
+      "visual_type": "comparison_table_ui",
+      "labels": ["3-Г", "Договор", "Чек", "2 ночи"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "scene_hint": "workflow: бухгалтер→«не гостиница».",
+      "alt": "Бухгалтер, «не гостиница», другой пакет.",
+      "meme_caption_ru": "",
+      "h2_anchor": "«Мы не гостиница» — это другой пакет",
+      "visual_type": "workflow_diagram",
+      "labels": ["Бухгалтер", "Не гостиница", "Договор+чек", "До оплаты"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "scene_hint": "infographic: справку и чек?; pad TR.",
+      "alt": "Вопрос до оплаты: в каком виде дадут справку и чек — и три дня на авансовый отчёт.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Один вопрос до оплаты",
+      "visual_type": "infographic_card",
+      "labels": ["Справку?", "PDF", "3 дня", "До перевода"]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "scene_hint": "labeled_checklist: ООО/ИП/НПД; чек QR; Мой налог.",
+      "alt": "Статус арендодателя: ООО, ИП или самозанятый — разные форматы чека для бухгалтерии.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Один вопрос до оплаты",
+      "visual_type": "labeled_checklist",
+      "labels": ["ООО/ИП/НПД", "QR", "Мой налог", "Акт"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "scene_hint": "table: карточка vs бронь.",
+      "alt": "В объявлении «отчётные документы» — уточняйте пакет под конкретные даты и размещение.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Где обещание расходится с реальностью",
+      "visual_type": "comparison_table_ui",
+      "labels": ["Карточка", "По брони", "Командир.", "До оплаты"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "scene_hint": "faq: проверка→перевод.",
+      "alt": "Сначала проверка документов, потом перевод — не наоборот.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "schema_faq_ui",
+      "labels": ["Не заселяем", "Проверка", "Перевод", "Не наоборот"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "scene_hint": "checklist: договор, QR, PDF; pad TR.",
+      "alt": "Чеклист: договор, чек, образцы в PDF бухгалтеру — до оплаты.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "checklist_board",
+      "labels": ["Договор", "QR", "PDF", "Проверка", "Перевод"]
+    }
+  }
+}

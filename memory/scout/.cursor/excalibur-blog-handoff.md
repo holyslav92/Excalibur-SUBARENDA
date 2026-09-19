@@ -1,20 +1,37 @@
-Принял слот B20: проверю ротацию и файлы банка, затем передам собранный контекст Derouter для обязательного handoff.DEROUTER SCOUT BLOCKER: в текущей среде недоступны shell/Derouter utility и файловая запись, поэтому я не могу легитимно сформировать или записать `.cursor/excalibur-blog-handoff.md`.
+topic_id: B28
 
-Wordstat-данные из входа приняты как уже пройденные live-проверки, но handoff-прозу по контракту должен генерировать только `gpt-5.6-terra` через:
+title_draft: «Нужна справка для бухгалтерии. В чате: “мы не гостиница”»
 
-```bash
-python3 scripts/excalibur_blog_derouter_opus_chat.py \
-  --role scout \
-  --system-file skills/scout-excalibur-blog/SKILL.md \
-  --user-file <assembled-scout-inputs.md> \
-  --output .cursor/excalibur-blog-handoff.md \
-  --article-dir <article_dir_or_memory/scout>
-```
+slug_hint: spravka-dlya-buhgalterii-v-kvartire-posutochno-tyumen
 
-После генерации требуется запустить:
+primary_query: «квартиры посуточно тюмень»
 
-```bash
-python3 scripts/excalibur_blog_wordstat_gate.py handoff
-```
+klyshin_hook: business_trip_receipt | original: «Командировка в Тюмень. Бухгалтерия просит справку — в чате: “мы не гостиница”» | angle: закрывающие документы до брони; квартира посуточно vs отель — справка о проживании и чек; NOT Wi‑Fi desk (B15), NOT hotel price compare (WP) | signal: https://t.me/klyshin_A
 
-Не создаю handoff вручную, чтобы не нарушить обязательный Derouter-only контракт.
+wordstat_preflight: mcp-kv wordstat_get_user_info OK
+
+wordstat_rework: probe «справка о проживании в посуточной квартире» 11 (225) → «справка о проживании в квартире для командировочных» 16 (225) → «справка о проживании в гостинице для командировочных» 289 (225) → «командировка тюмень» 114 (225) → «договор посуточной аренды квартиры» 37 (55+11176) → final P0 «квартиры посуточно тюмень» 4495 (55+11176) | compare 9696 (225) | clusters tried: справка о проживании, командировка, договор посуточной аренды квартиры, квартиры посуточно в Тюмени
+
+wordstat: mcp_kv live | regions 55,11176,compare225 | P0 «квартиры посуточно тюмень» 4495 | RU 225: 9696
+
+angle_rotation: checked last N=3 | burn-at-door skip: yes | reason: B25 sleeping places, B26 dog fee, B27 heating; burn-at-door family explicitly skipped per mandate (B18, B22); B28 keeps a distinct business-trip documents angle and does not repeat B15 Wi‑Fi/рабочий стол or recent hotel-price comparison
+
+dzen_pattern: 3
+
+dzen_shape_hint: «Страх перед отказом бухгалтерии → плотный кейс командировочного гостя → цитата “мы не гостиница” → короткая инструкция, какие справка о проживании, договор и чек проверить до оплаты»
+
+signal_urls:
+- https://t.me/klyshin_A
+- https://dzen.ru/holyslav
+- https://добрыйдом-72.рф/blog/
+- https://t.me/Dobriy_dom_72
+
+external_signal: свежий guest-hook из klyshin_A о справке для бухгалтерии в командировке; дополнительный сигнал — dzen.ru/holyslav; локальный supply-контекст — Добрый дом, посуточная аренда в Тюмени; Wordstat final P0 подтверждён live MCP-KV: «квартиры посуточно тюмень» 4495 в регионах 55+11176 против 9696 по РФ
+
+opening_direction: Открыть плотным кейсом гостя в командировке в Тюмени: бронь нужна сегодня, бухгалтерия заранее просит закрывающие документы. Гость задаёт lockpick-вопрос о справке и чеке, получает ответ «мы не гостиница», после чего следует отказ: «Нет. Так не бронируем». Не строить вертикальную лестницу и не писать отчёт от лица хозяина; держать гостя внутри ситуации. Показать цену ошибки через риск не получить отчётные документы и потерять деньги за поездку, не выдумывая конкретные суммы. После кейса дать чеклист проверки документов до оплаты.
+
+moral: сначала справка о проживании, договор и чек для командировочных, потом деньги и ключ
+
+lockpick_question: «Справку о проживании и чек для отчёта дадите до оплаты — в каком виде?»
+
+anti_dup_guard: guest CASE only; не повторять Wi‑Fi/рабочий стол и созвон (B15), сравнение цены квартиры с отелем (WP), sleeping places (B25), доплату за собаку (B26), отопление и холодные батареи (B27), залог (B02), кухню против кафе (B07), код/бесконтактное заселение и ошибочную дверь (B18, B22); не использовать ЕГРН, суд, наследство, Москву, риэлтора или Шакина

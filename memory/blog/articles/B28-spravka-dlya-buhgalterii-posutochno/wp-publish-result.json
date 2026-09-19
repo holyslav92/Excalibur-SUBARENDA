@@ -1,0 +1,27 @@
+{
+  "slug": "spravka-dlya-buhgalterii-posutochno-tyumen",
+  "topic_id": "B28",
+  "permalink": "{{SITE_BASE}}/blog/spravka-dlya-buhgalterii-posutochno-tyumen/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B28-spravka-dlya-buhgalterii-posutochno/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1071836,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4951 slug=spravka-dlya-buhgalterii-posutochno-tyumen\nOK categories=101,103\nOK dzen_yzen_meta=1\nOK featured_image=4952\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4953 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/spravka-dlya-buhgalterii-posutochno-tyumen-inline-02.png\nOK inline_alt=4953\nOK inline_caption=4953\nOK inline_description=4953\nOK inline_image_upload=4954 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/spravka-dlya-buhgalterii-posutochno-tyumen-inline-01.png\nOK inline_alt=4954\nOK inline_caption=4954\nOK inline_description=4954\nOK inline_image_upload=4955 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/09/spravka-dlya-buhgalterii-posutochno-tyumen-inline-04.png\nOK inline_alt=4955\nOK inline_caption=4955\nOK inline_description=4955\nOK inline_image_upload=4956 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/spravka-dlya-buhgalterii-posutochno-tyumen-inline-03.png\nOK inline_alt=4956\nOK inline_caption=4956\nOK inline_description=4956\nOK inline_image_upload=4957 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/09/spravka-dlya-buhgalterii-posutochno-tyumen-inline-05.png\nOK inline_alt=4957\nOK inline_caption=4957\nOK inline_description=4957\nOK inline_image_upload=4958 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/09/spravka-dlya-buhgalterii-posutochno-tyumen-inline-07.png\nOK inline_alt=4958\nOK inline_caption=4958\nOK inline_description=4958\nOK inline_image_upload=4959 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/09/spravka-dlya-buhgalterii-posutochno-tyumen-inline-06.png\nOK inline_alt=4959\nOK inline_caption=4959\nOK inline_description=4959\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/spravka-dlya-buhgalterii-posutochno-tyumen/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/spravka-dlya-buhgalterii-posutochno-tyumen/",
+    "errors": []
+  }
+}
