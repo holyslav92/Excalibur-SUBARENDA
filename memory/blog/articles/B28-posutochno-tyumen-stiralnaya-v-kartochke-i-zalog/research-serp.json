@@ -1,0 +1,218 @@
+{
+  "agent": "excalibur-blog",
+  "date_context": {
+    "timezone": "Europe/Moscow",
+    "today_iso": "2026-09-19",
+    "today_ru": "19.09.2026",
+    "year": 2026,
+    "month": 9,
+    "month_name_ru": "сентябрь",
+    "weekday_ru": "суббота"
+  },
+  "topic": {
+    "topic_id": "B28",
+    "title": "Посуточно Тюмень: стиральная в карточке и залог",
+    "h1": "Посуточно Тюмень: стиральная в карточке и залог",
+    "slug": "posutochno-tyumen-stiralnaya-v-kartochke-i-zalog",
+    "primary_query": "Посуточно Тюмень: стиральная в карточке и залог",
+    "priority": "P0"
+  },
+  "searches": [
+    {
+      "query_id": "primary_fresh",
+      "query": "Посуточно Тюмень: стиральная в карточке и залог 2026",
+      "purpose": "актуальный SERP",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "1-комнатная квартира посуточно, Тюмень, Луначарского улица, 9 ...",
+          "url": "https://tyumen.sutochno.ru/2239412",
+          "snippet": ""
+        },
+        {
+          "title": "стиральная машинка рабочая - Снять квартиру посуточно в Тюмени | Авито ...",
+          "url": "https://www.avito.ru/tyumen/kvartiry/sdam/posutochno/-ASgBAgICAkSSA8gQ8AeSUg?q=%D1%81%D1%82%D0%B8%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F+%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%BA%D0%B0+%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B0%D1%8F",
+          "snippet": "От 2500 рублей за сутки — беспроводной интернет Wi-Fi, холодильник, стиральная машина, СВЧ-печь, постельное бельё, 13 отзывов — объявление об аренде №2239412."
+        },
+        {
+          "title": "2-комнатная квартира посуточно, Тюмень, Тимофея Чаркова улица, 87 ...",
+          "url": "https://tyumen.sutochno.ru/1832634",
+          "snippet": "Цены на аренду квартир в Тюмени. Объявления от собственников и проверенных агентств: поиск на карте, по району, цене, площади и другим параметрам."
+        },
+        {
+          "title": "стиральная машина beko - Снять квартиру посуточно в Тюмени | Авито ...",
+          "url": "https://www.avito.ru/tyumen/kvartiry/sdam/posutochno/-ASgBAgICAkSSA8gQ8AeSUg?q=%D1%81%D1%82%D0%B8%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F+%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%B0+beko",
+          "snippet": "Заезд в 14:00. Выезд до 12:00. При заселении необходим паспорт для заключения договора и возвратный залог 2000. Квартира посуточно сдаётся с минимальным сроком проживания — 1 сутки."
+        },
+        {
+          "title": "Квартира Посуточно в Тюмени - цены, фото и отзывы",
+          "url": "https://ostrovok.ru/hotel/russia/tyumen/mid11281353/posutochno_flat_13/",
+          "snippet": "Цены на аренду квартир в Тюмени. Объявления от собственников и проверенных агентств: поиск на карте, по району, цене, площади и другим параметрам."
+        },
+        {
+          "title": "Квартиры посуточно в Тюмени | Столичный",
+          "url": "https://stolichnyi72.ru/",
+          "snippet": "Об апартаментах Залог хорошего отдыха — чувствовать себя в новом месте как дома: апартаменты «Квартира Посуточно» находятся в Тюмени. Эти апартаменты расположены в 5 км от центра города."
+        }
+      ],
+      "searched_at": "2026-09-19"
+    },
+    {
+      "query_id": "title_fresh",
+      "query": "Посуточно Тюмень: стиральная в карточке и залог 2026",
+      "purpose": "SERP по человеческому title",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "стиральная машинка рабочая - Снять квартиру посуточно в Тюмени | Авито ...",
+          "url": "https://www.avito.ru/tyumen/kvartiry/sdam/posutochno/-ASgBAgICAkSSA8gQ8AeSUg?q=%D1%81%D1%82%D0%B8%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F+%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%BA%D0%B0+%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B0%D1%8F",
+          "snippet": ""
+        },
+        {
+          "title": "1-комнатная квартира посуточно, Тюмень, Луначарского улица, 9 ...",
+          "url": "https://tyumen.sutochno.ru/2239412",
+          "snippet": "Цены на аренду квартир в Тюмени. Объявления от собственников и проверенных агентств: поиск на карте, по району, цене, площади и другим параметрам."
+        },
+        {
+          "title": "2-комнатная квартира посуточно, Тюмень, Тимофея Чаркова улица, 87 ...",
+          "url": "https://tyumen.sutochno.ru/1832634",
+          "snippet": "От 2500 рублей за сутки — беспроводной интернет Wi-Fi, холодильник, стиральная машина, СВЧ-печь, постельное бельё, 13 отзывов — объявление об аренде №2239412."
+        },
+        {
+          "title": "стиральная машина beko - Снять квартиру посуточно в Тюмени | Авито ...",
+          "url": "https://www.avito.ru/tyumen/kvartiry/sdam/posutochno/-ASgBAgICAkSSA8gQ8AeSUg?q=%D1%81%D1%82%D0%B8%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F+%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%B0+beko",
+          "snippet": "Заезд в 14:00. Выезд до 12:00. При заселении необходим паспорт для заключения договора и возвратный залог 2000. Квартира посуточно сдаётся с минимальным сроком проживания — 1 сутки."
+        },
+        {
+          "title": "Квартира Посуточно в Тюмени - цены, фото и отзывы",
+          "url": "https://ostrovok.ru/hotel/russia/tyumen/mid11281353/posutochno_flat_13/",
+          "snippet": "Цены на аренду квартир в Тюмени. Объявления от собственников и проверенных агентств: поиск на карте, по району, цене, площади и другим параметрам."
+        },
+        {
+          "title": "Квартиры посуточно в Тюмени | Столичный",
+          "url": "https://stolichnyi72.ru/",
+          "snippet": "Об апартаментах Залог хорошего отдыха — чувствовать себя в новом месте как дома: апартаменты «Квартира Посуточно» находятся в Тюмени. Эти апартаменты расположены в 5 км от центра города."
+        }
+      ],
+      "searched_at": "2026-09-19"
+    },
+    {
+      "query_id": "official_docs",
+      "query": "Посуточно Тюмень: стиральная в карточке и залог official docs 2026",
+      "purpose": "официальные docs",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Студия посуточно, Тюмень, Одесская улица, 24А, объявление 1438871",
+          "url": "https://tyumen.sutochno.ru/1438871",
+          "snippet": ""
+        },
+        {
+          "title": "Жильё посуточно с отчетными документами в Тюмени, забронировать ...",
+          "url": "https://kvartirka.com/location/tyumen-12/filter-documents/",
+          "snippet": "От 1000 рублей за сутки — беспроводной интернет Wi-Fi, холодильник, стиральная машина, СВЧ-печь, кабельное ТВ, 35 отзывов — объявление об аренде №1438871."
+        },
+        {
+          "title": "Добрый Дом - Квартиры посуточно Тюмень | Более 55 квартир в Тюмени ...",
+          "url": "https://vk.com/dobryi_dom_tyumen",
+          "snippet": "Забронируйте апартаменты или квартиру в Тюмени посуточно с договором, чеком и оформлением отчетных командировочных документов для бухгалтерии юридических лиц и бюджетных организаций."
+        },
+        {
+          "title": "2-комнатная квартира посуточно, Тюмень, Заречный проезд, 37к1 ...",
+          "url": "https://tyumen.sutochno.ru/779371",
+          "snippet": "В «Добром Доме» это закрыто до заезда: показываем настоящие фото, заранее проговариваем условия и остаёмся на связи от брони до момента, когда вы зайдёте внутрь."
+        },
+        {
+          "title": "Квартиры посуточно без залога в Тюмени | Авито Путешествия",
+          "url": "https://www.avito.ru/tyumen/kvartiry/sdam/posutochno/bez-zaloga-ASgBAgICA0SSA8gQ8AeSUpz4DgI",
+          "snippet": "От 2700 рублей за сутки — беспроводной интернет Wi-Fi, холодильник, стиральная машина, СВЧ-печь, кабельное ТВ, отчётные документы, постельное бельё, 9 отзывов — объявление об аренде №779371."
+        },
+        {
+          "title": "Снять квартиру посуточно в Тюмени — забронировать квартиру для отдыха ...",
+          "url": "https://ostrovok.ru/hotel/russia/tyumen/kvartiry/?dateless_form=yes",
+          "snippet": "177 объявлений о сдаче квартир в посуточную аренду без залога в Тюмени. Авито Путешествия поможет недорого снять квартиру на короткий срок, выбрав предложения без посредников."
+        }
+      ],
+      "searched_at": "2026-09-19"
+    },
+    {
+      "query_id": "github_evidence",
+      "query": "site:github.com Посуточно Тюмень: стиральная в карточке и залог 2026",
+      "purpose": "GitHub evidence",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "unsupervised_topic_modeling/topics/ru/15/100/100/topics at ... - GitHub",
+          "url": "https://github.com/annontopicmodel/unsupervised_topic_modeling/blob/master/topics/ru/15/100/100/topics",
+          "snippet": ""
+        },
+        {
+          "title": "docs/favicon.svg at main · pritish-mishra/docs · GitHub",
+          "url": "https://github.com/pritish-mishra/docs/blob/main/favicon.svg",
+          "snippet": "Contribute to annontopicmodel/unsupervised_topic_modeling development by creating an account on GitHub."
+        },
+        {
+          "title": "Morph/images/logo.png at main · WeChatCV/Morph · GitHub",
+          "url": "https://github.com/WeChatCV/Morph/blob/main/images/logo.png",
+          "snippet": "Contribute to pritish-mishra/docs development by creating an account on GitHub."
+        },
+        {
+          "title": "Infernux/docs/assets/logo.png at master · ChenlizheMe/Infernux",
+          "url": "https://github.com/ChenlizheMe/Infernux/blob/master/docs/assets/logo.png",
+          "snippet": "[ICCV2025]Morph: A Motion-free Physics Optimization Framework for Human Motion Generation - Morph/images/logo.png at main · WeChatCV/Morph"
+        },
+        {
+          "title": "yyhhkya/img/skill.svg at main · yyhhkya/yyhhkya · GitHub",
+          "url": "https://github.com/yyhhkya/yyhhkya/blob/main/img/skill.svg",
+          "snippet": "Open-source game engine with a C++17 / Vulkan runtime and a Python production layer. - Infernux/docs/assets/logo.png at master · ChenlizheMe/Infernux."
+        },
+        {
+          "title": "AWorld-RL/EnvTuning/assets/pipeline.png at main · inclusionAI/AWorld-RL",
+          "url": "https://github.com/inclusionAI/AWorld-RL/blob/main/EnvTuning/assets/pipeline.png",
+          "snippet": "Contribute to yyhhkya/yyhhkya development by creating an account on GitHub."
+        }
+      ],
+      "searched_at": "2026-09-19"
+    },
+    {
+      "query_id": "community_experience",
+      "query": "Посуточно Тюмень: стиральная в карточке и залог forum problems опыт 2026",
+      "purpose": "форумы и живые проблемы",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "1-комнатная квартира посуточно, Тюмень, Ставропольская улица, 95 ...",
+          "url": "https://tyumen.sutochno.ru/1716382",
+          "snippet": ""
+        },
+        {
+          "title": "Снять квартиру посуточно в Тюмени — от хозяев, без комиссий | Spiti",
+          "url": "https://tyumen.spiti.ru/",
+          "snippet": "Ранний заезд и поздний выезд предоставляется по возможности в зависимости от занятости квартиры. Минимальный срок проживания - 2 дня. Взрослые старше 22лет. Дети старше 3 лет."
+        },
+        {
+          "title": "Снять квартиру посуточно в Тюмени , аренда квартиры на сутки в Тюмени",
+          "url": "https://tyumen.sutochno.ru/",
+          "snippet": "На нашем сайте вы можете найти подходящий вариант посуточной аренды квартиры в городе Тюмень. Мы публикуем объявления от собственников, что позволяет выбрать нужную вам квартиру по выгодной цене."
+        },
+        {
+          "title": "Квартиры посуточно в Тюмени | Здравствуйте, дорогие друзья! Вы попали в ...",
+          "url": "https://vk.com/dom_ohag",
+          "snippet": "Снять квартиру напрямую у владельцев без посредников и переплаты в Тюмени. Выгодные цены, реальные отзывы, телефоны собственников, гарантия заселения, рейтинг жилья на Суточно.ру."
+        },
+        {
+          "title": "Аренда посуточно в Тюмени ООО РЕСТ",
+          "url": "https://vk.com/restapart",
+          "snippet": "Квартиры для краткосрочной и длительной аренды от собственника в городе Тюмень, на любой срок. БЕСКОНТАКТНОЕ КРУГЛОСУТОЧНОЕ ЗАСЕЛЕНИЕ - забудьте о лишних хлопотах!"
+        },
+        {
+          "title": "Написали «без залога». У двери попросили 5 000 ₽",
+          "url": "https://dzen.ru/a/aqEym8SWjwEsy3zR",
+          "snippet": "Предлагаем в аренду на короткий срок апартаменты и квартиры, стандарт и Люкс, смежные номера для путешествий большим составом или командированным. Предоставляем отчетные документы."
+        }
+      ],
+      "searched_at": "2026-09-19"
+    }
+  ],
+  "errors": []
+}

@@ -1,5 +1,24 @@
 # WP publish log
 
+## B28 — 2026-09-19
+
+- **topic_id:** B28
+- **slug:** posutochno-tyumen-stiralnaya-v-kartochke-i-zalog
+- **title:** «Стиральная машина есть» в фильтре. К 3-й ночи — мокрое бельё, прачечная, 1 100 ₽
+- **post_id:** 4962
+- **permalink:** /blog/posutochno-tyumen-stiralnaya-v-kartochke-i-zalog/
+- **categories:** posutochnaya-arenda (101), zalog-i-vyiezd (102)
+- **featured_image:** 4963
+- **inline_images:** 4964–4970 (7× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS
+- **dzen preview:** dzen_yzen_meta=1; cover-1024x576.png HTTP 200 (845397 bytes); feed enclosure → full cover.png; live_dzen_rss_fix PASS
+- **interlink outbound:** 4 live /blog/ siblings (crosslink-qa PASS)
+- **interlink inbound:** B01 (3745)
+- **publish_method:** sftp:22 (Cloud Agent; FTP PASV blocked)
+- **preflight fix:** wp_category_slugs added; gates + link-verify; theme_contract_deploy skipped (functions.php bounds not found — already patched on live)
+- **llms_deploy:** PASS (llms.txt + llms-full.txt)
+
 ## B27 — 2026-09-18
 
 - **topic_id:** B27

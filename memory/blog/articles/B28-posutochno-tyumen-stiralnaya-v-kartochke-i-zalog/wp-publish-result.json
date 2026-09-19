@@ -1,0 +1,27 @@
+{
+  "slug": "posutochno-tyumen-stiralnaya-v-kartochke-i-zalog",
+  "topic_id": "B28",
+  "permalink": "{{SITE_BASE}}/blog/posutochno-tyumen-stiralnaya-v-kartochke-i-zalog/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B28-posutochno-tyumen-stiralnaya-v-kartochke-i-zalog/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1198699,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4962 slug=posutochno-tyumen-stiralnaya-v-kartochke-i-zalog\nOK categories=101,102\nOK dzen_yzen_meta=1\nOK featured_image=4963\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4964 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-stiralnaya-v-kartochke-i-zalog-inline-04.png\nOK inline_alt=4964\nOK inline_caption=4964\nOK inline_description=4964\nOK inline_image_upload=4965 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-stiralnaya-v-kartochke-i-zalog-inline-01.png\nOK inline_alt=4965\nOK inline_caption=4965\nOK inline_description=4965\nOK inline_image_upload=4966 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-stiralnaya-v-kartochke-i-zalog-inline-05.png\nOK inline_alt=4966\nOK inline_caption=4966\nOK inline_description=4966\nOK inline_image_upload=4967 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-stiralnaya-v-kartochke-i-zalog-inline-02.png\nOK inline_alt=4967\nOK inline_caption=4967\nOK inline_description=4967\nOK inline_image_upload=4968 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-stiralnaya-v-kartochke-i-zalog-inline-06.png\nOK inline_alt=4968\nOK inline_caption=4968\nOK inline_description=4968\nOK inline_image_upload=4969 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-stiralnaya-v-kartochke-i-zalog-inline-03.png\nOK inline_alt=4969\nOK inline_caption=4969\nOK inline_description=4969\nOK inline_image_upload=4970 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-stiralnaya-v-kartochke-i-zalog-inline-07.png\nOK inline_alt=4970\nOK inline_caption=4970\nOK inline_description=4970\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/posutochno-tyumen-stiralnaya-v-kartochke-i-zalog/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/posutochno-tyumen-stiralnaya-v-kartochke-i-zalog/",
+    "errors": []
+  }
+}
