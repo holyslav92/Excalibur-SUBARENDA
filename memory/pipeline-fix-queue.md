@@ -1733,3 +1733,31 @@ checks_run:
 - `python3 -m unittest tests.test_wp_categories_interlink.WpCategoriesInterlinkTests.test_wp_categories_infer_sovety_from_sleeping_places_brief -v`
 - B25 `infer_secondary_slugs_from_brief()` → sovety-gostyam
 commit: d6d3bf1
+
+## INC-20260920-0652 — Metrika credentials missing (Content-learner B30)
+
+status: needs-human
+run_date: 2026-09-20
+role: excalibur-blog-content-learner
+topic_id: B30
+article_dir: memory/blog/articles/B30-pozdnij-vyezd-doplata-s-karty
+severity: medium
+category: env
+
+### What went wrong
+
+- `excalibur_blog_metrika_fetch.py --days 30 --ingest` → METRIKA CREDENTIALS BLOCKER (no OAuth token / counter id in Cloud Secrets).
+
+### How the agent recovered this run
+
+- Recorded optional/low-confidence lessons in `memory/content-lessons.md`; no causal Metrika claims.
+
+### Durable fix needed before next run
+
+- Set YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets for tenant.
+
+### Fixer resolution
+
+status: needs-human
+reason: env-only blocker; duplicate of INC-20260903-0640
+needed_decision_or_secret: YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets
