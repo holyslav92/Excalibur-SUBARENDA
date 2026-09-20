@@ -1,0 +1,126 @@
+{
+  "topic_id": "B30",
+  "slug": "pozdnij-vyezd-doplata-s-karty",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "До двух согласовали — списали с карты",
+  "cover_hook_highlight": "списали",
+  "cover_headline_line1": "До двух согласовали",
+  "cover_headline_line2": "списали с карты",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "снять квартиру посуточно в тюмени"
+  ],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "taxi guest bank push hook tr pad chat phone",
+    "location": "mid-sept sep 2026 autumn tyumen golden leaves wet asphalt no snow",
+    "meme": "small cat sticker cover only",
+    "prop_set": "phone push -1800 chat lockbox keys taxi",
+    "sticker_set": "поздний выезд посуточно тюмень доплата за выезд 1800 пуш",
+    "joke": "keys in lockbox card still charged"
+  },
+  "cover_emotion": "шок в такси после пуша",
+  "cover_scene": "Такси, пуш −1800, чат до двух, хук, pad TR, осень.",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "scene_hint": "Такси: пуш −1800, чат, хук, +7 993 574-83-22, осень, pad TR.",
+      "alt": "Пуш −1800 ₽ в такси после выезда до двух.",
+      "meme_caption_ru": "",
+      "role": "cover_editorial_hero",
+      "sticky": "Ключи уже сдал"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "scene_hint": "comparison_table_ui: полдень / до двух / без цены / 14:38. Pad TR.",
+      "alt": "Выезд в полдень продлили до двух, но цену продления в чате не назвали.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Когда согласованное время не означает согласованные деньги",
+      "visual_type": "comparison_table_ui",
+      "labels": ["выезд в полдень", "до двух можно", "цена не указана"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "scene_hint": "workflow: локбокс → +38 мин → −1800 ₽. NO logo.",
+      "alt": "Ключи в локбоксе в 14:38 — через 38 минут после двух списали 1 800 ₽.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Что происходит после двух",
+      "visual_type": "workflow_diagram",
+      "labels": ["ключи в локбоксе", "опоздание 38 минут", "списали 1 800 ₽"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "scene_hint": "checklist: пуш в такси, нет правила, проверка. Pad TR.",
+      "alt": "Пуш пришёл в такси: поздний выезд без заранее присланного правила — сначала проверка.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Холд и списание — не одно и то же",
+      "visual_type": "checklist_board",
+      "labels": ["пуш пришёл в такси", "поздний выезд", "правило не прислали", "сначала проверка"]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "scene_hint": "checklist: до двух, без цены, 14:38, списание. NO logo.",
+      "alt": "«До двух можно» без цены и правила после двух — списание выглядит сюрпризом.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Когда согласованное время не означает согласованные деньги",
+      "visual_type": "labeled_checklist",
+      "labels": ["До двух можно", "Без цены", "14:38 ключи", "Списание"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "scene_hint": "table: час / минуты / фикс / нет ответа. NO logo.",
+      "alt": "После двух: полный час, минуты или фикс — ответ должен быть до ключей.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Что происходит после двух",
+      "visual_type": "comparison_table_ui",
+      "labels": ["Полный час", "Каждая минута", "Фикс доплата", "До ключей"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "scene_hint": "faq: холд, списание, залог, новая операция. NO logo.",
+      "alt": "Холд и списание — разные операции; поверх холда могла пройти новая сумма.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Холд и списание — не одно и то же",
+      "visual_type": "schema_faq_ui",
+      "labels": ["Холд", "Списание", "Залог", "Новая операция"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "scene_hint": "checklist: время, цена, правило после двух; +7 в кадре. Pad TR.",
+      "alt": "Три строки до ключей: время выезда, доплата, правило после согласованного часа.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "checklist_board",
+      "labels": ["Время выезда", "Доплата текстом", "Правило после двух", "Сначала проверка"]
+    }
+  }
+}
