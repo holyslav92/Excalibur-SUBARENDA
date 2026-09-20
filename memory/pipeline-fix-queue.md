@@ -1821,9 +1821,9 @@ files_changed:
 - `memory/pipeline-fix-queue.md`
 checks_run:
 - manual review B30 research-agent-report derouter block
-commit: pending
+commit: f9a77ac
 
-## INC-20260920-0652 — Metrika credentials missing (Content-learner B30)
+## INC-20260920-0654-metrika-content-learner-b30
 
 status: needs-human
 run_date: 2026-09-20
