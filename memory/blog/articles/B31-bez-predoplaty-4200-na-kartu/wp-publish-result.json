@@ -1,0 +1,27 @@
+{
+  "slug": "bez-predoplaty-4200-na-kartu",
+  "topic_id": "B31",
+  "permalink": "{{SITE_BASE}}/blog/bez-predoplaty-4200-na-kartu/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B31-bez-predoplaty-4200-na-kartu/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1198945,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=5003 slug=bez-predoplaty-4200-na-kartu\nOK categories=101,104\nOK dzen_yzen_meta=1\nOK featured_image=5004\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=5005 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/bez-predoplaty-4200-na-kartu-inline-01.png\nOK inline_alt=5005\nOK inline_caption=5005\nOK inline_description=5005\nOK inline_image_upload=5006 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/bez-predoplaty-4200-na-kartu-inline-02.png\nOK inline_alt=5006\nOK inline_caption=5006\nOK inline_description=5006\nOK inline_image_upload=5007 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/bez-predoplaty-4200-na-kartu-inline-03.png\nOK inline_alt=5007\nOK inline_caption=5007\nOK inline_description=5007\nOK inline_image_upload=5008 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/09/bez-predoplaty-4200-na-kartu-inline-04.png\nOK inline_alt=5008\nOK inline_caption=5008\nOK inline_description=5008\nOK inline_image_upload=5009 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/09/bez-predoplaty-4200-na-kartu-inline-05.png\nOK inline_alt=5009\nOK inline_caption=5009\nOK inline_description=5009\nOK inline_image_upload=5010 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/09/bez-predoplaty-4200-na-kartu-inline-06.png\nOK inline_alt=5010\nOK inline_caption=5010\nOK inline_description=5010\nOK inline_image_upload=5011 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/09/bez-predoplaty-4200-na-kartu-inline-07.png\nOK inline_alt=5011\nOK inline_caption=5011\nOK inline_description=5011\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/bez-predoplaty-4200-na-kartu/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/bez-predoplaty-4200-na-kartu/",
+    "errors": []
+  }
+}

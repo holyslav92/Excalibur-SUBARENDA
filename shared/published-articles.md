@@ -35,3 +35,4 @@ Excalibur-2-Cloud — не копировать URL tymenrieltor.ru.
 | 2026-09-19 | B28 | posutochno-tyumen-stiralnaya-v-kartochke-i-zalog | /blog/posutochno-tyumen-stiralnaya-v-kartochke-i-zalog/ | published |
 | 2026-09-19 | B29 | buhgalteriya-zhdet-chek-v-chate-my-ne-gostinica | /blog/buhgalteriya-zhdet-chek-v-chate-my-ne-gostinica/ | published |
 | 2026-09-20 | B30 | pozdnij-vyezd-doplata-s-karty | /blog/pozdnij-vyezd-doplata-s-karty/ | published |
+| 2026-09-20 | B31 | bez-predoplaty-4200-na-kartu | /blog/bez-predoplaty-4200-na-kartu/ | published |

@@ -1,0 +1,218 @@
+{
+  "agent": "excalibur-blog",
+  "date_context": {
+    "timezone": "Europe/Moscow",
+    "today_iso": "2026-09-20",
+    "today_ru": "20.09.2026",
+    "year": 2026,
+    "month": 9,
+    "month_name_ru": "сентябрь",
+    "weekday_ru": "воскресенье"
+  },
+  "topic": {
+    "topic_id": "B31",
+    "title": "без предоплаты — 4200 на карту",
+    "h1": "без предоплаты — 4200 на карту",
+    "slug": "bez-predoplaty-4200-na-kartu",
+    "primary_query": "без предоплаты — 4200 на карту",
+    "priority": "P0"
+  },
+  "searches": [
+    {
+      "query_id": "primary_fresh",
+      "query": "без предоплаты — 4200 на карту 2026",
+      "purpose": "актуальный SERP",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Топ-10 МФО, которые выдают займы без предоплаты в 2026 году",
+          "url": "https://vc.ru/top_obzor/2956851-mfo-bez-predoplati-top-10-luchshih-mikrozajmov",
+          "snippet": ""
+        },
+        {
+          "title": "Получить займ без процентов на карту: ТОП-10 МФО в 2026 году",
+          "url": "https://fbm.ru/novosti/business/poluchit-zajm-bez-procentov-na-kartu-top-10-mfo-v-2026-godu.html",
+          "snippet": "В этом рейтинге мы собрали проверенные микрофинансовые компании, которые работают строго в рамках законодательства РФ и выдают займы без предоплаты. Каждая организация из списка внесена в официальный реестр Банка России, публикует прозрачные тарифы и не использует скрытые комиссии."
+        },
+        {
+          "title": "Займы на карту без предоплаты в 92 МФО, получить микрозайм без ...",
+          "url": "https://www.banklab.ru/loans/bez-predoplaty/",
+          "snippet": "Один из ключевых инструментов привлечения — первый займ без процентов, позволяющий получить деньги на карту без переплаты."
+        },
+        {
+          "title": "Кредитные карты без процентов 2026 - оформить кредитную карту онлайн с ...",
+          "url": "https://www.sravni.ru/karty/bez-procentov/",
+          "snippet": "Получить займ на карту без предоплаты и отказа в 92 МФО по процентной ставке от 0 до 1%."
+        },
+        {
+          "title": "Займы без предоплаты — взять микрозайм на карту без предоплаты и ...",
+          "url": "https://credits-on-line.ru/zajmy/bez-predoplaty/",
+          "snippet": "Сравните предложения по кредитам и выберите лучшее. Все банки на витрине входят в официальный реестр ЦБ РФ. Воспользуйтесь фильтром, чтобы подобрать предложения под нужные суммы и срок."
+        },
+        {
+          "title": "Кредитные карты без процентов ⚡ - 124 предложений от 64 банков ...",
+          "url": "https://www.vbr.ru/banki/kreditnyekarty/bez-procentov/",
+          "snippet": "Получить займ без предоплаты и комиссии за перевод на карту можно в 45 проверенных микрофинансовых организациях."
+        }
+      ],
+      "searched_at": "2026-09-20"
+    },
+    {
+      "query_id": "title_fresh",
+      "query": "без предоплаты — 4200 на карту 2026",
+      "purpose": "SERP по человеческому title",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Топ-10 МФО, которые выдают займы без предоплаты в 2026 году",
+          "url": "https://vc.ru/top_obzor/2956851-mfo-bez-predoplati-top-10-luchshih-mikrozajmov",
+          "snippet": ""
+        },
+        {
+          "title": "Займ без предоплаты: прозрачные условия",
+          "url": "https://exnode.ru/mfo/zajm-bez-predoplaty",
+          "snippet": "В этом рейтинге мы собрали проверенные микрофинансовые компании, которые работают строго в рамках законодательства РФ и выдают займы без предоплаты. Каждая организация из списка внесена в официальный реестр Банка России, публикует прозрачные тарифы и не использует скрытые комиссии."
+        },
+        {
+          "title": "Получить займ без процентов на карту: ТОП-10 МФО в 2026 году",
+          "url": "https://fbm.ru/novosti/business/poluchit-zajm-bez-procentov-na-kartu-top-10-mfo-v-2026-godu.html",
+          "snippet": "Займ без предоплаты — обычное состояние законного микрозайма: деньги переводят после одобрения заявки, без платежей заранее. Просьба оплатить страховку, комиссию за одобрение или «гарантию» до перевода суммы ..."
+        },
+        {
+          "title": "Займы на карту без предоплаты в 92 МФО, получить микрозайм без ...",
+          "url": "https://www.banklab.ru/loans/bez-predoplaty/",
+          "snippet": "Один из ключевых инструментов привлечения — первый займ без процентов, позволяющий получить деньги на карту без переплаты."
+        },
+        {
+          "title": "Кредитные карты без годичного обслуживания без отречения в 2026 году",
+          "url": "https://banksh.ru/kreditnie-karti-bez-godichnogo-obsluzhivaniya-bez-otrecheniya-v-2026-godu/",
+          "snippet": "Получить займ на карту без предоплаты и отказа в 92 МФО по процентной ставке от 0 до 1%."
+        },
+        {
+          "title": "Новый займ на карту без отказа 2026 - взять онлайн в 179 МФО",
+          "url": "https://creditulka.com/mfo/novye-zajmy-na-kartu",
+          "snippet": "Обзор кредитных карт без годового обслуживания, которые останутся актуальными в 2026 году. Сравнение реальных условий, скрытых комиссий и способов получить карту без отказа."
+        }
+      ],
+      "searched_at": "2026-09-20"
+    },
+    {
+      "query_id": "official_docs",
+      "query": "без предоплаты — 4200 на карту official docs 2026",
+      "purpose": "официальные docs",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Visa или Mastercard для россиян в 2026: как открыть без полета за ...",
+          "url": "https://companies.rbc.ru/news/HHzBORcWGv/visa-ili-mastercard-dlya-rossiyan-v-2026-kak-otkryit-bez-poleta-za-granitsu/",
+          "snippet": ""
+        },
+        {
+          "title": "Займы на карту без предоплаты в 92 МФО, получить микрозайм без ...",
+          "url": "https://www.banklab.ru/loans/bez-predoplaty/",
+          "snippet": "К 2026 году вопрос «а можно ли россиянину вообще получить Visa или Mastercard» уже устарел — можно. В статье рассказали про несколько вариантов оформления карты"
+        },
+        {
+          "title": "Займ без предоплаты на карту, без оплаты 1 рубля срочно - 65 МФО, ФинДозор",
+          "url": "https://findozor.net/zaimy/bez-predoplaty/",
+          "snippet": "Получить займ на карту без предоплаты и отказа в 92 МФО по процентной ставке от 0 до 1%."
+        },
+        {
+          "title": "GitHub - ekyv72/racknerd-vps-deals: RackNerd промокод 2026: какие ...",
+          "url": "https://github.com/ekyv72/racknerd-vps-deals",
+          "snippet": "Оформите займ без предоплаты онлайн: реальные МФО выдают деньги на карту без предварительной оплаты, скрытых комиссий и подписок. Подбор предложений с мгновенным решением и безопасным оформлением."
+        },
+        {
+          "title": "RackNerd скидки 2026: какие VPS-тарифы ... - GitHub",
+          "url": "https://github.com/jlemb5/racknerd-vps-deals",
+          "snippet": "Если коротко: рабочие скидки RackNerd на 2026 — это не мифические промокоды из сторонних блогов, а официальные акции на самом сайте и один публичный пожизненный код 15OFFDEDI для выделенных серверов."
+        },
+        {
+          "title": "Самые новые МФО 2026 в России. Новые займы без отказа онлайн",
+          "url": "https://creditulka.com/mfo/novye-mfo",
+          "snippet": "Заодно собрал всё, что сейчас актуально по RackNerd скидки 2026, в один текст. RackNerd — американский бюджетный хостинг-провайдер, который продаёт KVM VPS, shared-хостинг, реселлерские пакеты и выделенные серверы с мгновенным развёртыванием в ~20 дата-центрах по США, Европе и Азии."
+        }
+      ],
+      "searched_at": "2026-09-20"
+    },
+    {
+      "query_id": "github_evidence",
+      "query": "site:github.com без предоплаты — 4200 на карту 2026",
+      "purpose": "GitHub evidence",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "ToonTokenizer/Icon.png at master · madskristensen/ToonTokenizer · GitHub",
+          "url": "https://github.com/madskristensen/ToonTokenizer/blob/master/Icon.png",
+          "snippet": ""
+        },
+        {
+          "title": "gees/Icons/icon.png at master · scelts/gees · GitHub",
+          "url": "https://github.com/scelts/gees/blob/master/Icons/icon.png",
+          "snippet": "Contribute to madskristensen/ToonTokenizer development by creating an account on GitHub."
+        },
+        {
+          "title": "Обход блокировок роскомнадзора без прокси и VPN · GitHub",
+          "url": "https://gist.github.com/kolyanok/505f9ac88d4255ffac9a95b6d9e6978e",
+          "snippet": "Landing rate calculation for the Microsoft Flight Simulator 2020 - gees/Icons/icon.png at master · scelts/gees"
+        },
+        {
+          "title": "Releases · justagoodman/JMComic - GitHub",
+          "url": "https://github.com/justagoodman/JMComic/releases",
+          "snippet": "Обход блокировок роскомнадзора без прокси и VPN! Среди пользователей интернета в России, наверное, уже не осталось тех, кто ни разу не задавался вопросом, как возможно обойти блокировки роскомнадзора. Большинство сайтов и гайдов обычно советуют использовать Tor, прокси или VPN."
+        },
+        {
+          "title": "fff/assets/logo-dark.png at main · dmtrKovalenko/fff · GitHub",
+          "url": "https://github.com/dmtrKovalenko/fff/blob/main/assets/logo-dark.png",
+          "snippet": "Contribute to justagoodman/JMComic development by creating an account on GitHub."
+        },
+        {
+          "title": "bilibili-API-collect-backup/assets/zone_v2_icon/game.svg at master ...",
+          "url": "https://github.com/tsubakiyui/bilibili-API-collect-backup/blob/master/assets/zone_v2_icon/game.svg",
+          "snippet": "The fastest and the most accurate file search SDK for AI agents, Neovim, Rust, C, Python, Bun and NodeJS - fff/assets/logo-dark.png at main · dmtrKovalenko/fff"
+        }
+      ],
+      "searched_at": "2026-09-20"
+    },
+    {
+      "query_id": "community_experience",
+      "query": "без предоплаты — 4200 на карту forum problems опыт 2026",
+      "purpose": "форумы и живые проблемы",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Займ на карту без кредитной истории в 2026 году: где одобрят и как ...",
+          "url": "https://vc.ru/life/2988443-zaim-na-kartu-bez-kreditnoi-istorii-v-2026-godu-gde-odobryat-i-kak-oformit-novye-zaimy-s-plohoi-kreditnoi-istoriei",
+          "snippet": ""
+        },
+        {
+          "title": "Займы на карту без отказа с плохой кредитной историей и просрочками ...",
+          "url": "https://vc.ru/growth/3139696-zaimy-na-kartu-bez-otkaza-s-plohoi-kreditnoi-istoriei-i-prosrochkami-podborka-kompanii-v-kotoryh-mozhno-vzyat-zaimy-2026-bez-selfi-onlain",
+          "snippet": "Разберем где реально одобряют и как устроен рынок займов для заёмщиков с испорченным кредитным рейтингом."
+        },
+        {
+          "title": "Займы на карту без предоплаты в 92 МФО, получить микрозайм без ...",
+          "url": "https://www.banklab.ru/loans/bez-predoplaty/",
+          "snippet": "Получить займ с плохой кредитной историей в сентябре 2026 года стало сложнее, чем год назад. МФО строже считают долговую нагрузку, внимательнее проверяют доход и чаще отказывают тем, у кого уже много действующих ..."
+        },
+        {
+          "title": "Получить займ без процентов на карту: ТОП-10 МФО в 2026 году",
+          "url": "https://fbm.ru/novosti/business/poluchit-zajm-bez-procentov-na-kartu-top-10-mfo-v-2026-godu.html",
+          "snippet": "Получить займ на карту без предоплаты и отказа в 92 МФО по процентной ставке от 0 до 1%."
+        },
+        {
+          "title": "Форум должников — подробный реальный обзор отзывов и мнений на 2025 год ...",
+          "url": "https://dtf.ru/life/4086035-forum-dolzhnikov-podrobnyi-realnyi-obzor-otzyvov-i-mnenii-na-2025-god-kto-bral-zaim-bez-procentov-gde-odobrili-zaimy-maloizvestnye-kompanii-s-zaimami-pod-0-novye-mfo-s-besprocentnoi-vydachei-na-kartu",
+          "snippet": "Разберем, где действительно можно взять займ без процентов в 2026 году, какие МФО предлагают лучшие условия и как избежать ошибок. Рейтинг топ-10 МФО 2026 года без процентов"
+        },
+        {
+          "title": "Займы без предоплаты - взять срочный микрозайм онлайн на карту в 140 МФО",
+          "url": "https://www.1mbank.ru/zaimy/bez-predoplaty/",
+          "snippet": "Вступая в дискуссию о безпроцентных займах, важно понимать, какие механизмы стоят за предложениями \"под 0%\", какие условия реально выполняются, и какие последствия это может иметь для ..."
+        }
+      ],
+      "searched_at": "2026-09-20"
+    }
+  ],
+  "errors": []
+}
