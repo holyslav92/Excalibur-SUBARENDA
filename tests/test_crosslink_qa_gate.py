@@ -176,6 +176,18 @@ class CrosslinkQaGateTests(unittest.TestCase):
         catalog_title = "Оплатил квартиру посуточно. Код прислали от чужой двери"
         self.assertTrue(anchor_matches_catalog_title(anchor, catalog_title))
 
+    def test_extract_anchor_stops_at_closing_a_tag(self) -> None:
+        from excalibur_blog_crosslink_qa_gate import extract_article_links
+
+        html = (
+            '<p>В материале про <a href="https://example.test/blog/foo/">1 800 ₽ за простыни</a> '
+            "причина была иной. Длинный хвост после ссылки не должен попасть в anchor.</p>"
+        )
+        links = extract_article_links(html)
+        self.assertEqual(len(links), 1)
+        self.assertEqual(links[0]["anchor"].strip(), "1 800 ₽ за простыни")
+        self.assertNotIn("причина была", links[0]["anchor"])
+
 
 if __name__ == "__main__":
     unittest.main()

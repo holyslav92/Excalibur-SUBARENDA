@@ -1733,3 +1733,120 @@ checks_run:
 - `python3 -m unittest tests.test_wp_categories_interlink.WpCategoriesInterlinkTests.test_wp_categories_infer_sovety_from_sleeping_places_brief -v`
 - B25 `infer_secondary_slugs_from_brief()` → sovety-gostyam
 commit: d6d3bf1
+
+## INC-20260920-0652-crosslink-anchor-bleed-after-closing-a
+status: fixed
+run_date: 2026-09-20
+role: excalibur-blog-fixer
+topic_id: B30
+article_dir: memory/blog/articles/B30-pozdnij-vyezd-doplata-s-karty
+severity: medium
+category: script
+
+### What went wrong
+
+- `crosslink-qa-gate.json` for B30 recorded a multi-kilobyte `anchor` for the last outbound `/blog/` link (B23 sibling): prose after `</a>` was appended to the link anchor.
+- `ArticleLinkExtractor` had no `handle_endtag` for `<a>`; `handle_data` kept feeding `links[-1]` for the rest of the document → inflated anchors and overly permissive `anchor_matches_catalog_title` token overlap.
+
+### How the agent recovered this run
+
+- Publish crosslink-qa still PASS (false confidence on last link). Fixer found bug during post-publish review.
+
+### Durable fix needed before next run
+
+- Track anchor depth; only accumulate text while inside `<a>`.
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_crosslink_qa_gate.py`
+- `tests/test_crosslink_qa_gate.py`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-09-20
+fix_summary:
+- `ArticleLinkExtractor` increments/decrements `_anchor_depth` on `<a>` open/close; `handle_data` only appends inside an open anchor (INC B30).
+- Regression test `test_extract_anchor_stops_at_closing_a_tag`.
+files_changed:
+- `scripts/excalibur_blog_crosslink_qa_gate.py`
+- `tests/test_crosslink_qa_gate.py`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_crosslink_qa_gate.py`
+- `python3 -m unittest tests.test_crosslink_qa_gate.CrosslinkQaGateTests.test_extract_anchor_stops_at_closing_a_tag -v`
+commit: f9a77ac
+
+## INC-20260920-0653-research-derouter-blocker-meta-retry
+status: fixed
+run_date: 2026-09-20
+role: excalibur-blog-fixer
+topic_id: B30
+article_dir: memory/blog/articles/B30-pozdnij-vyezd-doplata-s-karty
+severity: low
+category: prompt
+
+### What went wrong
+
+- B30 `research-agent-report.json` logged `derouter.first_attempt: BLOCKER_META` (meta-refusal / non-notes output); second Derouter call with reinforced assembled user-file → PASS (same pattern as B23).
+
+### How the agent recovered this run
+
+- Research agent retried Derouter once with explicit «only research-notes body» user-file; notes + report PASS.
+
+### Durable fix needed before next run
+
+- Document one-shot meta-refusal retry in research skill before terminal BLOCKER.
+
+### Suggested files to inspect/change
+
+- `skills/excalibur-research/SKILL.md`
+- `.cursor/skills/excalibur-research/SKILL.md`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-09-20
+fix_summary:
+- Research skill runbook: meta-refusal retry + `BLOCKER_META` logging in `research-agent-report.json` (INC B23/B30).
+files_changed:
+- `skills/excalibur-research/SKILL.md`
+- `.cursor/skills/excalibur-research/SKILL.md`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- manual review B30 research-agent-report derouter block
+commit: f9a77ac
+
+## INC-20260920-0654-metrika-content-learner-b30
+
+status: needs-human
+run_date: 2026-09-20
+role: excalibur-blog-content-learner
+topic_id: B30
+article_dir: memory/blog/articles/B30-pozdnij-vyezd-doplata-s-karty
+severity: medium
+category: env
+
+### What went wrong
+
+- `excalibur_blog_metrika_fetch.py --days 30 --ingest` → METRIKA CREDENTIALS BLOCKER (no OAuth token / counter id in Cloud Secrets).
+
+### How the agent recovered this run
+
+- Recorded optional/low-confidence lessons in `memory/content-lessons.md`; no causal Metrika claims.
+
+### Durable fix needed before next run
+
+- Set YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets for tenant.
+
+### Fixer resolution
+
+status: needs-human
+reason: env-only blocker; duplicate of INC-20260903-0640
+needed_decision_or_secret: YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets

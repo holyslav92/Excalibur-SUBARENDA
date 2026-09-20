@@ -46,7 +46,14 @@ ANGLE_CATEGORY_KEYWORDS: dict[str, tuple[str, ...]] = {
         "правил",
         "селфи",
     ),
-    "zalog-i-vyiezd": ("залог", "депозит", "выезд", "vyezd"),
+    "zalog-i-vyiezd": (
+        "залог",
+        "депозит",
+        "выезд",
+        "vyezd",
+        "поздн",
+        "продлен",
+    ),
     "zhkh-i-doplaty": ("коммунал", "жкх", "счет", "счёт", "доплат"),
     "sovety-gostyam": (
         "совет",

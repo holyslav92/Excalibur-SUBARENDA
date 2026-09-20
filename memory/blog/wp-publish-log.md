@@ -1,5 +1,23 @@
 # WP publish log
 
+## B30 — 2026-09-20
+
+- **topic_id:** B30
+- **slug:** pozdnij-vyezd-doplata-s-karty
+- **title:** Продление до двух согласовали. После сдачи ключей с карты списали 1 800 ₽
+- **post_id:** 4981
+- **permalink:** /blog/pozdnij-vyezd-doplata-s-karty/
+- **categories:** posutochnaya-arenda (101), zalog-i-vyiezd (102), dogovor-i-pravila (104)
+- **featured_image:** 4982
+- **inline_images:** 4983–4989 (7× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS
+- **dzen /feed/zen/:** dzen_yzen_meta=1; live_dzen_rss_fix PASS; enclosure → full cover.png; preview file `…-cover-1024x576.png` HTTP 200 (1024×576)
+- **interlink inbound:** B01 (3745)
+- **publish_method:** sftp:22 (Cloud Agent)
+- **preflight:** theme_contract_deploy skipped (functions.php FAQ bounds not found — live already patched, same as B28/B29)
+- **llms_deploy:** PASS (llms.txt + llms-full.txt)
+
 ## B29 — 2026-09-19
 
 - **topic_id:** B29

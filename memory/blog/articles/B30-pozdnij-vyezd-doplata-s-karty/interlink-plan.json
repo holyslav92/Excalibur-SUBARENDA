@@ -1,0 +1,101 @@
+{
+  "topic_id": "B30",
+  "slug": "pozdnij-vyezd-doplata-s-karty",
+  "title": "Продление до двух согласовали. После сдачи ключей с карты списали 1 800 ₽",
+  "outbound_required_min": 1,
+  "outbound_found": [
+    {
+      "slug": "vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu",
+      "title": "vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu",
+      "permalink": "/blog/vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu/",
+      "topic_id": "B06",
+      "post_id": null,
+      "source": "ledger"
+    },
+    {
+      "slug": "rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00",
+      "title": "rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00",
+      "permalink": "/blog/rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00/",
+      "topic_id": "B21",
+      "post_id": null,
+      "source": "ledger"
+    },
+    {
+      "slug": "napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni",
+      "title": "napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni",
+      "permalink": "/blog/napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni/",
+      "topic_id": "B23",
+      "post_id": null,
+      "source": "ledger"
+    },
+    {
+      "slug": "posutochno-tyumen-stiralnaya-v-kartochke-i-zalog",
+      "title": "posutochno-tyumen-stiralnaya-v-kartochke-i-zalog",
+      "permalink": "/blog/posutochno-tyumen-stiralnaya-v-kartochke-i-zalog/",
+      "topic_id": "B28",
+      "post_id": null,
+      "source": "ledger"
+    }
+  ],
+  "outbound_missing_suggestions": [
+    {
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "title": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "permalink": "{{SITE_BASE}}/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+      "topic_id": "B01",
+      "post_id": 3745,
+      "source": "ledger"
+    },
+    {
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "title": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "permalink": "{{SITE_BASE}}/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/",
+      "topic_id": "B02",
+      "post_id": 3777,
+      "source": "ledger"
+    },
+    {
+      "slug": "kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki",
+      "title": "kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki",
+      "permalink": "/blog/kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki/",
+      "topic_id": "B03",
+      "post_id": null,
+      "source": "ledger"
+    }
+  ],
+  "inbound_targets": [
+    {
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "title": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "permalink": "{{SITE_BASE}}/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+      "topic_id": "B01",
+      "post_id": 3745,
+      "source": "ledger"
+    },
+    {
+      "slug": "buhgalteriya-zhdet-chek-v-chate-my-ne-gostinica",
+      "title": "buhgalteriya-zhdet-chek-v-chate-my-ne-gostinica",
+      "permalink": "/blog/buhgalteriya-zhdet-chek-v-chate-my-ne-gostinica/",
+      "topic_id": "B29",
+      "post_id": null,
+      "source": "ledger"
+    },
+    {
+      "slug": "dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras",
+      "title": "dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras",
+      "permalink": "/blog/dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras/",
+      "topic_id": "B25",
+      "post_id": null,
+      "source": "ledger"
+    }
+  ],
+  "inbound_updates": [
+    {
+      "post_id": 3745,
+      "marker": "data-excalibur-interlink-from=\"pozdnij-vyezd-doplata-s-karty\"",
+      "html": "<p class=\"excalibur-interlink-readalso\" data-excalibur-interlink-from=\"pozdnij-vyezd-doplata-s-karty\"><b>Читайте также:</b> <a href=\"{{SITE_BASE}}/blog/pozdnij-vyezd-doplata-s-karty/\">Продление до двух согласовали. После сдачи ключей с карты списали 1 800 ₽</a></p>"
+    }
+  ],
+  "new_url": "{{SITE_BASE}}/blog/pozdnij-vyezd-doplata-s-karty/",
+  "dry_run": false
+}

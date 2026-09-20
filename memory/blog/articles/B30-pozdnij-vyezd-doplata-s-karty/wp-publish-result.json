@@ -1,0 +1,27 @@
+{
+  "slug": "pozdnij-vyezd-doplata-s-karty",
+  "topic_id": "B30",
+  "permalink": "{{SITE_BASE}}/blog/pozdnij-vyezd-doplata-s-karty/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B30-pozdnij-vyezd-doplata-s-karty/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1060466,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=4981 slug=pozdnij-vyezd-doplata-s-karty\nOK categories=101,102,104\nOK dzen_yzen_meta=1\nOK featured_image=4982\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=4983 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/09/pozdnij-vyezd-doplata-s-karty-inline-04.png\nOK inline_alt=4983\nOK inline_caption=4983\nOK inline_description=4983\nOK inline_image_upload=4984 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/pozdnij-vyezd-doplata-s-karty-inline-01.png\nOK inline_alt=4984\nOK inline_caption=4984\nOK inline_description=4984\nOK inline_image_upload=4985 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/09/pozdnij-vyezd-doplata-s-karty-inline-05.png\nOK inline_alt=4985\nOK inline_caption=4985\nOK inline_description=4985\nOK inline_image_upload=4986 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/pozdnij-vyezd-doplata-s-karty-inline-02.png\nOK inline_alt=4986\nOK inline_caption=4986\nOK inline_description=4986\nOK inline_image_upload=4987 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/09/pozdnij-vyezd-doplata-s-karty-inline-06.png\nOK inline_alt=4987\nOK inline_caption=4987\nOK inline_description=4987\nOK inline_image_upload=4988 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/pozdnij-vyezd-doplata-s-karty-inline-03.png\nOK inline_alt=4988\nOK inline_caption=4988\nOK inline_description=4988\nOK inline_image_upload=4989 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/09/pozdnij-vyezd-doplata-s-karty-inline-07.png\nOK inline_alt=4989\nOK inline_caption=4989\nOK inline_description=4989\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/pozdnij-vyezd-doplata-s-karty/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/pozdnij-vyezd-doplata-s-karty/",
+    "errors": []
+  }
+}

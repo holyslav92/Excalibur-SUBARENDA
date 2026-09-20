@@ -194,6 +194,32 @@ class WpCategoriesInterlinkTests(unittest.TestCase):
         finally:
             shutil.rmtree(article_dir, ignore_errors=True)
 
+    def test_wp_categories_infer_zalog_zhkh_from_late_checkout_brief(self) -> None:
+        import sys
+
+        sys.path.insert(0, str(ROOT / "scripts"))
+        from excalibur_blog_wp_categories import infer_secondary_slugs_from_brief
+
+        article_dir = ROOT / "memory/blog/articles/_gate_fixture_b30_categories"
+        try:
+            article_dir.mkdir(parents=True, exist_ok=True)
+            (article_dir / "title-brief.json").write_text(
+                json.dumps(
+                    {
+                        "subject": "Поздний выезд и списание доплаты с карты после сдачи ключей",
+                        "angle": "Согласованное продление не совпало с прозрачным расчётом после отъезда",
+                    },
+                    ensure_ascii=False,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            inferred = infer_secondary_slugs_from_brief(article_dir)
+            self.assertIn("zalog-i-vyiezd", inferred)
+            self.assertIn("zhkh-i-doplaty", inferred)
+        finally:
+            shutil.rmtree(article_dir, ignore_errors=True)
+
     def test_interlink_gate_pass_with_outbound(self) -> None:
         links = (
             '<a href="/blog/beskontaktnoe-zaselenie-posutochno-tyumen/">бесконтактное заселение</a>, '

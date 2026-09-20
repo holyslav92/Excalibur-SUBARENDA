@@ -1819,3 +1819,91 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+---
+
+## LESSON-20260920-0652-B30-late-checkout-card-after-keys
+status: proposed
+topic_id: B30
+category: utility
+confidence: medium
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP. Урок из publish-артефактов: handoff wordstat rework, title-brief.json, article.html, description-brief.json PASS, interlink-plan.json (B06/B21/B23/B28), wp_category_slugs zalog-i-vyiezd.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest METRIKA CREDENTIALS BLOCKER (INC-20260920-0652).
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Угол `late_checkout_fee`: согласованное **время** («до двух можно») ≠ согласованные **деньги**; пуш −1 800 ₽ в такси после лок-бокса — asymmetric moment после «всё нормально».
+- §1: цитата чата → банковский пуш → «ключи уже сдал» / «поздний выезд по тарифу»; thesis «Время согласовали. Деньги — нет.»
+- Вопрос-отмычка mid-body: «Что считается после согласованного времени выезда — полный час, каждая минута или фиксированная доплата?» — до ключей, не в комментариях.
+- Слой холд vs списание без ложных сроков «вернётся за три дня»; гость фиксирует «ключи сдал» с временем.
+- Явный anti-dup: 1 800 ₽ ≠ B23 (грязные простыни) — одна сумма не склеивает разные основания.
+- Host Klyshin-close: «Нет. Так не заселяем.» → три строки (время, доплата, правило после часа) + «Сначала проверка. Потом перевод.»
+- Interlink spine: B06 чемоданы/поезд, B21 ранний заезд vs уборка, B28 залог/стиралка — время суток и операции на карте, не burn-at-door (rotation после B27–B29).
+- Scout rework в handoff: «поздний выезд» RU 9868 → «доплата за поздний выезд» RU 92 → final P0 spine «квартиры посуточно тюмень» 9530 — честный buyer spine при слабом fee-кластере.
+
+### Change
+- Для `late_checkout_fee` hooks в §1 всегда давать **конкретику согласования**: базовый выезд (полдень), продлённый час (14:00), факт ключей (14:38) — чтобы спор был про правило, не про «опоздал непонятно на сколько».
+- В utility-блоке держать **запрет выдуманной тарифной сетки** (как в B30: не «три часа по шестьсот») — только сумма из кейса + диагноз «цифра раньше правила».
+
+### Never again
+- How-to «как оспорить списание» без переписки, пуша и правил объекта.
+- Ответ хоста «можно» без цены продления и правила после согласованного времени — в материале показывать как ошибку обеих сторон, но с акцентом на хоста.
+- Склеивать late-checkout с B23/B04 только по совпадению ₽ без явного разведения причин.
+
+### Proposed apply
+- Scout: hook `late_checkout_fee` — handoff original Klyshin + rework log (fee phrase + spine Tyumen P0); angle_rotation не ставить burn-at-door подряд.
+- WP rubric: `zalog-i-vyiezd` для card/hold/checkout disputes (как B30).
+- Review only; Writer prompt не трогать автоматически.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260920-0652-B30-title-after-keys-not-in-chat
+status: proposed
+topic_id: B30
+category: voice
+confidence: low
+
+### Evidence
+- artifact: title-brief.json / description-brief.json
+  finding: H1 two-beat «Продление до двух согласовали. После сдачи ключей с карты списали 1 800 ₽»; description klyshin_case_hook — ключи в лок-боксе + карта −1 800 ₽, not_equal_title PASS; scout draft с HH:MM «14:38» остался в теле, не в H1.
+- metrika_signal: none (credentials unavailable; causal CTR не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Cable pain-scene: договорённость в прошлом («согласовали») → удар **после** передачи ключей и привязанной карты — не спойлер всей хронологии в одном заголовке.
+- Cover-text two-beat «До двух согласовали — списали с карты» + sticky «Ключи уже сдал» — визуальный ритм без дублирования полного H1.
+- Сумма 1 800 ₽ в H1 и description teaser — buyer anchor как у B04/B23, но с другим conflict layer.
+
+### Change
+- Для late_checkout hooks: prefer **agreement beat + post-keys charge beat** over scout draft с точным HH:MM в H1 (время — в lead/utility).
+- Description: контраст «фиксировать не только по времени, но и по цене» — не дублировать H1 дословно.
+
+### Never again
+- H1-часы «14:38» при opening-meta gate / cable-scene canon — оставлять минуты в §1 и inline stickers.
+- Description = копия H1 (meta_ab дубли в article.meta.json — техдолг publish, не слог Sol).
+
+### Proposed apply
+- Title/Description review: late_checkout_fee — согласовали → после ключей/карты > timestamp spoiler H1.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
