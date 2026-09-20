@@ -1,0 +1,117 @@
+{
+  "topic_id": "B31",
+  "slug": "bez-predoplaty-4200-na-kartu",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "Без предоплаты — 4 200 на карту",
+  "cover_hook_highlight": "4 200",
+  "cover_headline_line1": "Без предоплаты в фильтре",
+  "cover_headline_line2": "4 200 ₽ за сутки",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "без предоплаты квартира"
+  ],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "guest suitcase phone chat SBP transfer hook",
+    "location": "mid-sept 2026 Tyumen autumn entrance golden leaves no snow",
+    "meme": "no cat meme this slot",
+    "prop_set": "phone chat 4200 rub filter screenshot",
+    "sticker_set": "без предоплаты тюмень",
+    "joke": "filter vs chat"
+  },
+  "cover_emotion": "шок",
+  "cover_scene": "Чемодан, чат 4200, хук, магнит тел, осень.",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "scene_hint": "Подъезд, чат 4200, хук, +7 993 на магните, осень, pad TR.",
+      "alt": "Фильтр без предоплаты — за сутки просят 4 200 ₽ на карту.",
+      "meme_caption_ru": "",
+      "role": "cover_editorial_hero",
+      "sticky": "Сначала проверим"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "scene_hint": "Таблица: фильтр vs чат, pad TR.",
+      "alt": "Фильтр в карточке и правило в чате — два разных документа.",
+      "h2_anchor": "Фильтр в карточке и правило в чате — это два разных документа",
+      "visual_type": "comparison_table_ui",
+      "labels": ["фильтр без предоплаты", "за сутки до заезда", "половина суммы", "перевод на карту"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "scene_hint": "Схема: билеты → чат → перевод.",
+      "alt": "За сутки до заезда просят перевод, когда билеты уже куплены.",
+      "h2_anchor": "Почему просят именно за сутки",
+      "visual_type": "workflow_diagram",
+      "labels": ["сообщение в чате", "иначе отмена", "билеты куплены", "срочный перевод"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "scene_hint": "Чеклист бронь/чат, pad TR.",
+      "alt": "Что должно быть в брони, а не только в чате.",
+      "h2_anchor": "Что должно быть в брони, а не в чате",
+      "visual_type": "checklist_board",
+      "labels": ["скрин переписки", "номер получателя", "условия в брони", "не торопиться"]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "scene_hint": "Чеклист: проверка → перевод.",
+      "alt": "Сначала проверка условий, потом перевод денег.",
+      "visual_type": "labeled_checklist",
+      "labels": ["сначала проверка", "потом перевод", "не наоборот", "три вопроса"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "scene_hint": "Стикер «так у всех» без кота.",
+      "alt": "Отмазка «так у всех» не заменяет условия брони.",
+      "meme_caption_ru": "",
+      "visual_type": "comparison_table_ui",
+      "labels": ["комиссия площадки", "так у всех", "отказ нормально", "другой вариант"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "scene_hint": "Таблица: 2 ночи, половина, риск.",
+      "alt": "Две ночи и половина суммы на карту — риск перед заездом.",
+      "visual_type": "comparison_table_ui",
+      "labels": ["две ночи восемь", "четыре двести половина", "сбп перевод", "риск потери"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "scene_hint": "Чеклист TG/бронь, pad TR.",
+      "alt": "Фиксация условий в чате до оплаты — нормальная практика.",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "checklist_board",
+      "labels": ["менеджер в телеграм", "фиксация в чате", "бронь без сюрприза", "тюмень посуточно"]
+    }
+  }
+}
