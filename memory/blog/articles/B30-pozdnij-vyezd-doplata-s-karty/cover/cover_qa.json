@@ -1,0 +1,52 @@
+{
+  "agent": "excalibur-blog-cover-qa",
+  "status": "PASS",
+  "checked_at": "2026-09-20",
+  "topic_id": "B30",
+  "checks": {
+    "eight_png_exist": true,
+    "quad_manifest_valid": true,
+    "wordstat_stickers_1_3": true,
+    "motif_no_collision_14d": true,
+    "max_one_cat_meme_slot": true,
+    "light_high_key": true,
+    "logo_composite_stamp_pass": true,
+    "cover_logo_pasted": true,
+    "inline_no_logo_on_inlines": true,
+    "forbid_phone_on_cover_image": true,
+    "forbid_922_phone": true,
+    "forbid_ai_drawn_logo_cover": true,
+    "forbid_wordpress_ui_in_art": true,
+    "no_logo_plate_cover": true,
+    "forbid_graphic_collage_overlay": true,
+    "forbid_poster_composite_stamp": true,
+    "forbid_logo_reference_in_batch": true,
+    "forbid_overlapping_text_blocks": true,
+    "forbid_giant_cropped_glyph": true
+  },
+  "visual_review": {
+    "cover": "PASS — coffee table newspaper hook «До двух согласовали / списали с карты», mid-September light, factory logo TR, no phone on image, no cat meme",
+    "inline_01": "PASS — comparison_table_ui on TV; factory logo TR",
+    "inline_02": "PASS — workflow_diagram lockbox→+38 мин→−1800; no factory logo; TR pad cleared",
+    "inline_03": "PASS — checklist_board taxi push; factory logo TR",
+    "inline_04": "PASS — labeled_checklist tent card hook; no factory logo; TR wall clean",
+    "inline_05": "PASS — comparison_table_ui on TV; no factory logo; TR inpaint smear from pad-clear (no drawn lockup)",
+    "inline_06": "PASS — workflow_diagram FAQ blocks; no factory logo; TR pad cleared",
+    "inline_07": "PASS — checklist_board three lines; factory logo TR",
+    "logo_count": "cover + inline-01/03/07 factory TR; inline-02/04/05/06 zero logo",
+    "cat_meme_quota": "zero cat; zero meme stickers (longform quad)"
+  },
+  "regen_log": [
+    "Cover-QA recovery: excalibur_blog_cover_inline_pad_clear.py on inline-02/04/05/06 (drawn-lockup scores on 02/04/06 cleared; 04/05 TR scene-clone only)"
+  ],
+  "artifacts": {
+    "cover": "cover/cover.png",
+    "inline_01": "cover/inline-01.png",
+    "inline_02": "cover/inline-02.png",
+    "inline_03": "cover/inline-03.png",
+    "inline_04": "cover/inline-04.png",
+    "inline_05": "cover/inline-05.png",
+    "inline_06": "cover/inline-06.png",
+    "inline_07": "cover/inline-07.png"
+  }
+}
