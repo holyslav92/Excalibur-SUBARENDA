@@ -20,6 +20,13 @@ python3 scripts/excalibur_blog_derouter_opus_chat.py \
 
 `DEROUTER RESEARCH BLOCKER` → стоп. Контракт: `shared/derouter-opus-brain-contract.md`.
 
+**Meta-refusal retry (INC B23/B30):** если первый ответ Derouter — отказ,
+meta-инструкции или «как запустить скрипт» вместо тела `research-notes.md`,
+усиль `--user-file` (явно: «только markdown notes, без BLOCKER и без shell»),
+повтори **один** вызов Derouter. В `research-agent-report.json` →
+`derouter.first_attempt: BLOCKER_META`, `second_attempt: PASS`. Третий отказ —
+BLOCKER.
+
 Задача: дать Writer достоверные факты и боль читателя по теме, которую Scout
 взял из **живого** сигнала. Не придумывать каркас и не дописывать соседнюю статью.
 
