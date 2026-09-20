@@ -38,3 +38,4 @@ lessons, benchmarks, QA reports или соседние research-notes как о
 | B27 | kvartira-posutochno-v-tyumeni-otoplenie-est-batarei-holodnye | «Отопление есть»: 2 ночи, +14 °C — ледяные батареи, «УК не включила» | published |
 | B28 | posutochno-tyumen-stiralnaya-v-kartochke-i-zalog | «Стиральная машина есть» в фильтре. К 3-й ночи — мокрое бельё, прачечная, 1 100 ₽ | published |
 | B29 | buhgalteriya-zhdet-chek-v-chate-my-ne-gostinica | Оплатили 2 ночи. Бухгалтерия просит чек — «мы не гостиница» | published |
+| B30 | pozdnij-vyezd-doplata-s-karty | Продление до двух согласовали. После сдачи ключей с карты списали 1 800 ₽ | published |
