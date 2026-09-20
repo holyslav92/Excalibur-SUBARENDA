@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "topic_id": "B30",
+  "slug": "pozdnij-vyezd-doplata-s-karty",
+  "candidates_count": 33,
+  "outbound_found": [
+    {
+      "slug": "vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu",
+      "title": "vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu"
+    },
+    {
+      "slug": "rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00",
+      "title": "rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00"
+    },
+    {
+      "slug": "napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni",
+      "title": "napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni"
+    },
+    {
+      "slug": "posutochno-tyumen-stiralnaya-v-kartochke-i-zalog",
+      "title": "posutochno-tyumen-stiralnaya-v-kartochke-i-zalog"
+    }
+  ],
+  "outbound_unique_slugs": [
+    "rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00",
+    "vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu",
+    "posutochno-tyumen-stiralnaya-v-kartochke-i-zalog",
+    "napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "warnings": [],
+  "errors": []
+}
