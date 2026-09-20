@@ -1778,7 +1778,7 @@ files_changed:
 checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_crosslink_qa_gate.py`
 - `python3 -m unittest tests.test_crosslink_qa_gate.CrosslinkQaGateTests.test_extract_anchor_stops_at_closing_a_tag -v`
-commit: pending
+commit: f9a77ac
 
 ## INC-20260920-0653-research-derouter-blocker-meta-retry
 status: fixed
