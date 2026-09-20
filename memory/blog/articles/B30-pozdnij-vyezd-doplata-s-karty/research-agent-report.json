@@ -1,0 +1,127 @@
+{
+  "status": "PASS",
+  "topic_id": "B30",
+  "slug": "pozdnij-vyezd-doplata-s-karty",
+  "research_date": "2026-09-20",
+  "summary": "Research for guest CASE: agreed checkout until 14:00, keys at 14:38, post-departure card charge 1 800 ₽. Fresh signals: Dobriy_dom_72 TG week of 2026-09-20 (checkout/extension/contactless), Directline deposit article updated 2026-08-07, Scout late_checkout_fee editorial hook + Klyshin channel activity. Mechanics: extension time+price+overage rule in chat; hold vs capture; hotel PP as analogy only. Anti-dup vs B06/B21/B23/B17.",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Dobriy_dom_72 TG 2026-09-20 + Scout late_checkout_fee hook + Directline.pro 2026-08-07",
+    "source_type": "community_and_industry",
+    "urls": [
+      "https://t.me/Dobriy_dom_72",
+      "https://t.me/klyshin_A",
+      "https://www.directline.pro/connect/p/zalog-pri-sdache-kvartiry-posutochno/"
+    ],
+    "accessed_at": "2026-09-20",
+    "note": "Composite Tyumen guest case from Scout hook; not verified transcript of one booking. Klyshin live posts this week are purchase-law topics — hook is topic-bank editorial."
+  },
+  "freshness_audit": {
+    "research_date": "2026-09-20",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://t.me/Dobriy_dom_72",
+      "published_at": "2026-09-20",
+      "note": "Tenant channel posts on contactless check-in/out, extension terms, check-in photo practice — local fresh context for predictable checkout."
+    },
+    "additional_fresh_signals": [
+      {
+        "url": "https://www.directline.pro/connect/p/zalog-pri-sdache-kvartiry-posutochno/",
+        "published_at": "2026-08-07",
+        "type": "industry_article",
+        "note": "Deposit/hold and delayed checkout retention if rules disclosed in advance."
+      },
+      {
+        "url": "https://t.me/klyshin_A",
+        "published_at": "2026-09-14",
+        "type": "scout_editorial_channel",
+        "note": "Active consumer-law channel; late_checkout_fee hook from topic bank same week as research_start."
+      }
+    ]
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176", "225"],
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 4423,
+        "region": "55+11176",
+        "note": "Scout same-day probe also logged 9530 — intraday variance"
+      },
+      {
+        "phrase": "снять квартиру посуточно в тюмени",
+        "volume": 1311,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "поздний выезд",
+        "volume": 9868,
+        "region": "225"
+      },
+      {
+        "phrase": "поздний выезд",
+        "volume": 106,
+        "region": "55+11176",
+        "note": "hotel-skewed weak local cluster"
+      },
+      {
+        "phrase": "доплата за поздний выезд",
+        "volume": 92,
+        "region": "225"
+      },
+      {
+        "phrase": "поздний выезд сколько стоит",
+        "volume": 224,
+        "region": "225"
+      }
+    ]
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "No bank tariff digits; Rospotrebnadzor hotel PP cited as hotel-context only; industry PMS examples not market prices",
+    "verified_claims": 0,
+    "entities_checked": [],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "memory/blog/articles/B30-pozdnij-vyezd-doplata-s-karty/derouter-opus-stamp-research.json",
+    "first_attempt": "BLOCKER_META",
+    "second_attempt": "PASS"
+  },
+  "source_count": 12,
+  "practical_facts_count": 13,
+  "limitations": [
+    "No verified chat transcript of a specific Tyumen booking; case from Scout editorial late_checkout_fee hook.",
+    "1 800 ₽ is title scenario anchor, not verified market tariff or host calculation.",
+    "Hotel services PP (Rospotrebnadzor press) does not automatically govern private daily apartment lease — Writer must keep analogy-only framing.",
+    "Wordstat volumes are totalCount probes (PARTIAL for pricing claims).",
+    "Bronirui/TravelLine tariff examples are PMS documentation, not Dobry Dom or Tyumen norms."
+  ],
+  "writer_safe_urls": [
+    "https://t.me/Dobriy_dom_72",
+    "https://t.me/Dobriy_dom_Tyumen",
+    "https://max.ru/id660300569233_biz",
+    "https://добрыйдом-72.рф/",
+    "https://добрыйдом-72.рф/booking/",
+    "https://t.me/klyshin_A",
+    "https://www.tutu.ru/geo/journal/polezno-passazhiru/article/rannij-zaezd-i-pozdnij-vyezd/",
+    "https://www.directline.pro/connect/p/zalog-pri-sdache-kvartiry-posutochno/",
+    "https://www.directline.pro/connect/p/pravila-prozhivaniya-v-posutochnoj-kvartire/",
+    "https://www.travelline.ru/support/knowledge-base/kak-nastroit-doplatu-za-pozdniy-vyezd/",
+    "https://bronirui-online.ru/baza-znaniy/nastrojki/rannij-zaezd-pozdnij-vyezd/",
+    "https://bronevik.com/ru/blog/stati/otlozhennyy-platezh-v-gostinichnom-biznese",
+    "http://26.rospotrebnadzor.ru/press-center/pr/14348/",
+    "https://extranet.sutochno.ru/blog/legal-issues"
+  ],
+  "errors": []
+}
