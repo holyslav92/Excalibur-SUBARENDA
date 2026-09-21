@@ -1853,7 +1853,7 @@ needed_decision_or_secret: YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_I
 
 ## INC-20260921-0925-schema-derouter-refusal
 
-status: open
+status: fixed
 run_date: 2026-09-21
 role: excalibur-blog-schema
 topic_id: B31
@@ -1881,6 +1881,24 @@ category: api
 ### Secrets
 
 - none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-09-21
+fix_summary:
+- `schema_derouter_output_errors()` rejects meta-refusal prose and non-JSON / missing BlogPosting before writing `schema.jsonld`.
+- One auto-retry with reinforced user suffix; exit 2 + `DEROUTER SCHEMA BLOCKER` if still invalid (INC B31).
+- Schema skill documents script-side meta-refusal retry.
+files_changed:
+- `scripts/excalibur_blog_derouter_opus_chat.py`
+- `skills/schema-excalibur-blog/SKILL.md`
+- `.cursor/skills/schema-excalibur-blog/SKILL.md`
+- `tests/test_derouter_schema_output.py`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_derouter_opus_chat.py`
+- `python3 -m unittest tests.test_derouter_schema_output -v`
+commit: pending-parent-commit
 
 ## INC-20260921-1000-metrika-content-learner-b31
 

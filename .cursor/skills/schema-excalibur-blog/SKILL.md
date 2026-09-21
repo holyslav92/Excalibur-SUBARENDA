@@ -22,6 +22,13 @@ Bare `--output` filenames resolve under `--article-dir` (same rule as schema-gat
 
 `DEROUTER SCHEMA BLOCKER` → стоп. Контракт: `shared/derouter-opus-brain-contract.md`.
 
+**Meta-refusal (INC B31):** если Derouter вернул prose про скрипт/контракт вместо
+JSON-LD, `excalibur_blog_derouter_opus_chat.py` логирует
+`first_attempt: BLOCKER_META`, делает **один** auto-retry с усиленным user-prompt
+и пишет `schema.jsonld` только при валидном JSON с `@type` BlogPosting.
+Повторный отказ → exit ≠ 0, файл не перезаписывается. Ручной обход — только
+если script BLOCKER после retry.
+
 ## Вход
 
 - `article.html`, `article.meta.json`, `research-notes.md`

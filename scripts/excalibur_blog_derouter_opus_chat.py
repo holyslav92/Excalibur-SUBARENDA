@@ -425,6 +425,63 @@ def resolve_stamp_path(*, article_dir: str | None, role: str, root: Path) -> Pat
     return root / "memory/setup/derouter-opus-stamp.json"
 
 
+SCHEMA_META_REFUSAL_MARKERS = (
+    "excalibur_blog_derouter",
+    "excalibur_blog_derouter_opus_chat",
+    "должен быть создан",
+    "DEROUTER SCHEMA",
+)
+
+SCHEMA_RETRY_USER_SUFFIX = (
+    "\n\n---\nOUTPUT (HARD): Reply with ONLY valid JSON-LD (BlogPosting; optional FAQPage "
+    "in @graph). No markdown fences, no prose, no meta about scripts or "
+    "excalibur_blog_derouter_opus_chat.py."
+)
+
+
+def strip_jsonld_fences(text: str) -> str:
+    raw = text.strip()
+    if not raw.startswith("```"):
+        return raw
+    lines = raw.splitlines()
+    if lines and lines[0].startswith("```"):
+        lines = lines[1:]
+    if lines and lines[-1].strip() == "```":
+        lines = lines[:-1]
+    return "\n".join(lines).strip()
+
+
+def _schema_graph_objects(value: Any) -> list[dict[str, Any]]:
+    found: list[dict[str, Any]] = []
+    if isinstance(value, dict):
+        found.append(value)
+        for child in value.values():
+            found.extend(_schema_graph_objects(child))
+    elif isinstance(value, list):
+        for child in value:
+            found.extend(_schema_graph_objects(child))
+    return found
+
+
+def schema_derouter_output_errors(text: str) -> list[str]:
+    """Reject meta-refusal prose or non-JSON-LD schema role output (INC B31)."""
+    raw = strip_jsonld_fences(text)
+    if not raw:
+        return ["empty output"]
+    lower = raw.lower()
+    for marker in SCHEMA_META_REFUSAL_MARKERS:
+        if marker.lower() in lower:
+            return [f"meta-refusal or contract echo (marker {marker!r})"]
+    try:
+        data = json.loads(raw)
+    except json.JSONDecodeError as exc:
+        return [f"not valid JSON: {exc}"]
+    types = {str(item.get("@type") or "") for item in _schema_graph_objects(data)}
+    if "BlogPosting" not in types:
+        return ["JSON lacks @type BlogPosting"]
+    return []
+
+
 def resolve_derouter_output_path(
     output: str,
     *,
@@ -569,10 +626,41 @@ def run_chat(args: argparse.Namespace) -> int:
         print_blocker(role, str(exc))
         return 2
 
+    if role == "schema" and args.output:
+        schema_errors = schema_derouter_output_errors(text)
+        if schema_errors:
+            reason = "; ".join(schema_errors)
+            print(
+                f"WARN schema derouter first_attempt: BLOCKER_META ({reason})",
+                file=sys.stderr,
+            )
+            reinforced = user_prompt.rstrip() + SCHEMA_RETRY_USER_SUFFIX
+            try:
+                text, response, endpoint, resolved_model = call_derouter_with_aliases(
+                    system_prompt=system_prompt,
+                    user_prompt=reinforced,
+                    tier=tier,
+                    model=model,
+                    timeout=timeout,
+                    max_retries=DEFAULT_MAX_RETRIES,
+                )
+            except DerouterChatError as exc:
+                print_blocker(role, str(exc))
+                return 2
+            schema_errors = schema_derouter_output_errors(text)
+            if schema_errors:
+                retry_reason = "; ".join(schema_errors)
+                print_blocker(role, f"schema output invalid after retry: {retry_reason}")
+                return 2
+            print("NOTE schema derouter second_attempt: PASS", file=sys.stderr)
+
     if args.output:
         out = resolve_derouter_output_path(args.output, article_dir=args.article_dir, root=root)
         out.parent.mkdir(parents=True, exist_ok=True)
-        out.write_text(text if text.endswith("\n") else text + "\n", encoding="utf-8")
+        body = text
+        if role == "schema":
+            body = strip_jsonld_fences(text)
+        out.write_text(body if body.endswith("\n") else body + "\n", encoding="utf-8")
         print(f"WROTE {out.relative_to(root) if out.is_relative_to(root) else out}")
 
     stamp_path = resolve_stamp_path(article_dir=args.article_dir, role=role, root=root)
