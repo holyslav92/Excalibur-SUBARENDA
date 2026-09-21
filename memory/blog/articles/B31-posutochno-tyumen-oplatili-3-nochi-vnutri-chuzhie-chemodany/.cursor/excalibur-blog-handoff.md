@@ -9,3 +9,16 @@ topic_id: B31
 title_draft: «Оплатили 3 ночи. Открыли дверь — внутри чужие чемоданы»
 primary_query: квартиры посуточно тюмень
 priority: P0
+
+=== EXCALIBUR BLOG PUBLISH ===
+topic_id: B31
+slug: posutochno-tyumen-oplatili-3-nochi-vnutri-chuzhie-chemodany
+article_dir: memory/blog/articles/B31-posutochno-tyumen-oplatili-3-nochi-vnutri-chuzhie-chemodany
+publish_date: 2026-09-21
+verdict: PASS
+permalink: https://добрыйдом-72.рф/blog/posutochno-tyumen-oplatili-3-nochi-vnutri-chuzhie-chemodany/
+post_id: 5019
+featured_image: 5020
+inline_images: 5021,5022,5023
+schema_meta: ok
+blockers:
