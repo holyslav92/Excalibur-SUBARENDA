@@ -1,0 +1,75 @@
+{
+  "topic_id": "B32",
+  "slug": "v-kartochke-4200-na-oplate-5050-klyuch-eshe-ne-brali",
+  "canvas_file": "cover/canvas-slice4.png",
+  "layout": "2x2",
+  "pipeline": "slice4_grid_1x_image_api",
+  "inline_count": 3,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-slice4.png",
+      "batch_file": "cover/slice4-mcp-batch.json",
+      "prompt_file": "cover/slice4-mcp-prompt.txt",
+      "result_file": "cover/slice4-mcp-result.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+      "has_cover": true
+    }
+  ],
+  "style_preset": "dobry_dom_gen_only_slice4",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "cover_hook": "Карточка 4 200 — оплата 5 050",
+  "cover_hook_highlight": "5 050",
+  "cover_headline_line1": "В карточке 4 200 ₽",
+  "cover_headline_line2": "на оплате 5 050",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "wordstat_stickers": ["квартиры посуточно тюмень", "посуточно комиссия"],
+  "cover_motifs": {
+    "composition": "guest on sofa scrolling phone checkout screen 4200 crossed 5050 total service fee line autumn tyumen window golden light",
+    "location": "early autumn 2026 warm sunny tyumen comfort apartment no snow",
+    "meme": "photoreal zero cat meme no wordstat stickers in art",
+    "prop_set": "smartphone payment app 4200 5050 rubles receipt sticky note hook pad top-right empty",
+    "sticker_set": "посуточно тюмень комиссия итог оплаты",
+    "joke": "guest thought card price was final until checkout added 850"
+  },
+  "cover_emotion": "недоверие к экрану до ключа",
+  "cover_scene": "Гость с телефоном на экране оплаты; крупный кириллический хук; pad TR пустой.",
+  "mcp_note": "ONE Grsai 2048×1152 slice4 — factory logo paste cover tile only after split.",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "На экране оплаты 5 050 ₽ вместо 4 200 ₽ в карточке — ключ ещё не выдали.",
+      "scene_hint": "Photoreal guest woman in light autumn jacket on apartment sofa holds smartphone showing payment total 5050 rubles with smaller 4200 listing above; large Cyrillic hook «В карточке 4 200 — на оплате 5 050» on paper on coffee table; phone number +7 (993) 574-83-22 on fridge magnet in scene; sunny September Tyumen through window yellow leaves; clean empty top-right pad 10% no logo no white box.",
+      "meme_caption_ru": "",
+      "sticky": "Ключ ещё не брали"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Сначала человек выбирает цифру",
+      "visual_type": "fact_card",
+      "scene_hint": "fact_card UI: card price vs checkout total vs service line vs cleaning line — light board large Cyrillic NO logo NO people.",
+      "alt": "Цена в карточке и итог на оплате — разные строки расчёта.",
+      "labels": ["цена в карточке", "итог на оплате", "сервис отдельно", "уборка в чеке"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Где именно появляется недоверие",
+      "visual_type": "comparison_table_ui",
+      "scene_hint": "comparison_table_ui: фильтр «от» vs итог vs «без комиссии» vs реальный чек — table large Cyrillic NO logo.",
+      "alt": "Недоверие появляется на последнем экране оплаты, не в фильтре.",
+      "labels": ["скрин карточки", "скрин итога", "сумма в чате", "потом перевод"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Как мы отвечаем на вопрос о цене",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "workflow_diagram arrows: спросить итог → скрин в чат → проверка → перевод → ключ — NO logo.",
+      "alt": "Сначала итог за даты в переписке, потом оплата и ключ.",
+      "labels": ["не «от»", "итог за даты", "сначала проверка", "потом ключ"]
+    }
+  }
+}

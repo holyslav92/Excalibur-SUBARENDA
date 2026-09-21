@@ -1,0 +1,50 @@
+{
+  "topic_id": "B32",
+  "slug": "v-kartochke-4200-na-oplate-5050-klyuch-eshe-ne-brali",
+  "cover_family": "brand_collage",
+  "style_preset": "dobry_dom_gen_only_slice4",
+  "pipeline": "slice4_grid_1x_image_api",
+  "file": "cover/cover.png",
+  "alt": "На экране оплаты 5 050 ₽ вместо 4 200 ₽ в карточке — ключ ещё не выдали.",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-slice4.png",
+  "generated_at": "2026-09-21T12:31:27+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "На экране оплаты 5 050 ₽ вместо 4 200 ₽ в карточке — ключ ещё не выдали.",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Цена в карточке и итог на оплате — разные строки расчёта.",
+      "h2_anchor": "Сначала человек выбирает цифру",
+      "visual_type": "fact_card",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Недоверие появляется на последнем экране оплаты, не в фильтре.",
+      "h2_anchor": "Где именно появляется недоверие",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Сначала итог за даты в переписке, потом оплата и ключ.",
+      "h2_anchor": "Как мы отвечаем на вопрос о цене",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}
