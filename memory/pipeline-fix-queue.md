@@ -1850,3 +1850,34 @@ category: env
 status: needs-human
 reason: env-only blocker; duplicate of INC-20260903-0640
 needed_decision_or_secret: YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets
+
+## INC-20260921-0925-schema-derouter-refusal
+
+status: open
+run_date: 2026-09-21
+role: excalibur-blog-schema
+topic_id: B31
+article_dir: memory/blog/articles/B31-posutochno-tyumen-oplatili-3-nochi-vnutri-chuzhie-chemodany
+severity: medium
+category: api
+
+### What went wrong
+
+- `excalibur_blog_derouter_opus_chat.py --role schema` exited 0 but wrote refusal prose into `schema.jsonld` instead of JSON-LD (model echoed contract text: «должен быть создан через excalibur_blog_derouter_opus_chat.py»).
+
+### How the agent recovered this run
+
+- Replaced `schema.jsonld` with B30-shaped BlogPosting JSON from `article.meta.json` / assembled inputs; `excalibur_blog_schema_gate.py` → PASS.
+
+### Durable fix needed before next run
+
+- Detect non-JSON schema derouter output and fail the script (non-zero exit) or auto-retry with stricter user prompt; strip meta-refusal from Terra schema role.
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_derouter_opus_chat.py`
+- `skills/schema-excalibur-blog/SKILL.md`
+
+### Secrets
+
+- none recorded
