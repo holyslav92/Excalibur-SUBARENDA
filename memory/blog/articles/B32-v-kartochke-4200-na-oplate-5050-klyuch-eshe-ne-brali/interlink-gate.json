@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "topic_id": "B32",
+  "slug": "v-kartochke-4200-na-oplate-5050-klyuch-eshe-ne-brali",
+  "candidates_count": 35,
+  "outbound_found": [
+    {
+      "slug": "rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super",
+      "title": "rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super"
+    },
+    {
+      "slug": "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400",
+      "title": "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400"
+    },
+    {
+      "slug": "buhgalteriya-zhdet-chek-v-chate-my-ne-gostinica",
+      "title": "buhgalteriya-zhdet-chek-v-chate-my-ne-gostinica"
+    }
+  ],
+  "outbound_unique_slugs": [
+    "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400",
+    "rejting-4-8-u-kvartiry-posutochno-dva-otzyva-odno-i-to-zhe-vse-super",
+    "buhgalteriya-zhdet-chek-v-chate-my-ne-gostinica"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "warnings": [],
+  "errors": []
+}

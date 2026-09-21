@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "topic_id": "B32",
+  "slug": "v-kartochke-4200-na-oplate-5050-klyuch-eshe-ne-brali",
+  "research_date": "2026-09-21",
+  "summary": "Guest CASE: card 4200 RUB vs checkout 5050 before key; 850 delta; commission/cleaning line at pay step. Fresh Dobriy_dom_72 Sep 2026 + Wordstat commission cluster.",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Dobriy_dom_72 TG Sep 2026 + Scout checkout-delta hook",
+    "source_type": "community",
+    "urls": ["https://t.me/Dobriy_dom_72", "https://t.me/klyshin_A"],
+    "accessed_at": "2026-09-21"
+  },
+  "freshness_audit": {
+    "research_date": "2026-09-21",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true
+  },
+  "wordstat_audit": {"status": "PASS", "regions": ["55", "11176", "225"]},
+  "official_source_audit": {"status": "PASS", "required": false},
+  "derouter": {"role": "research", "first_attempt": "PASS"},
+  "errors": []
+}

@@ -1,0 +1,34 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/v-kartochke-4200-na-oplate-5050-klyuch-eshe-ne-brali/",
+  "url": "{{SITE_BASE}}/blog/v-kartochke-4200-na-oplate-5050-klyuch-eshe-ne-brali/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/v-kartochke-4200-na-oplate-5050-klyuch-eshe-ne-brali/"
+  },
+  "headline": "В карточке 4 200 ₽. На оплате — 5 050, ключ ещё не брали",
+  "datePublished": "2026-09-21",
+  "author": {
+    "@type": "Organization",
+    "@id": "{{SITE_BASE}}/#organization",
+    "name": "Добрый дом",
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "{{SITE_BASE}}/#organization",
+    "name": "Добрый дом",
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    }
+  }
+}

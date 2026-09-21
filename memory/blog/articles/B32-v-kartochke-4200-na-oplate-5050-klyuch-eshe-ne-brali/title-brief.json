@@ -1,0 +1,14 @@
+{
+  "topic_id": "B32",
+  "h1": "В карточке 4 200 ₽. На оплате — 5 050, ключ ещё не брали",
+  "title": "В карточке 4 200 ₽, а на оплате 5 050 ₽ — квартиры посуточно в Тюмени",
+  "slug": "v-kartochke-4200-na-oplate-5050-klyuch-eshe-ne-brali",
+  "primary_query": "квартиры посуточно тюмень",
+  "wordstat_p0": {
+    "phrase": "квартиры посуточно тюмень",
+    "volume_tyumen": 4409,
+    "volume_ru": 9372
+  },
+  "dzen_pattern": 2,
+  "klyshin_hook": "kitchen_vs_hotel + hidden_fees → checkout delta before key"
+}
