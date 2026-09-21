@@ -1,0 +1,74 @@
+{
+  "status": "PASS",
+  "topic_id": "B31",
+  "slug": "zalog-utrom-posle-uborki",
+  "research_date": "2026-09-21",
+  "summary": "Guest CASE: 5 000 ₽ deposit promised return morning/до обеда; keys at 11:00; new message «после уборки и фото». Fresh: Dobriy_dom_72 TG week 2026-09-21 (check-in photos, clarify terms, payment proof); Directline deposit article 2026-08-07; Klyshin channel active; P0 «залог посуточно» 2686 (225). Mechanics: fix return deadline before stay; inspection vs cleaning trigger; not damage dispute (anti-dup B02/B23/B30).",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Dobriy_dom_72 TG 2026-09-21 + Directline.pro 2026-08-07 + Scout deposit_return_sliding_window",
+    "source_type": "community_and_industry",
+    "urls": [
+      "https://t.me/Dobriy_dom_72",
+      "https://t.me/klyshin_A",
+      "https://www.directline.pro/connect/p/zalog-pri-sdache-kvartiry-posutochno/"
+    ],
+    "accessed_at": "2026-09-21",
+    "note": "Composite Tyumen guest case from Scout hook; not verified transcript. Klyshin posts this week are purchase-law — hook is topic-bank editorial."
+  },
+  "freshness_audit": {
+    "research_date": "2026-09-21",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://t.me/s/Dobriy_dom_72",
+      "published_at": "2026-09-21",
+      "note": "Posts on check-in state photos, extension terms before booking, save payment screenshots — local fresh context for deposit return timing."
+    }
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176", "225"],
+    "observations": [
+      {"phrase": "залог посуточно", "volume": 2686, "region": "225"},
+      {"phrase": "залог посуточно", "volume": 26, "region": "55+11176"},
+      {"phrase": "не возвращают залог за квартиру посуточно", "volume": 55, "region": "225"},
+      {"phrase": "квартиры посуточно без залога", "volume": 1130, "region": "225", "note": "related cluster from scout rework"}
+    ]
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "No bank tariff digits; Directline industry orientation only",
+    "verified_claims": 0,
+    "entities_checked": [],
+    "errors": []
+  },
+  "tenant_cta_audit": {"status": "PASS", "phone_invented": false},
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "memory/blog/articles/B31-zalog-utrom-posle-uborki/derouter-opus-stamp-research.json",
+    "first_attempt": "PASS"
+  },
+  "source_count": 10,
+  "practical_facts_count": 12,
+  "limitations": [
+    "No verified chat transcript of a specific Tyumen booking; case from Scout editorial hook.",
+    "5 000 ₽ is title scenario anchor, not verified market deposit median.",
+    "Wordstat volumes are totalCount probes (PARTIAL).",
+    "Directline deposit range 2–5k is industry media, not Tyumen norm."
+  ],
+  "writer_safe_urls": [
+    "https://t.me/Dobriy_dom_72",
+    "https://t.me/Dobriy_dom_Tyumen",
+    "https://max.ru/id660300569233_biz",
+    "https://добрыйдом-72.рф/",
+    "https://добрыйдом-72.рф/booking/",
+    "https://t.me/klyshin_A",
+    "https://www.directline.pro/connect/p/zalog-pri-sdache-kvartiry-posutochno/",
+    "https://www.directline.pro/connect/p/pravila-prozhivaniya-v-posutochnoj-kvartire/"
+  ],
+  "errors": []
+}
