@@ -1,0 +1,218 @@
+{
+  "agent": "excalibur-blog",
+  "date_context": {
+    "timezone": "Europe/Moscow",
+    "today_iso": "2026-09-21",
+    "today_ru": "21.09.2026",
+    "year": 2026,
+    "month": 9,
+    "month_name_ru": "сентябрь",
+    "weekday_ru": "понедельник"
+  },
+  "topic": {
+    "topic_id": "B31",
+    "title": "Залог утром после уборки",
+    "h1": "Залог утром после уборки",
+    "slug": "zalog-utrom-posle-uborki",
+    "primary_query": "Залог утром после уборки",
+    "priority": "P0"
+  },
+  "searches": [
+    {
+      "query_id": "primary_fresh",
+      "query": "Залог утром после уборки 2026",
+      "purpose": "актуальный SERP",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Залог 5 000 ₽ обещали утром. После уборки — без срока",
+          "url": "https://dzen.ru/a/aqo64N8hLg35kw71",
+          "snippet": ""
+        },
+        {
+          "title": "Вернуть залог за квартиру: уборка, чек-лист и фото до/после",
+          "url": "https://tehkom-s.ru/kak-vernut-zalog-za-kvartiru-s-pomoshhyu-uborki-poshagovyj-prakticheskij-plan/",
+          "snippet": "Статья автора «Добрый Дом | посуточно квартиры в Тюмени» в Дзене : Вы перевели 5 000 ₽ залога ещё до заезда — для посуточной аренды в Тюмени это привычная практика."
+        },
+        {
+          "title": "Залог 5 000 ₽ обещали вернуть утром. А потом — «после уборки»",
+          "url": "https://dzen.ru/a/aqQQkWFhSwy0vtrh",
+          "snippet": "Узнайте, как вернуть залог за квартиру: пошаговая уборка, чек-лист и лайфхаки для идеальной сдачи жилья без претензий."
+        },
+        {
+          "title": "Уборка перед сном: залог чистого утра - Все секреты легкой уборки",
+          "url": "https://nevas.ru/osnovy-uborki/uborka-pered-snom-zalog-chistogo-utra.html",
+          "snippet": "Статья автора «Добрый Дом | посуточно квартиры в Тюмени» в Дзене : «Вернём утром после выезда» — это было написано в чате ещё до оплаты."
+        },
+        {
+          "title": "Уборка после арендаторов: чек-лист для возврата залога, понятный и ...",
+          "url": "http://lr-cleaning.ru/uborka-posle-arendatorov-chek-list-dlya-vozvrata-zaloga-ponyatnyj-i-praktichnyj/",
+          "snippet": "Правильный настрой с утра — это залог успешных начинаний. Научившись убирать перед сном, вы приобретете привычку, которая поможет вам в будущем справляться с беспорядком быстрее и ..."
+        },
+        {
+          "title": "Торги по банкротству ЕФРСБ, лоты по продаже имущества должников ...",
+          "url": "https://m-ets.ru/",
+          "snippet": "Если сроки сжаты, отберите ключевые работы, которые гарантированно повлияют на решение о возврате залога."
+        }
+      ],
+      "searched_at": "2026-09-21"
+    },
+    {
+      "query_id": "title_fresh",
+      "query": "Залог утром после уборки 2026",
+      "purpose": "SERP по человеческому title",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Залог 5 000 ₽ обещали утром. После уборки — без срока",
+          "url": "https://dzen.ru/a/aqo64N8hLg35kw71",
+          "snippet": ""
+        },
+        {
+          "title": "Вернуть залог за квартиру: уборка, чек-лист и фото до/после",
+          "url": "https://tehkom-s.ru/kak-vernut-zalog-za-kvartiru-s-pomoshhyu-uborki-poshagovyj-prakticheskij-plan/",
+          "snippet": "Статья автора «Добрый Дом | посуточно квартиры в Тюмени» в Дзене : Вы перевели 5 000 ₽ залога ещё до заезда — для посуточной аренды в Тюмени это привычная практика."
+        },
+        {
+          "title": "Уборка перед сном: залог чистого утра - Все секреты легкой уборки",
+          "url": "https://nevas.ru/osnovy-uborki/uborka-pered-snom-zalog-chistogo-utra.html",
+          "snippet": "Узнайте, как вернуть залог за квартиру: пошаговая уборка, чек-лист и лайфхаки для идеальной сдачи жилья без претензий."
+        },
+        {
+          "title": "Залог 5 000 ₽ обещали вернуть утром. А потом — «после уборки»",
+          "url": "https://dzen.ru/a/aqQQkWFhSwy0vtrh",
+          "snippet": "Правильный настрой с утра — это залог успешных начинаний. Научившись убирать перед сном, вы приобретете привычку, которая поможет вам в будущем справляться с беспорядком быстрее и ..."
+        },
+        {
+          "title": "Уборка после арендаторов: чек-лист для возврата залога, понятный и ...",
+          "url": "http://lr-cleaning.ru/uborka-posle-arendatorov-chek-list-dlya-vozvrata-zaloga-ponyatnyj-i-praktichnyj/",
+          "snippet": "Статья автора «Добрый Дом | посуточно квартиры в Тюмени» в Дзене : «Вернём утром после выезда» — это было написано в чате ещё до оплаты."
+        },
+        {
+          "title": "Залог при посуточной аренде: что это такое, зачем нужен, возвращается ...",
+          "url": "https://blog.domclick.ru/nedvizhimost/post/zalog-pri-posutochnoj-arende-kak-pravilno-oformit-i-vernut",
+          "snippet": "Если сроки сжаты, отберите ключевые работы, которые гарантированно повлияют на решение о возврате залога."
+        }
+      ],
+      "searched_at": "2026-09-21"
+    },
+    {
+      "query_id": "official_docs",
+      "query": "Залог утром после уборки official docs 2026",
+      "purpose": "официальные docs",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Залог 5 000 ₽ обещали утром. После уборки — без срока",
+          "url": "https://dzen.ru/a/aqo64N8hLg35kw71",
+          "snippet": ""
+        },
+        {
+          "title": "Постановление Пленума ВС РФ о применении судами правил о залоге вещей",
+          "url": "https://sibadvokat.ru/magazine/sudebnaja-praktika/obzor-postanovlenija-plenuma-verhovnogo-suda-o-primenenii-pravil-o-zaloge-veshhej",
+          "snippet": "Статья автора «Добрый Дом | посуточно квартиры в Тюмени» в Дзене : Вы перевели 5 000 ₽ залога ещё до заезда — для посуточной аренды в Тюмени это привычная практика."
+        },
+        {
+          "title": "Поиск в реестре",
+          "url": "https://www.reestr-zalogov.ru/search",
+          "snippet": "Как указал Пленум Верховного суда РФ, залогодатель, у которого находится заложенная вещь, обязан владеть ею бережно, принимать меры, направленные на обеспечение сохранности предмета ..."
+        },
+        {
+          "title": "Предшествующий и последующий залог \\ 2026-2025-2024 год \\ Акты, образцы ...",
+          "url": "https://www.consultant.ru/law/podborki/predshestvuyuschij_i_posleduyuschij_zalog/",
+          "snippet": "Реестр уведомлений о залоге движимого имущества Проверить статус"
+        },
+        {
+          "title": "Залог 5 000 ₽ обещали вернуть утром. А потом — «после уборки»",
+          "url": "https://dzen.ru/a/aqQQkWFhSwy0vtrh",
+          "snippet": "Подборка наиболее важных документов по вопросу Предшествующий и последующий залог нормативно-правовые акты формы статьи консультации экспертов и многое другое."
+        },
+        {
+          "title": "Договоры залога: скачать шаблоны и образцы бесплатно",
+          "url": "https://amulex.ru/docs/contracts/pledge-contract",
+          "snippet": "Статья автора «Добрый Дом | посуточно квартиры в Тюмени» в Дзене : «Вернём утром после выезда» — это было написано в чате ещё до оплаты."
+        }
+      ],
+      "searched_at": "2026-09-21"
+    },
+    {
+      "query_id": "github_evidence",
+      "query": "site:github.com Залог утром после уборки 2026",
+      "purpose": "GitHub evidence",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Aura-AI/flow.png at master · Rkcr7/Aura-AI · GitHub",
+          "url": "https://github.com/Rkcr7/Aura-AI/blob/master/flow.png",
+          "snippet": ""
+        },
+        {
+          "title": "localtuya/img/5-success.png at master · rospogrigio/localtuya",
+          "url": "https://github.com/rospogrigio/localtuya/blob/master/img/5-success.png",
+          "snippet": "An undetectable AI assistant that lives on your screen. Solves problems, answers questions, analyzes screenshots — invisible to everyone but you. - Aura-AI/flow.png at master · Rkcr7/Aura-AI."
+        },
+        {
+          "title": "pastiera/dict_backup/ru_base.json at main - GitHub",
+          "url": "https://github.com/palsoftware/pastiera/blob/main/dict_backup/ru_base.json",
+          "snippet": "Contribute to rospogrigio/localtuya development by creating an account on GitHub."
+        },
+        {
+          "title": "akiev-3/USA_crime_2020-2026 - GitHub",
+          "url": "https://github.com/akiev-3/USA_crime_2020-2026",
+          "snippet": "Expanded dictionary files for multiple languages, adding new entries … {\"w\":\"я\",\"f\":5081568}, {\"w\":\"не\",\"f\":4334804}, {\"w\":\"что\",\"f\":3552532}, {\"w\":\"в\",\"f\":2953981}, {\"w\":\"и\",\"f\":2917112}, {\"w\":\"ты\",\"f\":2723798}, {\"w\":\"это\",\"f\":2640455}, {\"w\":\"на\",\"f\":1655351}, {\"w\":\"с\",\"f\":1509844}, {\"w\":\"он\",\"f\":1283590}, {\"w\":\"мы\",\"f\":1214875},"
+        },
+        {
+          "title": "aurora/aurora_white_standard.png at master · logrusorgru/aurora",
+          "url": "https://github.com/logrusorgru/aurora/blob/master/aurora_white_standard.png",
+          "snippet": "[Набор данных о правонарушениях LAPD NIBRS | [Портал открытых данных Лос-Анджелеса] • [Набор данных о жертвах преступлений LAPD NIBRS | Портал открытых данных Лос-Анджелеса] - akiev-3/USA_crime_2020-2026"
+        },
+        {
+          "title": "unsupervised_topic_modeling/topics/ru/17/100/50/topics at ... - GitHub",
+          "url": "https://github.com/annontopicmodel/unsupervised_topic_modeling/blob/master/topics/ru/17/100/50/topics",
+          "snippet": "Golang ultimate ANSI-colors that supports Printf/Sprintf methods - aurora/aurora_white_standard.png at master · logrusorgru/aurora"
+        }
+      ],
+      "searched_at": "2026-09-21"
+    },
+    {
+      "query_id": "community_experience",
+      "query": "Залог утром после уборки forum problems опыт 2026",
+      "purpose": "форумы и живые проблемы",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Залог 5 000 ₽ обещали утром. После уборки — без срока",
+          "url": "https://dzen.ru/a/aqo64N8hLg35kw71",
+          "snippet": ""
+        },
+        {
+          "title": "Залог 5 000 ₽ обещали вернуть утром. А потом — «после уборки»",
+          "url": "https://dzen.ru/a/aqQQkWFhSwy0vtrh",
+          "snippet": "Статья автора «Добрый Дом | посуточно квартиры в Тюмени» в Дзене : Вы перевели 5 000 ₽ залога ещё до заезда — для посуточной аренды в Тюмени это привычная практика."
+        },
+        {
+          "title": "Вернуть залог за квартиру: уборка, чек-лист и фото до/после",
+          "url": "https://tehkom-s.ru/kak-vernut-zalog-za-kvartiru-s-pomoshhyu-uborki-poshagovyj-prakticheskij-plan/",
+          "snippet": "Статья автора «Добрый Дом | посуточно квартиры в Тюмени» в Дзене : «Вернём утром после выезда» — это было написано в чате ещё до оплаты."
+        },
+        {
+          "title": "Внесение залога 1. Залог является обеспечительной мерой и вносится ...",
+          "url": "https://vk.com/wall-236946027_16",
+          "snippet": "Узнайте, как вернуть залог за квартиру: пошаговая уборка, чек-лист и лайфхаки для идеальной сдачи жилья без претензий."
+        },
+        {
+          "title": "Как вернуть залог за квартиру — пошаговая инструкция 2026",
+          "url": "https://pravoznaika.ru/blog/kak-vernut-zalog-za-kvartiru/",
+          "snippet": "2. Перевод залога подтверждает согласие гостя со всеми правилами проживания и условиями возврата залога. 3. Залог возвращается в полном объёме в течение 4 часов после выезда при условии:"
+        },
+        {
+          "title": "Чистота - залог уюта! ‍♂️Начинаем рабочую неделю с уборки! Сегодня ...",
+          "url": "https://vk.com/wall-232145734_159",
+          "snippet": "Наймодатель не отдаёт залог за квартиру? Разбираем, когда залог обязаны вернуть, как составить претензию и что делать, если деньги не возвращают. Образцы и ссылки на законы."
+        }
+      ],
+      "searched_at": "2026-09-21"
+    }
+  ],
+  "errors": []
+}

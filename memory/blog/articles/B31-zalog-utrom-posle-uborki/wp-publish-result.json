@@ -1,0 +1,27 @@
+{
+  "slug": "zalog-utrom-posle-uborki",
+  "topic_id": "B31",
+  "permalink": "{{SITE_BASE}}/blog/zalog-utrom-posle-uborki/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B31-zalog-utrom-posle-uborki/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1007046,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=5013 slug=zalog-utrom-posle-uborki\nOK categories=101,102\nOK dzen_yzen_meta=1\nOK featured_image=5014\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=5015 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/zalog-utrom-posle-uborki-inline-01.png\nOK inline_alt=5015\nOK inline_caption=5015\nOK inline_description=5015\nOK inline_image_upload=5016 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/zalog-utrom-posle-uborki-inline-02.png\nOK inline_alt=5016\nOK inline_caption=5016\nOK inline_description=5016\nOK inline_image_upload=5017 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/zalog-utrom-posle-uborki-inline-03.png\nOK inline_alt=5017\nOK inline_caption=5017\nOK inline_description=5017\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/zalog-utrom-posle-uborki/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 3,
+    "expected_inline": 3,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/zalog-utrom-posle-uborki/",
+    "errors": []
+  }
+}

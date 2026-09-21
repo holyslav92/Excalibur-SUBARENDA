@@ -1,0 +1,74 @@
+{
+  "topic_id": "B31",
+  "canvas_file": "cover/canvas-slice4.png",
+  "layout": "2x2",
+  "pipeline": "slice4_grid_1x_image_api",
+  "inline_count": 3,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-slice4.png",
+      "batch_file": "cover/slice4-mcp-batch.json",
+      "prompt_file": "cover/slice4-mcp-prompt.txt",
+      "result_file": "cover/slice4-mcp-result.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+      "has_cover": true,
+      "slice4_grid": true
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "Обещали утром — после уборки",
+  "cover_hook_highlight": "уборки",
+  "cover_headline_line1": "Обещали утром",
+  "cover_headline_line2": "после уборки",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "wordstat_stickers": [
+    "залог посуточно",
+    "квартиры посуточно без залога"
+  ],
+  "cover_motifs": {
+    "composition": "bank app chat envelope keys autumn",
+    "location": "mid-sep 2026 tyumen entry golden leaves no snow",
+    "meme": "deposit return envelope sticker cover only no cat",
+    "prop_set": "phone chat deposit keys"
+  },
+  "cover_emotion": "ожидание возврата",
+  "cover_scene": "Чат и банк, хук, осень.",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "scene_hint": "Смартфон: чат «до обеда», хук, перевод, осень, pad TR.",
+      "alt": "Обещали вернуть залог утром — пришло «после уборки».",
+      "sticky": "Ключи уже сдал"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "«Утром» — это не срок",
+      "visual_type": "bar_timeline_chart",
+      "scene_hint": "timeline: утро / обед / уборка. Pad TR.",
+      "alt": "Слово «утром» не заменяет срок возврата залога.",
+      "labels": ["залог пять тысяч", "до обеда вернём", "перевод на карту"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Это не спор про ущерб",
+      "visual_type": "comparison_table_ui",
+      "scene_hint": "table: ущерб vs срок. NO logo.",
+      "alt": "Не удержание за скол — перенос срока после ключей.",
+      "labels": ["ключи в ящике", "после уборки", "фото без срока"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Вопрос, который открывает замок",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "workflow: вопрос в чат → перевод. NO logo.",
+      "alt": "Спросить до перевода: когда вернут и что в переписке.",
+      "labels": ["банк не обновился", "утро прошло", "сначала проверка"]
+    }
+  }
+}
