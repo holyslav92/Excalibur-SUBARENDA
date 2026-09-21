@@ -1,0 +1,99 @@
+{
+  "topic_id": "B31",
+  "slug": "posutochno-tyumen-oplatili-3-nochi-vnutri-chuzhie-chemodany",
+  "canvas_file": "cover/canvas-slice4.png",
+  "layout": "2x2",
+  "pipeline": "slice4_grid_1x_image_api",
+  "inline_count": 3,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-slice4.png",
+      "batch_file": "cover/slice4-mcp-batch.json",
+      "prompt_file": "cover/slice4-mcp-prompt.txt",
+      "result_file": "cover/slice4-mcp-result.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    }
+  ],
+  "style_preset": "dobry_dom_gen_only_slice4",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "cover_hook": "Осенний заезд в Тюмени — чужие чемоданы",
+  "cover_hook_highlight": "чужие",
+  "cover_headline_line1": "Оплатили 3 ночи",
+  "cover_headline_line2": "внутри чужие чемоданы",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "снять квартиру посуточно в тюмени"
+  ],
+  "cover_motifs": {
+    "composition": "guest frozen at half-open door sees two rolling suitcases in bright living room printed booking sheet on hallway console hook tr pad",
+    "location": "early autumn 2026 warm sunny tyumen comfort plus one bedroom golden birch light through window wet umbrella rack no snow no winter",
+    "meme": "photoreal zero cat meme stickers no wordstat stickers in art",
+    "prop_set": "smartphone booking chat three nights paid green check two foreign suitcases door ajar hallway shoes payment receipt",
+    "sticker_set": "двойное бронирование посуточно тюмень занятая квартира при заезде",
+    "joke": "payment confirmed in chat but inside another guest trip already unpacked"
+  },
+  "cover_emotion": "шок у порога — три ночи оплачены, а внутри чужой заезд",
+  "cover_scene": "Гость у приоткрытой двери видит два чемодана в гостиной; на консоли распечатка брони; хук на листе; pad TR.",
+  "mcp_note": "ONE Grsai 2048×1152 slice4 — factory logo paste cover tile only after split.",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Три ночи оплачены, но при открытии двери в квартире уже стоят чужие чемоданы.",
+      "scene_hint": "Гость в лёгкой осенней куртке замер у приоткрытой двери посуточной однушки: в глубине гостиной два дорожных чемодана и чужая обувь, на консоли в прихожей смартфон с зелёной галочкой «3 ночи оплачены»; крупный хук «Оплатили 3 ночи — внутри чужие чемоданы» с выделением слова «чужие» на распечатке брони на столике; сентябрьское солнце и жёлтые листья за окном без снега; чистый pad TR 8–12% без логотипа и без телефона на картинке.",
+      "meme_caption_ru": "",
+      "sticky": "Три ночи оплачены"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Почему оплата не освобождает квартиру",
+      "visual_type": "comparison_table_ui",
+      "scene_hint": "comparison_table_ui: оплата не замок / два на одну дату / календарь не обновился / чек не ночлег — светлая таблица на доске, крупная кириллица, NO logo NO people large.",
+      "alt": "Оплата подтверждает перевод, но не гарантирует, что календарь не пересёкся с другим гостем.",
+      "labels": [
+        "оплата не замок",
+        "два на одну дату",
+        "календарь не обновился",
+        "чек не ночлег"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Первые минуты у занятой квартиры",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "workflow_diagram: не заходить внутрь → шаг назад от двери → адрес замены сейчас → поддержка площадки — стрелки, светлый фон, NO logo.",
+      "alt": "У занятой квартиры — не входить, отойти от двери, запросить замену и написать в поддержку площадки.",
+      "labels": [
+        "не заходить внутрь",
+        "шаг назад от двери",
+        "адрес замены сейчас",
+        "поддержка площадки"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Что проверить до перевода",
+      "visual_type": "checklist_board",
+      "scene_hint": "checklist_board: адрес до оплаты / план Б письменно / сначала проверка / потом перевод — чек-лист на светлой доске, NO logo.",
+      "alt": "До перевода: адрес, план Б письменно и проверка — потом оплата.",
+      "labels": [
+        "адрес до оплаты",
+        "план Б письменно",
+        "сначала проверка",
+        "потом перевод"
+      ]
+    }
+  },
+  "cover_keys_ru": []
+}

@@ -1907,3 +1907,89 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+---
+
+## LESSON-20260921-1000-B31-double-booking-plan-b-before-pay
+status: proposed
+topic_id: B31
+category: utility
+confidence: medium
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP. Урок из publish-артефактов: handoff wordstat rework, title-brief.json, article.html, description-brief.json PASS, interlink-plan.json (B08/B13/B16/B22), cover-text.json.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest METRIKA CREDENTIALS BLOCKER (INC-20260921-1000).
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Угол `double_booking` / pack_vs_flat: оплата 3 ночей ≠ свободная дверь; «календарь не обновился» — объяснение хоста, не ночлег у порога.
+- §1 sensory door-scene: сумка, код, адрес совпадает, чужие чемоданы/чайник/голоса — не abstract «овербукинг».
+- Вопрос-отмычка mid-body: «Если квартира окажется занята в день заезда — какой адрес, возврат или замена вы фиксируете в переписке до оплаты?» — до TG, не комментарии.
+- Utility H2 «не заходить внутрь» + конкретика в чат: адрес замены и время, не «что делать?».
+- Host Klyshin-close: «Нет. Так не заселяем.» + «Сначала проверка. Потом перевод.» — план Б письменно до перевода.
+- Scout rework в handoff: «квартира занята посуточно» 18 → «залог посуточно» 2672 RU → final P0 spine «квартиры посуточно тюмень» 4409; angle_rotation skip burn-at-door (B28–B30) → новый inside-occupied angle.
+- Interlink spine: B08 предоплата/тишина, B13 пустая ключница, B16 отмена рейса/возврат, B22 паспорт до кода — заселение и деньги, не дубль B30 late-checkout.
+
+### Change
+- Для double-booking hooks в §1 всегда фиксировать **N ночей оплачено** + **физическое доказательство занятости** (чемоданы), чтобы отличать от wrong-address / empty lockbox.
+- В utility-блоке держать **замена vs возврат**: возврат не заменяет ночлег в день заезда — явно как в B31 lead.
+
+### Never again
+- How-to «как забронировать без овербукинга» / чеклист площадок без дверной сцены.
+- Сценарий «войти и разобраться» с людьми внутри — в материале только как anti-pattern.
+- Склеивать double booking с B13 только по «не пускают» без слоя «внутри уже живут другие гости».
+
+### Proposed apply
+- Scout: hook `pack_vs_flat` / double booking — handoff original Klyshin + rework log (слабый «занята» → spine Tyumen P0); angle_rotation не ставить burn-at-door подряд.
+- Review only; Writer prompt не трогать автоматически.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260921-1000-B31-title-paid-nights-door-suitcases
+status: proposed
+topic_id: B31
+category: voice
+confidence: low
+
+### Evidence
+- artifact: title-brief.json / description-brief.json
+  finding: H1 two-beat «Оплатили 3 ночи. Открыли дверь — внутри чужие чемоданы»; description klyshin_case_hook — «календарь не обновился» + план до перевода, not_equal_title PASS; dzen_pattern 2.
+- metrika_signal: none (credentials unavailable; causal CTR не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Cable pain-scene: оплата (3 ночи) → действие у двери → визуальный шок (чемоданы), без SEO-хвоста в H1.
+- Cover-text: sticky «Три ночи оплачены» + highlight «чужие» — ритм без полного дубля H1.
+- Description teaser про план Б до перевода — не копия H1 (meta_ab дубли в article.meta.json — техдолг publish).
+
+### Change
+- Для inside-occupied hooks: prefer **paid nights beat + door reveal beat** over scout draft с полным how-to в заголовке.
+- Description: контраст «календарь не обновился» vs «что спросить до оплаты» — как B31 description-brief.
+
+### Never again
+- H1 только «двойное бронирование посуточно тюмень» без дверной сцены.
+- Description = дословный H1 (три variant meta в publish — не слог Sol).
+
+### Proposed apply
+- Title/Description review: double_booking — оплатили N ночей → открыли дверь > jargon-only H1.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded

@@ -1850,3 +1850,80 @@ category: env
 status: needs-human
 reason: env-only blocker; duplicate of INC-20260903-0640
 needed_decision_or_secret: YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets
+
+## INC-20260921-0925-schema-derouter-refusal
+
+status: fixed
+run_date: 2026-09-21
+role: excalibur-blog-schema
+topic_id: B31
+article_dir: memory/blog/articles/B31-posutochno-tyumen-oplatili-3-nochi-vnutri-chuzhie-chemodany
+severity: medium
+category: api
+
+### What went wrong
+
+- `excalibur_blog_derouter_opus_chat.py --role schema` exited 0 but wrote refusal prose into `schema.jsonld` instead of JSON-LD (model echoed contract text: «должен быть создан через excalibur_blog_derouter_opus_chat.py»).
+
+### How the agent recovered this run
+
+- Replaced `schema.jsonld` with B30-shaped BlogPosting JSON from `article.meta.json` / assembled inputs; `excalibur_blog_schema_gate.py` → PASS.
+
+### Durable fix needed before next run
+
+- Detect non-JSON schema derouter output and fail the script (non-zero exit) or auto-retry with stricter user prompt; strip meta-refusal from Terra schema role.
+
+### Suggested files to inspect/change
+
+- `scripts/excalibur_blog_derouter_opus_chat.py`
+- `skills/schema-excalibur-blog/SKILL.md`
+
+### Secrets
+
+- none recorded
+
+### Fixer resolution
+
+fixed_at: 2026-09-21
+fix_summary:
+- `schema_derouter_output_errors()` rejects meta-refusal prose and non-JSON / missing BlogPosting before writing `schema.jsonld`.
+- One auto-retry with reinforced user suffix; exit 2 + `DEROUTER SCHEMA BLOCKER` if still invalid (INC B31).
+- Schema skill documents script-side meta-refusal retry.
+files_changed:
+- `scripts/excalibur_blog_derouter_opus_chat.py`
+- `skills/schema-excalibur-blog/SKILL.md`
+- `.cursor/skills/schema-excalibur-blog/SKILL.md`
+- `tests/test_derouter_schema_output.py`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_derouter_opus_chat.py`
+- `python3 -m unittest tests.test_derouter_schema_output -v`
+commit: 944c95c
+
+## INC-20260921-1000-metrika-content-learner-b31
+
+status: needs-human
+run_date: 2026-09-21
+role: excalibur-blog-content-learner
+topic_id: B31
+article_dir: memory/blog/articles/B31-posutochno-tyumen-oplatili-3-nochi-vnutri-chuzhie-chemodany
+severity: medium
+category: env
+
+### What went wrong
+
+- `excalibur_blog_metrika_fetch.py --days 30 --ingest` → METRIKA CREDENTIALS BLOCKER (no OAuth token / counter id in Cloud Secrets).
+
+### How the agent recovered this run
+
+- Recorded optional/low-confidence lessons in `memory/content-lessons.md`; no causal Metrika claims.
+
+### Durable fix needed before next run
+
+- Set YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets for tenant.
+
+### Fixer resolution
+
+status: needs-human
+reason: env-only blocker; duplicate of INC-20260903-0640
+needed_decision_or_secret: YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets

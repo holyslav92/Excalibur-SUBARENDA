@@ -1,0 +1,149 @@
+{
+  "agent": "excalibur-blog-cover-quad-split",
+  "status": "PASS",
+  "splits": [
+    {
+      "canvas_index": 1,
+      "manifest": "cover/quad-manifest.json",
+      "split": {
+        "source_canvas": "memory/blog/articles/B31-posutochno-tyumen-oplatili-3-nochi-vnutri-chuzhie-chemodany/cover/canvas-slice4.png",
+        "source_size_px": [
+          2048,
+          1152
+        ],
+        "panel_size_px": [
+          1020,
+          572
+        ],
+        "split_meta": {
+          "split_mode": "gutter_detect",
+          "h_gutter_px": {
+            "start": 572,
+            "end": 580
+          },
+          "v_gutter_px": {
+            "start": 1020,
+            "end": 1027
+          },
+          "requested_mode": "auto",
+          "gutter_quality": {
+            "h_center_offset_px": 0.0,
+            "v_center_offset_px": 0.5,
+            "max_aspect_crop_loss": 0.0,
+            "per_panel_crop_loss": {
+              "top_left": 0.0,
+              "top_right": 0.0,
+              "bottom_left": 0.0,
+              "bottom_right": 0.0
+            },
+            "reject_reason": null
+          }
+        },
+        "output_size_px": [
+          1200,
+          675
+        ],
+        "outputs": {
+          "cover": {
+            "file": "cover/cover.png",
+            "quadrant": "top_left",
+            "box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1020,
+              "bottom": 572
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1020,
+              "bottom": 572
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Три ночи оплачены, но при открытии двери в квартире уже стоят чужие чемоданы.",
+            "h2_anchor": null
+          },
+          "inline_1": {
+            "file": "cover/inline-01.png",
+            "quadrant": "top_right",
+            "box_px": {
+              "left": 1027,
+              "top": 0,
+              "right": 2048,
+              "bottom": 572
+            },
+            "raw_box_px": {
+              "left": 1027,
+              "top": 0,
+              "right": 2048,
+              "bottom": 572
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Оплата подтверждает перевод, но не гарантирует, что календарь не пересёкся с другим гостем.",
+            "h2_anchor": "Почему оплата не освобождает квартиру"
+          },
+          "inline_2": {
+            "file": "cover/inline-02.png",
+            "quadrant": "bottom_left",
+            "box_px": {
+              "left": 0,
+              "top": 580,
+              "right": 1020,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 580,
+              "right": 1020,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "У занятой квартиры — не входить, отойти от двери, запросить замену и написать в поддержку площадки.",
+            "h2_anchor": "Первые минуты у занятой квартиры"
+          },
+          "inline_3": {
+            "file": "cover/inline-03.png",
+            "quadrant": "bottom_right",
+            "box_px": {
+              "left": 1027,
+              "top": 580,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 1027,
+              "top": 580,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "До перевода: адрес, план Б письменно и проверка — потом оплата.",
+            "h2_anchor": "Что проверить до перевода"
+          }
+        }
+      }
+    }
+  ],
+  "manifest": "cover/quad-manifest.json",
+  "html_inject": [
+    "skip inline_1: already correct under H2 — Почему оплата не освобождает квартиру",
+    "skip inline_2: already correct under H2 — Первые минуты у занятой квартиры",
+    "skip inline_3: already correct under H2 — Что проверить до перевода"
+  ]
+}

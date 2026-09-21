@@ -1,0 +1,126 @@
+{
+  "status": "PASS",
+  "topic_id": "B31",
+  "slug": "posutochno-tyumen-oplatili-3-nochi-vnutri-chuzhie-chemodany",
+  "research_date": "2026-09-21",
+  "summary": "Research for guest CASE: paid 3 nights, door opens to other guests with suitcases (double booking / calendar overlap). Fresh: Dobriy_dom_72 TG Sep 2026 (occupancy, booking proof), Bronevik double-booking article 2026-02-16, Sutochno extranet legal 2026-02-23, Scout pack_vs_flat→double-booking hook + Klyshin channel activity. Mechanics: multi-channel calendars, iCal lag, unique unit no spare room. Anti-dup vs B04/B21/B01 door-family.",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Dobriy_dom_72 TG Sep 2026 + Bronevik 2026-02-16 + Scout double-booking hook",
+    "source_type": "community_and_industry",
+    "urls": [
+      "https://t.me/Dobriy_dom_72",
+      "https://bronevik.com/ru/blog/stati/dvoynoe-bronirovanie-chto-eto-takoe",
+      "https://t.me/klyshin_A"
+    ],
+    "accessed_at": "2026-09-21",
+    "note": "Composite Tyumen guest case from Scout hook; not verified transcript of one booking."
+  },
+  "freshness_audit": {
+    "research_date": "2026-09-21",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://t.me/Dobriy_dom_72",
+      "published_at": "2026-09-21",
+      "note": "September 2026 posts on extension/occupancy («квартира занята»), contactless check-in risks, booking confirmations before payment."
+    },
+    "additional_fresh_signals": [
+      {
+        "url": "https://bronevik.com/ru/blog/stati/dvoynoe-bronirovanie-chto-eto-takoe",
+        "published_at": "2026-02-16",
+        "type": "industry_article",
+        "note": "2026 industry explainer on double booking vs overbooking and guest check-in protocol."
+      },
+      {
+        "url": "https://extranet.sutochno.ru/blog/legal-issues",
+        "published_at": "2026-02-23",
+        "type": "platform_article",
+        "note": "Written lease terms for STR hosts; supports pre-payment clarity constraint."
+      },
+      {
+        "url": "https://t.me/klyshin_A",
+        "published_at": "2026-09-14",
+        "type": "scout_editorial_channel",
+        "note": "Active consumer-law channel; pack_vs_flat hook reworked to double booking inside."
+      }
+    ]
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176", "225"],
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 4409,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 9372,
+        "region": "225",
+        "note": "Scout RU compare"
+      },
+      {
+        "phrase": "залог посуточно",
+        "volume": 2672,
+        "region": "225"
+      },
+      {
+        "phrase": "квартира занята посуточно",
+        "volume": 18,
+        "region": "225",
+        "note": "weak cluster"
+      },
+      {
+        "phrase": "двойное бронирование квартира",
+        "volume": 21,
+        "region": "225",
+        "note": "polluted SERP — not sticker"
+      }
+    ]
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "No bank tariff digits; law03 as legal background only; Bronevik hotel-leaning guest steps as analogy",
+    "verified_claims": 0,
+    "entities_checked": [],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "memory/blog/articles/B31-posutochno-tyumen-oplatili-3-nochi-vnutri-chuzhie-chemodany/derouter-opus-stamp-research.json",
+    "first_attempt": "PASS",
+    "second_attempt": null
+  },
+  "source_count": 8,
+  "practical_facts_count": 11,
+  "limitations": [
+    "No verified chat transcript of a specific Tyumen double-booking; case from Scout editorial hook.",
+    "Three nights and suitcases are title scenario anchors, not court-proven facts.",
+    "Bronevik guest algorithm is hospitality-framed; Writer keeps STR/guest-case tone, not legal essay.",
+    "Wordstat volumes are totalCount probes (PARTIAL).",
+    "Law03 refund article is background only — no guaranteed outcome."
+  ],
+  "writer_safe_urls": [
+    "https://t.me/Dobriy_dom_72",
+    "https://t.me/Dobriy_dom_Tyumen",
+    "https://max.ru/id660300569233_biz",
+    "https://добрыйдом-72.рф/",
+    "https://добрыйдом-72.рф/booking/",
+    "https://t.me/klyshin_A",
+    "https://bronevik.com/ru/blog/stati/dvoynoe-bronirovanie-chto-eto-takoe",
+    "https://new.realtycalendar.ru/blog/kak-izbezhat-overbukinga-v-arende-3-effektivnyh-metoda",
+    "https://extranet.sutochno.ru/blog/legal-issues",
+    "https://tyumen.sutochno.ru/",
+    "https://law03.ru/finance/article/kak-vernut-dengi-za-arendu-kvartiry-pri-dvoynoy-broni"
+  ],
+  "errors": []
+}

@@ -1,5 +1,24 @@
 # WP publish log
 
+## B31 — 2026-09-21
+
+- **topic_id:** B31
+- **slug:** posutochno-tyumen-oplatili-3-nochi-vnutri-chuzhie-chemodany
+- **title:** Оплатили 3 ночи. Открыли дверь — внутри чужие чемоданы
+- **post_id:** 5019
+- **permalink:** /blog/posutochno-tyumen-oplatili-3-nochi-vnutri-chuzhie-chemodany/
+- **categories:** posutochnaya-arenda (101)
+- **featured_image:** 5020
+- **inline_images:** 5021–5023 (3× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS
+- **dzen /feed/zen/:** dzen_yzen_meta=1; enclosure → full cover.png; preview `…-cover-1024x576.png` HTTP 200 (1024×576)
+- **interlink outbound:** 4 live /blog/ siblings (crosslink-qa PASS)
+- **interlink inbound:** B01 (3745)
+- **publish_method:** sftp:22 (Cloud Agent)
+- **preflight:** theme_contract_deploy skipped (functions.php FAQ bounds not found — live already patched)
+- **llms_deploy:** SKIP (SFTP upload hung after publish; live llms.txt not yet listing B31 — retry `excalibur_blog_llms_deploy.py` when host idle)
+
 ## B30 — 2026-09-20
 
 - **topic_id:** B30

@@ -1,0 +1,27 @@
+{
+  "slug": "posutochno-tyumen-oplatili-3-nochi-vnutri-chuzhie-chemodany",
+  "topic_id": "B31",
+  "permalink": "{{SITE_BASE}}/blog/posutochno-tyumen-oplatili-3-nochi-vnutri-chuzhie-chemodany/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B31-posutochno-tyumen-oplatili-3-nochi-vnutri-chuzhie-chemodany/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 932350,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=5019 slug=posutochno-tyumen-oplatili-3-nochi-vnutri-chuzhie-chemodany\nOK categories=101\nOK dzen_yzen_meta=1\nOK featured_image=5020\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=5021 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-oplatili-3-nochi-vnutri-chuzhie-chemodany-inline-01.png\nOK inline_alt=5021\nOK inline_caption=5021\nOK inline_description=5021\nOK inline_image_upload=5022 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-oplatili-3-nochi-vnutri-chuzhie-chemodany-inline-02.png\nOK inline_alt=5022\nOK inline_caption=5022\nOK inline_description=5022\nOK inline_image_upload=5023 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-tyumen-oplatili-3-nochi-vnutri-chuzhie-chemodany-inline-03.png\nOK inline_alt=5023\nOK inline_caption=5023\nOK inline_description=5023\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/posutochno-tyumen-oplatili-3-nochi-vnutri-chuzhie-chemodany/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 3,
+    "expected_inline": 3,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/posutochno-tyumen-oplatili-3-nochi-vnutri-chuzhie-chemodany/",
+    "errors": []
+  }
+}

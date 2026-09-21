@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "https://добрыйдом-72.рф/blog/pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate/",
+      "slug": "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+      "anchor": "предоплату и тишину в чате перед заездом",
+      "catalog_title": "Перевели 3 000 ₽ предоплатой. К вечеру — тишина в чате",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/kod-srabotal-klyuchnica-pusta-posutochno-tyumen/",
+      "slug": "kod-srabotal-klyuchnica-pusta-posutochno-tyumen",
+      "anchor": "код сработал, а ключница оказалась пуста",
+      "catalog_title": "Код сработал. Пустая ключница — 35 минут у двери",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/posutochno-tyumen-foto-pasporta-v-chat-kod-ne-prislali/",
+      "slug": "posutochno-tyumen-foto-pasporta-v-chat-kod-ne-prislali",
+      "anchor": "фото паспорта в чат, а код не присылают",
+      "catalog_title": "Оплатили 3 ночи. Фото паспорта в чат — код не пришёл, багаж у двери",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/otmenili-rejs-predoplatu-vernut/",
+      "slug": "otmenili-rejs-predoplatu-vernut",
+      "anchor": "рейс отменили, а 4 200 ₽ обещали вернуть за три дня",
+      "catalog_title": "Рейс отменили. 4 200 ₽ обещали вернуть за три дня — срок вышел",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "outbound_unique_slugs": [
+    "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+    "kod-srabotal-klyuchnica-pusta-posutochno-tyumen",
+    "posutochno-tyumen-foto-pasporta-v-chat-kod-ne-prislali",
+    "otmenili-rejs-predoplatu-vernut"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B31-posutochno-tyumen-oplatili-3-nochi-vnutri-chuzhie-chemodany",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}
