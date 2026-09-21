@@ -1898,7 +1898,7 @@ files_changed:
 checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_derouter_opus_chat.py`
 - `python3 -m unittest tests.test_derouter_schema_output -v`
-commit: pending-parent-commit
+commit: 944c95c
 
 ## INC-20260921-1000-metrika-content-learner-b31
 
