@@ -1,0 +1,50 @@
+{
+  "topic_id": "B31",
+  "slug": "posutochno-tyumen-oplatili-3-nochi-vnutri-chuzhie-chemodany",
+  "cover_family": "brand_collage",
+  "style_preset": "dobry_dom_gen_only_slice4",
+  "pipeline": "slice4_grid_1x_image_api",
+  "file": "cover/cover.png",
+  "alt": "Три ночи оплачены, но при открытии двери в квартире уже стоят чужие чемоданы.",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-slice4.png",
+  "generated_at": "2026-09-21T09:29:55+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Три ночи оплачены, но при открытии двери в квартире уже стоят чужие чемоданы.",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Оплата подтверждает перевод, но не гарантирует, что календарь не пересёкся с другим гостем.",
+      "h2_anchor": "Почему оплата не освобождает квартиру",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "У занятой квартиры — не входить, отойти от двери, запросить замену и написать в поддержку площадки.",
+      "h2_anchor": "Первые минуты у занятой квартиры",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "До перевода: адрес, план Б письменно и проверка — потом оплата.",
+      "h2_anchor": "Что проверить до перевода",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}
