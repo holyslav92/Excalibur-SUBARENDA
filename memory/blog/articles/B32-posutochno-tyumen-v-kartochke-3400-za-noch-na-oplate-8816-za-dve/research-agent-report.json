@@ -1,0 +1,118 @@
+{
+  "status": "PASS",
+  "topic_id": "B32",
+  "slug": "posutochno-tyumen-v-kartochke-3400-za-noch-na-oplate-8816-za-dve",
+  "research_date": "2026-09-22",
+  "summary": "Research for guest CASE: per-night card 3 400 ₽ × 2 vs checkout 8 816 ₽ (+12% service + 1 200 ₽ cleaning). Composite Scout/Klyshin hook; fresh Dobriy_dom_72 TG Sep 2026 (price-before-details); Klyshin channel active 22 Sep 2026; official Sutochno.ru guest pricing model (no separate guest commission, fees in calculation). Anti-dup vs B23 post-stay cleaning charge.",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Dobriy_dom_72 TG Sep 2026 + Klyshin_A active 2026-09-22 + Scout checkout_price_stack",
+    "source_type": "community_and_editorial",
+    "urls": [
+      "https://t.me/s/Dobriy_dom_72",
+      "https://t.me/s/klyshin_A",
+      "https://t.me/klyshin_A"
+    ],
+    "accessed_at": "2026-09-22",
+    "note": "3400/8816 sums are editorial composite; not verified single booking."
+  },
+  "freshness_audit": {
+    "research_date": "2026-09-22",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://t.me/s/Dobriy_dom_72",
+      "published_at": "2026-09-22",
+      "note": "September 2026 posts: guest checks price/district first, details after payment; extension affects price/availability."
+    },
+    "additional_fresh_signals": [
+      {
+        "url": "https://t.me/s/klyshin_A",
+        "published_at": "2026-09-22",
+        "type": "scout_editorial_channel",
+        "note": "Channel active week of research; checkout_price_stack hook from topic bank; literal price post not in latest feed."
+      }
+    ]
+  },
+  "wordstat_audit": {
+    "status": "PARTIAL",
+    "regions": ["55", "11176", "225"],
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 4409,
+        "region": "55+11176",
+        "source": "scout_handoff"
+      },
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 9372,
+        "region": "225",
+        "source": "scout_handoff"
+      },
+      {
+        "phrase": "комиссия посуточно",
+        "volume": 1903,
+        "region": "225",
+        "source": "scout_handoff"
+      },
+      {
+        "phrase": "уборка посуточно",
+        "volume": 1932,
+        "region": "225",
+        "source": "scout_handoff"
+      },
+      {
+        "phrase": "отели тюмень",
+        "volume": 7002,
+        "region": "55+11176",
+        "source": "scout_handoff"
+      }
+    ],
+    "mcp_errors": [
+      "wordstat_get_top_requests API 499 cancelled (2026-09-22, two attempts)"
+    ]
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "Sutochno.ru official guest pricing/help pages; no bank tariff digits",
+    "verified_claims": 4,
+    "entities_checked": ["sutochno"],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "memory/blog/articles/B32-posutochno-tyumen-v-kartochke-3400-za-noch-na-oplate-8816-za-dve/derouter-opus-stamp-research.json",
+    "first_attempt": "BLOCKER_OVERLOAD",
+    "second_attempt": "PASS"
+  },
+  "source_count": 9,
+  "practical_facts_count": 20,
+  "limitations": [
+    "No verified chat/payment for Tyumen 3400→8816 checkout; composite Scout hook.",
+    "12% service line models some OTA UX, not Sutochno published no-commission policy.",
+    "Wordstat volumes from Scout handoff; MCP live probe failed (PARTIAL).",
+    "Dobry Dom direct-booking savings claims are tenant marketing, not market-wide stats."
+  ],
+  "writer_safe_urls": [
+    "https://t.me/Dobriy_dom_72",
+    "https://t.me/Dobriy_dom_Tyumen",
+    "https://max.ru/id660300569233_biz",
+    "https://добрыйдом-72.рф/",
+    "https://добрыйдом-72.рф/booking/",
+    "https://t.me/klyshin_A",
+    "https://tyumen.sutochno.ru/",
+    "https://sutochno.ru/sj/iz-chego-skladivaetsya-stoimost-bronirovaniya",
+    "https://sutochno.ru/help/gosti/safety",
+    "https://sutochno.ru/blog/rules",
+    "https://sutochno.ru/help/arendodateli/public/price"
+  ],
+  "errors": []
+}
