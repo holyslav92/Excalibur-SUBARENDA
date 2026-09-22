@@ -135,6 +135,13 @@
         "снимки чата",
         "не платите второй раз"
       ]
+    },
+    "panel_quiet_pad": {
+      "quadrant": "bottom_right",
+      "role": "quiet_pad",
+      "alt": "Quiet pad",
+      "scene_hint": "Soft cream blur pad, no text.",
+      "labels": []
     }
   }
 }
