@@ -149,6 +149,17 @@ def zen_upload_names(public_base: str, slug: str) -> list[str]:
     return sorted(set(ZEN_UPLOAD_RE.findall(block)))
 
 
+def uploads_prefix_from_media(media_items: list[dict[str, Any]]) -> str:
+    """Resolve wp-content/uploads/YYYY/MM/ from live attachment URLs (not hardcoded month)."""
+    for media in media_items:
+        for key in ("source_url", "link"):
+            url = str(media.get(key) or "")
+            match = re.search(r"(wp-content/uploads/\d{4}/\d{2}/)", url)
+            if match:
+                return match.group(1)
+    return UPLOADS_PREFIX
+
+
 def post_media(public_base: str, slug: str) -> tuple[int, list[dict[str, Any]]]:
     posts = wp_get_json(public_base, f"/wp-json/wp/v2/posts?slug={slug}&_embed")
     if not posts:
@@ -240,8 +251,10 @@ def refresh_slug(
         raise RuntimeError("PUBLIC_SITE_URL missing")
 
     env = env or load_env(ROOT)
+    _, media_items = post_media(public_base, slug)
+    uploads_prefix = uploads_prefix_from_media(media_items)
     targets_by_full = collect_targets(public_base, slug)
-    uploads_dir = f"{public_base}/{UPLOADS_PREFIX}"
+    uploads_dir = f"{public_base}/{uploads_prefix}"
     report: dict[str, Any] = {
         "slug": slug,
         "full_images": [],
@@ -295,7 +308,7 @@ def refresh_slug(
                 report["uploads"].append({**row, "dry_run": True})
                 continue
             if upload:
-                remote_rel = UPLOADS_PREFIX + target.remote_name
+                remote_rel = uploads_prefix + target.remote_name
                 upload_bytes_sftp(env, remote_rel, out_bytes)
                 report["uploads"].append(row)
         report["full_images"].append(entry)

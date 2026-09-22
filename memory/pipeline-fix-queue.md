@@ -1994,3 +1994,31 @@ category: env
 status: needs-human
 reason: env-only blocker; duplicate of INC-20260903-0640
 needed_decision_or_secret: YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets
+
+## INC-20260922-1205-publish-intermediate-upload-month
+status: fixed
+run_date: 2026-09-22
+role: excalibur-blog-publish
+topic_id: B33
+article_dir: memory/blog/articles/B33-posutochno-tyumen-oplatili-na-avito-prosyat-perevesti-esche-raz
+severity: medium
+category: script
+
+### What went wrong
+
+- `excalibur_blog_wp_intermediate_refresh.py` hardcoded `UPLOADS_PREFIX=2026/08/`; B33 media uploaded to `2026/09/` → HTTP 404 on full PNG fetch.
+- `live_dzen_bump.py` without `--touch-modified-only` failed on B33 (`build_spec_from_wp` expects 7 inline h2 anchors; article has 4 H2 sections).
+
+### How the agent recovered this run
+
+- Patched intermediate refresh to derive uploads month from WP media `source_url`.
+- Ran `live_dzen_bump.py --touch-modified-only` after intermediate refresh.
+
+### Durable fix needed before next run
+
+- Generalize `live_dzen_bump` spec builder for longform quad articles with fewer than 7 H2 anchors (or document touch-only path post-publish).
+
+### Fixer resolution
+
+status: fixed
+reason: uploads prefix patch merged in publish run; dzen touch-only documented in wp-publish-log B33
