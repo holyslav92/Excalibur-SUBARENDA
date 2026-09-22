@@ -2078,3 +2078,90 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+---
+
+## LESSON-20260922-1216-B33-avito-double-prepay-off-platform
+status: proposed
+topic_id: B33
+category: utility
+confidence: medium
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP. Урок из publish PASS: case-delivery-gate PASS, live-page-report PASS, opening-meta-gate PASS, wp-publish-log post_id=5040, interlink-gate/crosslink-qa PASS, title-brief/description-brief/cover-text PASS, research-notes (editorial composite суммы 4200+3800=8000).
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest METRIKA CREDENTIALS BLOCKER (INC-20260922-1216-metrika-content-learner-b33).
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Угол `avito_double_payment`: оплаченный заказ Avito («чек», статус «оплачено») ≠ вторая «предоплата на карту»; lead с цитатой «бухгалтерия не видит» и эскалацией «отмените заказ — 8 000 напрямую».
+- §1 арифметика: 4 200 ₽ через площадку + 3 800 ₽ при заселении = 8 000 ₽ — до морали, не только эмоция «у меня же чек».
+- Разведение предоплаты / залога / «другой оплаты» — залог только если описан заранее, не замена уже оплаченной предоплаты.
+- Utility H2: мотив комиссии host.avito.com/season-2026 (20/17/15%) как объяснение, не обязанность гостя; отмена = потеря защищённого заказа (sibling B16).
+- Вопрос-отмычка: «Где в заказе Avito написано, что предоплату нужно платить второй раз на карту?» — до TG/MAX.
+- Host Klyshin-close: «Нет. Так не заселяем.» + «Сначала проверка. Потом перевод.» — editorial mechanic B33, не дословная цитата из поста.
+- Cover-text/inline: «4 200 оплачено» → «просят на карту» → «не залог» → комиссии → «после отмены защиты нет».
+- Interlink spine: B28 залог в чате, B32 карточка vs оплата, B16 отмена/возврат, B08 предоплата/тишина — деньги мимо площадки, не дубль B31 door-scene.
+- Wordstat P0 spine «квартиры посуточно тюмень»; support Avito 8 804 700-04-40 в utility.
+
+### Change
+- Для off-platform prepay hooks в §1 сразу фиксировать **статус заказа + сумма уже на площадке + остаток при заселении**, затем цитата из чата — отличать от B08 «тишина после перевода» и B32 price-stack.
+- Scout/research: помечать **editorial composite** суммы (как B33 research-notes), если signal URL без literal чека.
+
+### Never again
+- How-to «как безопасно бронировать на Авито» без сцены «второй перевод после чека».
+- Называть хозяина мошенником без оговорки; советовать отменять заказ до поддержки.
+- Склеивать тему только с B08 без sibling про залог/итог оплаты/отмену заказа.
+
+### Proposed apply
+- Scout: hook avito double payment / off-platform prepay — handoff original Klyshin angle + final P0 spine Tyumen; rework «авито посуточно» stickers в cover-text.
+- Review only; Writer prompt не трогать автоматически.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260922-1216-B33-title-avito-paid-chat-second-transfer
+status: proposed
+topic_id: B33
+category: voice
+confidence: low
+
+### Evidence
+- artifact: title-brief.json / description-brief.json
+  finding: H1 two-beat «Бронь на Авито уже оплачена. В чате: второй перевод на карту»; description klyshin_case_hook — «У меня же чек» + вопрос до второго платежа, not_equal_title PASS; klyshin_title_shape 3.
+- metrika_signal: none (credentials unavailable; causal CTR не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Cable pain-scene: факт оплаты на площадке → канал давления (чат, карта), без SEO-хвоста в H1.
+- Cover-text hook «На Авито оплачено — снова на карту» + sticky «Это уже второй платёж» — ритм без полного дубля H1.
+- Description teaser про вопрос перед вторым платежом — не копия H1.
+
+### Change
+- Для avito_double_payment: prefer **platform-paid beat + chat second-transfer beat** over scout draft с полным how-to или «мошенничество» в заголовке.
+
+### Never again
+- H1 только «авито посуточно тюмень» / «двойная оплата» без двух битов (оплачено → чат).
+- Description = дословный H1.
+
+### Proposed apply
+- Title/Description review: off-platform prepay — оплачено на Avito → второй перевод в чате > jargon-only H1.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded

@@ -1,0 +1,7 @@
+ONE canvas 2048x1152 as 2x2 GRID of four photoreal 16:9 apartment infographic panels. NO cover panel. Early September bright Tyumen daily-rent mood, high-key, NOT winter.
+TOP-LEFT inline_5: comparison table on desk card — «Почему хозяин предлагает оплатить напрямую»; rows: не залог | залог заранее | предоплата уже есть; typography BLACK only; TOP-RIGHT 12% pad: empty flat cream wall #F2EDE6 — NO objects NO orange NO terracotta NO brand colors in pad.
+TOP-RIGHT inline_6: FAQ board on kitchen wall — «Что проверить до перевода»; three lines: 20% комиссия | 17% комиссия | 15% комиссия; typography BLUE/BLACK only; TOP-RIGHT 12% pad: empty flat cream wall #F2EDE6 — NO UI cards NO terracotta in pad.
+BOTTOM-LEFT inline_7: checklist board on door — «Мой вывод как практика»; labels: после отмены защиты нет | номер заказа | снимки чата | не платите второй раз; +7 (993) 574-83-22 on small door tablo; TOP-RIGHT empty pad 8-12% for factory logo paste — model draws NOTHING there.
+BOTTOM-RIGHT panel_quiet_pad: soft cream blur pad, no text, no objects.
+CRITICAL: inline_5 and inline_6 panels ZERO brand logo, ZERO «Добрый дом», ZERO curtains+flower lockup, ZERO house icon in top-right.
+ALL panels utility infographic with readable Cyrillic; ZERO meme; NO WordPress UI; NO phone mockup chat bubbles.

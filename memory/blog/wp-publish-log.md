@@ -1,5 +1,22 @@
 # WP publish log
 
+## B33 — 2026-09-22
+
+- **topic_id:** B33
+- **slug:** posutochno-tyumen-oplatili-na-avito-prosyat-perevesti-esche-raz
+- **title:** Бронь на Авито уже оплачена. В чате: второй перевод на карту
+- **post_id:** 5040
+- **permalink:** /blog/posutochno-tyumen-oplatili-na-avito-prosyat-perevesti-esche-raz/
+- **categories:** posutochnaya-arenda (101), zalog-i-vyiezd (102)
+- **featured_image:** 5041
+- **inline_images:** 5042–5048 (7× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS
+- **dzen:** yzen meta on publish; `wp_intermediate_refresh` (2026/09 uploads); `live_dzen_bump --touch-modified-only`
+- **interlink outbound:** 4 live /blog/ siblings (crosslink-qa PASS)
+- **interlink inbound:** B01 (3745)
+- **publish_method:** sftp:22 (Cloud Agent)
+
 ## B31 — 2026-09-21
 
 - **topic_id:** B31

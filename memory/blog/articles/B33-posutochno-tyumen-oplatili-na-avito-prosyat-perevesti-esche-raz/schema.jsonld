@@ -1,0 +1,35 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/posutochno-tyumen-oplatili-na-avito-prosyat-perevesti-esche-raz/#article",
+  "url": "{{SITE_BASE}}/blog/posutochno-tyumen-oplatili-na-avito-prosyat-perevesti-esche-raz/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/posutochno-tyumen-oplatili-na-avito-prosyat-perevesti-esche-raz/"
+  },
+  "headline": "Бронь на Авито уже оплачена. В чате: второй перевод на карту",
+  "description": "Что делать, если бронь на Avito уже оплачена, а в чате просят повторно перевести деньги на карту. Разбираем, как отличить законный остаток при заселении от попытки получить двойную оплату.",
+  "datePublished": "2026-09-22",
+  "dateModified": "2026-09-22",
+  "inLanguage": "ru-RU",
+  "author": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    }
+  }
+}

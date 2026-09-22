@@ -41,3 +41,4 @@ lessons, benchmarks, QA reports или соседние research-notes как о
 | B30 | pozdnij-vyezd-doplata-s-karty | Продление до двух согласовали. После сдачи ключей с карты списали 1 800 ₽ | published |
 | B31 | posutochno-tyumen-oplatili-3-nochi-vnutri-chuzhie-chemodany | Оплатили 3 ночи. Открыли дверь — внутри чужие чемоданы | published |
 | B32 | v-kartochke-3400-za-noch-na-oplate-8816-za-dve | В карточке 3 400 ₽ за ночь. На оплате — 8 816 ₽ за две ночи | published |
+| B33 | posutochno-tyumen-oplatili-na-avito-prosyat-perevesti-esche-raz | Бронь на Авито уже оплачена. В чате: второй перевод на карту | published |

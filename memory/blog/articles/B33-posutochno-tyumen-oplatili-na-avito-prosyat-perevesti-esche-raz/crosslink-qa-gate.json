@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "{{SITE_BASE}}/blog/posutochno-tyumen-stiralnaya-v-kartochke-i-zalog/",
+      "slug": "posutochno-tyumen-stiralnaya-v-kartochke-i-zalog",
+      "anchor": "стиральная в карточке и залог, который просят «в чате»",
+      "catalog_title": "«Стиральная машина есть» в фильтре. К 3-й ночи — мокрое бельё, прачечная, 1 100 ₽",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "{{SITE_BASE}}/blog/v-kartochke-3400-za-noch-na-oplate-8816-za-dve/",
+      "slug": "v-kartochke-3400-za-noch-na-oplate-8816-za-dve",
+      "anchor": "в карточке одна цена за ночь, на оплате — другая сумма",
+      "catalog_title": "В карточке 3 400 ₽ за ночь. На оплате — 8 816 ₽ за две ночи",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "{{SITE_BASE}}/blog/otmenili-rejs-predoplatu-vernut/",
+      "slug": "otmenili-rejs-predoplatu-vernut",
+      "anchor": "отмена рейса и возврат предоплаты, когда срок вышел",
+      "catalog_title": "Рейс отменили. 4 200 ₽ обещали вернуть за три дня — срок вышел",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "{{SITE_BASE}}/blog/pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate/",
+      "slug": "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+      "anchor": "перевод предоплаты и тишину в чате к вечеру",
+      "catalog_title": "Перевели 3 000 ₽ предоплатой. К вечеру — тишина в чате",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "outbound_unique_slugs": [
+    "posutochno-tyumen-stiralnaya-v-kartochke-i-zalog",
+    "v-kartochke-3400-za-noch-na-oplate-8816-za-dve",
+    "otmenili-rejs-predoplatu-vernut",
+    "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B33-posutochno-tyumen-oplatili-na-avito-prosyat-perevesti-esche-raz",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}

@@ -31,11 +31,11 @@ from excalibur_blog_wp_publish import (  # noqa: E402
 )
 
 ROOT = project_root()
-UPLOADS_PREFIX = "wp-content/uploads/2026/08/"
+DEFAULT_UPLOADS_PREFIX = "wp-content/uploads/2026/08/"
 INTERMEDIATE_RE = re.compile(r"-\d+x\d+(?=\.[a-z]+$)", re.I)
 SCALED_RE = re.compile(r"-scaled(?=\.[a-z]+$)", re.I)
-ZEN_UPLOAD_RE = re.compile(
-    r"uploads/2026/08/([^\"'\s?#]+\.(?:png|jpe?g|webp))",
+INLINE_UPLOAD_BASENAME_RE = re.compile(
+    r"uploads/\d{4}/\d{2}/([^\"'\s?#]+\.(?:png|jpe?g|webp))",
     re.I,
 )
 
@@ -144,9 +144,33 @@ def zen_feed_block(public_base: str, slug: str) -> str:
     return match.group(0)
 
 
-def zen_upload_names(public_base: str, slug: str) -> list[str]:
+def zen_upload_pattern(uploads_prefix: str) -> re.Pattern[str]:
+    """Build regex for enclosure/img paths under uploads/YYYY/MM/ in zen RSS HTML."""
+    match = re.search(r"uploads/(\d{4}/\d{2}/)", uploads_prefix)
+    month = match.group(1) if match else "2026/08/"
+    return re.compile(
+        rf"uploads/{re.escape(month)}([^\"'\s?#]+\.(?:png|jpe?g|webp))",
+        re.I,
+    )
+
+
+def zen_upload_names(public_base: str, slug: str, zen_re: re.Pattern[str]) -> list[str]:
     block = zen_feed_block(public_base, slug)
-    return sorted(set(ZEN_UPLOAD_RE.findall(block)))
+    names = list(zen_re.findall(block))
+    if not names:
+        names = INLINE_UPLOAD_BASENAME_RE.findall(block)
+    return sorted(set(names))
+
+
+def uploads_prefix_from_media(media_items: list[dict[str, Any]]) -> str:
+    """Resolve wp-content/uploads/YYYY/MM/ from live attachment URLs (not hardcoded month)."""
+    for media in media_items:
+        for key in ("source_url", "link"):
+            url = str(media.get(key) or "")
+            match = re.search(r"(wp-content/uploads/\d{4}/\d{2}/)", url)
+            if match:
+                return match.group(1)
+    return DEFAULT_UPLOADS_PREFIX
 
 
 def post_media(public_base: str, slug: str) -> tuple[int, list[dict[str, Any]]]:
@@ -167,9 +191,16 @@ def post_media(public_base: str, slug: str) -> tuple[int, list[dict[str, Any]]]:
     return post_id, list(dedup.values())
 
 
-def collect_targets(public_base: str, slug: str) -> dict[str, list[SizeTarget]]:
+def collect_targets(
+    public_base: str,
+    slug: str,
+    uploads_prefix: str | None = None,
+) -> dict[str, list[SizeTarget]]:
     """Map full remote basename -> intermediate SizeTarget list."""
     _, media_items = post_media(public_base, slug)
+    if not uploads_prefix:
+        uploads_prefix = uploads_prefix_from_media(media_items)
+    zen_re = zen_upload_pattern(uploads_prefix)
     by_full: dict[str, list[SizeTarget]] = {}
     for media in media_items:
         targets = size_targets_from_media(media)
@@ -184,7 +215,7 @@ def collect_targets(public_base: str, slug: str) -> dict[str, list[SizeTarget]]:
                 existing.add(target.remote_name)
         by_full[full_name] = merged
 
-    for name in zen_upload_names(public_base, slug):
+    for name in zen_upload_names(public_base, slug, zen_re):
         if not is_intermediate_name(name):
             continue
         full_name = full_name_from_intermediate(name)
@@ -240,8 +271,10 @@ def refresh_slug(
         raise RuntimeError("PUBLIC_SITE_URL missing")
 
     env = env or load_env(ROOT)
-    targets_by_full = collect_targets(public_base, slug)
-    uploads_dir = f"{public_base}/{UPLOADS_PREFIX}"
+    _, media_items = post_media(public_base, slug)
+    uploads_prefix = uploads_prefix_from_media(media_items)
+    targets_by_full = collect_targets(public_base, slug, uploads_prefix)
+    uploads_dir = f"{public_base}/{uploads_prefix}"
     report: dict[str, Any] = {
         "slug": slug,
         "full_images": [],
@@ -295,7 +328,7 @@ def refresh_slug(
                 report["uploads"].append({**row, "dry_run": True})
                 continue
             if upload:
-                remote_rel = UPLOADS_PREFIX + target.remote_name
+                remote_rel = uploads_prefix + target.remote_name
                 upload_bytes_sftp(env, remote_rel, out_bytes)
                 report["uploads"].append(row)
         report["full_images"].append(entry)

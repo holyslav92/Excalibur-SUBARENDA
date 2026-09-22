@@ -228,6 +228,13 @@ def discover_aug22_slugs(*, refresh: bool = False) -> list[str]:
     return sorted({r["slug"] for r in published + modified_only})
 
 
+INLINE_UPLOAD_BASENAME_RE = re.compile(
+    r"uploads/\d{4}/\d{2}/([^\"']+inline[^\"']+\.png)",
+    re.I,
+)
+INLINE_SLOT_RE = re.compile(r'data-slot=["\']inline_(\d+)["\']', re.I)
+
+
 def extract_h2s_with_inline(content: str) -> list[str]:
     parts = re.split(r"(<h2[^>]*>.*?</h2>)", content, flags=re.I | re.S)
     out: list[str] = []
@@ -243,6 +250,31 @@ def extract_h2s_with_inline(content: str) -> list[str]:
     # fallback: first 7 h2 in body
     all_h2 = [re.sub("<[^>]+>", "", h).strip() for h in re.findall(r"<h2[^>]*>(.*?)</h2>", content, re.I | re.S)]
     return all_h2[:7]
+
+
+def count_inline_images(content: str) -> int:
+    """Max inline slot index in live post HTML (quad longform may have <7 H2 sections)."""
+    slots = {int(m.group(1)) for m in INLINE_SLOT_RE.finditer(content)}
+    if slots:
+        return min(7, max(slots))
+    nums: list[int] = []
+    for basename in INLINE_UPLOAD_BASENAME_RE.findall(content):
+        m = re.search(r"inline-(\d{2})", basename, re.I)
+        if m:
+            nums.append(int(m.group(1)))
+    if nums:
+        return min(7, max(nums))
+    return 0
+
+
+def pad_h2s_for_inline_slots(h2s: list[str], inline_count: int, fallback: str) -> list[str]:
+    """Ensure manifest/bootstrap has one h2 label per inline slot (not one per H2 section)."""
+    if inline_count <= 0:
+        return h2s[:7]
+    out = list(h2s[:inline_count])
+    while len(out) < inline_count:
+        out.append(out[-1] if out else fallback[:72])
+    return out
 
 
 def infer_inline_pattern(inline_names: list[str], slug: str) -> str:
@@ -264,13 +296,15 @@ def build_spec_from_wp(slug: str) -> dict:
     h1 = re.sub("<[^>]+>", "", p["title"]["rendered"]).strip()
     content = p["content"]["rendered"]
     h2s = extract_h2s_with_inline(content)
-    if len(h2s) < 7:
-        raise RuntimeError(f"{slug}: expected 7 inline h2 anchors, got {len(h2s)}")
+    inline_count = count_inline_images(content)
+    if inline_count <= 0:
+        inline_count = min(7, max(len(h2s), 1))
+    h2s = pad_h2s_for_inline_slots(h2s, inline_count, h1)
 
     fm = (p.get("_embedded") or {}).get("wp:featuredmedia") or [{}]
     cover_url = (fm[0] or {}).get("source_url", "")
     cover_remote = cover_url.rsplit("/", 1)[-1] if cover_url else f"{slug}-cover.png"
-    inline_names = sorted(re.findall(r"uploads/2026/08/([^\"']+inline[^\"']+\.png)", content, re.I))
+    inline_names = sorted(set(INLINE_UPLOAD_BASENAME_RE.findall(content)))
     inline_remote = infer_inline_pattern(inline_names, slug)
 
     topic_id = meta.get("topic_id") or f"LIVE-{slug[:24]}"
@@ -286,6 +320,7 @@ def build_spec_from_wp(slug: str) -> dict:
         "wordstat": meta.get("wordstat", ["Тюмень", "посуточно"]),
         "cover_remote": cover_remote,
         "inline_remote": inline_remote,
+        "inline_count": inline_count,
         "h2s": h2s,
         "cover_emotion": meta.get("cover_emotion", h1[:100]),
         "cover_scene": meta.get("cover_scene", f"Rental shock scene; {DAYLIGHT_SCENE_SUFFIX}"),
@@ -308,6 +343,7 @@ def bootstrap(spec: dict) -> Path:
     adir = article_dir(spec)
     cover = adir / "cover"
     cover.mkdir(parents=True, exist_ok=True)
+    inline_count = int(spec.get("inline_count") or len(spec.get("h2s") or []) or 7)
 
     h2_blocks = "".join(f"<h2>{h}</h2><p>…</p>" for h in spec["h2s"])
     (adir / "article.html").write_text(
@@ -371,7 +407,7 @@ def bootstrap(spec: dict) -> Path:
         "slug": spec["slug"],
         "layout": "2x2",
         "pipeline": "quad_canvas_2x_image_api_longform",
-        "inline_count": 7,
+        "inline_count": inline_count,
         "style_preset": "dobry_dom_light_meme_wordstat",
         "style_file": "memory/cover/quad-style-dobry-dom.json",
         "blog_hero": "memory/cover/blog-hero.json",

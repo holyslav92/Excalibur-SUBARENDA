@@ -1,0 +1,111 @@
+{
+  "status": "PASS",
+  "topic_id": "B33",
+  "slug": "posutochno-tyumen-oplatili-na-avito-prosyat-perevesti-esche-raz",
+  "research_date": "2026-09-22",
+  "summary": "Guest-night CASE: Avito safe prepay confirmed, host asks duplicate card transfer or cancel+direct; Klyshin dialog beat «Нет. Так не заселяем.»; fresh Dobriy_dom_72 TG Sep 2026; official Avito host rules (host.avito.com) on direct-pay ban and 15–20% host commission; Wordstat P0 Tyumen 4341.",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Dobriy_dom_72 TG Sep 2026 + klyshin_A active 2026-09-22",
+    "source_type": "community",
+    "urls": [
+      "https://t.me/s/Dobriy_dom_72",
+      "https://t.me/s/klyshin_A"
+    ],
+    "accessed_at": "2026-09-22",
+    "note": "«Не переводите повторно» on tenant channel; Klyshin quote is editorial mechanics not channel post."
+  },
+  "freshness_audit": {
+    "research_date": "2026-09-22",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://t.me/s/Dobriy_dom_72",
+      "published_at": "2026-09-22",
+      "note": "September 2026 feed: no second transfer after payment; card pressure red flag."
+    },
+    "additional_fresh_signals": [
+      {
+        "url": "https://t.me/s/klyshin_A",
+        "published_at": "2026-09-22",
+        "type": "scout_editorial_channel",
+        "note": "Channel active week of research; B33 hook editorial composite."
+      }
+    ]
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176", "225"],
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 4341,
+        "region": "55+11176",
+        "source": "mcp_kv_live"
+      },
+      {
+        "phrase": "комиссия посуточно",
+        "volume": 1896,
+        "region": "225",
+        "source": "mcp_kv_live"
+      },
+      {
+        "phrase": "авито посуточно комиссия",
+        "volume": 1052,
+        "region": "225",
+        "source": "mcp_kv_live"
+      },
+      {
+        "phrase": "авито квартиры посуточно тюмень",
+        "volume": 301,
+        "region": "55+11176",
+        "source": "mcp_kv_live"
+      }
+    ],
+    "mcp_errors": []
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": true,
+    "scope": "Avito host commission and platform payment rules (host.avito.com)",
+    "verified_claims": 4,
+    "entities_checked": ["avito"],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "memory/blog/articles/B33-posutochno-tyumen-oplatili-na-avito-prosyat-perevesti-esche-raz/derouter-opus-stamp-research.json",
+    "first_attempt": "BLOCKER_HTTP_524",
+    "second_attempt": "BLOCKER_HTTP_524",
+    "third_attempt": "BLOCKER_META",
+    "fourth_attempt": "BLOCKER_META",
+    "fifth_attempt": "PASS",
+    "note": "Long assembled input hit CF 524; final PASS via compact inline user-prompt synthesis; fresh_signal_note corrected for Klyshin quote accuracy."
+  },
+  "source_count": 9,
+  "practical_facts_count": 6,
+  "limitations": [
+    "Composite guest chat — no verified booking ID or Tyumen listing.",
+    "travelq.ru and Mail.ru answers are secondary; Avito tariff digits only from host.avito.com.",
+    "avito.ru/blog pages blocked from cloud IP; blog rules cited via search snippets + host portal.",
+    "Remainder-at-check-in vs duplicate prepay distinction must stay explicit for Writer."
+  ],
+  "writer_safe_urls": [
+    "https://t.me/Dobriy_dom_72",
+    "https://t.me/Dobriy_dom_Tyumen",
+    "https://max.ru/id660300569233_biz",
+    "https://добрыйдом-72.рф/booking/",
+    "https://t.me/klyshin_A",
+    "https://host.avito.com/season-2026",
+    "https://host.avito.com/course/lesson-3",
+    "https://travelq.ru/avito/",
+    "https://otvet.mail.ru/question/229855712"
+  ],
+  "errors": []
+}

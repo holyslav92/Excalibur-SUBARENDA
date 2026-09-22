@@ -75,9 +75,12 @@ python3 scripts/excalibur_blog_wp_publish.py \
 6b. **Dzen / WP intermediates (live overwrite):** `/feed/zen/` enclosure и `<img>` в RSS
    часто ссылаются на **промежуточные** файлы (`-1024x576`, `-768x432`, `-300x169`,
    `-150x150`), а не на full PNG. После SFTP-overwrite full cover/inline **обязательно**
-   прогон `scripts/excalibur_blog_wp_intermediate_refresh.py` (или live regen upload,
-   который вызывает его автоматически), затем `scripts/excalibur_blog_live_dzen_bump.py`
-   для `post_modified_gmt` в 7-дневном окне Дзена.
+   прогон `scripts/excalibur_blog_wp_intermediate_refresh.py` (месяц uploads берётся из
+   `source_url` вложений, не хардкод; или live regen upload, который вызывает refresh
+   автоматически), затем `scripts/excalibur_blog_live_dzen_bump.py` для
+   `post_modified_gmt` в 7-дневном окне Дзена. У longform quad бывает **7 inline** при
+   **<7 H2** — bump использует `inline_count` из HTML; при сбое spec-builder достаточно
+   `--touch-modified-only`.
 6c. **Dzen RSS directives:** publish выставляет yzen post meta (`native-yes`, `evergreen`,
    `index`) и деплоит MU-plugin `factory/wp-mu-plugins/excalibur-dzen-rss.php` (одна
    enclosure, `format-article`, без `native-no`). Канон: `shared/dzen-rss-contract.md`.

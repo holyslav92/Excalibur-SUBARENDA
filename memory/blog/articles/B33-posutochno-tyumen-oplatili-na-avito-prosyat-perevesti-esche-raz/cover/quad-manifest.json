@@ -1,0 +1,147 @@
+{
+  "topic_id": "B33",
+  "slug": "posutochno-tyumen-oplatili-na-avito-prosyat-perevesti-esche-raz",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 0,
+      "standalone_cover": true,
+      "canvas_file": "cover/cover-canvas.png",
+      "batch_file": "cover/cover-mcp-batch.json",
+      "prompt_file": "cover/cover-mcp-prompt.txt",
+      "result_file": "cover/cover-mcp-result.json",
+      "slots": ["cover"],
+      "has_cover": true
+    },
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["inline_1", "inline_2", "inline_3", "inline_4"],
+      "has_cover": false
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_5", "inline_6", "inline_7", "panel_quiet_pad"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "На Авито оплачено — снова на карту",
+  "cover_hook_highlight": "оплачено",
+  "cover_headline_line1": "Авито оплачено",
+  "cover_headline_line2": "снова на карту",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень"
+  ],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "sofa phone avito paid chat card hook tr pad tablo",
+    "location": "early autumn sep 2026 tyumen golden leaves no snow",
+    "meme": "photoreal zero cat; one drake people-meme sticker cover only no cat",
+    "prop_set": "phone avito paid 4200 chat card 8000",
+    "sticker_set": "квартиры посуточно тюмень авито посуточно",
+    "joke": "paid check chat wants card again"
+  },
+  "cover_emotion": "шок: второй перевод",
+  "cover_scene": "Диван: Avito оплачено, чат на карту, хук, табло +7 993 574-83-22, осень TR pad.",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "scene_hint": "Диван Avito оплачено, чат на карту, хук, табло +7 993 574-83-22 TR pad.",
+      "alt": "После оплаты на Avito в чате просят перевести ту же предоплату на карту.",
+      "meme_caption_ru": "",
+      "role": "cover_editorial_hero",
+      "sticky": "Второй платёж"
+    },
+    "inline_1": {
+      "quadrant": "top_left",
+      "scene_hint": "table: 2 ночи, 8000 ₽, заказ Avito.",
+      "alt": "Две ночи в Тюмени: 8 000 ₽ всего, предоплата оформлена в заказе Avito.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Что произошло с оплатой",
+      "visual_type": "comparison_table_ui",
+      "labels": ["две ночи", "8 000 ₽ всего", "заказ на Авито"]
+    },
+    "inline_2": {
+      "quadrant": "top_right",
+      "scene_hint": "workflow: 4200 → чек → оплачено.",
+      "alt": "4 200 ₽ списались через Avito — в заказе чек и статус «оплачено».",
+      "meme_caption_ru": "",
+      "h2_anchor": "Что произошло с оплатой",
+      "visual_type": "workflow_diagram",
+      "labels": ["4 200 ₽ оплачено", "чек в заказе", "статус оплачено"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_left",
+      "scene_hint": "checklist: на карту, бухгалтерия, дубль. Pad TR.",
+      "alt": "В чате просят продублировать предоплату на карту — «бухгалтерия не видит».",
+      "meme_caption_ru": "",
+      "h2_anchor": "Что произошло с оплатой",
+      "visual_type": "checklist_board",
+      "labels": ["просят на карту", "предоплату продублируйте", "бухгалтерия не видит"]
+    },
+    "inline_4": {
+      "quadrant": "bottom_right",
+      "scene_hint": "checklist: другая оплата, отмена, 8000 напрямую.",
+      "alt": "«Это другая оплата» и предложение отменить заказ ради перевода 8 000 ₽ на карту.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Почему хозяин предлагает оплатить напрямую",
+      "visual_type": "labeled_checklist",
+      "labels": ["это другая оплата", "отмените заказ", "напрямую 8 000 ₽"]
+    },
+    "inline_5": {
+      "quadrant": "top_left",
+      "scene_hint": "table: не залог, залог заранее, предоплата есть.",
+      "alt": "Повторный перевод — не залог: залог должен быть описан заранее, предоплата уже в заказе.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Почему хозяин предлагает оплатить напрямую",
+      "visual_type": "comparison_table_ui",
+      "labels": ["не залог", "залог заранее", "предоплата уже есть"]
+    },
+    "inline_6": {
+      "quadrant": "top_right",
+      "scene_hint": "faq: комиссия 20/17/15%.",
+      "alt": "Комиссия Avito для хозяев сезона 2026: 20%, 17% или 15% — мотив, не обязанность гостя.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Что проверить до перевода",
+      "visual_type": "schema_faq_ui",
+      "labels": ["20% комиссия", "17% комиссия", "15% комиссия"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_left",
+      "scene_hint": "checklist: отмена, заказ, скрины; табло +7. Pad TR.",
+      "alt": "После отмены защиты нет — сохраните номер заказа и скрины, не платите второй раз.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "checklist_board",
+      "labels": [
+        "после отмены защиты нет",
+        "номер заказа",
+        "снимки чата",
+        "не платите второй раз"
+      ]
+    },
+    "panel_quiet_pad": {
+      "quadrant": "bottom_right",
+      "role": "quiet_pad",
+      "alt": "Quiet pad",
+      "scene_hint": "Soft cream blur pad, no text.",
+      "labels": []
+    }
+  }
+}

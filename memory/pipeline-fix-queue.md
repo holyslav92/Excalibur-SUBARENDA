@@ -1994,3 +1994,73 @@ category: env
 status: needs-human
 reason: env-only blocker; duplicate of INC-20260903-0640
 needed_decision_or_secret: YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets
+
+## INC-20260922-1205-publish-intermediate-upload-month
+status: fixed
+run_date: 2026-09-22
+role: excalibur-blog-publish
+topic_id: B33
+article_dir: memory/blog/articles/B33-posutochno-tyumen-oplatili-na-avito-prosyat-perevesti-esche-raz
+severity: medium
+category: script
+
+### What went wrong
+
+- `excalibur_blog_wp_intermediate_refresh.py` hardcoded `UPLOADS_PREFIX=2026/08/`; B33 media uploaded to `2026/09/` → HTTP 404 on full PNG fetch.
+- `live_dzen_bump.py` without `--touch-modified-only` failed on B33 (`build_spec_from_wp` expects 7 inline h2 anchors; article has 4 H2 sections).
+
+### How the agent recovered this run
+
+- Patched intermediate refresh to derive uploads month from WP media `source_url`.
+- Ran `live_dzen_bump.py --touch-modified-only` after intermediate refresh.
+
+### Durable fix needed before next run
+
+- Generalize `live_dzen_bump` spec builder for longform quad articles with fewer than 7 H2 anchors (or document touch-only path post-publish).
+
+### Fixer resolution
+
+status: fixed
+fixed_at: 2026-09-22
+fix_summary:
+- `excalibur_blog_wp_intermediate_refresh.py` derives uploads month from attachment URLs; zen feed regex uses same prefix (not hardcoded 2026/08).
+- `build_spec_from_wp` counts inline slots via `data-slot` / upload basename; `live_dzen_bump` passes `inline_count` when article has fewer H2 sections than inline figures (INC B33).
+files_changed:
+- `scripts/excalibur_blog_wp_intermediate_refresh.py`
+- `scripts/excalibur_blog_live_cover_regen_aug22.py`
+- `scripts/excalibur_blog_live_dzen_bump.py`
+- `shared/excalibur-wp-publish-contract.md`
+- `tests/test_dzen_build_spec.py`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_wp_intermediate_refresh.py scripts/excalibur_blog_live_cover_regen_aug22.py scripts/excalibur_blog_live_dzen_bump.py`
+- `python3 -m unittest tests.test_wp_intermediate_refresh tests.test_dzen_build_spec -v`
+commit: 64e96c9
+
+## INC-20260922-1216-metrika-content-learner-b33
+
+status: needs-human
+run_date: 2026-09-22
+role: excalibur-blog-content-learner
+topic_id: B33
+article_dir: memory/blog/articles/B33-posutochno-tyumen-oplatili-na-avito-prosyat-perevesti-esche-raz
+severity: medium
+category: env
+
+### What went wrong
+
+- `excalibur_blog_metrika_fetch.py --days 30 --ingest` → METRIKA CREDENTIALS BLOCKER (no OAuth token / counter id in Cloud Secrets).
+
+### How the agent recovered this run
+
+- Recorded optional/low-confidence lessons in `memory/content-lessons.md` from publish PASS artifacts; no causal Metrika claims.
+
+### Durable fix needed before next run
+
+- Set YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets for tenant.
+
+### Fixer resolution
+
+status: needs-human
+reason: env-only blocker; duplicate of INC-20260903-0640
+needed_decision_or_secret: YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets
