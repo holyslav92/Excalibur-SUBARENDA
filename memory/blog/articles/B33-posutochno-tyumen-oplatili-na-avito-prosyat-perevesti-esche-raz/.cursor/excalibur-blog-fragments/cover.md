@@ -2,7 +2,7 @@
 status: PASS
 topic_id: B33
 article: memory/blog/articles/B33-posutochno-tyumen-oplatili-na-avito-prosyat-perevesti-esche-raz
-provider: grsai grsai-image-api (vip economy quads; cover vip 2K)
+provider: grsai (vip economy quads; cover vip 2K)
 pipeline: quad_canvas_2x_image_api_longform
 canvases: 3 (standalone cover + quad-01 + quad-02)
 inline_count: 7
