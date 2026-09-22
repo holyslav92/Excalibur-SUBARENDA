@@ -1993,3 +1993,88 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+---
+
+## LESSON-20260922-0715-B32-checkout-price-stack-before-pay
+status: proposed
+topic_id: B32
+category: utility
+confidence: medium
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP. Урок из publish-артефактов: scout hook checkout_price_stack, research-notes (суммы — редакционный композит, literal Klyshin post не найден), title-brief/description/cover-text PASS, case-delivery PASS, wp-publish pass post=5033, interlink B10/B23/B04/B08.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest METRIKA CREDENTIALS BLOCKER (INC-20260922-0715-metrika-content-learner-b32).
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Угол `checkout_price_stack`: ставка «3 400 ₽/ночь» vs итог на кнопке «8 816 ₽» — арифметика 6800 + 816 (+12%) + 1200 уборка, delta 2016 ₽ в lead.
+- Явный disclaimer: числа — собирательный пример, не чужой чек и не прайс «Доброго дома»; +12% сервис — иллюстрация, не правило Суточно.ру (со ссылкой на их справку).
+- H2 «цена на кнопке оплаты», не в карточке; короткий заезд — разовая уборка больнее ночи.
+- Вопрос-отмычка: «Где до оплаты увидеть всю сумму — с уборкой и сервисным сбором?» — до TG.
+- Host close: «Сначала проверка. Потом перевод.» + залог отдельно от суммы брони.
+- Cover-text/inline stickers: карточка 3400 → две ночи 6800 → строки 816/1200 → итог 8816.
+- Interlink spine: B10 «всё включено», B23 уборка на выезде, B04 третий гость, B08 предоплата/тишина — слой «обещание vs чек», не дубль B31 door-scene.
+
+### Change
+- Для price-stack hooks в §1 сразу показывать **ожидание (N×ночь)** и **итог на оплате**, затем разворот строк — не оставлять только эмоцию «откуда взялось».
+- Scout/research: если signal URL без literal сумм — в handoff помечать **editorial composite** (как B32 research-notes), Writer не выдавать за верифицированный кейс.
+
+### Never again
+- How-to «как снять посуточно без скрытых комиссий» без двух сумм в opening.
+- Приписывать конкретной площадке схему «+12% + уборка» без disclaimer и без проверки их справки.
+- Склеивать checkout stack только с B08 prepay без sibling про «всё включено» / уборку / доп. гостей.
+
+### Proposed apply
+- Scout: hook `checkout_price_stack` — rework log P0 «квартиры посуточно тюмень»; research flag composite numbers.
+- Review only; Writer prompt не трогать автоматически.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260922-0715-B32-title-card-rate-vs-pay-total
+status: proposed
+topic_id: B32
+category: voice
+confidence: low
+
+### Evidence
+- artifact: title-brief.json / description-brief.json
+  finding: H1 two-beat «В карточке 3 400 ₽ за ночь. На оплате — 8 816 ₽ за две ночи»; description klyshin_case_hook — «Откуда это взялось?» + уборка/сервис до кнопки, not_equal_title PASS; scout original с явным «+12%» в hook — в H1 только две суммы.
+- metrika_signal: none (credentials unavailable; causal CTR не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Cable pain-scene: витринная ставка → шок на шаге оплаты (две ночи в H1), без SEO-хвоста.
+- Cover-text «3400 — на оплате 8816» + sticky «итог до оплаты» — ритм без полного дубля H1.
+- Description teaser про проверку до кнопки — не копия H1.
+
+### Change
+- Для checkout_price_stack: prefer **card rate beat + pay-total beat** over scout draft с процентами/уборкой в заголовке (детали — в lead и inline).
+
+### Never again
+- H1 только «комиссия посуточно тюмень» без двух конкретных сумм.
+- Description = дословный H1.
+
+### Proposed apply
+- Title/Description review: checkout_price_stack — карточка → оплата > jargon-only H1.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
