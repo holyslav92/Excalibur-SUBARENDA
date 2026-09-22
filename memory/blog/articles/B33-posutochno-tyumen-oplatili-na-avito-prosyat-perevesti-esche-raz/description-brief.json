@@ -1,0 +1,10 @@
+{
+  "topic_id": "B33",
+  "description": "«У меня же чек» — а в чате уже просят отменить бронь и перевести предоплату на карту. Добрый дом разбирает, какой вопрос задать перед вторым платежом в Тюмени.",
+  "rhythm": "klyshin_case_hook",
+  "geo": "Тюмень",
+  "author_brand": "Добрый дом",
+  "not_equal_title": true,
+  "not_truncated_lead": true,
+  "verdict": "PASS"
+}
