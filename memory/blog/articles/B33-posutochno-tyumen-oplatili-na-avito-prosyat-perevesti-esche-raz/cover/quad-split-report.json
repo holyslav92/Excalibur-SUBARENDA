@@ -12,23 +12,23 @@
           1152
         ],
         "panel_size_px": [
-          1018,
-          571
+          1022,
+          576
         ],
         "split_meta": {
           "split_mode": "gutter_detect",
           "h_gutter_px": {
-            "start": 571,
-            "end": 582
+            "start": 576,
+            "end": 578
           },
           "v_gutter_px": {
-            "start": 1018,
-            "end": 1029
+            "start": 1022,
+            "end": 1024
           },
           "requested_mode": "auto",
           "gutter_quality": {
-            "h_center_offset_px": 0.5,
-            "v_center_offset_px": 0.5,
+            "h_center_offset_px": 1.0,
+            "v_center_offset_px": 1.0,
             "max_aspect_crop_loss": 0.0,
             "per_panel_crop_loss": {
               "top_left": 0.0,
@@ -50,14 +50,14 @@
             "box_px": {
               "left": 0,
               "top": 0,
-              "right": 1018,
-              "bottom": 571
+              "right": 1022,
+              "bottom": 576
             },
             "raw_box_px": {
               "left": 0,
               "top": 0,
-              "right": 1018,
-              "bottom": 571
+              "right": 1022,
+              "bottom": 576
             },
             "size_px": [
               1200,
@@ -71,16 +71,16 @@
             "file": "cover/inline-02.png",
             "quadrant": "top_right",
             "box_px": {
-              "left": 1029,
+              "left": 1024,
               "top": 0,
               "right": 2048,
-              "bottom": 571
+              "bottom": 576
             },
             "raw_box_px": {
-              "left": 1029,
+              "left": 1024,
               "top": 0,
               "right": 2048,
-              "bottom": 571
+              "bottom": 576
             },
             "size_px": [
               1200,
@@ -95,14 +95,14 @@
             "quadrant": "bottom_left",
             "box_px": {
               "left": 0,
-              "top": 582,
-              "right": 1018,
+              "top": 578,
+              "right": 1022,
               "bottom": 1152
             },
             "raw_box_px": {
               "left": 0,
-              "top": 582,
-              "right": 1018,
+              "top": 578,
+              "right": 1022,
               "bottom": 1152
             },
             "size_px": [
@@ -117,14 +117,14 @@
             "file": "cover/inline-04.png",
             "quadrant": "bottom_right",
             "box_px": {
-              "left": 1029,
-              "top": 582,
+              "left": 1024,
+              "top": 578,
               "right": 2048,
               "bottom": 1152
             },
             "raw_box_px": {
-              "left": 1029,
-              "top": 582,
+              "left": 1024,
+              "top": 578,
               "right": 2048,
               "bottom": 1152
             },
@@ -149,27 +149,27 @@
           1152
         ],
         "panel_size_px": [
-          1019,
-          570
+          1020,
+          573
         ],
         "split_meta": {
           "split_mode": "gutter_detect",
           "h_gutter_px": {
-            "start": 570,
-            "end": 579
+            "start": 573,
+            "end": 580
           },
           "v_gutter_px": {
-            "start": 1019,
-            "end": 1028
+            "start": 1020,
+            "end": 1027
           },
           "requested_mode": "auto",
           "gutter_quality": {
-            "h_center_offset_px": 1.5,
+            "h_center_offset_px": 0.5,
             "v_center_offset_px": 0.5,
-            "max_aspect_crop_loss": 0.0069,
+            "max_aspect_crop_loss": 0.0,
             "per_panel_crop_loss": {
               "top_left": 0.0,
-              "top_right": 0.0069,
+              "top_right": 0.0,
               "bottom_left": 0.0,
               "bottom_right": 0.0
             },
@@ -187,14 +187,14 @@
             "box_px": {
               "left": 0,
               "top": 0,
-              "right": 1019,
-              "bottom": 570
+              "right": 1020,
+              "bottom": 573
             },
             "raw_box_px": {
               "left": 0,
               "top": 0,
-              "right": 1019,
-              "bottom": 570
+              "right": 1020,
+              "bottom": 573
             },
             "size_px": [
               1200,
@@ -208,16 +208,16 @@
             "file": "cover/inline-06.png",
             "quadrant": "top_right",
             "box_px": {
-              "left": 1031,
-              "top": 0,
-              "right": 2044,
-              "bottom": 570
-            },
-            "raw_box_px": {
-              "left": 1028,
+              "left": 1027,
               "top": 0,
               "right": 2048,
-              "bottom": 570
+              "bottom": 573
+            },
+            "raw_box_px": {
+              "left": 1027,
+              "top": 0,
+              "right": 2048,
+              "bottom": 573
             },
             "size_px": [
               1200,
@@ -232,14 +232,14 @@
             "quadrant": "bottom_left",
             "box_px": {
               "left": 0,
-              "top": 579,
-              "right": 1019,
+              "top": 580,
+              "right": 1020,
               "bottom": 1152
             },
             "raw_box_px": {
               "left": 0,
-              "top": 579,
-              "right": 1019,
+              "top": 580,
+              "right": 1020,
               "bottom": 1152
             },
             "size_px": [
@@ -256,12 +256,8 @@
   ],
   "manifest": "cover/quad-manifest.json",
   "html_inject": [
-    "injected inline_1 after H2 — Что произошло с оплатой",
-    "injected inline_2 after H2 — Что произошло с оплатой",
-    "injected inline_3 after H2 — Что произошло с оплатой",
-    "injected inline_4 after H2 — Почему хозяин предлагает оплатить напрямую",
-    "injected inline_5 after H2 — Почему хозяин предлагает оплатить напрямую",
-    "injected inline_6 after H2 — Что проверить до перевода",
-    "injected inline_7 after H2 — Мой вывод как практика"
+    "skip inline_1: already correct under H2 — Что произошло с оплатой",
+    "skip inline_2: already correct under H2 — Что произошло с оплатой",
+    "skip inline_3: already correct under H2 — Что произошло с оплатой"
   ]
 }

@@ -4,7 +4,7 @@
   "standalone_cover": false,
   "model_policy": "",
   "vip_disabled": false,
-  "max_generation_attempts": 2,
+  "max_generation_attempts": 1,
   "identity_reference_local": "",
   "identity_reference_id": "",
   "logo_reference_local": "",
