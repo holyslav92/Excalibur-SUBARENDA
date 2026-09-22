@@ -279,7 +279,7 @@ def main() -> int:
                 "slug": slug,
                 "cover_remote": spec["cover_remote"],
                 "inline_remote": spec["inline_remote"],
-                "inline_count": 7,
+                "inline_count": int(spec.get("inline_count") or 7),
             }
         )
 

@@ -2021,7 +2021,21 @@ category: script
 ### Fixer resolution
 
 status: fixed
-reason: uploads prefix patch merged in publish run; dzen touch-only documented in wp-publish-log B33
+fixed_at: 2026-09-22
+fix_summary:
+- `excalibur_blog_wp_intermediate_refresh.py` derives uploads month from attachment URLs; zen feed regex uses same prefix (not hardcoded 2026/08).
+- `build_spec_from_wp` counts inline slots via `data-slot` / upload basename; `live_dzen_bump` passes `inline_count` when article has fewer H2 sections than inline figures (INC B33).
+files_changed:
+- `scripts/excalibur_blog_wp_intermediate_refresh.py`
+- `scripts/excalibur_blog_live_cover_regen_aug22.py`
+- `scripts/excalibur_blog_live_dzen_bump.py`
+- `shared/excalibur-wp-publish-contract.md`
+- `tests/test_dzen_build_spec.py`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_wp_intermediate_refresh.py scripts/excalibur_blog_live_cover_regen_aug22.py scripts/excalibur_blog_live_dzen_bump.py`
+- `python3 -m unittest tests.test_wp_intermediate_refresh tests.test_dzen_build_spec -v`
+commit: pending-parent-commit
 
 ## INC-20260922-1216-metrika-content-learner-b33
 
