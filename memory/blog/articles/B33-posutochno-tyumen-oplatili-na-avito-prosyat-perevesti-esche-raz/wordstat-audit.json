@@ -1,0 +1,10 @@
+{
+  "research_date": "2026-09-22",
+  "tool": "mcp-kv wordstat_get_top_requests",
+  "queries": [
+    {"phrase": "квартиры посуточно тюмень", "regions": [55, 11176], "totalCount": 4341},
+    {"phrase": "комиссия посуточно", "regions": [225], "totalCount": 1896},
+    {"phrase": "авито посуточно комиссия", "regions": [225], "totalCount": 1052},
+    {"phrase": "авито квартиры посуточно тюмень", "regions": [55, 11176], "totalCount": 301}
+  ]
+}
