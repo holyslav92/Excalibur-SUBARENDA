@@ -1,0 +1,20 @@
+{
+  "local_path": "cover/canvas-slice4.png",
+  "source": "grsai-draw-api",
+  "used_vip_fallback": true,
+  "quality": "high",
+  "bytes": 3168051,
+  "aspect_ratio": "16:9",
+  "resolution": "2K",
+  "endpoint": "draw/completions+result",
+  "host": "grsaiapi.com",
+  "response_kind": "url",
+  "task_id": "3-aad6ef88-f4b6-4df0-8e38-089da3ebacd1",
+  "target_canvas": "2048x1152",
+  "native_width": 2048,
+  "native_height": 1152,
+  "native_long_side": 2048,
+  "min_long_side_required": 2048,
+  "delivery": "native_2k",
+  "vip_trigger": "2k_not_possible_on_primary"
+}

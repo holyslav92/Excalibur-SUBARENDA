@@ -1,0 +1,50 @@
+{
+  "topic_id": "B32",
+  "slug": "v-kartochke-3400-za-noch-na-oplate-8816-za-dve",
+  "cover_family": "brand_collage",
+  "style_preset": "the_rieltor_twilight_gold",
+  "pipeline": "slice4_grid_1x_image_api",
+  "file": "cover/cover.png",
+  "alt": "Гость в светлой кухне посуточной квартиры в Тюмени смотрит на телефон с итогом оплаты 8816 ₽, на столе распечатка с ценой 3400 за ночь",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-slice4.png",
+  "generated_at": "2026-09-22T06:57:29+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Гость в светлой кухне посуточной квартиры в Тюмени смотрит на телефон с итогом оплаты 8816 ₽, на столе распечатка с ценой 3400 за ночь",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Сравнение цены в карточке 3400 ₽ и суммы за две ночи 6800 ₽ на экранах устройств",
+      "h2_anchor": "Цена живёт не в карточке, а на кнопке оплаты",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Детализация оплаты: сервисный сбор 816 ₽, уборка 1200 ₽, итог 8816 ₽",
+      "h2_anchor": "На коротком заезде разовая строка тяжелее ночи",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Чек-лист перед оплатой: сверить полный итог, сначала проверка, потом перевод",
+      "h2_anchor": "Вопрос, который открывает расчёт",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}

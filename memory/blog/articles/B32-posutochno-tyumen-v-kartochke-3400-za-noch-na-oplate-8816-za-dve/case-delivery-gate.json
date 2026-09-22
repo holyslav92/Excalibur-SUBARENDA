@@ -1,0 +1,12 @@
+{
+  "gate": "case-delivery",
+  "status": "PASS",
+  "stage": "article",
+  "manner_canon": "dobry_dom_gen_only_human_v1",
+  "checks_run": [
+    "writer.html",
+    "article.html"
+  ],
+  "errors": [],
+  "article_dir": "/workspace/memory/blog/articles/B32-posutochno-tyumen-v-kartochke-3400-za-noch-na-oplate-8816-za-dve"
+}

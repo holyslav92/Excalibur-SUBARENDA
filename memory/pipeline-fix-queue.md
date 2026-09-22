@@ -1927,3 +1927,70 @@ category: env
 status: needs-human
 reason: env-only blocker; duplicate of INC-20260903-0640
 needed_decision_or_secret: YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets
+
+## INC-20260922-0715-publish-theme-contract-deploy
+
+status: open
+run_date: 2026-09-22
+role: excalibur-blog-publish
+topic_id: B32
+article_dir: memory/blog/articles/B32-posutochno-tyumen-v-kartochke-3400-za-noch-na-oplate-8816-za-dve
+severity: low
+category: script
+
+### What went wrong
+
+- `excalibur_blog_theme_contract_deploy.py --deploy` → `ValueError: functions.php FAQ function bounds not found` (patcher could not locate FAQ block in live theme).
+
+### How the agent recovered this run
+
+- Publish continued; live-page gate PASS on new post (theme meta skip flags applied via bootstrap).
+
+### Durable fix needed before next run
+
+- Update `excalibur_blog_theme_contract_deploy.py` patch bounds for current Timeweb theme `functions.php`, or document idempotent skip when already patched.
+
+### Fixer resolution
+
+status: fixed
+fixed_at: 2026-09-22
+fix_summary:
+- Live Timeweb theme `functions.php` no longer defines `custom_theme_add_faq_to_single`; schema hook already present — FAQ patch is N/A, not an error.
+- `patch_functions` / `patch_single` idempotently skip when legacy FAQ hook or side-sticker/quiz markup absent; deploy prints `OK skip=…` instead of ValueError.
+files_changed:
+- `scripts/excalibur_blog_theme_contract_deploy.py`
+- `tests/test_theme_contract_deploy.py`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_theme_contract_deploy.py`
+- `python3 -m unittest tests.test_theme_contract_deploy -v`
+- `python3 scripts/excalibur_blog_theme_contract_deploy.py --deploy` → OK skip functions.php + single.php
+commit: bbdb7a7
+
+## INC-20260922-0715-metrika-content-learner-b32
+
+status: needs-human
+run_date: 2026-09-22
+role: excalibur-blog-content-learner
+topic_id: B32
+article_dir: memory/blog/articles/B32-posutochno-tyumen-v-kartochke-3400-za-noch-na-oplate-8816-za-dve
+severity: medium
+category: env
+
+### What went wrong
+
+- `excalibur_blog_metrika_fetch.py --days 30 --ingest` → METRIKA CREDENTIALS BLOCKER (no OAuth token / counter id in Cloud Secrets).
+
+### How the agent recovered this run
+
+- Recorded optional/low-confidence lessons in `memory/content-lessons.md`; no causal Metrika claims.
+
+### Durable fix needed before next run
+
+- Set YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets for tenant.
+
+### Fixer resolution
+
+status: needs-human
+reason: env-only blocker; duplicate of INC-20260903-0640
+needed_decision_or_secret: YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets

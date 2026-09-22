@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "https://добрыйдом-72.рф/blog/hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400/",
+      "slug": "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400",
+      "anchor": "«Хозяин сказал „всё включено“. В такси доплатили 2 400»",
+      "catalog_title": "Хозяин сказал «всё включено». В такси доплатили 2 400 ₽",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni/",
+      "slug": "napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni",
+      "anchor": "«Написали „уборка включена“. На выезде — 1 800 ₽ за грязные простыни»",
+      "catalog_title": "В карточке: «уборка включена» — 3 ночи. Выезд: фото простыни — 1 800 ₽",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego/",
+      "slug": "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+      "anchor": "«Оплатил за двоих. У двери попросили доплату за третьего»",
+      "catalog_title": "Оплатили за двоих. У двери попросили доплату за третьего",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate/",
+      "slug": "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+      "anchor": "«Перевели 3 000 предоплатой. К 21:00 — тишина в чате»",
+      "catalog_title": "Перевели 3 000 ₽ предоплатой. К вечеру — тишина в чате",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "outbound_unique_slugs": [
+    "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400",
+    "napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni",
+    "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+    "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B32-posutochno-tyumen-v-kartochke-3400-za-noch-na-oplate-8816-za-dve",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}

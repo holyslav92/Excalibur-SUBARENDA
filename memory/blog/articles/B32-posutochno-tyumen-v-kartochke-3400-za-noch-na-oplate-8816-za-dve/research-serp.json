@@ -1,0 +1,218 @@
+{
+  "agent": "excalibur-blog",
+  "date_context": {
+    "timezone": "Asia/Yekaterinburg",
+    "today_iso": "2026-09-22",
+    "today_ru": "22.09.2026",
+    "year": 2026,
+    "month": 9,
+    "month_name_ru": "сентябрь",
+    "weekday_ru": "вторник"
+  },
+  "topic": {
+    "topic_id": "B32",
+    "title": "Посуточно Тюмень: в карточке 3400 за ночь, на оплате 8816 за две",
+    "h1": "Посуточно Тюмень: в карточке 3400 за ночь, на оплате 8816 за две",
+    "slug": "posutochno-tyumen-v-kartochke-3400-za-noch-na-oplate-8816-za-dve",
+    "primary_query": "Посуточно Тюмень: в карточке 3400 за ночь, на оплате 8816 за две",
+    "priority": "P0"
+  },
+  "searches": [
+    {
+      "query_id": "primary_fresh",
+      "query": "Посуточно Тюмень: в карточке 3400 за ночь, на оплате 8816 за две 2026",
+      "purpose": "актуальный SERP",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Снять квартиру посуточно, аренда квартиры на сутки в Тюмени | Авито ...",
+          "url": "https://www.avito.ru/tyumen/kvartiry/sdam/posutochno/-ASgBAgICAkSSA8gQ8AeSUg",
+          "snippet": ""
+        },
+        {
+          "title": "Снять квартиру посуточно, аренда квартиры на сутки в Тюменской области ...",
+          "url": "https://www.avito.ru/tyumenskaya_oblast/kvartiry/sdam/posutochno/-ASgBAgICAkSSA8gQ8AeSUg",
+          "snippet": "Квартира отлично подойдёт для семей с детьми, туристического отдыха, командировочных, бизнесменов, соло-путешественников, влюблённых пар, романтических встреч и свиданий."
+        },
+        {
+          "title": "Снять квартиру посуточно в Тюмени , аренда квартиры на сутки в Тюмени",
+          "url": "https://tyumen.sutochno.ru/",
+          "snippet": "Цены на аренду квартир в Тюменской области. Объявления от собственников и проверенных агентств: поиск на карте, по району, цене, площади и другим параметрам."
+        },
+        {
+          "title": "Квартиры посуточно в Тюмени на карте: ☎ телефоны, ★ отзывы — 2ГИС",
+          "url": "https://2gis.ru/tyumen/search/%D0%9A%D0%B2%D0%B0%D1%80%D1%82%D0%B8%D1%80%D1%8B%20%D0%BF%D0%BE%D1%81%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%BE/rubricId/19487",
+          "snippet": "Снять квартиру напрямую у владельцев без посредников и переплаты в Тюмени. Выгодные цены, реальные отзывы, телефоны собственников, гарантия заселения, рейтинг жилья на Суточно.ру."
+        },
+        {
+          "title": "Жильё посуточно в Тюмени, жильё посуточно рядом со мной на карте ...",
+          "url": "https://yandex.ru/maps/55/tyumen/category/short_term_housing_rental/197061821387/",
+          "snippet": "Результаты поиска по запросу Квартиры посуточно на карте в Тюмени. Также люди ищут: Снять квартиру, Почасовые квартиры, Сдача квартир."
+        },
+        {
+          "title": "Снять квартиру в тюмени посуточно в Тюмени на карте: ☎ телефоны ...",
+          "url": "https://2gis.ru/tyumen/search/%D0%A1%D0%BD%D1%8F%D1%82%D1%8C%20%D0%BA%D0%B2%D0%B0%D1%80%D1%82%D0%B8%D1%80%D1%83%20%D0%B2%20%D1%82%D1%8E%D0%BC%D0%B5%D0%BD%D0%B8%20%D0%BF%D0%BE%D1%81%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%BE",
+          "snippet": "Жильё посуточно в Тюмени с адресами, телефонами и отзывами. Карты покажут режим работы, панорамы и фото места, помогут добраться общественным транспортом, пешком или на машине."
+        }
+      ],
+      "searched_at": "2026-09-22"
+    },
+    {
+      "query_id": "title_fresh",
+      "query": "Посуточно Тюмень: в карточке 3400 за ночь, на оплате 8816 за две 2026",
+      "purpose": "SERP по человеческому title",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Снять квартиру посуточно, аренда квартиры на сутки в Тюмени | Авито ...",
+          "url": "https://www.avito.ru/tyumen/kvartiry/sdam/posutochno/-ASgBAgICAkSSA8gQ8AeSUg",
+          "snippet": ""
+        },
+        {
+          "title": "Снять квартиру посуточно в Тюмени , аренда квартиры на сутки в Тюмени",
+          "url": "https://tyumen.sutochno.ru/",
+          "snippet": "Квартира отлично подойдёт для семей с детьми, туристического отдыха, командировочных, бизнесменов, соло-путешественников, влюблённых пар, романтических встреч и свиданий."
+        },
+        {
+          "title": "Снять квартиру посуточно в Тюмени — забронировать квартиру для отдыха ...",
+          "url": "https://ostrovok.ru/hotel/russia/tyumen/kvartiry/?dateless_form=yes",
+          "snippet": "Снять квартиру напрямую у владельцев без посредников и переплаты в Тюмени. Выгодные цены, реальные отзывы, телефоны собственников, гарантия заселения, рейтинг жилья на Суточно.ру."
+        },
+        {
+          "title": "Быстрое бронирование — снять жильё посуточно в Тюмени",
+          "url": "https://tyumen.sutochno.ru/now",
+          "snippet": "Снимайте квартиры в Тюмени посуточно онлайн по самым выгодным ценам на 2026 год. Выбирайте из 3738 объектов с реальными фото и отзывами."
+        },
+        {
+          "title": "Снять комнату посуточно в Тюмени | Цены на аренду комнат в Тюмени | Авито",
+          "url": "https://www.avito.ru/tyumen/komnaty/sdam/posutochno/-ASgBAgICAkSQA74QqAn4YA",
+          "snippet": "Квартира посуточно в Тюмени — выгоднее и комфортнее, чем номер в гостинице. Краткосрочная аренда квартир — идеальное решение для туристов и командированных. Здесь можно сдать и снять квартиру на сутки в Тюмени и другом городе без посредников! Забронируйте до 30 сентября 2026 — и получите кэшбэк бонусами после оценки проживания. Подробнее."
+        },
+        {
+          "title": "Отели и гостиницы в Тюмень — бронирование номеров посуточно. Найдено 62 ...",
+          "url": "https://tyumen.cian.ru/snyat-posutochno-hotels/",
+          "snippet": "Цены на аренду комнат в Тюмени. Объявления от собственников и проверенных агентств: поиск на карте, по району, цене, площади и другим параметрам."
+        }
+      ],
+      "searched_at": "2026-09-22"
+    },
+    {
+      "query_id": "official_docs",
+      "query": "Посуточно Тюмень: в карточке 3400 за ночь, на оплате 8816 за две official docs 2026",
+      "purpose": "официальные docs",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Снять квартиру посуточно, аренда квартиры на сутки в Тюмени | Авито ...",
+          "url": "https://www.avito.ru/tyumen/kvartiry/sdam/posutochno/-ASgBAgICAkSSA8gQ8AeSUg",
+          "snippet": ""
+        },
+        {
+          "title": "Снять квартиру посуточно в Тюмени , аренда квартиры на сутки в Тюмени",
+          "url": "https://tyumen.sutochno.ru/",
+          "snippet": "Квартира отлично подойдёт для семей с детьми, туристического отдыха, командировочных, бизнесменов, соло-путешественников, влюблённых пар, романтических встреч и свиданий."
+        },
+        {
+          "title": "Снять квартиру посуточно в Тюмени — забронировать квартиру для отдыха ...",
+          "url": "https://ostrovok.ru/hotel/russia/tyumen/kvartiry/?dateless_form=yes",
+          "snippet": "Снять квартиру напрямую у владельцев без посредников и переплаты в Тюмени. Выгодные цены, реальные отзывы, телефоны собственников, гарантия заселения, рейтинг жилья на Суточно.ру."
+        },
+        {
+          "title": "Снять посуточно в Тюмени на карте: ☎ телефоны, ★ отзывы — 2ГИС",
+          "url": "https://2gis.ru/tyumen/search/%D0%A1%D0%BD%D1%8F%D1%82%D1%8C%20%D0%BF%D0%BE%D1%81%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%BE",
+          "snippet": "Снимайте квартиры в Тюмени посуточно онлайн по самым выгодным ценам на 2026 год. Выбирайте из 3739 объектов с реальными фото и отзывами."
+        },
+        {
+          "title": "Снять квартиру в Тюмени посуточно — Яндекс Путешествия",
+          "url": "https://travel.yandex.ru/hotels/tyumen/filter-flats/",
+          "snippet": "Снять посуточно: адреса на карте, ☎ телефоны, сайты, часы работы, ★ отзывы, фото, ⚑ поиск проезда на городском транспорте и авто"
+        },
+        {
+          "title": "Снять комнату посуточно в Тюмени | Цены на аренду комнат в Тюмени | Авито",
+          "url": "https://www.avito.ru/tyumen/komnaty/sdam/posutochno/-ASgBAgICAkSQA74QqAn4YA",
+          "snippet": "Снять квартиру в Тюмени посуточно — актуальные варианты аренды квартир на сутки и только проверенные предложения на сервисе Яндекс Путешествия."
+        }
+      ],
+      "searched_at": "2026-09-22"
+    },
+    {
+      "query_id": "github_evidence",
+      "query": "site:github.com Посуточно Тюмень: в карточке 3400 за ночь, на оплате 8816 за две 2026",
+      "purpose": "GitHub evidence",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "was-node-suite-comfyui/image/load_vqa_model_node.jpg at main ...",
+          "url": "https://github.com/RituCodeWeb/was-node-suite-comfyui/blob/main/image/load_vqa_model_node.jpg",
+          "snippet": ""
+        },
+        {
+          "title": "opentitan/hw/ip/tlul/doc/tlul_socket_m1.svg at master - GitHub",
+          "url": "https://github.com/lin-snail/opentitan/blob/master/hw/ip/tlul/doc/tlul_socket_m1.svg",
+          "snippet": "Contribute to RituCodeWeb/was-node-suite-comfyui development by creating an account on GitHub."
+        },
+        {
+          "title": "123usef/images/html.svg at main · 123usef/123usef · GitHub",
+          "url": "https://github.com/123usef/123usef/blob/main/images/html.svg",
+          "snippet": "Contribute to lin-snail/opentitan development by creating an account on GitHub."
+        },
+        {
+          "title": "bulletproofs/tex/9261976c22c8fab73fb9c45ca5e5e760.svg at master ...",
+          "url": "https://github.com/sdiehl/bulletproofs/blob/master/tex/9261976c22c8fab73fb9c45ca5e5e760.svg?invert_in_darkmode&sanitize=true",
+          "snippet": "Contribute to 123usef/123usef development by creating an account on GitHub."
+        },
+        {
+          "title": "PAST/assets/PAST_figure.png at main · slp-rl/PAST · GitHub",
+          "url": "https://github.com/slp-rl/PAST/blob/main/assets/PAST_figure.png",
+          "snippet": "Invalid image source."
+        },
+        {
+          "title": "TV-Logos/AFNSports.us.png at master · IPTVtuner/TV-Logos",
+          "url": "https://github.com/IPTVtuner/TV-Logos/blob/master/AFNSports.us.png",
+          "snippet": "Contribute to slp-rl/PAST development by creating an account on GitHub."
+        }
+      ],
+      "searched_at": "2026-09-22"
+    },
+    {
+      "query_id": "community_experience",
+      "query": "Посуточно Тюмень: в карточке 3400 за ночь, на оплате 8816 за две forum problems опыт 2026",
+      "purpose": "форумы и живые проблемы",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Квартиры на сутки, г. Тюмень, \"Форум\" | Квартиры посуточно в Тюмени ...",
+          "url": "https://vk.ru/forum3452",
+          "snippet": ""
+        },
+        {
+          "title": "Снять квартиру посуточно в Тюмени , аренда квартиры на сутки в Тюмени",
+          "url": "https://tyumen.sutochno.ru/",
+          "snippet": "Автоматический определитель номера с базой рекомендаций и отзывов для коллег-посуточников."
+        },
+        {
+          "title": "Снять посуточно в Тюмени на карте: ☎ телефоны, ★ отзывы — 2ГИС",
+          "url": "https://2gis.ru/tyumen/search/%D0%A1%D0%BD%D1%8F%D1%82%D1%8C%20%D0%BF%D0%BE%D1%81%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%BE",
+          "snippet": "Краткосрочная аренда квартир — идеальное решение для туристов и командированных. Здесь можно сдать и недорого снять квартиру на сутки в Тюмени и другом городе без посредников! Забронируйте до 30 сентября 2026 — и получите кэшбэк бонусами после оценки проживания. Подробнее."
+        },
+        {
+          "title": "Снять квартиру посуточно, аренда квартиры на сутки в Тюмени | Авито ...",
+          "url": "https://www.avito.ru/tyumen/kvartiry/sdam/posutochno/-ASgBAgICAkSSA8gQ8AeSUg",
+          "snippet": "Снять посуточно: адреса на карте, ☎ телефоны, сайты, часы работы, ★ отзывы, фото, ⚑ поиск проезда на городском транспорте и авто"
+        },
+        {
+          "title": "посуточно - Снять квартиру в районе Центральный | Цены на аренду ...",
+          "url": "https://www.avito.ru/tyumen/kvartiry/sdam-ASgBAgICAUSSA8gQ?district=161&q=%D0%BF%D0%BE%D1%81%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%BE",
+          "snippet": "Квартира отлично подойдёт для семей с детьми, туристического отдыха, командировочных, бизнесменов, соло-путешественников, влюблённых пар, романтических встреч и свиданий."
+        },
+        {
+          "title": "Снять квартиру посуточно в Тюмени — забронировать квартиру для отдыха ...",
+          "url": "https://ostrovok.ru/hotel/russia/tyumen/kvartiry/?dateless_form=yes",
+          "snippet": "Квартиры от собственников и проверенных агентств в Тюмени: долгосрочная и посуточная аренда. Цены на аренду квартир. Поиск квартир на карте, по району, цене, площади и другим параметрам."
+        }
+      ],
+      "searched_at": "2026-09-22"
+    }
+  ],
+  "errors": []
+}

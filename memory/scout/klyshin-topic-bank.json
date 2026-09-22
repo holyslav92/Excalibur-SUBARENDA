@@ -3,7 +3,7 @@
   "source_channel": "https://t.me/klyshin_A",
   "source_label": "Алексей Клышин — angle only (ритм delivery, не копировать сделки)",
   "tenant": "Добрый дом — посуточная аренда / субаренда Тюмень",
-  "updated_at": "2026-09-12",
+  "updated_at": "2026-09-22",
   "timezone": "Asia/Yekaterinburg",
   "algorithm": "klyshin_hook → wordstat_probe → rework_for_demand → final_P0_or_skip_after_rework",
   "angle_rotation": {
@@ -253,6 +253,23 @@
       "final_p0": {"phrase": "квартиры посуточно тюмень", "volume_tyumen": 4826, "volume_ru": 10308},
       "wordstat_rework_log": "probe «горячая вода посуточно» 2/74 → «бойлер» 9007 → «аренда квартиры посуточно» 664 → final P0 «квартиры посуточно тюмень» 4826/10308",
       "used_in_articles": ["B20"]
+    },
+    {
+      "id": "checkout_price_stack",
+      "queue_num": 11,
+      "hook_ru": "В карточке 3 400 ₽ за ночь. На оплате — 8 816 ₽ за две (сервис + уборка).",
+      "angle": "строка «за ночь» vs итог на шаге оплаты; контраст с отелем; NOT B10 at door, NOT B23 checkout linen",
+      "klyshin_signal": "механика «мелочь в карточке → большой переплат» (Klyshin число/контраст); moral: полная сумма до оплаты",
+      "wordstat_probes": ["комиссия посуточно", "квартира посуточно тюмень цена", "посуточно или отель", "квартиры посуточно тюмень"],
+      "dzen_pattern_prefer": [4, 2],
+      "anti_dup": ["hidden_fees_all_inclusive", "utilities_jkh", "overlap_suitcases", "burn_at_door", "deposit_chip"],
+      "tyumen_localize": true,
+      "status": "used",
+      "last_seen": "2026-09-22",
+      "queue_slot": "2026-09-22 B32 scout",
+      "final_p0": {"phrase": "квартиры посуточно тюмень", "volume_tyumen": 4409, "volume_ru": 9372},
+      "wordstat_rework_log": "probe «комиссия посуточно» 1903 (225) → «уборка посуточно» 1932 (225) → «посуточно или отель» 8 (55+11176) / «отель или посуточная квартира» 280 (225) → «квартира посуточно тюмень цена» 92 (225) → final P0 «квартиры посуточно тюмень» 4409/9372",
+      "used_in_articles": ["B32"]
     }
   ],
   "parked_hooks": {
