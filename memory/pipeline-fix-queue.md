@@ -1965,7 +1965,7 @@ checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_theme_contract_deploy.py`
 - `python3 -m unittest tests.test_theme_contract_deploy -v`
 - `python3 scripts/excalibur_blog_theme_contract_deploy.py --deploy` → OK skip functions.php + single.php
-commit: pending
+commit: bbdb7a7
 
 ## INC-20260922-0715-metrika-content-learner-b32
 
