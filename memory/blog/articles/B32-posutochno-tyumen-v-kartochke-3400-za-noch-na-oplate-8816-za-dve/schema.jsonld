@@ -1,0 +1,48 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/v-kartochke-3400-za-noch-na-oplate-8816-za-dve/#article",
+  "url": "{{SITE_BASE}}/blog/v-kartochke-3400-za-noch-na-oplate-8816-za-dve/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/v-kartochke-3400-za-noch-na-oplate-8816-za-dve/"
+  },
+  "headline": "В карточке 3 400 ₽ за ночь. На оплате — 8 816 ₽ за две ночи",
+  "description": "Разбираем, почему ставка 3 400 ₽ за ночь превращается в итоговые 8 816 ₽ на оплате за две ночи с учётом сервиса и уборки. Объясняем, как сравнивать квартиру с отелем по полной сумме бронирования.",
+  "datePublished": "2026-09-22",
+  "dateModified": "2026-09-22",
+  "inLanguage": "ru-RU",
+  "author": {
+    "@type": "Organization",
+    "@id": "{{SITE_BASE}}/#organization",
+    "name": "Добрый дом",
+    "jobTitle": "Апартаменты и квартиры посуточно в Тюмени",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ],
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "{{SITE_BASE}}/#organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ],
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    }
+  }
+}
