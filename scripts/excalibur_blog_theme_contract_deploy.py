@@ -9,6 +9,35 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 
+def theme_has_legacy_faq_hook(text: str) -> bool:
+    """True when the old kov4eg-style global FAQ filter is still in functions.php."""
+    return "custom_theme_add_faq_to_single" in text
+
+
+def faq_skip_guard_applied(text: str) -> bool:
+    needle = "_excalibur_blog_skip_theme_faq"
+    if needle not in text:
+        return False
+    guard = (
+        "if ( is_single() && 'post' === get_post_type() "
+        "&& ! ( '1' === get_post_meta( get_the_ID(), "
+        "'_excalibur_blog_skip_theme_faq', true ) "
+        "&& '1' === get_post_meta( get_the_ID(), "
+        "'_excalibur_blog_skip_engagement_quiz', true ) ) ) {"
+    )
+    return guard in text
+
+
+def single_needs_excalibur_guards(text: str) -> bool:
+    """True when single.php still renders legacy side stickers / signal quiz blocks."""
+    return (
+        'class="article-side-stickers"' in text
+        or "article-side-stickers" in text
+        or 'class="article-signal-cards"' in text
+        or "article-signal-cards" in text
+    )
+
+
 def patch_functions(text: str) -> str:
     old = "if ( is_single() && 'post' === get_post_type() ) {"
     new = (
@@ -18,18 +47,19 @@ def patch_functions(text: str) -> str:
         "&& '1' === get_post_meta( get_the_ID(), "
         "'_excalibur_blog_skip_engagement_quiz', true ) ) ) {"
     )
-    if new not in text:
-        function_start = text.find("function custom_theme_add_faq_to_single")
-        filter_anchor = text.find(
-            "add_filter( 'the_content', 'custom_theme_add_faq_to_single', 99 );"
-        )
-        if function_start < 0 or filter_anchor < function_start:
-            raise ValueError("functions.php FAQ function bounds not found")
-        faq_function = text[function_start:filter_anchor]
-        if old not in faq_function:
-            raise ValueError("functions.php FAQ anchor not found")
-        patched_function = faq_function.replace(old, new, 1)
-        text = text[:function_start] + patched_function + text[filter_anchor:]
+    if theme_has_legacy_faq_hook(text) and not faq_skip_guard_applied(text):
+        if new not in text:
+            function_start = text.find("function custom_theme_add_faq_to_single")
+            filter_anchor = text.find(
+                "add_filter( 'the_content', 'custom_theme_add_faq_to_single', 99 );"
+            )
+            if function_start < 0 or filter_anchor < function_start:
+                raise ValueError("functions.php FAQ function bounds not found")
+            faq_function = text[function_start:filter_anchor]
+            if old not in faq_function:
+                raise ValueError("functions.php FAQ anchor not found")
+            patched_function = faq_function.replace(old, new, 1)
+            text = text[:function_start] + patched_function + text[filter_anchor:]
 
     schema_marker = "function excalibur_blog_output_schema_jsonld()"
     if schema_marker not in text:
@@ -55,6 +85,8 @@ add_action( 'wp_head', 'excalibur_blog_output_schema_jsonld', 20 );
 
 
 def patch_single(text: str) -> str:
+    if not single_needs_excalibur_guards(text):
+        return text
     marker = """\t\tthe_post();
 
 \t\t$excalibur_skip_side_stickers = '1' === get_post_meta( get_the_ID(), '_excalibur_blog_skip_side_stickers', true );
@@ -179,7 +211,12 @@ def deploy() -> None:
                 original = handle.read().decode("utf-8")
             patched = patcher(original)
             if patched == original:
-                print(f"OK unchanged={name}")
+                if name == "functions.php" and not theme_has_legacy_faq_hook(original):
+                    print(f"OK skip={name} reason=no_legacy_theme_faq_hook")
+                elif name == "single.php" and not single_needs_excalibur_guards(original):
+                    print(f"OK skip={name} reason=no_legacy_side_stickers_or_quiz")
+                else:
+                    print(f"OK unchanged={name}")
                 continue
             backup = f"{remote}.bak-excalibur-{stamp}"
             with sftp.open(backup, "w") as handle:

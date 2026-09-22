@@ -1952,8 +1952,20 @@ category: script
 
 ### Fixer resolution
 
-status: open
-reason: non-blocking for B32; may block future articles if theme FAQ suppression drifts
+status: fixed
+fixed_at: 2026-09-22
+fix_summary:
+- Live Timeweb theme `functions.php` no longer defines `custom_theme_add_faq_to_single`; schema hook already present — FAQ patch is N/A, not an error.
+- `patch_functions` / `patch_single` idempotently skip when legacy FAQ hook or side-sticker/quiz markup absent; deploy prints `OK skip=…` instead of ValueError.
+files_changed:
+- `scripts/excalibur_blog_theme_contract_deploy.py`
+- `tests/test_theme_contract_deploy.py`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_theme_contract_deploy.py`
+- `python3 -m unittest tests.test_theme_contract_deploy -v`
+- `python3 scripts/excalibur_blog_theme_contract_deploy.py --deploy` → OK skip functions.php + single.php
+commit: pending
 
 ## INC-20260922-0715-metrika-content-learner-b32
 
