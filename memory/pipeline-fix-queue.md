@@ -2035,7 +2035,7 @@ files_changed:
 checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_wp_intermediate_refresh.py scripts/excalibur_blog_live_cover_regen_aug22.py scripts/excalibur_blog_live_dzen_bump.py`
 - `python3 -m unittest tests.test_wp_intermediate_refresh tests.test_dzen_build_spec -v`
-commit: pending-parent-commit
+commit: 64e96c9
 
 ## INC-20260922-1216-metrika-content-learner-b33
 
