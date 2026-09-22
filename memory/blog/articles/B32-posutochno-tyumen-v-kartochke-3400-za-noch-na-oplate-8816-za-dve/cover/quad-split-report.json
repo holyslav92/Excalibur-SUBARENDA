@@ -142,8 +142,8 @@
   ],
   "manifest": "cover/quad-manifest.json",
   "html_inject": [
-    "injected inline_1 after H2 — Цена живёт не в карточке, а на кнопке оплаты",
-    "injected inline_2 after H2 — На коротком заезде разовая строка тяжелее ночи",
-    "injected inline_3 after H2 — Вопрос, который открывает расчёт"
+    "skip inline_1: already correct under H2 — Цена живёт не в карточке, а на кнопке оплаты",
+    "skip inline_2: already correct under H2 — На коротком заезде разовая строка тяжелее ночи",
+    "skip inline_3: already correct under H2 — Вопрос, который открывает расчёт"
   ]
 }

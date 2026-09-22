@@ -1,0 +1,27 @@
+{
+  "slug": "v-kartochke-3400-za-noch-na-oplate-8816-za-dve",
+  "topic_id": "B32",
+  "permalink": "{{SITE_BASE}}/blog/v-kartochke-3400-za-noch-na-oplate-8816-za-dve/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B32-posutochno-tyumen-v-kartochke-3400-za-noch-na-oplate-8816-za-dve/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1078546,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=5033 slug=v-kartochke-3400-za-noch-na-oplate-8816-za-dve\nOK categories=101\nOK dzen_yzen_meta=1\nOK featured_image=5034\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=5035 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/v-kartochke-3400-za-noch-na-oplate-8816-za-dve-inline-01.png\nOK inline_alt=5035\nOK inline_caption=5035\nOK inline_description=5035\nOK inline_image_upload=5036 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/v-kartochke-3400-za-noch-na-oplate-8816-za-dve-inline-02.png\nOK inline_alt=5036\nOK inline_caption=5036\nOK inline_description=5036\nOK inline_image_upload=5037 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/v-kartochke-3400-za-noch-na-oplate-8816-za-dve-inline-03.png\nOK inline_alt=5037\nOK inline_caption=5037\nOK inline_description=5037\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/v-kartochke-3400-za-noch-na-oplate-8816-za-dve/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 3,
+    "expected_inline": 3,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/v-kartochke-3400-za-noch-na-oplate-8816-za-dve/",
+    "errors": []
+  }
+}

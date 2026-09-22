@@ -430,6 +430,24 @@
 - **publish_method:** sftp (FTP PASV data timeout on cloud; SFTP:22 OK)
 - **llms_deploy:** FAIL (SFTP upload empty error — post live OK)
 
+## B32 — 2026-09-22
+
+- **topic_id:** B32
+- **slug:** v-kartochke-3400-za-noch-na-oplate-8816-za-dve
+- **title:** В карточке 3 400 ₽ за ночь. На оплате — 8 816 ₽ за две ночи
+- **post_id:** 5033
+- **permalink:** /blog/v-kartochke-3400-za-noch-na-oplate-8816-za-dve/
+- **categories:** posutochnaya-arenda (101)
+- **featured_image:** 5034 (alt/caption/description ok)
+- **inline_images:** 5035–5037 (3× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS
+- **dzen RSS:** format-article, single enclosure (full cover); WP intermediate `…-cover-1024x576.png` HTTP 200
+- **interlink inbound:** B01 (3745)
+- **publish_method:** sftp (Cloud Agent SFTP:22 override)
+- **llms_deploy:** PASS (llms.txt + llms-full.txt)
+- **preflight note:** Indexer/gates (link-verify, wp-categories, interlink, crosslink, freshness, llms) completed at publish step
+
 ## B05 — 2026-09-01
 
 - **topic_id:** B05

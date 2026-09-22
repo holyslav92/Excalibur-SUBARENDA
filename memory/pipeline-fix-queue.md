@@ -1927,3 +1927,30 @@ category: env
 status: needs-human
 reason: env-only blocker; duplicate of INC-20260903-0640
 needed_decision_or_secret: YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets
+
+## INC-20260922-0715-publish-theme-contract-deploy
+
+status: open
+run_date: 2026-09-22
+role: excalibur-blog-publish
+topic_id: B32
+article_dir: memory/blog/articles/B32-posutochno-tyumen-v-kartochke-3400-za-noch-na-oplate-8816-za-dve
+severity: low
+category: script
+
+### What went wrong
+
+- `excalibur_blog_theme_contract_deploy.py --deploy` → `ValueError: functions.php FAQ function bounds not found` (patcher could not locate FAQ block in live theme).
+
+### How the agent recovered this run
+
+- Publish continued; live-page gate PASS on new post (theme meta skip flags applied via bootstrap).
+
+### Durable fix needed before next run
+
+- Update `excalibur_blog_theme_contract_deploy.py` patch bounds for current Timeweb theme `functions.php`, or document idempotent skip when already patched.
+
+### Fixer resolution
+
+status: open
+reason: non-blocking for B32; may block future articles if theme FAQ suppression drifts
