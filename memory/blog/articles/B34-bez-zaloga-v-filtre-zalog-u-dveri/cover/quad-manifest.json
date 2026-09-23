@@ -1,0 +1,129 @@
+{
+  "topic_id": "B34",
+  "slug": "bez-zaloga-v-filtre-zalog-u-dveri",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "Фильтр без залога — пять тысяч у двери",
+  "cover_hook_highlight": "залога",
+  "cover_headline_line1": "Фильтр без залога",
+  "cover_headline_line2": "пять тысяч у двери",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Grsai draw API — 2 canvases × 4 panels; logo paste cover + inline_1/3/7; phone on cover scene.",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень"
+  ],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "door landing phone filter qr card headline tr pad",
+    "location": "sep 2026 tyumen autumn evening no snow",
+    "meme": "zero cat; one trade-off sticker cover only",
+    "prop_set": "filter bez zaloga 4800 qr 5000 suitcase",
+    "sticker_set": "без залога посуточно тюмень фильтр авито",
+    "joke": "no deposit filter five thousand at door"
+  },
+  "cover_emotion": "усталость у двери",
+  "cover_scene": "Дверь: фильтр, QR, хук; +7 993 574-83-22; TR pad.",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "scene_hint": "Дверь: фильтр, QR, хук; +79935748322; TR pad.",
+      "alt": "Гость с чемоданом у двери посуточной квартиры в Тюмени: в поиске был фильтр «без залога», у порога просят 5 000 ₽ на личную карту до ключей.",
+      "meme_caption_ru": "",
+      "role": "cover_editorial_hero",
+      "sticky": "Сначала проверка, потом перевод"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "scene_hint": "Таблица: фильтр, 4800 ₽, платформа. Pad TR.",
+      "alt": "Три разных платежа: раскрытый залог в карточке, остаток за проживание из брони и «страховой» у двери.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Где проходит граница: раскрытый залог, остаток за проживание и «страховой» у двери",
+      "visual_type": "comparison_table_ui",
+      "labels": ["фильтр без залога", "ночь 4800 ₽", "оплата на платформе"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "scene_hint": "Схема: 5000 ₽ → карта → ключи.",
+      "alt": "Цепочка требования: 5 000 ₽ на личную карту до передачи ключей — не из заказа.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Нет. Так не заселяем.",
+      "visual_type": "workflow_diagram",
+      "labels": ["залог 5000 ₽", "карта хозяина", "ключи после перевода"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "scene_hint": "Чек-лист: страховка мебели, 5000 ₽, не в заказе. Pad TR.",
+      "alt": "Переименование залога в «страховку мебели» не добавляет строку в бронирование.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Один вопрос, который выключает спешку",
+      "visual_type": "checklist_board",
+      "labels": ["это страховка мебели", "те же 5000 ₽", "не в заказе"]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "scene_hint": "Сравнение: залог заранее vs у двери.",
+      "alt": "Залог в карточке до оплаты отличается от нового требования на лестничной площадке.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Где проходит граница: раскрытый залог, остаток за проживание и «страховой» у двери",
+      "visual_type": "comparison_table_ui",
+      "labels": ["залог указан заранее", "баланс при заезде", "сюрприз у двери"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "scene_hint": "Схема: Авито — карта стоп.",
+      "alt": "При брони на площадке перевод на личную карту у двери уводит оплату мимо заказа.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Нет. Так не заселяем.",
+      "visual_type": "workflow_diagram",
+      "labels": ["платёж через Авито", "личная карта — стоп", "условия важнее слов"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "scene_hint": "Чек-лист: не заселяем; условия; после проверки.",
+      "alt": "Правило «Доброго дома»: без залога в карточке — без депозита на пороге под другим именем.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Нет. Так не заселяем.",
+      "visual_type": "labeled_checklist",
+      "labels": ["нет, так не заселяем", "сначала условия брони", "перевод после проверки"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "scene_hint": "Чек-лист: скрин, заказ, не СБП. Pad TR.",
+      "alt": "Один вопрос у двери: где в заказе строка про 5 000 ₽ на карту — и не переводить по СБП.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "checklist_board",
+      "labels": ["скриншот условий", "откройте заказ у двери", "не переводить по СБП"]
+    }
+  },
+  "cover_keys_ru": [],
+  "no_host_face": true,
+  "skip_identity_i2i": true
+}
