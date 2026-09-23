@@ -1,0 +1,120 @@
+{
+  "topic_id": "B35",
+  "slug": "ot-hozyaev-v-filtre-u-dveri-menedzher-eshche-2000-na-kartu",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "От хозяев — две тысячи у двери",
+  "cover_hook_highlight": "тысячи",
+  "cover_headline_line1": "От хозяев в фильтре",
+  "cover_headline_line2": "две тысячи у двери",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "Grsai draw API — 2 canvases × 4; logo paste cover + inline_1/3/7",
+  "wordstat_stickers": ["квартиры посуточно тюмень", "без посредников"],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "door manager qr filter phone headline tr pad",
+    "location": "sep 2026 tyumen early autumn leaves no snow",
+    "meme": "one trade_offer max",
+    "prop_set": "filter ot hozyaev 7600 qr 2000 suitcase",
+    "sticker_set": "от хозяев посуточно тюмень без посредников",
+    "joke": "owners filter manager two thousand at door"
+  },
+  "cover_emotion": "растерянность у двери",
+  "cover_scene": "Менеджер с QR у двери; фильтр «от хозяев»; +7 993 574-83-22; TR pad.",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "scene_hint": "Менеджер с QR у двери; фильтр; +79935748322; TR pad.",
+      "alt": "Гость с чемоданом у двери в Тюмени: в фильтре «от хозяев», а встречает менеджер с просьбой 2 000 ₽ на карту.",
+      "meme_caption_ru": "",
+      "role": "cover_editorial_hero",
+      "sticky": "Фильтр не спас"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "scene_hint": "Таблица: фильтр, 7600 ₽, платформа. Pad TR.",
+      "alt": "Сравнение: галочка «от хозяев» в поиске и чужой человек с ключами у двери.",
+      "h2_anchor": "Галочка осталась на сайте, а человек оказался у двери",
+      "visual_type": "comparison_table_ui",
+      "labels": ["фильтр «от хозяев»", "две ночи 7600 ₽", "оплата на площадке"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "scene_hint": "Схема: 2000 ₽ → карта → ключи.",
+      "alt": "Цепочка: доплата «за заселение» на личную карту до ключей — не в брони.",
+      "h2_anchor": "Почему у двери новая цена кажется нормальной",
+      "visual_type": "workflow_diagram",
+      "labels": ["2000 ₽ заселение", "QR на карту", "ключи после перевода"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "scene_hint": "Чек-лист: кто заселяет, что в цене. Pad TR.",
+      "alt": "Вопрос до оплаты: хозяин или агент и что входит в сумму на сайте.",
+      "h2_anchor": "Вопрос, который нужно задать до оплаты",
+      "visual_type": "checklist_board",
+      "labels": ["кто заселяет", "что в цене", "ответ в чате"]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "scene_hint": "Схема: чемодан — пауза — чат площадки.",
+      "alt": "Три шага у двери: назвать сумму, открыть бронь, написать в чат площадки.",
+      "h2_anchor": "Если новый человек уже встретил вас",
+      "visual_type": "workflow_diagram",
+      "labels": ["не спорить", "сверить бронь", "сообщение в чат"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "scene_hint": "Сравнение: цена в брони vs у двери.",
+      "alt": "Сумма в бронировании — окончательная; у двери не добавляют «так принято».",
+      "h2_anchor": "Как у нас",
+      "visual_type": "comparison_table",
+      "labels": ["цена в брони", "без QR у двери", "тот же контакт в чате"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "scene_hint": "Плашка: Нет. Так не заселяем.",
+      "alt": "Правило: не просим деньги на карту сверх оплаченной брони.",
+      "h2_anchor": "Как у нас",
+      "visual_type": "labeled_checklist",
+      "labels": ["нет так не заселяем", "без доплат у двери", "имя в чате = у двери"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "scene_hint": "Чек-лист: проверка, перевод, скрин. Pad TR.",
+      "alt": "Сначала проверка условий, потом любой перевод; скрин фильтра сохранить.",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "checklist_board",
+      "labels": ["сначала проверка", "потом перевод", "скрин фильтра"]
+    }
+  },
+  "cover_keys_ru": [],
+  "no_host_face": true,
+  "skip_identity_i2i": true
+}
