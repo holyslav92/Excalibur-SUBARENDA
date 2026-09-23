@@ -1,0 +1,12 @@
+{
+  "topic_id": "B34",
+  "h1": "«От хозяев» в фильтре. У двери менеджер: ещё 2 000 ₽ на карту",
+  "title": "«От хозяев» в фильтре. У двери менеджер: ещё 2 000 ₽ на карту",
+  "slug": "kvartira-posutochno-tyumen-bez-posrednikov-menedzher-u-dveri",
+  "subject": "Неоговорённая доплата за оформление при заселении",
+  "angle": "Фильтр «от хозяев» не исключил менеджера у двери и перевод на карту после оплаты двух ночей.",
+  "klyshin_title_shape": 2,
+  "wordstat_p0": "квартиры посуточно тюмень без посредников",
+  "verdict": "PASS",
+  "generated_via": "excalibur_blog_derouter_opus_chat.py --role title"
+}
