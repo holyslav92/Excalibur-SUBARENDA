@@ -1,0 +1,93 @@
+{
+  "topic_id": "B34",
+  "slug": "kvartira-posutochno-tyumen-bez-posrednikov-menedzher-u-dveri",
+  "title": "«От хозяев» в фильтре. У двери менеджер: ещё 2 000 ₽ на карту",
+  "outbound_required_min": 1,
+  "outbound_found": [
+    {
+      "slug": "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+      "title": "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+      "permalink": "/blog/oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego/",
+      "topic_id": "B04",
+      "post_id": null,
+      "source": "ledger"
+    },
+    {
+      "slug": "kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda",
+      "title": "kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda",
+      "permalink": "/blog/kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda/",
+      "topic_id": "B18",
+      "post_id": 4724,
+      "source": "ledger"
+    },
+    {
+      "slug": "posutochno-tyumen-stiralnaya-v-kartochke-i-zalog",
+      "title": "posutochno-tyumen-stiralnaya-v-kartochke-i-zalog",
+      "permalink": "/blog/posutochno-tyumen-stiralnaya-v-kartochke-i-zalog/",
+      "topic_id": "B28",
+      "post_id": null,
+      "source": "ledger"
+    }
+  ],
+  "outbound_missing_suggestions": [
+    {
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "title": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "permalink": "/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+      "topic_id": "B01",
+      "post_id": 3745,
+      "source": "ledger"
+    },
+    {
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "title": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "permalink": "/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/",
+      "topic_id": "B02",
+      "post_id": 3777,
+      "source": "ledger"
+    },
+    {
+      "slug": "kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki",
+      "title": "kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki",
+      "permalink": "/blog/kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki/",
+      "topic_id": "B03",
+      "post_id": null,
+      "source": "ledger"
+    }
+  ],
+  "inbound_targets": [
+    {
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "title": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "permalink": "/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+      "topic_id": "B01",
+      "post_id": 3745,
+      "source": "ledger"
+    },
+    {
+      "slug": "buhgalteriya-zhdet-chek-v-chate-my-ne-gostinica",
+      "title": "buhgalteriya-zhdet-chek-v-chate-my-ne-gostinica",
+      "permalink": "/blog/buhgalteriya-zhdet-chek-v-chate-my-ne-gostinica/",
+      "topic_id": "B29",
+      "post_id": null,
+      "source": "ledger"
+    },
+    {
+      "slug": "dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras",
+      "title": "dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras",
+      "permalink": "/blog/dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras/",
+      "topic_id": "B25",
+      "post_id": null,
+      "source": "ledger"
+    }
+  ],
+  "inbound_updates": [
+    {
+      "post_id": 3745,
+      "marker": "data-excalibur-interlink-from=\"kvartira-posutochno-tyumen-bez-posrednikov-menedzher-u-dveri\"",
+      "html": "<p class=\"excalibur-interlink-readalso\" data-excalibur-interlink-from=\"kvartira-posutochno-tyumen-bez-posrednikov-menedzher-u-dveri\"><b>Читайте также:</b> <a href=\"{{SITE_BASE}}/blog/kvartira-posutochno-tyumen-bez-posrednikov-menedzher-u-dveri/\">«От хозяев» в фильтре. У двери менеджер: ещё 2 000 ₽ на карту</a></p>"
+    }
+  ],
+  "new_url": "{{SITE_BASE}}/blog/kvartira-posutochno-tyumen-bez-posrednikov-menedzher-u-dveri/",
+  "dry_run": false
+}

@@ -1,0 +1,109 @@
+{
+  "status": "PASS",
+  "topic_id": "B34",
+  "slug": "kvartira-posutochno-tyumen-bez-posrednikov-menedzher-u-dveri",
+  "research_date": "2026-09-23",
+  "summary": "Guest-night CASE: filter «от хозяев», paid platform booking, manager at door asks 2 000 ₽ «оформление» off-booking; Sutochno safety rules (no extra pay between prepay and check-in) + Avito host anti-bypass; fresh Dobriy_dom_72 TG 2026-09-23; Wordstat P0 163 Tyumen без посредников.",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Dobriy_dom_72 TG 2026-09-23 + klyshin_A active week",
+    "source_type": "community",
+    "urls": [
+      "https://t.me/s/Dobriy_dom_72",
+      "https://t.me/s/klyshin_A"
+    ],
+    "accessed_at": "2026-09-23",
+    "note": "Tenant channel same-week posts on listing mismatch, card-transfer pressure, clarify check-in before arrival; Klyshin active but not daily-rent editorial source."
+  },
+  "freshness_audit": {
+    "research_date": "2026-09-23",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://t.me/s/Dobriy_dom_72",
+      "published_at": "2026-09-23",
+      "note": "September 2026 feed: mismatch after pay; stop on «переводите на карту»; check-in clarity before trip."
+    },
+    "additional_fresh_signals": [
+      {
+        "url": "https://t.me/s/klyshin_A",
+        "published_at": "2026-09-23",
+        "type": "scout_editorial_channel",
+        "note": "Channel active research week; B34 hook is composite, not Klyshin daily-rent post."
+      }
+    ]
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176", "225"],
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень без посредников",
+        "volume": 163,
+        "region": "55",
+        "source": "mcp_kv_live"
+      },
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 3137,
+        "region": "55",
+        "source": "mcp_kv_live"
+      },
+      {
+        "phrase": "квартира без посредников от хозяев посуточно",
+        "volume": 64,
+        "region": "55",
+        "source": "mcp_kv_live"
+      },
+      {
+        "phrase": "доплата при заселении посуточно",
+        "volume": null,
+        "region": "225",
+        "source": "mcp_kv_live",
+        "note": "totalCount only — WORDSTAT PARTIAL"
+      }
+    ],
+    "mcp_errors": []
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": true,
+    "scope": "Sutochno.ru guest safety + booking cost rules; Avito host payment bypass ban",
+    "verified_claims": 3,
+    "entities_checked": ["sutochno", "avito"],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "memory/blog/articles/B34-kvartira-posutochno-tyumen-bez-posrednikov-menedzher-u-dveri/derouter-opus-stamp-research.json",
+    "first_attempt": "PASS",
+    "note": "Compact assembled input; single Derouter call."
+  },
+  "source_count": 7,
+  "practical_facts_count": 11,
+  "limitations": [
+    "Editorial composite — no verified booking ID or Tyumen listing.",
+    "2 000 ₽ is handoff burn figure, not market tariff.",
+    "Platform rules cited for Sutochno/Avito; guest must read their specific booking confirmation.",
+    "Klyshin «Нет. Так не заселяем.» is scout editorial beat, not channel quote on посуточно."
+  ],
+  "writer_safe_urls": [
+    "https://t.me/Dobriy_dom_72",
+    "https://t.me/Dobriy_dom_Tyumen",
+    "https://max.ru/id660300569233_biz",
+    "https://добрыйдом-72.рф/booking/",
+    "https://t.me/klyshin_A",
+    "https://sutochno.ru/help/gosti/safety",
+    "https://sutochno.ru/sj/iz-chego-skladivaetsya-stoimost-bronirovaniya",
+    "https://host.avito.com/course/lesson-3",
+    "https://tyumen.sutochno.ru/",
+    "https://www.avito.ru/tyumen/kvartiry/sdam/posutochno/-ASgBAgICAkSSA8gQ8AeSUg"
+  ],
+  "errors": []
+}

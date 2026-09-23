@@ -1,0 +1,10 @@
+{
+  "topic_id": "B34",
+  "description": "«Хозяин занят», — говорит менеджер у двери. В Тюмени Добрый дом советует до оплаты спросить: кто заселяет и не прячется ли комиссия за «вы уже приехали».",
+  "rhythm": "klyshin_case_hook",
+  "geo": "Тюмень",
+  "author_brand": "Добрый дом",
+  "not_equal_title": true,
+  "not_truncated_lead": true,
+  "verdict": "PASS"
+}

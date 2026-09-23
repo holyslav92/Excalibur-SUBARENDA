@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "topic_id": "B34",
+  "slug": "kvartira-posutochno-tyumen-bez-posrednikov-menedzher-u-dveri",
+  "candidates_count": 37,
+  "outbound_found": [
+    {
+      "slug": "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+      "title": "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego"
+    },
+    {
+      "slug": "kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda",
+      "title": "kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda"
+    },
+    {
+      "slug": "posutochno-tyumen-stiralnaya-v-kartochke-i-zalog",
+      "title": "posutochno-tyumen-stiralnaya-v-kartochke-i-zalog"
+    }
+  ],
+  "outbound_unique_slugs": [
+    "kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda",
+    "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+    "posutochno-tyumen-stiralnaya-v-kartochke-i-zalog"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "warnings": [],
+  "errors": []
+}

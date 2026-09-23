@@ -1,0 +1,124 @@
+{
+  "topic_id": "B34",
+  "slug": "kvartira-posutochno-tyumen-bez-posrednikov-menedzher-u-dveri",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "Сентябрь: от хозяев — 2 000 у двери",
+  "cover_hook_highlight": "двери",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень без посредников",
+    "снять квартиру посуточно в тюмени без посредников"
+  ],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "door stairwell manager tablet 2000 card hook tr pad",
+    "location": "early autumn sep 2026 tyumen golden hour stairwell",
+    "meme": "small drake people-meme sticker cover only",
+    "prop_set": "tablet manager door booking 7400",
+    "sticker_set": "квартиры посуточно тюмень без посредников снять квартиру посуточно",
+    "joke": "filter said owners manager wants 2000 at door"
+  },
+  "cover_emotion": "шок: менеджер у двери",
+  "cover_scene": "Лестничная клетка: менеджер с планшетом, гость с телефоном, хук на табло, +7 993 574-83-22 в сцене, TR pad.",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "scene_hint": "Stairwell: guest, manager tablet, hook sign, +7 993 574-83-22 on board not pill, TR pad 10%.",
+      "alt": "У двери квартиры менеджер с планшетом просит 2 000 ₽ на карту, хотя в брони 7 400 ₽ за две ночи.",
+      "meme_caption_ru": "",
+      "role": "cover_editorial_hero",
+      "sticky": "Фильтр не спасает"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "scene_hint": "table: фильтр от хозяев, две ночи, 7 400 ₽.",
+      "alt": "В фильтре «от хозяев» забронированы две ночи на 7 400 ₽ через площадку.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Что на самом деле произошло у двери",
+      "visual_type": "comparison_table_ui",
+      "labels": ["фильтр от хозяев", "две ночи", "семь четыреста в брони"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "scene_hint": "workflow: менеджер у двери, 2 000 на карту, не в брони.",
+      "alt": "Менеджер у двери просит ещё 2 000 ₽ переводом — суммы нет в подтверждении.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Что на самом деле произошло у двери",
+      "visual_type": "workflow_diagram",
+      "labels": ["у двери менеджер", "две тысячи на карту", "не в брони", "не в чате"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "scene_hint": "checklist: кто заселяет, комиссия, доплата.",
+      "alt": "До оплаты спросите, кто заселяет и есть ли комиссия кроме цены в брони.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Вопрос, который лучше задать до оплаты",
+      "visual_type": "checklist_board",
+      "labels": ["кто заселяет лично", "есть ли доплата", "сначала проверка", "потом перевод"]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "scene_hint": "faq: кто встретит, полномочия.",
+      "alt": "Планшет не подтверждает полномочия — до приезда должно быть ясно, кто встретит.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Что на самом деле произошло у двери",
+      "visual_type": "schema_faq_ui",
+      "labels": ["хозяин занят", "кто откроет", "код или встреча"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "scene_hint": "tool: бронь 7400, оплачено, чат.",
+      "alt": "В подтверждении видны 7 400 ₽ за две ночи и переписка внутри заказа.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Вопрос, который лучше задать до оплаты",
+      "visual_type": "tool_screenshot",
+      "labels": ["сумма в брони", "статус оплачено", "чат в заказе"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "scene_hint": "infographic: остаток, залог, оформление.",
+      "alt": "Честный остаток и залог называют заранее; «оформление» у порога — нет.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "infographic_card",
+      "labels": ["не залог", "не остаток", "новая сумма у двери"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "scene_hint": "checklist: поддержка, скрины, не переводить.",
+      "alt": "Не переводите на карту у двери — пишите в поддержку площадки через заказ.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "checklist_board",
+      "labels": ["не переводить на карту", "поддержка через заказ", "сохранить переписку"]
+    }
+  }
+}

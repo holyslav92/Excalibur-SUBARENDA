@@ -1,0 +1,27 @@
+{
+  "slug": "kvartira-posutochno-tyumen-bez-posrednikov-menedzher-u-dveri",
+  "topic_id": "B34",
+  "permalink": "{{SITE_BASE}}/blog/kvartira-posutochno-tyumen-bez-posrednikov-menedzher-u-dveri/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B34-kvartira-posutochno-tyumen-bez-posrednikov-menedzher-u-dveri/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1154099,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=5051 slug=kvartira-posutochno-tyumen-bez-posrednikov-menedzher-u-dveri\nOK categories=101,106,104\nOK dzen_yzen_meta=1\nOK featured_image=5052\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=5053 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kvartira-posutochno-tyumen-bez-posrednikov-menedzher-u-dveri-inline-04.png\nOK inline_alt=5053\nOK inline_caption=5053\nOK inline_description=5053\nOK inline_image_upload=5054 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kvartira-posutochno-tyumen-bez-posrednikov-menedzher-u-dveri-inline-02.png\nOK inline_alt=5054\nOK inline_caption=5054\nOK inline_description=5054\nOK inline_image_upload=5055 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kvartira-posutochno-tyumen-bez-posrednikov-menedzher-u-dveri-inline-01.png\nOK inline_alt=5055\nOK inline_caption=5055\nOK inline_description=5055\nOK inline_image_upload=5056 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kvartira-posutochno-tyumen-bez-posrednikov-menedzher-u-dveri-inline-05.png\nOK inline_alt=5056\nOK inline_caption=5056\nOK inline_description=5056\nOK inline_image_upload=5057 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kvartira-posutochno-tyumen-bez-posrednikov-menedzher-u-dveri-inline-03.png\nOK inline_alt=5057\nOK inline_caption=5057\nOK inline_description=5057\nOK inline_image_upload=5058 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kvartira-posutochno-tyumen-bez-posrednikov-menedzher-u-dveri-inline-07.png\nOK inline_alt=5058\nOK inline_caption=5058\nOK inline_description=5058\nOK inline_image_upload=5059 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kvartira-posutochno-tyumen-bez-posrednikov-menedzher-u-dveri-inline-06.png\nOK inline_alt=5059\nOK inline_caption=5059\nOK inline_description=5059\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/kvartira-posutochno-tyumen-bez-posrednikov-menedzher-u-dveri/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/kvartira-posutochno-tyumen-bez-posrednikov-menedzher-u-dveri/",
+    "errors": []
+  }
+}
