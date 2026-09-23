@@ -2099,4 +2099,4 @@ files_changed:
 checks_run:
 - `python3 scripts/excalibur_blog_doctor.py`
 - `python3 scripts/excalibur_blog_crosslink_qa_gate.py --article-dir memory/blog/articles/B34-kvartira-posutochno-tyumen-bez-posrednikov-menedzher-u-dveri`
-commit: pending
+commit: bf15274
