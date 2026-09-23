@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "https://добрыйдом-72.рф/blog/v-kartochke-3400-za-noch-na-oplate-8816-za-dve/",
+      "slug": "v-kartochke-3400-za-noch-na-oplate-8816-za-dve",
+      "anchor": "«В карточке 3 400 за ночь, на оплате 8 816 за две»",
+      "catalog_title": "В карточке 3 400 ₽ за ночь. На оплате — 8 816 ₽ за две ночи",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/posutochno-tyumen-stiralnaya-v-kartochke-i-zalog/",
+      "slug": "posutochno-tyumen-stiralnaya-v-kartochke-i-zalog",
+      "anchor": "«Стиральная в карточке и залог»",
+      "catalog_title": "«Стиральная машина есть» в фильтре. К 3-й ночи — мокрое бельё, прачечная, 1 100 ₽",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/posutochno-tyumen-oplatili-na-avito-prosyat-perevesti-esche-raz/",
+      "slug": "posutochno-tyumen-oplatili-na-avito-prosyat-perevesti-esche-raz",
+      "anchor": "«Оплатили на Авито, просят перевести ещё раз»",
+      "catalog_title": "Бронь на Авито уже оплачена. В чате: второй перевод на карту",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego/",
+      "slug": "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+      "anchor": "«Оплатил за двоих, у двери попросили доплату за третьего»",
+      "catalog_title": "Оплатили за двоих. У двери попросили доплату за третьего",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "outbound_unique_slugs": [
+    "v-kartochke-3400-za-noch-na-oplate-8816-za-dve",
+    "posutochno-tyumen-stiralnaya-v-kartochke-i-zalog",
+    "posutochno-tyumen-oplatili-na-avito-prosyat-perevesti-esche-raz",
+    "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B34-bez-zaloga-v-filtre-zalog-u-dveri",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}

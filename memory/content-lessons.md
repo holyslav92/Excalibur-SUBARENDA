@@ -2165,3 +2165,91 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+---
+
+## LESSON-20260923-1003-B34-filter-no-deposit-door-insurance-transfer
+status: proposed
+topic_id: B34
+category: utility
+confidence: medium
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: content-evidence-report.json отсутствует; gate SKIP. Урок из publish PASS: case-delivery-gate PASS, wp-publish-log post_id=5062, live-page PASS, interlink 4 outbound + inbound B01, research-notes (editorial composite 4800+5000), title-brief/description-brief/cover-text PASS.
+- metrika_signal: none — YANDEX_METRIKA_OAUTH_TOKEN / COUNTER_ID не заданы; ingest METRIKA CREDENTIALS BLOCKER (INC-20260923-1003-metrika-content-learner-b34).
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Угол filter_no_deposit_door_deposit: фильтр «без залога» + оплата на площадке → у двери «страховка мебели» 5 000 ₽ на личную карту (ребёнок, чемодан, QR).
+- §1 арифметика: ночь 4 800 ₽ в брони vs новый перевод 5 000 ₽ — до морали; цитата «Это не залог, это страховка мебели».
+- Utility H2: три развилки — раскрытый залог в карточке / остаток за проживание из брони / «страховой» сюрприз у двери (не смешивать).
+- Avito host rule: бронь онлайн → не уводить оплату на карту физлица (host.avito.com/course/lesson-3).
+- Вопрос-отмычка: «Где в условиях брони и в карточке написано, что перед ключами нужно перевести 5 000 ₽ на личную карту?» — до TG/MAX.
+- Host Klyshin-close: «Нет. Так не заселяем.» + «Сначала проверка. Потом перевод.» — editorial mechanic B34.
+- Cover-text spine: фильтр без залога → 5000 у двери → «страховка мебели» / не в заказе → Авито vs личная карта.
+- Interlink spine: B32 карточка vs оплата, B28 стиралка+залог, B33 второй перевод после Avito, B04 доплата у двери — залог/деньги на пороге, не дубль B02 возврат после выезда.
+- Wordstat: spine «квартиры посуточно тюмень» 4304 (55+11176); «без залога» шире на RF, локально — spine Tyumen.
+
+### Change
+- Для no-deposit-filter hooks в §1 сразу фиксировать **скрин фильтра + отсутствие строки в заказе**, затем переименование («страховка» ≠ новый договор) — отличать от B28 «залог в карточке» и B33 «второй платёж после чека».
+- Scout/research: помечать **editorial composite** суммы (research-notes B34), связка klyshin_A — механизм угла, не цитата поста.
+
+### Never again
+- How-to «как снять без залога в Тюмени» без сцены у двери и личной карты.
+- Называть все объявления с фильтром «без залога» мошенническими; обещать автоматический возврат через платформу.
+- Склеивать тему только с B02 (спор после выезда) без sibling про фильтр / off-platform / price-stack.
+
+### Proposed apply
+- Scout: hook filter no deposit → handoff original Klyshin «без залога у двери» + final P0 spine Tyumen; cover wordstat «квартиры посуточно тюмень».
+- WP rubric: `zalog-i-vyiezd` для filter/deposit-at-door disputes (как B30/B33).
+- Review only; Writer prompt не трогать автоматически.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
+## LESSON-20260923-1003-B34-title-filter-beats-door-card-transfer
+status: proposed
+topic_id: B34
+category: voice
+confidence: low
+
+### Evidence
+- artifact: title-brief.json / description-brief.json
+  finding: H1 two-beat «В фильтре — «без залога». У двери попросили 5 000 ₽ на личную карту»; description klyshin_case_hook — «страховка мебели» + вопрос «Где эта сумма была в брони?», not_equal_title PASS; klyshin_title_shape 3.
+- metrika_signal: none (credentials unavailable; causal CTR не выводить)
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Cable pain-scene: признак поиска (фильтр) → новый платёж на карту у двери, без SEO-хвоста в H1.
+- Cover-text hook «Фильтр без залога — пять тысяч у двери» + sticky «Сначала проверка, потом перевод» — ритм без полного дубля H1.
+- Description teaser про «страховку» и отсутствие суммы в брони — не копия H1.
+
+### Change
+- Для filter_no_deposit_door_deposit: prefer **filter beat + door/card amount beat** over scout draft только «залог посуточно» или WP-дубль «перед кодом».
+
+### Never again
+- H1 только «квартиры посуточно без залога тюмень» без двух битов (фильтр → дверь).
+- Description = дословный H1.
+
+### Proposed apply
+- Title/Description review: no-deposit filter — фильтр → перевод на карту > jargon-only H1.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded

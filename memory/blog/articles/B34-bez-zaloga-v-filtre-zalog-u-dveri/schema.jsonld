@@ -1,0 +1,39 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/bez-zaloga-v-filtre-zalog-u-dveri/#article",
+  "url": "{{SITE_BASE}}/blog/bez-zaloga-v-filtre-zalog-u-dveri/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/bez-zaloga-v-filtre-zalog-u-dveri/"
+  },
+  "headline": "В фильтре — «без залога». У двери попросили 5 000 ₽ на личную карту",
+  "description": "Как отличить раскрытый залог в карточке от нового требования перевести 5 000 ₽ «страховой» на личную карту у двери. Разбираем, почему такой перевод хуже защищён и как действовать без спешки.",
+  "datePublished": "2026-09-23",
+  "dateModified": "2026-09-23",
+  "inLanguage": "ru-RU",
+  "author": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    },
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "topic_id": "B34",
+  "description": "«Это не залог, страховка мебели» — пять тысяч просят на личную карту, пока у вас чемодан и ребёнок у двери в Тюмени. Где эта сумма была в брони?",
+  "rhythm": "klyshin_case_hook",
+  "geo": "Тюмень",
+  "author_brand": "Добрый дом",
+  "not_equal_title": true,
+  "not_truncated_lead": true,
+  "verdict": "PASS"
+}

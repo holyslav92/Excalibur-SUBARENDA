@@ -1,0 +1,107 @@
+{
+  "status": "PASS",
+  "topic_id": "B34",
+  "slug": "bez-zaloga-v-filtre-zalog-u-dveri",
+  "research_date": "2026-09-23",
+  "summary": "CASE Tyumen: filter «Без залога» vs 5 000 ₽ «страховой» on personal card at door; Avito filter official; host lesson forbids off-platform pay; fresh Dobriy_dom_72 Sep 22–23; Wordstat P0 4304.",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Dobriy_dom_72 TG 22–23 Sep 2026 + klyshin_A active 2026-09-23",
+    "source_type": "community",
+    "urls": [
+      "https://t.me/s/Dobriy_dom_72",
+      "https://t.me/s/klyshin_A"
+    ],
+    "accessed_at": "2026-09-23",
+    "note": "Card-transfer stop + check-in state posts; Klyshin hook is Scout editorial not channel quote."
+  },
+  "freshness_audit": {
+    "research_date": "2026-09-23",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://t.me/s/Dobriy_dom_72",
+      "published_at": "2026-09-23",
+      "note": "Posts on personal-card pressure and pre-check-in condition fix same week as research."
+    }
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176", "225"],
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 4304,
+        "region": "55+11176",
+        "source": "mcp_kv_live"
+      },
+      {
+        "phrase": "залог посуточно",
+        "volume": 2592,
+        "region": "225",
+        "source": "mcp_kv_live"
+      },
+      {
+        "phrase": "залог посуточно",
+        "volume": 27,
+        "region": "55+11176",
+        "source": "mcp_kv_live"
+      },
+      {
+        "phrase": "квартиры посуточно без залога",
+        "volume": 1115,
+        "region": "225",
+        "source": "mcp_kv_live"
+      },
+      {
+        "phrase": "снять квартиру посуточно без залога",
+        "volume": 892,
+        "region": "225",
+        "source": "mcp_kv_live"
+      }
+    ],
+    "mcp_errors": []
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "Avito filter UI and host payment rules (no bank tariff digits in notes)",
+    "verified_claims": 3,
+    "entities_checked": ["avito"],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "memory/blog/articles/B34-bez-zaloga-v-filtre-zalog-u-dveri/derouter-opus-stamp-research.json",
+    "first_attempt": "PASS",
+    "note": "Post-Derouter structure normalized to ## section canon."
+  },
+  "source_count": 8,
+  "practical_facts_count": 8,
+  "limitations": [
+    "Composite case — no verified booking ID or Tyumen listing.",
+    "Woman.ru thread cited as community only; page fetch timed out.",
+    "Filter «Без залога» vs in-card zalog text mismatch varies by listing.",
+    "Distinct from B02 checkout zalog dispute and B33 duplicate Avito prepay."
+  ],
+  "writer_safe_urls": [
+    "https://t.me/Dobriy_dom_72",
+    "https://t.me/Dobriy_dom_Tyumen",
+    "https://max.ru/id660300569233_biz",
+    "https://добрыйдом-72.рф/booking/",
+    "https://добрыйдом-72.рф/",
+    "https://t.me/klyshin_A",
+    "https://www.avito.ru/all/kvartiry/sdam/posutochno/",
+    "https://avito.ru/legal/realty_rules/online-booking",
+    "https://host.avito.com/course/lesson-3",
+    "https://arenda.yandex.ru/journal/post/chto-delat-esli-sobstvennik-ne-vozvrashchaet-zalog/",
+    "https://www.woman.ru/psycho/socialization/thread-kvartira-bez-zaloga-v-chem-podvokh-id6353375/"
+  ],
+  "errors": []
+}

@@ -1,5 +1,23 @@
 # WP publish log
 
+## B34 — 2026-09-23
+
+- **topic_id:** B34
+- **slug:** bez-zaloga-v-filtre-zalog-u-dveri
+- **title:** В фильтре — «без залога». У двери попросили 5 000 ₽ на личную карту
+- **post_id:** 5062
+- **permalink:** /blog/bez-zaloga-v-filtre-zalog-u-dveri/
+- **categories:** posutochnaya-arenda (101), zalog-i-vyiezd (102)
+- **featured_image:** 5063
+- **inline_images:** 5064–5070 (7× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS
+- **dzen:** yzen meta on publish; cover `-1024x576.png` on wp-content (HTTP 200)
+- **interlink outbound:** 4 live /blog/ siblings (crosslink-qa PASS)
+- **interlink inbound:** B01 (3745)
+- **publish_method:** sftp:22 (Cloud Agent)
+- **llms_deploy:** PASS (post-publish fixer SFTP redeploy after Indexer; llms.txt lists B34)
+
 ## B33 — 2026-09-22
 
 - **topic_id:** B33
