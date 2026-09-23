@@ -1930,7 +1930,7 @@ needed_decision_or_secret: YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_I
 
 ## INC-20260922-0715-publish-theme-contract-deploy
 
-status: open
+status: fixed
 run_date: 2026-09-22
 role: excalibur-blog-publish
 topic_id: B32

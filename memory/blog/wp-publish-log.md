@@ -16,6 +16,7 @@
 - **interlink outbound:** 4 live /blog/ siblings (crosslink-qa PASS)
 - **interlink inbound:** B01 (3745)
 - **publish_method:** sftp:22 (Cloud Agent)
+- **llms_deploy:** PASS (post-publish fixer SFTP redeploy after Indexer; llms.txt lists B34)
 
 ## B33 — 2026-09-22
 
