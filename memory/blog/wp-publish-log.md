@@ -495,3 +495,20 @@
 - **live-page gate:** PASS
 - **interlink inbound:** B01 (3745), B02 (3777)
 - **publish_method:** ftp (Timeweb PASV)
+
+## B34 — 2026-09-23
+
+- **topic_id:** B34
+- **slug:** kvartira-posutochno-tyumen-bez-posrednikov-menedzher-u-dveri
+- **title:** «От хозяев» в фильтре. У двери менеджер: ещё 2 000 ₽ на карту
+- **post_id:** 5051
+- **permalink:** /blog/kvartira-posutochno-tyumen-bez-posrednikov-menedzher-u-dveri/
+- **categories:** posutochnaya-arenda (101), sovety-gostyam (106), zhkh-i-doplaty (104)
+- **featured_image:** 5052
+- **inline_images:** 5053–5059 (7× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS
+- **dzen zen 1024×576:** cover + inline intermediates refreshed (`excalibur_blog_wp_intermediate_refresh.py`)
+- **interlink inbound:** B01 (3745)
+- **llms deploy:** llms.txt retried via `excalibur_blog_llms_deploy.py` after FTP timeout on first publish
+- **publish_method:** sftp (Cloud Agent; bootstrap SFTP:22)
