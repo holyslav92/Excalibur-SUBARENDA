@@ -4,6 +4,48 @@
 
 ---
 
+## LESSON-20260923-1032-B34-owners-filter-manager-at-door
+status: proposed
+topic_id: B34
+category: utility
+confidence: low
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: publish PASS; title-brief + article.html — фильтр «от хозяев», менеджер у двери, 2 000 ₽ на карту после 7 400 ₽ в брони.
+- metrika_signal: none — METRIKA CREDENTIALS BLOCKER (INC-20260903-0640); выборка отсутствует.
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- H1: фильтр «от хозяев» → у двери менеджер + перевод на карту (не how-to «как выбрать без посредников»).
+- §1: итог в брони (7 400 ₽ / две ночи) до сюрpriза; «менеджера» нет в карточке.
+- Отмычка в чате до оплаты: «Кто заселяет лично и есть ли комиссия кроме цены в брони?»
+- Klyshin: «Нет. Так не заселяем.» + «Сначала проверка. Потом перевод.» — развести честный остаток/залог и «оформление» у порога.
+- Wordstat spine «квартиры посуточно тюмень без посредников» + sibling B04 (доплата у двери после оплаты).
+
+### Change
+- Scout/handoff: при hook bez_posrednikov / «от хозяев» логировать sub-angle **роль у двери + все ₽ только в брони**, не только фильтр площадки.
+
+### Never again
+- Продавать фильтр «от хозяев» как гарантию, что у двери будет собственник и не будет новых обязательных переводов.
+- Чеклист «как включить фильтр» без сцены у двери и без вопроса про комиссию в переписке.
+
+### Proposed apply
+- Scout: final P0 spine + mandatory handoff field `door_role_and_fees_in_booking`.
+- Review only; Writer prompt не трогать.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
+
+---
+
 ## LESSON-20260830-1745-B04-extra-guest-fee-at-door
 status: proposed
 topic_id: B04
