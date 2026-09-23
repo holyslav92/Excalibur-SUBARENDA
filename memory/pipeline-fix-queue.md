@@ -1930,7 +1930,7 @@ needed_decision_or_secret: YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_I
 
 ## INC-20260922-0715-publish-theme-contract-deploy
 
-status: open
+status: fixed
 run_date: 2026-09-22
 role: excalibur-blog-publish
 topic_id: B32
@@ -2064,3 +2064,39 @@ category: env
 status: needs-human
 reason: env-only blocker; duplicate of INC-20260903-0640
 needed_decision_or_secret: YANDEX_METRIKA_OAUTH_TOKEN + YANDEX_METRIKA_COUNTER_ID in Cloud Secrets
+
+## FIXER-20260923-0727-b34-clean
+
+status: clean
+run_date: 2026-09-23
+role: excalibur-blog-fixer
+topic_id: B34
+article_dir: memory/blog/articles/B34-kvartira-posutochno-tyumen-bez-posrednikov-menedzher-u-dveri
+severity: n/a
+category: other
+
+### What went wrong
+
+- none (publish PASS; no agent-filed open incidents for this run)
+
+### How the agent recovered this run
+
+- n/a
+
+### Durable fix needed before next run
+
+- none from B34 run
+
+### Fixer resolution
+
+fixed_at: 2026-09-23
+fix_summary:
+- Post-publish fixer pass: no open incidents for B34; stamped fixer-report.json status clean.
+- Corrected stale header `status: open` → `status: fixed` on INC-20260922-0715-publish-theme-contract-deploy (resolution already recorded).
+files_changed:
+- `memory/blog/articles/B34-kvartira-posutochno-tyumen-bez-posrednikov-menedzher-u-dveri/fixer-report.json`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 scripts/excalibur_blog_doctor.py`
+- `python3 scripts/excalibur_blog_crosslink_qa_gate.py --article-dir memory/blog/articles/B34-kvartira-posutochno-tyumen-bez-posrednikov-menedzher-u-dveri`
+commit: pending
