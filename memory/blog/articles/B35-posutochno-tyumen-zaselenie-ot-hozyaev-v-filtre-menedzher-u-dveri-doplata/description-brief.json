@@ -1,0 +1,10 @@
+{
+  "topic_id": "B35",
+  "description": "Фильтр обещал «от хозяев», а у двери появился менеджер: «ещё 2 000 ₽ за заселение». В Тюмени такие условия проверяют до оплаты, а не у порога.",
+  "rhythm": "klyshin_case_hook",
+  "geo": "Тюмень",
+  "author_brand": "Добрый дом",
+  "not_equal_title": true,
+  "not_truncated_lead": true,
+  "verdict": "PASS"
+}

@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "topic_id": "B35",
+  "slug": "ot-hozyaev-v-filtre-u-dveri-menedzher-eshche-2000-na-kartu",
+  "research_date": "2026-09-23",
+  "summary": "CASE: filter «от хозяев» vs manager at door 2 000 ₽ card; Wordstat P0 без посредников 43518; Tyumen spine 4304.",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Dobriy_dom_72 TG 22–23 Sep 2026",
+    "source_type": "community",
+    "urls": ["https://t.me/s/Dobriy_dom_72"],
+    "accessed_at": "2026-09-23"
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176", "225"],
+    "final_p0": "квартиры посуточно без посредников 43518 (225)"
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "note": "Avito/Sutochno positioning + host payment rules pattern"
+  },
+  "derouter": {
+    "first_attempt": "PASS",
+    "second_attempt": null
+  }
+}

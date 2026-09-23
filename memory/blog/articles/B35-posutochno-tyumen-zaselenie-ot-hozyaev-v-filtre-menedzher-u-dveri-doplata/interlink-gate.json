@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "topic_id": "B35",
+  "slug": "ot-hozyaev-v-filtre-u-dveri-menedzher-eshche-2000-na-kartu",
+  "candidates_count": 38,
+  "outbound_found": [
+    {
+      "slug": "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+      "title": "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego"
+    },
+    {
+      "slug": "v-kartochke-3400-za-noch-na-oplate-8816-za-dve",
+      "title": "v-kartochke-3400-za-noch-na-oplate-8816-za-dve"
+    },
+    {
+      "slug": "posutochno-tyumen-oplatili-na-avito-prosyat-perevesti-esche-raz",
+      "title": "posutochno-tyumen-oplatili-na-avito-prosyat-perevesti-esche-raz"
+    },
+    {
+      "slug": "bez-zaloga-v-filtre-zalog-u-dveri",
+      "title": "bez-zaloga-v-filtre-zalog-u-dveri"
+    }
+  ],
+  "outbound_unique_slugs": [
+    "bez-zaloga-v-filtre-zalog-u-dveri",
+    "posutochno-tyumen-oplatili-na-avito-prosyat-perevesti-esche-raz",
+    "v-kartochke-3400-za-noch-na-oplate-8816-za-dve",
+    "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "warnings": [],
+  "errors": []
+}
