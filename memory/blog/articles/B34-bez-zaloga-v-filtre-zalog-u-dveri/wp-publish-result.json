@@ -1,0 +1,27 @@
+{
+  "slug": "bez-zaloga-v-filtre-zalog-u-dveri",
+  "topic_id": "B34",
+  "permalink": "{{SITE_BASE}}/blog/bez-zaloga-v-filtre-zalog-u-dveri/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B34-bez-zaloga-v-filtre-zalog-u-dveri/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 998302,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=5062 slug=bez-zaloga-v-filtre-zalog-u-dveri\nOK categories=101,102\nOK dzen_yzen_meta=1\nOK featured_image=5063\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=5064 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/09/bez-zaloga-v-filtre-zalog-u-dveri-inline-04.png\nOK inline_alt=5064\nOK inline_caption=5064\nOK inline_description=5064\nOK inline_image_upload=5065 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/bez-zaloga-v-filtre-zalog-u-dveri-inline-01.png\nOK inline_alt=5065\nOK inline_caption=5065\nOK inline_description=5065\nOK inline_image_upload=5066 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/09/bez-zaloga-v-filtre-zalog-u-dveri-inline-06.png\nOK inline_alt=5066\nOK inline_caption=5066\nOK inline_description=5066\nOK inline_image_upload=5067 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/09/bez-zaloga-v-filtre-zalog-u-dveri-inline-05.png\nOK inline_alt=5067\nOK inline_caption=5067\nOK inline_description=5067\nOK inline_image_upload=5068 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/bez-zaloga-v-filtre-zalog-u-dveri-inline-02.png\nOK inline_alt=5068\nOK inline_caption=5068\nOK inline_description=5068\nOK inline_image_upload=5069 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/bez-zaloga-v-filtre-zalog-u-dveri-inline-03.png\nOK inline_alt=5069\nOK inline_caption=5069\nOK inline_description=5069\nOK inline_image_upload=5070 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/09/bez-zaloga-v-filtre-zalog-u-dveri-inline-07.png\nOK inline_alt=5070\nOK inline_caption=5070\nOK inline_description=5070\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/bez-zaloga-v-filtre-zalog-u-dveri/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/bez-zaloga-v-filtre-zalog-u-dveri/",
+    "errors": []
+  }
+}
