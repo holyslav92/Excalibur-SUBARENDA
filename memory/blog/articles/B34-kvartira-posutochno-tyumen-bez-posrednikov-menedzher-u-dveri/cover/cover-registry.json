@@ -1,0 +1,86 @@
+{
+  "topic_id": "B34",
+  "slug": "kvartira-posutochno-tyumen-bez-posrednikov-menedzher-u-dveri",
+  "cover_family": "brand_collage",
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "file": "cover/cover.png",
+  "alt": "У двери квартиры менеджер с планшетом просит 2 000 ₽ на карту, хотя в брони 7 400 ₽ за две ночи.",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-quad-01.png",
+  "generated_at": "2026-09-23T06:39:15+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "У двери квартиры менеджер с планшетом просит 2 000 ₽ на карту, хотя в брони 7 400 ₽ за две ночи.",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "В фильтре «от хозяев» забронированы две ночи на 7 400 ₽ через площадку.",
+      "h2_anchor": "Что на самом деле произошло у двери",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Менеджер у двери просит ещё 2 000 ₽ переводом — суммы нет в подтверждении.",
+      "h2_anchor": "Что на самом деле произошло у двери",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "До оплаты спросите, кто заселяет и есть ли комиссия кроме цены в брони.",
+      "h2_anchor": "Вопрос, который лучше задать до оплаты",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_4",
+      "file": "cover/inline-04.png",
+      "alt": "Планшет не подтверждает полномочия — до приезда должно быть ясно, кто встретит.",
+      "h2_anchor": "Что на самом деле произошло у двери",
+      "visual_type": "schema_faq_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_5",
+      "file": "cover/inline-05.png",
+      "alt": "В подтверждении видны 7 400 ₽ за две ночи и переписка внутри заказа.",
+      "h2_anchor": "Вопрос, который лучше задать до оплаты",
+      "visual_type": "tool_screenshot",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_6",
+      "file": "cover/inline-06.png",
+      "alt": "Честный остаток и залог называют заранее; «оформление» у порога — нет.",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "infographic_card",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_7",
+      "file": "cover/inline-07.png",
+      "alt": "Не переводите на карту у двери — пишите в поддержку площадки через заказ.",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}
