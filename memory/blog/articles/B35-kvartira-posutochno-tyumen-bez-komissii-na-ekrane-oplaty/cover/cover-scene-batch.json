@@ -1,0 +1,84 @@
+{
+  "topic_id": "B35",
+  "canvas": {
+    "width": 2048,
+    "height": 1152,
+    "layout": "2x2",
+    "instruction": "Create one coherent 2048x1152 image containing four complete, separate 16:9 editorial panels in a clean 2x2 grid. No gutters, borders, overlaps, or elements crossing quadrant boundaries. September 2026, Tyumen, Russia, autumn evening, warm twilight-gold documentary realism, restrained navy and terracotta palette, premium rental-editorial photography, crisp readable interfaces, natural human details. Each quadrant must be a complete standalone image."
+  },
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Гость проверяет экран оплаты бронирования квартиры в Тюмени: после обещания «без комиссии» сервис показывает дополнительный сбор 1 187 ₽.",
+      "scene_hint": "September 2026 Tyumen autumn evening. A guest in a navy blazer sits at a tidy apartment table near a window with amber streetlights, wet autumn trees, and recognizable but subtle Tyumen urban atmosphere outside. Foreground hero object: a modern smartphone held upright, screen facing camera, showing a Russian checkout screen for a short-term apartment booking. The screen must visibly contain the exact phone number +7 (993) 574-83-22 and the exact Cyrillic hook: «В фильтре — „без комиссии“. Перед оплатой сервис добавил 1 187 ₽». Make the added amount 1 187 ₽ the strongest highlighted UI figure, with a clear checkout total and a small fee line. The emotional tone is surprised but calm, investigative editorial rather than alarmist. Reserve a clean uncluttered top-right area of the cover panel, approximately 8–12% of panel width, as a natural dark warm-toned TR logo pad: no objects, no text, no icons, no model-drawn logo or brand lockup in this area. Official logo will be composited later. Keep all typography inside the cover quadrant.",
+      "meme_caption_ru": "",
+      "sticky": "+7 (993) 574-83-22",
+      "prompt": "TOP-LEFT COVER PANEL ONLY. Editorial hero scene, September 2026, Tyumen autumn evening, warm twilight gold, realistic Russian apartment interior, guest in navy blazer, smartphone checkout screen prominent in foreground. Exact visible Russian text on phone: «В фильтре — „без комиссии“. Перед оплатой сервис добавил 1 187 ₽»; exact phone number: +7 (993) 574-83-22. Highlight 1 187 ₽. Reserve a clean empty dark warm-toned top-right logo pad, 8–12% of panel width. Do not draw any logo, wordmark, plaque, fake brand lockup, watermark, cat, or extra phone number. No text or objects may cross into another quadrant. Complete standalone 16:9 composition."
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "role": "comparison_table_ui",
+      "h2_anchor": "Сначала была обычная карточка",
+      "alt": "Сравнение карточки аренды и финального экрана оплаты: фильтр без комиссии против итоговой суммы с дополнительным сбором.",
+      "scene_hint": "September 2026 Tyumen autumn evening. Clean editorial explainer panel styled as a realistic rental-booking interface on a laptop and tablet, with a two-column comparison: «Карточка» and «Перед оплатой». Show a neutral apartment listing, the filter label «без комиссии», then the final checkout state with an added «Сервисный сбор — 1 187 ₽». Use restrained arrows and highlights to show the change. Russian labels must be concise and legible. Warm desk light, autumn window reflection, no people required. This is an information graphic, not a cover. No logo, no brand lockup, no phone number, no cat.",
+      "labels": [
+        "Карточка",
+        "без комиссии",
+        "Перед оплатой",
+        "Сервисный сбор — 1 187 ₽",
+        "Итоговая сумма"
+      ],
+      "meme_caption_ru": "",
+      "prompt": "TOP-RIGHT INLINE PANEL ONLY. Complete standalone 16:9 editorial comparison-table UI about a Tyumen apartment rental booking in September 2026. Show two clear columns labeled «Карточка» and «Перед оплатой». Include exact Russian labels «без комиссии» and «Сервисный сбор — 1 187 ₽», with the added fee visibly emphasized. Realistic laptop/tablet interface, warm autumn-evening desk light, navy and terracotta accents, clean explanatory design. No logo, no wordmark, no plaque, no watermark, no phone number, no cat. No elements outside this quadrant."
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "role": "workflow_diagram",
+      "h2_anchor": "Почему «без комиссии» не стало итоговой ценой",
+      "alt": "Схема пути гостя от фильтра «без комиссии» к финальному экрану с дополнительным сбором 1 187 ₽.",
+      "scene_hint": "September 2026 Tyumen autumn evening. Editorial workflow diagram on a dark navy board with warm amber accents, showing the guest journey in four connected steps: «Поиск», «Фильтр», «Карточка», «Оплата». At the first three stages show «без комиссии»; at the final stage reveal «Сервисный сбор — 1 187 ₽». Use simple pictograms of search, filter, listing card, and payment screen. The diagram should make the timing of the disclosure immediately understandable. No decorative brand marks, no logo, no phone number, no cat.",
+      "labels": [
+        "Поиск",
+        "Фильтр",
+        "Карточка",
+        "Оплата",
+        "без комиссии",
+        "Сервисный сбор — 1 187 ₽"
+      ],
+      "meme_caption_ru": "",
+      "prompt": "BOTTOM-LEFT INLINE PANEL ONLY. Complete standalone 16:9 explanatory workflow diagram for a Tyumen rental booking, September 2026 autumn evening palette. Four connected steps labeled «Поиск» → «Фильтр» → «Карточка» → «Оплата». Show «без комиссии» in the first three steps and reveal «Сервисный сбор — 1 187 ₽» only at «Оплата». Clear arrows, simple search/filter/card/payment pictograms, navy board, amber highlights, restrained editorial realism. No logo, no wordmark, no plaque, no watermark, no phone number, no cat. Keep all content inside this quadrant."
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "role": "checklist_board",
+      "h2_anchor": "Ответ хоста может быть честным и всё равно не помочь",
+      "alt": "Чек-лист вопросов хозяину жилья перед оплатой: где отображается сбор и какая сумма будет списана.",
+      "scene_hint": "September 2026 Tyumen autumn evening. A practical checklist board on a kitchen table beside a guest's notebook and phone, with warm window light and rainy autumn city outside. Show four concise Russian questions with checkboxes: «Где указан сбор?», «Когда видна полная сумма?», «Кто получает платёж?», «Что входит в цену?». Add a small neutral speech bubble: «Хозяин может не видеть комиссию сервиса». Include exactly one tiny humorous cat meme sticker in a corner, not a logo, captioned «Я тоже увидел это только на оплате». The cat is the only meme element in the entire 2x2 canvas. No other animals, jokes, stickers, logos, phone numbers, or brand marks.",
+      "labels": [
+        "Где указан сбор?",
+        "Когда видна полная сумма?",
+        "Кто получает платёж?",
+        "Что входит в цену?",
+        "Хозяин может не видеть комиссию сервиса"
+      ],
+      "meme_caption_ru": "Я тоже увидел это только на оплате",
+      "prompt": "BOTTOM-RIGHT INLINE PANEL ONLY. Complete standalone 16:9 practical checklist-board scene, September 2026 Tyumen autumn evening, warm kitchen-table light, notebook and phone, rainy autumn window. Legible Russian checklist with exact questions: «Где указан сбор?», «Когда видна полная сумма?», «Кто получает платёж?», «Что входит в цену?». Add speech bubble: «Хозяин может не видеть комиссию сервиса». Include exactly one small humorous cat meme sticker with the exact caption «Я тоже увидел это только на оплате»; this is the only cat or meme in the whole canvas. No other animals, jokes, stickers, logo, wordmark, plaque, watermark, or phone number. Keep all content inside this quadrant."
+    }
+  },
+  "global_negative_prompt": [
+    "No second image or extra panels",
+    "No 8-frame layout",
+    "No collage inside any quadrant",
+    "No fake Добрый дом logo or model-drawn brand lockup",
+    "No logo on inline panels",
+    "No white or gray logo plaque",
+    "No square logo stamp",
+    "No watermark",
+    "No extra phone numbers",
+    "No cat or meme outside inline_3",
+    "No objects or text crossing quadrant boundaries",
+    "No illegible pseudo-Cyrillic filler where specified text is required",
+    "No hoodie; host/guest styling should use a navy blazer or neutral autumn clothing"
+  ]
+}

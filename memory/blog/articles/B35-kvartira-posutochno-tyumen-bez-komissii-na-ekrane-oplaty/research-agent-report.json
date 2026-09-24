@@ -1,0 +1,101 @@
+{
+  "status": "BLOCK",
+  "blocker": "DEROUTER RESEARCH BLOCKER",
+  "topic_id": "B35",
+  "slug": "kvartira-posutochno-tyumen-bez-komissii-na-ekrane-oplaty",
+  "research_date": "2026-09-24",
+  "summary": "Assembled inputs + fresh Dobriy_dom_24.09 + Wordstat live OK; Derouter HTTP 524 timeout twice — research-notes.md not generated.",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Dobriy_dom_72 TG 24 Sep 2026 + host.avito release Q1 2026",
+    "source_type": "community",
+    "urls": [
+      "https://t.me/s/Dobriy_dom_72",
+      "https://host.avito.com/release-q1-2026"
+    ],
+    "accessed_at": "2026-09-24",
+    "note": "Channel posts on extension pricing, check details before pay, direct vs aggregator commission; Klyshin checkout hook is Scout editorial."
+  },
+  "freshness_audit": {
+    "research_date": "2026-09-24",
+    "all_source_rows_have_accessed_at": false,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://t.me/s/Dobriy_dom_72",
+      "published_at": "2026-09-24",
+      "note": "Same-week posts: full-price-before-pay, aggregator commission context, Tyumen guest prep."
+    }
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176", "225"],
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 4274,
+        "region": "55+11176",
+        "source": "mcp_kv_live"
+      },
+      {
+        "phrase": "авито посуточно комиссия",
+        "volume": 1024,
+        "region": "225",
+        "source": "mcp_kv_live"
+      },
+      {
+        "phrase": "квартиры посуточно без комиссии",
+        "volume": 314,
+        "region": "225",
+        "source": "mcp_kv_live"
+      }
+    ],
+    "mcp_errors": []
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": true,
+    "scope": "Avito host commission tiers, checkout line items (cleaning), off-platform payment ban",
+    "verified_claims": 4,
+    "entities_checked": ["avito"],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "first_attempt": "BLOCKER_524",
+    "second_attempt": "BLOCKER_524",
+    "note": "Cloudflare 524 origin timeout ~120s; no research-notes.md written."
+  },
+  "source_count": 0,
+  "practical_facts_count": 0,
+  "limitations": [
+    "research-notes.md missing — pipeline stop until Derouter succeeds.",
+    "1187 RUB case sum composite from Scout, not verified screenshot.",
+    "avito.ru legal/journal main site IP-blocked from Cloud; host.avito.com fetched OK."
+  ],
+  "writer_safe_urls": [
+    "https://t.me/Dobriy_dom_72",
+    "https://t.me/Dobriy_dom_Tyumen",
+    "https://max.ru/id660300569233_biz",
+    "https://добрыйдом-72.рф/booking/",
+    "https://добрыйдом-72.рф/",
+    "https://t.me/klyshin_A",
+    "https://www.avito.ru/tyumen/kvartiry/sdam/posutochno/-ASgBAgICAkSSA8gQ8AeSUg",
+    "https://realty.yandex.ru/tyumen/snyat/kvartira/posutochno-i-bez-komissii/",
+    "https://host.avito.com/season-2026",
+    "https://host.avito.com/release-q1-2026",
+    "https://host.avito.com/course/lesson-3",
+    "https://www.avito.ru/journal/articles/kak-zabronirovat-zhilyo-na-avito-onlayn-podrobnaya-instrukciya",
+    "https://www.avito.ru/legal/realty_rules/online-booking",
+    "https://www.avito.ru/legal/promo/best-price-travel/",
+    "https://dzen.ru/holyslav"
+  ],
+  "errors": [
+    "DEROUTER RESEARCH BLOCKER: HTTP 524 after retry"
+  ]
+}

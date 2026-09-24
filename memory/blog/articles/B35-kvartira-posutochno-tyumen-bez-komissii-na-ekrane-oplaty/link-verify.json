@@ -1,0 +1,89 @@
+{
+  "source": "memory/blog/articles/B35-kvartira-posutochno-tyumen-bez-komissii-na-ekrane-oplaty/article.html",
+  "total_links": 9,
+  "failed_count": 0,
+  "verdict": "pass",
+  "links": [
+    {
+      "url": "https://t.me/Dobriy_dom_72",
+      "status": 200,
+      "ok": true,
+      "method": "HEAD",
+      "error": null,
+      "kind": "external",
+      "skipped": false
+    },
+    {
+      "url": "https://max.ru/id660300569233_biz",
+      "status": 200,
+      "ok": true,
+      "method": "HEAD",
+      "error": null,
+      "kind": "external",
+      "skipped": false
+    },
+    {
+      "url": "https://добрыйдом-72.рф/blog/v-kartochke-3400-za-noch-na-oplate-8816-za-dve/",
+      "status": 200,
+      "ok": true,
+      "method": "HEAD",
+      "error": null,
+      "kind": "external",
+      "skipped": false
+    },
+    {
+      "url": "https://добрыйдом-72.рф/blog/bez-zaloga-v-filtre-zalog-u-dveri/",
+      "status": 200,
+      "ok": true,
+      "method": "HEAD",
+      "error": null,
+      "kind": "external",
+      "skipped": false
+    },
+    {
+      "url": "https://добрыйдом-72.рф/blog/posutochno-tyumen-oplatili-na-avito-prosyat-perevesti-esche-raz/",
+      "status": 200,
+      "ok": true,
+      "method": "HEAD",
+      "error": null,
+      "kind": "external",
+      "skipped": false
+    },
+    {
+      "url": "https://добрыйдом-72.рф/blog/hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400/",
+      "status": 200,
+      "ok": true,
+      "method": "HEAD",
+      "error": null,
+      "kind": "external",
+      "skipped": false
+    },
+    {
+      "url": "https://добрыйдом-72.рф/",
+      "status": 200,
+      "ok": true,
+      "method": "HEAD",
+      "error": null,
+      "kind": "external",
+      "skipped": false
+    },
+    {
+      "url": "https://добрыйдом-72.рф/booking/",
+      "status": 200,
+      "ok": true,
+      "method": "HEAD",
+      "error": null,
+      "kind": "external",
+      "skipped": false
+    },
+    {
+      "url": "https://t.me/Dobriy_dom_Tyumen",
+      "status": 200,
+      "ok": true,
+      "method": "HEAD",
+      "error": null,
+      "kind": "external",
+      "skipped": false
+    }
+  ]
+}

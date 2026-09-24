@@ -1,0 +1,29 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/kvartira-posutochno-tyumen-bez-komissii-na-ekrane-oplaty/",
+  "url": "{{SITE_BASE}}/blog/kvartira-posutochno-tyumen-bez-komissii-na-ekrane-oplaty/",
+  "headline": "В фильтре — «без комиссии». Перед оплатой сервис добавил 1 187 ₽",
+  "description": "В фильтре — «без комиссии», а перед оплатой +1 187 ₽ строкой сервиса. Кейс гостя в Тюмени: итог 9 587 ₽ вместо 8 400 ₽.",
+  "datePublished": "2026-09-24",
+  "author": {
+    "@type": "Organization",
+    "@id": "{{SITE_BASE}}/#organization",
+    "name": "Добрый дом"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "{{SITE_BASE}}/#organization",
+    "name": "Добрый дом",
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/kvartira-posutochno-tyumen-bez-komissii-na-ekrane-oplaty/"
+  }
+}

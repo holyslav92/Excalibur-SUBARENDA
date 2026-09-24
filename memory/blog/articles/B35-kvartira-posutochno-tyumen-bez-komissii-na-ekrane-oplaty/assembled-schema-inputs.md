@@ -1,0 +1,1 @@
+Output schema.jsonld BlogPosting JSON-LD only. topic B35, author Добрый дом, date 2026-09-24. FAQ skip.

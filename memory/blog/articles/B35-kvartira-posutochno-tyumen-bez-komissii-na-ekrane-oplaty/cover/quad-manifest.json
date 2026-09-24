@@ -1,0 +1,120 @@
+{
+  "topic_id": "B35",
+  "slug": "kvartira-posutochno-tyumen-bez-komissii-na-ekrane-oplaty",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "Без комиссии — +1 187 ₽",
+  "cover_hook_highlight": "1 187 ₽",
+  "cover_headline_line1": "Без комиссии",
+  "cover_headline_line2": "+1 187 ₽ на оплате",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Grsai gpt-image-2 VIP — 2 canvases × 4 panels; logo paste cover + inline_1/3/7; phone on cover scene.",
+  "wordstat_stickers": ["квартиры посуточно тюмень", "авито посуточно комиссия"],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "phone checkout screen filter commission headline tr pad",
+    "location": "sep 2026 tyumen autumn evening no snow",
+    "meme": "zero cat; no cat on cover",
+    "prop_set": "filter bez komissii 8400 1187 9587 phone",
+    "sticker_set": "без комиссии посуточно тюмень авито",
+    "joke": "no commission filter service fee checkout"
+  },
+  "cover_emotion": "усталость перед оплатой",
+  "cover_scene": "Гость с телефоном: экран оплаты, хук кириллицей; +79935748322; TR pad.",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "scene_hint": "Телефон: экран оплаты 9587, фильтр, хук; +79935748322; TR pad.",
+      "alt": "Гость в Тюмени смотрит на экран оплаты посуточной брони: в фильтре было «без комиссии», перед оплатой появилась комиссия сервиса 1 187 ₽.",
+      "meme_caption_ru": "",
+      "role": "cover_editorial_hero",
+      "sticky": "Сначала итог, потом оплата"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "scene_hint": "Таблица: 4200, 8400, 9587. Pad TR.",
+      "alt": "Сравнение сумм: цена за ночь, проживание за две ночи и итог с комиссией сервиса.",
+      "h2_anchor": "Сначала была обычная карточка",
+      "visual_type": "comparison_table_ui",
+      "labels": ["4200 за ночь", "8400 две ночи", "9587 итог"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "scene_hint": "Схема: фильтр → карточка → комиссия.",
+      "alt": "Цепочка: фильтр «без комиссии», цена в карточке и отдельная строка комиссии на оплате.",
+      "h2_anchor": "Почему «без комиссии» не стало итоговой ценой",
+      "visual_type": "workflow_diagram",
+      "labels": ["комиссия сервиса", "строка оплаты", "до оплатить"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "scene_hint": "Диалог: не моя комиссия. Pad TR.",
+      "alt": "Ответ хоста «это комиссия площадки» не отвечает на вопрос гостя об итоговой сумме.",
+      "h2_anchor": "Ответ хоста может быть честным и всё равно не помочь",
+      "visual_type": "checklist_board",
+      "labels": ["не моя", "гость спрашивает", "итог важнее"]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "scene_hint": "Сравнение: ночь vs итог срока.",
+      "alt": "Цена за ночь и итог за весь срок с комиссией — разные ориентиры для бюджета.",
+      "h2_anchor": "Не цена ночи. Итог за весь срок",
+      "visual_type": "comparison_table_ui",
+      "labels": ["фильтр обманул", "два смысла", "читай расчёт"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "scene_hint": "Схема checkout vs чат: стикер без кота.",
+      "alt": "Схема: это не перевод в чат и не залог у двери — только официальный checkout.",
+      "h2_anchor": "Вопрос, который вскрывает замок",
+      "visual_type": "workflow_diagram",
+      "labels": ["не чат", "не залог", "checkout"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "scene_hint": "Чек-лист: сначала проверка.",
+      "alt": "Порядок: сначала полный расчёт, потом оплата — не наоборот.",
+      "h2_anchor": "Сначала проверка. Потом перевод. Не наоборот.",
+      "visual_type": "labeled_checklist",
+      "labels": ["сначала проверка", "потом перевод", "не наоборот"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "scene_hint": "Скрин расчёта, вопрос. Pad TR.",
+      "alt": "Что проверить до оплаты: скрин итога и вопрос хосту о сумме за весь срок.",
+      "h2_anchor": "Что проверить до оплаты",
+      "visual_type": "checklist_board",
+      "labels": ["скрин расчёта", "вопрос до брони", "напишите нам"]
+    }
+  },
+  "cover_keys_ru": [],
+  "no_host_face": true,
+  "skip_identity_i2i": true
+}

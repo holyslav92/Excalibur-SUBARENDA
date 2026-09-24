@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "https://добрыйдом-72.рф/blog/v-kartochke-3400-za-noch-na-oplate-8816-za-dve/",
+      "slug": "v-kartochke-3400-za-noch-na-oplate-8816-za-dve",
+      "anchor": "в карточке стоит 3 400 ₽, а на оплате выходит 8 816 ₽ за две ночи",
+      "catalog_title": "В карточке 3 400 ₽ за ночь. На оплате — 8 816 ₽ за две ночи",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/bez-zaloga-v-filtre-zalog-u-dveri/",
+      "slug": "bez-zaloga-v-filtre-zalog-u-dveri",
+      "anchor": "фильтр «без залога», после которого залог оказался у двери",
+      "catalog_title": "В фильтре — «без залога». У двери попросили 5 000 ₽ на личную карту",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/posutochno-tyumen-oplatili-na-avito-prosyat-perevesti-esche-raz/",
+      "slug": "posutochno-tyumen-oplatili-na-avito-prosyat-perevesti-esche-raz",
+      "anchor": "повторный перевод за посуточную аренду",
+      "catalog_title": "Бронь на Авито уже оплачена. В чате: второй перевод на карту",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400/",
+      "slug": "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400",
+      "anchor": "доплату 2 400 ₽ после слов «всё включено»",
+      "catalog_title": "Хозяин сказал «всё включено». В такси доплатили 2 400 ₽",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "outbound_unique_slugs": [
+    "v-kartochke-3400-za-noch-na-oplate-8816-za-dve",
+    "bez-zaloga-v-filtre-zalog-u-dveri",
+    "posutochno-tyumen-oplatili-na-avito-prosyat-perevesti-esche-raz",
+    "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B35-kvartira-posutochno-tyumen-bez-komissii-na-ekrane-oplaty",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}
