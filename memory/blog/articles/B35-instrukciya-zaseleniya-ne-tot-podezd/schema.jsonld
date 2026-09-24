@@ -1,0 +1,39 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/instrukciya-zaseleniya-posutochno-ne-tot-podezd/#article",
+  "url": "{{SITE_BASE}}/blog/instrukciya-zaseleniya-posutochno-ne-tot-podezd/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/instrukciya-zaseleniya-posutochno-ne-tot-podezd/"
+  },
+  "headline": "PDF на три страницы. Дом верный — 35 минут с чемоданом у чужого подъезда",
+  "description": "Когда PDF самозаселения ведёт в чужой подъезд при верном доме: код сработал, а нужной двери и ключницы нет. Как отличить ошибку маршрута от сбоя домофона и что проверить до отпуска такси.",
+  "datePublished": "2026-09-24",
+  "dateModified": "2026-09-24",
+  "inLanguage": "ru-RU",
+  "author": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    },
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  }
+}
