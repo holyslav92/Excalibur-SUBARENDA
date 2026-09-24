@@ -1,0 +1,27 @@
+{
+  "slug": "instrukciya-zaseleniya-posutochno-ne-tot-podezd",
+  "topic_id": "B35",
+  "permalink": "{{SITE_BASE}}/blog/instrukciya-zaseleniya-posutochno-ne-tot-podezd/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B35-instrukciya-zaseleniya-ne-tot-podezd/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1343706,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=5095 slug=instrukciya-zaseleniya-posutochno-ne-tot-podezd\nOK categories=101,106\nOK dzen_yzen_meta=1\nOK featured_image=5096\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=5097 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/09/instrukciya-zaseleniya-posutochno-ne-tot-podezd-inline-04.png\nOK inline_alt=5097\nOK inline_caption=5097\nOK inline_description=5097\nOK inline_image_upload=5098 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/instrukciya-zaseleniya-posutochno-ne-tot-podezd-inline-01.png\nOK inline_alt=5098\nOK inline_caption=5098\nOK inline_description=5098\nOK inline_image_upload=5099 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/09/instrukciya-zaseleniya-posutochno-ne-tot-podezd-inline-06.png\nOK inline_alt=5099\nOK inline_caption=5099\nOK inline_description=5099\nOK inline_image_upload=5100 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/09/instrukciya-zaseleniya-posutochno-ne-tot-podezd-inline-05.png\nOK inline_alt=5100\nOK inline_caption=5100\nOK inline_description=5100\nOK inline_image_upload=5101 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/instrukciya-zaseleniya-posutochno-ne-tot-podezd-inline-02.png\nOK inline_alt=5101\nOK inline_caption=5101\nOK inline_description=5101\nOK inline_image_upload=5102 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/09/instrukciya-zaseleniya-posutochno-ne-tot-podezd-inline-07.png\nOK inline_alt=5102\nOK inline_caption=5102\nOK inline_description=5102\nOK inline_image_upload=5103 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/instrukciya-zaseleniya-posutochno-ne-tot-podezd-inline-03.png\nOK inline_alt=5103\nOK inline_caption=5103\nOK inline_description=5103\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/instrukciya-zaseleniya-posutochno-ne-tot-podezd/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/instrukciya-zaseleniya-posutochno-ne-tot-podezd/",
+    "errors": []
+  }
+}

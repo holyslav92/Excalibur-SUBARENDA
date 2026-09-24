@@ -1,5 +1,23 @@
 # WP publish log
 
+## B35 — 2026-09-24
+
+- **topic_id:** B35
+- **slug:** instrukciya-zaseleniya-posutochno-ne-tot-podezd
+- **title:** PDF на три страницы. Дом верный — 35 минут с чемоданом у чужого подъезда
+- **post_id:** 5095
+- **permalink:** /blog/instrukciya-zaseleniya-posutochno-ne-tot-podezd/
+- **categories:** posutochnaya-arenda (101), sovety-gostyam (106)
+- **featured_image:** 5096
+- **inline_images:** 5097–5103 (7× wp-content/uploads/2026/09/…-inline-0N.png)
+- **schema_meta:** ok
+- **live-page gate:** PASS
+- **dzen preview:** cover-1024x576.png HTTP 200 (1040078 bytes); dzen_touch post_modified bumped; wp_intermediate_refresh (2026/09 uploads)
+- **interlink outbound:** 4 live /blog/ siblings (crosslink-qa PASS)
+- **interlink inbound:** B01 (3745)
+- **publish_method:** sftp:22 (Cloud Agent); llms deploy via SFTP after main publish (FTP PASV hang on egress)
+- **llms_deploy:** PASS
+
 ## B34 — 2026-09-23
 
 - **topic_id:** B34

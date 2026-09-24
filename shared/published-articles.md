@@ -39,3 +39,4 @@ Excalibur-2-Cloud — не копировать URL tymenrieltor.ru.
 | 2026-09-22 | B32 | v-kartochke-3400-za-noch-na-oplate-8816-za-dve | /blog/v-kartochke-3400-za-noch-na-oplate-8816-za-dve/ | published |
 | 2026-09-22 | B33 | posutochno-tyumen-oplatili-na-avito-prosyat-perevesti-esche-raz | /blog/posutochno-tyumen-oplatili-na-avito-prosyat-perevesti-esche-raz/ | published |
 | 2026-09-23 | B34 | bez-zaloga-v-filtre-zalog-u-dveri | /blog/bez-zaloga-v-filtre-zalog-u-dveri/ | published |
+| 2026-09-24 | B35 | instrukciya-zaseleniya-posutochno-ne-tot-podezd | /blog/instrukciya-zaseleniya-posutochno-ne-tot-podezd/ | published |
