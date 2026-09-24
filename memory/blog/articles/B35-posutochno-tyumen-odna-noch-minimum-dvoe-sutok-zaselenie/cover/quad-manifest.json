@@ -1,0 +1,116 @@
+{
+  "topic_id": "B35",
+  "slug": "oplachena-odna-noch-minimum-dvoe-sutok",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "Одна ночь оплачена — минимум двое",
+  "cover_hook_highlight": "минимум",
+  "cover_headline_line1": "Одна ночь оплачена",
+  "cover_headline_line2": "минимум двое",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "wordstat_stickers": ["квартиры посуточно тюмень"],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "car at entrance phone chat headline tr pad autumn",
+    "location": "sep 2026 tyumen early autumn evening no snow",
+    "meme": "max one cat panel optional",
+    "prop_set": "4800 one night chat two nights kids car",
+    "sticker_set": "посуточно тюмень одна ночь минимум",
+    "joke": "paid one night minimum two at curb"
+  },
+  "cover_emotion": "усталость в машине у подъезда",
+  "cover_scene": "Машина у подъезда, чат «минимум двое», крупный кириллический хук; +79935748322 на магните; TR pad.",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "scene_hint": "Машина у подъезда ночью, экран чата, хук кириллицей; телефон на магните; TR pad.",
+      "alt": "Гость в машине у подъезда в Тюмени: оплачена одна ночь, в чате требуют минимум двое суток.",
+      "role": "cover_editorial_hero",
+      "sticky": "Срок в чате до оплаты"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "scene_hint": "Таблица: 1 ночь 4800, календарь, оплата. Pad TR.",
+      "alt": "Сравнение: одна ночь в календаре и оплаченная сумма против правила «минимум двое».",
+      "h2_anchor": "Цена меняется не в календаре, а у подъезда",
+      "visual_type": "comparison_table_ui",
+      "labels": ["одна ночь 4 800", "календарь дал дату", "оплата прошла"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "scene_hint": "Схема: чат → минимум двое → дети в машине.",
+      "alt": "Диалог у подъезда: новое условие после оплаты одной ночи.",
+      "h2_anchor": "Одна отмычка до перевода",
+      "visual_type": "workflow_diagram",
+      "labels": ["чат у подъезда", "минимум двое", "дети в машине"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "scene_hint": "Чек-лист: правила внизу, «так у всех». Pad TR.",
+      "alt": "Аргументы хоста «внизу написано» против оплаченной одной ночи.",
+      "h2_anchor": "Что делать, когда условие всплыло слишком поздно",
+      "visual_type": "checklist_board",
+      "labels": ["внизу в объявлении", "так у всех", "новое условие"]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "scene_hint": "Сравнение: вторая ночь под давлением vs запасной адрес.",
+      "alt": "Почему гости соглашаются на вторую ночь у подъезда.",
+      "h2_anchor": "Цена меняется не в календаре, а у подъезда",
+      "visual_type": "comparison_table_ui",
+      "labels": ["вторая ночь", "давление ночи", "запасной адрес"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "scene_hint": "Схема: вопрос в чат → цифра → оплата.",
+      "alt": "Один вопрос о минимуме ночей до кнопки «оплатить».",
+      "h2_anchor": "Одна отмычка до перевода",
+      "visual_type": "workflow_diagram",
+      "labels": ["спросить до оплаты", "цифра в чате", "не размыто"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "scene_hint": "Чек-лист: нет так не заселяем; срок до кнопки.",
+      "alt": "Правило: минимальный срок проговаривается до оплаты.",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "labeled_checklist",
+      "labels": ["нет так не заселяем", "срок до кнопки", "честные условия"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "scene_hint": "Чек-лист: поддержка, скрин, не вторая ночь под давлением. Pad TR.",
+      "alt": "Действия при отказе в одной ночи после оплаты на платформе.",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "checklist_board",
+      "labels": ["поддержка платформы", "скрин правил", "не вторая ночь под давлением"]
+    }
+  },
+  "no_host_face": true,
+  "skip_identity_i2i": true
+}

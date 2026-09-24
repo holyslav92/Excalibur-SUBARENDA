@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "research_date": "2026-09-24",
+  "derouter": {
+    "first_attempt": "PASS",
+    "model": "gpt-5.6-terra"
+  },
+  "fresh_signal": {
+    "source": "https://t.me/s/Dobriy_dom_72",
+    "accessed_at": "2026-09-24",
+    "note": "Posts 22-24.09.2026: late check-in, extension anxiety, verify conditions before pay"
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "notes": "Avito online-booking rules + host course referenced in research-notes"
+  },
+  "wordstat_p0": {
+    "phrase": "квартиры посуточно тюмень",
+    "volume_tyumen": 4304,
+    "volume_ru": 9251
+  }
+}
