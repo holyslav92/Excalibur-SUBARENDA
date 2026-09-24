@@ -3,148 +3,6 @@
   "status": "PASS",
   "splits": [
     {
-      "canvas_index": 1,
-      "manifest": "cover/quad-manifest.json",
-      "split": {
-        "source_canvas": "memory/blog/articles/B35-instrukciya-zaseleniya-ne-tot-podezd/cover/canvas-quad-01.png",
-        "source_size_px": [
-          2048,
-          1152
-        ],
-        "panel_size_px": [
-          1024,
-          576
-        ],
-        "split_meta": {
-          "split_mode": "mechanical_center",
-          "h_gutter_px": null,
-          "v_gutter_px": null,
-          "requested_mode": "auto",
-          "fallback_reason": "aspect_crop_loss_too_high",
-          "rejected_gutter": {
-            "h_gutter_px": {
-              "start": 571,
-              "end": 604
-            },
-            "v_gutter_px": {
-              "start": 1015,
-              "end": 1052
-            },
-            "gutter_quality": {
-              "h_center_offset_px": 11.5,
-              "v_center_offset_px": 9.5,
-              "max_aspect_crop_loss": 0.0404,
-              "per_panel_crop_loss": {
-                "top_left": 0.0,
-                "top_right": 0.0193,
-                "bottom_left": 0.0404,
-                "bottom_right": 0.0221
-              },
-              "reject_reason": "aspect_crop_loss_too_high"
-            }
-          }
-        },
-        "output_size_px": [
-          1200,
-          675
-        ],
-        "outputs": {
-          "cover": {
-            "file": "cover/cover.png",
-            "quadrant": "top_left",
-            "box_px": {
-              "left": 0,
-              "top": 0,
-              "right": 1024,
-              "bottom": 576
-            },
-            "raw_box_px": {
-              "left": 0,
-              "top": 0,
-              "right": 1024,
-              "bottom": 576
-            },
-            "size_px": [
-              1200,
-              675
-            ],
-            "aspect_ratio": "16:9",
-            "alt": "Гость с чемоданом у чужого подъезда при верном доме: код сработал, но лестница и двор не совпали с PDF.",
-            "h2_anchor": null
-          },
-          "inline_1": {
-            "file": "cover/inline-01.png",
-            "quadrant": "top_right",
-            "box_px": {
-              "left": 1024,
-              "top": 0,
-              "right": 2048,
-              "bottom": 576
-            },
-            "raw_box_px": {
-              "left": 1024,
-              "top": 0,
-              "right": 2048,
-              "bottom": 576
-            },
-            "size_px": [
-              1200,
-              675
-            ],
-            "aspect_ratio": "16:9",
-            "alt": "Адрес и дом совпали, код сработал — но подъезд и лестница не те, что в инструкции.",
-            "h2_anchor": "Адрес верный — маршрут неверный"
-          },
-          "inline_2": {
-            "file": "cover/inline-02.png",
-            "quadrant": "bottom_left",
-            "box_px": {
-              "left": 0,
-              "top": 576,
-              "right": 1024,
-              "bottom": 1152
-            },
-            "raw_box_px": {
-              "left": 0,
-              "top": 576,
-              "right": 1024,
-              "bottom": 1152
-            },
-            "size_px": [
-              1200,
-              675
-            ],
-            "aspect_ratio": "16:9",
-            "alt": "Три страницы PDF не заменяют маршрут: гость в чужом дворе получает «вы не туда».",
-            "h2_anchor": "Три страницы не заменяют один путь"
-          },
-          "inline_3": {
-            "file": "cover/inline-03.png",
-            "quadrant": "bottom_right",
-            "box_px": {
-              "left": 1024,
-              "top": 576,
-              "right": 2048,
-              "bottom": 1152
-            },
-            "raw_box_px": {
-              "left": 1024,
-              "top": 576,
-              "right": 2048,
-              "bottom": 1152
-            },
-            "size_px": [
-              1200,
-              675
-            ],
-            "aspect_ratio": "16:9",
-            "alt": "Чек-лист: свежие фото улицы, двора, двери и номер подъезда отдельной строкой.",
-            "h2_anchor": "Мой вывод как практика"
-          }
-        }
-      }
-    },
-    {
       "canvas_index": 2,
       "manifest": "cover/quad-manifest.json",
       "split": {
@@ -281,6 +139,148 @@
             ],
             "aspect_ratio": "16:9",
             "alt": "Сначала проверка маршрута и три кадра входа — потом отпускать такси.",
+            "h2_anchor": "Мой вывод как практика"
+          }
+        }
+      }
+    },
+    {
+      "canvas_index": 1,
+      "manifest": "cover/quad-manifest.json",
+      "split": {
+        "source_canvas": "memory/blog/articles/B35-instrukciya-zaseleniya-ne-tot-podezd/cover/canvas-quad-01.png",
+        "source_size_px": [
+          2048,
+          1152
+        ],
+        "panel_size_px": [
+          1024,
+          576
+        ],
+        "split_meta": {
+          "split_mode": "mechanical_center",
+          "h_gutter_px": null,
+          "v_gutter_px": null,
+          "requested_mode": "auto",
+          "fallback_reason": "aspect_crop_loss_too_high",
+          "rejected_gutter": {
+            "h_gutter_px": {
+              "start": 570,
+              "end": 583
+            },
+            "v_gutter_px": {
+              "start": 1017,
+              "end": 1057
+            },
+            "gutter_quality": {
+              "h_center_offset_px": 0.5,
+              "v_center_offset_px": 13.0,
+              "max_aspect_crop_loss": 0.0228,
+              "per_panel_crop_loss": {
+                "top_left": 0.0,
+                "top_right": 0.0228,
+                "bottom_left": 0.0,
+                "bottom_right": 0.0211
+              },
+              "reject_reason": "aspect_crop_loss_too_high"
+            }
+          }
+        },
+        "output_size_px": [
+          1200,
+          675
+        ],
+        "outputs": {
+          "cover": {
+            "file": "cover/cover.png",
+            "quadrant": "top_left",
+            "box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1024,
+              "bottom": 576
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1024,
+              "bottom": 576
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Гость с чемоданом у чужого подъезда при верном доме: код сработал, но лестница и двор не совпали с PDF.",
+            "h2_anchor": null
+          },
+          "inline_1": {
+            "file": "cover/inline-01.png",
+            "quadrant": "top_right",
+            "box_px": {
+              "left": 1024,
+              "top": 0,
+              "right": 2048,
+              "bottom": 576
+            },
+            "raw_box_px": {
+              "left": 1024,
+              "top": 0,
+              "right": 2048,
+              "bottom": 576
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Адрес и дом совпали, код сработал — но подъезд и лестница не те, что в инструкции.",
+            "h2_anchor": "Адрес верный — маршрут неверный"
+          },
+          "inline_2": {
+            "file": "cover/inline-02.png",
+            "quadrant": "bottom_left",
+            "box_px": {
+              "left": 0,
+              "top": 576,
+              "right": 1024,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 576,
+              "right": 1024,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Три страницы PDF не заменяют маршрут: гость в чужом дворе получает «вы не туда».",
+            "h2_anchor": "Три страницы не заменяют один путь"
+          },
+          "inline_3": {
+            "file": "cover/inline-03.png",
+            "quadrant": "bottom_right",
+            "box_px": {
+              "left": 1024,
+              "top": 576,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 1024,
+              "top": 576,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Чек-лист: свежие фото улицы, двора, двери и номер подъезда отдельной строкой.",
             "h2_anchor": "Мой вывод как практика"
           }
         }

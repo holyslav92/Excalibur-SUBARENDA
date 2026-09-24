@@ -16,7 +16,7 @@ topic_id: B35
 
 - `cover-text-gate.json`: PASS
 - `excalibur_blog_drawn_logo_gate.py`: PASS (slim)
-- `cover_qa.json`: pending Cover-QA agent
+- `cover/cover_qa.json`: PASS (Cover-QA 2026-09-24)
 
 ## Generation
 
