@@ -1,0 +1,27 @@
+{
+  "slug": "kvartira-posutochno-tyumen-bez-komissii-na-ekrane-oplaty",
+  "topic_id": "B35",
+  "permalink": "{{SITE_BASE}}/blog/kvartira-posutochno-tyumen-bez-komissii-na-ekrane-oplaty/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B35-kvartira-posutochno-tyumen-bez-komissii-na-ekrane-oplaty/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1183582,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=5084 slug=kvartira-posutochno-tyumen-bez-komissii-na-ekrane-oplaty\nOK categories=101,104,102\nOK dzen_yzen_meta=1\nOK featured_image=5085\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=5086 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kvartira-posutochno-tyumen-bez-komissii-na-ekrane-oplaty-inline-01.png\nOK inline_alt=5086\nOK inline_caption=5086\nOK inline_description=5086\nOK inline_image_upload=5087 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kvartira-posutochno-tyumen-bez-komissii-na-ekrane-oplaty-inline-02.png\nOK inline_alt=5087\nOK inline_caption=5087\nOK inline_description=5087\nOK inline_image_upload=5088 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kvartira-posutochno-tyumen-bez-komissii-na-ekrane-oplaty-inline-03.png\nOK inline_alt=5088\nOK inline_caption=5088\nOK inline_description=5088\nOK inline_image_upload=5089 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kvartira-posutochno-tyumen-bez-komissii-na-ekrane-oplaty-inline-04.png\nOK inline_alt=5089\nOK inline_caption=5089\nOK inline_description=5089\nOK inline_image_upload=5090 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kvartira-posutochno-tyumen-bez-komissii-na-ekrane-oplaty-inline-05.png\nOK inline_alt=5090\nOK inline_caption=5090\nOK inline_description=5090\nOK inline_image_upload=5091 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kvartira-posutochno-tyumen-bez-komissii-na-ekrane-oplaty-inline-06.png\nOK inline_alt=5091\nOK inline_caption=5091\nOK inline_description=5091\nOK inline_image_upload=5092 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/09/kvartira-posutochno-tyumen-bez-komissii-na-ekrane-oplaty-inline-07.png\nOK inline_alt=5092\nOK inline_caption=5092\nOK inline_description=5092\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/kvartira-posutochno-tyumen-bez-komissii-na-ekrane-oplaty/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/kvartira-posutochno-tyumen-bez-komissii-na-ekrane-oplaty/",
+    "errors": []
+  }
+}

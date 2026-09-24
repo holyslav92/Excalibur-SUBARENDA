@@ -1,0 +1,10 @@
+{
+  "topic_id": "B35",
+  "description": "В фильтре — «без комиссии», а перед оплатой +1 187 ₽ строкой сервиса. Кейс гостя в Тюмени: итог 9 587 ₽ вместо 8 400 ₽ — что смотреть до кнопки «Оплатить».",
+  "rhythm": "klyshin_case_hook",
+  "geo": "Тюмень",
+  "author_brand": "Добрый дом",
+  "not_equal_title": true,
+  "not_truncated_lead": true,
+  "verdict": "PASS"
+}

@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "topic_id": "B35",
+  "slug": "kvartira-posutochno-tyumen-bez-komissii-na-ekrane-oplaty",
+  "candidates_count": 38,
+  "outbound_found": [
+    {
+      "slug": "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400",
+      "title": "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400"
+    },
+    {
+      "slug": "v-kartochke-3400-za-noch-na-oplate-8816-za-dve",
+      "title": "v-kartochke-3400-za-noch-na-oplate-8816-za-dve"
+    },
+    {
+      "slug": "posutochno-tyumen-oplatili-na-avito-prosyat-perevesti-esche-raz",
+      "title": "posutochno-tyumen-oplatili-na-avito-prosyat-perevesti-esche-raz"
+    },
+    {
+      "slug": "bez-zaloga-v-filtre-zalog-u-dveri",
+      "title": "bez-zaloga-v-filtre-zalog-u-dveri"
+    }
+  ],
+  "outbound_unique_slugs": [
+    "v-kartochke-3400-za-noch-na-oplate-8816-za-dve",
+    "bez-zaloga-v-filtre-zalog-u-dveri",
+    "posutochno-tyumen-oplatili-na-avito-prosyat-perevesti-esche-raz",
+    "hozyain-skazal-vse-vklyucheno-v-taksi-doplatili-2-400"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "warnings": [],
+  "errors": []
+}
