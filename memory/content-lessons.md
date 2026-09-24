@@ -2253,3 +2253,40 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+---
+
+## LESSON-20260924-1352-B35-instruction-wrong-entrance
+status: proposed
+topic_id: B35
+category: utility
+confidence: low
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: gate SKIP; publish PASS (wp-publish-log post_id=5095, live-page PASS, interlink 4 outbound + inbound B01, cover_qa PASS, sftp publish; llms_deploy PASS).
+- metrika_signal: none — METRIKA CREDENTIALS BLOCKER (INC-20260924-1352-metrika-content-learner-b35).
+
+### Named blockers
+- EVIDENCE_SKIPPED
+- METRIKA_UNAVAILABLE
+- LOW_SAMPLE
+
+### Keep
+- Hook `instruction_wrong_entrance`: верный адрес дома, неверный подъезд/двор в PDF — не код/ключница (anti-dup B13/B18/B01).
+- H1 two-beat: «PDF на три страницы» → «35 минут с чемоданом у чужого подъезда»; Klyshin «Инструкцию прислали… дверь — не та».
+- §1: оплаченные ночи + вечер/такси уехало до переписки «вы не туда»; Wordstat P0 spine «квартиры посуточно тюмень» 4274 (55+11176).
+
+### Never again
+- How-to «как читать инструкцию заселения» без сцены чужого двора.
+- Смешивать угол с «не работает код» / домофоном.
+
+### Proposed apply
+- Scout: hook instruction_wrong_entrance → handoff Klyshin original + final P0 spine; cover wordstat stickers (cover_qa B35).
+- Review only; Writer prompt не трогать.
+
+### Durable applied
+- none
+
+### Resolution
+status: recorded
