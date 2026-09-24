@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "https://добрыйдом-72.рф/blog/pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate/",
+      "slug": "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+      "anchor": "тишина в чате после предоплаты",
+      "catalog_title": "Перевели 3 000 ₽ предоплатой. К вечеру — тишина в чате",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00/",
+      "slug": "rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00",
+      "anchor": "оплаченный заезд и ожидание у двери",
+      "catalog_title": "Ранний заезд оплатили. У двери с чемоданом — почти 5 часов ожидания",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/v-kartochke-3400-za-noch-na-oplate-8816-za-dve/",
+      "slug": "v-kartochke-3400-za-noch-na-oplate-8816-za-dve",
+      "anchor": "в карточке 3 400 ₽ за ночь, на оплате — 8 816 ₽ за две",
+      "catalog_title": "В карточке 3 400 ₽ за ночь. На оплате — 8 816 ₽ за две ночи",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/otmenili-rejs-predoplatu-vernut/",
+      "slug": "otmenili-rejs-predoplatu-vernut",
+      "anchor": "сорвался рейс после предоплаты",
+      "catalog_title": "Рейс отменили. 4 200 ₽ обещали вернуть за три дня — срок вышел",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "outbound_unique_slugs": [
+    "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+    "rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00",
+    "v-kartochke-3400-za-noch-na-oplate-8816-za-dve",
+    "otmenili-rejs-predoplatu-vernut"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B35-posutochno-tyumen-odna-noch-minimum-dvoe-sutok-zaselenie",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}

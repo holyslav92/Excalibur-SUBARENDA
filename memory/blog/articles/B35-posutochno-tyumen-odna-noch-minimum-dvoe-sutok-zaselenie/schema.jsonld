@@ -1,0 +1,35 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/oplachena-odna-noch-minimum-dvoe-sutok/#blogposting",
+  "url": "{{SITE_BASE}}/blog/oplachena-odna-noch-minimum-dvoe-sutok/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/oplachena-odna-noch-minimum-dvoe-sutok/"
+  },
+  "headline": "Оплатили одну ночь за 4 800 ₽. У подъезда — минимум двое суток",
+  "datePublished": "2026-09-24",
+  "author": {
+    "@type": "Organization",
+    "@id": "{{SITE_BASE}}/#organization",
+    "name": "Добрый дом",
+    "sameAs": "{{SITE_BASE}}/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "{{SITE_BASE}}/#organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    }
+  },
+  "about": {
+    "@type": "Place",
+    "name": "Тюмень"
+  },
+  "inLanguage": "ru-RU"
+}
