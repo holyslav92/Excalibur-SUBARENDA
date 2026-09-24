@@ -1,0 +1,10 @@
+{
+  "topic_id": "B35",
+  "description": "Код щёлкнул — а этаж чужой. В Тюмени при самозаселении адрес на карте ещё не ведёт к двери: проверьте путь от тротуара до нужного подъезда.",
+  "rhythm": "klyshin_case_hook",
+  "geo": "Тюмень",
+  "author_brand": "Добрый дом",
+  "not_equal_title": true,
+  "not_truncated_lead": true,
+  "verdict": "PASS"
+}
