@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "https://добрыйдом-72.рф/blog/kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda/",
+      "slug": "kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda",
+      "anchor": "код прислали, а домофон молчит",
+      "catalog_title": "Код уже есть. Только в подъезд не попасть — 20 минут с чемоданом",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/kod-srabotal-klyuchnica-pusta-posutochno-tyumen/",
+      "slug": "kod-srabotal-klyuchnica-pusta-posutochno-tyumen",
+      "anchor": "код сработал, а ключница пуста",
+      "catalog_title": "Код сработал. Пустая ключница — 35 минут у двери",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/sozvonili-v-10-00-posutochno-k-22-30-koda-ne-bylo-otchet-gorit/",
+      "slug": "sozvonili-v-10-00-posutochno-k-22-30-koda-ne-bylo-otchet-gorit",
+      "anchor": "к ночи кода нет — отчёт горит",
+      "catalog_title": "Две ночи, 8 400 ₽. К ночи кода нет — отчёт горит",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/posutochno-tyumen-foto-pasporta-v-chat-kod-ne-prislali/",
+      "slug": "posutochno-tyumen-foto-pasporta-v-chat-kod-ne-prislali",
+      "anchor": "фото паспорта в чат — код не пришёл",
+      "catalog_title": "Оплатили 3 ночи. Фото паспорта в чат — код не пришёл, багаж у двери",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "outbound_unique_slugs": [
+    "kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda",
+    "kod-srabotal-klyuchnica-pusta-posutochno-tyumen",
+    "sozvonili-v-10-00-posutochno-k-22-30-koda-ne-bylo-otchet-gorit",
+    "posutochno-tyumen-foto-pasporta-v-chat-kod-ne-prislali"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B35-instrukciya-zaseleniya-ne-tot-podezd",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}

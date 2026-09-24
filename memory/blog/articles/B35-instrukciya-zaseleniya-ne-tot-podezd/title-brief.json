@@ -1,0 +1,12 @@
+{
+  "topic_id": "B35",
+  "h1": "PDF на три страницы. Дом верный — 35 минут с чемоданом у чужого подъезда",
+  "title": "PDF на три страницы. Дом верный — 35 минут с чемоданом у чужого подъезда",
+  "slug": "instrukciya-zaseleniya-posutochno-ne-tot-podezd",
+  "subject": "Ошибочный подъезд в инструкции самозаселения",
+  "angle": "Гость оплатил две ночи и приехал по верному адресу, но PDF с подъездом, кодом и этажом вёл в другой двор.",
+  "klyshin_title_shape": 1,
+  "wordstat_p0": "квартиры посуточно тюмень",
+  "verdict": "PASS",
+  "generated_via": "excalibur_blog_derouter_opus_chat.py --role title"
+}

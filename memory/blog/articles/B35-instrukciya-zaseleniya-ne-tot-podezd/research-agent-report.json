@@ -1,0 +1,91 @@
+{
+  "status": "PASS",
+  "topic_id": "B35",
+  "slug": "instrukciya-zaseleniya-ne-tot-podezd",
+  "research_date": "2026-09-24",
+  "summary": "Research for instruction_wrong_entrance CASE: Tyumen guest, Sep 2026 evening, long self-check-in PDF — correct building, wrong courtyard/entrance, ~30–40 min chat with luggage after taxi left. Fresh signal: Dobriy_dom_72 TG 24.09.2026 (stale instruction / wrong access at door) + scout hook validated 2026-09-24 + Darstroy Jun 2026 entrance-route canon. Wordstat P0 «квартиры посуточно тюмень» 4274 (55+11176), 9275 (225); angle «инструкция по заселению…» 73/1. Not B01/B13/B18 (code/keybox/domofon). No bank/JKH tariff digits — official audit N/A.",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "t.me/s/Dobriy_dom_72 post 2026-09-24 + scout-inputs-2026-09-24 instruction_wrong_entrance",
+    "source_type": "community",
+    "urls": [
+      "https://t.me/s/Dobriy_dom_72",
+      "https://t.me/klyshin_A",
+      "memory/scout/scout-inputs-2026-09-24.md"
+    ],
+    "accessed_at": "2026-09-24",
+    "note": "Tenant channel names outdated instruction and door delay; scout hook today; angle is wrong podjezd/dvor not failed code."
+  },
+  "freshness_audit": {
+    "research_date": "2026-09-24",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://t.me/s/Dobriy_dom_72",
+      "published_at": "2026-09-24",
+      "note": "Бесконтактное заселение: зона риска — неактуальная инструкция / неверный доступ у двери; ночной заезд — уточнить вход до приезда."
+    },
+    "additional_fresh_signals": [
+      {
+        "url": "memory/scout/scout-inputs-2026-09-24.md",
+        "published_at": "2026-09-24",
+        "type": "scout",
+        "note": "hook instruction_wrong_entrance, PDF podjezd/dvor scene, anti-dup B13/B18."
+      },
+      {
+        "url": "https://darstroy-yug.ru/articles/beskontaktnoe-zaselenie-v-kvartiru/",
+        "published_at": "2026-06-22",
+        "type": "industry",
+        "note": "Updated Jun 2026: instruction must specify podjezd, photos, guest path walkthrough."
+      }
+    ]
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "source": "handoff mcp-kv conductor 2026-09-24",
+    "regions": ["55", "11176", "225"],
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 4274,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 9275,
+        "region": "225"
+      },
+      {
+        "phrase": "инструкция по заселению в квартиру посуточно",
+        "volume": 73,
+        "region": "225"
+      },
+      {
+        "phrase": "инструкция по заселению в квартиру посуточно",
+        "volume": 1,
+        "region": "55+11176"
+      }
+    ]
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "No bank/JKH tariff digits; industry + tenant community sources only",
+    "verified_claims": 0,
+    "entities_checked": [],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "memory/blog/articles/B35-instrukciya-zaseleniya-ne-tot-podezd/derouter-opus-stamp-research.json",
+    "first_attempt": "PASS"
+  },
+  "key_facts_count": 12,
+  "errors": []
+}

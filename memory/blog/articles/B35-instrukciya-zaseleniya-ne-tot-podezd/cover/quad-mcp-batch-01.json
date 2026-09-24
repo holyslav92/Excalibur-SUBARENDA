@@ -1,0 +1,25 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 1,
+  "model_policy": "vip_for_2k",
+  "vip_disabled": false,
+  "max_generation_attempts": 2,
+  "output_canvas": "cover/canvas-quad-01.png",
+  "result_path": "cover/quad-mcp-result-01.json",
+  "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+  "preferred_image_flow": {
+    "provider": "grsai",
+    "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
+    "resolution": "2K"
+  },
+  "jobs": [{
+    "slot": "canvas_quad",
+    "tool": "grsai",
+    "mcp_args": {
+      "prompt": "WOW RU collage, airy #FFFFFF high-key, Tyumen late September 2026 AUTUMN evening drizzle, wet courtyard, golden leaves, NO winter/snow/ice. Canvas 2048x1152 2x2 grid; white gutters. Ban: dark cinematic, WP UI, Shakin/host face, pill phone overlay, model-drawn «Добрый дом» logo, meme cat stickers, text walls.\nALL panels TR pad = clean wall 8-12% ONLY for factory logo paste AFTER — ZERO drawn logo on TR.\nCover TL: tired guest with suitcase at WRONG stairwell door, smartphone PDF «подъезд 2», domofon worked but stairs wrong; autumn wet asphalt arch playground; LARGE Cyrillic hook «Дом верный — 35 минут у чужого подъезда» gold highlight «чужого» on wall tablo; phone +7 (993) 574-83-22 small vertical on booking card NOT pill; Wordstat stickers «квартиры посуточно тюмень» «снять квартиру посуточно в тюмени»; TR pad empty.\nTR inline_1 FULL comparison_table_ui: TXT:Дом верный|Подъезд неверный|Код работает|Лестница чужая. Dense UI chips autumn courtyard. TR pad empty for factory logo.\nBL inline_2 cool-blue workflow ONLY no terracotta no orange: arrows PDF→двор→дверь. TXT:Три страницы|Двор|Чужая дверь|«Не туда». Top-right 12% = flat gray wall ZERO text ZERO logos.\nBR inline_3 checklist_board route photos. TXT:Фото улицы|Фото двора|Фото двери|Подъезд строкой. TR pad empty for factory logo.",
+      "aspect_ratio": "16:9",
+      "resolution": "2K"
+    }
+  }],
+  "validation": {"prompt_chars": 1450, "max_prompt_chars": 3500, "resolution": "2K"}
+}

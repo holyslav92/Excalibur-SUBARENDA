@@ -1,0 +1,86 @@
+{
+  "topic_id": "B35",
+  "slug": "instrukciya-zaseleniya-posutochno-ne-tot-podezd",
+  "cover_family": "brand_collage",
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "file": "cover/cover.png",
+  "alt": "Гость с чемоданом у чужого подъезда при верном доме: код сработал, но лестница и двор не совпали с PDF.",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-quad-01.png",
+  "generated_at": "2026-09-24T13:22:52+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Гость с чемоданом у чужого подъезда при верном доме: код сработал, но лестница и двор не совпали с PDF.",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Адрес и дом совпали, код сработал — но подъезд и лестница не те, что в инструкции.",
+      "h2_anchor": "Адрес верный — маршрут неверный",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Три страницы PDF не заменяют маршрут: гость в чужом дворе получает «вы не туда».",
+      "h2_anchor": "Три страницы не заменяют один путь",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Чек-лист: свежие фото улицы, двора, двери и номер подъезда отдельной строкой.",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_4",
+      "file": "cover/inline-04.png",
+      "alt": "Точка на карте и путь от тротуара до двери — разные вещи у большого дома.",
+      "h2_anchor": "Адрес верный — маршрут неверный",
+      "visual_type": "infographic_card",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_5",
+      "file": "cover/inline-05.png",
+      "alt": "Летняя мелкая фотография в PDF не совпадает с осенней дверью без коврика.",
+      "h2_anchor": "Три страницы не заменяют один путь",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_6",
+      "file": "cover/inline-06.png",
+      "alt": "Вопросы до заезда: маршрут до кода, ориентир в темноте, второй канал связи.",
+      "h2_anchor": "Три страницы не заменяют один путь",
+      "visual_type": "schema_faq_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_7",
+      "file": "cover/inline-07.png",
+      "alt": "Сначала проверка маршрута и три кадра входа — потом отпускать такси.",
+      "h2_anchor": "Мой вывод как практика",
+      "visual_type": "labeled_checklist",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}

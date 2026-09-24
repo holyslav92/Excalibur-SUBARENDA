@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "topic_id": "B35",
+  "slug": "instrukciya-zaseleniya-posutochno-ne-tot-podezd",
+  "candidates_count": 38,
+  "outbound_found": [
+    {
+      "slug": "kod-srabotal-klyuchnica-pusta-posutochno-tyumen",
+      "title": "kod-srabotal-klyuchnica-pusta-posutochno-tyumen"
+    },
+    {
+      "slug": "kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda",
+      "title": "kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda"
+    },
+    {
+      "slug": "posutochno-tyumen-foto-pasporta-v-chat-kod-ne-prislali",
+      "title": "posutochno-tyumen-foto-pasporta-v-chat-kod-ne-prislali"
+    }
+  ],
+  "outbound_unique_slugs": [
+    "kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda",
+    "kod-srabotal-klyuchnica-pusta-posutochno-tyumen",
+    "sozvonili-v-10-00-posutochno-k-22-30-koda-ne-bylo-otchet-gorit",
+    "posutochno-tyumen-foto-pasporta-v-chat-kod-ne-prislali"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "warnings": [],
+  "errors": []
+}
