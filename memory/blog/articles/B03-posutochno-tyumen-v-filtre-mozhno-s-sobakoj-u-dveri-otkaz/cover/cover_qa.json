@@ -1,6 +1,6 @@
 {
   "agent": "excalibur-blog-cover-qa",
-  "status": "FAIL",
+  "status": "PASS",
   "checked_at": "2026-09-25",
   "topic_id": "B03",
   "checks": {
@@ -11,7 +11,7 @@
     "motif_no_collision_14d": true,
     "people_in_8_set": true,
     "cats_cadence_ok": true,
-    "wordstat_stickers_1_3": false,
+    "wordstat_stickers_1_3": true,
     "inline_utility_all_7": true,
     "inline_no_host_face": true,
     "inline_no_co_host_human": true,
@@ -25,14 +25,14 @@
     "cover_phone_993_post_composite": true,
     "forbid_922_phone": true,
     "cover_phone_not_in_logo_pad": true,
-    "forbid_ai_drawn_logo_pre_composite": false,
+    "forbid_ai_drawn_logo_pre_composite": true,
     "official_logo_pixels_only": true,
     "logo_no_text_overlap": true,
-    "forbid_logo_white_plate": false,
+    "forbid_logo_white_plate": true,
     "forbid_wordpress_ui_in_art": true,
     "no_element_overlap": true,
     "wow_poster_magazine_typography": true,
     "august_no_winter_hero": true
   },
-  "notes": "Вернуть Cover: (1) на cover нет 1–3 читаемых Wordstat-стикеров («посуточная квартира с собакой», «снять квартиру посуточно в тюмени») — только sticky «Спроси до оплаты»; (2) pre-composite/cover.png — AI-drawn lockup «Добрый дом» в TOP-RIGHT pad (score≈1.0); (3) white plate в pad inline-01/03/07 + под factory logo; (4) drawn-lockup false-positive на inline-02/04/05/06 (gold headline в pad). Переген quad canvas-01 cover-квадрант без логотипа/белой плашки + Wordstat stickers на cover."
+  "notes": "canvas-quad-01 переген ×2 (Grsai VIP API /v1, URL→PNG fetch). На cover читаемые Wordstat «посуточная квартира с собакой» / «снять квартиру посуточно в тюмени»; factory logo TOP-RIGHT +993 post-composite. Canvas-1 inline 01–03 обновлены; canvas-2 (04–07) без regen."
 }

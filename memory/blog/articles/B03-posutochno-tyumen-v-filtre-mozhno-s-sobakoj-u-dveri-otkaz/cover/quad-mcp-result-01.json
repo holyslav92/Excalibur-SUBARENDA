@@ -1,4 +1,11 @@
 {
-  "url": "https://file2.aitohumanize.com/file/e2f7470f1c2c47df91115269a7e1b7be.png",
-  "local_path": "cover/canvas-quad-01.png"
+  "local_path": "cover/canvas-quad-01.png",
+  "source": "grsai-vip-api",
+  "size": "1672x941",
+  "endpoint": "generations",
+  "host": "grsaiapi.com",
+  "api_base": "grsai-vip",
+  "response_kind": "url",
+  "attempts": 2,
+  "regen_note": "canvas-01 x2 Grsai VIP; pad inpaint post-split"
 }
