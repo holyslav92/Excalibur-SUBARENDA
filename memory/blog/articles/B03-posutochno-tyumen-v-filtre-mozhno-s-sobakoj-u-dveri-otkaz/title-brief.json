@@ -1,0 +1,10 @@
+{
+  "topic_id": "B03",
+  "slug": "posutochno-tyumen-v-filtre-mozhno-s-sobakoj-u-dveri-otkaz",
+  "h1": "В фильтре — «с собакой». У двери крупного пса не пустили без 3 000 ₽",
+  "title": "В фильтре — «с собакой». У двери крупного пса не пустили без 3 000 ₽",
+  "subject": "посуточная аренда с крупной собакой: фильтр pet-friendly и отказ или доплата у двери",
+  "angle": "Klyshin двухтакт: галочка в фильтре успокоила — у подъезда всплыли вес и 3 000 ₽. Wordstat spine «посуточная квартира с собакой» (403 RU) под H1, не в заголовке. Контраст фильтр vs дверь (dzen pattern 4).",
+  "generated_via": "excalibur_blog_derouter_opus_chat.py --role title",
+  "verdict": "PASS"
+}
