@@ -150,6 +150,7 @@ def validate_cover_qa(article_dir: Path, root: Path) -> dict:
             slots = manifest.get("slots") or {}
             allowed_types = {
                 "comparison_table",
+                "comparison_table_ui",
                 "process_flow",
                 "bar_timeline_chart",
                 "structure_diagram",
