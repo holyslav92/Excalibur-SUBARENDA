@@ -1,0 +1,29 @@
+{
+  "brief_id": "b03",
+  "role": "title",
+  "generated_via": "excalibur_blog_derouter_opus_chat.py --role title",
+  "verdict": "PASS",
+  "h1": "В объявлении — «можно с собакой». У двери попросили 3 000 «за шерсть»",
+  "title": "В объявлении — «можно с собакой». У двери попросили 3 000 «за шерсть»",
+  "char_count": 62,
+  "subject": "проживание с собакой в посуточной квартире",
+  "pain_scene": {
+    "setup": "в карточке и чате согласовали собаку",
+    "turn": "при заселении просят доплату «за шерсть» без пункта в правилах",
+    "conflict": "оплата уже прошла, спор у двери",
+    "strong_verb": "попросили / потребовали"
+  },
+  "wordstat": {
+    "spine": {
+      "phrase": "посуточно с собакой",
+      "rf_freq": 777,
+      "role": "demand spine под H1"
+    }
+  },
+  "checks": {
+    "label_head": false,
+    "seo_tail": false,
+    "two_beat_case": true,
+    "length_50_70": true
+  }
+}

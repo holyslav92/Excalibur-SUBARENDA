@@ -1,0 +1,160 @@
+{
+  "topic_id": "B03",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": [
+        "inline_4",
+        "inline_5",
+        "inline_6",
+        "inline_7"
+      ],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "cover_hook": "За собаку попросили 3 000",
+  "cover_hook_highlight": "3 000",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Derouter REST (DEROUTER_API_KEY) — 2K 16:9, one job per canvas (2×). Cover agent invents cover_hook + scene_hint/alt before --write-batch. Host lock = blog-hero.json (navy blazer, not hoodie).",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Гостья с собакой у двери посуточной квартиры, хозяин просит доплату за шерсть.",
+      "scene_hint": "Светлый осенний коллаж Тюmenи: женщина с переноской и корги у подъезда, встречающий показывает ладонь «3000», на телефоне чат «можно с собакой», крупная кириллическая надпись «3 000 за шерсть», золото и белый фон, телефон +7 993 574-83-22 на магните на двери, верхний правый угол пустой под логотип, без лиц знаменитостей.",
+      "meme_caption_ru": "",
+      "sticky": "хотя в объявлении можно",
+      "cover_emotion": "bewildered"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Что она согласовала — и что не согласовала",
+      "visual_type": "comparison_table_ui",
+      "scene_hint": "Таблица «в чате / у двери»: слева галочка «можно», справа «3000 наличными», осень, светлый коллаж.",
+      "alt": "Таблица «в чате / у двери»: слева галочка «можно», справа «3000 наличными», осен",
+      "labels": [
+        "можно с собакой",
+        "в чате да",
+        "без суммы",
+        "до оплаты"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Три разные суммы, которые называют одним словом",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Схема три круга: доплата, уборка, депозит — разные стрелки, подписи по-русски.",
+      "alt": "Схема три круга: доплата, уборка, депозит — разные стрелки, подписи по-русски.",
+      "labels": [
+        "доплата",
+        "уборка",
+        "депозит",
+        "не одно"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Почему «можно с животными» — это не условия",
+      "visual_type": "checklist_board",
+      "scene_hint": "Фильтр на телефоне «можно с животными» vs пустые правила, стикер у двери.",
+      "alt": "Фильтр на телефоне «можно с животными» vs пустые правила, стикер у двери.",
+      "labels": [
+        "фильтр",
+        "не правила",
+        "у двери",
+        "ночь у двери"
+      ]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Как это устроено у нас",
+      "visual_type": "schema_faq_ui",
+      "scene_hint": "Плашка «Нет. Так не заселяем» и блок «до перевода письменно», светлый стиль Добрый дом.",
+      "alt": "Плашка «Нет. Так не заселяем» и блок «до перевода письменно», светлый стиль Добр",
+      "labels": [
+        "нет",
+        "так не заселяем",
+        "до перевода",
+        "письменно"
+      ]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Одно сообщение — пять фактов",
+      "visual_type": "fact_card",
+      "scene_hint": "Карточка переписки: пять строк фактов до оплаты, скриншот.",
+      "alt": "Карточка переписки: пять строк фактов до оплаты, скриншот.",
+      "labels": [
+        "5 фактов",
+        "одно сообщение",
+        "до перевода",
+        "скриншот"
+      ]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Когда можно развернуться",
+      "visual_type": "tool_screenshot",
+      "scene_hint": "Такси у подъезда ночью, чемодан и собака, подпись «можно уехать».",
+      "alt": "Такси у подъезда ночью, чемодан и собака, подпись «можно уехать».",
+      "labels": [
+        "можно уехать",
+        "без чека",
+        "без согласия",
+        "поздний заезд"
+      ]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Мораль",
+      "visual_type": "infographic_card",
+      "scene_hint": "Итог: корги, три тысячи, за шерсть — инфографика без простыни текста.",
+      "alt": "Итог: корги, три тысячи, за шерсть — инфографика без простыни текста.",
+      "labels": [
+        "корги 11 кг",
+        "3 000 ₽",
+        "за шерсть",
+        "наличными"
+      ]
+    }
+  },
+  "cover_keys_ru": [],
+  "cover_motifs": {
+    "composition": "guest_with_dog_at_door",
+    "location": "tyumen_apartment_entry_september",
+    "meme": "tiny_cat_sticker_one_panel",
+    "prop_set": "pet_carrier_cash",
+    "sticker_set": "wordstat_pet",
+    "joke": "sherst_fee"
+  },
+  "wordstat_stickers": [
+    "посуточно с собакой",
+    "квартира с собакой"
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "agent": "excalibur-blog",
+  "date_context": {
+    "timezone": "Europe/Moscow",
+    "today_iso": "2026-09-25",
+    "today_ru": "25.09.2026",
+    "year": 2026,
+    "month": 9,
+    "month_name_ru": "сентябрь",
+    "weekday_ru": "пятница"
+  },
+  "topic": {
+    "topic_id": "B03",
+    "title": "собака доплата у двери",
+    "h1": "собака доплата у двери",
+    "slug": "sobaka-doplata-u-dveri",
+    "primary_query": "собака доплата у двери",
+    "priority": "P0"
+  },
+  "searches": [
+    {
+      "query_id": "primary_fresh",
+      "query": "собака доплата у двери 2026",
+      "purpose": "актуальный SERP",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Штрафы для владельцев собак 2026: за что накажут | Журнал «Владис»",
+          "url": "https://vladis.ru/blog/shtrafy-dlya-vladelcev-sobak-v-mnogoetazhkah",
+          "snippet": ""
+        },
+        {
+          "title": "Можно ли с собакой в отель | muyo.ru",
+          "url": "https://muyo.ru/guide/mozhno-li-s-sobakoy-v-otel/",
+          "snippet": "Изучаем новые штрафы для владельцев собак в многоквартирных домах. Узнайте правила выгула без поводка, как работает закон о тишине и кто накажет за неубранный подъезд."
+        },
+        {
+          "title": "Штрафы для владельцев собак в 2026 году",
+          "url": "https://dzen.ru/a/afrkq370Rn0awlg7",
+          "snippet": "Если собака лает ночью или поцарапала дверь, отель вправе удержать часть депозита или попросить выехать — это нормальная практика, а не обман."
+        },
+        {
+          "title": "Подкармливать нельзя запретить: что происходит с законом о бездомных ...",
+          "url": "https://www.rambler.ru/eco/pomosch/56490713-podkarmlivat-nelzya-zapretit-chto-proishodit-s-zakonom-o-bezdomnyh-sobakah-v-2026-godu/",
+          "snippet": "Государство окончательно перестало опираться на устную совесть хозяев: Госдума утвердила жесткие поправки в КоАП, заменив профилактические беседы реальными штрафами. Оставленные на тротуаре отходы или выгул без амуниции обойдутся в сумму до 3000 рублей на федеральном уровне."
+        },
+        {
+          "title": "Дорогой лай и запретный самовыгул: сколько придется заплатить ...",
+          "url": "https://dzen.ru/a/anjX4K3UpQP2E-10",
+          "snippet": "Но собаки — не единственные животные, чьё кормление вызывает споры. Все подробности о том, законно ли угощать голубей хлебом и семечками, читайте в нашем материале."
+        },
+        {
+          "title": "Перевозка животных в автомобиле: законы, ПДД и штрафы в 2026 ...",
+          "url": "https://www.avtovzglyad.ru/gai/pdd/74276-2026-08-27-perevozka-zhivotnyih-vavtomobile-zakonyi-pdd-ishtrafyi-v2026-godu/",
+          "snippet": "В 2026 году правила содержания домашних животных стали строже: теперь за прогулку без поводка или ночной лай в квартире можно получить внушительный штраф."
+        }
+      ],
+      "searched_at": "2026-09-25"
+    },
+    {
+      "query_id": "title_fresh",
+      "query": "собака доплата у двери 2026",
+      "purpose": "SERP по человеческому title",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Подкармливать нельзя запретить: что происходит с законом о бездомных ...",
+          "url": "https://www.rambler.ru/eco/pomosch/56490713-podkarmlivat-nelzya-zapretit-chto-proishodit-s-zakonom-o-bezdomnyh-sobakah-v-2026-godu/",
+          "snippet": ""
+        },
+        {
+          "title": "Штрафы для владельцев собак 2026: за что накажут | Журнал «Владис»",
+          "url": "https://vladis.ru/blog/shtrafy-dlya-vladelcev-sobak-v-mnogoetazhkah",
+          "snippet": "Но собаки — не единственные животные, чьё кормление вызывает споры. Все подробности о том, законно ли угощать голубей хлебом и семечками, читайте в нашем материале."
+        },
+        {
+          "title": "Можно ли с собакой в отель | muyo.ru",
+          "url": "https://muyo.ru/guide/mozhno-li-s-sobakoy-v-otel/",
+          "snippet": "Изучаем новые штрафы для владельцев собак в многоквартирных домах. Узнайте правила выгула без поводка, как работает закон о тишине и кто накажет за неубранный подъезд."
+        },
+        {
+          "title": "Штрафы для владельцев собак в 2026 году",
+          "url": "https://dzen.ru/a/afrkq370Rn0awlg7",
+          "snippet": "Если собака лает ночью или поцарапала дверь, отель вправе удержать часть депозита или попросить выехать — это нормальная практика, а не обман."
+        },
+        {
+          "title": "Дорогой лай и запретный самовыгул: сколько придется заплатить ...",
+          "url": "https://dzen.ru/a/anjX4K3UpQP2E-10",
+          "snippet": "Государство окончательно перестало опираться на устную совесть хозяев: Госдума утвердила жесткие поправки в КоАП, заменив профилактические беседы реальными штрафами. Оставленные на тротуаре отходы или выгул без амуниции обойдутся в сумму до 3000 рублей на федеральном уровне."
+        },
+        {
+          "title": "За что мы любим кошек и собак — и почему спор об этом не закончится",
+          "url": "https://crimea-news.com/society/2026/09/25/2078722.html",
+          "snippet": "В 2026 году правила содержания домашних животных стали строже: теперь за прогулку без поводка или ночной лай в квартире можно получить внушительный штраф."
+        }
+      ],
+      "searched_at": "2026-09-25"
+    },
+    {
+      "query_id": "official_docs",
+      "query": "собака доплата у двери official docs 2026",
+      "purpose": "официальные docs",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "PDF ПРАВИТЕЛЬСТВО РОССИЙСКОЙ ФЕДЕРАЦИИ ПОСТАНОВЛЕНИЕ от 14 сентября 2026 ...",
+          "url": "https://proinfosoft.ru/assets/files/news/2026/14092026N1166.pdf",
+          "snippet": ""
+        },
+        {
+          "title": "Новые правила перевозки собак в самолёте 2026: доплата за шерсть и ...",
+          "url": "https://totdom.com/news/sobaki_v_samolete_shershavaya_problema_ili_novyy_standart_chto_izmenit_dlya_vladeltsev_zhivotnykh/",
+          "snippet": "УТВЕРЖДЕНЫ постановлением Правительства Российской Федерации от 14 сентября 2026 года No 1166 Изменения, которые вносятся в акты Правительства Российской Федерации"
+        },
+        {
+          "title": "Министерство финансов Российской Федерации",
+          "url": "https://minfin.gov.ru/",
+          "snippet": "Согласно новым правилам, которые вступили в силу в некоторых авиакомпаниях, владельцы собак должны учитывать не только размеры своих питомцев, но и их шерсть. Теперь некоторые компании требуют дополнительную плату за перевозку животных, особенно если у них длинная шерсть."
+        },
+        {
+          "title": "Google Документы: онлайн-документы и PDF-редактор | Google Workspace",
+          "url": "https://workspace.google.com/intl/ru/products/docs/",
+          "snippet": "Повестка № 11 от 25.09.2026 очного заседания Общественного совета при Министерстве финансов Российской Федерации «О рассмотрении доклада о повышении эффективности расходов бюджетных ..."
+        },
+        {
+          "title": "Выплату на содержание собак-проводников можно получить раз в год. Её ...",
+          "url": "https://vk.com/wall-217438047_780",
+          "snippet": "Сколько стоит доступ к Google Документам? Любой пользователь, у которого есть аккаунт Google, может создавать документы."
+        },
+        {
+          "title": "Документы - Правительство России",
+          "url": "http://government.ru/docs/all/166253/",
+          "snippet": "Доплата состоит в размере разницы между пятикратной величиной прожиточного минимума по Иркутской области (в 2024 году однократная величина составляет 16 380 рублей) и размером уже ..."
+        }
+      ],
+      "searched_at": "2026-09-25"
+    },
+    {
+      "query_id": "github_evidence",
+      "query": "site:github.com собака доплата у двери 2026",
+      "purpose": "GitHub evidence",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "makuo/BGDP.jpg at main · Kaida-19/makuo · GitHub",
+          "url": "https://github.com/Kaida-19/makuo/blob/main/BGDP.jpg",
+          "snippet": ""
+        },
+        {
+          "title": "Fizgig/icon.png at master · shootthesound/Fizgig · GitHub",
+          "url": "https://github.com/shootthesound/Fizgig/blob/master/icon.png",
+          "snippet": "Contribute to Kaida-19/makuo development by creating an account on GitHub."
+        },
+        {
+          "title": "halyard/icon.png at main · mikest/halyard · GitHub",
+          "url": "https://github.com/mikest/halyard/blob/main/icon.png",
+          "snippet": "Krea 2, MiniMax & Klein 9B LoRA - LoKR Studio — train, profile, repair, and extract Krea 2, Flux 2 Klein 9B & MiniMax LoRAs & LoKRs - Fizgig/icon.png at master · shootthesound/Fizgig"
+        },
+        {
+          "title": "Dino2/icon.svg at main · rakibmondal003/Dino2 · GitHub",
+          "url": "https://github.com/rakibmondal003/Dino2/blob/main/icon.svg",
+          "snippet": "Rope simulation for Godot 4.5+. Contribute to mikest/halyard development by creating an account on GitHub."
+        },
+        {
+          "title": "Setiyoaryo/images/Mikrotik.svg at main - GitHub",
+          "url": "https://github.com/Setiyoaryo/Setiyoaryo/blob/main/images/Mikrotik.svg",
+          "snippet": "Contribute to rakibmondal003/Dino2 development by creating an account on GitHub."
+        },
+        {
+          "title": "FlagTree/.github/assets/nv_h100_fp32_mm_1a.png at main · flagos-ai ...",
+          "url": "https://github.com/flagos-ai/FlagTree/blob/main/.github/assets/nv_h100_fp32_mm_1a.png",
+          "snippet": "Contribute to Setiyoaryo/Setiyoaryo development by creating an account on GitHub."
+        }
+      ],
+      "searched_at": "2026-09-25"
+    },
+    {
+      "query_id": "community_experience",
+      "query": "собака доплата у двери forum problems опыт 2026",
+      "purpose": "форумы и живые проблемы",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Городская мистика против физики: что на самом деле происходит, когда к ...",
+          "url": "https://www.pravda.ru/zoo/2348258-automatic-doors-sensors/",
+          "snippet": ""
+        },
+        {
+          "title": "Почему лишение контроля усиливает поведение Когда собака лежит у двери ...",
+          "url": "https://vk.com/wall-171866203_815623",
+          "snippet": "Почему автоматические двери в магазинах не открываются перед животными? Эксперты объясняют работу датчиков, технические требования к безопасности и настройки сенсоров."
+        },
+        {
+          "title": "Почему лишение контроля усиливает поведение Когда собака лежит у двери ...",
+          "url": "https://vk.com/wall-236776118_1459",
+          "snippet": "Важно помнить, это работает там, где нервная система ещё способна учиться. Если собака уже в сильном возбуждении, сначала нужно снижать общий фон. Контроль не убирают силой - его ..."
+        },
+        {
+          "title": "Собака лает на звонок и гостей: 5-шаговый протокол переобучения",
+          "url": "https://animaapp.ru/articles/dog-doorbell-barking-fix/",
+          "snippet": "Важно помнить, это работает там, где нервная система ещё способна учиться. Если собака уже в сильном возбуждении, сначала нужно снижать общий фон. Контроль не убирают силой - его ..."
+        },
+        {
+          "title": "Электронная \"лающая \" собака. Опыт использования?",
+          "url": "https://www.dverizamki.org/forum/index.php?topic=1215.0",
+          "snippet": "Почему собака лает на дверной звонок и как это исправить: 5-шаговый протокол десенсибилизации, тренировки альтернативного поведения и типичные ошибки хозяев."
+        },
+        {
+          "title": "Собака лает на дверь. Что делать? — Favet — Wibes",
+          "url": "https://wibes.ru/article/sobaka-laet-na-dver-chto-delat-6574154",
+          "snippet": "Ответьте, пожалуйста, действенная-ли эта вещь-DG-198 (электронная собака), и действительно у неё \"реальный\" лай? Есть у кого-нибудь опыт эксплуатации? Каковы мнения по поводу..."
+        }
+      ],
+      "searched_at": "2026-09-25"
+    }
+  ],
+  "errors": []
+}
