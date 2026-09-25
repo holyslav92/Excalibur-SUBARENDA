@@ -1,0 +1,10 @@
+{
+  "topic_id": "B03",
+  "h1": "Обещали горячую воду. В 23:40 душ выдал ледяную струю",
+  "title": "Обещали горячую воду. В 23:40 душ выдал ледяную струю",
+  "slug": "posutochno-goryachaya-voda-obeschali-ledyanoj-dush-nochyu",
+  "subject": "горячая вода в посуточной квартире при позднем заезде",
+  "angle": "Klyshin two-beat: обещание в карточке — ледяная струя ночью. Demand spine «в квартире нет горячей воды» (2709 RU) под H1, не в заголовке. dzen_pattern 2 — обещание vs факт первой ночи, бойлер/магистраль в теле.",
+  "verdict": "PASS",
+  "generated_via": "excalibur_blog_derouter_opus_chat.py --role title"
+}
