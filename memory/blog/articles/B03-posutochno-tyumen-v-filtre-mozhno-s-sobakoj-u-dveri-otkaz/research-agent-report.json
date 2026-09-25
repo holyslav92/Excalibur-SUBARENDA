@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "research_date": "2026-09-25",
+  "topic_id": "B03",
+  "topic": "pet-friendly фильтр vs отказ/лимит веса у двери, посуточно Тюмень",
+  "fresh_signal": "t.me/Dobriy_dom_72 posts 2026-09-25 + vk.com/wall-224399874_300 SERP + host.avito.com lesson-3 live",
+  "wordstat_status": "PASS",
+  "official_source_audit": {
+    "required": false,
+    "status": "NOT_REQUIRED",
+    "reason": "Нет тарифов/комиссий банков; платформенные правила сверены по sutochno.ru/help и host.avito.com",
+    "verified_claims": 0,
+    "entities_checked": ["sutochno", "avito_host"],
+    "errors": []
+  }
+}
