@@ -79,14 +79,18 @@ FAIL → **вернуть Cover** (не Indexer/Publish).
 
 При FAIL — `status: FAIL`, перечисли checks=false и **не** пускай дальше.
 
-## Gate (shell)
+**HARD:** `cover/cover_qa.json` с `status: PASS` **без** exit 0 gate-скрипта —
+недостаточно (B03: JSON PASS при локальном FAIL drawn-logo/composite).
+Publish preflight гоняет тот же скрипт.
+
+## Gate (shell) — обязателен после JSON
 
 ```bash
 ARTICLE="memory/blog/articles/<topic_id>-<slug>"
 python3 scripts/excalibur_blog_cover_qa_gate.py --article-dir "$ARTICLE"
 ```
 
-Только `OK cover QA stamp` → Indexer.
+Только stdout `OK cover QA stamp` (exit 0) → Indexer / Publish.
 
 ## Blockers
 

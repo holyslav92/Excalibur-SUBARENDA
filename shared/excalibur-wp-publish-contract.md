@@ -15,6 +15,8 @@ Excalibur BLOG готовит артефакты локально; публик�
 - `article.html`, `article.meta.json` (`pipeline_canon` stamp, `theme_blocks.*.skip`)
 - `schema.jsonld` + `schema-gate.json` PASS
 - `cover/cover.png` + `cover-registry.json` (alt)
+- `cover/cover_qa.json` PASS **and** `excalibur_blog_cover_qa_gate.py` exit 0
+  (logo composite + drawn-logo pixel checks — JSON alone is not enough)
 - `link-verify.json` (verdict pass)
 - Cloud Secrets / env vars или `memory/site.env.local` — FTP или SFTP доступ + `PUBLIC_SITE_URL` + `EXCALIBUR_BLOG_ALLOW_PUBLISH=yes`
 - **Секреты:** `FTP_HOST` / `FTP_USER` / `FTP_PASS` / `FTP_ROOT` / `FTP_PORT` / `FTP_TRANSPORT`
@@ -42,6 +44,7 @@ python3 scripts/excalibur_blog_wp_publish.py \
 1. **Preflight gates** (обязательно, иначе BLOCKER; emergency `--skip-gates`):
    - `link-verify.json` → `verdict: pass`
    - `schema.jsonld`, `schema-gate.json` PASS, `cover/cover.png`
+   - `excalibur_blog_cover_qa_gate.py` PASS (same checks as Cover-QA agent)
    - `article.html` + `article.meta.json` с `pipeline_canon` stamp
    - `freshness-report.json` — только если файл есть → PASS
      (`excalibur_blog_contract_freshness.py`)
@@ -73,7 +76,10 @@ python3 scripts/excalibur_blog_wp_publish.py \
 6. **Media completeness**: `WARN cover` / неполный inline upload → publish **fail** (не `OK post=` alone)
 7. Post meta `_excalibur_blog_schema_jsonld` — JSON-LD для `single.php`
 8. Post meta `_excalibur_blog_skip_theme_faq` = `1` — сигнал теме **не** добавлять глобальный FAQ-блок
-9. После publish — `llms.txt` + `llms-full.txt` в корень WP (`--deploy-llms` или `tenant-config.publish_options.deploy_llms_after_publish=true`)
+9. После publish — `llms.txt` + `llms-full.txt` в корень WP (`--deploy-llms` или
+   `tenant-config.publish_options.deploy_llms_after_publish=true`); transport via
+   `resolve_publish_transport` → FTP when `FTP_TRANSPORT=ftp` / port 21
+   (`excalibur_blog_llms_deploy.py` + `upload_text_file`)
 
 Маппинг полей WP Media Library:
 

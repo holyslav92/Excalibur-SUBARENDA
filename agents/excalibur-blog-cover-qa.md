@@ -27,12 +27,19 @@ FAIL → **вернуть Cover**, не пускать Indexer/Publish.
 - **host face на inline** → FAIL
 - **inline co-host / stock man / large meme person** → FAIL
 
-## PASS
+## PASS (порядок обязателен)
 
-Пишешь `cover/cover_qa.json` со всеми `checks: true`, `status: PASS`.
+1. Визуально проверь 8 PNG и артефакты (WOW rules, stickers, utility inline).
+2. Запиши `cover/cover_qa.json` со всеми `checks: true`, `status: PASS` **только**
+   если pixel/composite реально чистые (не «на глаз» при FAIL drawn-logo gate).
+3. **Финальный gate (обязателен, source of truth):**
 
 ```bash
 python3 scripts/excalibur_blog_cover_qa_gate.py --article-dir <dir>
 ```
+
+Без stdout `OK cover QA stamp` (exit 0) — **не** handoff PASS, Indexer и Publish
+заблокированы. Publish повторно гоняет тот же скрипт; JSON PASS без script OK
+недостаточен (B03 / drawn-logo mismatch).
 
 Skill: `skills/cover-qa-excalibur-blog/SKILL.md`

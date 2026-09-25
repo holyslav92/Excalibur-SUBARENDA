@@ -39,7 +39,7 @@ class PublishTransportTest(unittest.TestCase):
 
     def test_env_check_report_ftp_mode(self) -> None:
         env = {
-            "FTP_HOST": "vh368.timeweb.ru",
+            "FTP_HOST": "188.225.40.162",
             "FTP_USER": "ca21576_svyat",
             "FTP_PASS": "secret",
             "FTP_PORT": "21",
@@ -49,9 +49,12 @@ class PublishTransportTest(unittest.TestCase):
             "EXCALIBUR_BLOG_ALLOW_PUBLISH": "no",
         }
         report = publish_env_check_report(env)
-        self.assertEqual(report["transport"], "ftp")
+        transport = report["transport"]
+        assert isinstance(transport, dict)
+        self.assertEqual(transport["mode"], "ftp")
         self.assertFalse(report["allow_publish"])
-        self.assertEqual(report["remote"]["ftp_root"], "sublease/public_html")
+        self.assertEqual(transport["port"], "21")
+        self.assertEqual(transport["pasv_rewrite_ip"], "188.225.40.162")
 
     @patch("excalibur_blog_remote_transport._upload_text_ftp")
     def test_upload_dispatches_ftp(self, mock_ftp: MagicMock) -> None:
