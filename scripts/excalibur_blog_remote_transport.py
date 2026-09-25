@@ -292,6 +292,36 @@ def delete_remote_file(
             ftp.close()
 
 
+def resolve_publish_transport(env: dict[str, str]) -> str:
+    mode = transport_mode(env)
+    if mode == "ftp":
+        return "ftp"
+    port = int((env.get("FTP_PORT") or env.get("SSH_PORT") or "22").strip() or "22")
+    return "ftp" if port == 21 else "sftp"
+
+
+def remote_path(env: dict[str, str], remote_name: str) -> str:
+    root = (env.get("FTP_ROOT") or env.get("SSH_ROOT") or ".").strip() or "."
+    root = root.rstrip("/")
+    name = remote_name.lstrip("/")
+    if root in {".", ""}:
+        return name
+    return f"{root}/{name}"
+
+
+def _upload_text_ftp(env: dict[str, str], remote_name: str, data: bytes) -> str:
+    selected_root, _log = find_wp_root(env)
+    upload_bytes(env, remote_name, data, root=selected_root)
+    return remote_path(env, remote_name)
+
+
+def upload_text_file(env: dict[str, str], remote_name: str, data: bytes) -> str:
+    mode = resolve_publish_transport(env)
+    if mode == "ftp":
+        return _upload_text_ftp(env, remote_name, data)
+    raise RuntimeError("SFTP upload_text_file not implemented; set FTP_TRANSPORT=ftp for Timeweb")
+
+
 def cli_find_wp_root() -> int:
     import json
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Cover QA gate — stamp cover/cover_qa.json after visual checks."""
+"""Cover QA gate — validate cover/cover_qa.json + pixel/composite checks (Publish preflight)."""
 
 from __future__ import annotations
 

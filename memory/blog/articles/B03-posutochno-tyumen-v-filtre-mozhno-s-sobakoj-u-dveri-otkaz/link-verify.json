@@ -1,0 +1,85 @@
+{
+  "source": "memory/blog/articles/B03-posutochno-tyumen-v-filtre-mozhno-s-sobakoj-u-dveri-otkaz/article.html",
+  "total_links": 8,
+  "failed_count": 0,
+  "verdict": "pass",
+  "links": [
+    {
+      "url": "{{SITE_BASE}}/blog/bez-zaloga-v-filtre-zalog-u-dveri/",
+      "status": 200,
+      "ok": true,
+      "method": "HEAD",
+      "error": null,
+      "kind": "internal_relative",
+      "skipped": false,
+      "checked_url": "{{SITE_BASE}}/blog/bez-zaloga-v-filtre-zalog-u-dveri/"
+    },
+    {
+      "url": "{{SITE_BASE}}/blog/mozhno-s-detmi-doplata-za-rebenka/",
+      "status": 200,
+      "ok": true,
+      "method": "HEAD",
+      "error": null,
+      "kind": "internal_relative",
+      "skipped": false,
+      "checked_url": "{{SITE_BASE}}/blog/mozhno-s-detmi-doplata-za-rebenka/"
+    },
+    {
+      "url": "https://t.me/Dobriy_dom_72",
+      "status": 200,
+      "ok": true,
+      "method": "HEAD",
+      "error": null,
+      "kind": "external",
+      "skipped": false
+    },
+    {
+      "url": "https://max.ru/id660300569233_biz",
+      "status": 200,
+      "ok": true,
+      "method": "HEAD",
+      "error": null,
+      "kind": "external",
+      "skipped": false
+    },
+    {
+      "url": "{{SITE_BASE}}/blog/napisali-bez-zaloga-u-dveri-5000/",
+      "status": 200,
+      "ok": true,
+      "method": "HEAD",
+      "error": null,
+      "kind": "internal_relative",
+      "skipped": false,
+      "checked_url": "{{SITE_BASE}}/blog/napisali-bez-zaloga-u-dveri-5000/"
+    },
+    {
+      "url": "{{SITE_BASE}}/blog/instrukciya-zaseleniya-posutochno-ne-tot-podezd/",
+      "status": 200,
+      "ok": true,
+      "method": "HEAD",
+      "error": null,
+      "kind": "internal_relative",
+      "skipped": false,
+      "checked_url": "{{SITE_BASE}}/blog/instrukciya-zaseleniya-posutochno-ne-tot-podezd/"
+    },
+    {
+      "url": "https://t.me/Dobriy_dom_Tyumen",
+      "status": 200,
+      "ok": true,
+      "method": "HEAD",
+      "error": null,
+      "kind": "external",
+      "skipped": false
+    },
+    {
+      "url": "{{SITE_BASE}}/booking/",
+      "status": 200,
+      "ok": true,
+      "method": "HEAD",
+      "error": null,
+      "kind": "internal_relative",
+      "skipped": false,
+      "checked_url": "{{SITE_BASE}}/booking/"
+    }
+  ]
+}

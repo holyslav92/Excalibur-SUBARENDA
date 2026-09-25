@@ -128,10 +128,11 @@ def _read_env_file(path: Path) -> dict[str, str]:
 def load_env(root: Path) -> dict[str, str]:
     """Load publish secrets.
 
-    Canon: FTP_* and SSH_* are the **same** SFTP credentials under two names.
-    Transport is always SFTP/SSH (port 22). Never attempt plain FTP upload.
-    Prefer setting FTP_HOST / FTP_USER / FTP_PASS / FTP_ROOT in Cloud Secrets;
-    SSH_* are optional aliases. Empty or ``/`` root means SFTP login cwd (``.``).
+    Canon: FTP_* and SSH_* share the same remote account under two names.
+    Default transport is SFTP (port 22). Timeweb PASV: ``FTP_TRANSPORT=ftp`` or
+    ``FTP_PORT=21`` (see ``excalibur_blog_remote_transport.py``).
+    Prefer ``FTP_HOST`` / ``FTP_USER`` / ``FTP_PASS`` / ``FTP_ROOT`` in Cloud Secrets;
+    ``SSH_*`` are optional aliases. Empty or ``/`` root means login cwd (``.``).
     """
     env = _read_env_file(root / "memory/site.env.local")
     for key in PUBLISH_ENV_KEYS:
@@ -1300,6 +1301,13 @@ def check_publish_prerequisites(
                 blockers.append("interlink-gate.json status=BLOCK")
         except json.JSONDecodeError:
             blockers.append("interlink-gate.json invalid")
+
+    cover_qa_rc = _run_article_gate_script(root, article_dir, "excalibur_blog_cover_qa_gate.py")
+    if cover_qa_rc != 0:
+        blockers.append(
+            "cover-qa-gate failed (cover/cover_qa.json + logo composite / drawn-logo pixel checks; "
+            "run excalibur_blog_cover_qa_gate.py — manual checks=true without script OK is insufficient)"
+        )
 
     crosslink_rc = _run_article_gate_script(root, article_dir, "excalibur_blog_crosslink_qa_gate.py")
     if crosslink_rc != 0:
