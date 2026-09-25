@@ -3,28 +3,16 @@
   "window_days": 14,
   "entries": [
     {
-      "date": "2026-08-20",
-      "topic_id": "B01",
+      "date": "2026-09-25",
+      "topic_id": "B03",
       "slug": "",
       "motifs": {
-        "composition": "night entrance phone code",
-        "location": "tyumen apartment",
-        "meme": "cat sticker",
-        "prop_set": "keybox suitcase",
-        "sticker_set": "wordstat logo",
-        "joke": "wrong door code"
-      }
-    },
-    {
-      "date": "2026-08-20",
-      "topic_id": "B02",
-      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
-      "motifs": {
-        "composition": "poster collage chip on stove + phone bubble + bold headline, top-right empty logo pad",
-        "location": "tyumen apartment kitchen august warm evening green trees window",
-        "meme": "tiny cat sticker bottom-left ≤12%, never top-right pad",
-        "sticker_set": "залог посуточно, тюмень, скол на плите",
-        "joke": "cat reacts to countertop chip"
+        "composition": "guest dog door cash demand phone filter checkmark headline empty top-right pad",
+        "location": "tyumen apartment entrance autumn golden leaves september evening",
+        "meme": "tiny meme cat bottom-left approving filter check",
+        "prop_set": "smartphone leash suitcase golden leaves door keys",
+        "sticker_set": "посуточная квартира с собакой снять квартиру посуточно в тюмени",
+        "joke": "dog calmer than human hearing 3000 rubles at door"
       }
     }
   ]

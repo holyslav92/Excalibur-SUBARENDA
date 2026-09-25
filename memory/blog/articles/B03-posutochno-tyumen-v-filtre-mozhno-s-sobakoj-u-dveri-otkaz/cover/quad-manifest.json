@@ -1,0 +1,185 @@
+{
+  "topic_id": "B03",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": [
+        "inline_4",
+        "inline_5",
+        "inline_6",
+        "inline_7"
+      ],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "cover_hook": "С собакой — доплата у двери",
+  "cover_hook_highlight": "доплата",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Derouter REST (DEROUTER_API_KEY) — 2K 16:9, one job per canvas (2×). Cover agent invents cover_hook + scene_hint/alt before --write-batch. Host lock = blog-hero.json (navy blazer, not hoodie).",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Гостья с крупной собакой у двери посуточной квартиры в Тюмени узнаёт о доплате 3000 ₽, хотя в фильтре было «можно с животными» — осенний постер.",
+      "scene_hint": "Autumn Tyumen door: guest + 32kg dog, host palm cash demand, phone pet-filter vs 3000₽ bubble; bold hook «доплата» gold; sun flare; TOP-RIGHT empty pad; cat sticker bottom-left ≤12%; NO logo/phone",
+      "meme_caption_ru": "",
+      "sticky": "Спроси до оплаты"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Случай: в фильтре — можно, у двери — 3 000 ₽",
+      "visual_type": "comparison_table_ui",
+      "scene_hint": "Compare table: filter «можно» vs 3000₽ у двери; facts 1772/1500₽/32кг; torn paper gold ink.",
+      "alt": "Сравнение pet-friendly фильтра и неожиданной доплаты 3000 рублей при заселении с собакой",
+      "labels": [
+        "1772 объявления",
+        "от 1500 ₽",
+        "пёс 32 кг",
+        "3000 ₽ наличными",
+        "искала другой вариант"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Почему галочка в фильтре ничего не обещает",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Flow 5 steps: фильтр → блок «Животные» → вес/порода → доплата → скрин чата; arrows icons.",
+      "alt": "Пошаговый порядок бронирования посуточной квартиры с собакой без неожиданной доплаты",
+      "labels": [
+        "лимит по весу",
+        "доплата за заезд",
+        "нужен депозит",
+        "блок «Животные»",
+        "отказ от брони"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Где ломается именно собака, а не кот",
+      "visual_type": "checklist_board",
+      "scene_hint": "Bar chart: доплата 1500 vs 3000₽; weight limit; 7 Wordstat Tyumen; checklist chips.",
+      "alt": "Когда проверять возможность проживания с собакой: до бронирования, до заезда и у двери",
+      "labels": [
+        "1500 ₽ доплата",
+        "3000 ₽ доплата",
+        "породу уточнить",
+        "не оставлять одного",
+        "7 запросов Тюмень"
+      ]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Что спросить и зафиксировать до оплаты",
+      "visual_type": "schema_faq_ui",
+      "scene_hint": "Diagram 7 chat questions: вес 32кг, порода, доплата/сутки, скрин до оплаты; numbered nodes.",
+      "alt": "Какие условия нужно уточнить для проживания с собакой весом 32 килограмма",
+      "labels": [
+        "7 вопросов в чат",
+        "вес 32 кг",
+        "указать породу",
+        "доплата за сутки",
+        "скриншот до оплаты"
+      ]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Один вопрос, который закрывает всю тему",
+      "visual_type": "tool_screenshot",
+      "scene_hint": "Checklist board: вес, порода, сумма до двери, «да»≠договор, доплата при брони; toggles.",
+      "alt": "Чек-лист перед оплатой посуточной квартиры для гостя с собакой",
+      "labels": [
+        "вес и порода",
+        "сумма до двери",
+        "«да» недостаточно",
+        "доплата при брони",
+        "не переводить вслепую"
+      ]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Переписка важнее галочки",
+      "visual_type": "infographic_card",
+      "scene_hint": "Card compare: галочка витрина vs переписка договорённость; скрины, вес/порода заранее.",
+      "alt": "Чем проверяемый pet-friendly фильтр лучше устного обещания при аренде квартиры посуточно",
+      "labels": [
+        "условия до оплаты",
+        "вес и порода",
+        "количество ночей",
+        "один в квартире",
+        "«Добрый дом»"
+      ]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "У нас так",
+      "visual_type": "comparison_table_ui",
+      "scene_hint": "FAQ 4 cards: галочка≠условия, поддержка+скрины, вес/порода заранее; small cat corner.",
+      "alt": "Что проверить у двери при заселении в квартиру посуточно с собакой",
+      "labels": [
+        "галочка — витрина",
+        "договорённость — квартира",
+        "поддержка и скрины",
+        "вес заранее",
+        "породу заранее"
+      ]
+    }
+  },
+  "cover_keys_ru": [
+    "посуточная квартира с собакой",
+    "снять квартиру посуточно в тюмени"
+  ],
+  "cover_emotion": "шок и усталость у подъезда: гостья с чемоданом и крупным псом 32 кг слышит про 3000 ₽ наличными, хотя в фильтре была галочка «можно с животными»",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "logo_paste_inline_slots": [
+    "inline_1",
+    "inline_3",
+    "inline_7"
+  ],
+  "wordstat_stickers": [
+    "посуточная квартира с собакой",
+    "снять квартиру посуточно в тюмени"
+  ],
+  "cover_motifs": {
+    "composition": "Гостья с крупной собакой слева у двери, хозяин только рукой и частью корпуса справа, смартфон с зелёной галочкой в переднем плане, headline в свободной центральной зоне, пустой верхний правый pad 8–12% под официальный логотип, все элементы разнесены без перекрытий",
+    "location": "Светлая входная зона посуточной квартиры в Тюмени, открытая дверь, осенние золотые листья снаружи, сентябрьский тёплый вечерний свет",
+    "meme": "Маленький стикер мемного кота с выражением «ну наконец-то» в нижнем левом углу, не более 12% кадра, не перекрывает собаку, текст и дверь",
+    "prop_set": [
+      "современный смартфон с зелёной галочкой pet-friendly-фильтра без бренда и читаемого интерфейса сервиса",
+      "поводок и аккуратный ошейник на собаке",
+      "небольшая дорожная сумка гостьи",
+      "золотые осенние листья",
+      "светлая входная дверь и ключевой цилиндр"
+    ],
+    "sticker_set": [
+      "посуточная квартира с собакой",
+      "снять квартиру посуточно в тюмени"
+    ],
+    "joke": "Шутка на контрасте: собака проходит фильтр спокойнее человека, а неожиданная доплата остаётся за дверью; маленький кот в углу одобрительно реагирует на зелёную галочку"
+  }
+}
