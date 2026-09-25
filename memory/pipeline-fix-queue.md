@@ -57,6 +57,38 @@ checks_run:
 - `python3 scripts/excalibur_blog_cover_qa_gate.py --article-dir memory/blog/articles/B03-posutochno-tyumen-v-filtre-mozhno-s-sobakoj-u-dveri-otkaz` (still FAIL on B03 artifacts — expected until Cover regen + gate PASS)
 commit: e92fc99c
 
+## INC-20260925-1506-content-learner-metrika-credentials
+status: open
+run_date: 2026-09-25
+role: excalibur-blog-content-learner
+topic_id: B03
+article_dir: memory/blog/articles/B03-posutochno-tyumen-v-filtre-mozhno-s-sobakoj-u-dveri-otkaz
+severity: blocker
+category: env
+
+### What went wrong
+- `python3 scripts/excalibur_blog_metrika_fetch.py --days 30 --ingest` exited with
+  `METRIKA CREDENTIALS BLOCKER` — `YANDEX_METRIKA_OAUTH_TOKEN` and
+  `YANDEX_METRIKA_COUNTER_ID` unset in Cloud env.
+- No `memory/analytics/metrika-latest.json` refresh; B03 post-publish behavioral
+  feedback loop blocked for this content-learner run.
+
+### How the agent recovered this run
+- Recorded LESSON-20260925-1506-B03-cover-qa-json-gate-split from pipeline
+  artifacts + cover QA gate FAIL vs JSON PASS (Metrika-independent).
+- Did not invent Metrika metrics or content-evidence-report.
+
+### Durable fix needed before next run
+- Set Yandex Metrika OAuth (`metrika:read`) and counter id in Cloud Secrets/env.
+- Re-run content-learner Metrika ingest after credentials land.
+
+### Suggested files to inspect/change
+- Cloud Secrets / tenant env for Metrika vars
+- `scripts/excalibur_blog_metrika_fetch.py`
+
+### Secrets
+- none recorded (missing vars only)
+
 ## INC-20260925-1500-llms-deploy-ftp-transport
 status: fixed
 run_date: 2026-09-25
