@@ -1,0 +1,25 @@
+{
+  "topic_id": "B03",
+  "research_date": "2026-09-25",
+  "status": "PASS",
+  "fresh_signal_check": {
+    "status": "PASS",
+    "reason": "Есть свежие news/community источники текущей недели: материалы Megatyumen от 11.09.2026 и 25.09.2026, а также локальный городской контекст."
+  },
+  "official_source_audit": {
+    "status": "NOT_REQUIRED",
+    "reason": "Нет тарифов/комиссий банков или точных нормативных цифр; УСТЭК — фактический official URL в source_table"
+  },
+  "wordstat": {
+    "status": "PASS",
+    "queries": [
+      "в квартире нет горячей воды",
+      "нет горячей воды в квартире что делать",
+      "проточный водонагреватель или бойлер",
+      "аренда квартиры в тюмени посуточно"
+    ],
+    "accessed_at": "2026-09-25"
+  },
+  "source_table_complete": true,
+  "notes_file": "research-notes.md"
+}
