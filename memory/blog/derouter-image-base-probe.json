@@ -1,0 +1,52 @@
+{
+  "probed_at": "2026-09-25T06:28:46.526939+00:00",
+  "model_env": "DEROUTER_IMAGE_MODEL",
+  "size": "2048x1152",
+  "candidates_default": [
+    "https://api.derouter.ai/openai/v1",
+    "https://api.apikey.cloud/openai/v1",
+    "https://api-direct.derouter.ai/openai/v1",
+    "https://api-direct.apikey.cloud/openai/v1"
+  ],
+  "candidates_effective": [
+    "https://api.derouter.ai/openai/v1",
+    "https://api.apikey.cloud/openai/v1",
+    "https://api-direct.derouter.ai/openai/v1",
+    "https://api-direct.apikey.cloud/openai/v1"
+  ],
+  "winner": null,
+  "results": [
+    {
+      "base": "https://api.derouter.ai/openai/v1",
+      "host": "api.derouter.ai",
+      "status": 404,
+      "ok": false,
+      "bytes": 0,
+      "error": "Derouter HTTP 404: <!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot POST /openai/v1/images/generations</pre>\n</body>\n</html>\n"
+    },
+    {
+      "base": "https://api.apikey.cloud/openai/v1",
+      "host": "api.apikey.cloud",
+      "status": 404,
+      "ok": false,
+      "bytes": 0,
+      "error": "Derouter HTTP 404: <!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot POST /openai/v1/images/generations</pre>\n</body>\n</html>\n"
+    },
+    {
+      "base": "https://api-direct.derouter.ai/openai/v1",
+      "host": "api-direct.derouter.ai",
+      "status": 404,
+      "ok": false,
+      "bytes": 0,
+      "error": "Derouter HTTP 404: <!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot POST /openai/v1/images/generations</pre>\n</body>\n</html>\n"
+    },
+    {
+      "base": "https://api-direct.apikey.cloud/openai/v1",
+      "host": "api-direct.apikey.cloud",
+      "status": 404,
+      "ok": false,
+      "bytes": 0,
+      "error": "Derouter HTTP 404: <!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot POST /openai/v1/images/generations</pre>\n</body>\n</html>\n"
+    }
+  ]
+}

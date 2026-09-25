@@ -1,0 +1,172 @@
+{
+  "topic_id": "B03",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": [
+        "inline_4",
+        "inline_5",
+        "inline_6",
+        "inline_7"
+      ],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "Обещали горячую воду — ледяной душ в 23:40",
+  "cover_hook_highlight": "горячую",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Derouter REST (DEROUTER_API_KEY) — 2K 16:9, one job per canvas (2×). Cover agent invents cover_hook + scene_hint/alt before --write-batch. Host lock = blog-hero.json (navy blazer, not hoodie).",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Осенний постер: гость в 23:40 получает ледяную струю из душа, хотя в карточке обещали горячую воду — Тюмень, сентябрь 2026.",
+      "scene_hint": "POSTER сентябрь Тюмень: лейка+холодный термометр, гостья в халате, листья за окном; high-key flare; TOP-RIGHT empty pad; cat BL ≤12%; NO logo/phone in gen.",
+      "meme_caption_ru": "",
+      "sticky": "А из крана лёд"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Где ломается обещание «вода есть»",
+      "visual_type": "comparison_table_ui",
+      "scene_hint": "Compare table: магистраль/дом/квартира, clock 23:40, gold vs blue rows; torn paper; TOP-RIGHT empty pad; no people/cat.",
+      "alt": "Где ломается обещание «горячая вода есть»: магистраль, дом или квартира в 23:40",
+      "labels": [
+        "в 23:40",
+        "магистраль",
+        "домовые сети",
+        "бойлер в квартире",
+        "обещание в карточке"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Три причины ледяного крана",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Flow 23:40 droplet → 3 causes (city/building/boiler) → next step; gold arrows; white collage; no people/cat.",
+      "alt": "Три причины ледяного крана: город, домовые сети и бойлер в квартире",
+      "labels": [
+        "УСТЭК: магистраль",
+        "Рабфаковская, 2",
+        "бойлер выключен",
+        "бак пуст"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Бойлер: «есть» ≠ «можно мыться сейчас»",
+      "visual_type": "checklist_board",
+      "scene_hint": "Bar timeline 0–80 min, band 40–80 highlighted; blue→gold; Cyrillic labels; TOP-RIGHT empty pad; no people/cat.",
+      "alt": "Бойлер «есть» не значит «можно мыться сейчас»: прогрев 40–80 минут",
+      "labels": [
+        "проточный или накопительный",
+        "прогрев 40–80 минут",
+        "есть ≠ сейчас"
+      ]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Что спросить в переписке до оплаты",
+      "visual_type": "schema_faq_ui",
+      "scene_hint": "6-checkbox checklist before pay, 2 columns; gold checks; torn paper; high-key; no people/cat.",
+      "alt": "Шесть вопросов в переписке до оплаты про источник горячей воды",
+      "labels": [
+        "шесть вопросов",
+        "магистраль или бойлер",
+        "тип бойлера",
+        "прогрет к заезду",
+        "ночной контакт"
+      ]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Первая ночь в Тюмени осенью",
+      "visual_type": "tool_screenshot",
+      "scene_hint": "Fact card +9°C badge, rainy autumn window, cold-water warn; gold leaves; white poster; no people/cat.",
+      "alt": "Первая ночь в Тюмени осенью: +9 °C и холодный душ после дороги",
+      "labels": [
+        "плюс 9 °C",
+        "ветер 6 м/с",
+        "душ после дороги",
+        "холод ощущается сильнее"
+      ]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Вопрос, который стоит задать не в комментариях",
+      "visual_type": "infographic_card",
+      "scene_hint": "Decision fork: ждать час vs переехать/ночной контакт; clocks+arrows; torn paper; no people/cat.",
+      "alt": "Ждать час нагрева бойлера или съехать: ночной контакт с хозяином",
+      "labels": [
+        "ждать один час",
+        "или съехать",
+        "ответы ночью",
+        "Телеграм и МАКС"
+      ]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Как у нас в «Добрый дом»",
+      "visual_type": "comparison_table_ui",
+      "scene_hint": "Pre-book FAQ ladder: вода/бойлер/ночь icons; confirm step; TOP-RIGHT empty pad; no people/cat.",
+      "alt": "Как в «Добрый дом» заранее уточняют воду и бойлер до бронирования",
+      "labels": [
+        "указать источник воды",
+        "включить бойлер заранее",
+        "поздний заезд",
+        "предупредить об отключении",
+        "до бронирования"
+      ]
+    }
+  },
+  "cover_keys_ru": [
+    "в квартире нет горячей воды",
+    "квартиры посуточно тюмень"
+  ],
+  "cover_emotion": "измученное недоумение после ледяного душа в 23:40",
+  "cover_motifs": {
+    "composition": "диагональный коллаж «обещание против реальности»: тёплая золотая карточка объявления сверху слева, холодная душевая лейка и термометр по центру, гостья на правом краю; крупная чистая зона для заголовка",
+    "location": "светлая ванная посуточной квартиры в Тюмени, сентябрьская ночь +9°C, окно с дождевыми каплями и золотыми листьями",
+    "meme": "крошечный стикер кота внизу слева, не более 12% кадра, с комично округлёнными глазами",
+    "prop_set": "душевая лейка, аналоговый термометр у холодной синей зоны, нейтральный экран бронирования без брендов и UI, влажное полотенце, золотые листья за окном",
+    "sticker_set": "«в квартире нет горячей воды», «квартиры посуточно тюмень», липкая реплика «А из крана лёд»",
+    "joke": "Золотая карточка «горячую воду» визуально тает в маленькую ледяную каплю под душевой лейкой."
+  },
+  "wordstat_stickers": [
+    "в квартире нет горячей воды",
+    "квартиры посуточно тюмень",
+    "снять квартиру посуточно в тюмени"
+  ],
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "logo_paste_inline_slots": [
+    "inline_1",
+    "inline_3",
+    "inline_7"
+  ]
+}
