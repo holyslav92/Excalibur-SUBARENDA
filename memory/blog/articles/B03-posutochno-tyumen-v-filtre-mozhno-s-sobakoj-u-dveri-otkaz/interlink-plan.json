@@ -1,0 +1,30 @@
+{
+  "topic_id": "B03",
+  "slug": "posutochno-tyumen-v-filtre-mozhno-s-sobakoj-u-dveri-otkaz",
+  "title": "В фильтре — «с собакой». У двери крупного пса не пустили без 3 000 ₽",
+  "outbound_required_min": 1,
+  "outbound_found": [
+    {
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "title": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "permalink": "{{SITE_BASE}}/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+      "topic_id": "B01",
+      "post_id": null,
+      "source": "ledger"
+    }
+  ],
+  "outbound_missing_suggestions": [
+    {
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "title": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "permalink": "{{SITE_BASE}}/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/",
+      "topic_id": "B02",
+      "post_id": null,
+      "source": "ledger"
+    }
+  ],
+  "inbound_targets": [],
+  "inbound_updates": [],
+  "new_url": "{{SITE_BASE}}/blog/posutochno-tyumen-v-filtre-mozhno-s-sobakoj-u-dveri-otkaz/",
+  "dry_run": false
+}

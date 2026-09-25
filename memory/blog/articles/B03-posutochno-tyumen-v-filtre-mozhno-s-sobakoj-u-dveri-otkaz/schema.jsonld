@@ -1,7 +1,7 @@
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "@id": "{{SITE_BASE}}/posutochno-tyumen-v-filtre-mozhno-s-sobakoj-u-dveri-otkaz/#article",
+  "@id": "{{SITE_BASE}}/blog/posutochno-tyumen-v-filtre-mozhno-s-sobakoj-u-dveri-otkaz/#article",
   "headline": "В фильтре — «с собакой». У двери крупного пса не пустили без 3 000 ₽",
   "description": "Фильтр «можно с животными» не всегда означает согласие на размещение крупной собаки. Разбираем, что уточнить у хозяина до оплаты и как зафиксировать условия аренды посуточного жилья в Тюмени.",
   "inLanguage": "ru-RU",
@@ -19,6 +19,6 @@
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "{{SITE_BASE}}/posutochno-tyumen-v-filtre-mozhno-s-sobakoj-u-dveri-otkaz/"
+    "@id": "{{SITE_BASE}}/blog/posutochno-tyumen-v-filtre-mozhno-s-sobakoj-u-dveri-otkaz/"
   }
 }
