@@ -1,0 +1,111 @@
+{
+  "cover_hook": "Горячая вода всегда",
+  "cover_hook_highlight": "Лёд из душа",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "залог посуточно",
+    "бойлер"
+  ],
+  "cover_motifs": {
+    "composition": "bright bathroom-to-kitchen split collage with a startled guest, torn-paper headline strip and warm utility accents",
+    "location": "autumn Tyumen apartment, visible golden leaves and pale sunlight through the kitchen window",
+    "meme": "one tiny surprised cat sticker only on inline_3",
+    "prop_set": [
+      "shower mixer with icy droplets",
+      "compact boiler indicator",
+      "kitchen kettle with warm steam",
+      "autumn window"
+    ],
+    "sticker_set": [
+      "квартиры посуточно тюмень",
+      "залог посуточно",
+      "бойлер"
+    ],
+    "joke": "ледяная струя противопоставлена уютному тёплому дому"
+  },
+  "slots": {
+    "cover": {
+      "scene_hint": "Светлая квартира в осенней Тюмени: гость вздрагивает от ледяной струи у душа, рядом сияющая кухня и бойлер; солнечный блик, тёплый юмор, изумлённый шок. Пустая зона под логотип сверху справа.",
+      "cover_emotion": "изумлённый шок от холодного душа, комичный, но не карикатурный",
+      "headline_text": "Горячая вода всегда",
+      "sticky_text": "Лёд из душа",
+      "layout_notes": [
+        "bold readable Cyrillic magazine typography",
+        "empty clean top-right logo pad",
+        "no phone number or logo rendered inside generation",
+        "no Shakin face, no realtor host, no WordPress UI",
+        "high-key white, gold and black collage with torn paper, tape and sun flare"
+      ]
+    },
+    "inline_1": {
+      "visual_type": "comparison_table",
+      "scene_hint": "Светлая таблица-сравнение «Есть горячая вода / Риск холодного душа» с пиктограммами душа, бойлера и крана; осенний свет, без людей.",
+      "fact_labels": [
+        "Бойлер",
+        "Проверка воды",
+        "Комфорт гостя",
+        "До заселения"
+      ]
+    },
+    "inline_2": {
+      "visual_type": "process_flow",
+      "scene_hint": "Понятная схема из четырёх шагов: проверить бойлер, включить нагрев, дождаться готовности, принять гостя; белый фон, золотые стрелки, без людей.",
+      "fact_labels": [
+        "1. Проверить",
+        "2. Включить",
+        "3. Нагреть",
+        "4. Заселить"
+      ]
+    },
+    "inline_3": {
+      "visual_type": "bar_timeline_chart",
+      "scene_hint": "Инфографика готовности горячей воды: шкала от «холодно» к «готово», индикатор бойлера и одна маленькая наклейка-мем с удивлённым котом в углу, не более 15% кадра.",
+      "fact_labels": [
+        "Холодная вода",
+        "Нагрев",
+        "Готово",
+        "Бойлер"
+      ]
+    },
+    "inline_4": {
+      "visual_type": "structure_diagram",
+      "scene_hint": "Чистая схема квартиры: ввод воды, бойлер, ванная, кухня; линии соединений, бело-золотая палитра, без людей и без стокового интерьера.",
+      "fact_labels": [
+        "Ввод воды",
+        "Бойлер",
+        "Ванная",
+        "Кухня"
+      ]
+    },
+    "inline_5": {
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Чек-лист перед заселением в формате журнальной карточки: кран, душ, индикатор бойлера, запасной сценарий; яркий дневной свет, без людей.",
+      "fact_labels": [
+        "Кран работает",
+        "Душ проверен",
+        "Бойлер включён",
+        "Гостю понятно"
+      ]
+    },
+    "inline_6": {
+      "visual_type": "comparison_table",
+      "scene_hint": "Сравнение двух сценариев для посуточной квартиры: «без проверки» и «всё готово», с крупными понятными значками и короткими подписями.",
+      "fact_labels": [
+        "Без проверки",
+        "С проверкой",
+        "Холодный душ",
+        "Комфорт"
+      ]
+    },
+    "inline_7": {
+      "visual_type": "process_flow",
+      "scene_hint": "Финальная схема коммуникации с гостем: проверить воду, сообщить о бойлере, передать инструкцию, получить спокойное заселение; допускается чистая зона под маленький логотип.",
+      "fact_labels": [
+        "Проверить",
+        "Сообщить",
+        "Инструкция",
+        "Спокойное заселение"
+      ]
+    }
+  }
+}

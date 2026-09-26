@@ -1,0 +1,218 @@
+{
+  "agent": "excalibur-blog",
+  "date_context": {
+    "timezone": "Europe/Moscow",
+    "today_iso": "2026-09-26",
+    "today_ru": "26.09.2026",
+    "year": 2026,
+    "month": 9,
+    "month_name_ru": "сентябрь",
+    "weekday_ru": "суббота"
+  },
+  "topic": {
+    "topic_id": "B03",
+    "title": "Посуточно без горячей воды: бойлер сел ночью",
+    "h1": "Посуточно без горячей воды: бойлер сел ночью",
+    "slug": "posutochno-bez-goryachej-vody-bojler-sel-nochyu",
+    "primary_query": "Посуточно без горячей воды: бойлер сел ночью",
+    "priority": "P0"
+  },
+  "searches": [
+    {
+      "query_id": "primary_fresh",
+      "query": "Посуточно без горячей воды: бойлер сел ночью 2026",
+      "purpose": "актуальный SERP",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Выключать бойлер на ночь или нет: электрик со стажем объяснил, как ...",
+          "url": "https://day.ru/novaya-moskva/vyklyuchat-boyler-na-noch-ili-net-elektrik-so-stazhem-obyasnil-kak-platit-menshe_id20243_a515",
+          "snippet": ""
+        },
+        {
+          "title": "Когда россияне останутся без горячей воды и как пережить это без стресса",
+          "url": "https://pronedra.ru/gotovim-taziki-2026-kogda-v-rossii-otklyuchat-goryachuyu-vodu-i-mozhno-li-perezhit-eto-bez-stressa-817360.html",
+          "snippet": "Бойлер кажется довольно прожорливым прибором: несколько часов без горячей воды — и возникает желание выключить его из розетки, чтобы счётчик не крутился зря. Особенно на ночь, когда водой почти никто не пользуется ..."
+        },
+        {
+          "title": "Выключать бойлер на ночь или нет: электрик со стажем раскрыл, как не ...",
+          "url": "https://progoroduhta.ru/news/100429",
+          "snippet": "В 2026 году плановые профилактические работы в Москве стартуют уже в мае и продлятся до конца августа. Аналогичные отключения пройдут практически по всей стране — от Санкт-Петербурга до Иркутска."
+        },
+        {
+          "title": "Экстаз воспевания святого имени | Ночной киртан #shorts #киртан #бхакти ...",
+          "url": "https://www.youtube.com/watch?v=_R-sUBIQVwM",
+          "snippet": "Стоит ли отключать бойлер на ночь ради экономии? Расход зависит от объёма бака, теплоизоляции, тарифа и режима использования горячей воды."
+        },
+        {
+          "title": "Как помыться без горячей воды в квартире: советы сантехника",
+          "url": "https://rostovgazeta.ru/news/2026-09-23/kak-rostovchanam-pomytsya-bez-goryachey-vody-santehnik-nazval-bezopasnye-sposoby-5689620",
+          "snippet": "Искреннее прославление Всевышнего под сводами ночного неба пробуждает в сердце неподдельную радость и ..."
+        },
+        {
+          "title": "График отключения горячей воды в 2026 году: список городов с датами",
+          "url": "https://www.banki.ru/news/daytheme/?id=11023955",
+          "snippet": "Фото: rostovgazeta.ru. Бойлер оказался опаснее кастрюли в период отключений горячей воды в Ростове Пока в десятках донских домов восстанавливают горячее водоснабжение ..."
+        }
+      ],
+      "searched_at": "2026-09-26"
+    },
+    {
+      "query_id": "title_fresh",
+      "query": "Посуточно без горячей воды: бойлер сел ночью 2026",
+      "purpose": "SERP по человеческому title",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Топ-10 водонагревателей для квартиры с перебоями горячей воды — рейтинг ...",
+          "url": "https://santehnika-online.ru/wiki/kak-ne-ostatsya-bez-goryachey-vody-top-10-boylerov-dlya-kvartir-s-otklyucheniyami/",
+          "snippet": ""
+        },
+        {
+          "title": "Ваш бойлер тайно съедает деньги по ночам: физики раскрыли, что ...",
+          "url": "https://www.yuga.ru/polza/10467-vash-bojler-tajno-sedaet-dengi-po-nocham-fiziki-raskryli-chto-proiskhodit-s-nim-posle-2300/",
+          "snippet": "Подборка лучших водонагревателей для квартир с перебоями горячей воды: сухие ТЭНы, баки из нержавейки, Wi-Fi-управление. Сравнение объёмов 30-100 л, мощностей и особенностей."
+        },
+        {
+          "title": "Когда россияне останутся без горячей воды и как пережить это без стресса",
+          "url": "https://pronedra.ru/gotovim-taziki-2026-kogda-v-rossii-otklyuchat-goryachuyu-vodu-i-mozhno-li-perezhit-eto-bez-stressa-817360.html",
+          "snippet": "Если корпус бойлера ощутимо горячий, вода быстро остывает без расхода или ТЭН включается слишком часто, причиной может быть повреждение изоляции, накипь, неисправный термостат либо утечка ..."
+        },
+        {
+          "title": "Выключать бойлер на ночь или нет: электрик со стажем объяснил, как ...",
+          "url": "https://day.ru/novaya-moskva/vyklyuchat-boyler-na-noch-ili-net-elektrik-so-stazhem-obyasnil-kak-platit-menshe_id20243_a515",
+          "snippet": "В 2026 году плановые профилактические работы в Москве стартуют уже в мае и продлятся до конца августа. Аналогичные отключения пройдут практически по всей стране — от Санкт-Петербурга до Иркутска."
+        },
+        {
+          "title": "Почему Ночью Нет Горячей Воды",
+          "url": "https://vodobur24.ru/blog/pochemu-nochyu-net-goryachey-vody/",
+          "snippet": "Бойлер кажется довольно прожорливым прибором: несколько часов без горячей воды — и возникает желание выключить его из розетки, чтобы счётчик не крутился зря. Особенно на ночь, когда водой почти никто не пользуется ..."
+        },
+        {
+          "title": "Жители Лёвинцев полгода сидят без горячей воды",
+          "url": "https://www.newsler.ru/society/2026/09/22/zhiteli-lyovincev-polgoda-sidyat-bez-goryachej-vody",
+          "snippet": "В этой статье вы узнаете, почему ночью нет горячей воды в квартире или частном доме, и какие технические, экономические и организационные причины стоят за этой распространенной проблемой."
+        }
+      ],
+      "searched_at": "2026-09-26"
+    },
+    {
+      "query_id": "official_docs",
+      "query": "Посуточно без горячей воды: бойлер сел ночью official docs 2026",
+      "purpose": "официальные docs",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Как помыться без горячей воды в квартире: советы сантехника",
+          "url": "https://rostovgazeta.ru/news/2026-09-23/kak-rostovchanam-pomytsya-bez-goryachey-vody-santehnik-nazval-bezopasnye-sposoby-5689620",
+          "snippet": ""
+        },
+        {
+          "title": "Отключение горячей воды в Ростове 22-23 сентября 2026: адреса, сроки ...",
+          "url": "https://www.rostov.kp.ru/daily/277818/5306482/",
+          "snippet": "Фото: rostovgazeta.ru. Бойлер оказался опаснее кастрюли в период отключений горячей воды в Ростове Пока в десятках донских домов восстанавливают горячее водоснабжение ..."
+        },
+        {
+          "title": "5 домов в Белгороде на сутки останутся без горячей воды",
+          "url": "https://news-belgorod.ru/society/2026/09/24/181383.html",
+          "snippet": "Отключение горячей воды в Ростове 22-23 сентября 2026: адреса Уточняется, что без горячей воды остались жители десятков домов в Советском районе Ростова-на-Дону."
+        },
+        {
+          "title": "В Ростове более 120 домов остаются без горячей воды",
+          "url": "https://south.vedomosti.ru/south/news/2026/09/21/1230601-rostove",
+          "snippet": "5 домов в Белгороде на сутки останутся без горячей воды Об отключениях предупреждает филиал «РИР Энерго» - «Белгородская генерация». Они будут связаны с подготовкой к отопительному ..."
+        },
+        {
+          "title": "Стало известно, из-за чего екатеринбуржцы остались без горячей воды",
+          "url": "https://www.e1.ru/text/house/2026/09/22/76655206/",
+          "snippet": "В Ростове-на-Дону без горячего водоснабжения остаются 124 многоквартирных дома в нескольких районах города. Завершить ремонтные работы коммунальные службы планируют до 24 сентября, сообщил губернатор Ростовской ..."
+        },
+        {
+          "title": "Жители около 100 домов в Томске все еще сидят без горячей воды",
+          "url": "https://www.riatomsk.ru/article/20260925/zhiteli-okolo-100-domov-v-tomske-vse-esche-sidyat-bez-goryachei-vodi",
+          "snippet": "В Екатеринбурге с 15 сентября начался отопительный сезон, но многие дома остались без горячей воды. Причины и рекомендации для обращений — в статье. - Мой дом - 22 сентября 2026 | Е1.ру"
+        }
+      ],
+      "searched_at": "2026-09-26"
+    },
+    {
+      "query_id": "github_evidence",
+      "query": "site:github.com Посуточно без горячей воды: бойлер сел ночью 2026",
+      "purpose": "GitHub evidence",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Download GitHub Desktop",
+          "url": "https://desktop.github.com/download/",
+          "snippet": ""
+        },
+        {
+          "title": "unsupervised_topic_modeling/topics/ru/15/100/100/topics at ... - GitHub",
+          "url": "https://github.com/annontopicmodel/unsupervised_topic_modeling/blob/master/topics/ru/15/100/100/topics",
+          "snippet": "Focus on what matters instead of fighting with Git. Whether you're new to Git or a seasoned user, GitHub Desktop simplifies your development workflow. Experience the latest features and bug fixes before they're released. Looking for Windows? Need to download the installer for Windows? Do you use a Mac with Intel chip?"
+        },
+        {
+          "title": "articles/2026-08-pgpro-rp/pgpro-rp.md at master - GitHub",
+          "url": "https://github.com/lesovsky/articles/blob/master/2026-08-pgpro-rp/pgpro-rp.md",
+          "snippet": "Contribute to annontopicmodel/unsupervised_topic_modeling development by creating an account on GitHub."
+        },
+        {
+          "title": "GitHub Docs",
+          "url": "https://docs.github.com/",
+          "snippet": "Материалы к статьям: тексты, скрипты экспериментов, сырые данные и графики - lesovsky/articles"
+        },
+        {
+          "title": "GitHub - deepseek-ai/deepseek-harness: DeepSeek Harness: Everything is ...",
+          "url": "https://github.com/deepseek-ai/deepseek-harness",
+          "snippet": "Get started, troubleshoot, and make the most of GitHub. Documentation for new users, developers, administrators, and all of GitHub's products."
+        },
+        {
+          "title": "APP/codeguide-backdrop.svg at main · aldyisyan/APP · GitHub",
+          "url": "https://github.com/aldyisyan/APP/blob/main/codeguide-backdrop.svg",
+          "snippet": "DeepSeek Harness (dsh) is an open-source agent harness developed by DeepSeek AI. It is built on an everything-is-a-plugin architecture and powered by Cordis, whose design is described in A Programming Paradigm for Spatiotemporal Composability. Documentation: https://deepseek-harness.github.io/deepseek-harness/"
+        }
+      ],
+      "searched_at": "2026-09-26"
+    },
+    {
+      "query_id": "community_experience",
+      "query": "Посуточно без горячей воды: бойлер сел ночью forum problems опыт 2026",
+      "purpose": "форумы и живые проблемы",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Как помыться без горячей воды в квартире: советы сантехника",
+          "url": "https://rostovgazeta.ru/news/2026-09-23/kak-rostovchanam-pomytsya-bez-goryachey-vody-santehnik-nazval-bezopasnye-sposoby-5689620",
+          "snippet": ""
+        },
+        {
+          "title": "Выключать бойлер на ночь или нет: электрик со стажем объяснил, как ...",
+          "url": "https://day.ru/novaya-moskva/vyklyuchat-boyler-na-noch-ili-net-elektrik-so-stazhem-obyasnil-kak-platit-menshe_id20243_a515",
+          "snippet": "Фото: rostovgazeta.ru. Бойлер оказался опаснее кастрюли в период отключений горячей воды в Ростове Пока в десятках донских домов восстанавливают горячее водоснабжение ..."
+        },
+        {
+          "title": "Вопрос по бойлеру! - Форум onliner.by",
+          "url": "https://forum.onliner.by/viewtopic.php?f=136&p=116618913",
+          "snippet": "Бойлер кажется довольно прожорливым прибором: несколько часов без горячей воды — и возникает желание выключить его из розетки, чтобы счётчик не крутился зря. Особенно на ночь, когда водой почти никто не пользуется ..."
+        },
+        {
+          "title": "Выключать бойлер на ночь или нет: электрик со стажем раскрыл, как не ...",
+          "url": "https://progoroduhta.ru/news/100429",
+          "snippet": "Всем привет. В квартире пользуюсь бойлером две недели в году, когда отключают горячую воду. Нужно ли сливать воду из бойлера на 11,5 месяцев или лучше оставить?"
+        },
+        {
+          "title": "Сантехник поставил точку в спорном вопросе: выключать бойлер на ночь ...",
+          "url": "https://progorodnn.ru/news/160533",
+          "snippet": "Нужно ли выключать бойлер на ночь для экономии электричества Кажется логичным: выдернул вилку перед сном — несколько часов электричество не расходуется."
+        },
+        {
+          "title": "Выключать бойлер на ночь или оставлять включенным: расходует ли это ...",
+          "url": "https://peterburg2.ru/news/rashoduet-li-boyler-bolshe-elektrichestva-esli-ego-otklyuchat-na-noch-251823.html",
+          "snippet": "Сантехник поставил точку в спорном вопросе: выключать бойлер на ночь или оставлять включенным Бытовая техника Для дома 14:12 24 сентября"
+        }
+      ],
+      "searched_at": "2026-09-26"
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "topic_id": "B03",
+  "slug": "posutochno-bez-goryachej-vody-bojler-sel-nochyu",
+  "candidates_count": 7,
+  "outbound_found": [
+    {
+      "slug": "zalog-utrom-posle-uborki",
+      "title": "Залог 5 000 ₽ обещали вернуть утром. Потом — «после уборки»"
+    }
+  ],
+  "outbound_required_min": 1,
+  "errors": []
+}

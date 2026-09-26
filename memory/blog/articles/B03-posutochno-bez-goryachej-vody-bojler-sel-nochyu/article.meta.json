@@ -1,0 +1,15 @@
+{
+  "topic_id": "B03",
+  "slug": "posutochno-bez-goryachej-vody-bojler-sel-nochyu",
+  "title": "В объявлении — «горячая вода всегда». Ночью бойлер сдался",
+  "h1": "В объявлении — «горячая вода всегда». Ночью бойлер сдался",
+  "description": "«Горячая вода всегда» звучит спокойно — пока в 01:52 из душа идёт лёд, а хост не отвечает. Разбираем ночной кейс: бойлер на 80 литров, шестеро гостей и что спросить до оплаты.",
+  "wp_category_slugs": ["posutochnaya-arenda", "sovety-gostyam"],
+  "theme_blocks": {"faq": "skip", "quiz": "skip", "side_stickers": "skip"},
+  "status": "draft_ready",
+  "author_id": "dobry-dom",
+  "article_mode": "B",
+  "date": "2026-09-26",
+  "pipeline_canon": "human-first-v2",
+  "editorial_swarm": false
+}

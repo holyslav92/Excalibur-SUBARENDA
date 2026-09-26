@@ -1,0 +1,62 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/posutochno-bez-goryachej-vody-bojler-sel-nochyu/#article",
+  "url": "{{SITE_BASE}}/posutochno-bez-goryachej-vody-bojler-sel-nochyu/",
+  "headline": "В объявлении — «горячая вода всегда». Ночью бойлер сдался",
+  "description": "«Горячая вода всегда» звучит спокойно — пока в 01:52 из душа идёт лёд, а хост не отвечает. Разбираем ночной кейс: бойлер на 80 литров, шестеро гостей и что спросить до оплаты.",
+  "inLanguage": "ru-RU",
+  "datePublished": "2026-09-26",
+  "dateModified": "2026-09-26",
+  "author": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/posutochno-bez-goryachej-vody-bojler-sel-nochyu/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/"
+  },
+  "mainEntity": {
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Можно ли снимать квартиру, если в доме отключили ГВС?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Можно, если хост заранее сказал об отключении и честно объяснил, какой бойлер стоит в квартире, сколько в нём литров и на какое число гостей его хватает."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Хватит ли бойлера на 80 литров семье?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Для двоих-троих человек обычно может хватить при разумном расходе. Для шести гостей утром перед выездом — это уже почти наверняка очередь, даже если сам бойлер исправен."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Что попросить у хоста перед переводом?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Уточните отключение ГВС на ваши даты, объём бойлера, число гостей и попросите короткое видео с горячей водой из крана. Это занимает несколько минут и снимает много вопросов."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Куда писать, если нужно проверить адрес в Тюмени?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Напишите нам в Telegram или в MAX: укажите улицу, даты и сколько вас будет. Посмотрим по вашему окну и подскажем честно."
+        }
+      }
+    ]
+  }
+}
