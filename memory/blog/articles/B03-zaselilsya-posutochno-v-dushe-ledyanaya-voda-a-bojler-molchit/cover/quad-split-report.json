@@ -12,29 +12,29 @@
           941
         ],
         "panel_size_px": [
-          829,
-          463
+          832,
+          465
         ],
         "split_meta": {
           "split_mode": "gutter_detect",
           "h_gutter_px": {
-            "start": 463,
-            "end": 479
+            "start": 465,
+            "end": 471
           },
           "v_gutter_px": {
-            "start": 829,
-            "end": 846
+            "start": 832,
+            "end": 840
           },
           "requested_mode": "auto",
           "gutter_quality": {
-            "h_center_offset_px": 0.5,
-            "v_center_offset_px": 1.5,
-            "max_aspect_crop_loss": 0.0097,
+            "h_center_offset_px": 2.5,
+            "v_center_offset_px": 0.0,
+            "max_aspect_crop_loss": 0.006,
             "per_panel_crop_loss": {
-              "top_left": 0.0072,
-              "top_right": 0.0,
-              "bottom_left": 0.0097,
-              "bottom_right": 0.0061
+              "top_left": 0.006,
+              "top_right": 0.006,
+              "bottom_left": 0.0,
+              "bottom_right": 0.0
             },
             "reject_reason": null
           }
@@ -48,16 +48,16 @@
             "file": "cover/inline-04.png",
             "quadrant": "top_left",
             "box_px": {
-              "left": 3,
+              "left": 2,
               "top": 0,
-              "right": 826,
-              "bottom": 463
+              "right": 829,
+              "bottom": 465
             },
             "raw_box_px": {
               "left": 0,
               "top": 0,
-              "right": 829,
-              "bottom": 463
+              "right": 832,
+              "bottom": 465
             },
             "size_px": [
               1200,
@@ -71,16 +71,16 @@
             "file": "cover/inline-05.png",
             "quadrant": "top_right",
             "box_px": {
-              "left": 846,
+              "left": 842,
               "top": 0,
-              "right": 1672,
-              "bottom": 463
+              "right": 1669,
+              "bottom": 465
             },
             "raw_box_px": {
-              "left": 846,
+              "left": 840,
               "top": 0,
               "right": 1672,
-              "bottom": 463
+              "bottom": 465
             },
             "size_px": [
               1200,
@@ -94,15 +94,15 @@
             "file": "cover/inline-06.png",
             "quadrant": "bottom_left",
             "box_px": {
-              "left": 4,
-              "top": 479,
-              "right": 825,
+              "left": 0,
+              "top": 471,
+              "right": 832,
               "bottom": 941
             },
             "raw_box_px": {
               "left": 0,
-              "top": 479,
-              "right": 829,
+              "top": 471,
+              "right": 832,
               "bottom": 941
             },
             "size_px": [
@@ -117,14 +117,14 @@
             "file": "cover/inline-07.png",
             "quadrant": "bottom_right",
             "box_px": {
-              "left": 848,
-              "top": 479,
-              "right": 1669,
+              "left": 840,
+              "top": 471,
+              "right": 1672,
               "bottom": 941
             },
             "raw_box_px": {
-              "left": 846,
-              "top": 479,
+              "left": 840,
+              "top": 471,
               "right": 1672,
               "bottom": 941
             },
@@ -149,31 +149,36 @@
           940
         ],
         "panel_size_px": [
-          831,
-          465
+          836,
+          470
         ],
         "split_meta": {
-          "split_mode": "gutter_detect",
-          "h_gutter_px": {
-            "start": 465,
-            "end": 475
-          },
-          "v_gutter_px": {
-            "start": 831,
-            "end": 842
-          },
+          "split_mode": "mechanical_center",
+          "h_gutter_px": null,
+          "v_gutter_px": null,
           "requested_mode": "auto",
-          "gutter_quality": {
-            "h_center_offset_px": 0.0,
-            "v_center_offset_px": 0.5,
-            "max_aspect_crop_loss": 0.0,
-            "per_panel_crop_loss": {
-              "top_left": 0.0,
-              "top_right": 0.0,
-              "bottom_left": 0.0,
-              "bottom_right": 0.0
+          "fallback_reason": "aspect_crop_loss_too_high",
+          "rejected_gutter": {
+            "h_gutter_px": {
+              "start": 470,
+              "end": 488
             },
-            "reject_reason": null
+            "v_gutter_px": {
+              "start": 832,
+              "end": 840
+            },
+            "gutter_quality": {
+              "h_center_offset_px": 9.0,
+              "v_center_offset_px": 0.0,
+              "max_aspect_crop_loss": 0.0337,
+              "per_panel_crop_loss": {
+                "top_left": 0.0,
+                "top_right": 0.0,
+                "bottom_left": 0.0337,
+                "bottom_right": 0.0337
+              },
+              "reject_reason": "aspect_crop_loss_too_high"
+            }
           }
         },
         "output_size_px": [
@@ -187,14 +192,14 @@
             "box_px": {
               "left": 0,
               "top": 0,
-              "right": 831,
-              "bottom": 465
+              "right": 836,
+              "bottom": 470
             },
             "raw_box_px": {
               "left": 0,
               "top": 0,
-              "right": 831,
-              "bottom": 465
+              "right": 836,
+              "bottom": 470
             },
             "size_px": [
               1200,
@@ -208,16 +213,16 @@
             "file": "cover/inline-01.png",
             "quadrant": "top_right",
             "box_px": {
-              "left": 842,
+              "left": 836,
               "top": 0,
               "right": 1672,
-              "bottom": 465
+              "bottom": 470
             },
             "raw_box_px": {
-              "left": 842,
+              "left": 836,
               "top": 0,
               "right": 1672,
-              "bottom": 465
+              "bottom": 470
             },
             "size_px": [
               1200,
@@ -232,14 +237,14 @@
             "quadrant": "bottom_left",
             "box_px": {
               "left": 0,
-              "top": 475,
-              "right": 831,
+              "top": 470,
+              "right": 836,
               "bottom": 940
             },
             "raw_box_px": {
               "left": 0,
-              "top": 475,
-              "right": 831,
+              "top": 470,
+              "right": 836,
               "bottom": 940
             },
             "size_px": [
@@ -254,14 +259,14 @@
             "file": "cover/inline-03.png",
             "quadrant": "bottom_right",
             "box_px": {
-              "left": 842,
-              "top": 475,
+              "left": 836,
+              "top": 470,
               "right": 1672,
               "bottom": 940
             },
             "raw_box_px": {
-              "left": 842,
-              "top": 475,
+              "left": 836,
+              "top": 470,
               "right": 1672,
               "bottom": 940
             },

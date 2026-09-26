@@ -34,5 +34,5 @@
     "wow_poster_magazine_typography": true,
     "august_no_winter_hero": true
   },
-  "notes": "B03 autumn boiler shower poster. Billing block on primary Kie host. Logo pad QA failed on multiple panels."
+  "notes": "GRSAI regen (grsaiapi.com/v1) + opencv clear_logo_pad on pre-composite; drawn lockup/white pad still fail on cover and several inlines. Return to Cover for another gen pass with empty textured top-right (no white card, no AI lockup)."
 }
