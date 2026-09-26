@@ -114,7 +114,7 @@ files_changed:
 checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_derouter_gpt_image2_api.py`
 - `tests/test_fixer_b03_contracts.py`
-commit: fa72eb0
+commit: 20f94c1
 
 ---
 
@@ -154,3 +154,26 @@ checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_interlink_lib.py`
 - `tests/test_fixer_b03_contracts.py`
 commit: fa72eb0
+
+---
+
+## INC-20260926-1547-metrika-credentials-content-learner
+status: open
+run_date: 2026-09-26
+role: excalibur-blog-content-learner
+topic_id: B03
+article_dir: memory/blog/articles/B03-zaselilsya-posutochno-v-dushe-ledyanaya-voda-a-bojler-molchit
+severity: low
+category: secrets
+
+### What went wrong
+- `excalibur_blog_metrika_fetch.py --days 30 --ingest` → METRIKA CREDENTIALS BLOCKER (no OAuth/counter in env).
+
+### How the agent recovered this run
+- Recorded cover-pad lesson from Cover-QA/incident evidence only; no Metrika cohort.
+
+### Durable fix needed before next run
+- Set `YANDEX_METRIKA_OAUTH_TOKEN` + `YANDEX_METRIKA_COUNTER_ID` in Cloud Secrets.
+
+### Secrets
+- YANDEX_METRIKA_OAUTH_TOKEN, YANDEX_METRIKA_COUNTER_ID (missing)
