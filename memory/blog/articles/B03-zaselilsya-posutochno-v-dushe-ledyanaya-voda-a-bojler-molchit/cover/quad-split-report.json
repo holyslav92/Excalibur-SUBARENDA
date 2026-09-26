@@ -3,6 +3,143 @@
   "status": "PASS",
   "splits": [
     {
+      "canvas_index": 1,
+      "manifest": "cover/quad-manifest.json",
+      "split": {
+        "source_canvas": "memory/blog/articles/B03-zaselilsya-posutochno-v-dushe-ledyanaya-voda-a-bojler-molchit/cover/canvas-quad-01.png",
+        "source_size_px": [
+          1672,
+          941
+        ],
+        "panel_size_px": [
+          829,
+          464
+        ],
+        "split_meta": {
+          "split_mode": "gutter_detect",
+          "h_gutter_px": {
+            "start": 464,
+            "end": 478
+          },
+          "v_gutter_px": {
+            "start": 829,
+            "end": 843
+          },
+          "requested_mode": "auto",
+          "gutter_quality": {
+            "h_center_offset_px": 0.5,
+            "v_center_offset_px": 0.0,
+            "max_aspect_crop_loss": 0.0072,
+            "per_panel_crop_loss": {
+              "top_left": 0.0,
+              "top_right": 0.0,
+              "bottom_left": 0.0072,
+              "bottom_right": 0.0072
+            },
+            "reject_reason": null
+          }
+        },
+        "output_size_px": [
+          1200,
+          675
+        ],
+        "outputs": {
+          "cover": {
+            "file": "cover/cover.png",
+            "quadrant": "top_left",
+            "box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 829,
+              "bottom": 464
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 829,
+              "bottom": 464
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Осенний постер: гость в тюменской посуточной ванной у холодного душа и молчащего бойлера, телефон на плитке.",
+            "h2_anchor": null
+          },
+          "inline_1": {
+            "file": "cover/inline-01.png",
+            "quadrant": "top_right",
+            "box_px": {
+              "left": 843,
+              "top": 0,
+              "right": 1672,
+              "bottom": 464
+            },
+            "raw_box_px": {
+              "left": 843,
+              "top": 0,
+              "right": 1672,
+              "bottom": 464
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Сравнение мгновенной горячей воды и ожидания нагрева бойлера до 90 минут.",
+            "h2_anchor": "Почему в квартире есть бойлер, но из душа идёт холодная вода"
+          },
+          "inline_2": {
+            "file": "cover/inline-02.png",
+            "quadrant": "bottom_left",
+            "box_px": {
+              "left": 3,
+              "top": 478,
+              "right": 826,
+              "bottom": 941
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 478,
+              "right": 829,
+              "bottom": 941
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Четыре шага проверки бойлера перед оплатой посуточной квартиры.",
+            "h2_anchor": "Сколько нагревается бойлер на 50 литров после заселения"
+          },
+          "inline_3": {
+            "file": "cover/inline-03.png",
+            "quadrant": "bottom_right",
+            "box_px": {
+              "left": 846,
+              "top": 478,
+              "right": 1669,
+              "bottom": 941
+            },
+            "raw_box_px": {
+              "left": 843,
+              "top": 478,
+              "right": 1672,
+              "bottom": 941
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Шкала ожидания нагрева бойлера: горячий душ может появиться через 90 минут.",
+            "h2_anchor": "Что означает обещание «горячая вода» в объявлении"
+          }
+        }
+      }
+    },
+    {
       "canvas_index": 2,
       "manifest": "cover/quad-manifest.json",
       "split": {
@@ -12,32 +149,15 @@
           941
         ],
         "panel_size_px": [
-          832,
-          465
+          836,
+          470
         ],
         "split_meta": {
-          "split_mode": "gutter_detect",
-          "h_gutter_px": {
-            "start": 465,
-            "end": 471
-          },
-          "v_gutter_px": {
-            "start": 832,
-            "end": 840
-          },
+          "split_mode": "mechanical_center",
+          "h_gutter_px": null,
+          "v_gutter_px": null,
           "requested_mode": "auto",
-          "gutter_quality": {
-            "h_center_offset_px": 2.5,
-            "v_center_offset_px": 0.0,
-            "max_aspect_crop_loss": 0.006,
-            "per_panel_crop_loss": {
-              "top_left": 0.006,
-              "top_right": 0.006,
-              "bottom_left": 0.0,
-              "bottom_right": 0.0
-            },
-            "reject_reason": null
-          }
+          "fallback_reason": "gutter_bands_not_found"
         },
         "output_size_px": [
           1200,
@@ -48,16 +168,16 @@
             "file": "cover/inline-04.png",
             "quadrant": "top_left",
             "box_px": {
-              "left": 2,
+              "left": 0,
               "top": 0,
-              "right": 829,
-              "bottom": 465
+              "right": 836,
+              "bottom": 470
             },
             "raw_box_px": {
               "left": 0,
               "top": 0,
-              "right": 832,
-              "bottom": 465
+              "right": 836,
+              "bottom": 470
             },
             "size_px": [
               1200,
@@ -71,16 +191,16 @@
             "file": "cover/inline-05.png",
             "quadrant": "top_right",
             "box_px": {
-              "left": 842,
-              "top": 0,
-              "right": 1669,
-              "bottom": 465
-            },
-            "raw_box_px": {
-              "left": 840,
+              "left": 836,
               "top": 0,
               "right": 1672,
-              "bottom": 465
+              "bottom": 470
+            },
+            "raw_box_px": {
+              "left": 836,
+              "top": 0,
+              "right": 1672,
+              "bottom": 470
             },
             "size_px": [
               1200,
@@ -95,14 +215,14 @@
             "quadrant": "bottom_left",
             "box_px": {
               "left": 0,
-              "top": 471,
-              "right": 832,
+              "top": 470,
+              "right": 836,
               "bottom": 941
             },
             "raw_box_px": {
               "left": 0,
-              "top": 471,
-              "right": 832,
+              "top": 470,
+              "right": 836,
               "bottom": 941
             },
             "size_px": [
@@ -117,14 +237,14 @@
             "file": "cover/inline-07.png",
             "quadrant": "bottom_right",
             "box_px": {
-              "left": 840,
-              "top": 471,
+              "left": 836,
+              "top": 470,
               "right": 1672,
               "bottom": 941
             },
             "raw_box_px": {
-              "left": 840,
-              "top": 471,
+              "left": 836,
+              "top": 470,
               "right": 1672,
               "bottom": 941
             },
@@ -135,148 +255,6 @@
             "aspect_ratio": "16:9",
             "alt": "Порядок действий гостя, если после заселения вода остаётся холодной.",
             "h2_anchor": "Как мы проверяем технику при заселении"
-          }
-        }
-      }
-    },
-    {
-      "canvas_index": 1,
-      "manifest": "cover/quad-manifest.json",
-      "split": {
-        "source_canvas": "memory/blog/articles/B03-zaselilsya-posutochno-v-dushe-ledyanaya-voda-a-bojler-molchit/cover/canvas-quad-01.png",
-        "source_size_px": [
-          1672,
-          940
-        ],
-        "panel_size_px": [
-          836,
-          470
-        ],
-        "split_meta": {
-          "split_mode": "mechanical_center",
-          "h_gutter_px": null,
-          "v_gutter_px": null,
-          "requested_mode": "auto",
-          "fallback_reason": "aspect_crop_loss_too_high",
-          "rejected_gutter": {
-            "h_gutter_px": {
-              "start": 470,
-              "end": 488
-            },
-            "v_gutter_px": {
-              "start": 832,
-              "end": 840
-            },
-            "gutter_quality": {
-              "h_center_offset_px": 9.0,
-              "v_center_offset_px": 0.0,
-              "max_aspect_crop_loss": 0.0337,
-              "per_panel_crop_loss": {
-                "top_left": 0.0,
-                "top_right": 0.0,
-                "bottom_left": 0.0337,
-                "bottom_right": 0.0337
-              },
-              "reject_reason": "aspect_crop_loss_too_high"
-            }
-          }
-        },
-        "output_size_px": [
-          1200,
-          675
-        ],
-        "outputs": {
-          "cover": {
-            "file": "cover/cover.png",
-            "quadrant": "top_left",
-            "box_px": {
-              "left": 0,
-              "top": 0,
-              "right": 836,
-              "bottom": 470
-            },
-            "raw_box_px": {
-              "left": 0,
-              "top": 0,
-              "right": 836,
-              "bottom": 470
-            },
-            "size_px": [
-              1200,
-              675
-            ],
-            "aspect_ratio": "16:9",
-            "alt": "Осенний постер: гость в тюменской посуточной ванной у холодного душа и молчащего бойлера, телефон на плитке.",
-            "h2_anchor": null
-          },
-          "inline_1": {
-            "file": "cover/inline-01.png",
-            "quadrant": "top_right",
-            "box_px": {
-              "left": 836,
-              "top": 0,
-              "right": 1672,
-              "bottom": 470
-            },
-            "raw_box_px": {
-              "left": 836,
-              "top": 0,
-              "right": 1672,
-              "bottom": 470
-            },
-            "size_px": [
-              1200,
-              675
-            ],
-            "aspect_ratio": "16:9",
-            "alt": "Сравнение мгновенной горячей воды и ожидания нагрева бойлера до 90 минут.",
-            "h2_anchor": "Почему в квартире есть бойлер, но из душа идёт холодная вода"
-          },
-          "inline_2": {
-            "file": "cover/inline-02.png",
-            "quadrant": "bottom_left",
-            "box_px": {
-              "left": 0,
-              "top": 470,
-              "right": 836,
-              "bottom": 940
-            },
-            "raw_box_px": {
-              "left": 0,
-              "top": 470,
-              "right": 836,
-              "bottom": 940
-            },
-            "size_px": [
-              1200,
-              675
-            ],
-            "aspect_ratio": "16:9",
-            "alt": "Четыре шага проверки бойлера перед оплатой посуточной квартиры.",
-            "h2_anchor": "Сколько нагревается бойлер на 50 литров после заселения"
-          },
-          "inline_3": {
-            "file": "cover/inline-03.png",
-            "quadrant": "bottom_right",
-            "box_px": {
-              "left": 836,
-              "top": 470,
-              "right": 1672,
-              "bottom": 940
-            },
-            "raw_box_px": {
-              "left": 836,
-              "top": 470,
-              "right": 1672,
-              "bottom": 940
-            },
-            "size_px": [
-              1200,
-              675
-            ],
-            "aspect_ratio": "16:9",
-            "alt": "Шкала ожидания нагрева бойлера: горячий душ может появиться через 90 минут.",
-            "h2_anchor": "Что означает обещание «горячая вода» в объявлении"
           }
         }
       }
