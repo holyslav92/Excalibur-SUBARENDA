@@ -1,0 +1,86 @@
+{
+  "topic_id": "B03",
+  "slug": "zaselilsya-posutochno-v-dushe-ledyanaya-voda-a-bojler-molchit",
+  "cover_family": "brand_collage",
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "file": "cover/cover.png",
+  "alt": "Осенний постер: гость в тюменской посуточной ванной у холодного душа и молчащего бойлера, телефон на плитке.",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-quad-01.png",
+  "generated_at": "2026-09-26T09:46:18+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Осенний постер: гость в тюменской посуточной ванной у холодного душа и молчащего бойлера, телефон на плитке.",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Сравнение мгновенной горячей воды и ожидания нагрева бойлера до 90 минут.",
+      "h2_anchor": "Почему в квартире есть бойлер, но из душа идёт холодная вода",
+      "visual_type": "comparison_table",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Четыре шага проверки бойлера перед оплатой посуточной квартиры.",
+      "h2_anchor": "Сколько нагревается бойлер на 50 литров после заселения",
+      "visual_type": "process_flow",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Шкала ожидания нагрева бойлера: горячий душ может появиться через 90 минут.",
+      "h2_anchor": "Что означает обещание «горячая вода» в объявлении",
+      "visual_type": "bar_timeline_chart",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_4",
+      "file": "cover/inline-04.png",
+      "alt": "Схема проверки бойлера, индикатора нагрева, душа и крана в ванной.",
+      "h2_anchor": "Какие вопросы задать хозяину до оплаты",
+      "visual_type": "structure_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_5",
+      "file": "cover/inline-05.png",
+      "alt": "Чек-лист вопросов о бойлере и горячей воде перед оплатой квартиры.",
+      "h2_anchor": "Что сохранить в переписке перед переводом",
+      "visual_type": "labeled_checklist",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_6",
+      "file": "cover/inline-06.png",
+      "alt": "Что обещал арендодатель и что проверить на месте при проблеме с горячей водой.",
+      "h2_anchor": "Когда холодный душ — неисправность, а когда обычное ожидание",
+      "visual_type": "comparison_table",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_7",
+      "file": "cover/inline-07.png",
+      "alt": "Порядок действий гостя, если после заселения вода остаётся холодной.",
+      "h2_anchor": "Как мы проверяем технику при заселении",
+      "visual_type": "process_flow",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}
