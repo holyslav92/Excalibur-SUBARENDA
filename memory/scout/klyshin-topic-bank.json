@@ -3,7 +3,7 @@
   "source_channel": "https://t.me/klyshin_A",
   "source_label": "Алексей Клышин — юрист по недвижимости (angle only, не копировать сделки)",
   "tenant": "Добрый дом — посуточная аренда / субаренда Тюмень",
-  "updated_at": "2026-08-20",
+  "updated_at": "2026-09-26",
   "algorithm": "klyshin_hook → wordstat_probe → rework_for_demand → final_P0_or_skip_after_rework",
   "wordstat_gate": {
     "provider": "mcp-kv",
@@ -109,6 +109,39 @@
       "wordstat_probes": ["интернет в арендованной квартире", "аренда квартиры с wifi", "квартира посуточно тюмень"],
       "tyumen_localize": true,
       "status": "seed"
+    },
+    {
+      "id": "guest_boiler_hot_water_first_night",
+      "hook_ru": "первая ночь посуточно — в душе ледяная вода, бойлер не прогрелся",
+      "angle": "гостевая боль (не юр Клышин): в карточке «есть душ» → центральная ГВ отключена / только бойлер → что спросить и что снять до оплаты",
+      "klyshin_signal": "Angle mechanics only (ритм «в объявлении просто → в первую ночь ломается»); факты — Добрый дом Тюмень",
+      "wordstat_probes": [
+        "горячая вода квартира посуточно",
+        "горячая вода посуточно",
+        "нет горячей воды посуточно",
+        "бойлер квартира посуточно",
+        "квартиры посуточно тюмень"
+      ],
+      "wordstat_rework_log": [
+        "2026-09-26 probe «горячая вода квартира посуточно» RU225 totalCount 28 (weak)",
+        "2026-09-26 probe «горячая вода посуточно» RU225 totalCount 39 (weak)",
+        "2026-09-26 probe «нет горячей воды посуточно» RU225 totalCount 19 (weak)",
+        "2026-09-26 probe «бойлер квартира посуточно» RU225 totalCount 2 (weak)",
+        "2026-09-26 probe «нет горячей воды в квартире аренда» RU225 totalCount 8 (weak)",
+        "2026-09-26 localize Tyumen → final P0 «квартиры посуточно тюмень» 55+11176 4209 | RU225 9221"
+      ],
+      "final_p0": {
+        "phrase": "квартиры посуточно тюмень",
+        "volume_tyumen_oblast": 4209,
+        "volume_ru_225": 9221,
+        "regions": ["55", "11176"],
+        "compare_ru": "225"
+      },
+      "rework_hints": ["квартиры посуточно тюмень", "снять квартиру посуточно в тюмени", "жкх", "бойлер", "горячая вода"],
+      "tyumen_localize": true,
+      "status": "selected_B03",
+      "used_in_articles": ["B03"],
+      "last_seen": "2026-09-26"
     }
   ]
 }
