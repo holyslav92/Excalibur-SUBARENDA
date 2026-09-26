@@ -1,0 +1,36 @@
+{
+  "topic_id": "B03",
+  "research_date": "2026-09-26",
+  "status": "PASS",
+  "summary": "Operational research: first night short-term rental in Tyumen — cold shower, boiler off or slow heat. Fresh local channel signal week 2026-09-22–26; Klyshin hook; Wordstat P0 Tyumen posutochno cluster.",
+  "freshness_audit": {
+    "research_date": "2026-09-26",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://t.me/s/Dobriy_dom_72",
+      "published_at": "2026-09-22",
+      "note": "Tenant Telegram: check-in state + исправность техники; same-week posts on late check-in and listing mismatch (fetched 2026-09-26)."
+    }
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176"],
+    "compare_region": "225",
+    "p0_phrase": "квартиры посуточно тюмень",
+    "p0_volume": 4209,
+    "p1_phrase": "снять квартиру посуточно в тюмени",
+    "p1_volume": 1191,
+    "narrow_partial": true,
+    "narrow_note": "горячая вода / бойлер probes returned totalCount-only (WORDSTAT PARTIAL), not blocker"
+  },
+  "official_source_audit": {
+    "status": "NOT_REQUIRED",
+    "reason": "Нет тарифов банков, госорганов или комиссий; только бытовая техника и посуточная аренда"
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "derouter_research_stamp": "memory/blog/articles/B03-zaselilsya-posutochno-v-dushe-ledyanaya-voda-a-bojler-molchit/derouter-opus-stamp-research.json"
+}

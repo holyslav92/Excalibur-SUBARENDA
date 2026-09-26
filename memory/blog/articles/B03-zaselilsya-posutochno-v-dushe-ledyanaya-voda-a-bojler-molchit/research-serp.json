@@ -1,0 +1,256 @@
+{
+  "agent": "excalibur-blog",
+  "date_context": {
+    "timezone": "Europe/Moscow",
+    "today_iso": "2026-09-26",
+    "today_ru": "26.09.2026",
+    "year": 2026,
+    "month": 9,
+    "month_name_ru": "сентябрь",
+    "weekday_ru": "суббота"
+  },
+  "topic": {
+    "topic_id": "B03",
+    "title": "Заселился посуточно. В душе — ледяная вода, а бойлер молчит",
+    "h1": "Заселился посуточно. В душе — ледяная вода, а бойлер молчит",
+    "slug": "zaselilsya-posutochno-v-dushe-ledyanaya-voda-a-bojler-molchit",
+    "primary_query": "Заселился посуточно. В душе — ледяная вода, а бойлер молчит",
+    "priority": "P0"
+  },
+  "searches": [
+    {
+      "query_id": "primary_fresh",
+      "query": "Заселился посуточно. В душе — ледяная вода, а бойлер молчит 2026",
+      "purpose": "актуальный SERP",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Или ледяная вода в душе | Научные шутки, Короткие шутки, Смешные надписи",
+          "url": "https://ru.pinterest.com/pin/962785226612278562/",
+          "snippet": ""
+        },
+        {
+          "title": "Вода молчит.S01e1-2 — Видео от Детективы Всего МИРА",
+          "url": "https://yandex.ru/video/preview/2274578211859576820",
+          "snippet": "19 авг. 2025 г. — | Аниме смех, Аниме приколы, Аниме мемы"
+        },
+        {
+          "title": "А у всех ледяная: истории из жизни, советы, новости, юмор и картинки ...",
+          "url": "https://pikabu.ru/tag/%D0%90%20%D1%83%20%D0%B2%D1%81%D0%B5%D1%85%20%D0%BB%D0%B5%D0%B4%D1%8F%D0%BD%D0%B0%D1%8F",
+          "snippet": "Источник видео: VK Видео"
+        },
+        {
+          "title": "К посту про душ с калом. заселился я в общагу. на 3 день мы услышали ...",
+          "url": "https://vk.com/wall-71729358_9635533",
+          "snippet": "Читайте публикации на тему А у всех ледяная. Личный опыт, познавательные статьи, забавные фото и видео. Или поделитесь своей историей с тегом А у всех ледяная."
+        },
+        {
+          "title": "\"Впервые заселился в отель со своей собакой. Она решила заночевать ...",
+          "url": "https://pikabu.ru/story/vpervyie_zaselilsya_v_otel_so_svoey_sobakoy_ona_reshila_zanochevat_pryamo_v_dushe_7711204",
+          "snippet": "Пошли на вахту сказали мол в душе кто-то упал и больше ничего не слышно. Позвали слесаря чтобы дверь аккуратно открыл и как вы думаете, там лежал 3-курсник, в говне и без сознания."
+        },
+        {
+          "title": "Горячая вода была. На второй минуте душ — холод",
+          "url": "https://dzen.ru/a/apV_TiWD6W9q3nXC",
+          "snippet": "Посты, своей тематикой связанные с нападением бездомных собак, а также распространением ими заболеваний и иным негативным влиянием на общество, будут выноситься в общую ленту."
+        }
+      ],
+      "searched_at": "2026-09-26"
+    },
+    {
+      "query_id": "title_fresh",
+      "query": "Заселился посуточно. В душе — ледяная вода, а бойлер молчит 2026",
+      "purpose": "SERP по человеческому title",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Психология Любви ️ | Почему некоторые люди стоят в душе слишком долго ...",
+          "url": "https://www.instagram.com/reel/Dc3PXoIM-oE/",
+          "snippet": ""
+        },
+        {
+          "title": "Google Переводчик",
+          "url": "https://translate.google.com/?hl=ru",
+          "snippet": "Шум воды заглушает мысли. Тепло расслабляет тело. Закрытая дверь создаёт ощущение, что тебя никто сейчас не тронет. И человек будто впервые за день остаётся не с обязанностями, а с собой."
+        },
+        {
+          "title": "Google",
+          "url": "https://www.google.com/?hl=ru",
+          "snippet": "Бесплатный сервис Google позволяет мгновенно переводить слова, фразы и веб-страницы. Поддерживается более 100 языков."
+        },
+        {
+          "title": "У бабушки тоже деменция. У нее гниёт нога, она молчит, сегодня мама ...",
+          "url": "https://x.com/JQ7h1whHsuBOsyU/status/2050212265928884410",
+          "snippet": "Сервисы Google доступны на этих языках: English Реклама Всё о Google Google.com in English"
+        },
+        {
+          "title": "Или ледяная вода в душе | Научные шутки, Короткие шутки, Смешные надписи",
+          "url": "https://ru.pinterest.com/pin/962785226612278562/",
+          "snippet": "У нее гниёт нога, она молчит, сегодня мама увидела, начала ей обрабатывать. Оказывается не мылась, потому что забыла как включать бойлер, а он вкл, нужно открыть кран в ванной и все."
+        },
+        {
+          "title": "Анжелика Киборт Ямаути | Была ледяная вода но я обрадовалась и ...",
+          "url": "https://www.instagram.com/reel/CiaJF-tOlR9/",
+          "snippet": "19 авг. 2025 г. — | Аниме смех, Аниме приколы, Аниме мемы"
+        }
+      ],
+      "searched_at": "2026-09-26"
+    },
+    {
+      "query_id": "official_docs",
+      "query": "Заселился посуточно. В душе — ледяная вода, а бойлер молчит official docs 2026",
+      "purpose": "официальные docs",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "«Горячая вода есть». В душе — ледяная струя, ждать 40 минут",
+          "url": "https://dzen.ru/a/aqEEZ6KBtmtjK9W_",
+          "snippet": ""
+        },
+        {
+          "title": "Или ледяная вода в душе | Научные шутки, Короткие шутки, Смешные надписи",
+          "url": "https://ru.pinterest.com/pin/962785226612278562/",
+          "snippet": "Заезд поздний: человек добирается после дороги, открывает дверь, рассчитывает быстро принять душ и лечь спать. Но из крана идёт ледяная струя. В чате хозяин отвечает: «включите бойлер, подождите 40 минут». Я хост посуточной в Тюмени. Это «Добрый дом»."
+        },
+        {
+          "title": "Вода молчит.S01e1-2 — Видео от Детективы Всего МИРА",
+          "url": "https://yandex.ru/video/preview/2274578211859576820",
+          "snippet": "19 авг. 2025 г. — | Аниме смех, Аниме приколы, Аниме мемы"
+        },
+        {
+          "title": "А у всех ледяная: истории из жизни, советы, новости, юмор и картинки ...",
+          "url": "https://pikabu.ru/tag/%D0%90%20%D1%83%20%D0%B2%D1%81%D0%B5%D1%85%20%D0%BB%D0%B5%D0%B4%D1%8F%D0%BD%D0%B0%D1%8F",
+          "snippet": "Источник видео: VK Видео"
+        },
+        {
+          "title": "Горячая вода была. На второй минуте душ — холод",
+          "url": "https://dzen.ru/a/apV_TiWD6W9q3nXC",
+          "snippet": "Читайте публикации на тему А у всех ледяная. Личный опыт, познавательные статьи, забавные фото и видео. Или поделитесь своей историей с тегом А у всех ледяная."
+        },
+        {
+          "title": "Водонагреватель бьёт током: что делать сразу и почему щиплет вода в душе",
+          "url": "https://1bitovoy-service.ru/blog/remont-vodonagrevateley/vodonagrevatel-bet-tokom",
+          "snippet": "«Горячая вода есть, заходите» — такое сообщение висело в чате за час до заселения. Гость прилетел поздно, доехал на такси, набрал код на замке, бросил сумку и пошёл в душ. Первые две минуты вода была тёплой. Потом стала ледяной."
+        }
+      ],
+      "searched_at": "2026-09-26"
+    },
+    {
+      "query_id": "github_evidence",
+      "query": "site:github.com Заселился посуточно. В душе — ледяная вода, а бойлер молчит 2026",
+      "purpose": "GitHub evidence",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "fp-2025/synopsis.png at main · vipo/fp-2025 · GitHub",
+          "url": "https://github.com/vipo/fp-2025/blob/main/synopsis.png",
+          "snippet": ""
+        },
+        {
+          "title": "Offline-Games/TS2.svg at main · 2pro12342/Offline-Games",
+          "url": "https://github.com/2pro12342/Offline-Games/blob/main/TS2.svg",
+          "snippet": "Contribute to vipo/fp-2025 development by creating an account on GitHub."
+        },
+        {
+          "title": "was-node-suite-comfyui/image/image_shift_example.jpg at main ...",
+          "url": "https://github.com/RituCodeWeb/was-node-suite-comfyui/blob/main/image/image_shift_example.jpg",
+          "snippet": "Contribute to 2pro12342/Offline-Games development by creating an account on GitHub."
+        },
+        {
+          "title": "[Проблема] Не слышно друг друга в ... - GitHub",
+          "url": "https://github.com/Flowseal/zapret-discord-youtube/issues/8542",
+          "snippet": "Contribute to RituCodeWeb/was-node-suite-comfyui development by creating an account on GitHub."
+        },
+        {
+          "title": "shelfmark/README_images/homescreen.png at main · calibrain/shelfmark ...",
+          "url": "https://github.com/calibrain/shelfmark/blob/main/README_images/homescreen.png",
+          "snippet": "Запустите service.bat и выберите пункт Run Diagnostics, чтобы проверить на конфликтующие сервисы. Если у вас проблемы с запуском Discord, то в конце согласитесь на очистку кэша. Если не работает / перестала работать стратегия, то попробуйте другие."
+        },
+        {
+          "title": "Как добавить работу запрета для еще одного приложения?",
+          "url": "https://github.com/Flowseal/zapret-discord-youtube/discussions/1793",
+          "snippet": "Contribute to calibrain/shelfmark development by creating an account on GitHub."
+        }
+      ],
+      "searched_at": "2026-09-26"
+    },
+    {
+      "query_id": "community_experience",
+      "query": "Заселился посуточно. В душе — ледяная вода, а бойлер молчит forum problems опыт 2026",
+      "purpose": "форумы и живые проблемы",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Google Переводчик",
+          "url": "https://translate.google.com/?hl=ru",
+          "snippet": ""
+        },
+        {
+          "title": "«Горячая вода есть». В душе — ледяная струя, ждать 40 минут",
+          "url": "https://dzen.ru/a/aqEEZ6KBtmtjK9W_",
+          "snippet": "Бесплатный сервис Google позволяет мгновенно переводить слова, фразы и веб-страницы. Поддерживается более 100 языков."
+        },
+        {
+          "title": "У бабушки тоже деменция. У нее гниёт нога, она молчит, сегодня мама ...",
+          "url": "https://x.com/JQ7h1whHsuBOsyU/status/2050212265928884410",
+          "snippet": "Если в квартире стоит накопительный бойлер на 50-80 литров и он полностью остыл, сорока минут может не хватить. В зависимости от мощности и температуры вода может нагреваться 1-2 часа. Поэтому фраза «подождите 40 минут» не является универсальным сроком готовности душа."
+        },
+        {
+          "title": "Когда зашёл в душ… а вода оказалась ледяной - YouTube",
+          "url": "https://www.youtube.com/watch?v=ng6kwVRwRxw",
+          "snippet": "У нее гниёт нога, она молчит, сегодня мама увидела, начала ей обрабатывать. Оказывается не мылась, потому что забыла как включать бойлер, а он вкл, нужно открыть кран в ванной и все."
+        },
+        {
+          "title": "Помогите!! Горячая вода в душе работает, а в кухне и умывальнике - нет ...",
+          "url": "https://forum.baxi.ru/viewtopic.php?t=9672",
+          "snippet": "Мартышка в душе передаёт все наши чувства по утрам.А ты тоже так орёшь, когда вода холодная?"
+        },
+        {
+          "title": "Или ледяная вода в душе | Научные шутки, Короткие шутки, Смешные надписи",
+          "url": "https://ru.pinterest.com/pin/962785226612278562/",
+          "snippet": "Раньше много лет вода шла хорошо. Однако сейчас бойлер реагирует только на открытие крана горячей воды в душе. Начинает мигать символ краника и появляется символ горелки. Вода идёт горячая. А в рукомойниках в ванне и в кухне бойлер на открытие крана горячей воды никак не реагирует."
+        }
+      ],
+      "searched_at": "2026-09-26"
+    },
+    {
+      "query_id": "research_supplement_fresh_channel",
+      "query": "t.me/s/Dobriy_dom_72 посуточно техника заселение",
+      "purpose": "свежий локальный канал (неделя)",
+      "result_count": 1,
+      "results": [
+        {
+          "title": "Добрый Дом Тюмень | посуточные квартиры — Telegram",
+          "url": "https://t.me/s/Dobriy_dom_72",
+          "snippet": "Посты недели 2026-09-18–26: проверка состояния квартиры при заселении, исправность техники, поздний заезд, несоответствие карточке."
+        }
+      ],
+      "searched_at": "2026-09-26"
+    },
+    {
+      "query_id": "research_supplement_boiler_timing",
+      "query": "сколько нагревается водонагреватель 50 литров",
+      "purpose": "технические ориентиры нагрева",
+      "result_count": 3,
+      "results": [
+        {
+          "title": "Сколько времени нагревается вода в накопительном водонагревателе",
+          "url": "https://www.timberk.ru/articles/nagrev-vody/skolko-vremeni-nagrevaetsya-voda-v-vodonagrevatele/",
+          "snippet": "Расчёт для 50 л: при 1,5 кВт и нагреве с 15 до 65 °C — около 2 часов."
+        },
+        {
+          "title": "Калькулятор нагрева воды ТЭНом — elec.ru",
+          "url": "https://www.elec.ru/calculators/ten/",
+          "snippet": "Таблица: 50 л при 2 кВт — около 78 минут (диапазон температур в калькуляторе)."
+        },
+        {
+          "title": "Avito: нет горячей воды в посуточной — vc.ru",
+          "url": "https://vc.ru/services/2143010-avito-arendatory-pod-ugrozoy-shantazha",
+          "snippet": "Кейс посуточной аренды: горячая вода отключена, не указано в объявлении."
+        }
+      ],
+      "searched_at": "2026-09-26"
+    }
+  ],
+  "errors": []
+}
