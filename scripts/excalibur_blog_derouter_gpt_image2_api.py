@@ -349,7 +349,7 @@ def http_multipart_post(
 
 
 def parse_image_response(parsed: dict[str, Any]) -> bytes:
-    """Derouter images API returns data[0].b64_json (PNG), not a URL."""
+    """Derouter/GRSAI images API returns data[0].b64_json or data[0].url."""
     data = parsed.get("data")
     if not isinstance(data, list) or not data:
         raise DerouterApiError(f"Derouter response missing data[]: {list(parsed.keys())}")
@@ -357,12 +357,19 @@ def parse_image_response(parsed: dict[str, Any]) -> bytes:
     if not isinstance(item, dict):
         raise DerouterApiError("Derouter data[0] is not an object")
     b64 = item.get("b64_json")
-    if not b64:
-        raise DerouterApiError("Derouter response missing data[0].b64_json (URL field not used)")
-    try:
-        return base64.b64decode(str(b64))
-    except Exception as exc:  # noqa: BLE001
-        raise DerouterApiError("Derouter b64_json decode failed") from exc
+    if b64:
+        try:
+            return base64.b64decode(str(b64))
+        except Exception as exc:  # noqa: BLE001
+            raise DerouterApiError("Derouter b64_json decode failed") from exc
+    url = str(item.get("url") or "").strip()
+    if url:
+        try:
+            with urllib.request.urlopen(url, timeout=120) as response:
+                return response.read()
+        except urllib.error.URLError as exc:
+            raise DerouterApiError(f"Derouter image url fetch failed: {exc.reason}") from exc
+    raise DerouterApiError("Derouter response missing data[0].b64_json and data[0].url")
 
 
 def call_generations(
