@@ -341,6 +341,23 @@ def restore_or_snapshot_pre_composite(image_path: Path, pre_dir: Path) -> tuple[
     return pre_path, created
 
 
+def scrub_generation_logo_pad(image_path: Path, *, initial_full_wipe: bool = False) -> dict[str, Any]:
+    """Inpaint white/gray pad + drawn lockup in top-right before factory paste (Cover-QA helper)."""
+    try:
+        from excalibur_blog_live_plate_remove_relogo import clear_logo_pad, np_array_rgb_from_pil
+        from PIL import Image
+    except ImportError as exc:
+        return {"passes": 0, "skipped": True, "reason": str(exc)[:120]}
+
+    with Image.open(image_path) as img:
+        rgba = img.convert("RGBA")
+    rgb = np_array_rgb_from_pil(rgba)
+    passes = clear_logo_pad(rgb, initial_full_wipe=initial_full_wipe)
+    if passes:
+        Image.fromarray(rgb).convert("RGBA").save(image_path, format="PNG", optimize=True)
+    return {"passes": passes, "initial_full_wipe": initial_full_wipe}
+
+
 def assert_no_drawn_lockup_before_paste(image_path: Path) -> None:
     from excalibur_blog_drawn_logo_gate import detect_drawn_lockup_in_image
 
@@ -371,8 +388,16 @@ def composite_logo_onto_image(
 
     if pre_snapshot_dir is not None:
         pre_path, created = restore_or_snapshot_pre_composite(image_path, pre_snapshot_dir)
-        if paste_logo and block_drawn_lockup and created:
-            assert_no_drawn_lockup_before_paste(pre_path)
+        scrub_generation_logo_pad(pre_path, initial_full_wipe=bool(paste_logo))
+        if paste_logo and block_drawn_lockup:
+            from excalibur_blog_drawn_logo_gate import detect_drawn_lockup_in_image
+
+            lockup = detect_drawn_lockup_in_image(pre_path)
+            if lockup.get("detected"):
+                scrub_generation_logo_pad(pre_path, initial_full_wipe=True)
+                lockup = detect_drawn_lockup_in_image(pre_path)
+            if lockup.get("detected"):
+                assert_no_drawn_lockup_before_paste(pre_path)
 
     with Image.open(image_path) as base_img:
         base = base_img.convert("RGBA")

@@ -57,6 +57,10 @@ MIN_TIMEOUT_SECONDS = 240
 DEFAULT_MAX_RETRIES = 1
 DEFAULT_RETRY_WAIT_SECONDS = 5
 DEFAULT_LOCAL_REFERENCE = "memory/cover/assets/blog-hero-reference.png"
+GRSAI_IMAGE_API_BASE_ENV = "GRSAI_IMAGE_API_BASE"
+GRSAI_API_KEY_ENV = "GRSAI_API_KEY"
+DEFAULT_GRSAI_IMAGE_BASE = "https://" + "grsaiapi.com/v1"
+GRSAI_HOST_MARKERS = ("grsaiapi.com", "grsai.ai", "grsai.com")
 
 
 class DerouterApiError(RuntimeError):
@@ -119,14 +123,28 @@ def normalize_api_base(url: str) -> str:
     base = str(url or "").strip().rstrip("/")
     if not base:
         return ""
-    if not base.endswith("/openai/v1"):
-        if base.endswith("/openai"):
-            base = f"{base}/v1"
-        elif base.endswith("/v1"):
-            base = base
-        else:
-            base = f"{base}/openai/v1"
-    return base
+    if base.endswith("/openai/v1"):
+        return base
+    parsed = urllib.parse.urlparse(base)
+    host = (parsed.netloc or "").lower()
+    is_grsai = any(marker in host for marker in GRSAI_HOST_MARKERS)
+    if is_grsai:
+        # GRSAI OpenAI-compatible API is /v1/images/generations — not /openai/v1 (404).
+        if base.endswith("/v1"):
+            return base
+        return f"{parsed.scheme}://{parsed.netloc}/v1"
+    if base.endswith("/openai"):
+        return f"{base}/v1"
+    if base.endswith("/v1"):
+        return base
+    return f"{base}/openai/v1"
+
+
+def api_key_for_image_base(base: str, *, default_key: str) -> str:
+    host = urllib.parse.urlparse(base).netloc.lower()
+    if any(marker in host for marker in GRSAI_HOST_MARKERS):
+        return os.environ.get(GRSAI_API_KEY_ENV, "").strip() or default_key
+    return default_key
 
 
 def image_api_base_candidates(
@@ -136,7 +154,10 @@ def image_api_base_candidates(
 ) -> list[str]:
     """DEROUTER_IMAGE_API_BASE / DEROUTER_API_BASE override, then ordered fallbacks."""
     out: list[str] = []
+    grsai_key = os.environ.get(GRSAI_API_KEY_ENV, "").strip()
     for raw in (
+        os.environ.get(GRSAI_IMAGE_API_BASE_ENV, "").strip(),
+        DEFAULT_GRSAI_IMAGE_BASE if grsai_key else "",
         os.environ.get(DEROUTER_IMAGE_API_BASE_ENV, "").strip(),
         os.environ.get(DEROUTER_API_BASE_ENV, "").strip(),
         str(primary_base or "").strip(),
@@ -443,11 +464,17 @@ def generate_image(
         for attempt in range(max_retries + 1):
             attempts += 1
             host = urllib.parse.urlparse(base).netloc
+            key = api_key_for_image_base(base, default_key=api_key)
+            if not key:
+                last_error = DerouterApiError(
+                    f"Missing API key for {host} (set DEROUTER_API_KEY or GRSAI_API_KEY)"
+                )
+                continue
             try:
                 if use_edits:
                     parsed = call_edits(
                         base_url=base,
-                        api_key=api_key,
+                        api_key=key,
                         model=model,
                         prompt=str(image_input["prompt"]),
                         image_paths=local_refs,
@@ -458,7 +485,7 @@ def generate_image(
                 else:
                     parsed = call_generations(
                         base_url=base,
-                        api_key=api_key,
+                        api_key=key,
                         model=model,
                         prompt=str(image_input["prompt"]),
                         size=size,
@@ -589,8 +616,10 @@ def main() -> int:
 
         api_key = os.environ.get(args.api_key_env, "").strip()
         if not api_key:
+            api_key = os.environ.get(GRSAI_API_KEY_ENV, "").strip()
+        if not api_key:
             print(
-                "❌ DEROUTER API KEY MISSING: set DEROUTER_API_KEY in Cloud Secrets/env; "
+                "❌ DEROUTER API KEY MISSING: set DEROUTER_API_KEY or GRSAI_API_KEY in Cloud Secrets/env; "
                 "the key must not be committed or printed.",
                 file=sys.stderr,
             )

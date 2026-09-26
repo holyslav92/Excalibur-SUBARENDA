@@ -80,6 +80,7 @@ Canvas 2: no local ref → `/images/generations` (t2i).
 - `DEROUTER_IMAGE_MODEL` required (id from GET `/v1/models`)
 - Optional: `DEROUTER_IMAGE_SIZE` (default `2048x1152`), `DEROUTER_IMAGE_QUALITY` (default `auto`)
 - Optional override host: `DEROUTER_IMAGE_API_BASE` or `DEROUTER_API_BASE` (must end with `/openai/v1` or bare host — script normalizes)
+- **GRSAI fallback (Kie/Derouter credits):** GRSAI API key env + optional `GRSAI_IMAGE_API_BASE` (default host `grsaiapi.com/v1`). Script uses **`/v1/images/generations`**, not `/openai/v1` (404 on GRSAI host). When GRSAI key is set, GRSAI base is probed before Derouter hosts; auth key follows host.
 - Never commit, print, or copy keys into git/PR/logs
 
 Doctor: **WARN** when `DEROUTER_API_KEY` or `DEROUTER_IMAGE_MODEL` missing; Cover gen **BLOCKs**.

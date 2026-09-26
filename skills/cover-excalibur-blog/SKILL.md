@@ -65,6 +65,8 @@ PRIMARY: **Derouter REST** (`DEROUTER_API_KEY` + `DEROUTER_IMAGE_MODEL`, api-dir
 
 Factory paste after split: `python3 scripts/excalibur_blog_brand_logo_composite.py --article-dir "$ARTICLE"`
 
+Перед paste скрипт **авто-inpaint** top-right pad (white plate / drawn lockup) на pre-composite; при жёстком lockup — FAIL с regenerate hint (Cover-QA `forbid_ai_drawn_logo_pre_composite`).
+
 ## Cover canon (production)
 
 1. **Invent from scratch** — no inventory lock; no default keys/hologram/desk/balcony.

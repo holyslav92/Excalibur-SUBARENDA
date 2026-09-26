@@ -57,9 +57,40 @@ def load_siblings(root: Path) -> list[dict[str, Any]]:
     return [item for item in siblings if isinstance(item, dict) and item.get("slug")]
 
 
+def load_live_catalog_posts(root: Path) -> list[dict[str, Any]]:
+    """Cached live WP slugs (memory/live-catalog.json) — ledger lag interlink source."""
+    try:
+        from excalibur_blog_live_catalog import catalog_path, load_catalog
+    except ImportError:
+        return []
+    catalog = load_catalog(catalog_path(root))
+    posts = catalog.get("posts") or []
+    out: list[dict[str, Any]] = []
+    for row in posts:
+        if not isinstance(row, dict):
+            continue
+        slug = str(row.get("slug") or "").strip()
+        if not slug:
+            continue
+        href = str(row.get("href") or "").strip()
+        permalink = href if href.startswith("/") else f"/blog/{slug.strip('/')}/"
+        out.append(
+            {
+                "slug": slug,
+                "title": str(row.get("title") or slug).strip(),
+                "permalink": permalink,
+                "topic_id": "",
+                "post_id": None,
+                "source": "live_catalog",
+            }
+        )
+    return out
+
+
 def all_interlink_candidates(root: Path, *, exclude_topic_id: str = "") -> list[dict[str, Any]]:
     ledger = parse_ledger(root / "shared/published-articles.md")
     siblings = load_siblings(root)
+    catalog_posts = load_live_catalog_posts(root)
     merged: dict[str, dict[str, Any]] = {}
     for row in ledger:
         slug = str(row.get("slug") or "").strip()
@@ -93,6 +124,13 @@ def all_interlink_candidates(root: Path, *, exclude_topic_id: str = "") -> list[
                 merged[slug]["post_id"] = row.get("post_id")
             if row.get("title"):
                 merged[slug]["title"] = row.get("title")
+    for row in catalog_posts:
+        slug = str(row.get("slug") or "").strip()
+        if not slug or slug in merged:
+            continue
+        if exclude_topic_id and str(row.get("topic_id") or "").upper() == exclude_topic_id.upper():
+            continue
+        merged[slug] = dict(row)
     return list(merged.values())
 
 
@@ -215,5 +253,10 @@ def pick_inbound_targets(
     max_inbound: int = 3,
 ) -> list[dict[str, Any]]:
     filtered = [row for row in candidates if str(row.get("slug") or "") != new_slug]
-    filtered.sort(key=lambda row: (0 if row.get("source") == "ledger" else 1, str(row.get("slug") or "")))
+    filtered.sort(
+        key=lambda row: (
+            0 if row.get("source") == "ledger" else 1 if row.get("source") == "siblings" else 2,
+            str(row.get("slug") or ""),
+        )
+    )
     return filtered[: max(0, max_inbound)]
