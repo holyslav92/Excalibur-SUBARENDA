@@ -1,0 +1,25 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/zaselilsya-posutochno-v-dushe-ledyanaya-voda-a-bojler-molchit/#article",
+  "url": "{{SITE_BASE}}/zaselilsya-posutochno-v-dushe-ledyanaya-voda-a-bojler-molchit/",
+  "headline": "Заселился на ночь. Бойлер не нагрел воду — душ ждал 90 минут",
+  "description": "Ледяная вода после заселения в Тюмени: сколько ждать нагрева бойлера, как отличить ожидание от поломки и что уточнить у хозяина до оплаты посуточной квартиры.",
+  "inLanguage": "ru-RU",
+  "datePublished": "2026-09-26",
+  "dateModified": "2026-09-26",
+  "author": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/zaselilsya-posutochno-v-dushe-ledyanaya-voda-a-bojler-molchit/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/"
+  }
+}
