@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Case-delivery gate — two-beat H1 and stage checks (title, later writer/sol)."""
+"""Case-delivery gate — two-beat H1 and stage checks (title, writer, later sol)."""
 
 from __future__ import annotations
 
@@ -7,8 +7,13 @@ import argparse
 import json
 import re
 import sys
+from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any
+
+from excalibur_blog_link_verify import check_url_with_connection_reset_retry
+from excalibur_blog_live_catalog import slug_from_blog_href
+from excalibur_blog_site_base import expand_site_base, resolve_public_base_from_env
 
 HOW_TO_RES = (
     re.compile(r"^\s*\d+\s+вопрос", re.I),
@@ -121,10 +126,182 @@ def check_title_stage(article_dir: Path) -> dict[str, Any]:
     }
 
 
+class _AnchorExtractor(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self.hrefs: list[str] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        if tag.lower() != "a":
+            return
+        for k, v in attrs:
+            if k.lower() == "href" and v:
+                self.hrefs.append(v.strip())
+
+
+def strip_html(html: str) -> str:
+    html = re.sub(r"(?is)<script.*?>.*?</script>", " ", html)
+    html = re.sub(r"(?is)<style.*?>.*?</style>", " ", html)
+    html = re.sub(r"(?is)<[^>]+>", " ", html)
+    html = re.sub(r"\s+", " ", html)
+    return html.strip()
+
+
+def word_count_ru(html: str) -> int:
+    text = strip_html(html)
+    if not text:
+        return 0
+    return len(re.findall(r"[\w\u0400-\u04FF]+", text, flags=re.UNICODE))
+
+
+WRITER_BANNED_SUBSTRINGS = (
+    "+7 922 001 65 05",
+    "922 001 65 05",
+    "whatsapp",
+    "t.me/klyshin",
+    "klyshin_a",
+)
+
+WRITER_LEGAL_HOOK_RES = (
+    re.compile(r"\bегрн\b", re.I),
+    re.compile(r"\bнотариус", re.I),
+    re.compile(r"\bв\s+суд\b", re.I),
+    re.compile(r"\bя\s+адвокат\b", re.I),
+)
+
+HOST_LINE_RE = re.compile(
+    r"я\s+хост\s+посуточной\s+в\s+тюмени\.?\s*это\s+[«\"]?\s*добрый\s+дом\s*[»\"]?",
+    re.I | re.UNICODE,
+)
+
+KLYSHIN_REFUSAL_RE = re.compile(r"нет\.?\s*так\s+не\s+заселяем", re.I)
+
+SECTION1_MONEY_RE = re.compile(r"(₽|\bруб\.?\b|\bрубл)", re.I)
+SECTION1_TIME_RE = re.compile(r"\b\d{1,2}:\d{2}\b")
+
+
+def check_writer_stage(article_dir: Path, root: Path) -> dict[str, Any]:
+    errors: list[str] = []
+    draft = article_dir / "drafts" / "writer.html"
+    if not draft.is_file():
+        return {
+            "status": "BLOCK",
+            "stage": "writer",
+            "errors": ["drafts/writer.html missing"],
+            "article_dir": str(article_dir),
+        }
+
+    html = draft.read_text(encoding="utf-8")
+    if re.search(r"<h1\b", html, re.I):
+        errors.append("writer draft must not contain <h1>")
+
+    wc = word_count_ru(html)
+    if wc < 1100 or wc > 1800:
+        errors.append(f"word count {wc} outside 1100–1800")
+
+    stamp = article_dir / "derouter-opus-stamp-writer.json"
+    if not stamp.is_file():
+        errors.append("derouter-opus-stamp-writer.json missing (writer must use Derouter Opus)")
+
+    lower = html.casefold()
+    for banned in WRITER_BANNED_SUBSTRINGS:
+        if banned.casefold() in lower:
+            errors.append(f"banned substring: {banned}")
+
+    plain = strip_html(html)
+    if not HOST_LINE_RE.search(plain):
+        errors.append('missing host line «Я хост посуточной в Тюмени. Это «Добрый дом».»')
+
+    # §1 = text before first <h2>
+    h2_match = re.search(r"(?is)<h2\b", html)
+    section1 = html[: h2_match.start()] if h2_match else html[:2000]
+    s1_plain = strip_html(section1)
+    if not SECTION1_TIME_RE.search(s1_plain):
+        errors.append("§1 missing concrete time (HH:MM)")
+    if not SECTION1_MONEY_RE.search(s1_plain):
+        errors.append("§1 missing sum in ₽/руб")
+
+    if not KLYSHIN_REFUSAL_RE.search(plain):
+        errors.append('missing Klyshin refusal dialog «Нет. Так не заселяем.»')
+
+    for rx in WRITER_LEGAL_HOOK_RES:
+        if rx.search(plain):
+            errors.append(f"legal hook pattern: {rx.pattern[:30]}")
+            break
+
+    if "комментар" in lower:
+        errors.append("must not send readers to comments")
+
+    if "наш вывод простой" not in lower:
+        errors.append('missing ending lead «Наш вывод простой.»')
+
+    idx = lower.find("наш вывод простой")
+    tail = html[idx:] if idx >= 0 else html[-1500:]
+    funnel_needles = (
+        "t.me/dobriy_dom_72",
+        "max.ru/id660300569233_biz",
+        "booking",
+        "dobriy_dom_tyumen",
+        "tel:+79935748322",
+    )
+    tail_lower = tail.casefold()
+    for needle in funnel_needles:
+        if needle not in tail_lower and needle.replace("tel:", "") not in tail_lower:
+            errors.append(f"final funnel block missing {needle}")
+
+    if "+7 (993) 574-83-22" not in tail and "+79935748322" not in tail_lower:
+        errors.append("final funnel missing display phone +7 (993) 574-83-22")
+
+    # Mid-article Q → TG or MAX (before final third)
+    mid_end = max(len(html) * 2 // 3, len(html) - 2000)
+    mid = html[:mid_end]
+    mid_lower = mid.casefold()
+    has_mid_channel = "t.me/dobriy_dom_72" in mid_lower or "max.ru/id660300569233_biz" in mid_lower
+    if "?" not in strip_html(mid) or not has_mid_channel:
+        errors.append("mid-article question with answer via TG or MAX missing")
+
+    parser = _AnchorExtractor()
+    parser.feed(html)
+    blog_slugs: set[str] = set()
+    blog_hrefs: list[str] = []
+    for href in parser.hrefs:
+        if href.startswith("/blog/") or "/blog/" in href:
+            slug = slug_from_blog_href(href)
+            if slug:
+                blog_slugs.add(slug)
+                blog_hrefs.append(href)
+
+    if len(blog_slugs) < 3:
+        errors.append(f"need 3–4 unique /blog/ interlinks (got {len(blog_slugs)} slugs)")
+
+    site_base = resolve_public_base_from_env(root)
+    for href in sorted(set(blog_hrefs)):
+        if href.startswith("/"):
+            url = expand_site_base(href, site_base)
+        elif href.startswith("http"):
+            url = href
+        else:
+            continue
+        result = check_url_with_connection_reset_retry(url, timeout=20.0)
+        code = result.get("status_code") or result.get("http_status")
+        if code != 200:
+            errors.append(f"interlink not HTTP 200: {href} ({code})")
+
+    status = "PASS" if not errors else "BLOCK"
+    return {
+        "status": status,
+        "stage": "writer",
+        "word_count_estimate": wc,
+        "blog_interlink_slugs": sorted(blog_slugs),
+        "errors": errors,
+        "article_dir": str(article_dir),
+    }
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Case delivery gate")
     parser.add_argument("--article-dir", required=True)
-    parser.add_argument("--stage", required=True, choices=["title"])
+    parser.add_argument("--stage", required=True, choices=["title", "writer"])
     parser.add_argument("--json-out", help="Write gate result JSON next to article")
     args = parser.parse_args(argv)
 
@@ -135,10 +312,13 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.stage == "title":
         result = check_title_stage(ad)
+    elif args.stage == "writer":
+        result = check_writer_stage(ad, root)
     else:
         result = {"status": "BLOCK", "errors": [f"unknown stage {args.stage}"]}
 
-    out_path = Path(args.json_out) if args.json_out else ad / "case-delivery-gate-title.json"
+    default_out = f"case-delivery-gate-{args.stage}.json"
+    out_path = Path(args.json_out) if args.json_out else ad / default_out
     if not out_path.is_absolute():
         out_path = root / out_path
     out_path.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
