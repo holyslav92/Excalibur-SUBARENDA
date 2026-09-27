@@ -4,9 +4,35 @@
   "checked_at": "2026-09-27",
   "topic_id": "B38",
   "checks": {
+    "board_stationery_ok": true,
+    "typography_cyrillic_clean": true,
+    "meme_density_inline_ok": true,
+    "light_high_key": true,
+    "motif_no_collision_14d": true,
+    "people_in_8_set": true,
+    "cats_cadence_ok": true,
+    "wordstat_stickers_1_3": true,
+    "inline_utility_all_7": true,
+    "inline_no_host_face": true,
+    "inline_no_co_host_human": true,
+    "inline_meme_sticker_scale": true,
+    "meme_people_real_catalog": true,
     "brand_logo_paste_png": false,
+    "logo_top_right_fixed": false,
+    "inline_logo_count_2_3": false,
+    "forbid_multiple_logos_per_image": true,
+    "logo_width_fraction_8_12": false,
     "forbid_ai_drawn_logo_pre_composite": false,
-    "cover_phone_993_post_composite": false
+    "official_logo_pixels_only": false,
+    "logo_no_text_overlap": true,
+    "forbid_logo_white_plate": false,
+    "cover_phone_993_post_composite": false,
+    "forbid_922_phone": true,
+    "cover_phone_not_in_logo_pad": true,
+    "forbid_wordpress_ui_in_art": true,
+    "no_element_overlap": true,
+    "wow_poster_magazine_typography": true,
+    "august_no_winter_hero": true
   },
-  "notes": "8 panels split from 2×GRSAI quad canvases; factory logo composite blocked by AI-drawn lockup in top-right pad (cover + inline logo slots). Regenerate canvas 1 cover quadrant or wipe pad then re-run brand_logo_composite."
+  "notes": "8 PNG визуально high-key, Wordstat-стикеры и utility-inline OK; кот на cover. logo-composite-stamp PASS, но excalibur_blog_drawn_logo_gate: pre-composite cover/01/03/07 — AI-drawn lockup + white plate в top-right pad; live inline-02/04/06 — drawn lockup без factory paste; под factory logo на inline-07 white plate. Нужен возврат Cover: переген canvas 2 (inline_4/6/7) и/или quad-1 inline_3 с пустым top-right pad, wipe pre-composite, brand_logo_composite, повтор Cover-QA."
 }
