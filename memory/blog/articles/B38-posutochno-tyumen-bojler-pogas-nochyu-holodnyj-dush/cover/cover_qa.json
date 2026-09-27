@@ -1,0 +1,12 @@
+{
+  "agent": "excalibur-blog-cover-qa",
+  "status": "FAIL",
+  "checked_at": "2026-09-27",
+  "topic_id": "B38",
+  "checks": {
+    "brand_logo_paste_png": false,
+    "forbid_ai_drawn_logo_pre_composite": false,
+    "cover_phone_993_post_composite": false
+  },
+  "notes": "8 panels split from 2×GRSAI quad canvases; factory logo composite blocked by AI-drawn lockup in top-right pad (cover + inline logo slots). Regenerate canvas 1 cover quadrant or wipe pad then re-run brand_logo_composite."
+}

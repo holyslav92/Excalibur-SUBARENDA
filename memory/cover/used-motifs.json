@@ -3,28 +3,16 @@
   "window_days": 14,
   "entries": [
     {
-      "date": "2026-08-20",
-      "topic_id": "B01",
+      "date": "2026-09-27",
+      "topic_id": "B38",
       "slug": "",
       "motifs": {
-        "composition": "night entrance phone code",
-        "location": "tyumen apartment",
-        "meme": "cat sticker",
-        "prop_set": "keybox suitcase",
-        "sticker_set": "wordstat logo",
-        "joke": "wrong door code"
-      }
-    },
-    {
-      "date": "2026-08-20",
-      "topic_id": "B02",
-      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
-      "motifs": {
-        "composition": "poster collage chip on stove + phone bubble + bold headline, top-right empty logo pad",
-        "location": "tyumen apartment kitchen august warm evening green trees window",
-        "meme": "tiny cat sticker bottom-left ≤12%, never top-right pad",
-        "sticker_set": "залог посуточно, тюмень, скол на плите",
-        "joke": "cat reacts to countertop chip"
+        "composition": "magazine bathroom collage blinking boiler red led autumn window",
+        "location": "bright tyumen short-term rental bathroom september golden leaves",
+        "meme": "tiny shocked meme cat bottom-left",
+        "prop_set": "boiler panel shower phone chat towel",
+        "sticker_set": "посуточно тюмень бойлер ледяная вода",
+        "joke": "card promised shower arctic quest 23:10"
       }
     }
   ]

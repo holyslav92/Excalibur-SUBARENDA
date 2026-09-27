@@ -1,0 +1,166 @@
+{
+  "topic_id": "B38",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": [
+        "inline_4",
+        "inline_5",
+        "inline_6",
+        "inline_7"
+      ],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "cover_hook": "В карточке душ — в 23:10 ледяная",
+  "cover_hook_highlight": "ледяная",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Derouter REST (DEROUTER_API_KEY) — 2K 16:9, one job per canvas (2×). Cover agent invents cover_hook + scene_hint/alt before --write-batch. Host lock = blog-hero.json (navy blazer, not hoodie).",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Постер: в посуточной квартире в Тюмени в сентябре в 23:10 из душа идёт ледяная вода, мигает индикатор бойлера — гость в шоке.",
+      "scene_hint": "LEFT-half collage only: family icy shower boiler; RIGHT half empty pale wall NO objects NO text",
+      "meme_caption_ru": "",
+      "sticky": "Бойлер никто не проверил"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Суббота 26 сентября: в карточке душ, в 23:10 — ледяная вода",
+      "visual_type": "comparison_table",
+      "scene_hint": "3-col compare table left/center only; TOP-RIGHT 15% plain white empty NO brand NO house icon NO curtains NO flower NO Cyrillic logo",
+      "alt": "Сравнительная таблица проверки посуточной квартиры: обещанный душ, ледяная вода в 23:10, непроверенный бойлер и мастер только завтра",
+      "labels": [
+        "душ и горячая вода",
+        "4 200 за ночь",
+        "предоплата 8 400"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Почему «мастер завтра» — это не случайность",
+      "visual_type": "process_flow",
+      "scene_hint": "5-step flow: open hot tap, wait heat, check boiler, emergency contact; clean TR",
+      "alt": "Пошаговая схема проверки горячей воды и бойлера в квартире посуточно перед заселением",
+      "labels": [
+        "суббота 26 сентября",
+        "ушёл за 4 минуты",
+        "23:10 вода ледяная"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Где подставят: переписка с хозяином",
+      "visual_type": "bar_timeline_chart",
+      "scene_hint": "Timeline bars check-in 23:10; TOP-RIGHT 15% plain white empty NO brand NO house icon NO curtains NO flower NO Cyrillic logo",
+      "alt": "Временная шкала инцидента с бойлером: от заселения до ледяного душа в 23:10 и ожидания мастера",
+      "labels": [
+        "30 л бойлер",
+        "тепло 1,5 минуты",
+        "23:12 в чат",
+        "ответ 23:26"
+      ]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "«А если бойлер всё-таки сломается ночью — что делать мне, гостю?»",
+      "visual_type": "structure_diagram",
+      "scene_hint": "Diagram: listing → boiler → host chat → guest backup plan arrows",
+      "alt": "Схема проверки горячего душа в посуточной квартире: объявление, бойлер, связь с хозяином и аварийный план",
+      "labels": [
+        "ребёнка мыли из чайника",
+        "скидка 500 рублей",
+        "залог вернули утром"
+      ]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Четыре вопроса до перевода предоплаты",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Checklist board: 4 questions before prepay; chips toggles; no WP UI",
+      "alt": "Чек-лист гостя перед заселением в посуточную квартиру: вопросы о бойлере, контакты и немедленная проверка воды",
+      "labels": [
+        "один короткий душ",
+        "нагрев 40–90 минут",
+        "семье воды мало"
+      ]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "У нас так",
+      "visual_type": "comparison_table",
+      "scene_hint": "Table: central vs boiler, volume, night response, money-no-shower",
+      "alt": "Таблица действий при разных сценариях с бойлером и ответом хозяина посуточной квартиры",
+      "labels": [
+        "центральная или бойлер",
+        "объём и нагрев",
+        "ответят ли ночью",
+        "деньги без душа"
+      ]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Наш вывод простой.",
+      "visual_type": "process_flow",
+      "scene_hint": "Flow fix breaker VN chat time; TOP-RIGHT 15% plain white empty NO brand NO house icon NO curtains NO flower NO Cyrillic logo",
+      "alt": "Пошаговая схема фиксации холодного душа: фото бойлера, видео воды, время 23:10 и письменный запрос решения",
+      "labels": [
+        "автомат «ВН»",
+        "починка за 2 минуты",
+        "сними кран и бойлер",
+        "запиши время чата"
+      ]
+    }
+  },
+  "cover_keys_ru": [],
+  "cover_emotion": "измученное недоумение и тревожная гримаса: семья только что включила душ и поняла, что вода ледяная",
+  "cover_motifs": {
+    "composition": "Яркий журнальный коллаж: крупная ванная и мигающий бойлер в центре, семья сбоку без перекрытия заголовка, сверху свободная зона под логотип, снизу слева пустая зона под телефон",
+    "location": "Светлая ванная посуточной квартиры в Тюмени, в окне золотые осенние листья и узнаваемый городской силуэт без конкретных брендов",
+    "meme": "Маленькая наклейка мем-кота с ошарашенным выражением в нижнем левом углу, не более 12% кадра",
+    "prop_set": "Настенный бойлер с красным мигающим индикатором, душ с холодной струёй, полотенца, смартфон с абстрактным чатом без читаемого бренда, осеннее окно",
+    "sticker_set": [
+      "квартиры посуточно тюмень",
+      "снять квартиру посуточно в тюмени",
+      "Бойлер никто не проверил"
+    ],
+    "joke": "В карточке обещали душ, а в 23:10 вы получили домашний арктический квест"
+  },
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "снять квартиру посуточно в тюмени"
+  ],
+  "logo_paste_inline_slots": [
+    "inline_1",
+    "inline_3",
+    "inline_7"
+  ],
+  "cover_phone_cta": "+7 (993) 574-83-22"
+}
