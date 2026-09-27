@@ -348,8 +348,8 @@ def http_multipart_post(
     return parsed
 
 
-def parse_image_response(parsed: dict[str, Any]) -> bytes:
-    """Derouter images API returns data[0].b64_json (PNG), not a URL."""
+def parse_image_response(parsed: dict[str, Any]) -> tuple[bytes, str]:
+    """Derouter/GRSAI images API: data[0].b64_json (PNG) or data[0].url (download)."""
     data = parsed.get("data")
     if not isinstance(data, list) or not data:
         raise DerouterApiError(f"Derouter response missing data[]: {list(parsed.keys())}")
@@ -357,12 +357,18 @@ def parse_image_response(parsed: dict[str, Any]) -> bytes:
     if not isinstance(item, dict):
         raise DerouterApiError("Derouter data[0] is not an object")
     b64 = item.get("b64_json")
-    if not b64:
-        raise DerouterApiError("Derouter response missing data[0].b64_json (URL field not used)")
-    try:
-        return base64.b64decode(str(b64))
-    except Exception as exc:  # noqa: BLE001
-        raise DerouterApiError("Derouter b64_json decode failed") from exc
+    if b64:
+        try:
+            return base64.b64decode(str(b64)), "b64_json"
+        except Exception as exc:  # noqa: BLE001
+            raise DerouterApiError("Derouter b64_json decode failed") from exc
+    url = str(item.get("url") or "").strip()
+    if url:
+        from asset_download import download_url_bytes  # noqa: WPS433
+
+        image_bytes, _evidence = download_url_bytes(url)
+        return image_bytes, "url"
+    raise DerouterApiError("Derouter response missing data[0].b64_json and data[0].url")
 
 
 def call_generations(
@@ -460,7 +466,7 @@ def generate_image(
                     )
                     kind = "generations"
                     ref_names = []
-                image_bytes = parse_image_response(parsed)
+                image_bytes, response_kind = parse_image_response(parsed)
                 meta = {
                     "source": "derouter-api",
                     "model": model,
@@ -469,7 +475,7 @@ def generate_image(
                     "endpoint": kind,
                     "host": host,
                     "api_base": base,
-                    "response_kind": "b64_json",
+                    "response_kind": response_kind,
                     "attempts": attempts,
                 }
                 if ref_names:
