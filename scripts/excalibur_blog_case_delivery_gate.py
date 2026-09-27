@@ -180,28 +180,29 @@ SECTION1_MONEY_RE = re.compile(r"(₽|\bруб\.?\b|\bрубл)", re.I)
 SECTION1_TIME_RE = re.compile(r"\b\d{1,2}:\d{2}\b")
 
 
-def check_writer_stage(article_dir: Path, root: Path) -> dict[str, Any]:
+def _case_body_checks(
+    html: str,
+    article_dir: Path,
+    root: Path,
+    *,
+    stage: str,
+    forbid_h1: bool,
+    require_h1: bool,
+    stamp_name: str,
+) -> dict[str, Any]:
     errors: list[str] = []
-    draft = article_dir / "drafts" / "writer.html"
-    if not draft.is_file():
-        return {
-            "status": "BLOCK",
-            "stage": "writer",
-            "errors": ["drafts/writer.html missing"],
-            "article_dir": str(article_dir),
-        }
-
-    html = draft.read_text(encoding="utf-8")
-    if re.search(r"<h1\b", html, re.I):
-        errors.append("writer draft must not contain <h1>")
+    if forbid_h1 and re.search(r"<h1\b", html, re.I):
+        errors.append(f"{stage} article must not contain <h1> (WP title is separate)")
+    if require_h1 and not re.search(r"<h1\b", html, re.I):
+        errors.append(f"{stage} article must contain <h1>")
 
     wc = word_count_ru(html)
     if wc < 1100 or wc > 1800:
         errors.append(f"word count {wc} outside 1100–1800")
 
-    stamp = article_dir / "derouter-opus-stamp-writer.json"
+    stamp = article_dir / stamp_name
     if not stamp.is_file():
-        errors.append("derouter-opus-stamp-writer.json missing (writer must use Derouter Opus)")
+        errors.append(f"{stamp_name} missing (stage must use Derouter)")
 
     lower = html.casefold()
     for banned in WRITER_BANNED_SUBSTRINGS:
@@ -301,7 +302,7 @@ def check_writer_stage(article_dir: Path, root: Path) -> dict[str, Any]:
     status = "PASS" if not errors else "BLOCK"
     return {
         "status": status,
-        "stage": "writer",
+        "stage": stage,
         "word_count_estimate": wc,
         "blog_interlink_slugs": sorted(blog_slugs),
         "errors": errors,
@@ -309,10 +310,60 @@ def check_writer_stage(article_dir: Path, root: Path) -> dict[str, Any]:
     }
 
 
+def check_writer_stage(article_dir: Path, root: Path) -> dict[str, Any]:
+    draft = article_dir / "drafts" / "writer.html"
+    if not draft.is_file():
+        return {
+            "status": "BLOCK",
+            "stage": "writer",
+            "errors": ["drafts/writer.html missing"],
+            "article_dir": str(article_dir),
+        }
+    html = draft.read_text(encoding="utf-8")
+    return _case_body_checks(
+        html,
+        article_dir,
+        root,
+        stage="writer",
+        forbid_h1=True,
+        require_h1=False,
+        stamp_name="derouter-opus-stamp-writer.json",
+    )
+
+
+def check_sol_stage(article_dir: Path, root: Path) -> dict[str, Any]:
+    errors: list[str] = []
+    final = article_dir / "article.html"
+    variant = article_dir / "drafts" / "variant-a.html"
+    if not final.is_file():
+        return {
+            "status": "BLOCK",
+            "stage": "sol",
+            "errors": ["article.html missing"],
+            "article_dir": str(article_dir),
+        }
+    if not variant.is_file():
+        errors.append("drafts/variant-a.html missing (copy of Sol final)")
+    html = final.read_text(encoding="utf-8")
+    result = _case_body_checks(
+        html,
+        article_dir,
+        root,
+        stage="sol",
+        forbid_h1=True,
+        require_h1=False,
+        stamp_name="derouter-opus-stamp-sol.json",
+    )
+    if errors:
+        result["errors"] = errors + result.get("errors", [])
+        result["status"] = "BLOCK"
+    return result
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Case delivery gate")
     parser.add_argument("--article-dir", required=True)
-    parser.add_argument("--stage", required=True, choices=["title", "writer"])
+    parser.add_argument("--stage", required=True, choices=["title", "writer", "sol"])
     parser.add_argument("--json-out", help="Write gate result JSON next to article")
     args = parser.parse_args(argv)
 
@@ -325,6 +376,8 @@ def main(argv: list[str] | None = None) -> int:
         result = check_title_stage(ad)
     elif args.stage == "writer":
         result = check_writer_stage(ad, root)
+    elif args.stage == "sol":
+        result = check_sol_stage(ad, root)
     else:
         result = {"status": "BLOCK", "errors": [f"unknown stage {args.stage}"]}
 
