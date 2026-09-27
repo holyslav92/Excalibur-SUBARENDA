@@ -1,0 +1,35 @@
+{
+  "topic_id": "B38",
+  "research_date": "2026-09-27",
+  "status": "PASS",
+  "summary": "Guest night-one hot water / boiler failure after Tyumen posutochno check-in. Fresh signal: ProГород NN 25.09.2026 on boiler overnight operation vs fault. Wordstat confirms posutochno Tyumen P0 cluster; boiler+rent phrase partial (13).",
+  "freshness_audit": {
+    "research_date": "2026-09-27",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://progorodnn.ru/news/160533",
+      "published_at": "2026-09-25",
+      "note": "News/community explainer: storage heater thermostat cycles, limited benefit of nightly shutoff, fault warning signs — contrasts with guest cold shower at 23:10 when host defers to morning."
+    }
+  },
+  "wordstat_audit": {
+    "status": "PARTIAL",
+    "regions": ["55", "11176", "225"],
+    "phrases_called": [
+      "квартиры посуточно тюмень",
+      "снять квартиру посуточно в тюмени",
+      "бойлер квартира аренда",
+      "горячая вода квартира"
+    ],
+    "partial_reason": "«бойлер квартира аренда» returned totalCount only (13), no top-phrase list"
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  }
+}

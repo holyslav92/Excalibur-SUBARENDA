@@ -1,0 +1,86 @@
+{
+  "topic_id": "B38",
+  "slug": "posutochno-tyumen-bojler-pogas-nochyu-holodnyj-dush",
+  "cover_family": "brand_collage",
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "file": "cover/cover.png",
+  "alt": "Постер: в посуточной квартире в Тюмени в сентябре в 23:10 из душа идёт ледяная вода, мигает индикатор бойлера — гость в шоке.",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-quad-01.png",
+  "generated_at": "2026-09-27T11:42:57+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Постер: в посуточной квартире в Тюмени в сентябре в 23:10 из душа идёт ледяная вода, мигает индикатор бойлера — гость в шоке.",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Сравнительная таблица проверки посуточной квартиры: обещанный душ, ледяная вода в 23:10, непроверенный бойлер и мастер только завтра",
+      "h2_anchor": "Суббота 26 сентября: в карточке душ, в 23:10 — ледяная вода",
+      "visual_type": "comparison_table",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Пошаговая схема проверки горячей воды и бойлера в квартире посуточно перед заселением",
+      "h2_anchor": "Почему «мастер завтра» — это не случайность",
+      "visual_type": "process_flow",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Временная шкала инцидента с бойлером: от заселения до ледяного душа в 23:10 и ожидания мастера",
+      "h2_anchor": "Где подставят: переписка с хозяином",
+      "visual_type": "bar_timeline_chart",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_4",
+      "file": "cover/inline-04.png",
+      "alt": "Схема проверки горячего душа в посуточной квартире: объявление, бойлер, связь с хозяином и аварийный план",
+      "h2_anchor": "«А если бойлер всё-таки сломается ночью — что делать мне, гостю?»",
+      "visual_type": "structure_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_5",
+      "file": "cover/inline-05.png",
+      "alt": "Чек-лист гостя перед заселением в посуточную квартиру: вопросы о бойлере, контакты и немедленная проверка воды",
+      "h2_anchor": "Четыре вопроса до перевода предоплаты",
+      "visual_type": "labeled_checklist",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_6",
+      "file": "cover/inline-06.png",
+      "alt": "Таблица действий при разных сценариях с бойлером и ответом хозяина посуточной квартиры",
+      "h2_anchor": "У нас так",
+      "visual_type": "comparison_table",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_7",
+      "file": "cover/inline-07.png",
+      "alt": "Пошаговая схема фиксации холодного душа: фото бойлера, видео воды, время 23:10 и письменный запрос решения",
+      "h2_anchor": "Наш вывод простой.",
+      "visual_type": "process_flow",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}

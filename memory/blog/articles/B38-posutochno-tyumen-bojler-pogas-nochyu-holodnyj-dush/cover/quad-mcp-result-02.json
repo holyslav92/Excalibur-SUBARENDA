@@ -1,0 +1,10 @@
+{
+  "local_path": "cover/canvas-quad-02.png",
+  "source": "derouter-api",
+  "size": "2048x1152",
+  "quality": "auto",
+  "bytes": 1956048,
+  "endpoint": "generations",
+  "response_kind": "url",
+  "attempts": 1
+}

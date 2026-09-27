@@ -1,0 +1,21 @@
+{
+  "gate": "case-delivery",
+  "status": "BLOCK",
+  "stage": "article",
+  "manner_canon": "dobry_dom_gen_only_human_v1",
+  "checks_run": [
+    "writer.html",
+    "article.html"
+  ],
+  "errors": [
+    "writer.html: duty-log / clock-stamp lead (smooth holyslav quote-first opening; no weekday/date/clock in §1)",
+    "writer.html: body-as-timeline spine (8 clock stamps) — one red line through the case, not dispatch log",
+    "article.html: duty-log / clock-stamp lead (smooth holyslav quote-first opening; no weekday/date/clock in §1)",
+    "article.html: human-lead FAIL — first 2–3 sentences need quote or ₽/money so tired guest gets it",
+    "article.html: body-as-timeline spine (9 clock stamps) — one red line through the case, not dispatch log",
+    "article.html: too long (1325 words; hard fail >1300, target 700–1100)",
+    "article.meta.json: h1: clock time (HH:MM) — use story words («Утром её уже сдали»), not dispatch log",
+    "article.meta.json: h1: missing figure (цифра ₽/ночи/люди) — Dzen CASE needs крик+казус+цифра"
+  ],
+  "article_dir": "/workspace/memory/blog/articles/B38-posutochno-tyumen-bojler-pogas-nochyu-holodnyj-dush"
+}
