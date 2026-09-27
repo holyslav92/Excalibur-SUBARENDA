@@ -13,7 +13,7 @@ from typing import Any
 
 from excalibur_blog_link_verify import check_url_with_connection_reset_retry
 from excalibur_blog_live_catalog import slug_from_blog_href
-from excalibur_blog_site_base import expand_site_base, resolve_public_base_from_env
+from excalibur_blog_site_base import normalize_public_base, resolve_public_base_from_env
 
 HOW_TO_RES = (
     re.compile(r"^\s*\d+\s+вопрос", re.I),
@@ -274,17 +274,28 @@ def check_writer_stage(article_dir: Path, root: Path) -> dict[str, Any]:
     if len(blog_slugs) < 3:
         errors.append(f"need 3–4 unique /blog/ interlinks (got {len(blog_slugs)} slugs)")
 
-    site_base = resolve_public_base_from_env(root)
+    site_base = resolve_public_base_from_env()
+    if not site_base:
+        tenant = load_json(root / "shared/tenant-config.json") or {}
+        urls = tenant.get("site_urls") if isinstance(tenant.get("site_urls"), dict) else {}
+        site_base = normalize_public_base(
+            urls.get("public_unicode")
+            or (tenant.get("cta_channels") or {}).get("site")
+        )
+    user_agent = "ExcaliburBlogCaseDeliveryGate/1.0"
     for href in sorted(set(blog_hrefs)):
         if href.startswith("/"):
-            url = expand_site_base(href, site_base)
+            if not site_base:
+                errors.append("cannot verify interlink: public site base unknown")
+                break
+            url = site_base.rstrip("/") + href
         elif href.startswith("http"):
             url = href
         else:
             continue
-        result = check_url_with_connection_reset_retry(url, timeout=20.0)
-        code = result.get("status_code") or result.get("http_status")
-        if code != 200:
+        result = check_url_with_connection_reset_retry(url, 20.0, user_agent)
+        if not result.get("ok"):
+            code = result.get("status")
             errors.append(f"interlink not HTTP 200: {href} ({code})")
 
     status = "PASS" if not errors else "BLOCK"
