@@ -1,0 +1,84 @@
+{
+  "topic_id": "B37",
+  "canvas_file": "cover/canvas-slice4.png",
+  "layout": "2x2",
+  "pipeline": "slice4_grid_1x_image_api",
+  "inline_count": 3,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-slice4.png",
+      "batch_file": "cover/slice4-mcp-batch.json",
+      "prompt_file": "cover/slice4-mcp-prompt.txt",
+      "result_file": "cover/slice4-mcp-result.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    }
+  ],
+  "style_preset": "the_rieltor_twilight_gold",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "cover_hook": "Лифт в карточке. 22 минуты по лестнице",
+  "cover_hook_highlight": "22 минуты",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Derouter REST (DEROUTER_API_KEY) — 2K 16:9, one job per canvas (1×). Cover agent invents cover_hook + scene_hint/alt before --write-batch. Host lock = blog-hero.json (navy blazer, not hoodie).",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Чемоданы у неработающего лифта в подъезде в осенней Тюмени, на телефоне виден номер +79935748322.",
+      "scene_hint": "Осень в Тюмени, подъезд многоэтажки, неработающий лифт с табличкой «Не работает», у лестницы стоят чемоданы; на переднем плане телефон с номером +79935748322; оставить свободную зону в правом верхнем углу под логотип; визуально подчеркнуть hook «Лифт в карточке. 22 минуты по лестнице».",
+      "meme_caption_ru": "",
+      "sticky": "Сначала лифт — потом оплата"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Лифт остановился не по вине хозяина. Но гость всё равно оказался у хозяина на руках",
+      "visual_type": "comparison_table_ui",
+      "scene_hint": "Осенний подъезд в Тюмени, человек с двумя чемоданами смотрит на табличку «Лифт не работает» и лестничный пролёт вверх; тёплый бытовой свет, реалистичная сцена.",
+      "alt": "Пассажир с чемоданами стоит у неработающего лифта и смотрит на лестницу.",
+      "labels": [
+        "лифт в карточке",
+        "табличка не работает",
+        "8 этаж",
+        "два чемодана"
+      ],
+      "meme_caption_ru": ""
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Фраза, которую лучше задать себе до приезда гостей",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Лестница многоэтажного дома, человек поднимается с чемоданами на 8 этаж, видны пролёты и указатель «8 этаж»; осенние детали у окна, ощущение долгого подъёма.",
+      "alt": "Человек поднимает чемоданы по лестнице на восьмой этаж.",
+      "labels": [
+        "такси уехало",
+        "подъём 22 мин",
+        "остановки на площадках",
+        "молчание в лестнице"
+      ],
+      "meme_caption_ru": ""
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Что происходит после «зато»",
+      "visual_type": "checklist_board",
+      "scene_hint": "Площадка восьмого этажа в тюменском подъезде, человек с чемоданами наконец добрался наверх, рядом дверь квартиры и мягкий свет; спокойный финал после подъёма.",
+      "alt": "Путешественник с чемоданами стоит на площадке восьмого этажа после подъёма по лестнице.",
+      "labels": [
+        "чат хозяину",
+        "зато вид",
+        "нет помощи",
+        "ключи в сейфе"
+      ],
+      "meme_caption_ru": ""
+    }
+  },
+  "cover_keys_ru": []
+}
