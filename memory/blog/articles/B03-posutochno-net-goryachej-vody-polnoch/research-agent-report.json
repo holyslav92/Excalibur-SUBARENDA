@@ -1,0 +1,28 @@
+{
+  "topic_id": "B03",
+  "research_date": "2026-09-28",
+  "status": "PASS",
+  "summary": "Hot water night failure in Tyumen short-term rental; city shutdown vs private boiler; community VK/Domclick signals accessed 2026-09-28.",
+  "freshness_audit": {
+    "research_date": "2026-09-28",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://vk.com/@vse_v_profi-10-prostyh-laifhakov-na-sluchai-kogda-net-goryachei-vody",
+      "published_at": "2026-09-28",
+      "note": "SERP community_experience fetched 2026-09-28"
+    }
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["225"]
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  }
+}
