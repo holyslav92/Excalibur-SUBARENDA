@@ -1,0 +1,218 @@
+{
+  "agent": "excalibur-blog",
+  "date_context": {
+    "timezone": "Europe/Moscow",
+    "today_iso": "2026-09-28",
+    "today_ru": "28.09.2026",
+    "year": 2026,
+    "month": 9,
+    "month_name_ru": "сентябрь",
+    "weekday_ru": "понедельник"
+  },
+  "topic": {
+    "topic_id": "B03",
+    "title": "сырость плесень ванная посуточно заезд",
+    "h1": "сырость плесень ванная посуточно заезд",
+    "slug": "syrost-plesen-vannaya-posutochno-zaezd",
+    "primary_query": "сырость плесень ванная посуточно заезд",
+    "priority": "P0"
+  },
+  "searches": [
+    {
+      "query_id": "primary_fresh",
+      "query": "сырость плесень ванная посуточно заезд 2026",
+      "purpose": "актуальный SERP",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Сырость в ванной? Пять привычек, которые навсегда уничтожат плесень",
+          "url": "https://regions.ru/obschestvo/syrost-v-vannoj-5-ezhednevnyh-privychek-kotorye-navsegda-unichtozhat-plesen",
+          "snippet": ""
+        },
+        {
+          "title": "Почему в ванной всегда сырость: лайфхаки для борьбы с плесенью и ...",
+          "url": "https://temaglavnoe.ru/life/12788/",
+          "snippet": "Пять привычек, которые навсегда уничтожат плесень. С наступлением осени в квартирах становится промозгло. Окна почти не открываются, батареи еще не греют, а после душа в ванной повисает густая влажность. Такие условия — настоящий рай для плесени."
+        },
+        {
+          "title": "Убрали плесень, а она вернулась? Эти ошибки в ванной поддерживают ...",
+          "url": "https://www.pravda.ru/news/realty/2411925-bathroom-mold-prevention/",
+          "snippet": "На самом деле плесень — это не приговор, а всего лишь следствие привычек, которые можно легко изменить без дорогого ремонта и сложных манипуляций."
+        },
+        {
+          "title": "Плесень в доме обычно появляется из‑за повышенной влажности — три ...",
+          "url": "https://vk.com/wall-133676288_1413",
+          "snippet": "Узнайте, почему плесень возвращается после уборки и как навсегда избавиться от грибка в ванной, устранив причины избыточной влажности в доме."
+        },
+        {
+          "title": "Как избавиться от сырости и плесени в ванной комнате",
+          "url": "https://dzen.ru/a/ab2PxFWM3kDd0f78",
+          "snippet": "Плесень в доме обычно появляется из‑за повышенной влажности — три бюджетных способа убрать сырость и запах, даже если вы уже перепробовали многое."
+        },
+        {
+          "title": "Как убрать сырость в доме: 10 проверенных методов 2026",
+          "url": "https://stroy-baza.vercel.app/articles/c/ch/chem-ubrat-syrost.html",
+          "snippet": "Статья автора «Ufatime» в Дзене : Сырость в ванной комнате - проблема, знакомая многим. Она не только создает дискомфорт, но и ведет к появлению грибка и преждевременной порче отделки."
+        }
+      ],
+      "searched_at": "2026-09-28"
+    },
+    {
+      "query_id": "title_fresh",
+      "query": "сырость плесень ванная посуточно заезд 2026",
+      "purpose": "SERP по человеческому title",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Сырость в ванной? Пять привычек, которые навсегда уничтожат плесень",
+          "url": "https://regions.ru/obschestvo/syrost-v-vannoj-5-ezhednevnyh-privychek-kotorye-navsegda-unichtozhat-plesen",
+          "snippet": ""
+        },
+        {
+          "title": "Убрали плесень, а она вернулась? Эти ошибки в ванной поддерживают ...",
+          "url": "https://www.pravda.ru/news/realty/2411925-bathroom-mold-prevention/",
+          "snippet": "Пять привычек, которые навсегда уничтожат плесень. С наступлением осени в квартирах становится промозгло. Окна почти не открываются, батареи еще не греют, а после душа в ванной повисает густая влажность. Такие условия — настоящий рай для плесени."
+        },
+        {
+          "title": "Как убрать сырость в доме: 10 проверенных методов 2026",
+          "url": "https://stroy-baza.vercel.app/articles/c/ch/chem-ubrat-syrost.html",
+          "snippet": "Узнайте, почему плесень возвращается после уборки и как навсегда избавиться от грибка в ванной, устранив причины избыточной влажности в доме."
+        },
+        {
+          "title": "Плесень в доме обычно появляется из‑за повышенной влажности — три ...",
+          "url": "https://vk.com/wall-133676288_1413",
+          "snippet": "Сырость в доме — это не просто дискомфорт, а реальная угроза здоровью и целостности строения. Повышенная влажность становится идеальной средой для развития плесени, грибка и коррозии металлических элементов."
+        },
+        {
+          "title": "Почему в ванной всегда сырость: лайфхаки для борьбы с плесенью и ...",
+          "url": "https://temaglavnoe.ru/life/12788/",
+          "snippet": "Плесень в доме обычно появляется из‑за повышенной влажности — три бюджетных способа убрать сырость и запах, даже если вы уже перепробовали многое."
+        },
+        {
+          "title": "Как убрать сырость в ванной комнате эффективно",
+          "url": "https://maxkom.ru/articles/kak-ubrat-syrost-v-vannoj-komnate-effektivno",
+          "snippet": "На самом деле плесень — это не приговор, а всего лишь следствие привычек, которые можно легко изменить без дорогого ремонта и сложных манипуляций."
+        }
+      ],
+      "searched_at": "2026-09-28"
+    },
+    {
+      "query_id": "official_docs",
+      "query": "сырость плесень ванная посуточно заезд official docs 2026",
+      "purpose": "официальные docs",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "РУКОВОДСТВО ВОЗ ПО КАЧЕСТВУ ВОЗДУХА В ПОМЕЩЕНИЯХ: СЫРОСТЬ И ПЛЕСЕНЬ",
+          "url": "https://iris.who.int/server/api/core/bitstreams/5cc58b7b-9138-43ce-b569-bde2eb665acf/content",
+          "snippet": ""
+        },
+        {
+          "title": "Рекомендации ВОЗ по качеству воздуха в помещениях: сырость и плесень",
+          "url": "https://iris.who.int/items/3b9fb7bf-37a7-4241-9f24-e7c7b0a7529a",
+          "snippet": "Настоящий документ представляет собой руководство Всемирной организации здравоохранения (ВОЗ) по защите здоровья населения от вредного воздействия сырости, а также связанного с нею роста микроорганизмов и контаминации помещений."
+        },
+        {
+          "title": "Google Docs",
+          "url": "https://docs.google.com/",
+          "snippet": "В ней также описаны условия, которые способствуют появлению плесени, и меры по кон-тролю ее роста в помещениях."
+        },
+        {
+          "title": "PDF СЫРОСТЬ И ПЛЕСЕНЬ",
+          "url": "http://www.env-health.org/IMG/pdf/1-_Damp_and_Mould_Health_risks_prevention_and_remedial_actions-RU.pdf",
+          "snippet": "Create and edit web-based documents, spreadsheets, and presentations. Store documents online and access them from any computer."
+        },
+        {
+          "title": "Сырость в ванной? Пять привычек, которые навсегда уничтожат плесень",
+          "url": "https://regions.ru/obschestvo/syrost-v-vannoj-5-ezhednevnyh-privychek-kotorye-navsegda-unichtozhat-plesen",
+          "snippet": "В брошюре кратко представлена основная информация, которую должно знать население для предупреждения и снижения уровня воздействия сырости и плесени и удаления плесени после ее появления."
+        },
+        {
+          "title": "Как избавиться от плесени в ванной комнате?",
+          "url": "https://santehnika-online.ru/wiki/vopros-otvet/kak-izbavitsya-ot-pleseni-v-vannoj-komnate/",
+          "snippet": "Чтобы споры проросли и превратились в видимую плесень, нужны три условия. Первое — влажность выше 60 процентов. В ванной после душа влажность может подниматься до 90-100 процентов. Второе — температура от 20 до 25 градусов. Именно та температура, в которой мы сами живем. Третье — застой воздуха."
+        }
+      ],
+      "searched_at": "2026-09-28"
+    },
+    {
+      "query_id": "github_evidence",
+      "query": "site:github.com сырость плесень ванная посуточно заезд 2026",
+      "purpose": "GitHub evidence",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Kou/Kou.svg at main · hansnihbos/Kou · GitHub",
+          "url": "https://github.com/hansnihbos/Kou/blob/main/Kou.svg",
+          "snippet": ""
+        },
+        {
+          "title": "ctsdg/assets/framework.png at main · xiefan-guo/ctsdg · GitHub",
+          "url": "https://github.com/xiefan-guo/ctsdg/blob/main/assets/framework.png",
+          "snippet": "Contribute to hansnihbos/Kou development by creating an account on GitHub."
+        },
+        {
+          "title": "ai-engineering-aneela/assets/banner.svg at main - GitHub",
+          "url": "https://github.com/aneelaaltaf007/ai-engineering-aneela/blob/main/assets/banner.svg",
+          "snippet": "[ICCV 2021] Image Inpainting via Conditional Texture and Structure Dual Generation - xiefan-guo/ctsdg"
+        },
+        {
+          "title": "emon/vector13678-cxc.svg at main · sharvaa/emon · GitHub",
+          "url": "https://github.com/sharvaa/emon/blob/main/vector13678-cxc.svg",
+          "snippet": "Contribute to aneelaaltaf007/ai-engineering-aneela development by creating an account on GitHub."
+        },
+        {
+          "title": "PSPHunter/figs/graphAbstract.jpg at main · jsun9003/PSPHunter",
+          "url": "https://github.com/jsun9003/PSPHunter/blob/main/figs/graphAbstract.jpg",
+          "snippet": "Contribute to sharvaa/emon development by creating an account on GitHub."
+        },
+        {
+          "title": "YEDDA/EnglishInterface.png at master · jiesutd/YEDDA · GitHub",
+          "url": "https://github.com/jiesutd/YEDDA/blob/master/EnglishInterface.png",
+          "snippet": "A Machine Learning Model to Predict Phase Separation Driving Residues - jsun9003/PSPHunter"
+        }
+      ],
+      "searched_at": "2026-09-28"
+    },
+    {
+      "query_id": "community_experience",
+      "query": "сырость плесень ванная посуточно заезд forum problems опыт 2026",
+      "purpose": "форумы и живые проблемы",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Убрали плесень, а она вернулась? Эти ошибки в ванной поддерживают ...",
+          "url": "https://www.pravda.ru/news/realty/2411925-bathroom-mold-prevention/",
+          "snippet": ""
+        },
+        {
+          "title": "Сырость и плесень в ванной комнате - Хлебопечка.ру",
+          "url": "https://hlebopechka.ru/a/index.php?topic=430876.0",
+          "snippet": "Узнайте, почему плесень возвращается после уборки и как навсегда избавиться от грибка в ванной, устранив причины избыточной влажности в доме."
+        },
+        {
+          "title": "Сырость. Плесень. - forum.md",
+          "url": "https://forum.md/769648",
+          "snippet": "Проблема плесени в стыке между ванной и плиткой после ремонта герметика, способы борьбы и предотвращения."
+        },
+        {
+          "title": "Плесень в ванной — мой опыт: как победить навсегда",
+          "url": "https://astkachenko.ru/2025/12/21/kak-ya-borolsya-s-plesenyu-v-vannoj/",
+          "snippet": "Ситуация в следующем: квартира на 1 этаже, стена в ванной комнате выходит в подъезд, стены и полоток выложены плиткой. Вентиляции нет."
+        },
+        {
+          "title": "Сырость и плесень: как быстро решить проблему в квартире",
+          "url": "https://bbnews.ru/syirost-i-plesen-kak-byistro-reshit-problemu-v-kvartire/",
+          "snippet": "Как я боролся с плесенью в ванной: реальные методы, быстрый результат и простые советы по профилактике — избавьтесь навсегда."
+        },
+        {
+          "title": "Как убрать плесень в квартире навсегда: причины и эффективные средства",
+          "url": "https://goodhim.com/stati-i-video/pyat-mest-v-kvartire-gde-plesen-poyavlyaetsya-chashche-vsego/",
+          "snippet": "В Подмосковье рассказали, куда обращаться, если в квартире появилась плесень. Это опасно для здоровья, поэтому важно быстро понять, кто должен все исправить."
+        }
+      ],
+      "searched_at": "2026-09-28"
+    }
+  ],
+  "errors": []
+}
