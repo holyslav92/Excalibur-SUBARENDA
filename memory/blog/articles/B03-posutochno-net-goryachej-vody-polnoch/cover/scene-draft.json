@@ -1,0 +1,10 @@
+Принял данные: `verdict = PASS`.
+
+Для запуска Cover-пайплайна нужны ещё:
+
+- `article_dir`, например `memory/blog/articles/<topic_id>-<slug>`;
+- `topic_id`;
+- статья или её H2-заголовки — для точной привязки `inline_1…7`;
+- доступные `DEROUTER_API_KEY` и `DEROUTER_IMAGE_MODEL`.
+
+После этого можно выполнить manifest merge, Derouter `cover-scene`, motif gate, генерацию двух quad-canvas и последующий Cover-QA.

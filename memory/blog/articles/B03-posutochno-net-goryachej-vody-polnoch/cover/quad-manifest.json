@@ -1,0 +1,154 @@
+{
+  "topic_id": "B03",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": [
+        "inline_4",
+        "inline_5",
+        "inline_6",
+        "inline_7"
+      ],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "cover_hook": "Горячая вода в карточке. В полночь — лёд",
+  "cover_hook_highlight": "лёд",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Derouter REST (DEROUTER_API_KEY) — 2K 16:9, one job per canvas (2×). Cover agent invents cover_hook + scene_hint/alt before --write-batch. Host lock = blog-hero.json (navy blazer, not hoodie).",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Постер: гость в ванной ночью видит ледяную воду из крана после поезда.",
+      "scene_hint": "Сентябрь, Тюмень: уставшая мама с ребёнком в ванной, ледяная струя из крана, на телефоне 00:41; крупная кириллица «ГОРЯЧАЯ ВОДА» и «ЛЁД»; осенний свет из окна; пустой верхний правый угол 12% без логотипа; без лиц знаменитостей.",
+      "meme_caption_ru": "",
+      "sticky": "00:41 из крана"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Ночь, когда на бумаге всё было нормально",
+      "visual_type": "comparison_table",
+      "scene_hint": "Светлая таблица «карточка vs реальность»: слева «горячая вода 24/7», справа термометр «0°C» и часы 00:41; осенний интерьер.",
+      "alt": "Сравнение обещания горячей воды и ледяного крана в полночь.",
+      "labels": [
+        "23:50 заселение",
+        "4 600 ₽ ночь",
+        "3 000 ₽ залог",
+        "поезд + ребёнок",
+        "00:41 сообщение"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Что мы проверили до утра",
+      "visual_type": "comparison_table_ui",
+      "scene_hint": "Таймлайн 00:44–08:10: соседка, аварийная, три варианта для гостя; схема стояка дома.",
+      "alt": "Хронология ночных проверок от соседки до включения воды.",
+      "labels": [
+        "дом или квартира?",
+        "соседка 00:52",
+        "аварийная 00:55",
+        "к 08:00 вода",
+        "три варианта"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Нет. Так не заселяем.",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Доска объявления в подъезде «отключение ГВС» и красная плашка «гость не знал»; workflow стрелки.",
+      "alt": "Объявление об отключении в подъезде, которое не увидели до заселения.",
+      "labels": [
+        "объявление в подъезде",
+        "клинер не видел",
+        "гость не знал",
+        "19:00 написать",
+        "не молча ключ"
+      ]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Сначала проверка. Потом ночь. Не наоборот.",
+      "visual_type": "checklist_board",
+      "scene_hint": "Чеклист: сначала проверка крана и дома, потом ключ; золотые галочки, осень.",
+      "alt": "Порядок: проверка воды до выдачи ключей.",
+      "labels": [
+        "не «спустите 3 мин»",
+        "ведра + обогрев",
+        "такси за наш счёт",
+        "половина ночи",
+        "залог у двери"
+      ]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Не скидка. Не залог. Предупреждение до брони.",
+      "visual_type": "schema_faq_ui",
+      "scene_hint": "Три карточки «не скидка / не залог / предупреждение» с иконками рубля и сообщения 19:00.",
+      "alt": "Три уровня ответа хозяина: не скидка, не залог, а предупреждение.",
+      "labels": [
+        "видео крана 10 сек",
+        "фото объявления",
+        "отопление +4 °C",
+        "лифт в ремонте",
+        "19 пунктов"
+      ]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Что мы теперь говорим про воду до заселения",
+      "visual_type": "tool_screenshot",
+      "scene_hint": "Скриншот-стиль: видео крана 10 сек, фото объявления, телефон +7 993 на магните на холодильнике.",
+      "alt": "Контроль горячей воды перед заездом: видео крана и контакты.",
+      "labels": [
+        "4 проверки ночью",
+        "2 шаблона чата",
+        "канал в Телеграм",
+        "мессенджер до заезда",
+        "телефон на магните"
+      ]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Наш вывод простой.",
+      "visual_type": "infographic_card",
+      "scene_hint": "Инфокарточка вывода: семья у двери с чемоданом, осенний двор Тюмени, тёплый свет квартиры.",
+      "alt": "Вывод: гость должен знать о воде до оплаты.",
+      "labels": [
+        "осень Тюмень",
+        "ванная свет",
+        "ледяная струя",
+        "семья в душе",
+        "кот мем запрет"
+      ]
+    }
+  },
+  "cover_keys_ru": []
+}
