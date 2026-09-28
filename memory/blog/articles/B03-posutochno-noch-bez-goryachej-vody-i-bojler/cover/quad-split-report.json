@@ -1,0 +1,290 @@
+{
+  "agent": "excalibur-blog-cover-quad-split",
+  "status": "PASS",
+  "splits": [
+    {
+      "canvas_index": 2,
+      "manifest": "cover/quad-manifest.json",
+      "split": {
+        "source_canvas": "memory/blog/articles/B03-posutochno-noch-bez-goryachej-vody-i-bojler/cover/canvas-quad-02.png",
+        "source_size_px": [
+          1672,
+          941
+        ],
+        "panel_size_px": [
+          835,
+          466
+        ],
+        "split_meta": {
+          "split_mode": "gutter_detect",
+          "h_gutter_px": {
+            "start": 466,
+            "end": 471
+          },
+          "v_gutter_px": {
+            "start": 835,
+            "end": 837
+          },
+          "requested_mode": "auto",
+          "gutter_quality": {
+            "h_center_offset_px": 2.0,
+            "v_center_offset_px": 0.0,
+            "max_aspect_crop_loss": 0.0084,
+            "per_panel_crop_loss": {
+              "top_left": 0.0084,
+              "top_right": 0.0084,
+              "bottom_left": 0.0,
+              "bottom_right": 0.0
+            },
+            "reject_reason": null
+          }
+        },
+        "output_size_px": [
+          1200,
+          675
+        ],
+        "outputs": {
+          "inline_4": {
+            "file": "cover/inline-04.png",
+            "quadrant": "top_left",
+            "box_px": {
+              "left": 3,
+              "top": 0,
+              "right": 831,
+              "bottom": 466
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 835,
+              "bottom": 466
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Иллюстрация к разделу: Три сообщения, которые нужны до перевода",
+            "h2_anchor": "Три сообщения, которые нужны до перевода"
+          },
+          "inline_5": {
+            "file": "cover/inline-05.png",
+            "quadrant": "top_right",
+            "box_px": {
+              "left": 840,
+              "top": 0,
+              "right": 1668,
+              "bottom": 466
+            },
+            "raw_box_px": {
+              "left": 837,
+              "top": 0,
+              "right": 1672,
+              "bottom": 466
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Иллюстрация к разделу: Семь вопросов перед оплатой",
+            "h2_anchor": "Семь вопросов перед оплатой"
+          },
+          "inline_6": {
+            "file": "cover/inline-06.png",
+            "quadrant": "bottom_left",
+            "box_px": {
+              "left": 0,
+              "top": 471,
+              "right": 835,
+              "bottom": 941
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 471,
+              "right": 835,
+              "bottom": 941
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Иллюстрация к разделу: «Без залога» и «без комиссии» тоже лучше проверить днём",
+            "h2_anchor": "«Без залога» и «без комиссии» тоже лучше проверить днём"
+          },
+          "inline_7": {
+            "file": "cover/inline-07.png",
+            "quadrant": "bottom_right",
+            "box_px": {
+              "left": 837,
+              "top": 471,
+              "right": 1672,
+              "bottom": 941
+            },
+            "raw_box_px": {
+              "left": 837,
+              "top": 471,
+              "right": 1672,
+              "bottom": 941
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Иллюстрация к разделу: Как мы закрываем эту проблему у себя",
+            "h2_anchor": "Как мы закрываем эту проблему у себя"
+          }
+        }
+      }
+    },
+    {
+      "canvas_index": 1,
+      "manifest": "cover/quad-manifest.json",
+      "split": {
+        "source_canvas": "memory/blog/articles/B03-posutochno-noch-bez-goryachej-vody-i-bojler/cover/canvas-quad-01.png",
+        "source_size_px": [
+          1672,
+          940
+        ],
+        "panel_size_px": [
+          831,
+          464
+        ],
+        "split_meta": {
+          "split_mode": "gutter_detect",
+          "h_gutter_px": {
+            "start": 464,
+            "end": 476
+          },
+          "v_gutter_px": {
+            "start": 831,
+            "end": 841
+          },
+          "requested_mode": "auto",
+          "gutter_quality": {
+            "h_center_offset_px": 0.0,
+            "v_center_offset_px": 0.0,
+            "max_aspect_crop_loss": 0.0072,
+            "per_panel_crop_loss": {
+              "top_left": 0.0072,
+              "top_right": 0.0072,
+              "bottom_left": 0.0072,
+              "bottom_right": 0.0072
+            },
+            "reject_reason": null
+          }
+        },
+        "output_size_px": [
+          1200,
+          675
+        ],
+        "outputs": {
+          "cover": {
+            "file": "cover/cover.png",
+            "quadrant": "top_left",
+            "box_px": {
+              "left": 3,
+              "top": 0,
+              "right": 828,
+              "bottom": 464
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 831,
+              "bottom": 464
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Гость в осенней ванной касается ледяного крана, на телефоне переписка «бойлер нагреется утром».",
+            "h2_anchor": null
+          },
+          "inline_1": {
+            "file": "cover/inline-01.png",
+            "quadrant": "top_right",
+            "box_px": {
+              "left": 844,
+              "top": 0,
+              "right": 1669,
+              "bottom": 464
+            },
+            "raw_box_px": {
+              "left": 841,
+              "top": 0,
+              "right": 1672,
+              "bottom": 464
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Иллюстрация к разделу: В 00:15 «утром» — это не решение",
+            "h2_anchor": "В 00:15 «утром» — это не решение"
+          },
+          "inline_2": {
+            "file": "cover/inline-02.png",
+            "quadrant": "bottom_left",
+            "box_px": {
+              "left": 3,
+              "top": 476,
+              "right": 828,
+              "bottom": 940
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 476,
+              "right": 831,
+              "bottom": 940
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Иллюстрация к разделу: Сломался не бойлер. Сломалась вся цепочка",
+            "h2_anchor": "Сломался не бойлер. Сломалась вся цепочка"
+          },
+          "inline_3": {
+            "file": "cover/inline-03.png",
+            "quadrant": "bottom_right",
+            "box_px": {
+              "left": 844,
+              "top": 476,
+              "right": 1669,
+              "bottom": 940
+            },
+            "raw_box_px": {
+              "left": 841,
+              "top": 476,
+              "right": 1672,
+              "bottom": 940
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Иллюстрация к разделу: Зимняя Тюмень не ждёт до утра",
+            "h2_anchor": "Зимняя Тюмень не ждёт до утра"
+          }
+        }
+      }
+    }
+  ],
+  "manifest": "cover/quad-manifest.json",
+  "html_inject": [
+    "skip inline_1: already correct under H2 — В 00:15 «утром» — это не решение",
+    "skip inline_2: already correct under H2 — Сломался не бойлер. Сломалась вся цепочка",
+    "skip inline_3: already correct under H2 — Зимняя Тюмень не ждёт до утра",
+    "skip inline_4: already correct under H2 — Три сообщения, которые нужны до перевода",
+    "skip inline_5: already correct under H2 — Семь вопросов перед оплатой",
+    "skip inline_6: already correct under H2 — «Без залога» и «без комиссии» тоже лучше проверить днём",
+    "skip inline_7: already correct under H2 — Как мы закрываем эту проблему у себя"
+  ]
+}

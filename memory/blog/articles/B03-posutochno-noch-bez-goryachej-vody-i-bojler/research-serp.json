@@ -1,0 +1,68 @@
+{
+  "agent": "excalibur-blog",
+  "date_context": {
+    "timezone": "Europe/Moscow",
+    "today_iso": "2026-09-28",
+    "today_ru": "28.09.2026",
+    "year": 2026,
+    "month": 9,
+    "month_name_ru": "сентябрь",
+    "weekday_ru": "понедельник"
+  },
+  "topic": {
+    "topic_id": "B03",
+    "title": "Посуточно: ночь без горячей воды и бойлер",
+    "h1": "Посуточно: ночь без горячей воды и бойлер",
+    "slug": "posutochno-noch-bez-goryachej-vody-i-bojler",
+    "primary_query": "Посуточно: ночь без горячей воды и бойлер",
+    "priority": "P0"
+  },
+  "searches": [
+    {
+      "query_id": "primary_fresh",
+      "query": "Посуточно: ночь без горячей воды и бойлер 2026",
+      "purpose": "актуальный SERP",
+      "result_count": 0,
+      "results": [],
+      "searched_at": "2026-09-28"
+    },
+    {
+      "query_id": "title_fresh",
+      "query": "Посуточно: ночь без горячей воды и бойлер 2026",
+      "purpose": "SERP по человеческому title",
+      "result_count": 0,
+      "results": [],
+      "error": "search failed for 'Посуточно: ночь без горячей воды и бойлер 2026': <urlopen error _ssl.c:983: The handshake operation timed out>",
+      "searched_at": "2026-09-28"
+    },
+    {
+      "query_id": "official_docs",
+      "query": "Посуточно: ночь без горячей воды и бойлер official docs 2026",
+      "purpose": "официальные docs",
+      "result_count": 0,
+      "results": [],
+      "error": "search failed for 'Посуточно: ночь без горячей воды и бойлер official docs 2026': <urlopen error _ssl.c:983: The handshake operation timed out>",
+      "searched_at": "2026-09-28"
+    },
+    {
+      "query_id": "github_evidence",
+      "query": "site:github.com Посуточно: ночь без горячей воды и бойлер 2026",
+      "purpose": "GitHub evidence",
+      "result_count": 0,
+      "results": [],
+      "searched_at": "2026-09-28"
+    },
+    {
+      "query_id": "community_experience",
+      "query": "Посуточно: ночь без горячей воды и бойлер forum problems опыт 2026",
+      "purpose": "форумы и живые проблемы",
+      "result_count": 0,
+      "results": [],
+      "searched_at": "2026-09-28"
+    }
+  ],
+  "errors": [
+    "search failed for 'Посуточно: ночь без горячей воды и бойлер 2026': <urlopen error _ssl.c:983: The handshake operation timed out>",
+    "search failed for 'Посуточно: ночь без горячей воды и бойлер official docs 2026': <urlopen error _ssl.c:983: The handshake operation timed out>"
+  ]
+}

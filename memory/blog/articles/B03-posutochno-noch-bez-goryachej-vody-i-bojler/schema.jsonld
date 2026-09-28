@@ -1,0 +1,25 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/zaselilis-na-noch-boiler-nagreetsya-utrom-bron-5400/#article",
+  "url": "{{SITE_BASE}}/zaselilis-na-noch-boiler-nagreetsya-utrom-bron-5400/",
+  "headline": "Заселились на ночь. «Бойлер нагреется утром» — бронь 5 400 ₽",
+  "description": "В Тюмени семья приехала поздно, а из крана пошёл лёд: хозяин обещал «к утру». Кейс о брони 5 400 ₽ и проверке до оплаты.",
+  "inLanguage": "ru-RU",
+  "datePublished": "2026-09-28",
+  "dateModified": "2026-09-28",
+  "author": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/zaselilis-na-noch-boiler-nagreetsya-utrom-bron-5400/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/"
+  }
+}

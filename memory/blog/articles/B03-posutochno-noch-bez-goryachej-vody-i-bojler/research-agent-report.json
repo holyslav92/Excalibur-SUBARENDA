@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "research_date": "2026-09-28",
+  "timezone": "YEKT",
+  "topic": "Бойлер и ледяная вода ночью в квартире посуточно в Тюмени",
+  "primary_query": "квартиры посуточно тюмень",
+  "fresh_signal": {
+    "status": "PASS",
+    "source_type": "community_and_user_reports",
+    "sources": [
+      "https://www.woman.ru/home/economy/thread-boyler-v-kvartire-kak-osnovnoy-istochnik-goryachey-vody-id6413072/",
+      "https://www.otzyvru.com/sutochnoru/review-2182420",
+      "https://pravoved.ru/question/4192284/",
+      "https://irecommend.ru/content/khoteli-kak-vsegda-poluchilos-eshche-khuzhe"
+    ],
+    "accessed_at": "2026-09-28"
+  },
+  "wordstat": {
+    "status": "PASS",
+    "queries": [
+      {
+        "query": "квартиры посуточно тюмень",
+        "ru": 9212,
+        "tyumen_region": 4194
+      },
+      {
+        "query": "бойлер нет горячей воды",
+        "ru": 893
+      },
+      {
+        "query": "как включить водонагреватель",
+        "related_frequency": 6755
+      }
+    ],
+    "accessed_at": "2026-09-28"
+  },
+  "official_source_audit": {
+    "status": "NOT_REQUIRED",
+    "reason": "В материалах нет тарифов, комиссий, лимитов, сроков реакции или иных числовых условий официальной организации."
+  },
+  "source_table_complete": true,
+  "writer_safe_urls_complete": true,
+  "forbidden_constraints_checked": [
+    "Не использованы тела опубликованных статей сайта",
+    "Не использованы ЕГРН и материалы суда Клышина",
+    "Не добавлены коды квартир",
+    "Фабула с бронью 5400 рублей отмечена как вымышленная",
+    "Не сформированы готовые H2, лид или каркас статьи"
+  ]
+}

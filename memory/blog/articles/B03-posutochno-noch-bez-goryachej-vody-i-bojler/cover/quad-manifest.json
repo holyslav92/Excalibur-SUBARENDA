@@ -1,0 +1,166 @@
+{
+  "topic_id": "B03",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": [
+        "inline_4",
+        "inline_5",
+        "inline_6",
+        "inline_7"
+      ],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "Бронь 5 400 ₽ — воды нет",
+  "cover_hook_highlight": "воды",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Derouter REST (DEROUTER_API_KEY) — 2K 16:9, one job per canvas (2×). Cover agent invents cover_hook + scene_hint/alt before --write-batch. Host lock = blog-hero.json (navy blazer, not hoodie).",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Гость в осенней ванной касается ледяного крана, на телефоне переписка «бойлер нагреется утром».",
+      "scene_hint": "Осенний свет: гость у ванной, ледяной кран, чат «бойлер утром», hook кириллицей, Wordstat стикеры, телефон на магните +7 993 574-83-22, пустой верхний правый угол, без снега.",
+      "meme_caption_ru": "",
+      "sticky": "Так бывает?"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "В 00:15 «утром» — это не решение",
+      "visual_type": "comparison_table",
+      "scene_hint": "Инфографика сравнение: обещание «горячий душ» vs реальность ледяной струи в 00:15, осенние цвета, labels из cover-text. …",
+      "alt": "Иллюстрация к разделу: В 00:15 «утром» — это не решение",
+      "labels": [
+        "бойлер не греет",
+        "заселились вечером",
+        "ждать до утра"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Сломался не бойлер. Сломалась вся цепочка",
+      "visual_type": "process_flow",
+      "scene_hint": "Схема цепочки: оплата → ключ → душ → холодная вода → ответ «утром», workflow золотые стрелки. Светлый фон, читаемая кири…",
+      "alt": "Иллюстрация к разделу: Сломался не бойлер. Сломалась вся цепочка",
+      "labels": [
+        "душ холодный",
+        "горячей воды нет",
+        "ночь после брони"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Зимняя Тюмень не ждёт до утра",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Мем-стикер удивлённого кота у бойлера (единственный кот на 8 кадрах), таблица «бойлер 50л = 15 минут горячей». Светлый ф…",
+      "alt": "Иллюстрация к разделу: Зимняя Тюмень не ждёт до утра",
+      "labels": [
+        "бронь 5 400 ₽",
+        "оплата за ночь",
+        "вода не включена"
+      ]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Три сообщения, которые нужны до перевода",
+      "visual_type": "structure_diagram",
+      "scene_hint": "Скриншот-стилизация чата с тремя обязательными вопросами до перевода, без WP UI. Светлый фон, читаемая кириллица, верхни…",
+      "alt": "Иллюстрация к разделу: Три сообщения, которые нужны до перевода",
+      "labels": [
+        "«Нагреется утром»",
+        "ответ в чате",
+        "проблему признали"
+      ]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Семь вопросов перед оплатой",
+      "visual_type": "fact_card",
+      "scene_hint": "Схема щитка: автомат «бойлер» выключен, подписи по-русски. Светлый фон, читаемая кириллица, верхний правый угол пустой п…",
+      "alt": "Иллюстрация к разделу: Семь вопросов перед оплатой",
+      "labels": [
+        "выбило автомат",
+        "проверь щиток",
+        "бойлер без питания"
+      ]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "«Без залога» и «без комиссии» тоже лучше проверить днём",
+      "visual_type": "fact_card",
+      "scene_hint": "Чеклист фиксации: фото крана, время, переписка, звонок. Светлый фон, читаемая кириллица, верхний правый угол пустой под …",
+      "alt": "Иллюстрация к разделу: «Без залога» и «без комиссии» тоже лучше проверить днём",
+      "labels": [
+        "звони хозяину",
+        "сними показания",
+        "сохрани переписку"
+      ]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Как мы закрываем эту проблему у себя",
+      "visual_type": "comparison_table",
+      "scene_hint": "Воронка: телефон на экране +7 993 574-83-22, Telegram и MAX иконки стилизованно. Светлый фон, читаемая кириллица, верхни…",
+      "alt": "Иллюстрация к разделу: Как мы закрываем эту проблему у себя",
+      "labels": [
+        "просите возврат",
+        "фиксируйте холодную воду",
+        "не ждите до утра"
+      ]
+    }
+  },
+  "cover_keys_ru": [],
+  "cover_emotion": "усталость и злость у холодного крана ночью",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "снять квартиру посуточно в тюмени"
+  ],
+  "logo_lockup": {
+    "text": "Добрый дом",
+    "path": "memory/cover/assets/brand/dobry-dom-logo.png",
+    "all_panels": true
+  },
+  "cover_motifs": {
+    "composition": "september evening bathroom scene with person testing tap, phone chat visible",
+    "location": "Tyumen apartment bathroom warm light autumn",
+    "meme": "one small cat sticker max one frame",
+    "prop_set": "shower tap, water thermometer, smartphone chat, towel",
+    "sticker_set": "wordstat labels",
+    "joke": "host message boiler tomorrow morning"
+  },
+  "skip_identity_i2i": true,
+  "no_host_face": true,
+  "logo_paste_inline_slots": [
+    "inline_1",
+    "inline_3",
+    "inline_7"
+  ]
+}
