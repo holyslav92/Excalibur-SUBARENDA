@@ -1,0 +1,110 @@
+{
+  "status": "PASS",
+  "topic_id": "B39",
+  "slug": "oplatili-2-nochi-posutochno-v-tyumeni-u-dveri-dogovor-i-esche-3-000",
+  "research_date": "2026-09-29",
+  "summary": "CASE Tyumen: 2 nights paid on brand site → 3-page paper contract at door + 3 000 ₽ extra; GK найм context, conditions-before-payment; fresh Dobriy_dom_72 Sep 23–29; Wordstat P0 «договор посуточной аренды» 3982/94.",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "Dobriy_dom_72 TG 23–29 Sep 2026 + tenant blog; Klyshin editorial hook (not channel quote)",
+    "source_type": "community",
+    "urls": [
+      "https://t.me/s/Dobriy_dom_72",
+      "https://добрыйдом-72.рф/blog/",
+      "https://t.me/s/klyshin_A"
+    ],
+    "accessed_at": "2026-09-29",
+    "note": "Check-in state / no surprises at threshold posts; paper-at-door = Scout paper_contract_at_door mechanics."
+  },
+  "freshness_audit": {
+    "research_date": "2026-09-29",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://t.me/s/Dobriy_dom_72",
+      "published_at": "2026-09-29",
+      "note": "Late Sep posts on check-in condition, upfront terms vs surprises at door, payment-screen commission case."
+    }
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "source": "handoff_mcp_kv_2026-09-29",
+    "regions": ["55", "11176", "225"],
+    "observations": [
+      {
+        "phrase": "договор посуточной аренды",
+        "volume": 3982,
+        "region": "225",
+        "source": "scout_handoff"
+      },
+      {
+        "phrase": "договор посуточной аренды",
+        "volume": 94,
+        "region": "55+11176",
+        "source": "scout_handoff"
+      },
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 4194,
+        "region": "55+11176",
+        "source": "scout_handoff"
+      },
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 9212,
+        "region": "225",
+        "source": "scout_handoff"
+      },
+      {
+        "phrase": "предоплата посуточно",
+        "volume": 705,
+        "region": "225",
+        "source": "scout_handoff"
+      }
+    ],
+    "mcp_errors": []
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "No bank/developer tariff digits; GK/legal media + Avito host lesson as market context",
+    "verified_claims": 0,
+    "entities_checked": [],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "memory/blog/articles/B39-oplatili-2-nochi-posutochno-v-tyumeni-u-dveri-dogovor-i-esche-3-000/derouter-opus-stamp-research.json",
+    "first_attempt": "PASS",
+    "second_attempt": null
+  },
+  "source_count": 8,
+  "practical_facts_count": 12,
+  "limitations": [
+    "Composite editorial case — no verified booking ID.",
+    "3 000 ₽ and three-page contract are scenario parameters, not market averages.",
+    "Distinct from B04 third guest, B34 door zalog on card, B35 wrong entrance PDF.",
+    "Klyshin_A active this week but no direct посуточный door-contract post."
+  ],
+  "writer_safe_urls": [
+    "https://t.me/Dobriy_dom_72",
+    "https://t.me/Dobriy_dom_Tyumen",
+    "https://max.ru/id660300569233_biz",
+    "https://добрыйдом-72.рф/booking/",
+    "https://добрыйдом-72.рф/",
+    "https://добрыйдом-72.рф/blog/",
+    "https://t.me/klyshin_A",
+    "https://www.cian.ru/stati-juridicheskie-tonkosti-posutochnoj-arendy-objasnjaet-jurist-341001/",
+    "https://pravoved.ru/question/4945821/",
+    "https://cosmo2tree.com/articles/kak-proverit-usloviya-arendy-zhilya/",
+    "https://host.avito.com/course/lesson-3",
+    "tel:+79935748322"
+  ],
+  "errors": []
+}
