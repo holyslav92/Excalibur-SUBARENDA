@@ -1,0 +1,11 @@
+{
+  "category_ids": [],
+  "category_slugs": [
+    "posutochno",
+    "zaselenie"
+  ],
+  "errors": [
+    "wp categories missing: set article.meta.json wp_category_slugs or shared/wp-blog-categories.json topic_defaults"
+  ],
+  "status": "BLOCK"
+}

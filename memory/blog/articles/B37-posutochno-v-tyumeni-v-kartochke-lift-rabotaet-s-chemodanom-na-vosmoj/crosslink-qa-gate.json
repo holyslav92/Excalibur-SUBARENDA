@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "https://добрыйдом-72.рф/blog/rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00/",
+      "slug": "rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00",
+      "anchor": "ранний заезд с чемоданом у двери",
+      "catalog_title": "Ранний заезд оплатили. У двери с чемоданом — почти 5 часов ожидания",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda/",
+      "slug": "kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda",
+      "anchor": "20 минут с чемоданом у подъезда",
+      "catalog_title": "Код уже есть. Только в подъезд не попасть — 20 минут с чемоданом",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/instrukciya-zaseleniya-posutochno-ne-tot-podezd/",
+      "slug": "instrukciya-zaseleniya-posutochno-ne-tot-podezd",
+      "anchor": "35 минут с чемоданом у чужого подъезда",
+      "catalog_title": "PDF на три страницы. Дом верный — 35 минут с чемоданом у чужого подъезда",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu/",
+      "slug": "vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu",
+      "anchor": "чемоданы у подъезда между выездом и поездом",
+      "catalog_title": "Выезд в полдень. Поезд через 4 часа — чемоданы у подъезда",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "outbound_unique_slugs": [
+    "rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00",
+    "kod-dlya-zaseleniya-prislali-domofon-molchit-dvadcat-minut-u-podezda",
+    "instrukciya-zaseleniya-posutochno-ne-tot-podezd",
+    "vyezd-v-12-00-poezd-v-16-30-kuda-det-chemodany-mezhdu"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B37-posutochno-v-tyumeni-v-kartochke-lift-rabotaet-s-chemodanom-na-vosmoj",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}
