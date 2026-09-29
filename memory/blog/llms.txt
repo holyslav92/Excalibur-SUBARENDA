@@ -28,6 +28,7 @@
 - [Продление до двух согласовали. После сдачи ключей с карты списали 1 800 ₽]({{SITE_BASE}}/pozdnij-vyezd-doplata-s-karty/): Продление до двух согласовали. После сдачи ключей с карты списали 1 800 ₽
 - [Привезли сына к вузу — «рядом» оказалось 40 минут пешком]({{SITE_BASE}}/kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki/): Привезли сына к вузу — «рядом» оказалось 40 минут пешком
 - [PDF на три страницы. Дом верный — 35 минут с чемоданом у чужого подъезда]({{SITE_BASE}}/instrukciya-zaseleniya-posutochno-ne-tot-podezd/): PDF на три страницы. Дом верный — 35 минут с чемоданом у чужого подъезда
+- [В карточке лифт работает. С чемоданом на восьмой — 22 минуты по лестнице]({{SITE_BASE}}/posutochno-v-tyumeni-v-kartochke-lift-rabotaet-s-chemodanom-na-vosmoj/): В карточке лифт работает. С чемоданом на восьмой — 22 минуты по лестнице
 - [«Отопление есть»: 2 ночи, +14 °C — ледяные батареи, «УК не включила»]({{SITE_BASE}}/kvartira-posutochno-v-tyumeni-otoplenie-est-batarei-holodnye/): «Отопление есть»: 2 ночи, +14 °C — ледяные батареи, «УК не включила»
 - [В карточке: «уборка включена» — 3 ночи. Выезд: фото простыни — 1 800 ₽]({{SITE_BASE}}/napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni/): В карточке: «уборка включена» — 3 ночи. Выезд: фото простыни — 1 800 ₽
 - [Заселились на ночь. «Бойлер нагреется утром» — бронь 5 400 ₽]({{SITE_BASE}}/zaselilis-na-noch-boiler-nagreetsya-utrom-bron-5400/): 
