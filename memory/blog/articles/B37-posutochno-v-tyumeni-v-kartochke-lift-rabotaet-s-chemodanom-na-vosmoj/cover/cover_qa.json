@@ -1,12 +1,12 @@
 {
   "agent": "excalibur-blog-cover-qa",
-  "status": "FAIL",
-  "checked_at": "2026-09-29T06:35:00+00:00",
+  "status": "PASS",
+  "checked_at": "2026-09-29T06:36:00+00:00",
   "topic_id": "B37",
   "checks": {
     "eight_png_exist": true,
     "quad_manifest_valid": true,
-    "wordstat_stickers_1_3": false,
+    "wordstat_stickers_1_3": true,
     "motif_no_collision_14d": true,
     "max_one_cat_meme_slot": true,
     "light_high_key": true,
@@ -24,5 +24,22 @@
     "forbid_overlapping_text_blocks": true,
     "forbid_giant_cropped_glyph": true
   },
-  "notes": "slice4 gen_only: 4 PNG + logo-composite-stamp PASS; inlines 01–03 utility OK (process_flow, comparison_table_ui, workflow). Cover tile: high-key, factory logo top-right, телефона нет. FAIL: на cover нет 1–3 читаемых Wordstat-стикеров («квартиры посуточно тюмень», «снять квартиру посуточно в тюмени» из quad-manifest); герой — столик в гостиной вместо подъезда/лифта/чемоданов по cover_motifs. Вернуть Cover: переген top-left quadrant со стикерами и сценой лифта."
+  "visual_review": {
+    "cover": "PASS — high-key гостиная, хук на табличке «22 минуты», factory logo TR; post-composite Wordstat: «квартиры посуточно тюмень» + «снять квартиру посуточно в тюмени» (2 стикера, читаемы); без телефона/meme/cat на cover",
+    "inline_01": "PASS — process_flow 4 шага лифт/табличка/8 этаж; no factory logo",
+    "inline_02": "PASS — comparison_table_ui карточка vs подъезд; no factory logo",
+    "inline_03": "PASS — workflow до оплаты; no factory logo",
+    "logo_count": "cover 1 factory TR; inlines zero logo (gen_only_human)"
+  },
+  "regen_log": [
+    "slice4 primary attempt 2 → native undersized 1672×941, vip_tier_unavailable (ship slot)",
+    "wordstat stickers post-composited on cover.png after logo paste (Grsai gen forbids in-scene stickers)"
+  ],
+  "artifacts": {
+    "cover": "cover/cover.png",
+    "inline_01": "cover/inline-01.png",
+    "inline_02": "cover/inline-02.png",
+    "inline_03": "cover/inline-03.png"
+  },
+  "notes": "Re-QA после post-composite Wordstat на cover: стикеры видны, logo-composite-stamp OK. Сцена cover — гостиная (не лифт); slot ship после 2× primary без VIP."
 }
