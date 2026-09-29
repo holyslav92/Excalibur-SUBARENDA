@@ -45,3 +45,4 @@ lessons, benchmarks, QA reports или соседние research-notes как о
 | B34 | bez-zaloga-v-filtre-zalog-u-dveri | В фильтре — «без залога». У двери попросили 5 000 ₽ на личную карту | published |
 | B35 | instrukciya-zaseleniya-posutochno-ne-tot-podezd | PDF на три страницы. Дом верный — 35 минут с чемоданом у чужого подъезда | published |
 | B36 | posutochno-tyumen-v-filtre-mozhno-s-sobakoj-u-dveri-otkaz | Posutochno tyumen v filtre mozhno s sobakoj u dveri otkaz | published |
+| B37 | posutochno-v-tyumeni-v-kartochke-lift-rabotaet-s-chemodanom-na-vosmoj | В карточке лифт работает. С чемоданом на восьмой — 22 минуты по лестнице | published |

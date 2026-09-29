@@ -1,0 +1,27 @@
+{
+  "slug": "posutochno-v-tyumeni-v-kartochke-lift-rabotaet-s-chemodanom-na-vosmoj",
+  "topic_id": "B37",
+  "permalink": "{{SITE_BASE}}/blog/posutochno-v-tyumeni-v-kartochke-lift-rabotaet-s-chemodanom-na-vosmoj/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B37-posutochno-v-tyumeni-v-kartochke-lift-rabotaet-s-chemodanom-na-vosmoj/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 770585,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=5125 slug=posutochno-v-tyumeni-v-kartochke-lift-rabotaet-s-chemodanom-na-vosmoj\nOK categories=101,106\nOK dzen_yzen_meta=1\nOK featured_image=5126\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=5127 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-v-tyumeni-v-kartochke-lift-rabotaet-s-chemodanom-na-vosmoj-inline-01.png\nOK inline_alt=5127\nOK inline_caption=5127\nOK inline_description=5127\nOK inline_image_upload=5128 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-v-tyumeni-v-kartochke-lift-rabotaet-s-chemodanom-na-vosmoj-inline-02.png\nOK inline_alt=5128\nOK inline_caption=5128\nOK inline_description=5128\nOK inline_image_upload=5129 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/09/posutochno-v-tyumeni-v-kartochke-lift-rabotaet-s-chemodanom-na-vosmoj-inline-03.png\nOK inline_alt=5129\nOK inline_caption=5129\nOK inline_description=5129\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/posutochno-v-tyumeni-v-kartochke-lift-rabotaet-s-chemodanom-na-vosmoj/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 3,
+    "expected_inline": 3,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/posutochno-v-tyumeni-v-kartochke-lift-rabotaet-s-chemodanom-na-vosmoj/",
+    "errors": []
+  }
+}
