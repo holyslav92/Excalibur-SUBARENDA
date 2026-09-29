@@ -138,7 +138,7 @@ files_changed:
 checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_remote_transport.py scripts/excalibur_blog_llms_deploy.py`
 - `python3 -m unittest tests.test_publish_transport tests.test_publish_cover_qa_prereq -q`
-commit: pending-parent-commit
+commit: 2a9b210d
 
 ## INC-20260925-1500-llms-deploy-ftp-transport
 status: fixed
