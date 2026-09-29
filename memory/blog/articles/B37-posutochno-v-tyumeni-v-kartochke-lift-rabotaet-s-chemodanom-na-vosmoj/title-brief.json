@@ -1,0 +1,12 @@
+{
+  "topic_id": "B37",
+  "h1": "В карточке лифт работает. С чемоданом на восьмой — 22 минуты по лестнице",
+  "title": "В карточке лифт работает. С чемоданом на восьмой — 22 минуты по лестнице",
+  "slug": "posutochno-v-tyumeni-v-kartochke-lift-rabotaet-s-chemodanom-na-vosmoj",
+  "subject": "Посуточная аренда в Тюмени: неработающий лифт и подъём с багажом",
+  "angle": "Обещание работающего лифта в карточке оборачивается подъёмом с чемоданом на восьмой этаж",
+  "klyshin_title_shape": 2,
+  "wordstat_p0": "квартиры посуточно тюмень",
+  "verdict": "PASS",
+  "generated_via": "excalibur_blog_derouter_opus_chat.py --role title"
+}
