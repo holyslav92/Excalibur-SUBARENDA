@@ -1,0 +1,39 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/posutochno-v-tyumeni-v-kartochke-lift-rabotaet-s-chemodanom-na-vosmoj/#article",
+  "url": "{{SITE_BASE}}/blog/posutochno-v-tyumeni-v-kartochke-lift-rabotaet-s-chemodanom-na-vosmoj/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/posutochno-v-tyumeni-v-kartochke-lift-rabotaet-s-chemodanom-na-vosmoj/"
+  },
+  "headline": "В карточке лифт работает. С чемоданом на восьмой — 22 минуты по лестнице",
+  "description": "В карточке указано, что лифт есть, но у подъезда висит табличка «не работает»: впереди восьмой этаж, два чемодана и ответ хозяина «зато вид» вместо плана. Разбираем, что спросить до оплаты и каких действий ждать от хоста при поломке лифта.",
+  "datePublished": "2026-09-29",
+  "dateModified": "2026-09-29",
+  "inLanguage": "ru-RU",
+  "author": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ],
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    }
+  }
+}
