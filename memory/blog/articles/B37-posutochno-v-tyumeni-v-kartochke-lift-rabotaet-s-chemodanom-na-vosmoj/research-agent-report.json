@@ -1,0 +1,99 @@
+{
+  "status": "PASS",
+  "topic_id": "B37",
+  "slug": "posutochno-v-tyumeni-v-kartochke-lift-rabotaet-s-chemodanom-na-vosmoj",
+  "research_date": "2026-09-29",
+  "summary": "Research for high_floor_lift_out CASE: Tyumen guest, Sep 2026, listing promised lift, sign «не работает» at entrance, 8th floor ~22 min with luggage after taxi left. Fresh: Dobriy_dom_72 TG 29.09 (review details vs superhost) + 27.09 filter vs payment screen; Tyumen news 24–25.09 lift shutdown at Championsky; Klyshin channel active 28–29.09 + scout hook. Wordstat P0 «квартиры посуточно тюмень» 4194 (55+11176), 9212 (225); lift probes weak/partial. Not B35/B18/B06. No bank/JKH tariff digits.",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "t.me/s/Dobriy_dom_72 2026-09-29 + Tyumen lift news 24–25.09.2026 + scout high_floor_lift_out",
+    "source_type": "community+news",
+    "urls": [
+      "https://t.me/s/Dobriy_dom_72",
+      "https://72.ru/text/incidents/2026/09/24/76659941/",
+      "https://t.me/s/klyshin_A",
+      "memory/scout/assembled-scout-inputs-b37-2026-09-29.md"
+    ],
+    "accessed_at": "2026-09-29",
+    "note": "Tenant channel this week on reading real review details; local news shows lifts can be shut off; Klyshin/scout hook for lift+floor+baggage mechanics."
+  },
+  "freshness_audit": {
+    "research_date": "2026-09-29",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://t.me/s/Dobriy_dom_72",
+      "published_at": "2026-09-29",
+      "note": "Post on generic high ratings vs concrete review details (noise, sofa, door) — supports pre-booking checks including floor/lift."
+    },
+    "additional_fresh_signals": [
+      {
+        "url": "https://t.me/s/Dobriy_dom_72",
+        "published_at": "2026-09-27",
+        "type": "community",
+        "note": "Filter «без комиссии» vs commission line at payment — expectation mismatch parallel."
+      },
+      {
+        "url": "https://72.ru/text/incidents/2026/09/24/76659941/",
+        "published_at": "2026-09-24",
+        "type": "news",
+        "note": "Championsky JJK: lift disabled after shaft-area damage; Tyumen background only."
+      },
+      {
+        "url": "memory/scout/assembled-scout-inputs-b37-2026-09-29.md",
+        "published_at": "2026-09-29",
+        "type": "scout",
+        "note": "hook high_floor_lift_out, composite 8th floor / 22 min / baggage."
+      }
+    ]
+  },
+  "wordstat_audit": {
+    "status": "PARTIAL",
+    "source": "mcp-kv live 2026-09-29",
+    "regions": ["55", "11176", "225"],
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 4194,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 9212,
+        "region": "225"
+      },
+      {
+        "phrase": "посуточно лифт",
+        "volume": 27,
+        "region": "225",
+        "note": "totalCount only"
+      },
+      {
+        "phrase": "снять квартиру посуточно высокий этаж",
+        "volume": 29,
+        "region": "225"
+      }
+    ]
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "No bank/JKH tariff digits; community, news, platform context only",
+    "verified_claims": 0,
+    "entities_checked": [],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-5.6-terra",
+    "stamp": "memory/blog/articles/B37-posutochno-v-tyumeni-v-kartochke-lift-rabotaet-s-chemodanom-na-vosmoj/derouter-opus-stamp-research.json",
+    "first_attempt": "PASS"
+  },
+  "key_facts_count": 14,
+  "errors": []
+}
