@@ -46,3 +46,54 @@ confidence: high
 
 ### Resolution
 status: recorded
+
+## LESSON-20260929-0650-B37-slice4-grsai-vip-wordstat-postcomposite
+status: proposed
+topic_id: B37
+category: other
+confidence: medium
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: `content-evidence-report.json` absent; evidence_gate SKIP — editorial evidence table not used.
+- artifact: `memory/blog/articles/B37-posutochno-v-tyumeni-v-kartochke-lift-rabotaet-s-chemodanom-na-vosmoj/cover/slice4-mcp-result.json`
+  finding: Grsai primary attempt 2; `vip_trigger: vip_tier_unavailable`; `delivery: native_undersized_no_vip`; native 1672×941 vs target 2048×1152 — slot shipped after PIL upscale + mechanical quarter slice (canon `on_exhaust`).
+- artifact: `memory/blog/articles/B37-posutochno-v-tyumeni-v-kartochke-lift-rabotaet-s-chemodanom-na-vosmoj/cover/cover_qa.json` + `cover/logo-composite-stamp.json`
+  finding: Wordstat phrases («квартиры посуточно тюмень», «снять квартиру посуточно в тюменi») **post-composited on cover.png after** factory logo paste; Cover-QA re-run PASS with `wordstat_stickers_1_3: true`; regen_log documents gen forbids in-scene stickers.
+- artifact: `memory/blog/articles/B37-posutochno-v-tyumeni-v-kartochke-lift-rabotaet-s-chemodanom-na-vosmoj/cover/quad-split-report.json` + `slice4-gate.json`
+  finding: **One** slice4 canvas → cover + 3 inlines (4 PNG total); not legacy 2×8-frame / 7-inline longform; `python3 scripts/excalibur_blog_cover_qa_gate.py` exit 0 on publish tree.
+- artifact: `memory/blog/articles/B37-posutochno-v-tyumeni-v-kartochke-lift-rabotaet-s-chemodanom-na-vosmoj/wp-publish-result.json`
+  finding: publish PASS 2026-09-29 (post 5125, featured + 3 inline uploads).
+- metrika_signal: none — `METRIKA FEEDBACK BLOCKER` (`YANDEX_METRIKA_OAUTH_TOKEN` / `YANDEX_METRIKA_COUNTER_ID` unset); see `memory/pipeline-fix-queue.md#INC-20260925-1506-content-learner-metrika-credentials`.
+
+### Named blockers
+- METRIKA_CREDENTIALS — behavioral cohort unavailable; no causal CTR/retention claims for B37 day-0.
+- GRSAI_VIP_UNAVAILABLE — VIP tier down at gen time; primary-only undersized delivery accepted under canon exhaust.
+- EVIDENCE_SKIPPED — no content-evidence-report for editorial-quality claims beyond cover pipeline artifacts.
+- CANON_DOC_DRIFT — `memory/cover/cover-canon.json` still lists `wordstat_stickers.cover: FORBIDDEN` while B37 factory workflow post-composites 1–3 stickers after logo (human canon sync needed).
+
+### Keep
+- CASE lift + чемодан + «22 минуты» angle shipped with slice4 grid (подъезд/лифт narrative in inline panels despite cover panel = гостиная scene).
+- Order of factory steps when stickers needed: Grsai slice4 draw → quad split → **logo paste cover tile only** → **Wordstat sticker post-composite** → Cover-QA + gate script before Indexer/Publish.
+- Single Grsai draw + mechanical quarter crop (`dobry_dom_gen_only_human_v1`); logo never on inline tiles.
+
+### Change
+- Treat Grsai `vip_tier_unavailable` as expected env state (batch note: VIP permanently disabled): log `native_undersized_no_vip` in `slice4-mcp-result.json` / cover_qa `regen_log`; upscale before split; do not block publish if slice4_gate + cover QA script PASS.
+- Cover-QA must visually confirm **post-composite** Wordstat stickers (readable, 1–3, no overlap with logo pad) — not demand stickers inside Grsai generation prompt (gen_only forbids factory typography/sticker collage in-scene).
+- Cover agent handoff: explicitly flag **slice4 (4 PNG)**, not 8-frame set, in fragment `cover.md` (B37 did this).
+
+### Never again
+- Request Wordstat sticker text inside the Grsai slice4 prompt as painted scene typography (use manifest + factory post-composite after logo).
+- Assume VIP retry will upsize to true 2048 long side when API returns `vip_tier_unavailable` — ship slot per canon after max primary attempts.
+- Run Cover-QA stamp before Wordstat post-composite when manifest requires stickers (re-QA after sticker paste, as B37).
+
+### Proposed apply
+- Human: align `memory/cover/cover-canon.json` `wordstat_stickers` block with gen_only factory post-composite allowance (cover tile only, after logo paste).
+- Human: refresh Cover-QA / Cover skills prose from «8 PNG / 7 inline» to slice4 4-panel canon (do not auto-edit skills from this single lesson per Writer/skill protection — queue for owner).
+- Env: resolve Metrika credentials (existing INC) and re-run learner ingest for B37 cohort when vars land.
+
+### Durable applied
+- none — first named slice4+VIP+wordstat-postcomposite lesson; Grsai undersized pattern also seen on B05/B08 but different cover pipelines; no automated skill/canon edit this run.
+
+### Resolution
+status: recorded
