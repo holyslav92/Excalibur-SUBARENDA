@@ -8,7 +8,7 @@ import sys
 from pathlib import Path
 from typing import Any
 
-from excalibur_blog_remote_transport import transport_mode, upload_text_file
+from excalibur_blog_remote_transport import effective_publish_transport, upload_text_file
 from excalibur_blog_site_base import SITE_BASE_PLACEHOLDER, expand_site_base
 from excalibur_blog_wp_publish import load_env, project_root, validate_publish_env
 
@@ -29,7 +29,7 @@ def deploy_llms_files(root: Path, env: dict[str, str], public_base: str) -> dict
 
     uploaded: list[str] = []
     errors: list[str] = []
-    transport = transport_mode(env)
+    transport = effective_publish_transport(env)
     for name, path in files:
         raw = path.read_text(encoding="utf-8")
         body = expand_site_base(raw, public_base)
@@ -70,7 +70,7 @@ def main() -> int:
             "llms_txt": llms.is_file(),
             "llms_full_txt": full.is_file(),
             "public_base_configured": bool(public),
-            "transport": transport_mode(env),
+            "transport": effective_publish_transport(env),
             "placeholder_remaining": (
                 (SITE_BASE_PLACEHOLDER in llms.read_text(encoding="utf-8")) if llms.is_file() and public else None
             ),

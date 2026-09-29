@@ -112,8 +112,8 @@ def _upload_text_ftp(env: dict[str, str], remote_name: str, data: bytes) -> str:
 
 
 def upload_text_file(env: dict[str, str], remote_name: str, data: bytes) -> str:
-    """Upload a small text/bootstrap file via configured transport."""
-    if resolve_publish_transport(env) == "ftp":
+    """Upload a small text/bootstrap file via configured transport (Cloud Agent may override ftp→sftp)."""
+    if effective_publish_transport(env) == "ftp":
         return _upload_text_ftp(env, remote_name, data)
     from excalibur_blog_wp_publish import upload_bootstrap_sftp
 

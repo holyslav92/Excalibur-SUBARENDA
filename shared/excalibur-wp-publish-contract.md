@@ -91,7 +91,8 @@ python3 scripts/excalibur_blog_wp_publish.py \
 8. Post meta `_excalibur_blog_skip_theme_faq` = `1` — сигнал теме **не** добавлять глобальный FAQ-блок
 9. После publish — `llms.txt` + `llms-full.txt` в корень WP (`--deploy-llms` или
    `tenant-config.publish_options.deploy_llms_after_publish=true`); transport via
-   `resolve_publish_transport` → FTP when `FTP_TRANSPORT=ftp` / port 21
+   `effective_publish_transport` (same Cloud Agent ftp→sftp override as bootstrap;
+   configured mode in `resolve_publish_transport`) — FTP when allowed / port 21
    (`excalibur_blog_llms_deploy.py` + `upload_text_file`)
 
 Маппинг полей WP Media Library:

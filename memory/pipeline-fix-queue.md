@@ -89,6 +89,57 @@ category: env
 ### Secrets
 - none recorded (missing vars only)
 
+### Fixer resolution
+status: needs-human
+reason:
+- Metrika OAuth + counter id must be set in Cloud Secrets; no repo-side substitute.
+needed_decision_or_secret:
+- `YANDEX_METRIKA_OAUTH_TOKEN`, `YANDEX_METRIKA_COUNTER_ID`
+
+## INC-20260929-0639-publish-duplicate-transport-resolver
+status: fixed
+run_date: 2026-09-29
+role: excalibur-blog-publish
+topic_id: B37
+article_dir: memory/blog/articles/B37-posutochno-v-tyumeni-v-kartochke-lift-rabotaet-s-chemodanom-na-vosmoj
+severity: medium
+category: script
+
+### What went wrong
+- `excalibur_blog_remote_transport.py` contained a second copy of
+  `resolve_publish_transport` / `upload_text_file` at EOF that shadowed the canonical
+  helpers (added for B03 llms FTP); publish/llms behavior depended on which definition won.
+
+### How the agent recovered this run
+- Removed duplicate block in commit 59326b70; B37 publish + llms deploy completed.
+
+### Durable fix needed before next run
+- Single canonical transport module; regression tests for transport selection.
+
+### Suggested files to inspect/change
+- `scripts/excalibur_blog_remote_transport.py`
+- `tests/test_publish_transport.py`
+
+### Secrets
+- none recorded
+
+### Fixer resolution
+status: fixed
+fixed_at: 2026-09-29
+fix_summary:
+- Duplicate EOF transport helpers removed in 59326b70; fixer aligned llms upload with
+  `effective_publish_transport` and hardened unit tests (Cloud Agent CURSOR_AGENT unset in ftp assertions).
+files_changed:
+- `scripts/excalibur_blog_remote_transport.py`
+- `scripts/excalibur_blog_llms_deploy.py`
+- `tests/test_publish_transport.py`
+- `shared/excalibur-wp-publish-contract.md`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_remote_transport.py scripts/excalibur_blog_llms_deploy.py`
+- `python3 -m unittest tests.test_publish_transport tests.test_publish_cover_qa_prereq -q`
+commit: pending-parent-commit
+
 ## INC-20260925-1500-llms-deploy-ftp-transport
 status: fixed
 run_date: 2026-09-25
