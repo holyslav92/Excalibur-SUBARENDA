@@ -1,0 +1,50 @@
+{
+  "topic_id": "B37",
+  "slug": "posutochno-v-tyumeni-v-kartochke-lift-rabotaet-s-chemodanom-na-vosmoj",
+  "cover_family": "brand_collage",
+  "style_preset": "the_rieltor_twilight_gold",
+  "pipeline": "slice4_grid_1x_image_api",
+  "file": "cover/cover.png",
+  "alt": "Подъезд в Тюмени: табличка «лифт не работает», два чемодана у шахты, на смартфоне карточка «лифт есть» и номер +7 993 574-83-22.",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-slice4.png",
+  "generated_at": "2026-09-29T06:27:20+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Подъезд в Тюмени: табличка «лифт не работает», два чемодана у шахты, на смартфоне карточка «лифт есть» и номер +7 993 574-83-22.",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Схема из четырёх шагов: обещание лифта, табличка, восьмой этаж с багажом, двадцать две минуты подъёма.",
+      "h2_anchor": "Что на самом деле произошло",
+      "visual_type": "process_flow",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Таблица: обещание в объявлении против реальности у лифта и в переписке.",
+      "h2_anchor": "Вопрос-отмычка",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Пошаговая схема вопросов гостя до оплаты брони.",
+      "h2_anchor": "Если лифт встал не по вине хозяина",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}

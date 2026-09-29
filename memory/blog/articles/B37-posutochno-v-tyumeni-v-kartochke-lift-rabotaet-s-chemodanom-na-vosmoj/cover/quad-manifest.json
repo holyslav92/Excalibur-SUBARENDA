@@ -1,0 +1,94 @@
+{
+  "topic_id": "B37",
+  "canvas_file": "cover/canvas-slice4.png",
+  "layout": "2x2",
+  "pipeline": "slice4_grid_1x_image_api",
+  "inline_count": 3,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-slice4.png",
+      "batch_file": "cover/slice4-mcp-batch.json",
+      "prompt_file": "cover/slice4-mcp-prompt.txt",
+      "result_file": "cover/slice4-mcp-result.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    }
+  ],
+  "style_preset": "the_rieltor_twilight_gold",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "cover_hook": "В карточке лифт работает — 22 минуты",
+  "cover_hook_highlight": "22 минуты",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "снять квартиру посуточно в тюмени"
+  ],
+  "cover_motifs": {
+    "composition": "low-angle lift doors paper out-of-order sign two suitcases phone screen with booking card",
+    "location": "tyumen panel building entrance stairwell autumn evening warm corridor light",
+    "meme": "tiny surprised traveler meme sticker bottom-left under 12 percent frame",
+    "prop_set": "scotch-taped notice broken wheel suitcase taxi receipt crumpled",
+    "sticker_set": "квартиры посуточно тюмень снять квартиру посуточно в тюмени",
+    "joke": "listing says lift works sticker says no guest already paid"
+  },
+  "mcp_note": "ONE Grsai 2048x1152 slice4 — factory logo paste cover tile only.",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Подъезд в Тюмени: табличка «лифт не работает», два чемодана у шахты, на смартфоне карточка «лифт есть» и номер +7 993 574-83-22.",
+      "scene_hint": "Светлый подъезд тюменской многоэтажки, осень; железные двери лифта, поверх кнопки бумажка на скотче «не работает»; у пола два чемодана, у одного кривое колесо; в руке гостя смартфон — на экране скрин карточки «лифт есть» и крупно +7 993 574-83-22; крыльцо видно через стекло; пустой чистый угол справа сверху 8–12% под фабричный логотип; хук «22 минуты» розовым акцентом на табличке; мелкий мем-стикер удивлённого путника; без AI-логотипа.",
+      "meme_caption_ru": "",
+      "sticky": "Сначала проверка — потом оплата"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Что на самом деле произошло",
+      "visual_type": "process_flow",
+      "scene_hint": "Инфографика process_flow на светлом фоне #FFF: 4 шага с номерами — «лифт в карточке» → «табличка у шахты» → «8 этаж / 2 чемодана» → «22 мин подъём»; terracotta/teal акценты, torn paper, без людей-крупным планом.",
+      "alt": "Схема из четырёх шагов: обещание лифта, табличка, восьмой этаж с багажом, двадцать две минуты подъёма.",
+      "labels": [
+        "лифт в карточке",
+        "табличка не работает",
+        "восьмой этаж",
+        "два чемодана"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Вопрос-отмычка",
+      "visual_type": "comparison_table_ui",
+      "scene_hint": "Сравнительная таблица UI: колонка «в карточке» vs «у подъезда» — строки лифт/этаж/багаж/ответ хозяина; выделить «зато вид» vs «6 800 ₽ вперёд»; читаемые кириллические подписи из labels.",
+      "alt": "Таблица: обещание в объявлении против реальности у лифта и в переписке.",
+      "labels": [
+        "такси уехало",
+        "подъём 22 мин",
+        "«зато вид»",
+        "6 800 ₽ вперёд"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Если лифт встал не по вине хозяина",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Workflow до оплаты: блоки «спросить лифт сегодня» → «скрин карточки» → «сначала проверка» → «потом перевод»; стрелки, чек-марки, спокойный Comfort+ стиль.",
+      "alt": "Пошаговая схема вопросов гостя до оплаты брони.",
+      "labels": [
+        "спросить до оплаты",
+        "лифт сегодня",
+        "скрин карточки",
+        "сначала проверка"
+      ]
+    }
+  },
+  "cover_keys_ru": []
+}
