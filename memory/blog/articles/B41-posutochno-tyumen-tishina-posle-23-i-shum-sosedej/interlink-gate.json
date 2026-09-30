@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "topic_id": "B41",
+  "slug": "posutochno-tyumen-v-pravilah-tishina-posle-23-drill-za-stenkoj",
+  "candidates_count": 43,
+  "outbound_found": [
+    {
+      "slug": "napisali-tihij-centr-v-6-30-za-oknom-kran",
+      "title": "napisali-tihij-centr-v-6-30-za-oknom-kran"
+    },
+    {
+      "slug": "napisali-tihij-dom-v-23-40-sosedi-vklyuchili-muzyku",
+      "title": "napisali-tihij-dom-v-23-40-sosedi-vklyuchili-muzyku"
+    },
+    {
+      "slug": "bez-zaloga-v-filtre-zalog-u-dveri",
+      "title": "bez-zaloga-v-filtre-zalog-u-dveri"
+    },
+    {
+      "slug": "instrukciya-zaseleniya-posutochno-ne-tot-podezd",
+      "title": "instrukciya-zaseleniya-posutochno-ne-tot-podezd"
+    }
+  ],
+  "outbound_unique_slugs": [
+    "napisali-tihij-dom-v-23-40-sosedi-vklyuchili-muzyku",
+    "napisali-tihij-centr-v-6-30-za-oknom-kran",
+    "bez-zaloga-v-filtre-zalog-u-dveri",
+    "instrukciya-zaseleniya-posutochno-ne-tot-podezd"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "warnings": [],
+  "errors": []
+}

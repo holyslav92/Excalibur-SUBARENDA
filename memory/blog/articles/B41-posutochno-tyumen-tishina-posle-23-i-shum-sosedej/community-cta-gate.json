@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "article_dir": "memory/blog/articles/B41-posutochno-tyumen-tishina-posle-23-i-shum-sosedej",
+  "cta_required": true,
+  "required": [
+    "https://t.me/Dobriy_dom_72",
+    "https://max.ru/id660300569233_biz",
+    "{{SITE_BASE}}/booking/",
+    "{{SITE_BASE}}/",
+    "tel:+79935748322"
+  ],
+  "present": {
+    "https://t.me/Dobriy_dom_72": true,
+    "https://max.ru/id660300569233_biz": true,
+    "{{SITE_BASE}}/booking/": true,
+    "{{SITE_BASE}}/": true,
+    "tel:+79935748322": true,
+    "cta_channels.max": true
+  },
+  "funnel_errors": [],
+  "errors": []
+}

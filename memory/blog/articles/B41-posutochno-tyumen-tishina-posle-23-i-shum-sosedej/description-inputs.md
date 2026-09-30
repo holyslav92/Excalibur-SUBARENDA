@@ -1,0 +1,1 @@
+Read article.html and title-brief.json. Write ONLY JSON for description-brief.json with one field "description" — Dzen card teaser 120-160 chars, Klyshin rhythm, not duplicate H1. Case: 9200 rub, drill after quiet rules.

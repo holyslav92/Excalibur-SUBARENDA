@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "{{SITE_BASE}}/blog/napisali-tihij-dom-v-23-40-sosedi-vklyuchili-muzyku/",
+      "slug": "napisali-tihij-dom-v-23-40-sosedi-vklyuchili-muzyku",
+      "anchor": "в истории о музыке за стеной",
+      "catalog_title": "«Тихий дом» обещали. За 8 400 ₽ — музыка за стеной ночью",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "{{SITE_BASE}}/blog/napisali-tihij-centr-v-6-30-za-oknom-kran/",
+      "slug": "napisali-tihij-centr-v-6-30-za-oknom-kran",
+      "anchor": "строительный кран под окнами «тихого центра»",
+      "catalog_title": "Написали «тихий центр». Три ночи за 12 600 ₽ — под краном",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "{{SITE_BASE}}/blog/bez-zaloga-v-filtre-zalog-u-dveri/",
+      "slug": "bez-zaloga-v-filtre-zalog-u-dveri",
+      "anchor": "про залог у двери",
+      "catalog_title": "В фильтре — «без залога». У двери попросили 5 000 ₽ на личную карту",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "{{SITE_BASE}}/blog/instrukciya-zaseleniya-posutochno-ne-tot-podezd/",
+      "slug": "instrukciya-zaseleniya-posutochno-ne-tot-podezd",
+      "anchor": "в истории с инструкцией и подъездом",
+      "catalog_title": "PDF на три страницы. Дом верный — 35 минут с чемоданом у чужого подъезда",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "outbound_unique_slugs": [
+    "napisali-tihij-dom-v-23-40-sosedi-vklyuchili-muzyku",
+    "napisali-tihij-centr-v-6-30-za-oknom-kran",
+    "bez-zaloga-v-filtre-zalog-u-dveri",
+    "instrukciya-zaseleniya-posutochno-ne-tot-podezd"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B41-posutochno-tyumen-tishina-posle-23-i-shum-sosedej",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}

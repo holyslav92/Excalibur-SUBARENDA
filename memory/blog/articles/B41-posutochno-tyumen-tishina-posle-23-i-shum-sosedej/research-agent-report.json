@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "topic_id": "B41",
+  "slug": "posutochno-tyumen-tishina-posle-23-i-shum-sosedej",
+  "research_date": "2026-09-30",
+  "summary": "CASE neighbors_rules_night_noise: rules PDF quiet after 23:00, drill at 01:17, host blames neighbors. Fresh Dobriy_dom_72 mismatch listing 30.09. Wordstat P0 3984/8838.",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "t.me/s/Dobriy_dom_72 2026-09-30",
+    "source_type": "community",
+    "urls": ["https://t.me/s/Dobriy_dom_72", "https://t.me/s/klyshin_A"],
+    "accessed_at": "2026-09-30"
+  },
+  "freshness_audit": {
+    "research_date": "2026-09-30",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://t.me/s/Dobriy_dom_72",
+      "published_at": "2026-09-30",
+      "note": "Listing mismatch includes quiet vs noisy surroundings."
+    }
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "source": "mcp-kv live 2026-09-30",
+    "regions": ["55", "11176", "225"]
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "note": "NOT_REQUIRED — background silence law only"
+  }
+}

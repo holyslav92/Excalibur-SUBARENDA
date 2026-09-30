@@ -1,16 +1,16 @@
 {
   "script": "scripts/excalibur_blog_derouter_opus_chat.py",
-  "role": "scout",
+  "role": "title",
   "tier": "utility",
   "model": "gpt-6-luna",
   "endpoint": "https://api.derouter.ai/openai/v1/chat/completions",
-  "request_id": "chatcmpl-13074061b7984a4683fea362",
+  "request_id": "chatcmpl-230e2fb0a8f944d48459d552",
   "usage": {
-    "prompt_tokens": 3173,
-    "completion_tokens": 278,
-    "total_tokens": 3451
+    "prompt_tokens": 827,
+    "completion_tokens": 874,
+    "total_tokens": 1701
   },
-  "created_at": "2026-09-30T12:13:43.391168+00:00",
+  "created_at": "2026-09-30T12:16:42.719263+00:00",
   "provider": "derouter-rest",
   "user_prompt_chars": 200,
   "contract": "shared/derouter-opus-brain-contract.md"

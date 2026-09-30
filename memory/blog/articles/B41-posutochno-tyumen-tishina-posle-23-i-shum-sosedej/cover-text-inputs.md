@@ -1,0 +1,1 @@
+Read title-brief.json, article.html opening. Output ONLY valid JSON cover-text.json per cover-text skill: cover_hook lines in Russian matching H1 two-beat, wordstat stickers, phone +7 993 574-83-22 in scene text not pill. Autumn September Tyumen season.

@@ -1,0 +1,1 @@
+Write schema.jsonld BlogPosting for slug posutochno-tyumen-v-pravilah-tishina-posle-23-drill-za-stenkoj, headline from title-brief h1, description from description-brief, date 2026-09-30, author Добрый дом, use {{SITE_BASE}} placeholders like B40 schema. Output ONLY JSON-LD.

@@ -1,0 +1,42 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "{{SITE_BASE}}/#organization",
+      "name": "Добрый дом",
+      "url": "{{SITE_BASE}}/",
+      "telephone": "+7 (993) 574-83-22",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Тюмень",
+        "addressCountry": "RU"
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "{{SITE_BASE}}/blog/posutochno-tyumen-v-pravilah-tishina-posle-23-drill-za-stenkoj/#blogposting",
+      "url": "{{SITE_BASE}}/blog/posutochno-tyumen-v-pravilah-tishina-posle-23-drill-za-stenkoj/",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{SITE_BASE}}/blog/posutochno-tyumen-v-pravilah-tishina-posle-23-drill-za-stenkoj/"
+      },
+      "headline": "Посуточно в Тюмени: правила тишины после 23:00 и дрель за стенкой",
+      "description": "Разбираем правила тишины в Тюмени после 23:00: что делать, если в соседней квартире шумят или за стенкой работает дрель, и куда обращаться.",
+      "datePublished": "2026-09-30",
+      "dateModified": "2026-09-30",
+      "inLanguage": "ru-RU",
+      "author": {
+        "@id": "{{SITE_BASE}}/#organization"
+      },
+      "publisher": {
+        "@id": "{{SITE_BASE}}/#organization"
+      },
+      "articleSection": "Блог",
+      "about": {
+        "@type": "City",
+        "name": "Тюмень"
+      }
+    }
+  ]
+}
