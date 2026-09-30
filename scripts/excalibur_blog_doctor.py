@@ -147,7 +147,10 @@ def main() -> int:
         "scripts/excalibur_blog_derouter_opus_chat.py",
         "scripts/excalibur_blog_viraldzen_slot.py",
         "scripts/excalibur_blog_viral_handoff_gate.py",
+        "scripts/excalibur_blog_viral_topic_repeat_gate.py",
+        "scripts/excalibur_blog_viral_topic_repeat.py",
         "shared/viraldzen-slot-config.json",
+        "shared/viral-topic-repeat-blocklist.json",
         "skills/viraldzen-collect/SKILL.md",
         "scripts/excalibur_blog_interlink_lib.py",
         "scripts/excalibur_blog_interlinker.py",
@@ -641,6 +644,35 @@ def main() -> int:
         )
     except Exception as exc:  # noqa: BLE001
         check(False, f"published-titles parity check failed: {exc}", errors, warnings)
+
+    auto_path = root / ".cursor/automations/dobry-dom-3x.yml"
+    if auto_path.is_file():
+        auto_text = auto_path.read_text(encoding="utf-8")
+        parsed_ok = False
+        instructions = ""
+        try:
+            import yaml  # type: ignore
+
+            doc = yaml.safe_load(auto_text)
+            if isinstance(doc, dict):
+                instructions = str(doc.get("instructions") or "")
+                parsed_ok = True
+        except Exception:
+            parsed_ok = False
+        if not parsed_ok:
+            check(
+                False,
+                "dobry-dom-3x.yml invalid YAML (instructions block must be root-level, indented)",
+                errors,
+                warnings,
+            )
+        else:
+            check(
+                instructions.strip().lower().startswith("step 0") and "viraldzen" in instructions.lower(),
+                "dobry-dom-3x automation instructions start with STEP 0 ViralDzen",
+                errors,
+                warnings,
+            )
 
     print(f"SUMMARY errors={len(errors)} warnings={len(warnings)} setup_complete={setup_complete}")
     if errors:

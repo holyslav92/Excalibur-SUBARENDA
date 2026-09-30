@@ -29,6 +29,8 @@ class ViralHandoffGateTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             handoff = {
                 "status": "PASS",
+                "handoff_id": "00000000-0000-4000-8000-000000000001",
+                "issued_at": "2026-10-01T03:00:00+00:00",
                 "viral_source": {
                     "title": "Пример",
                     "url": "https://dzen.ru/a/example",
@@ -60,6 +62,8 @@ class ViralHandoffGateTests(unittest.TestCase):
             # redirect slot path via monkeypatch is heavy; use gate on synthetic file
             handoff = {
                 "status": "PASS",
+                "handoff_id": "00000000-0000-4000-8000-000000000002",
+                "issued_at": "2026-10-01T03:00:00+00:00",
                 "viral_source": {"title": "t", "url": "https://dzen.ru/a/x", "viral_score": 1.0},
                 "guest_angle_ru": "угол",
                 "discovered_hub": {"slug": "travel"},

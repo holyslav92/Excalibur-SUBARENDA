@@ -60,7 +60,9 @@ python3 scripts/excalibur_blog_research_start.py --topic-id B111 --title "…"
 - Publish **без рубрик WP** (`wp_category_slugs` / `topic_defaults`) при `wp_categories_required=true`
 - Publish **без outbound interlink** (**3–4** уникальные live `/blog/` ссылки на published siblings) при `interlink_old_articles=true`
 - **Dzen:** в `article.html` и RSS — только `{{SITE_BASE}}/blog/{slug}/` (или expanded absolute); **никогда** `href="/blog/..."` (root-relative ломает Дзен in-app browser → 404)
-- Scout/тема без **Klyshin×Wordstat dual gate**, без rework-лога или с выдуманными частотами
+- Publish / слот без **ViralDzen** (`viral-dzen-handoff.json` + `excalibur_blog_viral_handoff_gate.py --publish`)
+- Publish / слот без **ViralDzen** handoff (`viral-dzen-handoff.json`, publish gate `--publish`)
+- Scout/тема без **Klyshin×Wordstat dual gate** (после ViralDzen), без rework-лога или с выдуманными частотами
 - Scout **drop hook** при слабом Wordstat без цикла rework (локализация Тюмень, buyer-жаргон: егрн, наследство, ипотека, аванс…)
 - Scout/тема про RF-blocked heroes без Дзен-канона (если `dzen_rf_pack`)
 - Sol выдумывает факты, которых нет в `drafts/writer.html` / research

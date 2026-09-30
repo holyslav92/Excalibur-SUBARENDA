@@ -44,9 +44,10 @@
 ## Один run = одна статья
 
 ```text
-Scout? → research_start → Research → Title → Writer → Sol
+ViralDzen → viral_handoff_gate → viral_topic_repeat_gate → Scout?
+→ research_start → Research → Title → Writer (claude-opus-5-5) → Sol
 → Description → Cover-text || Schema → Cover → Cover-QA → Indexer
-→ Publish? → Fixer → merge → Content-learner
+→ Publish? (viral gates HARD) → Fixer → merge → Content-learner
 ```
 
 - **Publish** — **только если одновременно**:
@@ -70,7 +71,9 @@ Scout? → research_start → Research → Title → Writer → Sol
 - BAN фиксированный H2 «Мой вывод как практика»; BAN штампы «Нет. Так не заселяем.» / «Наш вывод простой.»; один CTA в конце.
 - Scout wound gate: `scripts/excalibur_blog_scout_wound_gate.py` (не клонировать door-surcharge семейство).
 
-**Thin conductor:** Cursor не пишет прозу. Слот: `scripts/excalibur_blog_viraldzen_slot.py` → gate → Scout. **Writer** = `claude-opus-5-5`. **Sol** / Scout / viral-pick = `gpt-6-luna` (`shared/SOUL.md`, `shared/dobry-dom-voice-reset-v1.md`).
+**Thin conductor:** Cursor не пишет прозу. **STEP 0:** `scripts/excalibur_blog_viraldzen_slot.py` → `excalibur_blog_viral_handoff_gate.py` → `excalibur_blog_viral_topic_repeat_gate.py` — иначе стоп (не Scout). **Writer** = `claude-opus-5-5`. **Publish** вызывает viral gates (`--publish`); без handoff в article dir — BLOCK. **Sol** / Scout / viral-pick = `gpt-6-luna`.
+
+**Automation YAML:** `.cursor/automations/dobry-dom-3x.yml` — корневой `instructions:` (валидный YAML); `python3 -c "import yaml; yaml.safe_load(open('.cursor/automations/dobry-dom-3x.yml'))"` в doctor.
 
 **CASE delivery gate:** `scripts/excalibur_blog_case_delivery_gate.py` после Title / Writer / Sol. BLOCK → переписать роль. BAN duty-log в §1, BAN `HH:MM` в H1.
 
