@@ -1,4 +1,4 @@
-"""Tests for dobry_dom_gen_only_human_v1 + dobry_dom_gen_only_human_v1 locks."""
+"""Tests for dobry_dom_voice_reset_v1 editorial + dobry_dom_gen_only_human_v1 cover locks."""
 from __future__ import annotations
 
 import json
@@ -14,9 +14,14 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from excalibur_blog_case_delivery_gate import (  # noqa: E402
     MANNER_CANON_ID,
     WORD_COUNT_HARD_MAX,
+    check_h1,
     check_manner_stamps,
     check_word_count,
     check_article_dir,
+)
+from excalibur_blog_editorial_anti_clone import (  # noqa: E402
+    EDITORIAL_CANON_ID,
+    check_anti_clone_h1,
 )
 from excalibur_blog_quad_slots import GEN_ONLY_HUMAN_CANON_ID, uses_one_2k_slice4  # noqa: E402
 from excalibur_blog_brand_logo_composite import prepare_logo_rgba  # noqa: E402
@@ -25,10 +30,10 @@ LOGO = ROOT / "memory/cover/assets/brand/logo-dobry-dom.png"
 
 GOOD_ARTICLE = (
     "<p>«Парковка бесплатно» — в чате так и написали. У шлагбаума попросили 800 ₽. "
-    "Вы уже в машине, ребёнок спит.</p>"
+    "Посуточно снимали квартиру с ребёнком — вы уже в машине.</p>"
     "<p>Я хост посуточной в Тюмени. Это «Добрый дом».</p>"
     "<h2>Где ловят</h2><p>На словах «бесплатно» без номера места и без скрина шлагбаума.</p>"
-    "<h2>Мой вывод как практика</h2><p>Сначала место на карте, потом перевод. Не наоборот.</p>"
+    "<h2>Короче</h2><p>Сначала место на карте, потом перевод. Не наоборот.</p>"
     "<h2>Что спросить до оплаты</h2><ul><li>Номер парковочного места</li><li>Скрин шлагбаума</li></ul>"
     + "<p>Залог 5 000 — норм или перебор? Ответ в Telegram.</p>" * 3
 )
@@ -38,33 +43,24 @@ class KlyshinMannerGateTest(unittest.TestCase):
     def test_manner_canon_in_pipeline(self) -> None:
         canon = json.loads((ROOT / "shared/pipeline-canon.json").read_text(encoding="utf-8"))
         self.assertEqual(canon.get("editorial_manner_canon"), MANNER_CANON_ID)
+        self.assertEqual(canon.get("editorial_manner_canon"), EDITORIAL_CANON_ID)
         self.assertEqual(canon.get("cover_pipeline_canon"), GEN_ONLY_HUMAN_CANON_ID)
-        self.assertEqual(canon["opening_rules"].get("word_count_target"), "700-1100")
+        self.assertEqual(canon["opening_rules"].get("word_count_target"), "650-1100")
 
     def test_article_style_names_manner_canon(self) -> None:
         style = (ROOT / "shared/article-style.md").read_text(encoding="utf-8")
         self.assertIn(MANNER_CANON_ID, style)
-        self.assertIn("700–1100", style)
-        self.assertIn("Мой вывод как практика", style)
+        self.assertIn("650–1100", style)
+        self.assertNotIn("Мой вывод как практика» — **ровно 1×**", style)
         self.assertNotIn("1100–1800", style)
 
-    def test_bans_repeat_nash_vyvod_stamp(self) -> None:
-        html = (
-            "<p>Наш вывод простой. Хороший хост — тот, кто говорит цифры заранее.</p>"
-            "<p>Снова: наш вывод простой.</p>"
-        )
+    def test_bans_nash_vyvod_stamp(self) -> None:
+        html = "<p>Наш вывод простой. Хороший хост — тот, кто говорит цифры заранее.</p>"
         errors = check_manner_stamps(html, label="test")
         self.assertTrue(errors)
 
-    def test_allows_single_nash_vyvod_stamp(self) -> None:
-        html = "<p>Наш вывод простой. Хороший хост — тот, кто говорит цифры заранее.</p>"
-        errors = check_manner_stamps(html, label="test")
-        self.assertFalse(errors)
-
-    def test_bans_repeat_net_tak_ne_zaselyaem(self) -> None:
-        html = (
-            "<p>Нет. Так не заселяем.</p><p>Снова: нет. Так не заселяем.</p>"
-        )
+    def test_bans_net_tak_ne_zaselyaem(self) -> None:
+        html = "<p>Нет. Так не заселяем.</p>"
         errors = check_manner_stamps(html, label="test")
         self.assertTrue(errors)
 
@@ -75,8 +71,20 @@ class KlyshinMannerGateTest(unittest.TestCase):
 
     def test_article_style_forbids_old_length(self) -> None:
         prompt = (ROOT / "shared/writer-master-prompt.md").read_text(encoding="utf-8")
-        self.assertIn("700–1100", prompt)
+        self.assertIn("650–1100", prompt)
         self.assertNotIn("1100–1800", prompt)
+
+    def test_anti_clone_blocks_door_h1_template(self) -> None:
+        last_live = [{"h1": "Оплатили за двоих. У двери попросили доплату за третьего", "opening": ""}]
+        clone = "Оплатили за двоих. У двери попросили доплату за третьего посуточно"
+        errors = check_anti_clone_h1(clone, root=ROOT, recent=last_live)
+        self.assertTrue(any("opening 6 words" in e or "door-surcharge" in e for e in errors))
+
+    def test_fresh_h1_shape_passes_without_clone_errors(self) -> None:
+        last_live = [{"h1": "Оплатили за двоих. У двери попросили доплату за третьего", "opening": ""}]
+        fresh = "22 минуты по лестнице: в карточке лифт «работает», посуточно в Тюмени"
+        errors = check_anti_clone_h1(fresh, root=ROOT, recent=last_live)
+        self.assertEqual(errors, [], errors)
 
 
 class Slice4CanonTest(unittest.TestCase):

@@ -5,7 +5,7 @@
 
 **Только после** `memory/setup/status.json` → `complete: true`.
 
-Тенант: **«Добрый дом»** / добрыйдом-72.рф — один guest-night **CASE** **700–1100 слов** (`dobry_dom_gen_only_human_v1`), **1 cover + 3 inline** (`dobry_dom_gen_only_human_v1`).
+Тенант: **«Добрый дом»** / добрыйдом-72.рф — один guest-night **CASE** **650–1100 слов** (`dobry_dom_voice_reset_v1`), **1 cover + 3 inline** (`dobry_dom_gen_only_human_v1`, image pipeline без изменений).
 Темы: посуточная аренда, субаренда, заселение, залог, соседи, ЖКХ, Тюмень.
 
 ## Расписание (owner: 10–17 YEKT)
@@ -63,14 +63,16 @@ Scout? → research_start → Research → Title → Writer → Sol
 - **After slice, cover tile ONLY:** factory paste `cropped-img_7143.png` — native aspect, no plaque. **Inlines: ZERO logo. NEVER logo in Grsai images[].**
 - Allowed scripts: `excalibur_blog_cover_quad_split.py` + `excalibur_blog_brand_logo_composite.py` only.
 
-### Prose manner (HARD — `dobry_dom_gen_only_human_v1`)
+### Prose manner (HARD — `dobry_dom_voice_reset_v1`)
 
-- **700–1100 слов**, spoken Russian at the door. First 2–3 sentences: what happened + quote or ₽.
-- BAN riddle H1, «под вопросом», clever structure. ONE «Мой вывод как практика».
+- **650–1100 слов**, короткие фразы, гость понимает с первой строки.
+- H1/body **rotate shapes** — anti-clone vs **12** live; BAN «Сняли квартиру посуточно. Хотели X. У двери:».
+- BAN фиксированный H2 «Мой вывод как практика»; BAN штампы «Нет. Так не заселяем.» / «Наш вывод простой.»; один CTA в конце.
+- Scout wound gate: `scripts/excalibur_blog_scout_wound_gate.py` (не клонировать door-surcharge семейство).
 
-**Thin conductor:** Cursor не пишет прозу и не рисует кадры. **Writer** = `claude-opus-5` (полный CASE в `drafts/writer.html`, не тезисы). **Sol** = `gpt-5.6-terra` (слог `shared/SOUL.md` + `shared/soul-examples/`).
+**Thin conductor:** Cursor не пишет прозу. **Writer** = `claude-opus-5`. **Sol** = `gpt-5.6-terra` (`shared/SOUL.md`, `shared/dobry-dom-voice-reset-v1.md`).
 
-**CASE delivery gate:** после Title и после Writer/Sol — `scripts/excalibur_blog_case_delivery_gate.py`. BLOCK → переписать роль, не публиковать. **BAN duty-log lead** (дата/часы/`HH:MM` в §1) и **BAN `HH:MM` в H1** — holyslav smooth quote-first opening.
+**CASE delivery gate:** `scripts/excalibur_blog_case_delivery_gate.py` после Title / Writer / Sol. BLOCK → переписать роль. BAN duty-log в §1, BAN `HH:MM` в H1.
 
 **Воронка:** один блок CTA **только в конце** статьи (не после чеклиста, не после «у нас так»).
 

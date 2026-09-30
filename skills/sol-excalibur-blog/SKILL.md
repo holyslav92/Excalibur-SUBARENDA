@@ -25,7 +25,9 @@ python3 scripts/excalibur_blog_derouter_opus_chat.py \
 Ты берёшь **смысл** черновика Writer и **переписываешь** статью слогом
 тенанта. Публикуется твой `article.html`, не сырой Writer.
 
-**Длина:** ~**1100–1800 слов**. **Sol MUST NOT** replace burn scene with how-to encyclopedia or checklist spine.
+**Канон:** `dobry_dom_voice_reset_v1` (`shared/dobry-dom-voice-reset-v1.md`).  
+**Длина:** **650–1100 слов**, hard fail >1300. **BAN** H2 «Мой вывод как практика» и штампы «Нет. Так не заселяем.» / «Наш вывод простой.»  
+**Sol MUST NOT** replace burn scene with how-to encyclopedia or checklist spine.
 
 ---
 

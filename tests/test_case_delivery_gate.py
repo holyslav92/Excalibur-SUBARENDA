@@ -10,13 +10,14 @@ from scripts.excalibur_blog_case_delivery_gate import (
     check_h1,
     check_opening_body,
     check_article_dir,
+    check_manner_stamps,
 )
 
 ROOT = Path(__file__).resolve().parents[1]
 
 SMOOTH_OPENING = (
-    "<p>«Оплатили за двоих» — в чате бронь закрыта. У двери просят ещё 2 400 ₽ "
-    "за третьего. Нет. Так не заселяем.</p>"
+    "<p>«Оплатили за двоих» — в чате бронь закрыта. У шлагбаума попросили ещё 2 400 ₽ "
+    "за третьего. Посуточно в Тюмени это уже третий такой кейс за неделю.</p>"
     "<p>Я хост посуточной в Тюмени. Это «Добрый дом».</p>"
 )
 
@@ -42,33 +43,31 @@ class CaseDeliveryGateTest(unittest.TestCase):
         self.assertTrue("how-to" in joined or "что нужно" in joined)
 
     def test_blocks_h1_without_figure(self) -> None:
-        errors = check_h1("Обещали парковку рядом. Шлагбаум не пустил")
+        errors = check_h1("Обещали парковку рядом. Шлагбаум не пустил посуточно")
         self.assertTrue(any("figure" in e or "цифра" in e for e in errors))
 
     def test_passes_h1_with_figure(self) -> None:
-        errors = check_h1("«Парковка бесплатно». У шлагбаума попросили 500 ₽")
+        errors = check_h1("«Парковка бесплатно». У шлагбаума попросили 500 ₽, посуточно")
         self.assertEqual(errors, [], errors)
 
     def test_passes_two_beat_case_h1(self) -> None:
         errors = check_h1(
-            "Хозяин сказал «всё включено». В такси доплатили 2 400 ₽"
+            "Хозяин сказал «всё включено». В такси доплатили 2 400 ₽, посуточно"
         )
         self.assertEqual(errors, [], errors)
 
-    def test_passes_h1_without_clock_oplatili(self) -> None:
-        errors = check_h1("Оплатили за двоих. У двери попросили доплату за третьего")
-        self.assertEqual(errors, [], errors)
-
-    def test_passes_h1_without_clock_utrom(self) -> None:
-        errors = check_h1("Перевёл 3 000 ₽ предоплаты. Утром квартиру уже сдали")
-        self.assertEqual(errors, [], errors)
+    def test_blocks_factory_skeleton_h1(self) -> None:
+        errors = check_h1(
+            "Сняли квартиру посуточно. Хотели парковку. У двери: +800 ₽"
+        )
+        self.assertTrue(any("skeleton" in e for e in errors))
 
     def test_blocks_h1_with_clock(self) -> None:
-        errors = check_h1("Звонок в 10:00. Заселился в 22:00 — у стола нет розетки")
+        errors = check_h1("Звонок в 10:00. Заселился в 22:00 — у стола нет розетки, посуточно")
         self.assertTrue(any("clock" in e.lower() for e in errors))
 
     def test_blocks_h1_without_two_beats(self) -> None:
-        errors = check_h1("Залог при посуточной аренде")
+        errors = check_h1("Залог при посуточной аренде 5000")
         self.assertTrue(any("two-beat" in e for e in errors))
 
     def test_blocks_chopped_opening(self) -> None:
@@ -95,9 +94,14 @@ class CaseDeliveryGateTest(unittest.TestCase):
         errors = check_opening_body(opening, label="test")
         self.assertTrue(any("duty-log" in e for e in errors))
 
-    def test_passes_smooth_holyslav_opening(self) -> None:
+    def test_passes_smooth_opening(self) -> None:
         errors = check_opening_body(SMOOTH_OPENING, label="test")
         self.assertEqual(errors, [], errors)
+
+    def test_bans_manner_stamps_in_opening(self) -> None:
+        stamped = SMOOTH_OPENING + "<p>Нет. Так не заселяем.</p>"
+        errors = check_manner_stamps(stamped, label="test")
+        self.assertTrue(errors)
 
     def test_title_stage_blocks_skeleton(self) -> None:
         with tempfile.TemporaryDirectory() as td:

@@ -12,8 +12,8 @@ class TitleSubjectWordstatTest(unittest.TestCase):
         s = (ROOT / "skills/title-excalibur-blog/SKILL.md").read_text(encoding="utf-8")
         low = s.lower()
         self.assertIn("guest", low)
-        self.assertIn("two-beat", low)
-        self.assertTrue("dzen_pattern" in low or "dzen pattern" in low)
+        self.assertTrue("voice_reset" in low or "rotate" in low or "shape" in low)
+        self.assertTrue("guest" in low or "h1_shape" in low)
 
     def test_title_agent_bans_hiding_subject(self) -> None:
         a = (ROOT / "agents/excalibur-blog-title.md").read_text(encoding="utf-8")

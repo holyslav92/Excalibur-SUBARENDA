@@ -98,15 +98,15 @@ publish_gate:
     - FTP_ROOT
 
   instructions: |
-  Один слот = ОДНА статья-кейс «Добрый дом», разговор у двери (dobry_dom_gen_only_human_v1). Реп только holyslav92/Excalibur-SUBARENDA, ветка main. Никогда Excalibur-2-Cloud и tymenrieltor.ru. MCP-KV только wordstat_get_*. Проза — Derouter REST скриптом репа (не Composer, не mcp-derouter). Картинки — ONE Grsai primary image 2048×1152 (VIP-on для 2K если primary не тянет), 1 draw → slice 4. ЗАПРЕЩЕНО: 2 холста × 4 = 8, poster_composite, phone overlay, logo в images[]. Нет ключа Derouter или Grsai → BLOCKER.
+  Один слот = ОДНА статья-кейс «Добрый дом» (текст: dobry_dom_voice_reset_v1; картинки: dobry_dom_gen_only_human_v1). Реп только Excalibur-SUBARENDA (см. repository.github в этом файле), ветка main. Никогда Excalibur-2-Cloud и tymenrieltor.ru. MCP-KV только wordstat_get_*. Проза — Derouter REST скриптом репа (не Composer, не mcp-derouter). Картинки — ONE Grsai primary image 2048×1152 (VIP-on для 2K если primary не тянет), 1 draw → slice 4. ЗАПРЕЩЕНО: 2 холста × 4 = 8, poster_composite, phone overlay, logo в images[]. Нет ключа Derouter или Grsai → BLOCKER.
 
   Канон ролей, без пропусков:
   Scout? → research_start → Research → Title → Writer → Sol → Description → Cover-text || Schema → Cover → Cover-QA → Indexer → Publish? → Fixer → merge → Content-learner
 
-  Дирижёр Cursor не пишет абзацы и не рисует кадры. Writer = claude-opus-5. Scout / Research / Title / Sol / Description / Cover-text / Schema / Cover-scene = gpt-5.6-terra. Слог Sol — shared/SOUL.md + shared/soul-examples/. После Title и после Writer/Sol гонять scripts/excalibur_blog_case_delivery_gate.py. BLOCK → переписать роль, не публиковать.
+  Дирижёр Cursor не пишет абзацы и не рисует кадры. Writer = claude-opus-5. Scout / Research / Title / Sol / Description / Cover-text / Schema / Cover-scene = gpt-5.6-terra. Слог Sol — shared/SOUL.md + shared/dobry-dom-voice-reset-v1.md + shared/soul-examples/. После Scout — scripts/excalibur_blog_scout_wound_gate.py. После Title / Writer / Sol — scripts/excalibur_blog_case_delivery_gate.py. BLOCK → переписать роль, не публиковать.
 
-  ГОЛОС (HARD — dobry_dom_gen_only_human_v1): 700–1100 слов. §1 = что случилось + цитата или ₽ — гость понимает без второго чтения. Короткие предложения, как у двери. BAN загадочный H1, «под вопросом», clever structure. Телефон +7 (993) 574-83-22 только в ТЕКСТЕ, не на картинке.
+  ГОЛОС (HARD — dobry_dom_voice_reset_v1): 650–1100 слов. Ротируй H1 shape (6 форм), anti-clone vs 12 live. BAN скелет «Сняли квартиру посуточно… У двери:», BAN H2 «Мой вывод как практика», BAN штампы «Нет. Так не заселяем.» / «Наш вывод простой.», один CTA. «посуточно» в H1 или первом предложении. Телефон +7 (993) 574-83-22 только в ТЕКСТЕ, не на картинке.
 
   Картинки (HARD — dobry_dom_gen_only_human_v1): ONE Grsai primary image 2048×1152 как 2×2 photoreal grid → slice 4 (cover+3 inline). Headline кириллицей НА предмете в кадре (бумага, табличка, ТВ) — НЕ Canva overlay, НЕ жёлтый маркер, НЕ стикер, НЕ phone pill. После slice: paste cropped-img_7143.png ТОЛЬКО на cover tile. Единственные скрипты: quad_split + brand_logo_composite. Gate: excalibur_blog_slice4_gate.py + case_delivery_gate.py.
 
-  Report: manner_canon PASS?, slice4 gate PASS?, word count 700–1100, 4 images, 1 grsai draw, case-delivery-gate PASS/BLOCK.
+  Report: editorial dobry_dom_voice_reset_v1 PASS?, scout-wound + case-delivery PASS?, slice4 PASS?, word count 650–1100, 4 images, 1 grsai draw.

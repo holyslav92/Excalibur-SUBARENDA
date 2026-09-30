@@ -4,9 +4,9 @@
 Checks title-brief.json (after Title), drafts/writer.html (after Writer),
 article.html (after Sol). Cron/slots cannot ship encyclopedia guides.
 
-Editorial manner canon: dobry_dom_gen_only_human_v1 — spoken Russian at the door,
-plain H1 naming the wound, guest understands §1 without rereading.
-Repeat-gate: same sentence-idea across lead / вывод / checklist = FAIL.
+Editorial manner canon: dobry_dom_voice_reset_v1 — spoken Russian, short sentences,
+rotating H1/body shapes; anti-clone vs last 12 live posts.
+Repeat-gate: lead / conclusion / checklist must not paraphrase the same moral.
 """
 from __future__ import annotations
 
@@ -21,6 +21,16 @@ _SCRIPTS = Path(__file__).resolve().parent
 if str(_SCRIPTS) not in sys.path:
     sys.path.insert(0, str(_SCRIPTS))
 
+from excalibur_blog_editorial_anti_clone import (
+    EDITORIAL_CANON_ID,
+    check_anti_clone_h1,
+    check_anti_clone_opening,
+    check_banned_h1_skeleton,
+    check_conclusion_present,
+    check_fixed_verdict_heading,
+    check_lead_conclusion_sentence_repeat,
+    check_posutochno_surface,
+)
 from excalibur_blog_opening_meta_gate import (
     CLOCK_RE,
     _is_chopped_lead,
@@ -129,9 +139,9 @@ MONEY_NIGHTS_RE = re.compile(
     re.I,
 )
 
-MANNER_CANON_ID = "dobry_dom_gen_only_human_v1"
+MANNER_CANON_ID = EDITORIAL_CANON_ID
 WORD_COUNT_MIN = 650
-WORD_COUNT_TARGET = "700–1100"
+WORD_COUNT_TARGET = "650–1100"
 WORD_COUNT_HARD_MAX = 1300
 
 RUSSIAN_STOPWORDS = frozenset(
@@ -143,16 +153,16 @@ RUSSIAN_STOPWORDS = frozenset(
     """.split()
 )
 
-BANNED_STAMP_RES: tuple[re.Pattern[str], ...] = ()
-
-LIMITED_STAMP_RES: tuple[tuple[re.Pattern[str], int], ...] = (
-    (re.compile(r"нет\.\s*так\s+не\s+заселяем", re.I), 1),
-    (re.compile(r"так\s+не\s+заселяем", re.I), 1),
-    (re.compile(r"наш\s+вывод\s+простой", re.I), 1),
+BANNED_STAMP_RES: tuple[re.Pattern[str], ...] = (
+    re.compile(r"нет\.\s*так\s+не\s+заселяем", re.I),
+    re.compile(r"так\s+не\s+заселяем", re.I),
+    re.compile(r"наш\s+вывод\s+простой", re.I),
 )
 
-VERDICT_HEADING_RE = re.compile(
-    r"мой\s+вывод\s+как\s+практик",
+LIMITED_STAMP_RES: tuple[tuple[re.Pattern[str], int], ...] = ()
+
+CONCLUSION_HEADING_HINT_RE = re.compile(
+    r"вывод|итог|короче|главное|если\s+коротко|на\s+практике",
     re.I,
 )
 
@@ -208,7 +218,7 @@ REALTOR_BLOCKED_RE = (
 )
 
 
-def check_h1(h1: str) -> list[str]:
+def check_h1(h1: str, *, root: Path | None = None) -> list[str]:
     errors: list[str] = []
     title = (h1 or "").strip()
     if not title:
@@ -247,6 +257,11 @@ def check_h1(h1: str) -> list[str]:
         if rx.search(low):
             errors.append(f"h1: riddle/clever structure — name the wound plainly (ban «под вопросом»)")
             break
+    errors.extend(check_banned_h1_skeleton(title))
+    errors.extend(check_posutochno_surface(title))
+    if root is not None:
+        for err in check_anti_clone_h1(title, root=root):
+            errors.append(f"h1: {err}")
     return errors
 
 
@@ -330,36 +345,29 @@ def check_manner_stamps(html: str, *, label: str) -> list[str]:
         if rx.search(plain):
             errors.append(f"{label}: banned manner stamp")
             break
-    stamp_labels = {
-        r"наш\s+вывод\s+простой": "«Наш вывод простой.»",
-        r"нет\.\s*так\s+не\s+заселяем": "«Нет. Так не заселяем.»",
-        r"так\s+не\s+заселяем": "«Так не заселяем.»",
-    }
     for rx, limit in LIMITED_STAMP_RES:
         hits = len(rx.findall(plain))
         if hits > limit:
-            pat = rx.pattern
-            stamp = next(
-                (v for k, v in stamp_labels.items() if k in pat),
-                "manner stamp",
-            )
-            errors.append(
-                f"{label}: stamp {stamp} repeated {hits}× (max {limit} total)"
-            )
+            errors.append(f"{label}: manner stamp repeated {hits}× (max {limit} total)")
     return errors
 
 
 def check_manner_sections(html: str, *, label: str) -> list[str]:
     errors: list[str] = []
+    errors.extend(check_fixed_verdict_heading(html, label=label))
     lead = _extract_lead_text(html)
-    verdict = _extract_h2_section(html, VERDICT_HEADING_RE) or _extract_h2_section(
-        html, re.compile(r"вывод", re.I)
-    )
+    verdict = ""
+    for match in re.finditer(r"<h2[^>]*>(.*?)</h2>([\s\S]*?)(?=<h2|$)", html or "", flags=re.I):
+        heading = _plain(match.group(1))
+        if CONCLUSION_HEADING_HINT_RE.search(heading) and not re.match(
+            r"^\s*мой\s+вывод\s+как\s+практик", heading, re.I
+        ):
+            verdict = _plain(match.group(2))
+            break
     checklist = _extract_h2_section(html, re.compile(r"чеклист|провер", re.I))
-    if not verdict and "article" in label:
-        errors.append(
-            f"{label}: missing ONE «Мой вывод как практика» section (H2)"
-        )
+    if "article" in label:
+        errors.extend(check_conclusion_present(html, label=label))
+        errors.extend(check_lead_conclusion_sentence_repeat(html, label=label))
     pairs = (
         ("lead", lead, "verdict", verdict),
         ("lead", lead, "checklist", checklist),
@@ -471,8 +479,15 @@ def check_identity(html: str, *, label: str) -> list[str]:
 def check_article_dir(article_dir: Path, *, stage: str = "all") -> dict[str, Any]:
     errors: list[str] = []
     checks_run: list[str] = []
-
+    root = Path(__file__).resolve().parents[1]
     title_path = article_dir / "title-brief.json"
+    brief_h1 = ""
+    if title_path.is_file():
+        try:
+            brief_data = json.loads(title_path.read_text(encoding="utf-8"))
+            brief_h1 = str(brief_data.get("h1") or brief_data.get("title") or "").strip()
+        except json.JSONDecodeError:
+            brief_h1 = ""
     if stage in {"all", "title"} and title_path.is_file():
         checks_run.append("title-brief")
         try:
@@ -481,7 +496,7 @@ def check_article_dir(article_dir: Path, *, stage: str = "all") -> dict[str, Any
             errors.append("title-brief.json: invalid JSON")
             brief = {}
         h1 = str(brief.get("h1") or brief.get("title") or "").strip()
-        for err in check_h1(h1):
+        for err in check_h1(h1, root=root):
             errors.append(f"title-brief.json: {err}")
 
     writer_path = article_dir / "drafts" / "writer.html"
@@ -493,6 +508,10 @@ def check_article_dir(article_dir: Path, *, stage: str = "all") -> dict[str, Any
         errors.extend(check_body_timeline(writer_html, label="writer.html"))
         errors.extend(check_audience_and_bans(writer_html, label="writer.html"))
         errors.extend(check_manner_stamps(writer_html, label="writer.html"))
+        errors.extend(check_fixed_verdict_heading(writer_html, label="writer.html"))
+        opening_plain = _opening_slice(writer_html)
+        for err in check_posutochno_surface(brief_h1, opening_plain):
+            errors.append(f"writer.html: {err}")
         if stage in {"all", "writer"}:
             errors.extend(check_identity(writer_html, label="writer.html"))
         if COMMENT_BAIT_RE.search(writer_html):
@@ -510,14 +529,20 @@ def check_article_dir(article_dir: Path, *, stage: str = "all") -> dict[str, Any
         errors.extend(check_manner_sections(article_html, label="article.html"))
         errors.extend(check_identity(article_html, label="article.html"))
         errors.extend(check_word_count(article_html, label="article.html"))
+        opening_plain = _opening_slice(article_html)
+        meta_h1 = brief_h1
+        for err in check_posutochno_surface(meta_h1, opening_plain):
+            errors.append(f"article.html: {err}")
+        for err in check_anti_clone_opening(opening_plain, meta_h1, root=root):
+            errors.append(f"article.html: {err}")
         if COMMENT_BAIT_RE.search(article_html):
             errors.append("article.html: WP comment bait — use TG/MAX")
         meta_path = article_dir / "article.meta.json"
         if meta_path.is_file():
             try:
                 meta = json.loads(meta_path.read_text(encoding="utf-8"))
-                meta_h1 = str(meta.get("h1") or meta.get("title") or "").strip()
-                for err in check_h1(meta_h1):
+                meta_h1 = str(meta.get("h1") or meta.get("title") or brief_h1).strip()
+                for err in check_h1(meta_h1, root=root):
                     errors.append(f"article.meta.json: {err}")
             except json.JSONDecodeError:
                 errors.append("article.meta.json: invalid JSON")

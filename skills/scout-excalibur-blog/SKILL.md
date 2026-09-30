@@ -31,10 +31,10 @@ Klyshin **не** заменяет частоты. Wordstat **не** binary skip 
 ## Klyshin delivery — 10 правил (HARD, mechanics only)
 
 1. §1 = **плотный кейс** (1–2 абзаца holyslav Dzen). **BAN** vertical ladder (8+ строк по 1–4 слова) в opening.
-2. Title = two-beat stop-factor (см. Title skill, 10 formulas). **Не** topic label.
+2. Title = `dobry_dom_voice_reset_v1` shape (см. Title skill, **6 rotating forms**). **Не** topic label.
 3. Reader is inside — **гость**, не host-operator report.
 4. Number = price of burn (залог, доплата, минуты, ночи).
-5. Host/aggregator dialogue: quote then break («Нет. Так не заселяем.»).
+5. Host dialogue: quote then short break in plain words — **BAN** stamp «Нет. Так не заселяем.»
 6. One case → one verdict. Checklist AFTER moral.
 7. Moral: first X, then money/key.
 8. One lockpick question (guest: «Где бойлер?» / «сколько минут до вуза?»).
@@ -44,8 +44,8 @@ Klyshin **не** заменяет частоты. Wordstat **не** binary skip 
 ## Алгоритм (канон)
 
 ```text
-1. Прочитай published-titles (последние N=3) → angle rotation (см. klyshin-topic-bank.md)
-2. Klyshin hook/angle (bank + live @klyshin_A) — guest topic, NOT burn-at-door if saturated
+1. Прочитай published-titles + published-articles (**последние N=12**) → wound anti-clone
+2. Klyshin hook/angle — guest topic, **NOT** door-surcharge clone (третий гость, парковка, лапа, обогреватель, чемоданы, кухня, «у двери +₽») if saturated in last 12
 3. wordstat_get_top_requests: hook phrase + tyumen analogs (regions 55, 11176; compare 225)
 4. Слабый объём → НЕ drop. Rework guest clusters ONLY:
    посуточно, залог, заселение, ранний заезд, уборка, ЖКХ, соседи, животные,
@@ -61,10 +61,15 @@ Klyshin **не** заменяет частоты. Wordstat **не** binary skip 
 
 ## Angle rotation (HARD)
 
-Перед выбором hook — `shared/published-titles.md` (последние **N=3**).
+Перед выбором hook — `shared/published-articles.md` (последние **12** live).
 
-**Skip** hook из семейства **burn-at-door** (код / бесконтакт / «оплатил — дверь не та»),
-если последние N статей уже из этой семьи **без нового угла**.
+**Skip / rework** hook, если рана клонирует **door-surcharge** семейство из последних 12 без нового угла.
+
+После handoff — gate:
+
+```bash
+python3 scripts/excalibur_blog_scout_wound_gate.py --handoff .cursor/excalibur-blog-handoff.md
+```
 
 ## Klyshin — ALWAYS joint with Wordstat
 

@@ -27,7 +27,9 @@ python3 scripts/excalibur_blog_case_delivery_gate.py --article-dir <dir> --stage
 Контракт: `shared/derouter-opus-brain-contract.md`.
 `DEROUTER WRITER BLOCKER` → стоп.
 
-Ты пишешь **полный CASE** (~700–1100 слов): плотный §1, identity, одна красная линия, диалог, moral, mid fight-question, optional checklist после moral, один CTA.
+Канон: **`dobry_dom_voice_reset_v1`** (`shared/dobry-dom-voice-reset-v1.md`).
+
+Ты пишешь **полный CASE** (650–1100 слов): плотный §1, identity, **разные H2**, свой вывод (не «Мой вывод как практика»), mid fight-question, optional checklist, **один** CTA. **dzen_pattern:** живой кейс с суммами, не default «N советов».
 **Не** outline/тезисы «для Sol». Sol — слог, не encyclopedia из bullets.
 
 **Аудитория:** гость, бронирующий ночь в Тюмени. **Не** host-operator (загрузка %, «гость съехал»).
