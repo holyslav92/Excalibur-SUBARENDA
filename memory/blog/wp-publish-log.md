@@ -26,3 +26,18 @@
 - dzen RSS: native-yes / format-article; enclosure `…-cover-dzen-v3.png` (factory MU-plugin; 1024×576 intermediate on host)
 - interlink inbound: B01 post 3745
 - llms.txt + llms-full.txt: deployed
+
+## B40 — 2026-09-30
+
+- topic_id: B40
+- slug: `posutochno-tyumen-v-filtre-bez-predoplaty-perevod-do-koda`
+- post_id: 5140
+- permalink: `/blog/posutochno-tyumen-v-filtre-bez-predoplaty-perevod-do-koda/`
+- featured_image: 5141 (`…-cover.png` on wp-content)
+- inline_images: 5142–5144 (3 slots, wp-content URLs)
+- schema_meta: ok
+- categories: 101, 104 (posutochnaya-arenda, zhkh-i-doplaty)
+- live-page gate: PASS
+- dzen RSS: item in `/feed/zen/`; enclosure `…-cover.png`; `OK dzen_yzen_meta=1`
+- interlink inbound: B01 post 3745
+- llms.txt + llms-full.txt: deployed
