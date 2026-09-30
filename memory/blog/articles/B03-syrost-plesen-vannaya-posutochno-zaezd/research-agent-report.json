@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "topic_id": "B03",
+  "tenant": "Добрый дом, Тюмень, посуточная аренда",
+  "research_date": "2026-09-28",
+  "output_file": "research-notes.md",
+  "research_scope": "Сырость, запах и видимые следы плесени в ванной посуточной квартиры при заселении; фиксация несоответствия и коммуникация с хозяином или площадкой.",
+  "freshness_audit": {
+    "status": "PASS",
+    "all_sources_accessed_at": "2026-09-28",
+    "wordstat_checked": true,
+    "wordstat_query_count": 5,
+    "fresh_community_or_market_signal": {
+      "status": "PASS",
+      "source": "Hlebopechka — живое обсуждение",
+      "url": "https://hlebopechka.ru/a/index.php?topic=430876.0",
+      "accessed_at": "2026-09-28",
+      "basis": "Проверенный в неделю исследования community-источник с пользовательскими сообщениями о сырости, конденсате и запахе в ванной."
+    },
+    "limitations": [
+      "Доступность живого обсуждения в дату исследования не превращает форумные сообщения в техническую или медицинскую экспертизу.",
+      "Материал Pravda.ru опубликован в 2025 году и используется только как практический контекст после проверки в дату исследования."
+    ]
+  },
+  "source_audit": {
+    "status": "PASS",
+    "source_count": 7,
+    "sources_with_accessed_at": 7,
+    "independent_context_sources": 4,
+    "tenant_cta_sources": 2,
+    "search_demand_source": 1
+  },
+  "official_source_audit": {
+    "status": "NOT_APPLICABLE",
+    "reason": "Материал не содержит банковских тарифов, комиссий, ставок, лимитов, государственных условий или конкретных правил возврата платформы.",
+    "official_sources_required": false
+  },
+  "coverage": {
+    "reader_problem_present": true,
+    "reader_outcome_present": true,
+    "practical_facts_present": true,
+    "constraints_present": true,
+    "common_mistakes_present": true,
+    "interlinks_present": true,
+    "writer_safe_urls_present": true,
+    "source_table_present": true
+  },
+  "safety_and_accuracy": {
+    "status": "PASS",
+    "no_invented_platform_rules": true,
+    "no_unverified_refund_promises": true,
+    "no_medical_diagnosis_or_treatment": true,
+    "no_bank_or_tariff_claims": true,
+    "separates_smell_of_smoke_from_mold_topic": true,
+    "composite_examples_allowed_only_when_labeled": true
+  },
+  "overlap_check": {
+    "status": "PASS",
+    "basis": "Тема отделена от sibling-материалов о запахе сигарет, уборке/залоге, инструкциях заселения и запросе паспорта.",
+    "published_article_content_opened": false
+  },
+  "writer_notes": [
+    "Не выдавать осеннюю влажность за норму, которая отменяет несоответствие условиям объекта.",
+    "Не обещать возврат или перенос автоматически: привязывать решение к правилам конкретной площадки и письменной фиксации обстоятельств.",
+    "Не расширять материал до самостоятельного удаления плесени, залога, уборки после выезда или курения."
+  ],
+  "blockers": []
+}
