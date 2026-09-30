@@ -2,3 +2,4 @@ Pillow
 numpy
 paramiko
 opencv-python-headless
+viraldzen @ git+https://github.com/Horosheff/ViralDzen.git

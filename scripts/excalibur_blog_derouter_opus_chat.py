@@ -35,12 +35,14 @@ MIN_TIMEOUT_SECONDS = 60
 DEFAULT_MAX_RETRIES = 1
 DEFAULT_RETRY_WAIT_SECONDS = 5
 
-DEFAULT_OPUS_MODEL = "claude-opus-5"
+DEFAULT_OPUS_MODEL = "claude-opus-5-5"
 DEFAULT_TERRA_MODEL = "gpt-5.6-terra"
 DEFAULT_OPUS_MODEL_ENV = "DEROUTER_OPUS_MODEL"
 DEFAULT_TERRA_MODEL_ENV = "DEROUTER_TERRA_MODEL"
 
 OPUS_MODEL_ALIASES = (
+    "claude-opus-5-5",
+    "anthropic/claude-opus-5-5",
     "claude-opus-5",
     "anthropic/claude-opus-5",
 )
@@ -60,6 +62,7 @@ VALID_ROLES = frozenset(
         "cover-text",
         "schema",
         "cover-scene",
+        "viral-pick",
         "smoke",
     }
 )
@@ -67,7 +70,17 @@ VALID_ROLES = frozenset(
 # Opus 5 = Writer only; everything else Terra (cost canon — do not revert scout/title/sol to powerful).
 POWERFUL_ROLES = frozenset({"writer"})
 UTILITY_ROLES = frozenset(
-    {"scout", "title", "sol", "research", "description", "cover-text", "schema", "cover-scene"}
+    {
+        "scout",
+        "title",
+        "sol",
+        "research",
+        "description",
+        "cover-text",
+        "schema",
+        "cover-scene",
+        "viral-pick",
+    }
 )
 
 
@@ -204,7 +217,7 @@ def resolve_model(role: str, override: str | None, root: Path) -> tuple[str, str
     if tier == "powerful" and not is_opus_family(model):
         raise DerouterChatError(
             f"Role {role!r} requires Claude Opus family; got {model!r}. "
-            f"Set {tier_block.get('model_env') or DEFAULT_OPUS_MODEL_ENV}=claude-opus-5"
+            f"Set {tier_block.get('model_env') or DEFAULT_OPUS_MODEL_ENV}=claude-opus-5-5"
         )
 
     if tier == "utility" and "terra" not in model.lower():
@@ -377,6 +390,7 @@ def role_blocker_label(role: str) -> str:
         "cover-text": "COVER-TEXT",
         "schema": "SCHEMA",
         "cover-scene": "COVER-SCENE",
+        "viral-pick": "VIRAL-PICK",
         "smoke": "SMOKE",
     }
     return mapping.get(role, role.upper())

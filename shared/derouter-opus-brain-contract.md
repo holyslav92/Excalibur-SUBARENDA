@@ -9,18 +9,18 @@
 
 Источник истины по ролям: `shared/tenant-config.json` → `writing_model`.
 
-**Opus 5 = Writer only; everything else Terra** — не возвращай scout/title/sol на powerful без явного решения тенанта.
+**Claude Opus 5.5 = Writer only; everything else Terra** — не возвращай scout/title/sol на powerful без явного решения тенанта.
 
 ## Два tier (HARD)
 
 | Tier | Model id (Derouter) | Env override | Роли |
 |------|---------------------|--------------|------|
-| **powerful** | `claude-opus-5` | `DEROUTER_OPUS_MODEL` | writer |
-| **utility** | `gpt-5.6-terra` | `DEROUTER_TERRA_MODEL` | scout, title, sol, research, description, cover-text, schema, cover-scene |
+| **powerful** | `claude-opus-5-5` | `DEROUTER_OPUS_MODEL` | writer |
+| **utility** | `gpt-5.6-terra` | `DEROUTER_TERRA_MODEL` | scout, viral-pick, title, sol, research, description, cover-text, schema, cover-scene |
 
 `resolve_model` выбирает tier по `--role`. **Не** используй глобальный `DEROUTER_TEXT_MODEL` как override всех ролей — если задан, он не переводит powerful-роли на non-Opus.
 
-При 404 model id скрипт пробует алиасы (`gpt-5.6-terra`, `openai/gpt-5.6-terra` для utility; `claude-opus-5`, `anthropic/claude-opus-5` для powerful) и при smoke может зафиксировать рабочий id в tenant-config.
+При 404 model id скрипт пробует алиасы (`gpt-5.6-terra`, `openai/gpt-5.6-terra` для utility; `claude-opus-5-5`, `anthropic/claude-opus-5-5`, затем legacy `claude-opus-5` для powerful) и при smoke может зафиксировать рабочий id в tenant-config.
 
 ## Thin Cursor conductor (HARD)
 
@@ -78,7 +78,7 @@ python3 scripts/excalibur_blog_derouter_opus_chat.py --role smoke --smoke
 - `mcp-derouter/start-mcp.sh` — только REST
 - Cursor-authored prose для любой роли из таблицы
 - Тихий fallback на weaker model или Composer
-- Документировать `model: claude-opus-5` / `gpt-5.6-terra` для Cursor Cloud Agent — эти id только для Derouter REST
+- Документировать `model: claude-opus-5-5` / `gpt-5.6-terra` для Cursor Cloud Agent — эти id только для Derouter REST
 
 ## Legacy alias
 

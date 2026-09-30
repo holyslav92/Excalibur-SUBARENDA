@@ -1,0 +1,42 @@
+{
+  "version": "1",
+  "description": "ViralDzen slot — discover official Dzen hubs (no invented slugs), then collect viral articles.",
+  "topic_seeds_ru": [
+    "путешествия",
+    "отели",
+    "недвижимость",
+    "аренда квартир",
+    "туризм"
+  ],
+  "hub_pick": {
+    "topics_per_seed": 8,
+    "topic_pages": 1,
+    "min_subscribers": 5000,
+    "prefer_slug_keywords": [
+      "travel",
+      "hotel",
+      "nedvizhim",
+      "kvartir",
+      "arend",
+      "turizm",
+      "puteshestv",
+      "zhile",
+      "housing"
+    ]
+  },
+  "collect": {
+    "pages": 2,
+    "top_n": 20,
+    "delay_seconds": 0.7,
+    "min_views": 5000,
+    "fetch_content": false,
+    "download_images": false,
+    "recirc": true,
+    "include_feed": true
+  },
+  "handoff_filename": "viral-dzen-handoff.json",
+  "slot_handoff_path": "memory/scout/viral-dzen-handoff.json",
+  "package": "viraldzen",
+  "repo": "https://github.com/Horosheff/ViralDzen",
+  "skill": "viraldzen-collect"
+}

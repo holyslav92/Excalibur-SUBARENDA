@@ -5,7 +5,7 @@
 >
 > **Opus 5 = Writer only; everything else Terra**
 
-Writer — **единственная** роль на powerful tier (`claude-opus-5` via Derouter REST).
+Writer — **единственная** роль на powerful tier (`claude-opus-5-5` via Derouter REST).
 Sol, Scout, Title и все прочие текстовые роли — utility tier (`gpt-5.6-terra`).
 
 ```bash
@@ -17,7 +17,7 @@ python3 scripts/excalibur_blog_derouter_opus_chat.py \
   --article-dir <article_dir>
 ```
 
-- **Model:** `claude-opus-5` (env `DEROUTER_OPUS_MODEL`, семейство Claude Opus 5)
+- **Model:** `claude-opus-5-5` (env `DEROUTER_OPUS_MODEL`, семейство Claude Opus 5.5)
 - **Auth:** `DEROUTER_API_KEY` только из Cloud Secrets
 - **Endpoint:** `https://api.derouter.ai/openai/v1/chat/completions`
 

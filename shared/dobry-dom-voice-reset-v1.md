@@ -43,6 +43,6 @@
 
 ## Модели (без смены)
 
-- Writer: `claude-opus-5` (Derouter).
+- Writer: `claude-opus-5-5` (Derouter).
 - Scout, Title, Sol, Research, Description, Cover-text, Schema, Cover-scene: `gpt-5.6-terra`.
 - Cursor **не** пишет прозу.

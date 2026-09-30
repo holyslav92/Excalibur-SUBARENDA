@@ -5,6 +5,17 @@ description: Pick P0 topic from Klyshin hooks × MCP-KV Wordstat — evaluate an
 
 # Scout — Klyshin hooks × Wordstat (evaluate + rework)
 
+## ViralDzen (HARD, до Scout)
+
+Слот **не** начинает Scout, пока нет `memory/scout/viral-dzen-handoff.json` (или `viral-dzen-handoff.json` в article dir).
+
+```bash
+python3 scripts/excalibur_blog_viraldzen_slot.py
+python3 scripts/excalibur_blog_viral_handoff_gate.py
+```
+
+`VIRALDZEN BLOCKER` / gate BLOCK → **стоп**, тему старым способом не выдумывать. Скилл: `viraldzen-collect`, пакет `viraldzen` (см. `shared/viraldzen-slot-config.json`). В handoff Scout включи `guest_angle_ru` и `viral_source` (title, url, score) — угол для гостя посуточно в Тюмени, **без** копирования текста вирусника.
+
 ## Thin conductor + Derouter utility (HARD)
 
 Handoff-проза (topic, rework log, title draft) — **только** через Derouter utility tier (gpt-5.6-terra).

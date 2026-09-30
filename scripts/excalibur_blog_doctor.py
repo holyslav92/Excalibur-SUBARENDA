@@ -145,6 +145,10 @@ def main() -> int:
         "scripts/excalibur_blog_writer_ready_gate.py",
         "scripts/excalibur_blog_cover_text_gate.py",
         "scripts/excalibur_blog_derouter_opus_chat.py",
+        "scripts/excalibur_blog_viraldzen_slot.py",
+        "scripts/excalibur_blog_viral_handoff_gate.py",
+        "shared/viraldzen-slot-config.json",
+        "skills/viraldzen-collect/SKILL.md",
         "scripts/excalibur_blog_interlink_lib.py",
         "scripts/excalibur_blog_interlinker.py",
         "scripts/excalibur_blog_live_catalog.py",
@@ -467,7 +471,7 @@ def main() -> int:
         )
     derouter_opus_env = os.environ.get("DEROUTER_OPUS_MODEL", "").strip()
     powerful_cfg = (tenant.get("writing_model") or {}).get("powerful") or {}
-    powerful_model = str(powerful_cfg.get("model") or "claude-opus-5")
+    powerful_model = str(powerful_cfg.get("model") or "claude-opus-5-5")
     opus_check = derouter_opus_env or powerful_model
     check(
         bool(opus_check) and "opus" in opus_check.lower(),
@@ -569,9 +573,17 @@ def main() -> int:
         warnings,
     )
     check(
-        {"scout", "title", "sol", "research", "description", "cover-text", "schema", "cover-scene"}.issubset(
-            utility_roles
-        ),
+        {
+            "scout",
+            "viral-pick",
+            "title",
+            "sol",
+            "research",
+            "description",
+            "cover-text",
+            "schema",
+            "cover-scene",
+        }.issubset(utility_roles),
         "tenant writing_model.utility.roles includes all non-writer text roles",
         errors,
         warnings,

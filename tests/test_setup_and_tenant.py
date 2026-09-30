@@ -57,11 +57,12 @@ class SetupTenantTests(unittest.TestCase):
         writing = tenant.get("writing_model") or {}
         powerful = writing.get("powerful") or {}
         utility = writing.get("utility") or {}
-        self.assertEqual(powerful.get("model"), "claude-opus-5")
+        self.assertEqual(powerful.get("model"), "claude-opus-5-5")
+        self.assertNotEqual(powerful.get("model"), "claude-opus-5")
         self.assertEqual(utility.get("model"), "gpt-5.6-terra")
         self.assertEqual(set(powerful.get("roles") or []), {"writer"})
         self.assertTrue(set(NON_WRITER_TEXT_ROLES).issubset(set(utility.get("roles") or [])))
-        self.assertEqual(writing.get("canon_note"), "Opus 5 = Writer only; everything else Terra")
+        self.assertIn("Opus 5.5", writing.get("canon_note") or "")
         self.assertTrue(writing.get("fail_loud_if_unavailable"))
 
     def test_setup_agents_present(self) -> None:

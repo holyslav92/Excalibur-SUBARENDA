@@ -7,7 +7,7 @@ description: Write full CASE draft drafts/writer.html; Sol applies tenant SOUL s
 
 ## Модель (HARD) — thin conductor
 
-**Не пиши прозу моделью Cursor.** Writer — **единственная** роль на Opus 5 (Derouter powerful tier, claude-opus-5). Собери `--user-file` из research/title-brief и вызови:
+**Не пиши прозу моделью Cursor.** Writer — **единственная** роль на Claude Opus 5.5 (Derouter powerful tier, `claude-opus-5-5`). Собери `--user-file` из research/title-brief и вызови:
 
 ```bash
 python3 scripts/excalibur_blog_derouter_opus_chat.py \

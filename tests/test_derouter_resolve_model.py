@@ -43,6 +43,7 @@ class DerouterResolveModelTests(unittest.TestCase):
                     "cover-text",
                     "schema",
                     "cover-scene",
+                    "viral-pick",
                 }
             ),
         )
@@ -132,7 +133,7 @@ class TenantWritingModelRoutingTests(unittest.TestCase):
         utility_roles = set((writing.get("utility") or {}).get("roles") or [])
 
         self.assertEqual(powerful_roles, {"writer"})
-        self.assertEqual(writing.get("canon_note"), "Opus 5 = Writer only; everything else Terra")
+        self.assertIn("Opus 5.5", writing.get("canon_note") or "")
         self.assertFalse(powerful_roles.intersection({"scout", "title", "sol"}))
         self.assertTrue(set(NON_WRITER_TEXT_ROLES).issubset(utility_roles))
 

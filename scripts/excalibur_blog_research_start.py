@@ -282,6 +282,10 @@ def run_research_start(
     queries = build_search_queries(topic, ctx)
     out_dir = output_dir or article_dir(root, topic)
     out_dir.mkdir(parents=True, exist_ok=True)
+    slot_viral = root / "memory/scout/viral-dzen-handoff.json"
+    article_viral = out_dir / "viral-dzen-handoff.json"
+    if slot_viral.is_file() and not article_viral.is_file():
+        article_viral.write_text(slot_viral.read_text(encoding="utf-8"), encoding="utf-8")
 
     serp_runs: list[dict[str, Any]] = []
     errors: list[str] = []

@@ -15,12 +15,12 @@
 ## Канон (после setup)
 
 ```text
-Scout? → research_start → Research → Title → Writer(смысл)
+ViralDzen → viral-pick (Terra) → Scout? → research_start → Research → Title → Writer(смысл)
 → Sol(слог) → Description → Cover-text || Schema → Cover → Cover-QA
 → Indexer(llms) → Publish → Fixer → merge → Content-learner
 ```
 
-**Writer** → `drafts/writer.html` (полный CASE, не тезисы; `claude-opus-5`).  
+**Writer** → `drafts/writer.html` (полный CASE, не тезисы; `claude-opus-5-5`).  
 **Sol** (`excalibur-blog-sol`) → финальный `article.html` слогом тенанта
 (`shared/SOUL.md` + `shared/soul-examples/`; `gpt-5.6-terra`).  
 После Title и после Writer/Sol — `scripts/excalibur_blog_case_delivery_gate.py`
@@ -38,9 +38,9 @@ Scout? → research_start → Research → Title → Writer(смысл)
 
 **Factory brain (двухуровневый split):** Cursor — **тонкий дирижёр** (default Composer; не переключать модель Cursor).
 Прозу пишет только `scripts/excalibur_blog_derouter_opus_chat.py` → Derouter REST (`DEROUTER_API_KEY`):
-- **Opus 5 = Writer only; everything else Terra** (cost canon)
-- **powerful** `claude-opus-5` (`DEROUTER_OPUS_MODEL`): Writer (article body / longform)
-- **utility** `gpt-5.6-terra` (`DEROUTER_TERRA_MODEL`): Scout, Title, Sol, Research synthesis, Description, Cover-text, Schema, Cover-scene
+- **Claude Opus 5.5 = Writer only; everything else Terra** (cost canon)
+- **powerful** `claude-opus-5-5` (`DEROUTER_OPUS_MODEL`): Writer (article body / longform)
+- **utility** `gpt-5.6-terra` (`DEROUTER_TERRA_MODEL`): Scout, viral-pick, Title, Sol, Research synthesis, Description, Cover-text, Schema, Cover-scene
 При недоступности → `DEROUTER <ROLE> BLOCKER`, без тихого fallback на Composer. См. `shared/derouter-opus-brain-contract.md`.
 **Cover PNG:** Grsai PRIMARY_MODEL_ID only (`shared/grsai-gpt-image-api-contract.md`); **vip permanently disabled**. Derouter REST — legacy fallback (`shared/derouter-gpt-image-api-contract.md`).
 **Wordstat:** MCP-KV. **Cover-QA:** Python gates, не «глаз» агента.
