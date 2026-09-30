@@ -566,7 +566,7 @@ def main() -> int:
     utility_roles = set((brain.get("utility") or {}).get("roles") or [])
     check(
         powerful_roles == {"writer"},
-        "tenant writing_model.powerful.roles is writer-only (Opus 5 = Writer only; everything else Terra)",
+        "tenant writing_model.powerful.roles is writer-only (Opus 5.5 = Writer only; utility gpt-6-luna)",
         errors,
         warnings,
     )
