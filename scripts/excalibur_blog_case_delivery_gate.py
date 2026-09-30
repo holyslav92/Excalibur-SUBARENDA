@@ -408,7 +408,7 @@ def check_opening_body(html: str, *, label: str) -> list[str]:
     if _is_duty_log_lead(opening) or _is_duty_log_lead(raw_head) or _is_duty_log_lead(duty_slice):
         errors.append(
             f"{label}: duty-log / clock-stamp lead "
-            "(smooth holyslav quote-first opening; no weekday/date/clock in §1)"
+            "(smooth quote-first opening; no weekday/date/clock in §1)"
         )
     if not QUOTE_RE.search(opening):
         errors.append(f"{label}: opening missing host/guest quote")

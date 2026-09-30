@@ -30,7 +30,7 @@ Klyshin **не** заменяет частоты. Wordstat **не** binary skip 
 
 ## Klyshin delivery — 10 правил (HARD, mechanics only)
 
-1. §1 = **плотный кейс** (1–2 абзаца holyslav Dzen). **BAN** vertical ladder (8+ строк по 1–4 слова) в opening.
+1. §1 = **плотный кейс** (1–2 абзаца, плотный Dzen-лид). **BAN** vertical ladder (8+ строк по 1–4 слова) в opening.
 2. Title = `dobry_dom_voice_reset_v1` shape (см. Title skill, **6 rotating forms**). **Не** topic label.
 3. Reader is inside — **гость**, не host-operator report.
 4. Number = price of burn (залог, доплата, минуты, ночи).
