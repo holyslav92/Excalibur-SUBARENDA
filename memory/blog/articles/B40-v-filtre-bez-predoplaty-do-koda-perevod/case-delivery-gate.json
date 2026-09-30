@@ -1,12 +1,16 @@
 {
   "gate": "case-delivery",
-  "status": "PASS",
+  "status": "BLOCK",
   "stage": "article",
   "manner_canon": "dobry_dom_voice_reset_v1",
   "checks_run": [
     "writer.html",
     "article.html"
   ],
-  "errors": [],
+  "errors": [
+    "article.html: anti-clone: H1 + first ~400 chars match recent live skeleton — new scene required",
+    "article.meta.json: h1: anti-clone: H1 shape «dialogue» repeats previous live post — rotate shape",
+    "article.meta.json: h1: anti-clone: same opening 6 words as a recent live H1 — rewrite hook"
+  ],
   "article_dir": "/workspace/memory/blog/articles/B40-v-filtre-bez-predoplaty-do-koda-perevod"
 }
