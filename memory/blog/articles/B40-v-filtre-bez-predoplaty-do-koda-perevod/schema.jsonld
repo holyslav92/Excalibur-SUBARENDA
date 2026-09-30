@@ -1,0 +1,39 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/posutochno-tyumen-v-filtre-bez-predoplaty-perevod-do-koda/#article",
+  "url": "{{SITE_BASE}}/blog/posutochno-tyumen-v-filtre-bez-predoplaty-perevod-do-koda/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/posutochno-tyumen-v-filtre-bez-predoplaty-perevod-do-koda/"
+  },
+  "headline": "В фильтре посуточно — «без предоплаты». До кода попросили 3 200 ₽ на карту",
+  "description": "Оплату на платформе уже провели, а перед заселением хозяин просит ещё 3 200 ₽ на карту «за код». Почему фильтр «без предоплаты» не спасает и что делать, если платят вне сервиса.",
+  "datePublished": "2026-09-30",
+  "dateModified": "2026-09-30",
+  "inLanguage": "ru-RU",
+  "author": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    },
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  }
+}

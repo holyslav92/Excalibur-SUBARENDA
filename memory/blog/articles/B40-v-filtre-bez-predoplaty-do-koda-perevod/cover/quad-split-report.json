@@ -142,8 +142,8 @@
   ],
   "manifest": "cover/quad-manifest.json",
   "html_inject": [
-    "injected inline_1 after H2 — Где именно сломалось обещание",
-    "injected inline_2 after H2 — Почему просьба о коде — не мелочь",
-    "injected inline_3 after H2 — Один вопрос, который всё проясняет"
+    "skip inline_1: already correct under H2 — Где именно сломалось обещание",
+    "skip inline_2: already correct under H2 — Почему просьба о коде — не мелочь",
+    "skip inline_3: already correct under H2 — Один вопрос, который всё проясняет"
   ]
 }
