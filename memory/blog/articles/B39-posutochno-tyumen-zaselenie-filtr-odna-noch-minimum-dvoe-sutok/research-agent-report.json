@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "topic_id": "B39",
+  "slug": "posutochno-tyumen-zaselenie-filtr-odna-noch-minimum-dvoe-sutok",
+  "research_date": "2026-09-30",
+  "summary": "CASE min_nights_at_door: filter «от 1 ночи», paid one night, at intercom «minimum two nights» or pay for second. Fresh Dobriy_dom_72 27–29.09 filter/payment mismatch + review details. Wordstat P0 4194/9212.",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "t.me/s/Dobriy_dom_72 2026-09-27–29",
+    "source_type": "community",
+    "urls": ["https://t.me/s/Dobriy_dom_72", "https://t.me/s/klyshin_A"],
+    "accessed_at": "2026-09-30"
+  },
+  "freshness_audit": {
+    "research_date": "2026-09-30",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://t.me/s/Dobriy_dom_72",
+      "published_at": "2026-09-29",
+      "note": "Review details vs ratings; 27.09 filter vs payment screen."
+    }
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "source": "mcp-kv live 2026-09-30",
+    "regions": ["55", "11176", "225"]
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "No tariff digits",
+    "verified_claims": 0,
+    "entities_checked": [],
+    "errors": []
+  },
+  "derouter": {
+    "role": "research",
+    "first_attempt": "BLOCKER_META",
+    "second_attempt": "CONDUCTOR_FACTS_FROM_ASSEMBLED",
+    "note": "Derouter refused tools; notes from assembled inputs + MCP wordstat by conductor"
+  },
+  "key_facts_count": 12,
+  "errors": []
+}

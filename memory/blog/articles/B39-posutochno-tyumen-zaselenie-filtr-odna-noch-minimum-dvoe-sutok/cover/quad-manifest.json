@@ -1,0 +1,80 @@
+{
+  "topic_id": "B39",
+  "canvas_file": "cover/canvas-slice4.png",
+  "layout": "2x2",
+  "pipeline": "slice4_grid_1x_image_api",
+  "inline_count": 3,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-slice4.png",
+      "batch_file": "cover/slice4-mcp-batch.json",
+      "prompt_file": "cover/slice4-mcp-prompt.txt",
+      "result_file": "cover/slice4-mcp-result.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    }
+  ],
+  "style_preset": "the_rieltor_twilight_gold",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "cover_hook": "Фильтр одна ночь. У домофона двое суток",
+  "cover_hook_highlight": "ночь",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Derouter REST (DEROUTER_API_KEY) — 2K 16:9, one job per canvas (1×). Cover agent invents cover_hook + scene_hint/alt before --write-batch. Host lock = blog-hero.json (navy blazer, not hoodie).",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Гость у домофона с чемоданом, вечер в Тюмени",
+      "scene_hint": "Guest suitcase at intercom, evening, phone on screen, TR empty",
+      "meme_caption_ru": "",
+      "sticky": "Гость с чемоданом"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Фильтр «от 1 ночи» — это не обещание хозяина",
+      "visual_type": "comparison_table_ui",
+      "scene_hint": "Simple infographic panel, no logo, white TR corner",
+      "alt": "Иллюстрация к кейсу минимального срока брони",
+      "labels": [
+        "фильтр 1 ночь",
+        "оплата 5 000 ₽"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Что реально сломалось у подъезда",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Simple infographic panel, no logo, white TR corner",
+      "alt": "Иллюстрация к кейсу минимального срока брони",
+      "labels": [
+        "минимум 2 суток",
+        "уборка сверху"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Как это выглядит у нас",
+      "visual_type": "checklist_board",
+      "scene_hint": "Simple infographic panel, no logo, white TR corner",
+      "alt": "Иллюстрация к кейсу минимального срока брони",
+      "labels": [
+        "три числа до оплаты",
+        "ночи итог уборка"
+      ]
+    }
+  },
+  "cover_keys_ru": [],
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "заселение в квартиру посуточно"
+  ],
+  "cover_phone_cta": "+7 (993) 574-83-22"
+}

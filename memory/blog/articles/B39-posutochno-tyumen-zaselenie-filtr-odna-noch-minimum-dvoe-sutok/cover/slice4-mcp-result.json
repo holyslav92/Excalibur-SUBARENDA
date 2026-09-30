@@ -1,0 +1,11 @@
+{
+  "local_path": "cover/canvas-slice4.png",
+  "source": "grsai-draw-api",
+  "model": "vip-fallback-used",
+  "used_vip_fallback": true,
+  "quality": "high",
+  "bytes": 2959338,
+  "target_canvas": "2048x1152",
+  "native_long_side": 2048,
+  "delivery": "native_2k"
+}

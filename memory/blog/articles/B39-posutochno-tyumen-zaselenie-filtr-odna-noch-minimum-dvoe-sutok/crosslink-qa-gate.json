@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "https://добрыйдом-72.рф/blog/v-kartochke-3400-za-noch-na-oplate-8816-za-dve/",
+      "slug": "v-kartochke-3400-za-noch-na-oplate-8816-za-dve",
+      "anchor": "в карточке одна цена, на оплате — другая",
+      "catalog_title": "В карточке 3 400 ₽ за ночь. На оплате — 8 816 ₽ за две ночи",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/instrukciya-zaseleniya-posutochno-ne-tot-podezd/",
+      "slug": "instrukciya-zaseleniya-posutochno-ne-tot-podezd",
+      "anchor": "PDF на три страницы — и чужой подъезд",
+      "catalog_title": "PDF на три страницы. Дом верный — 35 минут с чемоданом у чужого подъезда",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/bez-zaloga-v-filtre-zalog-u-dveri/",
+      "slug": "bez-zaloga-v-filtre-zalog-u-dveri",
+      "anchor": "когда в фильтре одно, а у двери — другое",
+      "catalog_title": "В фильтре — «без залога». У двери попросили 5 000 ₽ на личную карту",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate/",
+      "slug": "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+      "anchor": "когда после предоплаты в чате тишина",
+      "catalog_title": "Перевели 3 000 ₽ предоплатой. К вечеру — тишина в чате",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "outbound_unique_slugs": [
+    "v-kartochke-3400-za-noch-na-oplate-8816-za-dve",
+    "instrukciya-zaseleniya-posutochno-ne-tot-podezd",
+    "bez-zaloga-v-filtre-zalog-u-dveri",
+    "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B39-posutochno-tyumen-zaselenie-filtr-odna-noch-minimum-dvoe-sutok",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}

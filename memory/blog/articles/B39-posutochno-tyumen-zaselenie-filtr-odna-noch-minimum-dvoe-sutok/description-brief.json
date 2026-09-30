@@ -1,0 +1,10 @@
+{
+  "topic_id": "B39",
+  "description": "Заселяетесь в Тюмени на сутки, а у домофона всплывает лишняя ночь к оплате? Добрый дом показывает, какие условия проверить до встречи с хозяином.",
+  "rhythm": "klyshin_case_hook",
+  "geo": "Тюмень",
+  "author_brand": "Добрый дом",
+  "not_equal_title": true,
+  "not_truncated_lead": true,
+  "verdict": "PASS"
+}
