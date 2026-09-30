@@ -7,7 +7,7 @@ description: "Sol: rewrite Writer draft into tenant-SOUL final article.html."
 
 ## Модель (HARD) — thin conductor
 
-**Не пиши прозу моделью Cursor.** Собери `--user-file` из `drafts/writer.html` + SOUL/examples и вызови Derouter utility tier (gpt-5.6-terra):
+**Не пиши прозу моделью Cursor.** Собери `--user-file` из `drafts/writer.html` + SOUL/examples и вызови Derouter utility tier (gpt-6-luna):
 
 ```bash
 python3 scripts/excalibur_blog_derouter_opus_chat.py \

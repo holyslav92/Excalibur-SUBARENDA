@@ -36,9 +36,10 @@ DEFAULT_MAX_RETRIES = 1
 DEFAULT_RETRY_WAIT_SECONDS = 5
 
 DEFAULT_OPUS_MODEL = "claude-opus-5-5"
-DEFAULT_TERRA_MODEL = "gpt-5.6-terra"
+DEFAULT_UTILITY_MODEL = "gpt-6-luna"
 DEFAULT_OPUS_MODEL_ENV = "DEROUTER_OPUS_MODEL"
-DEFAULT_TERRA_MODEL_ENV = "DEROUTER_TERRA_MODEL"
+DEFAULT_UTILITY_MODEL_ENV = "DEROUTER_UTILITY_MODEL"
+LEGACY_UTILITY_MODEL_ENV = "DEROUTER_TERRA_MODEL"
 
 OPUS_MODEL_ALIASES = (
     "claude-opus-5-5",
@@ -46,9 +47,9 @@ OPUS_MODEL_ALIASES = (
     "claude-opus-5",
     "anthropic/claude-opus-5",
 )
-TERRA_MODEL_ALIASES = (
-    "gpt-5.6-terra",
-    "openai/gpt-5.6-terra",
+UTILITY_MODEL_ALIASES = (
+    "gpt-6-luna",
+    "openai/gpt-6-luna",
 )
 
 VALID_ROLES = frozenset(
@@ -67,7 +68,7 @@ VALID_ROLES = frozenset(
     }
 )
 
-# Opus 5 = Writer only; everything else Terra (cost canon — do not revert scout/title/sol to powerful).
+# Opus 5.5 = Writer only; everything else gpt-6-luna utility (do not revert scout/title/sol to powerful).
 POWERFUL_ROLES = frozenset({"writer"})
 UTILITY_ROLES = frozenset(
     {
@@ -118,14 +119,14 @@ def load_writing_model_config(root: Path) -> dict[str, Any]:
 
 
 def validate_writing_model_opus_writer_only(writing: dict[str, Any]) -> None:
-    """Opus 5 = Writer only; everything else Terra."""
+    """Opus 5.5 = Writer only; everything else gpt-6-luna utility."""
     if not writing:
         return
     powerful_roles = set(writing.get("powerful", {}).get("roles") or POWERFUL_ROLES)
     non_writer_on_opus = powerful_roles - {"writer"}
     if non_writer_on_opus:
         raise DerouterChatError(
-            "Opus 5 = Writer only; everything else Terra. "
+            "Opus 5.5 = Writer only; everything else gpt-6-luna. "
             f"Non-writer roles on powerful tier: {sorted(non_writer_on_opus)}"
         )
 
@@ -154,14 +155,14 @@ def tier_config(writing: dict[str, Any], tier: str) -> dict[str, Any]:
             "roles": sorted(POWERFUL_ROLES),
         }
     return {
-        "model": DEFAULT_TERRA_MODEL,
-        "model_env": DEFAULT_TERRA_MODEL_ENV,
+        "model": DEFAULT_UTILITY_MODEL,
+        "model_env": DEFAULT_UTILITY_MODEL_ENV,
         "roles": sorted(UTILITY_ROLES),
     }
 
 
 def model_aliases_for_tier(tier: str, base_model: str) -> list[str]:
-    defaults = OPUS_MODEL_ALIASES if tier == "powerful" else TERRA_MODEL_ALIASES
+    defaults = OPUS_MODEL_ALIASES if tier == "powerful" else UTILITY_MODEL_ALIASES
     ordered: list[str] = []
     for candidate in (base_model, *defaults):
         if candidate and candidate not in ordered:
@@ -171,6 +172,22 @@ def model_aliases_for_tier(tier: str, base_model: str) -> list[str]:
 
 def is_opus_family(model: str) -> bool:
     return "opus" in model.lower()
+
+
+def utility_model_bare_id(model: str) -> str:
+    return model.lower().split("/")[-1].strip()
+
+
+def is_utility_family(model: str) -> bool:
+    """Utility tier must be gpt-6-luna (Derouter catalog), not legacy terra."""
+    return utility_model_bare_id(model) == "gpt-6-luna"
+
+
+def read_utility_model_env() -> str:
+    return (
+        os.environ.get(DEFAULT_UTILITY_MODEL_ENV, "").strip()
+        or os.environ.get(LEGACY_UTILITY_MODEL_ENV, "").strip()
+    )
 
 
 def is_model_not_found_error(exc: Exception) -> bool:
@@ -191,7 +208,10 @@ def resolve_model(role: str, override: str | None, root: Path) -> tuple[str, str
     tier_block = tier_config(writing, tier)
     config_model = str(tier_block.get("model") or "").strip()
     model_env = str(tier_block.get("model_env") or "").strip()
-    env_model = os.environ.get(model_env, "").strip() if model_env else ""
+    if tier == "utility":
+        env_model = read_utility_model_env()
+    else:
+        env_model = os.environ.get(model_env, "").strip() if model_env else ""
 
     if override and override.strip():
         model = override.strip()
@@ -200,7 +220,7 @@ def resolve_model(role: str, override: str | None, root: Path) -> tuple[str, str
     elif config_model:
         model = config_model
     else:
-        model = DEFAULT_OPUS_MODEL if tier == "powerful" else DEFAULT_TERRA_MODEL
+        model = DEFAULT_OPUS_MODEL if tier == "powerful" else DEFAULT_UTILITY_MODEL
 
     # DEROUTER_TEXT_MODEL — legacy; не даём переключить powerful-роли на non-Opus.
     legacy_text = os.environ.get("DEROUTER_TEXT_MODEL", "").strip()
@@ -211,7 +231,7 @@ def resolve_model(role: str, override: str | None, root: Path) -> tuple[str, str
             elif not is_opus_family(model):
                 model = DEFAULT_OPUS_MODEL
         elif tier == "utility" and not env_model and not config_model:
-            if "terra" in legacy_text.lower() or legacy_text == DEFAULT_TERRA_MODEL:
+            if is_utility_family(legacy_text):
                 model = legacy_text
 
     if tier == "powerful" and not is_opus_family(model):
@@ -220,10 +240,10 @@ def resolve_model(role: str, override: str | None, root: Path) -> tuple[str, str
             f"Set {tier_block.get('model_env') or DEFAULT_OPUS_MODEL_ENV}=claude-opus-5-5"
         )
 
-    if tier == "utility" and "terra" not in model.lower():
+    if tier == "utility" and not is_utility_family(model):
         raise DerouterChatError(
-            f"Role {role!r} requires utility terra model; got {model!r}. "
-            f"Set {tier_block.get('model_env') or DEFAULT_TERRA_MODEL_ENV}=gpt-5.6-terra"
+            f"Role {role!r} requires utility model gpt-6-luna; got {model!r}. "
+            f"Set {DEFAULT_UTILITY_MODEL_ENV}=gpt-6-luna (legacy {LEGACY_UTILITY_MODEL_ENV} also read)"
         )
 
     return model, tier
@@ -435,7 +455,7 @@ def resolve_stamp_path(*, article_dir: str | None, role: str, root: Path) -> Pat
         ad = resolve_article_dir(article_dir, root)
         return ad / f"derouter-opus-stamp-{role}.json"
     if role == "smoke":
-        return root / "memory/setup/derouter-smoke-terra-stamp.json"
+        return root / "memory/setup/derouter-smoke-utility-stamp.json"
     return root / "memory/setup/derouter-opus-stamp.json"
 
 
@@ -587,10 +607,10 @@ def run_chat(args: argparse.Namespace) -> int:
     validate_writing_model_opus_writer_only(load_writing_model_config(root))
 
     if role == "smoke" or args.smoke:
-        terra_ok, terra_model = run_smoke_ping(
+        utility_ok, utility_model = run_smoke_ping(
             root=root,
             timeout=timeout,
-            stamp_suffix="terra",
+            stamp_suffix="utility",
             role_for_tier="research",
             system_prompt="You are a connectivity test. Reply with exactly: pong",
             user_prompt="ping",
@@ -605,15 +625,15 @@ def run_chat(args: argparse.Namespace) -> int:
             user_prompt="smoke writer",
             pass_check=lambda text: "готово" in text.lower(),
         )
-        if terra_model:
-            maybe_lock_model_in_tenant(root, "utility", terra_model)
+        if utility_model:
+            maybe_lock_model_in_tenant(root, "utility", utility_model)
         if opus_model:
             maybe_lock_model_in_tenant(root, "powerful", opus_model)
-        if terra_ok and opus_ok:
-            print("SMOKE ALL PASS (terra + opus)")
+        if utility_ok and opus_ok:
+            print("SMOKE ALL PASS (utility + opus)")
             return 0
-        if terra_ok:
-            print("SMOKE PARTIAL: terra PASS, opus FAIL or skipped")
+        if utility_ok:
+            print("SMOKE PARTIAL: utility PASS, opus FAIL or skipped")
             return 1
         print("SMOKE FAIL")
         return 1
@@ -722,7 +742,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--smoke",
         action="store_true",
-        help="Alias: --role smoke (terra ping + opus writer one-liner)",
+        help="Alias: --role smoke (utility gpt-6-luna ping + opus writer one-liner)",
     )
     parser.add_argument(
         "--model",

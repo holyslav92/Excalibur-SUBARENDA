@@ -481,12 +481,16 @@ def main() -> int:
         warn=not derouter_key,
     )
     utility_cfg = (tenant.get("writing_model") or {}).get("utility") or {}
-    utility_model = str(utility_cfg.get("model") or "gpt-5.6-terra")
-    terra_env = os.environ.get("DEROUTER_TERRA_MODEL", "").strip()
-    terra_check = terra_env or utility_model
+    utility_model = str(utility_cfg.get("model") or "gpt-6-luna")
+    utility_env = (
+        os.environ.get("DEROUTER_UTILITY_MODEL", "").strip()
+        or os.environ.get("DEROUTER_TERRA_MODEL", "").strip()
+    )
+    utility_check = utility_env or utility_model
+    bare = utility_check.lower().split("/")[-1]
     check(
-        bool(terra_check) and "terra" in terra_check.lower(),
-        f"utility tier terra id ({terra_check})",
+        bare == "gpt-6-luna",
+        f"utility tier gpt-6-luna id ({utility_check})",
         errors,
         warnings,
         warn=not derouter_key,

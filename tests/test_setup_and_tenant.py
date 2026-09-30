@@ -59,7 +59,8 @@ class SetupTenantTests(unittest.TestCase):
         utility = writing.get("utility") or {}
         self.assertEqual(powerful.get("model"), "claude-opus-5-5")
         self.assertNotEqual(powerful.get("model"), "claude-opus-5")
-        self.assertEqual(utility.get("model"), "gpt-5.6-terra")
+        self.assertEqual(utility.get("model"), "gpt-6-luna")
+        self.assertNotEqual(utility.get("model"), "gpt-5.6-terra")
         self.assertEqual(set(powerful.get("roles") or []), {"writer"})
         self.assertTrue(set(NON_WRITER_TEXT_ROLES).issubset(set(utility.get("roles") or [])))
         self.assertIn("Opus 5.5", writing.get("canon_note") or "")

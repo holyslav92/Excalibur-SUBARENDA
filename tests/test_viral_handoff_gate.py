@@ -79,6 +79,13 @@ class ViralHandoffGateTests(unittest.TestCase):
             self.assertEqual(proc.returncode, 0)
 
 
+class UtilityModelLunaTests(unittest.TestCase):
+    def test_tenant_utility_is_gpt_6_luna(self) -> None:
+        tenant = json.loads((ROOT / "shared/tenant-config.json").read_text(encoding="utf-8"))
+        model = (tenant.get("writing_model") or {}).get("utility", {}).get("model")
+        self.assertEqual(model, "gpt-6-luna")
+
+
 class WriterModelOpus55Tests(unittest.TestCase):
     def test_tenant_writer_not_legacy_opus5_id(self) -> None:
         tenant = json.loads((ROOT / "shared/tenant-config.json").read_text(encoding="utf-8"))

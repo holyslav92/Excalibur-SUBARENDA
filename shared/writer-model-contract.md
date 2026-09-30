@@ -3,10 +3,10 @@
 > Канонический контракт всего «мозга» фабрики:
 > **`shared/derouter-opus-brain-contract.md`**
 >
-> **Opus 5 = Writer only; everything else Terra**
+> **Opus 5 = Writer only; utility gpt-6-luna**
 
 Writer — **единственная** роль на powerful tier (`claude-opus-5-5` via Derouter REST).
-Sol, Scout, Title и все прочие текстовые роли — utility tier (`gpt-5.6-terra`).
+Sol, Scout, Title и все прочие текстовые роли — utility tier (`gpt-6-luna`).
 
 ```bash
 python3 scripts/excalibur_blog_derouter_opus_chat.py \
@@ -21,10 +21,10 @@ python3 scripts/excalibur_blog_derouter_opus_chat.py \
 - **Auth:** `DEROUTER_API_KEY` только из Cloud Secrets
 - **Endpoint:** `https://api.derouter.ai/openai/v1/chat/completions`
 
-Utility tier (`gpt-5.6-terra`) — Scout, Title, Sol, Research, Description, Cover-text, Schema, Cover-scene. См. brain contract.
+Utility tier (`gpt-6-luna`) — Scout, Title, Sol, Research, Description, Cover-text, Schema, Cover-scene. См. brain contract.
 
 ## Fail loud
 
-`DEROUTER WRITER BLOCKER` — без тихого fallback на Composer или Terra.
+`DEROUTER WRITER BLOCKER` — без тихого fallback на Composer или utility gpt-6-luna.
 
 Полный контракт: `shared/derouter-opus-brain-contract.md`.

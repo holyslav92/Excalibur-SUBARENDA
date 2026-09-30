@@ -2,15 +2,15 @@
   "script": "scripts/excalibur_blog_derouter_opus_chat.py",
   "role": "smoke",
   "tier": "utility",
-  "model": "gpt-5.6-terra",
+  "model": "gpt-6-luna",
   "endpoint": "https://api.derouter.ai/openai/v1/chat/completions",
-  "request_id": "chatcmpl-9a812680bd4e48aab7f1e949",
+  "request_id": "chatcmpl-6c2aa95752c24dc69b8714dd",
   "usage": {
     "prompt_tokens": 22,
     "completion_tokens": 5,
     "total_tokens": 27
   },
-  "created_at": "2026-09-30T08:35:19.690695+00:00",
+  "created_at": "2026-09-30T08:43:00.114957+00:00",
   "provider": "derouter-rest",
   "user_prompt_chars": 4,
   "contract": "shared/derouter-opus-brain-contract.md"

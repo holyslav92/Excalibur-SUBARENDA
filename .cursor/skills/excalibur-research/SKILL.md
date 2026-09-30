@@ -7,7 +7,7 @@ description: Current-date facts from live sources; no invented series continuati
 
 ## Thin conductor + Derouter utility (HARD)
 
-Синтез `research-notes.md` — **только** через Derouter utility tier (gpt-5.6-terra). Live fetch/MCP — Cursor; прозу notes — Derouter.
+Синтез `research-notes.md` — **только** через Derouter utility tier (gpt-6-luna). Live fetch/MCP — Cursor; прозу notes — Derouter.
 
 ```bash
 python3 scripts/excalibur_blog_derouter_opus_chat.py \

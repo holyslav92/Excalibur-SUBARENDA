@@ -70,7 +70,7 @@ Scout? → research_start → Research → Title → Writer → Sol
 - BAN фиксированный H2 «Мой вывод как практика»; BAN штампы «Нет. Так не заселяем.» / «Наш вывод простой.»; один CTA в конце.
 - Scout wound gate: `scripts/excalibur_blog_scout_wound_gate.py` (не клонировать door-surcharge семейство).
 
-**Thin conductor:** Cursor не пишет прозу. Слот: `scripts/excalibur_blog_viraldzen_slot.py` → gate → Scout. **Writer** = `claude-opus-5-5`. **Sol** / Scout / viral-pick = `gpt-5.6-terra` (`shared/SOUL.md`, `shared/dobry-dom-voice-reset-v1.md`).
+**Thin conductor:** Cursor не пишет прозу. Слот: `scripts/excalibur_blog_viraldzen_slot.py` → gate → Scout. **Writer** = `claude-opus-5-5`. **Sol** / Scout / viral-pick = `gpt-6-luna` (`shared/SOUL.md`, `shared/dobry-dom-voice-reset-v1.md`).
 
 **CASE delivery gate:** `scripts/excalibur_blog_case_delivery_gate.py` после Title / Writer / Sol. BLOCK → переписать роль. BAN duty-log в §1, BAN `HH:MM` в H1.
 

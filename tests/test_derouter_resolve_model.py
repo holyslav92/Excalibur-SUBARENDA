@@ -56,7 +56,7 @@ class DerouterResolveModelTests(unittest.TestCase):
             model, tier = resolve_model(role, None, ROOT)
             self.assertEqual(tier, "utility", role)
             self.assertNotIn("opus", model.lower(), role)
-            self.assertIn("terra", model.lower(), role)
+            self.assertEqual(model, "gpt-6-luna", role)
 
     def test_powerful_role_requires_opus_family(self) -> None:
         from scripts.excalibur_blog_derouter_opus_chat import resolve_model
@@ -74,8 +74,8 @@ class DerouterResolveModelTests(unittest.TestCase):
                                 "roles": ["writer"],
                             },
                             "utility": {
-                                "model": "gpt-5.6-terra",
-                                "model_env": "DEROUTER_TERRA_MODEL",
+                                "model": "gpt-6-luna",
+                                "model_env": "DEROUTER_UTILITY_MODEL",
                                 "roles": list(NON_WRITER_TEXT_ROLES),
                             },
                         }
@@ -89,7 +89,7 @@ class DerouterResolveModelTests(unittest.TestCase):
 
             model, tier = resolve_model("research", None, root)
             self.assertEqual(tier, "utility")
-            self.assertEqual(model, "gpt-5.6-terra")
+            self.assertEqual(model, "gpt-6-luna")
 
     def test_validate_rejects_non_writer_on_opus_tier(self) -> None:
         from scripts.excalibur_blog_derouter_opus_chat import (
@@ -113,16 +113,22 @@ class DerouterResolveModelTests(unittest.TestCase):
                     {
                         "writing_model": {
                             "powerful": {"model": "claude-opus-5", "roles": ["writer"]},
-                            "utility": {"model": "gpt-5.6-terra", "roles": ["research"]},
+                            "utility": {"model": "gpt-6-luna", "roles": ["research"]},
                         }
                     }
                 ),
                 encoding="utf-8",
             )
-            with mock.patch.dict(os.environ, {"DEROUTER_TEXT_MODEL": "gpt-5.6-terra"}, clear=False):
+            with mock.patch.dict(os.environ, {"DEROUTER_TEXT_MODEL": "gpt-6-luna"}, clear=False):
                 model, tier = resolve_model("writer", None, root)
                 self.assertEqual(tier, "powerful")
                 self.assertIn("opus", model.lower())
+
+    def test_utility_rejects_legacy_terra_model(self) -> None:
+        from scripts.excalibur_blog_derouter_opus_chat import DerouterChatError, resolve_model
+
+        with self.assertRaises(DerouterChatError):
+            resolve_model("scout", "gpt-5.6-terra", ROOT)
 
 
 class TenantWritingModelRoutingTests(unittest.TestCase):

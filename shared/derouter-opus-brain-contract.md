@@ -9,18 +9,18 @@
 
 Источник истины по ролям: `shared/tenant-config.json` → `writing_model`.
 
-**Claude Opus 5.5 = Writer only; everything else Terra** — не возвращай scout/title/sol на powerful без явного решения тенанта.
+**Claude Opus 5.5 = Writer only; utility gpt-6-luna** — не возвращай scout/title/sol на powerful без явного решения тенанта.
 
 ## Два tier (HARD)
 
 | Tier | Model id (Derouter) | Env override | Роли |
 |------|---------------------|--------------|------|
 | **powerful** | `claude-opus-5-5` | `DEROUTER_OPUS_MODEL` | writer |
-| **utility** | `gpt-5.6-terra` | `DEROUTER_TERRA_MODEL` | scout, viral-pick, title, sol, research, description, cover-text, schema, cover-scene |
+| **utility** | `gpt-6-luna` | `DEROUTER_UTILITY_MODEL` | scout, viral-pick, title, sol, research, description, cover-text, schema, cover-scene |
 
 `resolve_model` выбирает tier по `--role`. **Не** используй глобальный `DEROUTER_TEXT_MODEL` как override всех ролей — если задан, он не переводит powerful-роли на non-Opus.
 
-При 404 model id скрипт пробует алиасы (`gpt-5.6-terra`, `openai/gpt-5.6-terra` для utility; `claude-opus-5-5`, `anthropic/claude-opus-5-5`, затем legacy `claude-opus-5` для powerful) и при smoke может зафиксировать рабочий id в tenant-config.
+При 404 model id скрипт пробует алиасы (`gpt-6-luna`, `openai/gpt-6-luna` для utility; `claude-opus-5-5`, `anthropic/claude-opus-5-5`, затем legacy `claude-opus-5` для powerful) и при smoke может зафиксировать рабочий id в tenant-config.
 
 ## Thin Cursor conductor (HARD)
 
@@ -41,7 +41,7 @@ python3 scripts/excalibur_blog_derouter_opus_chat.py \
 1. Cursor **собирает** `--user-file` из входов (research, handoff, article.html…).
 2. Cursor **вызывает** скрипт; берёт `--output` **как есть**.
 3. Cursor **не переписывает** HTML/JSON/надписи после Derouter.
-4. Stamp `derouter-opus-stamp-<role>.json` — tier + фактический model id (opus vs terra).
+4. Stamp `derouter-opus-stamp-<role>.json` — tier + фактический model id (opus vs utility).
 
 ## Не Derouter chat (остаётся Cursor / Python / MCP)
 
@@ -70,7 +70,7 @@ reason: DEROUTER_API_KEY missing or Derouter chat API unavailable; <tier> model 
 python3 scripts/excalibur_blog_derouter_opus_chat.py --role smoke --smoke
 ```
 
-- Terra ping (utility, cheaper) → `memory/setup/derouter-smoke-terra-stamp.json`
+- Utility ping (gpt-6-luna) → `memory/setup/derouter-smoke-utility-stamp.json`
 - Opus Writer one-liner → `memory/setup/derouter-smoke-opus-stamp.json`
 
 ## Запрещено
@@ -78,8 +78,8 @@ python3 scripts/excalibur_blog_derouter_opus_chat.py --role smoke --smoke
 - `mcp-derouter/start-mcp.sh` — только REST
 - Cursor-authored prose для любой роли из таблицы
 - Тихий fallback на weaker model или Composer
-- Документировать `model: claude-opus-5-5` / `gpt-5.6-terra` для Cursor Cloud Agent — эти id только для Derouter REST
+- Документировать `model: claude-opus-5-5` / `gpt-6-luna` для Cursor Cloud Agent — эти id только для Derouter REST
 
 ## Legacy alias
 
-`shared/writer-model-contract.md` — Writer-only Opus subset (Sol → utility Terra).
+`shared/writer-model-contract.md` — Writer-only Opus subset (Sol → utility gpt-6-luna).

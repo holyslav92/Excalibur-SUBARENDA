@@ -18,7 +18,7 @@ python3 scripts/excalibur_blog_viral_handoff_gate.py
 
 ## Thin conductor + Derouter utility (HARD)
 
-Handoff-проза (topic, rework log, title draft) — **только** через Derouter utility tier (gpt-5.6-terra).
+Handoff-проза (topic, rework log, title draft) — **только** через Derouter utility tier (gpt-6-luna).
 Wordstat частоты — live MCP-KV (не Derouter). Cursor не пишет handoff своей моделью.
 
 ```bash

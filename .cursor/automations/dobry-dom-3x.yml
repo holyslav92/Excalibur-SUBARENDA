@@ -103,7 +103,7 @@ publish_gate:
   Канон ролей, без пропусков:
   ViralDzen (scripts/excalibur_blog_viraldzen_slot.py) → viral_handoff_gate → Scout? → research_start → Research → Title → Writer → Sol → Description → Cover-text || Schema → Cover → Cover-QA → Indexer → Publish? → Fixer → merge → Content-learner
 
-  Дирижёр Cursor не пишет абзацы и не рисует кадры. Writer = claude-opus-5-5. Scout / viral-pick / Research / Title / Sol / Description / Cover-text / Schema / Cover-scene = gpt-5.6-terra. Слог Sol — shared/SOUL.md + shared/dobry-dom-voice-reset-v1.md + shared/soul-examples/. После Scout — scripts/excalibur_blog_scout_wound_gate.py. После Title / Writer / Sol — scripts/excalibur_blog_case_delivery_gate.py. BLOCK → переписать роль, не публиковать.
+  Дирижёр Cursor не пишет абзацы и не рисует кадры. Writer = claude-opus-5-5. Scout / viral-pick / Research / Title / Sol / Description / Cover-text / Schema / Cover-scene = gpt-6-luna. Слог Sol — shared/SOUL.md + shared/dobry-dom-voice-reset-v1.md + shared/soul-examples/. После Scout — scripts/excalibur_blog_scout_wound_gate.py. После Title / Writer / Sol — scripts/excalibur_blog_case_delivery_gate.py. BLOCK → переписать роль, не публиковать.
 
   ГОЛОС (HARD — dobry_dom_voice_reset_v1): 650–1100 слов. Ротируй H1 shape (6 форм), anti-clone vs 12 live. BAN скелет «Сняли квартиру посуточно… У двери:», BAN H2 «Мой вывод как практика», BAN штампы «Нет. Так не заселяем.» / «Наш вывод простой.», один CTA. «посуточно» в H1 или первом предложении. Телефон +7 (993) 574-83-22 только в ТЕКСТЕ, не на картинке.
 

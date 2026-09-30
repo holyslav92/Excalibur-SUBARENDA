@@ -7,7 +7,7 @@ description: Invent one human H1 — wound in one breath; rotate shapes; Tyumen 
 
 ## Derouter utility (HARD)
 
-H1 — только через `excalibur_blog_derouter_opus_chat.py --role title` (gpt-5.6-terra).
+H1 — только через `excalibur_blog_derouter_opus_chat.py --role title` (gpt-6-luna).
 
 ```bash
 python3 scripts/excalibur_blog_case_delivery_gate.py --article-dir <dir> --stage title
