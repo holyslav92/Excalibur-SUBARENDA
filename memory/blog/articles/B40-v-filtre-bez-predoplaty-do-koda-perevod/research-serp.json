@@ -1,0 +1,218 @@
+{
+  "agent": "excalibur-blog",
+  "date_context": {
+    "timezone": "Europe/Moscow",
+    "today_iso": "2026-09-30",
+    "today_ru": "30.09.2026",
+    "year": 2026,
+    "month": 9,
+    "month_name_ru": "сентябрь",
+    "weekday_ru": "среда"
+  },
+  "topic": {
+    "topic_id": "B40",
+    "title": "В фильтре без предоплаты до кода перевод",
+    "h1": "В фильтре без предоплаты до кода перевод",
+    "slug": "v-filtre-bez-predoplaty-do-koda-perevod",
+    "primary_query": "В фильтре без предоплаты до кода перевод",
+    "priority": "P0"
+  },
+  "searches": [
+    {
+      "query_id": "primary_fresh",
+      "query": "В фильтре без предоплаты до кода перевод 2026",
+      "purpose": "актуальный SERP",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Международные денежные переводы в 2026 году: как выбрать канал и не ...",
+          "url": "https://vc.ru/money/2799955-mezhdunarodnye-perevody-2026-kak-vybrat-luchshiy-sposob",
+          "snippet": ""
+        },
+        {
+          "title": "Международные переводы 2026: полный гайд по переводу денег из России",
+          "url": "https://dtf.ru/howto/4715746-mezhdunarodnye-perevody-2026-kak-perevesti-dengi-iz-rossii",
+          "snippet": "В этой статье - разбор всех работающих способов международного перевода средств: что выбрать под небольшую срочную задачу, что - для крупной бизнес-операции, как сделать ..."
+        },
+        {
+          "title": "Перевод денег за границу в 2026: валюта, карты, лимиты и рабочие схемы",
+          "url": "https://vc.ru/money/2739152-perevod-deneg-za-granitsu-v-2026",
+          "snippet": "Данное руководство предоставляет анализ современных возможностей для осуществления международного перевода."
+        },
+        {
+          "title": "Справочник кодов видов валютных операций в 2026 году",
+          "url": "https://nalog-nalog.ru/valyutnye_operacii/spravochnik_kodov_vidov_valyutnyh_operacij/",
+          "snippet": "В этой статье разберём: в какой валюте выгоднее, какие карты помогут, какая допустимая сумма переводов за границу, какие подводные камни ждут и как их обойти."
+        },
+        {
+          "title": "Международные переводы в 2026 году: полный разбор для физлиц и бизнеса ...",
+          "url": "https://dtf.ru/howto/4839868-mezhdunarodnye-perevody-v-2026-godu",
+          "snippet": "Рассмотрим, где применяются КВВО, каков порядок их применения, а также основные коды валютных операций в материале далее."
+        },
+        {
+          "title": "Swift перевод за рубеж в 2026: как отправить деньги быстро и без ошибок",
+          "url": "https://habr.com/ru/companies/Exnode/articles/1073024/",
+          "snippet": "В этой статье разберём все рабочие способы сделать международный перевод в 2026 году: из России и в Россию."
+        }
+      ],
+      "searched_at": "2026-09-30"
+    },
+    {
+      "query_id": "title_fresh",
+      "query": "В фильтре без предоплаты до кода перевод 2026",
+      "purpose": "SERP по человеческому title",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Google Переводчик",
+          "url": "https://translate.google.com/?hl=ru",
+          "snippet": ""
+        },
+        {
+          "title": "Переводы на карту с 1 сентября 2026: что изменится, новые правила",
+          "url": "https://ru.investing.com/news/general-news/article-3362356",
+          "snippet": "Бесплатный сервис Google позволяет мгновенно переводить слова, фразы и веб-страницы. Поддерживается более 100 языков."
+        },
+        {
+          "title": "Переводы на карту с 1 сентября 2026: новые правила, изменения",
+          "url": "https://frankmedia.ru/300406",
+          "snippet": "В материале детально рассмотрим, какие новые правила контроля переводов вступают в силу и кого они затронут. Росфинмониторинг получит доступ к переводам с 1 сентября 2026"
+        },
+        {
+          "title": "Swift-перевод В 2026: Что Должен Знать Каждый",
+          "url": "https://moneyport.ru/blog/dlya-biznesa/2026/09/29/swift-perevod-v-2026-chto-dolzhen-znat-kazhdyy.html",
+          "snippet": "В материале детально рассмотрим, какие новые правила контроля переводов вступают в силу и кого они затронут."
+        },
+        {
+          "title": "Изменения в денежных переводах 1 апреля 2026 года — новые правила для ...",
+          "url": "https://www.klerk.ru/user/2416162/685224/",
+          "snippet": "SWIFT осенью 2026: что происходит с исходящими платежами Прямая отправка валюты со счетов в РФ за рубеж стала лотереей с низким шансом на успех."
+        },
+        {
+          "title": "Справочник кодов видов валютных операций в 2026 году",
+          "url": "https://nalog-nalog.ru/valyutnye_operacii/spravochnik_kodov_vidov_valyutnyh_operacij/",
+          "snippet": "О всех изменениях в правилах денежных переводов в России в 2026 году: новые реквизиты с 1 апреля, 12 критериев блокировки ЦБ, лимиты и контроль через СБП."
+        }
+      ],
+      "searched_at": "2026-09-30"
+    },
+    {
+      "query_id": "official_docs",
+      "query": "В фильтре без предоплаты до кода перевод official docs 2026",
+      "purpose": "официальные docs",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Google Переводчик",
+          "url": "https://translate.google.com/?hl=ru&sl=en&tl=ru&op=docs",
+          "snippet": ""
+        },
+        {
+          "title": "Бесплатный онлайн-переводчик: сохранение макета документа (PDF, Word ...",
+          "url": "https://www.onlinedoctranslator.com/ru/",
+          "snippet": "Бесплатный сервис Google позволяет мгновенно переводить слова, фразы и веб-страницы. Поддерживается более 100 языков."
+        },
+        {
+          "title": "DocTranslator - Мгновенно перевести документ",
+          "url": "https://doctranslator.com/ru",
+          "snippet": "Переводите документы онлайн бесплатно на 100+ языков. Загрузите PDF или Word и получите мгновенный перевод с сохранением исходной разметки."
+        },
+        {
+          "title": "Переводчик документов: Точный ИИ-перевод с сохранением форматирования ...",
+          "url": "https://doc.openl.io/ru",
+          "snippet": "Переводите PDF-файлы, документы Word, электронные таблицы и сканы на 108 языков и скачивайте их в том же формате. Вы регистрируетесь по электронной почте и можете сразу же приступить к работе над первым файлом, не устанавливая ничего и не бронируя звонок с менеджером."
+        },
+        {
+          "title": "Belin Doc - ИИ-переводчик PDF онлайн бесплатно: DOCX, EPUB",
+          "url": "https://belindoc.com/ru",
+          "snippet": "Переводите документы PDF, Word, Excel и PowerPoint на 100+ языков, сохраняя исходное форматирование. Быстрый, точный и безопасный перевод документов для бизнеса и личных задач."
+        },
+        {
+          "title": "Переводчик документов с ИИ без потери форматирования | DocTranslator",
+          "url": "https://doctranslator.net/ru",
+          "snippet": "Belin Doc — это полностью бесплатный и безлимитный инструмент для перевода документов, работающий на передовых технологиях анализа форматирования документов и больших языковых моделях."
+        }
+      ],
+      "searched_at": "2026-09-30"
+    },
+    {
+      "query_id": "github_evidence",
+      "query": "site:github.com В фильтре без предоплаты до кода перевод 2026",
+      "purpose": "GitHub evidence",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Какой режим Game Filter ставить? И какой раньше всегда работал?",
+          "url": "https://github.com/Flowseal/zapret-discord-youtube/issues/10738",
+          "snippet": ""
+        },
+        {
+          "title": "wiiMac/assets/bootmii.png at main · bryankeller/wiiMac · GitHub",
+          "url": "https://github.com/bryankeller/wiiMac/blob/main/assets/bootmii.png",
+          "snippet": "В версии 1.9.7 появилась возможность отдельно в Game Filter включать и выключать TCP и UDP. Что из этого включать? Лучше ли сразу оба использовать?"
+        },
+        {
+          "title": "памятка - zapret для домохозяек · GitHub",
+          "url": "https://gist.github.com/kotsmotritnastul/3cf8296a14d02bb95961c093082f41c0",
+          "snippet": "A Mac OS X bootloader for the Nintendo Wii. Contribute to bryankeller/wiiMac development by creating an account on GitHub."
+        },
+        {
+          "title": "Шпаргалка по Markdown · GitHub",
+          "url": "https://gist.github.com/fomvasss/8dd8cd7f88c67a4e3727f9d39224a84c",
+          "snippet": "памятка - zapret для домохозяек. GitHub Gist: instantly share code, notes, and snippets."
+        },
+        {
+          "title": "Добавление локально размещенного кода в GitHub",
+          "url": "https://docs.github.com/ru/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github",
+          "snippet": "Блоки кода являются частью функций Markdown, но не подсветка синтаксиса. Однако многие обработчики, например Github или Markdown Here, поддерживают подсветку синтаксиса."
+        },
+        {
+          "title": "Связывание текстовых редакторов с Git - Документация GitHub",
+          "url": "https://docs.github.com/ru/get-started/git-basics/associating-text-editors-with-git",
+          "snippet": "Если у вас есть исходный код, хранящийся локально на компьютере, который отслеживается Git или не отслеживается любой системой управления версиями (VCS), можно добавить код, GitHub введя команды ..."
+        }
+      ],
+      "searched_at": "2026-09-30"
+    },
+    {
+      "query_id": "community_experience",
+      "query": "В фильтре без предоплаты до кода перевод forum problems опыт 2026",
+      "purpose": "форумы и живые проблемы",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Google Переводчик",
+          "url": "https://translate.google.com/?hl=ru",
+          "snippet": ""
+        },
+        {
+          "title": "Перевод Заблокировали — Что Делать: Комплаенс, Возврат Swift 2026",
+          "url": "https://flatters.ru/perevody/komplaens/",
+          "snippet": "Бесплатный сервис Google позволяет мгновенно переводить слова, фразы и веб-страницы. Поддерживается более 100 языков."
+        },
+        {
+          "title": "СВИФТ-перевод в Россию в 2026: какие банки принимают переводы и чем их ...",
+          "url": "https://vc.ru/transport/3068271-swift-perevody-v-rossiyu",
+          "snippet": "Почему банк блокирует и возвращает перевод за границу: комплаенс, источник средств, санкционный фильтр. Что делать, если деньги зависли, и как пройти проверку с первого раза."
+        },
+        {
+          "title": "Swift-перевод В 2026: Что Должен Знать Каждый",
+          "url": "https://moneyport.ru/blog/dlya-biznesa/2026/09/29/swift-perevod-v-2026-chto-dolzhen-znat-kazhdyy.html",
+          "snippet": "В 2026 году СВИФТ перевод в Россию остаётся одним из ключевых каналов для получения средств из-за рубежа, но работает он совсем не так, как три года назад."
+        },
+        {
+          "title": "Swift Перевод Из России: Почему Блокируют Платежи И Как Этого Избежать ...",
+          "url": "https://dtf.ru/howto/5156470-swift-perevod-iz-rossii-kak-izbezhat-blokirovok",
+          "snippet": "SWIFT осенью 2026: что происходит с исходящими платежами Прямая отправка валюты со счетов в РФ за рубеж стала лотереей с низким шансом на успех."
+        },
+        {
+          "title": "Код вида валютной операции: одна ошибка - и перевод в Китай не уходит",
+          "url": "https://whitechina.ru/tpost/kod-vida-valyutnoj-operatsii-odna-oshibka-i-perevod-v-kitaj-ne-uhodit",
+          "snippet": "Актуальное состояние на 2026 год: Когда банковский путь закрыт или слишком сложен — появляются платёжные агенты. Именно они сегодня закрывают большинство реальных задач по SWIFT переводам из России. Вот три варианта, которые заслуживают внимания."
+        }
+      ],
+      "searched_at": "2026-09-30"
+    }
+  ],
+  "errors": []
+}

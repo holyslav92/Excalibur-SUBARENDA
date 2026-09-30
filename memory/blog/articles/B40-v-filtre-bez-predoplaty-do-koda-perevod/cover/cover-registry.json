@@ -1,0 +1,50 @@
+{
+  "topic_id": "B40",
+  "slug": "posutochno-tyumen-v-filtre-bez-predoplaty-perevod-do-koda",
+  "cover_family": "brand_collage",
+  "style_preset": "the_rieltor_twilight_gold",
+  "pipeline": "slice4_grid_1x_image_api",
+  "file": "cover/cover.png",
+  "alt": "Гость с чемоданом у закрытой двери посуточной квартиры в Тюмени проверяет телефон; на табличке указано, что после фильтра «без предоплаты» до кода попросили 3 200 рублей на карту.",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-slice4.png",
+  "generated_at": "2026-09-30T09:23:24+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Гость с чемоданом у закрытой двери посуточной квартиры в Тюмени проверяет телефон; на табличке указано, что после фильтра «без предоплаты» до кода попросили 3 200 рублей на карту.",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Гость в светлой квартире проверяет на телефоне условие бронирования «без предоплаты»; за окном видны золотые сентябрьские листья.",
+      "h2_anchor": "Где именно сломалось обещание",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "У закрытой двери стоит чемодан гостя; на телефоне показана просьба перевести 3 200 рублей до получения кода от замка.",
+      "h2_anchor": "Почему просьба о коде — не мелочь",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Гость с телефоном и хозяин у электронного замка спокойно выясняют порядок заселения: сначала код от двери или перевод денег.",
+      "h2_anchor": "Один вопрос, который всё проясняет",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}
