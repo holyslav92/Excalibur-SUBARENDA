@@ -10,8 +10,16 @@ import json
 import subprocess
 import sys
 import tempfile
+import uuid
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+
+_SCRIPTS = Path(__file__).resolve().parent
+if str(_SCRIPTS) not in sys.path:
+    sys.path.insert(0, str(_SCRIPTS))
+
+from excalibur_blog_viral_topic_repeat import check_topic_repeat
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -213,17 +221,46 @@ def run_slot(
             pick = {
                 "status": "PASS",
                 "viral_source": candidates[0],
-                "guest_angle_ru": "dry-run angle",
+                "guest_angle_ru": "dry-run angle unique wound kettle filter",
                 "tyumen_wound_hint": "dry-run",
                 "hub_slug": hub["slug"],
             }
         else:
             candidates = _collect_viral(root, cfg, hub, tmp_path)
-            pick = _pick_angle(root, hub, candidates, tmp_path)
+            pick = None
+            excluded_urls: set[str] = set()
+            for _attempt in range(min(8, len(candidates) or 1)):
+                pool = [c for c in candidates if c["url"] not in excluded_urls]
+                if not pool:
+                    break
+                pick = _pick_angle(root, hub, pool, tmp_path)
+                probe = " ".join(
+                    [
+                        str(pick.get("guest_angle_ru") or ""),
+                        str(pick.get("tyumen_wound_hint") or ""),
+                        str((pick.get("viral_source") or {}).get("title") or ""),
+                    ]
+                )
+                repeat_errors = check_topic_repeat(root, probe)
+                if not repeat_errors:
+                    break
+                src_url = str((pick.get("viral_source") or {}).get("url") or "")
+                if src_url:
+                    excluded_urls.add(src_url)
+                pick = None
+            if pick is None:
+                raise RuntimeError(
+                    "VIRALDZEN BLOCKER: no non-repeat viral angle after rework "
+                    f"(tried {len(excluded_urls)} sources)"
+                )
 
     src = pick.get("viral_source") or {}
+    issued_at = datetime.now(timezone.utc).isoformat()
+    handoff_id = str(uuid.uuid4())
     handoff = {
         "status": "PASS",
+        "handoff_id": handoff_id,
+        "issued_at": issued_at,
         "editorial_canon": "dobry_dom_voice_reset_v1",
         "discovered_hub": hub,
         "viral_source": {

@@ -1,0 +1,43 @@
+{
+  "version": "1",
+  "description": "Живые повторы — hard block для ViralDzen angle + publish (не skill-only).",
+  "committed_live_wounds": [
+    {
+      "id": "avito_duplicate_prepay_b33_b40",
+      "note": "B33 + B40 / WP 5140 — второй перевод после оплаты на Авито / карта без предоплаты",
+      "patterns": [
+        "авито",
+        "второй перевод",
+        "предоплат",
+        "на карту",
+        "без предоплат",
+        "дублируйте"
+      ],
+      "min_pattern_hits": 2
+    },
+    {
+      "id": "quiet_hours_drilling_wp5147",
+      "note": "WP 5147 — тихий дом / сверление за стеной",
+      "patterns": [
+        "сверл",
+        "тихий дом",
+        "тихие часы",
+        "за стеной",
+        "шум ночью"
+      ],
+      "min_pattern_hits": 2
+    },
+    {
+      "id": "door_surcharge_family",
+      "note": "Клоны «у двери» / доплата при заселении (B04, B34, …)",
+      "patterns": [
+        "у двери",
+        "доплат",
+        "третьего гост",
+        "на личную карту",
+        "5 000"
+      ],
+      "min_pattern_hits": 3
+    }
+  ]
+}

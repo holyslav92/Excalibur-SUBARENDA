@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import subprocess
 import sys
 import time
 import urllib.error
@@ -279,13 +280,50 @@ def run_research_start(
     topic = parse_topic_card(topic_id, title_override=title)
     root = project_root()
     assert_topic_focus(topic)
+    if not dry_run:
+        gate = subprocess.run(
+            [sys.executable, str(root / "scripts/excalibur_blog_viral_handoff_gate.py")],
+            cwd=str(root),
+            check=False,
+        )
+        if gate.returncode != 0:
+            raise RuntimeError(
+                "VIRALDZEN BLOCKER: viral handoff gate failed — "
+                "run scripts/excalibur_blog_viraldzen_slot.py before research_start"
+            )
     queries = build_search_queries(topic, ctx)
     out_dir = output_dir or article_dir(root, topic)
     out_dir.mkdir(parents=True, exist_ok=True)
     slot_viral = root / "memory/scout/viral-dzen-handoff.json"
     article_viral = out_dir / "viral-dzen-handoff.json"
-    if slot_viral.is_file() and not article_viral.is_file():
-        article_viral.write_text(slot_viral.read_text(encoding="utf-8"), encoding="utf-8")
+    if not dry_run:
+        if not slot_viral.is_file():
+            raise RuntimeError("VIRALDZEN BLOCKER: memory/scout/viral-dzen-handoff.json missing")
+        if not article_viral.is_file() or article_viral.stat().st_mtime < slot_viral.stat().st_mtime:
+            article_viral.write_text(slot_viral.read_text(encoding="utf-8"), encoding="utf-8")
+        handoff = json.loads(article_viral.read_text(encoding="utf-8"))
+        meta_path = out_dir / "article.meta.json"
+        meta: dict[str, Any] = {}
+        if meta_path.is_file():
+            meta = json.loads(meta_path.read_text(encoding="utf-8"))
+        if not isinstance(meta, dict):
+            meta = {}
+        meta["viral_handoff_id"] = handoff.get("handoff_id")
+        meta["viral_handoff_issued_at"] = handoff.get("issued_at")
+        meta.setdefault("topic_id", topic.get("topic_id"))
+        meta_path.write_text(json.dumps(meta, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        repeat = subprocess.run(
+            [
+                sys.executable,
+                str(root / "scripts/excalibur_blog_viral_topic_repeat_gate.py"),
+                "--article-dir",
+                str(out_dir.relative_to(root)),
+            ],
+            cwd=str(root),
+            check=False,
+        )
+        if repeat.returncode != 0:
+            raise RuntimeError("VIRALDZEN BLOCKER: viral topic repeat gate failed for this slot angle")
 
     serp_runs: list[dict[str, Any]] = []
     errors: list[str] = []

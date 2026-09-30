@@ -1333,6 +1333,35 @@ def check_publish_prerequisites(
                 f"(need {'PASS or STALE' if allow_stale_freshness else 'PASS'})"
             )
 
+    rel_dir = article_dir.relative_to(root) if article_dir.is_relative_to(root) else article_dir
+    viral_proc = subprocess.run(
+        [
+            sys.executable,
+            str(root / "scripts/excalibur_blog_viral_handoff_gate.py"),
+            "--publish",
+            "--article-dir",
+            str(rel_dir),
+        ],
+        cwd=str(root),
+        check=False,
+    )
+    if viral_proc.returncode != 0:
+        blockers.append(
+            "viral-handoff gate failed (ViralDzen slot PASS handoff required in article dir)"
+        )
+    repeat_proc = subprocess.run(
+        [
+            sys.executable,
+            str(root / "scripts/excalibur_blog_viral_topic_repeat_gate.py"),
+            "--article-dir",
+            str(rel_dir),
+        ],
+        cwd=str(root),
+        check=False,
+    )
+    if repeat_proc.returncode != 0:
+        blockers.append("viral-topic-repeat gate failed (angle duplicates recent live wound)")
+
     return blockers
 
 
