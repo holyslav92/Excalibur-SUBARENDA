@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "topic_id": "B41",
+  "slug": "zalog-5-000-obeschali-vernut-utrom-utrom-napisali-posle-uborki",
+  "research_date": "2026-10-01",
+  "summary": "CASE deposit_return_delay: promised refund by 11:00, morning message «after cleaning». Wordstat P0 3984 Tyumen.",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "t.me/s/Dobriy_dom_72 week to 2026-10-01",
+    "source_type": "community",
+    "urls": ["https://t.me/s/Dobriy_dom_72", "https://t.me/s/klyshin_A"],
+    "accessed_at": "2026-10-01"
+  },
+  "freshness_audit": {
+    "research_date": "2026-10-01",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://t.me/s/Dobriy_dom_72",
+      "published_at": "2026-09-28",
+      "note": "Deposit return / checkout timing discussions."
+    }
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "source": "mcp-kv live 2026-10-01",
+    "regions": ["55", "11176", "225"]
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "note": "No bank tariff claims in case article"
+  },
+  "derouter": {
+    "first_attempt": "PASS",
+    "model": "gpt-6-luna"
+  }
+}

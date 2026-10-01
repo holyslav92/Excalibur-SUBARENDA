@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "handoff_id": "72a1c138-74a1-4942-bd09-70f324570a7e",
+  "issued_at": "2026-10-01T09:07:45.478622+00:00",
+  "editorial_canon": "dobry_dom_voice_reset_v1",
+  "discovered_hub": {
+    "slug": "travel",
+    "title": "Путешествия",
+    "url": "https://dzen.ru/topic/travel",
+    "subscribers": 7419022,
+    "topic_id": "5168",
+    "discovered_from_seeds": [
+      "путешествия",
+      "отели",
+      "недвижимость",
+      "аренда квартир",
+      "туризм"
+    ]
+  },
+  "viral_source": {
+    "title": "✈️ Как связаться с техподдержкой Ozon Travel: телефон, чат, возврат билетов, отмена бронирования и помощь с заказом онлайн",
+    "url": "https://dzen.ru/a/ah0F7VYv2THXMskj",
+    "viral_score": 7.43
+  },
+  "guest_angle_ru": "Гость заранее понимает, что делать при накладках: где получить код от замка, кому написать при позднем заезде, как быстро решить вопрос с уборкой или отменой брони без поисков нужного контакта.",
+  "tyumen_wound_hint": "В Тюмени особенно важны понятная связь и быстрый ответ при заселении в мороз, позднем прибытии или задержке транспорта.",
+  "candidates_count": 20,
+  "anti_copy": "Do not copy or closely paraphrase viral_source body; angle only."
+}

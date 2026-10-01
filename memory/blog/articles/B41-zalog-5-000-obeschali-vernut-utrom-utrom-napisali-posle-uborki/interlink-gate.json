@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "topic_id": "B41",
+  "slug": "zalog-5-000-obeschali-vernut-utrom-utrom-napisali-posle-uborki",
+  "candidates_count": 43,
+  "outbound_found": [
+    {
+      "slug": "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+      "title": "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate"
+    },
+    {
+      "slug": "napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni",
+      "title": "napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni"
+    },
+    {
+      "slug": "bez-zaloga-v-filtre-zalog-u-dveri",
+      "title": "bez-zaloga-v-filtre-zalog-u-dveri"
+    }
+  ],
+  "outbound_unique_slugs": [
+    "napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni",
+    "bez-zaloga-v-filtre-zalog-u-dveri",
+    "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "warnings": [],
+  "errors": []
+}
