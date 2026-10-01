@@ -1,0 +1,32 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/b41/",
+  "url": "{{SITE_BASE}}/blog/b41/",
+  "headline": "B41",
+  "datePublished": "2025-01-01",
+  "author": {
+    "@type": "Organization",
+    "@id": "{{SITE_BASE}}/#organization-dobry-dom",
+    "name": "Добрый дом",
+    "sameAs": [
+      "{{SITE_BASE}}/"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "{{SITE_BASE}}/#organization-dobry-dom",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/b41/"
+  }
+}

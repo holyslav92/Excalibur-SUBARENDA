@@ -1,5 +1,1 @@
-Проверяю обязательные локальные материалы и доступность Wordstat/MCP перед сборкой handoff.SCOUT BLOCK.
-
-Причина: в текущем API-сеансе недоступен `CallMcpTool` для обязательного preflight `wordstat_get_user_info`. По контракту Wordstat частоты нельзя принимать или переиспользовать только из входных данных пользователя без live MCP-проверки.
-
-Handoff `.cursor/excalibur-blog-handoff.md` не создан.
+**SCOUT BLOCK — WORDSTAT MCP unavailable.** I can’t perform the required solo `wordstat_get_user_info` preflight or independently query the supplied frequencies, so I won’t write the handoff or claim the Wordstat gate passed. The provided figures don’t replace the required live MCP check.

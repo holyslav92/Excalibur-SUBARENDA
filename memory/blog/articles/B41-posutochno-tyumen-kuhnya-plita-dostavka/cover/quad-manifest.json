@@ -1,0 +1,78 @@
+{
+  "topic_id": "B41",
+  "canvas_file": "cover/canvas-slice4.png",
+  "layout": "2x2",
+  "pipeline": "slice4_grid_1x_image_api",
+  "inline_count": 3,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-slice4.png",
+      "batch_file": "cover/slice4-mcp-batch.json",
+      "prompt_file": "cover/slice4-mcp-prompt.txt",
+      "result_file": "cover/slice4-mcp-result.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    }
+  ],
+  "style_preset": "the_rieltor_twilight_gold",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "cover_hook": "Плита молчит — 4 200 ₽ доставки",
+  "cover_hook_highlight": "4 200 ₽",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "PRIMARY: Derouter REST (DEROUTER_API_KEY) — 2K 16:9, one job per canvas (1×). Cover agent invents cover_hook + scene_hint/alt before --write-batch. Host lock = blog-hero.json (navy blazer, not hoodie).",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Гостья у плиты в осенней кухне Тюмени, на магните телефон",
+      "scene_hint": "Comfort+ kitchen autumn evening, woman at dead stove, grocery bags, Cyrillic hook on fridge magnet, phone +7 993 574-83-22 on magnet",
+      "meme_caption_ru": "",
+      "sticky": "Сначала плита, потом оплата"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "За что семья заплатила 9 900 ₽",
+      "visual_type": "bar_timeline_chart",
+      "scene_hint": "Bar chart: stay 9900 vs delivery 4200",
+      "alt": "Схема расходов: проживание и доставки",
+      "labels": [
+        "плита молчит",
+        "второй вечер",
+        "три ночи"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "«Мастер завтра» оставляет гостя сегодня",
+      "visual_type": "comparison_table_ui",
+      "scene_hint": "Split: host chat «мастер завтра» vs hungry kids",
+      "alt": "Сравнение: обещание мастера и голодный вечер",
+      "labels": [
+        "мастер завтра",
+        "доставка снова",
+        "продукты в холодильнике"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Фото кухни не включает плиту",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Workflow: photo of stove vs reality off",
+      "alt": "Диаграмма: фото плиты и нерабочая конфорка",
+      "labels": [
+        "розетка не помогла",
+        "автомат выбило",
+        "ужин сорвался"
+      ]
+    }
+  },
+  "cover_keys_ru": []
+}

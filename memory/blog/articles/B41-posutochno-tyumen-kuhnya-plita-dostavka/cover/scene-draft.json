@@ -1,0 +1,90 @@
+Запрос в текущем виде нарушает Cover Agent policy: нельзя делать standalone cover poster, 2 quad canvases или 8 изображений. Для B41 допустим только **один Grsai canvas 2048×1152 с сеткой 2×2**, затем он режется на `cover.png` и `inline-01..03.png`. Официальный логотип добавляется только после нарезки на cover.
+
+Содержимое `cover/scene-draft.json` можно оформить так:
+
+```json
+{
+  "topic_id": "B41",
+  "role": "cover-scene",
+  "provider": "grsai",
+  "canvas": {
+    "width": 2048,
+    "height": 1152,
+    "layout": "2x2_grid",
+    "panels": 4
+  },
+  "output": [
+    "cover/cover.png",
+    "cover/inline-01.png",
+    "cover/inline-02.png",
+    "cover/inline-03.png"
+  ],
+  "subject": {
+    "season": "autumn",
+    "location": "Tyumen",
+    "interior": "realistic lived-in family kitchen",
+    "people": "family gathered around a broken freestanding stove",
+    "mood": "tense but humane, practical problem-solving",
+    "props": [
+      "broken stove with visible malfunction",
+      "grocery bags and unpacked groceries",
+      "smartphone showing a delivery app",
+      "kitchen magnets",
+      "autumn outerwear details",
+      "ordinary household clutter"
+    ]
+  },
+  "cover_panel": {
+    "composition": "family and broken stove as the main focal point, groceries in the foreground, smartphone clearly visible near the stove",
+    "physical_text_object": {
+      "type": "kitchen magnet or small handwritten notice attached to the refrigerator",
+      "text": "[EXACT ARTICLE H1 IN CYRILLIC]",
+      "must_be": "legible Cyrillic text on a real physical object, not an overlay"
+    },
+    "phone": {
+      "number": "+7 (993) 574-83-22",
+      "placement": "visible on a magnet, lock screen, or delivery-app contact screen",
+      "must_be": "legible in the generated scene"
+    },
+    "logo": {
+      "model_drawn": false,
+      "reserve_area": "clean top-right padding approximately 8-12 percent of tile width",
+      "postprocess": "paste official cropped-img_7143.png after slicing",
+      "white_plaque": false
+    }
+  },
+  "inline_panels": [
+    {
+      "id": "inline-01",
+      "scene": "close detail of the broken stove controls and family member inspecting the fault",
+      "logo": false,
+      "text_overlay": false
+    },
+    {
+      "id": "inline-02",
+      "scene": "groceries spread across the kitchen table while the family checks a delivery app on a phone",
+      "logo": false,
+      "text_overlay": false
+    },
+    {
+      "id": "inline-03",
+      "scene": "wider Tyumen autumn kitchen view with family planning the repair or replacement of the stove",
+      "logo": false,
+      "text_overlay": false
+    }
+  ],
+  "global_constraints": [
+    "one Grsai generation only",
+    "no standalone cover generation",
+    "no second quad canvas",
+    "no 8-frame batch",
+    "no model-drawn brand lockup",
+    "no logo on inline panels",
+    "no white or gray logo plaque",
+    "natural documentary editorial photography",
+    "all four panels must be complete 16:9 compositions inside one 2x2 canvas"
+  ]
+}
+```
+
+Нужно заменить `[EXACT ARTICLE H1 IN CYRILLIC]` фактическим H1 статьи перед запуском генерации.

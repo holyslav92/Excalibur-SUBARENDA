@@ -1,0 +1,50 @@
+{
+  "topic_id": "B41",
+  "slug": "posutochno-tyumen-kuhnya-kak-doma-plita-ne-zazhigaetsya-dostavki",
+  "cover_family": "brand_collage",
+  "style_preset": "the_rieltor_twilight_gold",
+  "pipeline": "slice4_grid_1x_image_api",
+  "file": "cover/cover.png",
+  "alt": "Гостья у плиты в осенней кухне Тюмени, на магните телефон",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-slice4.png",
+  "generated_at": "2026-10-01T12:35:06+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Гостья у плиты в осенней кухне Тюмени, на магните телефон",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Схема расходов: проживание и доставки",
+      "h2_anchor": "За что семья заплатила 9 900 ₽",
+      "visual_type": "bar_timeline_chart",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Сравнение: обещание мастера и голодный вечер",
+      "h2_anchor": "«Мастер завтра» оставляет гостя сегодня",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Диаграмма: фото плиты и нерабочая конфорка",
+      "h2_anchor": "Фото кухни не включает плиту",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}

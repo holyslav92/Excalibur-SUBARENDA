@@ -1,0 +1,218 @@
+{
+  "agent": "excalibur-blog",
+  "date_context": {
+    "timezone": "Europe/Moscow",
+    "today_iso": "2026-10-01",
+    "today_ru": "01.10.2026",
+    "year": 2026,
+    "month": 10,
+    "month_name_ru": "октябрь",
+    "weekday_ru": "четверг"
+  },
+  "topic": {
+    "topic_id": "B41",
+    "title": "посуточно тюмень кухня плита доставка",
+    "h1": "посуточно тюмень кухня плита доставка",
+    "slug": "posutochno-tyumen-kuhnya-plita-dostavka",
+    "primary_query": "посуточно тюмень кухня плита доставка",
+    "priority": "P0"
+  },
+  "searches": [
+    {
+      "query_id": "primary_fresh",
+      "query": "посуточно тюмень кухня плита доставка 2026",
+      "purpose": "актуальный SERP",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Доставка еды Тюмень — Круглосуточно | На дом, ночью, недорого ...",
+          "url": "https://www.tyumenspoon.ru/",
+          "snippet": ""
+        },
+        {
+          "title": "Доставка еды и обедов в Тюмени рейтинг за 2026 год.",
+          "url": "https://mirstat.ru/tyumen/food_and_lunch_delivery.html",
+          "snippet": "Тюмень — доставка круглосуточно Доставка еды в Тюмени — круглосуточно, от 30 минут Доставляем готовую еду по Тюмени — домой, в офис или точно к выбранному времени."
+        },
+        {
+          "title": "ТОП-50: Доставка еды и обедов в Тюмени - адреса, телефоны, отзывы ...",
+          "url": "https://tyumen.jsprav.ru/dostavka-edyi-i-obedov/",
+          "snippet": "ТОП популярных компаний в категории Доставка еды и обедов в Тюмени, по количеству отзывов пользователей."
+        },
+        {
+          "title": "Кафе с доставкой еды на дом и в офис — Восточная долина | Восточная и ...",
+          "url": "https://vdolina.cafe/",
+          "snippet": "Сервисы по доставке готовых блюд — 716 компаний в Тюмени; — удобный поиск организаций Тюмени, адреса, схемы проезда, рейтинги; — только реальные отзывы покупателей."
+        },
+        {
+          "title": "Круглосуточно круглосуточная доставка еды в Тюмени на карте: ☎ телефоны ...",
+          "url": "https://2gis.ru/tyumen/search/%D0%9A%D1%80%D1%83%D0%B3%D0%BB%D0%BE%D1%81%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%BE%20%D0%BA%D1%80%D1%83%D0%B3%D0%BB%D0%BE%D1%81%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%B0%D1%8F%20%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B0%20%D0%B5%D0%B4%D1%8B",
+          "snippet": "Официальный сайт кафе в Тюмени — Восточная долина | | Ул. Вишневая 1 | Меню и цены на доставку и вынос | Восточная и Европейская кухня | +7 (3452) 68-77-68"
+        },
+        {
+          "title": "Доставка еды в Тюмени - Заказать еду готовую на дом в городе Тюмень",
+          "url": "https://tyumen.soho.menu/dostavka/",
+          "snippet": "Круглосуточно круглосуточная доставка еды: адреса на карте, ☎ телефоны, сайты, часы работы, ★ отзывы, фото, ⚑ поиск проезда на городском транспорте и авто"
+        }
+      ],
+      "searched_at": "2026-10-01"
+    },
+    {
+      "query_id": "title_fresh",
+      "query": "посуточно тюмень кухня плита доставка 2026",
+      "purpose": "SERP по человеческому title",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Доставка еды и обедов в Тюмени рейтинг за 2026 год.",
+          "url": "https://mirstat.ru/tyumen/food_and_lunch_delivery.html",
+          "snippet": ""
+        },
+        {
+          "title": "ТОП-50: Доставка еды и обедов в Тюмени - адреса, телефоны, отзывы ...",
+          "url": "https://tyumen.jsprav.ru/dostavka-edyi-i-obedov/",
+          "snippet": "ТОП популярных компаний в категории Доставка еды и обедов в Тюмени, по количеству отзывов пользователей."
+        },
+        {
+          "title": "Кулинарный дом \"Александр\" - доставка готовой еды в городе Тюмень",
+          "url": "https://aleksander.ru/tiumen-3",
+          "snippet": "Сервисы по доставке готовых блюд — 716 компаний в Тюмени; — удобный поиск организаций Тюмени, адреса, схемы проезда, рейтинги; — только реальные отзывы покупателей."
+        },
+        {
+          "title": "Сеть уникальных столовых в Тюмени — ⭐ \"Тарелку съел\"",
+          "url": "https://tarelkusyel.ru/",
+          "snippet": "Кулинарный дом \"Александр\" — доставка готовой еды в Тюмень. Свежие ингредиенты, широкий выбор, доставка от 30 минут. Закажи готовую еду, выпечку и десерты онлайн!"
+        },
+        {
+          "title": "Кафе с доставкой еды на дом и в офис — Восточная долина | Восточная и ...",
+          "url": "https://vdolina.cafe/",
+          "snippet": "Недорогие столовые в Тюмени \"Тарелку съел\". ️ Уютные кафе с вкусной едой. Оформите заказ на доставку на сайте или по телефону ☎ +7 (3452) 988-535"
+        },
+        {
+          "title": "Заказать выездную кухню онлайн: услуги и цены в Тюмени",
+          "url": "https://tym.caterme.ru/catering/vyezdnaja-kuhnya",
+          "snippet": "Официальный сайт кафе в Тюмени — Восточная долина | | Ул. Вишневая 1 | Меню и цены на доставку и вынос | Восточная и Европейская кухня | +7 (3452) 68-77-68"
+        }
+      ],
+      "searched_at": "2026-10-01"
+    },
+    {
+      "query_id": "official_docs",
+      "query": "посуточно тюмень кухня плита доставка official docs 2026",
+      "purpose": "официальные docs",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Кухни на заказ в Тюмени",
+          "url": "https://nika-kitchen.ru/",
+          "snippet": ""
+        },
+        {
+          "title": "Кухни на заказ в Тюмени 2026 — Кухни на заказ от производителя ...",
+          "url": "https://kuhni-zakaz-online.ru/goroda/tyumen/",
+          "snippet": "Предложим все возможности проектирования кухни актуальные на 2026 год Хотите скрытую вытяжку? Сделаем ее более опрятной и эстетичной, легко интегрируя в дизайн кухни. Антресоли без ручки?"
+        },
+        {
+          "title": "Кухни на заказ в Тюмени: ТОП-8 лучших производителей кухонь — рейтинг ...",
+          "url": "https://vc.ru/top_rating/2801826-kuhni-na-zakaz-v-tyumeni-luchshie-proizvoditeli",
+          "snippet": "Полный спектр услуг по кухне на заказ в Тюмени. Бесплатный замер, выезд мастера."
+        },
+        {
+          "title": "Доставка мебели Тюмень Интернет магазин мебели с доставкой",
+          "url": "https://www.kukhni-tyumen.ru/dostavka/",
+          "snippet": "Тюменский рынок кухонь на заказ в 2026 году продолжает расти за счёт спроса на персонализацию. Покупатели уходят от готовых каталожных решений — им нужны кухни под конкретную планировку: с островом, П-образные, с ..."
+        },
+        {
+          "title": "Доставка | Услуги компании «Кухонный двор» в Тюмени",
+          "url": "https://tyumen.kd-kuhni.ru/services/dostavka/",
+          "snippet": "С бесплатной доставкой мебели \"до двери\" день в день Внимание! Бесплатная доставка по городу при заказе свыше 30 000 рублей, в остальных случаях стоимость доставки по городу составляет 499 ..."
+        },
+        {
+          "title": "Мебельная фабрика Мария: кухни, шкафы, ванные, диваны на заказ",
+          "url": "https://tyumen.marya.ru/",
+          "snippet": "Доставка — мы предлагаем индивидуальные решения для каждого клиента в Тюмени"
+        }
+      ],
+      "searched_at": "2026-10-01"
+    },
+    {
+      "query_id": "github_evidence",
+      "query": "site:github.com посуточно тюмень кухня плита доставка 2026",
+      "purpose": "GitHub evidence",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Panels/Cessna, 172.png at main · rogerwilcoaviation/Panels",
+          "url": "https://github.com/rogerwilcoaviation/Panels/blob/main/Cessna%2C%20172.png",
+          "snippet": ""
+        },
+        {
+          "title": "neosoft-zebar/misc/taskbar-integration.png at main · blaiyz/neosoft ...",
+          "url": "https://github.com/blaiyz/neosoft-zebar/blob/main/misc/taskbar-integration.png",
+          "snippet": "Contribute to rogerwilcoaviation/Panels development by creating an account on GitHub."
+        },
+        {
+          "title": "typst-zebraw/assets/frame_18.svg at main - GitHub",
+          "url": "https://github.com/hongjr03/typst-zebraw/blob/main/assets/frame_18.svg",
+          "snippet": "A customizable (and smooooooth) Zebar configuration - blaiyz/neosoft-zebar"
+        },
+        {
+          "title": "IndexTTS/assets/IndexTTS2_banner.png at main · shijianus/IndexTTS",
+          "url": "https://github.com/shijianus/IndexTTS/blob/main/assets/IndexTTS2_banner.png",
+          "snippet": "Displaying code blocks with line numbers and line highlighting. - hongjr03/typst-zebraw"
+        },
+        {
+          "title": "MindSpeed-MM/sources/images/qwen_image.png at master · Ascend/MindSpeed-MM",
+          "url": "https://github.com/Ascend/MindSpeed-MM/blob/master/sources/images/qwen_image.png",
+          "snippet": "An Industrial-Level Controllable and Efficient Zero-Shot Text-To-Speech System - shijianus/IndexTTS"
+        },
+        {
+          "title": "migueLLIDO/output/snake.svg at main - GitHub",
+          "url": "https://github.com/migueLLIDO/migueLLIDO/blob/main/output/snake.svg",
+          "snippet": "Contribute to Ascend/MindSpeed-MM development by creating an account on GitHub."
+        }
+      ],
+      "searched_at": "2026-10-01"
+    },
+    {
+      "query_id": "community_experience",
+      "query": "посуточно тюмень кухня плита доставка forum problems опыт 2026",
+      "purpose": "форумы и живые проблемы",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Кухни на заказ в Тюмени: ТОП-8 лучших производителей кухонь — рейтинг ...",
+          "url": "https://vc.ru/top_rating/2801826-kuhni-na-zakaz-v-tyumeni-luchshie-proizvoditeli",
+          "snippet": ""
+        },
+        {
+          "title": "Кухни на заказ от производителя - Фабрика «Кухни РМ» в Тюмени",
+          "url": "https://tyumen.kitchenrm.ru/",
+          "snippet": "Сколько стоит кухня на заказ в Тюмени в 2026 году Цены на кухни у тюменских производителей зависят от конфигурации, материалов фасадов и столешницы, а также комплектации фурнитурой."
+        },
+        {
+          "title": "Кухни на заказ в Тюмени",
+          "url": "https://nika-kitchen.ru/",
+          "snippet": "Хотите купить кухню у производителя? «Кухни РМ» - крупнейший производитель кухонных гарнитуров в России. Изготовление кухонь по индивидуальным размерам на собственной фабрике. Доставка по Тюмени."
+        },
+        {
+          "title": "Кухни на заказ в Тюмени — 15 прайс-листов с ценой от 150 590 руб.",
+          "url": "https://otexpertov.ru/tyumen/kuhni/",
+          "snippet": "Предложим все возможности проектирования кухни актуальные на 2026 год Хотите скрытую вытяжку? Сделаем ее более опрятной и эстетичной, легко интегрируя в дизайн кухни. Антресоли без ручки?"
+        },
+        {
+          "title": "Кухня в тюмени круглосуточно в Тюмени на карте: ☎ телефоны, ★ отзывы — 2ГИС",
+          "url": "https://2gis.ru/tyumen/search/%D0%9A%D1%83%D1%85%D0%BD%D1%8F%20%D0%B2%20%D1%82%D1%8E%D0%BC%D0%B5%D0%BD%D0%B8%20%D0%BA%D1%80%D1%83%D0%B3%D0%BB%D0%BE%D1%81%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%BE",
+          "snippet": "Выберите на отЭкспертов.ру опытного эксперта или производителя для изготовления кухни на заказ в Тюмени. На 10.08.2026 г. вам доступно 15 прайс-листов с актуальными ценами, 3 работы."
+        },
+        {
+          "title": "Лучшие кухни на заказ в Тюмени: рейтинг студий и фабрик 2026 года",
+          "url": "https://dzen.ru/a/agl1p_-C5kd-kTNA",
+          "snippet": "Тип предприятия Розница Производство Опт Компания по изготовлению мебели Мебель для кухни 5 6 оценок Камчатская улица, 202 ст1, Тюмень Мебель для кухни · Доставка"
+        }
+      ],
+      "searched_at": "2026-10-01"
+    }
+  ],
+  "errors": []
+}

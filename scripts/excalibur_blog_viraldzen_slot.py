@@ -133,16 +133,25 @@ def _collect_viral(root: Path, cfg: dict[str, Any], hub: dict[str, Any], out_dir
         store.close()
     if not items:
         raise RuntimeError(f"VIRALDZEN BLOCKER: collect returned 0 items for hub slug={slug}")
+    def _item_field(item: Any, key: str, default: Any = "") -> Any:
+        # viraldzen ItemStore.all_items() returns sqlite3.Row — доступ по ключу, не по атрибуту
+        if isinstance(item, dict):
+            return item.get(key, default)
+        try:
+            return item[key]
+        except (KeyError, TypeError, IndexError):
+            return getattr(item, key, default)
+
     rows: list[dict[str, Any]] = []
     for item in items[: int(coll.get("top_n", 20))]:
         rows.append(
             {
-                "title": item.title,
-                "url": item.url,
-                "viral_score": float(item.viral_score or 0),
-                "views": int(item.views or 0),
-                "topic": item.topic,
-                "snippet": (item.snippet or "")[:280],
+                "title": _item_field(item, "title"),
+                "url": _item_field(item, "url"),
+                "viral_score": float(_item_field(item, "viral_score") or 0),
+                "views": int(_item_field(item, "views") or 0),
+                "topic": _item_field(item, "topic"),
+                "snippet": str(_item_field(item, "snippet") or "")[:280],
             }
         )
     rows.sort(key=lambda r: (r["viral_score"], r["views"]), reverse=True)
