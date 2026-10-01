@@ -1,0 +1,149 @@
+{
+  "agent": "excalibur-blog-cover-quad-split",
+  "status": "PASS",
+  "splits": [
+    {
+      "canvas_index": 1,
+      "manifest": "cover/quad-manifest.json",
+      "split": {
+        "source_canvas": "memory/blog/articles/B41-posutochno-v-tyumeni-wi-fi-dlya-sozvona-obeschali-k-utru-net-seti/cover/canvas-slice4.png",
+        "source_size_px": [
+          2048,
+          1152
+        ],
+        "panel_size_px": [
+          1018,
+          571
+        ],
+        "split_meta": {
+          "split_mode": "gutter_detect",
+          "h_gutter_px": {
+            "start": 571,
+            "end": 582
+          },
+          "v_gutter_px": {
+            "start": 1018,
+            "end": 1029
+          },
+          "requested_mode": "auto",
+          "gutter_quality": {
+            "h_center_offset_px": 0.5,
+            "v_center_offset_px": 0.5,
+            "max_aspect_crop_loss": 0.0,
+            "per_panel_crop_loss": {
+              "top_left": 0.0,
+              "top_right": 0.0,
+              "bottom_left": 0.0,
+              "bottom_right": 0.0
+            },
+            "reject_reason": null
+          }
+        },
+        "output_size_px": [
+          1200,
+          675
+        ],
+        "outputs": {
+          "cover": {
+            "file": "cover/cover.png",
+            "quadrant": "top_left",
+            "box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1018,
+              "bottom": 571
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 1018,
+              "bottom": 571
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Утро в тюменской квартире: гость у ноутбука видит «Нет подключения», роутер горит красным, на постере написано «Обещали Wi‑Fi для созвона — к утру сети нет»",
+            "h2_anchor": null
+          },
+          "inline_1": {
+            "file": "cover/inline-01.png",
+            "quadrant": "top_right",
+            "box_px": {
+              "left": 1029,
+              "top": 0,
+              "right": 2048,
+              "bottom": 571
+            },
+            "raw_box_px": {
+              "left": 1029,
+              "top": 0,
+              "right": 2048,
+              "bottom": 571
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Распечатка бронирования с галочкой Wi‑Fi, оплатой 10 600 ₽ и обещанием «для созвона хватит» на столе в тюменской квартире",
+            "h2_anchor": "Галочка в карточке не обещает сеть к вашему утру"
+          },
+          "inline_2": {
+            "file": "cover/inline-02.png",
+            "quadrant": "bottom_left",
+            "box_px": {
+              "left": 0,
+              "top": 582,
+              "right": 1018,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 582,
+              "right": 1018,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Ноутбук без сети рядом с роутером во время перезагрузки; на предметных стикерах зафиксированы вечерняя работа страниц и утреннее отсутствие подключения",
+            "h2_anchor": "Пока роутер молчит, собирайте не злость, а факты"
+          },
+          "inline_3": {
+            "file": "cover/inline-03.png",
+            "quadrant": "bottom_right",
+            "box_px": {
+              "left": 1029,
+              "top": 582,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "raw_box_px": {
+              "left": 1029,
+              "top": 582,
+              "right": 2048,
+              "bottom": 1152
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Доказательства сбоя Wi‑Fi на столе: экран ошибки со временем, фото индикаторов роутера, запись вечернего замера скорости и подготовленное обращение в поддержку",
+            "h2_anchor": "Сеть проверяют до ночи, а не на пороге дедлайна"
+          }
+        }
+      }
+    }
+  ],
+  "manifest": "cover/quad-manifest.json",
+  "html_inject": [
+    "injected inline_1 after H2 — Галочка в карточке не обещает сеть к вашему утру",
+    "injected inline_2 after H2 — Пока роутер молчит, собирайте не злость, а факты",
+    "injected inline_3 after H2 — Сеть проверяют до ночи, а не на пороге дедлайна"
+  ]
+}
