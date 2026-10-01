@@ -1,0 +1,84 @@
+{
+  "topic_id": "B41",
+  "canvas_file": "cover/canvas-slice4.png",
+  "layout": "2x2",
+  "pipeline": "slice4_grid_1x_image_api",
+  "inline_count": 3,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-slice4.png",
+      "batch_file": "cover/slice4-mcp-batch.json",
+      "prompt_file": "cover/slice4-mcp-prompt.txt",
+      "result_file": "cover/slice4-mcp-result.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    }
+  ],
+  "style_preset": "the_rieltor_twilight_gold",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "cover_hook": "Обещали утром — пришло уборка",
+  "cover_hook_highlight": "утром",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "wordstat_stickers": [
+    "залог посуточно",
+    "квартиры посуточно тюмень",
+    "не возвращают залог"
+  ],
+  "mcp_note": "PRIMARY: Derouter REST (DEROUTER_API_KEY) — 2K 16:9, one job per canvas (1×). Cover agent invents cover_hook + scene_hint/alt before --write-batch. Host lock = blog-hero.json (navy blazer, not hoodie).",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Гость у подъезда в дождливый октябрьский день смотрит в телефон — залог обещали вернуть утром",
+      "scene_hint": "Tyumen autumn rain at apartment entry, guest with suitcase checks phone, Cyrillic headline hook on scene, phone +7 993 574-83-22 on small sign, empty top-right corner for logo paste, no snow",
+      "meme_caption_ru": "",
+      "sticky": "Срок возврата залога"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Что было написано в чате до заезда",
+      "visual_type": "comparison_table_ui",
+      "scene_hint": "Close-up phone chat about 5000 deposit refund promise, rainy entry background",
+      "alt": "Переписка о залоге 5 000 ₽ до заезда",
+      "labels": [
+        "утром вернём",
+        "до заезда",
+        "5 000 залог"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Утро выезда: ключи сданы, денег нет",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Morning at same entry, guest waiting with keys, chat silence meme diagram",
+      "alt": "Утро выезда — ключи сданы, залог не вернули",
+      "labels": [
+        "ключи в ящике",
+        "тишина в чате",
+        "после уборки"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Где на самом деле сломалось обещание",
+      "visual_type": "checklist_board",
+      "scene_hint": "Simple diagram: promise morning vs message after cleaning, sticker style",
+      "alt": "Обещание утром сменилось на «после уборки»",
+      "labels": [
+        "пятно без фото",
+        "минус 1500",
+        "гость в поезде"
+      ]
+    }
+  },
+  "cover_keys_ru": []
+}
