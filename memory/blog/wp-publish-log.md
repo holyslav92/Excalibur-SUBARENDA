@@ -41,3 +41,18 @@
 - dzen RSS: item in `/feed/zen/`; enclosure `…-cover.png`; `OK dzen_yzen_meta=1`
 - interlink inbound: B01 post 3745
 - llms.txt + llms-full.txt: deployed
+
+## B41 — 2026-10-01
+
+- topic_id: B41
+- slug: `posutochno-wifi-obeshchali-k-sozvonu-net-seti`
+- post_id: 5154
+- permalink: `/blog/posutochno-wifi-obeshchali-k-sozvonu-net-seti/`
+- featured_image: 5155 (`…-cover.png` on wp-content; Dzen yzen meta)
+- inline_images: 5156–5158 (3 slots, wp-content URLs)
+- schema_meta: ok
+- categories: 101, 106 (posutochnaya-arenda, sovety-gostyam)
+- live-page gate: PASS
+- dzen RSS: `OK dzen_yzen_meta=1` (MU-plugin; 1024×576 feed preview on host)
+- interlink inbound: B01 post 3745
+- llms.txt + llms-full.txt: deployed
