@@ -1,0 +1,64 @@
+{
+  "status": "PASS",
+  "topic_id": "B41",
+  "slug": "posutochno-v-tyumeni-wi-fi-dlya-sozvona-obeschali-k-utru-net-seti",
+  "research_date": "2026-10-01",
+  "summary": "CASE wifi_call_burn: Wi‑Fi for 9am work call promised; by morning no network, blinking router, silent host; 10 600 ₽ two nights Tyumen. Fresh Dobriy_dom_72 Wi‑Fi-for-calls positioning week 2026-09-29–30. Wordstat P0 3984/8838.",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "t.me/s/Dobriy_dom_72 2026-09-29–30",
+    "source_type": "community",
+    "urls": [
+      "https://t.me/s/Dobriy_dom_72",
+      "https://t.me/s/klyshin_A"
+    ],
+    "accessed_at": "2026-10-01"
+  },
+  "freshness_audit": {
+    "research_date": "2026-10-01",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://t.me/s/Dobriy_dom_72",
+      "published_at": "2026-09-30",
+      "note": "Wi‑Fi for video calls as explicit host UTP vs card checkbox only."
+    }
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "source": "mcp-kv live 2026-10-01",
+    "regions": ["55", "11176", "225"],
+    "phrases": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "tyumen_11176": 3984,
+        "ru_225": 8838
+      },
+      {
+        "phrase": "залог посуточно",
+        "ru_225": 2497
+      },
+      {
+        "phrase": "посуточно комиссия",
+        "ru_225": 1833
+      },
+      {
+        "phrase": "квартира посуточно wi fi",
+        "note": "WORDSTAT PARTIAL",
+        "ru_combined": 17
+      }
+    ]
+  },
+  "official_source_audit": {
+    "required": false,
+    "status": "PASS",
+    "verified_claims": 0,
+    "entities_checked": [],
+    "errors": [],
+    "note": "No bank tariff claims; ZPP legal context via consultant.ru in source_table"
+  },
+  "derouter": {
+    "first_attempt": "PASS",
+    "model": "gpt-6-luna"
+  }
+}

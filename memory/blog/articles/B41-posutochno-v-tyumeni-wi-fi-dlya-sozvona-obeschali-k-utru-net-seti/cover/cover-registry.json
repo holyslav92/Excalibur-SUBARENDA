@@ -1,0 +1,50 @@
+{
+  "topic_id": "B41",
+  "slug": "posutochno-wifi-obeshchali-k-sozvonu-net-seti",
+  "cover_family": "brand_collage",
+  "style_preset": "the_rieltor_twilight_gold",
+  "pipeline": "slice4_grid_1x_image_api",
+  "file": "cover/cover.png",
+  "alt": "Утро в тюменской квартире: гость у ноутбука видит «Нет подключения», роутер горит красным, на постере написано «Обещали Wi‑Fi для созвона — к утру сети нет»",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-slice4.png",
+  "generated_at": "2026-10-01T06:33:09+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Утро в тюменской квартире: гость у ноутбука видит «Нет подключения», роутер горит красным, на постере написано «Обещали Wi‑Fi для созвона — к утру сети нет»",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Распечатка бронирования с галочкой Wi‑Fi, оплатой 10 600 ₽ и обещанием «для созвона хватит» на столе в тюменской квартире",
+      "h2_anchor": "Галочка в карточке не обещает сеть к вашему утру",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Ноутбук без сети рядом с роутером во время перезагрузки; на предметных стикерах зафиксированы вечерняя работа страниц и утреннее отсутствие подключения",
+      "h2_anchor": "Пока роутер молчит, собирайте не злость, а факты",
+      "visual_type": "fact_card",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Доказательства сбоя Wi‑Fi на столе: экран ошибки со временем, фото индикаторов роутера, запись вечернего замера скорости и подготовленное обращение в поддержку",
+      "h2_anchor": "Сеть проверяют до ночи, а не на пороге дедлайна",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}

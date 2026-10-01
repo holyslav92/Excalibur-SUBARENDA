@@ -1,0 +1,11 @@
+{
+  "gate": "case-delivery",
+  "status": "PASS",
+  "stage": "writer",
+  "manner_canon": "dobry_dom_voice_reset_v1",
+  "checks_run": [
+    "writer.html"
+  ],
+  "errors": [],
+  "article_dir": "/workspace/memory/blog/articles/B41-posutochno-v-tyumeni-wi-fi-dlya-sozvona-obeschali-k-utru-net-seti"
+}

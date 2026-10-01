@@ -135,14 +135,15 @@ def _collect_viral(root: Path, cfg: dict[str, Any], hub: dict[str, Any], out_dir
         raise RuntimeError(f"VIRALDZEN BLOCKER: collect returned 0 items for hub slug={slug}")
     rows: list[dict[str, Any]] = []
     for item in items[: int(coll.get("top_n", 20))]:
+        # ItemStore.all_items() returns sqlite3.Row (no attribute access).
         rows.append(
             {
-                "title": item.title,
-                "url": item.url,
-                "viral_score": float(item.viral_score or 0),
-                "views": int(item.views or 0),
-                "topic": item.topic,
-                "snippet": (item.snippet or "")[:280],
+                "title": item["title"],
+                "url": item["url"],
+                "viral_score": float(item["viral_score"] or 0),
+                "views": int(item["views"] or 0),
+                "topic": item["topic"],
+                "snippet": (item["snippet"] or "")[:280],
             }
         )
     rows.sort(key=lambda r: (r["viral_score"], r["views"]), reverse=True)

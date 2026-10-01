@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "https://добрыйдом-72.рф/blog/pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate/",
+      "slug": "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+      "anchor": "после предоплаты в чате наступила тишина",
+      "catalog_title": "Перевели 3 000 ₽ предоплатой. К вечеру — тишина в чате",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/zaselilsya-v-22-00-v-10-00-sozvon-wi-fi-ne-vyderzhal/",
+      "slug": "zaselilsya-v-22-00-v-10-00-sozvon-wi-fi-ne-vyderzhal",
+      "anchor": "Wi‑Fi сорвал созвон после рейса",
+      "catalog_title": "Заселился после рейса. За 10 200 ₽ Wi‑Fi сорвал созвон",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/bez-zaloga-v-filtre-zalog-u-dveri/",
+      "slug": "bez-zaloga-v-filtre-zalog-u-dveri",
+      "anchor": "«без залога в фильтре, залог у двери»",
+      "catalog_title": "В фильтре — «без залога». У двери попросили 5 000 ₽ на личную карту",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/posutochno-tyumen-v-filtre-bez-predoplaty-perevod-do-koda/",
+      "slug": "posutochno-tyumen-v-filtre-bez-predoplaty-perevod-do-koda",
+      "anchor": "про перевод до получения кода",
+      "catalog_title": "В фильтре посуточно — «без предоплаты». До кода попросили 3 200 ₽ на карту",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "outbound_unique_slugs": [
+    "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+    "zaselilsya-v-22-00-v-10-00-sozvon-wi-fi-ne-vyderzhal",
+    "bez-zaloga-v-filtre-zalog-u-dveri",
+    "posutochno-tyumen-v-filtre-bez-predoplaty-perevod-do-koda"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B41-posutochno-v-tyumeni-wi-fi-dlya-sozvona-obeschali-k-utru-net-seti",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}

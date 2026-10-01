@@ -156,10 +156,12 @@ RUSSIAN_STOPWORDS = frozenset(
 BANNED_STAMP_RES: tuple[re.Pattern[str], ...] = (
     re.compile(r"нет\.\s*так\s+не\s+заселяем", re.I),
     re.compile(r"так\s+не\s+заселяем", re.I),
-    re.compile(r"наш\s+вывод\s+простой", re.I),
 )
 
-LIMITED_STAMP_RES: tuple[tuple[re.Pattern[str], int], ...] = ()
+# PR #52 slot canon: one closing «Наш вывод простой.» allowed; repeat = fail.
+LIMITED_STAMP_RES: tuple[tuple[re.Pattern[str], int], ...] = (
+    (re.compile(r"наш\s+вывод\s+простой", re.I), 1),
+)
 
 CONCLUSION_HEADING_HINT_RE = re.compile(
     r"вывод|итог|короче|главное|если\s+коротко|на\s+практике",
