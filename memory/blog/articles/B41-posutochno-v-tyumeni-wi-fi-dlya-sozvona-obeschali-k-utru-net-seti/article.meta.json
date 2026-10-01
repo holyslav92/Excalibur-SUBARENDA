@@ -6,6 +6,10 @@
   "h1": "Посуточно обещали Wi‑Fi для созвона. К утру — нет сети, 10 600 ₽ за две ночи",
   "slug": "posutochno-wifi-obeshchali-k-sozvonu-net-seti",
   "author_id": "dobry-dom",
+  "wp_category_slugs": [
+    "posutochnaya-arenda",
+    "sovety-gostyam"
+  ],
   "article_mode": "B",
   "description": "Посуточно обещали Wi‑Fi для созвона. К утру — нет сети, 10 600 ₽ за две ночи",
   "meta_ab": {
