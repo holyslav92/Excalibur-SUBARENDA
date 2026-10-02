@@ -97,3 +97,43 @@ confidence: medium
 
 ### Resolution
 status: recorded
+
+## LESSON-20261002-1358-B42-dvushka-vtoraya-kladovaya-day0
+status: proposed
+topic_id: B42
+category: structure
+confidence: low
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: `content-evidence-report.json` absent; `excalibur_blog_content_evidence_gate.py` → SKIP.
+- artifact: `memory/blog/articles/B42-posutochno-tyumen-dvuhkomnatnaya-vtoraya-kladovaya/case-delivery-gate.json`
+  finding: `status: PASS` — H1 dialogue + «в фильтре двухкомнатная / за второй дверью кладовая» CASE shipped; `exclude_slug` from `article.meta.json` excluded self from anti-clone vs 12 live (no false skeleton match on merge tree).
+- artifact: `memory/blog/articles/B42-posutochno-tyumen-dvuhkomnatnaya-vtoraya-kladovaya/wp-publish-result.json`
+  finding: publish PASS 2026-10-02 (WP post 5179, 7 inline, featured, categories).
+- metrika_signal: none — `METRIKA FEEDBACK BLOCKER` (`YANDEX_METRIKA_OAUTH_TOKEN` / `YANDEX_METRIKA_COUNTER_ID` unset); see `memory/pipeline-fix-queue.md#INC-20260925-1506-content-learner-metrika-credentials`.
+
+### Named blockers
+- EVIDENCE_SKIPPED — no editorial evidence table; no causal quality claims.
+- METRIKA_CREDENTIALS — behavioral cohort unavailable for B42 day-0.
+- LOW_SAMPLE — fresh publish; no on-site cohort to match.
+
+### Keep
+- «Вторая не сдаётся» / кладовая за второй дверью wound distinct from door-surcharge-only skeletons; filter-two-room + 10 800 ₽ price anchor in H1/meta_ab.
+- Case-delivery anti-clone with `exclude_slug` on in-flight article dir before live ledger refresh — B42 gate clean without fixer.
+
+### Change
+- none durable — re-run Metrika ingest after credentials land to attach cohort for `posutochno-tyumen-dvuhkomnatnaya-vtoraya-kladovaya`.
+
+### Never again
+- Treat missing Metrika env as silent skip in content-learner (must log BLOCKER + existing INC).
+
+### Proposed apply
+- Env: resolve Metrika secrets; re-ingest and optional lesson confidence bump when matched_rows > 0.
+- Human: none for anti-clone — `exclude_slug` already wired in `excalibur_blog_case_delivery_gate.py`.
+
+### Durable applied
+- none — day-0 SKIP+Metrika-only; no repeat pattern for automated apply.
+
+### Resolution
+status: recorded
