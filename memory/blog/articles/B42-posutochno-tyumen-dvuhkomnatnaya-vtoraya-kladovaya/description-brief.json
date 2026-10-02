@@ -1,0 +1,10 @@
+{
+  "topic_id": "B42",
+  "description": "Вторая дверь есть — кровати нет. В Тюмени фильтр обещает «двухкомнатную», а троих могут оставить на диване. Добрый дом советует проверить спальные места до оплаты.",
+  "rhythm": "klyshin_case_hook",
+  "geo": "Тюмень",
+  "author_brand": "Добрый дом",
+  "not_equal_title": true,
+  "not_truncated_lead": true,
+  "verdict": "PASS"
+}
