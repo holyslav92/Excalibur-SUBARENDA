@@ -49,4 +49,4 @@ lessons, benchmarks, QA reports или соседние research-notes как о
 | B39 | posutochno-tyumen-v-filtre-ot-odnoj-nochi-u-domofona-minimum-dvoe-sutok | Фильтр обещал 1 ночь. У домофона потребовали оплатить 2 | published |
 | B40 | posutochno-tyumen-v-filtre-bez-predoplaty-perevod-do-koda | В фильтре посуточно — «без предоплаты». До кода попросили 3 200 ₽ на карту | published |
 | B41 | posutochno-tyumen-kuhnya-kak-doma-plita-ne-zazhigaetsya-dostavki | «Кухня как дома» посуточно. Плита молчит — 4 200 ₽ на доставках | published |
-| B42 | posutochno-tyumen-dvuhkomnatnaya-vtoraya-kladovaya | В фильтре — двухкомнатная посуточно. За второй дверью — кладовая: 10 800 ₽ | published |
+| B42 | posutochno-tyumen-dvuhkomnatnaya-vtoraya-kladovaya | Хозяин ответил: «вторая не сдаётся». Двушка посуточно — 10 800 ₽, за дверью кладовая | published |

@@ -156,12 +156,16 @@ def check_anti_clone_h1(
     *,
     root: Path,
     recent: list[dict[str, str]] | None = None,
+    exclude_slug: str = "",
 ) -> list[str]:
     errors: list[str] = []
     title = (h1 or "").strip()
     if not title:
         return errors
     corpus = recent if recent is not None else _load_recent_live(root)
+    skip = (exclude_slug or "").strip()
+    if skip:
+        corpus = [row for row in corpus if row.get("slug") != skip]
     if not corpus:
         return errors
 
@@ -207,12 +211,16 @@ def check_anti_clone_opening(
     *,
     root: Path,
     recent: list[dict[str, str]] | None = None,
+    exclude_slug: str = "",
 ) -> list[str]:
     errors: list[str] = []
     head = (opening_plain or "")[:400]
     if not head:
         return errors
     corpus = recent if recent is not None else _load_recent_live(root)
+    skip = (exclude_slug or "").strip()
+    if skip:
+        corpus = [row for row in corpus if row.get("slug") != skip]
     new_sig = first_n_words(f"{h1} {head}", 12)
     for row in corpus:
         prev = f"{row.get('h1', '')} {row.get('opening', '')}"

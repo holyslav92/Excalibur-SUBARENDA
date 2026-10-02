@@ -218,7 +218,7 @@ REALTOR_BLOCKED_RE = (
 )
 
 
-def check_h1(h1: str, *, root: Path | None = None) -> list[str]:
+def check_h1(h1: str, *, root: Path | None = None, exclude_slug: str = "") -> list[str]:
     errors: list[str] = []
     title = (h1 or "").strip()
     if not title:
@@ -260,7 +260,7 @@ def check_h1(h1: str, *, root: Path | None = None) -> list[str]:
     errors.extend(check_banned_h1_skeleton(title))
     errors.extend(check_posutochno_surface(title))
     if root is not None:
-        for err in check_anti_clone_h1(title, root=root):
+        for err in check_anti_clone_h1(title, root=root, exclude_slug=exclude_slug):
             errors.append(f"h1: {err}")
     return errors
 
@@ -480,6 +480,14 @@ def check_article_dir(article_dir: Path, *, stage: str = "all") -> dict[str, Any
     errors: list[str] = []
     checks_run: list[str] = []
     root = Path(__file__).resolve().parents[1]
+    exclude_slug = ""
+    meta_path = article_dir / "article.meta.json"
+    if meta_path.is_file():
+        try:
+            meta_pre = json.loads(meta_path.read_text(encoding="utf-8"))
+            exclude_slug = str(meta_pre.get("slug") or "").strip()
+        except json.JSONDecodeError:
+            exclude_slug = ""
     title_path = article_dir / "title-brief.json"
     brief_h1 = ""
     if title_path.is_file():
@@ -496,7 +504,7 @@ def check_article_dir(article_dir: Path, *, stage: str = "all") -> dict[str, Any
             errors.append("title-brief.json: invalid JSON")
             brief = {}
         h1 = str(brief.get("h1") or brief.get("title") or "").strip()
-        for err in check_h1(h1, root=root):
+        for err in check_h1(h1, root=root, exclude_slug=exclude_slug):
             errors.append(f"title-brief.json: {err}")
 
     writer_path = article_dir / "drafts" / "writer.html"
@@ -533,16 +541,17 @@ def check_article_dir(article_dir: Path, *, stage: str = "all") -> dict[str, Any
         meta_h1 = brief_h1
         for err in check_posutochno_surface(meta_h1, opening_plain):
             errors.append(f"article.html: {err}")
-        for err in check_anti_clone_opening(opening_plain, meta_h1, root=root):
+        for err in check_anti_clone_opening(
+            opening_plain, meta_h1, root=root, exclude_slug=exclude_slug
+        ):
             errors.append(f"article.html: {err}")
         if COMMENT_BAIT_RE.search(article_html):
             errors.append("article.html: WP comment bait — use TG/MAX")
-        meta_path = article_dir / "article.meta.json"
         if meta_path.is_file():
             try:
                 meta = json.loads(meta_path.read_text(encoding="utf-8"))
                 meta_h1 = str(meta.get("h1") or meta.get("title") or brief_h1).strip()
-                for err in check_h1(meta_h1, root=root):
+                for err in check_h1(meta_h1, root=root, exclude_slug=exclude_slug):
                     errors.append(f"article.meta.json: {err}")
             except json.JSONDecodeError:
                 errors.append("article.meta.json: invalid JSON")
