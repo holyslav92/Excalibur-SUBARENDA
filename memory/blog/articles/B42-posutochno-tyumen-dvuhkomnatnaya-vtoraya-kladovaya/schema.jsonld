@@ -1,0 +1,37 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/posutochno-tyumen-dvuhkomnatnaya-vtoraya-kladovaya/",
+  "url": "{{SITE_BASE}}/blog/posutochno-tyumen-dvuhkomnatnaya-vtoraya-kladovaya/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/posutochno-tyumen-dvuhkomnatnaya-vtoraya-kladovaya/"
+  },
+  "headline": "В фильтре — двухкомнатная посуточно. За второй дверью — кладовая: 10 800 ₽",
+  "description": "В фильтре — двухкомнатная, за второй дверью кладовая без кровати: семья из трёх на диване 140 см, 10 800 ₽ за две ночи. Что спросить у хозяина до оплаты, если едете в Тюмень.",
+  "datePublished": "2026-10-02",
+  "dateModified": "2026-10-02",
+  "inLanguage": "ru-RU",
+  "author": {
+    "@type": "Organization",
+    "@id": "{{SITE_BASE}}/#organization-dobry-dom",
+    "name": "Добрый дом",
+    "sameAs": [
+      "{{SITE_BASE}}/"
+    ]
+  },
+  "publisher": {
+    "@type": "LocalBusiness",
+    "@id": "{{SITE_BASE}}/#organization-dobry-dom",
+    "name": "Добрый дом",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    },
+    "telephone": "+7 (993) 574-83-22",
+    "sameAs": [
+      "{{SITE_BASE}}/"
+    ]
+  }
+}
