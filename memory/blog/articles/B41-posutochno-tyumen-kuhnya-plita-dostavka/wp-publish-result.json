@@ -1,0 +1,27 @@
+{
+  "slug": "posutochno-tyumen-kuhnya-kak-doma-plita-ne-zazhigaetsya-dostavki",
+  "topic_id": "B41",
+  "permalink": "{{SITE_BASE}}/blog/posutochno-tyumen-kuhnya-kak-doma-plita-ne-zazhigaetsya-dostavki/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B41-posutochno-tyumen-kuhnya-plita-dostavka/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 975525,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=5161 slug=posutochno-tyumen-kuhnya-kak-doma-plita-ne-zazhigaetsya-dostavki\nOK categories=101,104\nOK dzen_yzen_meta=1\nOK featured_image=5162\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=5163 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/10/posutochno-tyumen-kuhnya-kak-doma-plita-ne-zazhigaetsya-dostavki-inline-01.png\nOK inline_alt=5163\nOK inline_caption=5163\nOK inline_description=5163\nOK inline_image_upload=5164 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/10/posutochno-tyumen-kuhnya-kak-doma-plita-ne-zazhigaetsya-dostavki-inline-02.png\nOK inline_alt=5164\nOK inline_caption=5164\nOK inline_description=5164\nOK inline_image_upload=5165 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/10/posutochno-tyumen-kuhnya-kak-doma-plita-ne-zazhigaetsya-dostavki-inline-03.png\nOK inline_alt=5165\nOK inline_caption=5165\nOK inline_description=5165\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/posutochno-tyumen-kuhnya-kak-doma-plita-ne-zazhigaetsya-dostavki/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 3,
+    "expected_inline": 3,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/posutochno-tyumen-kuhnya-kak-doma-plita-ne-zazhigaetsya-dostavki/",
+    "errors": []
+  }
+}

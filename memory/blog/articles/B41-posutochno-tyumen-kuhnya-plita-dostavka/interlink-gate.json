@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "topic_id": "B41",
+  "slug": "posutochno-tyumen-kuhnya-kak-doma-plita-ne-zazhigaetsya-dostavki",
+  "candidates_count": 43,
+  "outbound_found": [
+    {
+      "slug": "kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den",
+      "title": "kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den"
+    },
+    {
+      "slug": "v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik",
+      "title": "v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik"
+    },
+    {
+      "slug": "napisali-goryachaya-voda-est-ledyanoj-dush-migayushij-boiler",
+      "title": "napisali-goryachaya-voda-est-ledyanoj-dush-migayushij-boiler"
+    },
+    {
+      "slug": "posutochno-tyumen-stiralnaya-v-kartochke-i-zalog",
+      "title": "posutochno-tyumen-stiralnaya-v-kartochke-i-zalog"
+    }
+  ],
+  "outbound_unique_slugs": [
+    "kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den",
+    "napisali-goryachaya-voda-est-ledyanoj-dush-migayushij-boiler",
+    "v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik",
+    "posutochno-tyumen-stiralnaya-v-kartochke-i-zalog"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "warnings": [],
+  "errors": []
+}

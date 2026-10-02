@@ -1,0 +1,101 @@
+{
+  "topic_id": "B41",
+  "slug": "posutochno-tyumen-kuhnya-kak-doma-plita-ne-zazhigaetsya-dostavki",
+  "title": "«Кухня как дома» посуточно. Плита молчит — 4 200 ₽ на доставках",
+  "outbound_required_min": 1,
+  "outbound_found": [
+    {
+      "slug": "kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den",
+      "title": "kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den",
+      "permalink": "/blog/kvartira-posutochno-kuhnya-est-tri-nochi-v-kafe-kazhdyj-den/",
+      "topic_id": "B07",
+      "post_id": null,
+      "source": "ledger"
+    },
+    {
+      "slug": "v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik",
+      "title": "v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik",
+      "permalink": "/blog/v-obyavlenii-vse-dlya-gostej-v-vannoj-odin-mokryj-kovrik/",
+      "topic_id": "B11",
+      "post_id": null,
+      "source": "ledger"
+    },
+    {
+      "slug": "napisali-goryachaya-voda-est-ledyanoj-dush-migayushij-boiler",
+      "title": "napisali-goryachaya-voda-est-ledyanoj-dush-migayushij-boiler",
+      "permalink": "/blog/napisali-goryachaya-voda-est-ledyanoj-dush-migayushij-boiler/",
+      "topic_id": "B20",
+      "post_id": null,
+      "source": "ledger"
+    },
+    {
+      "slug": "posutochno-tyumen-stiralnaya-v-kartochke-i-zalog",
+      "title": "posutochno-tyumen-stiralnaya-v-kartochke-i-zalog",
+      "permalink": "/blog/posutochno-tyumen-stiralnaya-v-kartochke-i-zalog/",
+      "topic_id": "B28",
+      "post_id": null,
+      "source": "ledger"
+    }
+  ],
+  "outbound_missing_suggestions": [
+    {
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "title": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "permalink": "{{SITE_BASE}}/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+      "topic_id": "B01",
+      "post_id": 3745,
+      "source": "ledger"
+    },
+    {
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "title": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "permalink": "{{SITE_BASE}}/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/",
+      "topic_id": "B02",
+      "post_id": 3777,
+      "source": "ledger"
+    },
+    {
+      "slug": "kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki",
+      "title": "kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki",
+      "permalink": "/blog/kvartiry-posutochno-v-tyumeni-k-1-sentyabrya-ryadom-s-vuzom-tri-ostanovki/",
+      "topic_id": "B03",
+      "post_id": null,
+      "source": "ledger"
+    }
+  ],
+  "inbound_targets": [
+    {
+      "slug": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "title": "beskontaktnoe-zaselenie-posutochno-tyumen",
+      "permalink": "{{SITE_BASE}}/blog/beskontaktnoe-zaselenie-posutochno-tyumen/",
+      "topic_id": "B01",
+      "post_id": 3745,
+      "source": "ledger"
+    },
+    {
+      "slug": "bez-zaloga-v-filtre-zalog-u-dveri",
+      "title": "bez-zaloga-v-filtre-zalog-u-dveri",
+      "permalink": "/blog/bez-zaloga-v-filtre-zalog-u-dveri/",
+      "topic_id": "B34",
+      "post_id": null,
+      "source": "ledger"
+    },
+    {
+      "slug": "buhgalteriya-zhdet-chek-v-chate-my-ne-gostinica",
+      "title": "buhgalteriya-zhdet-chek-v-chate-my-ne-gostinica",
+      "permalink": "/blog/buhgalteriya-zhdet-chek-v-chate-my-ne-gostinica/",
+      "topic_id": "B29",
+      "post_id": null,
+      "source": "ledger"
+    }
+  ],
+  "inbound_updates": [
+    {
+      "post_id": 3745,
+      "marker": "data-excalibur-interlink-from=\"posutochno-tyumen-kuhnya-kak-doma-plita-ne-zazhigaetsya-dostavki\"",
+      "html": "<p class=\"excalibur-interlink-readalso\" data-excalibur-interlink-from=\"posutochno-tyumen-kuhnya-kak-doma-plita-ne-zazhigaetsya-dostavki\"><b>Читайте также:</b> <a href=\"{{SITE_BASE}}/blog/posutochno-tyumen-kuhnya-kak-doma-plita-ne-zazhigaetsya-dostavki/\">«Кухня как дома» посуточно. Плита молчит — 4 200 ₽ на доставках</a></p>"
+    }
+  ],
+  "new_url": "{{SITE_BASE}}/blog/posutochno-tyumen-kuhnya-kak-doma-plita-ne-zazhigaetsya-dostavki/",
+  "dry_run": false
+}

@@ -48,3 +48,4 @@ lessons, benchmarks, QA reports или соседние research-notes как о
 | B37 | posutochno-v-tyumeni-v-kartochke-lift-rabotaet-s-chemodanom-na-vosmoj | В карточке лифт работает. С чемоданом на восьмой — 22 минуты по лестнице | published |
 | B39 | posutochno-tyumen-v-filtre-ot-odnoj-nochi-u-domofona-minimum-dvoe-sutok | Фильтр обещал 1 ночь. У домофона потребовали оплатить 2 | published |
 | B40 | posutochno-tyumen-v-filtre-bez-predoplaty-perevod-do-koda | В фильтре посуточно — «без предоплаты». До кода попросили 3 200 ₽ на карту | published |
+| B41 | posutochno-tyumen-kuhnya-kak-doma-plita-ne-zazhigaetsya-dostavki | «Кухня как дома» посуточно. Плита молчит — 4 200 ₽ на доставках | published |

@@ -1,0 +1,39 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/posutochno-tyumen-kuhnya-kak-doma-plita-ne-zazhigaetsya-dostavki/#article",
+  "url": "{{SITE_BASE}}/blog/posutochno-tyumen-kuhnya-kak-doma-plita-ne-zazhigaetsya-dostavki/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/posutochno-tyumen-kuhnya-kak-doma-plita-ne-zazhigaetsya-dostavki/"
+  },
+  "headline": "«Кухня как дома» посуточно. Плита молчит — 4 200 ₽ на доставках",
+  "description": "В карточке — «кухня как дома». На второй вечер плита молчит, а семья снова заказывает еду: 4 200 ₽ сверху за две доставки. Что спросить у хозяина до оплаты, если едете готовить в Тюмени.",
+  "datePublished": "2026-10-02",
+  "dateModified": "2026-10-02",
+  "inLanguage": "ru-RU",
+  "author": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "url": "{{SITE_BASE}}/",
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    },
+    "sameAs": [
+      "{{SITE_BASE}}/",
+      "{{SITE_BASE}}/blog/"
+    ]
+  }
+}
