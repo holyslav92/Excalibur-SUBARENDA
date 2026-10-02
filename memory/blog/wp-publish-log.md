@@ -1,5 +1,20 @@
 # WP publish log — Excalibur BLOG
 
+## B42 — 2026-10-02
+
+- topic_id: B42
+- slug: `posutochno-tyumen-dvuhkomnatnaya-vtoraya-kladovaya`
+- post_id: 5179
+- permalink: `/blog/posutochno-tyumen-dvuhkomnatnaya-vtoraya-kladovaya/`
+- featured_image: 5180 (`…-cover.png`, `…-cover-1024x576.png` on wp-content)
+- inline_images: 5181–5187 (7 slots, wp-content URLs)
+- schema_meta: ok
+- categories: 101 (posutochnaya-arenda)
+- live-page gate: PASS
+- dzen RSS: `OK dzen_yzen_meta=1`; intermediate refresh (cover + inline `*-1024x576.png`)
+- interlink inbound: B01 post 3745
+- llms.txt + llms-full.txt: deployed
+
 ## B03 — 2026-09-25
 
 - topic_id: B03

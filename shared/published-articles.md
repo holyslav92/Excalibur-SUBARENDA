@@ -45,3 +45,4 @@ Excalibur-2-Cloud — не копировать URL tymenrieltor.ru.
 | 2026-09-30 | B39 | posutochno-tyumen-v-filtre-ot-odnoj-nochi-u-domofona-minimum-dvoe-sutok | /blog/posutochno-tyumen-v-filtre-ot-odnoj-nochi-u-domofona-minimum-dvoe-sutok/ | published |
 | 2026-09-30 | B40 | posutochno-tyumen-v-filtre-bez-predoplaty-perevod-do-koda | /blog/posutochno-tyumen-v-filtre-bez-predoplaty-perevod-do-koda/ | published |
 | 2026-10-02 | B41 | posutochno-tyumen-kuhnya-kak-doma-plita-ne-zazhigaetsya-dostavki | /blog/posutochno-tyumen-kuhnya-kak-doma-plita-ne-zazhigaetsya-dostavki/ | published |
+| 2026-10-02 | B42 | posutochno-tyumen-dvuhkomnatnaya-vtoraya-kladovaya | /blog/posutochno-tyumen-dvuhkomnatnaya-vtoraya-kladovaya/ | published |

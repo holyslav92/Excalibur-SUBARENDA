@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "https://добрыйдом-72.рф/blog/dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras/",
+      "slug": "dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras",
+      "anchor": "про две кровати на фото и складной матрас ночью",
+      "catalog_title": "На фото две кровати. Ночью троих — диван и складной матрас",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/mozhno-s-detmi-doplata-za-rebenka/",
+      "slug": "mozhno-s-detmi-doplata-za-rebenka",
+      "anchor": "можно ли с детьми и бывает ли доплата за ребёнка",
+      "catalog_title": "«Можно с детьми» в карточке. При заезде: 1 500 ₽ за 2 ночи, 6-летнему",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/kvartira-posutochno-v-tyumeni-otoplenie-est-batarei-holodnye/",
+      "slug": "kvartira-posutochno-v-tyumeni-otoplenie-est-batarei-holodnye",
+      "anchor": "отопление есть, а батареи холодные",
+      "catalog_title": "«Отопление есть»: 2 ночи, +14 °C — ледяные батареи, «УК не включила»",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego/",
+      "slug": "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego",
+      "anchor": "отдельная история про оплату за двоих",
+      "catalog_title": "Оплатили за двоих. У двери попросили доплату за третьего",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "outbound_unique_slugs": [
+    "dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras",
+    "mozhno-s-detmi-doplata-za-rebenka",
+    "kvartira-posutochno-v-tyumeni-otoplenie-est-batarei-holodnye",
+    "oplatil-za-dvoih-u-dveri-poprosili-doplatu-za-tretego"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B42-posutochno-tyumen-dvuhkomnatnaya-vtoraya-kladovaya",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}
