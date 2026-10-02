@@ -327,6 +327,7 @@ def call_derouter_chat(
     model: str,
     timeout: int,
     max_retries: int,
+    role: str | None = None,
 ) -> tuple[str, dict[str, Any], str]:
     api_key = os.environ.get(DEFAULT_API_KEY_ENV, "").strip()
     if not api_key:
@@ -339,8 +340,15 @@ def call_derouter_chat(
             {"role": "user", "content": user_prompt},
         ],
     }
+    # Cloudflare origin timeout (~120s): cap long utility outputs (research notes).
+    if role == "research":
+        payload["max_tokens"] = 4500
 
-    endpoints = [PRIMARY_ENDPOINT, FALLBACK_ENDPOINT]
+    endpoints = (
+        [FALLBACK_ENDPOINT, PRIMARY_ENDPOINT]
+        if role == "research"
+        else [PRIMARY_ENDPOINT, FALLBACK_ENDPOINT]
+    )
     last_error: Exception | None = None
 
     for endpoint in endpoints:
@@ -373,6 +381,7 @@ def call_derouter_with_aliases(
     model: str,
     timeout: int,
     max_retries: int,
+    role: str | None = None,
 ) -> tuple[str, dict[str, Any], str, str]:
     aliases = model_aliases_for_tier(tier, model)
     last_error: Exception | None = None
@@ -384,6 +393,7 @@ def call_derouter_with_aliases(
                 model=candidate,
                 timeout=timeout,
                 max_retries=max_retries,
+                role=role,
             )
             if candidate != model:
                 print(f"NOTE model alias accepted: {candidate} (configured {model})")
@@ -655,6 +665,7 @@ def run_chat(args: argparse.Namespace) -> int:
             model=model,
             timeout=timeout,
             max_retries=DEFAULT_MAX_RETRIES,
+            role=role,
         )
     except DerouterChatError as exc:
         print_blocker(role, str(exc))
@@ -677,6 +688,7 @@ def run_chat(args: argparse.Namespace) -> int:
                     model=model,
                     timeout=timeout,
                     max_retries=DEFAULT_MAX_RETRIES,
+                    role=role,
                 )
             except DerouterChatError as exc:
                 print_blocker(role, str(exc))

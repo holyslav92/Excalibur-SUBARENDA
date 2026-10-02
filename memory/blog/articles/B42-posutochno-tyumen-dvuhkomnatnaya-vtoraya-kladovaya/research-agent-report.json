@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "topic_id": "B42",
+  "slug": "posutochno-tyumen-dvuhkomnatnaya-vtoraya-kladovaya",
+  "research_date": "2026-10-02",
+  "summary": "CASE pack_vs_flat: filter «2-комн», вторая дверь — кладовая ~6 м², семья на диване 140 см, спор ~1 500 ₽. Fresh Dobriy_dom_72 Oct 1 heating check + USTEK schedule. Wordstat P0 «двухкомнатная посуточно» 3993 RU.",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "t.me/s/Dobriy_dom_72 2026-10-01",
+    "source_type": "community",
+    "urls": [
+      "https://t.me/s/Dobriy_dom_72",
+      "https://t.me/s/klyshin_A",
+      "https://ao-ustek.ru/press-tsentr/novosti/ao-ustek-nachinaet-poetapnyy-zapusk-teplosnabzheniya-v-tyumeni/"
+    ],
+    "accessed_at": "2026-10-02"
+  },
+  "freshness_audit": {
+    "research_date": "2026-10-02",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://t.me/s/Dobriy_dom_72",
+      "published_at": "2026-10-01",
+      "note": "Осенний заезд: проверка батареи/окна при поэтапном включении отопления."
+    }
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "source": "mcp-kv live 2026-10-02",
+    "regions": ["225", "55", "11176"],
+    "p0_phrase": "двухкомнатная посуточно",
+    "p0_volume_ru225": 3993
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "note": "No bank tariff claims; USTEK schedule cited as seasonal context only"
+  },
+  "derouter": {
+    "first_attempt": "BLOCKER_524",
+    "second_attempt": "PASS",
+    "model": "gpt-6-luna",
+    "note": "Full assembled prompt hit origin timeout; compact assembled-research-inputs-short.md via fallback endpoint with max_tokens cap"
+  }
+}

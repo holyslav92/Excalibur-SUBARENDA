@@ -1,0 +1,15 @@
+{
+  "gate": "contract-freshness",
+  "status": "PASS",
+  "pipeline_step": "research",
+  "contracts_fingerprint": "dd3062f78c76548d",
+  "checked": [
+    "research-notes.md",
+    "research-agent-report.json",
+    "assembled-research-inputs.md",
+    "research-serp.json"
+  ],
+  "must_rerun": [],
+  "missing_contracts": [],
+  "note": "Research handoff: Writer/Sol artifacts not yet generated; inputs fresh for 2026-10-02"
+}

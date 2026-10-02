@@ -1,0 +1,250 @@
+{
+  "agent": "excalibur-blog",
+  "date_context": {
+    "timezone": "Europe/Moscow",
+    "today_iso": "2026-10-02",
+    "today_ru": "02.10.2026",
+    "year": 2026,
+    "month": 10,
+    "month_name_ru": "октябрь",
+    "weekday_ru": "пятница"
+  },
+  "topic": {
+    "topic_id": "B42",
+    "title": "посуточно Тюмень двухкомнатная вторая кладовая",
+    "h1": "посуточно Тюмень двухкомнатная вторая кладовая",
+    "slug": "posutochno-tyumen-dvuhkomnatnaya-vtoraya-kladovaya",
+    "primary_query": "посуточно Тюмень двухкомнатная вторая кладовая",
+    "priority": "P0"
+  },
+  "searches": [
+    {
+      "query_id": "primary_fresh",
+      "query": "посуточно Тюмень двухкомнатная вторая кладовая 2026",
+      "purpose": "актуальный SERP",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Снять квартиру посуточно в Тюмени , аренда квартиры на сутки в Тюмени",
+          "url": "https://tyumen.sutochno.ru/",
+          "snippet": ""
+        },
+        {
+          "title": "Снять двухкомнатную квартиру посуточно в Тюмени",
+          "url": "https://tyumen.sutochno.ru/2-komnatnye",
+          "snippet": "Снять квартиру напрямую у владельцев без посредников и переплаты в Тюмени. Выгодные цены, реальные отзывы, телефоны собственников, гарантия заселения, рейтинг жилья на Суточно.ру."
+        },
+        {
+          "title": "Снять 2-комнатную квартиру посуточно в Тюмень, аренда 2-комнатных ...",
+          "url": "https://tyumen.cian.ru/snyat-2-komnatnuyu-kvartiru-posutochno/",
+          "snippet": "Забронируйте до 31 марта 2026 — и получите кэшбэк бонусами после оценки проживания. Подробнее Добавить в Избранное 2-комнатная квартира Семейные апартаменты рядом с аквапарком ЛетоЛето 6 ..."
+        },
+        {
+          "title": "Посуточная аренда двухкомнатных квартир в Тюмени",
+          "url": "https://www.avito.ru/tyumen/kvartiry/sdam/posutochno/2-komnatnye-ASgBAgICA0SSA8gQ8AeSUswIkFk",
+          "snippet": "Снимите 2-комнатную квартиру посуточно со скидкой до -1000 руб. по промокоду HAPPY в Тюмень на Циан - 1 404 объявления. Самая маленькая квартира: 34 м². Арендуйте двухкомнатную квартиру на сутки в Тюмень по цене от 2 тыс. руб."
+        },
+        {
+          "title": "Снять посуточно двухкомнатную квартиру в Тюмени — 215 объявлений с ...",
+          "url": "https://realty.yandex.ru/tyumen/snyat/kvartira/dvuhkomnatnaya/posutochno/",
+          "snippet": "Авито Путешествия - 755 объявлений о сдаче 2-комнатных квартир в краткосрочную аренду в Тюмени. Авито Путешествия поможет недорого снять 2-комнатную квартиру посуточно, выбрав предложения без посредников. Цены на ..."
+        },
+        {
+          "title": "Двухкомнатные квартиры посуточно в Тюмени, Тюменская область - Квартирка",
+          "url": "https://kvartirka.com/location/tyumen-12/rent-flat2rooms/",
+          "snippet": "🏠 213 свежих объявлений с посуточной арендой двухкомнатных квартир в Тюмени. Снимите свою лучшую двухкомнатную квартиру по цене от 1 600 ₽ — 213 объявлений по аренде недвижимости в Тюмени."
+        }
+      ],
+      "searched_at": "2026-10-02"
+    },
+    {
+      "query_id": "title_fresh",
+      "query": "посуточно Тюмень двухкомнатная вторая кладовая 2026",
+      "purpose": "SERP по человеческому title",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Снять квартиру посуточно в Тюмени , аренда квартиры на сутки в Тюмени",
+          "url": "https://tyumen.sutochno.ru/",
+          "snippet": ""
+        },
+        {
+          "title": "Снять двухкомнатную квартиру посуточно в Тюмени",
+          "url": "https://tyumen.sutochno.ru/2-komnatnye",
+          "snippet": "Снять квартиру напрямую у владельцев без посредников и переплаты в Тюмени. Выгодные цены, реальные отзывы, телефоны собственников, гарантия заселения, рейтинг жилья на Суточно.ру."
+        },
+        {
+          "title": "Снять 2-комнатную квартиру посуточно в Тюмень, аренда 2-комнатных ...",
+          "url": "https://tyumen.cian.ru/snyat-2-komnatnuyu-kvartiru-posutochno/",
+          "snippet": "Забронируйте до 31 марта 2026 — и получите кэшбэк бонусами после оценки проживания. Подробнее Добавить в Избранное 2-комнатная квартира Семейные апартаменты рядом с аквапарком ЛетоЛето 6 ..."
+        },
+        {
+          "title": "Снять 2-комнатную квартиру посуточно в Тюмени | Авито Путешествия в Тюмени",
+          "url": "https://www.avito.ru/tyumen/kvartiry/sdam/posutochno/2-komnatnye-ASgBAQICA0SSA8gQ8AeSUswIoMWuAgFAzAgUkFk",
+          "snippet": "Снимите 2-комнатную квартиру посуточно со скидкой до -1000 руб. по промокоду HAPPY в Тюмень на Циан - 1 404 объявления. Самая маленькая квартира: 34 м². Арендуйте двухкомнатную квартиру на сутки в Тюмень по цене от 2 тыс. руб."
+        },
+        {
+          "title": "Снять квартиру посуточно, аренда квартиры на сутки в Тюмени | Авито ...",
+          "url": "https://www.avito.ru/tyumen/kvartiry/sdam/posutochno/-ASgBAgICAkSSA8gQ8AeSUg",
+          "snippet": "Авито Путешествия поможет недорого снять 2-комнатную квартиру посуточно, выбрав предложения без посредников. Цены на аренду квартир в Тюмени."
+        },
+        {
+          "title": "Двухкомнатные квартиры посуточно в Тюмени, Тюменская область - Квартирка",
+          "url": "https://kvartirka.com/location/tyumen-12/rent-flat2rooms/",
+          "snippet": "4 546 объявлений о сдаче квартир в посуточную аренду в Тюмени. Авито Путешествия поможет недорого снять квартиру на короткий срок, выбрав предложения без посредников. Цены на аренду квартир в Тюмени. Объявления от ..."
+        }
+      ],
+      "searched_at": "2026-10-02"
+    },
+    {
+      "query_id": "official_docs",
+      "query": "посуточно Тюмень двухкомнатная вторая кладовая official docs 2026",
+      "purpose": "официальные docs",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Снять квартиру посуточно в Тюмени , аренда квартиры на сутки в Тюмени",
+          "url": "https://tyumen.sutochno.ru/",
+          "snippet": ""
+        },
+        {
+          "title": "Снять двухкомнатную квартиру посуточно в Тюмени",
+          "url": "https://tyumen.sutochno.ru/2-komnatnye",
+          "snippet": "Снять квартиру напрямую у владельцев без посредников и переплаты в Тюмени. Выгодные цены, реальные отзывы, телефоны собственников, гарантия заселения, рейтинг жилья на Суточно.ру."
+        },
+        {
+          "title": "Снять квартиру посуточно, аренда квартиры на сутки в Тюмени | Авито ...",
+          "url": "https://www.avito.ru/tyumen/kvartiry/sdam/posutochno/-ASgBAgICAkSSA8gQ8AeSUg",
+          "snippet": "Забронируйте до 31 марта 2026 — и получите кэшбэк бонусами после оценки проживания. Подробнее Добавить в Избранное 2-комнатная квартира Семейные апартаменты рядом с аквапарком ЛетоЛето 6 ..."
+        },
+        {
+          "title": "Двухкомнатные квартиры посуточно в Тюмени, Тюменская область - Квартирка",
+          "url": "https://kvartirka.com/location/tyumen-12/rent-flat2rooms/",
+          "snippet": "4 546 объявлений о сдаче квартир в посуточную аренду в Тюмени. Авито Путешествия поможет недорого снять квартиру на короткий срок, выбрав предложения без посредников. Цены на аренду квартир в Тюмени. Объявления от ..."
+        },
+        {
+          "title": "Снять 2-комнатную квартиру посуточно в Тюмень, аренда 2-комнатных ...",
+          "url": "https://tyumen.cian.ru/snyat-2-komnatnuyu-kvartiru-posutochno/",
+          "snippet": "Аренда 2-комнатных квартир посуточно в Тюмени для временного проживания, отдыха, туризма, путешествий, поездок по делам и командировок. Реальные отзывы гостей, актуальные цены 2026 года, проверенные фотографии ..."
+        },
+        {
+          "title": "Снять 2-комнатную квартиру посуточно в Тюменской области, аренда 2 ...",
+          "url": "https://tyumen.cian.ru/snyat-2-komnatnuyu-kvartiru-posutochno-tyumenskaya-oblast/",
+          "snippet": "Снимите 2-комнатную квартиру посуточно со скидкой до -1000 руб. по промокоду HAPPY в Тюмень на Циан - 1 404 объявления. Самая маленькая квартира: 34 м². Арендуйте двухкомнатную квартиру на сутки в Тюмень по цене от 2 тыс. руб."
+        }
+      ],
+      "searched_at": "2026-10-02"
+    },
+    {
+      "query_id": "github_evidence",
+      "query": "site:github.com посуточно Тюмень двухкомнатная вторая кладовая 2026",
+      "purpose": "GitHub evidence",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Witchlight/icon.svg at main · Bernartik/Witchlight · GitHub",
+          "url": "https://github.com/Bernartik/Witchlight/blob/main/icon.svg",
+          "snippet": ""
+        },
+        {
+          "title": "testp2/src/icons/hat.svg at master · RainDash1/testp2 · GitHub",
+          "url": "https://github.com/RainDash1/testp2/blob/master/src/icons/hat.svg",
+          "snippet": "A game made for the Pirate Software Jam #15. Contribute to Bernartik/Witchlight development by creating an account on GitHub."
+        },
+        {
+          "title": "flicksense/icon.svg at master · rxn7/flicksense · GitHub",
+          "url": "https://github.com/rxn7/flicksense/blob/master/icon.svg",
+          "snippet": "Contribute to RainDash1/testp2 development by creating an account on GitHub."
+        },
+        {
+          "title": "Beholden/icon.svg at main · Lugh-o/Beholden · GitHub",
+          "url": "https://github.com/Lugh-o/Beholden/blob/main/icon.svg",
+          "snippet": "Aim training tool. Contribute to rxn7/flicksense development by creating an account on GitHub."
+        },
+        {
+          "title": "zmk-sofle/keymap-drawer/eyelash_sofle.svg at main - GitHub",
+          "url": "https://github.com/bottlefull/zmk-sofle/blob/main/keymap-drawer/eyelash_sofle.svg",
+          "snippet": "Contribute to Lugh-o/Beholden development by creating an account on GitHub."
+        },
+        {
+          "title": "vite-plus/logo-dark.svg at main · voidzero-dev/vite-plus · GitHub",
+          "url": "https://github.com/voidzero-dev/vite-plus/blob/main/logo-dark.svg",
+          "snippet": "Contribute to bottlefull/zmk-sofle development by creating an account on GitHub."
+        }
+      ],
+      "searched_at": "2026-10-02"
+    },
+    {
+      "query_id": "community_experience",
+      "query": "посуточно Тюмень двухкомнатная вторая кладовая forum problems опыт 2026",
+      "purpose": "форумы и живые проблемы",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Квартиры на сутки, г. Тюмень, \"Форум\" | Квартиры посуточно в Тюмени ...",
+          "url": "https://vk.ru/forum3452",
+          "snippet": ""
+        },
+        {
+          "title": "Снять 2-комнатную квартиру посуточно в Тюмень, аренда 2-комнатных ...",
+          "url": "https://tyumen.cian.ru/snyat-2-komnatnuyu-kvartiru-posutochno/",
+          "snippet": "Квартиры посуточно в Тюмени. Отчетные документы. 8 3452 288-441 8 932-324-31-86 | 399 подписчиков. 13 записей. 5 фотографий. 1 обсуждение."
+        },
+        {
+          "title": "Снять квартиру посуточно в Тюмени , аренда квартиры на сутки в Тюмени",
+          "url": "https://tyumen.sutochno.ru/",
+          "snippet": "Снимите 2-комнатную квартиру посуточно со скидкой до -1000 руб. по промокоду HAPPY в Тюмень на Циан - 1 404 объявления. Самая маленькая квартира: 34 м². Арендуйте двухкомнатную квартиру на сутки в Тюмень по цене от 2 тыс. руб."
+        },
+        {
+          "title": "Снять двухкомнатную квартиру посуточно в Тюмени",
+          "url": "https://tyumen.sutochno.ru/2-komnatnye",
+          "snippet": "Снять квартиру напрямую у владельцев без посредников и переплаты в Тюмени. Выгодные цены, реальные отзывы, телефоны собственников, гарантия заселения, рейтинг жилья на Суточно.ру."
+        },
+        {
+          "title": "Двухкомнатные квартиры посуточно в Тюмени, Тюменская область - Квартирка",
+          "url": "https://kvartirka.com/location/tyumen-12/rent-flat2rooms/",
+          "snippet": "Забронируйте до 31 марта 2026 — и получите кэшбэк бонусами после оценки проживания. Подробнее Добавить в Избранное 2-комнатная квартира Семейные апартаменты рядом с аквапарком ЛетоЛето 6 ..."
+        },
+        {
+          "title": "Снять 2-комнатную квартиру посуточно в Тюменской области, аренда 2 ...",
+          "url": "https://tyumen.cian.ru/snyat-2-komnatnuyu-kvartiru-posutochno-tyumenskaya-oblast/",
+          "snippet": "Аренда 2-комнатных квартир посуточно в Тюмени для временного проживания, отдыха, туризма, путешествий, поездок по делам и командировок. Реальные отзывы гостей, актуальные цены 2026 года, проверенные фотографии ..."
+        }
+      ],
+      "searched_at": "2026-10-02"
+    }
+  ],
+  "mcp_kv_wordstat": {
+    "fetched_at": "2026-10-02",
+    "regions": ["225", "55", "11176"],
+    "phrases": [
+      {"phrase": "двухкомнатная посуточно", "region": "225", "volume": 3993},
+      {"phrase": "снять двухкомнатную квартиру посуточно", "region": "225", "volume": 2912},
+      {"phrase": "квартиры посуточно тюмень", "region": "55+11176", "volume": 3940},
+      {"phrase": "снять квартиру посуточно в тюмени", "region": "55+11176", "volume": 1116}
+    ]
+  },
+  "fresh_signals": [
+    {
+      "source_type": "community",
+      "url": "https://t.me/s/Dobriy_dom_72",
+      "published_at": "2026-10-01",
+      "note": "Пост про проверку батареи/окна при осеннем заезде",
+      "accessed_at": "2026-10-02"
+    },
+    {
+      "source_type": "official",
+      "url": "https://ao-ustek.ru/press-tsentr/novosti/ao-ustek-nachinaet-poetapnyy-zapusk-teplosnabzheniya-v-tyumeni/",
+      "published_at": "2026-09-28",
+      "note": "График поэтапного включения отопления Тюмень",
+      "accessed_at": "2026-10-02"
+    },
+    {
+      "source_type": "marketplace",
+      "url": "https://www.sutochno.ru/2062353",
+      "note": "Пример карточки: вторая комната как кладовая в тексте объявления",
+      "accessed_at": "2026-10-02"
+    }
+  ],
+  "errors": []
+}
