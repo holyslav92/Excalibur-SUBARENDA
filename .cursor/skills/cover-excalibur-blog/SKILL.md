@@ -1,63 +1,55 @@
 ---
 name: cover-excalibur-blog
-description: "④a Cover: ONE Grsai 2K 2×2 grid → slice 4 (cover+3 inline) + pixel-faithful logo paste on cover tile only."
+description: "④a Cover: Grsai urls[Pexels style + logo], full gen, slice/resize only — NO overlay scripts."
 ---
 
-# Cover Agent — `dobry_dom_gen_only_human_v1`
+# Cover Agent — Grsai full generation
 
 ## Philosophy
 
-**ONE Grsai primary image model draw** per article: canvas **2048×1152** as **2×2 GRID** of four complete 16:9 panels → deterministic PIL quarter slice → **[0] cover + [1..3] inlines**. **ZERO** second draw. **BAN** 8-frame / quad-mcp-batch-01|02 / standalone cover-mcp.
+**Grsai** рисует **всю** обложку за один вызов: кириллица, телефон, логотип, сцена.  
+**urls[]:** `[0]` эфемерный **Pexels** style ref (новый на каждую статью), `[1]` постоянный **logo-dobry-dom.png**.  
+**Единственные пост-скрипты:** нарезка (`cover_quad_split.py`) или resize (`cover_standalone_apply.py`).  
+**ЗАПРЕЩЕНО:** `brand_logo_composite.py`, `cover_poster_composite.py`, любые PIL-оверлеи текста/логотипа.
 
-**AFTER slice, cover tile ONLY:** factory paste official `cropped-img_7143.png` (`logo-dobry-dom.png`) top-right ~8–12% tile width — **pixel-faithful, native aspect (NOT square crop)**, RGBA alpha, **no white plaque** — covers any model-drawn fake lockup.
+## Image model lock (HARD)
 
-**Inlines: ZERO logo.**
+| Allowed | Forbidden |
+|---------|-----------|
+| `excalibur_blog_grsai_gpt_image2_api.py` (PRIMARY) | factory logo/phone/type overlay scripts |
+| `excalibur_blog_pexels_design_ref.py` | `brand_logo_composite.py` on new covers |
+| slice / standalone_apply only | Derouter/Kie unless fallback after Grsai fail |
 
-## Generation policy (HARD)
-
-| Rule | Value |
-|------|-------|
-| Canvas | **ONE** 2048×1152 prompted as 2×2 grid |
-| Output | `cover.png` + `inline-01..03.png` (4 images total) |
-| Provider | **Grsai** — primary or vip for 2K |
-| Max attempts | **2** per article → pad-clear TR + slice + logo paste if needed |
-| Prose/scene | Derouter Terra `--role cover-scene` only |
-
-## Архитектура
-
-```text
-ONE canvas 2048×1152 (Grsai, max 2 attempts — four quadrants IN one draw)
-  → cover_quad_split.py → cover.png + inline-01..03.png
-  → brand_logo_composite.py (official PNG paste COVER TILE ONLY — native aspect)
-→ slice4_gate.py + Cover-QA → Indexer
-```
-
-## Brand lock
-
-- Model may reserve **top-right pad 8–12%** on cover panel — **NEVER** ship model-drawn «Добрый дом» lockup as final
-- **AFTER slice:** factory pastes official `cropped-img_7143.png` — curtains + red flower + terracotta wordmark, **NOT square crop**
-- **FORBIDDEN:** white/gray plaque; logo on inline tiles; `cover_poster_composite.py`
-- Phone **+7 (993) 574-83-22** drawn **IN generation** on cover panel infoboard
-
-## Anti-collage gates (HARD — FAIL if broken)
-
-- Second Grsai draw / 8-frame batch / standalone cover batch
-- Square logo stamp or full-canvas square crop of logo file
-- Model-drawn brand lockup shipped without factory paste
-- Logo on any inline tile
+## Runbook (standalone 16:9 Dzen collage)
 
 ```bash
 ARTICLE="memory/blog/articles/<topic_id>-<slug>"
 
 python3 scripts/excalibur_blog_cover_text_gate.py --article-dir "$ARTICLE"
 python3 scripts/excalibur_blog_quad_manifest.py --article-dir "$ARTICLE" --merge
-python3 scripts/excalibur_blog_cover_motif_gate.py check --topic-id <id> \
-  --composition "..." --location "..." --prop-set "..."
+
+# Pexels style ref — один на статью (авто при --write-batch если файла нет)
+python3 scripts/excalibur_blog_pexels_design_ref.py --article-dir "$ARTICLE"
+
 python3 scripts/excalibur_blog_cover_quad_prompt.py --article-dir "$ARTICLE" --write-batch
 python3 scripts/excalibur_blog_grsai_gpt_image2_api.py --article-dir "$ARTICLE" \
-  --batch cover/slice4-mcp-batch.json --result cover/slice4-mcp-result.json
-python3 scripts/excalibur_blog_cover_quad_split.py --article-dir "$ARTICLE" --inject-html
-python3 scripts/excalibur_blog_brand_logo_composite.py --article-dir "$ARTICLE"
-python3 scripts/excalibur_blog_slice4_gate.py --article-dir "$ARTICLE"
+  --batch cover/cover-mcp-batch.json --result cover/cover-mcp-result.json
+python3 scripts/excalibur_blog_cover_standalone_apply.py --article-dir "$ARTICLE" --skip-pad-clear
 python3 scripts/excalibur_blog_cover_qa_gate.py --article-dir "$ARTICLE"
 ```
+
+После успешного Grsai: **Pexels URL удаляется из batch**; логотип остаётся в `memory/cover/blog-hero.json` / tenant-config.
+
+## Prompt rules
+
+- EXACT Cyrillic strings from `cover-text.json` — **perfect spelling**, no garbled letters
+- urls[0] = layout/color/typography mood from Pexels — do not clone photo subjects
+- urls[1] = official logo TOP-RIGHT 8–12%, pixel-faithful
+- Phone +7 (993) 574-83-22 IN scene, thumb-readable
+
+## Blockers
+
+- PEXELS DESIGN REF BLOCKER
+- LOGO REFERENCE BLOCKER (missing logo-dobry-dom.png)
+- GRSAI BLOCKER / KIE API BLOCKER
+- logo-composite-stamp.json present (factory paste forbidden)
