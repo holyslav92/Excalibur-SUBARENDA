@@ -1,0 +1,167 @@
+{
+  "topic_id": "B42",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": [
+        "inline_4",
+        "inline_5",
+        "inline_6",
+        "inline_7"
+      ],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "cover_hook": "Осенью за дверью — кладовая",
+  "cover_hook_highlight": "кладовая",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "Grsai draw API 2K, 2× quad canvas; autumn Tyumen; factory logo paste cover + inline_1/3/7.",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Осенний постер: семья открывает вторую дверь в посуточной двушке Тюмени и видит кладовую с коробками вместо спальни.",
+      "scene_hint": "Storage door open, boxes; sofa family; Oct leaves; hook pink «кладовая»; TR empty; facepalm BL; phone 993 board",
+      "meme_caption_ru": "",
+      "sticky": "Проверьте отопление до оплаты"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "За что семья отдала 10 800 ₽",
+      "visual_type": "comparison_table_ui",
+      "scene_hint": "3-col table: 2-room filter vs 10800 vs one sofa; TR pad empty",
+      "alt": "Сравнение: фильтр двухкомнатная, оплата 10 800 ₽ за две ночи и реальность — один диван на троих",
+      "labels": [
+        "фильтр: 2 комнаты",
+        "семья из трёх",
+        "10 800 ₽ за 2 ночи",
+        "5 400 ₽ за ночь"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Почему «2-комн» не говорит о спальных местах",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "5-step flow: filter → 2 doors → ask beds → storage → sofa night",
+      "alt": "Схема: почему фильтр «2-комн» не гарантирует две спальни — вторая дверь может быть кладовой",
+      "labels": [
+        "за второй дверью",
+        "не спальня",
+        "две двери на фото"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Спор на 1 500 ₽ начинается слишком поздно",
+      "visual_type": "checklist_board",
+      "scene_hint": "Checklist 4 pre-pay questions; chat bubbles; TR pad empty",
+      "alt": "Чек-лист вопросов до оплаты: сдаётся ли вторая комната, фото спальных мест, ширина дивана",
+      "labels": [
+        "кладовая 6 м²",
+        "полки и коробки",
+        "спор 1 500 ₽"
+      ]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Как мы проверяем двушки для семей",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Checklist: both rooms open, beds labeled, family size",
+      "alt": "Чек-лист хоста: обе комнаты сдаются, в каждой спальное место, состав семьи уточнён до оплаты",
+      "labels": [
+        "10 800 ₽ за 2 ночи",
+        "5 400 ₽ за ночь",
+        "обе комнаты сдаются"
+      ]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Осенью проверяют ещё и батарею",
+      "visual_type": "comparison_table",
+      "scene_hint": "Split: cold vs warm radiator; Oct chip; no logo",
+      "alt": "Осенью в Тюмени проверяют батарею в комнате где спят — холодная гостиная с балконной дверью",
+      "labels": [
+        "диван около 140 см",
+        "на троих тесно",
+        "отопление в октябре"
+      ]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Осенью проверяют ещё и батарею",
+      "visual_type": "process_flow",
+      "scene_hint": "Flow: touch radiator → photo host → heater or leave; autumn sill",
+      "alt": "Порядок действий при холодной батарее в посуточной квартире осенью в Тюмени",
+      "labels": [
+        "холодная гостиная",
+        "балконная дверь",
+        "отопление включают в октябре"
+      ]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Главное: две двери на фото — не два сна",
+      "visual_type": "schema_faq_ui",
+      "scene_hint": "FAQ 4 RU questions; doors icon; TR pad empty",
+      "alt": "Четыре вопроса до оплаты: обе комнаты сдаются, спальные места, фото второй комнаты, отопление",
+      "labels": [
+        "обе комнаты сдаются?",
+        "где спальные места?",
+        "фото второй комнаты",
+        "отопление уже включили?"
+      ]
+    }
+  },
+  "cover_keys_ru": [],
+  "cover_emotion": "недоумение и усталость: семья поняла, что вторая «комната» — кладовая",
+  "cover_motifs": {
+    "composition": "журнальный постер: открытая дверь кладовой по центру, семья на диване слева, пустой верхний правый угол под логотип, телефон на доске снизу",
+    "location": "светлая гостиная посуточной двушки в Тюмени, за окном жёлтые осенние листья и пасмурное октябрьское небо",
+    "meme": "маленькая наклейка people-meme «facepalm traveler» из каталога в нижнем левом углу, не больше 12% кадра",
+    "prop_set": "коробки на стеллажах, диван 140 см, смартфон с абстрактным чатом, термометр на подоконнике, осенние листья",
+    "sticker_set": [
+      "двухкомнатная квартира посуточно тюмень",
+      "квартиры посуточно тюмень",
+      "Проверьте отопление до оплаты"
+    ],
+    "joke": "фильтр показал две комнаты, а сон остался один — на диване"
+  },
+  "wordstat_stickers": [
+    "двухкомнатная квартира посуточно тюмень",
+    "квартиры посуточно тюмень",
+    "снять квартиру посуточно в тюмени"
+  ],
+  "logo_paste_inline_slots": [
+    "inline_1",
+    "inline_3",
+    "inline_7"
+  ],
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "season": "autumn_october_tyumen"
+}

@@ -1,0 +1,40 @@
+{
+  "agent": "excalibur-blog-cover-qa",
+  "status": "PASS",
+  "checked_at": "2026-10-02",
+  "topic_id": "B42",
+  "canon": "quad_canvas_2x_grsai_longform",
+  "checks": {
+    "eight_png_exist": true,
+    "quad_manifest_valid": true,
+    "wordstat_stickers_1_3": true,
+    "motif_no_collision_14d": true,
+    "max_one_cat_meme_slot": true,
+    "light_high_key": true,
+    "logo_composite_stamp_pass": true,
+    "cover_logo_pasted": true,
+    "inline_no_logo_on_inlines": true,
+    "forbid_phone_on_cover_image": true,
+    "forbid_922_phone": true,
+    "forbid_ai_drawn_logo_cover": true,
+    "forbid_wordpress_ui_in_art": true,
+    "no_logo_plate_cover": true,
+    "forbid_graphic_collage_overlay": true,
+    "forbid_poster_composite_stamp": true,
+    "forbid_logo_reference_in_batch": true,
+    "forbid_overlapping_text_blocks": true,
+    "forbid_giant_cropped_glyph": true,
+    "inline_logo_count_2_3": true,
+    "logo_top_right_fixed": true,
+    "forbid_multiple_logos_per_image": true,
+    "official_logo_pixels_only": true,
+    "brand_logo_paste_png": true
+  },
+  "visual_review": {
+    "logo_panels": "cover + inline-01, inline-03, inline-07 factory paste top-right",
+    "season": "October autumn Tyumen golden leaves, no snow",
+    "meme": "people-meme facepalm BL on cover (no cat)",
+    "phone": "+7 (993) 574-83-22 in scene on cover board"
+  },
+  "notes": "Grsai draw API: canvas-01 primary→vip; canvas-02 vip after retry; pad-clear on no-logo inlines"
+}
