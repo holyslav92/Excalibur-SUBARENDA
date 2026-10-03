@@ -46,3 +46,4 @@ Excalibur-2-Cloud — не копировать URL tymenrieltor.ru.
 | 2026-09-30 | B40 | posutochno-tyumen-v-filtre-bez-predoplaty-perevod-do-koda | /blog/posutochno-tyumen-v-filtre-bez-predoplaty-perevod-do-koda/ | published |
 | 2026-10-02 | B41 | posutochno-tyumen-kuhnya-kak-doma-plita-ne-zazhigaetsya-dostavki | /blog/posutochno-tyumen-kuhnya-kak-doma-plita-ne-zazhigaetsya-dostavki/ | published |
 | 2026-10-02 | B42 | posutochno-tyumen-dvuhkomnatnaya-vtoraya-kladovaya | /blog/posutochno-tyumen-dvuhkomnatnaya-vtoraya-kladovaya/ | published |
+| 2026-10-03 | B43 | zalog-5-000-obeschali-vernut-k-obedu-v-14-20-napisali-posle-uborki | /blog/zalog-5-000-obeschali-vernut-k-obedu-v-14-20-napisali-posle-uborki/ | published |

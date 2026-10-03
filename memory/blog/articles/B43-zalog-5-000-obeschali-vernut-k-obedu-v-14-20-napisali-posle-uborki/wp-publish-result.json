@@ -1,0 +1,27 @@
+{
+  "slug": "zalog-5-000-obeschali-vernut-k-obedu-v-14-20-napisali-posle-uborki",
+  "topic_id": "B43",
+  "permalink": "{{SITE_BASE}}/blog/zalog-5-000-obeschali-vernut-k-obedu-v-14-20-napisali-posle-uborki/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B43-zalog-5-000-obeschali-vernut-k-obedu-v-14-20-napisali-posle-uborki/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 1020230,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=5200 slug=zalog-5-000-obeschali-vernut-k-obedu-v-14-20-napisali-posle-uborki\nOK categories=101,102\nOK dzen_yzen_meta=1\nOK featured_image=5201\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=5202 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/10/zalog-5-000-obeschali-vernut-k-obedu-v-14-20-napisali-posle-uborki-inline-02.png\nOK inline_alt=5202\nOK inline_caption=5202\nOK inline_description=5202\nOK inline_image_upload=5203 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/10/zalog-5-000-obeschali-vernut-k-obedu-v-14-20-napisali-posle-uborki-inline-01.png\nOK inline_alt=5203\nOK inline_caption=5203\nOK inline_description=5203\nOK inline_image_upload=5204 src=cover/inline-04.png url={{SITE_BASE}}/wp-content/uploads/2026/10/zalog-5-000-obeschali-vernut-k-obedu-v-14-20-napisali-posle-uborki-inline-04.png\nOK inline_alt=5204\nOK inline_caption=5204\nOK inline_description=5204\nOK inline_image_upload=5205 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/10/zalog-5-000-obeschali-vernut-k-obedu-v-14-20-napisali-posle-uborki-inline-03.png\nOK inline_alt=5205\nOK inline_caption=5205\nOK inline_description=5205\nOK inline_image_upload=5206 src=cover/inline-06.png url={{SITE_BASE}}/wp-content/uploads/2026/10/zalog-5-000-obeschali-vernut-k-obedu-v-14-20-napisali-posle-uborki-inline-06.png\nOK inline_alt=5206\nOK inline_caption=5206\nOK inline_description=5206\nOK inline_image_upload=5207 src=cover/inline-05.png url={{SITE_BASE}}/wp-content/uploads/2026/10/zalog-5-000-obeschali-vernut-k-obedu-v-14-20-napisali-posle-uborki-inline-05.png\nOK inline_alt=5207\nOK inline_caption=5207\nOK inline_description=5207\nOK inline_image_upload=5208 src=cover/inline-07.png url={{SITE_BASE}}/wp-content/uploads/2026/10/zalog-5-000-obeschali-vernut-k-obedu-v-14-20-napisali-posle-uborki-inline-07.png\nOK inline_alt=5208\nOK inline_caption=5208\nOK inline_description=5208\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/zalog-5-000-obeschali-vernut-k-obedu-v-14-20-napisali-posle-uborki/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 7,
+    "expected_inline": 7,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/zalog-5-000-obeschali-vernut-k-obedu-v-14-20-napisali-posle-uborki/",
+    "errors": []
+  }
+}

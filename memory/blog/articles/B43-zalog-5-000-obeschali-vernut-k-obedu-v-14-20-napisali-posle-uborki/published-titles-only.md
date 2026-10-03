@@ -50,3 +50,4 @@ lessons, benchmarks, QA reports или соседние research-notes как о
 | B40 | posutochno-tyumen-v-filtre-bez-predoplaty-perevod-do-koda | В фильтре посуточно — «без предоплаты». До кода попросили 3 200 ₽ на карту | published |
 | B41 | posutochno-tyumen-kuhnya-kak-doma-plita-ne-zazhigaetsya-dostavki | «Кухня как дома» посуточно. Плита молчит — 4 200 ₽ на доставках | published |
 | B42 | posutochno-tyumen-dvuhkomnatnaya-vtoraya-kladovaya | Хозяин ответил: «вторая не сдаётся». Двушка посуточно — 10 800 ₽, за дверью кладовая | published |
+| B43 | zalog-5-000-obeschali-vernut-k-obedu-v-14-20-napisali-posle-uborki | 5 000 ₽ залога посуточно: обещали «к обеду». В чате — «после уборки» | published |

@@ -56,3 +56,19 @@
 - dzen RSS: item in `/feed/zen/`; enclosure `…-cover.png`; `OK dzen_yzen_meta=1`
 - interlink inbound: B01 post 3745
 - llms.txt + llms-full.txt: deployed
+
+## B43 — 2026-10-03
+
+- topic_id: B43
+- slug: `zalog-5-000-obeschali-vernut-k-obedu-v-14-20-napisali-posle-uborki`
+- post_id: 5200
+- permalink: `/blog/zalog-5-000-obeschali-vernut-k-obedu-v-14-20-napisali-posle-uborki/`
+- featured_image: 5201 (`…-cover.png` on wp-content)
+- inline_images: 5202–5208 (7 slots, wp-content URLs)
+- schema_meta: ok
+- categories: 101, 102 (posutochnaya-arenda, zalog-i-vyiezd)
+- live-page gate: PASS
+- dzen RSS: `OK dzen_yzen_meta=1`; MU-plugin deployed; feed preview 1024×576 via host intermediates
+- interlink inbound: B01 post 3745
+- llms.txt + llms-full.txt: deployed
+- note: crosslink gate needed live-catalog crawl ≥24 listing pages (catalog depth fix)
