@@ -23,7 +23,7 @@ from excalibur_blog_site_base import (
 )
 
 DEFAULT_CATALOG_PATH = "memory/live-catalog.json"
-MAX_LISTING_PAGES = 8
+MAX_LISTING_PAGES = 24
 USER_AGENT = "ExcaliburBlogLiveCatalog/1.0"
 
 
@@ -128,6 +128,15 @@ def parse_listing_html(html: str) -> list[dict[str, str]]:
     return parser.entries
 
 
+def catalog_ledger_gaps(catalog: dict[str, Any], required_slugs: set[str]) -> list[str]:
+    """Published ledger slugs missing from a live-catalog slug_index (shallow crawl)."""
+    if not required_slugs:
+        return []
+    idx = catalog.get("slug_index") or {}
+    missing = [slug for slug in sorted(required_slugs) if slug not in idx]
+    return missing
+
+
 def merge_catalog_entries(entries: list[dict[str, str]]) -> dict[str, dict[str, str]]:
     merged: dict[str, dict[str, str]] = {}
     for row in entries:
@@ -146,6 +155,7 @@ def fetch_live_catalog(
     *,
     max_pages: int = MAX_LISTING_PAGES,
     timeout: float = 20.0,
+    ensure_slugs: set[str] | None = None,
 ) -> dict[str, Any]:
     base = normalize_public_base(site_base or resolve_public_base_from_env())
     if not base:
@@ -154,8 +164,10 @@ def fetch_live_catalog(
         raise ValueError(f"live catalog requires real site base, not {SITE_BASE_PLACEHOLDER}")
 
     host = (urlparse(base).hostname or "").lower()
+    required = {s.strip() for s in (ensure_slugs or set()) if s and str(s).strip()}
     all_entries: list[dict[str, str]] = []
     pages_fetched = 0
+    by_slug: dict[str, dict[str, str]] = {}
     for page in range(1, max_pages + 1):
         try:
             html = fetch_listing_page(base, page)
@@ -168,16 +180,23 @@ def fetch_live_catalog(
         if not page_entries and page > 1:
             break
         all_entries.extend(page_entries)
+        by_slug = merge_catalog_entries(all_entries)
+        if required and required.issubset(by_slug.keys()):
+            break
 
-    by_slug = merge_catalog_entries(all_entries)
+    if not by_slug:
+        by_slug = merge_catalog_entries(all_entries)
     posts = sorted(by_slug.values(), key=lambda row: row["slug"])
+    missing_ledger = catalog_ledger_gaps({"slug_index": by_slug}, required)
     return {
         "site_base": base,
         "site_host": host,
         "pages_fetched": pages_fetched,
+        "max_listing_pages": max_pages,
         "count": len(posts),
         "posts": posts,
         "slug_index": {row["slug"]: row for row in posts},
+        "ledger_slugs_missing": missing_ledger,
     }
 
 
@@ -212,7 +231,14 @@ def refresh_catalog(
     write: bool = True,
 ) -> dict[str, Any]:
     root = root or project_root()
-    catalog = fetch_live_catalog(site_base=site_base)
+    from excalibur_blog_interlink_lib import parse_ledger
+
+    ledger_slugs = {
+        str(row.get("slug") or "").strip()
+        for row in parse_ledger(root / "shared/published-articles.md")
+        if str(row.get("slug") or "").strip()
+    }
+    catalog = fetch_live_catalog(site_base=site_base, ensure_slugs=ledger_slugs)
     if write:
         save_catalog(catalog, catalog_path(root))
     return catalog

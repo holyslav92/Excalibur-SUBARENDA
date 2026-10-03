@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "https://добрыйдом-72.рф/blog/perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem/",
+      "slug": "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+      "anchor": "вот этот материал о залоге, который отказались возвращать",
+      "catalog_title": "Снял квартиру посуточно. Залог не вернули — нашли скол на плите",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/bez-zaloga-v-filtre-zalog-u-dveri/",
+      "slug": "bez-zaloga-v-filtre-zalog-u-dveri",
+      "anchor": "«без залога» в фильтре и залог у двери",
+      "catalog_title": "В фильтре — «без залога». У двери попросили 5 000 ₽ на личную карту",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/posutochno-tyumen-stiralnaya-v-kartochke-i-zalog/",
+      "slug": "posutochno-tyumen-stiralnaya-v-kartochke-i-zalog",
+      "anchor": "стиральную в карточке и залог",
+      "catalog_title": "«Стиральная машина есть» в фильтре. К 3-й ночи — мокрое бельё, прачечная, 1 100 ₽",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni/",
+      "slug": "napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni",
+      "anchor": "про 1 800 ₽ за простыни",
+      "catalog_title": "В карточке: «уборка включена» — 3 ночи. Выезд: фото простыни — 1 800 ₽",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 288,
+  "outbound_unique_slugs": [
+    "perevel-zalog-za-posutochnuyu-na-vyezde-skazali-ne-vernem",
+    "bez-zaloga-v-filtre-zalog-u-dveri",
+    "posutochno-tyumen-stiralnaya-v-kartochke-i-zalog",
+    "napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B43-zalog-5-000-obeschali-vernut-k-obedu-v-14-20-napisali-posle-uborki",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}

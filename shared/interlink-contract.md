@@ -13,6 +13,22 @@
    post-publish interlink добавляет в 1–3 релевантных старых поста блок
    «Читайте также» со ссылкой на новую статью (один раз, идемпотентно).
 
+## Live-каталог для crosslink QA
+
+Перед publish `excalibur_blog_crosslink_qa_gate.py` обновляет `memory/live-catalog.json`
+обходом `/blog/` listing (по умолчанию до **24** страниц, `MAX_LISTING_PAGES` в
+`scripts/excalibur_blog_live_catalog.py`). На сайте сотни постов; shallow crawl
+(раньше 8 страниц) давал ложный FAIL «invented slug» для живых sibling из ledger.
+
+- Crawl **останавливается раньше**, когда все slug из `shared/published-articles.md`
+  уже в каталоге.
+- Если после полного crawl в каталоге **нет** slug из ledger — **BLOCKER** до увеличения
+  `--max-pages` / константы (INC B43).
+
+```bash
+python3 scripts/excalibur_blog_live_catalog.py --max-pages 24
+```
+
 ## Ограничения
 
 - Не более **3 inbound** правок за один publish-run.

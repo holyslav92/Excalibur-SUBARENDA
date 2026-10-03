@@ -1,16 +1,16 @@
 ---
 role: excalibur-blog-schema
-topic_id: B42
-article_dir: memory/blog/articles/B42-posutochno-tyumen-dvuhkomnatnaya-vtoraya-kladovaya
+topic_id: B43
+article_dir: memory/blog/articles/B43-zalog-5-000-obeschali-vernut-k-obedu-v-14-20-napisali-posle-uborki
 status: PASS
-completed_at: 2026-10-02T12:56:00Z
+completed_at: 2026-10-03T09:31:00Z
 incident_report: none
 artifacts:
   - schema.jsonld
 ---
 
 === EXCALIBUR BLOG SCHEMA ===
-topic_id: B42
+topic_id: B43
 verdict: PASS
 schema: schema.jsonld
 blockers: none

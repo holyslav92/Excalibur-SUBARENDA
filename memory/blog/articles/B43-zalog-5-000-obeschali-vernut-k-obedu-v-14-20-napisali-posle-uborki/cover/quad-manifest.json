@@ -1,0 +1,118 @@
+{
+  "topic_id": "B43",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "cover_hook": "5 000 ждут уборку",
+  "cover_hook_highlight": "уборку",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "Grsai vip tier 2K, 2× quad canvas; autumn Tyumen; factory logo paste cover + inline_1/3/7; phone in scene.",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Гость с чемоданом у двери посуточной квартиры в Тюмени: на телефоне переписка «верну после уборки» вместо обещанного «к обеду», осенний свет из окна.",
+      "scene_hint": "Hallway suitcase; chat «после уборки»; past noon; hook «уборку»; people-meme BL; phone note; TR empty",
+      "meme_caption_ru": "",
+      "sticky": "К обеду — нет"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Как срок возврата растворился в уборке",
+      "visual_type": "comparison_table_ui",
+      "scene_hint": "Table «к обеду» vs «после уборки»; 5000₽; TR empty",
+      "alt": "Сравнение: в чате обещали вернуть 5 000 ₽ залога к обеду, потом написали «после уборки» без нового времени",
+      "labels": ["залог 5000", "к обеду", "срок в чате"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Как срок возврата растворился в уборке",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "5-step: keys→inspect→noon→ask→vague",
+      "alt": "Схема: ключи сданы без претензий, обед прошёл, гость спрашивает про перевод — ответ «после уборки»",
+      "labels": ["фото выезда", "претензий нет", "сообщение сохранено"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Проблема началась до перевода",
+      "visual_type": "checklist_board",
+      "scene_hint": "Checklist 4 pre-pay Q; chat bubbles; TR pad empty",
+      "alt": "Чек-лист до перевода залога: сумма, срок возврата, способ перевода и условия удержания",
+      "labels": ["октябрь", "после уборки", "чемодан"]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Проблема началась до перевода",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "4 questions board before transfer; Oct window light",
+      "alt": "Четыре вопроса до перевода 5 000 ₽: когда вернут, каким способом, при каких удержаниях",
+      "labels": ["сумма", "срок", "способ", "удержание"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Что сохранить при выезде",
+      "visual_type": "process_flow",
+      "scene_hint": "Flow: photo → keys frame → save chat → confirm refund time",
+      "alt": "Что сделать при выезде: снять квартиру, зафиксировать ключи и сохранить переписку о возврате залога",
+      "labels": ["фото", "ключи", "чат", "срок"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Что сохранить при выезде",
+      "visual_type": "infographic_card",
+      "scene_hint": "Split chat «к обеду» vs «после уборки»; arrow; no logo",
+      "alt": "Сохранить оба сообщения хозяина: конкретное «к обеду» и расплывчатое «после уборки»",
+      "labels": ["к обеду", "после уборки", "время?", "удержание?"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Вывод: деньги не должны догонять гостя",
+      "visual_type": "schema_faq_ui",
+      "scene_hint": "FAQ 4 bullets; suitcase icon; TR empty",
+      "alt": "Итог: залог нормален, если правила возврата ясны до перевода — не ждать у вокзала",
+      "labels": ["5000 ₽", "когда", "как", "удержат"]
+    }
+  },
+  "cover_keys_ru": [],
+  "cover_emotion": "усталость и тревога: обещание «к обеду» растворилось в чужой уборке",
+  "cover_motifs": {
+    "composition": "прихожая чемодан ключи чат «после уборки» часы после полудня TR пустой телефон на записке",
+    "location": "посуточная квартира Тюмень, октябрь 2026, золотые листья за окном, тёплый дневной свет, без снега и зимы",
+    "meme": "маленькая наклейка people-meme «tired traveler with suitcase» в нижнем левом углу, не больше 12% кадра, не кот",
+    "prop_set": "чемодан, ключи, смартфон, квитанция 5000, осенние листья на подоконнике",
+    "sticker_set": ["залог посуточно", "квартиры посуточно тюмень"],
+    "joke": "обед наступил, а залог уехал на уборку без расписания"
+  },
+  "wordstat_stickers": [
+    "залог посуточно",
+    "квартиры посуточно тюмень"
+  ],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "season": "autumn_october_tyumen"
+}
