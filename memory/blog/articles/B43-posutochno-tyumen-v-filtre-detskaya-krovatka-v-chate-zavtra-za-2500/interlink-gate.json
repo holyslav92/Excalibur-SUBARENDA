@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "topic_id": "B43",
+  "slug": "posutochno-tyumen-v-filtre-detskaya-krovatka-v-chate-zavtra-za-2500",
+  "candidates_count": 45,
+  "outbound_found": [
+    {
+      "slug": "mozhno-s-detmi-doplata-za-rebenka",
+      "title": "mozhno-s-detmi-doplata-za-rebenka"
+    },
+    {
+      "slug": "dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras",
+      "title": "dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras"
+    },
+    {
+      "slug": "bez-zaloga-v-filtre-zalog-u-dveri",
+      "title": "bez-zaloga-v-filtre-zalog-u-dveri"
+    },
+    {
+      "slug": "posutochno-tyumen-v-filtre-ot-odnoj-nochi-u-domofona-minimum-dvoe-sutok",
+      "title": "posutochno-tyumen-v-filtre-ot-odnoj-nochi-u-domofona-minimum-dvoe-sutok"
+    }
+  ],
+  "outbound_unique_slugs": [
+    "bez-zaloga-v-filtre-zalog-u-dveri",
+    "mozhno-s-detmi-doplata-za-rebenka",
+    "dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras",
+    "posutochno-tyumen-v-filtre-ot-odnoj-nochi-u-domofona-minimum-dvoe-sutok"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "warnings": [],
+  "errors": []
+}

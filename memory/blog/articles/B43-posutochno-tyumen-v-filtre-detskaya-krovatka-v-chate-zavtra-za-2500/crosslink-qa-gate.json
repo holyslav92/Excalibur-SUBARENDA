@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "https://добрыйдом-72.рф/blog/bez-zaloga-v-filtre-zalog-u-dveri/",
+      "slug": "bez-zaloga-v-filtre-zalog-u-dveri",
+      "anchor": "«без залога» в фильтре и залог у двери",
+      "catalog_title": "В фильтре — «без залога». У двери попросили 5 000 ₽ на личную карту",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/mozhno-s-detmi-doplata-za-rebenka/",
+      "slug": "mozhno-s-detmi-doplata-za-rebenka",
+      "anchor": "«можно с детьми» и доплата за ребёнка",
+      "catalog_title": "«Можно с детьми» в карточке. При заезде: 1 500 ₽ за 2 ночи, 6-летнему",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras/",
+      "slug": "dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras",
+      "anchor": "«две кровати на фото, ночью диван и складной матрас»",
+      "catalog_title": "На фото две кровати. Ночью троих — диван и складной матрас",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/posutochno-tyumen-v-filtre-ot-odnoj-nochi-u-domofona-minimum-dvoe-sutok/",
+      "slug": "posutochno-tyumen-v-filtre-ot-odnoj-nochi-u-domofona-minimum-dvoe-sutok",
+      "anchor": "«посуточно в Тюмени: в фильтре от одной ночи, у домофона минимум двое суток»",
+      "catalog_title": "Фильтр обещал 1 ночь. У домофона потребовали оплатить 2",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "outbound_unique_slugs": [
+    "bez-zaloga-v-filtre-zalog-u-dveri",
+    "mozhno-s-detmi-doplata-za-rebenka",
+    "dve-krovati-na-foto-posutochno-nochyu-divan-i-skladnoj-matras",
+    "posutochno-tyumen-v-filtre-ot-odnoj-nochi-u-domofona-minimum-dvoe-sutok"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B43-posutochno-tyumen-v-filtre-detskaya-krovatka-v-chate-zavtra-za-2500",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}

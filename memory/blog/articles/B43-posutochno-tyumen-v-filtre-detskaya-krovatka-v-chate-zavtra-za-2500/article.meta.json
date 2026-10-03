@@ -16,6 +16,11 @@
     "description_ctr": "«Детская кроватка» в фильтре посуточно — в чате: завтра за 2 500 ₽",
     "description_aeo": "«Детская кроватка» в фильтре посуточно — в чате: завтра за 2 500 ₽"
   },
+  "wp_category_slugs": [
+    "posutochnaya-arenda",
+    "zhkh-i-doplaty",
+    "sovety-gostyam"
+  ],
   "theme_blocks": {
     "faq": "skip",
     "quiz": "skip",
