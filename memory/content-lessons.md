@@ -137,3 +137,53 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+## LESSON-20261003-1254-B43-crib-filter-weak-wordstat-sol-shrink
+status: proposed
+topic_id: B43
+category: structure
+confidence: low
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: `content-evidence-report.json` absent; `excalibur_blog_content_evidence_gate.py` → SKIP.
+- artifact: `memory/scout/scout-assembled-input-2026-10-03.md`
+  finding: Klyshin `hook_id: crib_filter_promise` — filter amenity vs pay/tomorrow; Wordstat «квартира посуточно с детской кроваткой» **37** (225); rework logged: weak crib → keep guest crib angle, spine P0 «квартиры посуточно тюмень» 3963 (55+11176) | 8919 (225).
+- artifact: `memory/blog/articles/B43-posutochno-tyumen-v-filtre-detskaya-krovatka-v-chate-zavtra-za-2500/case-delivery-gate.json`
+  finding: `status: PASS` — H1 «детская кроватка» + chat «завтра за 2 500 ₽» CASE shipped (`dobry_dom_voice_reset_v1`).
+- artifact: `memory/blog/articles/B43-posutochno-tyumen-v-filtre-detskaya-krovatka-v-chate-zavtra-za-2500/wp-publish-result.json`
+  finding: publish PASS 2026-10-03 (WP post 5211, featured + 3 inline, categories 101/104/106).
+- artifact: word-count probe (article tree, same tokenizer as gate plain text)
+  finding: `drafts/writer.html` **1137** words → `article.html` **941** words after Sol (~17% shrink); canon target band 650–1100 — gate min 650 satisfied, but landed ~160 words below Writer meaning budget and below informal 1100 upper intent for CASE mode B.
+- metrika_signal: none — `METRIKA FEEDBACK BLOCKER` (`YANDEX_METRIKA_OAUTH_TOKEN` / `YANDEX_METRIKA_COUNTER_ID` unset); see `memory/pipeline-fix-queue.md#INC-20260925-1506-content-learner-metrika-credentials`.
+
+### Named blockers
+- EVIDENCE_SKIPPED — no editorial evidence table; no causal quality claims from evidence report.
+- METRIKA_CREDENTIALS — behavioral cohort unavailable for B43 day-0.
+- LOW_SAMPLE — fresh publish; no on-site Metrika match possible this run.
+- WEAK_WORDSTAT_NICHE — amenity-specific query 37 (225); demand carried by spine P0 only (expected Scout rework, not skip).
+
+### Keep
+- `crib_filter_promise` wound (filter tick vs paid/tomorrow delivery) distinct from B24 child surcharge / B36 dog / B42 closet-room skeletons.
+- Scout dual-gate pattern: do not drop hook on crib volume 37; localize via «квартиры посуточно тюмень» P0 + in-text amenity conflict (mirrors B24 «с детьми» rework).
+- Outbound interlink to family/sleep siblings (`mozhno-s-detmi-doplata-za-rebenka`, `dve-krovati-na-foto-…`) — `interlink-gate.json` PASS.
+
+### Change
+- Sol handoff (human/Sol skill review, not Writer prompt): when Writer draft >~1050 words, Sol should preserve checklist/utility blocks (what to ask in chat before pay, 2 500 ₽ line items) rather than compress to ~940 — target upper half of 650–1100 for filter-amenity CASEs with weak SEO tail.
+- After Metrika credentials: re-ingest and attach cohort for slug `posutochno-tyumen-v-filtre-detskaya-krovatka-v-chate-zavtra-za-2500`; do not infer crib-niche SEO failure from day-0.
+
+### Never again
+- Skip `crib_filter_promise` solely because «детская кроватка» Wordstat <50 without rework log + spine P0 (B43 shipped correctly).
+- Treat missing Metrika env as silent skip in content-learner.
+- Auto-edit `shared/writer-master-prompt.md` or Sol skill from one Sol-shrink observation.
+
+### Proposed apply
+- Env: resolve Metrika secrets (existing INC); optional confidence bump if matched_rows > 0 and retention OK vs family-amenity siblings.
+- Human: Sol agent/skill note — «preserve Writer utility when Terra Sol shortens >15%»; repeat on second article before any script gate change.
+- Scout: no change — weak amenity + strong spine already canon.
+
+### Durable applied
+- none — first named `crib_filter_promise` + Sol-shrink lesson; B24 weak child cluster is parallel but different hook; no automated apply.
+
+### Resolution
+status: recorded
