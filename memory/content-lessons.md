@@ -137,3 +137,55 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+## LESSON-20261003-0954-B43-zalog-posle-uborka-timing
+status: proposed
+topic_id: B43
+category: utility
+confidence: low
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: `content-evidence-report.json` absent; `excalibur_blog_content_evidence_gate.py` → SKIP (`pipeline_canon` human-first-v3).
+- artifact: `memory/blog/articles/B43-zalog-5-000-obeschali-vernut-k-obedu-v-14-20-napisali-posle-uborki/wp-publish-result.json`
+  finding: publish PASS 2026-10-03 (WP post 5200, featured + 7 inline, categories 101/102, live-page PASS).
+- artifact: `memory/blog/articles/B43-zalog-5-000-obeschali-vernut-k-obedu-v-14-20-napisali-posle-uborki/crosslink-qa-gate.json` + `interlink-gate.json`
+  finding: 4 outbound siblings — zalog cluster (`perevel-zalog…`, `bez-zaloga…`, `stiralnaya…-i-zalog`) plus **uborka CASE** `napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni` (B23) with anchor «про 1 800 ₽ за простыни»; crosslink QA PASS (HTTP 200, title_ok).
+- artifact: `memory/blog/articles/B43-zalog-5-000-obeschali-vernut-k-obedu-v-14-20-napisali-posle-uborki/assembled-sol-inputs.md` (Writer/Sol brief)
+  finding: angle = срок возврата 5 000 ₽ «к обеду» → в 14:20 «после уборки» без нового времени/удержания; explicit **Never** repeat отдельную плату за уборку / чип / залог у двери — отличить от B23 (fee) и других zalog skeletons.
+- artifact: `memory/blog/articles/B43-zalog-5-000-obeschali-vernut-k-obedu-v-14-20-napisali-posle-uborki/viral-topic-repeat-gate.json`
+  finding: PASS — H1/slug not treated as duplicate of prior uborka-only or zalog-only posts after cluster «уборка» (B23) already live.
+- artifact: `memory/blog/articles/B43-zalog-5-000-obeschali-vernut-k-obedu-v-14-20-napisali-posle-uborki/case-delivery-gate.json`
+  finding: PASS at title stage (`dobry_dom_voice_reset_v1`, title-brief only).
+- artifact: `memory/blog/articles/B43-zalog-5-000-obeschali-vernut-k-obedu-v-14-20-napisali-posle-uborki/cover/cover_qa.json`
+  finding: Cover-QA stamped PASS (quad longform, wordstat stickers, logo composite) — no B03-style JSON↔script split signal in tree.
+- metrika_signal: none — `METRIKA FEEDBACK BLOCKER` (`YANDEX_METRIKA_OAUTH_TOKEN` / `YANDEX_METRIKA_COUNTER_ID` unset); see `memory/pipeline-fix-queue.md#INC-20260925-1506-content-learner-metrika-credentials`.
+
+### Named blockers
+- EVIDENCE_SKIPPED — no editorial evidence table; no causal on-page quality claims.
+- METRIKA_CREDENTIALS — behavioral cohort unavailable for B43 day-0.
+- LOW_SAMPLE — fresh publish; cannot match slug `zalog-5-000-obeschali-vernut-k-obedu-v-14-20-napisali-posle-uborki` in ingest.
+
+### Keep
+- **Wound split after uborka CASE (B23):** B43 = неопределённый **срок возврата залога** («после уборки» как moving deadline), not повтор сюжета «1 800 ₽ за простыни»; H1 фиксирует 14:20 и чат.
+- Outbound bridge to B23 only where reader needs «уборка на выезде» context; zalog siblings carry refund/refusal angles.
+- Pre-transfer checklist in copy: сумма, срок, способ, скрин «к обеду» vs позднее «после уборки»; exit photo + «претензий нет?» (cover-text / description rhythm).
+- Wordstat P0 anchor in title pipeline: «залог посуточно» (documented in Sol stamp).
+
+### Change
+- none durable — day-0; re-run Metrika ingest after credentials land to see if zalog×uborka cluster interlink lifts depth vs bounce (no causality claim until matched_rows).
+
+### Never again
+- Collapse B43 into a second «уборка включена / доплата за грязь» article — that skeleton is B23; here уборка only explains хозяин’s wording, not the fee plot.
+- Treat «после уборки» without datetime as sufficient refund promise in utility blocks (name it as non-agreement).
+- Silent skip Metrika in content-learner when env vars missing (log BLOCKER + existing INC).
+
+### Proposed apply
+- Env: resolve Metrika secrets; re-ingest and optional confidence bump when `metrika-latest.json` matches B43 slug.
+- Human/review-only: Scout/Writer — when hook follows live **uborka** sibling, pick **timing/hold** angle (zalog return), not repeat exit-cleaning invoice beat.
+
+### Durable applied
+- none — first named B43 lesson; interlink pattern not repeated in ≥2 learner runs; Writer prompt protected.
+
+### Resolution
+status: recorded
