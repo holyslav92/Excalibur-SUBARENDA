@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "topic_id": "B43",
+  "slug": "zalog-5-000-obeschali-vernut-k-obedu-v-14-20-napisali-posle-uborki",
+  "research_date": "2026-10-03",
+  "summary": "CASE deposit_delay: 5 000 ₽, «к обеду» → 14:20 «после уборки». Fresh t.me/s/Dobriy_dom_72 Oct 2–3. Wordstat P0 «залог посуточно» 2423 RU / 25 Tyumen.",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "t.me/s/Dobriy_dom_72",
+    "source_type": "community",
+    "urls": [
+      "https://t.me/s/Dobriy_dom_72",
+      "https://t.me/s/klyshin_A",
+      "https://harant.ru/questions/q-230340/"
+    ],
+    "accessed_at": "2026-10-03"
+  },
+  "freshness_audit": {
+    "research_date": "2026-10-03",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://t.me/s/Dobriy_dom_72",
+      "published_at": "2026-10-02",
+      "note": "02.10 — «без комиссии» vs доплата на экране; 03.10 — осмотр при заезде / уборка между гостями."
+    }
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "source": "mcp-kv live 2026-10-03",
+    "regions": ["225", "55", "11176"],
+    "p0_phrase": "залог посуточно",
+    "p0_volume_ru225": 2423,
+    "p0_volume_tyumen_55_11176": 25
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "note": "No bank or brand tariff claims in case pack"
+  },
+  "derouter": {
+    "first_attempt": "BLOCKER_META",
+    "second_attempt": "BLOCKER_META",
+    "third_attempt": "PASS",
+    "model": "gpt-6-luna",
+    "endpoint": "https://api.derouter.ai/openai/v1/chat/completions",
+    "note": "Fallback apikey.cloud meta-refused; primary derouter.ai + reinforced assembled-research-inputs-derouter.md"
+  }
+}
