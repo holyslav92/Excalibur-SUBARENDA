@@ -447,18 +447,36 @@ def main() -> int:
     html = html_path.read_text(encoding="utf-8")
     tenant = load_tenant(root)
 
+    catalog_live_refresh = False
     try:
         if args.use_cache:
             catalog = load_catalog(catalog_path(root))
             if not catalog.get("posts"):
                 catalog = refresh_catalog(root, site_base=args.site_base or None)
+                catalog_live_refresh = True
         else:
             catalog = refresh_catalog(root, site_base=args.site_base or None)
+            catalog_live_refresh = True
     except ValueError as exc:
         print(f"BLOCKER: {exc}", file=sys.stderr)
         return 2
     except Exception as exc:  # noqa: BLE001
         print(f"BLOCKER: live catalog refresh failed: {exc}", file=sys.stderr)
+        return 2
+
+    missing_ledger = catalog.get("ledger_slugs_missing") or []
+    if catalog_live_refresh and missing_ledger:
+        sample = ", ".join(missing_ledger[:5])
+        extra = f" (+{len(missing_ledger) - 5} more)" if len(missing_ledger) > 5 else ""
+        print(
+            "BLOCKER: live catalog crawl too shallow for published-articles ledger "
+            f"(pages_fetched={catalog.get('pages_fetched')}, "
+            f"max_listing_pages={catalog.get('max_listing_pages')}); "
+            f"missing slugs e.g. {sample}{extra}. "
+            "Raise MAX_LISTING_PAGES in excalibur_blog_live_catalog.py or re-run "
+            "python3 scripts/excalibur_blog_live_catalog.py --max-pages <n>.",
+            file=sys.stderr,
+        )
         return 2
 
     meta_path = article_dir / "article.meta.json"
@@ -481,6 +499,8 @@ def main() -> int:
 
     report["article_dir"] = str(article_dir.relative_to(root)).replace("\\", "/")
     report["catalog_path"] = str(catalog_path(root).relative_to(root)).replace("\\", "/")
+    report["catalog_pages_fetched"] = catalog.get("pages_fetched")
+    report["catalog_max_listing_pages"] = catalog.get("max_listing_pages")
     report["gate"] = "crosslink-qa"
 
     out_path = article_dir / Path(args.output).name

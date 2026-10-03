@@ -140,6 +140,55 @@ checks_run:
 - `python3 -m unittest tests.test_publish_transport tests.test_publish_cover_qa_prereq -q`
 commit: 2a9b210d
 
+## INC-20261003-0950-publish-crosslink-catalog-depth-b43
+status: fixed
+run_date: 2026-10-03
+role: excalibur-blog-publish
+topic_id: B43
+article_dir: memory/blog/articles/B43-zalog-5-000-obeschali-vernut-k-obedu-v-14-20-napisali-posle-uborki
+severity: medium
+category: script
+
+### What went wrong
+- `excalibur_blog_live_catalog.py` crawled only **8** `/blog/` listing pages; tenant site
+  has hundreds of posts. Crosslink QA treated valid sibling slugs as «invented» until
+  catalog refresh during B43 publish.
+
+### How the agent recovered this run
+- Raised `MAX_LISTING_PAGES` from 8 → **24** (commit 52f6545); re-ran crosslink gate;
+  publish completed (post 5200).
+
+### Durable fix needed before next run
+- Keep deep crawl default; stop early when all `published-articles` slugs are indexed;
+  BLOCKER on live refresh if ledger slugs still missing after max pages.
+
+### Suggested files to inspect/change
+- `scripts/excalibur_blog_live_catalog.py`
+- `scripts/excalibur_blog_crosslink_qa_gate.py`
+- `shared/interlink-contract.md`
+- `tests/test_live_catalog.py`
+
+### Secrets
+- none recorded
+
+### Fixer resolution
+status: fixed
+fixed_at: 2026-10-03
+fix_summary:
+- MAX_LISTING_PAGES=24 (52f6545); ledger-aware crawl with early exit + `ledger_slugs_missing`.
+- Crosslink gate BLOCKER after live catalog refresh when ledger slugs absent from index.
+- Documented live-catalog depth in interlink contract; unit tests for crawl helpers.
+files_changed:
+- `scripts/excalibur_blog_live_catalog.py`
+- `scripts/excalibur_blog_crosslink_qa_gate.py`
+- `shared/interlink-contract.md`
+- `tests/test_live_catalog.py`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_live_catalog.py scripts/excalibur_blog_crosslink_qa_gate.py`
+- `python3 -m unittest tests.test_live_catalog tests.test_crosslink_qa_gate -q`
+commit: pending-parent-commit
+
 ## INC-20260925-1500-llms-deploy-ftp-transport
 status: fixed
 run_date: 2026-09-25
