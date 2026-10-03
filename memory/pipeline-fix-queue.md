@@ -187,7 +187,7 @@ files_changed:
 checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_live_catalog.py scripts/excalibur_blog_crosslink_qa_gate.py`
 - `python3 -m unittest tests.test_live_catalog tests.test_crosslink_qa_gate -q`
-commit: pending-parent-commit
+commit: 92be2b6
 
 ## INC-20260925-1500-llms-deploy-ftp-transport
 status: fixed
