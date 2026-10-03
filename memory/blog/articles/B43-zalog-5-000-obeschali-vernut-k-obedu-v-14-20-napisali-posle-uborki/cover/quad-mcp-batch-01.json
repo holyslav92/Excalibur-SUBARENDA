@@ -1,0 +1,25 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 1,
+  "model_policy": "vip_for_2k",
+  "vip_disabled": false,
+  "max_generation_attempts": 2,
+  "output_canvas": "cover/canvas-quad-01.png",
+  "result_path": "cover/quad-mcp-result-01.json",
+  "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+  "preferred_image_flow": {
+    "provider": "grsai",
+    "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
+    "resolution": "2K"
+  },
+  "jobs": [{
+    "slot": "canvas_quad",
+    "tool": "grsai",
+    "mcp_args": {
+      "prompt": "WOW RU collage, airy #FFFFFF high-key, Tyumen October 2026 AUTUMN golden leaves outside window, NO winter/snow. Canvas 2048x1152 2x2 grid; white gutters. Ban: dark cinematic, WP UI, host face, pill phone overlay, model-drawn «Добрый дом» logo, meme cat stickers.\nALL panels TR pad = clean wall 8-12% ONLY for factory logo paste AFTER — ZERO drawn logo on TR.\nCover TL: guest hallway with suitcase and keys; smartphone chat bubble «верну после уборки»; wall clock past noon; LARGE Cyrillic hook «5 000 ждут уборку» gold highlight ONLY «уборку»; sticky «К обеду — нет»; phone +7 (993) 574-83-22 hand-painted on paper note taped to wall, NOT black pill NOT button NOT bar; Wordstat stickers «залог посуточно» «квартиры посуточно тюмень»; tired-traveler people-meme sticker BL ≤12%; TR pad empty.\nTR inline_1 comparison_table_ui: TXT:залог 5000|к обеду|после уборки. TR pad empty for factory logo.\nBL inline_2 workflow_diagram: keys→inspect OK→noon→guest asks→vague reply. TXT:фото выезда|претензий нет|сообщение сохранено. Top-right 12% flat wall ZERO logos.\nBR inline_3 checklist_board 4 pre-pay questions. TXT:октябрь|после уборки|чемодан. TR pad empty for factory logo.",
+      "aspect_ratio": "16:9",
+      "resolution": "2K"
+    }
+  }],
+  "validation": {"prompt_chars": 1320, "max_prompt_chars": 3500, "resolution": "2K"}
+}
