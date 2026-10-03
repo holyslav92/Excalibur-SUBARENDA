@@ -1,0 +1,27 @@
+{
+  "slug": "posutochno-tyumen-v-filtre-detskaya-krovatka-v-chate-zavtra-za-2500",
+  "topic_id": "B43",
+  "permalink": "{{SITE_BASE}}/blog/posutochno-tyumen-v-filtre-detskaya-krovatka-v-chate-zavtra-za-2500/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B43-posutochno-tyumen-v-filtre-detskaya-krovatka-v-chate-zavtra-za-2500/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 891229,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=5211 slug=posutochno-tyumen-v-filtre-detskaya-krovatka-v-chate-zavtra-za-2500\nOK categories=101,104,106\nOK dzen_yzen_meta=1\nOK featured_image=5212\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=5213 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/10/posutochno-tyumen-v-filtre-detskaya-krovatka-v-chate-zavtra-za-2500-inline-01.png\nOK inline_alt=5213\nOK inline_caption=5213\nOK inline_description=5213\nOK inline_image_upload=5214 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/10/posutochno-tyumen-v-filtre-detskaya-krovatka-v-chate-zavtra-za-2500-inline-02.png\nOK inline_alt=5214\nOK inline_caption=5214\nOK inline_description=5214\nOK inline_image_upload=5215 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/10/posutochno-tyumen-v-filtre-detskaya-krovatka-v-chate-zavtra-za-2500-inline-03.png\nOK inline_alt=5215\nOK inline_caption=5215\nOK inline_description=5215\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/posutochno-tyumen-v-filtre-detskaya-krovatka-v-chate-zavtra-za-2500/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 3,
+    "expected_inline": 3,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/posutochno-tyumen-v-filtre-detskaya-krovatka-v-chate-zavtra-za-2500/",
+    "errors": []
+  }
+}

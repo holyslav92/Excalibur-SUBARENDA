@@ -1,5 +1,20 @@
 # WP publish log — Excalibur BLOG
 
+## B43 — 2026-10-03
+
+- topic_id: B43
+- slug: `posutochno-tyumen-v-filtre-detskaya-krovatka-v-chate-zavtra-za-2500`
+- post_id: 5211
+- permalink: `/blog/posutochno-tyumen-v-filtre-detskaya-krovatka-v-chate-zavtra-za-2500/`
+- featured_image: 5212 (cover + `*-1024x576` intermediates refreshed)
+- inline_images: 5213–5215 (3 slots)
+- schema_meta: ok
+- categories: 101, 104, 106 (posutochnaya-arenda, zhkh-i-doplaty, sovety-gostyam)
+- live-page gate: PASS
+- dzen RSS: intermediate refresh + `live_dzen_bump` (post_modified_gmt bumped)
+- interlink inbound: B01 post 3745
+- llms.txt + llms-full.txt: deployed
+
 ## B42 — 2026-10-02
 
 - topic_id: B42
