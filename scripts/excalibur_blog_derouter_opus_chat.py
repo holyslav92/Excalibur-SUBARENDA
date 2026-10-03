@@ -344,11 +344,8 @@ def call_derouter_chat(
     if role == "research":
         payload["max_tokens"] = 4500
 
-    endpoints = (
-        [FALLBACK_ENDPOINT, PRIMARY_ENDPOINT]
-        if role == "research"
-        else [PRIMARY_ENDPOINT, FALLBACK_ENDPOINT]
-    )
+    # Research: primary first (fallback mirror often meta-refuses assembled notes).
+    endpoints = [PRIMARY_ENDPOINT, FALLBACK_ENDPOINT]
     last_error: Exception | None = None
 
     for endpoint in endpoints:
