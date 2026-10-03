@@ -1,0 +1,50 @@
+{
+  "topic_id": "B43",
+  "slug": "posutochno-tyumen-v-filtre-detskaya-krovatka-v-chate-zavtra-za-2500",
+  "cover_family": "brand_collage",
+  "style_preset": "the_rieltor_twilight_gold",
+  "pipeline": "slice4_grid_1x_image_api",
+  "file": "cover/cover.png",
+  "alt": "Родители с малышом в посуточной квартире Тюмени: в фильтре отмечена детская кроватка, в углу пусто, на столе распечатка с заголовком про кроватку и завтрашнюю доплату",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-slice4.png",
+  "generated_at": "2026-10-03T12:43:55+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Родители с малышом в посуточной квартире Тюмени: в фильтре отмечена детская кроватка, в углу пусто, на столе распечатка с заголовком про кроватку и завтрашнюю доплату",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Сравнение: галочка в фильтре бронирования и пустой угол в квартире без кроватки",
+      "h2_anchor": "Галочка — это поиск, а не обещание",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Схема: сообщение в чате про кроватку завтра и доплату 2500 рублей после заселения",
+      "h2_anchor": "Почему «завтра» меняет весь смысл",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Диаграмма: цена ночи и отдельная доплата за детскую кроватку, напоминание спросить до оплаты",
+      "h2_anchor": "Доплата важна не меньше срока",
+      "visual_type": "bar_timeline_chart",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}
