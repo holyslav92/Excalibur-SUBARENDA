@@ -1,0 +1,66 @@
+{
+  "status": "PASS",
+  "topic_id": "B43",
+  "slug": "posutochno-tyumen-v-filtre-detskaya-krovatka-v-chate-zavtra-za-2500",
+  "research_date": "2026-10-03",
+  "summary": "CASE crib_filter_promise: фильтр «детская кроватка» → в чате «завтра за 2 500 ₽». Fresh Dobriy_dom_72 Oct 1–3 family/heating posts; Sutochno official rules on prices/children vs amenities; Wordstat P0 «квартиры посуточно тюмень» 3963 Tyumen / 8919 RU.",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "t.me/s/Dobriy_dom_72 2026-10-03 family weekend post + 2026-10-01 arrival checklist",
+    "source_type": "community",
+    "urls": [
+      "https://t.me/s/Dobriy_dom_72",
+      "https://t.me/klyshin_A",
+      "https://memory/scout/scout-assembled-input-2026-10-03.md"
+    ],
+    "accessed_at": "2026-10-03"
+  },
+  "freshness_audit": {
+    "research_date": "2026-10-03",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://t.me/s/Dobriy_dom_72",
+      "published_at": "2026-10-03",
+      "note": "«Выходные с мамой» — семейная поездка, бронь заранее, бесконтактный заезд."
+    },
+    "additional_fresh_signals": [
+      {
+        "url": "https://t.me/s/Dobriy_dom_72",
+        "published_at": "2026-10-01",
+        "type": "community",
+        "note": "Чеклист первых минут в квартире (батарея, окно, горячая вода) — проверка факта после входа."
+      },
+      {
+        "url": "https://t.me/klyshin_A",
+        "published_at": "2026-10-03",
+        "type": "scout_editorial",
+        "note": "Topic-bank hook crib_filter_promise (filter amenity vs pay/tomorrow), not a verified Tyumen transcript."
+      }
+    ]
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "source": "mcp-kv live 2026-10-03",
+    "regions": ["225", "55", "11176"],
+    "p0_phrase": "квартиры посуточно тюмень",
+    "p0_volume_tyumen_55_11176": 3963,
+    "p0_volume_ru225": 8919,
+    "niche_phrase": "квартира посуточно с детской кроваткой",
+    "niche_volume_ru225": 37
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "note": "No bank/developer tariff claims; Sutochno.ru official help/blog/rules cited for platform mechanics only"
+  },
+  "derouter": {
+    "first_attempt": "PASS",
+    "second_attempt": null,
+    "model": "gpt-6-luna",
+    "chars": 8342
+  },
+  "overlap_guard": {
+    "distinct_from": ["B24", "B25"],
+    "note": "B24 = «можно с детьми» surcharge; B25 = sleep places vs photo; B43 = crib amenity filter + delayed delivery fee"
+  }
+}
