@@ -23,7 +23,7 @@ from excalibur_blog_site_base import (
 )
 
 DEFAULT_CATALOG_PATH = "memory/live-catalog.json"
-MAX_LISTING_PAGES = 8
+MAX_LISTING_PAGES = 24
 USER_AGENT = "ExcaliburBlogLiveCatalog/1.0"
 
 
