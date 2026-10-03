@@ -1,0 +1,10 @@
+{
+  "topic_id": "B43",
+  "description": "Галочка была, кроватки — нет: в Тюмени семья узнала про «привезём завтра» уже после дороги, когда малыш устал. Что спросить у хозяина до оплаты — показывает Добрый дом.",
+  "rhythm": "klyshin_case_hook",
+  "geo": "Тюмень",
+  "author_brand": "Добрый дом",
+  "not_equal_title": true,
+  "not_truncated_lead": true,
+  "verdict": "PASS"
+}
