@@ -1,5 +1,20 @@
 # WP publish log — Excalibur BLOG
 
+## B44 — 2026-10-04
+
+- topic_id: B44
+- slug: `posutochno-tyumen-v-chate-zalog-3000-bank-zamorozil-11400`
+- post_id: 5218
+- permalink: `/blog/posutochno-tyumen-v-chate-zalog-3000-bank-zamorozil-11400/`
+- featured_image: 5219 (cover + `*-1024x576` intermediates refreshed)
+- inline_images: 5220–5222 (3 slots, wp-content URLs)
+- schema_meta: ok
+- categories: 101, 102 (posutochnaya-arenda, zalog-i-vyiezd)
+- live-page gate: PASS
+- dzen RSS: `OK dzen_yzen_meta=1`; intermediate refresh + `live_dzen_bump`
+- interlink inbound: B01 post 3745
+- llms.txt + llms-full.txt: deployed
+
 ## B43 — 2026-10-03
 
 - topic_id: B43

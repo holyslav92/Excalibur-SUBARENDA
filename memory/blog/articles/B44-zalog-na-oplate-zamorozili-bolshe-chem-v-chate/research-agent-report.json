@@ -1,0 +1,103 @@
+{
+  "status": "PASS",
+  "topic_id": "B44",
+  "slug": "zalog-na-oplate-zamorozili-bolshe-chem-v-chate",
+  "research_date": "2026-10-04",
+  "summary": "CASE Tyumen: chat zalog 3000 RUB vs card hold 11400 before check-in code; hold vs deposit vs prepay; fresh Dobriy_dom_72 Oct checkout surprise; Sutochno official deposit/price rules; Wordstat P0 залог 22 Tyumen.",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "t.me/s/Dobriy_dom_72 Oct 2026 checkout commission line + early Oct family/heating posts",
+    "source_type": "community",
+    "urls": [
+      "https://t.me/s/Dobriy_dom_72",
+      "https://t.me/klyshin_A"
+    ],
+    "accessed_at": "2026-10-04",
+    "note": "Commission-on-checkout post is adjacent signal; 3000/11400 hold is editorial composite, not channel transcript."
+  },
+  "freshness_audit": {
+    "research_date": "2026-10-04",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://t.me/s/Dobriy_dom_72",
+      "published_at": "2026-10-04",
+      "note": "«Без комиссии» filter vs +1187 on payment screen; Oct 1–3 family/heating posts."
+    }
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "source": "mcp-kv live 2026-10-04",
+    "regions": ["225", "55", "11176"],
+    "observations": [
+      {
+        "phrase": "квартира посуточно залог",
+        "volume": 22,
+        "region": "55+11176",
+        "source": "mcp_kv_live"
+      },
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 3963,
+        "region": "55+11176",
+        "source": "mcp_kv_live"
+      },
+      {
+        "phrase": "посуточно комиссия",
+        "volume": 1769,
+        "region": "225",
+        "source": "mcp_kv_live"
+      },
+      {
+        "phrase": "не вернули залог за квартиру посуточно",
+        "volume": 31,
+        "region": "225",
+        "source": "mcp_kv_live"
+      }
+    ],
+    "mcp_errors": []
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "Sutochno.ru platform rules only; no bank tariff digits",
+    "verified_claims": 3,
+    "entities_checked": ["sutochno"],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-6-luna",
+    "stamp": "memory/blog/articles/B44-zalog-na-oplate-zamorozili-bolshe-chem-v-chate/derouter-opus-stamp-research.json",
+    "first_attempt": "BLOCKER_API",
+    "second_attempt": "PASS",
+    "note": "First calls HTTP 524 (~120s origin timeout). Retry with minimal system prompt + max_tokens cap succeeded; notes structure/URLs normalized post-Derouter."
+  },
+  "source_count": 8,
+  "practical_facts_count": 12,
+  "limitations": [
+    "Composite case — no verified booking ID.",
+    "Avito legal page blocked from cloud IP.",
+    "Dobriy post documents commission surprise, not 11400 hold specifically.",
+    "Distinct from B34 door zalog, B02 return dispute, B32 price stack framing."
+  ],
+  "writer_safe_urls": [
+    "https://t.me/Dobriy_dom_72",
+    "https://t.me/Dobriy_dom_Tyumen",
+    "https://max.ru/id660300569233_biz",
+    "https://добрыйдом-72.рф/",
+    "https://добрыйдом-72.рф/booking/",
+    "https://t.me/klyshin_A",
+    "https://sutochno.ru/help/gosti/safety",
+    "https://sutochno.ru/sj/iz-chego-skladivaetsya-stoimost-bronirovaniya",
+    "https://sutochno.ru/blog/rules",
+    "https://pay.yandex.ru/blog/articles/holdirovanie-platezhey-dlya-biznesa",
+    "https://www.directline.pro/connect/p/zalog-pri-sdache-kvartiry-posutochno/"
+  ],
+  "errors": []
+}

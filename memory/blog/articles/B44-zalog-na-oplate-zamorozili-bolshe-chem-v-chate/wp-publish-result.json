@@ -1,0 +1,27 @@
+{
+  "slug": "posutochno-tyumen-v-chate-zalog-3000-bank-zamorozil-11400",
+  "topic_id": "B44",
+  "permalink": "{{SITE_BASE}}/blog/posutochno-tyumen-v-chate-zalog-3000-bank-zamorozil-11400/",
+  "publish_method": "sftp",
+  "cover_evidence": {
+    "path": "memory/blog/articles/B44-zalog-na-oplate-zamorozili-bolshe-chem-v-chate/cover/cover.png",
+    "source": "existing_file",
+    "decode_verified": true,
+    "bytes": 966908,
+    "detected_format": "png"
+  },
+  "raw_output": "OK post=5218 slug=posutochno-tyumen-v-chate-zalog-3000-bank-zamorozil-11400\nOK categories=101,102\nOK dzen_yzen_meta=1\nOK featured_image=5219\nOK featured_alt=1\nOK featured_caption=1\nOK featured_description=1\nOK schema_meta=1\nOK skip_theme_faq_meta=1\nOK skip_engagement_quiz_meta=1\nOK skip_side_stickers_meta=1\nOK inline_image_upload=5220 src=cover/inline-01.png url={{SITE_BASE}}/wp-content/uploads/2026/10/posutochno-tyumen-v-chate-zalog-3000-bank-zamorozil-11400-inline-01.png\nOK inline_alt=5220\nOK inline_caption=5220\nOK inline_description=5220\nOK inline_image_upload=5221 src=cover/inline-02.png url={{SITE_BASE}}/wp-content/uploads/2026/10/posutochno-tyumen-v-chate-zalog-3000-bank-zamorozil-11400-inline-02.png\nOK inline_alt=5221\nOK inline_caption=5221\nOK inline_description=5221\nOK inline_image_upload=5222 src=cover/inline-03.png url={{SITE_BASE}}/wp-content/uploads/2026/10/posutochno-tyumen-v-chate-zalog-3000-bank-zamorozil-11400-inline-03.png\nOK inline_alt=5222\nOK inline_caption=5222\nOK inline_description=5222\nOK post_content_rewritten=1\npermalink={{SITE_BASE}}/blog/posutochno-tyumen-v-chate-zalog-3000-bank-zamorozil-11400/\n",
+  "media_check": {
+    "featured_ok": true,
+    "inline_ok": 3,
+    "expected_inline": 3,
+    "errors": []
+  },
+  "verdict": "pass",
+  "live_page": {
+    "gate": "live-page",
+    "status": "PASS",
+    "permalink": "{{SITE_BASE}}/blog/posutochno-tyumen-v-chate-zalog-3000-bank-zamorozil-11400/",
+    "errors": []
+  }
+}

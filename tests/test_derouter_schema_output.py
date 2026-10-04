@@ -9,6 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from excalibur_blog_derouter_opus_chat import (
+    sanitize_schema_system_prompt,
     schema_derouter_output_errors,
     strip_jsonld_fences,
 )  # noqa: E402
@@ -48,6 +49,17 @@ class DerouterSchemaOutputTests(unittest.TestCase):
         wrapped = '```json\n{"@type":"BlogPosting"}\n```'
         self.assertEqual(strip_jsonld_fences(wrapped), '{"@type":"BlogPosting"}')
         self.assertEqual(schema_derouter_output_errors(wrapped), [])
+
+    def test_sanitize_schema_system_strips_derouter_echo_triggers(self) -> None:
+        raw = (
+            "Rules\n"
+            "Run excalibur_blog_derouter_opus_chat.py --role schema.\n"
+            "DEROUTER SCHEMA BLOCKER\n"
+            "Keep headline.\n"
+        )
+        cleaned = sanitize_schema_system_prompt(raw)
+        self.assertNotIn("excalibur_blog_derouter", cleaned.lower())
+        self.assertIn("Keep headline", cleaned)
 
 
 if __name__ == "__main__":

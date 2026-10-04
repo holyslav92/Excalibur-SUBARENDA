@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "handoff_id": "df4658d6-19df-43e1-b0ae-7c7c3df82263",
+  "issued_at": "2026-10-04T06:08:43.426145+00:00",
+  "editorial_canon": "dobry_dom_voice_reset_v1",
+  "discovered_hub": {
+    "slug": "travel",
+    "title": "Путешествия",
+    "url": "https://dzen.ru/topic/travel",
+    "subscribers": 7419022,
+    "topic_id": "5168",
+    "discovered_from_seeds": [
+      "путешествия",
+      "отели",
+      "недвижимость",
+      "аренда квартир",
+      "туризм"
+    ]
+  },
+  "viral_source": {
+    "title": "✈️ Как связаться с техподдержкой Ozon Travel: телефон, чат, возврат билетов, отмена бронирования и помощь с заказом онлайн",
+    "url": "https://dzen.ru/a/ah0F7VYv2THXMskj",
+    "viral_score": 7.46
+  },
+  "guest_angle_ru": "Как снять квартиру посуточно в Тюмени без стресса: заранее понять условия залога, получить понятную инструкцию по коду и заселению, быстро связаться с хозяином и не остаться один на один с проблемой, если что-то не так.",
+  "tyumen_wound_hint": "После дороги гостю важны предсказуемое бесконтактное заселение, прозрачный залог, чистая квартира и оперативная связь — особенно вечером, в мороз или при задержке транспорта.",
+  "candidates_count": 20,
+  "anti_copy": "Do not copy or closely paraphrase viral_source body; angle only."
+}

@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "{{SITE_BASE}}/blog/v-kartochke-3400-za-noch-na-oplate-8816-za-dve/",
+      "slug": "v-kartochke-3400-za-noch-na-oplate-8816-za-dve",
+      "anchor": "в карточке стояло 3 400 ₽ за ночь, а на оплате вышло 8 816 ₽ за две",
+      "catalog_title": "В карточке 3 400 ₽ за ночь. На оплате — 8 816 ₽ за две ночи",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "{{SITE_BASE}}/blog/posutochno-tyumen-v-filtre-bez-predoplaty-perevod-do-koda/",
+      "slug": "posutochno-tyumen-v-filtre-bez-predoplaty-perevod-do-koda",
+      "anchor": "до кода заселения",
+      "catalog_title": "В фильтре посуточно — «без предоплаты». До кода попросили 3 200 ₽ на карту",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "{{SITE_BASE}}/blog/pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate/",
+      "slug": "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+      "anchor": "предоплата 3 000 ₽ и тишина в чате после перевода",
+      "catalog_title": "Перевели 3 000 ₽ предоплатой. К вечеру — тишина в чате",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "{{SITE_BASE}}/blog/posutochno-tyumen-stiralnaya-v-kartochke-i-zalog/",
+      "slug": "posutochno-tyumen-stiralnaya-v-kartochke-i-zalog",
+      "anchor": "стиральную в карточке и залог у двери",
+      "catalog_title": "«Стиральная машина есть» в фильтре. К 3-й ночи — мокрое бельё, прачечная, 1 100 ₽",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "outbound_unique_slugs": [
+    "v-kartochke-3400-za-noch-na-oplate-8816-za-dve",
+    "posutochno-tyumen-v-filtre-bez-predoplaty-perevod-do-koda",
+    "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+    "posutochno-tyumen-stiralnaya-v-kartochke-i-zalog"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B44-zalog-na-oplate-zamorozili-bolshe-chem-v-chate",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}

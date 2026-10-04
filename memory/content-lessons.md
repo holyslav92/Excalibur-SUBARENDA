@@ -187,3 +187,57 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+## LESSON-20261004-0756-B44-deposit-hold-chat-checkout-day0
+status: proposed
+topic_id: B44
+category: structure
+confidence: low
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: `content-evidence-report.json` absent; `excalibur_blog_content_evidence_gate.py` → SKIP.
+- artifact: `memory/scout/excalibur-blog-handoff.md`
+  finding: Klyshin `hook_id: deposit_before_keys` — chat small deposit vs large card hold before code; Wordstat rework: sparse «залог на карте посуточно» → spine P0 «квартира посуточно залог» **17** (Tyumen 55) | RU «не вернули залог за квартиру посуточно» 31 | «посуточно комиссия» 1769 (225) as checkout-sum context; angle_rotation excludes B34 door-zalog / B02 return / live «залог к обеду».
+- artifact: `memory/blog/articles/B44-zalog-na-oplate-zamorozili-bolshe-chem-v-chate/case-delivery-gate.json`
+  finding: `status: PASS` — H1 chat 3 000 ₽ vs bank hold 11 400 before code (`dobry_dom_voice_reset_v1`).
+- artifact: `memory/blog/articles/B44-zalog-na-oplate-zamorozili-bolshe-chem-v-chate/wp-publish-result.json`
+  finding: publish PASS 2026-10-04 (WP post 5218, featured + 3 inline, categories 101/102).
+- artifact: `memory/blog/articles/B44-zalog-na-oplate-zamorozili-bolshe-chem-v-chate/interlink-gate.json`
+  finding: outbound 4 siblings (prepay silence, washer+zalog, price stack 3400→8816, filter no-prepay) — PASS.
+- artifact: `memory/blog/articles/B44-zalog-na-oplate-zamorozili-bolshe-chem-v-chate/cover/slice4-mcp-result.json`
+  finding: Grsai `delivery: native_undersized_no_vip` 1672×940 → upscale/split shipped; Cover-QA + slice4 gate PASS (parallel to LESSON-20260929-0650-B37).
+- artifact: word-count probe (plain text, same tokenizer as prior lessons)
+  finding: `drafts/writer.html` **1080** words → `article.html` **982** words after Sol (~9% shrink); within 650–1100 band; less compression than B43 crib CASE.
+- metrika_signal: none — `METRIKA FEEDBACK BLOCKER` (`YANDEX_METRIKA_OAUTH_TOKEN` / `YANDEX_METRIKA_COUNTER_ID` unset); see `memory/pipeline-fix-queue.md#INC-20260925-1506-content-learner-metrika-credentials`.
+
+### Named blockers
+- EVIDENCE_SKIPPED — no editorial evidence table; no causal quality claims from evidence report.
+- METRIKA_CREDENTIALS — behavioral cohort unavailable for B44 day-0.
+- LOW_SAMPLE — fresh publish; no on-site Metrika match possible this run.
+- WEAK_WORDSTAT_NICHE — Tyumen P0 «квартира посуточно залог» 17; demand carried by rework + checkout/commission context (expected Scout pattern, not skip).
+
+### Keep
+- `deposit_before_keys` wound (promised chat deposit vs payment-screen hold before keys) distinct from B34 «без залога у двери», B40 prepay-before-code, B02 return/scratch, live return-timing posts.
+- Scout dual-gate: do not drop hook on Tyumen 17; log rework + supporting RU clusters + spine; ship dzen_shape «3 000 в чате — 11 400 на оплате, код нет».
+- Outbound interlink cluster to prepay/price-stack/zalog siblings — strengthens buyer checkout literacy without cloning saturated return-zalog H1s.
+
+### Change
+- After Metrika credentials land: re-ingest (`--days 30 --ingest`) and attach cohort for slug `posutochno-tyumen-v-chate-zalog-3000-bank-zamorozil-11400`; do not infer niche SEO failure from day-0.
+- Human (optional): if second `deposit_before_keys` article shows Sol shrink >15%, review Sol skill for preserving «what to screenshot before pay / hold vs charge» utility blocks — B44 ~9% only; no Writer prompt edit.
+
+### Never again
+- Skip `deposit_before_keys` solely because Tyumen zalog P0 <50 without rework log + angle_rotation (B44 shipped correctly).
+- Treat missing Metrika env as silent skip in content-learner.
+- Auto-edit `shared/writer-master-prompt.md` from one weak-Wordstat deposit lesson.
+
+### Proposed apply
+- Env: resolve Metrika secrets (existing INC); optional confidence bump when `matched_rows` > 0.
+- Scout: no change — weak local P0 + commission context already canon.
+- Cover: no new durable apply — Grsai undersized pattern covered by B37 lesson.
+
+### Durable applied
+- none — day-0 SKIP + Metrika BLOCKER; deposit-hold angle first named lesson; no repeat pattern for automated apply.
+
+### Resolution
+status: recorded
