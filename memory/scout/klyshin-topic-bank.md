@@ -32,6 +32,12 @@ Prefer **high-volume guest P0** (Wordstat 55+11176, compare 225).
 
 **Dzen pattern 1** (N советов) — **NOT default**. Prefer 2–5.
 
+## B45 (2026-10-04)
+
+| hook_id | final P0 | article |
+|---------|----------|---------|
+| `hot_booking_skip_house_rules` | «квартиры посуточно тюмень» 3889 (55+11176) | B45 — памятка/штраф на выезде |
+
 ---
 
 ## P0 queue — 26.08–10.09 YEKT
