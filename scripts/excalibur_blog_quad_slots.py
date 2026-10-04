@@ -158,7 +158,27 @@ def uses_scene_composite_v1(root: Path | None = None) -> bool:
 
 
 def uses_dzen_story_collage_v1(root: Path | None = None) -> bool:
-    return load_cover_canon_id(root) in DZEN_STORY_COLLAGE_CANON_IDS
+    root = root or project_root()
+    if load_cover_canon_id(root) in DZEN_STORY_COLLAGE_CANON_IDS:
+        return True
+    tenant_path = root / "shared" / "tenant-config.json"
+    if tenant_path.is_file():
+        try:
+            tenant = json.loads(tenant_path.read_text(encoding="utf-8"))
+            mode = str(tenant.get("cover_mode") or "").casefold()
+            if mode in {"full_grsai_cover", "grsai_full_cover"}:
+                return True
+        except json.JSONDecodeError:
+            pass
+    style_path = root / "memory/cover/quad-style-dobry-dom.json"
+    if style_path.is_file():
+        try:
+            style = json.loads(style_path.read_text(encoding="utf-8"))
+            if str(style.get("style_id") or "") in DZEN_STORY_COLLAGE_CANON_IDS:
+                return True
+        except json.JSONDecodeError:
+            pass
+    return False
 
 
 def uses_full_grsai_cover(root: Path | None = None) -> bool:
