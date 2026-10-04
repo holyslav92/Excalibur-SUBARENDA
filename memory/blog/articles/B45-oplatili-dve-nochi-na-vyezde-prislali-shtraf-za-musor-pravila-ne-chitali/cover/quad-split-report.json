@@ -286,10 +286,6 @@
   "html_inject": [
     "skip inline_1: already correct under H2 — Почему две ночи хочется забронировать как можно быстрее",
     "skip inline_2: already correct under H2 — Что было обещано до оплаты",
-    "skip inline_3: already correct under H2 — Три фотографии, которые пригодятся на выезде",
-    "injected inline_4 after H2 — Что было обещано до оплаты",
-    "injected inline_5 after H2 — Что было обещано до оплаты",
-    "injected inline_6 after H2 — Три фотографии, которые пригодятся на выезде",
-    "injected inline_7 after H2 — Короче"
+    "skip inline_3: already correct under H2 — Три фотографии, которые пригодятся на выезде"
   ]
 }
