@@ -1,0 +1,10 @@
+{
+  "topic_id": "B45",
+  "description": "Две ночи уже оплачены, а у подъезда в чате всплывает «ночной заезд 2 500 ₽» — и код обещают только после перевода. Разберём, почему так бывает и что спросить до вылета.",
+  "rhythm": "klyshin_case_hook",
+  "geo": "Тюмень",
+  "author_brand": "Добрый дом",
+  "not_equal_title": true,
+  "not_truncated_lead": true,
+  "verdict": "PASS"
+}
