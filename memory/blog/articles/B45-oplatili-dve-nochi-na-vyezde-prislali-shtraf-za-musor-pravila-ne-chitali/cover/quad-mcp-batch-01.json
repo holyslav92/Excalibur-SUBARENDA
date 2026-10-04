@@ -1,0 +1,31 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 1,
+  "model_policy": "primary_or_vip_for_2k",
+  "vip_disabled": false,
+  "max_generation_attempts": 2,
+  "output_canvas": "cover/canvas-quad-01.png",
+  "result_path": "cover/quad-mcp-result-01.json",
+  "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+  "preferred_image_flow": {
+    "provider": "grsai",
+    "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
+    "resolution": "2K"
+  },
+  "jobs": [
+    {
+      "slot": "canvas_quad",
+      "tool": "grsai",
+      "mcp_args": {
+        "prompt": "WOW RU collage, airy #FFFFFF high-key, Tyumen October 2026 AUTUMN golden leaves outside window, NO winter/snow. Canvas 2048x1152 2x2 grid; white gutters. Ban: dark cinematic, WP UI, host face, pill phone overlay, model-drawn «Добрый дом» logo, cat meme stickers.\nALL panels TR pad = clean wall 8-12% ONLY for factory logo paste AFTER — ZERO drawn logo on TR.\nCover TL: guest at kitchen door with trash bag, delivery boxes, cups in sink; phone chat «штраф 900 ₽ иначе удержим залог»; LARGE Cyrillic hook «Правила потом» gold highlight ONLY «потом»; second line «штраф 900 ₽ на выезде»; phone +7 (993) 574-83-22 hand-painted on wooden info board in scene, NOT black pill NOT button; Wordstat stickers «квартиры посуточно тюмень» «квартира посуточно правила»; ONE tired-guest people-meme sticker BL ≤10%; TR pad empty.\nTR inline_1 infographic_card: TXT:две ночи|~7200 ₽|правила потом. TR pad empty for factory logo.\nBL inline_2 comparison_table_ui: TXT:штраф 900 ₽|залог цел|иначе удержим. ZERO logos entire quadrant.\nBR inline_3 checklist_board: TXT:снимите фото|скриншоты|до оплаты. TR pad empty for factory logo.",
+        "aspect_ratio": "16:9",
+        "resolution": "2K"
+      }
+    }
+  ],
+  "validation": {
+    "prompt_chars": 1280,
+    "max_prompt_chars": 3500,
+    "resolution": "2K"
+  }
+}
