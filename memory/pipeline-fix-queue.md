@@ -225,3 +225,50 @@ checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_derouter_opus_chat.py`
 - `python3 -m unittest tests.test_derouter_schema_output -q`
 commit: pending-parent-commit
+
+## INC-20261004-1032-viraldzen-package-missing-cloud
+status: fixed
+run_date: 2026-10-04
+role: excalibur-blog-fixer
+topic_id: B45
+article_dir: memory/blog/articles/B45-oplatili-dve-nochi-na-vyezde-prislali-shtraf-za-musor-pravila-ne-chitali
+severity: medium
+category: env
+
+### What went wrong
+- B45 slot STEP 0 (`excalibur_blog_viraldzen_slot.py`) hit
+  `VIRALDZEN BLOCKER: package viraldzen not installed` although
+  `requirements.txt` lists the git dependency.
+- Cloud pod had not run `.cursor/environment.json` install (or stale env
+  snapshot without `viraldzen`).
+
+### How the agent recovered this run
+- `pip install` ViralDzen during slot; pipeline completed; WP post 5225 live.
+
+### Durable fix needed before next run
+- Preflight doctor must FAIL early when `viraldzen` import missing (before Scout).
+- Keep `environment.json` install on `requirements.txt` (already canonical).
+
+### Suggested files to inspect/change
+- `scripts/excalibur_blog_doctor.py`
+- `.cursor/environment.json`
+- `requirements.txt`
+
+### Secrets
+- none recorded
+
+### Fixer resolution
+status: fixed
+fixed_at: 2026-10-04
+fix_summary:
+- Doctor preflight checks `viraldzen` import with hint to `pip install -r requirements.txt`.
+- Regression test asserts doctor wires the gate (INC B45).
+files_changed:
+- `scripts/excalibur_blog_doctor.py`
+- `tests/test_dzen_content_rules.py`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_doctor.py`
+- `python3 -m unittest tests.test_dzen_content_rules.DzenContentRulesTest.test_doctor_requires_viraldzen_package -q`
+- `python3 scripts/excalibur_blog_doctor.py` (viraldzen OK when installed)
+commit: pending-parent-commit
