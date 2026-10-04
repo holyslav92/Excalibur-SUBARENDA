@@ -181,3 +181,30 @@ files_changed:
 checks_run:
 - `python3 -m unittest tests.test_publish_transport -q`
 commit: e92fc99c
+
+## INC-20261004-0710-schema-derouter-meta
+status: open
+run_date: 2026-10-04
+role: excalibur-blog-schema
+topic_id: B44
+article_dir: memory/blog/articles/B44-zalog-na-oplate-zamorozili-bolshe-chem-v-chate
+severity: medium
+category: derouter
+
+### What went wrong
+- `excalibur_blog_derouter_opus_chat.py --role schema` exited BLOCKER after retry:
+  `first_attempt: BLOCKER_META` (meta-refusal / contract echo), second attempt invalid JSON.
+
+### How the agent recovered this run
+- Manual `schema.jsonld` assembled from B43 canonical shape + `assembled-schema-inputs.md`;
+  `excalibur_blog_schema_gate.py` → PASS.
+
+### Durable fix needed before next run
+- Investigate Terra schema role meta-refusal rate; strengthen retry prompt or schema system trim.
+
+### Suggested files to inspect/change
+- `scripts/excalibur_blog_derouter_opus_chat.py`
+- `skills/schema-excalibur-blog/SKILL.md`
+
+### Secrets
+- none recorded

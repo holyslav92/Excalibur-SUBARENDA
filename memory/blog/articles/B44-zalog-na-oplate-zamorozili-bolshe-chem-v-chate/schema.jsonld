@@ -1,0 +1,28 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "В чате посуточно: залог 3 000 ₽ — на оплате заморозка 11 400, кода нет",
+  "description": "В переписке обещали залог 3 000 ₽, а банк при оплате заморозил 11 400 ₽ — и кода от двери до сих пор нет. Редакционный сценарий: одна авторизация может включать ночи, уборку, сервисный сбор и депозит; разбираем экран оплаты по строкам и отличаем холд от списания.",
+  "datePublished": "2026-10-04",
+  "author": {
+    "@type": "Organization",
+    "name": "Добрый дом",
+    "identifier": "dobry-dom"
+  },
+  "publisher": {
+    "@type": "LocalBusiness",
+    "name": "Добрый дом",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    },
+    "telephone": "+7 (993) 574-83-22"
+  },
+  "url": "{{SITE_BASE}}/blog/posutochno-tyumen-v-chate-zalog-3000-bank-zamorozil-11400/",
+  "@id": "{{SITE_BASE}}/blog/posutochno-tyumen-v-chate-zalog-3000-bank-zamorozil-11400/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/posutochno-tyumen-v-chate-zalog-3000-bank-zamorozil-11400/"
+  }
+}
