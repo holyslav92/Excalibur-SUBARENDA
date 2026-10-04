@@ -51,3 +51,4 @@ lessons, benchmarks, QA reports или соседние research-notes как о
 | B41 | posutochno-tyumen-kuhnya-kak-doma-plita-ne-zazhigaetsya-dostavki | «Кухня как дома» посуточно. Плита молчит — 4 200 ₽ на доставках | published |
 | B42 | posutochno-tyumen-dvuhkomnatnaya-vtoraya-kladovaya | Хозяин ответил: «вторая не сдаётся». Двушка посуточно — 10 800 ₽, за дверью кладовая | published |
 | B43 | posutochno-tyumen-v-filtre-detskaya-krovatka-v-chate-zavtra-za-2500 | «Детская кроватка» в фильтре посуточно — в чате: завтра за 2 500 ₽ | published |
+| B44 | posutochno-tyumen-v-chate-zalog-3000-bank-zamorozil-11400 | В чате посуточно: залог 3 000 ₽ — на оплате заморозка 11 400, кода нет | published |
