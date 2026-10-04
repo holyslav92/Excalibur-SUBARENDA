@@ -271,4 +271,4 @@ checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_doctor.py`
 - `python3 -m unittest tests.test_dzen_content_rules.DzenContentRulesTest.test_doctor_requires_viraldzen_package -q`
 - `python3 scripts/excalibur_blog_doctor.py` (viraldzen OK when installed)
-commit: pending-parent-commit
+commit: 26ab04a
