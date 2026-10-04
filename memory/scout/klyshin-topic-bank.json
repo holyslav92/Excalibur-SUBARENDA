@@ -3,7 +3,7 @@
   "source_channel": "https://t.me/klyshin_A",
   "source_label": "Алексей Клышин — angle only (ритм delivery, не копировать сделки)",
   "tenant": "Добрый дом — посуточная аренда / субаренда Тюмень",
-  "updated_at": "2026-09-22",
+  "updated_at": "2026-10-04",
   "timezone": "Asia/Yekaterinburg",
   "algorithm": "klyshin_hook → wordstat_probe → rework_for_demand → final_P0_or_skip_after_rework",
   "angle_rotation": {
@@ -270,6 +270,23 @@
       "final_p0": {"phrase": "квартиры посуточно тюмень", "volume_tyumen": 4409, "volume_ru": 9372},
       "wordstat_rework_log": "probe «комиссия посуточно» 1903 (225) → «уборка посуточно» 1932 (225) → «посуточно или отель» 8 (55+11176) / «отель или посуточная квартира» 280 (225) → «квартира посуточно тюмень цена» 92 (225) → final P0 «квартиры посуточно тюмень» 4409/9372",
       "used_in_articles": ["B32"]
+    },
+    {
+      "id": "hot_booking_skip_house_rules",
+      "queue_num": 12,
+      "hook_ru": "Даты горят. Оплатил, не открыв правила. На выезде — штраф по памятке.",
+      "angle": "спешная бронь → памятка/штрафы (мусор, посуда); NOT B23 простыни, NOT залог B44",
+      "klyshin_signal": "https://t.me/klyshin_A/3186 — ритм «не задам вопросов — заберут»",
+      "wordstat_probes": ["правила проживания посуточно", "квартиры посуточно тюмень"],
+      "dzen_pattern_prefer": [2, 3],
+      "anti_dup": ["deposit_chip", "checkout_linen", "burn_at_door", "prepay_ghost"],
+      "tyumen_localize": true,
+      "status": "used",
+      "last_seen": "2026-10-04",
+      "queue_slot": "2026-10-04 B45 scout",
+      "final_p0": {"phrase": "квартиры посуточно тюмень", "volume_tyumen": 3889, "volume_ru": 8881},
+      "wordstat_rework_log": "probe «правила проживания посуточно» 387/3 → «правила проживания в квартире посуточно» 283 → «уборка посуточно» 1932 host bias → final P0 «квартиры посуточно тюмень» 3889/8881",
+      "used_in_articles": ["B45"]
     }
   ],
   "parked_hooks": {

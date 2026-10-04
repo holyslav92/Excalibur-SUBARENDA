@@ -206,6 +206,12 @@ def main() -> int:
     )
     check(module_available("PIL"), "Pillow available", errors, warnings)
     check(module_available("numpy"), "numpy available", errors, warnings)
+    check(
+        module_available("viraldzen"),
+        "viraldzen available (pip install -r requirements.txt; STEP 0 ViralDzen)",
+        errors,
+        warnings,
+    )
 
     topics_dir = root / "memory/topics"
     check(

@@ -31,6 +31,11 @@ class DzenContentRulesTest(unittest.TestCase):
         doc = (ROOT / "scripts/excalibur_blog_doctor.py").read_text(encoding="utf-8")
         self.assertIn("shared/dzen-content-rules.md", doc)
 
+    def test_doctor_requires_viraldzen_package(self) -> None:
+        doc = (ROOT / "scripts/excalibur_blog_doctor.py").read_text(encoding="utf-8")
+        self.assertIn('module_available("viraldzen")', doc)
+        self.assertIn("requirements.txt", doc)
+
     def test_dzen_feed_patterns_in_style_and_soul(self) -> None:
         style = (ROOT / "shared/article-style.md").read_text(encoding="utf-8").lower()
         soul = (ROOT / "shared/SOUL.md").read_text(encoding="utf-8").lower()

@@ -1,0 +1,86 @@
+{
+  "topic_id": "B45",
+  "slug": "posutochno-tyumen-pravila-prozhivaniya-shtraf-musor-vyezd",
+  "cover_family": "brand_collage",
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "file": "cover/cover.png",
+  "alt": "Гость на выезде с пакетом мусора и сообщением о штрафе 900 ₽ после двух ночей посуточно в Тюмени.",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-quad-01.png",
+  "generated_at": "2026-10-04T10:22:21+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Гость на выезде с пакетом мусора и сообщением о штрафе 900 ₽ после двух ночей посуточно в Тюмени.",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Спешка при бронировании двух ночей около 7200 ₽ и отложенные правила.",
+      "h2_anchor": "Почему две ночи хочется забронировать как можно быстрее",
+      "visual_type": "infographic_card",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "На выезде штраф 900 ₽ и угроза удержать залог, пока депозит не списали.",
+      "h2_anchor": "Что было обещано до оплаты",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Сохранить фото кухни и скриншоты объявления до оплаты.",
+      "h2_anchor": "Три фотографии, которые пригодятся на выезде",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_4",
+      "file": "cover/inline-04.png",
+      "alt": "Что было в карточке до оплаты и что пришло отдельным файлом после брони.",
+      "h2_anchor": "Что было обещано до оплаты",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_5",
+      "file": "cover/inline-05.png",
+      "alt": "Разные трактовки фразы «уборка включена» про посуду и мусор.",
+      "h2_anchor": "Что было обещано до оплаты",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_6",
+      "file": "cover/inline-06.png",
+      "alt": "Снимки раковины, мусорного ведра и пакета при заселении и выезде.",
+      "h2_anchor": "Три фотографии, которые пригодятся на выезде",
+      "visual_type": "labeled_checklist",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_7",
+      "file": "cover/inline-07.png",
+      "alt": "Сначала правила и фото, потом спор о штрафе на выезде.",
+      "h2_anchor": "Короче",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}

@@ -1,5 +1,20 @@
 # WP publish log — Excalibur BLOG
 
+## B45 — 2026-10-04
+
+- topic_id: B45
+- slug: `posutochno-tyumen-pravila-prozhivaniya-shtraf-musor-vyezd`
+- post_id: 5225
+- permalink: `/blog/posutochno-tyumen-pravila-prozhivaniya-shtraf-musor-vyezd/`
+- featured_image: 5226 (cover + dzen_yzen_meta)
+- inline_images: 5227–5233 (7 slots, wp-content URLs)
+- schema_meta: ok
+- categories: 103, 102 (dogovor-i-pravila, zalog-i-vyiezd)
+- live-page gate: PASS
+- dzen RSS: `OK dzen_yzen_meta=1`
+- interlink inbound: B01 post 3745
+- llms.txt + llms-full.txt: deployed
+
 ## B44 — 2026-10-04
 
 - topic_id: B44

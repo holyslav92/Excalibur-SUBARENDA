@@ -1,0 +1,129 @@
+{
+  "topic_id": "B45",
+  "slug": "posutochno-tyumen-pravila-prozhivaniya-shtraf-musor-vyezd",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "Оплатили две ночи — штраф за мусор",
+  "cover_hook_highlight": "мусор",
+  "cover_headline_line1": "Правила потом",
+  "cover_headline_line2": "штраф 900 ₽ на выезде",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "wordstat_stickers": [
+    "квартиры посуточно тюмень",
+    "квартира посуточно правила"
+  ],
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_motifs": {
+    "composition": "kitchen doorway checkout guest phone chat fine trash bag delivery boxes dishes sink headline board empty top-right pad",
+    "location": "tyumen comfort+ apartment october 2026 golden leaves on windowsill cool daylight no snow no winter",
+    "meme": "tiny people-meme tired guest palm-on-forehead sticker cover panel only under 10 percent",
+    "prop_set": "smartphone chat screenshot 900 rubles trash bag delivery boxes cups in sink printed rules pdf",
+    "sticker_set": "квартиры посуточно тюмень квартира посуточно правила",
+    "joke": "paid 7200 for two nights rules link opened only at checkout trash fine appears"
+  },
+  "cover_emotion": "усталость гостя у двери с пакетом мусора и сообщением о штрафе",
+  "cover_scene": "Октябрь кухня у двери: мусор, коробки, телефон «900 ₽»; хук на бумаге; телефон на доске; pad TR; people-meme стикер.",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "scene_hint": "Кухня октябрь: мусор, коробки, чашки; чат «900 ₽»; хук на бумаге; +7 993 574-83-22 на доске; people-meme; pad TR.",
+      "alt": "Гость на выезде с пакетом мусора и сообщением о штрафе 900 ₽ после двух ночей посуточно в Тюмени.",
+      "meme_caption_ru": "",
+      "role": "cover_editorial_hero",
+      "sticky": "Сначала правила и фото"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "scene_hint": "Карточка: 2 ночи, ~7200 ₽, «правила потом». Pad TR.",
+      "alt": "Спешка при бронировании двух ночей около 7200 ₽ и отложенные правила.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Почему две ночи хочется забронировать как можно быстрее",
+      "visual_type": "infographic_card",
+      "labels": ["две ночи", "около 7200 ₽", "правила потом"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "scene_hint": "Таблица: 900 ₽, залог цел, «удержим». Без лого.",
+      "alt": "На выезде штраф 900 ₽ и угроза удержать залог, пока депозит не списали.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Что было обещано до оплаты",
+      "visual_type": "comparison_table_ui",
+      "labels": ["штраф 900 ₽", "залог пока цел", "иначе удержим"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "scene_hint": "Чек-лист: фото, скрины, до оплаты. Pad TR.",
+      "alt": "Сохранить фото кухни и скриншоты объявления до оплаты.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Три фотографии, которые пригодятся на выезде",
+      "visual_type": "checklist_board",
+      "labels": ["снимите фото", "сохраните скриншоты", "что было до оплаты"]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "scene_hint": "Таблица: объявление vs PDF после оплаты. Без лого.",
+      "alt": "Что было в карточке до оплаты и что пришло отдельным файлом после брони.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Что было обещано до оплаты",
+      "visual_type": "comparison_table_ui",
+      "labels": ["текст объявления", "файл правил", "после оплаты", "штрафы внутри"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "scene_hint": "Схема: уборка vs посуда/мусор. Без лого.",
+      "alt": "Разные трактовки фразы «уборка включена» про посуду и мусор.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Что было обещано до оплаты",
+      "visual_type": "workflow_diagram",
+      "labels": ["уборка включена", "посуда гостя", "мусор в пакете", "уточнить в чате"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "scene_hint": "Схема фото: раковина, ведро, пакет. Без лого.",
+      "alt": "Снимки раковины, мусорного ведра и пакета при заселении и выезде.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Три фотографии, которые пригодятся на выезде",
+      "visual_type": "labeled_checklist",
+      "labels": ["раковина", "ведро", "пакет у двери", "заселение и выезд"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "scene_hint": "Чек-лист: правила, фото, спор. Pad TR.",
+      "alt": "Сначала правила и фото, потом спор о штрафе на выезде.",
+      "meme_caption_ru": "",
+      "h2_anchor": "Короче",
+      "visual_type": "checklist_board",
+      "labels": ["правила до оплаты", "фото на выезде", "спросить пункт", "не платить из страха"]
+    }
+  },
+  "cover_keys_ru": ["квартиры посуточно тюмень", "квартира посуточно правила"],
+  "no_host_face": true,
+  "skip_identity_i2i": true
+}

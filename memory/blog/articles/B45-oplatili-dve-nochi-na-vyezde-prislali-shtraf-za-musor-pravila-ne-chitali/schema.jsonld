@@ -1,0 +1,24 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/posutochno-tyumen-pravila-prozhivaniya-shtraf-musor-vyezd/",
+  "url": "{{SITE_BASE}}/blog/posutochno-tyumen-pravila-prozhivaniya-shtraf-musor-vyezd/",
+  "mainEntityOfPage": "{{SITE_BASE}}/blog/posutochno-tyumen-pravila-prozhivaniya-shtraf-musor-vyezd/",
+  "headline": "«Правила потом»: 2 ночи посуточно — на выезде штраф за мусор",
+  "datePublished": "2026-10-04",
+  "description": "Гость в спешке оплатил две ночи посуточно, не открыв правила проживания, а на выезде получил претензию за мусор и угрозу удержать депозит. Что проверить до оплаты и как сохранить переписку при споре.",
+  "author": {
+    "@type": "Organization",
+    "name": "Добрый дом"
+  },
+  "publisher": {
+    "@type": "LocalBusiness",
+    "name": "Добрый дом",
+    "telephone": "+7 (993) 574-83-22",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    }
+  }
+}

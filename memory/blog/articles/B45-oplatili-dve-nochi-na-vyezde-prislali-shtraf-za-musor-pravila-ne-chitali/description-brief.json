@@ -1,0 +1,10 @@
+{
+  "topic_id": "B45",
+  "description": "«Я потом прочитаю» — а на выезде в Тюмени гость узнаёт, что мусор и посуда превратились в 900 ₽ и риск потерять депозит. Что проверять до оплаты посуточной квартиры?",
+  "rhythm": "klyshin_case_hook",
+  "geo": "Тюмень",
+  "author_brand": "Добрый дом",
+  "not_equal_title": true,
+  "not_truncated_lead": true,
+  "verdict": "PASS"
+}

@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "handoff_id": "a0af08bb-c922-4f35-84a5-a20f57a6dee7",
+  "issued_at": "2026-10-04T09:22:15.380718+00:00",
+  "editorial_canon": "dobry_dom_voice_reset_v1",
+  "discovered_hub": {
+    "slug": "travel",
+    "title": "Путешествия",
+    "url": "https://dzen.ru/topic/travel",
+    "subscribers": 7419022,
+    "topic_id": "5168",
+    "discovered_from_seeds": [
+      "путешествия",
+      "отели",
+      "недвижимость",
+      "аренда квартир",
+      "туризм"
+    ]
+  },
+  "viral_source": {
+    "title": "✈️ Как связаться с техподдержкой Ozon Travel: телефон, чат, возврат билетов, отмена бронирования и помощь с заказом онлайн",
+    "url": "https://dzen.ru/a/ah0F7VYv2THXMskj",
+    "viral_score": 7.46
+  },
+  "guest_angle_ru": "После дороги гостю важно не гадать, кто поможет, если планы изменились или не получается попасть в квартиру: заранее понятные правила отмены и быстрый контакт хозяина снимают лишнее напряжение.",
+  "tyumen_wound_hint": "Поздний приезд в незнакомый город и тревога, что код или инструкция по заселению не придут вовремя.",
+  "candidates_count": 20,
+  "anti_copy": "Do not copy or closely paraphrase viral_source body; angle only."
+}

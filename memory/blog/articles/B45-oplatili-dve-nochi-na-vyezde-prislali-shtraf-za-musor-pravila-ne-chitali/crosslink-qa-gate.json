@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "https://добрыйдом-72.рф/blog/pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate/",
+      "slug": "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+      "anchor": "перевёл предоплату и остался с тишиной в чате",
+      "catalog_title": "Перевели 3 000 ₽ предоплатой. К вечеру — тишина в чате",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/bez-zaloga-v-filtre-zalog-u-dveri/",
+      "slug": "bez-zaloga-v-filtre-zalog-u-dveri",
+      "anchor": "«без залога», а у двери залог попросили",
+      "catalog_title": "В фильтре — «без залога». У двери попросили 5 000 ₽ на личную карту",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/kommunalka-vklyuchena-schet-1840-na-vyezde/",
+      "slug": "kommunalka-vklyuchena-schet-1840-na-vyezde",
+      "anchor": "счёт на 1 840 ₽",
+      "catalog_title": "«Коммуналка включена». На выезде — счётчики и 1 840 ₽",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "https://добрыйдом-72.рф/blog/posutochno-tyumen-v-filtre-bez-predoplaty-perevod-do-koda/",
+      "slug": "posutochno-tyumen-v-filtre-bez-predoplaty-perevod-do-koda",
+      "anchor": "«без предоплаты» в фильтре и перевода до получения кода",
+      "catalog_title": "В фильтре посуточно — «без предоплаты». До кода попросили 3 200 ₽ на карту",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "outbound_unique_slugs": [
+    "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+    "bez-zaloga-v-filtre-zalog-u-dveri",
+    "kommunalka-vklyuchena-schet-1840-na-vyezde",
+    "posutochno-tyumen-v-filtre-bez-predoplaty-perevod-do-koda"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B45-oplatili-dve-nochi-na-vyezde-prislali-shtraf-za-musor-pravila-ne-chitali",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}
