@@ -1,0 +1,50 @@
+{
+  "topic_id": "B44",
+  "slug": "posutochno-tyumen-v-chate-zalog-3000-bank-zamorozil-11400",
+  "cover_family": "brand_collage",
+  "style_preset": "the_rieltor_twilight_gold",
+  "pipeline": "slice4_grid_1x_image_api",
+  "file": "cover/cover.png",
+  "alt": "Гость с чемоданом у двери посуточной квартиры в Тюмени: на телефоне экран банка «заморожено 11 400 ₽», в чате обещали залог 3 000, код от двери ещё не прислали",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-slice4.png",
+  "generated_at": "2026-10-04T07:48:22+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Гость с чемоданом у двери посуточной квартиры в Тюмени: на телефоне экран банка «заморожено 11 400 ₽», в чате обещали залог 3 000, код от двери ещё не прислали",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Сравнение: залог 3000 в переписке и состав итога 11400 на экране оплаты",
+      "h2_anchor": "Три тысячи в чате — не всегда вся сумма",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Схема: временная блокировка 11400 на карте и отличие от списания",
+      "h2_anchor": "Что означает слово «заморожено»",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Сравнение банковского холда и отсутствия кода заселения",
+      "h2_anchor": "Почему отсутствие кода усиливает тревогу",
+      "visual_type": "comparison_table",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}

@@ -1,0 +1,154 @@
+{
+  "agent": "excalibur-blog-cover-quad-split",
+  "status": "PASS",
+  "splits": [
+    {
+      "canvas_index": 1,
+      "manifest": "cover/quad-manifest.json",
+      "split": {
+        "source_canvas": "memory/blog/articles/B44-zalog-na-oplate-zamorozili-bolshe-chem-v-chate/cover/canvas-slice4.png",
+        "source_size_px": [
+          1672,
+          940
+        ],
+        "panel_size_px": [
+          836,
+          470
+        ],
+        "split_meta": {
+          "split_mode": "mechanical_center",
+          "h_gutter_px": null,
+          "v_gutter_px": null,
+          "requested_mode": "auto",
+          "fallback_reason": "aspect_crop_loss_too_high",
+          "rejected_gutter": {
+            "h_gutter_px": {
+              "start": 465,
+              "end": 507
+            },
+            "v_gutter_px": {
+              "start": 832,
+              "end": 875
+            },
+            "gutter_quality": {
+              "h_center_offset_px": 16.0,
+              "v_center_offset_px": 17.5,
+              "max_aspect_crop_loss": 0.0745,
+              "per_panel_crop_loss": {
+                "top_left": 0.006,
+                "top_right": 0.0366,
+                "bottom_left": 0.0745,
+                "bottom_right": 0.0339
+              },
+              "reject_reason": "aspect_crop_loss_too_high"
+            }
+          }
+        },
+        "output_size_px": [
+          1200,
+          675
+        ],
+        "outputs": {
+          "cover": {
+            "file": "cover/cover.png",
+            "quadrant": "top_left",
+            "box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 836,
+              "bottom": 470
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 0,
+              "right": 836,
+              "bottom": 470
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Гость с чемоданом у двери посуточной квартиры в Тюмени: на телефоне экран банка «заморожено 11 400 ₽», в чате обещали залог 3 000, код от двери ещё не прислали",
+            "h2_anchor": null
+          },
+          "inline_1": {
+            "file": "cover/inline-01.png",
+            "quadrant": "top_right",
+            "box_px": {
+              "left": 836,
+              "top": 0,
+              "right": 1672,
+              "bottom": 470
+            },
+            "raw_box_px": {
+              "left": 836,
+              "top": 0,
+              "right": 1672,
+              "bottom": 470
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Сравнение: залог 3000 в переписке и состав итога 11400 на экране оплаты",
+            "h2_anchor": "Три тысячи в чате — не всегда вся сумма"
+          },
+          "inline_2": {
+            "file": "cover/inline-02.png",
+            "quadrant": "bottom_left",
+            "box_px": {
+              "left": 0,
+              "top": 470,
+              "right": 836,
+              "bottom": 940
+            },
+            "raw_box_px": {
+              "left": 0,
+              "top": 470,
+              "right": 836,
+              "bottom": 940
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Схема: временная блокировка 11400 на карте и отличие от списания",
+            "h2_anchor": "Что означает слово «заморожено»"
+          },
+          "inline_3": {
+            "file": "cover/inline-03.png",
+            "quadrant": "bottom_right",
+            "box_px": {
+              "left": 836,
+              "top": 470,
+              "right": 1672,
+              "bottom": 940
+            },
+            "raw_box_px": {
+              "left": 836,
+              "top": 470,
+              "right": 1672,
+              "bottom": 940
+            },
+            "size_px": [
+              1200,
+              675
+            ],
+            "aspect_ratio": "16:9",
+            "alt": "Сравнение банковского холда и отсутствия кода заселения",
+            "h2_anchor": "Почему отсутствие кода усиливает тревогу"
+          }
+        }
+      }
+    }
+  ],
+  "manifest": "cover/quad-manifest.json",
+  "html_inject": [
+    "skip inline_1: already correct under H2 — Три тысячи в чате — не всегда вся сумма",
+    "skip inline_2: already correct under H2 — Что означает слово «заморожено»",
+    "skip inline_3: already correct under H2 — Почему отсутствие кода усиливает тревогу"
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "topic_id": "B44",
+  "canvas_file": "cover/canvas-slice4.png",
+  "layout": "2x2",
+  "pipeline": "slice4_grid_1x_image_api",
+  "inline_count": 3,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-slice4.png",
+      "batch_file": "cover/slice4-mcp-batch.json",
+      "prompt_file": "cover/slice4-mcp-prompt.txt",
+      "result_file": "cover/slice4-mcp-result.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    }
+  ],
+  "style_preset": "the_rieltor_twilight_gold",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "cover_hook": "Залог 3000 в чате — заморозка 11400",
+  "cover_hook_highlight": "заморозка",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "Grsai one draw slice4 autumn Tyumen; factory logo paste on cover tile after split.",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Гость с чемоданом у двери посуточной квартиры в Тюмени: на телефоне экран банка «заморожено 11 400 ₽», в чате обещали залог 3 000, код от двери ещё не прислали",
+      "scene_hint": "Светлая гостиная посуточной квартиры Тюмень, октябрь, тёплый дневной свет. На журнальном столике газета с крупным кириллическим заголовком «Залог 3000 в чате — заморозка 11400». На стене плоская светлая табличка с текстом +7 (993) 574-83-22 (не кнопка, не pill). Без смартфонов в кадре. Верхний правый угол — чистая светлая стена 8–12% без логотипа.",
+      "meme_caption_ru": "",
+      "sticky": "Кода пока нет"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Три тысячи в чате — не всегда вся сумма",
+      "visual_type": "comparison_table_ui",
+      "scene_hint": "Инфографика-сравнение на белом фоне: слева скрин чата «залог 3 000 ₽», справа разбивка строк checkout «ночи + уборка + депозит = 11 400», подписи «Обещали 3000», «В чате», «квартира посуточно залог» — без людей, без логотипа",
+      "alt": "Сравнение: залог 3000 в переписке и состав итога 11400 на экране оплаты",
+      "labels": [
+        "Обещали 3000",
+        "В чате"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Что означает слово «заморожено»",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Схема-лента: карта → «холд/предавторизация» → стрелка «списание или разблокировка», рядом цифра 11 400, подписи «Заморозка 11400», «Кода нет», осенний интерьер на фоне, светлый #FFFFFF",
+      "alt": "Схема: временная блокировка 11400 на карте и отличие от списания",
+      "labels": [
+        "Заморозка 11400",
+        "Кода нет"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Почему отсутствие кода усиливает тревогу",
+      "visual_type": "comparison_table",
+      "scene_hint": "Две колонки: «блокировка на карте» vs «код от двери не пришёл», чек-лист «Проверьте строки», «Спросите про возврат», стикер «квартиры посуточно Тюмень», без brand lockup",
+      "alt": "Сравнение банковского холда и отсутствия кода заселения",
+      "labels": [
+        "Проверьте строки",
+        "Спросите про возврат"
+      ]
+    }
+  },
+  "cover_keys_ru": [],
+  "cover_motifs": {
+    "composition": "гость чемодан у двери смартфон банк холд 11400 чат залог 3000 без кода",
+    "location": "тюмень посуточная прихожая октябрь золотые листья прохладное утро comfort+",
+    "meme": "people-meme sticker worried guest palm on forehead tiny bottom-left under 12 percent frame",
+    "prop_set": "смартфон чемодан куртка распечатка строк оплаты intercom",
+    "sticker_set": "квартира посуточно залог квартиры посуточно тюмень",
+    "joke": "в чате три тысячи банк заморозил одиннадцать четыреста код не прислали"
+  },
+  "wordstat_stickers": [
+    "квартира посуточно залог",
+    "квартиры посуточно Тюмень"
+  ],
+  "cover_phone_cta": "+7 (993) 574-83-22"
+}
