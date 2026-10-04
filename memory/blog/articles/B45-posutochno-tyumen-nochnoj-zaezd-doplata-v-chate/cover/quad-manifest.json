@@ -1,0 +1,104 @@
+{
+  "topic_id": "B45",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": ["cover", "inline_1", "inline_2", "inline_3"],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": ["inline_4", "inline_5", "inline_6", "inline_7"],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types.json",
+  "cover_hook": "Ночной заезд 2500 в чате",
+  "cover_hook_highlight": "2500",
+  "cover_hook_contract": "shared/blog-cover-quad-canvas-contract.md",
+  "mcp_note": "Grsai primary image API 2K, 2× quad canvas autumn Tyumen; logo paste cover + inline_1/3/7.",
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Гостья с чемоданом у подъезда ночью в Тюмени: на телефоне чат «ночной заезд 2500», крупный кириллический заголовок на постере.",
+      "scene_hint": "Night autumn Tyumen entrance; guest suitcase; phone chat bubble; large Cyrillic hook «Ночной заезд 2500 в чате» on wall poster; phone +7 993 574-83-22 on door magnet; top-right empty light wall 10% for logo paste; no winter snow",
+      "meme_caption_ru": "",
+      "sticky": "Кода нет"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Как доплата появилась у подъезда",
+      "visual_type": "comparison_table_ui",
+      "scene_hint": "Table: paid 8400 vs chat +2500 night fee; labels Cyrillic",
+      "alt": "Сравнение: две ночи уже оплачены 8400 ₽ и доплата 2500 ₽ в чате у подъезда",
+      "labels": ["8400 оплачено", "В чате"]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Важна не только сумма",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Flow: flight land → taxi → chat surcharge → code withheld",
+      "alt": "Схема: после рейса доплата за ночной заезд и задержка кода",
+      "labels": ["После рейса", "Доплата 2500"]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Когда ночная доплата оправдана",
+      "visual_type": "checklist_board",
+      "scene_hint": "Checklist when night fee is fair vs surprise; autumn interior",
+      "alt": "Когда ночная доплата за заселение оправдана, а когда это сюрприз у двери",
+      "labels": ["Круглосуточно в объявлении", "Доплата"]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Почему код приходит не сразу",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Chat timeline code after payment; intercom dark",
+      "alt": "Почему код от двери приходит только после доплаты или перевода",
+      "labels": ["Такси у двери", "Код ждут"]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Как мы договариваемся о времени и доступе",
+      "visual_type": "comparison_table",
+      "scene_hint": "Host calendar vs guest flight delay; Tyumen",
+      "alt": "Как заранее согласовать поздний заезд и доступ в квартиру",
+      "labels": ["Спросить до оплаты", "Письменно"]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Что проверить до бронирования",
+      "visual_type": "process_flow",
+      "scene_hint": "4 questions before pay; wordstat chip посуточно Тюмень",
+      "alt": "Что спросить до бронирования посуточно при позднем рейсе",
+      "labels": ["Сначала время", "Потом ключ"]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Короче",
+      "visual_type": "schema_faq_ui",
+      "scene_hint": "FAQ 3 bullets late check-in; one small cat meme max",
+      "alt": "Короткий итог: уточняйте ночной заезд до оплаты",
+      "labels": ["Поздний рейс", "Тюмень"]
+    }
+  },
+  "logo_paste_inline_slots": ["inline_1", "inline_3", "inline_7"],
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "season": "autumn_october_tyumen"
+}

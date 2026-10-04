@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "research_date": "2026-10-04",
+  "derouter": {
+    "first_attempt": "BLOCKER_META",
+    "second_attempt": "PASS",
+    "notes": "minimal system prompt retry"
+  },
+  "sources_count": 6
+}

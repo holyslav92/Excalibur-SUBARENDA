@@ -1,0 +1,218 @@
+{
+  "agent": "excalibur-blog",
+  "date_context": {
+    "timezone": "Europe/Moscow",
+    "today_iso": "2026-10-04",
+    "today_ru": "04.10.2026",
+    "year": 2026,
+    "month": 10,
+    "month_name_ru": "октябрь",
+    "weekday_ru": "воскресенье"
+  },
+  "topic": {
+    "topic_id": "B45",
+    "title": "Посуточно Тюмень ночной заезд доплата в чате",
+    "h1": "Посуточно Тюмень ночной заезд доплата в чате",
+    "slug": "posutochno-tyumen-nochnoj-zaezd-doplata-v-chate",
+    "primary_query": "Посуточно Тюмень ночной заезд доплата в чате",
+    "priority": "P0"
+  },
+  "searches": [
+    {
+      "query_id": "primary_fresh",
+      "query": "Посуточно Тюмень ночной заезд доплата в чате 2026",
+      "purpose": "актуальный SERP",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Доплата за ночную работу: полное руководство по ТК РФ 2025‑2026",
+          "url": "https://yuridicheskii-kompas-prava.ru/oplata-i-uchyot-truda-v-nochnoe-i-vechernee-vremya-v-rossii-polnoe-rukovodstvo-2025-2026.html",
+          "snippet": ""
+        },
+        {
+          "title": "Доплата за работу ночью расчет часовой ставки",
+          "url": "https://www.consultant.ru/law/podborki/doplata_za_rabotu_nochyu_raschet_chasovoj_stavki/",
+          "snippet": "Узнайте, как закон РФ считает доплату за ночную работу, какие нормы действуют в 2025‑2026, где искать выплаты и какие отрасли получают больше."
+        },
+        {
+          "title": "Командировка в 2026 году: оплата, суточные и права работника",
+          "url": "https://www.rbc.ru/education/01/10/2026/6aa7be499a7947c1a8dc866e",
+          "snippet": "Суд пришел к выводу, что расчет выплат за работу в ночное время, в нерабочие праздничные дни и за сверхурочную работу должен производиться из заработной платы заявителя, увеличенной ..."
+        },
+        {
+          "title": "Энциклопедия решений. Доплата за работу в ночное время (август 2026)",
+          "url": "https://base.garant.ru/58072153/",
+          "snippet": "Разбираем, что работодатель обязан оплатить в командировке: проезд, жилье, суточные и средний заработок. Объясняем размер суточных в 2026 году и права сотрудника"
+        },
+        {
+          "title": "Доплата за ночные часы: трудовой кодекс 2026",
+          "url": "https://clubtk.ru/doplata-za-rabotu-v-nochnoe-vremya",
+          "snippet": "Минимальный размер повышения установлен постановлением Правительства РФ от 22.07.2008 N 554 (далее - Постановление N 554) и составляет 20% часовой тарифной ставки (оклада, рассчитанного за час работы) за каждый час работы в ночное время."
+        },
+        {
+          "title": "Как оплачивать ночные часы в 2026 году",
+          "url": "https://deloprava.ru/kak-oplachivat-nochnye-chasy-v-2026-godu/",
+          "snippet": "Доплата за работу в ночное время — это требование, зафиксированное в Трудовом кодексе Российской Федерации. Его цель — материально компенсировать человеку рабочие условия, отличающиеся от нормальных."
+        }
+      ],
+      "searched_at": "2026-10-04"
+    },
+    {
+      "query_id": "title_fresh",
+      "query": "Посуточно Тюмень ночной заезд доплата в чате 2026",
+      "purpose": "SERP по человеческому title",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Доплата за ночную работу: полное руководство по ТК РФ 2025‑2026",
+          "url": "https://yuridicheskii-kompas-prava.ru/oplata-i-uchyot-truda-v-nochnoe-i-vechernee-vremya-v-rossii-polnoe-rukovodstvo-2025-2026.html",
+          "snippet": ""
+        },
+        {
+          "title": "Доплата за работу ночью расчет часовой ставки",
+          "url": "https://www.consultant.ru/law/podborki/doplata_za_rabotu_nochyu_raschet_chasovoj_stavki/",
+          "snippet": "Узнайте, как закон РФ считает доплату за ночную работу, какие нормы действуют в 2025‑2026, где искать выплаты и какие отрасли получают больше."
+        },
+        {
+          "title": "Командировка в 2026 году: оплата, суточные и права работника",
+          "url": "https://www.rbc.ru/education/01/10/2026/6aa7be499a7947c1a8dc866e",
+          "snippet": "Суд пришел к выводу, что расчет выплат за работу в ночное время, в нерабочие праздничные дни и за сверхурочную работу должен производиться из заработной платы заявителя, увеличенной ..."
+        },
+        {
+          "title": "Энциклопедия решений. Доплата за работу в ночное время (август 2026)",
+          "url": "https://base.garant.ru/58072153/",
+          "snippet": "Разбираем, что работодатель обязан оплатить в командировке: проезд, жилье, суточные и средний заработок. Объясняем размер суточных в 2026 году и права сотрудника"
+        },
+        {
+          "title": "Квартиры посуточно: сколько доплатить за ранний заезд",
+          "url": "https://dzen.ru/a/ag8DAxUdvlFXpKMc",
+          "snippet": "Минимальный размер повышения установлен постановлением Правительства РФ от 22.07.2008 N 554 (далее - Постановление N 554) и составляет 20% часовой тарифной ставки (оклада, рассчитанного за час работы) за каждый час работы в ночное время."
+        },
+        {
+          "title": "Доплата за ночные часы: трудовой кодекс 2026",
+          "url": "https://clubtk.ru/doplata-za-rabotu-v-nochnoe-vremya",
+          "snippet": "Поэтому квартиры посуточно в Тюмени от «Добрый Дом» для гостей, которым критично время приезда, лучше смотреть не только по району и цене, но и по условиям заселения."
+        }
+      ],
+      "searched_at": "2026-10-04"
+    },
+    {
+      "query_id": "official_docs",
+      "query": "Посуточно Тюмень ночной заезд доплата в чате official docs 2026",
+      "purpose": "официальные docs",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Доплата за ночную работу: полное руководство по ТК РФ 2025‑2026",
+          "url": "https://yuridicheskii-kompas-prava.ru/oplata-i-uchyot-truda-v-nochnoe-i-vechernee-vremya-v-rossii-polnoe-rukovodstvo-2025-2026.html",
+          "snippet": ""
+        },
+        {
+          "title": "Оплата ночных часов по ТК РФ в 2026 году: как рассчитать и оформить по ...",
+          "url": "https://www.v2b.ru/articles/oplata-nochnyh-chasov-po-tk-rf-v-2026-godu-kak-rasschitat-i-oformit/",
+          "snippet": "Узнайте, как закон РФ считает доплату за ночную работу, какие нормы действуют в 2025‑2026, где искать выплаты и какие отрасли получают больше."
+        },
+        {
+          "title": "Квартиры посуточно: сколько доплатить за ранний заезд",
+          "url": "https://dzen.ru/a/ag8DAxUdvlFXpKMc",
+          "snippet": "В сентябре 2025 года вступило в силу постановление Правительства РФ №436 о правилах оплаты труда в ночное время. Оно заменило ранее действовавшее регулирование. Ключевые положения и подходы к определению ночного времени, повышению оплаты, принципам расчета, содержащимся в ТК РФ, сохранены."
+        },
+        {
+          "title": "Доплата за ночные часы: трудовой кодекс 2026",
+          "url": "https://clubtk.ru/doplata-za-rabotu-v-nochnoe-vremya",
+          "snippet": "Ранний заезд, поздний выезд, условия отмены, расстояние до нужного места и транспорт могут изменить реальную выгоду. Иногда квартира дешевле по объявлению, но неудобнее по логистике."
+        },
+        {
+          "title": "Ранний заезд \\ 2026-2025-2024 год \\ Акты, образцы, формы, договоры ...",
+          "url": "https://www.consultant.ru/law/podborki/rannij_zaezd/",
+          "snippet": "Доплата за работу в ночное время — это требование, зафиксированное в Трудовом кодексе Российской Федерации. Его цель — материально компенсировать человеку рабочие условия, отличающиеся от нормальных."
+        },
+        {
+          "title": "Заезд в квартиру посуточно ночью | muyo.ru",
+          "url": "https://muyo.ru/guide/mozhno-li-zaehat-v-kvartiru-posutochno-nochyu/",
+          "snippet": "Подборка наиболее важных документов по вопросу Ранний заезд нормативно-правовые акты формы статьи консультации экспертов и многое другое."
+        }
+      ],
+      "searched_at": "2026-10-04"
+    },
+    {
+      "query_id": "github_evidence",
+      "query": "site:github.com Посуточно Тюмень ночной заезд доплата в чате 2026",
+      "purpose": "GitHub evidence",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "permabright-ai-mockup/icon.svg at main - GitHub",
+          "url": "https://github.com/permabright/permabright-ai-mockup/blob/main/icon.svg",
+          "snippet": ""
+        },
+        {
+          "title": "TareaRT/KFC_logo.svg.png at main · Zaida-tm18/TareaRT",
+          "url": "https://github.com/Zaida-tm18/TareaRT/blob/main/KFC_logo.svg.png",
+          "snippet": "Contribute to permabright/permabright-ai-mockup development by creating an account on GitHub."
+        },
+        {
+          "title": "Контекстное меню на ПКМ на Macos · elfmz far2l · Discussion #3405",
+          "url": "https://github.com/elfmz/far2l/discussions/3405",
+          "snippet": "Contribute to Zaida-tm18/TareaRT development by creating an account on GitHub."
+        },
+        {
+          "title": "Personal-Portfolio_CodSoft/Flaticon.svg at main · Saloni456 ... - GitHub",
+          "url": "https://github.com/Saloni456/Personal-Portfolio_CodSoft/blob/main/Flaticon.svg",
+          "snippet": "sackosh #3405 sackosh May 21, 2026 ·· sackosh На винде при вызове ПКМ возникает удобное контекстное меню, очень удобно, здесь на Macos просто выделение файлов, поискал везде, и здесь в обсуждениях, нигде не вижу, хотя вижу ..."
+        },
+        {
+          "title": "All variations for NFQWS_OPT (все варианты дурения)",
+          "url": "https://github.com/remittor/zapret-openwrt/discussions/168",
+          "snippet": "Contribute to Saloni456/Personal-Portfolio_CodSoft development by creating an account on GitHub."
+        },
+        {
+          "title": "wordpiece-tokenizer-cpp/tokenizer.json at main · ansharyan03 ... - GitHub",
+          "url": "https://github.com/ansharyan03/wordpiece-tokenizer-cpp/blob/main/tokenizer.json",
+          "snippet": "Проблема в устаревшем ядре nfqws, которое не поддерживает L7-фильтрацию. Я просто заменил бинарник nfqws на свежую версию из официального релиза bol-van/zapret (v72.13)."
+        }
+      ],
+      "searched_at": "2026-10-04"
+    },
+    {
+      "query_id": "community_experience",
+      "query": "Посуточно Тюмень ночной заезд доплата в чате forum problems опыт 2026",
+      "purpose": "форумы и живые проблемы",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Самый неприятный момент в посуточной аренде — не сама оплата, а ...",
+          "url": "https://vk.com/wall-224399874_267",
+          "snippet": ""
+        },
+        {
+          "title": "Квартиры посуточно: сколько доплатить за ранний заезд",
+          "url": "https://dzen.ru/a/ag8DAxUdvlFXpKMc",
+          "snippet": "Самый неприятный момент в посуточной аренде — не сама оплата, а сюрпризы после дороги: когда вы уже приехали в Тюмень, устали, а к цене из объявления вдруг добавляются уборка, залог ..."
+        },
+        {
+          "title": "Заезд в квартиру посуточно ночью | muyo.ru",
+          "url": "https://muyo.ru/guide/mozhno-li-zaehat-v-kvartiru-posutochno-nochyu/",
+          "snippet": "Ранний заезд, поздний выезд, условия отмены, расстояние до нужного места и транспорт могут изменить реальную выгоду. Иногда квартира дешевле по объявлению, но неудобнее по логистике."
+        },
+        {
+          "title": "Квартиры на сутки, г. Тюмень, \"Форум\" | Квартиры посуточно в Тюмени ...",
+          "url": "https://vk.ru/forum3452",
+          "snippet": "В каталоге квартир посуточно ищите варианты, где в карточке прямо указан круглосуточный заезд по коду или самозаселение; если этого нет — уточняйте способ заезда у хозяина до оплаты."
+        },
+        {
+          "title": "Снять квартиру посуточно в Тюмени, отзывы 2025-2026, аренда - ТВИЛ",
+          "url": "https://tvil.ru/city/tyumen/flats/otzyvy/",
+          "snippet": "Квартиры на сутки, г. Тюмень, \"Форум\" в сообществе обновилась фотография 30 ноя 2016"
+        },
+        {
+          "title": "Ранний заезд и поздний выезд при аренде жилья — как договориться",
+          "url": "https://sutochno.ru/sj/ranniy-zaezd-i-pozdniy-vyezd",
+          "snippet": "Отзывы об аренде квартир посуточно в Тюмени 2025-2026 от отдыхающих. Снять квартиру в Тюмени можно через сайт. Бронируйте квартиру посуточно, на сутки без посредников по недорогим ценам - ТВИЛ."
+        }
+      ],
+      "searched_at": "2026-10-04"
+    }
+  ],
+  "errors": []
+}
