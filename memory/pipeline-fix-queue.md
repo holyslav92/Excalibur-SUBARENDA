@@ -183,7 +183,7 @@ checks_run:
 commit: e92fc99c
 
 ## INC-20261004-0710-schema-derouter-meta
-status: open
+status: fixed
 run_date: 2026-10-04
 role: excalibur-blog-schema
 topic_id: B44
@@ -208,3 +208,20 @@ category: derouter
 
 ### Secrets
 - none recorded
+
+### Fixer resolution
+status: fixed
+fixed_at: 2026-10-04
+fix_summary:
+- Dedicated `shared/schema-derouter-system-prompt.md` for `--system-file` (no orchestration/bash echo).
+- Schema role sanitizes system prompt; retry uses minimal system + user suffix without script name (INC B44).
+files_changed:
+- `shared/schema-derouter-system-prompt.md`
+- `scripts/excalibur_blog_derouter_opus_chat.py`
+- `skills/schema-excalibur-blog/SKILL.md`
+- `.cursor/skills/schema-excalibur-blog/SKILL.md`
+- `tests/test_derouter_schema_output.py`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_derouter_opus_chat.py`
+- `python3 -m unittest tests.test_derouter_schema_output -q`
+commit: pending-parent-commit

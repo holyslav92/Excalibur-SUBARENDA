@@ -12,7 +12,7 @@ description: Excalibur BLOG Schema — BlogPosting + optional FAQPage, author re
 ```bash
 python3 scripts/excalibur_blog_derouter_opus_chat.py \
   --role schema \
-  --system-file skills/schema-excalibur-blog/SKILL.md \
+  --system-file shared/schema-derouter-system-prompt.md \
   --user-file <assembled-schema-inputs.md> \
   --output schema.jsonld \
   --article-dir <article_dir>

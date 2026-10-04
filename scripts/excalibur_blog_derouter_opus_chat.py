@@ -477,11 +477,32 @@ SCHEMA_META_REFUSAL_MARKERS = (
     "DEROUTER SCHEMA",
 )
 
+SCHEMA_MINIMAL_SYSTEM_PROMPT = (
+    "You are a JSON-LD generator. Reply with a single valid JSON object only: "
+    "BlogPosting (required @type) and optional FAQPage in @graph. "
+    "No markdown, no prose, no commentary."
+)
+
 SCHEMA_RETRY_USER_SUFFIX = (
     "\n\n---\nOUTPUT (HARD): Reply with ONLY valid JSON-LD (BlogPosting; optional FAQPage "
-    "in @graph). No markdown fences, no prose, no meta about scripts or "
-    "excalibur_blog_derouter_opus_chat.py."
+    "in @graph). No markdown fences, no prose, no meta about tools or pipeline."
 )
+
+
+def sanitize_schema_system_prompt(system_prompt: str) -> str:
+    """Drop orchestration lines that trigger Terra meta-refusal (INC B44)."""
+    kept: list[str] = []
+    for line in system_prompt.splitlines():
+        lower = line.lower()
+        if any(marker.lower() in lower for marker in SCHEMA_META_REFUSAL_MARKERS):
+            continue
+        if "thin conductor" in lower or "не пиши schema.jsonld моделью cursor" in lower:
+            continue
+        if line.strip().startswith("```bash") or "scripts/excalibur_blog_derouter" in lower:
+            continue
+        kept.append(line)
+    trimmed = "\n".join(kept).strip()
+    return trimmed if trimmed else SCHEMA_MINIMAL_SYSTEM_PROMPT
 
 
 def strip_jsonld_fences(text: str) -> str:
@@ -657,6 +678,8 @@ def run_chat(args: argparse.Namespace) -> int:
     user_prompt = load_text_arg(
         inline=args.user_prompt, path=args.user_file, label="user-prompt"
     )
+    if role == "schema":
+        system_prompt = sanitize_schema_system_prompt(system_prompt)
 
     try:
         text, response, endpoint, resolved_model = call_derouter_with_aliases(
@@ -681,9 +704,10 @@ def run_chat(args: argparse.Namespace) -> int:
                 file=sys.stderr,
             )
             reinforced = user_prompt.rstrip() + SCHEMA_RETRY_USER_SUFFIX
+            retry_system = SCHEMA_MINIMAL_SYSTEM_PROMPT
             try:
                 text, response, endpoint, resolved_model = call_derouter_with_aliases(
-                    system_prompt=system_prompt,
+                    system_prompt=retry_system,
                     user_prompt=reinforced,
                     tier=tier,
                     model=model,
