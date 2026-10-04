@@ -1,0 +1,10 @@
+{
+  "topic_id": "B44",
+  "description": "На экране — 11 400 ₽, в переписке обещали залог. Пока код не пришёл, проверьте, что именно банк заморозил: сумму брони или ещё что-то.",
+  "rhythm": "klyshin_case_hook",
+  "geo": "Тюмень",
+  "author_brand": "Добрый дом",
+  "not_equal_title": true,
+  "not_truncated_lead": true,
+  "verdict": "PASS"
+}
