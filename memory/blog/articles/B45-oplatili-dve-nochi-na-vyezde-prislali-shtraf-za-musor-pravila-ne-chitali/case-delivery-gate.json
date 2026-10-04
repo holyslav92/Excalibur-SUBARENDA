@@ -1,0 +1,11 @@
+{
+  "gate": "case-delivery",
+  "status": "PASS",
+  "stage": "writer",
+  "manner_canon": "dobry_dom_voice_reset_v1",
+  "checks_run": [
+    "writer.html"
+  ],
+  "errors": [],
+  "article_dir": "/workspace/memory/blog/articles/B45-oplatili-dve-nochi-na-vyezde-prislali-shtraf-za-musor-pravila-ne-chitali"
+}
