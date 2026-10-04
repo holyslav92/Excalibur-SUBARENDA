@@ -1,0 +1,108 @@
+{
+  "status": "PASS",
+  "topic_id": "B45",
+  "slug": "oplatili-dve-nochi-na-vyezde-prislali-shtraf-za-musor-pravila-ne-chitali",
+  "research_date": "2026-10-04",
+  "summary": "Research for guest CASE: hurried payment for two nights in Tyumen, house-rules memo skipped, checkout chat fine for garbage/dishes per memo with deposit/transfer threat. Fresh signals: Dobriy Dom TG early Oct 2026 (checkout commission lesson, heat checklist); Scout hook from Klyshin A/3186 speed rhythm (14 Sep 2026). Mechanics: advance disclosure of withhold grounds, photo sink/trash, distinct from B23 linens, B44 hold, B02 deposit disputes.",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "t.me/s/Dobriy_dom_72 October 2026 + Scout B45 stamp 2026-10-04",
+    "source_type": "community_and_scout",
+    "urls": [
+      "https://t.me/s/Dobriy_dom_72",
+      "https://t.me/klyshin_A/3186"
+    ],
+    "accessed_at": "2026-10-04",
+    "note": "Dobriy Dom posts 1–4 Oct 2026 (commission +1187 checkout, heat checklist 3 Oct) — fresh tenant channel; not proof of garbage-fine booking. Klyshin 3186 verified for hurry quote only."
+  },
+  "freshness_audit": {
+    "research_date": "2026-10-04",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://t.me/s/Dobriy_dom_72",
+      "published_at": "2026-10-01 — 2026-10-04",
+      "note": "Early October 2026 posts: checkout total vs filter, 5-minute heat/water checklist after check-in."
+    },
+    "additional_fresh_signals": [
+      {
+        "url": "https://t.me/klyshin_A/3186",
+        "published_at": "2026-09-14",
+        "type": "scout_editorial_rhythm",
+        "note": "Quote «не задам вопросов — заберут»; editorial transfer to guest booking, not posutochno transcript."
+      }
+    ]
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "regions": ["55", "11176", "225"],
+    "observations": [
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 3889,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "снять квартиру посуточно в тюмени",
+        "volume": 1071,
+        "region": "55+11176"
+      },
+      {
+        "phrase": "правила проживания посуточно",
+        "volume": 387,
+        "region": "225",
+        "note": "Tyumen alone 3 — weak local rules cluster"
+      },
+      {
+        "phrase": "уборка посуточно",
+        "volume": 1932,
+        "region": "225",
+        "note": "host/job bias"
+      }
+    ]
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": false,
+    "scope": "Sutochno platform rules only; no bank tariff digits; operator fine 2000 RUB Kislovodsk example not Tyumen norm",
+    "verified_claims": 2,
+    "entities_checked": ["sutochno"],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-6-luna",
+    "stamp": "memory/blog/articles/B45-oplatili-dve-nochi-na-vyezde-prislali-shtraf-za-musor-pravila-ne-chitali/derouter-opus-stamp-research.json",
+    "first_attempt": "BLOCKER_META",
+    "second_attempt": "BLOCKER_524",
+    "third_attempt": "PASS"
+  },
+  "source_count": 12,
+  "limitations": [
+    "No verified transcript of a specific Tyumen booking; case from Scout composite hook hot_booking_skip_house_rules.",
+    "Klyshin 3186 is purchase-market hurry parable (14 Sep 2026), not posutochno house-rules dispute.",
+    "2000 RUB operator fine and 2000–5000 deposit range are industry/operator examples, not Tyumen market norms.",
+    "Dobriy Dom October posts support checkout diligence theme, not garbage-fine case proof.",
+    "Administrative KoAP street-litter fines are SERP noise, out of scope."
+  ],
+  "writer_safe_urls": [
+    "https://t.me/Dobriy_dom_72",
+    "https://t.me/Dobriy_dom_Tyumen",
+    "https://max.ru/id660300569233_biz",
+    "https://добрыйдом-72.рф/",
+    "https://добрыйдом-72.рф/booking/",
+    "https://добрыйдом-72.рф/blog/",
+    "https://t.me/klyshin_A/3186",
+    "https://www.directline.pro/connect/p/pravila-prozhivaniya-v-posutochnoj-kvartire/",
+    "https://www.directline.pro/connect/p/zalog-pri-sdache-kvartiry-posutochno/",
+    "https://vc.ru/id5998346/3064578-zalog-v-posutochnoy-arende-pravila-i-riski",
+    "https://sutochno.ru/help/gosti/safety",
+    "https://sutochno.ru/blog/rules"
+  ],
+  "errors": []
+}
