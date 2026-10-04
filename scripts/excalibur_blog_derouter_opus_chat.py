@@ -342,10 +342,11 @@ def call_derouter_chat(
     }
     # Cloudflare origin timeout (~120s): cap long utility outputs (research notes).
     if role == "research":
-        payload["max_tokens"] = 4500
+        # Keep under Cloudflare ~120s origin window (INC: 524 on long research notes).
+        payload["max_tokens"] = 2200
 
     endpoints = (
-        [FALLBACK_ENDPOINT, PRIMARY_ENDPOINT]
+        [PRIMARY_ENDPOINT, FALLBACK_ENDPOINT]
         if role == "research"
         else [PRIMARY_ENDPOINT, FALLBACK_ENDPOINT]
     )
