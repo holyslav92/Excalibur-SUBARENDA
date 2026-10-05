@@ -1,0 +1,27 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/posutochno-pravila-v-chate-posle-oplaty-shtraf-za-musor/",
+  "url": "{{SITE_BASE}}/blog/posutochno-pravila-v-chate-posle-oplaty-shtraf-za-musor/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/posutochno-pravila-v-chate-posle-oplaty-shtraf-za-musor/"
+  },
+  "headline": "Две ночи посуточно: PDF после перевода — на выезде 3 800 ₽ за пакеты",
+  "datePublished": "2026-10-05",
+  "description": "Такси уже у подъезда, а правила про мусор всплывают только на выезде? В Тюмени спросите о пакетах и доплатах до перевода — потом спорить у двери поздно.",
+  "author": {
+    "@type": "Organization",
+    "name": "Добрый дом"
+  },
+  "publisher": {
+    "@type": "LocalBusiness",
+    "name": "Добрый дом",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    },
+    "telephone": "+7 (993) 574-83-22"
+  }
+}
