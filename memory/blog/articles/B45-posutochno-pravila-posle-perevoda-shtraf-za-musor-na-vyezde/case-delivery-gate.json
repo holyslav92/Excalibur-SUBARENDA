@@ -5,7 +5,8 @@
   "manner_canon": "dobry_dom_voice_reset_v1",
   "checks_run": [
     "writer.html",
-    "article.html"
+    "article.html",
+    "viral-topic-repeat-probe"
   ],
   "errors": [],
   "article_dir": "/workspace/memory/blog/articles/B45-posutochno-pravila-posle-perevoda-shtraf-za-musor-na-vyezde"
