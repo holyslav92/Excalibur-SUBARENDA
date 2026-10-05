@@ -44,6 +44,17 @@ python3 scripts/excalibur_blog_derouter_opus_chat.py \
 9. One mid fight-question (TG/MAX).
 10. No ЕГРН/Шакин. Sol MUST NOT encyclopedia.
 
+## Viral topic repeat (после Sol, до Publish)
+
+Publish и `case-delivery` (stage `article`) гоняют `viral-topic-repeat`: probe =
+`viral-dzen-handoff.json` + `title-brief.json` + **первые ~500 символов** `article.html`.
+
+- **BAN** в §1 opening probe: одновременно **`у двери`** и **`чемодан`** (семейства
+  `door_beat` + `bags`), если в последних 12 live уже saturated — типичный BLOCK B45.
+- Hook **`rules_before_keys`:** §1 = цитата + **PDF после перевода / мусор не в карточке**;
+  сцена с пакетами у двери — mid-body или H2, не в opening probe.
+- После правки §1: `python3 scripts/excalibur_blog_viral_topic_repeat_gate.py --article-dir <dir>`.
+
 ---
 
 ## Читаешь (порядок)

@@ -31,6 +31,7 @@ from excalibur_blog_editorial_anti_clone import (
     check_lead_conclusion_sentence_repeat,
     check_posutochno_surface,
 )
+from excalibur_blog_viral_topic_repeat import check_topic_repeat, probe_text_from_article_dir
 from excalibur_blog_opening_meta_gate import (
     CLOCK_RE,
     _is_chopped_lead,
@@ -547,6 +548,12 @@ def check_article_dir(article_dir: Path, *, stage: str = "all") -> dict[str, Any
             errors.append(f"article.html: {err}")
         if COMMENT_BAIT_RE.search(article_html):
             errors.append("article.html: WP comment bait — use TG/MAX")
+        handoff_path = article_dir / "viral-dzen-handoff.json"
+        if handoff_path.is_file():
+            checks_run.append("viral-topic-repeat-probe")
+            probe = probe_text_from_article_dir(root, article_dir)
+            for err in check_topic_repeat(root, probe, article_dir=article_dir):
+                errors.append(err if err.startswith("viral-topic-repeat") else f"viral-topic-repeat: {err}")
         if meta_path.is_file():
             try:
                 meta = json.loads(meta_path.read_text(encoding="utf-8"))

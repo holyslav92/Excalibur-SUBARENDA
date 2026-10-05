@@ -38,6 +38,25 @@ class PublishViralGateTests(unittest.TestCase):
         errors = check_topic_repeat(ROOT, probe)
         self.assertTrue(errors, errors)
 
+    def test_b45_rules_angle_passes_door_bags_combo_fails(self) -> None:
+        from excalibur_blog_viral_topic_repeat import check_topic_repeat
+
+        ad = ROOT / "memory/blog/articles/B45-posutochno-pravila-posle-perevoda-shtraf-za-musor-na-vyezde"
+        if not (ad / "viral-dzen-handoff.json").is_file():
+            self.skipTest("B45 fixture missing")
+        from excalibur_blog_viral_topic_repeat import probe_text_from_article_dir
+
+        probe_ok = probe_text_from_article_dir(ROOT, ad)
+        self.assertFalse(
+            check_topic_repeat(ROOT, probe_ok, article_dir=ad),
+            "B45 post-fix handoff+title+opening should PASS repeat gate",
+        )
+        bad = "У двери гость с чемоданами и пакетами — доплата 3800 за мусор на выезде"
+        self.assertTrue(
+            check_topic_repeat(ROOT, bad),
+            "door_beat+bags combo should FAIL when saturated in last 12 live",
+        )
+
     def test_handoff_publish_binding_requires_meta(self) -> None:
         from scripts.excalibur_blog_viral_handoff_gate import check_handoff_for_publish
 

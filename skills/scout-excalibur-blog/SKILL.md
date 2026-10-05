@@ -76,6 +76,9 @@ Klyshin **не** заменяет частоты. Wordstat **не** binary skip 
 
 **Skip / rework** hook, если рана клонирует **door-surcharge** семейство из последних 12 без нового угла.
 
+**ViralDzen handoff:** угол в `guest_angle_ru` попадает в publish-probe вместе с Sol §1 (~500 символов).
+Не комбинируй **`у двери` + `чемодан`** в handoff/opening, если live уже saturated (B45 BLOCK).
+
 После handoff — gate:
 
 ```bash
