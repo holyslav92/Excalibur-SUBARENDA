@@ -1,0 +1,110 @@
+{
+  "status": "PASS",
+  "topic_id": "B45",
+  "slug": "posutochno-pravila-posle-perevoda-shtraf-za-musor-na-vyezde",
+  "research_date": "2026-10-05",
+  "summary": "CASE Tyumen: 2 nights paid, PDF rules after transfer, ~3800 RUB trash bags on checkout; GK 438/443 acceptance timing; Sutochno compensation-not-fine; fresh Dobriy_dom_72 Oct 3-5 check-in checklist posts; Wordstat P0 правила 380 RU / 4 Tyumen.",
+  "fresh_signal": {
+    "status": "PASS",
+    "source": "t.me/s/Dobriy_dom_72 posts 2026-10-03 to 2026-10-05 (heating/water checklist, family booking, cleaning standards)",
+    "source_type": "community",
+    "urls": [
+      "https://t.me/s/Dobriy_dom_72",
+      "https://t.me/klyshin_A"
+    ],
+    "accessed_at": "2026-10-05",
+    "note": "Community signal is adjacent guest-checklist culture; 3800 trash/PDF-after-pay is editorial composite per Scout hook rules_before_keys."
+  },
+  "freshness_audit": {
+    "research_date": "2026-10-05",
+    "all_source_rows_have_accessed_at": true,
+    "fresh_community_or_news_signal_published_this_week": true,
+    "community_signal": {
+      "url": "https://t.me/s/Dobriy_dom_72",
+      "published_at": "2026-10-05",
+      "note": "«5 минут в квартире: батарея, окно и горячая вода»; 3 Oct family weekend; cleaning standards repost."
+    }
+  },
+  "wordstat_audit": {
+    "status": "PASS",
+    "source": "mcp-kv live 2026-10-05",
+    "regions": ["225", "55", "11176"],
+    "observations": [
+      {
+        "phrase": "правила проживания посуточно",
+        "volume": 380,
+        "region": "225",
+        "source": "mcp_kv_live"
+      },
+      {
+        "phrase": "правила проживания посуточно",
+        "volume": 4,
+        "region": "55+11176",
+        "source": "mcp_kv_live"
+      },
+      {
+        "phrase": "штраф посуточно",
+        "volume": 168,
+        "region": "225",
+        "source": "mcp_kv_live"
+      },
+      {
+        "phrase": "квартиры посуточно тюмень",
+        "volume": 3874,
+        "region": "55+11176",
+        "source": "mcp_kv_live"
+      },
+      {
+        "phrase": "снять квартиру посуточно в тюмени",
+        "volume": 1045,
+        "region": "55+11176",
+        "source": "mcp_kv_live"
+      }
+    ],
+    "mcp_errors": []
+  },
+  "official_source_audit": {
+    "status": "PASS",
+    "required": true,
+    "scope": "GK RF st 438 Consultant + Sutochno legal blog; no bank tariffs",
+    "verified_claims": 2,
+    "entities_checked": ["consultant_gk", "sutochno"],
+    "errors": []
+  },
+  "tenant_cta_audit": {
+    "status": "PASS",
+    "phone_invented": false
+  },
+  "derouter": {
+    "role": "research",
+    "tier": "utility",
+    "model": "gpt-6-luna",
+    "stamp": "memory/blog/articles/B45-posutochno-pravila-posle-perevoda-shtraf-za-musor-na-vyezde/derouter-opus-stamp-research.json",
+    "first_attempt": "BLOCKER_META",
+    "second_attempt": "PASS",
+    "note": "First call with full SKILL.md returned meta-refusal; retry minimal system + assembled-research-inputs.md succeeded."
+  },
+  "source_count": 9,
+  "practical_facts_count": 11,
+  "limitations": [
+    "Composite case — no verified booking ID.",
+    "3800 RUB is headline anchor only.",
+    "Dobriy_dom posts document check-in checklist, not trash fine transcript.",
+    "Distinct from B23 linen charge, B02 zalog return, B44 hold before code."
+  ],
+  "writer_safe_urls": [
+    "https://t.me/Dobriy_dom_72",
+    "https://t.me/Dobriy_dom_Tyumen",
+    "https://max.ru/id660300569233_biz",
+    "https://добрыйдом-72.рф/",
+    "https://добрыйдом-72.рф/booking/",
+    "https://t.me/klyshin_A",
+    "https://www.consultant.ru/document/cons_doc_LAW_5142/912ecd30f8655752c373ce4bde835b3832154b11/",
+    "https://sutochno.ru/blog/legal-issues",
+    "https://www.directline.pro/connect/p/pravila-prozhivaniya-v-posutochnoj-kvartire/",
+    "https://travel.yandex.ru/pro/instrukciya-dlya-gostey-posutochnoy-kvartiry/",
+    "https://host.avito.com/course/lesson-5",
+    "https://www.woman.ru/psycho/socialization/thread/5799797/"
+  ],
+  "errors": []
+}
