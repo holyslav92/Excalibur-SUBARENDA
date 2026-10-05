@@ -1,0 +1,13 @@
+{
+  "topic_id": "B45",
+  "h1": "Две ночи посуточно: PDF после перевода — на выезде 3 800 ₽ за пакеты",
+  "title": "Две ночи посуточно: PDF после перевода — на выезде 3 800 ₽ за пакеты",
+  "slug": "posutochno-pravila-v-chate-posle-oplaty-shtraf-za-musor",
+  "subject": "Гость оплатил две ночи посуточно, а правила получил после перевода; при выезде потребовали 3 800 ₽ за мусорные пакеты.",
+  "angle": "Редакционный composite-кейс о правилах, присланных после оплаты, и неожиданном требовании на выезде.",
+  "h1_shape": "scene",
+  "klyshin_title_shape": 5,
+  "wordstat_p0": "правила проживания посуточно",
+  "verdict": "PASS",
+  "generated_via": "excalibur_blog_derouter_opus_chat.py --role title"
+}
