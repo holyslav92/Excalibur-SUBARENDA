@@ -241,3 +241,59 @@ confidence: low
 
 ### Resolution
 status: recorded
+
+## LESSON-20261005-0952-B45-rules-pdf-trash-checkout-day0
+status: proposed
+topic_id: B45
+category: structure
+confidence: low
+
+### Evidence
+- artifact: none (skipped under human-first-v2)
+  finding: `content-evidence-report.json` absent; `excalibur_blog_content_evidence_gate.py` → SKIP.
+- artifact: `memory/scout/.cursor/excalibur-blog-handoff.md`
+  finding: Klyshin `hook_id: rules_before_keys` — PDF rules after transfer; checkout trash fine 3 800 ₽; Wordstat P0 «правила проживания посуточно» **380** (225) / **7** (55+11176); rework: supporting «штраф посуточно» 168 (225) + spine «квартиры посуточно тюмень» 3874; `angle_rotation` skips door-code/zalog/B23 linen clone — PDF-after-pay + exit trash sum angle.
+- artifact: `memory/blog/articles/B45-posutochno-pravila-posle-perevoda-shtraf-za-musor-na-vyezde/case-delivery-gate.json`
+  finding: `status: PASS` — H1 «PDF после перевода — на выезде 3 800 ₽ за пакеты» CASE (`dobry_dom_voice_reset_v1`).
+- artifact: `memory/blog/articles/B45-posutochno-pravila-posle-perevoda-shtraf-za-musor-na-vyezde/wp-publish-result.json`
+  finding: publish PASS 2026-10-05 (WP post 5236, featured + **7** inline, categories 101/103/102 = posutochnaya-arenda + pravila-prozhivaniya).
+- artifact: `memory/blog/articles/B45-posutochno-pravila-posle-perevoda-shtraf-za-musor-na-vyezde/cover/quad-manifest.json` + `slice4-gate.json`
+  finding: `quad_canvas_2x_image_api_longform` with `inline_count: 7` (2× Grsai quad canvases); slice4 gate **SKIP** by design (`longform_inline_count_7_skip_slice4`); Cover-QA PASS incl. Wordstat stickers 1–3 post-composite.
+- artifact: `memory/blog/articles/B45-posutochno-pravila-posle-perevoda-shtraf-za-musor-na-vyezde/interlink-gate.json` + `crosslink-qa-gate.json`
+  finding: outbound 4 siblings (no-prepay transfer, prepay silence, B23 checkout linen, empty keybox) — PASS with live HTTP 200.
+- artifact: word-count probe (plain text, same tokenizer as prior lessons)
+  finding: `drafts/writer.html` **1172** words → `article.html` **1241** after Sol (~6% expansion); within 650–1100 band at upper edge — preserves checkout/trash utility vs B43 Sol-shrink pattern.
+- metrika_signal: none — `METRIKA FEEDBACK BLOCKER` (`YANDEX_METRIKA_OAUTH_TOKEN` / `YANDEX_METRIKA_COUNTER_ID` unset); see `memory/pipeline-fix-queue.md#INC-20260925-1506-content-learner-metrika-credentials`.
+
+### Named blockers
+- EVIDENCE_SKIPPED — no editorial evidence table; no causal quality claims from evidence report.
+- METRIKA_CREDENTIALS — behavioral cohort unavailable for B45 day-0.
+- LOW_SAMPLE — fresh publish; no on-site Metrika match possible this run.
+- WEAK_WORDSTAT_NICHE — Tyumen P0 «правила проживания посуточно» **7**; demand carried by RU 380 + spine 3874 + «штраф посуточно» (expected Scout rework, not skip).
+
+### Keep
+- `rules_before_keys` wound (rules PDF after payment vs promised-before-keys) distinct from B23 checkout linen, B44 deposit hold, prepay-silence / no-prepay-filter transfer siblings.
+- Scout dual-gate: do not drop hook on Tyumen 7; log rework + supporting штраф cluster + spine; ship dzen_shape «Оплатили две ночи. Правила — после перевода. На выезде 3 800 за пакеты».
+- Longform 7-inline quad cover pipeline when CASE needs extra utility panels — slice4 SKIP is correct; Cover-QA + script gate before publish.
+- Outbound interlink cluster to prepay/checkout/trash literacy posts — strengthens buyer «ask before transfer» without cloning saturated door-code H1s.
+
+### Change
+- After Metrika credentials land: re-ingest (`--days 30 --ingest`) and attach cohort for slug `posutochno-pravila-v-chate-posle-oplaty-shtraf-za-musor`; do not infer rules-niche SEO failure from day-0 Tyumen volume.
+- Human (optional): if second `rules_before_keys` article Sol **shrinks** >15% like B43, review Sol skill for preserving «PDF before pay / trash bags on exit» blocks — B45 Sol **expanded**; no Writer prompt edit.
+
+### Never again
+- Skip `rules_before_keys` solely because Tyumen rules P0 <50 without rework log + spine P0 (B45 shipped correctly).
+- Treat missing Metrika env as silent skip in content-learner.
+- Force slice4 cover on `inline_count=7` longform trees where quad-manifest already declares 2× canvas longform.
+- Auto-edit `shared/writer-master-prompt.md` from one weak-Wordstat rules lesson.
+
+### Proposed apply
+- Env: resolve Metrika secrets (existing INC); optional confidence bump when `matched_rows` > 0.
+- Scout: no change — weak local P0 + RU/supporting clusters already canon.
+- Cover: no new durable apply — longform 7-inline quad path distinct from B37 slice4 lesson.
+
+### Durable applied
+- none — day-0 SKIP + Metrika BLOCKER; first named `rules_before_keys` + PDF-after-pay/trash checkout lesson; no repeat pattern for automated apply.
+
+### Resolution
+status: recorded
