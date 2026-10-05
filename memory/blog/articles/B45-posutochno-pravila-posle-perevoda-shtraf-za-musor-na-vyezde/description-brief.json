@@ -1,0 +1,10 @@
+{
+  "topic_id": "B45",
+  "description": "Такси уже у подъезда, а правила про мусор всплывают только на выезде? В Тюмени спросите о пакетах и доплатах до перевода — потом спорить у двери поздно.",
+  "rhythm": "klyshin_case_hook",
+  "geo": "Тюмень",
+  "author_brand": "Добрый дом",
+  "not_equal_title": true,
+  "not_truncated_lead": true,
+  "verdict": "PASS"
+}
