@@ -1,0 +1,10 @@
+{
+  "topic_id": "B45",
+  "description": "Рейс задержали, а у подъезда в Тюмени вместо кода просят перевод на карту: «24/7» вдруг заканчивается доплатой. Вы бы платили или искали, где это было в условиях?",
+  "rhythm": "klyshin_case_hook",
+  "geo": "Тюмень",
+  "author_brand": "Добрый дом",
+  "not_equal_title": true,
+  "not_truncated_lead": true,
+  "verdict": "PASS"
+}
