@@ -227,7 +227,7 @@ checks_run:
 commit: pending-parent-commit
 
 ## INC-20261005-0950-publish-viral-topic-repeat-b45
-status: open
+status: fixed
 run_date: 2026-10-05
 role: excalibur-blog-publish
 topic_id: B45
@@ -262,4 +262,25 @@ category: publish
 - none recorded
 
 ### Fixer resolution
-- pending
+status: fixed
+fixed_at: 2026-10-05
+fix_summary:
+- `case-delivery` (stage article) runs `viral-topic-repeat` probe before Publish (same as publish preflight).
+- Sol/Scout/ViralDzen contracts document handoff+H1+§1~500 probe; B45 `rules_before_keys` framing.
+- Regression test B45 PASS probe vs door_beat+bags FAIL combo.
+files_changed:
+- `scripts/excalibur_blog_case_delivery_gate.py`
+- `skills/sol-excalibur-blog/SKILL.md`
+- `.cursor/skills/sol-excalibur-blog/SKILL.md`
+- `skills/scout-excalibur-blog/SKILL.md`
+- `.cursor/skills/scout-excalibur-blog/SKILL.md`
+- `shared/viral-dzen-angle-system.md`
+- `shared/dobry-dom-voice-reset-v1.md`
+- `shared/excalibur-wp-publish-contract.md`
+- `tests/test_publish_viral_gates.py`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_case_delivery_gate.py`
+- `PYTHONPATH=scripts python3 -m unittest tests.test_publish_viral_gates tests.test_case_delivery_gate -q`
+- `PYTHONPATH=scripts python3 scripts/excalibur_blog_case_delivery_gate.py --article-dir memory/blog/articles/B45-... --stage article` → PASS + viral-topic-repeat-probe
+commit: c3faf28
