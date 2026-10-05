@@ -1,0 +1,162 @@
+{
+  "topic_id": "B45",
+  "slug": "posutochno-pravila-posle-perevoda-shtraf-za-musor-na-vyezde",
+  "canvas_file": "cover/canvas-quad-01.png",
+  "layout": "2x2",
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "inline_count": 7,
+  "canvases": [
+    {
+      "index": 1,
+      "canvas_file": "cover/canvas-quad-01.png",
+      "batch_file": "cover/quad-mcp-batch-01.json",
+      "prompt_file": "cover/quad-mcp-prompt-01.txt",
+      "result_file": "cover/quad-mcp-result-01.json",
+      "slots": [
+        "cover",
+        "inline_1",
+        "inline_2",
+        "inline_3"
+      ],
+      "has_cover": true
+    },
+    {
+      "index": 2,
+      "canvas_file": "cover/canvas-quad-02.png",
+      "batch_file": "cover/quad-mcp-batch-02.json",
+      "prompt_file": "cover/quad-mcp-prompt-02.txt",
+      "result_file": "cover/quad-mcp-result-02.json",
+      "slots": [
+        "inline_4",
+        "inline_5",
+        "inline_6",
+        "inline_7"
+      ],
+      "has_cover": false
+    }
+  ],
+  "style_preset": "dobry_dom_light_meme_wordstat",
+  "style_file": "memory/cover/quad-style-dobry-dom.json",
+  "blog_hero": "memory/cover/blog-hero.json",
+  "inline_types_catalog": "memory/cover/inline-visual-types-dobry-dom.json",
+  "cover_hook": "Перевод — правила потом, 3800 за мусор",
+  "cover_hook_highlight": "мусор",
+  "cover_headline_line1": "Перевод — правила потом",
+  "cover_headline_line2": "3800 за мусор",
+  "cover_phone_cta": "+7 (993) 574-83-22",
+  "wordstat_stickers": [
+    "правила проживания посуточно",
+    "квартиры посуточно тюмень"
+  ],
+  "logo_paste_inline_slots": [
+    "inline_1",
+    "inline_3",
+    "inline_7"
+  ],
+  "cover_motifs": {
+    "composition": "guest with trash bags at door phone chat PDF headline on printed rules sheet autumn entryway",
+    "location": "october tyumen apartment hallway golden leaves warm daylight not winter",
+    "meme": "tiny harold sticker bottom-left under 12 percent",
+    "prop_set": "tied trash bags suitcase smartphone pdf printout door mat",
+    "sticker_set": "правила проживания посуточно квартиры посуточно тюмень",
+    "joke": "rules arrive after payment like train schedule after departure",
+    "headline_line1": "Перевод — правила потом",
+    "headline_line2": "3800 за мусор",
+    "hero_type": "guest_woman_trash_bags_door"
+  },
+  "slots": {
+    "cover": {
+      "quadrant": "top_left",
+      "role": "cover_editorial_hero",
+      "alt": "Гостья с пакетами у двери посуточной квартиры в Тюмени осенью: на стене табличка с телефоном +7 (993) 574-83-22, на листе правил крупный заголовок про 3800 за мусор после перевода",
+      "scene_hint": "Светлая прихожая посуточной квартиры Тюмень, октябрь, тёплый дневной свет, за окном золотые листья. Гостья в пальто с завязанными пакетами у двери. На двери или столике — лист «Правила проживания» с кириллическим заголовком «Перевод — правила потом» и строкой «3800 за мусор». На стене плоская светлая табличка с текстом +7 (993) 574-83-22 (не кнопка, не pill). Верхний правый угол кадра — чистая светлая стена 8–12% без логотипа. Маленький мем-стикер Harold внизу слева ≤12%.",
+      "meme_caption_ru": "",
+      "sticky": "В объявлении ни слова"
+    },
+    "inline_1": {
+      "quadrant": "top_right",
+      "h2_anchor": "Карточка, перевод, PDF: порядок, который всё ломает",
+      "visual_type": "process_flow",
+      "scene_hint": "Схема-порядок на белом фоне: карточка → перевод → PDF правила, стрелки, без людей",
+      "alt": "Порядок: сначала оплата, потом PDF с правилами и сбором за мусор",
+      "labels": [
+        "две ночи оплачены",
+        "правила после оплаты",
+        "3800 за вывоз"
+      ]
+    },
+    "inline_2": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Оплатили — значит, согласились? Не так прямолинейно",
+      "visual_type": "comparison_table",
+      "scene_hint": "Таблица: оплата vs новые условия в PDF, статьи ГК как подписи",
+      "alt": "Сравнение: оплата не равна согласию с правилами, пришедшими после",
+      "labels": [
+        "Скрин объявления",
+        "Чек перевода",
+        "Фото при заезде"
+      ]
+    },
+    "inline_3": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Пакеты у двери и вопрос, который хочется задать прямо сейчас",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Чеклист у двери: пакеты, такси, сообщение хоста 3800",
+      "alt": "Пакеты у двери и вопрос: платить 3800 сейчас или спорить",
+      "labels": [
+        "Правила до оплаты",
+        "Спросите про сборы",
+        "Сначала правила"
+      ]
+    },
+    "inline_4": {
+      "quadrant": "top_left",
+      "h2_anchor": "Компенсация или штраф: как выглядит честный счёт",
+      "visual_type": "comparison_table_ui",
+      "scene_hint": "Две колонки: компенсация с расчётом vs названная сумма без строки",
+      "alt": "Честный счёт: что потрачено, чем подтверждено, где было в правилах",
+      "labels": [
+        "компенсация не штраф",
+        "покажите расчёт",
+        "3800 без строки"
+      ]
+    },
+    "inline_5": {
+      "quadrant": "top_right",
+      "h2_anchor": "Что сохранить, пока вы ещё в квартире",
+      "visual_type": "labeled_checklist",
+      "scene_hint": "Чеклист доказательств: скрин, чек, PDF, фото кухни",
+      "alt": "Что сохранить до выезда: карточка, перевод, PDF, фото квартиры",
+      "labels": [
+        "скрин карточки",
+        "чек перевода",
+        "страницы PDF"
+      ]
+    },
+    "inline_6": {
+      "quadrant": "bottom_left",
+      "h2_anchor": "Как мы делаем у себя",
+      "visual_type": "workflow_diagram",
+      "scene_hint": "Схема: правила в чат → «прочитал» → код ключ",
+      "alt": "Правила до оплаты, коротко, потом ключ",
+      "labels": [
+        "правила до оплаты",
+        "короткое сообщение",
+        "потом ключ"
+      ]
+    },
+    "inline_7": {
+      "quadrant": "bottom_right",
+      "h2_anchor": "Короче",
+      "visual_type": "fact_card",
+      "scene_hint": "Карточка-итог: 4 пункта до оплаты",
+      "alt": "Короткий список: спросить про сборы и правила до перевода",
+      "labels": [
+        "спросите про сборы",
+        "правила текстом",
+        "фото при входе"
+      ]
+    }
+  },
+  "cover_keys_ru": []
+}

@@ -1,0 +1,40 @@
+{
+  "pipeline": "quad_canvas_2x_image_api_longform",
+  "canvas_index": 1,
+  "standalone_cover": false,
+  "model_policy": "primary_then_vip_for_2k",
+  "vip_disabled": false,
+  "max_generation_attempts": 2,
+  "identity_reference_local": "",
+  "identity_reference_id": "",
+  "logo_reference_local": "",
+  "logo_reference_url": "",
+  "logo_reference_in_generation": false,
+  "reference_url_hosted": "",
+  "output_canvas": "cover/canvas-quad-01.png",
+  "result_path": "cover/quad-mcp-result-01.json",
+  "slots": [
+    "cover",
+    "inline_1",
+    "inline_2",
+    "inline_3"
+  ],
+  "preferred_image_flow": {
+    "provider": "grsai",
+    "script": "scripts/excalibur_blog_grsai_gpt_image2_api.py",
+    "resolution": "2K",
+    "apply_script": "python3 scripts/excalibur_blog_quad_apply.py --article-dir <article_dir> --canvas-index 1 --inject-html"
+  },
+  "jobs": [
+    {
+      "slot": "canvas_quad",
+      "tool": "grsai",
+      "mcp_args": {
+        "prompt": "ONE canvas 2048×1152 — draw as 2×2 GRID of FOUR complete photoreal 16:9 apartment panels (thin white gutters OK). Each quadrant is its own readable scene.\nAutumn October Tyumen daily-rental Comfort+ — bright high-key #FFFFFF warm daylight, golden leaves outside window, NOT winter snow, NOT dark cinematic.\nTEXT LANGUAGE LOCK: all visible text RUSSIAN Cyrillic only.\nCOVER PANEL top-left — magazine editorial poster WITH ONE real person (guest woman, back/side, not host face): tied trash bags and suitcase at apartment door. Headline L1 «Перевод — правила потом» + L2 «3800 за мусор» printed on physical paper «Правила проживания» in scene — NOT graphic overlay, NOT yellow sticky collage.\nOn wall: flat light wooden tablichka/sign with painted text +7 (993) 574-83-22 — readable, IN SCENE, NOT rounded pill button, NOT phone UI chip.\nWordstat die-cut stickers (1–2): «правила проживания посуточно», «квартиры посуточно тюмень».\nTiny Harold meme sticker bottom-left ≤12% frame. Sticky note «В объявлении ни слова».\nTOP-RIGHT of COVER PANEL: clean bright wall pad 8–12% — NO logo, NO curtains lockup; factory pastes logo after generation.\nFORBIDDEN on cover: model-drawn «Добрый дом» logo, dashed logo frame, white plaque under logo, WordPress UI.\nTop-right inline_1 process_flow «Карточка, перевод, PDF» — TXT: две ночи оплачены | правила после оплаты | 3800 за вывоз. High-key infographic, NO people, NO logo.\nBottom-left inline_2 comparison_table «Оплатили — согласились?» — TXT: Скрин объявления | Чек перевода | Фото при заезде. NO logo.\nBottom-right inline_3 labeled_checklist «Пакеты у двери» — TXT: Правила до оплаты | Спросите про сборы | Сначала правила. NO logo.\nInlines: photoreal or clean editorial collage on white; NO host identity; NO large human heroes; NO brand lockup on inline panels.\nBAN: dark/low-key; phone pill; post-composite CTA bar; overlapping unreadable text; 922 phone; empty stock; meme soup (max 1 cat/harold on cover only).",
+        "aspect_ratio": "16:9",
+        "resolution": "2K",
+        "logo_reference_in_generation": false
+      }
+    }
+  ]
+}
