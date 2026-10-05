@@ -1,5 +1,27 @@
 {
   "viral_handoff_id": "4fe0a514-33ac-438b-8e91-99d8344d2c7f",
   "viral_handoff_issued_at": "2026-10-05T09:12:08.634250+00:00",
-  "topic_id": "B45"
+  "topic_id": "B45",
+  "title": "Две ночи посуточно: PDF после перевода — на выезде 3 800 ₽ за пакеты",
+  "h1": "Две ночи посуточно: PDF после перевода — на выезде 3 800 ₽ за пакеты",
+  "slug": "posutochno-pravila-v-chate-posle-oplaty-shtraf-za-musor",
+  "author_id": "dobry-dom",
+  "article_mode": "B",
+  "description": "Две ночи посуточно: PDF после перевода — на выезде 3 800 ₽ за пакеты",
+  "meta_ab": {
+    "title_seo": "Две ночи посуточно: PDF после перевода — на выезде 3 800 ₽ за пакеты",
+    "title_ctr": "Две ночи посуточно: PDF после перевода — на выезде 3 800 ₽ за пакеты",
+    "title_aeo": "Две ночи посуточно: PDF после перевода — на выезде 3 800 ₽ за пакеты",
+    "description_seo": "Две ночи посуточно: PDF после перевода — на выезде 3 800 ₽ за пакеты",
+    "description_ctr": "Две ночи посуточно: PDF после перевода — на выезде 3 800 ₽ за пакеты",
+    "description_aeo": "Две ночи посуточно: PDF после перевода — на выезде 3 800 ₽ за пакеты"
+  },
+  "theme_blocks": {
+    "faq": "skip",
+    "quiz": "skip",
+    "side_stickers": "skip"
+  },
+  "date": "2026-10-05",
+  "pipeline_canon": "human-first-v3",
+  "editorial_swarm": false
 }
