@@ -1,0 +1,50 @@
+{
+  "topic_id": "B45",
+  "slug": "kruglosutochnoe-zaselenie-polnoch-doplata",
+  "cover_family": "brand_collage",
+  "style_preset": "the_rieltor_twilight_gold",
+  "pipeline": "slice4_grid_1x_image_api",
+  "file": "cover/cover.png",
+  "alt": "Гость с чемоданом у подъезда в Тюмени ночью: на телефоне чат с доплатой за ночной заезд, на двери — обещание заселения 24/7",
+  "aspect_ratio": "16:9",
+  "canvas_source": "cover/canvas-slice4.png",
+  "generated_at": "2026-10-05T12:33:21+00:00",
+  "assets": [
+    {
+      "role": "cover",
+      "slot": "cover",
+      "file": "cover/cover.png",
+      "alt": "Гость с чемоданом у подъезда в Тюмени ночью: на телефоне чат с доплатой за ночной заезд, на двери — обещание заселения 24/7",
+      "h2_anchor": null,
+      "visual_type": "cover_editorial_hero",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_1",
+      "file": "cover/inline-01.png",
+      "alt": "Хронология: обещание круглосуточного заселения и ночной доплаты в чате",
+      "h2_anchor": "Как всё происходило",
+      "visual_type": "comparison_table_ui",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_2",
+      "file": "cover/inline-02.png",
+      "alt": "Почему формулировка 24/7 в карточке и доплата в переписке расходятся",
+      "h2_anchor": "Почему «24/7» и переписка могут расходиться",
+      "visual_type": "workflow_diagram",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "role": "inline",
+      "slot": "inline_3",
+      "file": "cover/inline-03.png",
+      "alt": "Чек-лист: проверить условия, сохранить переписку, не переводить сразу",
+      "h2_anchor": "Что учитывать при бронировании через площадку",
+      "visual_type": "checklist_board",
+      "aspect_ratio": "16:9"
+    }
+  ]
+}
