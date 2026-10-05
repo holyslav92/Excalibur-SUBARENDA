@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "topic_id": "B45",
+  "slug": "kruglosutochnoe-zaselenie-polnoch-doplata",
+  "candidates_count": 47,
+  "outbound_found": [
+    {
+      "slug": "kod-srabotal-klyuchnica-pusta-posutochno-tyumen",
+      "title": "kod-srabotal-klyuchnica-pusta-posutochno-tyumen"
+    },
+    {
+      "slug": "otmenili-rejs-predoplatu-vernut",
+      "title": "otmenili-rejs-predoplatu-vernut"
+    },
+    {
+      "slug": "rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00",
+      "title": "rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00"
+    },
+    {
+      "slug": "posutochno-tyumen-v-chate-zalog-3000-bank-zamorozil-11400",
+      "title": "posutochno-tyumen-v-chate-zalog-3000-bank-zamorozil-11400"
+    }
+  ],
+  "outbound_unique_slugs": [
+    "kod-srabotal-klyuchnica-pusta-posutochno-tyumen",
+    "posutochno-tyumen-v-chate-zalog-3000-bank-zamorozil-11400",
+    "otmenili-rejs-predoplatu-vernut",
+    "rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "warnings": [],
+  "errors": []
+}

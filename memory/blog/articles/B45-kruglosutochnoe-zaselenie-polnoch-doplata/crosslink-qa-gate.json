@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "{{SITE_BASE}}/blog/kod-srabotal-klyuchnica-pusta-posutochno-tyumen/",
+      "slug": "kod-srabotal-klyuchnica-pusta-posutochno-tyumen",
+      "anchor": "код сработал, а ключница оказалась пустой",
+      "catalog_title": "Код сработал. Пустая ключница — 35 минут у двери",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "{{SITE_BASE}}/blog/posutochno-tyumen-v-chate-zalog-3000-bank-zamorozil-11400/",
+      "slug": "posutochno-tyumen-v-chate-zalog-3000-bank-zamorozil-11400",
+      "anchor": "залог 3 000 ₽ в чате и заморозка 11 400 ₽ на экране оплаты",
+      "catalog_title": "В чате посуточно: залог 3 000 ₽ — на оплате заморозка 11 400, кода нет",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "{{SITE_BASE}}/blog/otmenili-rejs-predoplatu-vernut/",
+      "slug": "otmenili-rejs-predoplatu-vernut",
+      "anchor": "отменённый рейс и возврат предоплаты",
+      "catalog_title": "Рейс отменили. 4 200 ₽ обещали вернуть за три дня — срок вышел",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "{{SITE_BASE}}/blog/rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00/",
+      "slug": "rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00",
+      "anchor": "ранний заезд и ожидание у двери до уборки",
+      "catalog_title": "Ранний заезд оплатили. У двери с чемоданом — почти 5 часов ожидания",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "outbound_unique_slugs": [
+    "kod-srabotal-klyuchnica-pusta-posutochno-tyumen",
+    "posutochno-tyumen-v-chate-zalog-3000-bank-zamorozil-11400",
+    "otmenili-rejs-predoplatu-vernut",
+    "rannij-zaezd-oplatili-v-9-10-u-dveri-uborka-do-14-00"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B45-kruglosutochnoe-zaselenie-polnoch-doplata",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}

@@ -1,0 +1,27 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{SITE_BASE}}/blog/kruglosutochnoe-zaselenie-polnoch-doplata/#blogposting",
+  "url": "{{SITE_BASE}}/blog/kruglosutochnoe-zaselenie-polnoch-doplata/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{SITE_BASE}}/blog/kruglosutochnoe-zaselenie-polnoch-doplata/"
+  },
+  "headline": "«Заселение 24/7» посуточно. В чате: +1 800 ₽ за ночной заезд",
+  "datePublished": "2026-10-05",
+  "description": "«Заселение 24/7» в карточке, две ночи уже оплачены — а у подъезда в чате просят +1 800 ₽ за ночной заезд без предупреждения. Редакционный сценарий: когда доплата за поздний приезд законна, как проверить условия до поездки и что делать, если код не присылают без перевода.",
+  "author": {
+    "@type": "Organization",
+    "name": "Добрый дом"
+  },
+  "publisher": {
+    "@type": "LocalBusiness",
+    "name": "Добрый дом",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Тюмень",
+      "addressCountry": "RU"
+    },
+    "telephone": "+7 (993) 574-83-22"
+  }
+}
