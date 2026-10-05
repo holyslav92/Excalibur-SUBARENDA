@@ -1,6 +1,8 @@
 {
   "gate": "viral-topic-repeat",
-  "status": "PASS",
+  "status": "BLOCK",
   "article_dir": "memory/blog/articles/B45-posutochno-pravila-posle-perevoda-shtraf-za-musor-na-vyezde",
-  "errors": []
+  "errors": [
+    "viral-topic-repeat: wound families overlap recent live (bags, door_beat)"
+  ]
 }

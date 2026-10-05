@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "href": "{{SITE_BASE}}/blog/posutochno-tyumen-v-filtre-bez-predoplaty-perevod-do-koda/",
+      "slug": "posutochno-tyumen-v-filtre-bez-predoplaty-perevod-do-koda",
+      "anchor": "в фильтре «без предоплаты», до кода попросили перевод",
+      "catalog_title": "В фильтре посуточно — «без предоплаты». До кода попросили 3 200 ₽ на карту",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "{{SITE_BASE}}/blog/pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate/",
+      "slug": "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+      "anchor": "перевели предоплату, а в чате тишина",
+      "catalog_title": "Перевели 3 000 ₽ предоплатой. К вечеру — тишина в чате",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "{{SITE_BASE}}/blog/napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni/",
+      "slug": "napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni",
+      "anchor": "в карточке «уборка включена», а на выезде счёт за простыни",
+      "catalog_title": "В карточке: «уборка включена» — 3 ночи. Выезд: фото простыни — 1 800 ₽",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    },
+    {
+      "href": "{{SITE_BASE}}/blog/kod-srabotal-klyuchnica-pusta-posutochno-tyumen/",
+      "slug": "kod-srabotal-klyuchnica-pusta-posutochno-tyumen",
+      "anchor": "код сработал, а ключница пустая — фото после входа",
+      "catalog_title": "Код сработал. Пустая ключница — 35 минут у двери",
+      "http_ok": true,
+      "title_ok": true,
+      "path_ok": true,
+      "http_status": 200
+    }
+  ],
+  "catalog_count": 96,
+  "outbound_unique_slugs": [
+    "posutochno-tyumen-v-filtre-bez-predoplaty-perevod-do-koda",
+    "pereveli-3-000-predoplatoj-k-21-00-tishina-v-chate",
+    "napisali-uborka-vklyuchena-na-vyezde-1800-za-gryaznye-prostyni",
+    "kod-srabotal-klyuchnica-pusta-posutochno-tyumen"
+  ],
+  "outbound_required_min": 3,
+  "outbound_required_max": 4,
+  "site_base": "{{SITE_BASE}}",
+  "article_dir": "memory/blog/articles/B45-posutochno-pravila-posle-perevoda-shtraf-za-musor-na-vyezde",
+  "catalog_path": "memory/live-catalog.json",
+  "gate": "crosslink-qa"
+}

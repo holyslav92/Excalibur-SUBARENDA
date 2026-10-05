@@ -286,10 +286,6 @@
   "html_inject": [
     "skip inline_1: already correct under H2 — Карточка, перевод, PDF: порядок, который всё ломает",
     "skip inline_2: already correct under H2 — Оплатили — значит, согласились? Не так прямолинейно",
-    "skip inline_3: already correct under H2 — Пакеты у двери и вопрос, который хочется задать прямо сейчас",
-    "injected inline_4 after H2 — Компенсация или штраф: как выглядит честный счёт",
-    "injected inline_5 after H2 — Что сохранить, пока вы ещё в квартире",
-    "injected inline_6 after H2 — Как мы делаем у себя",
-    "injected inline_7 after H2 — Короче"
+    "skip inline_3: already correct under H2 — Пакеты у двери и вопрос, который хочется задать прямо сейчас"
   ]
 }
