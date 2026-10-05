@@ -48,3 +48,4 @@ Excalibur-2-Cloud — не копировать URL tymenrieltor.ru.
 | 2026-10-02 | B42 | posutochno-tyumen-dvuhkomnatnaya-vtoraya-kladovaya | /blog/posutochno-tyumen-dvuhkomnatnaya-vtoraya-kladovaya/ | published |
 | 2026-10-03 | B43 | posutochno-tyumen-v-filtre-detskaya-krovatka-v-chate-zavtra-za-2500 | /blog/posutochno-tyumen-v-filtre-detskaya-krovatka-v-chate-zavtra-za-2500/ | published |
 | 2026-10-04 | B44 | posutochno-tyumen-v-chate-zalog-3000-bank-zamorozil-11400 | /blog/posutochno-tyumen-v-chate-zalog-3000-bank-zamorozil-11400/ | published |
+| 2026-10-05 | B45 | posutochno-pravila-v-chate-posle-oplaty-shtraf-za-musor | /blog/posutochno-pravila-v-chate-posle-oplaty-shtraf-za-musor/ | published |

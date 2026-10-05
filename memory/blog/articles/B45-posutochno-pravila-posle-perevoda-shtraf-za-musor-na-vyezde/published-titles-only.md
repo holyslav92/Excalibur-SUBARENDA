@@ -52,3 +52,4 @@ lessons, benchmarks, QA reports или соседние research-notes как о
 | B42 | posutochno-tyumen-dvuhkomnatnaya-vtoraya-kladovaya | Хозяин ответил: «вторая не сдаётся». Двушка посуточно — 10 800 ₽, за дверью кладовая | published |
 | B43 | posutochno-tyumen-v-filtre-detskaya-krovatka-v-chate-zavtra-za-2500 | «Детская кроватка» в фильтре посуточно — в чате: завтра за 2 500 ₽ | published |
 | B44 | posutochno-tyumen-v-chate-zalog-3000-bank-zamorozil-11400 | В чате посуточно: залог 3 000 ₽ — на оплате заморозка 11 400, кода нет | published |
+| B45 | posutochno-pravila-v-chate-posle-oplaty-shtraf-za-musor | Две ночи посуточно: PDF после перевода — на выезде 3 800 ₽ за пакеты | published |

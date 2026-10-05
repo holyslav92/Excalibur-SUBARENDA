@@ -86,3 +86,18 @@
 - dzen RSS: item in `/feed/zen/`; enclosure `…-cover.png`; `OK dzen_yzen_meta=1`
 - interlink inbound: B01 post 3745
 - llms.txt + llms-full.txt: deployed
+
+## B45 — 2026-10-05
+
+- topic_id: B45
+- slug: `posutochno-pravila-v-chate-posle-oplaty-shtraf-za-musor`
+- post_id: 5236
+- permalink: `/blog/posutochno-pravila-v-chate-posle-oplaty-shtraf-za-musor/`
+- featured_image: 5237
+- inline_images: 5238–5244 (7 slots)
+- schema_meta: ok
+- categories: 101, 103, 102 (posutochnaya-arenda, dogovor-i-pravila, zalog-i-vyiezd)
+- live-page gate: PASS
+- viral-topic-repeat: PASS (retry after angle fix)
+- interlink inbound: B01 post 3745
+- llms.txt + llms-full.txt: deployed
