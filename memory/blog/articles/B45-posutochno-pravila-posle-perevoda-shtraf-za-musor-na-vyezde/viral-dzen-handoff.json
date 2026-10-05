@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "handoff_id": "4fe0a514-33ac-438b-8e91-99d8344d2c7f",
+  "issued_at": "2026-10-05T09:12:08.634250+00:00",
+  "editorial_canon": "dobry_dom_voice_reset_v1",
+  "discovered_hub": {
+    "slug": "travel",
+    "title": "Путешествия",
+    "url": "https://dzen.ru/topic/travel",
+    "subscribers": 7419022,
+    "topic_id": "5168",
+    "discovered_from_seeds": [
+      "путешествия",
+      "отели",
+      "недвижимость",
+      "аренда квартир",
+      "туризм"
+    ]
+  },
+  "viral_source": {
+    "title": "✈️ Как связаться с техподдержкой Ozon Travel: телефон, чат, возврат билетов, отмена бронирования и помощь с заказом онлайн",
+    "url": "https://dzen.ru/a/ah0F7VYv2THXMskj",
+    "viral_score": 7.46
+  },
+  "guest_angle_ru": "Гость посуточно в Тюмени хочет видеть правила проживания до оплаты: что входит в цену, есть ли сбор за мусор на выезде, когда присылают PDF — а не узнавать про 3 800 ₽ за пакеты уже в последний чат перед такси.",
+  "tyumen_wound_hint": "Обидно, когда перевод прошёл, а условия приходят файлом следом; на выезде появляется штраф за мусор, которого не было в карточке объявления.",
+  "candidates_count": 20,
+  "anti_copy": "Do not copy or closely paraphrase viral_source body; angle only."
+}

@@ -25,6 +25,10 @@
   6. fork — «только…» / «а потом…»
 - **BAN:** скелет «Сняли квартиру посуточно. Хотели X. У двери: +₽»; how-to; duty-log; фабричный штамп H1 как у соседних постов.
 - **Anti-clone:** сравнение с **12** последними live: те же 6 слов, тот же shape подряд, «У двери:» два раза подряд, то же door-surcharge семейство.
+- **Publish `viral-topic-repeat`:** probe = handoff + H1 + **~500 символов** opening
+  `article.html`. Sol §1 может пройти case-delivery, но **FAIL publish**, если в probe
+  два saturated семейства (часто `door_beat` + `bags`). Переноси «у двери/чемодан» ниже §1
+  или меняй раму на chat/PDF/карточку (см. B45 `rules_before_keys`).
 
 ## Тело (Writer → Sol)
 

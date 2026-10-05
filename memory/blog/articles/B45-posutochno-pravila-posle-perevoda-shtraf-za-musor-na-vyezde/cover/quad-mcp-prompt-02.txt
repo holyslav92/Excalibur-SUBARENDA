@@ -1,0 +1,9 @@
+ONE canvas 2048×1152 — draw as 2×2 GRID of FOUR complete 16:9 inline infographic panels (thin white gutters). NO cover panel — all four are article inlines only.
+Autumn Tyumen Comfort+ high-key #FFFFFF/gold labels, airy bright, NOT dark cinematic.
+TEXT LANGUAGE LOCK: Russian Cyrillic only; exact TXT labels per panel.
+Top-left inline_4 comparison_table_ui «Компенсация или штраф» — TXT: компенсация не штраф | покажите расчёт | 3800 без строки. NO logo, NO people.
+Top-right inline_5 labeled_checklist «Что сохранить» — TXT: скрин карточки | чек перевода | страницы PDF. NO logo.
+Bottom-left inline_6 workflow_diagram «Как мы делаем» — TXT: правила до оплаты | короткое сообщение | потом ключ. NO logo.
+Bottom-right inline_7 fact_card «Короче» — TXT: спросите про сборы | правила текстом | фото при входе. NO logo on panel (factory may paste logo after — leave top-right pad clean/light).
+Inlines: dense utility infographic — facts, order, numbers; tape/pins/paper scraps OK; NO WordPress; NO host face; NO brand lockup drawn by model; NO meme people >15%; NO phone pills.
+BAN: dark cinematic; empty cells; icon soup; model-drawn Dobry Dom logo; dashed logo frame; white logo plaque.

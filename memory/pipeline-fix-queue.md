@@ -225,3 +225,62 @@ checks_run:
 - `python3 -m py_compile scripts/excalibur_blog_derouter_opus_chat.py`
 - `python3 -m unittest tests.test_derouter_schema_output -q`
 commit: pending-parent-commit
+
+## INC-20261005-0950-publish-viral-topic-repeat-b45
+status: fixed
+run_date: 2026-10-05
+role: excalibur-blog-publish
+topic_id: B45
+article_dir: memory/blog/articles/B45-posutochno-pravila-posle-perevoda-shtraf-za-musor-na-vyezde
+severity: medium
+category: publish
+
+### What went wrong
+- Publish preflight `viral-topic-repeat` BLOCK: probe (handoff + H1 + ~500 chars
+  `article.html`) stacked saturated wound families **`door_beat` + `bags`**
+  («у двери» + «чемодан») against last 12 live posts.
+- Gate ran only at publish after full pipeline; Writer/Sol opening still used
+  door+bags scene in §1 probe window.
+
+### How the agent recovered this run
+- Updated `viral-dzen-handoff.json` to rules-before-pay / PDF-after-transfer angle.
+- Sol §1 rewrite without «у двери»/«чемодан» in opening probe; publish retry PASS.
+
+### Durable fix needed before next run
+- Document publish probe composition for Scout/Sol/ViralDzen.
+- Run same repeat check at Sol `case-delivery` (stage article) before Publish.
+- Regression test: B45 post-fix probe PASS vs door+bags combo FAIL.
+
+### Suggested files to inspect/change
+- `scripts/excalibur_blog_case_delivery_gate.py`
+- `skills/sol-excalibur-blog/SKILL.md`
+- `shared/viral-dzen-angle-system.md`
+- `shared/dobry-dom-voice-reset-v1.md`
+- `tests/test_publish_viral_gates.py`
+
+### Secrets
+- none recorded
+
+### Fixer resolution
+status: fixed
+fixed_at: 2026-10-05
+fix_summary:
+- `case-delivery` (stage article) runs `viral-topic-repeat` probe before Publish (same as publish preflight).
+- Sol/Scout/ViralDzen contracts document handoff+H1+§1~500 probe; B45 `rules_before_keys` framing.
+- Regression test B45 PASS probe vs door_beat+bags FAIL combo.
+files_changed:
+- `scripts/excalibur_blog_case_delivery_gate.py`
+- `skills/sol-excalibur-blog/SKILL.md`
+- `.cursor/skills/sol-excalibur-blog/SKILL.md`
+- `skills/scout-excalibur-blog/SKILL.md`
+- `.cursor/skills/scout-excalibur-blog/SKILL.md`
+- `shared/viral-dzen-angle-system.md`
+- `shared/dobry-dom-voice-reset-v1.md`
+- `shared/excalibur-wp-publish-contract.md`
+- `tests/test_publish_viral_gates.py`
+- `memory/pipeline-fix-queue.md`
+checks_run:
+- `python3 -m py_compile scripts/excalibur_blog_case_delivery_gate.py`
+- `PYTHONPATH=scripts python3 -m unittest tests.test_publish_viral_gates tests.test_case_delivery_gate -q`
+- `PYTHONPATH=scripts python3 scripts/excalibur_blog_case_delivery_gate.py --article-dir memory/blog/articles/B45-... --stage article` → PASS + viral-topic-repeat-probe
+commit: c3faf28

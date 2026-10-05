@@ -47,6 +47,8 @@ python3 scripts/excalibur_blog_wp_publish.py \
    - `schema.jsonld`, `schema-gate.json` PASS, `cover/cover.png`
    - `excalibur_blog_cover_qa_gate.py` PASS (same checks as Cover-QA agent)
    - `article.html` + `article.meta.json` с `pipeline_canon` stamp
+   - `viral-dzen-handoff.json` + `excalibur_blog_viral_topic_repeat_gate.py` PASS
+     (probe = handoff + H1 + ~500 chars opening; saturated `door_beat`+`bags` → BLOCK)
    - `freshness-report.json` — только если файл есть → PASS
      (`excalibur_blog_contract_freshness.py`)
 2. **MEDIA REFRESH** (`--media-refresh`) для уже published ledger-поста:
