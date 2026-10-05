@@ -1,0 +1,218 @@
+{
+  "agent": "excalibur-blog",
+  "date_context": {
+    "timezone": "Europe/Moscow",
+    "today_iso": "2026-10-05",
+    "today_ru": "05.10.2026",
+    "year": 2026,
+    "month": 10,
+    "month_name_ru": "октябрь",
+    "weekday_ru": "понедельник"
+  },
+  "topic": {
+    "topic_id": "B45",
+    "title": "круглосуточное заселение полночь доплата",
+    "h1": "круглосуточное заселение полночь доплата",
+    "slug": "kruglosutochnoe-zaselenie-polnoch-doplata",
+    "primary_query": "круглосуточное заселение полночь доплата",
+    "priority": "P0"
+  },
+  "searches": [
+    {
+      "query_id": "primary_fresh",
+      "query": "круглосуточное заселение полночь доплата 2026",
+      "purpose": "актуальный SERP",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "В России изменились правила круглосуточного нахождения родственников ...",
+          "url": "https://www.province.ru/society/4503875-v-rossii-izmenilis-pravila-kruglosutochnogo-nahojdeniya-rodstvennikov-pacienta-v-stacionarah/",
+          "snippet": ""
+        },
+        {
+          "title": "Доплата за работу ночью расчет часовой ставки",
+          "url": "https://www.consultant.ru/law/podborki/doplata_za_rabotu_nochyu_raschet_chasovoj_stavki/",
+          "snippet": "Круглосуточное нахождение с тяжелобольным пациентом оплачивается за счет обязательного медицинского страхования. 1 сентября 2026 года в России вступают новые стандарты взаимодействия с пациентами, которые прописаны в новом приказе Минздрава за № 286н."
+        },
+        {
+          "title": "Энциклопедия решений. Доплата за работу в ночное время (август 2026)",
+          "url": "https://base.garant.ru/58072153/",
+          "snippet": "Затем рассчитать доплату за каждый час работы в ночное время (с 22:00 до 6:00). Такая доплата составляет 20% часовой тарифной ставки (оклада, рассчитанного за час работы)."
+        },
+        {
+          "title": "О Праве Инвалида I Группы На Круглосуточное Сопровождение В Условиях ...",
+          "url": "https://dzen.ru/a/aiGppwlluV1kIDu4",
+          "snippet": "Минимальный размер повышения установлен постановлением Правительства РФ от 22.07.2008 N 554 (далее - Постановление N 554) и составляет 20% часовой тарифной ставки (оклада, рассчитанного за час работы) за каждый час работы в ночное время."
+        },
+        {
+          "title": "Рейтинг лучших отелей Москвы с круглосуточным заселением в 2026 году",
+          "url": "https://www.1-tur.ru/city/s-kruglosutochnym-zaseleniem-moskva/",
+          "snippet": "С 1 января 2026 года в Программе государственных гарантий бесплатного оказания гражданам медицинской помощи на 2026-2028 годы (утверждена постановлением Правительства РФ №2188 от 29 декабря 2025 года) закреплено право инвалида I группы на круглосуточное сопровождение в условиях стационара."
+        },
+        {
+          "title": "Доплата за ночные часы: трудовой кодекс 2026",
+          "url": "https://clubtk.ru/doplata-za-rabotu-v-nochnoe-vremya",
+          "snippet": "ТОП-12 рейтинг лучших отелей Москвы с круглосуточным заселением из 951 объектов на основе отзывов и оценок посетителей в 2026 году."
+        }
+      ],
+      "searched_at": "2026-10-05"
+    },
+    {
+      "query_id": "title_fresh",
+      "query": "круглосуточное заселение полночь доплата 2026",
+      "purpose": "SERP по человеческому title",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "В России изменились правила круглосуточного нахождения родственников ...",
+          "url": "https://www.province.ru/society/4503875-v-rossii-izmenilis-pravila-kruglosutochnogo-nahojdeniya-rodstvennikov-pacienta-v-stacionarah/",
+          "snippet": ""
+        },
+        {
+          "title": "Доплата за работу ночью расчет часовой ставки",
+          "url": "https://www.consultant.ru/law/podborki/doplata_za_rabotu_nochyu_raschet_chasovoj_stavki/",
+          "snippet": "Круглосуточное нахождение с тяжелобольным пациентом оплачивается за счет обязательного медицинского страхования. 1 сентября 2026 года в России вступают новые стандарты взаимодействия с пациентами, которые прописаны в новом приказе Минздрава за № 286н."
+        },
+        {
+          "title": "Энциклопедия решений. Доплата за работу в ночное время (август 2026)",
+          "url": "https://base.garant.ru/58072153/",
+          "snippet": "Затем рассчитать доплату за каждый час работы в ночное время (с 22:00 до 6:00). Такая доплата составляет 20% часовой тарифной ставки (оклада, рассчитанного за час работы)."
+        },
+        {
+          "title": "О Праве Инвалида I Группы На Круглосуточное Сопровождение В Условиях ...",
+          "url": "https://dzen.ru/a/aiGppwlluV1kIDu4",
+          "snippet": "Минимальный размер повышения установлен постановлением Правительства РФ от 22.07.2008 N 554 (далее - Постановление N 554) и составляет 20% часовой тарифной ставки (оклада, рассчитанного за час работы) за каждый час работы в ночное время."
+        },
+        {
+          "title": "Рейтинг лучших отелей Москвы с круглосуточным заселением в 2026 году",
+          "url": "https://www.1-tur.ru/city/s-kruglosutochnym-zaseleniem-moskva/",
+          "snippet": "С 1 января 2026 года в Программе государственных гарантий бесплатного оказания гражданам медицинской помощи на 2026-2028 годы (утверждена постановлением Правительства РФ №2188 от 29 декабря 2025 года) закреплено право инвалида I группы на круглосуточное сопровождение в условиях стационара."
+        },
+        {
+          "title": "Доплата за ночные часы: трудовой кодекс 2026",
+          "url": "https://clubtk.ru/doplata-za-rabotu-v-nochnoe-vremya",
+          "snippet": "ТОП-12 рейтинг лучших отелей Москвы с круглосуточным заселением из 951 объектов на основе отзывов и оценок посетителей в 2026 году."
+        }
+      ],
+      "searched_at": "2026-10-05"
+    },
+    {
+      "query_id": "official_docs",
+      "query": "круглосуточное заселение полночь доплата official docs 2026",
+      "purpose": "официальные docs",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Доплата за ночную работу: полное руководство по ТК РФ 2025‑2026",
+          "url": "https://yuridicheskii-kompas-prava.ru/oplata-i-uchyot-truda-v-nochnoe-i-vechernee-vremya-v-rossii-polnoe-rukovodstvo-2025-2026.html",
+          "snippet": ""
+        },
+        {
+          "title": "Рейтинг лучших отелей Москвы с круглосуточным заселением в 2026 году",
+          "url": "https://www.1-tur.ru/city/s-kruglosutochnym-zaseleniem-moskva/",
+          "snippet": "Узнайте, как закон РФ считает доплату за ночную работу, какие нормы действуют в 2025‑2026, где искать выплаты и какие отрасли получают больше."
+        },
+        {
+          "title": "Отель с круглосуточным заселением в Москве - «Космос» на ВДНХ",
+          "url": "https://www.hotelcosmos.ru/information/otel-v-moskve-s-kruglosutochnym-zaseleniem/",
+          "snippet": "ТОП-12 рейтинг лучших отелей Москвы с круглосуточным заселением из 951 объектов на основе отзывов и оценок посетителей в 2026 году."
+        },
+        {
+          "title": "Правительство Российской Федерации Постановление От 28 Мая 2026 Г. N ...",
+          "url": "https://www.consultant.ru/document/cons_doc_LAW_535446/92d969e26a4326c5d02fa79b8f9cf4994ee5633b/",
+          "snippet": "Отель с круглосуточным заселением в Москве Cosmos на ВДНХ 2026. Узнайте условия раннего заселения и позднего выезда, бронируйте проживание в гостинице онлайн по выгодным условиям."
+        },
+        {
+          "title": "Гостиницы в Москве с круглосуточным заселением — цены на номера 2026",
+          "url": "https://101hotels.com/main/cities/moskva/round_clock_hotels",
+          "snippet": "N 620 ОБ УТВЕРЖДЕНИИ ПРАВИЛ ПРЕДОСТАВЛЕНИЯ РАБОТНИКАМ ДОПОЛНИТЕЛЬНОГО ВЫХОДНОГО ДНЯ С СОХРАНЕНИЕМ СРЕДНЕГО ЗАРАБОТКА, ОТПУСКА БЕЗ СОХРАНЕНИЯ ЗАРАБОТНОЙ ПЛАТЫ ДО 5 КАЛЕНДАРНЫХ ДНЕЙ ПРИ ЧРЕЗВЫЧАЙНЫХ СИТУАЦИЯХ ПРИРОДНОГО И ТЕХНОГЕННОГО ХАРАКТЕРА. Срок действия документа ограничен 1 сентября 2032 года."
+        },
+        {
+          "title": "Новые правила для гостиниц с 1 сентября 2026 года: полный гид для отельеров",
+          "url": "https://rb.ru/reviews/novye-pravila-dlya-gostinic-2026/",
+          "snippet": "Новый Арбат, д. 15. от 7 650 руб. от 4 000 руб. Москва, ул. Краснопрудная, д. 12. от 13 000 руб. Москва, ш. Измайловское, д. 71, корп. 4 Г-Д. от 3 500 руб. Москва, ул. Кожевническая, д. 8с3. от 5 510 руб. Москва, пр. Ленинградский, д. 37. корп. 9, 7 км трассы М10. от 4 290 руб. Москва, ул. Новый Арбат, д. 32. от 7 200 руб. Москва, ул."
+        }
+      ],
+      "searched_at": "2026-10-05"
+    },
+    {
+      "query_id": "github_evidence",
+      "query": "site:github.com круглосуточное заселение полночь доплата 2026",
+      "purpose": "GitHub evidence",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "GitHub - clash-verge-rev/clash-verge-rev: A modern GUI client based on ...",
+          "url": "https://github.com/Clash-Verge-rev/clash-verge-rev",
+          "snippet": ""
+        },
+        {
+          "title": "manga-translator/mermaid1.png at main · mikeyoshino/manga-translator ...",
+          "url": "https://github.com/mikeyoshino/manga-translator/blob/main/mermaid1.png",
+          "snippet": "⚡ 3 分钟极速接入，零门槛上手，即刻提升客服效率与客户满意度。 内置 Clash.Meta (mihomo) 内核，并支持切换 Alpha 版本内核。 简洁美观的用户界面，支持自定义主题颜色、代理组/托盘图标以及 CSS Injection。 配置文件管理和增强（Merge 和 Script），配置文件语法提示。 系统代理和守卫、 TUN (虚拟网卡) 模式。 Refer to Doc FAQ Page. 捐助Clash Verge Rev的开发. See CONTRIBUTING.md for more details."
+        },
+        {
+          "title": "Download GitHub Desktop",
+          "url": "https://desktop.github.com/download/",
+          "snippet": "Contribute to mikeyoshino/manga-translator development by creating an account on GitHub."
+        },
+        {
+          "title": "GitHub · Change is constant. GitHub keeps you ahead. · GitHub",
+          "url": "https://github.com/",
+          "snippet": "Focus on what matters instead of fighting with Git. Whether you're new to Git or a seasoned user, GitHub Desktop simplifies your development workflow. Experience the latest features and bug fixes before they're released. Looking for Windows? Need to download the installer for Windows? Do you use a Mac with Intel chip?"
+        },
+        {
+          "title": "GitHub - ChrisTitusTech/winutil: Chris Titus Tech's Windows Utility ...",
+          "url": "https://github.com/ChrisTitusTech/winutil",
+          "snippet": "Write, test, and fix code quickly with GitHub Copilot, from simple boilerplate to complex features. From your first line of code to final deployment, GitHub provides AI and automation tools to help you build and ship better software faster. A Copilot chat window with the 'Ask' mode enabled."
+        },
+        {
+          "title": "Sign in to GitHub · GitHub",
+          "url": "https://github.com/login",
+          "snippet": "A curated compilation of Windows system tasks streamline installs, debloat with tweaks, troubleshoot with config, and configure Windows updates. Run it fresh on every new Windows install. WinUtil must be run as Administrator because it performs system-wide changes. Open PowerShell or Terminal as admin, then run: Stable Branch (recommended)"
+        }
+      ],
+      "searched_at": "2026-10-05"
+    },
+    {
+      "query_id": "community_experience",
+      "query": "круглосуточное заселение полночь доплата forum problems опыт 2026",
+      "purpose": "форумы и живые проблемы",
+      "result_count": 6,
+      "results": [
+        {
+          "title": "Доплата за ночную работу: полное руководство по ТК РФ 2025‑2026",
+          "url": "https://yuridicheskii-kompas-prava.ru/oplata-i-uchyot-truda-v-nochnoe-i-vechernee-vremya-v-rossii-polnoe-rukovodstvo-2025-2026.html",
+          "snippet": ""
+        },
+        {
+          "title": "Сотрудником склада от 120 000 руб. + доплата за ночные часы Неважно ...",
+          "url": "https://vk.com/wall-86376036_19868",
+          "snippet": "Узнайте, как закон РФ считает доплату за ночную работу, какие нормы действуют в 2025‑2026, где искать выплаты и какие отрасли получают больше."
+        },
+        {
+          "title": "Круглосуточное дежурство спасателя: почему платят только за 11 часов ...",
+          "url": "https://harant.ru/questions/q-146237/",
+          "snippet": "🔵 Сотрудником склада от 120 000 руб. + доплата за ночные часы Неважно, какой у вас опыт работы, возраст или гражданство - мы ждем всех желающих!"
+        },
+        {
+          "title": "Круглосуточное заселение — как это работает на практике Иногда жильё ...",
+          "url": "https://vk.com/wall-29374949_4657",
+          "snippet": "С юридической точки зрения, если в трудовом договоре установлена односменная продолжительность рабочей смены 11 часов, работодатель обязан оплачивать только фактически отработанные часы, а требование о круглосуточной готовности не означает круглосуточного дежурства и не влечёт оплаты за 24 часа."
+        },
+        {
+          "title": "Круглосуточное заселение: как это работает? Приезжаете поздно ночью ...",
+          "url": "https://vk.ru/wall-213055201_4644",
+          "snippet": "17-06-2026 Круглосуточное заселение — как это работает на практике Иногда жильё нужно срочно — ночью, утром или прямо «сейчас». Никаких ожиданий и «приходите завтра утром»"
+        },
+        {
+          "title": "Рейтинг лучших отелей Москвы с круглосуточным заселением в 2026 году",
+          "url": "https://www.1-tur.ru/city/s-kruglosutochnym-zaseleniem-moskva/",
+          "snippet": "Не переживайте, у нас действует круглосуточное заселение! В любое время суток вы можете заехать в свой номер, даже если ваш рейс или поезд прибыл ночью. Главное - заранее предупредить администратора о времени вашего прибытия. Как заселиться ночью? Позвоните нам перед заездом, чтобы мы вас встретили."
+        }
+      ],
+      "searched_at": "2026-10-05"
+    }
+  ],
+  "errors": []
+}
